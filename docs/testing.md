@@ -1,5 +1,7 @@
 # 测试状态
 
+**第五阶段原生验收完成（2026-11-14）：** [GitHub Actions run 43608522774](https://github.com/LanceaKing/oplus-edl/actions/runs/43608522774) 对提交 `3aaeaba4898b47d3320e6bcb21674fe2f51e958f` 的 Windows x86_64 MSVC、macOS arm64、Linux x86_64 GNU 四项原生检查全部通过。Windows 实际执行 86 个常规测试，macOS／Linux 各 88 个；三平台均通过独立 JSON 协议子进程检查。Rust／Cargo 为 1.100.0，锁定依赖，测试不操作设备。完整证据见[第五阶段记录](implementation/phase-5.md)。以下“进行中”和“未提交”等内容保留为历史状态。
+
 **第五阶段进行中（2026-11-14）：** macOS 原生格式检查、Clippy、构建、88 个测试及新增 JSON 协议子进程检查通过。Windows GNU、Linux musl 的 Clippy、构建和测试程序编译通过，但未执行目标程序。Linux GNU 跨目标 check／Clippy 通过，链接受本机工具链限制。Windows／Linux 原生四项检查尚未执行；CI 已配置但未运行。完整矩阵及日志见[第五阶段记录](implementation/phase-5.md)。下文各阶段描述均为历史状态，不代表当前公开写入仍被禁用。
 
 **第四阶段复审修复（2026-11-14）：** 3 个 P2 已修复，新增 11 个回归测试，88 个离线测试和本地四项检查通过，见[第四阶段记录](implementation/phase-4.md)。以下第二／三阶段状态保留为历史记录。

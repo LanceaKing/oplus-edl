@@ -4,7 +4,7 @@
 
 公开存储工作流包括目录备份、普通镜像／目录恢复和 XML 固件刷写。恢复和刷写先检查输入，显示摘要，确认一次后执行；非交互使用 `--yes`。`unlock`、`lock` 没有经过验证的机型方法，在连接前返回 `unsupported`。
 
-第五阶段跨平台检查进行中：macOS 原生四项检查通过，Windows GNU 和 Linux musl 交叉编译通过。Windows／Linux 原生测试尚未执行，CI 已配置但未运行；详见[第五阶段记录](docs/implementation/phase-5.md)。
+第五阶段原生验收已完成：[GitHub Actions](https://github.com/LanceaKing/oplus-edl/actions/runs/43608522774) 的 Windows x86_64 MSVC、macOS arm64、Linux x86_64 GNU 格式检查、Clippy、构建和离线测试全部通过。Windows 为 86 个常规测试，macOS／Linux 各 88 个，另均通过 JSON 协议子进程检查；详见[第五阶段记录](docs/implementation/phase-5.md)。此前交叉编译证据单独保留，未进行设备验证。
 
 ## 构建与离线测试
 
@@ -15,7 +15,7 @@ cargo test --workspace --all-features --locked
 
 qdlrs 修复已提交并推送，产品固定引用 `LanceaKing/qdlrs` 的 `a80cd1e8cd1cd60634b9c5ce9a4c8c96b727c003`。Cargo.lock 已更新，本地 `.cargo/config.toml` override 已移除。构建不再依赖相邻的 qdlrs 工作区。
 
-新固定依赖的产品检查已通过，产品代码尚未提交，未操作设备。发布及来源核验见[发布记录](docs/implementation/phase-2-publish/README.md)。已有缓存时可增加 `--offline`，首次获取依赖需要网络。验证范围见[测试记录](docs/testing.md)。
+产品代码已提交并推送至本公开仓库，未操作设备。固定依赖的历史发布及来源核验见[发布记录](docs/implementation/phase-2-publish/README.md)。已有缓存时可增加 `--offline`，首次获取依赖需要网络。验证范围见[测试记录](docs/testing.md)。
 
 ## 命令形式
 

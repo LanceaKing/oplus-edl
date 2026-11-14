@@ -1,5 +1,27 @@
 # 第五阶段实施记录
 
+## GitHub Actions 原生验收完成
+
+2026-11-14（北京时间）：用户另行授权提交、推送并明确选择公开仓库后，已创建 [LanceaKing/oplus-edl](https://github.com/LanceaKing/oplus-edl)，推送初始提交 `3aaeaba4898b47d3320e6bcb21674fe2f51e958f`。该提交的 [CI run 43608522774](https://github.com/LanceaKing/oplus-edl/actions/runs/43608522774) 已完成，三个原生任务全部成功。**第五阶段的三平台原生格式检查、Clippy、构建和离线测试验收已完成。** 没有枚举或操作设备。
+
+| 原生环境（实际 runner） | Rust host | 格式 / Clippy / 构建 | 实际执行的离线测试 |
+| --- | --- | --- | --- |
+| Windows Server 2025，windows-2025-vs2026 | `x86_64-pc-windows-msvc` | 全部通过 | 86 个常规测试 + JSON 协议子进程检查通过 |
+| macOS 26.7.2，macos-26-arm64 | `aarch64-apple-darwin` | 全部通过 | 88 个常规测试 + JSON 协议子进程检查通过 |
+| Ubuntu 26.04.1，ubuntu-26.04 | `x86_64-unknown-linux-gnu` | 全部通过 | 88 个常规测试 + JSON 协议子进程检查通过 |
+
+三个 runner 均使用 Rust／Cargo 1.100.0，日志保留完整工具链及镜像版本。CI 在各 runner 本机编译并执行测试，没有 `--target` 或 `--no-run`，不是交叉编译或模拟执行。Windows 比 Unix 少两个 FIFO 测试，符合条件编译范围；独立 JSON 检查不计入常规测试数量。
+
+流程先执行 `cargo +stable fetch --locked`，随后执行格式检查及带 `--locked --offline` 的 Clippy、构建和测试。Clippy 覆盖 workspace、all-targets、all-features，并拒绝 warnings。测试覆盖的 JSON stdout 检查在三个平台均实际运行成功。
+
+首次 CI 没有失败项，无需修改产品代码、测试或 CI 配置。初次提交前将 `.gitignore` 的根目录 `target` 规则扩展为忽略任意层级 `target/`，并排除 `.DS_Store`；约 3.5 GB 的历史构建产物没有进入仓库，原有小型审查快照、报告及日志保留。历史证据中的空白和旧状态未重写。
+
+证据：[GitHub 运行元数据及步骤状态](phase-5-native/run.json)、[验收摘要](phase-5-native/summary.json)、[Windows 日志](phase-5-native/windows.log)、[macOS 日志](phase-5-native/macos.log)、[Linux 日志](phase-5-native/ubuntu.log)、[受验源码与配置 SHA-256](phase-5-native/source-sha256.json)。这些证据对应上述初始提交；后续提交更新验收记录和状态文档，不改变受验产品代码、测试、依赖或 CI 配置。
+
+本次原生结果覆盖表中系统、架构和锁定依赖组合。此前 Windows GNU／Linux arm64 musl 的交叉编译结果仍只代表编译检查，不能由本次结果扩展为这些目标已经运行测试。原生离线验收也不证明真实 USB／串口、其他文件系统、加载器、RMX3800 或固件可启动性；第六阶段仍须另行授权。
+
+## 以下为原生 CI 之前的历史记录
+
 日期：2026-11-14。**第五阶段已开始，尚未达到三平台原生检查全部通过的完成条件。** 本次完成 macOS 原生检查、Windows GNU 和 Linux musl 交叉编译，以及三平台 CI 配置。Windows／Linux 原生运行环境尚未提供，CI 未运行，不把交叉编译当作原生测试。
 
 未提交、未推送、未枚举或操作设备。没有修改产品协议实现、qdlrs fork、固定 revision 或 Cargo.lock。依赖仍为 `a80cd1e8cd1cd60634b9c5ce9a4c8c96b727c003`。开始时产品文件已全部处于未跟踪状态，本次保留该状态。
