@@ -1,0 +1,14 @@
+Fix phase-one protocol I/O and add offline regressions
+
+Require complete source, transport, output and ACK handling; preserve
+modification confirmation and remove implicit resets. Validate Sahara
+ranges and backend selection, and make loader/storage output controllable.
+
+Adapt CLI program inputs with finite erase data and explicit final-sector
+padding. Keep unsafe read NAKs distinct from ordinary rejection and accept
+XML whitespace at welcome idle boundaries.
+
+Add scripted protocol, selection and CLI input regressions. All 76 tests,
+formatting, Clippy and workspace build passed on the reviewed snapshot.
+
+Assisted-by: Codex:gpt-6

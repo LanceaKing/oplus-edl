@@ -1,0 +1,61 @@
+{
+  "created_at": "2026-11-13T19:07:01.012398+00:00",
+  "workspace": "/Users/Apple/Documents/qdlrs",
+  "head": "75fe2f7e42546a1d75969040378d4616419a9dcf",
+  "rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "checks": [
+    {
+      "name": "fmt",
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "fmt.log"
+    },
+    {
+      "name": "clippy",
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "log": "clippy.log"
+    },
+    {
+      "name": "test",
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "log": "test.log"
+    },
+    {
+      "name": "build",
+      "command": [
+        "cargo",
+        "build",
+        "--workspace",
+        "--all-features",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    }
+  ],
+  "hardware_access": false
+}

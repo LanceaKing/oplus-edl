@@ -1,0 +1,32 @@
+   Compiling qdl v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-13-phase1-repair/protocol/scratch/source/qdl)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.39s
+     Running tests/review_protocol.rs (target/debug/deps/review_protocol-c9be7bec6c0b43dc)
+
+running 8 tests
+test sentinel_welcome_trailing_whitespace_handoff_diagnostic ... FAILED
+test welcome_whitespace_never_masks_complete_invalid_or_partial_xml ... ok
+test welcome_accepts_boundary_space_without_relaxing_document_limit_or_eof ... ok
+test final_read_nak_never_becomes_continueable_rejection ... ok
+test other_modifying_commands_keep_complete_hinted_nak_rejected ... ok
+test welcome_whitespace_and_xml_are_stable_at_every_split ... ok
+test all_whitespace_raw_storage_survives_every_split ... ok
+test initial_nak_classification_is_stable_at_every_split_and_keeps_tail ... ok
+
+failures:
+
+---- sentinel_welcome_trailing_whitespace_handoff_diagnostic stdout ----
+
+thread 'sentinel_welcome_trailing_whitespace_handoff_diagnostic' (7173992) panicked at qdl/tests/review_protocol.rs:135:65:
+called `Result::unwrap()` on an `Err` value: Invalid Firehose XML
+
+Caused by:
+    Malformed XML. 2:6 Invalid processing instruction: <?xml - "<?xml"-like PI is only valid at the beginning of the document
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    sentinel_welcome_trailing_whitespace_handoff_diagnostic
+
+test result: FAILED. 7 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+error: test failed, to rerun pass `-p qdl --test review_protocol`

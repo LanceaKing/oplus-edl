@@ -1,0 +1,50 @@
+--- a/qdl/src/lib.rs
++++ b/qdl/src/lib.rs
+@@ -242,6 +242,18 @@
+             return Err(
+                 io::Error::new(ErrorKind::UnexpectedEof, "EOF before Firehose response").into(),
+             );
++        }
++        // Only welcome collection can discard whitespace between log documents.
++        // Command ACKs return before any following raw-storage bytes are consumed.
++        if welcome && pending.is_empty() {
++            let whitespace = available
++                .iter()
++                .take_while(|byte| matches!(byte, b' ' | b'\t' | b'\r' | b'\n'))
++                .count();
++            if whitespace != 0 {
++                channel.consume(whitespace);
++                continue;
++            }
+         }
+         // Copy only up to the document limit, including a possible split end marker.
+         let old_len = pending.len();
+@@ -697,7 +709,15 @@
+     )?;
+ 
+     firehose_write(channel, &mut xml)?;
+-    if firehose_read(channel, firehose_parser_ack_nak)? != FirehoseStatus::Ack {
++    let (status, response) = firehose_response(channel, firehose_parser_ack_nak, false)?;
++    if status == FirehoseStatus::Nak {
++        let attrs = &response.attributes;
++        if attrs.contains_key("AttemptRestart")
++            || attrs.contains_key("AttemptRetry")
++            || attrs.get("rawmode").is_some_and(|mode| mode != "false")
++        {
++            bail!("Read was NAKed without a usable command boundary: {attrs:?}");
++        }
+         return Err(ReadRejected.into());
+     }
+ 
+--- a/qdl/src/types.rs
++++ b/qdl/src/types.rs
+@@ -57,7 +57,8 @@
+     }
+ }
+ 
+-/// A complete NAK received before a read enters raw mode.
++/// A complete initial read NAK with no retry/restart hint or raw-mode indication.
++/// Other read failures require stopping the session.
+ #[derive(Debug)]
+ pub struct ReadRejected;
+ 

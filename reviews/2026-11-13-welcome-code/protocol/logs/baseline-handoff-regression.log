@@ -1,0 +1,28 @@
+$ cargo test -p qdl --test protocol_probe --all-features --locked --offline protocol_declared_handoff_and_raw_are_preserved_at_all_splits -- --exact
+   Compiling qdl v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-13-welcome-code/protocol/baseline/qdl)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.41s
+     Running tests/protocol_probe.rs (target/debug/deps/protocol_probe-45f7459443f0f3ec)
+
+running 1 test
+test protocol_declared_handoff_and_raw_are_preserved_at_all_splits ... FAILED
+
+failures:
+
+---- protocol_declared_handoff_and_raw_are_preserved_at_all_splits stdout ----
+
+thread 'protocol_declared_handoff_and_raw_are_preserved_at_all_splits' (7838476) panicked at qdl/tests/protocol_probe.rs:58:79:
+called `Result::unwrap()` on an `Err` value: Invalid Firehose XML
+
+Caused by:
+    Malformed XML. 2:6 Invalid processing instruction: <?xml - "<?xml"-like PI is only valid at the beginning of the document
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+
+failures:
+    protocol_declared_handoff_and_raw_are_preserved_at_all_splits
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 6 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p qdl --test protocol_probe`
+
+exit=101; elapsed_seconds=0.634

@@ -1,0 +1,26 @@
+   Compiling serde v1.0.219
+   Compiling bincode v1.3.3
+   Compiling qdl v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-13-phase1-code/coverage_scope/probe-source/qdl)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.09s
+     Running tests/coverage_review_probes.rs (target/debug/deps/coverage_review_probes-4dd919aa7b2f2d2b)
+
+running 3 tests
+erase caller: Unknown: Error reading input for partition p; only program command sent
+
+thread 'completed_welcome_document_with_trailing_whitespace_should_end_on_idle' (7143359) panicked at qdl/tests/coverage_review_probes.rs:45:5:
+valid completed XML followed by whitespace: Err(scripted read failure)
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test existing_erase_source_fails_after_program_is_accepted ... ok
+actual parse_program_xml caller: Unknown: Error reading input for partition p: Error reading input for partition p: failed to fill whole buffer; sent 8 of 12 promised bytes
+test actual_xml_caller_omits_final_sector_padding ... ok
+test completed_welcome_document_with_trailing_whitespace_should_end_on_idle ... FAILED
+
+failures:
+
+failures:
+    completed_welcome_document_with_trailing_whitespace_should_end_on_idle
+
+test result: FAILED. 2 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p qdl --test coverage_review_probes`
+

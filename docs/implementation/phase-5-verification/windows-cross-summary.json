@@ -1,0 +1,51 @@
+{
+  "host": "macOS-26.6.2-arm64-arm-64bit",
+  "target": "x86_64-pc-windows-gnu",
+  "native_execution": false,
+  "checks": [
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-pc-windows-gnu",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--workspace",
+        "--all-features",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-pc-windows-gnu"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-pc-windows-gnu",
+        "--no-run"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

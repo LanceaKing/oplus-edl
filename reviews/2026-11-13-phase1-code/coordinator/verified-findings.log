@@ -1,0 +1,18 @@
+$ cargo test -p qdl --all-features --locked --offline --test review_firehose -- --nocapture
+   Compiling qdl v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-13-phase1-code/coordinator/probe-source/qdl)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.41s
+     Running tests/review_firehose.rs (target/debug/deps/review_firehose-89007017f1ffd3ec)
+
+running 4 tests
+complete welcome XML plus trailing newline returns TimedOut
+ReadRejected for <data><response value="NAK" AttemptRestart="1"/></data>
+test welcome_trailing_whitespace_timeout_is_rejected ... ok
+erase: Unknown/UnexpectedEof, one program command, no raw data
+test legacy_erase_input_stops_after_initial_ack ... ok
+ReadRejected for <data><response value="NAK" rawmode="true"/></data>
+test restart_nak_is_exposed_as_safe_read_rejection ... ok
+actual parse_program_xml: Unknown/UnexpectedEof after eight raw bytes; final padded sector never sent
+test actual_xml_caller_leaves_unaligned_image_partially_written ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

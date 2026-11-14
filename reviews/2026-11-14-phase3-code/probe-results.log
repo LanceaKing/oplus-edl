@@ -1,0 +1,24 @@
+   Compiling oplus-edl v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-14-phase3-code/probe)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.38s
+     Running tests/review_probes.rs (reviews/2026-11-14-phase3-code/target/debug/deps/review_probes-0d6c79d9cceacf04)
+
+running 4 tests
+aligned chunk rejected: invalid sparse geometry
+zero DONT_CARE rejected: invalid sparse chunk range
+test reproduces_aligned_sparse_rejection ... ok
+preflight result: {"id":3,"operation":"read","lun":0,"partition":"../bad","source":null,"xml_node":null,"start_byte":"32768","source_bytes":null,"partition_bytes":"1024","transfer_bytes":"1024","transferred_bytes":"0","execution":"failed","write":"not_applicable","verification":"not_applicable","ranges":[],"reason":null,"errors":[{"category":"unsupported","message":"partition name is unsafe or conflicts within selected LUN"}]}
+backup: Unsupported
+Scope: requested LUNs [0]; per-read results define scanned scope; only listed GPT partitions
+1: read done (512 bytes)
+2: /var/folders/yy/zg137m2x6ml7csnxd3mvy5y00000gn/T/.tmpAG2M9b/lun0/.gpt/primary.bin done (17408 bytes)
+3: read failed (0 bytes)
+Unsupported: partition name is unsafe or conflicts within selected LUN
+test reproduces_preflight_failed_status_without_read ... ok
+successful backup rejected on restore: target directory name collision
+test reproduces_backup_restore_case_asymmetry ... ok
+restore FIFO blocked until writer opened
+XML FIFO blocked until writer opened
+test reproduces_fifo_block_before_type_check ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.62s
+

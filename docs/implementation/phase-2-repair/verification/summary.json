@@ -1,0 +1,145 @@
+{
+  "date": "2026-11-14",
+  "host": "macOS-26.6.2-arm64-arm-64bit",
+  "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "qdl_base": "7e0a31a5be2ab5d01b27bd743ee67a445ad0b84d",
+  "qdl_local_override": true,
+  "checks": [
+    {
+      "project": "product",
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "product-fmt.log"
+    },
+    {
+      "project": "product",
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "log": "product-clippy.log"
+    },
+    {
+      "project": "product",
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "log": "product-test.log"
+    },
+    {
+      "project": "product",
+      "command": [
+        "cargo",
+        "build",
+        "--workspace",
+        "--all-features",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "log": "product-build.log"
+    },
+    {
+      "project": "qdlrs",
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "qdlrs-fmt.log"
+    },
+    {
+      "project": "qdlrs",
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--locked",
+        "--offline",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "log": "qdlrs-clippy.log"
+    },
+    {
+      "project": "qdlrs",
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "log": "qdlrs-test.log"
+    },
+    {
+      "project": "qdlrs",
+      "command": [
+        "cargo",
+        "build",
+        "--workspace",
+        "--all-features",
+        "--locked",
+        "--offline"
+      ],
+      "exit_code": 0,
+      "log": "qdlrs-build.log"
+    }
+  ],
+  "device_access": false,
+  "committed": false,
+  "pushed": false,
+  "product_tests": 37,
+  "qdlrs_tests": 82,
+  "additional_checks": [
+    {
+      "command": [
+        "cargo",
+        "check",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--locked",
+        "--offline",
+        "--target",
+        "x86_64-pc-windows-gnu"
+      ],
+      "exit_code": 0,
+      "scope": "cross compilation check only; no Windows execution"
+    },
+    {
+      "record": "unpatched-build.json",
+      "passed": true
+    }
+  ]
+}

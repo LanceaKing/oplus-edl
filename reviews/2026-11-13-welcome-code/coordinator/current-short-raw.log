@@ -1,0 +1,57 @@
+   Compiling proc-macro2 v1.0.94
+   Compiling libc v0.2.171
+   Compiling unicode-ident v1.0.18
+   Compiling crossbeam-utils v0.8.21
+   Compiling io-kit-sys v0.4.1
+   Compiling serde v1.0.219
+   Compiling core-foundation-sys v0.8.7
+   Compiling owo-colors v4.2.0
+   Compiling hashbrown v0.15.2
+   Compiling utf8parse v0.2.2
+   Compiling anyhow v1.0.97
+   Compiling equivalent v1.0.2
+   Compiling anstyle-parse v0.2.6
+   Compiling cfg-if v1.0.0
+   Compiling xml-rs v0.8.25
+   Compiling log v0.4.28
+   Compiling indexmap v2.8.0
+   Compiling futures-core v0.3.31
+   Compiling anstyle-query v1.1.2
+   Compiling slab v0.4.11
+   Compiling anstyle v1.0.10
+   Compiling once_cell v1.21.3
+   Compiling is_terminal_polyfill v1.70.1
+   Compiling colorchoice v1.0.3
+   Compiling anstream v0.6.18
+   Compiling xmltree v0.11.0
+   Compiling quote v1.0.40
+   Compiling syn v2.0.100
+   Compiling crossbeam-channel v0.5.15
+   Compiling mach2 v0.4.3
+   Compiling core-foundation v0.10.1
+   Compiling serial2 v0.2.28
+   Compiling pbr v1.1.1
+   Compiling nusb v0.2.1
+   Compiling serde_derive v1.0.219
+   Compiling serde_repr v0.1.20
+   Compiling bincode v1.3.3
+   Compiling qdl v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-13-welcome-code/coordinator/probe-source/qdl)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.42s
+     Running tests/review_short_raw.rs (target/debug/deps/review_short_raw-384c1f85d1b24c84)
+
+running 1 test
+result=Ok(()); output=[49, 50, 51, 52, 53, 54, 55, 13]
+
+thread 'short_raw_data_before_declared_final_ack_must_fail' (7835494) panicked at qdl/tests/review_short_raw.rs:14:5:
+short raw data was accepted with framing CR substituted into output
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test short_raw_data_before_declared_final_ack_must_fail ... FAILED
+
+failures:
+
+failures:
+    short_raw_data_before_declared_final_ack_must_fail
+
+test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p qdl --test review_short_raw`

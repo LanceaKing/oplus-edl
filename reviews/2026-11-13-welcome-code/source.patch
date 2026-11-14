@@ -1,0 +1,177 @@
+diff --git a/AGENTS.md b/AGENTS.md
+index 406c6a5..3d0682d 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -66,7 +66,7 @@ Connects to a crashed device, runs Sahara in memory-debug mode, and dumps select
+ - **Read rejection**: `ReadRejected` requires an initial complete NAK with no retry/restart hint and `rawmode` absent or `false`. Other read failures require stopping the session.
+ - **Input and configuration**: Program callers supply every requested sector byte, including any permitted tail padding. The default configuration uses `SkipWrite=0`. Invalid or zero payload sizes return errors. Configuration parsing does not send follow-up commands.
+ - **Output**: Product callers set `FirehoseConfiguration::quiet`. This suppresses logs and progress on loader/storage paths. Startup logs use `firehose_read_welcome`, while command responses use `firehose_read`. Storage information is returned as data.
+-- **XML framing on serial**: Firehose XML packets aren't naturally delimited over serial; `firehose_read` scans for `</data>` to find message boundaries rather than relying on packet framing.
++- **XML framing on serial**: Firehose XML packets aren't naturally delimited over serial; `firehose_read` skips XML whitespace before a document and scans for `</data>` to find its end. It leaves bytes after that boundary untouched, including raw storage data. A welcome end marker can return immediately without consuming trailing whitespace; the next XML read handles it. Command timeouts still fail.
+ 
+ ## Keeping this file current
+ 
+diff --git a/README.md b/README.md
+index bc1fb22..cd7d6d5 100644
+--- a/README.md
++++ b/README.md
+@@ -30,7 +30,8 @@ Only a complete NAK before raw data, without retry/restart hints or a raw-mode i
+ An absent `rawmode` attribute or `rawmode="false"` permits this classification. Other read failures require stopping the session.
+ 
+ `firehose_read_welcome` collects startup logs. An idle timeout ends welcome collection only at an XML document boundary.
+-XML whitespace between welcome documents or after a complete welcome document is allowed. Partial XML still fails on timeout.
++XML reads skip framing whitespace before the next document, including whitespace left by the welcome end marker.
++They return immediately at the document end, preserving raw storage bytes after an ACK. Partial XML still fails on timeout.
+ `firehose_read` requires a complete response, even after a log or partial XML.
+ `firehose_get_storage_info` returns log messages and response attributes, and reports NAK as an error.
+ Configuration responses update sizes only after a valid ACK. They do not send another configure or reset command.
+diff --git a/qdl/src/lib.rs b/qdl/src/lib.rs
+index d45cd5b..99e4d78 100644
+--- a/qdl/src/lib.rs
++++ b/qdl/src/lib.rs
+@@ -243,9 +243,10 @@ fn firehose_read_xml<T: QdlChan>(channel: &mut T, welcome: bool) -> Result<Optio
+                 io::Error::new(ErrorKind::UnexpectedEof, "EOF before Firehose response").into(),
+             );
+         }
+-        // Only welcome collection can discard whitespace between log documents.
+-        // Command ACKs return before any following raw-storage bytes are consumed.
+-        if welcome && pending.is_empty() {
++        // XML framing whitespace can remain after the welcome end marker or a
++        // preceding response. Skip it only before the next XML document; return
++        // at </data> so raw-storage bytes after an ACK remain untouched.
++        if pending.is_empty() {
+             let whitespace = available
+                 .iter()
+                 .take_while(|byte| matches!(byte, b' ' | b'\t' | b'\r' | b'\n'))
+@@ -351,7 +352,7 @@ pub fn firehose_read<T: QdlChan>(
+     Ok(firehose_response(channel, response_parser, false)?.0)
+ }
+ 
+-/// Collect startup logs separately. Only an idle timeout at an XML boundary ends collection.
++/// Collect startup logs until their end marker or an idle timeout at an XML boundary.
+ pub fn firehose_read_welcome<T: QdlChan>(channel: &mut T) -> Result<Vec<String>> {
+     let mut logs = Vec::new();
+     let mut log_bytes = 0usize;
+diff --git a/qdl/tests/firehose_io.rs b/qdl/tests/firehose_io.rs
+index 3dcbace..8d78970 100644
+--- a/qdl/tests/firehose_io.rs
++++ b/qdl/tests/firehose_io.rs
+@@ -441,6 +441,118 @@ fn welcome_end_marker_does_not_acknowledge_a_command() {
+     assert_eq!(firehose_read_welcome(&mut dev).unwrap().len(), 1);
+ }
+ 
++const WELCOME_END: &[u8] = b"<data><log value=\"INFO: End of supported functions\"/></data>";
++const XML_DECLARATION: &[u8] = b"<?xml version=\"1.0\"?>";
++
++#[test]
++fn welcome_handoff_accepts_declared_configure_response_at_every_split() {
++    let stream = [WELCOME_END, b"\r\n \t", XML_DECLARATION, CONFIG, ACK].concat();
++    let mut fragments = vec![vec![bytes(&stream)]];
++    fragments.extend(
++        (1..stream.len()).map(|split| vec![bytes(&stream[..split]), bytes(&stream[split..])]),
++    );
++    fragments.push(stream.iter().map(|byte| bytes(&[*byte])).collect());
++    for input in fragments {
++        let (mut dev, trace) = device(input);
++        assert_eq!(firehose_read_welcome(&mut dev).unwrap().len(), 1);
++        assert!(trace.lock().unwrap().writes.is_empty());
++        firehose_configure(&mut dev, false).unwrap();
++        assert_eq!(
++            firehose_read(&mut dev, firehose_parser_configure_response).unwrap(),
++            FirehoseStatus::Ack
++        );
++        assert_eq!(dev.fh_cfg.send_buffer_size, 8);
++        assert_eq!(
++            firehose_read(&mut dev, firehose_parser_ack_nak).unwrap(),
++            FirehoseStatus::Ack
++        );
++        drop(dev);
++        assert_eq!(trace.lock().unwrap().writes.len(), 1);
++        assert_no_reset(&trace);
++    }
++}
++
++#[test]
++fn welcome_handoff_preserves_raw_whitespace_at_every_split() {
++    let raw = b" \t\r\n \t\r\n";
++    let stream = [
++        WELCOME_END,
++        b"\r\n",
++        XML_DECLARATION,
++        ACK,
++        raw,
++        b"\r\n",
++        XML_DECLARATION,
++        ACK,
++        NAK,
++    ]
++    .concat();
++    for split in 1..stream.len() {
++        let (mut dev, trace) = device([bytes(&stream[..split]), bytes(&stream[split..])]);
++        assert_eq!(firehose_read_welcome(&mut dev).unwrap().len(), 1);
++        let mut out = Vec::new();
++        firehose_read_storage(&mut dev, &mut out, 2, 0, 0, 0).unwrap();
++        assert_eq!(out, raw, "split={split}");
++        assert_eq!(
++            firehose_read(&mut dev, firehose_parser_ack_nak).unwrap(),
++            FirehoseStatus::Nak
++        );
++        drop(dev);
++        assert_eq!(trace.lock().unwrap().writes.len(), 1);
++        assert_no_reset(&trace);
++    }
++}
++
++#[test]
++fn welcome_handoff_whitespace_and_partial_xml_never_acknowledge_a_command() {
++    for tail in [
++        &b" \t\r\n"[..],
++        &b"\r\n<?xml version=\"1.0\"?><data><response"[..],
++    ] {
++        for (ending, kind) in [
++            (Input::Error(ErrorKind::TimedOut), ErrorKind::TimedOut),
++            (Input::Eof, ErrorKind::UnexpectedEof),
++        ] {
++            let (mut dev, trace) = device([bytes(&[WELCOME_END, tail].concat()), ending]);
++            assert_eq!(firehose_read_welcome(&mut dev).unwrap().len(), 1);
++            assert_eq!(
++                io_kind(&firehose_read(&mut dev, firehose_parser_ack_nak).unwrap_err()),
++                kind
++            );
++            drop(dev);
++            assert!(trace.lock().unwrap().writes.is_empty());
++        }
++    }
++}
++
++#[test]
++fn welcome_handoff_rejects_non_xml_whitespace_and_malformed_documents() {
++    for tail in [
++        &b"\r\n\x0b<data><response value=\"ACK\"/></data>"[..],
++        &b"\r\n\x0c<data><response value=\"ACK\"/></data>"[..],
++        &b"\r\n<?xml version=\"1.0\"?><data><response value=\"ACK\"></data>"[..],
++    ] {
++        let (mut dev, _) = device([bytes(&[WELCOME_END, tail].concat())]);
++        assert_eq!(firehose_read_welcome(&mut dev).unwrap().len(), 1);
++        assert!(firehose_read(&mut dev, firehose_parser_ack_nak).is_err());
++    }
++}
++
++#[test]
++fn response_prefix_whitespace_preserves_xml_size_limit() {
++    let declared_ack = [XML_DECLARATION, ACK].concat();
++    for (limit, success) in [(declared_ack.len(), true), (declared_ack.len() - 1, false)] {
++        let (mut dev, _) = device([bytes(&[&b" \t\r\n"[..], &declared_ack].concat())]);
++        dev.fh_cfg.xml_buf_size = limit;
++        let result = firehose_read(&mut dev, firehose_parser_ack_nak);
++        if success {
++            assert_eq!(result.unwrap(), FirehoseStatus::Ack);
++        } else {
++            assert!(result.unwrap_err().to_string().contains("receive limit"));
++        }
++    }
++}
++
+ #[test]
+ fn welcome_timeout_only_completes_at_document_boundary() {
+     let (mut dev, _) = device([bytes(LOG), Input::Error(ErrorKind::TimedOut)]);

@@ -1,0 +1,48 @@
+{
+  "host": "aarch64-apple-darwin",
+  "target": "aarch64-unknown-linux-gnu",
+  "execution": "cross checks only; no Linux binaries executed",
+  "checks": [
+    {
+      "command": [
+        "cargo",
+        "check",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--locked",
+        "--target",
+        "aarch64-unknown-linux-gnu"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--locked",
+        "--target",
+        "aarch64-unknown-linux-gnu",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--workspace",
+        "--all-features",
+        "--locked",
+        "--target",
+        "aarch64-unknown-linux-gnu"
+      ],
+      "exit_code": 101
+    }
+  ]
+}

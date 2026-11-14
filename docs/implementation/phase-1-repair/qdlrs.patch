@@ -1,0 +1,3437 @@
+diff --git a/AGENTS.md b/AGENTS.md
+index 3224db5..406c6a5 100644
+--- a/AGENTS.md
++++ b/AGENTS.md
+@@ -37,7 +37,7 @@ This is a Cargo workspace with three members:
+ ### `qdl/` — core library
+ The protocol implementation. Exposes everything the CLI and ramdump tools need.
+ 
+-- **`src/types.rs`** — shared traits and structs. `QdlReadWrite` is the raw transport trait. `QdlDevice<T>` wraps it with a `FirehoseConfiguration` and implements `QdlChan`. `QdlChan: BufRead + Write` is what all Firehose functions accept. `QdlDevice` resets the board to EDL on `Drop` if an operation failed mid-flight.
++- **`src/types.rs`** — shared traits and structs. `QdlReadWrite` is the raw transport trait. `QdlDevice<T>` wraps it with a `FirehoseConfiguration` and implements `QdlChan`. `QdlChan: BufRead + Write` is what all Firehose functions accept. `QdlDevice` never sends commands on `Drop`. The retained `reset_on_drop` field is ignored. Modifying paths return `MutationFailure`, with a confirmation state and the original error.
+ - **`src/lib.rs`** — all Firehose XML protocol functions (`firehose_configure`, `firehose_program_storage`, `firehose_read_storage`, `firehose_reset`, etc.). Also contains `load_programmer_images`, which handles both plain ELF loaders and CPIO `newc` multi-image archives (used on newer platforms like SM8750 with `xbl_s_devprg_ns.melf`).
+ - **`src/sahara.rs`** — Sahara binary protocol (the first stage before Firehose). `sahara_run` drives the full state machine; `sahara_dump_regions` handles crash ramdumps.
+ - **`src/parsers.rs`** — XML response parsers for Firehose ACK/NAK and configure responses.
+@@ -47,6 +47,7 @@ The protocol implementation. Exposes everything the CLI and ramdump tools need.
+ The main user-facing tool. Parses args with `clap`, constructs a `QdlDevice`, runs Sahara to load the programmer, then dispatches Firehose commands.
+ 
+ - **`src/main.rs`** — CLI entry point and subcommand dispatch.
++- **`src/input.rs`** — bounded erase input and file ranges with explicit final-sector padding. File truncation remains an error.
+ - **`src/flasher.rs`** — `flasher` subcommand: reads `rawprogramN.xml` and `patchN.xml`, drives `firehose_program_storage` and `firehose_patch` in sequence.
+ - **`src/programfile.rs`** — parses rawprogram/patch XML files into operation structs.
+ - **`src/util.rs`** — GPT helpers (`read_gpt_from_storage`, `find_part`, `print_partition_table`).
+@@ -59,6 +60,12 @@ Connects to a crashed device, runs Sahara in memory-debug mode, and dumps select
+ - **Two-phase boot**: every operation starts with a Sahara handshake to upload a programmer ELF (or CPIO archive) into device RAM, then switches to Firehose XML over the same transport.
+ - **LUN/physical partition index**: UFS devices require explicit `--phys-part-idx` for all storage operations. The `flasher` command reads this from the XML files automatically; all other commands need it set explicitly.
+ - **Sector size matters**: wrong `--sector-size` causes NAK on `<program>` operations. Defaults vary by storage type (eMMC/NVMe: 512, UFS/NAND/SPINOR: 4096).
++- **Offline tests**: `qdl/tests/support/mod.rs` supplies `ScriptedIo`. `firehose_io`, `sahara_transfer`, `selection`, and the CLI's `program_input` do not enumerate or open hardware. The USB unit tests check completion lengths and cancellation error mapping without a device.
++- **Explicit selection**: USB and serial opening use `select_and_open`. No selection, no match, or duplicate matches must return before calling the open closure. Use the USB location-key API for product integration.
++- **Failure handling**: Stop after a failed modification. `NotSent` means local validation failed before sending. `Rejected` means a complete NAK. `Unknown` means the request could have reached the device without final confirmation. Do not send reset or retry from an error handler.
++- **Read rejection**: `ReadRejected` requires an initial complete NAK with no retry/restart hint and `rawmode` absent or `false`. Other read failures require stopping the session.
++- **Input and configuration**: Program callers supply every requested sector byte, including any permitted tail padding. The default configuration uses `SkipWrite=0`. Invalid or zero payload sizes return errors. Configuration parsing does not send follow-up commands.
++- **Output**: Product callers set `FirehoseConfiguration::quiet`. This suppresses logs and progress on loader/storage paths. Startup logs use `firehose_read_welcome`, while command responses use `firehose_read`. Storage information is returned as data.
+ - **XML framing on serial**: Firehose XML packets aren't naturally delimited over serial; `firehose_read` scans for `</data>` to find message boundaries rather than relying on packet framing.
+ 
+ ## Keeping this file current
+diff --git a/README.md b/README.md
+index f1d7e49..bc1fb22 100644
+--- a/README.md
++++ b/README.md
+@@ -4,6 +4,59 @@ Qualcomm SoCs feature the Emergency Download Mode (EDL, widely known as '9008 mo
+ 
+ `qdl` provides a Rust implementation for the Sahara and Firehose protocols that are used to communicate with a device in that mode.
+ 
++## Oplus EDL fork
++
++This fork starts at Qualcomm commit `75fe2f7e42546a1d75969040378d4616419a9dcf`.
++It contains the first protocol fixes for Oplus EDL. The workspace still contains the upstream tools and retains the BSD-3-Clause license.
++The tests use scripted transport. They do not open USB devices or serial ports.
++Offline success does not establish device support.
++
++`firehose_program_storage`, `firehose_patch`, `firehose_set_bootable`, and `firehose_reset` return `MutationFailure` on failure.
++Its `confirmation` field is `NotSent`, `Rejected`, or `Unknown`. Its `cause` field retains the original error.
++A complete NAK means `Rejected`. A transport failure after sending starts means `Unknown`.
++Success requires the final ACK. Callers must stop after failure and must not automatically retry modifications.
++Neither errors nor `QdlDevice` destruction send reset commands. The retained `reset_on_drop` field has no effect.
++Call `firehose_reset` explicitly when the workflow permits a reset.
++
++The program input must supply all requested sector bytes. The library no longer pads early EOF with buffer contents.
++Callers that permit a partial final sector must provide that padding explicitly.
++The upstream CLI uses a bounded zero stream for erase and pads only the final image sector.
++Rawprogram file offsets and lengths are checked before that program command is sent.
++A file that shrinks after this check still fails; it is not padded to hide missing source bytes.
++Serial writes can continue after a short write. USB writes require a complete transfer and reject short completions.
++USB cancellation becomes `TimedOut`, because cancellation can occur after bytes reach the device.
++Storage reads require complete output writes, a successful output flush, and a final ACK.
++Only a complete NAK before raw data, without retry/restart hints or a raw-mode indication, produces `ReadRejected`.
++An absent `rawmode` attribute or `rawmode="false"` permits this classification. Other read failures require stopping the session.
++
++`firehose_read_welcome` collects startup logs. An idle timeout ends welcome collection only at an XML document boundary.
++XML whitespace between welcome documents or after a complete welcome document is allowed. Partial XML still fails on timeout.
++`firehose_read` requires a complete response, even after a log or partial XML.
++`firehose_get_storage_info` returns log messages and response attributes, and reports NAK as an error.
++Configuration responses update sizes only after a valid ACK. They do not send another configure or reset command.
++Payload sizes must be nonzero sector multiples. Payload and XML buffers have a 16 MiB limit.
++`bypass_storage` defaults to false. The existing explicit throughput-testing setting remains available.
++
++Use `list_usb_device_keys` with `setup_usb_device_by_key` to select a physical USB location.
++`setup_usb_device_at` uses the same selection check. The legacy USB entry point requires an exact serial-number match.
++Serial selection requires an enumerated port path. Missing, absent, or duplicate selections never open a device.
++Set `FirehoseConfiguration::quiet` to suppress logs and progress on the loader and storage paths.
++The upstream CLI keeps its own output and successful-run reset policy. It is not the Oplus EDL product CLI.
++
++Run the offline checks from the fork directory:
++
++```sh
++cargo fmt --all -- --check
++cargo clippy --workspace --all-targets --all-features -- -D warnings
++cargo test --workspace --all-features --locked
++cargo build --workspace --all-features --locked
++```
++
++The integration suites are `firehose_io`, `sahara_transfer`, `selection`, and the CLI's `program_input`.
++The CLI suite exercises the production input adapters and rawprogram parser with temporary files and scripted transport.
++They cover local file faults separately from transport faults. Command records remain available after the session is dropped.
++Product workflows and their stop and verification policies belong to later implementation stages.
++
+ ## Contents
+ ```
+ cli/ - A CLI tool used to communicate with devices in EDL mode
+@@ -123,7 +176,7 @@ Due to how the protocol is constructed, particularly when interfacing with UFS,
+   
+ ### Example with UFS as primary storage, reboots to OS after flashing ends
+ ```
+-qdl-rs -l prog_firehose_ddr.elf -s ufs --reset-mode system flasher -p rawprogram*.xml -x patch*.xml
++qdl-rs --serial-no <SERIAL_NO> -l prog_firehose_ddr.elf -s ufs --reset-mode system flasher -p rawprogram*.xml -x patch*.xml
+ 
+ # NOTE: qdl-rs will flash anything you pass as a parameter. Some METAs ship a number of rawprogram0_foo.xml
+ # files which may be undesirable (e.g. _WIPE_GPT). You can filter those out with e.g.:
+@@ -136,7 +189,7 @@ find /path/to/build/ -regex '.*/rawprogram[0-9]+\.xml$'
+ <summary>Reboot the device back to the OS</summary>
+ 
+ ```
+-qdl-rs -l prog_firehose_ddr.elf -s ufs reset system
++qdl-rs --serial-no <SERIAL_NO> -l prog_firehose_ddr.elf -s ufs reset system
+ ```
+ 
+ </details>
+@@ -145,7 +198,7 @@ qdl-rs -l prog_firehose_ddr.elf -s ufs reset system
+ <summary>Dump the entire physical storage partition (e.g. LUN)</summary>
+   
+ ```
+-qdl-rs -l prog_firehose_ddr.elf -s ufs --phys-part-idx 2 dump -o lun2/
++qdl-rs --serial-no <SERIAL_NO> -l prog_firehose_ddr.elf -s ufs --phys-part-idx 2 dump -o lun2/
+ ```
+ 
+ </details>
+@@ -154,7 +207,7 @@ qdl-rs -l prog_firehose_ddr.elf -s ufs --phys-part-idx 2 dump -o lun2/
+ <summary>Fetch a single partition from LUN2</summary>
+ 
+ ```
+-qdl-rs -l prog_firehose_ddr.elf -s ufs --phys-part-idx 2 dump-part EFI
++qdl-rs --serial-no <SERIAL_NO> -l prog_firehose_ddr.elf -s ufs --phys-part-idx 2 dump-part EFI
+ ```
+ 
+ </details>
+@@ -163,7 +216,7 @@ qdl-rs -l prog_firehose_ddr.elf -s ufs --phys-part-idx 2 dump-part EFI
+ <summary>Overwrite a single partition on LUN0</summary>
+ 
+ ```
+-qdl-rs -l prog_firehose_ddr.elf -s ufs --phys-part-idx 0 write boot boot.img
++qdl-rs --serial-no <SERIAL_NO> -l prog_firehose_ddr.elf -s ufs --phys-part-idx 0 write boot boot.img
+ ```
+ 
+ </details>
+@@ -172,7 +225,7 @@ qdl-rs -l prog_firehose_ddr.elf -s ufs --phys-part-idx 0 write boot boot.img
+ <summary>Print out the partition table on LUN4</summary>
+ 
+ ```
+-qdl-rs -l prog_firehose_ddr.elf -s ufs --phys-part-idx 4 print-gpt
++qdl-rs --serial-no <SERIAL_NO> -l prog_firehose_ddr.elf -s ufs --phys-part-idx 4 print-gpt
+ ```
+ 
+ </details>
+@@ -181,7 +234,7 @@ qdl-rs -l prog_firehose_ddr.elf -s ufs --phys-part-idx 4 print-gpt
+ <summary>Overwrite the entirety of LUN7 (VERY dangerous, may remove device-unique data)</summary>
+ 
+ ```
+-qdl-rs -l prog_firehose_ddr.elf -s ufs --phys-part-idx 7 overwrite-storage lun7_dump.img
++qdl-rs --serial-no <SERIAL_NO> -l prog_firehose_ddr.elf -s ufs --phys-part-idx 7 overwrite-storage lun7_dump.img
+ ```
+ 
+ </details>
+@@ -190,7 +243,7 @@ qdl-rs -l prog_firehose_ddr.elf -s ufs --phys-part-idx 7 overwrite-storage lun7_
+ <summary>Erase a partition on eMMC (VERY dangerous, may remove device-unique data)</summary>
+ 
+ ```
+-qdl-rs -l prog_firehose_ddr.elf -s emmc erase boot
++qdl-rs --serial-no <SERIAL_NO> -l prog_firehose_ddr.elf -s emmc erase boot
+ ```
+ 
+ </details>
+@@ -199,7 +252,7 @@ qdl-rs -l prog_firehose_ddr.elf -s emmc erase boot
+ <summary>Set LUN2 as bootable (i.e. containing xbl)</summary>
+ 
+ ```
+-qdl-rs -l prog_firehose_ddr.elf -s ufs set-bootable-part 2
++qdl-rs --serial-no <SERIAL_NO> -l prog_firehose_ddr.elf -s ufs set-bootable-part 2
+ ```
+ 
+ </details>
+diff --git a/cli/src/main.rs b/cli/src/main.rs
+index 00a12ba..de9d532 100644
+--- a/cli/src/main.rs
++++ b/cli/src/main.rs
+@@ -3,12 +3,16 @@
+ use anyhow::{Result, bail};
+ use clap::{Parser, Subcommand};
+ use clap_num::maybe_hex;
++use input::{ProgramInput, zero_input};
+ use itertools::Itertools;
+ use owo_colors::OwoColorize;
+-use qdl::parsers::{firehose_parser_ack_nak, firehose_parser_configure_response};
++use qdl::parsers::firehose_parser_configure_response;
+ use qdl::sahara::{SaharaCmdModeCmd, SaharaMode, sahara_run, sahara_send_hello_rsp};
+ use qdl::types::{FirehoseResetMode, FirehoseStorageType, QdlBackend, QdlDevice};
+-use qdl::{firehose_configure, firehose_read, firehose_reset, types::FirehoseConfiguration};
++use qdl::{
++    firehose_configure, firehose_read, firehose_read_welcome, firehose_reset,
++    types::FirehoseConfiguration,
++};
+ use qdl::{
+     firehose_get_default_sector_size, firehose_nop, firehose_peek, firehose_program_storage,
+     firehose_set_bootable, load_programmer_images, setup_target_device,
+@@ -21,6 +25,7 @@ use std::fs::{self, File};
+ use std::{path::Path, str::FromStr};
+ 
+ mod flasher;
++mod input;
+ mod programfile;
+ mod util;
+ 
+@@ -286,17 +291,18 @@ fn main() -> Result<()> {
+         args.verbose_sahara,
+     )?;
+ 
+-    // If we're past Sahara, activate the Firehose reset-on-drop listener
+-    qdl_dev.reset_on_drop = true;
+-
+     // Get any "welcome" logs
+-    firehose_read(&mut qdl_dev, firehose_parser_ack_nak)?;
++    firehose_read_welcome(&mut qdl_dev)?;
+ 
+     // Send the host capabilities to the device
+     firehose_configure(&mut qdl_dev, args.skip_storage_init)?;
+ 
+     // Parse some information from the device
+-    firehose_read(&mut qdl_dev, firehose_parser_configure_response)?;
++    if firehose_read(&mut qdl_dev, firehose_parser_configure_response)?
++        != qdl::types::FirehoseStatus::Ack
++    {
++        bail!("Firehose configuration was NAKed");
++    }
+ 
+     match args.command {
+         Command::Dump { outdir } => {
+@@ -337,12 +343,14 @@ fn main() -> Result<()> {
+         }
+         Command::Erase { name } => {
+             let part = find_part(&mut qdl_dev, &name, args.storage_slot, args.phys_part_idx)?;
++            let num_sectors = usize::try_from(part.size()?)?;
++            let mut data = zero_input(num_sectors, qdl_dev.fh_cfg.storage_sector_size)?;
+ 
+             firehose_program_storage(
+                 &mut qdl_dev,
+-                &mut &[0u8][..],
++                &mut data,
+                 &name,
+-                (part.ending_lba - part.starting_lba + 1) as usize,
++                num_sectors,
+                 args.storage_slot,
+                 args.phys_part_idx,
+                 &part.starting_lba.to_string(),
+@@ -368,17 +376,19 @@ fn main() -> Result<()> {
+                 .unwrap()
+         ),
+         Command::OverwriteStorage { file_path } => {
+-            let mut file = File::open(file_path)?;
+-            let file_len_sectors = file
+-                .metadata()?
+-                .len()
+-                .div_ceil(qdl_dev.fh_cfg.storage_sector_size as u64);
++            let mut file = ProgramInput::from_file(
++                File::open(file_path)?,
++                qdl_dev.fh_cfg.storage_sector_size,
++                0,
++                None,
++            )?;
++            let file_len_sectors = file.num_sectors();
+ 
+             firehose_program_storage(
+                 &mut qdl_dev,
+                 &mut file,
+                 "",
+-                file_len_sectors as usize,
++                file_len_sectors,
+                 args.storage_slot,
+                 args.phys_part_idx,
+                 "0",
+@@ -402,14 +412,16 @@ fn main() -> Result<()> {
+                 args.storage_slot,
+                 args.phys_part_idx,
+             )?;
+-            let mut file = File::open(file_path)?;
+-            let file_len_sectors = file
+-                .metadata()?
+-                .len()
+-                .div_ceil(qdl_dev.fh_cfg.storage_sector_size as u64);
+-            let part_len_sectors = part.ending_lba - part.starting_lba + 1;
+-
+-            if file_len_sectors > part_len_sectors {
++            let mut file = ProgramInput::from_file(
++                File::open(file_path)?,
++                qdl_dev.fh_cfg.storage_sector_size,
++                0,
++                None,
++            )?;
++            let file_len_sectors = file.num_sectors();
++            let part_len_sectors = part.size()?;
++
++            if file_len_sectors as u64 > part_len_sectors {
+                 bail!(
+                     "Partition {} is too small for the specified image ({} > {})",
+                     part_name,
+@@ -422,7 +434,7 @@ fn main() -> Result<()> {
+                 &mut qdl_dev,
+                 &mut file,
+                 &part_name,
+-                file_len_sectors as usize,
++                file_len_sectors,
+                 args.storage_slot,
+                 args.phys_part_idx,
+                 &part.starting_lba.to_string(),
+diff --git a/cli/src/programfile.rs b/cli/src/programfile.rs
+index 2f9d81f..6c2087c 100644
+--- a/cli/src/programfile.rs
++++ b/cli/src/programfile.rs
+@@ -1,13 +1,9 @@
+ // SPDX-License-Identifier: BSD-3-Clause
+ // Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
++use crate::input::ProgramInput;
+ use anyhow::{Context, bail};
+ use indexmap::IndexMap;
+-use std::{
+-    fs,
+-    io::{Seek, SeekFrom},
+-    path::Path,
+-    str::FromStr,
+-};
++use std::{fs, path::Path, str::FromStr};
+ use xmltree::{self, Element, XMLNode};
+ 
+ use qdl::{
+@@ -105,6 +101,7 @@ fn parse_patch_cmd<T: QdlChan>(
+         start_sector,
+         val,
+     )
++    .map_err(Into::into)
+ }
+ 
+ const BOOTABLE_PART_NAMES: [&str; 3] = ["xbl", "xbl_a", "sbl1"];
+@@ -132,11 +129,10 @@ fn parse_program_cmd<T: QdlChan>(
+     };
+     let phys_part_idx = parse_attr::<u8>(attrs, "physical_partition_number")?;
+     let start_sector = get_attr(attrs, "start_sector")?;
+-    // file_sector_offset is optional; treat a missing or unparseable value as 0
+-    let file_sector_offset = attrs
+-        .get("file_sector_offset")
+-        .and_then(|s| s.parse::<u32>().ok())
+-        .unwrap_or(0);
++    let file_sector_offset = match attrs.get("file_sector_offset") {
++        Some(_) => parse_attr::<u64>(attrs, "file_sector_offset")?,
++        None => 0,
++    };
+ 
+     let label = get_attr(attrs, "label")?;
+     if num_sectors == 0 {
+@@ -163,11 +159,12 @@ fn parse_program_cmd<T: QdlChan>(
+         }
+     }
+ 
+-    let mut buf = fs::File::open(&file_path)
++    let file = fs::File::open(&file_path)
+         .with_context(|| format!("Couldn't open program file {}", file_path.display()))?;
+-    buf.seek(SeekFrom::Current(
+-        sector_size as i64 * file_sector_offset as i64,
+-    ))?;
++    let offset = file_sector_offset
++        .checked_mul(sector_size as u64)
++        .context("Program source offset overflow")?;
++    let mut buf = ProgramInput::from_file(file, sector_size, offset, Some(num_sectors))?;
+ 
+     firehose_program_storage(
+         channel,
+@@ -178,6 +175,7 @@ fn parse_program_cmd<T: QdlChan>(
+         phys_part_idx,
+         start_sector,
+     )
++    .map_err(Into::into)
+ }
+ 
+ // TODO: there's some funny optimizations to make here, such as OoO loading files into memory, or doing things while we're waiting on the device to finish
+diff --git a/qdl/src/lib.rs b/qdl/src/lib.rs
+index e40d209..d45cd5b 100644
+--- a/qdl/src/lib.rs
++++ b/qdl/src/lib.rs
+@@ -9,15 +9,15 @@ use parsers::firehose_parser_ack_nak;
+ use serde::{Deserialize, Serialize};
+ use std::cmp::min;
+ use std::fs;
+-use std::io::{Read, Write};
++use std::io::{self, ErrorKind, Read, Write};
+ use std::path::Path;
+ use std::str::{self, FromStr};
+-use types::FirehoseResetMode;
+ use types::FirehoseStatus;
+ use types::FirehoseStorageType;
+ use types::QdlBackend;
+ use types::QdlChan;
+ use types::QdlReadWrite;
++use types::{FirehoseResetMode, MutationFailure, ReadRejected};
+ 
+ use anyhow::bail;
+ use pbr::{ProgressBar, Units};
+@@ -158,6 +158,27 @@ pub fn load_programmer_images(path: impl AsRef<Path>) -> Result<Vec<Option<Vec<u
+     Ok(vec![Some(blob)])
+ }
+ 
++/// Open exactly one explicitly selected candidate. Enumeration never opens a device.
++pub fn select_and_open<T>(
++    keys: &[String],
++    requested: Option<&str>,
++    open: impl FnOnce(usize) -> Result<T>,
++) -> Result<T> {
++    let requested =
++        requested.with_context(|| format!("Select a device explicitly; candidates: {keys:?}"))?;
++    let mut matches = keys
++        .iter()
++        .enumerate()
++        .filter(|(_, key)| key.as_str() == requested);
++    let (index, _) = matches
++        .next()
++        .with_context(|| format!("No device matches {requested:?}; candidates: {keys:?}"))?;
++    if matches.next().is_some() {
++        bail!("Device selection {requested:?} is ambiguous");
++    }
++    open(index)
++}
++
+ pub fn setup_target_device(
+     backend: QdlBackend,
+     _serial_no: Option<String>,
+@@ -201,162 +222,185 @@ fn firehose_xml_setup(op: &str, kvps: &[(&str, &str)]) -> anyhow::Result<Vec<u8>
+     Ok(buf)
+ }
+ 
+-/// Main Firehose XML reading function
+-pub fn firehose_read<T: QdlChan>(
+-    channel: &mut T,
+-    response_parser: fn(&mut T, &IndexMap<String, String>) -> Result<FirehoseStatus, anyhow::Error>,
+-) -> Result<FirehoseStatus, anyhow::Error> {
+-    let mut got_any_data = false;
+-    let mut pending: Vec<u8> = Vec::new();
+-
++/// Read one XML document without consuming any following raw bytes or documents.
++fn firehose_read_xml<T: QdlChan>(channel: &mut T, welcome: bool) -> Result<Option<Element>> {
++    let limit = channel.fh_config().xml_buf_size;
++    if limit == 0 || limit > 16 * 1024 * 1024 {
++        bail!("Invalid XML receive limit {limit}");
++    }
++    let mut pending = Vec::new();
+     loop {
+-        // Use BufRead to peek at available data
+         let available = match channel.fill_buf() {
+             Ok(buf) => buf,
+-            Err(e) => match e.kind() {
+-                // In some cases (like with welcome messages), there's no acking
+-                // and a timeout is the "end of data" marker instead..
+-                std::io::ErrorKind::TimedOut if got_any_data => return Ok(FirehoseStatus::Ack),
+-                std::io::ErrorKind::TimedOut => return Err(e.into()),
+-                _ => return Err(e.into()),
+-            },
++            Err(e) if welcome && pending.is_empty() && e.kind() == ErrorKind::TimedOut => {
++                return Ok(None);
++            }
++            Err(e) if e.kind() == ErrorKind::Interrupted => continue,
++            Err(e) => return Err(e.into()),
+         };
+-
+-        got_any_data = true;
+-
+-        // When channel is a non-packetized BufRead (e.g. serial) XML documents
+-        // are not separated from each other, or from rawmode data. Search for
+-        // </data> in the BufRead stream to find the end of the current
+-        // message.
+-        let data_end_marker = b"</data>";
+-
+-        let pending_length = pending.len();
+-        pending.extend_from_slice(available);
+-
+-        // Search for the end marker in the pending data
+-        let end_pos = pending
+-            .windows(data_end_marker.len())
+-            .position(|window| window == data_end_marker);
+-
+-        if let Some(pos) = end_pos {
+-            let xml_end = pos + data_end_marker.len();
+-
+-            // xml_end is relative "pending", we need to consume only new the tail
+-            channel.consume(xml_end - pending_length);
+-
+-            // Only parse the XML portion
+-            let xml_chunk = &pending[..xml_end];
+-            let xml = match xmltree::Element::parse(xml_chunk) {
+-                Ok(x) => x,
+-                Err(e) => {
+-                    // Consume the bad data and continue
+-                    bail!("Failed to parse XML: {}", e);
+-                }
+-            };
+-
+-            // The current message might have started in "pending", so clear it
+-            // now. No need to do this if we're bailing above, as it's a local
+-            // resource.
+-            pending.clear();
+-
++        if available.is_empty() {
++            return Err(
++                io::Error::new(ErrorKind::UnexpectedEof, "EOF before Firehose response").into(),
++            );
++        }
++        // Only welcome collection can discard whitespace between log documents.
++        // Command ACKs return before any following raw-storage bytes are consumed.
++        if welcome && pending.is_empty() {
++            let whitespace = available
++                .iter()
++                .take_while(|byte| matches!(byte, b' ' | b'\t' | b'\r' | b'\n'))
++                .count();
++            if whitespace != 0 {
++                channel.consume(whitespace);
++                continue;
++            }
++        }
++        // Copy only up to the document limit, including a possible split end marker.
++        let old_len = pending.len();
++        let copied = available.len().min(limit - old_len);
++        pending.extend_from_slice(&available[..copied]);
++        if let Some(pos) = pending.windows(7).position(|w| w == b"</data>") {
++            let end = pos + 7;
++            channel.consume(end - old_len);
++            let xml = Element::parse(&pending[..end]).context("Invalid Firehose XML")?;
+             if xml.name != "data" {
+-                // TODO: define a more verbose level
+-                if channel.fh_config().verbose_firehose {
+-                    println!("{:?}", xml);
+-                }
+-                bail!("Got a firehose packet without a data tag");
++                bail!("Got a Firehose packet without a data tag");
+             }
++            return Ok(Some(xml));
++        }
++        channel.consume(copied);
++        if pending.len() == limit {
++            bail!("Firehose XML exceeds receive limit {limit}");
++        }
++    }
++}
+ 
+-            // The spec expects there's always a single node only
+-            if let Some(XMLNode::Element(e)) = xml.children.first() {
+-                // Check for a 'log' node and print out the message
+-                if e.name == "log" {
+-                    // The last message within the initial logspam should be this
+-                    // Try to match on it to not pay the USB xfer timeout penalty each time
+-                    if let Some(val) = e.attributes.get_key_value("value")
+-                        && val.1.starts_with("INFO: End of supported functions")
+-                    {
+-                        return Ok(FirehoseStatus::Ack);
+-                    }
+-                    if channel.fh_config().skip_firehose_log {
+-                        continue;
+-                    }
+-
+-                    println!(
+-                        "LOG: {}",
+-                        e.attributes
+-                            .get("value")
+-                            .to_owned()
+-                            .unwrap_or(&String::from("<garbage log data>"))
+-                            .bright_black()
+-                    );
+-
+-                    continue;
+-                }
++/// Device-provided storage information, without parsing console output.
++#[derive(Debug)]
++pub struct FirehoseStorageInfo {
++    pub logs: Vec<String>,
++    pub attributes: IndexMap<String, String>,
++}
+ 
+-                // DEBUG: "print out incoming packets"
+-                // TODO: define a more verbose level
+-                if channel.fh_config().verbose_firehose {
+-                    println!("RECV: {}", format!("{e:?}").magenta());
+-                }
++fn log_message<T: QdlChan>(channel: &T, node: &Element) -> String {
++    let message = node.attributes.get("value").cloned().unwrap_or_default();
++    if !channel.fh_config().quiet && !channel.fh_config().skip_firehose_log {
++        eprintln!("LOG: {message}");
++    }
++    message
++}
+ 
+-                // TODO: Use std::intrinsics::unlikely after it exits nightly
+-                if e.attributes.get("AttemptRetry").is_some() {
+-                    // Restart the outer loop instead of recursing to avoid stack overflow
+-                    got_any_data = false;
+-                    continue;
+-                } else if e.attributes.get("AttemptRestart").is_some() {
+-                    // TODO: handle this automagically
+-                    firehose_reset(channel, &FirehoseResetMode::ResetToEdl, 0)?;
+-                    bail!("Firehose requested a restart. Run the program again.");
++fn firehose_response<T: QdlChan>(
++    channel: &mut T,
++    parser: fn(&mut T, &IndexMap<String, String>) -> Result<FirehoseStatus>,
++    collect_logs: bool,
++) -> Result<(FirehoseStatus, FirehoseStorageInfo)> {
++    let mut logs = Vec::new();
++    let mut log_bytes = 0usize;
++    loop {
++        let xml = firehose_read_xml(channel, false)?.context("Missing Firehose response")?;
++        let nodes: Vec<_> = xml
++            .children
++            .iter()
++            .filter_map(XMLNode::as_element)
++            .collect();
++        if nodes.len() != 1 {
++            bail!("Expected one Firehose response or log node");
++        }
++        let node = nodes[0];
++        if node.name == "log" {
++            let message = log_message(channel, node);
++            if collect_logs {
++                log_bytes += message.len();
++                if log_bytes > 16 * 1024 * 1024 {
++                    bail!("Storage information exceeds log limit");
+                 }
+-
+-                // Pass other nodes to specialized parsers
+-                return response_parser(channel, &e.attributes);
++                logs.push(message);
+             }
+-        } else {
+-            // Didn't find the tail of the XML document in "pending" +
+-            // "available", consume the data into "pending" to let fill_buf()
+-            // read more data from the underlying Read.
+-            let available_len = available.len();
+-            channel.consume(available_len);
++            continue;
+         }
++        if node.name != "response" {
++            bail!("Unexpected Firehose node {}", node.name);
++        }
++        let status = parser(channel, &node.attributes)?;
++        // Preserve a complete NAK, but never act on retry/restart hints.
++        if status != FirehoseStatus::Nak
++            && (node.attributes.contains_key("AttemptRetry")
++                || node.attributes.contains_key("AttemptRestart"))
++        {
++            bail!("Firehose requested retry/restart without NAK; session stopped");
++        }
++        if !channel.fh_config().quiet && channel.fh_config().verbose_firehose {
++            eprintln!("RECV: {node:?}");
++        }
++        return Ok((
++            status,
++            FirehoseStorageInfo {
++                logs,
++                attributes: node.attributes.clone(),
++            },
++        ));
+     }
+ }
+ 
+-/// Send a Firehose packet
+-pub fn firehose_write<T: QdlChan>(channel: &mut T, buf: &mut [u8]) -> anyhow::Result<()> {
+-    let mut b = buf.to_vec();
++/// Wait for a complete response. Logs and partial XML can never acknowledge a command.
++pub fn firehose_read<T: QdlChan>(
++    channel: &mut T,
++    response_parser: fn(&mut T, &IndexMap<String, String>) -> Result<FirehoseStatus>,
++) -> Result<FirehoseStatus> {
++    Ok(firehose_response(channel, response_parser, false)?.0)
++}
+ 
+-    // XML can't be n * 512 bytes long by fh spec
+-    if !buf.is_empty() && buf.len().is_multiple_of(512) {
+-        println!("{}", "INFO: Appending '\n' to outgoing XML".bright_black());
+-        b.push(b'\n');
++/// Collect startup logs separately. Only an idle timeout at an XML boundary ends collection.
++pub fn firehose_read_welcome<T: QdlChan>(channel: &mut T) -> Result<Vec<String>> {
++    let mut logs = Vec::new();
++    let mut log_bytes = 0usize;
++    while let Some(xml) = firehose_read_xml(channel, true)? {
++        let nodes: Vec<_> = xml
++            .children
++            .iter()
++            .filter_map(XMLNode::as_element)
++            .collect();
++        if nodes.len() != 1 || nodes[0].name != "log" {
++            bail!("Expected a welcome log");
++        }
++        let message = log_message(channel, nodes[0]);
++        let done = message.starts_with("INFO: End of supported functions");
++        log_bytes += message.len();
++        if log_bytes > 16 * 1024 * 1024 {
++            bail!("Welcome logs exceed limit");
++        }
++        logs.push(message);
++        if done {
++            break;
++        }
+     }
++    Ok(logs)
++}
+ 
+-    match channel.write_all(&b) {
+-        Ok(_) => Ok(()),
+-        // Assume FH will hang after NAK..
+-        Err(_) => firehose_reset(channel, &FirehoseResetMode::ResetToEdl, 0),
++/// Send XML and preserve the original transport failure. No recovery commands are sent.
++pub fn firehose_write<T: QdlChan>(channel: &mut T, buf: &mut [u8]) -> Result<()> {
++    let mut bytes = buf.to_vec();
++    if !bytes.is_empty() && bytes.len().is_multiple_of(512) {
++        bytes.push(b'\n');
+     }
++    channel.write_all(&bytes)?;
++    channel.flush()?;
++    Ok(())
+ }
+ 
+-/// Send a Firehose packet and check for ack/nak
++/// Send a request and wait for its final ACK, retaining confirmation on failure.
+ pub fn firehose_write_getack<T: QdlChan>(
+     channel: &mut T,
+     buf: &mut [u8],
+     couldnt_what: String,
+-) -> anyhow::Result<()> {
+-    firehose_write(channel, buf)?;
+-
+-    match firehose_read::<T>(channel, firehose_parser_ack_nak) {
+-        Ok(FirehoseStatus::Ack) => Ok(()),
+-        Ok(FirehoseStatus::Nak) => {
+-            // Assume FH will hang after NAK..
+-            firehose_reset(channel, &FirehoseResetMode::ResetToEdl, 0)?;
+-            Err(anyhow::Error::msg(format!("Couldn't {couldnt_what}")))
+-        }
+-        Err(e) => Err(e),
++) -> Result<(), MutationFailure> {
++    firehose_write(channel, buf).map_err(MutationFailure::unknown)?;
++    match firehose_read(channel, firehose_parser_ack_nak).map_err(MutationFailure::unknown)? {
++        FirehoseStatus::Ack => Ok(()),
++        FirehoseStatus::Nak => Err(MutationFailure::rejected(anyhow::anyhow!(
++            "Couldn't {couldnt_what}: NAK"
++        ))),
+     }
+ }
+ 
+@@ -381,7 +425,7 @@ pub fn firehose_benchmark<T: QdlChan>(
+         ],
+     )?;
+ 
+-    firehose_write_getack(channel, &mut xml, "issue a NOP".to_owned())
++    firehose_write_getack(channel, &mut xml, "issue a NOP".to_owned()).map_err(Into::into)
+ }
+ 
+ /// Send a "Hello"-type packet to the Device
+@@ -390,18 +434,7 @@ pub fn firehose_configure<T: QdlChan>(
+     skip_storage_init: bool,
+ ) -> anyhow::Result<()> {
+     let config = channel.fh_config();
+-    // Spec requirement
+-    assert!(
+-        config
+-            .send_buffer_size
+-            .is_multiple_of(config.storage_sector_size)
+-    );
+-    // Sanity requirement
+-    assert!(
+-        config
+-            .recv_buffer_size
+-            .is_multiple_of(config.storage_sector_size)
+-    );
++    config.validate()?;
+     let mut xml = firehose_xml_setup(
+         "configure",
+         &[
+@@ -431,15 +464,15 @@ pub fn firehose_configure<T: QdlChan>(
+ pub fn firehose_nop<T: QdlChan>(channel: &mut T) -> anyhow::Result<()> {
+     let mut xml = firehose_xml_setup("nop", &[("value", "ping")])?;
+ 
+-    firehose_write_getack(channel, &mut xml, "issue a NOP".to_owned())
++    firehose_write_getack(channel, &mut xml, "issue a NOP".to_owned()).map_err(Into::into)
+ }
+ 
+ /// Get information about the physical partition of a storage medium (e.g. LUN)
+-/// Prints to \<log\> only
++/// Returns raw log messages and response attributes.
+ pub fn firehose_get_storage_info<T: QdlChan>(
+     channel: &mut T,
+     phys_part_idx: u8,
+-) -> anyhow::Result<()> {
++) -> Result<FirehoseStorageInfo> {
+     let mut xml = firehose_xml_setup(
+         "getstorageinfo",
+         &[("physical_partition_number", &phys_part_idx.to_string())],
+@@ -447,7 +480,11 @@ pub fn firehose_get_storage_info<T: QdlChan>(
+ 
+     firehose_write(channel, &mut xml)?;
+ 
+-    firehose_read::<T>(channel, firehose_parser_ack_nak).and(Ok(()))
++    let (status, info) = firehose_response(channel, firehose_parser_ack_nak, true)?;
++    if status == FirehoseStatus::Nak {
++        bail!("Storage information request was NAKed");
++    }
++    Ok(info)
+ }
+ 
+ /// Alter Device (TODO: or Host) storage
+@@ -459,7 +496,7 @@ pub fn firehose_patch<T: QdlChan>(
+     size: u64,
+     start_sector: &str,
+     val: &str,
+-) -> anyhow::Result<()> {
++) -> Result<(), MutationFailure> {
+     let mut xml: Vec<u8> = firehose_xml_setup(
+         "patch",
+         &[
+@@ -475,7 +512,8 @@ pub fn firehose_patch<T: QdlChan>(
+             ("start_sector", start_sector),
+             ("value", val),
+         ],
+-    )?;
++    )
++    .map_err(MutationFailure::not_sent)?;
+ 
+     firehose_write_getack(channel, &mut xml, "patch".to_string())
+ }
+@@ -503,7 +541,7 @@ pub fn firehose_peek<T: QdlChan>(
+         ],
+     )?;
+ 
+-    firehose_write_getack(channel, &mut xml, format!("peek @ {addr:#x}"))
++    firehose_write_getack(channel, &mut xml, format!("peek @ {addr:#x}")).map_err(Into::into)
+ }
+ 
+ /// Poke at memory
+@@ -525,7 +563,7 @@ pub fn firehose_poke<T: QdlChan>(
+         ],
+     )?;
+ 
+-    firehose_write_getack(channel, &mut xml, format!("poke @ {addr:#x}"))
++    firehose_write_getack(channel, &mut xml, format!("poke @ {addr:#x}")).map_err(Into::into)
+ }
+ 
+ /// Write to Device storage
+@@ -537,8 +575,12 @@ pub fn firehose_program_storage<T: QdlChan>(
+     slot: u8,
+     phys_part_idx: u8,
+     start_sector: &str,
+-) -> anyhow::Result<()> {
+-    let mut sectors_left = num_sectors;
++) -> Result<(), MutationFailure> {
++    let config = *channel.fh_config();
++    config.validate().map_err(MutationFailure::not_sent)?;
++    let mut bytes_left = num_sectors
++        .checked_mul(config.storage_sector_size)
++        .ok_or_else(|| MutationFailure::not_sent(anyhow::anyhow!("Program byte count overflow")))?;
+     let mut xml = firehose_xml_setup(
+         "program",
+         &[
+@@ -555,54 +597,57 @@ pub fn firehose_program_storage<T: QdlChan>(
+                 &(channel.fh_config().read_back_verify as u32).to_string(),
+             ),
+         ],
+-    )?;
+-
+-    firehose_write(channel, &mut xml)?;
+-
+-    if firehose_read::<T>(channel, firehose_parser_ack_nak)? != FirehoseStatus::Ack {
+-        bail!("<program> was NAKed. Did you set sector-size correctly?");
+-    }
+-
+-    let mut pb = ProgressBar::new((sectors_left * channel.fh_config().storage_sector_size) as u64);
+-    pb.show_time_left = true;
+-    pb.message(&format!("Sending partition {label}: "));
+-    pb.set_units(Units::Bytes);
+-
+-    while sectors_left > 0 {
+-        let chunk_size_sectors = min(
+-            sectors_left,
+-            channel.fh_config().send_buffer_size / channel.fh_config().storage_sector_size,
+-        );
+-        let mut buf = vec![
+-            0u8;
+-            min(
+-                channel.fh_config().send_buffer_size,
+-                chunk_size_sectors * channel.fh_config().storage_sector_size,
+-            )
+-        ];
+-        let _ = data.read(&mut buf).unwrap();
+-
+-        let n = channel
+-            .write(&buf)
+-            .with_context(|| format!("Error sending data for partition {label}"))?;
+-        if n != chunk_size_sectors * channel.fh_config().storage_sector_size {
+-            bail!("Wrote an unexpected number of bytes ({})", n);
++    )
++    .map_err(MutationFailure::not_sent)?;
++
++    firehose_write_getack(channel, &mut xml, "start program".to_owned())?;
++    let mut pb = (!config.quiet).then(|| {
++        let mut pb = ProgressBar::new(bytes_left as u64);
++        pb.show_time_left = true;
++        pb.message(&format!("Sending partition {label}: "));
++        pb.set_units(Units::Bytes);
++        pb
++    });
++    let mut buf = vec![0; min(bytes_left, config.send_buffer_size)];
++    while bytes_left > 0 {
++        let len = min(bytes_left, buf.len());
++        data.read_exact(&mut buf[..len])
++            .with_context(|| format!("Error reading input for partition {label}"))
++            .map_err(MutationFailure::unknown)?;
++        if config.backend == QdlBackend::Usb {
++            // A USB short OUT completion must not be resumed as another packet.
++            let n = channel
++                .write(&buf[..len])
++                .map_err(MutationFailure::unknown)?;
++            if n != len {
++                return Err(MutationFailure::unknown(io::Error::new(
++                    ErrorKind::WriteZero,
++                    "Short USB data write",
++                )));
++            }
++        } else {
++            channel
++                .write_all(&buf[..len])
++                .map_err(MutationFailure::unknown)?;
++        }
++        bytes_left -= len;
++        if let Some(pb) = &mut pb {
++            pb.add(len as u64);
+         }
+-
+-        sectors_left -= chunk_size_sectors;
+-        pb.add((chunk_size_sectors * channel.fh_config().storage_sector_size) as u64);
+     }
+-
+-    // Send a Zero-Length Packet to indicate end of stream
+-    if channel.fh_config().backend == QdlBackend::Usb {
+-        channel.write(&[]).context("Error sending ZLP")?;
++    if config.backend == QdlBackend::Usb {
++        channel
++            .write(&[])
++            .context("Error sending ZLP")
++            .map_err(MutationFailure::unknown)?;
+     }
+-
+-    if firehose_read::<T>(channel, firehose_parser_ack_nak)? != FirehoseStatus::Ack {
+-        bail!("Failed to complete 'write' op");
++    channel.flush().map_err(MutationFailure::unknown)?;
++    match firehose_read(channel, firehose_parser_ack_nak).map_err(MutationFailure::unknown)? {
++        FirehoseStatus::Ack => Ok(()),
++        FirehoseStatus::Nak => Err(MutationFailure::rejected(anyhow::anyhow!(
++            "Program completion was NAKed"
++        ))),
+     }
+-
+-    Ok(())
+ }
+ 
+ /// Get a SHA256 digest of a portion of Device storage
+@@ -644,7 +689,11 @@ pub fn firehose_read_storage(
+     phys_part_idx: u8,
+     start_sector: u64,
+ ) -> anyhow::Result<()> {
+-    let mut bytes_left = num_sectors * channel.fh_config().storage_sector_size;
++    let config = *channel.fh_config();
++    config.validate()?;
++    let mut bytes_left = num_sectors
++        .checked_mul(config.storage_sector_size)
++        .context("Read byte count overflow")?;
+     let mut xml = firehose_xml_setup(
+         "read",
+         &[
+@@ -660,38 +709,42 @@ pub fn firehose_read_storage(
+     )?;
+ 
+     firehose_write(channel, &mut xml)?;
+-    if firehose_read(channel, firehose_parser_ack_nak)? != FirehoseStatus::Ack {
+-        bail!("Read request was NAKed");
++    let (status, response) = firehose_response(channel, firehose_parser_ack_nak, false)?;
++    if status == FirehoseStatus::Nak {
++        let attrs = &response.attributes;
++        if attrs.contains_key("AttemptRestart")
++            || attrs.contains_key("AttemptRetry")
++            || attrs.get("rawmode").is_some_and(|mode| mode != "false")
++        {
++            bail!("Read was NAKed without a usable command boundary: {attrs:?}");
++        }
++        return Err(ReadRejected.into());
+     }
+ 
+-    let mut pb = ProgressBar::new(bytes_left as u64);
+-    pb.set_units(Units::Bytes);
+-
+-    let mut last_read_was_zero_len = false;
++    let mut pb = (!config.quiet).then(|| {
++        let mut pb = ProgressBar::new(bytes_left as u64);
++        pb.set_units(Units::Bytes);
++        pb
++    });
++    let mut buf = vec![0; min(bytes_left, config.recv_buffer_size)];
+     while bytes_left > 0 {
+-        let chunk_size_bytes = min(bytes_left, channel.fh_config().recv_buffer_size);
+-        let mut buf = vec![0; chunk_size_bytes];
+-
+-        let n = channel.read(&mut buf).context("Error receiving data")?;
++        let len = min(bytes_left, buf.len());
++        let n = match channel.read(&mut buf[..len]) {
++            Err(e) if e.kind() == ErrorKind::Interrupted => continue,
++            result => result.context("Error receiving data")?,
++        };
+         if n == 0 {
+-            // TODO: need more robustness here
+-            /* Every 2 or 3 packets should be empty? */
+-            last_read_was_zero_len = true;
+-            continue;
++            return Err(io::Error::new(ErrorKind::UnexpectedEof, "EOF in storage data").into());
+         }
+-
+-        last_read_was_zero_len = false;
+-        let _ = out.write(&buf[..n])?;
+-
++        out.write_all(&buf[..n])
++            .context("Error writing storage output")?;
+         bytes_left -= n;
+-        pb.add(n as u64);
+-    }
+-
+-    if !last_read_was_zero_len && channel.fh_config().backend == QdlBackend::Usb {
+-        // Issue a dummy read to drain the queue
+-        let _ = channel.read(&mut [])?;
++        if let Some(pb) = &mut pb {
++            pb.add(n as u64);
++        }
+     }
+-
++    out.flush().context("Error flushing storage output")?;
++    // nusb's streaming reader consumes USB packet delimiters itself.
+     if firehose_read(channel, firehose_parser_ack_nak)? != FirehoseStatus::Ack {
+         bail!("Failed to complete 'read' op");
+     }
+@@ -704,7 +757,7 @@ pub fn firehose_reset<T: QdlChan>(
+     channel: &mut T,
+     mode: &FirehoseResetMode,
+     delay_in_sec: u32,
+-) -> anyhow::Result<()> {
++) -> Result<(), MutationFailure> {
+     let mut xml = firehose_xml_setup(
+         "power",
+         &[
+@@ -718,22 +771,24 @@ pub fn firehose_reset<T: QdlChan>(
+             ),
+             ("DelayInSeconds", &delay_in_sec.to_string()),
+         ],
+-    )?;
++    )
++    .map_err(MutationFailure::not_sent)?;
+ 
+     firehose_write_getack(channel, &mut xml, "reset the Device".to_owned())?;
+ 
+-    // Drain the incoming LOG packets to actually restart the device
+-    let _ = channel.skip_until(0);
+-
+     Ok(())
+ }
+ 
+ /// Mark a physical storage partition as bootable
+-pub fn firehose_set_bootable<T: QdlChan>(channel: &mut T, drive_idx: u8) -> anyhow::Result<()> {
++pub fn firehose_set_bootable<T: QdlChan>(
++    channel: &mut T,
++    drive_idx: u8,
++) -> Result<(), MutationFailure> {
+     let mut xml = firehose_xml_setup(
+         "setbootablestoragedrive",
+         &[("value", &drive_idx.to_string())],
+-    )?;
++    )
++    .map_err(MutationFailure::not_sent)?;
+ 
+     firehose_write_getack(
+         channel,
+diff --git a/qdl/src/parsers.rs b/qdl/src/parsers.rs
+index a83ad9b..dc591c0 100644
+--- a/qdl/src/parsers.rs
++++ b/qdl/src/parsers.rs
+@@ -4,12 +4,9 @@
+ use indexmap::IndexMap;
+ 
+ use anyhow::{Context, bail};
+-use owo_colors::OwoColorize;
+ use std::str::FromStr;
+ 
+-use crate::{
+-    FirehoseResetMode, FirehoseStatus, QdlChan, firehose_configure, firehose_read, firehose_reset,
+-};
++use crate::{FirehoseStatus, QdlChan};
+ 
+ /// The highest protocol version currently supported by the library
+ const FH_PROTO_VERSION_SUPPORTED: u32 = 1;
+@@ -48,55 +45,30 @@ pub fn firehose_parser_configure_response<T: QdlChan>(
+     channel: &mut T,
+     attrs: &IndexMap<String, String>,
+ ) -> Result<FirehoseStatus, anyhow::Error> {
+-    if let Ok(status) = firehose_parser_ack_nak(channel, attrs) {
+-        // The device can't handle that big of a buffer and it auto-reconfigures to the max it can
+-        if status == FirehoseStatus::Nak {
+-            if attrs.contains_key("MaxPayloadSizeToTargetInBytes") {
+-                channel.mut_fh_config().send_buffer_size =
+-                    parse_attr(attrs, "MaxPayloadSizeToTargetInBytes")?;
+-            } else {
+-                firehose_reset(channel, &FirehoseResetMode::ResetToEdl, 0)?;
+-                bail!("firehose <configure> failed, try again with  --verbose-firehose")
+-            }
+-        }
++    let status = firehose_parser_ack_nak(channel, attrs)?;
++    if status == FirehoseStatus::Nak {
++        return Ok(status);
+     }
+ 
+-    let device_max_write_payload_size: usize =
+-        parse_attr(attrs, "MaxPayloadSizeToTargetInBytesSupported")?;
+-
+-    // TODO: define version of the spec we support and validate it
+-    let version = attrs
+-        .get("Version")
+-        .context("Device response is missing the 'Version' attribute")?;
+     let min_version_supported: u32 = parse_attr(attrs, "MinVersionSupported")?;
+-
+-    println!("Found protocol version {}", version.bright_blue());
+-
+     if min_version_supported > FH_PROTO_VERSION_SUPPORTED {
+         bail!(
+-            "Device requires protocol version >= {}, the library only supports up to v{}",
+-            min_version_supported.bright_red(),
+-            FH_PROTO_VERSION_SUPPORTED.bright_blue()
++            "Device requires protocol version >= {min_version_supported}, supported: {FH_PROTO_VERSION_SUPPORTED}"
+         );
+     }
+-
+-    // TODO: MaxPayloadSizeFromTargetInBytes seems useless when xfers are abstracted through libusb
+-    // TODO: ^ is usually 1kiB (reaaally small), newer (citation needed) devices don't advertise it
+-
+-    channel.mut_fh_config().xml_buf_size = parse_attr(attrs, "MaxXMLSizeInBytes")?;
+-    channel.mut_fh_config().send_buffer_size = parse_attr(attrs, "MaxPayloadSizeToTargetInBytes")?;
+-
+-    // If the device can take a larger buffer, reconfigure it.
+-    if channel.fh_config().send_buffer_size < device_max_write_payload_size {
+-        println!(
+-            "Reconfiguring the device to use a larger ({}kB) send buffer",
+-            device_max_write_payload_size / 1024
+-        );
+-
+-        channel.mut_fh_config().send_buffer_size = device_max_write_payload_size;
+-        firehose_configure(channel, true)?;
+-        firehose_read(channel, firehose_parser_ack_nak)?;
++    let version = attrs.get("Version").context("Missing protocol Version")?;
++    let supported: usize = parse_attr(attrs, "MaxPayloadSizeToTargetInBytesSupported")?;
++    let mut config = *channel.fh_config();
++    config.xml_buf_size = parse_attr(attrs, "MaxXMLSizeInBytes")?;
++    config.send_buffer_size = parse_attr(attrs, "MaxPayloadSizeToTargetInBytes")?;
++    config.validate()?;
++    if supported < config.send_buffer_size {
++        bail!("Configured payload exceeds the device maximum");
+     }
+-
+-    Ok(FirehoseStatus::Ack)
++    // Accept only the acknowledged sizes. Do not issue hidden reconfiguration.
++    *channel.mut_fh_config() = config;
++    if !config.quiet {
++        eprintln!("Found protocol version {version}");
++    }
++    Ok(status)
+ }
+diff --git a/qdl/src/sahara.rs b/qdl/src/sahara.rs
+index b3a581c..eec71ad 100644
+--- a/qdl/src/sahara.rs
++++ b/qdl/src/sahara.rs
+@@ -8,7 +8,7 @@ use std::{
+     ffi::CStr,
+     fs::File,
+     io::{Read, Write},
+-    mem::{self, size_of_val},
++    mem::size_of_val,
+ };
+ 
+ use anyhow::{Context, Result, anyhow, bail};
+@@ -224,22 +224,28 @@ pub fn sahara_send_img_to_device<T: Read + Write>(
+     image_offset: u64,
+     image_len: u64,
+ ) -> Result<usize, anyhow::Error> {
+-    let image = if img_arr.len() == 1 { 0 } else { image_idx };
+-    let Some(Some(buf)) = img_arr.get(image as usize) else {
+-        bail!("Sahara requested missing image ID {}", image_idx,);
++    let image = if img_arr.len() == 1 {
++        0
++    } else {
++        usize::try_from(image_idx).context("Image ID exceeds host address space")?
+     };
+-    if (image_offset + image_len) as usize > buf.len() {
+-        bail!(
+-            "Attempted OOB read {} > {}",
+-            image_offset + image_len,
+-            buf.len()
+-        );
++    let Some(Some(buf)) = img_arr.get(image) else {
++        bail!("Sahara requested missing image ID {image_idx}");
++    };
++    let end = image_offset
++        .checked_add(image_len)
++        .context("Sahara image range overflow")?;
++    let start = usize::try_from(image_offset).context("Image offset exceeds host address space")?;
++    let end = usize::try_from(end).context("Image end exceeds host address space")?;
++    let requested = buf
++        .get(start..end)
++        .context("Sahara requested data outside the image")?;
++    if requested.is_empty() {
++        bail!("Sahara requested an empty image range");
+     }
+-
+-    channel
+-        .write_all(&buf[image_offset as usize..(image_offset + image_len) as usize])
+-        .map(|_| image_len as usize)
+-        .map_err(|e| e.into())
++    channel.write_all(requested)?;
++    channel.flush()?;
++    Ok(requested.len())
+ }
+ 
+ fn sahara_send_generic<T: Read + Write>(
+@@ -254,12 +260,11 @@ fn sahara_send_generic<T: Read + Write>(
+         body,
+     };
+ 
+-    let serialized = serialize(&pkt).expect("Error serializing packet");
++    let serialized = serialize(&pkt).context("Error serializing Sahara packet")?;
+     let len = serialized.len();
+-    channel
+-        .write_all(&serialized)
+-        .map(|_| len)
+-        .map_err(|e| e.into())
++    channel.write_all(&serialized)?;
++    channel.flush()?;
++    Ok(len)
+ }
+ 
+ const SAHARA_VERSION: u32 = 2;
+@@ -511,15 +516,13 @@ pub fn sahara_run<T: QdlChan>(
+     filenames: Vec<String>,
+     verbose: bool,
+ ) -> Result<Vec<u8>> {
++    let verbose = verbose && !channel.fh_config().quiet;
+     loop {
+         let pkt = sahara_read_packet(channel, verbose)?;
+-        let pktsize = size_of_val(&pkt.cmd) + size_of_val(&pkt.len);
+ 
+         match pkt.cmd {
+             SaharaCmd::SaharaHello => {
+                 if let SaharaPacketBody::HelloReq(req) = pkt.body {
+-                    assert_eq!(pkt.len as usize, pktsize + mem::size_of::<HelloReq>());
+-
+                     // MemoryDebug mode can only be entered if the device offers it
+                     let mode = if sahara_mode == SaharaMode::MemoryDebug
+                         && req.mode == SaharaMode::MemoryDebug
+@@ -533,7 +536,6 @@ pub fn sahara_run<T: QdlChan>(
+             }
+             SaharaCmd::SaharaReadData => {
+                 if let SaharaPacketBody::ReadReq(rr) = pkt.body {
+-                    assert_eq!(pkt.len as usize, pktsize + mem::size_of::<ReadReq>());
+                     sahara_send_img_to_device(
+                         channel,
+                         images,
+@@ -545,8 +547,6 @@ pub fn sahara_run<T: QdlChan>(
+             }
+             SaharaCmd::SaharaEndOfImage => {
+                 if let SaharaPacketBody::Eoi(req) = pkt.body {
+-                    assert_eq!(pkt.len as usize, pktsize + mem::size_of::<Eoi>());
+-
+                     if req.status == 0 {
+                         sahara_send_done(channel)?;
+                     } else {
+@@ -555,16 +555,20 @@ pub fn sahara_run<T: QdlChan>(
+                 }
+             }
+             SaharaCmd::SaharaDoneResp => {
+-                if let SaharaPacketBody::DoneResp(req) = pkt.body
+-                    && (req.status == 1 /* COMPLETE */ /* 8916 bug */ ||
+-                     images.len() == 1)
+-                {
+-                    println!("{}", "Loader sent. Hack away!".green());
++                if let SaharaPacketBody::DoneResp(req) = pkt.body {
++                    if req.status > 1 {
++                        bail!("Invalid Sahara completion status {}", req.status);
++                    }
++                    if req.status == 0 && images.len() != 1 {
++                        continue;
++                    }
++                    if !channel.fh_config().quiet {
++                        println!("{}", "Loader sent. Hack away!".green());
++                    }
+                     return Ok(vec![]);
+                 }
+             }
+             SaharaCmd::SaharaCommandReady => {
+-                assert_eq!(pkt.len as usize, pktsize);
+                 match sahara_command {
+                     Some(cmd) => sahara_send_cmd_exec(channel, cmd),
+                     None => bail!("Missing sahara command"),
+@@ -587,8 +591,6 @@ pub fn sahara_run<T: QdlChan>(
+             }
+             SaharaCmd::SaharaMemDebug64 => {
+                 if let SaharaPacketBody::Debug64Req(req) = pkt.body {
+-                    assert_eq!(pkt.len as usize, pktsize + mem::size_of::<Debug64Req>());
+-
+                     // Receive the dump info table
+                     let dump_tbl = sahara_get_ramdump_tbl(channel, req.addr, req.len, verbose)?;
+ 
+@@ -600,17 +602,17 @@ pub fn sahara_run<T: QdlChan>(
+             }
+             SaharaCmd::SaharaReadData64 => {
+                 if let SaharaPacketBody::ReadData64Req(rr) = pkt.body {
+-                    assert_eq!(pkt.len as usize, pktsize + mem::size_of::<ReadData64Req>());
+                     sahara_send_img_to_device(channel, images, rr.image, rr.offset, rr.len)?;
+                 }
+             }
+             SaharaCmd::SaharaResetResp => {
+-                assert_eq!(pkt.len as usize, pktsize);
+                 return Ok(vec![]);
+             }
+             SaharaCmd::SaharaXML => {
+                 // Todo: make this optionally "fine"
+-                println!("Device booted into the loader already");
++                if !channel.fh_config().quiet {
++                    println!("Device booted into the loader already");
++                }
+                 return Ok(vec![]);
+             }
+             _ => bail!("Got unexpected packet {:?}", pkt),
+@@ -629,6 +631,20 @@ fn sahara_parse_packet(buf: &[u8], verbose: bool) -> Result<SaharaPacket> {
+     let cmd = bincode::deserialize::<SaharaCmd>(cmd)
+         .map_err(|_| anyhow!("Got unknown command {}", u32::from_le_bytes(*cmd)))?;
+ 
++    let body_len = match cmd {
++        SaharaCmd::SaharaHello | SaharaCmd::SaharaHelloResp => 40,
++        SaharaCmd::SaharaReadData => 12,
++        SaharaCmd::SaharaEndOfImage | SaharaCmd::SaharaExecuteResp => 8,
++        SaharaCmd::SaharaDone | SaharaCmd::SaharaResetResp | SaharaCmd::SaharaCommandReady => 0,
++        SaharaCmd::SaharaDoneResp | SaharaCmd::SaharaExecuteData => 4,
++        SaharaCmd::SaharaMemDebug64 | SaharaCmd::SaharaMemRead64 => 16,
++        SaharaCmd::SaharaReadData64 => 24,
++        _ => bail!("Unsupported Sahara command {cmd:?}"),
++    };
++    if u32::from_le_bytes(*len) as usize != 8 + body_len || args.len() != body_len {
++        bail!("Invalid {cmd:?} packet length");
++    }
++
+     let ret = SaharaPacket {
+         cmd,
+         len: u32::from_le_bytes(*len),
+diff --git a/qdl/src/serial.rs b/qdl/src/serial.rs
+index 643b696..7b118af 100644
+--- a/qdl/src/serial.rs
++++ b/qdl/src/serial.rs
+@@ -1,10 +1,11 @@
+ // SPDX-License-Identifier: BSD-3-Clause
+ // Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+-use anyhow::{Result, bail};
++use anyhow::Result;
+ use serial2::{self, SerialPort};
+ use std::io::{BufRead, Read, Write};
+ 
+-use crate::types::QdlReadWrite;
++use crate::{select_and_open, types::QdlReadWrite};
++use std::time::Duration;
+ 
+ pub struct QdlSerialConfig {
+     serport: SerialPort,
+@@ -13,7 +14,6 @@ pub struct QdlSerialConfig {
+     cap: usize,
+ }
+ 
+-// TODO: timeouts?
+ impl Write for QdlSerialConfig {
+     fn write(&mut self, buf: &[u8]) -> Result<usize, std::io::Error> {
+         self.serport.write(buf)
+@@ -25,6 +25,9 @@ impl Write for QdlSerialConfig {
+ 
+ impl Read for QdlSerialConfig {
+     fn read(&mut self, out: &mut [u8]) -> Result<usize, std::io::Error> {
++        if out.is_empty() {
++            return Ok(0);
++        }
+         // Drain internal buffer first
+         if self.pos < self.cap {
+             let n = std::cmp::min(out.len(), self.cap - self.pos);
+@@ -60,21 +63,29 @@ impl BufRead for QdlSerialConfig {
+ 
+ impl QdlReadWrite for QdlSerialConfig {}
+ 
+-pub fn setup_serial_device(dev_path: Option<String>) -> Result<QdlSerialConfig> {
+-    if dev_path.is_none() {
+-        bail!("Serial port path unspecified");
+-    }
+-
+-    let serport = SerialPort::open(dev_path.unwrap(), |mut settings: serial2::Settings| {
+-        settings.set_raw();
+-        settings.set_baud_rate(115200)?;
+-        Ok(settings)
+-    })?;
++/// Enumerate paths without opening a port.
++pub fn list_serial_device_keys() -> Result<Vec<String>> {
++    Ok(SerialPort::available_ports()?
++        .into_iter()
++        .filter_map(|path| path.into_os_string().into_string().ok())
++        .collect())
++}
+ 
+-    Ok(QdlSerialConfig {
+-        serport,
+-        buf: Vec::new(),
+-        pos: 0,
+-        cap: 0,
++pub fn setup_serial_device(dev_path: Option<String>) -> Result<QdlSerialConfig> {
++    let keys = list_serial_device_keys()?;
++    select_and_open(&keys, dev_path.as_deref(), |index| {
++        let mut serport = SerialPort::open(&keys[index], |mut settings: serial2::Settings| {
++            settings.set_raw();
++            settings.set_baud_rate(115200)?;
++            Ok(settings)
++        })?;
++        serport.set_read_timeout(Duration::from_secs(10))?;
++        serport.set_write_timeout(Duration::from_secs(10))?;
++        Ok(QdlSerialConfig {
++            serport,
++            buf: Vec::new(),
++            pos: 0,
++            cap: 0,
++        })
+     })
+ }
+diff --git a/qdl/src/types.rs b/qdl/src/types.rs
+index 9474e51..3d61e47 100644
+--- a/qdl/src/types.rs
++++ b/qdl/src/types.rs
+@@ -7,9 +7,68 @@ use std::{
+ };
+ 
+ use anyhow::{Error, bail};
+-use owo_colors::OwoColorize;
++/// Confirmation available when a modifying request fails.
++#[derive(Clone, Copy, Debug, Eq, PartialEq)]
++pub enum MutationConfirmation {
++    NotSent,
++    Rejected,
++    Unknown,
++}
++
++/// A failed modification, retaining the original error and wire confirmation.
++#[derive(Debug)]
++pub struct MutationFailure {
++    pub confirmation: MutationConfirmation,
++    pub cause: anyhow::Error,
++}
+ 
+-use crate::firehose_reset;
++impl MutationFailure {
++    pub fn not_sent(cause: impl Into<anyhow::Error>) -> Self {
++        Self {
++            confirmation: MutationConfirmation::NotSent,
++            cause: cause.into(),
++        }
++    }
++
++    pub fn rejected(cause: impl Into<anyhow::Error>) -> Self {
++        Self {
++            confirmation: MutationConfirmation::Rejected,
++            cause: cause.into(),
++        }
++    }
++
++    pub fn unknown(cause: impl Into<anyhow::Error>) -> Self {
++        Self {
++            confirmation: MutationConfirmation::Unknown,
++            cause: cause.into(),
++        }
++    }
++}
++
++impl Display for MutationFailure {
++    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
++        write!(f, "{:?}: {}", self.confirmation, self.cause)
++    }
++}
++
++impl std::error::Error for MutationFailure {
++    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
++        Some(self.cause.as_ref())
++    }
++}
++
++/// A complete initial read NAK with no retry/restart hint or raw-mode indication.
++/// Other read failures require stopping the session.
++#[derive(Debug)]
++pub struct ReadRejected;
++
++impl Display for ReadRejected {
++    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
++        f.write_str("Read request was NAKed before raw data")
++    }
++}
++
++impl std::error::Error for ReadRejected {}
+ 
+ /// Common respones indicating success/failure respectively
+ #[derive(Copy, Clone, Debug, PartialEq)]
+@@ -63,6 +122,8 @@ pub struct FirehoseConfiguration {
+     pub backend: QdlBackend,
+     pub skip_firehose_log: bool,
+     pub verbose_firehose: bool,
++    /// Suppress library logs and progress on the loader/storage paths.
++    pub quiet: bool,
+ }
+ 
+ impl Default for FirehoseConfiguration {
+@@ -73,13 +134,33 @@ impl Default for FirehoseConfiguration {
+             xml_buf_size: 4096,
+             storage_sector_size: 512,
+             storage_type: FirehoseStorageType::Emmc,
+-            bypass_storage: true,
++            bypass_storage: false,
+             hash_packets: false,
+             read_back_verify: false,
+             backend: QdlBackend::default(),
+             skip_firehose_log: true,
+             verbose_firehose: false,
++            quiet: false,
++        }
++    }
++}
++
++impl FirehoseConfiguration {
++    /// Bound allocations and reject sizes that cannot make sector progress.
++    pub fn validate(&self) -> anyhow::Result<()> {
++        const MAX_BUFFER: usize = 16 * 1024 * 1024;
++        if self.storage_sector_size == 0 || self.storage_sector_size > MAX_BUFFER {
++            bail!("Invalid storage sector size {}", self.storage_sector_size);
++        }
++        for size in [self.send_buffer_size, self.recv_buffer_size] {
++            if size == 0 || size > MAX_BUFFER || !size.is_multiple_of(self.storage_sector_size) {
++                bail!("Invalid sector-aligned payload size {size}");
++            }
++        }
++        if self.xml_buf_size == 0 || self.xml_buf_size > MAX_BUFFER {
++            bail!("Invalid XML buffer size {}", self.xml_buf_size);
+         }
++        Ok(())
+     }
+ }
+ pub trait QdlChan: BufRead + Write {
+@@ -96,6 +177,7 @@ where
+ {
+     pub rw: Box<T>,
+     pub fh_cfg: FirehoseConfiguration,
++    /// Retained for source compatibility; ignored. Drop never sends commands.
+     pub reset_on_drop: bool,
+ }
+ 
+@@ -147,24 +229,6 @@ where
+     }
+ }
+ 
+-impl<T> Drop for QdlDevice<T>
+-where
+-    T: QdlReadWrite + ?Sized,
+-{
+-    fn drop(&mut self) {
+-        // Avoid having the board be stuck in EDL limbo in case of errors
+-        // TODO: watch 'rawmode' and adjust accordingly
+-        if self.reset_on_drop {
+-            println!(
+-                "Firehose {}. Resetting the board to {}, try again.",
+-                "failed".bright_red(),
+-                "edl".bright_yellow()
+-            );
+-            let _ = firehose_reset(self, &FirehoseResetMode::ResetToEdl, 0);
+-        }
+-    }
+-}
+-
+ /// Supported storage media types
+ #[derive(Clone, Copy, Debug)]
+ pub enum FirehoseStorageType {
+diff --git a/qdl/src/usb.rs b/qdl/src/usb.rs
+index 4417637..62f0d10 100644
+--- a/qdl/src/usb.rs
++++ b/qdl/src/usb.rs
+@@ -1,40 +1,86 @@
+ // SPDX-License-Identifier: BSD-3-Clause
+ // Copyright (c) Qualcomm Technologies, Inc. and/or its subsidiaries.
+-use anyhow::{Context, Result, bail};
++use anyhow::{Context, Result};
+ use nusb::{
+-    self, Device, DeviceInfo, MaybeFuture,
+-    io::{EndpointRead, EndpointWrite},
++    self, Device, DeviceInfo, Endpoint, MaybeFuture,
++    io::EndpointRead,
++    transfer::{Bulk, Out, TransferError},
+ };
+ use std::{
+     io::{BufRead, Error, ErrorKind, Read, Write},
+     time::Duration,
+ };
+ 
+-use crate::types::QdlReadWrite;
++use crate::{select_and_open, types::QdlReadWrite};
+ 
+ pub struct QdlUsbConfig {
+     _dev: nusb::Device,
+     reader: EndpointRead<nusb::transfer::Bulk>,
+-    writer: EndpointWrite<nusb::transfer::Bulk>,
++    writer: Endpoint<Bulk, Out>,
+     buf: Vec<u8>,
+     pos: usize,
+     cap: usize,
+ }
+ 
+-// TODO: timeouts?
++// Use completions directly: EndpointWrite 0.2.1 does not check actual_len.
+ impl Write for QdlUsbConfig {
+     fn write(&mut self, buf: &[u8]) -> Result<usize, std::io::Error> {
+-        let n = self.writer.write(buf);
+-        self.writer.submit_end();
+-        n
++        let completion = self
++            .writer
++            .transfer_blocking(buf.to_vec().into(), Duration::from_secs(10));
++        checked_write_len(
++            buf.len(),
++            completion.actual_len,
++            completion.status.map_err(usb_transfer_error),
++        )
+     }
+ 
+     fn flush(&mut self) -> Result<(), std::io::Error> {
+-        self.writer.flush()
++        // Every write already waits for completion.
++        Ok(())
+     }
+ }
++
++// nusb maps cancellation to Interrupted, which write_all retries. A cancelled
++// USB transfer can already have sent bytes, so it must stop the protocol call.
++fn usb_transfer_error(error: TransferError) -> Error {
++    match error {
++        TransferError::Cancelled => Error::new(ErrorKind::TimedOut, error),
++        other => other.into(),
++    }
++}
++
++fn usb_read_error(error: Error) -> Error {
++    if error
++        .get_ref()
++        .and_then(|e| e.downcast_ref::<TransferError>())
++        == Some(&TransferError::Cancelled)
++    {
++        return Error::new(ErrorKind::TimedOut, error);
++    }
++    error
++}
++
++fn checked_write_len(
++    expected: usize,
++    actual: usize,
++    status: std::io::Result<()>,
++) -> std::io::Result<usize> {
++    status?;
++    if actual != expected {
++        return Err(Error::new(
++            ErrorKind::WriteZero,
++            format!("Short USB write: {actual}/{expected}"),
++        ));
++    }
++    Ok(actual)
++}
++
+ impl Read for QdlUsbConfig {
+     fn read(&mut self, out: &mut [u8]) -> Result<usize, std::io::Error> {
++        if out.is_empty() {
++            return Ok(0);
++        }
+         // Drain internal buffer first
+         if self.pos < self.cap {
+             let n = std::cmp::min(out.len(), self.cap - self.pos);
+@@ -43,7 +89,7 @@ impl Read for QdlUsbConfig {
+             return Ok(n);
+         }
+         // Otherwise, read directly from USB
+-        self.reader.read(out)
++        self.reader.read(out).map_err(usb_read_error)
+     }
+ }
+ 
+@@ -56,7 +102,7 @@ impl BufRead for QdlUsbConfig {
+                 self.buf.resize(4096, 0);
+             }
+             {
+-                let n = self.reader.read(&mut self.buf)?;
++                let n = self.reader.read(&mut self.buf).map_err(usb_read_error)?;
+                 self.cap = n;
+             }
+         }
+@@ -74,54 +120,54 @@ const USB_VID_QCOM: u16 = 0x05c6;
+ const USB_PID_EDL: [u16; 2] = [0x9008 /* EDL */, 0x900e /* Ramdump */];
+ const INTF_DESC_PROTO_CODES: [u8; 3] = [0x10, 0x11, 0xFF];
+ 
+-fn find_usb_handle_by_sn(
+-    devices: &mut dyn Iterator<Item = DeviceInfo>,
+-    serial_no: String,
+-) -> Result<Device> {
+-    let mut dev: Option<DeviceInfo> = None;
+-
+-    for d in devices {
+-        if let Some(prod_str) = d.product_string() {
+-            let Some(sn_pos) = prod_str.find("_SN:") else {
+-                println!(
+-                    "Found an EDL device without a '_SN:' fragment in the product string, skipping"
+-                );
+-                continue;
+-            };
+-            let sn = &prod_str[sn_pos + "_SN:".len()..];
+-            if sn.eq_ignore_ascii_case(&serial_no) {
+-                dev = Some(d);
+-                break;
+-            }
+-        }
+-    }
++fn edl_devices() -> Result<Vec<DeviceInfo>> {
++    Ok(nusb::list_devices()
++        .wait()?
++        .filter(|d| d.vendor_id() == USB_VID_QCOM && USB_PID_EDL.contains(&d.product_id()))
++        .collect())
++}
+ 
+-    match dev {
+-        Some(h) => Ok(h.open().wait()?),
+-        None => bail!(
+-            "Found no devices in EDL mode with serial number {}",
+-            serial_no
+-        ),
+-    }
++fn location_key(info: &DeviceInfo) -> String {
++    format!(
++        "{}:{}",
++        info.bus_id(),
++        info.port_chain()
++            .iter()
++            .map(u8::to_string)
++            .collect::<Vec<_>>()
++            .join(".")
++    )
+ }
+ 
+-pub fn setup_usb_device(serial_no: Option<String>) -> Result<QdlUsbConfig> {
+-    let mut devices = nusb::list_devices()
+-        .wait()
+-        .unwrap()
+-        .filter(|d| d.vendor_id() == USB_VID_QCOM && USB_PID_EDL.contains(&d.product_id()));
+-
+-    let dev = match serial_no {
+-        Some(s) => find_usb_handle_by_sn(&mut devices, s)?,
+-        None => {
+-            let Some(d) = devices.next() else {
+-                bail!("Found no devices in EDL mode")
+-            };
+-            d.open().wait()?
+-        }
+-    };
++/// Stable physical-location identifiers. This enumerates but does not open devices.
++pub fn list_usb_device_keys() -> Result<Vec<String>> {
++    Ok(edl_devices()?.iter().map(location_key).collect())
++}
++
++pub fn setup_usb_device_by_key(requested: Option<&str>) -> Result<QdlUsbConfig> {
++    let devices = edl_devices()?;
++    let keys = devices.iter().map(location_key).collect::<Vec<_>>();
++    select_and_open(&keys, requested, |index| {
++        setup_usb_device_from_device(devices[index].open().wait()?)
++    })
++}
+ 
+-    setup_usb_device_from_device(dev)
++/// Legacy serial-number selection remains explicit and rejects duplicate serials.
++pub fn setup_usb_device(serial_no: Option<String>) -> Result<QdlUsbConfig> {
++    let devices: Vec<_> = edl_devices()?
++        .into_iter()
++        .filter_map(|d| {
++            let key = d.product_string()?.split_once("_SN:")?.1.to_owned();
++            Some((key, d))
++        })
++        .collect();
++    let keys = devices
++        .iter()
++        .map(|(key, _)| key.clone())
++        .collect::<Vec<_>>();
++    select_and_open(&keys, serial_no.as_deref(), |index| {
++        setup_usb_device_from_device(devices[index].1.open().wait()?)
++    })
+ }
+ 
+ fn setup_usb_device_from_device(dev: Device) -> Result<QdlUsbConfig> {
+@@ -143,7 +189,7 @@ fn setup_usb_device_from_device(dev: Device) -> Result<QdlUsbConfig> {
+             e.direction() == nusb::transfer::Direction::In
+                 && e.transfer_type() == nusb::descriptors::TransferType::Bulk
+         })
+-        .unwrap()
++        .context("Missing bulk endpoint")?
+         .address();
+     let out_ep = intf_desc
+         .endpoints()
+@@ -151,7 +197,7 @@ fn setup_usb_device_from_device(dev: Device) -> Result<QdlUsbConfig> {
+             e.direction() == nusb::transfer::Direction::Out
+                 && e.transfer_type() == nusb::descriptors::TransferType::Bulk
+         })
+-        .unwrap()
++        .context("Missing bulk endpoint")?
+         .address();
+ 
+     // Make sure we can actually poke at the device
+@@ -161,10 +207,9 @@ fn setup_usb_device_from_device(dev: Device) -> Result<QdlUsbConfig> {
+         .with_context(|| format!("Couldn't claim interface{}", intf_desc.interface_number()))?;
+ 
+     let mut rd = intf.endpoint(in_ep)?.reader(1024 * 1024);
+-    let mut wr = intf.endpoint(out_ep)?.writer(1024 * 1024);
++    let wr = intf.endpoint(out_ep)?;
+ 
+     rd.set_read_timeout(Duration::from_secs(10));
+-    wr.set_write_timeout(Duration::from_secs(10));
+ 
+     Ok(QdlUsbConfig {
+         _dev: dev,
+@@ -178,22 +223,50 @@ fn setup_usb_device_from_device(dev: Device) -> Result<QdlUsbConfig> {
+ 
+ /// Open an EDL device at a known physical USB location.
+ pub fn setup_usb_device_at(bus_id: &str, port_numbers: &[u8]) -> Result<QdlUsbConfig> {
+-    let mut devices = nusb::list_devices().wait()?.filter(|d| {
+-        d.vendor_id() == USB_VID_QCOM
+-            && USB_PID_EDL.contains(&d.product_id())
+-            && d.bus_id() == bus_id
+-            && d.port_chain() == port_numbers
+-    });
+-
+-    let Some(info) = devices.next() else {
+-        bail!(
+-            "Found no EDL device at USB bus {bus_id:?} ports {:?}",
+-            port_numbers
++    let key = format!(
++        "{bus_id}:{}",
++        port_numbers
++            .iter()
++            .map(u8::to_string)
++            .collect::<Vec<_>>()
++            .join(".")
++    );
++    setup_usb_device_by_key(Some(&key))
++}
++
++#[cfg(test)]
++mod tests {
++    use super::*;
++
++    #[test]
++    fn usb_cancellation_is_not_retryable_interrupted_io() {
++        let error = usb_transfer_error(TransferError::Cancelled);
++        assert_eq!(error.kind(), ErrorKind::TimedOut);
++        assert_eq!(
++            error.get_ref().unwrap().downcast_ref::<TransferError>(),
++            Some(&TransferError::Cancelled)
++        );
++        let error = usb_read_error(TransferError::Cancelled.into());
++        assert_eq!(error.kind(), ErrorKind::TimedOut);
++        assert_eq!(
++            usb_transfer_error(TransferError::Disconnected).kind(),
++            ErrorKind::ConnectionAborted
+         );
+-    };
+-    if devices.next().is_some() {
+-        bail!("multiple EDL devices matched one USB location");
+     }
+ 
+-    setup_usb_device_from_device(info.open().wait()?)
++    #[test]
++    fn usb_completion_requires_full_length_and_success() {
++        assert_eq!(checked_write_len(8, 8, Ok(())).unwrap(), 8);
++        assert_eq!(checked_write_len(0, 0, Ok(())).unwrap(), 0);
++        assert_eq!(
++            checked_write_len(8, 4, Ok(())).unwrap_err().kind(),
++            ErrorKind::WriteZero
++        );
++        assert_eq!(
++            checked_write_len(8, 8, Err(ErrorKind::TimedOut.into()))
++                .unwrap_err()
++                .kind(),
++            ErrorKind::TimedOut
++        );
++    }
+ }
+diff --git a/cli/src/input.rs b/cli/src/input.rs
+new file mode 100644
+index 0000000..feb1fe2
+--- /dev/null
++++ b/cli/src/input.rs
+@@ -0,0 +1,89 @@
++// SPDX-License-Identifier: BSD-3-Clause
++use anyhow::{Context, Result, bail};
++use std::{
++    fs::File,
++    io::{self, Read, Seek, SeekFrom, Take},
++};
++
++/// A known file range followed by only its permitted final-sector padding.
++pub struct ProgramInput {
++    source: Take<File>,
++    padding_left: u64,
++    num_sectors: usize,
++}
++
++fn byte_count(num_sectors: usize, sector_size: usize) -> Result<u64> {
++    if sector_size == 0 {
++        bail!("Sector size must be nonzero");
++    }
++    Ok(u64::try_from(
++        num_sectors
++            .checked_mul(sector_size)
++            .context("Program byte count overflow")?,
++    )?)
++}
++
++impl ProgramInput {
++    pub fn from_file(
++        mut file: File,
++        sector_size: usize,
++        offset: u64,
++        requested_sectors: Option<usize>,
++    ) -> Result<Self> {
++        if sector_size == 0 {
++            bail!("Sector size must be nonzero");
++        }
++        let available = file
++            .metadata()?
++            .len()
++            .checked_sub(offset)
++            .context("Program source offset exceeds file length")?;
++        let num_sectors = match requested_sectors {
++            Some(count) => count,
++            None => usize::try_from(available.div_ceil(sector_size as u64))?,
++        };
++        let target_len = byte_count(num_sectors, sector_size)?;
++        let source_len = target_len.min(available);
++        let padding_left = target_len - source_len;
++        if padding_left >= sector_size as u64 {
++            bail!("Program source range exceeds file length beyond final-sector padding");
++        }
++        file.seek(SeekFrom::Start(offset))?;
++        Ok(Self {
++            source: file.take(source_len),
++            padding_left,
++            num_sectors,
++        })
++    }
++
++    pub fn num_sectors(&self) -> usize {
++        self.num_sectors
++    }
++}
++
++impl Read for ProgramInput {
++    fn read(&mut self, out: &mut [u8]) -> io::Result<usize> {
++        if out.is_empty() {
++            return Ok(0);
++        }
++        if self.source.limit() != 0 {
++            let n = self.source.read(out)?;
++            if n == 0 {
++                return Err(io::Error::new(
++                    io::ErrorKind::UnexpectedEof,
++                    "Program source was truncated",
++                ));
++            }
++            return Ok(n);
++        }
++        let n = (out.len() as u64).min(self.padding_left) as usize;
++        out[..n].fill(0);
++        self.padding_left -= n as u64;
++        Ok(n)
++    }
++}
++
++/// Erase callers intentionally provide every requested byte as zero.
++pub fn zero_input(num_sectors: usize, sector_size: usize) -> Result<Take<io::Repeat>> {
++    Ok(io::repeat(0).take(byte_count(num_sectors, sector_size)?))
++}
+diff --git a/cli/tests/program_input.rs b/cli/tests/program_input.rs
+new file mode 100644
+index 0000000..f842b9f
+--- /dev/null
++++ b/cli/tests/program_input.rs
+@@ -0,0 +1,231 @@
++// SPDX-License-Identifier: BSD-3-Clause
++#[path = "../src/input.rs"]
++mod input;
++#[path = "../src/programfile.rs"]
++mod programfile;
++#[path = "../../qdl/tests/support/mod.rs"]
++mod support;
++
++use input::{ProgramInput, zero_input};
++use qdl::{firehose_program_storage, types::MutationConfirmation};
++use std::{
++    fs::{self, File},
++    io::{ErrorKind, Read},
++    path::PathBuf,
++    sync::atomic::{AtomicU64, Ordering},
++};
++use support::*;
++
++struct Fixture(PathBuf);
++
++impl Fixture {
++    fn new(data: &[u8]) -> Self {
++        static NEXT: AtomicU64 = AtomicU64::new(0);
++        let dir = std::env::temp_dir().join(format!(
++            "qdlrs-program-input-{}-{}",
++            std::process::id(),
++            NEXT.fetch_add(1, Ordering::Relaxed)
++        ));
++        fs::create_dir(&dir).unwrap();
++        fs::write(dir.join("image.bin"), data).unwrap();
++        Self(dir)
++    }
++
++    fn file(&self) -> File {
++        File::open(self.0.join("image.bin")).unwrap()
++    }
++
++    fn xml(&self, sectors: usize, offset: &str) -> xmltree::Element {
++        xmltree::Element::parse(
++            format!(
++                "<data><program SECTOR_SIZE_IN_BYTES=\"4\" num_partition_sectors=\"{sectors}\" \
++                 physical_partition_number=\"0\" start_sector=\"0\" label=\"p\" \
++                 filename=\"image.bin\" file_sector_offset=\"{offset}\"/></data>"
++            )
++            .as_bytes(),
++        )
++        .unwrap()
++    }
++}
++
++impl Drop for Fixture {
++    fn drop(&mut self) {
++        fs::remove_dir_all(&self.0).unwrap();
++    }
++}
++
++fn payload(trace: &Trace) -> Vec<u8> {
++    let record = trace.lock().unwrap();
++    assert!(String::from_utf8_lossy(&record.writes[0]).contains("<program "));
++    record.writes[1..].concat()
++}
++
++#[test]
++fn raw_image_input_pads_only_the_final_sector() {
++    for (source, expected) in [
++        (&b"abcdefgh"[..], &b"abcdefgh"[..]),
++        (&b"a"[..], &b"a\0\0\0"[..]),
++        (&b"abcdefghi"[..], &b"abcdefghi\0\0\0"[..]),
++    ] {
++        let fixture = Fixture::new(source);
++        let mut input = ProgramInput::from_file(fixture.file(), 4, 0, None).unwrap();
++        let (mut dev, trace) = device([bytes(ACK), bytes(ACK)]);
++        let sectors = input.num_sectors();
++        assert_eq!(sectors * 4, expected.len());
++        firehose_program_storage(&mut dev, &mut input, "p", sectors, 0, 0, "0").unwrap();
++        assert_eq!(payload(&trace), expected);
++        assert_eq!(input.read(&mut [0; 1]).unwrap(), 0);
++        drop(dev);
++        assert_no_reset(&trace);
++    }
++}
++
++#[test]
++fn erase_input_is_a_finite_full_length_zero_stream() {
++    let mut input = zero_input(5, 4).unwrap();
++    let (mut dev, trace) = device([bytes(ACK), bytes(ACK)]);
++    firehose_program_storage(&mut dev, &mut input, "p", 5, 0, 0, "0").unwrap();
++    assert_eq!(payload(&trace), [0; 20]);
++    assert_eq!(
++        trace.lock().unwrap().writes[1..]
++            .iter()
++            .map(Vec::len)
++            .collect::<Vec<_>>(),
++        [8, 8, 4]
++    );
++    assert_eq!(input.read(&mut [0; 1]).unwrap(), 0);
++    drop(dev);
++    assert_no_reset(&trace);
++}
++
++#[test]
++fn rawprogram_caller_pads_tail_across_multiple_payloads() {
++    let fixture = Fixture::new(b"abcdefghi");
++    let (mut dev, trace) = device([bytes(ACK), bytes(ACK)]);
++    assert_eq!(
++        programfile::parse_program_xml(
++            &mut dev,
++            &fixture.xml(3, "0"),
++            &fixture.0,
++            &fixture.0,
++            false,
++            false
++        )
++        .unwrap(),
++        None
++    );
++    assert_eq!(payload(&trace), b"abcdefghi\0\0\0");
++    assert_eq!(
++        trace.lock().unwrap().writes[1..]
++            .iter()
++            .map(Vec::len)
++            .collect::<Vec<_>>(),
++        [8, 4]
++    );
++    drop(dev);
++    assert_no_reset(&trace);
++}
++
++#[test]
++fn rawprogram_caller_respects_selected_file_range() {
++    let fixture = Fixture::new(b"abcdefghijklmnopq");
++    for (sectors, offset, expected) in [
++        (2, "1", &b"efghijkl"[..]),
++        (3, "2", &b"ijklmnopq\0\0\0"[..]),
++    ] {
++        let (mut dev, trace) = device([bytes(ACK), bytes(ACK)]);
++        programfile::parse_program_xml(
++            &mut dev,
++            &fixture.xml(sectors, offset),
++            &fixture.0,
++            &fixture.0,
++            false,
++            false,
++        )
++        .unwrap();
++        assert_eq!(payload(&trace), expected);
++    }
++}
++
++#[test]
++fn rawprogram_invalid_ranges_fail_before_program_command() {
++    for (source, sectors, offset) in [
++        (&b""[..], 1, "0"),
++        (&b"abcde"[..], 3, "0"),
++        (&b"abcd"[..], 1, "1"),
++        (&b"abcd"[..], 1, "2"),
++        (&b"abcd"[..], 1, "not-a-number"),
++        (&b"abcd"[..], 1, "18446744073709551615"),
++        (&b"abcd"[..], usize::MAX, "0"),
++    ] {
++        let fixture = Fixture::new(source);
++        let (mut dev, trace) = device([]);
++        assert!(
++            programfile::parse_program_xml(
++                &mut dev,
++                &fixture.xml(sectors, offset),
++                &fixture.0,
++                &fixture.0,
++                false,
++                false
++            )
++            .is_err()
++        );
++        drop(dev);
++        assert!(trace.lock().unwrap().writes.is_empty());
++    }
++}
++
++#[test]
++fn file_truncation_is_not_converted_to_padding() {
++    let fixture = Fixture::new(b"abcdefghi");
++    let mut input = ProgramInput::from_file(fixture.file(), 4, 0, None).unwrap();
++    File::options()
++        .write(true)
++        .open(fixture.0.join("image.bin"))
++        .unwrap()
++        .set_len(8)
++        .unwrap();
++    let (mut dev, trace) = device([bytes(ACK)]);
++    let error = firehose_program_storage(&mut dev, &mut input, "p", 3, 0, 0, "0").unwrap_err();
++    assert_eq!(error.confirmation, MutationConfirmation::Unknown);
++    assert_eq!(
++        error.cause.downcast_ref::<std::io::Error>().unwrap().kind(),
++        ErrorKind::UnexpectedEof
++    );
++    assert_eq!(payload(&trace), b"abcdefgh");
++    assert_eq!(trace.lock().unwrap().writes.len(), 2);
++    drop(dev);
++    assert_no_reset(&trace);
++}
++
++#[test]
++fn padded_rawprogram_still_requires_final_ack() {
++    for final_response in [bytes(NAK), Input::Error(ErrorKind::TimedOut)] {
++        let fixture = Fixture::new(b"a");
++        let (mut dev, trace) = device([bytes(ACK), final_response]);
++        assert!(
++            programfile::parse_program_xml(
++                &mut dev,
++                &fixture.xml(1, "0"),
++                &fixture.0,
++                &fixture.0,
++                false,
++                false
++            )
++            .is_err()
++        );
++        assert_eq!(payload(&trace), b"a\0\0\0");
++        drop(dev);
++        assert_no_reset(&trace);
++    }
++}
++
++#[test]
++fn input_size_validation_rejects_zero_sector_and_overflow() {
++    let fixture = Fixture::new(b"abcd");
++    assert!(ProgramInput::from_file(fixture.file(), 0, 0, None).is_err());
++    assert!(ProgramInput::from_file(fixture.file(), 4, 0, Some(usize::MAX)).is_err());
++    assert!(zero_input(1, 0).is_err());
++    assert!(zero_input(usize::MAX, 4).is_err());
++}
+diff --git a/qdl/tests/firehose_io.rs b/qdl/tests/firehose_io.rs
+new file mode 100644
+index 0000000..3dcbace
+--- /dev/null
++++ b/qdl/tests/firehose_io.rs
+@@ -0,0 +1,767 @@
++// SPDX-License-Identifier: BSD-3-Clause
++mod support;
++
++use qdl::{
++    firehose_program_storage, firehose_read, firehose_read_storage,
++    parsers::firehose_parser_ack_nak,
++};
++use std::io::{ErrorKind, Read};
++use support::*;
++
++struct ShortSource(&'static [u8]);
++impl Read for ShortSource {
++    fn read(&mut self, out: &mut [u8]) -> std::io::Result<usize> {
++        let len = out.len().min(self.0.len()).min(2);
++        out[..len].copy_from_slice(&self.0[..len]);
++        self.0 = &self.0[len..];
++        Ok(len)
++    }
++}
++
++#[test]
++fn program_continues_short_file_reads() {
++    let (mut dev, trace) = device([bytes(ACK), bytes(ACK)]);
++    firehose_program_storage(&mut dev, &mut ShortSource(b"abcdefgh"), "p", 2, 0, 0, "0").unwrap();
++    assert!(trace.lock().unwrap().accepted.ends_with(b"abcdefgh"));
++}
++
++#[test]
++fn program_rejects_premature_file_eof() {
++    let (mut dev, trace) = device([bytes(ACK), bytes(ACK)]);
++    assert!(firehose_program_storage(&mut dev, &mut &b"ab"[..], "p", 2, 0, 0, "0").is_err());
++    drop(dev);
++    assert_no_reset(&trace);
++}
++
++#[test]
++fn log_then_timeout_is_not_ack() {
++    let (mut dev, _) = device([bytes(LOG), Input::Error(ErrorKind::TimedOut)]);
++    assert!(firehose_read(&mut dev, firehose_parser_ack_nak).is_err());
++}
++
++#[test]
++fn read_rejects_transport_eof() {
++    let (mut dev, _) = device([bytes(ACK), Input::Eof]);
++    assert!(firehose_read_storage(&mut dev, &mut Vec::new(), 1, 0, 0, 0).is_err());
++}
++
++use qdl::{
++    firehose_configure, firehose_get_storage_info, firehose_patch, firehose_read_welcome,
++    firehose_reset, firehose_set_bootable, firehose_write,
++    parsers::firehose_parser_configure_response,
++    types::{
++        FirehoseResetMode, FirehoseStatus, MutationConfirmation, MutationFailure, QdlBackend,
++        ReadRejected,
++    },
++};
++use std::io::BufRead;
++
++fn program(dev: &mut qdl::types::QdlDevice<ScriptedIo>) -> Result<(), MutationFailure> {
++    firehose_program_storage(dev, &mut &b"abcdefgh"[..], "p", 2, 0, 0, "0")
++}
++
++fn io_kind(error: &anyhow::Error) -> ErrorKind {
++    error
++        .downcast_ref::<std::io::Error>()
++        .expect("original IO error retained")
++        .kind()
++}
++
++fn one_program_no_followup(trace: &Trace) {
++    assert_no_reset(trace);
++    assert_eq!(
++        String::from_utf8_lossy(&trace.lock().unwrap().accepted)
++            .matches("<program ")
++            .count(),
++        1
++    );
++}
++
++#[test]
++fn scripted_read_and_bufread_share_position() {
++    let mut io = ScriptedIo::new([bytes(b"abcdef"), Input::Eof]);
++    assert_eq!(io.fill_buf().unwrap(), b"abcdef");
++    assert_eq!(io.fill_buf().unwrap(), b"abcdef");
++    io.consume(2);
++    let mut out = [0; 2];
++    io.read_exact(&mut out).unwrap();
++    assert_eq!(&out, b"cd");
++    assert_eq!(io.fill_buf().unwrap(), b"ef");
++    io.consume(2);
++    assert!(io.fill_buf().unwrap().is_empty());
++}
++
++#[test]
++fn program_continues_serial_short_writes() {
++    let (mut dev, trace) = device([bytes(ACK), bytes(ACK)]);
++    dev.rw.output.extend([
++        Output::Accept(usize::MAX),
++        Output::Accept(3),
++        Output::Accept(2),
++    ]);
++    program(&mut dev).unwrap();
++    assert!(trace.lock().unwrap().accepted.ends_with(b"abcdefgh"));
++    assert_eq!(trace.lock().unwrap().writes.len(), 4);
++}
++
++#[test]
++fn program_rejects_usb_short_write_without_resending() {
++    let (mut dev, trace) = device([bytes(ACK)]);
++    dev.fh_cfg.backend = QdlBackend::Usb;
++    dev.rw
++        .output
++        .extend([Output::Accept(usize::MAX), Output::Accept(3)]);
++    let error = program(&mut dev).unwrap_err();
++    assert_eq!(error.confirmation, MutationConfirmation::Unknown);
++    assert_eq!(io_kind(&error.cause), ErrorKind::WriteZero);
++    drop(dev);
++    assert_eq!(trace.lock().unwrap().writes.len(), 2);
++    assert!(trace.lock().unwrap().accepted.ends_with(b"abc"));
++    one_program_no_followup(&trace);
++}
++
++#[test]
++fn program_sends_one_explicit_usb_zlp() {
++    let (mut dev, trace) = device([bytes(ACK), bytes(ACK)]);
++    dev.fh_cfg.backend = QdlBackend::Usb;
++    program(&mut dev).unwrap();
++    drop(dev);
++    let record = trace.lock().unwrap();
++    assert_eq!(record.writes.iter().filter(|w| w.is_empty()).count(), 1);
++    assert_eq!(record.flushes, 2);
++}
++
++#[test]
++fn program_reports_zlp_failure_as_unknown() {
++    let (mut dev, trace) = device([bytes(ACK)]);
++    dev.fh_cfg.backend = QdlBackend::Usb;
++    dev.rw.output.extend([
++        Output::Accept(usize::MAX),
++        Output::Accept(usize::MAX),
++        Output::Error(ErrorKind::BrokenPipe),
++    ]);
++    let error = program(&mut dev).unwrap_err();
++    assert_eq!(error.confirmation, MutationConfirmation::Unknown);
++    assert_eq!(io_kind(&error.cause), ErrorKind::BrokenPipe);
++    drop(dev);
++    one_program_no_followup(&trace);
++}
++
++#[test]
++fn program_never_sends_incomplete_input_buffer() {
++    for last in [Input::Eof, Input::Error(ErrorKind::PermissionDenied)] {
++        let (mut dev, trace) = device([bytes(ACK)]);
++        let mut source = ScriptedIo::new([bytes(b"abc"), last]);
++        let error = firehose_program_storage(&mut dev, &mut source, "p", 2, 0, 0, "0").unwrap_err();
++        assert_eq!(error.confirmation, MutationConfirmation::Unknown);
++        assert!(matches!(
++            io_kind(&error.cause),
++            ErrorKind::UnexpectedEof | ErrorKind::PermissionDenied
++        ));
++        drop(dev);
++        assert_eq!(trace.lock().unwrap().writes.len(), 1);
++        one_program_no_followup(&trace);
++    }
++}
++
++#[test]
++fn program_stops_after_later_input_failure() {
++    let (mut dev, trace) = device([bytes(ACK)]);
++    let mut source = ScriptedIo::new([bytes(b"abcdefgh"), bytes(b"ij"), Input::Eof]);
++    let error = firehose_program_storage(&mut dev, &mut source, "p", 4, 0, 0, "0").unwrap_err();
++    assert_eq!(io_kind(&error.cause), ErrorKind::UnexpectedEof);
++    assert!(trace.lock().unwrap().accepted.ends_with(b"abcdefgh"));
++    assert_eq!(trace.lock().unwrap().writes.len(), 2);
++}
++
++#[test]
++fn program_zero_progress_and_hard_write_errors_are_unknown() {
++    for output in [Output::Accept(0), Output::Error(ErrorKind::BrokenPipe)] {
++        let (mut dev, trace) = device([bytes(ACK)]);
++        dev.rw.output.extend([Output::Accept(usize::MAX), output]);
++        let error = program(&mut dev).unwrap_err();
++        assert_eq!(error.confirmation, MutationConfirmation::Unknown);
++        assert!(matches!(
++            io_kind(&error.cause),
++            ErrorKind::WriteZero | ErrorKind::BrokenPipe
++        ));
++        drop(dev);
++        one_program_no_followup(&trace);
++    }
++}
++
++#[test]
++fn interrupted_file_and_serial_io_can_continue() {
++    let (mut dev, _) = device([Input::Error(ErrorKind::Interrupted), bytes(ACK), bytes(ACK)]);
++    dev.rw.output.extend([
++        Output::Error(ErrorKind::Interrupted),
++        Output::Accept(usize::MAX),
++        Output::Error(ErrorKind::Interrupted),
++    ]);
++    let mut source = ScriptedIo::new([Input::Error(ErrorKind::Interrupted), bytes(b"abcdefgh")]);
++    firehose_program_storage(&mut dev, &mut source, "p", 2, 0, 0, "0").unwrap();
++}
++
++#[test]
++fn final_ack_timeout_is_unknown_and_drop_sends_nothing() {
++    let (mut dev, trace) = device([bytes(ACK), bytes(LOG), Input::Error(ErrorKind::TimedOut)]);
++    dev.reset_on_drop = true; // Old callers cannot re-enable implicit commands.
++    let error = program(&mut dev).unwrap_err();
++    assert_eq!(error.confirmation, MutationConfirmation::Unknown);
++    assert_eq!(io_kind(&error.cause), ErrorKind::TimedOut);
++    drop(dev);
++    one_program_no_followup(&trace);
++}
++
++#[test]
++fn initial_and_final_program_nak_are_rejected() {
++    for (input, writes) in [(vec![bytes(NAK)], 1), (vec![bytes(ACK), bytes(NAK)], 2)] {
++        let (mut dev, trace) = device(input);
++        dev.reset_on_drop = true;
++        assert_eq!(
++            program(&mut dev).unwrap_err().confirmation,
++            MutationConfirmation::Rejected
++        );
++        drop(dev);
++        assert_eq!(trace.lock().unwrap().writes.len(), writes);
++        one_program_no_followup(&trace);
++    }
++}
++
++#[test]
++fn partial_command_failure_retains_original_error() {
++    let (mut dev, trace) = device([]);
++    dev.rw.output.extend([
++        Output::Accept(10),
++        Output::Error(ErrorKind::ConnectionReset),
++    ]);
++    let error = program(&mut dev).unwrap_err();
++    assert_eq!(error.confirmation, MutationConfirmation::Unknown);
++    assert_eq!(io_kind(&error.cause), ErrorKind::ConnectionReset);
++    assert_eq!(trace.lock().unwrap().accepted.len(), 10);
++    drop(dev);
++    assert_no_reset(&trace);
++}
++
++#[test]
++fn command_write_and_flush_errors_are_not_replaced_by_reset() {
++    for flush in [false, true] {
++        let (mut dev, trace) = device([]);
++        if flush {
++            dev.rw.flush_error = Some(ErrorKind::BrokenPipe);
++        } else {
++            dev.rw
++                .output
++                .push_back(Output::Error(ErrorKind::BrokenPipe));
++        }
++        let error = firehose_write(&mut dev, &mut b"<data><nop/></data>".to_vec()).unwrap_err();
++        assert_eq!(io_kind(&error), ErrorKind::BrokenPipe);
++        drop(dev);
++        assert_no_reset(&trace);
++        assert_eq!(trace.lock().unwrap().writes.len(), 1);
++    }
++}
++
++#[test]
++fn program_invalid_sizes_are_not_sent() {
++    for case in 0..6 {
++        let (mut dev, trace) = device([]);
++        match case {
++            0 => dev.fh_cfg.storage_sector_size = 0,
++            1 => dev.fh_cfg.send_buffer_size = 0,
++            2 => dev.fh_cfg.send_buffer_size = 3,
++            3 => dev.fh_cfg.recv_buffer_size = 0,
++            4 => dev.fh_cfg.xml_buf_size = 0,
++            _ => dev.fh_cfg.send_buffer_size = usize::MAX,
++        }
++        assert_eq!(
++            program(&mut dev).unwrap_err().confirmation,
++            MutationConfirmation::NotSent
++        );
++        assert!(trace.lock().unwrap().writes.is_empty());
++    }
++    let (mut dev, trace) = device([]);
++    let error =
++        firehose_program_storage(&mut dev, &mut &b""[..], "p", usize::MAX, 0, 0, "0").unwrap_err();
++    assert_eq!(error.confirmation, MutationConfirmation::NotSent);
++    assert!(trace.lock().unwrap().writes.is_empty());
++}
++
++#[test]
++fn read_handles_coalesced_xml_raw_data_and_short_local_writes() {
++    let (mut dev, _) = device([bytes(&[ACK, b"abcdefgh", ACK, ACK].concat())]);
++    let mut out = ScriptedIo::new([]);
++    out.output.extend([Output::Accept(2), Output::Accept(1)]);
++    firehose_read_storage(&mut dev, &mut out, 2, 0, 0, 0).unwrap();
++    assert_eq!(out.trace.lock().unwrap().accepted, b"abcdefgh");
++    assert_eq!(out.trace.lock().unwrap().flushes, 1);
++    assert_eq!(
++        firehose_read(&mut dev, firehose_parser_ack_nak).unwrap(),
++        FirehoseStatus::Ack
++    );
++}
++
++#[test]
++fn read_handles_fragmented_raw_data() {
++    let (mut dev, _) = device([
++        bytes(ACK),
++        bytes(b"a"),
++        Input::Error(ErrorKind::Interrupted),
++        bytes(b"bc"),
++        bytes(b"defgh"),
++        bytes(ACK),
++    ]);
++    let mut out = Vec::new();
++    firehose_read_storage(&mut dev, &mut out, 2, 0, 0, 0).unwrap();
++    assert_eq!(out, b"abcdefgh");
++}
++
++#[test]
++fn read_local_zero_write_hard_error_and_flush_failure_are_errors() {
++    for case in 0..3 {
++        let (mut dev, trace) = device([bytes(ACK), bytes(b"abcdefgh")]);
++        let mut out = ScriptedIo::new([]);
++        match case {
++            0 => out.output.push_back(Output::Accept(0)),
++            1 => out
++                .output
++                .push_back(Output::Error(ErrorKind::PermissionDenied)),
++            _ => out.flush_error = Some(ErrorKind::Other),
++        }
++        let error = firehose_read_storage(&mut dev, &mut out, 2, 0, 0, 0).unwrap_err();
++        assert!(matches!(
++            io_kind(&error),
++            ErrorKind::WriteZero | ErrorKind::PermissionDenied | ErrorKind::Other
++        ));
++        drop(dev);
++        assert_no_reset(&trace);
++    }
++}
++
++#[test]
++fn read_missing_final_ack_is_failure_after_complete_output() {
++    for final_input in [Input::Error(ErrorKind::TimedOut), Input::Eof, bytes(NAK)] {
++        let (mut dev, trace) = device([bytes(ACK), bytes(b"abcdefgh"), final_input]);
++        let mut out = Vec::new();
++        assert!(firehose_read_storage(&mut dev, &mut out, 2, 0, 0, 0).is_err());
++        assert_eq!(out, b"abcdefgh");
++        drop(dev);
++        assert_no_reset(&trace);
++    }
++}
++
++#[test]
++fn read_failure_in_raw_mode_is_not_read_rejection() {
++    for final_input in [
++        Input::Error(ErrorKind::TimedOut),
++        Input::Error(ErrorKind::ConnectionReset),
++        Input::Eof,
++    ] {
++        let (mut dev, _) = device([bytes(ACK), bytes(b"abc"), final_input]);
++        let error = firehose_read_storage(&mut dev, &mut Vec::new(), 2, 0, 0, 0).unwrap_err();
++        assert!(error.downcast_ref::<ReadRejected>().is_none());
++        assert!(error.downcast_ref::<std::io::Error>().is_some());
++    }
++}
++
++#[test]
++fn complete_initial_read_nak_is_typed_and_leaves_command_boundary() {
++    for nak in [
++        NAK,
++        b"<data><response value=\"NAK\" rawmode=\"false\"/></data>",
++    ] {
++        let (mut dev, trace) = device([bytes(&[nak, ACK].concat())]);
++        let error = firehose_read_storage(&mut dev, &mut Vec::new(), 2, 0, 0, 0).unwrap_err();
++        assert!(error.downcast_ref::<ReadRejected>().is_some());
++        assert_eq!(
++            firehose_read(&mut dev, firehose_parser_ack_nak).unwrap(),
++            FirehoseStatus::Ack
++        );
++        drop(dev);
++        assert_eq!(trace.lock().unwrap().writes.len(), 1);
++        assert_no_reset(&trace);
++    }
++}
++
++#[test]
++fn read_nak_with_restart_retry_or_raw_mode_requires_session_stop() {
++    for attributes in [
++        "AttemptRestart=\"1\"",
++        "AttemptRetry=\"1\"",
++        "AttemptRetry=\"0\" rawmode=\"false\"",
++        "rawmode=\"true\"",
++        "rawmode=\"invalid\"",
++        "rawmode=\"\"",
++    ] {
++        let xml = format!("<data><response value=\"NAK\" {attributes}/></data>");
++        let (mut dev, trace) = device([bytes(xml.as_bytes())]);
++        let mut out = Vec::new();
++        let error = firehose_read_storage(&mut dev, &mut out, 2, 0, 0, 0).unwrap_err();
++        assert!(
++            error.downcast_ref::<ReadRejected>().is_none(),
++            "{attributes}"
++        );
++        assert!(error.to_string().contains("command boundary"));
++        assert!(out.is_empty());
++        drop(dev);
++        assert_eq!(trace.lock().unwrap().writes.len(), 1);
++        assert_no_reset(&trace);
++    }
++}
++
++#[test]
++fn invalid_read_sizes_do_not_send_commands() {
++    let (mut dev, trace) = device([]);
++    assert!(firehose_read_storage(&mut dev, &mut Vec::new(), usize::MAX, 0, 0, 0).is_err());
++    dev.fh_cfg.recv_buffer_size = 0;
++    assert!(firehose_read_storage(&mut dev, &mut Vec::new(), 1, 0, 0, 0).is_err());
++    assert!(trace.lock().unwrap().writes.is_empty());
++}
++
++#[test]
++fn response_end_marker_can_split_at_every_byte() {
++    for split in 1..ACK.len() {
++        let (mut dev, _) = device([bytes(&ACK[..split]), bytes(&ACK[split..])]);
++        assert_eq!(
++            firehose_read(&mut dev, firehose_parser_ack_nak).unwrap(),
++            FirehoseStatus::Ack
++        );
++    }
++}
++
++#[test]
++fn welcome_end_marker_does_not_acknowledge_a_command() {
++    let end = b"<data><log value=\"INFO: End of supported functions\"/></data>";
++    let (mut dev, _) = device([bytes(end), Input::Error(ErrorKind::TimedOut)]);
++    assert_eq!(
++        io_kind(&firehose_read(&mut dev, firehose_parser_ack_nak).unwrap_err()),
++        ErrorKind::TimedOut
++    );
++    let (mut dev, _) = device([bytes(end)]);
++    assert_eq!(firehose_read_welcome(&mut dev).unwrap().len(), 1);
++}
++
++#[test]
++fn welcome_timeout_only_completes_at_document_boundary() {
++    let (mut dev, _) = device([bytes(LOG), Input::Error(ErrorKind::TimedOut)]);
++    assert_eq!(firehose_read_welcome(&mut dev).unwrap(), ["hello"]);
++    for welcome in [true, false] {
++        let (mut dev, _) = device([bytes(b"<data><response"), Input::Error(ErrorKind::TimedOut)]);
++        let error = if welcome {
++            firehose_read_welcome(&mut dev).map(|_| ()).unwrap_err()
++        } else {
++            firehose_read(&mut dev, firehose_parser_ack_nak)
++                .map(|_| ())
++                .unwrap_err()
++        };
++        assert_eq!(io_kind(&error), ErrorKind::TimedOut);
++    }
++}
++
++#[test]
++fn welcome_accepts_trailing_xml_whitespace_before_idle_timeout() {
++    for whitespace in [&b"\n"[..], &b"\r\n"[..], &b" \t\r\n"[..]] {
++        let (mut dev, _) = device([
++            bytes(&[LOG, whitespace].concat()),
++            Input::Error(ErrorKind::TimedOut),
++        ]);
++        assert_eq!(firehose_read_welcome(&mut dev).unwrap(), ["hello"]);
++    }
++}
++
++#[test]
++fn welcome_accepts_fragmented_whitespace_between_declared_documents() {
++    let second = b"<?xml version=\"1.0\"?><data><log value=\"second\"/></data>";
++    let (mut dev, _) = device([
++        bytes(&[LOG, b"\r"].concat()),
++        bytes(b"\n\t"),
++        bytes(&[&b" "[..], second, b"\r\n"].concat()),
++        Input::Error(ErrorKind::TimedOut),
++    ]);
++    assert_eq!(
++        firehose_read_welcome(&mut dev).unwrap(),
++        ["hello", "second"]
++    );
++}
++
++#[test]
++fn welcome_whitespace_does_not_hide_partial_xml_or_invalid_bytes() {
++    for tail in [&b"\n<data><log"[..], &b" \t\x0b"[..], &b"\r\n\x0c"[..]] {
++        let (mut dev, _) = device([
++            bytes(&[LOG, tail].concat()),
++            Input::Error(ErrorKind::TimedOut),
++        ]);
++        assert_eq!(
++            io_kind(&firehose_read_welcome(&mut dev).unwrap_err()),
++            ErrorKind::TimedOut
++        );
++    }
++}
++
++#[test]
++fn command_logs_with_trailing_whitespace_still_require_a_response() {
++    let (mut dev, _) = device([
++        bytes(&[LOG, b"\r\n"].concat()),
++        Input::Error(ErrorKind::TimedOut),
++    ]);
++    assert_eq!(
++        io_kind(&firehose_read(&mut dev, firehose_parser_ack_nak).unwrap_err()),
++        ErrorKind::TimedOut
++    );
++}
++
++#[test]
++fn storage_read_preserves_raw_leading_whitespace() {
++    let raw = b" \t\r\nDATA";
++    let (mut dev, _) = device([bytes(&[ACK, raw, ACK].concat())]);
++    let mut out = Vec::new();
++    firehose_read_storage(&mut dev, &mut out, 2, 0, 0, 0).unwrap();
++    assert_eq!(out, raw);
++}
++
++#[test]
++fn response_eof_malformed_and_oversized_xml_are_errors() {
++    for input in [
++        Input::Eof,
++        bytes(b"<data><response value=\"INVALID\"/></data>"),
++        bytes(b"<data><bad/></data>"),
++        bytes(b"<data></data>"),
++        bytes(b"<data><response value=\"ACK\"/><response value=\"ACK\"/></data>"),
++    ] {
++        let (mut dev, _) = device([input]);
++        assert!(firehose_read(&mut dev, firehose_parser_ack_nak).is_err());
++    }
++    let (mut dev, _) = device([bytes(b"<data>xxxxxxxxxx")]);
++    dev.fh_cfg.xml_buf_size = 8;
++    assert!(firehose_read(&mut dev, firehose_parser_ack_nak).is_err());
++}
++
++#[test]
++fn restart_and_retry_requests_never_send_commands() {
++    for hint in ["AttemptRestart", "AttemptRetry"] {
++        let xml = format!("<data><response value=\"NAK\" {hint}=\"1\"/></data>");
++        let (mut dev, trace) = device([bytes(xml.as_bytes())]);
++        assert_eq!(
++            firehose_read(&mut dev, firehose_parser_ack_nak).unwrap(),
++            FirehoseStatus::Nak
++        );
++        drop(dev);
++        assert!(trace.lock().unwrap().writes.is_empty());
++    }
++}
++
++#[test]
++fn storage_info_returns_logs_and_attributes_and_rejects_nak() {
++    let (mut dev, _) = device([
++        bytes(LOG),
++        bytes(b"<data><response value=\"ACK\" sectors=\"32\"/></data>"),
++    ]);
++    let info = firehose_get_storage_info(&mut dev, 2).unwrap();
++    assert_eq!(info.logs, ["hello"]);
++    assert_eq!(info.attributes["sectors"], "32");
++    let (mut dev, trace) = device([bytes(LOG), bytes(NAK)]);
++    assert!(firehose_get_storage_info(&mut dev, 0).is_err());
++    drop(dev);
++    assert_no_reset(&trace);
++}
++
++const CONFIG: &[u8] = b"<data><response value=\"ACK\" Version=\"1\" MinVersionSupported=\"1\" MaxPayloadSizeToTargetInBytesSupported=\"16\" MaxPayloadSizeToTargetInBytes=\"8\" MaxXMLSizeInBytes=\"4096\"/></data>";
++
++#[test]
++fn configure_defaults_to_real_writes_and_never_reconfigures_implicitly() {
++    let (mut dev, trace) = device([bytes(CONFIG)]);
++    firehose_configure(&mut dev, false).unwrap();
++    assert_eq!(
++        firehose_read(&mut dev, firehose_parser_configure_response).unwrap(),
++        FirehoseStatus::Ack
++    );
++    assert_eq!(dev.fh_cfg.send_buffer_size, 8);
++    let record = trace.lock().unwrap();
++    assert_eq!(record.writes.len(), 1);
++    assert!(String::from_utf8_lossy(&record.accepted).contains("SkipWrite=\"0\""));
++}
++
++#[test]
++fn configure_nak_and_invalid_attributes_never_reset_or_replace_configuration() {
++    let (mut dev, trace) = device([bytes(NAK)]);
++    assert_eq!(
++        firehose_read(&mut dev, firehose_parser_configure_response).unwrap(),
++        FirehoseStatus::Nak
++    );
++    drop(dev);
++    assert!(trace.lock().unwrap().writes.is_empty());
++    let config = String::from_utf8(CONFIG.to_vec()).unwrap();
++    for xml in [
++        config.replace("value=\"ACK\"", "value=\"bad\""),
++        config.replace("InBytes=\"8\"", "InBytes=\"0\""),
++        config.replace("InBytes=\"8\"", "InBytes=\"3\""),
++        config.replace("InBytes=\"8\"", "InBytes=\"32\""),
++        config.replace("InBytes=\"4096\"", "InBytes=\"0\""),
++        config.replace("InBytes=\"8\"", "InBytes=\"bad\""),
++        config.replace("MinVersionSupported=\"1\"", "MinVersionSupported=\"2\""),
++    ] {
++        let (mut dev, trace) = device([bytes(xml.as_bytes())]);
++        assert!(firehose_read(&mut dev, firehose_parser_configure_response).is_err());
++        assert_eq!(dev.fh_cfg.send_buffer_size, 8);
++        assert_eq!(dev.fh_cfg.xml_buf_size, 4096);
++        drop(dev);
++        assert!(trace.lock().unwrap().writes.is_empty());
++    }
++}
++
++#[test]
++fn invalid_configure_sizes_fail_before_send() {
++    let (mut dev, trace) = device([]);
++    dev.fh_cfg.storage_sector_size = 0;
++    assert!(firehose_configure(&mut dev, false).is_err());
++    assert!(trace.lock().unwrap().writes.is_empty());
++}
++
++#[test]
++fn patch_and_bootable_expose_rejected_and_unknown_confirmation() {
++    for patch in [true, false] {
++        for (response, expected) in [
++            (bytes(NAK), MutationConfirmation::Rejected),
++            (
++                Input::Error(ErrorKind::TimedOut),
++                MutationConfirmation::Unknown,
++            ),
++        ] {
++            let (mut dev, trace) = device([response]);
++            let error = if patch {
++                firehose_patch(&mut dev, 0, 0, 0, 4, "NUM_DISK_SECTORS-1.", "CRC32(0,1)")
++                    .unwrap_err()
++            } else {
++                firehose_set_bootable(&mut dev, 0).unwrap_err()
++            };
++            assert_eq!(error.confirmation, expected);
++            drop(dev);
++            assert_eq!(trace.lock().unwrap().writes.len(), 1);
++            assert!(!String::from_utf8_lossy(&trace.lock().unwrap().accepted).contains("<power"));
++        }
++    }
++}
++
++#[test]
++fn explicit_reset_sends_exactly_once_and_requires_ack() {
++    for (response, expected) in [
++        (bytes(ACK), None),
++        (bytes(NAK), Some(MutationConfirmation::Rejected)),
++        (
++            Input::Error(ErrorKind::TimedOut),
++            Some(MutationConfirmation::Unknown),
++        ),
++    ] {
++        let (mut dev, trace) = device([response]);
++        let result = firehose_reset(&mut dev, &FirehoseResetMode::Reset, 0);
++        assert_eq!(result.err().map(|e| e.confirmation), expected);
++        drop(dev);
++        assert_eq!(trace.lock().unwrap().writes.len(), 1);
++        assert_eq!(
++            String::from_utf8_lossy(&trace.lock().unwrap().accepted)
++                .matches("<power ")
++                .count(),
++            1
++        );
++    }
++}
++
++#[test]
++fn hinted_program_nak_is_still_rejected() {
++    for attributes in [
++        "AttemptRestart=\"1\"",
++        "AttemptRetry=\"1\"",
++        "rawmode=\"true\"",
++    ] {
++        for initial in [true, false] {
++            let xml = format!("<data><response value=\"NAK\" {attributes}/></data>");
++            let input = if initial {
++                vec![bytes(xml.as_bytes())]
++            } else {
++                vec![bytes(ACK), bytes(xml.as_bytes())]
++            };
++            let (mut dev, trace) = device(input);
++            assert_eq!(
++                program(&mut dev).unwrap_err().confirmation,
++                MutationConfirmation::Rejected
++            );
++            drop(dev);
++            one_program_no_followup(&trace);
++            assert_eq!(
++                trace.lock().unwrap().writes.len(),
++                if initial { 1 } else { 2 }
++            );
++        }
++    }
++}
++
++#[test]
++fn quiet_output_probe() {
++    if std::env::var_os("QDL_TEST_QUIET_CHILD").is_none() {
++        return;
++    }
++    use std::io::Write;
++    std::io::stdout().write_all(b"QDL_QUIET_BEGIN\n").unwrap();
++    let (mut dev, _) = device([
++        bytes(CONFIG),
++        bytes(LOG),
++        bytes(ACK),
++        bytes(ACK),
++        bytes(ACK),
++        bytes(b"abcdefgh"),
++        bytes(ACK),
++        bytes(LOG),
++        bytes(ACK),
++    ]);
++    dev.fh_cfg.verbose_firehose = true;
++    dev.fh_cfg.skip_firehose_log = false;
++    firehose_configure(&mut dev, false).unwrap();
++    firehose_read(&mut dev, firehose_parser_configure_response).unwrap();
++    program(&mut dev).unwrap();
++    firehose_read_storage(&mut dev, &mut Vec::new(), 2, 0, 0, 0).unwrap();
++    firehose_get_storage_info(&mut dev, 0).unwrap();
++    let done: Vec<_> = [6u32, 12, 1]
++        .into_iter()
++        .flat_map(u32::to_le_bytes)
++        .collect();
++    let (mut dev, _) = device([bytes(&done)]);
++    qdl::sahara::sahara_run(
++        &mut dev,
++        qdl::sahara::SaharaMode::WaitingForImage,
++        None,
++        &mut [Some(vec![1])],
++        vec![],
++        true,
++    )
++    .unwrap();
++    std::io::stdout().write_all(b"QDL_QUIET_END\n").unwrap();
++}
++
++#[test]
++fn quiet_loader_and_storage_paths_emit_no_output() {
++    let output = std::process::Command::new(std::env::current_exe().unwrap())
++        .args(["--exact", "quiet_output_probe", "--nocapture"])
++        .env("QDL_TEST_QUIET_CHILD", "1")
++        .output()
++        .unwrap();
++    assert!(
++        output.status.success(),
++        "{}\n{}",
++        String::from_utf8_lossy(&output.stdout),
++        String::from_utf8_lossy(&output.stderr)
++    );
++    let stdout = String::from_utf8(output.stdout).unwrap();
++    let between = stdout
++        .split_once("QDL_QUIET_BEGIN\n")
++        .unwrap()
++        .1
++        .split_once("QDL_QUIET_END\n")
++        .unwrap()
++        .0;
++    assert!(between.is_empty(), "unexpected library stdout: {between:?}");
++    assert!(
++        output.stderr.is_empty(),
++        "unexpected library stderr: {:?}",
++        output.stderr
++    );
++}
+diff --git a/qdl/tests/sahara_transfer.rs b/qdl/tests/sahara_transfer.rs
+new file mode 100644
+index 0000000..5374423
+--- /dev/null
++++ b/qdl/tests/sahara_transfer.rs
+@@ -0,0 +1,186 @@
++// SPDX-License-Identifier: BSD-3-Clause
++mod support;
++
++use qdl::{
++    sahara::{SaharaMode, sahara_run, sahara_send_img_to_device},
++    types::QdlDevice,
++};
++use std::io::ErrorKind;
++use support::*;
++
++fn packet(command: u32, words: &[u32]) -> Vec<u8> {
++    [command, 8 + words.len() as u32 * 4]
++        .into_iter()
++        .chain(words.iter().copied())
++        .flat_map(u32::to_le_bytes)
++        .collect()
++}
++
++fn run(dev: &mut QdlDevice<ScriptedIo>, images: &mut [Option<Vec<u8>>]) -> anyhow::Result<Vec<u8>> {
++    sahara_run(
++        dev,
++        SaharaMode::WaitingForImage,
++        None,
++        images,
++        vec![],
++        false,
++    )
++}
++
++#[test]
++fn image_range_overflow_out_of_bounds_and_empty_requests_do_not_write() {
++    for (offset, len) in [(u64::MAX, 1), (1, u64::MAX), (3, 2), (5, 0), (0, 0)] {
++        let (mut dev, trace) = device([]);
++        assert!(
++            sahara_send_img_to_device(&mut dev, &mut [Some(b"abcd".to_vec())], 13, offset, len)
++                .is_err()
++        );
++        drop(dev);
++        assert!(trace.lock().unwrap().writes.is_empty());
++    }
++}
++
++#[test]
++fn missing_image_id_is_an_error_without_writes() {
++    for index in [1, u64::MAX] {
++        let (mut dev, trace) = device([]);
++        assert!(
++            sahara_send_img_to_device(&mut dev, &mut [Some(vec![1]), None], index, 0, 1).is_err()
++        );
++        assert!(trace.lock().unwrap().writes.is_empty());
++    }
++}
++
++#[test]
++fn requested_range_and_single_image_id_fallback_are_preserved() {
++    let (mut dev, trace) = device([]);
++    dev.rw.output.extend([Output::Accept(1), Output::Accept(1)]);
++    let n = sahara_send_img_to_device(&mut dev, &mut [Some(b"abcdef".to_vec())], 13, 1, 3).unwrap();
++    assert_eq!(n, 3);
++    assert_eq!(trace.lock().unwrap().accepted, b"bcd");
++    assert_eq!(trace.lock().unwrap().flushes, 1);
++}
++
++#[test]
++fn image_write_zero_error_and_flush_error_propagate() {
++    for case in 0..3 {
++        let (mut dev, trace) = device([]);
++        match case {
++            0 => dev.rw.output.push_back(Output::Accept(0)),
++            1 => dev
++                .rw
++                .output
++                .push_back(Output::Error(ErrorKind::BrokenPipe)),
++            _ => dev.rw.flush_error = Some(ErrorKind::TimedOut),
++        }
++        let error = sahara_send_img_to_device(&mut dev, &mut [Some(b"abcd".to_vec())], 13, 0, 4)
++            .unwrap_err();
++        assert!(matches!(
++            error.downcast_ref::<std::io::Error>().unwrap().kind(),
++            ErrorKind::WriteZero | ErrorKind::BrokenPipe | ErrorKind::TimedOut
++        ));
++        drop(dev);
++        assert_no_reset(&trace);
++        assert_eq!(trace.lock().unwrap().writes.len(), 1);
++    }
++}
++
++#[test]
++fn fragmented_handshake_and_coalesced_image_requests_complete() {
++    let hello = packet(1, &[2, 1, 4096, 0, 0, 0, 0, 0, 0, 0]);
++    let request = packet(3, &[13, 1, 3]);
++    let eoi = packet(4, &[13, 0]);
++    let done = packet(6, &[1]);
++    let inbound = [hello, request, eoi, done].concat();
++    for chunk_size in [1, 3, 7, 4096] {
++        let (mut dev, trace) = device(inbound.chunks(chunk_size).map(bytes));
++        run(&mut dev, &mut [Some(b"abcdef".to_vec())]).unwrap();
++        drop(dev);
++        let record = trace.lock().unwrap();
++        assert_eq!(record.writes.len(), 3);
++        assert_eq!(&record.writes[0][..8], &packet(2, &[0; 10])[..8]);
++        assert_eq!(&record.writes[1], b"bcd");
++        assert_eq!(&record.writes[2], &packet(5, &[]));
++    }
++}
++
++#[test]
++fn read64_request_overflow_is_rejected_in_the_actual_state_machine() {
++    let (mut dev, trace) = device([bytes(&packet(0x12, &[13, 0, u32::MAX, u32::MAX, 1, 0]))]);
++    assert!(run(&mut dev, &mut [Some(vec![0; 8])]).is_err());
++    drop(dev);
++    assert!(trace.lock().unwrap().writes.is_empty());
++}
++
++#[test]
++fn read32_and_read64_out_of_bounds_are_errors() {
++    for request in [packet(3, &[13, 6, 3]), packet(0x12, &[13, 0, 6, 0, 3, 0])] {
++        let (mut dev, trace) = device([bytes(&request)]);
++        assert!(run(&mut dev, &mut [Some(vec![0; 8])]).is_err());
++        assert!(trace.lock().unwrap().writes.is_empty());
++    }
++}
++
++#[test]
++fn truncated_packets_fail_without_recovery_commands() {
++    let request = packet(3, &[13, 0, 4]);
++    for len in 0..request.len() {
++        let mut input = Vec::new();
++        if len > 0 {
++            input.push(bytes(&request[..len]));
++        }
++        input.push(Input::Eof);
++        let (mut dev, trace) = device(input);
++        let error = run(&mut dev, &mut [Some(vec![0; 8])]).unwrap_err();
++        assert_eq!(
++            error.downcast_ref::<std::io::Error>().unwrap().kind(),
++            ErrorKind::UnexpectedEof
++        );
++        drop(dev);
++        assert!(trace.lock().unwrap().writes.is_empty());
++    }
++}
++
++#[test]
++fn oversized_fixed_packet_bodies_return_errors_instead_of_panicking() {
++    for (command, words) in [
++        (1, 10),
++        (3, 3),
++        (4, 2),
++        (6, 1),
++        (8, 0),
++        (0xb, 0),
++        (0xe, 2),
++        (0x10, 4),
++        (0x12, 6),
++    ] {
++        let (mut dev, trace) = device([bytes(&packet(command, &vec![0; words + 1]))]);
++        assert!(run(&mut dev, &mut [Some(vec![0; 8])]).is_err());
++        assert!(trace.lock().unwrap().writes.is_empty());
++    }
++}
++
++#[test]
++fn malformed_header_and_unknown_command_are_errors() {
++    for header in [[3u32, 7], [3, 4097], [u32::MAX, 8]] {
++        let input: Vec<_> = header.into_iter().flat_map(u32::to_le_bytes).collect();
++        let (mut dev, trace) = device([bytes(&input)]);
++        assert!(run(&mut dev, &mut [Some(vec![0; 8])]).is_err());
++        assert!(trace.lock().unwrap().writes.is_empty());
++    }
++}
++
++#[test]
++fn failed_end_of_image_does_not_send_done_or_reset() {
++    let (mut dev, trace) = device([bytes(&packet(4, &[13, 1]))]);
++    assert!(run(&mut dev, &mut [Some(vec![0; 8])]).is_err());
++    drop(dev);
++    assert!(trace.lock().unwrap().writes.is_empty());
++}
++
++#[test]
++fn invalid_completion_status_never_reports_loader_success() {
++    let (mut dev, trace) = device([bytes(&packet(6, &[2]))]);
++    assert!(run(&mut dev, &mut [Some(vec![0; 8])]).is_err());
++    assert!(trace.lock().unwrap().writes.is_empty());
++}
+diff --git a/qdl/tests/selection.rs b/qdl/tests/selection.rs
+new file mode 100644
+index 0000000..f3893bd
+--- /dev/null
++++ b/qdl/tests/selection.rs
+@@ -0,0 +1,71 @@
++// SPDX-License-Identifier: BSD-3-Clause
++use qdl::select_and_open;
++use std::cell::Cell;
++
++#[test]
++fn missing_selection_never_opens_even_a_single_candidate() {
++    for keys in [vec![], vec!["a".into()], vec!["a".into(), "b".into()]] {
++        let calls = Cell::new(0);
++        assert!(
++            select_and_open(&keys, None, |_| {
++                calls.set(calls.get() + 1);
++                Ok(())
++            })
++            .is_err()
++        );
++        assert_eq!(calls.get(), 0);
++    }
++}
++
++#[test]
++fn no_match_or_duplicate_match_never_opens() {
++    for keys in [
++        vec![],
++        vec!["other".into()],
++        vec!["target".into(), "target".into()],
++    ] {
++        let calls = Cell::new(0);
++        assert!(
++            select_and_open(&keys, Some("target"), |_| {
++                calls.set(calls.get() + 1);
++                Ok(())
++            })
++            .is_err()
++        );
++        assert_eq!(calls.get(), 0);
++    }
++}
++
++#[test]
++fn exact_match_opens_only_the_requested_index_once() {
++    let keys = vec!["usb:1".into(), "usb:2".into(), "usb:3".into()];
++    let calls = Cell::new(0);
++    let result = select_and_open(&keys, Some("usb:2"), |index| {
++        calls.set(calls.get() + 1);
++        Ok(index)
++    })
++    .unwrap();
++    assert_eq!(result, 1);
++    assert_eq!(calls.get(), 1);
++}
++
++#[test]
++fn matching_is_exact_and_open_failure_is_preserved() {
++    let keys = vec!["COM4".into()];
++    for requested in ["com4", "COM", " COM4", ""] {
++        assert!(
++            select_and_open(&keys, Some(requested), |_| -> anyhow::Result<()> {
++                panic!("unexpected open")
++            })
++            .is_err()
++        );
++    }
++    let error = select_and_open(&keys, Some("COM4"), |_| -> anyhow::Result<()> {
++        Err(std::io::Error::from(std::io::ErrorKind::PermissionDenied).into())
++    })
++    .unwrap_err();
++    assert_eq!(
++        error.downcast_ref::<std::io::Error>().unwrap().kind(),
++        std::io::ErrorKind::PermissionDenied
++    );
++}
+diff --git a/qdl/tests/support/mod.rs b/qdl/tests/support/mod.rs
+new file mode 100644
+index 0000000..6de479b
+--- /dev/null
++++ b/qdl/tests/support/mod.rs
+@@ -0,0 +1,150 @@
++// SPDX-License-Identifier: BSD-3-Clause
++#![allow(dead_code)] // Shared by independent integration-test binaries.
++
++use std::{
++    collections::VecDeque,
++    io::{self, BufRead, ErrorKind, Read, Write},
++    sync::{Arc, Mutex},
++};
++
++use qdl::types::{FirehoseConfiguration, QdlBackend, QdlDevice, QdlReadWrite};
++
++pub const ACK: &[u8] = b"<data><response value=\"ACK\"/></data>";
++pub const NAK: &[u8] = b"<data><response value=\"NAK\"/></data>";
++pub const LOG: &[u8] = b"<data><log value=\"hello\"/></data>";
++
++pub enum Input {
++    Bytes(Vec<u8>),
++    Eof,
++    Error(ErrorKind),
++}
++
++pub fn bytes(value: &[u8]) -> Input {
++    Input::Bytes(value.to_vec())
++}
++
++pub enum Output {
++    Accept(usize),
++    Error(ErrorKind),
++}
++
++#[derive(Default, Debug)]
++pub struct Record {
++    pub accepted: Vec<u8>,
++    pub writes: Vec<Vec<u8>>,
++    pub flushes: usize,
++}
++
++pub type Trace = Arc<Mutex<Record>>;
++
++pub struct ScriptedIo {
++    input: VecDeque<Input>,
++    pending: Vec<u8>,
++    pos: usize,
++    pub output: VecDeque<Output>,
++    pub flush_error: Option<ErrorKind>,
++    pub trace: Trace,
++}
++
++impl ScriptedIo {
++    pub fn new(input: impl IntoIterator<Item = Input>) -> Self {
++        Self {
++            input: input.into_iter().collect(),
++            pending: Vec::new(),
++            pos: 0,
++            output: VecDeque::new(),
++            flush_error: None,
++            trace: Trace::default(),
++        }
++    }
++}
++
++impl BufRead for ScriptedIo {
++    fn fill_buf(&mut self) -> io::Result<&[u8]> {
++        if self.pos == self.pending.len() {
++            self.pending.clear();
++            self.pos = 0;
++            match self.input.pop_front().expect("unscripted read") {
++                Input::Bytes(data) => {
++                    assert!(!data.is_empty(), "use explicit EOF for zero progress");
++                    self.pending = data;
++                }
++                Input::Eof => return Ok(&[]),
++                Input::Error(kind) => return Err(io::Error::new(kind, "scripted read failure")),
++            }
++        }
++        Ok(&self.pending[self.pos..])
++    }
++
++    fn consume(&mut self, amt: usize) {
++        assert!(amt <= self.pending.len() - self.pos);
++        self.pos += amt;
++    }
++}
++
++impl Read for ScriptedIo {
++    fn read(&mut self, out: &mut [u8]) -> io::Result<usize> {
++        if out.is_empty() {
++            return Ok(0);
++        }
++        let available = self.fill_buf()?;
++        let len = out.len().min(available.len());
++        out[..len].copy_from_slice(&available[..len]);
++        self.consume(len);
++        Ok(len)
++    }
++}
++
++impl Write for ScriptedIo {
++    fn write(&mut self, data: &[u8]) -> io::Result<usize> {
++        let mut record = self.trace.lock().unwrap();
++        record.writes.push(data.to_vec());
++        let len = match self.output.pop_front() {
++            Some(Output::Accept(limit)) => data.len().min(limit),
++            Some(Output::Error(kind)) => {
++                return Err(io::Error::new(kind, "scripted write failure"));
++            }
++            None => data.len(),
++        };
++        record.accepted.extend_from_slice(&data[..len]);
++        Ok(len)
++    }
++
++    fn flush(&mut self) -> io::Result<()> {
++        self.trace.lock().unwrap().flushes += 1;
++        match self.flush_error.take() {
++            Some(kind) => Err(io::Error::new(kind, "scripted flush failure")),
++            None => Ok(()),
++        }
++    }
++}
++
++impl QdlReadWrite for ScriptedIo {}
++
++pub fn device(input: impl IntoIterator<Item = Input>) -> (QdlDevice<ScriptedIo>, Trace) {
++    let io = ScriptedIo::new(input);
++    let trace = io.trace.clone();
++    (
++        QdlDevice {
++            rw: Box::new(io),
++            fh_cfg: FirehoseConfiguration {
++                storage_sector_size: 4,
++                send_buffer_size: 8,
++                recv_buffer_size: 8,
++                backend: QdlBackend::Serial,
++                quiet: true,
++                ..Default::default()
++            },
++            reset_on_drop: false,
++        },
++        trace,
++    )
++}
++
++pub fn assert_no_reset(trace: &Trace) {
++    let record = trace.lock().unwrap();
++    let data = String::from_utf8_lossy(&record.accepted);
++    for forbidden in ["<power", "<patch", "<setbootablestoragedrive"] {
++        assert!(!data.contains(forbidden), "unexpected command: {data}");
++    }
++}

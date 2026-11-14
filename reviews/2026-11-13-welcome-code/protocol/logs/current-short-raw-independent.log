@@ -1,0 +1,24 @@
+$ cargo test -p qdl --test protocol_short_raw --all-features --locked --offline -- --nocapture
+   Compiling qdl v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-13-welcome-code/protocol/current/qdl)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.34s
+     Running tests/protocol_short_raw.rs (target/debug/deps/protocol_short_raw-6347508985010566)
+
+running 2 tests
+split=1; result=Ok(()); out=[49, 50, 51, 52, 53, 54, 55, 13]
+
+thread 'protocol_short_raw_declared_final_ack_must_fail' (7841046) panicked at qdl/tests/protocol_short_raw.rs:19:9:
+seven source bytes plus CRLF must not complete an eight-byte read
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+test protocol_short_raw_undeclared_final_ack_is_preexisting_ambiguity ... ok
+test protocol_short_raw_declared_final_ack_must_fail ... FAILED
+
+failures:
+
+failures:
+    protocol_short_raw_declared_final_ack_must_fail
+
+test result: FAILED. 1 passed; 1 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p qdl --test protocol_short_raw`
+
+exit=101; elapsed_seconds=3.555

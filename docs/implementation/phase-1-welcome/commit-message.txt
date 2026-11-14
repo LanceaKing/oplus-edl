@@ -1,0 +1,11 @@
+Fix XML response handoff after the welcome end marker
+
+Skip XML framing whitespace before each document so CRLF left by the
+welcome end marker does not invalidate the next XML declaration. Stop
+at </data>, preserving raw bytes after an ACK and mandatory command ACKs.
+
+Add five offline regressions for fragmented handoff, raw whitespace,
+missing responses, malformed XML and receive limits. Formatting, Clippy,
+all 81 workspace tests and build passed; independent review completed.
+
+Assisted-by: Codex:gpt-6

@@ -1,0 +1,21 @@
+   Compiling qdl-rs v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-13-phase1-repair/coverage_scope/scratch/source/cli)
+   Compiling qdl v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-13-phase1-repair/coverage_scope/scratch/source/qdl)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.41s
+     Running tests/review_boundary_probes.rs (target/debug/deps/review_boundary_probes-93999c867d366ea0)
+
+running 3 tests
+test welcome_single_byte_fragments_preserve_whitespace_boundary ... ok
+test fragmented_read_raw_xml_whitespace_is_not_discarded ... ok
+test read_rejection_matrix_is_conservative_under_fragmentation ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/review_input_boundaries.rs (target/debug/deps/review_input_boundaries-7f4e42f6c5088cdb)
+
+running 3 tests
+test zero_stream_empty_reads_do_not_change_remaining_length ... ok
+test truncation_inside_first_source_chunk_remains_an_error ... ok
+test selected_ranges_and_padding_match_small_exhaustive_matrix ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.71s
+

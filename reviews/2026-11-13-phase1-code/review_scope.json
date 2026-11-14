@@ -1,0 +1,55 @@
+{
+  "baseline": "75fe2f7e42546a1d75969040378d4616419a9dcf",
+  "patch_sha256": "8e00c89ae3ca79342c7aec7dc8db6a42a616c082943206d94123c0309216e28a",
+  "patch_lines": 2820,
+  "design_sha256": "b18cecd764799721c7cb51ac1a053a51a395df9c16c31d982dd776b910316d57",
+  "source_files": {
+    "AGENTS.md": "bc8d798772131df12722fa66f3fbf09b3b90ad9cb09dcc0893d8b9f22a48df39",
+    "README.md": "01ba78f18c6db7b431765dc63c9ed42a542472f396c1b1a1029a019e9649e185",
+    "cli/src/main.rs": "711f5cb3d54a438c50e96050d90e64806e3afbd7915afead18cb41040b85887e",
+    "cli/src/programfile.rs": "6530ef49986a53ddc32af86353988ce4084ea642e82def2b605accf38f94a878",
+    "qdl/src/lib.rs": "1ba150ea93fb721e7567ed388424c01b8d82a3852abaf314fe7ca9186b389891",
+    "qdl/src/parsers.rs": "3befc80d3de34195bc9c240455b5f86e3090ee960d0c6621c09d078cdebb2686",
+    "qdl/src/sahara.rs": "c4f20e109606ddf65f05829d8f4e0826b0cdda8273948fa9e78356ec8acc4b22",
+    "qdl/src/serial.rs": "8fbe2d1f732e9e4a83ab8adc880cc8d32c8391a52bf51c1b3a452412e3444a0d",
+    "qdl/src/types.rs": "3dc50a46ebb634f7684090b12a74615a619ad0ac47a8e019fe2729502d6ce981",
+    "qdl/src/usb.rs": "a2e2e0100c30153e153ee05706a9a82e5728b305cd5d37ccf89933dea3b65649",
+    "qdl/tests/firehose_io.rs": "71384b6820c8a0a3d781f3451f5414b8f5e7c09e87a0a5c9701f46de1be1db40",
+    "qdl/tests/sahara_transfer.rs": "a6d67c64fc5ab3e9ca14bcbacfd0f5669487d73d546e8afa28acb955f0c687b5",
+    "qdl/tests/selection.rs": "1a96084279d15cf0556e422cb2ad56aa5d7400c9c017f91754470d34407cd29b",
+    "qdl/tests/support/mod.rs": "eecc9348eae5d15651dc8f786af65b7fd53f737417199c71f83e3de232caaf15"
+  },
+  "mode": "one independent code review round; three fresh-context reviewers; no fixes",
+  "reviewers": [
+    "firehose",
+    "backend_sahara",
+    "coverage_scope"
+  ],
+  "constraints": [
+    "no commit",
+    "no push",
+    "no device operations"
+  ],
+  "reviewer_results": {
+    "firehose": "completed",
+    "backend_sahara": "completed",
+    "coverage_scope": "completed"
+  },
+  "decision": "changes requested: 3 P2 findings; no scope expansion established",
+  "findings": {
+    "R1": [
+      "FH-01",
+      "BS-02",
+      "COV-01"
+    ],
+    "R2": [
+      "FH-02"
+    ],
+    "R3": [
+      "FH-03",
+      "BS-01",
+      "COV-02"
+    ]
+  },
+  "worktree_and_snapshot_unchanged": true
+}

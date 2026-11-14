@@ -1,0 +1,40 @@
+$ cargo test -p qdl --all-features --locked --test review_probes -- --nocapture
+   Compiling qdl v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-13-phase1-code/coordinator/probe-source/qdl)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.27s
+     Running tests/review_probes.rs (target/debug/deps/review_probes-c411c2a453990add)
+
+running 5 tests
+
+thread 'restart_request_should_not_be_reported_as_safe_read_rejection' (7145265) panicked at qdl/tests/review_probes.rs:26:5:
+restart-required session was classified as ordinary ReadRejected
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'rawmode_nak_should_not_be_reported_as_safe_read_rejection' (7145264) panicked at qdl/tests/review_probes.rs:42:5:
+raw-mode session was classified as ordinary ReadRejected
+
+thread 'program_final_ack_still_in_raw_mode_should_not_confirm_completion' (7145263) panicked at qdl/tests/review_probes.rs:19:5:
+program returned success while final response still declares rawmode=true
+
+thread 'welcome_trailing_xml_whitespace_should_allow_idle_timeout' (7145266) panicked at qdl/tests/review_probes.rs:11:5:
+complete XML plus valid trailing whitespace was rejected: Err(scripted read failure)
+
+thread 'initial_ack_without_raw_mode_should_not_send_program_data' (7145262) panicked at qdl/tests/review_probes.rs:34:5:
+program sent 2 writes without raw-mode acceptance
+test rawmode_nak_should_not_be_reported_as_safe_read_rejection ... FAILED
+test restart_request_should_not_be_reported_as_safe_read_rejection ... FAILED
+test welcome_trailing_xml_whitespace_should_allow_idle_timeout ... FAILED
+test program_final_ack_still_in_raw_mode_should_not_confirm_completion ... FAILED
+test initial_ack_without_raw_mode_should_not_send_program_data ... FAILED
+
+failures:
+
+failures:
+    initial_ack_without_raw_mode_should_not_send_program_data
+    program_final_ack_still_in_raw_mode_should_not_confirm_completion
+    rawmode_nak_should_not_be_reported_as_safe_read_rejection
+    restart_request_should_not_be_reported_as_safe_read_rejection
+    welcome_trailing_xml_whitespace_should_allow_idle_timeout
+
+test result: FAILED. 0 passed; 5 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `-p qdl --test review_probes`

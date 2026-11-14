@@ -1,0 +1,52 @@
+{
+  "host": "aarch64-apple-darwin",
+  "target": "aarch64-unknown-linux-musl",
+  "linker": "Rust toolchain bundled rust-lld",
+  "native_execution": false,
+  "checks": [
+    {
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--locked",
+        "--offline",
+        "--target",
+        "aarch64-unknown-linux-musl",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "build",
+        "--workspace",
+        "--all-features",
+        "--locked",
+        "--offline",
+        "--target",
+        "aarch64-unknown-linux-musl"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--locked",
+        "--offline",
+        "--target",
+        "aarch64-unknown-linux-musl",
+        "--no-run"
+      ],
+      "exit_code": 0
+    }
+  ]
+}

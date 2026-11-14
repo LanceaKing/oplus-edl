@@ -1,0 +1,13 @@
+$ git worktree add --detach /var/folders/yy/zg137m2x6ml7csnxd3mvy5y00000gn/T/qdlrs-phase1-dyreod8r/verify 75fe2f7e42546a1d75969040378d4616419a9dcf
+Preparing worktree (detached HEAD 75fe2f7)
+HEAD is now at 75fe2f7 Merge pull request #54 from qualcomm/topic/usb_phys
+
+$ git apply --check /Users/Apple/Documents/oplus-edl/docs/implementation/phase-1/qdlrs.patch
+
+$ git apply /Users/Apple/Documents/oplus-edl/docs/implementation/phase-1/qdlrs.patch
+
+$ git diff --check
+
+PASS: all 14 changed files match the tested working-tree hashes.
+
+$ git worktree remove --force /var/folders/yy/zg137m2x6ml7csnxd3mvy5y00000gn/T/qdlrs-phase1-dyreod8r/verify

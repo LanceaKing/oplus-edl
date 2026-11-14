@@ -1,0 +1,69 @@
+   Compiling oplus-edl v0.1.0 (/Users/Apple/Documents/oplus-edl)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.88s
+     Running unittests src/lib.rs (target/debug/deps/oplus_edl-d3e046ec8c8001b6)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/oplus_edl-2022177d691eb070)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cli.rs (target/debug/deps/cli-eff94015fafe82da)
+
+running 8 tests
+test selection_requires_unique_explicit_match_without_opening ... ok
+test typed_mutation_failures_map_without_error_string_matching ... ok
+test result_priority_retains_all_facts_and_decimal_byte_strings ... ok
+test media_defaults_are_explicit_and_writes_are_not_skipped ... ok
+test removed_features_are_not_accepted ... ok
+test clap_contract_and_five_entries ... ok
+test unavailable_workflows_exit_before_hardware_or_loader_access ... ok
+test invalid_inputs_and_phase_boundary_do_not_open_hardware ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.56s
+
+     Running tests/device.rs (target/debug/deps/device-0df2591e51dddf09)
+
+running 4 tests
+test scripted_read_and_bufread_share_position ... ok
+test handshake_failure_does_not_configure_or_reset ... ok
+test configuration_rejects_nak_conflict_and_malformed_sector_without_reset ... ok
+test initialize_real_protocol_with_fragmented_script_only ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/storage.rs (target/debug/deps/storage-405236b215c7d93d)
+
+running 19 tests
+test invalid_program_ranges_do_not_send_anything ... ok
+test output_short_writes_continue_but_zero_and_errors_fail ... ok
+test failed_reads_retain_partial_and_never_publish ... ok
+test changed_gpt_header_is_not_trusted ... ok
+test program_final_ack_is_required ... ok
+test program_pads_only_the_sector_tail_and_handles_short_reads_and_serial_writes ... ok
+test safe_directory_names ... ok
+test duplicate_exact_names_are_not_selected ... ok
+test truncated_input_is_unknown_and_not_silently_padded ... ok
+test usb_short_completion_and_input_error_do_not_report_success ... ok
+test gpt_and_partition_read_at_both_sector_sizes ... ok
+test read_eof_timeout_and_initial_nak_preserve_partial_counts ... ok
+test overwrite_requires_explicit_flag_and_replaces_only_after_success ... ok
+test successful_read_publishes_and_existing_files_are_not_truncated ... ok
+test invalid_header_is_rejected_before_second_read ... ok
+test backup_gpt_failure_stops_before_partition_and_preserves_completed_item ... ok
+test corrupted_entries_and_out_of_range_partitions_are_rejected ... ok
+test backup_missing_or_case_conflicting_partition_never_reads_payload ... ok
+test complete_backup_captures_gpt_separately_and_marks_scope_limited ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+   Doc-tests oplus_edl
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

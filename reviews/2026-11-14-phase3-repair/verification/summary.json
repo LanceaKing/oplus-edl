@@ -1,0 +1,59 @@
+[
+  {
+    "check": "fmt",
+    "command": [
+      "cargo",
+      "fmt",
+      "--all",
+      "--",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "clippy",
+    "command": [
+      "cargo",
+      "clippy",
+      "--workspace",
+      "--all-targets",
+      "--all-features",
+      "--locked",
+      "--offline",
+      "--target-dir",
+      "/Users/Apple/Documents/oplus-edl/reviews/2026-11-14-phase3-repair/target",
+      "--",
+      "-D",
+      "warnings"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "test",
+    "command": [
+      "cargo",
+      "test",
+      "--workspace",
+      "--all-features",
+      "--locked",
+      "--offline",
+      "--target-dir",
+      "/Users/Apple/Documents/oplus-edl/reviews/2026-11-14-phase3-repair/target"
+    ],
+    "exit_code": 0
+  },
+  {
+    "check": "build",
+    "command": [
+      "cargo",
+      "build",
+      "--workspace",
+      "--all-features",
+      "--locked",
+      "--offline",
+      "--target-dir",
+      "/Users/Apple/Documents/oplus-edl/reviews/2026-11-14-phase3-repair/target"
+    ],
+    "exit_code": 0
+  }
+]

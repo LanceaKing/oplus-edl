@@ -1,0 +1,93 @@
+$ cargo test -p qdl --test firehose_io --all-features --locked --offline
+   Compiling libc v0.2.171
+   Compiling proc-macro2 v1.0.94
+   Compiling unicode-ident v1.0.18
+   Compiling crossbeam-utils v0.8.21
+   Compiling serde v1.0.219
+   Compiling core-foundation-sys v0.8.7
+   Compiling io-kit-sys v0.4.1
+   Compiling owo-colors v4.2.0
+   Compiling hashbrown v0.15.2
+   Compiling anyhow v1.0.97
+   Compiling equivalent v1.0.2
+   Compiling utf8parse v0.2.2
+   Compiling slab v0.4.11
+   Compiling anstyle-parse v0.2.6
+   Compiling once_cell v1.21.3
+   Compiling log v0.4.28
+   Compiling is_terminal_polyfill v1.70.1
+   Compiling indexmap v2.8.0
+   Compiling colorchoice v1.0.3
+   Compiling anstyle-query v1.1.2
+   Compiling futures-core v0.3.31
+   Compiling anstyle v1.0.10
+   Compiling xml-rs v0.8.25
+   Compiling cfg-if v1.0.0
+   Compiling anstream v0.6.18
+   Compiling xmltree v0.11.0
+   Compiling quote v1.0.40
+   Compiling syn v2.0.100
+   Compiling crossbeam-channel v0.5.15
+   Compiling mach2 v0.4.3
+   Compiling core-foundation v0.10.1
+   Compiling serial2 v0.2.28
+   Compiling pbr v1.1.1
+   Compiling nusb v0.2.1
+   Compiling serde_derive v1.0.219
+   Compiling serde_repr v0.1.20
+   Compiling bincode v1.3.3
+   Compiling qdl v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-13-welcome-code/protocol/baseline/qdl)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 5.75s
+     Running tests/firehose_io.rs (target/debug/deps/firehose_io-bdee39f4a0031134)
+
+running 45 tests
+test command_write_and_flush_errors_are_not_replaced_by_reset ... ok
+test command_logs_with_trailing_whitespace_still_require_a_response ... ok
+test explicit_reset_sends_exactly_once_and_requires_ack ... ok
+test configure_defaults_to_real_writes_and_never_reconfigures_implicitly ... ok
+test interrupted_file_and_serial_io_can_continue ... ok
+test invalid_configure_sizes_fail_before_send ... ok
+test final_ack_timeout_is_unknown_and_drop_sends_nothing ... ok
+test invalid_read_sizes_do_not_send_commands ... ok
+test log_then_timeout_is_not_ack ... ok
+test initial_and_final_program_nak_are_rejected ... ok
+test complete_initial_read_nak_is_typed_and_leaves_command_boundary ... ok
+test partial_command_failure_retains_original_error ... ok
+test program_invalid_sizes_are_not_sent ... ok
+test program_continues_short_file_reads ... ok
+test patch_and_bootable_expose_rejected_and_unknown_confirmation ... ok
+test program_continues_serial_short_writes ... ok
+test configure_nak_and_invalid_attributes_never_reset_or_replace_configuration ... ok
+test program_rejects_usb_short_write_without_resending ... ok
+test program_rejects_premature_file_eof ... ok
+test program_reports_zlp_failure_as_unknown ... ok
+test program_sends_one_explicit_usb_zlp ... ok
+test program_never_sends_incomplete_input_buffer ... ok
+test program_stops_after_later_input_failure ... ok
+test quiet_output_probe ... ok
+test program_zero_progress_and_hard_write_errors_are_unknown ... ok
+test hinted_program_nak_is_still_rejected ... ok
+test read_handles_coalesced_xml_raw_data_and_short_local_writes ... ok
+test read_handles_fragmented_raw_data ... ok
+test read_failure_in_raw_mode_is_not_read_rejection ... ok
+test read_rejects_transport_eof ... ok
+test scripted_read_and_bufread_share_position ... ok
+test response_eof_malformed_and_oversized_xml_are_errors ... ok
+test read_local_zero_write_hard_error_and_flush_failure_are_errors ... ok
+test welcome_accepts_fragmented_whitespace_between_declared_documents ... ok
+test storage_info_returns_logs_and_attributes_and_rejects_nak ... ok
+test read_missing_final_ack_is_failure_after_complete_output ... ok
+test welcome_accepts_trailing_xml_whitespace_before_idle_timeout ... ok
+test restart_and_retry_requests_never_send_commands ... ok
+test storage_read_preserves_raw_leading_whitespace ... ok
+test welcome_timeout_only_completes_at_document_boundary ... ok
+test welcome_end_marker_does_not_acknowledge_a_command ... ok
+test read_nak_with_restart_retry_or_raw_mode_requires_session_stop ... ok
+test welcome_whitespace_does_not_hide_partial_xml_or_invalid_bytes ... ok
+test response_end_marker_can_split_at_every_byte ... ok
+test quiet_loader_and_storage_paths_emit_no_output ... ok
+
+test result: ok. 45 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+
+exit=0; elapsed_seconds=5.969

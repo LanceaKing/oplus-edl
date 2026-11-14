@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-13",
+  "host": "macOS-26.6.2-arm64-arm-64bit",
+  "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "cargo": "cargo 1.99.0 (5f94df478 2026-08-27)",
+  "qdl_source": "git+https://github.com/LanceaKing/qdlrs?rev=7e0a31a5be2ab5d01b27bd743ee67a445ad0b84d#7e0a31a5be2ab5d01b27bd743ee67a445ad0b84d",
+  "checks": [
+    {
+      "check": "fmt",
+      "command": [
+        "cargo",
+        "fmt",
+        "--all",
+        "--",
+        "--check"
+      ],
+      "exit_code": 0,
+      "log": "fmt.log"
+    },
+    {
+      "check": "clippy",
+      "command": [
+        "cargo",
+        "clippy",
+        "--workspace",
+        "--all-targets",
+        "--all-features",
+        "--locked",
+        "--",
+        "-D",
+        "warnings"
+      ],
+      "exit_code": 0,
+      "log": "clippy.log"
+    },
+    {
+      "check": "test",
+      "command": [
+        "cargo",
+        "test",
+        "--workspace",
+        "--all-features",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "log": "test.log"
+    },
+    {
+      "check": "build",
+      "command": [
+        "cargo",
+        "build",
+        "--workspace",
+        "--all-features",
+        "--locked"
+      ],
+      "exit_code": 0,
+      "log": "build.log"
+    }
+  ],
+  "test_count": 31,
+  "device_access": false,
+  "committed": false,
+  "pushed": false
+}

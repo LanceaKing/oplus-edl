@@ -1,0 +1,133 @@
+   Compiling qdl v0.1.0 (/Users/Apple/Documents/qdlrs/qdl)
+   Compiling qramdump v0.1.0 (/Users/Apple/Documents/qdlrs/qramdump)
+   Compiling qdl-rs v0.1.0 (/Users/Apple/Documents/qdlrs/cli)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 1.15s
+     Running unittests src/lib.rs (target/debug/deps/qdl-2e91991b920d44d3)
+
+running 7 tests
+test sahara::tests::rejects_invalid_packet_length ... ok
+test usb::tests::usb_completion_requires_full_length_and_success ... ok
+test usb::tests::usb_cancellation_is_not_retryable_interrupted_io ... ok
+test sahara::tests::leaves_coalesced_packet_for_next_read ... ok
+test sahara::tests::rejects_truncated_packet_body ... ok
+test sahara::tests::rejects_truncated_header ... ok
+test sahara::tests::reads_packet_split_across_transport_reads ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/firehose_io.rs (target/debug/deps/firehose_io-327f43627581a312)
+
+running 50 tests
+test command_write_and_flush_errors_are_not_replaced_by_reset ... ok
+test command_logs_with_trailing_whitespace_still_require_a_response ... ok
+test configure_defaults_to_real_writes_and_never_reconfigures_implicitly ... ok
+test interrupted_file_and_serial_io_can_continue ... ok
+test invalid_configure_sizes_fail_before_send ... ok
+test invalid_read_sizes_do_not_send_commands ... ok
+test final_ack_timeout_is_unknown_and_drop_sends_nothing ... ok
+test log_then_timeout_is_not_ack ... ok
+test initial_and_final_program_nak_are_rejected ... ok
+test partial_command_failure_retains_original_error ... ok
+test explicit_reset_sends_exactly_once_and_requires_ack ... ok
+test complete_initial_read_nak_is_typed_and_leaves_command_boundary ... ok
+test program_invalid_sizes_are_not_sent ... ok
+test patch_and_bootable_expose_rejected_and_unknown_confirmation ... ok
+test program_continues_serial_short_writes ... ok
+test program_continues_short_file_reads ... ok
+test hinted_program_nak_is_still_rejected ... ok
+test configure_nak_and_invalid_attributes_never_reset_or_replace_configuration ... ok
+test program_rejects_premature_file_eof ... ok
+test program_never_sends_incomplete_input_buffer ... ok
+test program_rejects_usb_short_write_without_resending ... ok
+test program_reports_zlp_failure_as_unknown ... ok
+test program_stops_after_later_input_failure ... ok
+test program_sends_one_explicit_usb_zlp ... ok
+test quiet_output_probe ... ok
+test program_zero_progress_and_hard_write_errors_are_unknown ... ok
+test read_handles_coalesced_xml_raw_data_and_short_local_writes ... ok
+test read_handles_fragmented_raw_data ... ok
+test read_failure_in_raw_mode_is_not_read_rejection ... ok
+test read_rejects_transport_eof ... ok
+test read_local_zero_write_hard_error_and_flush_failure_are_errors ... ok
+test read_missing_final_ack_is_failure_after_complete_output ... ok
+test response_prefix_whitespace_preserves_xml_size_limit ... ok
+test scripted_read_and_bufread_share_position ... ok
+test restart_and_retry_requests_never_send_commands ... ok
+test storage_info_returns_logs_and_attributes_and_rejects_nak ... ok
+test storage_read_preserves_raw_leading_whitespace ... ok
+test response_eof_malformed_and_oversized_xml_are_errors ... ok
+test welcome_accepts_trailing_xml_whitespace_before_idle_timeout ... ok
+test welcome_accepts_fragmented_whitespace_between_declared_documents ... ok
+test welcome_end_marker_does_not_acknowledge_a_command ... ok
+test read_nak_with_restart_retry_or_raw_mode_requires_session_stop ... ok
+test welcome_handoff_whitespace_and_partial_xml_never_acknowledge_a_command ... ok
+test welcome_timeout_only_completes_at_document_boundary ... ok
+test welcome_handoff_rejects_non_xml_whitespace_and_malformed_documents ... ok
+test welcome_whitespace_does_not_hide_partial_xml_or_invalid_bytes ... ok
+test response_end_marker_can_split_at_every_byte ... ok
+test quiet_loader_and_storage_paths_emit_no_output ... ok
+test welcome_handoff_preserves_raw_whitespace_at_every_split ... ok
+test welcome_handoff_accepts_declared_configure_response_at_every_split ... ok
+
+test result: ok. 50 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/sahara_transfer.rs (target/debug/deps/sahara_transfer-c91167bdc3009fbb)
+
+running 12 tests
+test image_write_zero_error_and_flush_error_propagate ... ok
+test missing_image_id_is_an_error_without_writes ... ok
+test invalid_completion_status_never_reports_loader_success ... ok
+test read64_request_overflow_is_rejected_in_the_actual_state_machine ... ok
+test read32_and_read64_out_of_bounds_are_errors ... ok
+test failed_end_of_image_does_not_send_done_or_reset ... ok
+test image_range_overflow_out_of_bounds_and_empty_requests_do_not_write ... ok
+test malformed_header_and_unknown_command_are_errors ... ok
+test requested_range_and_single_image_id_fallback_are_preserved ... ok
+test oversized_fixed_packet_bodies_return_errors_instead_of_panicking ... ok
+test truncated_packets_fail_without_recovery_commands ... ok
+test fragmented_handshake_and_coalesced_image_requests_complete ... ok
+
+test result: ok. 12 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/selection.rs (target/debug/deps/selection-050c9dd0f21800ae)
+
+running 4 tests
+test missing_selection_never_opens_even_a_single_candidate ... ok
+test exact_match_opens_only_the_requested_index_once ... ok
+test no_match_or_duplicate_match_never_opens ... ok
+test matching_is_exact_and_open_failure_is_preserved ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (target/debug/deps/qdl_rs-a0168e504801fcff)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/program_input.rs (target/debug/deps/program_input-68713b464b834296)
+
+running 8 tests
+test erase_input_is_a_finite_full_length_zero_stream ... ok
+test rawprogram_caller_pads_tail_across_multiple_payloads ... ok
+test file_truncation_is_not_converted_to_padding ... ok
+test input_size_validation_rejects_zero_sector_and_overflow ... ok
+test rawprogram_caller_respects_selected_file_range ... ok
+test padded_rawprogram_still_requires_final_ack ... ok
+test raw_image_input_pads_only_the_final_sector ... ok
+test rawprogram_invalid_ranges_fail_before_program_command ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running unittests src/main.rs (target/debug/deps/qramdump-0127bc324ea46b06)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests qdl
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

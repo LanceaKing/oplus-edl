@@ -1,0 +1,26 @@
+{
+  "short_declared": {
+    "expected_raw_length": 8,
+    "raw_sent_hex": "61626364656667",
+    "response_separator_hex": "0d0a",
+    "stream_hex": "3c646174613e3c726573706f6e73652076616c75653d2241434b22207261776d6f64653d2274727565222f3e3c2f646174613e616263646566670d0a3c3f786d6c2076657273696f6e3d22312e30223f3e3c646174613e3c726573706f6e73652076616c75653d2241434b22207261776d6f64653d2266616c7365222f3e3c2f646174613e3c646174613e3c726573706f6e73652076616c75653d224e414b222f3e3c2f646174613e",
+    "stream_ascii": "<data><response value=\"ACK\" rawmode=\"true\"/></data>abcdefg\r\n<?xml version=\"1.0\"?><data><response value=\"ACK\" rawmode=\"false\"/></data><data><response value=\"NAK\"/></data>",
+    "fragmentations_tested": 170
+  },
+  "excess_declared": {
+    "expected_raw_length": 8,
+    "raw_sent_hex": "61626364656667680a",
+    "response_separator_hex": "",
+    "stream_hex": "3c646174613e3c726573706f6e73652076616c75653d2241434b22207261776d6f64653d2274727565222f3e3c2f646174613e61626364656667680a3c3f786d6c2076657273696f6e3d22312e30223f3e3c646174613e3c726573706f6e73652076616c75653d2241434b22207261776d6f64653d2266616c7365222f3e3c2f646174613e3c646174613e3c726573706f6e73652076616c75653d224e414b222f3e3c2f646174613e",
+    "stream_ascii": "<data><response value=\"ACK\" rawmode=\"true\"/></data>abcdefgh\n<?xml version=\"1.0\"?><data><response value=\"ACK\" rawmode=\"false\"/></data><data><response value=\"NAK\"/></data>",
+    "fragmentations_tested": 170
+  },
+  "short_undeclared_control": {
+    "expected_raw_length": 8,
+    "raw_sent_hex": "61626364656667",
+    "response_separator_hex": "0d0a",
+    "stream_hex": "3c646174613e3c726573706f6e73652076616c75653d2241434b22207261776d6f64653d2274727565222f3e3c2f646174613e616263646566670d0a3c646174613e3c726573706f6e73652076616c75653d2241434b22207261776d6f64653d2266616c7365222f3e3c2f646174613e3c646174613e3c726573706f6e73652076616c75653d224e414b222f3e3c2f646174613e",
+    "stream_ascii": "<data><response value=\"ACK\" rawmode=\"true\"/></data>abcdefg\r\n<data><response value=\"ACK\" rawmode=\"false\"/></data><data><response value=\"NAK\"/></data>",
+    "fragmentations_tested": 149
+  }
+}

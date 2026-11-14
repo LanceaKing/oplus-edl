@@ -1,0 +1,39 @@
+name: Offline checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Native checks (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Install Rust and check components
+        run: rustup toolchain install stable --profile minimal --component rustfmt --component clippy
+      - name: Record native toolchain
+        run: |
+          rustc +stable -Vv
+          cargo +stable -V
+      - name: Fetch locked dependencies
+        run: cargo +stable fetch --locked
+      - name: Format
+        run: cargo +stable fmt --all -- --check
+      - name: Clippy
+        run: cargo +stable clippy --workspace --all-targets --all-features --locked --offline -- -D warnings
+      - name: Build
+        run: cargo +stable build --workspace --all-features --locked --offline
+      - name: Offline tests (no hardware)
+        run: cargo +stable test --workspace --all-features --locked --offline

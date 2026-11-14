@@ -1,0 +1,24 @@
+$ cargo test -p qdl --test protocol_probe --all-features --locked --offline
+   Compiling qdl v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-13-welcome-code/protocol/current/qdl)
+error[E0599]: the method `concat` exists for array `[&Vec<u8>; 2]`, but its trait bounds were not satisfied
+   --> qdl/tests/protocol_probe.rs:104:41
+    |
+104 |                 bytes(&[&prefix, &tail].concat()),
+    |                                         ^^^^^^ method cannot be called on `[&Vec<u8>; 2]` due to unsatisfied trait bounds
+    |
+    = note: the following trait bounds were not satisfied:
+            `[&Vec<u8>]: Concat<_>`
+
+error[E0599]: the method `concat` exists for array `[&Vec<u8>; 2]`, but its trait bounds were not satisfied
+   --> qdl/tests/protocol_probe.rs:128:41
+    |
+128 |                 bytes(&[&prefix, &tail].concat()),
+    |                                         ^^^^^^ method cannot be called on `[&Vec<u8>; 2]` due to unsatisfied trait bounds
+    |
+    = note: the following trait bounds were not satisfied:
+            `[&Vec<u8>]: Concat<_>`
+
+For more information about this error, try `rustc --explain E0599`.
+error: could not compile `qdl` (test "protocol_probe") due to 2 previous errors
+
+exit=101; elapsed_seconds=0.162

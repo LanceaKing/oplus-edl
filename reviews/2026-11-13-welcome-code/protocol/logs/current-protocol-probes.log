@@ -1,0 +1,18 @@
+$ cargo test -p qdl --test protocol_probe --all-features --locked --offline
+   Compiling qdl v0.1.0 (/Users/Apple/Documents/oplus-edl/reviews/2026-11-13-welcome-code/protocol/current/qdl)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.43s
+     Running tests/protocol_probe.rs (target/debug/deps/protocol_probe-45f7459443f0f3ec)
+
+running 7 tests
+test protocol_program_initial_and_final_ack_remain_required_after_handoff ... ok
+test protocol_read_initial_and_final_ack_remain_required_after_handoff ... ok
+test protocol_welcome_returns_before_touching_any_tail ... ok
+test protocol_whitespace_inside_partial_xml_stays_in_document ... ok
+test protocol_each_possible_first_raw_byte_is_preserved ... ok
+test protocol_prefixed_initial_nak_preserves_the_next_command_boundary ... ok
+test protocol_declared_handoff_and_raw_are_preserved_at_all_splits ... ok
+
+test result: ok. 7 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+
+
+exit=0; elapsed_seconds=0.829
