@@ -1,0 +1,53 @@
+00450a13 int32_t var_8 = 0xffffffff
+00450a15 int32_t (* var_c)(void* arg1) = sub_6d1b08
+00450a20 TEB* fsbase
+00450a20 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00450a32 fsbase->NtTib.ExceptionList = &ExceptionList
+00450a5e int32_t __saved_ebp
+00450a5e void* var_18 = (*(data_7bfb90 + 0xc))(__security_cookie ^ &__saved_ebp) + 0x10
+00450a61 int32_t var_8_1 = 0
+00450a8e void* var_14 = (*(data_7bfb90 + 0xc))() + 0x10
+00450a94 var_8_1.b = 1
+00450aa0 sub_56eccf(arg1, 0x43b, &var_18)
+00450aaf sub_457e50(data_7df91c, &var_18)
+00450ac0 void* esi
+00450ac0 
+00450ac0 if (*(data_7df91c + 0x10) != 0)
+00450af9     var_8_1.b = 2
+00450afd     void* var_1c
+00450afd     sub_41a720(&var_14, sub_421030(&var_1c))
+00450b02     var_8_1.b = 1
+00450b0b     int32_t* edx_2 = var_1c - 0x10
+00450b11     int32_t ecx_7 = edx_2[3]
+00450b11     edx_2[3] -= 1
+00450b11     
+00450b18     if (ecx_7 - 1 s<= 0)
+00450b1f         (*(**edx_2 + 4))(edx_2)
+00450b1f     
+00450b22     esi = var_14
+00450b2d     sub_573841(arg1, 0x440, esi)
+00450ac0 else
+00450acc     sub_41a940(&var_14, u"Success!\r\n\r\nPlease click the link in your e-mail to reset password", 
+00450acc         0x42)
+00450ad1     esi = var_14
+00450adc     sub_573841(arg1, 0x440, esi)
+00450ae6     sub_574c2e(esi, 0, 0)
+00450ae6 
+00450b35 var_8_1.b = 0
+00450b3e int32_t ecx_11 = *(esi - 4)
+00450b3e *(esi - 4) -= 1
+00450b3e 
+00450b45 if (ecx_11 - 1 s<= 0)
+00450b4c     (*(**(esi - 0x10) + 4))(esi - 0x10)
+00450b4c 
+00450b4f int32_t var_8_2 = 0xffffffff
+00450b59 int32_t* edx_4 = var_18 - 0x10
+00450b5c int32_t* result = &edx_4[3]
+00450b5f int32_t edi = *result
+00450b5f *result -= 1
+00450b5f 
+00450b66 if (edi - 1 s<= 0)
+00450b6d     result = (*(**edx_4 + 4))(edx_4)
+00450b6d 
+00450b73 fsbase->NtTib.ExceptionList = ExceptionList
+00450b81 return result

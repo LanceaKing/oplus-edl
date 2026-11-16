@@ -1,0 +1,25 @@
+00440140 push    ebp
+00440141 mov     ebp, esp
+00440143 and     esp, 0xfffffff8
+00440146 push    0xffffffff
+00440148 push    0x6d01f8
+0044014d mov     eax, dword [fs:0x0]
+00440153 push    eax
+00440154 sub     esp, 0x6c
+00440157 mov     eax, dword [0x7c0bb0]
+0044015c xor     eax, esp
+0044015e mov     dword [esp+0x64], eax
+00440162 push    esi
+00440163 push    edi
+00440164 mov     eax, dword [0x7c0bb0]
+00440169 xor     eax, esp
+0044016b push    eax
+0044016c lea     eax, [esp+0x78]
+00440170 mov     dword [fs:0x0], eax
+00440176 mov     edi, ecx
+00440178 mov     dword [esp+0x24], 0xf
+00440180 mov     dword [esp+0x20], 0x0
+00440188 mov     byte [esp+0x10], 0x0
+0044018d push    0x77120c
+00440192 mov     dword [esp+0x84], 0x0
+0044019d jmp     0xaddc4c

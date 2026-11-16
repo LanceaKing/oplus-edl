@@ -1,0 +1,150 @@
+004cdb20 int32_t ebp
+004cdb20 int32_t var_4 = ebp
+004cdb21 int32_t* ebp_1 = &var_4
+004cdb23 int32_t var_8 = 0xffffffff
+004cdb25 int32_t (* var_c)(void* arg1) = __ehhandler$?_Init@?$numpunct@_W@std@@IAEXABV_Locinfo@2@_N@Z
+004cdb30 TEB* fsbase
+004cdb30 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004cdb3c int32_t eax_2 = __security_cookie ^ &var_4
+004cdb3e int32_t var_18 = eax_2
+004cdb41 int32_t ebx
+004cdb41 int32_t var_ac = ebx
+004cdb42 int32_t esi
+004cdb42 int32_t var_b0 = esi
+004cdb43 int32_t edi
+004cdb43 int32_t var_b4 = edi
+004cdb48 fsbase->NtTib.ExceptionList = &ExceptionList
+004cdb5c void var_a4
+004cdb5c sub_4d0ad0(&var_a4)
+004cdb64 int32_t var_8_1 = 0
+004cdb6e void var_84
+004cdb6e int32_t* eax_3
+004cdb6e int32_t ecx_2
+004cdb6e int32_t edx
+004cdb6e eax_3, ecx_2, edx = sub_4d0ad0(&var_84)
+004cdb73 int32_t var_34 = 0xf
+004cdb7a int32_t var_38 = 0
+004cdb81 char var_48 = 0
+004cdb87 var_8_1.b = 2
+004cdb94 _srand(sub_6898a4(eax_3, edx, ecx_2, nullptr))
+004cdbaa 0x3b7810(mods.dp.d(sx.q(sub_68d207()), 0x1f4), eax_2)
+004cdbb7 int32_t var_c0 = 0xf
+004cdbbe int32_t var_c4 = 0
+004cdbca char var_d4 = 0
+004cdbcd sub_412e10(&var_d4, "setprocstart", 0xc)
+004cdbe8 int32_t result = sub_4cd210(arg1, &var_a4, &var_84, &var_48, var_d4)
+004cdbec void* ebp_2
+004cdbec 
+004cdbec if (result == 0)
+004cdc17     void* var_c0_1 = 5
+004cdc19     char const* const var_c4_2 = "value"
+004cdc21     int32_t var_1c_1 = 0xf
+004cdc28     int32_t var_20_1 = 0
+004cdc2f     char var_30 = 0
+004cdc33     sub_412e10(&var_30, var_c4_2, var_c0_1)
+004cdc43     int32_t* var_64
+004cdc43     sub_42bc00(&var_84, &var_64, &var_30)
+004cdc43     
+004cdc4c     if (var_1c_1 u>= 0x10)
+004cdc51         ebp_1 = j_sub_688543(var_30.d)
+004cdc51     
+004cdc59     void* esi_1 = ebp_1[-0x18]
+004cdc5c     ebp_1[-6] = 0xf
+004cdc63     ebp_1[-7] = 0
+004cdc6a     ebp_1[-0xb].b = 0
+004cdc6a     
+004cdc71     if (esi_1 == ebp_1[-0x20])
+004cdd5c         char const* const var_c0_13 = "CFirehose::SendSetProcessStartCommand"
+004cdd62         int32_t var_c4_7 = *(arg1 + 0x10) + 1
+004cdd63         char const* const var_c8_3 = "[%d] [Firehose][%s] Can't find response value\n"
+004cdd68         int32_t var_cc_3 = 4
+004cdd6f         ebp_2 = sub_4d6270(&data_7e09e8)
+004cdc71     else if (sub_42b730(esi_1 + 0x20, "ACK") != 0)
+004cdd2d         void** esi_2 = esi_1 + 0x20
+004cdd2d         
+004cdd34         if (esi_2[5] u>= 0x10)
+004cdd36             esi_2 = *esi_2
+004cdd36         
+004cdd3b         void** var_c0_12 = esi_2
+004cdd3c         char const* const var_c4_6 = "CFirehose::SendSetProcessStartCommand"
+004cdd42         int32_t var_c8_2 = *(arg1 + 0x10) + 1
+004cdd43         char const* const var_cc_2 = "[%d] [Firehose][%s] Resp value is not ACK (%s)\n"
+004cdd48         int32_t var_d0_2 = 4
+004cdd4a         var_d4.d = &data_7e09e8
+004cdd4f         ebp_2 = sub_4d6270(var_d4)
+004cdc86     else
+004cdc94         sub_4129b0(&ebp_1[-0xb], "device_timestamp")
+004cdca4         sub_42bc00(&ebp_1[-0x20], &ebp_1[-0x18], &ebp_1[-0xb])
+004cdca4         
+004cdcad         if (ebp_1[-6] u>= 0x10)
+004cdcb2             ebp_1 = j_sub_688543(ebp_1[-0xb])
+004cdcb2         
+004cdcbd         char* eax_15 = ebp_1[-0x18] + 0x20
+004cdcc0         ebp_1[-6] = 0xf
+004cdcc7         ebp_1[-7] = 0
+004cdcce         ebp_1[-0xb].b = 0
+004cdcce         
+004cdcd6         if (*(eax_15 + 0x14) u>= 0x10)
+004cdcd8             eax_15 = *eax_15
+004cdcd8         
+004cdce3         int32_t var_c0_9 = sub_4129b0(&ebp_1[-0x17], eax_15)
+004cdce7         ebp_1[-1].b = 3
+004cdceb         int32_t eax_16
+004cdceb         int32_t edx_3
+004cdceb         eax_16, edx_3 = sub_4c6290(&ebp_1[-0x17])
+004cdcf3         ebp_1[-1].b = 2
+004cdcf7         bool cond:0_1 = ebp_1[-0x12] u< 0x10
+004cdcfb         *arg2 = eax_16
+004cdcfd         arg2[1] = edx_3
+004cdcfd         
+004cdd00         if (not(cond:0_1))
+004cdd05             j_sub_688543(ebp_1[-0x17])
+004cdd05         
+004cdd0d         int32_t var_c0_11 = arg2[1]
+004cdd13         int32_t var_c4_5 = *arg2
+004cdd16         int32_t var_c8_1 = *(arg1 + 0x10) + 1
+004cdd17         char const* const var_cc_1 = "[%d] [Firehose] Device start timestamp is %llu\n"
+004cdd1c         int32_t var_d0_1 = 4
+004cdd1e         var_d4.d = &data_7e09e8
+004cdd23         ebp_2 = sub_4d6270(var_d4)
+004cdd23     
+004cdd77     result = 0
+004cdbec else
+004cdbf1     int32_t result_1 = result
+004cdbf2     char const* const var_c4_1 = "setprocstart"
+004cdbf7     char const* const var_c8 = "CFirehose::SendSetProcessStartCommand"
+004cdbfd     int32_t var_cc = *(arg1 + 0x10) + 1
+004cdbfe     char const* const var_d0 = "[%d] [Firehose] %s: Failed to send %s. (%d).\n"
+004cdc03     var_d4.d = 4
+004cdc0a     ebp_2 = sub_4d6270(&data_7e09e8)
+004cdc0a 
+004cdd7d if (*(ebp_2 - 0x30) u>= 0x10)
+004cdd82     ebp_2 = j_sub_688543(*(ebp_2 - 0x44))
+004cdd82 
+004cdd8a int32_t eax_23 = *(ebp_2 - 0x78)
+004cdd8d *(ebp_2 - 0x30) = 0xf
+004cdd94 *(ebp_2 - 0x34) = 0
+004cdd9b *(ebp_2 - 0x44) = 0
+004cdd9b 
+004cdda1 if (eax_23 != 0)
+004cdda4     ebp_2 = j_sub_688543(eax_23)
+004cddac     *(ebp_2 - 0x78) = 0
+004cddb3     *(ebp_2 - 0x74) = 0
+004cddba     *(ebp_2 - 0x70) = 0
+004cddba 
+004cddc4 sub_4d0ba0(ebp_2 - 0x80)
+004cddcc void* ebp_3 = j_sub_688543(*(ebp_2 - 0x80))
+004cddd1 int32_t eax_24 = *(ebp_3 - 0x98)
+004cddd1 
+004cdddc if (eax_24 != 0)
+004cdddf     ebp_3 = j_sub_688543(eax_24)
+004cdde7     *(ebp_3 - 0x98) = 0
+004cddf1     *(ebp_3 - 0x94) = 0
+004cddfb     *(ebp_3 - 0x90) = 0
+004cddfb 
+004cde0b sub_4d0ba0(ebp_3 - 0xa0)
+004cde16 int32_t* ebp_4 = j_sub_688543(*(ebp_3 - 0xa0))
+004cde23 fsbase->NtTib.ExceptionList = ebp_4[-3]
+004cde33 sub_687de2(ebp_4[-5] ^ ebp_4)
+004cde3a *ebp_4
+004cde3b return result

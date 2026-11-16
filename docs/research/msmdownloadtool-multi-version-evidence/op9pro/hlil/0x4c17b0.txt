@@ -1,0 +1,196 @@
+004c17b3 int32_t* var_8 = arg1
+004c17c6 int32_t* eax
+004c17c6 
+004c17c6 if (arg1[0x174] u< 0x10)
+004c17cc     eax = &arg1[0x16f]
+004c17c6 else
+004c17c8     eax = arg1[0x16f]
+004c17c8 
+004c17e0 sub_4d6500(&data_7e4a58, 4, "[%d] [ffu]Start doing FFU check, current version is %s\n", 
+004c17e0     arg1[0xf] + 1, eax)
+004c17e5 int32_t esi = arg1[0x173]
+004c17ef int32_t* ecx
+004c17ef 
+004c17ef if (arg1[0x174] u< 0x10)
+004c17f5     ecx = &arg1[0x16f]
+004c17ef else
+004c17f1     ecx = arg1[0x16f]
+004c17f1 
+004c17f7 int32_t eax_3 = 3
+004c17f7 
+004c1803 if (esi u< 3)
+004c1803     eax_3 = esi
+004c1803 
+004c1816 void* const var_1c_11
+004c1816 int32_t var_18_20
+004c1816 int32_t* esi_1
+004c1816 
+004c1816 if (sub_4241f0(eax_3, &data_77a3ac, ecx, eax_3) != 0 || esi u< 3)
+004c1857 label_4c1857:
+004c1857     int32_t* ecx_2 = &arg1[0x16f]
+004c185d     int32_t esi_2 = ecx_2[4]
+004c185d     
+004c1860     if (ecx_2[5] u>= 0x10)
+004c1862         ecx_2 = *ecx_2
+004c1862     
+004c1867     int32_t eax_8 = 3
+004c1867     
+004c1871     if (esi_2 u< 3)
+004c1871         eax_8 = esi_2
+004c1871     
+004c1888     void* const var_18_6
+004c1888     
+004c1888     if (sub_4241f0(eax_8, &data_77a360, ecx_2, eax_8) == 0 && esi_2 u>= 3)
+004c1891         int32_t eax_9
+004c1891         eax_9.b = esi_2 != 3
+004c1891         
+004c1896         if (eax_9 != 0)
+004c1896             goto label_4c1930
+004c1896         
+004c189c         int32_t* var_18_4 = arg1[0x25]
+004c18a5         arg1[0x140] = &data_7e48c0
+004c18af         int32_t esi_3 = data_7e48c0
+004c18bb         sub_42bd10(&data_7e48c0, &var_8, var_18_4)
+004c18c0         void** eax_10 = arg1[0x25]
+004c18c0         
+004c18c9         if (var_8 == esi_3)
+004c18fb             if (eax_10[5] u>= 0x10)
+004c18fd                 eax_10 = *eax_10
+004c18fd             
+004c1911             sub_4d6500(&data_7e4a58, 4, 
+004c1911                 "[%d] [ffu]Project is %s, no need to update and keep doing SMT.\n", arg1[0xf] + 1, 
+004c1911                 eax_10)
+004c191c             *arg2 = 0
+004c191f             var_18_6 = u" The fw is P13."
+004c18c9         else
+004c18cf             if (eax_10[5] u>= 0x10)
+004c18d1                 eax_10 = *eax_10
+004c18d1             
+004c18e5             sub_4d6500(&data_7e4a58, 4, 
+004c18e5                 "[%d] [ffu]The fw is P13 and project is %s, will be update.\n", arg1[0xf] + 1, 
+004c18e5                 eax_10)
+004c18ed             var_18_6 = u" The fw is P13, will be update to P19."
+004c18ed         
+004c18c9         goto label_4c1a51
+004c18c9     
+004c1930 label_4c1930:
+004c1930     
+004c1937     if (sub_42b840(&arg1[0x16f], "900") == 0)
+004c193d         int32_t* var_18_8 = arg1[0x25]
+004c1946         arg1[0x140] = &data_7e48c0
+004c1950         int32_t esi_4 = data_7e48c0
+004c195c         sub_42bd10(&data_7e48c0, &var_8, var_18_8)
+004c195c         
+004c1964         if (var_8 == esi_4)
+004c1998             int32_t* var_18_10 = arg1[0x25]
+004c19a1             arg1[0x140] = &data_7e48a0
+004c19ab             int32_t esi_5 = data_7e48a0
+004c19b7             sub_42bd10(&data_7e48a0, &var_8, var_18_10)
+004c19bc             void** eax_20 = arg1[0x25]
+004c19bc             
+004c19c5             if (var_8 == esi_5)
+004c19f4                 if (eax_20[5] u>= 0x10)
+004c19f6                     eax_20 = *eax_20
+004c19f6                 
+004c1a0a                 sub_4d6500(&data_7e4a58, 4, 
+004c1a0a                     "[%d] [ffu]Project is %s, no need to update and keep doing SMT.\n", 
+004c1a0a                     arg1[0xf] + 1, eax_20)
+004c1a15                 *arg2 = 0
+004c1a18                 var_18_6 = u" The fw is P09."
+004c19c5             else
+004c19cb                 if (eax_20[5] u>= 0x10)
+004c19cd                     eax_20 = *eax_20
+004c19cd                 
+004c19e1                 sub_4d6500(&data_7e4a58, 4, 
+004c19e1                     "[%d] [ffu]The fw is P09 and project is %s, will be update to P13.\n", 
+004c19e1                     arg1[0xf] + 1, eax_20)
+004c19e9                 var_18_6 = u" The fw is P09, will be update to P13."
+004c1964         else
+004c1966             void** eax_17 = arg1[0x25]
+004c1966             
+004c1970             if (eax_17[5] u>= 0x10)
+004c1972                 eax_17 = *eax_17
+004c1972             
+004c1986             sub_4d6500(&data_7e4a58, 4, 
+004c1986                 "[%d] [ffu]The fw is P09 and project is %s, will be update to P19.\n", 
+004c1986                 arg1[0xf] + 1, eax_17)
+004c198e             var_18_6 = u" The fw is P09, will be update to P19."
+004c198e         
+004c1964         goto label_4c1a51
+004c1964     
+004c1a2b     bool cond:3_1 = sub_42b840(&arg1[0x16f], "400") != 0
+004c1a2d     int32_t eax_27 = arg1[0xf]
+004c1a2d     
+004c1a30     if (not(cond:3_1))
+004c1a44         sub_4d6500(&data_7e4a58, 4, "[%d] [ffu]The fw is P04, will be update.\n", eax_27 + 1)
+004c1a4c         var_18_6 = u" The fw is P04, will be update."
+004c1a51     label_4c1a51:
+004c1a51         esi_1 = arg3
+004c1a56         sub_47a2e0(var_18_6)
+004c1a56         goto label_4c1a5b
+004c1a56     
+004c1b92     var_18_20 = eax_27 + 1
+004c1b93     var_1c_11 = "[%d] [ffu]unknow firmware\n"
+004c1816 else
+004c181b     int32_t eax_4
+004c181b     eax_4.b = esi != 3
+004c181b     
+004c1820     if (eax_4 != 0)
+004c1820         goto label_4c1857
+004c1820     
+004c1825     esi_1 = arg3
+004c1831     *arg2 = 0
+004c1834     sub_45c9b0(esi_1, u" The fw is P19.", 0xf)
+004c184a     sub_4d6500(&data_7e4a58, 4, "[%d] [ffu]Device is P19 no need to update, keep doing SMT.\n", 
+004c184a         arg1[0xf] + 1)
+004c1a5b label_4c1a5b:
+004c1a5b     int32_t eax_29 = arg1[0x175]
+004c1a5b     
+004c1a64     if (eax_29 == 6)
+004c1a7b         sub_4d6500(&data_7e4a58, 4, "[%d] [ffu]The ufs has been provision!\n", arg1[0xf] + 1)
+004c1a8f         *arg2 = 0
+004c1a92         sub_45c080(esi_1, u" Device has been smt. Just doing SMT again only.", 0x30)
+004c1aa3         bool cond:4 = sub_42b840(&arg1[0x16f], "400") != 0
+004c1aa5         int32_t eax_34 = arg1[0xf]
+004c1aa5         
+004c1aa8         if (cond:4)
+004c1b21             sub_4d6500(&data_7e4a58, 4, 
+004c1b21                 "[%d] [ffu]Skip doing update and provision, just erase partition later.\n", 
+004c1b21                 eax_34 + 1)
+004c1b31             void* const var_18_18
+004c1b31             
+004c1b31             if (arg1[9].b == 0)
+004c1b3a                 var_18_18 = u"Skip provision and ffu, device has been smt."
+004c1b31             else
+004c1b33                 var_18_18 = &data_77dfa8
+004c1b33             
+004c1b48             0x3b87d0(arg1[0x10], 0x178c, zx.d(arg1[0xf].w), var_18_18)
+004c1b59             return 0x13
+004c1b59         
+004c1ab8         sub_4d6500(&data_7e4a58, 4, "[%d] [ffu]FW is P04 and device has been smt. Stop SMT.\n", 
+004c1ab8             eax_34 + 1)
+004c1acd         void* const var_18_16
+004c1acd         
+004c1acd         if (arg1[9].b == 0)
+004c1ad6             var_18_16 = u"FW is P04 and device has been smt. Stop SMT."
+004c1acd         else
+004c1acf             var_18_16 = &data_77df28
+004c1acf         
+004c1ae4         0x3b87d0(arg1[0x10], 0x178c, zx.d(arg1[0xf].w) | 0x1000000, var_18_16)
+004c1aea         void* eax_38 = arg1[0xc]
+004c1aed         int32_t var_28 = *(eax_38 + 8)
+004c1af0         *(eax_38 + 4) = 4
+004c1af8         sub_ca5489(eax_38, var_28)
+004c1b00         sub_4b82a0(arg1[0xc])
+004c1b10         return 0x14
+004c1b10     
+004c1b5f     if (eax_29 == 3)
+004c1b72         sub_4d6500(&data_7e4a58, 4, "[%d] [ffu]The ufs has not been provision yet!\n", 
+004c1b72             arg1[0xf] + 1)
+004c1b82         return 0
+004c1b82     
+004c1b89     var_18_20 = arg1[0xf] + 1
+004c1b8a     var_1c_11 = "[%d] [ffu]Unknown ufs provision state!\n"
+004c1b9f sub_4d6500(&data_7e4a58, 4, var_1c_11, var_18_20)
+004c1bac *arg2 = 0
+004c1bb5 return 0

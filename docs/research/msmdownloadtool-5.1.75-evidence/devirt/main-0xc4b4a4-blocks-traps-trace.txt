@@ -1,0 +1,41 @@
+FIRST
+00c4b4a4 90                             nop 
+00c4b4a5 8ac6                           mov al, dh
+00c4b4a7 6698                           cbw 
+00c4b4a9 6690                           nop 
+00c4b4ab 58                             pop eax
+00c4b4ac 870424                         xchg dword ptr [esp], eax
+00c4b4af e90bab3e00                     jmp 0x1035fbf
+01035fbf 50                             push eax
+01035fc0 9f                             lahf 
+01035fc1 0fbfc5                         movsx eax, bp
+01035fc4 98                             cwde 
+01035fc5 b8c4005400                     mov eax, 0x5400c4
+01035fca e9848a0c00                     jmp 0x10fea53
+010fea53 8b808be8a300                   mov eax, dword ptr [eax + 0xa3e88b]
+010fea59 8d808a7ce718                   lea eax, [eax + 0x18e77c8a]
+010fea5f e9e235c5ff                     jmp 0xd52046
+00d52046 870424                         xchg dword ptr [esp], eax
+00d52049 e9638d84ff                     jmp 0x59adb1
+0059adb1 c3                             ret 
+
+LAST
+00c4b4a4 90                             nop 
+00c4b4a5 8ac6                           mov al, dh
+00c4b4a7 6698                           cbw 
+00c4b4a9 6690                           nop 
+00c4b4ab 58                             pop eax
+00c4b4ac 870424                         xchg dword ptr [esp], eax
+00c4b4af e90bab3e00                     jmp 0x1035fbf
+01035fbf 50                             push eax
+01035fc0 9f                             lahf 
+01035fc1 0fbfc5                         movsx eax, bp
+01035fc4 98                             cwde 
+01035fc5 b8c4005400                     mov eax, 0x5400c4
+01035fca e9848a0c00                     jmp 0x10fea53
+010fea53 8b808be8a300                   mov eax, dword ptr [eax + 0xa3e88b]
+010fea59 8d808a7ce718                   lea eax, [eax + 0x18e77c8a]
+010fea5f e9e235c5ff                     jmp 0xd52046
+00d52046 870424                         xchg dword ptr [esp], eax
+00d52049 e9638d84ff                     jmp 0x59adb1
+0059adb1 c3                             ret 

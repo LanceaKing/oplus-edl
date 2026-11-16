@@ -1,0 +1,38 @@
+004306a0 int32_t ebp
+004306a0 int32_t var_4 = ebp
+004306a3 int32_t var_8 = 0xffffffff
+004306a5 int32_t (* var_c)(void* arg1) = sub_6ce5fb
+004306b0 TEB* fsbase
+004306b0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004306bc int32_t eax_2 = __security_cookie ^ &var_4
+004306be int32_t var_14 = eax_2
+004306c1 int32_t ebx
+004306c1 int32_t var_45c = ebx
+004306c2 int32_t esi
+004306c2 int32_t var_460 = esi
+004306c3 int32_t edi
+004306c3 int32_t var_464 = edi
+004306c4 int32_t var_468 = eax_2
+004306c8 fsbase->NtTib.ExceptionList = &ExceptionList
+004306d0 int32_t ecx
+004306d0 int32_t var_448 = ecx
+004306de int16_t var_234 = 0
+004306ec char var_232[0x21e]
+004306ec _memset(&var_232, 0, 0x208)
+004306f9 int16_t var_440 = 0
+00430707 char var_43e[0x20a]
+00430707 int16_t ecx_1
+00430707 int32_t edx
+00430707 ecx_1, edx = _memset(&var_43e, 0, 0x208)
+0043070f int32_t var_444 = 0
+0043071f int32_t var_454 = 0
+00430729 int32_t var_450 = 0
+00430733 int32_t var_46c = 0x20a
+00430738 int16_t* var_470 = &var_440
+0043073f int32_t* var_474_1 = &var_450
+00430746 int32_t* var_478 = &var_454
+0043074d int32_t* var_47c = &var_444
+0043074e int32_t var_480_1 = 0x20a
+00430759 int16_t* var_484 = &var_234
+0043075a void* const var_488 = &data_76ea70
+00430764 return j_sub_bd1dc7(&var_234, edx, ecx_1)

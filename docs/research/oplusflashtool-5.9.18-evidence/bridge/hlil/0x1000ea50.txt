@@ -1,0 +1,141 @@
+1000ea6c void* edi = *(this + 4)
+1000ea72 int32_t var_a0c
+1000ea72 memset(&var_a0c, 0, 0xa04)
+1000ea77 char const* ecx = arg2
+1000ea83 var_a0c = 1
+1000ea8d void var_a08
+1000ea8d int32_t edx = &var_a08 - ecx
+1000ea9b char const i
+1000ea9b 
+1000ea9b do
+1000ea90     i = *ecx
+1000ea92     ecx = &ecx[1]
+1000ea95     ecx[edx - 1] = i
+1000ea9b while (i != 0)
+1000ea9b 
+1000ea9d char const* ecx_1 = arg3
+1000eaa6 void var_808
+1000eaa6 int32_t edx_1 = &var_808 - ecx_1
+1000eaa6 
+1000eabb do
+1000eab0     i = *ecx_1
+1000eab2     ecx_1 = &ecx_1[1]
+1000eab5     ecx_1[edx_1 - 1] = i
+1000eabb while (i != 0)
+1000eabb 
+1000eabd char const* ecx_2 = arg4
+1000eac6 void var_788
+1000eac6 int32_t edx_2 = &var_788 - ecx_2
+1000eac6 
+1000eadb do
+1000ead0     i = *ecx_2
+1000ead2     ecx_2 = &ecx_2[1]
+1000ead5     ecx_2[edx_2 - 1] = i
+1000eadb while (i != 0)
+1000eadb 
+1000eadd char const* ecx_3 = arg5
+1000eae6 void var_708
+1000eae6 int32_t edx_3 = &var_708 - ecx_3
+1000eae6 
+1000eafb do
+1000eaf0     i = *ecx_3
+1000eaf2     ecx_3 = &ecx_3[1]
+1000eaf5     ecx_3[edx_3 - 1] = i
+1000eafb while (i != 0)
+1000eafb 
+1000eb01 char* ecx_4 = this + 0x20
+1000eb01 
+1000eb04 if (*(this + 0x34) u>= 0x10)
+1000eb06     ecx_4 = *ecx_4
+1000eb06 
+1000eb08 void var_608
+1000eb08 char* edx_4 = &var_608
+1000eb08 
+1000eb1c do
+1000eb10     i = *ecx_4
+1000eb12     ecx_4 = &ecx_4[1]
+1000eb15     *edx_4 = i
+1000eb17     edx_4 = &edx_4[1]
+1000eb1c while (i != 0)
+1000eb1c 
+1000eb25 char* ecx_5 = this + 0x204
+1000eb25 
+1000eb2b if (*(this + 0x218) u>= 0x10)
+1000eb2d     ecx_5 = *ecx_5
+1000eb2d 
+1000eb2f void var_108
+1000eb2f char* edx_5 = &var_108
+1000eb2f 
+1000eb41 do
+1000eb35     i = *ecx_5
+1000eb37     ecx_5 = &ecx_5[1]
+1000eb3a     *edx_5 = i
+1000eb3c     edx_5 = &edx_5[1]
+1000eb41 while (i != 0)
+1000eb41 
+1000eb54 char* edx_6 = edi + 0x48
+1000eb59 int32_t ebx
+1000eb59 ebx.b = auth_exec_login(edi, &var_a0c) == 0
+1000eb5c *(this + 0x200) = ebx.b
+1000eb65 void* ecx_6
+1000eb65 
+1000eb65 if (*edx_6 != 0)
+1000eb6b     char* ecx_7 = edx_6
+1000eb75     int32_t eax_1
+1000eb75     
+1000eb75     do
+1000eb70         eax_1.b = *ecx_7
+1000eb72         ecx_7 = &ecx_7[1]
+1000eb75     while (eax_1.b != 0)
+1000eb77     ecx_6 = ecx_7 - &ecx_7[1]
+1000eb65 else
+1000eb67     ecx_6 = nullptr
+1000eb67 
+1000eb81 sub_10003300(this + 0x38, edx_6, ecx_6)
+1000eb93 uint32_t ecx_9
+1000eb93 
+1000eb93 if (*(edi + 0x88) != 0)
+1000eb99     char* ecx_10 = edi + 0x88
+1000eba5     char i_1
+1000eba5     
+1000eba5     do
+1000eba0         i_1 = *ecx_10
+1000eba2         ecx_10 = &ecx_10[1]
+1000eba5     while (i_1 != 0)
+1000eba7     ecx_9 = ecx_10 - &ecx_10[1]
+1000eb93 else
+1000eb95     ecx_9 = 0
+1000eb95 
+1000ebae sub_10003300(this + 0x50, edi + 0x88, ecx_9)
+1000ebbd sub_10003300(this + 0x68, "invalid", 7)
+1000ebc8 uint32_t ecx_13
+1000ebc8 
+1000ebc8 if (*arg3 != 0)
+1000ebce     char const* ecx_14 = arg3
+1000ebd8     char const i_2
+1000ebd8     
+1000ebd8     do
+1000ebd3         i_2 = *ecx_14
+1000ebd5         ecx_14 = &ecx_14[1]
+1000ebd8     while (i_2 != 0)
+1000ebda     ecx_13 = ecx_14 - &ecx_14[1]
+1000ebc8 else
+1000ebca     ecx_13 = 0
+1000ebca 
+1000ebe4 sub_10003300(this + 0x98, arg3, ecx_13)
+1000ebf6 sub_10003300(this + 0xb0, 0x100471c0, 3)
+1000ec02 void* __offset(OpFlashAuthManager, 0x8)* ecx_17 = this + 8
+1000ec05 int32_t* eax_2 = &data_1005afc4
+1000ec05 
+1000ec0d if (data_1005afd8 u>= 0x10)
+1000ec0d     eax_2 = data_1005afc4
+1000ec0d 
+1000ec18 if (ecx_17[5] u>= 0x10)
+1000ec1a     ecx_17 = *ecx_17
+1000ec1a 
+1000ec35 if (sub_10003240(eax_2, ecx_17[4], ecx_17, eax_2, data_1005afd4) != 0)
+1000ec55     sub_10003300(this + 0x80, "production", 0xa)
+1000ec62     return ebx.b
+1000ec62 
+1000ec3e sub_10003300(this + 0x80, "development", 0xb)
+1000ec4b return ebx.b

@@ -1,0 +1,211 @@
+004233c3 int32_t var_8 = 0xffffffff
+004233c5 int32_t (* var_c)(void* arg1) = sub_571a80
+004233d0 TEB* fsbase
+004233d0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004233dc int32_t __saved_ebp
+004233dc int32_t eax_2 = __security_cookie ^ &__saved_ebp
+004233e2 fsbase->NtTib.ExceptionList = &ExceptionList
+004233e8 void* ebx = arg1
+004233ea void* var_14 = ebx
+004233f0 char* edi = 1
+004233f9 char* var_1c = 1
+004233fc int32_t* var_20
+004233fc void* arg_4
+004233fc sub_422c30(arg1, arg_4, &var_20)
+00423401 int32_t* eax_3 = var_20
+00423401 
+00423406 if (eax_3 != 0)
+0042345e     int32_t eax_8
+0042345e     int32_t edx_1
+0042345e     edx_1:eax_8 = muls.dp.d(0x66666667, eax_3[1] - *eax_3)
+00423460     int32_t var_28_1 = 0
+00423467     int32_t edx_2 = edx_1 s>> 6
+0042346c     uint32_t eax_10 = edx_2 u>> 0x1f
+0042346c     
+00423474     if (eax_10 != neg.d(edx_2))
+0042347a         int32_t ecx_2 = 0
+0042347c         int32_t var_2c_1 = 0
+0042347c         
+00423485         while (true)
+00423485             int32_t* ebx_2 = *var_20 + ecx_2
+0042348b             int32_t* edi_1 = &ebx_2[6]
+0042348b             
+0042348e             if (ebx_2[0xb] u>= 0x10)
+00423490                 edi_1 = *edi_1
+00423490             
+00423492             sub_41a930()
+004234ad             void* esi_2 = (*(data_5ea194 + 0xc))(eax_2) + 0x10
+004234b0             arg_4 = esi_2
+004234b3             int32_t var_8_1 = 0
+004234b3             
+004234c4             if (edi_1 == 0 || (edi_1 & 0xffff0000) != 0)
+004234e4                 sub_4061e0(&arg_4, edi_1)
+004234e9                 esi_2 = arg_4
+004234c4             else
+004234c6                 uint32_t edi_2 = zx.d(edi_1.w)
+004234cb                 HMODULE eax_14 = sub_4208e0(edi_2)
+004234cb                 
+004234d2                 if (eax_14 != 0)
+004234d9                     sub_40bb60(&arg_4, eax_14, edi_2)
+004234e9                     esi_2 = arg_4
+004234e9             
+004234ec             int32_t var_8_2 = 1
+004234f7             int32_t* eax_15
+004234f7             
+004234f7             if (ebx_2[5] u< 0x10)
+004234fd                 eax_15 = ebx_2
+004234f7             else
+004234f9                 eax_15 = *ebx_2
+004234f9             
+00423502             sub_41a930()
+0042351d             void* edi_3 = (*(data_5ea194 + 0xc))() + 0x10
+00423520             void* var_18 = edi_3
+00423526             var_8_2.b = 2
+00423533             HMODULE eax_19
+00423533             
+00423533             if (eax_15 == 0 || (eax_15 & 0xffff0000) != 0)
+00423558                 sub_4061e0(&var_18, eax_15)
+0042355d                 edi_3 = var_18
+00423533             else
+00423535                 uint32_t eax_18 = zx.d(eax_15.w)
+0042353d                 eax_19 = sub_4208e0(eax_18)
+0042353d                 
+00423544                 if (eax_19 != 0)
+0042354d                     sub_40bb60(&var_18, eax_19, eax_18)
+0042355d                     edi_3 = var_18
+0042355d             
+00423560             void* ecx_12 = var_14
+00423563             var_8_2.b = 3
+00423567             eax_19.b = *(ecx_12 + 0x100390)
+0042356f             char* ebx_3
+0042356f             
+0042356f             if (eax_19.b != 0)
+00423754                 ebx_3 = 0x4c7
+0042356f             else
+00423579                 if (ebx_2[0x18] != 0)
+00423579                     goto label_423595
+00423579                 
+00423589                 if (sub_4094a0(ebx_2, "xbl") != 0)
+004235b9                 label_4235b9:
+004235b9                     var_8_2.b = 1
+004235c5                     int32_t ecx_13 = *(edi_3 - 4)
+004235c5                     *(edi_3 - 4) -= 1
+004235c5                     
+004235cc                     if (ecx_13 - 1 s<= 0)
+004235d3                         (*(**(edi_3 - 0x10) + 4))(edi_3 - 0x10)
+004235d3                     
+004235d9                     int32_t var_8_3 = 0xffffffff
+004235e5                     int32_t ecx_16 = *(esi_2 - 4)
+004235e5                     *(esi_2 - 4) -= 1
+004235e5                     
+004235ec                     if (ecx_16 - 1 s<= 0)
+004235f3                         (*(**(esi_2 - 0x10) + 4))(esi_2 - 0x10)
+004235f3                     
+004235f6                     ebx = var_14
+004235ec                     goto label_4235ff
+004235ec                 
+0042358b                 ecx_12 = var_14
+0042358e                 ebx_2[0x18] = 0x300
+00423595             label_423595:
+00423595                 
+00423599                 if (*(ebx_2 + 0x7a) == 0)
+00423599                     goto label_4235b9
+00423599                 
+004235a5                 void* var_44_7 = esi_2
+004235a6                 char const* const var_48_5
+004235a6                 
+004235a6                 if (*(ecx_12 + 0x1b) == 0)
+00423653                     var_48_5 = u"Reading Back %s"
+004235a6                 else
+004235ac                     var_48_5 = "ck(W"
+004235ac                 
+00423659                 sub_426230(ecx_12 + 0x290, var_48_5)
+0042367d                 SendMessageW(*(var_14 + 0x30), 0x178c, zx.d((*(var_14 + 0x2c)).b) << 0x10, 
+0042367d                     var_14 + 0x290)
+004236a2                 SendMessageW(*(var_14 + 0x30), 0x178c, zx.d((*(var_14 + 0x2c)).b) << 0x10 | 1, 
+004236a2                     var_14 + 0x290)
+004236a9                 ebx = var_14
+004236ae                 char* eax_38 = sub_423f00(ebx, ebx_2)
+004236b3                 var_1c = eax_38
+004236b3                 
+004236b8                 if (eax_38 != 0)
+0042370d                     void* var_44_15 = esi_2
+0042370e                     wchar16 const* const var_48_9
+0042370e                     
+0042370e                     if (*(ebx + 0x1b) == 0)
+00423717                         var_48_9 = u"ReadBack %s Failed"
+0042370e                     else
+00423710                         var_48_9 = &data_5bc008
+00423710                     
+0042371d                     sub_426230(ebx + 0x290, var_48_9)
+00423749                     SendMessageW(*(ebx + 0x30), 0x178c, 
+00423749                         (zx.d((*(ebx + 0x2c)).b) | 0x100) << 0x10 | 1, ebx + 0x290)
+0042374f                     ebx_3 = var_1c
+004236b8                 else
+004236bd                     var_8_2.b = 1
+004236c9                     int32_t ecx_23 = *(edi_3 - 4)
+004236c9                     *(edi_3 - 4) -= 1
+004236c9                     
+004236d0                     if (ecx_23 - 1 s<= 0)
+004236d7                         (*(**(edi_3 - 0x10) + 4))(edi_3 - 0x10)
+004236d7                     
+004236dd                     int32_t var_8_4 = 0xffffffff
+004236e9                     int32_t ecx_26 = *(esi_2 - 4)
+004236e9                     *(esi_2 - 4) -= 1
+004236e9                     
+004236f0                     if (ecx_26 - 1 s<= 0)
+004236fb                         (*(**(esi_2 - 0x10) + 4))(esi_2 - 0x10)
+004236fb                     
+004235ff                 label_4235ff:
+004235ff                     int32_t eax_27 = var_28_1 + 1
+00423600                     ecx_2 = var_2c_1 + 0xa0
+00423606                     var_28_1 = eax_27
+00423609                     var_2c_1 = ecx_2
+00423609                     
+0042360f                     if (eax_27 u< eax_10 + edx_2)
+0042360f                         continue
+0042360f                     
+0042361b                     edi = var_1c
+0042361b                     break
+0042361b             
+0042375c             var_8_2.b = 1
+00423768             int32_t ecx_30 = *(edi_3 - 4)
+00423768             *(edi_3 - 4) -= 1
+00423768             
+0042376f             if (ecx_30 - 1 s<= 0)
+00423776                 (*(**(edi_3 - 0x10) + 4))(edi_3 - 0x10)
+00423776             
+0042377c             int32_t var_8_5 = 0xffffffff
+00423786             int32_t edi_4 = *(esi_2 - 4)
+00423786             *(esi_2 - 4) -= 1
+00423786             
+0042378d             if (edi_4 - 1 s<= 0)
+00423794                 (*(**(esi_2 - 0x10) + 4))(esi_2 - 0x10)
+00423794             
+0042379c             fsbase->NtTib.ExceptionList = ExceptionList
+004237aa             return ebx_3
+004237aa     
+0042362c     int32_t wParam = (zx.d((*(ebx + 0x2c)).b) | 0x200) << 0x10
+00423633     LPARAM lParam
+00423633     
+00423633     if (*(ebx + 0x1b) == 0)
+004237c5         SendMessageW(*(ebx + 0x30), 0x178c, wParam, u"ReadBack Complete")
+004237c7         lParam = u"ReadBack Complete"
+00423633     else
+00423647         SendMessageW(*(ebx + 0x30), 0x178c, wParam, 0x5bc048)
+00423649         lParam = 0x5bc048
+00423649     
+004237e6     SendMessageW(*(ebx + 0x30), 0x178c, zx.d((*(ebx + 0x2c)).b) << 0x10 | 0x2000001, lParam)
+00423406 else
+00423411     wchar16 const* const var_44_1
+00423411     
+00423411     if (*(ebx + 0x1b) == eax_3.b)
+0042341a         var_44_1 = u"No suitable setting available for read back"
+00423411     else
+00423413         var_44_1 = &data_5bbf5c
+00423413     
+00423420     sub_426230(ebx + 0x290, var_44_1)
+00423443     SendMessageW(*(ebx + 0x30), 0x178c, zx.d((*(ebx + 0x2c)).b) << 0x10 | 0x1000001, ebx + 0x290)
+00423443 
+004237ed fsbase->NtTib.ExceptionList = ExceptionList
+004237fb return edi

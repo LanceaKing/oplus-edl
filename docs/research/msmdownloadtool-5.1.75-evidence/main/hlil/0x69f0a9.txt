@@ -1,0 +1,66 @@
+0069f0a9 int32_t ebp
+0069f0a9 int32_t var_4 = ebp
+0069f0aa int32_t* ebp_1 = &var_4
+0069f0ac int32_t esi
+0069f0ac int32_t var_8 = esi
+0069f0ac int32_t* esp_1 = &var_8
+0069f0ac 
+0069f0b2 if (arg2 != 0)
+0069f0b4     int32_t var_c_1 = 0xffffffe0
+0069f0b8     esp_1 = &var_8
+0069f0b9     arg1 = divu.dp.d(0:0xffffffe0, arg2)
+0069f0b9 
+0069f0be uint32_t result
+0069f0be int32_t* eax_1
+0069f0be 
+0069f0be if (arg2 == 0 || arg1 u>= arg3)
+0069f0cf     int32_t esi_2 = arg2 * arg3
+0069f0cf     
+0069f0d5     if (esi_2 == 0)
+0069f0d7         esi_2 += 1
+0069f0d7     
+0069f0d8     while (true)
+0069f0d8         uint32_t result_1 = 0
+0069f0d8         
+0069f0dd         if (esi_2 u<= 0xffffffe0)
+0069f0df             *(esp_1 - 4) = esi_2
+0069f0e0             *(esp_1 - 8) = 8
+0069f0e2             *(esp_1 - 0xc) = data_7dc700
+0069f0e8             *(esp_1 - 0x10) = ebp_1
+0069f0e8             esp_1 -= 0x10
+0069f0e9             ebp_1 = sub_a50809()
+0069f0ee             result_1 = arg1
+0069f0ee             
+0069f0f2             if (result_1 != 0)
+0069f0f2                 goto label_69f11e
+0069f0f2         
+0069f0fb         if (data_7dd084 == 0)
+0069f111             int32_t* eax_2 = ebp_1[4]
+0069f111             
+0069f116             if (eax_2 != 0)
+0069f118                 *eax_2 = 0xc
+0069f118             
+0069f11e         label_69f11e:
+0069f11e             result = result_1
+0069f11e             break
+0069f11e         
+0069f0fd         *(esp_1 - 4) = esi_2
+0069f0fe         arg1, ebp_1 = sub_69fde4()
+0069f103         *(esp_1 - 4)
+0069f103         
+0069f106         if (arg1 == 0)
+0069f108             eax_1 = ebp_1[4]
+0069f108             
+0069f10d             if (eax_1 == 0)
+0069f10d                 goto label_69f0cb
+0069f10d             
+0069f10d             goto label_69f0c5
+0069f0be else
+0069f0c0     eax_1 = __errno()
+0069f0c5 label_69f0c5:
+0069f0c5     *eax_1 = 0xc
+0069f0cb label_69f0cb:
+0069f0cb     result = 0
+0069f120 *esp_1
+0069f120 esp_1[1]
+0069f122 return result

@@ -1,0 +1,1035 @@
+149a8e70 int64_t* fp
+149a8e70 int64_t* var_60 = fp
+149a8e70 int64_t* lr
+149a8e70 int64_t* var_58 = lr
+149a8e74 char* x28
+149a8e74 char* var_50 = x28
+149a8e78 char* x26
+149a8e78 char* var_40 = x26
+149a8e78 int64_t* x25
+149a8e78 int64_t* var_38 = x25
+149a8e7c uint64_t x24
+149a8e7c uint64_t var_30 = x24
+149a8e8c char* x0_7
+149a8e8c int32_t* x1_6
+149a8e8c uint64_t x2_4
+149a8e8c int64_t* x19_3
+149a8e8c 
+149a8e8c if (arg1 == 0)
+149a904c label_149a904c:
+149a904c     x1_6 = "S Boot Partition Enabled: 0x%x"
+149a9050 label_149a9050:
+149a9050     x0_7 = 2
+149a9054 label_149a9054:
+149a9054     x1_6 = &x1_6[0x260]
+149a9058 label_149a9058:
+149a9058     x2_4 = 2
+149a905c label_149a905c:
+149a905c     x19_3 = 2
+149a9060 label_149a9060:
+149a9060     sub_149a5c34(x0_7.d, x1_6, x2_4, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, 
+149a9060         arg13, arg14, arg15, arg16, x24)
+149a91e4     return zx.q(x19_3.d)
+149a91e4 
+149a8e94 char* x20_1 = arg1
+149a8e9c int32_t x19_1 = arg5.d
+149a8ea4 uint64_t x22_1 = zx.q(arg4.d)
+149a8ea8 char* x21_1 = arg3
+149a8eac x24 = arg2
+149a8eb0 void* x0 = sub_1499bc40("BackupGPT")
+149a8eb0 
+149a8ec4 if (sub_149ba5c4(x20_1, "BackupGPT", x0) == 0)
+149a8ec4     goto label_149a91c0
+149a8ec4 
+149a8ed0 char* x0_4
+149a8ed0 x0_4, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16 =
+149a8ed0     sub_149a91e8(x20_1, nullptr, x0, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, 
+149a8ed0     arg13, arg14, arg15, arg16)
+149a8ed4 bool cond:3_1
+149a8ed4 
+149a8ed4 if (x0_4 == 0)
+149a9068 label_149a9068:
+149a9068     x1_6 = "S Boot Partition Enabled: 0x%x"
+149a906c label_149a906c:
+149a906c     x0_7 = 2
+149a9070 label_149a9070:
+149a9070     x1_6 = &x1_6[0x266]
+149a9074 label_149a9074:
+149a9074     x2_4 = x20_1
+149a9078 label_149a9078:
+149a9078     arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16 = sub_149a5c34(x0_7.d, x1_6, 
+149a9078         x2_4, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, 
+149a9078         x24)
+149a9164 label_149a9164:
+149a9164     cond:3_1 = x22_1.d u> 3
+149a9168 label_149a9168:
+149a9168     
+149a9168     if (cond:3_1)
+149a9168         goto label_149a917c
+149a9168     
+149a9168     goto label_149a916c
+149a9168 
+149a8ef0 x19_3 = &x0_4[0x40]
+149a8ef8 char* x25_1 = x0_4
+149a8f20 char* x26_2 = &x0_4[0x48]
+149a8f28 uint64_t x3_2 = zx.q(*x19_3) | zx.q((zx.d(x0_4[0x41]) << 8).w)
+149a8f28     | zx.q((zx.d(*(x19_3 + 2)) | zx.d((zx.d(*(x19_3 + 3)) << 8).w)) << 0x10)
+149a8f54 uint64_t x4_2 = zx.q(x0_4[0x44]) | zx.q((zx.d(x0_4[0x45]) << 8).w)
+149a8f54     | zx.q((zx.d(x0_4[0x46]) | zx.d((zx.d(x0_4[0x47]) << 8).w)) << 0x10)
+149a8f68 uint64_t x5_2 = zx.q(*x26_2) | zx.q((zx.d(x0_4[0x49]) << 8).w)
+149a8f68     | zx.q((zx.d(x26_2[2]) | zx.d((zx.d(x26_2[3]) << 8).w)) << 0x10)
+149a8f78 uint64_t var_70_1 = x24
+149a8f9c uint64_t x7_2 = zx.q(x0_4[0x50]) | zx.q((zx.d(x25_1[0x51]) << 8).w)
+149a8f9c     | zx.q((zx.d(x0_4[0x52]) | zx.d((zx.d(x0_4[0x53]) << 8).w)) << 0x10)
+149a8fa4 uint64_t x6_2 = zx.q(x0_4[0x4c]) | zx.q((zx.d(x0_4[0x4d]) << 8).w)
+149a8fa4     | zx.q((zx.d(x0_4[0x4e]) | zx.d((zx.d(x0_4[0x4f]) << 8).w)) << 0x10)
+149a8fb4 char* x23_3 = &x25_1[0x60]
+149a8ff8 x24 = zx.q(x25_1[0x5c]) | zx.q((zx.q(x25_1[0x5d]) << 8).w)
+149a8ff8     | zx.q(((zx.q(x25_1[0x5e]) | zx.q((zx.q(x25_1[0x5f]) << 8).w)) << 0x10).d) | (zx.q(*x23_3)
+149a8ff8     | zx.q((zx.d(x25_1[0x61]) << 8).w)
+149a8ff8     | zx.q((zx.d(x23_3[2]) | zx.d((zx.d(x23_3[3]) << 8).w)) << 0x10)) << 0x20
+149a9014 uint64_t var_90 = zx.q(x25_1[0x54]) | zx.q((zx.q(x25_1[0x55]) << 8).w)
+149a9014     | zx.q(((zx.q(x25_1[0x56]) | zx.q((zx.q(x25_1[0x57]) << 8).w)) << 0x10).d) | (zx.q(x25_1[0x58])
+149a9014     | zx.q((zx.d(x25_1[0x59]) << 8).w)
+149a9014     | zx.q((zx.d(x25_1[0x5a]) | zx.d((zx.d(x25_1[0x5b]) << 8).w)) << 0x10)) << 0x20
+149a9014 uint64_t var_88_1 = x24
+149a9018 uint64_t x12_5
+149a9018 char x13_5
+149a9018 char x14_4
+149a9018 uint64_t x15_3
+149a9018 x0_7, x1_6, x2_4, arg4, arg5, arg6, arg7, arg8, x12_5, x13_5, x14_4, x15_3, arg9, arg10, arg11, 
+149a9018     arg12, arg13, arg14, arg15, arg16 = sub_149a5c34(4, 
+149a9018     "entry:%s, w:%d, r:%d, e:%d, c:%d, s:%d, start:0x%llx, num:0x%llx", x25_1, x3_2, x4_2, x5_2, 
+149a9018     x6_2, x7_2, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, x24)
+149a901c bool cond:0_1 = x22_1.d == 3
+149a901c bool cond:1_1 = x22_1.d u> 3
+149a901c bool cond:2_1 = x22_1.d u>= 3
+149a901c cond:3_1 = x22_1.d u> 3
+149a901c bool cond:4_1 = x22_1.d s>= 3
+149a901c bool cond:5_1 = x22_1.d != 3
+149a901c bool cond:6_1 = x22_1.d != 3
+149a901c bool cond:7_1 = x22_1.d != 3
+149a901c 
+149a9020 if (x22_1.d u> 3)
+149a9080 label_149a9080:
+149a9080     x1_6 = "S Boot Partition Enabled: 0x%x"
+149a9084 label_149a9084:
+149a9084     x0_7 = 2
+149a9088 label_149a9088:
+149a9088     x1_6 += 0x9ed
+149a908c     x2_4 = zx.q(x22_1.d)
+149a908c     goto label_149a905c
+149a908c 
+149a9028 uint64_t x8_8 = zx.q(x22_1.d)
+149a902c char* x9_5 = &data_149d1850
+149a9034 uint64_t x11_3 = zx.q(*(&data_149d1850 + x8_8))
+149a9038 char* x10_6 = &data_149a9044 + (x11_3 << 2)
+149a903c x24 = var_70_1
+149a9040 char* var_80
+149a9040 int64_t* var_78
+149a9040 
+149a9040 switch (x10_6)
+149a9044     case &data_149a9044
+149a9044         x26_2 = x19_3
+149a9098     label_149a9098:
+149a9098         x8_8 = zx.q(x19_1)
+149a909c     label_149a909c:
+149a909c         cond:0_1 = x8_8.d == 2
+149a90a0     label_149a90a0:
+149a90a0         
+149a90a0         if (cond:0_1)
+149a90a0             goto label_149a90ac
+149a90a0         
+149a90a0         goto label_149a90cc
+149a9040     case 0x149a9048
+149a9040         goto label_149a9098
+149a9040     case 0x149a904c
+149a9040         goto label_149a904c
+149a9040     case 0x149a9050
+149a9040         goto label_149a9050
+149a9040     case 0x149a9054
+149a9040         goto label_149a9054
+149a9040     case 0x149a9058
+149a9040         goto label_149a9058
+149a9040     case 0x149a9060
+149a9040         goto label_149a9060
+149a9040     case 0x149a9068
+149a9040         goto label_149a9068
+149a9040     case 0x149a906c
+149a9040         goto label_149a906c
+149a9040     case 0x149a9070
+149a9040         goto label_149a9070
+149a9040     case 0x149a9074
+149a9040         goto label_149a9074
+149a9040     case 0x149a9078
+149a9040         goto label_149a9078
+149a9040     case 0x149a907c
+149a9040         goto label_149a9164
+149a9040     case 0x149a9080
+149a9040         goto label_149a9080
+149a9040     case 0x149a9084
+149a9040         goto label_149a9084
+149a9040     case 0x149a9088
+149a9040         goto label_149a9088
+149a908c     case 0x149a908c
+149a908c         x2_4 = zx.q(x22_1.d)
+149a908c         goto label_149a905c
+149a9040     case 0x149a9090
+149a9040         goto label_149a905c
+149a9094     case 0x149a9094
+149a9094         x26_2 = &x0_4[0x44]
+149a9094         goto label_149a9098
+149a9040     case 0x149a909c
+149a9040         goto label_149a909c
+149a9040     case 0x149a90a0
+149a9040         goto label_149a90a0
+149a90cc     case 0x149a90a4
+149a90cc     label_149a90cc:
+149a90cc         x8_8 = x25_1
+149a90d0     label_149a90d0:
+149a90d0         x8_8 += 0x54
+149a90d0         x9_5 = zx.q(*x8_8)
+149a90d4     label_149a90d4:
+149a90d4         x10_6 = x8_8
+149a90d8     label_149a90d8:
+149a90d8         x14_4 = *(x8_8 + 3)
+149a90dc     label_149a90dc:
+149a90dc         x15_3 = zx.q(*(x8_8 + 2))
+149a90e0     label_149a90e0:
+149a90e0         x13_5 = *(x8_8 + 5)
+149a90e4     label_149a90e4:
+149a90e4         x10_6 = &x10_6[4]
+149a90e4         x11_3 = zx.q(*x10_6)
+149a90e8     label_149a90e8:
+149a90e8         x12_5 = zx.q(x10_6[3])
+149a90ec     label_149a90ec:
+149a90ec         x10_6 = zx.q(x10_6[2])
+149a90f0     label_149a90f0:
+149a90f0         x15_3 = (-0xff01 & x15_3) | zx.q(x14_4) << 8
+149a90f4     label_149a90f4:
+149a90f4         x8_8 = zx.q(*(x8_8 + 1))
+149a90f8     label_149a90f8:
+149a90f8         x11_3 = (0xffff00ff & zx.q(x11_3.d)) | zx.q(zx.d(x13_5) << 8)
+149a90fc     label_149a90fc:
+149a90fc         x10_6 = (0xffff00ff & zx.q(x10_6.d)) | zx.q((0xff & x12_5.d) << 8)
+149a9100     label_149a9100:
+149a9100         x9_5 = (-0xff01 & x9_5) | (0xff & x8_8) << 8
+149a9104     label_149a9104:
+149a9104         x11_3 = (0xffff & zx.q(x11_3.d)) | zx.q((0xffff & x10_6.d) << 0x10)
+149a9108     label_149a9108:
+149a9108         x9_5 = (-0xffff0001 & x9_5) | (0xffff & x15_3) << 0x10
+149a910c     label_149a910c:
+149a910c         x9_5 = (0xffffffff & x9_5) | (0xffffffff & x11_3) << 0x20
+149a9110     label_149a9110:
+149a9110         x8_8 = x9_5 - x24
+149a9110         cond:1_1 = x9_5 u> x24
+149a9114     label_149a9114:
+149a9114         
+149a9114         if (cond:1_1)
+149a9114             goto label_149a9164
+149a9114         
+149a9114         goto label_149a9118
+149a90a8     case 0x149a90a8
+149a90a8         x26_2 = &x0_4[0x4c]
+149a90ac     label_149a90ac:
+149a90ac         x8_8 = zx.q(x26_2[3])
+149a90b0     label_149a90b0:
+149a90b0         x9_5 = zx.q(x26_2[2])
+149a90b4     label_149a90b4:
+149a90b4         x10_6 = zx.q(x26_2[1])
+149a90b8     label_149a90b8:
+149a90b8         x11_3 = zx.q(*x26_2)
+149a90bc     label_149a90bc:
+149a90bc         x9_5 = (0xffff00ff & zx.q(x9_5.d)) | zx.q((0xff & x8_8.d) << 8)
+149a90c0     label_149a90c0:
+149a90c0         x11_3 = (0xffff00ff & zx.q(x11_3.d)) | zx.q((0xff & x10_6.d) << 8)
+149a90c4     label_149a90c4:
+149a90c4         x11_3 = (0xffff & zx.q(x11_3.d)) | zx.q((0xffff & x9_5.d) << 0x10)
+149a90c8     label_149a90c8:
+149a90c8         
+149a90c8         if (x11_3.d == 0)
+149a90c8             goto label_149a9164
+149a90c8         
+149a90c8         goto label_149a90cc
+149a9040     case 0x149a90ac
+149a9040         goto label_149a90ac
+149a9040     case 0x149a90b0
+149a9040         goto label_149a90b0
+149a9040     case 0x149a90b4
+149a9040         goto label_149a90b4
+149a9040     case 0x149a90b8
+149a9040         goto label_149a90b8
+149a9040     case 0x149a90bc
+149a9040         goto label_149a90bc
+149a9040     case 0x149a90c0
+149a9040         goto label_149a90c0
+149a9040     case 0x149a90c4
+149a9040         goto label_149a90c4
+149a9040     case 0x149a90c8
+149a9040         goto label_149a90c8
+149a9040     case 0x149a90d0
+149a9040         goto label_149a90d0
+149a9040     case 0x149a90d4
+149a9040         goto label_149a90d4
+149a9040     case 0x149a90d8
+149a9040         goto label_149a90d8
+149a9040     case 0x149a90dc
+149a9040         goto label_149a90dc
+149a9040     case 0x149a90e0
+149a9040         goto label_149a90e0
+149a9040     case 0x149a90e4
+149a9040         goto label_149a90e4
+149a9040     case 0x149a90e8
+149a9040         goto label_149a90e8
+149a9040     case 0x149a90ec
+149a9040         goto label_149a90ec
+149a9040     case 0x149a90f0
+149a9040         goto label_149a90f0
+149a9040     case 0x149a90f4
+149a9040         goto label_149a90f4
+149a9040     case 0x149a90f8
+149a9040         goto label_149a90f8
+149a9040     case 0x149a90fc
+149a9040         goto label_149a90fc
+149a9040     case 0x149a9100
+149a9040         goto label_149a9100
+149a9040     case 0x149a9104
+149a9040         goto label_149a9104
+149a9040     case 0x149a9108
+149a9040         goto label_149a9108
+149a9040     case 0x149a910c
+149a9040         goto label_149a910c
+149a9040     case 0x149a9110
+149a9040         goto label_149a9110
+149a9040     case 0x149a9114
+149a9040         goto label_149a9114
+149a9118     case 0x149a9118
+149a9118     label_149a9118:
+149a9118         x25_1 = &x25_1[0x5c]
+149a9118         x9_5 = zx.q(*x25_1)
+149a911c     label_149a911c:
+149a911c         x10_6 = x25_1
+149a9120     label_149a9120:
+149a9120         x13_5 = x25_1[5]
+149a9124     label_149a9124:
+149a9124         x14_4 = x25_1[3]
+149a9128     label_149a9128:
+149a9128         x10_6 = &x10_6[4]
+149a9128         x11_3 = zx.q(*x10_6)
+149a912c     label_149a912c:
+149a912c         x12_5 = zx.q(x10_6[3])
+149a9130     label_149a9130:
+149a9130         x10_6 = zx.q(x10_6[2])
+149a9134     label_149a9134:
+149a9134         x11_3 = (0xffff00ff & zx.q(x11_3.d)) | zx.q(zx.d(x13_5) << 8)
+149a9138     label_149a9138:
+149a9138         x13_5 = x25_1[1]
+149a913c     label_149a913c:
+149a913c         x10_6 = (0xffff00ff & zx.q(x10_6.d)) | zx.q((0xff & x12_5.d) << 8)
+149a9140     label_149a9140:
+149a9140         x12_5 = zx.q(x25_1[2])
+149a9144     label_149a9144:
+149a9144         x9_5 = (-0xff01 & x9_5) | zx.q(x13_5) << 8
+149a9148     label_149a9148:
+149a9148         x11_3 = (0xffff & zx.q(x11_3.d)) | zx.q((0xffff & x10_6.d) << 0x10)
+149a914c     label_149a914c:
+149a914c         x12_5 = (-0xff01 & x12_5) | zx.q(x14_4) << 8
+149a9150     label_149a9150:
+149a9150         x9_5 = (-0xffff0001 & x9_5) | (0xffff & x12_5) << 0x10
+149a9154     label_149a9154:
+149a9154         x9_5 = (0xffffffff & x9_5) | (0xffffffff & x11_3) << 0x20
+149a9158     label_149a9158:
+149a9158         x8_8 = &x9_5[x8_8]
+149a915c     label_149a915c:
+149a915c         cond:2_1 = x8_8 u>= x21_1
+149a9160     label_149a9160:
+149a9160         
+149a9160         if (cond:2_1)
+149a9160             goto label_149a91a8
+149a9160         
+149a9160         goto label_149a9164
+149a9040     case 0x149a911c
+149a9040         goto label_149a911c
+149a9040     case 0x149a9120
+149a9040         goto label_149a9120
+149a9040     case 0x149a9124
+149a9040         goto label_149a9124
+149a9040     case 0x149a9128
+149a9040         goto label_149a9128
+149a9040     case 0x149a912c
+149a9040         goto label_149a912c
+149a9040     case 0x149a9130
+149a9040         goto label_149a9130
+149a9040     case 0x149a9134
+149a9040         goto label_149a9134
+149a9040     case 0x149a9138
+149a9040         goto label_149a9138
+149a9040     case 0x149a913c
+149a9040         goto label_149a913c
+149a9040     case 0x149a9140
+149a9040         goto label_149a9140
+149a9040     case 0x149a9144
+149a9040         goto label_149a9144
+149a9040     case 0x149a9148
+149a9040         goto label_149a9148
+149a9040     case 0x149a914c
+149a9040         goto label_149a914c
+149a9040     case 0x149a9150
+149a9040         goto label_149a9150
+149a9040     case 0x149a9154
+149a9040         goto label_149a9154
+149a9040     case 0x149a9158
+149a9040         goto label_149a9158
+149a9040     case 0x149a915c
+149a9040         goto label_149a915c
+149a9040     case 0x149a9160
+149a9040         goto label_149a9160
+149a9040     case 0x149a9168
+149a9040         goto label_149a9168
+149a916c     case 0x149a916c
+149a916c     label_149a916c:
+149a916c         x8_8 = "S Boot Partition Enabled: 0x%x"
+149a9170     label_149a9170:
+149a9170         x8_8 += 0xc68
+149a9174     label_149a9174:
+149a9174         x2_4 = *(x8_8 + (sx.q(x22_1.d) << 3))
+149a9184     label_149a9184:
+149a9184         x1_6 = "S Boot Partition Enabled: 0x%x"
+149a9188     label_149a9188:
+149a9188         x0_7 = 2
+149a918c     label_149a918c:
+149a918c         x1_6 += 0xa25
+149a9190     label_149a9190:
+149a9190         arg4 = x20_1
+149a9194     label_149a9194:
+149a9194         arg5 = x24
+149a9198     label_149a9198:
+149a9198         arg6 = x21_1
+149a919c     label_149a919c:
+149a919c         x19_3 = 2
+149a91a0     label_149a91a0:
+149a91a0         sub_149a5c34(x0_7.d, x1_6, x2_4, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, 
+149a91a0             arg13, arg14, arg15, arg16, x24)
+149a91e4         return zx.q(x19_3.d)
+149a9040     case 0x149a9170
+149a9040         goto label_149a9170
+149a9040     case 0x149a9174
+149a9040         goto label_149a9174
+149a9040     case 0x149a9178
+149a9040         goto label_149a9184
+149a917c     case 0x149a917c
+149a917c     label_149a917c:
+149a917c         x2_4 = "S Boot Partition Enabled: 0x%x"
+149a9180     label_149a9180:
+149a9180         x2_4 += 0xbbe
+149a9180         goto label_149a9184
+149a9040     case 0x149a9180
+149a9040         goto label_149a9180
+149a9040     case 0x149a9188
+149a9040         goto label_149a9188
+149a9040     case 0x149a918c
+149a9040         goto label_149a918c
+149a9040     case 0x149a9190
+149a9040         goto label_149a9190
+149a9040     case 0x149a9194
+149a9040         goto label_149a9194
+149a9040     case 0x149a9198
+149a9040         goto label_149a9198
+149a9040     case 0x149a919c
+149a9040         goto label_149a919c
+149a9040     case 0x149a91a0
+149a9040         goto label_149a91a0
+149a91c4     case 0x149a91a4
+149a91e4         return zx.q(x19_3.d)
+149a91a8     case 0x149a91a8
+149a91a8     label_149a91a8:
+149a91a8         x1_6 = "S Boot Partition Enabled: 0x%x"
+149a91ac     label_149a91ac:
+149a91ac         x2_4 = "S Boot Partition Enabled: 0x%x"
+149a91b0     label_149a91b0:
+149a91b0         x1_6 += 0xa02
+149a91b4     label_149a91b4:
+149a91b4         x2_4 += 0xa08
+149a91b8     label_149a91b8:
+149a91b8         x0_7 = 4
+149a91bc     label_149a91bc:
+149a91bc         sub_149a5c34(x0_7.d, x1_6, x2_4, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, 
+149a91bc             arg13, arg14, arg15, arg16, x24)
+149a91c0     label_149a91c0:
+149a91e4         return zx.q(nullptr.d)
+149a9040     case 0x149a91ac
+149a9040         goto label_149a91ac
+149a9040     case 0x149a91b0
+149a9040         goto label_149a91b0
+149a9040     case 0x149a91b4
+149a9040         goto label_149a91b4
+149a9040     case 0x149a91b8
+149a9040         goto label_149a91b8
+149a9040     case 0x149a91bc
+149a9040         goto label_149a91bc
+149a9040     case 0x149a91c0
+149a9040         goto label_149a91c0
+149a91e4     case 0x149a91c8
+149a91e4         return x0_7
+149a9040     case sub_149a91e8
+149a9040         return sub_149a91e8(x0_7, x1_6, x2_4, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, 
+149a9040             arg12, arg13, arg14, arg15, arg16) __tailcall
+149a91ec     case 0x149a91ec
+149a91ec         var_80 = x24
+149a91ec         var_78 = x23_3
+149a91f0     label_149a91f0:
+149a91f0         var_70_1 = x22_1
+149a91f0         char* var_68_1 = x21_1
+149a91f4     label_149a91f4:
+149a91f4         var_60 = x20_1
+149a91f4         var_58 = x19_3
+149a91fc     label_149a91fc:
+149a91fc         
+149a91fc         if (x0_7 == 0)
+149a91fc             goto label_149a929c
+149a91fc         
+149a91fc         goto label_149a9200
+149a9040     case 0x149a91f0
+149a9040         goto label_149a91f0
+149a9040     case 0x149a91f4
+149a9040         goto label_149a91f4
+149a9040     case 0x149a91f8
+149a9040         goto label_149a91fc
+149a9200     case 0x149a9200
+149a9200     label_149a9200:
+149a9200         x8_8 = &data_80269000
+149a9204     label_149a9204:
+149a9204         x22_1 = *(x8_8 + 0xb70)
+149a9208     label_149a9208:
+149a9208         
+149a9208         if (x22_1 == 0)
+149a9208             goto label_149a92bc
+149a9208         
+149a9208         goto label_149a920c
+149a9040     case 0x149a9204
+149a9040         goto label_149a9204
+149a9040     case 0x149a9208
+149a9040         goto label_149a9208
+149a920c     case 0x149a920c
+149a920c     label_149a920c:
+149a920c         x19_3 = x0_7
+149a9210     label_149a9210:
+149a9210         x20_1 = x1_6
+149a9214     label_149a9214:
+149a9214         x23_3 = nullptr
+149a9218         x24 = &data_80269000
+149a9218         goto label_149a921c
+149a9040     case 0x149a9210
+149a9040         goto label_149a9210
+149a9040     case 0x149a9214
+149a9040         goto label_149a9214
+149a9218     case 0x149a9218
+149a9218         x24 = &data_80269000
+149a9218         goto label_149a921c
+149a9040     case 0x149a9220
+149a9040         goto label_149a9220
+149a9040     case 0x149a9224
+149a9040         goto label_149a9224
+149a9040     case 0x149a9228
+149a9040         goto label_149a9228
+149a9040     case 0x149a922c
+149a9040         goto label_149a922c
+149a9040     case 0x149a9230
+149a9040         goto label_149a9230
+149a9040     case 0x149a9234
+149a9040         goto label_149a9234
+149a9040     case 0x149a9238
+149a9040         goto label_149a9238
+149a9040     case 0x149a923c
+149a9040         goto label_149a923c
+149a9040     case 0x149a9240
+149a9040         goto label_149a9240
+149a9040     case 0x149a9244
+149a9040         goto label_149a9244
+149a9040     case 0x149a9248
+149a9040         goto label_149a9248
+149a9040     case 0x149a924c
+149a9040         goto label_149a924c
+149a9040     case 0x149a9250
+149a9040         goto label_149a9250
+149a9040     case 0x149a9254
+149a9040         goto label_149a9254
+149a9040     case 0x149a9258
+149a9040         goto label_149a9258
+149a9040     case 0x149a925c
+149a9040         goto label_149a925c
+149a9040     case 0x149a9260
+149a9040         goto label_149a9260
+149a9040     case 0x149a9264
+149a9040         goto label_149a9264
+149a9040     case 0x149a9268
+149a9040         goto label_149a9268
+149a9040     case 0x149a926c
+149a9040         goto label_149a926c
+149a9040     case 0x149a9270
+149a9040         goto label_149a9270
+149a9040     case 0x149a9274
+149a9040         goto label_149a9274
+149a9040     case 0x149a9278
+149a9040         goto label_149a9278
+149a9040     case 0x149a927c
+149a9040         goto label_149a927c
+149a9040     case 0x149a9280
+149a9040         goto label_149a9280
+149a9040     case 0x149a9284
+149a9040         goto label_149a9284
+149a9040     case 0x149a9288
+149a9040         goto label_149a9288
+149a9040     case 0x149a928c
+149a9040         goto label_149a928c
+149a9290     case 0x149a9290
+149a9290         while (x0_7.d != 0)
+149a927c         label_149a927c_1:
+149a927c             
+149a927c             do
+149a9294                 x23_3 = zx.q(x23_3.d + 1)
+149a921c             label_149a921c:
+149a921c                 x8_8 = x22_1
+149a9220             label_149a9220:
+149a9220                 x8_8 += 0xc
+149a9220                 x9_5 = zx.q(*x8_8)
+149a9224             label_149a9224:
+149a9224                 x10_6 = zx.q(*(x8_8 + 3))
+149a9228             label_149a9228:
+149a9228                 x11_3 = zx.q(*(x8_8 + 2))
+149a922c             label_149a922c:
+149a922c                 x8_8 = zx.q(*(x8_8 + 1))
+149a9230             label_149a9230:
+149a9230                 x11_3 = (0xffff00ff & zx.q(x11_3.d)) | zx.q((0xff & x10_6.d) << 8)
+149a9234             label_149a9234:
+149a9234                 x9_5 = (0xffff00ff & zx.q(x9_5.d)) | zx.q((0xff & x8_8.d) << 8)
+149a9238             label_149a9238:
+149a9238                 x9_5 = (0xffff & zx.q(x9_5.d)) | zx.q((0xffff & x11_3.d) << 0x10)
+149a923c             label_149a923c:
+149a923c                 cond:4_1 = x23_3.d s>= x9_5.d
+149a9240             label_149a9240:
+149a9240                 
+149a9240                 if (cond:4_1)
+149a9240                     goto label_149a92c0
+149a9240                 
+149a9244             label_149a9244:
+149a9244                 x8_8 = x22_1
+149a9248             label_149a9248:
+149a9248                 x12_5 = *(x24 + 0xb78)
+149a924c             label_149a924c:
+149a924c                 x0_7 = x19_3
+149a9250             label_149a9250:
+149a9250                 x8_8 += 0x14
+149a9250                 x9_5 = zx.q(*x8_8)
+149a9254             label_149a9254:
+149a9254                 x10_6 = sx.q(*(x8_8 + 3))
+149a9258             label_149a9258:
+149a9258                 x11_3 = zx.q(*(x8_8 + 2))
+149a925c             label_149a925c:
+149a925c                 x8_8 = zx.q(*(x8_8 + 1))
+149a9260             label_149a9260:
+149a9260                 x11_3 = (0xff & x11_3) | (0xffffffffffffff & x10_6) << 8
+149a9264             label_149a9264:
+149a9264                 x9_5 = (-0xff01 & x9_5) | (0xff & x8_8) << 8
+149a9268             label_149a9268:
+149a9268                 x8_8 = sx.q(x23_3.d)
+149a926c             label_149a926c:
+149a926c                 x9_5 = (0xffff & x9_5) | (0xffffffffffff & x11_3) << 0x10
+149a9270             label_149a9270:
+149a9270                 x21_1 = x12_5 + x9_5 * x8_8
+149a9274             label_149a9274:
+149a9274                 x1_6 = x21_1
+149a9278             label_149a9278:
+149a9278                 x0_7 = sub_149ba59c(x0_7, x1_6)
+149a927c             label_149a927c:
+149a927c             while (x0_7.d != 0)
+149a927c             
+149a9280         label_149a9280:
+149a9280             
+149a9280             if (x20_1 == 0)
+149a9280                 break
+149a9280             
+149a9284         label_149a9284:
+149a9284             x1_6 = &x21_1[0x20]
+149a9288         label_149a9288:
+149a9288             x0_7 = x20_1
+149a928c         label_149a928c:
+149a928c             x0_7 = sub_149ba59c(x0_7, x1_6)
+149a928c         
+149a92d8         return x21_1
+149a9040     case 0x149a9294
+149a9040         goto label_149a927c_1
+149a9040     case 0x149a9298
+149a9040         goto label_149a921c
+149a929c     case 0x149a929c
+149a929c     label_149a929c:
+149a929c         x1_6 = "S Boot Partition Enabled: 0x%x"
+149a92a0     label_149a92a0:
+149a92a0         x0_7 = 2
+149a92a4     label_149a92a4:
+149a92a4         x1_6 += 0xb6e
+149a92a8     label_149a92a8:
+149a92a8         sub_149a5c34(x0_7.d, x1_6, x2_4, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, 
+149a92a8             arg13, arg14, arg15, arg16, x24)
+149a92c0     label_149a92c0:
+149a92d8         return nullptr
+149a9040     case 0x149a92a0
+149a9040         goto label_149a92a0
+149a9040     case 0x149a92a4
+149a9040         goto label_149a92a4
+149a9040     case 0x149a92a8
+149a9040         goto label_149a92a8
+149a9040     case 0x149a92ac
+149a9040         goto label_149a92c0
+149a92bc     case 0x149a92b0
+149a92bc     label_149a92bc:
+149a92bc         sub_149a9900(arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16)
+149a92bc         goto label_149a92c0
+149a92c4     case 0x149a92c4
+149a92d8         return x21_1
+149a92d8     case 0x149a92c8
+149a92d8         return x0_7
+149a9040     case sub_149a92dc
+149a9040         return sub_149a92dc() __tailcall
+149a92e4     case 0x149a92e0
+149a92e4         x0_7, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16 =
+149a92e4             sub_149a5f80()
+149a92e8     label_149a92e8:
+149a92e8         x8_8 = &data_80269000
+149a92ec     label_149a92ec:
+149a92ec         *(x8_8 + 0xb90) = x0_7
+149a92f0     label_149a92f0:
+149a92f0         
+149a92f0         if (x0_7 == 0)
+149a92f0             goto label_149a9308
+149a92f0         
+149a92f0         goto label_149a92f4
+149a9040     case 0x149a92e8
+149a9040         goto label_149a92e8
+149a9040     case 0x149a92ec
+149a9040         goto label_149a92ec
+149a9040     case 0x149a92f0
+149a9040         goto label_149a92f0
+149a92f4     case 0x149a92f4
+149a92f4     label_149a92f4:
+149a92f4         x8_8 = &data_80269000
+149a92f8     label_149a92f8:
+149a92f8         x9_5 = 1
+149a92fc     label_149a92fc:
+149a9300         *(x8_8 + 0xb88) = x9_5.d
+149a9318         return nullptr
+149a9040     case 0x149a92f8
+149a9040         goto label_149a92f8
+149a9040     case 0x149a92fc
+149a9040         goto label_149a92fc
+149a9300     case 0x149a9300
+149a9300         *(x8_8 + 0xb88) = x9_5.d
+149a9318         return x0_7
+149a9318     case 0x149a9304
+149a9318         return x0_7
+149a9308     case 0x149a9308
+149a9308     label_149a9308:
+149a9308         x0_7, x1_6, x2_4 = sub_149a9920()
+149a930c     label_149a930c:
+149a930c         sub_149a5c34(x0_7.d, x1_6, x2_4, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, 
+149a930c             arg13, arg14, arg15, arg16, x24)
+149a9318         return 0xffffffff
+149a9040     case 0x149a930c
+149a9040         goto label_149a930c
+149a9310     case 0x149a9310
+149a9318         return 0xffffffff
+149a9040     case sub_149a931c
+149a9040         return sub_149a931c(x0_7, x1_6, x2_4, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16)
+149a9040             __tailcall
+149a9320     case 0x149a9320
+149a9320         var_80 = x20_1
+149a9320         var_78 = x19_3
+149a9328     label_149a9328:
+149a9328         x8_8 = x0_7
+149a932c     label_149a932c:
+149a932c         x0_7 = 0xffffffff
+149a9330     label_149a9330:
+149a9330         
+149a9334         if (x1_6 == 0 || x8_8 == 0)
+149a93c0             return x0_7
+149a93c0         
+149a9330         goto label_149a9338
+149a9040     case 0x149a9324
+149a9040         goto label_149a9328
+149a9040     case 0x149a932c
+149a9040         goto label_149a932c
+149a9040     case 0x149a9330
+149a9040         goto label_149a9330
+149a9334     case 0x149a9334
+149a9334         if (x8_8 == 0)
+149a93c0             return x0_7
+149a93c0         
+149a9334         goto label_149a9338
+149a9338     case 0x149a9338
+149a9338     label_149a9338:
+149a9338         x19_3 = x2_4
+149a933c     label_149a933c:
+149a933c         
+149a933c         if (x2_4 == 0)
+149a93c0             return x0_7
+149a93c0         
+149a933c         goto label_149a9340
+149a9040     case 0x149a933c
+149a9040         goto label_149a933c
+149a9340     case 0x149a9340
+149a9340     label_149a9340:
+149a9340         x9_5 = &data_80269000
+149a9344     label_149a9344:
+149a9344         x2_4 = zx.q(*(x9_5 + 0xb88))
+149a9348     label_149a9348:
+149a9348         cond:5_1 = x2_4.d != 1
+149a934c     label_149a934c:
+149a934c         
+149a934c         if (cond:5_1)
+149a934c             goto label_149a93b0
+149a934c         
+149a934c         goto label_149a9350
+149a9040     case 0x149a9344
+149a9040         goto label_149a9344
+149a9040     case 0x149a9348
+149a9040         goto label_149a9348
+149a9040     case 0x149a934c
+149a9040         goto label_149a934c
+149a9350     case 0x149a9350
+149a9350     label_149a9350:
+149a9350         x20_1 = x1_6
+149a9354     label_149a9354:
+149a9354         *x1_6
+149a9358     label_149a9358:
+149a9358         x19_3[1]
+149a9358         x19_3[2]
+149a935c     label_149a935c:
+149a935c         x0_7 = x8_8
+149a9360     label_149a9360:
+149a9360         x0_7, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16 = sub_149a6370(x0_7)
+149a9364     label_149a9364:
+149a9364         
+149a9364         if (x0_7.d == 0)
+149a9364             goto label_149a9384
+149a9364         
+149a9364         goto label_149a93b0
+149a9040     case 0x149a9354
+149a9040         goto label_149a9354
+149a9040     case 0x149a9358
+149a9040         goto label_149a9358
+149a9040     case 0x149a935c
+149a9040         goto label_149a935c
+149a9040     case 0x149a9360
+149a9040         goto label_149a9360
+149a9040     case 0x149a9364
+149a9040         goto label_149a9364
+149a9384     case 0x149a9384
+149a9384     label_149a9384:
+149a9384         x8_8 = zx.q(x19_3[1].d)
+149a9388     label_149a9388:
+149a9388         x9_5 = &data_80269000
+149a938c     label_149a938c:
+149a938c         x10_6 = zx.q(*x19_3)
+149a9390     label_149a9390:
+149a9390         x1_6 = *x20_1
+149a9394     label_149a9394:
+149a9394         x0_7 = *(x9_5 + 0xb90)
+149a9398     label_149a9398:
+149a9398         x2_4 = zx.q(x10_6.d * x8_8.d)
+149a939c     label_149a939c:
+149a939c         x0_7, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16 =
+149a939c             sub_149a5fd8(x0_7, x1_6, x2_4.d)
+149a93a0     label_149a93a0:
+149a93a0         
+149a93a0         if (x0_7.d == 0)
+149a93c0             return x0_7
+149a93c0         
+149a93a0         goto label_149a93b0
+149a9040     case 0x149a9388
+149a9040         goto label_149a9388
+149a9040     case 0x149a938c
+149a9040         goto label_149a938c
+149a9040     case 0x149a9390
+149a9040         goto label_149a9390
+149a9040     case 0x149a9394
+149a9040         goto label_149a9394
+149a9040     case 0x149a9398
+149a9040         goto label_149a9398
+149a9040     case 0x149a939c
+149a9040         goto label_149a939c
+149a9040     case 0x149a93a0
+149a9040         goto label_149a93a0
+149a93b0     case 0x149a93a4
+149a93b0     label_149a93b0:
+149a93b0         sub_149a9900(arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16)
+149a93c0         return 0xffffffff
+149a93b4     case 0x149a93b4
+149a93c0         return 0xffffffff
+149a93c0     case 0x149a93b8
+149a93c0         return x0_7
+149a9040     case sub_149a93c4
+149a9040         return sub_149a93c4(x0_7, x1_6) __tailcall
+149a93c8     case 0x149a93c8
+149a93c8         var_60 = &var_60
+149a93cc     label_149a93cc:
+149a93cc         var_50 = x21_1
+149a93d0     label_149a93d0:
+149a93d0         var_40 = x20_1
+149a93d0         var_38 = x19_3
+149a93d8     label_149a93d8:
+149a93d8         x8_8 = &data_149da000
+149a93dc     label_149a93dc:
+149a93dc         x21_1 = &data_80269000
+149a93e0     label_149a93e0:
+149a93e0         arg9.q = 0
+149a93e0         arg9:8.q = 0
+149a93e4     label_149a93e4:
+149a93e4         x8_8 = *(x8_8 + 0x3f0)
+149a93e8     label_149a93e8:
+149a93e8         uint64_t var_68_2 = x8_8
+149a93ec     label_149a93ec:
+149a93ec         x2_4 = zx.q(*(x21_1 + 0xb88))
+149a93f0     label_149a93f0:
+149a93f0         var_90.o = arg9
+149a93f0         var_80.o = arg9
+149a93f4     label_149a93f4:
+149a93f4         cond:6_1 = x2_4.d != 1
+149a93f4         cond:7_1 = x2_4.d != 1
+149a93f8     label_149a93f8:
+149a93f8         
+149a93f8         if (cond:6_1)
+149a93f8             goto label_149a9434
+149a93f8         
+149a93f8         goto label_149a93fc
+149a9040     case 0x149a93cc
+149a9040         goto label_149a93cc
+149a9040     case 0x149a93d0
+149a9040         goto label_149a93d0
+149a9040     case 0x149a93d4
+149a9040         goto label_149a93d8
+149a9040     case 0x149a93dc
+149a9040         goto label_149a93dc
+149a9040     case 0x149a93e0
+149a9040         goto label_149a93e0
+149a9040     case 0x149a93e4
+149a9040         goto label_149a93e4
+149a9040     case 0x149a93e8
+149a9040         goto label_149a93e8
+149a9040     case 0x149a93ec
+149a9040         goto label_149a93ec
+149a9040     case 0x149a93f0
+149a9040         goto label_149a93f0
+149a9040     case 0x149a93f4
+149a9040         goto label_149a93f4
+149a9040     case 0x149a93f8
+149a9040         goto label_149a93f8
+149a93fc     case 0x149a93fc
+149a93fc     label_149a93fc:
+149a93fc         x8_8 = &data_80269000
+149a9400     label_149a9400:
+149a9400         x20_1 = x0_7
+149a9404     label_149a9404:
+149a9404         x19_3 = x1_6
+149a9408     label_149a9408:
+149a9408         x1_6 = &var_90
+149a940c     label_149a940c:
+149a940c         x2_4 = 0x20
+149a9410     label_149a9410:
+149a9410         x0_7 = *(x8_8 + 0xb90)
+149a9414     label_149a9414:
+149a9414         x0_7, x2_4, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, 
+149a9414             arg16 = sub_149a601c(x0_7, x1_6, x2_4.d)
+149a9418     label_149a9418:
+149a9418         
+149a9418         if (x0_7.d != 0)
+149a9418             goto label_149a9434
+149a9418         
+149a9464         *(x21_1 + 0xb88) = 2
+149a9468         char* x0_10
+149a9468         int128_t v0_1
+149a9468         int128_t v1_1
+149a9468         int128_t v2_1
+149a9468         int128_t v3_1
+149a9468         int128_t v4_1
+149a9468         int128_t v5_1
+149a9468         int128_t v6_1
+149a9468         int128_t v7_1
+149a9468         x0_10, arg4, v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, v6_1, v7_1 = sub_149a91e8(x20_1, x19_3, 
+149a9468             x2_4, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, 
+149a9468             arg16)
+149a9468         
+149a946c         if (x0_10 == 0)
+149a94e0             x1_6, x2_4, arg4 = sub_149a9908(2, "Hash not found on %s:%s", v0_1, v1_1, v2_1, v3_1, 
+149a94e0                 v4_1, v5_1, v6_1, v7_1, x19_3, x20_1)
+149a94e4             goto label_149a9438
+149a94e4         
+149a9480         x0_7, x1_6, x2_4 = sub_149ba56c(&var_90, &x0_10[0x64], 0x20)
+149a9480         
+149a9484         if (x0_7.d != 0)
+149a9494             int64_t* x3_5
+149a9494             int64_t x4_4
+149a9494             int64_t x5_4
+149a9494             int64_t x6_4
+149a9494             int64_t x7_4
+149a9494             int128_t v0_2
+149a9494             int128_t v1_2
+149a9494             int128_t v2_2
+149a9494             int128_t v3_2
+149a9494             int128_t v4_2
+149a9494             int128_t v5_2
+149a9494             int128_t v6_2
+149a9494             int128_t v7_2
+149a9494             x3_5, x4_4, x5_4, x6_4, x7_4, v0_2, v1_2, v2_2, v3_2, v4_2, v5_2, v6_2, v7_2 =
+149a9494                 sub_149a9908(2, "Hash is unmatch on %s:%s", v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, 
+149a9494                 v6_1, v7_1, x19_3, x20_1)
+149a94a8             sub_149a5c34(2, "Excpted hash (%lld)", 0x20, x3_5, x4_4, x5_4, x6_4, x7_4, v0_2, v1_2, 
+149a94a8                 v2_2, v3_2, v4_2, v5_2, v6_2, v7_2, x24)
+149a94b0             int64_t* x3_6
+149a94b0             int64_t x4_5
+149a94b0             int64_t x5_5
+149a94b0             int64_t x6_5
+149a94b0             int64_t x7_5
+149a94b0             int128_t v0_3
+149a94b0             int128_t v1_3
+149a94b0             int128_t v2_3
+149a94b0             int128_t v3_3
+149a94b0             int128_t v4_3
+149a94b0             int128_t v5_3
+149a94b0             int128_t v6_3
+149a94b0             int128_t v7_3
+149a94b0             x3_6, x4_5, x5_5, x6_5, x7_5, v0_3, v1_3, v2_3, v3_3, v4_3, v5_3, v6_3, v7_3 =
+149a94b0                 sub_149a97e4(&x0_10[0x64])
+149a94c4             sub_149a5c34(2, "Calculated hash (%d)", 0x20, x3_6, x4_5, x5_5, x6_5, x7_5, v0_3, v1_3, 
+149a94c4                 v2_3, v3_3, v4_3, v5_3, v6_3, v7_3, x24)
+149a94cc             x1_6, x2_4, arg4 = sub_149a97e4(&var_90)
+149a94d0             goto label_149a9438
+149a9040     case 0x149a9400
+149a9040         goto label_149a9400
+149a9040     case 0x149a9404
+149a9040         goto label_149a9404
+149a9040     case 0x149a9408
+149a9040         goto label_149a9408
+149a9040     case 0x149a940c
+149a9040         goto label_149a940c
+149a9040     case 0x149a9410
+149a9040         goto label_149a9410
+149a9040     case 0x149a9414
+149a9040         goto label_149a9414
+149a9040     case 0x149a9418
+149a9040         goto label_149a9418
+149a9434     case 0x149a942c
+149a9434     label_149a9434:
+149a9434         x1_6, x2_4, arg4 = sub_149a9900(arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16)
+149a9438     label_149a9438:
+149a9438         x0_7 = 0xffffffff
+149a9040     case 0x149a9438
+149a9040         goto label_149a9438
+149a9040     case 0x149a943c
+149a9040         goto label_149a9440
+149a9040 
+149a9440 label_149a9440:
+149a9440 
+149a9440 if (cond:7_1)
+149a94e8     return sub_149a94ec(x0_7, x1_6, x2_4, arg4.d) __tailcall
+149a94e8 
+149a9454 return x0_7

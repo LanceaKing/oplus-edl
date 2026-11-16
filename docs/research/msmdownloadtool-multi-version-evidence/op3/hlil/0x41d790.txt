@@ -1,0 +1,35 @@
+0041d796 __security_cookie
+0041d7a5 void* var_28 = nullptr
+0041d7b3 int32_t i = 5
+0041d7bb _memset(arg1[2], 0, 0x1000)
+0041d7bb 
+0041d846 do
+0041d7ce     Sleep((6 - i) * 0x32)
+0041d7e7     void* eax_4 = sub_41af00(*arg1, arg1[2], 0x1000, &var_28, 0x3e8)
+0041d7e7     
+0041d7f0     if (eax_4 != 0)
+0041d841         if (eax_4 != 0x102)
+0041d841             break
+0041d841         
+0041d843         i -= 1
+0041d7f0     else
+0041d7f2         void* var_3c_2 = var_28
+0041d7f8         int32_t var_10_1 = 0xf
+0041d7ff         int32_t* var_40_2 = arg1[2]
+0041d802         void* var_14_1 = eax_4
+0041d805         char var_24 = eax_4.b
+0041d808         sub_402440(&var_24, var_40_2, var_3c_2)
+0041d808         
+0041d820         if (sub_40fa20(&var_24, "response value="ACK" rawmode="false"", eax_4, 0x24) != 0xffffffff)
+0041d852             if (var_10_1 u>= 0x10)
+0041d857                 sub_4208bb(var_24.d)
+0041d857             
+0041d852             break
+0041d852         
+0041d822         i -= 1
+0041d822         
+0041d82c         if (var_10_1 u>= 0x10)
+0041d831             sub_4208bb(var_24.d)
+0041d846 while (i != 0)
+0041d846 
+0041d871 return sub_53b554()

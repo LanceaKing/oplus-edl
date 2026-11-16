@@ -1,0 +1,462 @@
+00422363 int32_t var_8 = 0xffffffff
+00422365 int32_t (* var_c)(void* arg1) = sub_571a08
+00422370 TEB* fsbase
+00422370 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00422379 int32_t __saved_ebp
+00422379 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00422381 int32_t var_60 = eax_2
+00422385 fsbase->NtTib.ExceptionList = &ExceptionList
+00422394 int32_t* var_44
+00422394 sub_422c30(arg1, arg2, &var_44)
+00422399 void* eax_3 = *(arg1 + 0x60)
+0042239c *(arg1 + 0x1d) = 0
+004223a7 enum WIN32_ERROR result
+004223a7 enum WIN32_ERROR result_1
+004223a7 
+004223a7 if (*(eax_3 + 0xa1) == 0)
+004226ff label_4226ff:
+004226ff     int32_t* edi_6 = var_44
+004226ff     
+00422704     if (edi_6 != 0)
+00422762         int32_t eax_42
+00422762         int32_t edx_2
+00422762         edx_2:eax_42 = muls.dp.d(0x66666667, edi_6[1] - *edi_6)
+00422764         int32_t var_48_1 = 0
+0042276b         int32_t edx_3 = edx_2 s>> 6
+00422770         uint32_t eax_44 = edx_3 u>> 0x1f
+00422770         
+00422778         if (eax_44 == neg.d(edx_3))
+00422b26         label_422b26:
+00422b26             void** ecx_48 = *(arg1 + 0x28)
+00422b26             
+00422b29             if (*(arg1 + 0x1c) != 0)
+00422bce                 result_1 = sub_429a80(ecx_48, 1)
+00422bce                 
+00422bd2                 if (result_1 != NO_ERROR)
+00422be9                     wchar16 const* const lParam
+00422be9                     
+00422be9                     if (*(arg1 + 0x1b) == 0)
+00422bf2                         lParam = u"SetBootAbleStorageDriveTo1 Failed"
+00422be9                     else
+00422beb                         lParam = u"SetBootAbleStorageDriveTo"
+00422beb                     
+00422c00                     SendMessageW(*(arg1 + 0x30), 0x178c, 
+00422c00                         (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, lParam)
+00422b29             else
+00422b36                 result_1 = sub_429a80(ecx_48, 0)
+00422b36                 
+00422b3a                 if (result_1 != NO_ERROR)
+00422b44                     if (*(arg1 + 0x1b) == 0)
+00422c00                         SendMessageW(*(arg1 + 0x30), 0x178c, 
+00422c00                             (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, 
+00422c00                             u"SetBootAbleStorageDriveTo0 Failed")
+00422b44                     else
+00422c00                         SendMessageW(*(arg1 + 0x30), 0x178c, 
+00422c00                             (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, 
+00422c00                             u"SetBootAbleStorageDriveTo")
+00422778         else
+0042277e             int32_t ecx_31 = 0
+00422780             int32_t var_40_1 = 0
+00422780             
+00422785             while (true)
+00422785                 void** edi_5 = *edi_6 + ecx_31
+0042278b                 int32_t* ebx_2 = &edi_5[6]
+0042278e                 uint8_t* eax_46
+0042278e                 
+0042278e                 if (edi_5[0xb] u< 0x10)
+00422794                     eax_46 = ebx_2
+0042278e                 else
+00422790                     eax_46 = *ebx_2
+00422790                 
+0042279a                 void* var_38
+0042279a                 sub_426050(&var_38, eax_46)
+0042279f                 int32_t var_8_3 = 1
+004227aa                 uint8_t* eax_47
+004227aa                 
+004227aa                 if (edi_5[5] u< 0x10)
+004227b0                     eax_47 = edi_5
+004227aa                 else
+004227ac                     eax_47 = *edi_5
+004227ac                 
+004227b6                 void* var_34
+004227b6                 sub_426050(&var_34, eax_47)
+004227bb                 var_8_3.b = 2
+004227bf                 char eax_48 = *(arg1 + 0x100390)
+004227bf                 
+004227c7                 if (eax_48 != 0)
+00422b64                     result_1 = ERROR_CANCELLED
+004227c7                 else if (edi_5[0x1d].b == eax_48)
+00422a70                 label_422a70:
+00422a70                     var_8_3.b = 1
+00422a7c                     int32_t* edx_6 = var_34 - 0x10
+00422a82                     int32_t ecx_39 = edx_6[3]
+00422a82                     edx_6[3] -= 1
+00422a82                     
+00422a89                     if (ecx_39 - 1 s<= 0)
+00422a90                         (*(**edx_6 + 4))(edx_6)
+00422a90                     
+00422a93                     int32_t var_8_4 = 0xffffffff
+00422a9f                     int32_t* edx_8 = var_38 - 0x10
+00422aa5                     int32_t ecx_42 = edx_8[3]
+00422aa5                     edx_8[3] -= 1
+00422aa5                     
+00422aac                     if (ecx_42 - 1 s<= 0)
+00422ab3                         (*(**edx_8 + 4))(edx_8)
+00422ab3                     
+00422abc                     int32_t eax_92 = var_48_1 + 1
+00422abd                     ecx_31 = var_40_1 + 0xa0
+00422ac3                     var_48_1 = eax_92
+00422ac6                     var_40_1 = ecx_31
+00422ac6                     
+00422acc                     if (eax_92 u>= eax_44 + edx_3)
+00422acc                         goto label_422b26
+00422acc                     
+00422ace                     edi_6 = var_44
+00422ad1                     continue
+004227d0                 else if (*(edi_5 + 0x75) == eax_48)
+00422900                     if (edi_5[0xa] == 0)
+00422a36                         int32_t* eax_83 = _fopen("C:/ToolLog.txt", "a+")
+00422a36                         
+00422a42                         if (eax_83 != 0)
+00422a48                             void** eax_84
+00422a48                             
+00422a48                             if (edi_5[5] u< 0x10)
+00422a4e                                 eax_84 = edi_5
+00422a48                             else
+00422a4a                                 eax_84 = *edi_5
+00422a4a                             
+00422a50                             void** var_64_29 = eax_84
+00422a51                             int32_t var_68_20 = edi_5[0x1b]
+00422a58                             int32_t var_6c_6 = *(arg1 + 0x2c) + 1
+00422a5f                             _fprintf(eax_83, "[%d] Skip rawprogram%d Label: %s\n")
+00422a68                             _fclose(eax_83)
+00422a68                         
+00422a42                         goto label_422a70
+00422a42                     
+00422910                     if (*(arg1 + 0x1b) == 0)
+00422925                         void* var_64_23 = var_34
+00422928                         void* var_68_15 = var_38
+00422931                         sub_426230(arg1 + 0x290, u"Downloading %s to %s")
+00422910                     else
+00422912                         void* var_64_22 = var_38
+0042291b                         sub_426230(arg1 + 0x290, "ck(W")
+0042291b                     
+00422943                     int32_t* eax_68 = _fopen("C:/ToolLog.txt", "a+")
+00422943                     
+00422952                     if (eax_68 != 0)
+00422958                         if (ebx_2[5] u>= 0x10)
+0042295a                             ebx_2 = *ebx_2
+0042295a                         
+00422960                         void** eax_69
+00422960                         
+00422960                         if (edi_5[5] u< 0x10)
+00422966                             eax_69 = edi_5
+00422960                         else
+00422962                             eax_69 = *edi_5
+00422962                         
+00422968                         int32_t* var_64_24 = ebx_2
+00422969                         void** var_68_16 = eax_69
+0042296a                         int32_t var_6c_5 = edi_5[0x1b]
+00422971                         int32_t var_70_8 = *(arg1 + 0x2c) + 1
+00422978                         _fprintf(eax_68, "[%d] Downloading rawprogram%d Label: %s FileName: %s\n")
+00422980                         _fclose(eax_68)
+00422980                     
+004229a1                     SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, 
+004229a1                         arg1 + 0x290)
+004229bd                     SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 1, 
+004229bd                         arg1 + 0x290)
+004229c7                     char* eax_79
+004229c7                     
+004229c7                     if (edi_5[5] u< 0x10)
+004229cd                         eax_79 = edi_5
+004229c7                     else
+004229c9                         eax_79 = *edi_5
+004229c9                     
+004229cf                     char const* const ecx_37 = "userdata"
+004229d4                     int32_t eax_81
+004229d4                     
+004229d4                     while (true)
+004229d4                         char edx_4 = *eax_79
+004229d6                         char const temp2_1 = *ecx_37
+004229d6                         bool c_1 = edx_4 u< temp2_1
+004229d6                         
+004229d8                         if (edx_4 == temp2_1)
+004229dc                             if (edx_4 == 0)
+004229f0                                 eax_81 = 0
+004229f2                                 break
+004229f2                             
+004229de                             edx_4 = eax_79[1]
+004229e1                             char temp3_1 = ecx_37[1]
+004229e1                             c_1 = edx_4 u< temp3_1
+004229e1                             
+004229e4                             if (edx_4 == temp3_1)
+004229e6                                 eax_79 = &eax_79[2]
+004229e9                                 ecx_37 = &ecx_37[2]
+004229e9                                 
+004229ee                                 if (edx_4 != 0)
+004229ee                                     continue
+004229ee                                 
+004229f0                                 eax_81 = 0
+004229f2                                 break
+004229f2                         
+004229f6                         eax_81 = sbb.d(eax_79, eax_79, c_1) | 1
+004229f6                         break
+004229f6                     
+004229fb                     if (eax_81 == 0)
+004229fd                         *(arg1 + 0x1d) = 1
+004229fd                     
+00422a09                     result_1 = sub_423aa0(arg1, edi_5)
+00422a09                     
+00422a0d                     if (result_1 == NO_ERROR)
+00422a0d                         goto label_422a70
+00422a0d                     
+00422a19                     void* var_64_28 = var_38
+00422a1c                     wchar16 const* const var_68_19
+00422a1c                     
+00422a1c                     if (*(arg1 + 0x1b) == 0)
+00422af9                         var_68_19 = u"Donwloading %s Failed"
+00422a1c                     else
+00422a22                         var_68_19 = &data_5bbc9c
+00422a22                     
+00422b12                     sub_420d10(sub_426230(arg1 + 0x290, var_68_19), (*(arg1 + 0x2c)).b, 
+00422b12                         *(arg1 + 0x30), 1, arg1 + 0x290, 1)
+004227d9                 else
+004227e5                     void* var_64_13 = var_34
+004227eb                     char const* const var_68_8
+004227eb                     
+004227eb                     if (*(arg1 + 0x1b) == eax_48)
+004227f4                         var_68_8 = u"Erasing partition %s"
+004227eb                     else
+004227ed                         var_68_8 = "ck(W"
+004227ed                     
+004227fa                     sub_426230(arg1 + 0x290, var_68_8)
+0042280c                     int32_t* eax_49 = _fopen("C:/ToolLog.txt", "a+")
+0042280c                     
+0042281b                     if (eax_49 != 0)
+00422821                         void** eax_50
+00422821                         
+00422821                         if (edi_5[5] u< 0x10)
+00422827                             eax_50 = edi_5
+00422821                         else
+00422823                             eax_50 = *edi_5
+00422823                         
+00422829                         void** var_64_14 = eax_50
+0042282a                         int32_t var_68_9 = edi_5[0x1b]
+00422831                         int32_t var_6c_2 = *(arg1 + 0x2c) + 1
+00422838                         _fprintf(eax_49, "[%d] Erasing rawprogram%d Label %s\n")
+00422843                         _fclose(eax_49)
+00422843                     
+0042285e                     SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, 
+0042285e                         arg1 + 0x290)
+0042287a                     SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 1, 
+0042287a                         arg1 + 0x290)
+0042287a                     
+00422884                     if (edi_5[0x18] == 0)
+0042288a                         void* var_64_18 = var_34
+0042288d                         wchar16 const* const var_68_12
+0042288d                         
+0042288d                         if (*(arg1 + 0x1b) == 0)
+00422896                             var_68_12 = u"Skip erasing partition %s, num_partition_sectors = 0"
+0042288d                         else
+0042288f                             var_68_12 = &data_5bbb18
+0042288f                         
+0042289c                         sub_426230(arg1 + 0x290, var_68_12)
+004228c2                         SendMessageW(*(arg1 + 0x30), 0x178c, 
+004228c2                             (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10 | 1, arg1 + 0x290)
+004228c8                         goto label_422a70
+004228c8                     
+004228d5                     result_1 = sub_423800(arg1, edi_5)
+004228d5                     
+004228d9                     if (result_1 == NO_ERROR)
+004228d9                         goto label_422a70
+004228d9                     
+004228e9                     void* var_64_21 = var_34
+004228ec                     wchar16 const* const var_68_14
+004228ec                     
+004228ec                     if (*(arg1 + 0x1b) == 0)
+00422ad6                         var_68_14 = u"Erasing partition %s Failed"
+004228ec                     else
+004228f2                         var_68_14 = &data_5bbbd4
+004228f2                     
+00422aef                     sub_420d10(sub_426230(arg1 + 0x290, var_68_14), (*(arg1 + 0x2c)).b, 
+00422aef                         *(arg1 + 0x30), 1, arg1 + 0x290, 1)
+00422aef                 
+00422b69                 var_8_3.b = 1
+00422b75                 int32_t* edx_12 = var_34 - 0x10
+00422b7b                 int32_t ecx_53 = edx_12[3]
+00422b7b                 edx_12[3] -= 1
+00422b7b                 
+00422b82                 if (ecx_53 - 1 s<= 0)
+00422b89                     (*(**edx_12 + 4))(edx_12)
+00422b89                 
+00422b8c                 int32_t var_8_5 = 0xffffffff
+00422b96                 int32_t* esi_2 = var_38 - 0x10
+00422b9c                 int32_t ebx_8 = esi_2[3]
+00422b9c                 esi_2[3] -= 1
+00422b9c                 
+00422ba3                 if (ebx_8 - 1 s<= 0)
+00422baa                     (*(**esi_2 + 4))(esi_2)
+00422baa                 
+00422ba3                 break
+00422ba3         
+00422c02         result = result_1
+00422704     else
+00422710         wchar16 const* const var_64_9
+00422710         
+00422710         if (*(arg1 + 0x1b) == 0)
+00422719             var_64_9 = u"No suitable software available for download"
+00422710         else
+00422712             var_64_9 = &data_5bba14
+00422712         
+0042271f         sub_426230(arg1 + 0x290, var_64_9)
+00422742         SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 0x1000001, 
+00422742             arg1 + 0x290)
+00422748         result = ERROR_INVALID_FUNCTION
+004223a7 else
+004223ad     int32_t var_1c_1 = 0xf
+004223b4     int32_t var_20_1 = 0
+004223bb     char var_30 = 0
+004223c2     int32_t var_8_1 = 0
+004223c9     *(arg1 + 0x28)
+004223d2     result_1 = sub_42e100(arg1, &var_30)
+004223d2     
+004223d6     if (result_1 == NO_ERROR)
+00422429         int32_t* eax_9 = _fopen("C:/ToolLog.txt", "a+")
+00422429         
+00422435         if (eax_9 != 0)
+00422437             void** ecx_1 = *(arg1 + 0x60)
+00422437             
+0042243e             if (ecx_1[5] u>= 0x10)
+00422440                 ecx_1 = *ecx_1
+00422440             
+00422446             char* eax_10 = &var_30
+00422449             void** var_64_4 = ecx_1
+00422449             
+0042244a             if (var_1c_1 u>= 0x10)
+0042244a                 eax_10 = var_30.d
+0042244a             
+0042244e             char* var_68_3 = eax_10
+00422455             _fprintf(eax_9, "HWVersion=%s,Project=%s\n")
+0042245b             _fclose(eax_9)
+0042245b         
+00422472         char* var_64_5
+00422472         
+00422472         if (sub_4094a0(*(arg1 + 0x60), "16859") == 0)
+00422487             if (sub_4094a0(&var_30, "11") == 0)
+004226e7             label_4226e7:
+004226e7                 int32_t var_8_2 = 0xffffffff
+004226e7                 
+004226f2                 if (var_1c_1 u>= 0x10)
+004226f7                     j__free(var_30.d)
+004226f7                 
+004226f2                 goto label_4226ff
+004226f2             
+0042249c             if (sub_4094a0(&var_30, "12") == 0)
+0042249c                 goto label_4226e7
+0042249c             
+004224b1             if (sub_4094a0(&var_30, "13") == 0)
+004224b1                 goto label_4226e7
+004224b1             
+004224c6             if (sub_4094a0(&var_30, "14") == 0)
+004224c6                 goto label_4226e7
+004224c6             
+004224db             if (sub_4094a0(&var_30, "15") == 0)
+004224db                 goto label_4226e7
+004224db             
+004224f0             if (sub_4094a0(&var_30, "21") == 0)
+004224f0                 goto label_4226e7
+004224f0             
+00422505             if (sub_4094a0(&var_30, "22") == 0)
+00422505                 goto label_4226e7
+00422505             
+0042251a             if (sub_4094a0(&var_30, "23") == 0)
+0042251a                 goto label_4226e7
+0042251a             
+0042252f             if (sub_4094a0(&var_30, "24") == 0)
+0042252f                 goto label_4226e7
+0042252f             
+00422535             var_64_5 = &data_5bb960
+00422535             goto label_42253d
+00422535         
+00422573         if (sub_4094a0(*(arg1 + 0x60), "17801") == 0)
+00422588             if (sub_4094a0(&var_30, "33") == 0)
+00422588                 goto label_4226e7
+00422588             
+0042259d             if (sub_4094a0(&var_30, "34") == 0)
+0042259d                 goto label_4226e7
+0042259d             
+004225b2             if (sub_4094a0(&var_30, "35") == 0)
+004225b2                 goto label_4226e7
+004225b2             
+004225c7             if (sub_4094a0(&var_30, "41") == 0)
+004225c7                 goto label_4226e7
+004225c7             
+004225dc             if (sub_4094a0(&var_30, "42") == 0)
+004225dc                 goto label_4226e7
+004225dc             
+004225f1             if (sub_4094a0(&var_30, "43") == 0)
+004225f1                 goto label_4226e7
+004225f1             
+00422606             if (sub_4094a0(&var_30, "44") == 0)
+00422606                 goto label_4226e7
+00422606             
+0042261b             if (sub_4094a0(&var_30, "45") == 0)
+0042261b                 goto label_4226e7
+0042261b             
+00422630             if (sub_4094a0(&var_30, "51") == 0)
+00422630                 goto label_4226e7
+00422630             
+00422645             if (sub_4094a0(&var_30, "52") == 0)
+00422645                 goto label_4226e7
+00422645             
+0042265a             if (sub_4094a0(&var_30, "53") == 0)
+0042265a                 goto label_4226e7
+0042265a             
+00422660             var_64_5 = &data_5bb9fc
+00422665             goto label_42253d
+00422665         
+00422679         if (sub_4094a0(*(arg1 + 0x60), "17839") != 0)
+00422679             goto label_4226e7
+00422679         
+0042268a         if (sub_4094a0(&var_30, "25") == 0)
+0042268a             goto label_4226e7
+0042268a         
+0042269b         if (sub_4094a0(&var_30, "31") == 0)
+0042269b             goto label_4226e7
+0042269b         
+0042269d         var_64_5 = &data_5bba10
+0042253d     label_42253d:
+0042253d         
+00422544         if (sub_4094a0(&var_30, var_64_5) == 0)
+00422544             goto label_4226e7
+00422544         
+00422554         wchar16 const* const var_64_6
+00422554         
+00422554         if (*(arg1 + 0x1b) == 0)
+004226a7             var_64_6 = u"Images do not match with the phone!"
+00422554         else
+0042255a             var_64_6 = &data_5bb964
+0042255a         
+004226c0         sub_420d10(sub_426230(arg1 + 0x290, var_64_6), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 1, 
+004226c0             arg1 + 0x290, 1)
+004226c8         result_1 = ERROR_INVALID_FUNCTION
+004223d6     else
+004223e2         wchar16 const* const var_64_2
+004223e2         
+004223e2         if (*(arg1 + 0x1b) == 0)
+004223eb             var_64_2 = u"Failed to get HWVersion\n"
+004223e2         else
+004223e4             var_64_2 = &data_5bb8c4
+004223e4         
+004223f1         sub_426230(arg1 + 0x290, var_64_2)
+00422414         SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 0x1000001, 
+00422414             arg1 + 0x290)
+00422414     
+004226d1     if (var_1c_1 u< 0x10)
+00422c02         result = result_1
+004226d1     else
+004226da         j__free(var_30.d)
+00422c02         result = result_1
+00422c07 fsbase->NtTib.ExceptionList = ExceptionList
+00422c17 sub_54a573(eax_2 ^ &__saved_ebp)
+00422c1f return result

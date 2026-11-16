@@ -1,0 +1,88 @@
+100a1d17 push    ebp
+100a1d18 mov     ebp, esp
+100a1d1a sub     esp, 0xdd4
+100a1d20 mov     eax, dword [0x10247210]
+100a1d25 xor     eax, ebp
+100a1d27 mov     dword [ebp-0x4], eax
+100a1d2a mov     edx, dword [ebp+0x8]
+100a1d2d push    ebx
+100a1d2e push    esi
+100a1d2f mov     esi, dword [ebp+0xc]
+100a1d32 push    edi
+100a1d33 test    edx, edx
+100a1d35 je      0x100a1f36
+100a1f36 call    0x10078fc1
+100a1d3b test    esi, esi
+100a1d3d je      0x100a1f36
+100a1d43 mov     eax, dword [ebp+0x10]
+100a1d46 xor     ebx, ebx
+100a1d48 mov     dword [ebp-0x86c], ebx
+100a1d4e mov     dword [ebp-0x868], ebx
+100a1d54 mov     dword [ebp-0x864], ebx
+100a1d5a mov     dword [ebp-0x860], ebx
+100a1d60 mov     dword [ebp-0x85c], ebx
+100a1d66 mov     dword [ebp-0x858], ebx
+100a1d6c mov     dword [ebp-0x640], ebx
+100a1d72 mov     dword [ebp-0x63c], ebx
+100a1d78 mov     dword [ebp-0x638], ebx
+100a1d7e mov     dword [ebp-0x634], ebx
+100a1d84 mov     dword [ebp-0x630], ebx
+100a1d8a mov     dword [ebp-0x62c], ebx
+100a1d90 sub     eax, ebx
+100a1d92 je      0x100a1f07
+100a1f07 push    dword [esi+0x8]
+100a1f0a mov     eax, dword [edx]
+100a1f0c push    dword [edx+0x8]
+100a1f0f push    ebx
+100a1f10 mov     ecx, dword [eax]
+100a1f12 push    eax
+100a1f13 call    dword [ecx+0x1c]
+100a1f16 test    eax, eax
+100a1f18 jns     0x100a1f1e
+100a1d98 dec     eax
+100a1d99 je      0x100a1da9
+100a1f1e movsx   ebx, ax
+100a1f1a xor     eax, eax
+100a1f1c jmp     0x100a1f23
+100a1da9 call    0x1048fd8f
+100a1dae retn    
+100a1d9b dec     eax
+100a1d9c je      0x100a1e6f
+100a1f23 mov     ecx, dword [ebp-0x4]
+100a1f26 pop     edi
+100a1f27 pop     esi
+100a1f28 xor     ecx, ebp
+100a1f2a pop     ebx
+100a1f2b call    0x10194c02
+100a1f30 mov     esp, ebp
+100a1f32 pop     ebp
+100a1f33 retn    0xc
+100a1e6f push    edx
+100a1e70 call    0x108f1d2f
+100a1e75 lea     eax, [ebp-0xdd4]
+100a1e7b push    0x408
+100a1e80 push    0x2b4
+100a1e85 push    eax
+100a1e86 push    ebx
+100a1e87 push    dword [edx+0x4]
+100a1e8a call    edi
+100a1e8c test    eax, eax
+100a1e8e je      0x100a1f21
+100a1da2 dec     eax
+100a1da3 jne     0x100a1f21
+100a1f21 mov     eax, ebx
+100a1e94 push    0x408
+100a1e99 push    0x2b4
+100a1e9e lea     eax, [ebp-0xb20]
+100a1ea4 push    eax
+100a1ea5 push    ebx
+100a1ea6 push    dword [esi+0x4]
+100a1ea9 call    edi
+100a1eab test    eax, eax
+100a1ead je      0x100a1f21
+100a1eaf lea     eax, [ebp-0x90c]
+100a1eb5 push    eax
+100a1eb6 lea     eax, [ebp-0xbc0]
+100a1ebc push    eax
+100a1ebd call    0x109a35d4
+100a1ec2 retn    

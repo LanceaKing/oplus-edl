@@ -1,0 +1,184 @@
+File: /Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/op6/bn/analysis.bndb
+
+# Block 1 at 0x426500
+00426500  55               push    ebp
+00426501  8b ec            mov     ebp, esp
+00426503  83 ec 40         sub     esp, 0x40
+00426506  a1 30 e4 5d 00   mov     eax, dword [0x5de430]
+0042650b  33 c5            xor     eax, ebp
+0042650d  89 45 f8         mov     dword [ebp-0x8], eax
+00426510  83 3d 00 a2 5e 00 01 cmp     dword [0x5ea200], 0x1
+00426517  8b 55 10         mov     edx, dword [ebp+0x10]
+0042651a  53               push    ebx
+0042651b  8b 5d 0c         mov     ebx, dword [ebp+0xc]
+0042651e  56               push    esi
+0042651f  8b f1            mov     esi, ecx
+00426521  89 55 c8         mov     dword [ebp-0x38], edx
+00426524  8b 4d 08         mov     ecx, dword [ebp+0x8]
+00426527  57               push    edi
+00426528  89 4d d0         mov     dword [ebp-0x30], ecx
+0042652b  c7 45 cc 00 00 00 00 mov     dword [ebp-0x34], 0x0
+00426532  c7 02 00 00 00 00 mov     dword [edx], 0x0
+00426538  75 1d            jne     0x426557
+
+# Block 3 at 0x42653a
+0042653a  52               push    edx
+0042653b  53               push    ebx
+0042653c  51               push    ecx
+0042653d  8b ce            mov     ecx, esi
+0042653f  e8 5c 02 00 00   call    0x4267a0
+00426544  5f               pop     edi
+00426545  5e               pop     esi
+00426546  5b               pop     ebx
+00426547  8b 4d f8         mov     ecx, dword [ebp-0x8]
+0042654a  33 cd            xor     ecx, ebp
+0042654c  e8 22 40 12 00   call    0x54a573
+00426551  8b e5            mov     esp, ebp
+00426553  5d               pop     ebp
+00426554  c2 0c 00         retn    0xc
+
+# Block 2 at 0x426557
+00426557  85 db            test    ebx, ebx
+00426559  0f 84 0e 01 00 00 je      0x42666d
+
+# Block 5 at 0x42655f
+0042655f  8b 46 04         mov     eax, dword [esi+0x4]
+00426562  b9 00 80 00 00   mov     ecx, 0x8000
+00426567  3b d9            cmp     ebx, ecx
+00426569  8b fb            mov     edi, ebx
+0042656b  0f 47 f9         cmova   edi, ecx
+0042656e  89 7d c4         mov     dword [ebp-0x3c], edi
+00426571  83 f8 04         cmp     eax, 0x4
+00426574  0f 87 db 00 00 00 ja      0x426655
+
+# Block 7 at 0x42657a
+0042657a  ff 24 85 84 66 42 00 jmp     dword [eax*4+0x426684]
+
+# Block 8 at 0x426581
+00426581  6a 08            push    0x8
+00426583  ff 76 08         push    dword [esi+0x8]
+00426586  ff 15 b8 23 58 00 call    dword [PurgeComm]
+0042658c  85 c0            test    eax, eax
+0042658e  74 7d            je      0x42660d
+
+# Block 10 at 0x426590
+00426590  6a 04            push    0x4
+00426592  ff 76 08         push    dword [esi+0x8]
+00426595  ff 15 b8 23 58 00 call    dword [PurgeComm]
+0042659b  85 c0            test    eax, eax
+0042659d  74 6e            je      0x42660d
+
+# Block 13 at 0x42659f
+0042659f  6a 00            push    0x0
+004265a1  8d 45 cc         lea     eax, [ebp-0x34]
+004265a4  50               push    eax
+004265a5  57               push    edi
+004265a6  ff 75 d0         push    dword [ebp-0x30]
+004265a9  ff 76 08         push    dword [esi+0x8]
+004265ac  ff 15 ac 23 58 00 call    dword [WriteFile]
+004265b2  85 c0            test    eax, eax
+004265b4  74 57            je      0x42660d
+
+# Block 14 at 0x4265b6
+004265b6  e8 dd 93 12 00   call    _clock
+004265bb  8b f8            mov     edi, eax
+004265bd  8d 49 00         lea     ecx, [ecx]
+
+# Block 20 at 0x4265c0
+004265c0  8d 45 ec         lea     eax, [ebp-0x14]
+004265c3  50               push    eax
+004265c4  8d 45 c0         lea     eax, [ebp-0x40]
+004265c7  50               push    eax
+004265c8  ff 76 08         push    dword [esi+0x8]
+004265cb  ff 15 b0 23 58 00 call    dword [ClearCommError]
+004265d1  85 c0            test    eax, eax
+004265d3  74 38            je      0x42660d
+
+# Block 15 at 0x4265d5
+004265d5  e8 be 93 12 00   call    _clock
+004265da  2b c7            sub     eax, edi
+004265dc  3d e8 03 00 00   cmp     eax, 0x3e8
+004265e1  7d 06            jge     0x4265e9
+
+# Block 17 at 0x4265e3
+004265e3  83 7d f4 00      cmp     dword [ebp-0xc], 0x0
+004265e7  77 d7            ja      0x4265c0
+
+# Block 16 at 0x4265e9
+004265e9  ff 75 d0         push    dword [ebp-0x30]
+004265ec  8d 4d d4         lea     ecx, [ebp-0x2c]
+004265ef  e8 ac bc fd ff   call    0x4022a0
+004265f4  83 7d f4 00      cmp     dword [ebp-0xc], 0x0
+004265f8  75 32            jne     0x42662c
+
+# Block 19 at 0x4265fa
+004265fa  83 7d e8 10      cmp     dword [ebp-0x18], 0x10
+004265fe  72 17            jb      0x426617
+
+# Block 23 at 0x426600
+00426600  ff 75 d4         push    dword [ebp-0x2c]
+00426603  e8 0a 82 00 00   call    j__free
+00426608  83 c4 04         add     esp, 0x4
+0042660b  eb 0a            jmp     0x426617
+
+# Block 9 at 0x42660d
+0042660d  ff 15 90 24 58 00 call    dword [GetLastError]
+00426613  85 c0            test    eax, eax
+00426615  75 58            jne     0x42666f
+
+# Block 12 at 0x426617
+00426617  8b 45 c4         mov     eax, dword [ebp-0x3c]
+0042661a  2b d8            sub     ebx, eax
+0042661c  8b 4d c8         mov     ecx, dword [ebp-0x38]
+0042661f  01 45 d0         add     dword [ebp-0x30], eax
+00426622  8b 45 cc         mov     eax, dword [ebp-0x34]
+00426625  01 01            add     dword [ecx], eax
+00426627  e9 2b ff ff ff   jmp     0x426557
+
+# Block 18 at 0x42662c
+0042662c  83 7d e8 10      cmp     dword [ebp-0x18], 0x10
+00426630  72 0b            jb      0x42663d
+
+# Block 22 at 0x426632
+00426632  ff 75 d4         push    dword [ebp-0x2c]
+00426635  e8 d8 81 00 00   call    j__free
+0042663a  83 c4 04         add     esp, 0x4
+
+# Block 21 at 0x42663d
+0042663d  b8 01 00 00 00   mov     eax, 0x1
+00426642  5f               pop     edi
+00426643  5e               pop     esi
+00426644  5b               pop     ebx
+00426645  8b 4d f8         mov     ecx, dword [ebp-0x8]
+00426648  33 cd            xor     ecx, ebp
+0042664a  e8 24 3f 12 00   call    0x54a573
+0042664f  8b e5            mov     esp, ebp
+00426651  5d               pop     ebp
+00426652  c2 0c 00         retn    0xc
+
+# Block 6 at 0x426655
+00426655  b8 05 40 00 80   mov     eax, 0x80004005
+0042665a  5f               pop     edi
+0042665b  5e               pop     esi
+0042665c  5b               pop     ebx
+0042665d  8b 4d f8         mov     ecx, dword [ebp-0x8]
+00426660  33 cd            xor     ecx, ebp
+00426662  e8 0c 3f 12 00   call    0x54a573
+00426667  8b e5            mov     esp, ebp
+00426669  5d               pop     ebp
+0042666a  c2 0c 00         retn    0xc
+
+# Block 4 at 0x42666d
+0042666d  33 c0            xor     eax, eax
+
+# Block 11 at 0x42666f
+0042666f  8b 4d f8         mov     ecx, dword [ebp-0x8]
+00426672  5f               pop     edi
+00426673  5e               pop     esi
+00426674  33 cd            xor     ecx, ebp
+00426676  5b               pop     ebx
+00426677  e8 f7 3e 12 00   call    0x54a573
+0042667c  8b e5            mov     esp, ebp
+0042667e  5d               pop     ebp
+0042667f  c2 0c 00         retn    0xc
+

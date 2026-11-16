@@ -1,0 +1,17 @@
+010a8074 mov     edx, dword [esi]
+010a8076 shl     ecx, cl
+010a8078 mov     ecx, dword [edx]
+010a807a sub     ax, 0x6dd0
+010a807e xor     ah, 0x45
+010a8081 mov     dword [esi], ecx
+010a8083 mov     eax, dword [ebp]
+010a8087 stc     
+010a8088 add     ebp, 0x4
+010a808e cmc     
+010a808f xor     eax, ebx
+010a8091 add     eax, 0x28820712
+010a8096 cmc     
+010a8097 clc     
+010a8098 ror     eax, 0x1
+010a809a lea     eax, [eax+0x5ed23dcd]
+010a80a0 jmp     0xfef03b

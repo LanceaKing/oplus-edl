@@ -1,0 +1,50 @@
+005063b5 __chkstk(0x4c)
+005063bf int32_t eax_1 = __security_cookie ^ &__return_addr
+005063cd __return_addr = nullptr
+005063da int32_t* ecx = arg1[4]
+005063e8 int32_t eax_3 = *(*ecx + 0x48)
+005063ed int32_t ebx
+005063ed ebx.b = eax_3 != 0
+005063f7 void arg_8
+005063f7 int32_t edi_1
+005063f7 
+005063f7 if ((arg1[2] & 0x200) == 0)
+00506421     int32_t* eax_6 = sub_4d8390()
+0050642a     int32_t eax_7
+0050642a     
+0050642a     if (eax_6 != 0)
+00506432         eax_7 = sub_4d8210(eax_6, arg1)
+00506432     
+0050643c     if (eax_6 == 0 || eax_7 == 0)
+005064d4         sub_687de2(eax_1 ^ &__return_addr)
+005064dc         return 0xffffffff
+005064dc     
+00506444     int32_t eax_10
+00506444     
+00506444     if (ebx == 0)
+00506467         eax_10 = sub_4d7fd0(eax_6, &arg_8, &__return_addr)
+00506444     else
+00506446         int32_t* eax_8 = eax_6[4]
+00506455         eax_10 = (*(*eax_8 + 0x48))(eax_8, arg2, arg3, eax_6)
+00506455     
+00506470     edi_1 = eax_10
+00506472     sub_4d8370(eax_6)
+0050647b     goto label_50647e
+0050647b 
+005063fb if (ebx == 0)
+0050641d     edi_1 = sub_4d7fd0(arg1, &arg_8, &__return_addr)
+00506482 label_506482:
+00506482     
+00506484     if (edi_1 != 0)
+00506497         int32_t eax_11 = sub_51e540(arg1[4], arg2, arg3, &arg_8, __return_addr)
+005064a9         sub_687de2(eax_1 ^ &__return_addr)
+005064b1         return eax_11
+005063fb else
+00506406     edi_1 = eax_3(ecx, arg2, arg3, arg1)
+0050647e label_50647e:
+0050647e     
+00506480     if (ebx == 0)
+00506480         goto label_506482
+00506480 
+005064be sub_687de2(eax_1 ^ &__return_addr)
+005064c6 return edi_1

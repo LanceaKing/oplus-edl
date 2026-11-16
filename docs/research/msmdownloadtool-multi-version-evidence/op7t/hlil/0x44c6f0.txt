@@ -1,0 +1,88 @@
+0044c6f3 void* var_8 = arg1
+0044c6f4 int32_t ebx
+0044c6f4 int32_t var_c = ebx
+0044c6f5 int32_t esi
+0044c6f5 int32_t var_10 = esi
+0044c6f6 int32_t edi
+0044c6f6 int32_t var_14 = edi
+0044c6fe void** eax = *(arg1 + 0x88)
+0044c704 void* var_30 = 0xffffffff
+0044c706 int32_t var_34 = 0
+0044c708 int32_t var_18 = 0xf
+0044c70f int32_t var_1c = 0
+0044c717 char var_2c = 0
+0044c71a sub_406a50(&var_2c, eax, var_34, var_30)
+0044c727 std::locale::~locale(var_2c)
+0044c734 *(*(arg1 + 0x10057c) + 0x90) = *(arg1 + 0x50)
+0044c742 *(*(arg1 + 0x10057c) + 0x94) = *(arg1 + 0x100550)
+0044c752 void** eax_4 = *(arg1 + 0x88) + 0x18
+0044c757 var_2c.d = 0xf
+0044c75e int32_t var_30_1 = 0
+0044c766 char var_40 = 0
+0044c769 sub_406a50(&var_40, eax_4, 0, 0xffffffff)
+0044c770 sub_459c70(var_40)
+0044c780 void** eax_6 = *(arg1 + 0x88) + 0xc4
+0044c789 var_2c.d = 0xf
+0044c790 int32_t var_30_2 = 0
+0044c798 var_40 = 0
+0044c79b sub_406a50(&var_40, eax_6, 0, 0xffffffff)
+0044c7a2 std::_Fac_node::~_Fac_node(var_40)
+0044c7b2 void** eax_8 = *(arg1 + 0x88) + 0xdc
+0044c7bb var_2c.d = 0xf
+0044c7c2 int32_t var_30_3 = 0
+0044c7ca var_40 = 0
+0044c7cd sub_406a50(&var_40, eax_8, 0, 0xffffffff)
+0044c7d4 sub_459bd0(var_40)
+0044c7db sub_459d10()
+0044c7e0 *(arg1 + 0x10057c)
+0044c7e2 sub_45a660()
+0044c7e7 *(arg1 + 0x2c)
+0044c7ea var_2c.d = arg1 + 0x10057c
+0044c7eb int32_t result = sub_458840(var_2c)
+0044c7f5 int32_t eax_12
+0044c7f5 
+0044c7f5 if (result != 0)
+0044c82c     var_2c.d = &data_6d9770
+0044c836     int32_t eax_13 = std::_Deallocate<64,0>("C:/ToolLog.txt", var_2c)
+0044c836     
+0044c842     if (eax_13 != 0)
+0044c844         void* ecx_13 = *(arg1 + 0x10057c)
+0044c846         var_2c.d = *(ecx_13 + 0x9c)
+0044c85d         _fprintf(eax_13, "[%d] model check failed %d, %d\n", *(arg1 + 0x30) + 1, *(ecx_13 + 0x98), 
+0044c85d             var_2c)
+0044c865         var_2c.d = eax_13
+0044c866         _fclose(var_2c)
+0044c866     
+0044c870     int32_t ecx_16 = *(*(arg1 + 0x10057c) + 0x98)
+0044c870     
+0044c879     if (ecx_16 u> 3)
+0044c901         if (*(arg1 + 0x20) == 0)
+0044c90a             var_2c.d = u"Token process failed\n"
+0044c901         else
+0044c903             var_2c.d = "CgVg!h"
+0044c903         
+0044c910         sub_44d900(arg1 + 0x2b8)
+0044c91e         var_2c.d = arg1 + 0x2b8
+0044c92b         eax_12 = zx.d((*(arg1 + 0x30)).b) << 0x10 | 0x1000001
+0044c879     else
+0044c87b         switch (ecx_16)
+0044c87b             case 0
+0044c87b                 jump(0x44c882)
+0044c87b             case 1
+0044c87b                 return sub_44c8a9() __tailcall
+0044c87b             case 2
+0044c87b                 return sub_44c8c3() __tailcall
+0044c87b             case 3
+0044c87b                 return sub_44c8dd() __tailcall
+0044c7f5 else
+0044c800     if (*(arg1 + 0x20) == result.b)
+0044c809         var_2c.d = u"Send project model to device success!\n"
+0044c800     else
+0044c802         var_2c.d = &data_6e3894
+0044c802     
+0044c80f     sub_44d900(arg1 + 0x2b8)
+0044c823     eax_12 = zx.d((*(arg1 + 0x30)).b) << 0x10 | 1
+0044c826     var_2c.d = arg1 + 0x2b8
+0044c826 
+0044c939 0x3095d0(*(arg1 + 0x34), 0x178c, eax_12)
+0044c948 return result

@@ -1,0 +1,124 @@
+004195b6 int32_t ebx
+004195b6 int32_t var_14 = ebx
+004195b7 int32_t esi
+004195b7 int32_t var_18 = esi
+004195b7 
+004195c2 if (*(arg1 + 0x1e4) != 0)
+004195cf     return 0x4c7
+004195cf 
+004195d5 int32_t eax_2 = *(arg3 + 0x64)
+004195e0 int32_t var_8
+004195e0 int32_t ebx_2
+004195e0 
+004195e0 if (eax_2 != 0x200)
+004195f8     if (eax_2 != 0x1000)
+00419825         return 1
+00419825     
+00419603     int32_t eax_4 = sub_4208b2(&__dos_header)
+00419608     ebx_2 = eax_4
+0041960a     var_8 = eax_4
+004195e0 else
+004195ec     ebx_2 = sub_4208b2(0x80000)
+004195ee     var_8 = ebx_2
+004195ee 
+00419612 if (ebx_2 == 0)
+0041961d     return ebx_2 + 8
+0041961d 
+00419620 int32_t __saved_edi_1
+00419620 int32_t __saved_edi = __saved_edi_1
+00419623 int32_t edi_1 = arg5
+00419629 *(arg1 + 0x28)
+00419630 void* eax_6
+00419630 int32_t ecx_1
+00419630 eax_6, ecx_1 = sub_41d880(arg3, edi_1, arg4)
+00419630 
+0041963a if (eax_6 != 0)
+00419646     void* var_20_1 = eax_6
+00419647     char const* const var_24_1
+00419647     
+00419647     if (*(arg1 + 0x1b) == 0)
+00419650         var_24_1 = "SendProgromCommand Failed, Errno: %d"
+00419647     else
+00419649         var_24_1 = "SendProgromCommand"
+00419649     
+00419656     sub_410900(arg1 + 0x164, var_24_1)
+00419679     SendMessageA(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, arg1 + 0x164)
+00419680     sub_4208bb(ebx_2, __saved_edi)
+00419691     return eax_6
+00419691 
+00419694 void* eax_12 = arg6
+00419697 arg3 = eax_12
+00419697 
+004196a6 if (eax_12 s>= 0 && (eax_12 s> 0 || edi_1 != 0))
+004196b7     while (true)
+004196b7         if (*(arg1 + 0x1e4) == 0)
+004196c5             int32_t ebx_5
+004196c5             
+004196c5             ebx_5 = eax_12 s< 0 || (eax_12 s<= 0 && edi_1 u<= 0x400) ? edi_1 : 0x400
+004196c5             
+004196d6             void* eax_14 = eax_2 * ebx_5
+004196d6             
+004196ed             if (___vswprintf_l(var_8, eax_14, 1, arg2, __saved_edi) != 1)
+004197a4                 sub_53c55b("Read file failed in process_raw_chunk! errno=%d \n", *__errno())
+004197ac                 sub_4208bb(var_8)
+004197bd                 return 0xffffffff
+004197bd             
+004196f3             void** ecx_2 = *(arg1 + 0x28)
+004196fd             __saved_edi_1 = 0
+00419709             int32_t __saved_edi_2
+00419709             __saved_edi_2, ecx_1 = sub_41ad40(*ecx_2, var_8, eax_14, &__saved_edi_1)
+0041970e             __saved_edi_1 = __saved_edi_2
+0041970e             
+00419713             if (__saved_edi_2 != 0)
+00419756                 int32_t __saved_edi_3 = __saved_edi_2
+00419757                 char const* const var_24_4
+00419757                 
+00419757                 if (*(arg1 + 0x1b) == 0)
+00419760                     var_24_4 = "FirehoseWriteData Failed, Errno: %d"
+00419757                 else
+00419759                     var_24_4 = "FirehoseWriteData"
+00419759                 
+00419779                 sub_417200(sub_410900(arg1 + 0x164, var_24_4), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 
+00419779                     0, arg1 + 0x164, 1)
+00419784                 sub_4208bb(var_8)
+00419795                 return __saved_edi_1
+00419795             
+00419718             int32_t temp3_1 = edi_1
+00419718             edi_1 -= ebx_5
+00419718             bool c_1 = temp3_1 u< ebx_5
+0041971a             eax_12 = sbb.d(arg3, 0, c_1)
+0041971a             bool z_1 = sbb.d(arg3, 0, c_1) == 0
+0041971a             bool s_1 = sbb.d(arg3, 0, c_1) s< 0
+0041971a             bool o_1 = unimplemented  {sbb eax, 0x0}
+0041971d             arg3 = eax_12
+0041971d             
+00419720             if (not(s_1))
+00419722                 if (not(z_1) && s_1 == o_1)
+00419722                     continue
+00419722                 else if (edi_1 != 0)
+00419726                     continue
+00419726         
+00419728         ebx_2 = var_8
+00419728         break
+00419728 
+00419732 if (*(arg1 + 0x1e4) != 0)
+00419739     sub_4208bb(ebx_2, __saved_edi)
+00419749     return 0
+00419749 
+004197c1 *(arg1 + 0x28)
+004197c4 void* eax_22 = sub_41d790(ecx_1)
+004197c4 
+004197ce if (eax_22 != 0)
+004197da     void* var_20_10 = eax_22
+004197db     char const* const var_24_6
+004197db     
+004197db     if (*(arg1 + 0x1b) == 0)
+004197e4         var_24_6 = "FirehoseCheckRSP Failed, Errno: %d"
+004197db     else
+004197dd         var_24_6 = "FirehoseCheckRSP"
+004197dd     
+004197fd     sub_417200(sub_410900(arg1 + 0x164, var_24_6), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+004197fd         arg1 + 0x164, 1)
+004197fd 
+00419806 sub_4208bb(ebx_2, __saved_edi)
+00419817 return eax_22

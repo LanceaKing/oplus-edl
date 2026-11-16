@@ -1,0 +1,104 @@
+0040fd63 int32_t var_8 = 0xffffffff
+0040fd65 int32_t (* var_c)(void* arg1) = __ehhandler$?_Init@?$numpunct@D@std@@IAEXABV_Locinfo@2@_N@Z
+0040fd70 TEB* fsbase
+0040fd70 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040fd79 int32_t __saved_ebp
+0040fd79 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+0040fd85 fsbase->NtTib.ExceptionList = &ExceptionList
+0040fd8d *(arg1 + 0xc8) = 1
+0040fdbd PWSTR var_78 = (*(data_5dd008 + 0xc))(eax_2) + 0x10
+0040fdca int32_t var_8_1 = 0
+0040fdd1 int32_t* eax_6 = _fopen("md5sum_pack.md5", "rb")
+0040fde0 char var_5c[0x24]
+0040fde0 uint32_t eax_7
+0040fde0 
+0040fde0 if (eax_6 != 0)
+0040fded     sub_54be04(eax_6, nullptr, nullptr, FILE_BEGIN)
+0040fdfb     eax_7 = _fread(&var_5c, 0x21, 1, eax_6)
+0040fdfb 
+0040fe06 if (eax_6 == 0 || eax_7 != 1)
+0040ff3d     sub_402ab0(&var_78, u"MD5 Check skipped!\n")
+0040fe06 else
+0040fe13     char* eax_8 = &data_5ea590
+0040fe13     
+0040fe18     if (data_5ea5a4 u>= 0x10)
+0040fe18         eax_8 = data_5ea590.d
+0040fe18     
+0040fe24     int32_t* var_74
+0040fe24     sub_40a070(&var_74, eax_8)
+0040fe29     var_8_1.b = 1
+0040fe2d     int32_t* ecx_1 = &var_74
+0040fe34     void var_38
+0040fe34     char* edx_1 = &var_38
+0040fe37     int32_t var_60
+0040fe37     
+0040fe37     if (var_60 u>= 0x10)
+0040fe37         ecx_1 = var_74
+0040fe37     
+0040fe4c     char i
+0040fe4c     
+0040fe4c     do
+0040fe40         i = *ecx_1
+0040fe42         ecx_1 += 1
+0040fe45         *edx_1 = i
+0040fe47         edx_1 = &edx_1[1]
+0040fe4c     while (i != 0)
+0040fe4e     char (* ecx_2)[0x24] = &var_5c
+0040fe51     int32_t esi_1 = 0x1c
+0040fe56     int32_t* edx_2 = &var_38
+0040fe56     
+0040fe64     while (true)
+0040fe64         if (*ecx_2 != *edx_2)
+0040feb4             void* var_7c = (*(data_5dd008 + 0xc))() + 0x10
+0040feb7             var_8_1.b = 2
+0040febb             int32_t* eax_13 = &var_74
+0040febb             
+0040fec5             if (var_60 u>= 0x10)
+0040fec5                 eax_13 = var_74
+0040fec5             
+0040feca             sub_4061e0(&var_7c, eax_13)
+0040fecf             void* esi_2 = var_7c
+0040fed5             void* var_90_3 = esi_2
+0040fedc             *(arg1 + 0xc8) = 0
+0040fee6             sub_402ab0(&var_78, u"MD5 Check Failed!\n Image MD5 = %s\n")
+0040feee             var_8_1.b = 1
+0040fefa             int32_t ecx_5 = *(esi_2 - 4)
+0040fefa             *(esi_2 - 4) -= 1
+0040fefa             
+0040ff01             if (ecx_5 - 1 s<= 0)
+0040ff08                 (*(**(esi_2 - 0x10) + 4))(esi_2 - 0x10)
+0040ff08             
+0040ff01             break
+0040ff01         
+0040fe66         ecx_2 = &(*ecx_2)[4]
+0040fe69         edx_2 = &edx_2[1]
+0040fe6c         int32_t temp1_1 = esi_1
+0040fe6c         esi_1 -= 4
+0040fe6c         
+0040fe6f         if (temp1_1 u< 4)
+0040fe74             *(arg1 + 0xc8) = 1
+0040fe84             sub_402ab0(&var_78, u"MD5 Check Ok!\n")
+0040fe8c             break
+0040fe8c     
+0040ff0b     var_8_1.b = 0
+0040ff0b     
+0040ff13     if (var_60 u>= 0x10)
+0040ff18         j__free(var_74)
+0040ff18     
+0040ff20     int32_t var_60_1 = 0xf
+0040ff27     int32_t var_64_1 = 0
+0040ff2e     var_74.b = 0
+0040ff2e 
+0040ff45 PWSTR esi_4 = var_78
+0040ff4f sub_432b89(arg1, esi_4, nullptr, MB_OK)
+0040ff57 int32_t var_8_2 = 0xffffffff
+0040ff5e int32_t* result = &esi_4[-2]
+0040ff61 int32_t ebx = *result
+0040ff61 *result -= 1
+0040ff61 
+0040ff68 if (ebx - 1 s<= 0)
+0040ff6f     result = (*(**(esi_4 - 0x10) + 4))(&esi_4[-8])
+0040ff6f 
+0040ff75 fsbase->NtTib.ExceptionList = ExceptionList
+0040ff85 sub_54a573(eax_2 ^ &__saved_ebp)
+0040ff8d return result

@@ -1,0 +1,62 @@
+{
+  "scope": "original ARM64 OSIG serialization; stop before RSA; separate original SHA invocation; native x86 host OSIG comparison stops before key lookup",
+  "adapters": [],
+  "synthetic_inputs": true,
+  "device_or_server_acceptance_tested": false,
+  "cases": [
+    {
+      "label": "write_ascii",
+      "mode_flag": 1,
+      "inputs": {
+        "id": "3132333441424344",
+        "rand": "30313233343536373839616263646566",
+        "digest_write": "41414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141",
+        "digest_read": "42424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242"
+      },
+      "loader_execution": {
+        "instructions": 3036,
+        "stopped_before_rsa": false,
+        "logger_calls": 1,
+        "adapters": []
+      },
+      "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+      "pc": "0x149a4b0c"
+    },
+    {
+      "label": "read_ascii",
+      "mode_flag": 0,
+      "inputs": {
+        "id": "4645444342413938",
+        "rand": "66656463626139383736353433323130",
+        "digest_write": "30313233343536373839616263646566303132333435363738396162636465663031323334353637383961626364656630313233343536373839616263646566",
+        "digest_read": "66656463626139383736353433323130666564636261393837363534333231306665646362613938373635343332313066656463626139383736353433323130"
+      },
+      "loader_execution": {
+        "instructions": 3037,
+        "stopped_before_rsa": false,
+        "logger_calls": 1,
+        "adapters": []
+      },
+      "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+      "pc": "0x149a4b0c"
+    },
+    {
+      "label": "write_zero_inputs",
+      "mode_flag": 1,
+      "inputs": {
+        "id": "0000000000000000",
+        "rand": "00000000000000000000000000000000",
+        "digest_write": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+        "digest_read": "00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "loader_execution": {
+        "instructions": 3036,
+        "stopped_before_rsa": false,
+        "logger_calls": 1,
+        "adapters": []
+      },
+      "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+      "pc": "0x149a4b0c"
+    }
+  ]
+}

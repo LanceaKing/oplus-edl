@@ -1,0 +1,756 @@
+004b48f0 int32_t __saved_ebp_2
+004b48f0 int32_t __saved_ebp_1 = __saved_ebp_2
+004b48f3 int32_t var_8 = 0xffffffff
+004b48f5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_4e951e
+004b4900 TEB* fsbase
+004b4900 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004b4908 int32_t esi
+004b4908 int32_t var_a8 = esi
+004b4909 int32_t edi
+004b4909 int32_t var_ac = edi
+004b4911 int32_t __saved_ebp
+004b4911 char* var_b0 = __security_cookie ^ &__saved_ebp
+004b4915 fsbase->NtTib.ExceptionList = &ExceptionList
+004b491d int32_t var_24 = 0
+004b4924 sub_41cbc0()
+004b4932 class QDateTime* var_b4 = &data_58a020
+004b4933 void* const var_a0
+004b4933 sub_41d2e0(&var_a0, var_b4)
+004b4938 int32_t var_8_1 = 0
+004b493f sub_41cbc0()
+004b4946 int32_t eax_3 = sub_441db0(&data_58a018)
+004b4950 char ebx
+004b4950 char** esp_1
+004b4950 char const* const var_c8
+004b4950 OpFlashProfile* var_1c
+004b4950 char var_18
+004b4950 
+004b4950 if (eax_3 != 0)
+004b4a1d     QMessageLogger* ecx_13 = sub_41cbc0()
+004b4a25     OpFlashProfile* ebx_1 = data_58c2f0
+004b4a2e     var_b4 = &var_18
+004b4a2f     char* var_b8_4 = nullptr
+004b4a31     int32_t var_bc_3 = 0
+004b4a33     char* var_c0_3 = nullptr
+004b4a35     var_1c = ebx_1
+004b4a40     QDebug* eax_12 =
+004b4a40         QMessageLogger::info(QMessageLogger::QMessageLogger(ecx_13, var_c0_3, var_bc_3, var_b8_4))
+004b4a4a     var_8_1.b = 4
+004b4a57     var_b4 = zx.d(OpFlashProfile::getPackageNewFlag(ebx_1))
+004b4a58     char const* const var_b8_5 = "StartFlashing::StartFlash, new_package_flag is"
+004b4a5d     void* const var_bc_4 = &data_4f2998
+004b4a62     int32_t var_c0_4 = 0x407
+004b4a67     void* const var_c4_1 = &data_4f2994
+004b4a6c     var_c8 = "StartFlashing::SetProfileProperty"
+004b4a71     char const* const var_cc_1 = "[FTGuiSales]["
+004b4ab7     var_8_1.b = 0
+004b4abb     QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+004b4abb         QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(eax_12, 
+004b4abb             "[FTGuiSales][")))), 
+004b4abb         var_b4))))
+004b4abd     var_b4 = 1
+004b4abf     sub_41cbc0()
+004b4aca     OpFlashProfile::setRebootAfterDownload(data_58c2f0, var_b4.b)
+004b4ad0     sub_41cbc0()
+004b4ada     char const* const* var_20 = &var_c8
+004b4ae2     sub_415d20(&var_c8, data_58a058)
+004b4aea     var_8_1.b = 5
+004b4aee     sub_41cbc0()
+004b4af3     var_8_1.b = 0
+004b4afd     OpFlashProfile::setLoginUserType(data_58c2f0, var_c8)
+004b4b06     QMessageLogger* ecx_27 = *(eax_3 + 0x10)
+004b4b27     void* var_14
+004b4b27     void* esp_3
+004b4b27     char** esp_2
+004b4b27     
+004b4b27     if (ecx_27 == 1 || ecx_27 == 2 || ecx_27 == 3 || *eax_3 != 0)
+004b4c8c         var_b4 = &var_14
+004b4ca4         QDebug* eax_43 =
+004b4ca4             QMessageLogger::info(QMessageLogger::QMessageLogger(ecx_27, nullptr, 0, nullptr))
+004b4ca6         var_b4 = "isenterprise or operatorarea or isImportLocally default new_package_flag is true"
+004b4cab         void* const var_b8_9 = &data_4f2998
+004b4cb0         int32_t var_bc_8 = 0x40d
+004b4cb5         void* const var_c0_8 = &data_4f2994
+004b4cba         char const* const var_c4_3 = "StartFlashing::SetProfileProperty"
+004b4cbf         var_c8 = "[FTGuiSales]["
+004b4cc6         var_8_1.b = 6
+004b4ce2         esp_2 = &var_b0
+004b4cfb         var_8_1.b = 0
+004b4cff         QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(
+004b4cff             QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(eax_43, 
+004b4cff                 var_c8)))), 
+004b4cff             var_b0)))
+004b4d01     label_4b4d01:
+004b4d01         *(esp_2 - 4) = 1
+004b4d03         sub_41cbc0()
+004b4d08         data_58c2f0
+004b4d0e         OpFlashProfile::setPackageNewFlag()
+004b4d0e         esp_3 = esp_2
+004b4b27     else
+004b4b30         var_b4 = &var_18
+004b4b48         QDebug* eax_23 =
+004b4b48             QMessageLogger::info(QMessageLogger::QMessageLogger(ecx_27, nullptr, 0, nullptr))
+004b4b4a         class QDateTime* var_68
+004b4b4a         var_b4 = var_68
+004b4b4f         var_8_1.b = 7
+004b4b53         char const* const var_b8_7 = ", userType is "
+004b4b5b         char const* const var_c0_6 = "CheckPackageLatesFlag userInfo: loginType is "
+004b4b60         void* const var_c4_2 = &data_4f2998
+004b4b65         var_c8 = 0x410
+004b4b6a         void* const var_cc_3 = &data_4f2994
+004b4b6f         char const* const var_d0_2 = "StartFlashing::SetProfileProperty"
+004b4b74         char const* const var_d4_1 = "[FTGuiSales]["
+004b4bb9         void var_8c
+004b4bb9         esp_2 = &var_8c
+004b4bc2         var_8_1.b = 0
+004b4bc6         char* var_78
+004b4bc6         char* entry_ebx
+004b4bc6         QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(
+004b4bc6             QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+004b4bc6                 QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(eax_23, 
+004b4bc6                     "[FTGuiSales][")))), 
+004b4bc6                 var_78))), 
+004b4bc6             entry_ebx)))
+004b4bc8         sub_41cbc0()
+004b4bc8         
+004b4bd6         if (sub_43e400(&data_58a018) == 0)
+004b4bd6             goto label_4b4d01
+004b4bd6         
+004b4bdc         int32_t var_90_1 = eax_3
+004b4bdf         sub_41cbc0()
+004b4be6         char eax_33
+004b4be6         QMessageLogger* ecx_40
+004b4be6         eax_33, ecx_40 = sub_43df90()
+004b4beb         var_18 = eax_33
+004b4bf4         int32_t* var_90_2 = &var_14
+004b4c03         QDebug* eax_35 =
+004b4c03             QMessageLogger::info(QMessageLogger::QMessageLogger(ecx_40, nullptr, 0, nullptr))
+004b4c05         char* esi_2 = var_18.d
+004b4c0b         char const* const var_94_2 = "bLatestVersion  ret is "
+004b4c10         void* const var_98_2 = &data_4f2998
+004b4c15         int32_t var_9c_2 = 0x413
+004b4c1a         var_a0 = &data_4f2994
+004b4c1f         char const* const var_a4_1 = "StartFlashing::SetProfileProperty"
+004b4c29         var_8_1.b = 8
+004b4c66         var_8_1.b = 0
+004b4c6a         QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+004b4c6a             QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(eax_35, 
+004b4c6a                 "[FTGuiSales][")))), 
+004b4c6a             esi_2))))
+004b4c6c         bool var_90_4 = esi_2.b
+004b4c6d         sub_41cbc0()
+004b4c78         OpFlashProfile::setPackageNewFlag(data_58c2f0, var_90_4)
+004b4c78         esp_3 = &var_8c
+004b4d17     *(esp_3 - 4) = &var_14
+004b4d18     *(esp_3 - 8) = 0
+004b4d1a     *(esp_3 - 0xc) = 0
+004b4d1c     *(esp_3 - 0x10) = 0
+004b4d29     QMessageLogger::info(QMessageLogger::QMessageLogger())
+004b4d2b     *(esp_3 - 4) = "setUseDefaultNV: false"
+004b4d30     *(esp_3 - 8) = &data_4f2998
+004b4d35     *(esp_3 - 0xc) = 0x41a
+004b4d3a     *(esp_3 - 0x10) = &data_4f2994
+004b4d3f     *(esp_3 - 0x14) = "StartFlashing::SetProfileProperty"
+004b4d44     *(esp_3 - 0x18) = "[FTGuiSales]["
+004b4d4b     var_8_1.b = 9
+004b4d4f     QDebug::operator<<()
+004b4d57     QDebug::operator<<()
+004b4d5f     QDebug::operator<<()
+004b4d67     QDebug::operator<<()
+004b4d67     void* esp_16 = esp_3
+004b4d6f     QDebug::operator<<()
+004b4d80     var_8_1.b = 0
+004b4d84     QDebug::~QDebug(QDebug::operator<<())
+004b4d86     sub_41cbc0()
+004b4da2     QString* ecx_71
+004b4da2     void* esp_18
+004b4da2     
+004b4da2     if (OpFlashPack::getPlatform(OpFlashProfile::getFlashPack(data_58c2f0)) != 1)
+004b4dda         if (*(arg1 + 0x7c) != 0 && *(arg1 + 0x38) != 0)
+004b4de0             *(esp_16 - 4) = 0
+004b4de4             QWidget::setAcceptDrops()
+004b4dea             int32_t ecx_73 = *(arg1 + 0x38)
+004b4df0             *(esp_16 - 4) = &var_18
+004b4df1             int32_t eax_58 = sub_48d840(ecx_73)
+004b4dfb             var_8_1.b = 0xa
+004b4dff             *(esp_16 - 4) = &var_14
+004b4e00             *(esp_16 - 8) = 0
+004b4e02             *(esp_16 - 0xc) = 0
+004b4e04             *(esp_16 - 0x10) = 0
+004b4e11             QMessageLogger::info(QMessageLogger::QMessageLogger())
+004b4e17             *(esp_16 - 4) = eax_58
+004b4e18             *(esp_16 - 8) = "set project:"
+004b4e1d             *(esp_16 - 0xc) = &data_4f2998
+004b4e22             *(esp_16 - 0x10) = 0x427
+004b4e27             *(esp_16 - 0x14) = &data_4f2994
+004b4e2c             *(esp_16 - 0x18) = "StartFlashing::SetProfileProperty"
+004b4e31             *(esp_16 - 0x1c) = "[FTGuiSales]["
+004b4e38             var_8_1.b = 0xb
+004b4e3c             QDebug::operator<<()
+004b4e44             QDebug::operator<<()
+004b4e4c             QDebug::operator<<()
+004b4e54             QDebug::operator<<()
+004b4e5c             QDebug::operator<<()
+004b4e64             QDebug::operator<<()
+004b4e7a             var_8_1.b = 0
+004b4e7e             QString::~QString(QDebug::~QDebug(QDebug::operator<<()))
+004b4e84             int32_t ecx_84 = *(arg1 + 0x38)
+004b4e8a             *(esp_16 - 4) = &var_18
+004b4e8b             QString* eax_67 = sub_48d840(ecx_84)
+004b4e93             var_8_1.b = 0xc
+004b4e97             *(esp_16 - 4) = &var_14
+004b4ea2             var_8_1.b = 0xd
+004b4eaf             *(esp_16 - 4) = QByteArray(QString::toLocal8Bit(eax_67))
+004b4ec2             var_8_1.b = 0
+004b4ec6             QString::~QString(QByteArray::~QByteArray(OpFlashProfile::setProject()))
+004b4ecc             int32_t ecx_90 = *(arg1 + 0x3c)
+004b4ed2             *(esp_16 - 4) = &var_18
+004b4ed3             int32_t eax_70 = sub_48d840(ecx_90)
+004b4edd             var_8_1.b = 0xe
+004b4ee1             *(esp_16 - 4) = &var_14
+004b4ee2             *(esp_16 - 8) = 0
+004b4ee4             *(esp_16 - 0xc) = 0
+004b4ee6             *(esp_16 - 0x10) = 0
+004b4ef3             QMessageLogger::info(QMessageLogger::QMessageLogger())
+004b4ef9             *(esp_16 - 4) = eax_70
+004b4efa             *(esp_16 - 8) = "set storage:"
+004b4eff             *(esp_16 - 0xc) = &data_4f2998
+004b4f04             *(esp_16 - 0x10) = 0x429
+004b4f09             *(esp_16 - 0x14) = &data_4f2994
+004b4f0e             *(esp_16 - 0x18) = "StartFlashing::SetProfileProperty"
+004b4f13             *(esp_16 - 0x1c) = "[FTGuiSales]["
+004b4f1a             var_8_1.b = 0xf
+004b4f1e             QDebug::operator<<()
+004b4f26             QDebug::operator<<()
+004b4f2e             QDebug::operator<<()
+004b4f36             QDebug::operator<<()
+004b4f3e             QDebug::operator<<()
+004b4f46             QDebug::operator<<()
+004b4f5c             var_8_1.b = 0
+004b4f60             QString::~QString(QDebug::~QDebug(QDebug::operator<<()))
+004b4f66             int32_t ecx_101 = *(arg1 + 0x3c)
+004b4f6c             *(esp_16 - 4) = &var_18
+004b4f6d             QString* eax_79 = sub_48d840(ecx_101)
+004b4f75             var_8_1.b = 0x10
+004b4f79             *(esp_16 - 4) = &var_14
+004b4f84             var_8_1.b = 0x11
+004b4f91             *(esp_16 - 4) = QByteArray(QString::toLocal8Bit(eax_79))
+004b4fa4             var_8_1.b = 0
+004b4fa8             QString::~QString(QByteArray::~QByteArray(OpFlashProfile::setStorage()))
+004b4fb1             *(esp_16 - 4) = &var_14
+004b4fb2             *(esp_16 - 8) = 0
+004b4fb4             *(esp_16 - 0xc) = 0
+004b4fb6             *(esp_16 - 0x10) = 0
+004b4fc9             QMessageLogger::info(QMessageLogger::QMessageLogger())
+004b4fcb             *(esp_16 - 4) = "set use default NV:true"
+004b4fd0             *(esp_16 - 8) = &data_4f2998
+004b4fd5             *(esp_16 - 0xc) = 0x42b
+004b4fda             *(esp_16 - 0x10) = &data_4f2994
+004b4fdf             *(esp_16 - 0x14) = "StartFlashing::SetProfileProperty"
+004b4fe4             *(esp_16 - 0x18) = "[FTGuiSales]["
+004b4feb             var_8_1.b = 0x12
+004b4fef             QDebug::operator<<()
+004b4ff7             QDebug::operator<<()
+004b4fff             QDebug::operator<<()
+004b5007             QDebug::operator<<()
+004b500f             QDebug::operator<<()
+004b5020             var_8_1.b = 0
+004b5024             QDebug::~QDebug(QDebug::operator<<())
+004b5026             int32_t ecx_115 = *(arg1 + 0x38)
+004b5029             *(esp_16 - 4) = 0
+004b502b             sub_48c7a0(ecx_115)
+004b5030             int32_t ecx_116 = *(arg1 + 0x3c)
+004b5033             *(esp_16 - 4) = 0
+004b5035             sub_48c7a0(ecx_116)
+004b5035         
+004b503e         if (*(arg1 + 0x7d) != 0)
+004b5044             int32_t ecx_117 = *(arg1 + 0x38)
+004b5044             
+004b5049             if (ecx_117 != 0)
+004b5052                 *(esp_16 - 4) = &var_18
+004b5053                 int32_t eax_89 = sub_48d840(ecx_117)
+004b505d                 var_8_1.b = 0x13
+004b5061                 *(esp_16 - 4) = &var_14
+004b5062                 *(esp_16 - 8) = 0
+004b5064                 *(esp_16 - 0xc) = 0
+004b5066                 *(esp_16 - 0x10) = 0
+004b5073                 QMessageLogger::info(QMessageLogger::QMessageLogger())
+004b5079                 *(esp_16 - 4) = eax_89
+004b507a                 *(esp_16 - 8) = "set project:"
+004b507f                 *(esp_16 - 0xc) = &data_4f2998
+004b5084                 *(esp_16 - 0x10) = 0x430
+004b5089                 *(esp_16 - 0x14) = &data_4f2994
+004b508e                 *(esp_16 - 0x18) = "StartFlashing::SetProfileProperty"
+004b5093                 *(esp_16 - 0x1c) = "[FTGuiSales]["
+004b509a                 var_8_1.b = 0x14
+004b509e                 QDebug::operator<<()
+004b50a6                 QDebug::operator<<()
+004b50ae                 QDebug::operator<<()
+004b50b6                 QDebug::operator<<()
+004b50be                 QDebug::operator<<()
+004b50c6                 QDebug::operator<<()
+004b50dc                 var_8_1.b = 0
+004b50e0                 QString::~QString(QDebug::~QDebug(QDebug::operator<<()))
+004b50e6                 int32_t ecx_128 = *(arg1 + 0x38)
+004b50ec                 *(esp_16 - 4) = &var_18
+004b50ed                 QString* eax_98 = sub_48d840(ecx_128)
+004b50f5                 var_8_1.b = 0x15
+004b50f9                 void* esp_97
+004b50f9                 *esp_97 = &var_14
+004b5104                 var_8_1.b = 0x16
+004b5111                 *esp_97 = QByteArray(QString::toLocal8Bit(eax_98))
+004b5124                 var_8_1.b = 0
+004b5128                 QString::~QString(QByteArray::~QByteArray(OpFlashProfile::setProject()))
+004b512e                 int32_t ecx_134 = *(arg1 + 0x3c)
+004b5134                 *esp_97 = &var_18
+004b5135                 int32_t eax_101 = sub_48d840(ecx_134)
+004b513f                 var_8_1.b = 0x17
+004b5143                 *esp_97 = &var_14
+004b5144                 *(esp_97 - 4) = 0
+004b5146                 *(esp_97 - 8) = 0
+004b5148                 *(esp_97 - 0xc) = 0
+004b5155                 QMessageLogger::info(QMessageLogger::QMessageLogger())
+004b515b                 *esp_97 = eax_101
+004b515c                 *(esp_97 - 4) = "set storage:"
+004b5161                 *(esp_97 - 8) = &data_4f2998
+004b5166                 *(esp_97 - 0xc) = 0x432
+004b516b                 *(esp_97 - 0x10) = &data_4f2994
+004b5170                 *(esp_97 - 0x14) = "StartFlashing::SetProfileProperty"
+004b5175                 *(esp_97 - 0x18) = "[FTGuiSales]["
+004b5175                 void* esp_116 = esp_97 - 0x18
+004b517c                 var_8_1.b = 0x18
+004b5180                 QDebug::operator<<()
+004b5188                 QDebug::operator<<()
+004b5190                 QDebug::operator<<()
+004b5198                 QDebug::operator<<()
+004b51a0                 QDebug::operator<<()
+004b51a8                 QDebug::operator<<()
+004b51be                 var_8_1.b = 0
+004b51c2                 QString::~QString(QDebug::~QDebug(QDebug::operator<<()))
+004b51c8                 int32_t ecx_145 = *(arg1 + 0x3c)
+004b51ce                 *(esp_116 + 0x18) = &var_18
+004b51cf                 QString* eax_110 = sub_48d840(ecx_145)
+004b51d7                 var_8_1.b = 0x19
+004b51db                 *(esp_116 + 0x18) = &var_14
+004b51e6                 var_8_1.b = 0x1a
+004b51f3                 *(esp_116 + 0x18) = QByteArray(QString::toLocal8Bit(eax_110))
+004b5206                 var_8_1.b = 0
+004b520a                 QString::~QString(QByteArray::~QByteArray(OpFlashProfile::setStorage()))
+004b5213                 *(esp_116 + 0x18) = &var_14
+004b5214                 *(esp_116 + 0x14) = 0
+004b5216                 *(esp_116 + 0x10) = 0
+004b5218                 *(esp_116 + 0xc) = 0
+004b522b                 QMessageLogger::info(QMessageLogger::QMessageLogger())
+004b522d                 *(esp_116 + 0x18) = "set use default NV:true"
+004b5232                 *(esp_116 + 0x14) = &data_4f2998
+004b5237                 *(esp_116 + 0x10) = 0x434
+004b523c                 *(esp_116 + 0xc) = &data_4f2994
+004b5241                 *(esp_116 + 8) = "StartFlashing::SetProfileProperty"
+004b5246                 *(esp_116 + 4) = "[FTGuiSales]["
+004b524d                 var_8_1.b = 0x1b
+004b5251                 QDebug::operator<<()
+004b5259                 QDebug::operator<<()
+004b5261                 QDebug::operator<<()
+004b5269                 QDebug::operator<<()
+004b5271                 QDebug::operator<<()
+004b527f                 var_8_1.b = 0
+004b5286                 QDebug::~QDebug(QDebug::operator<<())
+004b5288                 int32_t ecx_159 = *(arg1 + 0x38)
+004b528b                 *(esp_116 + 0x18) = 0
+004b528d                 sub_48c7a0(ecx_159)
+004b5292                 int32_t ecx_160 = *(arg1 + 0x3c)
+004b5295                 *(esp_116 + 0x18) = 0
+004b5297                 sub_48c7a0(ecx_160)
+004b5297                 esp_16 = esp_116 + 0x1c
+004b5297         
+004b52a6         *(esp_16 - 4) = zx.d(*(arg1 + 0x8c))
+004b52a7         OpFlashProfile::setUseDefaultNV()
+004b52b0         *(esp_16 - 4) = &var_14
+004b52b1         *(esp_16 - 8) = 0
+004b52b3         *(esp_16 - 0xc) = 0
+004b52b5         *(esp_16 - 0x10) = 0
+004b52c2         QMessageLogger::info(QMessageLogger::QMessageLogger())
+004b52cb         *(esp_16 - 4) = zx.d(*(arg1 + 0x8c))
+004b52cc         *(esp_16 - 8) = "setUseDefaultNV:"
+004b52d1         *(esp_16 - 0xc) = &data_4f2998
+004b52d6         *(esp_16 - 0x10) = 0x439
+004b52db         *(esp_16 - 0x14) = &data_4f2994
+004b52e0         *(esp_16 - 0x18) = "StartFlashing::SetProfileProperty"
+004b52e5         *(esp_16 - 0x1c) = "[FTGuiSales]["
+004b52ec         var_8_1.b = 0x1c
+004b52f0         QDebug::operator<<()
+004b52f8         QDebug::operator<<()
+004b5300         QDebug::operator<<()
+004b5308         QDebug::operator<<()
+004b5310         QDebug::operator<<()
+004b5318         QDebug::operator<<()
+004b5320         esp_18 = esp_16
+004b5329         ecx_71 = QDebug::~QDebug(QDebug::operator<<())
+004b4da2     else
+004b4da4         sub_41cbc0()
+004b4da4         
+004b4db0         if (data_58a04d == 0)
+004b4dbf             *(esp_16 - 4) = 2
+004b4dc1             ecx_71 = OpFlashProfile::setDaLogPath()
+004b4dc1             esp_18 = esp_16
+004b4db0         else
+004b4db2             *(esp_16 - 4) = 1
+004b4db4             ecx_71 = OpFlashProfile::setDaLogPath()
+004b4db4             esp_18 = esp_16
+004b4db4     
+004b532e     QString::QString(ecx_71)
+004b5334     int32_t ecx_172 = *(arg1 + 0x38)
+004b5337     var_8_1.b = 0x1d
+004b533d     void* esp_162
+004b533d     
+004b533d     if (ecx_172 == 0)
+004b53fc         *(esp_18 - 4) = OpFlashProfile::getProject(var_1c)
+004b5400         QString::operator=()
+004b5400         esp_162 = esp_18
+004b533d     else
+004b5346         *(esp_18 - 4) = &var_20
+004b534e         var_8_1.b = 0x1e
+004b5356         OpFlashProfile* eax_134
+004b5356         char* ecx_176
+004b5356         void* esp_159
+004b5356         
+004b5356         if (*(*sub_48d840(ecx_172) + 4) != 0)
+004b5397             int32_t ecx_177 = *(arg1 + 0x38)
+004b539d             void var_44
+004b539d             *(esp_18 - 4) = &var_44
+004b539e             esp_159 = esp_18
+004b53a3             ecx_176 = sub_48d840(ecx_177)
+004b53a5             eax_134 = 2
+004b5356         else
+004b535b             char* eax_131 = OpFlashProfile::getProject(var_1c)
+004b5365             void* ecx_175
+004b5365             
+004b5365             if (eax_131 == 0)
+004b537c                 ecx_175 = 0xffffffff
+004b5365             else
+004b5367                 char* ecx_174 = eax_131
+004b536c                 var_14 = &ecx_174[1]
+004b5375                 void* eax_132
+004b5375                 
+004b5375                 do
+004b5370                     eax_132.b = *ecx_174
+004b5372                     ecx_174 = &ecx_174[1]
+004b5375                 while (eax_132.b != 0)
+004b5377                 ecx_175 = ecx_174 - var_14
+004b5377             
+004b537f             *(esp_18 - 4) = ecx_175
+004b5380             *(esp_18 - 8) = eax_131
+004b5387             esp_159 = esp_18
+004b538a             var_18.d = QString::fromAscii_helper()
+004b538d             ecx_176 = &var_18
+004b5390             eax_134 = 1
+004b5390         
+004b53aa         *(esp_159 - 4) = ecx_176
+004b53ae         var_1c = eax_134
+004b53b1         QString* ecx_178 = QString::operator=()
+004b53b1         esp_162 = esp_159
+004b53b7         OpFlashProfile* eax_136 = var_1c
+004b53b7         
+004b53bc         if ((eax_136.b & 2) != 0)
+004b53c4             var_1c = eax_136 & 0xfffffffd
+004b53c7             ecx_178 = QString::~QString(ecx_178)
+004b53cd             eax_136 = var_1c
+004b53cd         
+004b53d0         var_8_1 = 0x1e
+004b53d0         
+004b53d9         if ((eax_136.b & 1) != 0)
+004b53de             ecx_178 = QString::~QString(ecx_178)
+004b53de         
+004b53e7         var_8_1.b = 0x1d
+004b53eb         QString::~QString(ecx_178)
+004b53eb     
+004b5409     void var_28
+004b5409     *(esp_162 - 4) = &var_28
+004b540a     sub_41cbc0()
+004b5418     QString* ecx_199
+004b5418     void* esp_184
+004b5418     
+004b5418     if (sub_43e5c0(&data_58a018) == 0)
+004b5421         *(esp_162 - 4) = &var_20
+004b5422         *(esp_162 - 8) = 0
+004b5424         *(esp_162 - 0xc) = 0
+004b5426         *(esp_162 - 0x10) = 0
+004b5433         QMessageLogger::warning(QMessageLogger::QMessageLogger())
+004b5439         *(esp_162 - 4) = "temp account only support oneplus model flash"
+004b543e         *(esp_162 - 8) = &data_4f2998
+004b5443         *(esp_162 - 0xc) = 0x443
+004b5448         *(esp_162 - 0x10) = &data_4f2994
+004b544d         *(esp_162 - 0x14) = "StartFlashing::SetProfileProperty"
+004b5452         *(esp_162 - 0x18) = "[FTGuiSales]["
+004b5459         var_8_1.b = 0x20
+004b545d         QDebug::operator<<()
+004b5465         QDebug::operator<<()
+004b546d         QDebug::operator<<()
+004b5475         QDebug::operator<<()
+004b547d         QDebug::operator<<()
+004b548e         var_8_1.b = 0x1d
+004b5492         int32_t ecx_189 = QDebug::~QDebug(QDebug::operator<<())
+004b5494         *(esp_162 - 4) = 1
+004b5496         *(esp_162 - 8) = ecx_189
+004b5499         void* var_24_2 = esp_162 - 8
+004b549c         *(esp_162 - 0xc) = 0xffffffff
+004b549e         *(esp_162 - 0x10) = 0
+004b54a0         *(esp_162 - 0x14) = "temp account only support oneplus model flash"
+004b54a5         *(esp_162 - 0x18) = esp_162 - 8
+004b54a6         sub_4ba340()
+004b54ab         esp_184 = esp_162 - 8
+004b54ae         var_8_1.b = 0x21
+004b5892     label_4b5892:
+004b5892         sub_41cbc0()
+004b5897         var_8_1.b = 0x1d
+004b58a1         ecx_199 = sub_4304c0(data_58a0a8)
+004b58a1         esp_1 = esp_184 + 8
+004b58a6         ebx = 0
+004b5418     else
+004b54be         void* esp_203
+004b54be         
+004b54be         if (*(eax_3 + 0x14) != 0)
+004b5558             int32_t eax_153 = *(eax_3 + 0x18)
+004b5558             
+004b555d             if (eax_153 != 0)
+004b5670                 if (eax_153 == 1)
+004b5676                     *(esp_162 - 4) = &var_20
+004b5677                     *(esp_162 - 8) = 0
+004b5679                     *(esp_162 - 0xc) = 0
+004b567b                     *(esp_162 - 0x10) = 0
+004b5688                     QMessageLogger::info(QMessageLogger::QMessageLogger())
+004b568a                     *(esp_162 - 4) = "flashing package integerity check fail."
+004b568f                     *(esp_162 - 8) = &data_4f2998
+004b5694                     *(esp_162 - 0xc) = 0x45a
+004b5699                     *(esp_162 - 0x10) = &data_4f2994
+004b569e                     *(esp_162 - 0x14) = "StartFlashing::SetProfileProperty"
+004b56a3                     *(esp_162 - 0x18) = "[FTGuiSales]["
+004b56aa                     var_8_1.b = 0x28
+004b56ae                     QDebug::operator<<()
+004b56b6                     QDebug::operator<<()
+004b56be                     QDebug::operator<<()
+004b56c6                     QDebug::operator<<()
+004b56ce                     QDebug::operator<<()
+004b56df                     var_8_1.b = 0x1d
+004b56e3                     int32_t ecx_220 = QDebug::~QDebug(QDebug::operator<<())
+004b56e5                     *(esp_162 - 4) = 1
+004b56e7                     *(esp_162 - 8) = ecx_220
+004b56ea                     void* var_24_7 = esp_162 - 8
+004b56ed                     *(esp_162 - 0xc) = 0xffffffff
+004b56ef                     *(esp_162 - 0x10) = 0
+004b56f1                     *(esp_162 - 0x14) = "flashing package integerity check fail."
+004b56f6                     *(esp_162 - 0x18) = esp_162 - 8
+004b56f7                     sub_4ba340()
+004b56fc                     esp_184 = esp_162 - 8
+004b56ff                     var_8_1.b = 0x29
+004b5703                     goto label_4b5892
+004b5703                 
+004b5708                 *(esp_162 - 4) = 0xffffffff
+004b570a                 *(esp_162 - 8) = 0
+004b570c                 *(esp_162 - 0xc) =
+004b570c                     "Start flashing package integerity check, please wait 1~2 minutes..."
+004b5711                 *(esp_162 - 0x10) = &var_20
+004b5712                 int32_t eax_170 = sub_4ba340()
+004b571a                 *(esp_162 - 4) = 0
+004b571c                 *(esp_162 - 8) = 0
+004b571e                 *(esp_162 - 0xc) = eax_170
+004b5722                 var_8_1.b = 0x2a
+004b5726                 esp_1 = esp_162
+004b572e                 var_8_1.b = 0x1d
+004b5732                 QString::~QString(sub_492920(arg1 + 0x18))
+004b573b                 QWidget::show(arg1 + 0x18)
+004b5741                 sub_41cbc0()
+004b574c                 bool eax_171
+004b574c                 eax_171, ecx_199 = OpFlashManager::startIntegerityCheck(&data_58a0f0)
+004b574c                 
+004b5754                 if (eax_171 == 0)
+004b575a                     *(esp_1 - 4) = 0
+004b575c                     sub_41cbc0()
+004b5767                     OpFlashProfile* eax_172 = OpFlashManager::getProfile()
+004b576f                     void* esp_270
+004b576f                     
+004b576f                     if (eax_172 == 0)
+004b5801                         *(esp_1 - 4) = &var_20
+004b5802                         *(esp_1 - 8) = 0
+004b5804                         *(esp_1 - 0xc) = 0
+004b5806                         *(esp_1 - 0x10) = 0
+004b5813                         QMessageLogger::warning(QMessageLogger::QMessageLogger())
+004b5819                         *(esp_1 - 4) = "flashing package: integerity check fail"
+004b581e                         *(esp_1 - 8) = &data_4f2998
+004b5823                         *(esp_1 - 0xc) = 0x467
+004b5828                         *(esp_1 - 0x10) = &data_4f2994
+004b582d                         *(esp_1 - 0x14) = "StartFlashing::SetProfileProperty"
+004b5832                         *(esp_1 - 0x18) = "[FTGuiSales]["
+004b5839                         var_8_1.b = 0x2c
+004b583d                         QDebug::operator<<()
+004b5845                         QDebug::operator<<()
+004b584d                         QDebug::operator<<()
+004b5855                         QDebug::operator<<()
+004b5855                         esp_270 = esp_1
+004b576f                     else
+004b5777                         class OpFlashPack* eax_173 = OpFlashProfile::getFlashPack(eax_172)
+004b5785                         *(esp_1 - 4) = &var_20
+004b5786                         *(esp_1 - 8) = 0
+004b5788                         *(esp_1 - 0xc) = 0
+004b578a                         *(esp_1 - 0x10) = 0
+004b5794                         QMessageLogger::warning(QMessageLogger::QMessageLogger())
+004b579c                         *(esp_1 - 4) = "' integerity check fail"
+004b57a3                         var_8_1.b = 0x2b
+004b57ad                         *(esp_1 - 4) = OpFlashPack::getFilePath(eax_173)
+004b57ae                         *(esp_1 - 8) = "flashing package:'"
+004b57b3                         *(esp_1 - 0xc) = &data_4f2998
+004b57b8                         *(esp_1 - 0x10) = 0x465
+004b57bd                         *(esp_1 - 0x14) = &data_4f2994
+004b57c2                         *(esp_1 - 0x18) = "StartFlashing::SetProfileProperty"
+004b57c7                         *(esp_1 - 0x1c) = "[FTGuiSales]["
+004b57ce                         QDebug::operator<<()
+004b57d6                         QDebug::operator<<()
+004b57de                         QDebug::operator<<()
+004b57e6                         QDebug::operator<<()
+004b57e6                         esp_270 = esp_1 - 4
+004b57ee                         QDebug::operator<<()
+004b57f6                         QDebug::operator<<()
+004b57f6                     
+004b585d                     QDebug::operator<<()
+004b586e                     var_8_1.b = 0x1d
+004b5872                     int32_t ecx_242 = QDebug::~QDebug(QDebug::operator<<())
+004b5874                     *(esp_270 - 4) = 1
+004b5876                     *(esp_270 - 8) = ecx_242
+004b5879                     void* var_24_8 = esp_270 - 8
+004b587c                     *(esp_270 - 0xc) = 0xffffffff
+004b587e                     *(esp_270 - 0x10) = 0
+004b5880                     *(esp_270 - 0x14) = "flashing package integerity check fail."
+004b5885                     *(esp_270 - 0x18) = esp_270 - 8
+004b5886                     sub_4ba340()
+004b588b                     esp_184 = esp_270 - 8
+004b588e                     var_8_1.b = 0x2d
+004b588e                     goto label_4b5892
+004b588e                 
+004b5599                 ebx = 1
+004b555d             else
+004b5568                 void* var_24_5 = esp_162 - 0x18
+004b556b                 *(esp_162 - 0x1c) = &data_4f1ea9
+004b5570                 sub_40aea0(esp_162 - 0x18)
+004b5575                 var_8_1.b = 0x25
+004b5579                 sub_41cbc0()
+004b557e                 var_8_1.b = 0x1d
+004b5588                 char eax_154
+004b5588                 int32_t ecx_197
+004b5588                 eax_154, ecx_197 = OpFlashManager::startFlash()
+004b5588                 esp_1 = esp_162
+004b5588                 
+004b5590                 if (eax_154 == 0)
+004b55c3                     *(esp_1 - 4) = 1
+004b55c5                     *(esp_1 - 8) = ecx_197
+004b55c8                     void* var_24_6 = esp_1 - 8
+004b55cb                     *(esp_1 - 0xc) = 0xffffffff
+004b55cd                     *(esp_1 - 0x10) = 0
+004b55cf                     *(esp_1 - 0x14) = "start tool fail"
+004b55d4                     *(esp_1 - 0x18) = esp_1 - 8
+004b55d5                     sub_4ba340()
+004b55dd                     var_8_1.b = 0x26
+004b55e1                     sub_41cbc0()
+004b55e6                     var_8_1.b = 0x1d
+004b55f0                     sub_4304c0(data_58a0a8)
+004b55f8                     *(esp_1 - 4) = &var_20
+004b55f9                     *(esp_1 - 8) = 0
+004b55fb                     *(esp_1 - 0xc) = 0
+004b55fd                     *(esp_1 - 0x10) = 0
+004b560a                     QMessageLogger::info(QMessageLogger::QMessageLogger())
+004b560c                     *(esp_1 - 4) = "start fail"
+004b5611                     *(esp_1 - 8) = &data_4f2998
+004b5616                     var_8_1.b = 0x27
+004b561a                     *(esp_1 - 0xc) = 0x456
+004b561a                     esp_203 = esp_1 - 0xc
+004b561a                     goto label_4b561f
+004b561a                 
+004b5594                 ecx_199 = sub_4b5aa0(arg1)
+004b5599                 ebx = 1
+004b54be         else
+004b54c9             void* var_24_3 = esp_162 - 0x18
+004b54cc             *(esp_162 - 0x1c) = &data_4f1ea9
+004b54d1             sub_40aea0(esp_162 - 0x18)
+004b54d6             var_8_1.b = 0x22
+004b54da             sub_41cbc0()
+004b54df             var_8_1.b = 0x1d
+004b54e9             char eax_149
+004b54e9             int32_t ecx_192
+004b54e9             eax_149, ecx_192 = OpFlashManager::startFlash()
+004b54e9             esp_1 = esp_162
+004b54e9             
+004b54f1             if (eax_149 != 0)
+004b5594                 ecx_199 = sub_4b5aa0(arg1)
+004b5599                 ebx = 1
+004b54f1             else
+004b54f7                 *(esp_1 - 4) = 1
+004b54f9                 *(esp_1 - 8) = ecx_192
+004b54fc                 void* var_24_4 = esp_1 - 8
+004b54ff                 *(esp_1 - 0xc) = 0xffffffff
+004b5501                 *(esp_1 - 0x10) = 0
+004b5503                 *(esp_1 - 0x14) = "start tool fail"
+004b5508                 *(esp_1 - 0x18) = esp_1 - 8
+004b5509                 sub_4ba340()
+004b5511                 var_8_1.b = 0x23
+004b5515                 sub_41cbc0()
+004b551a                 var_8_1.b = 0x1d
+004b5524                 sub_4304c0(data_58a0a8)
+004b552c                 *(esp_1 - 4) = &var_20
+004b552d                 *(esp_1 - 8) = 0
+004b552f                 *(esp_1 - 0xc) = 0
+004b5531                 *(esp_1 - 0x10) = 0
+004b553e                 QMessageLogger::info(QMessageLogger::QMessageLogger())
+004b5540                 *(esp_1 - 4) = "start fail"
+004b5545                 *(esp_1 - 8) = &data_4f2998
+004b554a                 var_8_1.b = 0x24
+004b554e                 *(esp_1 - 0xc) = 0x44d
+004b554e                 esp_203 = esp_1 - 0xc
+004b561f             label_4b561f:
+004b561f                 *(esp_203 - 4) = &data_4f2994
+004b5624                 *(esp_203 - 8) = "StartFlashing::SetProfileProperty"
+004b5629                 *(esp_203 - 0xc) = "[FTGuiSales]["
+004b5630                 QDebug::operator<<()
+004b5638                 QDebug::operator<<()
+004b5640                 QDebug::operator<<()
+004b5648                 QDebug::operator<<()
+004b5648                 esp_1 = esp_203 + 0xc
+004b5650                 QDebug::operator<<()
+004b5661                 ecx_199 = QDebug::~QDebug(QDebug::operator<<())
+004b5663                 ebx = 0
+004b559e     QString::~QString(ecx_199)
+004b4950 else
+004b4956     var_b4 = 0xffffffff
+004b4962     QMessageLogger* ecx_1 = sub_4ba340(&var_1c, "current load SoftInfo is nullptr", eax_3, var_b4)
+004b496d     var_8_1.b = 1
+004b4971     var_b4 = &var_18
+004b4983     QDebug* eax_5 =
+004b4983         QMessageLogger::warning(QMessageLogger::QMessageLogger(ecx_1, nullptr, 0, nullptr))
+004b498c     var_8_1.b = 2
+004b4990     var_b4 = &var_1c
+004b4991     void* const var_b8_2 = &data_4f2998
+004b4996     int32_t var_bc_2 = 0x401
+004b499b     void* const var_c0_2 = &data_4f2994
+004b49a0     char const* const var_c4 = "StartFlashing::SetProfileProperty"
+004b49a5     var_c8 = "[FTGuiSales]["
+004b49dd     class QDateTime* ecx_10 = QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(
+004b49dd         QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(eax_5, 
+004b49dd             var_c8)))), 
+004b49dd         var_b0)))
+004b49e3     var_b0 = 1
+004b49e5     var_b4 = ecx_10
+004b49e9     class QDateTime** var_24_1 = &var_b4
+004b49ef     QString::QString(ecx_10, &var_1c)
+004b49f5     var_8_1.b = 3
+004b49f9     sub_41cbc0()
+004b49fe     var_8_1.b = 1
+004b4a08     esp_1 = &var_b0
+004b4a10     QString::~QString(sub_4304c0(data_58a0a8))
+004b4a16     ebx = 0
+004b55aa sub_41d750(&var_a0)
+004b55af int32_t result
+004b55af result.b = ebx
+004b55b4 fsbase->NtTib.ExceptionList = ExceptionList
+004b55bb *esp_1
+004b55bb esp_1[1]
+004b55bc esp_1[2]
+004b55bd esp_1[3]
+004b55c2 return result

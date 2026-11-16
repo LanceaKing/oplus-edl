@@ -1,0 +1,24 @@
+100439e6 int32_t* edi = *(arg1 + 0xdc)
+100439e6 
+100439f0 for (void** i = *edi; i != edi; i = *i)
+100439f8     int32_t* eax_2 = i[2] + 0x50
+100439f8     
+10043a02     if (eax_2[5] u>= 0x10)
+10043a04         eax_2 = *eax_2
+10043a04     
+10043a0a     int32_t* ecx
+10043a0a     
+10043a0a     if (arg2[5] u< 0x10)
+10043a10         ecx = arg2
+10043a0a     else
+10043a0c         ecx = *arg2
+10043a0c     
+10043a22     if (sub_10007cc0(eax_2, arg2[4], ecx, eax_2, eax_2[4]) == 0)
+10043a38         void* result = sub_1005f651(0x2e8)
+10043a47         memset(result, 0, 0x2e8)
+10043a4f         *(result + 0x2d8) = 0
+10043a59         *(result + 0x2dc) = 0
+10043a65         *(result + 0x2e0) = 0
+10043a73         return result
+10043a73 
+10043a30 return 0

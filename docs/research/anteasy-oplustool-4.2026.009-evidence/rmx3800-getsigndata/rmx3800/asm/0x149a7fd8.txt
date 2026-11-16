@@ -1,0 +1,21 @@
+149a7fd8 mov     x8, xzr
+149a7fdc mov     w9, #0x3c
+149a7fe0 mov     w10, #0xf
+149a7fe4 mov     w11, #0x57
+149a7fe8 mov     w12, #0x30
+149a7fec mov     w13, #0xfffffffc
+149a8024 strb    wzr, [x1, #0x10]
+149a8028 ret     
+149a7ff8 and     x14, x9, #0xfffffffc
+149a7ffc add     x9, x9, x13
+149a8000 lsl     x15, x10, x14
+149a8004 and     x15, x15, x0
+149a8008 lsr     x14, x15, x14
+149a800c cmp     w14, #0xa
+149a8010 csel    w15, w12, w11, lt
+149a8014 add     w14, w15, w14
+149a8018 strb    w14, [x1, x8]
+149a801c add     x8, x8, #0x1
+149a8020 b       0x149a7ff0
+149a7ff0 cmp     x8, #0x10
+149a7ff4 b.eq    0x149a8024

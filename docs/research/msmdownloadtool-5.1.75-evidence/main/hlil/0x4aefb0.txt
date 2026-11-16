@@ -1,0 +1,105 @@
+004aefbe int32_t __saved_ebp
+004aefbe int32_t eax_1 = __security_cookie ^ &__saved_ebp
+004aefc7 int32_t edx = 0
+004aefc9 int32_t i = 0
+004aefcb char* var_110 = arg1
+004aefd1 int32_t result = 0
+004aefd1 
+004aefdd if (arg2 s<= 0)
+004aefe5     sub_687de2(eax_1 ^ &__saved_ebp)
+004aefed     return 0
+004aefed 
+004aeff3 if (arg2 - 1 s> 0)
+004aeffe     do
+004aeff9         if (arg1[i] == 0x7b)
+004af002             edx = 1
+004af002             break
+004af002         
+004aeffb         i += 1
+004aeffe     while (i s< arg2 - 1)
+004aeffe 
+004af007 int32_t eax_2 = i + 1
+004af007 
+004af00a if (eax_2 s< arg2 - 1)
+004af010     while (true)
+004af010         arg1.b = arg1[eax_2]
+004af010         
+004af016         if (arg1.b == 0x7b)
+004af02d             edx += 1
+004af016         else
+004af01b             int32_t temp1_1
+004af01b             
+004af01b             if (arg1.b == 0x7d)
+004af01d                 temp1_1 = edx
+004af01d                 edx -= 1
+004af01d             
+004af01e             if (arg1.b != 0x7d || temp1_1 != 1)
+004af020                 arg1 = var_110
+004af026                 eax_2 += 1
+004af026                 
+004af029                 if (eax_2 s>= arg2 - 1)
+004af029                     break
+004af029                 
+004af029                 continue
+004af029         
+004af02e         arg1 = var_110
+004af02e         break
+004af02e     
+004af03a     if (eax_2 s< arg2 - 1 && edx == 0)
+004af03c         arg1[eax_2 + 1] = edx.b
+004af040         result = 1
+004af040 
+004af04a int32_t* i_1 = &data_7c1fd0
+004af050 int32_t* i_2 = &data_7c1fd0
+004af050 
+004af107 do
+004af057     char* esi_2 = *i_1
+004af05e     char* edi_2 = esi_2
+004af05e     
+004af065     do
+004af060         i_1.b = *edi_2
+004af062         edi_2 = &edi_2[1]
+004af065     while (i_1.b != 0)
+004af065     
+004af067     void* edi_3 = edi_2 - &esi_2[1]
+004af069     int16_t* ebx_1 = nullptr
+004af06d     char var_10c[0x104]
+004af06d     
+004af06d     if (edi_3 s> 0)
+004af075         char* var_118_1 = &var_10c
+004af075         
+004af0b9         do
+004af080             i_1.w = *(ebx_1 + esi_2)
+004af086             int16_t var_114 = i_1.w
+004af096             char var_112_1 = 0
+004af0a8             ebx_1 = &ebx_1[1]
+004af0ae             *var_118_1 = _strtol(&var_114, nullptr, 0x10).b
+004af0b1             var_118_1 = &var_118_1[1]
+004af0b9         while (ebx_1 s< edi_3)
+004af0b9     
+004af0c5     do
+004af0c0         i_1.b = *esi_2
+004af0c2         esi_2 = &esi_2[1]
+004af0c5     while (i_1.b != 0)
+004af0c5     
+004af0c9     uint32_t esi_4 = (esi_2 - &esi_2[1]) u>> 1
+004af0c9     
+004af0d1     if (esi_4 u>= 0x104)
+004af13b         ___report_rangecheckfailure()
+004af140         breakpoint
+004af140     
+004af0d3     var_10c[esi_4] = i_1.b
+004af0e7     char* eax_3
+004af0e7     int32_t xmm0[0x4]
+004af0e7     eax_3, xmm0 = _strstr(xmm0, var_110, &var_10c)
+004af0e7     
+004af0f1     if (eax_3 == 0)
+004af130         sub_687de2(eax_1 ^ &__saved_ebp)
+004af138         return 0
+004af138     
+004af0f9     i_1 = &i_2[1]
+004af0fc     i_2 = i_1
+004af107 while (i_1 != 0x7c1fe4)
+004af107 
+004af11b sub_687de2(eax_1 ^ &__saved_ebp)
+004af123 return result

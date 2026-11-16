@@ -1,0 +1,27 @@
+149c2988 stp     x7, x8, [sp, #-0x10]!
+149c298c stp     fp, lr, [sp, #-0x10]!
+149c2990 stp     x27, x28, [sp, #-0x10]!
+149c2994 stp     x25, x26, [sp, #-0x10]!
+149c2998 stp     x23, x24, [sp, #-0x10]!
+149c299c stp     x21, x22, [sp, #-0x10]!
+149c29a0 stp     x19, x20, [sp, #-0x10]!
+149c29a4 stp     x17, x18, [sp, #-0x10]!
+149c29a8 stp     x15, x16, [sp, #-0x10]!
+149c29ac smc     #0
+149c29b0 cmp     x0, #0x1
+149c29b4 b.eq    0x149c29ac
+149c29b8 ldp     x15, x16, [sp], #0x10
+149c29bc ldp     x17, x18, [sp], #0x10
+149c29c0 ldp     x19, x20, [sp], #0x10
+149c29c4 ldp     x21, x22, [sp], #0x10
+149c29c8 ldp     x23, x24, [sp], #0x10
+149c29cc ldp     x25, x26, [sp], #0x10
+149c29d0 ldp     x27, x28, [sp], #0x10
+149c29d4 ldp     fp, lr, [sp], #0x10
+149c29d8 ldp     x7, x8, [sp], #0x10
+149c29dc cmp     x7, #0
+149c29e0 b.eq    0x149c29f0
+149c29f0 ret     
+149c29e4 str     x1, [x7]
+149c29e8 str     x2, [x7, #0x8]
+149c29ec str     x3, [x7, #0x10]

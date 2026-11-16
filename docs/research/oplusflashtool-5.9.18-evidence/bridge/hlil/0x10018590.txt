@@ -1,0 +1,231 @@
+10018590 int32_t __saved_ebp_1
+10018590 int32_t __saved_ebp = __saved_ebp_1
+10018593 char* var_8 = 0xffffffff
+10018595 int32_t (* var_c)() = sub_10040168
+100185a0 TEB* fsbase
+100185a0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+100185a1 fsbase->NtTib.ExceptionList = &ExceptionList
+100185a8 OpFlashManager* this_1 = this
+100185a9 int32_t ebx
+100185a9 int32_t var_18 = ebx
+100185aa int32_t esi
+100185aa int32_t var_1c = esi
+100185ab int32_t edi
+100185ab int32_t var_20 = edi
+100185ae var_8 = nullptr
+100185b7 void* eax_1 = *(this + 0x10)
+100185ba int32_t edx = 0
+100185bc *(this + 0x2194) = 0
+100185c6 *(this + 0x2198) = 0
+100185d0 int32_t* ecx = *(eax_1 + 8)
+100185d3 int32_t eax_2 = *(eax_1 + 0xc)
+100185dd uint32_t esi_4 = (eax_2 - ecx + 3) u>> 2
+100185dd 
+100185e2 if (ecx u> eax_2)
+100185e2     esi_4 = 0
+100185e2 
+100185e7 if (esi_4 != 0)
+1001860b     do
+100185f0         void* eax_3 = *ecx
+100185f0         
+100185f4         if (eax_3 != 0)
+100185f6             void* eax_4 = *(eax_3 + 4)
+100185f9             *(eax_4 + 0xe20) = 0
+100185ff             *(eax_4 + 0xe24) = 0
+100185ff         
+10018605         edx += 1
+10018606         ecx = &ecx[1]
+1001860b     while (edx != esi_4)
+1001860b 
+1001860d OpFlashMode::getInstance()
+10018616 int32_t eax_14
+10018616 class OplusMTKAgent* (* const ebx_1)()
+10018616 int32_t* esp_1
+10018616 
+10018616 if (data_1005b150 != 1)
+100187dd     void* eax_19 = *(this + 0x2188)
+100187e6     ebx_1 = *(this + 0x218c)
+100187ec     int32_t var_24_1 = 3
+100187ee     int32_t var_28_1 = 0
+100187f0     void* const var_2c_1 = &data_10047ddc
+100187f0     
+10018806     if (sub_100045a0(&arg2, &data_10047ddc, nullptr, 3) != 0xffffffff
+10018806             && arg2._Mypair._Myval2._Mysize u< 7)
+1001880c         class std::string* _Buf = &arg2
+1001880c         
+10018815         if (arg2._Mypair._Myval2._Myres u>= 0x10)
+10018815             _Buf = arg2._Mypair._Myval2._Bx._Buf.d
+10018815         
+1001881d         int32_t var_28_2 = 0x20
+10018820         strcpy_s(ebx_1 + 0x2c, 0x20, _Buf)
+10018826         class std::string* _Buf_1 = &arg2
+10018826         
+10018829         if (arg2._Mypair._Myval2._Myres u>= 0x10)
+10018829             _Buf_1 = arg2._Mypair._Myval2._Bx._Buf.d
+10018829         
+10018834         int32_t var_34_1 = 0x20
+10018837         strcpy_s(eax_19 + 0x30, 0x20, _Buf_1)
+10018837     
+1001883f     qcom_flash_agent_reset(eax_19)
+10018846     mtk_flash_agent_clear_profiles(ebx_1)
+1001884c     int32_t* i = *(this + 0x70)
+1001884f     esp_1 = &var_20
+1001884f     
+10018855     for (; i != *(this + 0x74); i = &i[1])
+10018857         void* eax_24 = *i
+10018859         int32_t ecx_17 = *(eax_24 + 0x2c)
+10018859         
+1001885e         if (ecx_17 == 0)
+10018869             eax_14 = qcom_flash_agent_add_profile(eax_19, *(eax_24 + 0x90))
+1001886f             esp_1 = &var_20
+1001886f             
+10018874             if (eax_14 != 0)
+10018874                 goto label_100188dd_2
+10018874             
+10018876             *(this + 0x2194) += 1
+1001885e         else if (ecx_17 == 1)
+1001888a             eax_14 = mtk_flash_agent_add_profile(ebx_1, *(eax_24 + 0x90))
+10018890             esp_1 = &var_20
+10018890             
+10018895             if (eax_14 != 0)
+10018895                 goto label_100188dd_2
+10018895             
+10018897             *(this + 0x2198) += 1
+10018897     
+100188ac     if (*(this + 0x2194) s> 0)
+100188b1         eax_14 = qcom_flash_agent_start(eax_19)
+100188b7         esp_1 = &var_20
+100188b7     
+100188bc     if (*(this + 0x2194) s> 0 && eax_14 != 0)
+100188dd     label_100188dd:
+100188dd         ebx_1.b = 0
+100188bc     else
+100188c5         if (*(this + 0x2198) s<= 0)
+100188c5             goto label_10018786
+100188c5         
+100188d2         esp_1 = &var_20
+100188d2         
+100188d7         if (mtk_flash_agent_start(ebx_1) == 0)
+100188d7             goto label_10018786
+100188d7         
+100188dd     label_100188dd_1:
+100188dd         ebx_1.b = 0
+10018616 else
+10018626     QCFlashAgent::clearProfiles(QCFlashAgent::getInstance())
+10018636     OplusMTKAgent::clearProfiles(OplusMTKAgent::getInstance())
+1001863c     arg2._Mypair._Myval2._Bx._Buf.__offset(0x8).d = 3
+1001863e     arg2._Mypair._Myval2._Bx._Buf.__offset(0x4).d = 0
+10018640     arg2._Mypair._Myval2._Bx._Buf.d = &data_10047ddc
+10018648     uint8_t* eax_7 = sub_100045a0(&arg2)
+10018648     esp_1 = &arg2._Mypair._Myval2._Bx._Buf.__offset(0xc)
+10018648     
+10018650     if (eax_7 != 0xffffffff)
+1001865b         int32_t* var_14 = &var_8
+1001865e         arg2._Mypair._Myval2._Bx._Buf.__offset(0x8).d = 0xf
+10018665         arg2._Mypair._Myval2._Bx._Buf.__offset(0x4).d = 0
+10018670         char* eax_8
+10018670         
+10018670         eax_8 = arg2._Mypair._Myval2._Bx._Buf.__offset(0x8).d u< 0x10 ? &var_8 : var_8
+10018670         
+10018678         uint32_t var_c_1 = 0xffffffff
+1001867a         *eax_8 = 0
+10018680         ExceptionList = nullptr
+10018683         sub_10003400(&var_8, &arg2, ExceptionList, var_c_1)
+10018688         var_8.b = 1
+1001868c         QCFlashAgent::getInstance()
+10018690         var_8.b = 0
+10018694         QCFlashAgent::SetCOMPort()
+1001869f         char** var_14_2 = &var_8
+100186a2         arg2._Mypair._Myval2._Bx._Buf.__offset(0x8).d = 0xf
+100186a9         arg2._Mypair._Myval2._Bx._Buf.__offset(0x4).d = 0
+100186b4         char* eax_10
+100186b4         
+100186b4         eax_10 = arg2._Mypair._Myval2._Bx._Buf.__offset(0x8).d u< 0x10 ? &var_8 : var_8
+100186b4         
+100186bc         uint32_t var_c_2 = 0xffffffff
+100186be         *eax_10 = 0
+100186c4         ExceptionList = nullptr
+100186c7         sub_10003400(&var_8, &arg2, ExceptionList, var_c_2)
+100186cc         var_8.b = 2
+100186d0         OplusMTKAgent::getInstance()
+100186d0         esp_1 = &arg2._Mypair._Myval2._Bx._Buf.__offset(0xc)
+100186d4         var_8.b = 0
+100186d8         OplusMTKAgent::SetCOMPort()
+100186d8     
+100186de     void** esi_5 = *(this + 0x70)
+100186de     
+100186e4     if (esi_5 == *(this + 0x74))
+10018786     label_10018786:
+10018786         eax_14 = *(this + 0x70)
+10018786         
+1001878c         if (eax_14 != *(this + 0x74))
+1001878e             void* ecx_13 = *eax_14
+1001878e             
+10018799             if (ecx_13 != 0 && ecx_13 != 0xfffffff8)
+1001879f                 int32_t* eax_18 = ecx_13 + 0x38
+1001879f                 
+100187a2                 if (*(ecx_13 + 0x4c) u>= 0x10)
+100187a4                     eax_18 = *eax_18
+100187a4                 
+100187a6                 *(esp_1 - 4) = eax_18
+100187a7                 write_flash_event_listen_start()
+100187a7         
+100187b0         *(this + 4) = 1
+100187b4         ebx_1.b = 1
+100186e4     else
+100186f0         while (true)
+100186f0             void* ecx_8 = *esi_5
+100186f2             int32_t eax_12 = *(ecx_8 + 0x2c)
+100186f2             
+100186f7             if (eax_12 == 0)
+100186f9                 *(esp_1 - 4) = *(ecx_8 + 0x90)
+100186ff                 QCFlashAgent::getInstance()
+100186ff                 esp_1 = &esp_1[5]
+100186ff                 
+1001870f                 if (QCFlashAgent::addProfile() != 0)
+1001870f                     break
+1001870f                 
+10018715                 *(this + 0x2194) += 1
+100186f7             else if (eax_12 == 1)
+10018722                 *(esp_1 - 4) = *(ecx_8 + 0x90)
+10018728                 OplusMTKAgent::getInstance()
+10018728                 esp_1 = &esp_1[5]
+10018728                 
+10018734                 if (OplusMTKAgent::addProfile() != 0)
+10018734                     break
+10018734                 
+1001873a                 *(this + 0x2198) += 1
+1001873a             
+10018747             if (*(this + 0x2194) s> 0)
+10018749                 esp_1 = &esp_1[6]
+10018749                 
+10018759                 if (QCFlashAgent::start(QCFlashAgent::getInstance()) != 0)
+10018759                     break
+10018759             
+10018766             if (*(this + 0x2198) s> 0)
+10018768                 esp_1 = &esp_1[6]
+10018768                 
+10018774                 if (OplusMTKAgent::start(OplusMTKAgent::getInstance()) != 0)
+10018774                     break
+10018774             
+1001877a             esi_5 = &esi_5[1]
+1001877a             
+10018780             if (esi_5 == *(this + 0x74))
+10018780                 goto label_10018786
+10018780         
+100188dd     label_100188dd_2:
+100188dd         ebx_1.b = 0
+100188dd 
+100187b6 uint32_t _Myres = arg2._Mypair._Myval2._Myres
+100187b6 
+100187bc if (_Myres u>= 0x10)
+100187bf     *(esp_1 - 4) = _Myres + 1
+100187c0     *(esp_1 - 8) = arg2._Mypair._Myval2._Bx._Buf.d
+100187c3     sub_100037a0()
+100187c3 
+100187cb eax_14.b = ebx_1.b
+100187cd *esp_1
+100187cd esp_1[1]
+100187cf fsbase->NtTib.ExceptionList = ExceptionList
+100187ce esp_1[2]
+100187da return eax_14.b

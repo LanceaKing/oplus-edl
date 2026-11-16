@@ -1,0 +1,124 @@
+004c03f0 int32_t ebp
+004c03f0 int32_t var_4 = ebp
+004c03f3 void* var_8 = arg1
+004c03f4 int32_t ebx
+004c03f4 int32_t var_c = ebx
+004c03f5 int32_t esi
+004c03f5 int32_t var_10 = esi
+004c03f8 int32_t edi
+004c03f8 int32_t var_14 = edi
+004c03f9 void** eax = *(arg1 + 0x90)
+004c03ff int32_t ecx = eax[0x33]
+004c03ff 
+004c0408 if (ecx == 1)
+004c0408     goto label_4c041b
+004c0408 
+004c040d char var_2c
+004c040d 
+004c040d if (ecx == 2)
+004c040f     eax = &eax[6]
+004c041b label_4c041b:
+004c041b     int32_t var_18_1 = 0xf
+004c0422     int32_t var_1c_1 = 0
+004c042a     var_2c = 0
+004c042d     sub_412b40(&var_2c, eax, 0, 0xffffffff)
+004c0438     sub_4d1210(arg1 + 0x5a0)
+004c0438 
+004c044f *(*(arg1 + 0x5a0) + 0x98) = *(arg1 + 0x58)
+004c045d *(*(arg1 + 0x5a0) + 0x9c) = *(arg1 + 0x570)
+004c046d void** eax_4 = *(arg1 + 0x90) + 0x30
+004c0472 int32_t var_18_2 = 0xf
+004c0479 int32_t var_1c_2 = 0
+004c0481 var_2c = 0
+004c0484 sub_412b40(&var_2c, eax_4, 0, 0xffffffff)
+004c048b sub_4d13f0(arg1 + 0x5a0)
+004c049b void** eax_6 = *(arg1 + 0x90) + 0xe4
+004c04a4 int32_t var_18_3 = 0xf
+004c04ab int32_t var_1c_3 = 0
+004c04b3 var_2c = 0
+004c04b6 sub_412b40(&var_2c, eax_6, 0, 0xffffffff)
+004c04bd sub_4d12b0(arg1 + 0x5a0)
+004c04cd void** eax_8 = *(arg1 + 0x90) + 0xfc
+004c04d6 int32_t var_18_4 = 0xf
+004c04dd int32_t var_1c_4 = 0
+004c04e5 var_2c = 0
+004c04e8 sub_412b40(&var_2c, eax_8, 0, 0xffffffff)
+004c04ef sub_4d1350(arg1 + 0x5a0)
+004c04f4 *(arg1 + 0x5a0)
+004c04f6 sub_4d4e00()
+004c04fb *(arg1 + 0x5a0)
+004c04fd int32_t* ebp_1
+004c04fd void* esi_2
+004c04fd ebp_1, esi_2 = sub_4d4e80()
+004c0506 int32_t result = sub_4ceb40(*(esi_2 + 0x34), arg1 + 0x5a0)
+004c050f int16_t* var_18_7
+004c050f int32_t eax_10
+004c050f 
+004c050f if (result != 0)
+004c0540     void* eax_11 = *(arg1 + 0x5a0)
+004c0542     int32_t var_18_8 = *(eax_11 + 0x16c)
+004c0548     int32_t var_1c_6 = *(eax_11 + 0x168)
+004c0552     int32_t var_20_1 = *(esi_2 + 0x38) + 1
+004c0553     char const* const var_24_1 = "[%d] model check failed %d, %d\n"
+004c0558     int32_t var_28_1 = 4
+004c055a     var_2c.d = &data_7e09e8
+004c055f     ebp_1 = sub_4d6270(var_2c)
+004c0564     void* eax_14 = *(arg1 + 0x5a0)
+004c0569     int32_t ecx_14 = *(eax_14 + 0x168)
+004c0572     wchar16 const* const var_18_9
+004c0572     
+004c0572     if (ecx_14 u> 3)
+004c05fa         if (*(esi_2 + 0x24) == 0)
+004c0603             var_18_9 = u"Token process failed\n"
+004c05fa         else
+004c05fc             var_18_9 = "CgVg!h"
+004c05fc         
+004c0609         sub_4c2470(esi_2 + 0x2c0, var_18_9)
+004c0572     else
+004c0574         switch (ecx_14)
+004c0582             case 0
+004c0582                 if (*(eax_14 + 0x16c) != 0)
+004c0592                     if (*(esi_2 + 0x24) == 0)
+004c059b                         var_18_9 = u"Device not match image\n"
+004c0592                     else
+004c0594                         var_18_9 = &data_77d0d4
+004c0594                     
+004c0609                     sub_4c2470(esi_2 + 0x2c0, var_18_9)
+004c05a6             case 1
+004c05ac                 if (*(esi_2 + 0x24) == 0)
+004c05b5                     var_18_9 = u"Token verify failed\n"
+004c05ac                 else
+004c05ae                     var_18_9 = "CgVg!h"
+004c05ae                 
+004c0609                 sub_4c2470(esi_2 + 0x2c0, var_18_9)
+004c05c0             case 2
+004c05c6                 if (*(esi_2 + 0x24) == 0)
+004c05cf                     var_18_9 = u"The model hash is incorrect\n"
+004c05c6                 else
+004c05c8                     var_18_9 = &data_77d188
+004c05c8                 
+004c0609                 sub_4c2470(esi_2 + 0x2c0, var_18_9)
+004c05da             case 3
+004c05e0                 if (*(esi_2 + 0x24) == 0)
+004c05e9                     var_18_9 = u"SN not match\n"
+004c05e0                 else
+004c05e2                     var_18_9 = &data_77d25c
+004c05e2                 
+004c0609                 sub_4c2470(esi_2 + 0x2c0, var_18_9)
+004c0617     var_18_7 = esi_2 + 0x2c0
+004c061c     eax_10 = zx.d(*(esi_2 + 0x38)) | 0x1010000
+004c050f else
+004c051a     wchar16 const* const var_18_6
+004c051a     
+004c051a     if (*(esi_2 + 0x24) == result.b)
+004c0523         var_18_6 = u"Send project model to device success!\n"
+004c051a     else
+004c051c         var_18_6 = &data_77d044
+004c051c     
+004c0529     sub_4c2470(esi_2 + 0x2c0, var_18_6)
+004c0535     eax_10 = zx.d(*(esi_2 + 0x38)) | 0x10000
+004c053a     var_18_7 = esi_2 + 0x2c0
+004c053a 
+004c062a 0x3b8730(*(esi_2 + 0x3c), 0x178c, eax_10, var_18_7)
+004c0637 *ebp_1
+004c0638 return result

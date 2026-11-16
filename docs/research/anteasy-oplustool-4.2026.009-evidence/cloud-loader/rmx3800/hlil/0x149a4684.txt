@@ -1,0 +1,52 @@
+149a463c int64_t x8 = data_149da3f0
+149a4648 int128_t var_60
+149a4648 __builtin_memset(&var_60, 0, 0x20)
+149a464c void var_148
+149a464c sub_149c55bc(&var_148)
+149a4650 sub_149a4740(arg1)
+149a4660 sub_149a6090(*arg2, arg2[1].d, &var_60)
+149a4678 int32_t x0_3
+149a4678 int64_t* x3_1
+149a4678 int64_t x4_1
+149a4678 int64_t x5
+149a4678 int64_t x6
+149a4678 int64_t x7
+149a4678 int128_t v0
+149a4678 int128_t v1
+149a4678 int128_t v2
+149a4678 int128_t v3
+149a4678 int128_t v4
+149a4678 int128_t v5
+149a4678 int128_t v6
+149a4678 int128_t v7
+149a4678 x0_3, x3_1, x4_1, x5, x6, x7, v0, v1, v2, v3, v4, v5, v6, v7 =
+149a4678     sub_149c5964(&var_148, 9, 0x20, &var_60, *arg3)
+149a4694 char* x1_1
+149a4694 
+149a4694 x1_1 = x0_3 == 0 ? "%s verify signature ok" : "%s verify signature failed"
+149a4694 
+149a46a0 int64_t x19_1
+149a46a0 
+149a46a0 x19_1 = x0_3 != 0 ? 0xffffffff : 0
+149a46a0 
+149a46a4 uint64_t x24
+149a46a4 sub_149a5c34(2, x1_1, "DevprgRSAVerify", x3_1, x4_1, x5, x6, x7, v0, v1, v2, v3, v4, v5, v6, v7, 
+149a46a4     x24)
+149a46ac void* x0_5
+149a46ac char* x1_2
+149a46ac char* x2_1
+149a46ac x0_5, x1_2, x2_1 = sub_149c598c(&var_148)
+149a46ac 
+149a46c0 if (data_149da3f0 == x8)
+149a46d8     return zx.q(x19_1.d)
+149a46d8 
+149a46e0 int64_t __saved_fp
+149a46e0 int64_t* var_180 = &__saved_fp
+149a46e4 int64_t* var_170 = arg1
+149a46e8 int64_t* var_160 = arg2
+149a46e8 int64_t var_158 = x19_1
+149a4708 sub_149c3a68(x0_5 + 0x10, 0x10, x1_2)
+149a4718 sub_149c3a68(x0_5 + 0x20, 0x10, x2_1)
+149a4720 int64_t result = sub_149c3a3c(x0_5 + 0x10)
+149a4730 *(x0_5 + 8) = (result + 7) u>> 3
+149a473c return result

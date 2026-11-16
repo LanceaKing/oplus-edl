@@ -1,0 +1,191 @@
+{
+  "scope": "Native input-copy and branch boundaries only, not token or MES acceptance",
+  "image_sha256": "cf526788045211590d6fc3d5a1688b87d6377db05532516f5a4f570bd860e68f",
+  "api_implementations": 0,
+  "token_input_cases": [
+    {
+      "mode": 1,
+      "entry": "0x4c03f0",
+      "stop": "0x4d4e00",
+      "error": null,
+      "observed_stops": [
+        "0x4d4e00"
+      ],
+      "actual": {
+        "0x8": "project-first",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "expected": {
+        "0x8": "project-first",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "match": true
+    },
+    {
+      "mode": 2,
+      "entry": "0x4c03f0",
+      "stop": "0x4d4e00",
+      "error": null,
+      "observed_stops": [
+        "0x4d4e00"
+      ],
+      "actual": {
+        "0x8": "project-second",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "expected": {
+        "0x8": "project-second",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "match": true
+    },
+    {
+      "mode": 3,
+      "entry": "0x4c03f0",
+      "stop": "0x4d4e00",
+      "error": null,
+      "observed_stops": [
+        "0x4d4e00"
+      ],
+      "actual": {
+        "0x8": "keep-value",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "expected": {
+        "0x8": "keep-value",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "match": true
+    }
+  ],
+  "pcba_gate_cases": [
+    {
+      "login_flag": 0,
+      "station_flag": 0,
+      "upload": 0,
+      "entry": "0x4415c0",
+      "stop": "0x4418e1",
+      "error": null,
+      "observed_stops": [
+        "0x4418e1"
+      ],
+      "expected_stop": "0x4418e1",
+      "match": true
+    },
+    {
+      "login_flag": 0,
+      "station_flag": 0,
+      "upload": 1,
+      "entry": "0x4415c0",
+      "stop": "0x4418e1",
+      "error": null,
+      "observed_stops": [
+        "0x4418e1"
+      ],
+      "expected_stop": "0x4418e1",
+      "match": true
+    },
+    {
+      "login_flag": 0,
+      "station_flag": 1,
+      "upload": 0,
+      "entry": "0x4415c0",
+      "stop": "0x4418e1",
+      "error": null,
+      "observed_stops": [
+        "0x4418e1"
+      ],
+      "expected_stop": "0x4418e1",
+      "match": true
+    },
+    {
+      "login_flag": 0,
+      "station_flag": 1,
+      "upload": 1,
+      "entry": "0x4415c0",
+      "stop": "0x4418e1",
+      "error": null,
+      "observed_stops": [
+        "0x4418e1"
+      ],
+      "expected_stop": "0x4418e1",
+      "match": true
+    },
+    {
+      "login_flag": 1,
+      "station_flag": 0,
+      "upload": 0,
+      "entry": "0x4415c0",
+      "stop": "0x4418ee",
+      "error": null,
+      "observed_stops": [
+        "0x4418ee"
+      ],
+      "expected_stop": "0x4418ee",
+      "match": true
+    },
+    {
+      "login_flag": 1,
+      "station_flag": 0,
+      "upload": 1,
+      "entry": "0x4415c0",
+      "stop": "0x44162e",
+      "error": null,
+      "observed_stops": [
+        "0x44162e"
+      ],
+      "expected_stop": "0x44162e",
+      "match": true
+    },
+    {
+      "login_flag": 1,
+      "station_flag": 1,
+      "upload": 0,
+      "entry": "0x4415c0",
+      "stop": "0x4418ee",
+      "error": null,
+      "observed_stops": [
+        "0x4418ee"
+      ],
+      "expected_stop": "0x4418ee",
+      "match": true
+    },
+    {
+      "login_flag": 1,
+      "station_flag": 1,
+      "upload": 1,
+      "entry": "0x4415c0",
+      "stop": "0x4418f5",
+      "error": null,
+      "observed_stops": [
+        "0x4418f5"
+      ],
+      "expected_stop": "0x4418f5",
+      "match": true
+    }
+  ]
+}

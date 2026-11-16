@@ -1,0 +1,188 @@
+004c1d60 int32_t __saved_ebp_2
+004c1d60 int32_t __saved_ebp_1 = __saved_ebp_2
+004c1d61 int32_t __saved_ebp
+004c1d61 int32_t* ebp = &__saved_ebp
+004c1d63 int32_t var_8 = 0xffffffff
+004c1d65 int32_t (* var_c)(void* arg1) = sub_6cd2b8
+004c1d70 TEB* fsbase
+004c1d70 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004c1d74 int32_t __saved_ebx_1
+004c1d74 int32_t __saved_ebx = __saved_ebx_1
+004c1d75 int32_t __saved_esi_1
+004c1d75 int32_t __saved_esi = __saved_esi_1
+004c1d76 int32_t __saved_edi_1
+004c1d76 int32_t __saved_edi = __saved_edi_1
+004c1d7e int32_t var_2c = __security_cookie ^ &__saved_ebp
+004c1d7e int32_t* esp_1 = &var_2c
+004c1d82 fsbase->NtTib.ExceptionList = &ExceptionList
+004c1d90 int32_t ebx = 1
+004c1d95 int32_t eax_4 = *(*(arg1 + 0x90) + 0xd0)
+004c1d95 
+004c1d9d if (eax_4 == 0)
+004c1da2     fsbase->NtTib.ExceptionList = ExceptionList
+004c1db0     return eax_4
+004c1db0 
+004c1db4 if (eax_4 == 1)
+004c1dba     void* ecx_2 = *(arg1 + 0x34)
+004c1dc3     int64_t var_1c
+004c1dc3     int64_t* var_30_1 = &var_1c
+004c1dc4     var_1c = 0
+004c1dc9     int32_t eax_5
+004c1dc9     int32_t ebx_1
+004c1dc9     eax_5, ebx_1 = sub_4cdb20(ecx_2, var_30_1)
+004c1dc9     int32_t* esp_2 = &var_2c
+004c1dc9     
+004c1dd0     if (eax_5 != 0)
+004c1dd8         int32_t eax_8 = zx.d((*(arg1 + 0x38)).w) | 0x1000000
+004c1de1         wchar16 const* const var_30_2
+004c1de1         
+004c1de1         if (*(arg1 + 0x24) == 0)
+004c1dea             var_30_2 = u"Send process start command failed"
+004c1de1         else
+004c1de3             var_30_2 = &data_77e208
+004c1de3         
+004c1df0         int32_t var_38_1 = 0x178c
+004c1df5         int32_t var_3c = *(arg1 + 0x3c)
+004c1df5         esp_2 = &var_3c
+004c1df8         0x3b8730(var_3c, var_38_1, eax_8, var_30_2)
+004c1df8     
+004c1e09     int32_t eax_10 = *(arg1 + 0x90) + 0x18
+004c1e0c     *(esp_2 - 0x1c) = 0xffffffff
+004c1e0e     *(esp_2 - 0x20) = 0
+004c1e10     *(esp_2 - 4) = 0xf
+004c1e17     *(esp_2 - 8) = 0
+004c1e1e     *(esp_2 - 0x24) = eax_10
+004c1e1f     *(esp_2 - 0x18) = 0
+004c1e22     sub_412b40(esp_2 - 0x18)
+004c1e2f     sub_4d1210(arg1 + 0x5a0)
+004c1e3f     *(*(arg1 + 0x5a0) + 0x9c) = *(arg1 + 0x570)
+004c1e47     int32_t eax_12 = *(arg1 + 0x90)
+004c1e4d     *(esp_2 - 0x1c) = 0xffffffff
+004c1e52     *(esp_2 - 0x20) = 0
+004c1e54     *(esp_2 - 4) = 0xf
+004c1e5b     *(esp_2 - 8) = 0
+004c1e62     *(esp_2 - 0x24) = eax_12 + 0x30
+004c1e63     *(esp_2 - 0x18) = 0
+004c1e66     sub_412b40(esp_2 - 0x18)
+004c1e6d     sub_4d13f0(arg1 + 0x5a0)
+004c1e7d     int32_t eax_15 = *(arg1 + 0x90) + 0xe4
+004c1e82     *(esp_2 - 0x1c) = 0xffffffff
+004c1e84     *(esp_2 - 0x20) = 0
+004c1e86     *(esp_2 - 4) = 0xf
+004c1e8d     *(esp_2 - 8) = 0
+004c1e94     *(esp_2 - 0x24) = eax_15
+004c1e95     *(esp_2 - 0x18) = 0
+004c1e98     sub_412b40(esp_2 - 0x18)
+004c1e9f     sub_4d12b0(arg1 + 0x5a0)
+004c1eaf     int32_t eax_17 = *(arg1 + 0x90) + 0xfc
+004c1eb4     *(esp_2 - 0x1c) = 0xffffffff
+004c1eb6     *(esp_2 - 0x20) = 0
+004c1eb8     *(esp_2 - 4) = 0xf
+004c1ebf     *(esp_2 - 8) = 0
+004c1ec6     *(esp_2 - 0x24) = eax_17
+004c1ec7     *(esp_2 - 0x18) = 0
+004c1eca     sub_412b40(esp_2 - 0x18)
+004c1ed1     sub_4d1350(arg1 + 0x5a0)
+004c1ed1     void* esp_26 = esp_2
+004c1eda     void* eax_18 = *(arg1 + 0x5a0)
+004c1eda     
+004c1edc     if (*(arg1 + 0x20) != 2)
+004c1f0e         *(eax_18 + 0xa8) = 0
+004c1f1b         int32_t ecx_13 = *(arg1 + 0x28)
+004c1f1e         int32_t var_14
+004c1f1e         *(esp_26 - 4) = &var_14
+004c1f1f         *(esp_26 - 8) = 0x27
+004c1f21         var_14 = 0
+004c1f28         sub_4c2f40(ecx_13)
+004c1f32         *(*(arg1 + 0x5a0) + 0xac) = var_14
+004c1edc     else
+004c1ede         *(eax_18 + 0xa8) = ebx_1
+004c1ef0         void* eax_20 = *(arg1 + 0x5a0)
+004c1ef0         
+004c1ef2         if (*(*(arg1 + 0x90) + 0x140) != ebx_1)
+004c1f06             *(eax_20 + 0xac) = *(arg1 + 0x5e4)
+004c1ef2         else
+004c1ef4             *(eax_20 + 0xac) = 0
+004c1ef4     
+004c1f46     *(*(arg1 + 0x5a0) + 0xa4) = *(*(arg1 + 0x90) + 0x140)
+004c1f4c     void* ecx_16 = *(arg1 + 0x5a0)
+004c1f51     *(ecx_16 + 0xb0) = var_1c.d
+004c1f5a     *(ecx_16 + 0xb4) = var_1c:4.d
+004c1f60     *(arg1 + 0x5a0)
+004c1f62     int32_t* esi_1 = sub_4d4e00()
+004c1f67     *esi_1
+004c1f69     void* edi_1
+004c1f69     ebp, edi_1 = sub_4d5340()
+004c1f94     ebp[-4] = (*(data_7bfb90 + 0xc))() + 0x10
+004c1f9a     ebp[-1] = 0
+004c1fa1     *(edi_1 + 0x34)
+004c1fa4     *(esp_26 - 4) = &ebp[-4]
+004c1fa5     *(esp_26 - 8) = esi_1
+004c1fa6     int32_t eax_30
+004c1fa6     int32_t* esi_2
+004c1fa6     eax_30, esi_2 = sub_4cf2d0()
+004c1fa6     esp_1 = esp_26
+004c1fab     ebx = eax_30
+004c1faf     int32_t* ecx_25
+004c1faf     
+004c1faf     if (ebx == 0)
+004c1fee         void* esi_3 = ebp[-4]
+004c1fee         
+004c1ff8         if (*(*esi_2 + 0x16c) != 0)
+004c1ffa             bool cond:2_1 = *(edi_1 + 0x24) == 0
+004c2004             *(esp_1 - 4) = esi_3
+004c2005             void* esp_37
+004c2005             
+004c2005             if (cond:2_1)
+004c200e                 *(esp_1 - 8) = u"Device not match image (%s)\n"
+004c200e                 esp_37 = esp_1 - 8
+004c2005             else
+004c2007                 *(esp_1 - 8) = 0x77e1e8
+004c2007                 esp_37 = esp_1 - 8
+004c2007             
+004c2013             *(esp_37 - 4) = edi_1 + 0x2c0
+004c2014             sub_4c2470()
+004c201c             *(esp_37 + 4) = 1
+004c201e             *esp_37 = edi_1 + 0x2c0
+004c201f             *(esp_37 - 4) = 1
+004c2021             *(esp_37 - 8) = *(edi_1 + 0x38)
+004c2024             *(esp_37 - 0xc) = *(edi_1 + 0x3c)
+004c2027             sub_4b9410()
+004c2027             esp_1 = esp_37 - 8
+004c202c             ebx = 1
+004c202c         
+004c2034         ebp[-1] = 0xffffffff
+004c2041         int32_t ecx_26 = *(esi_3 - 4)
+004c2041         *(esi_3 - 4) -= 1
+004c2041         
+004c2048         if (ecx_26 - 1 s<= 0)
+004c204a             ecx_25 = *(esi_3 - 0x10)
+004c204c             *(esp_1 - 4) = esi_3 - 0x10
+004c204c             esp_1 -= 4
+004c204f             (*(*ecx_25 + 4))()
+004c1faf     else
+004c1fb1         int32_t ecx_21 = *(edi_1 + 0x38)
+004c1fb4         *(esp_1 - 4) = ebx
+004c1fb6         *(esp_1 - 8) = ecx_21 + 1
+004c1fb7         *(esp_1 - 0xc) = "[%d] Failed to send sw prj model cmd (%d)\n"
+004c1fbc         *(esp_1 - 0x10) = 4
+004c1fbe         *(esp_1 - 0x14) = &data_7e09e8
+004c1fc3         ebp = sub_4d6270()
+004c1fc8         ebp[-1] = 0xffffffff
+004c1fd8         int32_t* edx_2 = ebp[-4] - 0x10
+004c1fde         int32_t ecx_23 = edx_2[3]
+004c1fde         edx_2[3] -= 1
+004c1fde         
+004c1fe5         if (ecx_23 - 1 s<= 0)
+004c1fe7             ecx_25 = *edx_2
+004c1fe9             *(esp_1 - 4) = edx_2
+004c1fe9             esp_1 -= 4
+004c204f             (*(*ecx_25 + 4))()
+004c204f 
+004c2057 fsbase->NtTib.ExceptionList = ebp[-3]
+004c205e *esp_1
+004c205e esp_1[1]
+004c205f esp_1[2]
+004c2060 esp_1[3]
+004c2064 *ebp
+004c2065 return ebx

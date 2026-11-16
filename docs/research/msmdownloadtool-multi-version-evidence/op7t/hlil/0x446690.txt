@@ -1,0 +1,117 @@
+004466a9 int32_t** var_8
+004466a9 int32_t edi = sub_4460b0(arg1, &var_8, "param")
+004466ad int32_t* esp
+004466ad int32_t var_2c
+004466ad int32_t __saved_edi
+004466ad 
+004466ad if (edi == 0)
+004466f3     int32_t** ebx_1 = var_8
+00446704     int32_t var_c
+00446704     
+00446704     if (sub_44cff0(ebx_1, &var_c, *(arg1 + 0x3c)) != 0)
+0044674c         int32_t eax_7
+0044674c         int32_t edx_1
+0044674c         edx_1:eax_7 = sx.q(ebx_1[7])
+00446758         int32_t eax_10
+00446758         int32_t edx_3
+00446758         edx_3:eax_10 = sx.q(ebx_1[0x17])
+0044675a         var_2c = eax_10
+00446761         int32_t eax_11 = __alldiv(arg5, arg6, var_2c, edx_3, eax_7 + arg2, 
+00446761             adc.d(edx_1, arg3, eax_7 + arg2 u< eax_7))
+00446772         edi = sub_44cbb0(ebx_1, var_c, eax_11)
+00446772         
+00446776         if (edi == 0)
+004467c2             int32_t var_20_11 = 0x100000
+004467ca             int32_t eax_18 = zx.d((*(arg1 + 0x30)).b) << 0x10 | 2
+004467ce             int32_t var_28_7 = 0x178c
+004467d3             var_2c = *(arg1 + 0x34)
+004467d6             0x3095d0(var_2c, var_28_7, eax_18, var_20_11)
+004467dc             int32_t var_30_4 = ebx_1[0x17]
+004467e7             int32_t var_3c = arg4
+004467ea             int32_t eax_19 = sub_446340(arg1, var_3c, arg5, arg6, var_30_4)
+004467ea             
+004467f3             if (eax_19 != 0)
+00446803                 int32_t eax_20 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00446803                 
+0044680f                 if (eax_20 != 0)
+00446815                     int32_t ecx_10 = *(arg1 + 0x30) + 1
+00446817                     char const* const var_38_2 = "[%d] [Firehose] Failed to write data (%d)\n"
+0044681c                     var_3c = eax_20
+0044681d                     _fprintf(var_3c, var_38_2, ecx_10, eax_19)
+00446823                     _fclose(eax_20)
+00446823                 
+00446836                 wchar16 const* const var_34_5
+00446836                 
+00446836                 if (*(arg1 + 0x20) == 0)
+0044683f                     var_34_5 = u"FirehoseWriteData Failed, Errno: %d"
+00446836                 else
+00446838                     var_34_5 = u"FirehoseWriteData"
+00446838                 
+00446845                 sub_44d900(arg1 + 0x2b8, var_34_5, eax_19)
+0044685b                 int32_t eax_24 = (zx.d((*(arg1 + 0x30)).b) | 0x100) << 0x10
+00446860                 int32_t var_38_4 = 0x178c
+00446865                 var_3c = *(arg1 + 0x34)
+00446868                 0x3095d0(var_3c, var_38_4, eax_24, arg1 + 0x2b8)
+00446876                 return eax_19
+00446876             
+00446879             *(arg1 + 0x2c)
+0044687e             esp = &var_2c
+00446883             edi = sub_4542f0(0x64)
+00446883             
+00446887             if (edi != 0)
+00446893                 int32_t eax_27 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00446893                 
+0044689f                 if (eax_27 != 0)
+004468a5                     int32_t ecx_13 = *(arg1 + 0x30) + 1
+004468a7                     char const* const var_38_5 = "[%d] [Firehose] Failed to check response (%d)\n"
+004468ac                     var_3c = eax_27
+004468ad                     _fprintf(var_3c, var_38_5, ecx_13, edi)
+004468b3                     _fclose(eax_27)
+004468b3                 
+004468c6                 wchar16 const* const var_34_9
+004468c6                 
+004468c6                 if (*(arg1 + 0x20) == 0)
+004468cf                     var_34_9 = u"FirehoseCheckRSP Failed, Errno: %d"
+004468c6                 else
+004468c8                     var_34_9 = u"FirehoseCheckRS"
+004468c8                 
+004468d5                 sub_44d900(arg1 + 0x2b8, var_34_9, edi)
+004468dd                 int32_t var_30_13 = 1
+004468e0                 int16_t var_38_7 = 0
+004468e2                 var_3c = *(arg1 + 0x30)
+004468e8                 sub_443400(*(arg1 + 0x34), var_3c.b, var_38_7, arg1 + 0x2b8, var_30_13)
+004468e8                 esp = &var_3c
+00446776         else
+00446782             int32_t eax_13 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00446789             esp = &__saved_edi
+00446789             
+0044678e             if (eax_13 != 0)
+00446798                 int32_t ecx_7 = *(arg1 + 0x30) + 1
+0044679a                 char const* const var_28_6 = "[%d] [Firehose] Failed to send write command (%d)\n"
+0044679f                 var_2c = eax_13
+004467a0                 _fprintf(var_2c, var_28_6, ecx_7, edi)
+004467a6                 _fclose(eax_13)
+004467b6                 return edi
+00446704     else
+00446710         int32_t eax_4 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00446717         esp = &__saved_edi
+00446717         
+0044671c         if (eax_4 != 0)
+0044672d             _fprintf(eax_4, "[%d] Failed to get image info\n", *(arg1 + 0x30) + 1)
+00446736             _fclose(eax_4)
+00446746             return edi
+004466ad else
+004466b9     int32_t eax_1 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+004466c0     esp = &__saved_edi
+004466c0     
+004466c5     if (eax_1 != 0)
+004466cf         int32_t ecx_1 = *(arg1 + 0x30) + 1
+004466d1         char const* const var_28_1 = "[%d] Failed to get region info (%d)\n"
+004466d6         var_2c = eax_1
+004466d7         _fprintf(var_2c, var_28_1, ecx_1, edi)
+004466dd         _fclose(eax_1)
+004466ed         return edi
+004468ef *esp
+004468ef esp[1]
+004468f0 esp[2]
+004468f5 return edi

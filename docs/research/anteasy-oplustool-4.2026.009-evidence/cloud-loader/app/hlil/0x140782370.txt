@@ -1,0 +1,38 @@
+14078238d void** rax = sub_141194310(&data_142a9e1e0)
+1407823a3 void** result = sub_14093f880(rax, 1, 1)
+1407823af sub_141194570(arg1 + 0x10, rax)
+1407823b7 uint64_t ssp
+1407823b7 
+1407823b7 if (arg2 == 0)
+14078244f     void** rax_1
+14078244f     int512_t zmm0
+14078244f     rax_1, zmm0 = sub_141194310(&data_142a98138)
+140782461     sub_1408dea80(rax_1, &data_143620f10)
+140782469     sub_1411948d0(rax_1, ssp, zmm0)
+140782469     noreturn
+140782469 
+1407823c4 sub_141194570(arg1 + 0x20, arg2)
+1407823c4 
+1407823cc if (arg3 == 0)
+140782476     void** rax_2
+140782476     int512_t zmm0_1
+140782476     rax_2, zmm0_1 = sub_141194310(&data_142a98138)
+140782488     sub_1408dea80(rax_2, &data_143617af0)
+140782490     sub_1411948d0(rax_2, ssp, zmm0_1)
+140782490     noreturn
+140782490 
+1407823d9 sub_141194570(arg1 + 8, arg3)
+1407823de void** result_1 = arg4
+1407823de 
+1407823e4 if (result_1 == 0)
+1407823ed     result_1 = *(data_1436cc8c0 + 0x10)
+1407823ed     
+1407823f4     if (result_1 == 0)
+1407823fd         result = sub_141194310(&data_142cd2ca8)
+14078240f         sub_141178b78(result, &data_1436afb18)
+140782422         sub_141194570(data_1436cc8c0 + 0x10, result)
+140782427         result_1 = result
+140782427 
+14078242e sub_141194570(arg1 + 0x28, result_1)
+140782439 *(arg1 + 0x30) = arg5
+140782447 return result

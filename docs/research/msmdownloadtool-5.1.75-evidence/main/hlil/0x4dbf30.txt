@@ -1,0 +1,42 @@
+004dbf3a char* esi = arg2[0x16]
+004dbf3d esi[&arg2[6]] = 0x80
+004dbf41 void* esi_1 = &esi[1]
+004dbf41 
+004dbf45 if (esi_1 u> 0x38)
+004dbf55     _memset(esi_1 + &arg2[6], 0, 0x40 - esi_1)
+004dbf5e     esi_1 = nullptr
+004dbf60     sub_4dc130(arg2, &arg2[6], 1)
+004dbf60 
+004dbf76 _memset(esi_1 + &arg2[6], 0, 0x38 - esi_1)
+004dbf7f arg2[0x14].b = arg2[4].b
+004dbf86 *(arg2 + 0x51) = *(arg2 + 0x11)
+004dbf8d *(arg2 + 0x52) = *(arg2 + 0x12)
+004dbf94 *(arg2 + 0x53) = *(arg2 + 0x13)
+004dbf9b arg2[0x15].b = arg2[5].b
+004dbfa2 *(arg2 + 0x55) = *(arg2 + 0x15)
+004dbfab *(arg2 + 0x56) = *(arg2 + 0x16)
+004dbfb4 *(arg2 + 0x57) = *(arg2 + 0x17)
+004dbfb7 sub_4dc130(arg2, &arg2[6], 1)
+004dbfbf arg2[0x16] = 0
+004dbfc6 sub_4d7560(&arg2[6], 0x40)
+004dbfcb int32_t ecx = *arg2
+004dbfda *arg1 = ecx.b
+004dbfdc arg1[1] = (ecx u>> 8).b
+004dbfe4 arg1[2] = (ecx u>> 0x10).b
+004dbfea arg1[3] = (ecx u>> 0x18).b
+004dbfed int32_t ecx_2 = arg2[1]
+004dbff2 arg1[4] = ecx_2.b
+004dbff8 arg1[5] = (ecx_2 u>> 8).b
+004dc000 arg1[6] = (ecx_2 u>> 0x10).b
+004dc006 arg1[7] = (ecx_2 u>> 0x18).b
+004dc009 int32_t ecx_4 = arg2[2]
+004dc00e arg1[8] = ecx_4.b
+004dc014 arg1[9] = (ecx_4 u>> 8).b
+004dc01c arg1[0xa] = (ecx_4 u>> 0x10).b
+004dc022 arg1[0xb] = (ecx_4 u>> 0x18).b
+004dc025 int32_t ecx_6 = arg2[3]
+004dc02d arg1[0xc] = ecx_6.b
+004dc030 arg1[0xd] = (ecx_6 u>> 8).b
+004dc038 arg1[0xe] = (ecx_6 u>> 0x10).b
+004dc044 arg1[0xf] = (ecx_6 u>> 0x18).b
+004dc048 return 1

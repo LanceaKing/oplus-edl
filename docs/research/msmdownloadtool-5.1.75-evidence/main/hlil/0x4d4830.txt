@@ -1,0 +1,21 @@
+004d4830 int32_t ebp
+004d4830 int32_t var_4 = ebp
+004d4833 int32_t var_8 = 0xffffffff
+004d4835 int32_t (* var_c)(void* arg1) = sub_6dc9a4
+004d4840 TEB* fsbase
+004d4840 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004d484c int32_t eax_2 = __security_cookie ^ &var_4
+004d484e int32_t var_18 = eax_2
+004d4853 int32_t var_178 = eax_2
+004d4857 fsbase->NtTib.ExceptionList = &ExceptionList
+004d486d int32_t var_e8 = arg1
+004d4873 int32_t var_dc = 1
+004d4879 int32_t var_48 = 0xf
+004d4880 int32_t var_4c = 0
+004d4883 char var_5c = 0
+004d4887 int32_t var_8_1 = 0
+004d488d int32_t var_17c = 0x7801dc
+004d4892 char var_38
+004d4892 __builtin_memset(&var_38, 0, 0x20)
+004d48ab long double x87_r0
+004d48ab return sub_c4736a(nullptr, x87_r0) __tailcall

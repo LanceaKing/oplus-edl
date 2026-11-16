@@ -1,0 +1,20 @@
+149ac70c bool c
+149ac70c bool z
+149ac70c 
+149ac70c if (arg1 u<= 0xb)
+149ac70c     c = arg2 u>= 9
+149ac70c     z = arg2 == 9
+149ac70c else
+149ac70c     z = false
+149ac70c     c = true
+149ac70c 
+149ac710 if (z || not(c))
+149ac720     int32_t x9_1
+149ac720     
+149ac720     x9_1 = arg2 != 0 ? arg2 : 1
+149ac720     
+149ac734     for (int64_t i = 0; i != 0x20; i += 0x10)
+149ac740         if ((x9_1 | arg1 << 0x10) == *(&data_149d2d20 + i))
+149ac74c             return sub_149ac758(i, &data_149d2d20) __tailcall
+149ac74c 
+149ac714 return sub_149ac750() __tailcall

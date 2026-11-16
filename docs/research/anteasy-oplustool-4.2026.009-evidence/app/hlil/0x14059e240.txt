@@ -1,0 +1,254 @@
+14059e25d void* var_80
+14059e25d __builtin_memset(&var_80, 0, 0x24)
+14059e26c int96_t var_58 = (zx.o(0)).12
+14059e287 void** rax
+14059e287 int512_t zmm0
+14059e287 rax, zmm0 = sub_141194310(&data_142a5dd88)
+14059e297 sub_141194570(&rax[2], arg5)
+14059e297 
+14059e2a7 if (sub_1408d0f40(*(arg3 + 8)) != 0)
+14059e75c     void* rax_29 = *(arg4 + 8)
+14059e767     void* rdx_37 = *(data_1436cc7e8 + 8)
+14059e775     void** rdx_39
+14059e775     
+14059e775     if (rdx_37 == &data_14363bf38)
+14059e793         rdx_39 = &data_143600308
+14059e775     else if (rdx_37 == 0 || *(rdx_37 + 8) != 2)
+14059e79c         rdx_39 = &data_1435fef50
+14059e780     else
+14059e789         rdx_37.b = *(rdx_37 + 0xc) == 0x68007a
+14059e789         
+14059e791         rdx_39 = zx.d(rdx_37.b) == 0 ? &data_1435fef50 : &data_143600308
+14059e791     
+14059e7a7     (*(rax_29 + 0x20))(*(rax_29 + 8), rdx_39)
+14059e7aa     void* rax_30 = *(arg4 + 0x10)
+14059e7b9     (*(rax_30 + 0x20))(*(rax_30 + 8), &data_1435fdbb8)
+14059e7e2     return sub_1406b88e0(sub_1405b56a0(0x776, zmm0))
+14059e7e2 
+14059e2c1 int64_t* rax_2
+14059e2c1 int512_t zmm0_1
+14059e2c1 rax_2, zmm0_1 = sub_140583270(*(arg3 + 8), nullptr, arg2, *(arg3 + 0x30), zmm0, 0)
+14059e2cd uint32_t r14_1 = 0
+14059e2d0 void** r12 = &data_1434791e0
+14059e2d7 int32_t var_84 = 8
+14059e2e8 void** result
+14059e2e8 int512_t zmm0_7
+14059e2e8 
+14059e2e8 while (true)
+14059e2e8     uint32_t rax_4
+14059e2e8     rax_4, zmm0_1 = sub_1405834b0(rax_2, zmm0_1)
+14059e2e8     
+14059e2f3     if (rax_4 == 5)
+14059e6ed         void** result_4
+14059e6ed         result_4, zmm0_7 = sub_1406b8860(&data_1434791e0)
+14059e6f2         result = result_4
+14059e6f5         break
+14059e6f5     
+14059e30a     if (rax_4 != 6 && (rax_4 == 1 || rax_4 == 3))
+14059e319         int16_t** rax_5
+14059e319         int512_t zmm0_2
+14059e319         rax_5, zmm0_2 = sub_140583510(rax_2, rax_4, zmm0_1)
+14059e319         
+14059e32d         if (data_1436bcb48 != 0)
+14059e6f7             zmm0_2 = sub_14116bff6(zmm0_2)
+14059e6f7         
+14059e333         void* r14_2 = data_1436cd070
+14059e33a         int64_t* rcx_5 = *(r14_2 + 8)
+14059e33e         *rcx_5
+14059e33e         
+14059e343         if (rax_5 == 0)
+14059e708             sub_1408deb20(&data_143610bb8)
+14059e708             noreturn
+14059e708         
+14059e349         int32_t r9_1 = rax_5[1].d
+14059e352         int64_t* rax_6
+14059e352         int512_t zmm0_3
+14059e352         
+14059e352         if (r9_1 s<= 0x20)
+14059e364             rax_6, zmm0_3 = sub_1409bd3d0(rcx_5, rax_5)
+14059e352         else
+14059e35a             rax_6, zmm0_3 = sub_14095c970(rcx_5, rax_5, 0, r9_1, zmm0_2)
+14059e35a         
+14059e369         int64_t* rcx_6 = *(arg1 + 8)
+14059e369         
+14059e377         if (*rcx_6 == &data_142a5f000)
+14059e386             sub_1405b1f80(rcx_6, rax_6, zmm0_3)
+14059e377         else
+14059e37c             sub_1405b46c0(rcx_6, rax_6, zmm0_3)
+14059e37c         
+14059e392         void** rax_7 = sub_141194310(&data_142a5ef60)
+14059e39a         *(rax_7 + 0x64) = 0x64
+14059e3a3         rax_7[0xd].d = 0x14
+14059e3ac         *(rax_7 + 0x7c) = 0x101
+14059e3be         rax_7[0xc] = 0x1400001388
+14059e3c3         rax_7[0xd].d = 0x14
+14059e3cc         void** rdx_6 = rax[1]
+14059e3cc         
+14059e3d3         if (rdx_6 == 0)
+14059e3dc             void** rax_8 = sub_141194310(&data_142cf6b80)
+14059e3f1             sub_141175ec0(rax_8, rax)
+14059e401             sub_141194570(&rax[1], rax_8)
+14059e406             rdx_6 = rax_8
+14059e406         
+14059e412         sub_141194570(&rax_7[1], rdx_6)
+14059e41d         void* rax_9
+14059e41d         int512_t zmm0_4
+14059e41d         rax_9, zmm0_4 = sub_1405b1fb0(arg1, rax_7)
+14059e41d         
+14059e42b         if (*(rax_9 + 0x2c) == 0)
+14059e640             int64_t* rax_20
+14059e640             int512_t zmm0_14
+14059e640             rax_20, zmm0_14 = sub_141194310(&data_142a5c578)
+14059e645             void* rbx_2 = *(arg4 + 0x10)
+14059e64d             rax_20[1].d = rax_4
+14059e654             int64_t* rax_21
+14059e654             int512_t zmm0_15
+14059e654             rax_21, zmm0_15 = sub_1408ca500(rax_20, zmm0_14)
+14059e65f             int64_t* rax_22
+14059e65f             int512_t zmm0_16
+14059e65f             rax_22, zmm0_16 = sub_14059fd20(rax_21, rax_9, zmm0_15)
+14059e66e             int64_t* rax_23
+14059e66e             int512_t zmm0_17
+14059e66e             rax_23, zmm0_17 = sub_1408d1980(&data_1435fcef0, rax_22, zmm0_16)
+14059e67a             (*(rbx_2 + 0x20))(*(rbx_2 + 8), rax_23)
+14059e67d             void* rbx_3 = *(arg4 + 0x10)
+14059e690             int64_t* rax_24
+14059e690             int512_t zmm0_18
+14059e690             rax_24, zmm0_18 = sub_1408d1a20(*(rax_9 + 8), *(rax_9 + 0x10), *(rax_9 + 0x18), zmm0_17)
+14059e698             int64_t* rax_25
+14059e698             int512_t zmm0_19
+14059e698             rax_25, zmm0_19 = sub_14059f200(rax_24, zmm0_18)
+14059e6a7             int64_t* rax_26
+14059e6a7             int512_t zmm0_20
+14059e6a7             rax_26, zmm0_20 = sub_1408d1980(&data_1436005f0, rax_25, zmm0_19)
+14059e6b3             (*(rbx_3 + 0x20))(*(rbx_3 + 8), rax_26)
+14059e6c5             int64_t* rax_27
+14059e6c5             int512_t zmm0_21
+14059e6c5             rax_27, zmm0_21 = sub_1408d1a20(*(rax_9 + 8), *(rax_9 + 0x10), *(rax_9 + 0x18), zmm0_20)
+14059e6dc             void** result_3
+14059e6dc             result_3, zmm0_7 = sub_14059e820(arg4, arg3, rax_4, arg6, zmm0_21, rax_27)
+14059e6e1             result = result_3
+14059e6e4             break
+14059e6e4         
+14059e440         int64_t* rax_10
+14059e440         int512_t zmm0_5
+14059e440         rax_10, zmm0_5 = sub_1408d1a20(*(rax_9 + 8), *(rax_9 + 0x10), *(rax_9 + 0x18), zmm0_4)
+14059e44b         int64_t* rcx_12 = *(r14_2 + 8)
+14059e44f         *rcx_12
+14059e45a         int64_t* var_98_1
+14059e45a         int16_t** rax_12
+14059e45a         int512_t zmm0_6
+14059e45a         
+14059e45a         if (rax_10 == 0 || rax_10[1].d s> 0x20)
+14059e45c             var_98_1 = rax_10
+14059e466             rax_12, zmm0_6 = sub_140953c50(rcx_12, rax_10, zmm0_5)
+14059e45a         else
+14059e46d             var_98_1 = rax_10
+14059e477             rax_12, zmm0_6 = sub_1409bd260(rcx_12, rax_10)
+14059e477         
+14059e47f         int32_t rcx_13
+14059e47f         void* rdx_14
+14059e47f         
+14059e47f         if (rax_12 == 0)
+14059e48a             rdx_14 = nullptr
+14059e48c             rcx_13 = 0
+14059e47f         else
+14059e481             rdx_14 = &rax_12[2]
+14059e485             rcx_13 = rax_12[1].d
+14059e485         
+14059e48e         var_80 = rdx_14
+14059e492         int128_t var_78
+14059e492         var_78.d = rcx_13
+14059e4a0         uint32_t rax_13
+14059e4a0         rax_13, zmm0_1 = sub_140583640(rax_2, &var_80, zmm0_6)
+14059e4a0         
+14059e4b1         if (rax_13 != 0 && rax_13 != 0x22)
+14059e4ee             void* rbx_1 = *(arg4 + 0x10)
+14059e4ee             
+14059e4fe             if (data_1436c19e8 != 0)
+14059e70e                 zmm0_1 = sub_14116d244(zmm0_1)
+14059e70e             
+14059e50b             void* rcx_17 = *(data_1436d2290 + 8)
+14059e514             *rcx_17
+14059e516             int16_t** rax_14
+14059e516             int512_t zmm0_8
+14059e516             rax_14, zmm0_8 = sub_140cb1c20(rcx_17, 0x100, zmm0_1)
+14059e51e             void* rcx_18
+14059e51e             int32_t rdx_17
+14059e51e             
+14059e51e             if (rax_14 == 0)
+14059e529                 rcx_18 = nullptr
+14059e52b                 rdx_17 = 0
+14059e51e             else
+14059e520                 rcx_18 = &rax_14[2]
+14059e524                 rdx_17 = rax_14[1].d
+14059e524             
+14059e530             var_78:8.q = 0
+14059e534             int96_t var_68
+14059e534             var_68.q = rax_14
+14059e538             var_68:8.d = 0
+14059e53c             var_68:0xc.b = 0
+14059e540             var_58.q = rcx_18
+14059e544             var_58:8.d = rdx_17
+14059e544             
+14059e54d             if (0 u> var_58:8.d)
+14059e718                 sub_140900340()
+14059e718                 noreturn
+14059e718             
+14059e565             int512_t zmm0_9
+14059e565             
+14059e565             if (var_58:8.d u>= 0x22)
+14059e58d                 zmm0_9 = sub_1408feae0(var_58.q, u"[OnePlus] Auth response rejected (", 0x44)
+14059e598                 var_68:8.d += 0x22
+14059e565             else
+14059e572                 zmm0_9 = sub_14097cef0(&var_78:8, &data_1435fcf48, zmm0_8)
+14059e572             
+14059e5a2             int512_t zmm0_10 = sub_140fdc6c0(&var_78:8, rax_13, zmm0_9)
+14059e5a7             int32_t rcx_24 = var_68:8.d
+14059e5a7             
+14059e5ad             if (rcx_24 u> var_58:8.d)
+14059e718                 sub_140900340()
+14059e718                 noreturn
+14059e718             
+14059e5b9             int32_t* r14_4 = var_58.q + (zx.q(rcx_24) << 1)
+14059e5b9             
+14059e5c5             if (var_58:8.d - rcx_24 u>= 3)
+14059e5d9                 *r14_4 = 0x3a0029
+14059e5e0                 r14_4[1].w = 0x20
+14059e5ed                 var_68:8.d += 3
+14059e5c5             else
+14059e5d2                 zmm0_10 = sub_14097cef0(&var_78:8, &data_143490b80, zmm0_10)
+14059e5d2             
+14059e5f4             int64_t* rax_17
+14059e5f4             int512_t zmm0_11
+14059e5f4             rax_17, zmm0_11 = sub_14097cbe0(&var_78:8, zmm0_10)
+14059e5ff             void* rax_18
+14059e5ff             int512_t zmm0_12
+14059e5ff             rax_18, zmm0_12 = sub_1405a01d0(rax_10, zmm0_11)
+14059e60a             int64_t* rax_19
+14059e60a             int512_t zmm0_13
+14059e60a             rax_19, zmm0_13 = sub_1408d1980(rax_17, rax_18, zmm0_12)
+14059e616             (*(rbx_1 + 0x20))(*(rbx_1 + 8), rax_19)
+14059e62c             void** result_2
+14059e62c             result_2, zmm0_7 = sub_14059e820(arg4, arg3, rax_4, arg6, zmm0_13, rax_10)
+14059e631             result = result_2
+14059e51e             break
+14059e51e         
+14059e4b3         r14_1 = rax_4
+14059e4bb         bool cond:0_1 = var_84 != 1
+14059e4be         var_84 -= 1
+14059e4c2         r12 = var_98_1
+14059e4c2         
+14059e4c9         if (cond:0_1)
+14059e4c9             continue
+14059e4c9     
+14059e4e1     void** result_1
+14059e4e1     result_1, zmm0_7 = sub_14059e820(arg4, arg3, r14_1, arg6, zmm0_1, r12)
+14059e4e6     result = result_1
+14059e4e9     break
+14059e4e9 
+14059e726 if (rax_2 != 0)
+14059e734     sub_140984140(rax_2, 1, zmm0_7)
+14059e740     sub_1408cca10(rax_2, zmm0_7)
+14059e740 
+14059e75b return result

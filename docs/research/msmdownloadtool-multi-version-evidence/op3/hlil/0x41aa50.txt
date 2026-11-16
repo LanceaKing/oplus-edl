@@ -1,0 +1,134 @@
+0041aa58 void* esi = arg1
+0041aa5a int32_t var_14 = 0
+0041aa67 void* var_c = esi
+0041aa6a int32_t result = 1
+0041aa6f int32_t* edi = *(esi + 0x58)
+0041aa72 int32_t result_1 = 1
+0041aa75 int32_t* var_1c = edi
+0041aa7d int32_t eax
+0041aa7d int32_t edx_2
+0041aa7d edx_2:eax = muls.dp.d(0x2e8ba2e9, edi[1] - *edi)
+0041aa7f int32_t edx_3 = edx_2 s>> 4
+0041aa84 uint32_t eax_2 = edx_3 u>> 0x1f
+0041aa84 
+0041aa8c if (eax_2 != neg.d(edx_3))
+0041aa92     int32_t ecx = 0
+0041aa94     int32_t var_8_1 = 0
+0041aa94     
+0041aa99     while (true)
+0041aa99         int32_t* edi_2 = *edi + ecx
+0041aa9f         int32_t ebx = edi_2[4]
+0041aaa2         int32_t* edx_4
+0041aaa2         
+0041aaa2         if (edi_2[5] u< 0x10)
+0041aaa8             edx_4 = edi_2
+0041aaa2         else
+0041aaa4             edx_4 = *edi_2
+0041aaa4         
+0041aaaa         int32_t eax_4 = 4
+0041aaaa         
+0041aab1         if (ebx u< 4)
+0041aab1             eax_4 = ebx
+0041aab1         
+0041aab6         if (eax_4 != 0)
+0041aab8             char* esi_1 = "DISK"
+0041aabd             int32_t i_1 = eax_4 - 4
+0041aabd             
+0041aac0             if (eax_4 u>= 4)
+0041aad1                 int32_t i
+0041aad1                 
+0041aad1                 do
+0041aac6                     if (*edx_4 != *esi_1)
+0041aac6                         goto label_41aad8
+0041aac6                     
+0041aac8                     edx_4 = &edx_4[1]
+0041aacb                     esi_1 = &esi_1[4]
+0041aace                     i = i_1
+0041aace                     i_1 -= 4
+0041aad1                 while (i u>= 4)
+0041aad1             
+0041aad6             int32_t eax_6
+0041aad6             
+0041aad6             if (i_1 == 0xfffffffc)
+0041ab0c                 eax_6 = 0
+0041aad6             else
+0041aad8             label_41aad8:
+0041aad8                 ecx.b = *edx_4
+0041aada                 char temp2_1 = *esi_1
+0041aada                 
+0041aadc                 if (ecx.b != temp2_1)
+0041ab07                     eax_6 = sbb.d(i_1, i_1, ecx.b u< temp2_1) | 1
+0041aadc                 else if (i_1 == 0xfffffffd)
+0041ab0c                     eax_6 = 0
+0041aae1                 else
+0041aae3                     ecx.b = *(edx_4 + 1)
+0041aae6                     char temp4_1 = esi_1[1]
+0041aae6                     
+0041aae9                     if (ecx.b != temp4_1)
+0041ab07                         eax_6 = sbb.d(i_1, i_1, ecx.b u< temp4_1) | 1
+0041aae9                     else if (i_1 == 0xfffffffe)
+0041ab0c                         eax_6 = 0
+0041aaee                     else
+0041aaf0                         ecx.b = *(edx_4 + 2)
+0041aaf3                         char temp5_1 = esi_1[2]
+0041aaf3                         
+0041aaf6                         if (ecx.b != temp5_1)
+0041ab07                             eax_6 = sbb.d(i_1, i_1, ecx.b u< temp5_1) | 1
+0041aaf6                         else if (i_1 == 0xffffffff)
+0041ab0c                             eax_6 = 0
+0041aafb                         else
+0041aafd                             i_1.b = *(edx_4 + 3)
+0041ab00                             char temp6_1 = esi_1[3]
+0041ab00                             
+0041ab03                             if (i_1.b == temp6_1)
+0041ab0c                                 eax_6 = 0
+0041ab03                             else
+0041ab07                                 eax_6 = sbb.d(i_1, i_1, i_1.b u< temp6_1) | 1
+0041ab07             
+0041ab10             if (eax_6 != 0)
+0041ab10                 goto label_41ab43
+0041ab10             
+0041ab12             ecx = var_8_1
+0041ab15             esi = var_c
+0041ab15         
+0041ab1b         if (ebx u< 4)
+0041ab49             result = result_1
+0041ab1b         else
+0041ab22             int32_t eax_7
+0041ab22             eax_7.b = ebx != 4
+0041ab22             
+0041ab27             if (eax_7 != 0)
+0041ab43             label_41ab43:
+0041ab43                 ecx = var_8_1
+0041ab46                 esi = var_c
+0041ab49                 result = result_1
+0041ab27             else
+0041ab29                 esi = var_c
+0041ab2d                 *(esi + 0x28)
+0041ab35                 result = sub_41cc80(edi_2)
+0041ab37                 result_1 = result
+0041ab37                 
+0041ab3c                 if (result != 0)
+0041aba0                     return result
+0041aba0                 
+0041ab3e                 ecx = var_8_1
+0041ab3e         
+0041ab4f         ecx += 0x58
+0041ab52         int32_t eax_10 = var_14 + 1
+0041ab53         var_8_1 = ecx
+0041ab56         var_14 = eax_10
+0041ab56         
+0041ab5c         if (eax_10 u>= eax_2 + edx_3)
+0041ab5c             break
+0041ab5c         
+0041ab5e         edi = var_1c
+0041ab5e 
+0041ab7b LPARAM lParam
+0041ab7b 
+0041ab7b if (*(esi + 0x1b) == 0)
+0041ab84     lParam = "Download Complete."
+0041ab7b else
+0041ab7d     lParam = 0x5a234c
+0041ab7d 
+0041ab92 SendMessageA(*(esi + 0x30), 0x178c, (zx.d((*(esi + 0x2c)).b) | 0x200) << 0x10, lParam)
+0041aba0 return result

@@ -1,0 +1,29 @@
+0069c59d __SEH_prolog4(0x7b4600, 8)
+0069c5a2 void* esi = *(arg1 + 8)
+0069c5a5 *(esi + 0x5c) = 0x760ca0
+0069c5ac *(esi + 8) = 0
+0069c5b3 *(esi + 0x14) = 1
+0069c5b6 *(esi + 0x70) = 1
+0069c5bc *(esi + 0xb8) = 0x43
+0069c5c3 *(esi + 0x1be) = 0x43
+0069c5ca *(esi + 0x68) = 0x7c0ee0
+0069c5d1 *(esi + 0x3b8) = 0
+0069c5da __lock(0xd)
+0069c5e0 *(arg1 - 4) = 0
+0069c5e4 int32_t* eax = *(esi + 0x68)
+0069c5e9 *eax
+0069c5e9 *eax += 1
+0069c5ed *(arg1 - 4) = 0xfffffffe
+0069c5f4 sub_69c637()
+0069c5fb __lock(0xc)
+0069c601 *(arg1 - 4) = 1
+0069c604 int32_t eax_1 = *(arg1 + 0xc)
+0069c607 *(esi + 0x6c) = eax_1
+0069c607 
+0069c60c if (eax_1 == 0)
+0069c613     *(esi + 0x6c) = data_7c1364
+0069c613 
+0069c619 sub_69f66c(*(esi + 0x6c))
+0069c61f *(arg1 - 4) = 0xfffffffe
+0069c626 sub_69c640()
+0069c630 return __SEH_epilog4()

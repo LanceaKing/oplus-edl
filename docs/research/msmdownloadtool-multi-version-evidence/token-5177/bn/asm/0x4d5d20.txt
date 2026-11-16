@@ -1,0 +1,46 @@
+004d5d20 push    ebp
+004d5d21 mov     ebp, esp
+004d5d23 sub     esp, 0x128
+004d5d29 mov     eax, dword [0x7c0bb0]
+004d5d2e xor     eax, ebp
+004d5d30 mov     dword [ebp-0x4], eax
+004d5d33 mov     eax, dword [ebp+0x10]
+004d5d36 push    ebx
+004d5d37 push    esi
+004d5d38 mov     esi, dword [ebp+0xc]
+004d5d3b mov     ebx, edx
+004d5d3d movdqu  xmm0, xmmword [eax]
+004d5d41 push    edi
+004d5d42 mov     edi, ecx
+004d5d44 movdqu  xmmword [ebp-0x34], xmm0
+004d5d49 movdqu  xmm0, xmmword [eax+0x10]
+004d5d4e lea     eax, [ebp-0x128]
+004d5d54 push    eax
+004d5d55 movdqu  xmmword [ebp-0x24], xmm0
+004d5d5a lea     eax, [ebp-0x34]
+004d5d5d movdqu  xmm0, xmmword [esi]
+004d5d61 push    0x100
+004d5d66 push    eax
+004d5d67 movdqu  xmmword [ebp-0x14], xmm0
+004d5d6c call    0x52f790
+004d5d71 movdqu  xmm0, xmmword [esi]
+004d5d75 push    0x1
+004d5d77 lea     eax, [ebp-0x14]
+004d5d7a push    eax
+004d5d7b lea     eax, [ebp-0x128]
+004d5d81 push    eax
+004d5d82 push    dword [ebp+0x8]
+004d5d85 movdqu  xmmword [ebp-0x14], xmm0
+004d5d8a push    ebx
+004d5d8b push    edi
+004d5d8c call    0x52fc90
+004d5d91 mov     ecx, dword [ebp-0x4]
+004d5d94 add     esp, 0x24
+004d5d97 xor     ecx, ebp
+004d5d99 pop     edi
+004d5d9a pop     esi
+004d5d9b pop     ebx
+004d5d9c call    0x68804f
+004d5da1 mov     esp, ebp
+004d5da3 pop     ebp
+004d5da4 retn    

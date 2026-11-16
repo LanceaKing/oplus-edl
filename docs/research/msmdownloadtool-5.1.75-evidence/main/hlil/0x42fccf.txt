@@ -1,0 +1,20 @@
+0042fcd1 if (arg1 == 0)
+0042fcd3     char const* const var_4_1 = "Write License token failed\n"
+0042fcd8     int32_t var_8_1 = 4
+0042fcdf     arg2 = sub_4d6270(&data_7e09e8)
+0042fcdf 
+0042fce7 int32_t edi
+0042fce7 int32_t var_4_2 = edi
+0042fce8 0x3b7828()
+0042fcee arg2[-1] = 0xffffffff
+0042fcfb int32_t* edx_1 = arg2[2] - 0x10
+0042fd01 int32_t ecx = edx_1[3]
+0042fd01 edx_1[3] -= 1
+0042fd01 
+0042fd08 if (ecx - 1 s<= 0)
+0042fd0f     (*(**edx_1 + 4))(edx_1)
+0042fd0f 
+0042fd17 TEB* fsbase
+0042fd17 fsbase->NtTib.ExceptionList = arg2[-3]
+0042fd24 *arg2
+0042fd25 return 0

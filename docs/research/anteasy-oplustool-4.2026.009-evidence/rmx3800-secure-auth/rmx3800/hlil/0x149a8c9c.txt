@@ -1,0 +1,83 @@
+149a8cb8 int32_t var_34 = 0
+149a8cbc int32_t x0
+149a8cbc int64_t x7
+149a8cbc x0, x7 = sub_149a4c9c()
+149a8cc4 int64_t* x3_1
+149a8cc4 int64_t x4
+149a8cc4 int64_t x5
+149a8cc4 int64_t x6
+149a8cc4 int64_t x7_1
+149a8cc4 int32_t x22_1
+149a8cc4 uint64_t x24
+149a8cc4 int128_t v0
+149a8cc4 int128_t v1
+149a8cc4 int128_t v2
+149a8cc4 int128_t v3
+149a8cc4 int128_t v4
+149a8cc4 int128_t v5
+149a8cc4 int128_t v6
+149a8cc4 int128_t v7
+149a8cc4 
+149a8cc4 if (x0 == 0)
+149a8cec     uint32_t x22_2 = zx.d(*(arg1 + 0x98))
+149a8cf4     char x8_1 = *(arg1 + 0x99)
+149a8d08     data_80269b70 = arg1 + 0xe8
+149a8d0c     x22_1 = (0xffff00ff & x22_2) | zx.d(x8_1) << 8
+149a8d10     var_34 = x22_1
+149a8d14     x3_1, x4, x5, x6, x7_1, v0, v1, v2, v3, v4, v5, v6, v7 = sub_149a5c34(4, 
+149a8d14         "Secure Boot *not* enabled BUT VIP *is* enabled. Therefore will *not* check digital signature on "
+149a8d14     "Digest Table. This allows easier testing on non-secure targets%c", 
+149a8d14         0x2e, nullptr, 0, 0, 0, x7, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, x24)
+149a8cc4 else
+149a8cdc     int32_t x0_2
+149a8cdc     x0_2, x3_1, x4, x5, x6, x7_1, v0, v1, v2, v3, v4, v5, v6, v7 = sub_149a4cf4(arg1, arg2, 
+149a8cdc         &data_80269b70, &var_34, 0, 0, 0, x7, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)
+149a8cdc     
+149a8ce0     if (x0_2 == 0)
+149a8e1c         sub_149a5c34(2, "Authentication of signed hash failed %d", 0, x3_1, x4, x5, x6, x7_1, v0, 
+149a8e1c             v1, v2, v3, v4, v5, v6, v7, x24)
+149a8e20         return 7
+149a8e20     
+149a8ce4     x22_1 = var_34
+149a8ce4 
+149a8d18 uint64_t x2_1 = zx.q(x22_1)
+149a8d20 int64_t result
+149a8d20 uint64_t x1_1
+149a8d20 
+149a8d20 if (x22_1 u> 0x1f)
+149a8d34     char* x9_2 = data_80269b70
+149a8d58     uint32_t x8_4 = zx.d(*x9_2) | zx.d((zx.d(x9_2[1]) << 8).w)
+149a8d58         | (zx.d(x9_2[2]) | zx.d((zx.d(x9_2[3]) << 8).w)) << 0x10
+149a8d58     
+149a8d60     if (x8_4 != 0x7cef0312)
+149a8e30         x1_1 = "Invalid magic %#x"
+149a8e34         x2_1 = zx.q(x8_4)
+149a8e38         goto label_149a8e4c
+149a8e38     
+149a8d80     int64_t x8_7 = zx.q(x9_2[0x10]) | zx.q((zx.q(x9_2[0x11]) << 8).w)
+149a8d80         | (0xffffffffffff & (zx.q(x9_2[0x12]) | (0xffffffffffffff & sx.q(x9_2[0x13])) << 8))
+149a8d80         << 0x10
+149a8d8c     uint32_t x11_6
+149a8d8c     uint32_t x12_6
+149a8d8c     
+149a8d8c     if (x8_7 + 0x20 == x2_1)
+149a8dc4         x11_6 = zx.d(x9_2[0x14]) | zx.d((zx.d(x9_2[0x15]) << 8).w)
+149a8dc4             | (zx.d(x9_2[0x16]) | zx.d((zx.d(x9_2[0x17]) << 8).w)) << 0x10
+149a8dc8         x12_6 = zx.d(x9_2[0xc]) | zx.d((zx.d(x9_2[0xd]) << 8).w)
+149a8dc8             | (zx.d(x9_2[0xe]) | zx.d((zx.d(x9_2[0xf]) << 8).w)) << 0x10
+149a8dc8     
+149a8dd4     if (x8_7 + 0x20 != x2_1 || x8_7.d != x12_6 * x11_6)
+149a8e44         x1_1 = "Invalid code size for parts total size %d"
+149a8e48         x2_1 = zx.q(arg2)
+149a8e48         goto label_149a8e4c
+149a8e48     
+149a8de0     result = 0
+149a8e04     data_80269b78 = &x9_2[zx.q(x9_2[8]) | zx.q((zx.q(x9_2[9]) << 8).w)
+149a8e04         | (0xffffffffffff & (zx.q(x9_2[0xa]) | (0xffffffffffffff & sx.q(x9_2[0xb])) << 8)) << 0x10]
+149a8d20 else
+149a8d2c     x1_1 = "Invalid code size for SVIP_HEADER_S %d"
+149a8e4c label_149a8e4c:
+149a8e4c     sub_149a5c34(2, x1_1, x2_1, x3_1, x4, x5, x6, x7_1, v0, v1, v2, v3, v4, v5, v6, v7, x24)
+149a8e50     result = 7
+149a8e54     data_80269b70 = 0
+149a8e68 return result

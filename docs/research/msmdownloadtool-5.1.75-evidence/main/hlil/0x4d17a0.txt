@@ -1,0 +1,172 @@
+004d17a0 int32_t ebp
+004d17a0 int32_t var_4 = ebp
+004d17a9 int32_t ebx = 0
+004d17ab int32_t var_14 = 0
+004d17b2 int32_t var_38 = 0x200000
+004d17b7 int32_t* edi = arg1
+004d17b9 int32_t var_c = 0
+004d17c0 int32_t var_10 = 0
+004d17c3 int32_t* eax = sub_56c4c8()
+004d17cb int32_t* var_8 = eax
+004d17cb 
+004d17d0 if (eax == 0)
+004d17d5     int32_t var_38_1 = 0x77
+004d17d8     int32_t var_3c = edi[3] + 1
+004d17d9     char const* const var_40_1 = "[%d] [SP] Allocate memory failed. (%d)"
+004d17de     int32_t var_44_1 = 4
+004d17f5     *sub_4d6270(&data_7e09e8)
+004d17f6     return 8
+004d17f6 
+004d17fa int32_t* var_38_2 = &var_10
+004d1803 int32_t result = sub_4d24b0(edi, eax)
+004d1807 void* ebp_3
+004d1807 
+004d1807 if (result == 0)
+004d1822     int32_t result_8
+004d1822     int32_t ecx_2
+004d1822     result_8, ecx_2 = sub_4d2080(edi, 0x7c215c)
+004d1827     result = result_8
+004d1829     int32_t eax_7
+004d1829     int32_t edx_1
+004d1829     eax_7, edx_1, ebp_3 = sub_697887(ecx_2)
+004d182e     *(ebp_3 - 0xc) = eax_7
+004d182e     
+004d1839     while (true)
+004d1839         if (ebx - eax_7 s>= 0x3a98)
+004d1839             goto label_4d1a15
+004d1839         
+004d1843         if (edi[4].b != 0)
+004d1843             goto label_4d1a15
+004d1843         
+004d184e         int32_t var_38_4 = 0x7d0
+004d1853         int32_t var_3c_2 = 0x20
+004d1859         int32_t result_9
+004d1859         int32_t ecx_4
+004d1859         result_9, ecx_4, edi = sub_4b8550(ebp_3 - 0x10, edx_1, *edi, edi[2], ebp_3 - 0x10)
+004d185e         result = result_9
+004d185e         
+004d1862         if (result == 0)
+004d1868             int32_t* ecx_5 = edi[2]
+004d1868             
+004d1880             switch (*ecx_5 - 3)
+004d1887                 case 0
+004d1887                     int32_t* var_38_5 = ecx_5
+004d188e                     int32_t result_10
+004d188e                     result_10, ecx_5 = sub_4d22f0(edi, ecx_5, *(ebp_3 - 4))
+004d1893                     result = result_10
+004d1893                     
+004d1897                     if (result == 0)
+004d1897                         goto label_4d1946
+004d1897                     
+004d18a0                     int32_t result_3 = result
+004d18a1                     int32_t var_3c_4 = 0xa1
+004d18a7                     int32_t var_40_5 = edi[3] + 1
+004d18a8                     char const* const var_44_4 = "[%d] [SP][%d] Send read data failed (%d)(%d)"
+004d18ad                     break
+004d18e2                 case 1
+004d18e2                     int32_t eax_19 = ecx_5[3]
+004d18e2                     
+004d18e7                     if (eax_19 == 0)
+004d18ed                         void* ecx_8 = *edi
+004d18ef                         *(ebp_3 - 0x14) = eax_19
+004d18fb                         *(ebp_3 - 0x20) = 5
+004d1903                         *(ebp_3 - 0x1c) = 8
+004d190a                         int32_t result_12
+004d190a                         result_12, ecx_5 = sub_4b83c0(ecx_8, ebp_3 - 0x20, 8, ebp_3 - 0x14)
+004d190f                         result = result_12
+004d190f                         
+004d1913                         if (result == 0)
+004d1913                             goto label_4d1946
+004d1913                         
+004d1979                         int32_t result_6 = result
+004d197a                         int32_t var_3c_8 = 0xb4
+004d1980                         int32_t var_40_10 = edi[3] + 1
+004d1981                         char const* const var_44_7 = "[%d] [SP][%d] Send Don failed %d\n"
+004d1986                         break
+004d1986                     
+004d1988                     int32_t var_38_8 = eax_19
+004d198c                     int32_t var_3c_9 = 0xba
+004d1992                     int32_t var_40_11 = edi[3] + 1
+004d1993                     char const* const var_44_8 =
+004d1993                         "[%d] [SP][%d] Check cmd end image status failed. Reset. %d\n"
+004d1998                     int32_t var_48_2 = 4
+004d199f                     sub_4d6270(&data_7e09e8)
+004d1917                 case 3
+004d1917                     result = ecx_5[2]
+004d1917                     
+004d191c                     if (result != 0)
+004d192a                         int32_t result_5 = result
+004d192b                         int32_t var_3c_7 = 0xc3
+004d1931                         int32_t var_40_9 = edi[3] + 1
+004d1932                         char const* const var_44_6 =
+004d1932                             "[%d] [SP][%d] Check cmd done status failed. %d\n"
+004d1937                         int32_t var_48_1 = 4
+004d193e                         ecx_5 = sub_4d6270(&data_7e09e8)
+004d191c                     else
+004d191e                         *(ebp_3 - 8) = 1
+004d191e                     
+004d191c                     goto label_4d1946
+004d1946                 case 5
+004d1946                 label_4d1946:
+004d1946                     int32_t eax_24
+004d1946                     eax_24, edx_1, ebp_3 = sub_697887(ecx_5)
+004d194f                     ebx = eax_24
+004d194f                     
+004d1951                     if (*(ebp_3 - 8) != 0)
+004d1951                         goto label_4d1a15
+004d1951                     
+004d1957                     eax_7 = *(ebp_3 - 0xc)
+004d195a                     continue
+004d18c2                 case 0xf
+004d18c2                     int32_t result_11
+004d18c2                     result_11, ecx_5 =
+004d18c2                         sub_4b83c0(*edi, ecx_5[4] + *(ebp_3 - 4), ecx_5[6], ebp_3 - 0x18)
+004d18c7                     result = result_11
+004d18c7                     
+004d18cb                     if (result == 0)
+004d18cb                         goto label_4d1946
+004d18cb                     
+004d18d0                     int32_t result_4 = result
+004d18d1                     int32_t var_3c_6 = 0xa9
+004d18d7                     int32_t var_40_7 = edi[3] + 1
+004d18d8                     char const* const var_44_5 = "[%d] [SP][%d] Send read 64bit data failed %d\n"
+004d18dd                     break
+004d18dd             
+004d19aa             int32_t var_38_9 = 0xd0
+004d19b0             int32_t var_3c_10 = edi[3] + 1
+004d19b1             char const* const var_40_12 = "[%d] [SP][%d] Reset Sahara\n"
+004d19b6             int32_t var_44_9 = 4
+004d19bd             ebp_3 = sub_4d6270(&data_7e09e8)
+004d19cc             result = sub_4d2340(edi)
+004d19cc             
+004d19d0             if (result == 0)
+004d19d0                 goto label_4d1a15
+004d19d0             
+004d19d5             int32_t var_38_10 = 0xd4
+004d19da             int32_t result_2 = result
+004d19dc             int32_t var_40_13 = edi[3] + 1
+004d19dd             char const* const var_44_10 = "[%d] [SP] Failed to reset SP (%d) (%d)"
+004d19e2             break
+004d19e2         
+004d1965         if (result != 0x102)
+004d19e7             int32_t result_7 = result
+004d19e8             int32_t var_3c_11 = 0xe7
+004d19ee             int32_t var_40_14 = edi[3] + 1
+004d19ef             char const* const var_44_11 = "[%d] [SP][%d] Read response failed (%d)\n"
+004d19ef             break
+004d19ef         
+004d1967         int32_t eax_25
+004d1967         eax_25, edx_1, ebp_3 = sub_697887(ecx_4)
+004d196c         ebx = eax_25
+004d196e         eax_7 = *(ebp_3 - 0xc)
+004d1807 else
+004d180c     int32_t var_38_3 = 0x7f
+004d180e     int32_t result_1 = result
+004d1810     int32_t var_40_2 = edi[3] + 1
+004d1811     char const* const var_44_2 = "[%d] [SP] Get FP failed (%d) (%d)"
+004d1811 
+004d19f4 int32_t var_48_3 = 4
+004d19fb ebp_3 = sub_4d6270(&data_7e09e8)
+004d1a15 label_4d1a15:
+004d1a15 *j_sub_688543(*(ebp_3 - 4))
+004d1a16 return result

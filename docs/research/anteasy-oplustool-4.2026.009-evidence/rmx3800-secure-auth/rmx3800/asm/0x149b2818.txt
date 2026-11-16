@@ -1,0 +1,8 @@
+149b2818 stp     fp, lr, [sp, #-0x10]!
+149b281c mov     fp, sp
+149b2820 bl      0x149b2838
+149b2824 ubfx    w8, w0, #0x10, #0x4
+149b2828 mov     w9, #0x4
+149b282c lsl     w0, w9, w8
+149b2830 ldp     fp, lr, [sp], #0x10
+149b2834 ret     

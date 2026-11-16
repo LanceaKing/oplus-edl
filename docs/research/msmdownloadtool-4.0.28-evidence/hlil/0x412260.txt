@@ -1,0 +1,107 @@
+00412263 int32_t var_8 = 0xffffffff
+00412265 int32_t (* var_c)(void* arg1) = sub_570e46
+00412270 TEB* fsbase
+00412270 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00412281 int32_t __saved_ebp
+00412281 int32_t var_140 = __security_cookie ^ &__saved_ebp
+00412285 fsbase->NtTib.ExceptionList = &ExceptionList
+0041228b int32_t* var_14 = &var_140
+00412290 char* var_60 = arg1
+00412293 char* var_144 = arg1
+0041229a void var_130
+0041229a Concurrency::details::_StructuredTaskCollection::~_StructuredTaskCollection(&var_130)
+004122a1 int32_t var_8_1 = 0
+004122a8 sub_412110(arg1)
+004122af struct TiXmlNode::TiXmlDocument::VTable** eax_3
+004122af int32_t ecx_2
+004122af eax_3, ecx_2 = sub_42e7e5(0x48)
+004122b7 struct TiXmlNode::TiXmlDocument::VTable** var_20 = eax_3
+004122ba var_8_1.b = 1
+004122c0 struct TiXmlNode::TiXmlDocument::VTable** ebx
+004122c0 
+004122c0 if (eax_3 == 0)
+004122d2     ebx = nullptr
+004122c0 else
+004122c9     struct TiXmlNode::TiXmlDocument::VTable** eax_4
+004122c9     eax_4, ecx_2 = sub_41d3f0(eax_3, "Setting.xml")
+004122ce     ebx = eax_4
+004122ce 
+004122d4 var_8_1.b = 2
+004122db int32_t var_144_1 = ecx_2
+004122df struct TiXmlNode::TiXmlDocument::VTable** var_20_1 = ebx
+004122e2 int32_t var_148 = &ebx[8]->vFunc_2
+004122ec struct std::ios_base::VTable* const var_b8
+004122ec 
+004122ec if (sub_41d4f0(ebx) != 0)
+00412346     for (int32_t* i = ebx[6]; i != 0; i = i[0xa])
+00412351         if ((*(*i + 0x18))() != 0)
+00412357             (*(*i + 0x18))()
+0041235c             break
+0041235c     
+0041236c     void* eax_14 = sub_411760("BasicInfo")
+0041237b     void* eax_15 = sub_411760("SAHARA")
+0041238a     void* eax_16 = sub_411760("UFS_PROVISION")
+00412399     void* eax_17 = sub_411760("Program0")
+004123a8     void* eax_18 = sub_411760("Program1")
+004123b7     void* eax_19 = sub_411760("Program2")
+004123c6     void* eax_20 = sub_411760("Program3")
+004123d5     void* eax_21 = sub_411760("Program4")
+004123e4     void* eax_22 = sub_411760("Program5")
+004123f3     void* eax_23 = sub_411760("Program6")
+00412402     void* eax_24 = sub_411760("Program7")
+00412411     void* eax_25 = sub_411760("Patch0")
+00412420     void* eax_26 = sub_411760("Patch1")
+0041242f     void* eax_27 = sub_411760("Patch2")
+0041243e     void* eax_28 = sub_411760("Patch3")
+0041244d     void* eax_29 = sub_411760("Patch4")
+0041245c     void* eax_30 = sub_411760("Patch5")
+0041246b     void* eax_31 = sub_411760("Patch6")
+0041247a     void* eax_32 = sub_411760("Patch7")
+00412486     sub_4125f0(arg1, eax_14)
+00412490     sub_414330(arg1, eax_15)
+0041249a     sub_4129c0(arg1, eax_16)
+0041249a     
+004124ab     if (sub_4146e0(arg1, eax_17) != 0)
+004124b6         sub_4146e0(arg1, eax_18)
+004124c0         sub_4146e0(arg1, eax_19)
+004124ca         sub_4146e0(arg1, eax_20)
+004124d4         sub_4146e0(arg1, eax_21)
+004124de         sub_4146e0(arg1, eax_22)
+004124e8         sub_4146e0(arg1, eax_23)
+004124f2         sub_4146e0(arg1, eax_24)
+004124f2         
+00412503         if (sub_414e30(arg1, eax_25) != 0)
+0041250e             sub_414e30(arg1, eax_26)
+00412518             sub_414e30(arg1, eax_27)
+00412522             sub_414e30(arg1, eax_28)
+0041252c             sub_414e30(arg1, eax_29)
+00412536             sub_414e30(arg1, eax_30)
+00412540             sub_414e30(arg1, eax_31)
+00412548             sub_414e30(arg1, eax_32)
+0041254d             char var_19 = 1
+00412551             int32_t var_8_3 = 0
+00412551             
+00412583             if (ebx != 0)
+0041258b                 (*ebx)->vFunc_0(1)
+0041258b             
+00412593             int32_t var_8_4 = 0xffffffff
+0041259a             sub_416710(&var_b8)
+004125a5             var_b8 = &std::ios_base::`vftable'
+004125b0             std::ios_base::_Ios_base_dtor(&var_b8)
+004125b5             int32_t* eax_36
+004125b5             eax_36.b = var_19
+004125be             fsbase->NtTib.ExceptionList = ExceptionList
+004125cc             return eax_36
+004122ec else
+004122ee     *arg1 = 1
+004122f3     *(arg1 + 4) = "Load setting xml file failed."
+004122fe     (*ebx)->vFunc_0(1)
+004122fe 
+00412306 int32_t var_8_2 = 0xffffffff
+0041230d sub_416710(&var_b8)
+00412318 var_b8 = &std::ios_base::`vftable'
+00412323 std::ios_base::_Ios_base_dtor(&var_b8)
+0041232b int32_t* eax_9
+0041232b eax_9.b = 0
+00412330 fsbase->NtTib.ExceptionList = ExceptionList
+0041233e return eax_9

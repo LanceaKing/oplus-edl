@@ -1,0 +1,233 @@
+0040a5b0 CRITICAL_SECTION* lpCriticalSection_2
+0040a5b0 CRITICAL_SECTION* lpCriticalSection = lpCriticalSection_2
+0040a5b1 int32_t* ebp = &lpCriticalSection
+0040a5b3 int32_t var_8 = 0xffffffff
+0040a5b5 int32_t (* var_c)() = sub_55d8e6
+0040a5c0 TEB* fsbase
+0040a5c0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040a5cc int32_t* eax_2 = __security_cookie ^ &lpCriticalSection
+0040a5ce int32_t* var_14 = eax_2
+0040a5d1 int32_t ebx
+0040a5d1 int32_t var_110 = ebx
+0040a5d2 int32_t esi
+0040a5d2 int32_t var_114 = esi
+0040a5d3 int32_t edi
+0040a5d3 int32_t var_118 = edi
+0040a5d8 fsbase->NtTib.ExceptionList = &ExceptionList
+0040a5e3 int32_t* eax_3 = sub_421c0b(eax_2)
+0040a5ee int32_t ecx
+0040a5ee ecx.b = eax_3 != 0
+0040a5ee 
+0040a5f3 if (ecx == 0)
+0040a5f5     lpCriticalSection = 0x80004005
+0040a5fa     sub_402b80(lpCriticalSection)
+0040a5fa     noreturn
+0040a5fa 
+0040a606 void* eax_6 = (*(*eax_3 + 0xc))() + 0x10
+0040a60c int32_t var_8_1 = 0
+0040a61d char const* const var_8_2
+0040a61d 
+0040a61d if (data_5ceee4 == 0)
+0040a628     lpCriticalSection = 0x39
+0040a62a     var_8_2 = "The password you entered is incorrect. Please try again"
+0040a61d else
+0040a61f     lpCriticalSection = 0x1a
+0040a621     var_8_2 = &data_5a0370
+0040a621 
+0040a62f sub_405330(var_8_2)
+0040a63e uint128_t xmm1 = (*"@pJ?F^1jA#$version=%sQ?F")[0].o
+0040a64b char var_30 = 0
+0040a650 int32_t var_2f = 0
+0040a653 int16_t var_2b = 0
+0040a657 char var_29 = 0
+0040a660 int32_t var_38
+0040a660 __builtin_strncpy(&var_38, "on=%", 4)
+0040a668 int16_t var_58 = 0x47
+0040a66c int64_t var_56 = 0
+0040a67d int32_t var_4e = 0
+0040a684 char xmm0_1 = _mm_bsrli_si128(xmm1, 0xc)
+0040a691 int32_t xmm0_3 = _mm_bsrli_si128(xmm1, 4)
+0040a696 int32_t xmm1_1 = _mm_bsrli_si128(xmm1, 8)
+0040a69d char xmm2_1 = _mm_bsrli_si128((*"0123456789ABCDEFG")[0].o, 0xc)
+0040a6a2 char var_1c = xmm0_1 + 0xf
+0040a6a9 int16_t var_4a = 0
+0040a6af char var_17 = 0
+0040a6b8 data_5ceee0 = 0
+0040a6c2 uint8_t var_1b = (xmm0_3 u>> 0x10).b + 0x34
+0040a6ce uint8_t var_1a = (xmm1_1 u>> 0x10).b + 0xd
+0040a6d9 uint8_t var_19 = (var_38 u>> 0x18).b + 0xd
+0040a6e9 char var_18 = xmm2_1 - 0x10
+0040a6e9 
+0040a6ec if (data_5ceee4 == 0)
+0040a6f5     lpCriticalSection = " When updating your system,\n please ensure you have sufficient remaining "
+0040a6f5     "battery to avoid unintended interruptions."
+0040a6ec else
+0040a6ee     lpCriticalSection = &data_5a01d4
+0040a6ee 
+0040a706 CRITICAL_SECTION* lpCriticalSection_1 = sub_4294c9(sub_4291df(arg3, 0x401))
+0040a706 
+0040a722 if (data_5ceedc == 0 || *(arg3 + 0xc0) != 0)
+0040a88f label_40a88f:
+0040a88f     int32_t eax_25 = 0
+0040a891     int32_t var_28_1 = 0
+0040a891     
+0040a897     while (true)
+0040a897         if (eax_25 u> 3)
+0040a8be             void* i = *nullptr
+0040a8be             
+0040a8c3             if (i != *4)
+0040a8e3                 do
+0040a8cc                     if (data_5ceedc == 0 && sub_40a450() != 0)
+0040a8d9                         *(i + 0x5c) = 0
+0040a8d9                     
+0040a8dd                     i += 0x74
+0040a8e3                 while (i != *4)
+0040a8e3                 
+0040a8e5                 eax_25 = var_28_1
+0040a8e5             
+0040a8e8             eax_25 += 1
+0040a8e9             var_28_1 = eax_25
+0040a8e9             
+0040a8ef             if (eax_25 s>= 4)
+0040a8fb                 if (*(arg3 + 0x18c) == 0)
+0040a997                     bool cond:2_1 = data_5ceee4 == 0
+0040a99e                     lpCriticalSection = nullptr
+0040a9a2                     char const* const var_c_4
+0040a9a2                     
+0040a9a2                     var_c_4 = cond:2_1
+0040a9a2                         ? "SMT download mode: not verify or verify failed, Not allowed to download"
+0040a9a2                         : &data_5a04d0
+0040a9a2                     
+0040a9b0                     sub_42f6a2(var_c_4, 0x30)
+0040a8fb                 else
+0040a907                     lpCriticalSection = arg3 + 0x19c
+0040a90b                     EnterCriticalSection(lpCriticalSection)
+0040a91d                     int32_t esi_2 = *(arg3 + 0x190)
+0040a923                     (*(*(arg3 + 0x194) + 0x14))()
+0040a923                     
+0040a928                     if (esi_2 == 0)
+0040a92a                         lpCriticalSection = arg3 + 0x19c
+0040a92d                         EnterCriticalSection(lpCriticalSection)
+0040a933                         int32_t eax_29 = *(arg3 + 0x194)
+0040a945                         *(arg3 + 0x190) = 1
+0040a94b                         (*(eax_29 + 0x14))()
+0040a94e                         lpCriticalSection = nullptr
+0040a950                         int32_t var_8_5 = 0
+0040a952                         int32_t var_c_3 = 0
+0040a954                         ExceptionList = nullptr
+0040a957                         var_18.d = sub_403290
+0040a961                         *(arg3 + 0x1b8) = sub_42bf8b(var_18, arg3 + 0x190, ExceptionList, var_c_3, 
+0040a961                             var_8_5, lpCriticalSection)
+0040a961                     
+0040a966                     sub_40aac0()
+0040a96b                     lpCriticalSection = nullptr
+0040a97b                     sub_429193(sub_4291df(arg3, 0x3ef), lpCriticalSection)
+0040a980                     lpCriticalSection = nullptr
+0040a990                     sub_429193(sub_4291df(arg3, 0x3f0), lpCriticalSection)
+0040a990                 
+0040a9b8                 int32_t var_8_9 = 0xffffffff
+0040a9c5                 int32_t ecx_21 = *(eax_6 - 4)
+0040a9c5                 *(eax_6 - 4) -= 1
+0040a9c5                 
+0040a9cc                 if (ecx_21 - 1 s<= 0)
+0040a9ce                     int32_t* ecx_23 = *(eax_6 - 0x10)
+0040a9d0                     lpCriticalSection = eax_6 - 0x10
+0040a9d3                     (*(*ecx_23 + 4))(lpCriticalSection)
+0040a9d3                 
+0040a9cc                 break
+0040a897         else
+0040a899             switch (eax_25)
+0040a899                 case 0
+0040a899                     jump(0x40a8a0)
+0040a899                 case 1
+0040a899                     jump(0x40a8a7)
+0040a899                 case 2
+0040a899                     jump(0x40a8ae)
+0040a899                 case 3
+0040a899                     jump(0x40a8b5)
+0040a722 else
+0040a728     lpCriticalSection = lpCriticalSection_1
+0040a72f     int32_t esi_1 = 0
+0040a731     sub_404f30(lpCriticalSection)
+0040a73c     int32_t var_8_3
+0040a73c     var_8_3.b = 1
+0040a73c     
+0040a748     if (sub_420e24() == 1)
+0040a7ef         int32_t i_1
+0040a7ef         
+0040a7ef         do
+0040a753             lpCriticalSection = &var_1c
+0040a761             void* var_74
+0040a761             
+0040a761             if (__atoldbl(var_74, lpCriticalSection) == 0)
+0040a846                 *(arg3 + 0xc0) = 1
+0040a853                 int32_t var_6c
+0040a853                 
+0040a853                 if (var_6c u> 3)
+0040a886                     void* var_8_4
+0040a886                     var_8_4.b = 0
+0040a88a                     sub_4050c0()
+0040a853                 else
+0040a853                     switch (var_6c)
+0040a855                         case 0
+0040a855                             return sub_40a85c(ebp, eax_6) __tailcall
+0040a855                         case 1
+0040a855                             jump(0x40a863)
+0040a855                         case 2
+0040a855                             jump(0x40a86a)
+0040a855                         case 3
+0040a855                             return sub_40a871(ebp, eax_6) __tailcall
+0040a855                 
+0040a853                 goto label_40a88f
+0040a853             
+0040a767             lpCriticalSection = nullptr
+0040a767             
+0040a774             if (sub_42f6a2(eax_6, 0x34, lpCriticalSection) != 6)
+0040a774                 break
+0040a774             
+0040a77a             esi_1 += 1
+0040a77a             
+0040a77e             if (esi_1 s>= 3)
+0040a801                 if (data_5ceee4 == 0)
+0040a80a                     lpCriticalSection = "The password you entered is incorrect"
+0040a801                 else
+0040a803                     lpCriticalSection = &data_5a046c
+0040a803                 
+0040a80f                 sub_405410()
+0040a814                 lpCriticalSection = nullptr
+0040a81b                 sub_42f6a2(eax_6, 0x34, lpCriticalSection)
+0040a81b                 break
+0040a81b             
+0040a780             var_8_3.b = 3
+0040a790             void* var_70
+0040a790             int32_t ecx_4 = *(var_70 - 4)
+0040a790             *(var_70 - 4) -= 1
+0040a790             
+0040a797             if (ecx_4 - 1 s<= 0)
+0040a799                 int32_t* ecx_6 = *(var_70 - 0x10)
+0040a79b                 lpCriticalSection = var_70 - 0x10
+0040a79e                 (*(*ecx_6 + 4))(lpCriticalSection)
+0040a79e             
+0040a7a1             var_8_3.b = 2
+0040a7b1             int32_t ecx_7 = *(var_74 - 4)
+0040a7b1             *(var_74 - 4) -= 1
+0040a7b1             
+0040a7b8             if (ecx_7 - 1 s<= 0)
+0040a7ba                 int32_t* ecx_9 = *(var_74 - 0x10)
+0040a7bc                 lpCriticalSection = var_74 - 0x10
+0040a7bf                 (*(*ecx_9 + 4))(lpCriticalSection)
+0040a7bf             
+0040a7c8             var_8_3.b = 0
+0040a7d1             lpCriticalSection = sub_420922()
+0040a7d8             sub_404f30(lpCriticalSection)
+0040a7e3             var_8_3.b = 1
+0040a7e7             i_1 = sub_420e24()
+0040a7ef         while (i_1 == 1)
+0040a7ef     
+0040a822     sub_421113()
+0040a82d     var_8_3.b = 0
+0040a831     sub_4050c0()
+0040a839     sub_402b60()
+0040a839 
+0040a9d9 fsbase->NtTib.ExceptionList = ExceptionList
+0040a9f1 return sub_53b554()

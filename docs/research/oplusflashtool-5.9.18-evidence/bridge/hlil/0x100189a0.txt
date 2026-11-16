@@ -1,0 +1,85 @@
+100189a0 int32_t __saved_ebp_1
+100189a0 int32_t __saved_ebp = __saved_ebp_1
+100189a3 int32_t var_8 = 0xffffffff
+100189a5 int32_t (* var_c)() = sub_10040190
+100189b0 TEB* fsbase
+100189b0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+100189b1 fsbase->NtTib.ExceptionList = &ExceptionList
+100189bb int32_t ebx
+100189bb int32_t var_20 = ebx
+100189bc int32_t esi
+100189bc int32_t var_24 = esi
+100189bd int32_t edi
+100189bd int32_t var_28 = edi
+100189ca int32_t code = _Mtx_lock(this + 0x219c)
+100189ca 
+100189d5 if (code != 0)
+100189d8     std::_Throw_C_error(code)
+100189d8     noreturn
+100189d8 
+100189e1 void* esi_1 = arg2
+100189ea class OpFlashEvent* eax_3 = OpFlashManager::selectEventObject(this, esi_1 + 0xc)
+100189ea int32_t* esp_1 = &var_28
+100189ea 
+100189f3 if (eax_3 != 0)
+100189ff     char* ecx_1 = esi_1 + 0x278
+10018a08     *(eax_3 + 0x80) = *(esi_1 + 0x1478)
+10018a10     int32_t var_2c_3 = 0xf
+10018a17     int32_t var_30_1 = 0
+10018a2a     class OpFlashEvent* var_40
+10018a2a     var_40.b = 0
+10018a30     uint32_t ecx_2
+10018a30     
+10018a30     if (*ecx_1 != 0)
+10018a45         void* eax_6
+10018a45         
+10018a45         do
+10018a40             eax_6.b = *ecx_1
+10018a42             ecx_1 = &ecx_1[1]
+10018a45         while (eax_6.b != 0)
+10018a47         ecx_2 = ecx_1 - &ecx_1[1]
+10018a30     else
+10018a32         ecx_2 = 0
+10018a32     
+10018a54     sub_10003300(&var_40, esi_1 + 0x278, ecx_2)
+10018a5b     void var_3c
+10018a5b     esp_1 = &var_3c
+10018a5b     
+10018a62     if (OpFlashManager::isCommonEvent(this, var_40) == 0)
+10018ab8         *(eax_3 + 4) = 0
+10018abf         *(eax_3 + 8) = esi_1
+10018ac2         OpFlashEvent::resolveDataQcom(eax_3)
+10018ac2         
+10018ad0         for (int32_t* i = *(this + 0x7c); i != *(this + 0x80); i = &i[1])
+10018ad2             int32_t* ecx_10 = *i
+10018ad4             var_40 = eax_3
+10018ad7             (*(*ecx_10 + 4))(var_40)
+10018ad7             esp_1 = &var_3c
+10018a62     else
+10018a69         void var_54
+10018a69         arg2 = &var_54
+10018a71         sub_10003190(&var_54, &data_10046add)
+10018a79         int32_t var_8_1 = 0
+10018a86         void var_6c
+10018a86         void* var_18_1 = &var_6c
+10018a8c         sub_10003190(&var_6c, esi_1 + 0x378)
+10018a94         var_8_1.b = 1
+10018aa1         void var_84
+10018aa1         sub_10003190(&var_84, esi_1 + 0x278)
+10018aa8         int32_t var_8_2 = 0xffffffff
+10018aaf         OpFlashManager::processCommonEvent(this, var_84, var_6c, var_54)
+10018aaf         void var_50
+10018aaf         esp_1 = &var_50
+10018aaf 
+10018ae5 *(esp_1 - 4) = this + 0x219c
+10018ae8 int32_t eax_12 = _Mtx_unlock()
+10018ae8 
+10018af3 if (eax_12 != 0)
+10018af5     *(esp_1 - 4) = eax_12
+10018afb     std::_Throw_C_error()
+10018afb     noreturn
+10018afb 
+10018b03 *esp_1
+10018b03 esp_1[1]
+10018b05 fsbase->NtTib.ExceptionList = ExceptionList
+10018b04 esp_1[2]

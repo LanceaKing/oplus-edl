@@ -1,0 +1,227 @@
+0040dfa3 int32_t var_8 = 0xffffffff
+0040dfa5 int32_t (* var_c)(void* arg1) = sub_5709ce
+0040dfb0 TEB* fsbase
+0040dfb0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040dfbc int32_t __saved_ebp
+0040dfbc int32_t eax_2 = __security_cookie ^ &__saved_ebp
+0040dfc8 fsbase->NtTib.ExceptionList = &ExceptionList
+0040dff9 PWSTR var_20 = (*(data_5dd008 + 0xc))(eax_2) + 0x10
+0040dffc int32_t var_8_1 = 0
+0040e00d int32_t* var_134_1
+0040e00d void* var_130_1
+0040e00d 
+0040e00d if (data_5ea5ac == 0)
+0040e018     var_130_1 = 0x38
+0040e01a     var_134_1 = u"The password you entered is incorrect. Please try agai"
+0040e00d else
+0040e00f     var_130_1 = 0xd
+0040e011     var_134_1 = &data_5b94e8
+0040e011 
+0040e01f sub_4037b0(&var_20, var_134_1, var_130_1)
+0040e02c uint128_t xmm1_1 = (*"@pJ?F^1jA#$version=%sQ?F")[0].o
+0040e039 char var_38_1 = 0
+0040e03e int32_t var_37_1 = 0
+0040e041 int16_t var_33_1 = 0
+0040e045 char var_31_1 = 0
+0040e04e int32_t var_40
+0040e04e __builtin_strncpy(&var_40, "on=%", 4)
+0040e056 int16_t var_60_1 = 0x47
+0040e05a int64_t var_5e_1 = 0
+0040e06b int32_t var_56_1 = 0
+0040e072 uint8_t xmm0_2 = _mm_bsrli_si128(xmm1_1, 0xc)
+0040e07f int32_t xmm0_4 = _mm_bsrli_si128(xmm1_1, 4)
+0040e084 int32_t xmm1_2 = _mm_bsrli_si128(xmm1_1, 8)
+0040e08b char xmm2_2 = _mm_bsrli_si128((*"0123456789ABCDEFG")[0].o, 0xc)
+0040e090 uint8_t var_1c = xmm0_2 + 0xf
+0040e097 int16_t var_52_1 = 0
+0040e09d char var_17_1 = 0
+0040e0a6 uint8_t var_1b_1 = (xmm0_4 u>> 0x10).b + 0x34
+0040e0b2 uint8_t var_1a_1 = (xmm1_2 u>> 0x10).b + 0xd
+0040e0bd uint8_t var_19_1 = (var_40 u>> 0x18).b + 0xd
+0040e0c6 char var_18_1 = xmm2_2 - 0x10
+0040e0ef int16_t* var_28 = (*(data_5dd008 + 0xc))() + 0x10
+0040e0f5 var_8_1.b = 1
+0040e0fd sub_4061e0(&var_28, &var_1c)
+0040e102 bool cond:0_1 = data_5ea5ac == 0
+0040e10b data_5ea574 = 0
+0040e115 char const* const var_130_3
+0040e115 
+0040e115 var_130_3 = cond:0_1 ? u" When updating your system,\n please ensure you have sufficient remaining "
+0040e115 "battery to avoid unintended in" : "te:gGS"
+0040e115 
+0040e12f int32_t ecx_6 = sub_436d0c(sub_4369fd(arg1, 0x401), var_130_3)
+0040e13b PWSTR ebx_1 = var_20
+0040e13e int16_t* edi_1 = var_28
+0040e14e int32_t* result
+0040e14e 
+0040e14e if (data_5ea570 == 0 || *(arg1 + 0xc0) != 0)
+0040e310 label_40e310:
+0040e310     int32_t i = 0
+0040e312     int32_t i_1 = 0
+0040e312     
+0040e383     do
+0040e318         int32_t* esi_3
+0040e318         
+0040e318         if (i u> 4)
+0040e344             esi_3 = nullptr
+0040e318         else
+0040e31a             switch (i)
+0040e321                 case 0
+0040e321                     esi_3 = &data_5ea454
+0040e328                 case 1
+0040e328                     esi_3 = &data_5ea460
+0040e32f                 case 2
+0040e32f                     esi_3 = &data_5ea46c
+0040e336                 case 3
+0040e336                     esi_3 = &data_5ea478
+0040e33d                 case 4
+0040e33d                     esi_3 = &data_5ea484
+0040e33d         
+0040e349         int32_t* eax_29 = esi_3
+0040e349         
+0040e351         for (int32_t* j = *esi_3; j != eax_29[1]; j = &j[0x28])
+0040e35a             if (data_5ea570 == 0)
+0040e365                 eax_29 = esi_3
+0040e365                 
+0040e368                 if (sub_40de10(j) != 0)
+0040e36a                     j[0x1d].b = 0
+0040e36a         
+0040e37c         i = i_1 + 1
+0040e37d         i_1 = i
+0040e383     while (i s< 5)
+0040e383     
+0040e38f     if (*(arg1 + 0x18c) == 0)
+0040e40d         PWSTR var_138_4
+0040e40d         
+0040e40d         if (data_5ea5ac == 0)
+0040e416             var_138_4 = u"SMT download mode: not verify or verify failed, Not allowed to downloa"
+0040e40d         else
+0040e40f             var_138_4 = &data_5b9748
+0040e40f         
+0040e41b         sub_439ba7(var_138_4, MB_ICONEXCLAMATION, 0)
+0040e38f     else
+0040e397         sub_404320(arg1 + 0x598)
+0040e39e         sub_40e570(arg1)
+0040e3a5         sub_410090(arg1)
+0040e3ba         sub_4369b1(sub_4369fd(arg1, 0x3ef), 0)
+0040e3cf         sub_4369b1(sub_4369fd(arg1, 0x3f0), 0)
+0040e3db         uint32_t eax_34 = sub_436b4b(arg1, 0x412)
+0040e3e0         int32_t eax_35 = neg.d(eax_34)
+0040e3ef         data_5ea580 = neg.d(sbb.d(eax_35, eax_35, eax_34 != 0))
+0040e3fb         sub_4369b1(sub_4369fd(arg1, 0x412), 0)
+0040e3fb     
+0040e423     var_8_1.b = 0
+0040e42f     int32_t ecx_37 = *(edi_1 - 4)
+0040e42f     *(edi_1 - 4) -= 1
+0040e42f     
+0040e436     if (ecx_37 - 1 s<= 0)
+0040e43d         (*(**(edi_1 - 0x10) + 4))(&edi_1[-8])
+0040e43d     
+0040e443     int32_t var_8_2 = 0xffffffff
+0040e44a     result = &ebx_1[-2]
+0040e44d     int32_t esi_5 = *result
+0040e44d     *result -= 1
+0040e44d     
+0040e454     if (esi_5 - 1 s<= 0)
+0040e45b         result = (*(**(ebx_1 - 0x10) + 4))(&ebx_1[-8])
+0040e14e else
+0040e154     int32_t var_130_4 = ecx_6
+0040e15b     int32_t esi_1 = 0
+0040e15d     void var_11c
+0040e15d     sub_406270(&var_11c)
+0040e168     var_8_1.b = 2
+0040e168     
+0040e174     if (sub_42ed81(&var_11c) == 1)
+0040e17e         int32_t eax_19
+0040e17e         eax_19.b = edi_1 != 0
+0040e181         int32_t var_30_1 = eax_19
+0040e22b         bool cond:5_1
+0040e22b         
+0040e22b         do
+0040e186             if (eax_19 == 0)
+0040dfea                 sub_402ba0(0x80004005)
+0040dfea                 noreturn
+0040dfea             
+0040e19a             int16_t* var_84
+0040e19a             
+0040e19a             if (sub_54b4c8(var_84, edi_1) == 0)
+0040e295                 *(arg1 + 0xc0) = 1
+0040e29f                 int32_t* eax_27 = _fopen("C:/ToolLog.txt", "a+")
+0040e2ab                 int32_t var_7c
+0040e2ab                 
+0040e2ab                 if (eax_27 != 0)
+0040e2ad                     int32_t var_130_10 = var_7c
+0040e2b6                     _fprintf(eax_27, "Dialog selection = %d\n")
+0040e2bf                     _fclose(eax_27)
+0040e2bf                 
+0040e2cd                 if (var_7c u<= 4)
+0040e2cd                     char const* const var_130_12
+0040e2cd                     
+0040e2cd                     switch (var_7c)
+0040e2d6                         case 0
+0040e2d6                             var_130_12 = &data_5b9728
+0040e2dd                         case 1
+0040e2dd                             var_130_12 = &data_5b972c
+0040e2e4                         case 2
+0040e2e4                             var_130_12 = &data_5b9730
+0040e2eb                         case 3
+0040e2eb                             var_130_12 = "128G"
+0040e2f2                         case 4
+0040e2f2                             var_130_12 = "256G"
+0040e2f2                     
+0040e2fc                     sub_410240(var_130_12)
+0040e2fc                 
+0040e307                 var_8_1.b = 1
+0040e30b                 sub_406400(&var_11c)
+0040e2cd                 goto label_40e310
+0040e2cd             
+0040e1ad             if (sub_439ba7(ebx_1, 0x34, 0) != IDYES)
+0040e1ad                 break
+0040e1ad             
+0040e1b3             esi_1 += 1
+0040e1b3             
+0040e1b7             if (esi_1 s>= 3)
+0040e23d                 int32_t* var_130_9
+0040e23d                 
+0040e23d                 if (data_5ea5ac == 0)
+0040e246                     var_130_9 = u"The password you entered is incorrec"
+0040e23d                 else
+0040e23f                     var_130_9 = &data_5b9698
+0040e23f                 
+0040e24b                 sub_406570(&var_20, var_130_9)
+0040e257                 sub_439ba7(var_20, 0x34, 0)
+0040e257                 break
+0040e257             
+0040e1b9             var_8_1.b = 4
+0040e1c9             void* var_80
+0040e1c9             int32_t ecx_9 = *(var_80 - 4)
+0040e1c9             *(var_80 - 4) -= 1
+0040e1c9             
+0040e1d0             if (ecx_9 - 1 s<= 0)
+0040e1d7                 (*(**(var_80 - 0x10) + 4))(var_80 - 0x10)
+0040e1d7             
+0040e1da             var_8_1.b = 3
+0040e1ea             int32_t ecx_12 = *(var_84 - 4)
+0040e1ea             *(var_84 - 4) -= 1
+0040e1ea             
+0040e1f1             if (ecx_12 - 1 s<= 0)
+0040e1f8                 (*(**(var_84 - 0x10) + 4))(&var_84[-8])
+0040e1f8             
+0040e201             var_8_1.b = 1
+0040e205             sub_42e882(&var_11c)
+0040e20a             void* const var_130_8 = &data_42e8b8
+0040e211             sub_406270(&var_11c)
+0040e21c             var_8_1.b = 2
+0040e225             cond:5_1 = sub_42ed81(&var_11c) == 1
+0040e228             eax_19 = var_30_1
+0040e22b         while (cond:5_1)
+0040e22b     
+0040e25f     sub_42f070()
+0040e26a     var_8_1.b = 1
+0040e26e     sub_406400(&var_11c)
+0040e276     sub_402b80(&var_28)
+0040e27e     result = sub_402b80(&var_20)
+0040e27e 
+0040e461 fsbase->NtTib.ExceptionList = ExceptionList
+0040e471 sub_54a573(eax_2 ^ &__saved_ebp)
+0040e479 return result

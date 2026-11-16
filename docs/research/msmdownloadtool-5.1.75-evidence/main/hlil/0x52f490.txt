@@ -1,0 +1,151 @@
+0052f4a3 if (arg1 == 0 || arg3 == 0)
+0052f98f     return 0xffffffff
+0052f98f 
+0052f4b4 if (arg2 != 0x80 && arg2 != 0xc0 && arg2 != 0x100)
+0052f4cd     return 0xfffffffe
+0052f4cd 
+0052f4d4 if (arg2 != 0x80 && arg2 != 0x80)
+0052f4ea     int32_t eax_2
+0052f4ea     eax_2.b = arg2 != 0xc0
+0052f4f4     arg3[0x3c] = (eax_2 << 1) + 0xc
+0052f4d4 else
+0052f4d6     arg3[0x3c] = 0xa
+0052f4d6 
+0052f4fa int32_t ecx = *arg1
+0052f512 *arg3 = (ror.d(ecx, 8) & 0xff00ff00) | (rol.d(ecx, 8) & &data_ff00ff)
+0052f514 int32_t ecx_3 = arg1[1]
+0052f52d arg3[1] = (ror.d(ecx_3, 8) & 0xff00ff00) | (rol.d(ecx_3, 8) & &data_ff00ff)
+0052f530 int32_t ecx_6 = arg1[2]
+0052f536 int32_t* esi = &arg3[1]
+0052f54c arg3[2] = (ror.d(ecx_6, 8) & 0xff00ff00) | (rol.d(ecx_6, 8) & &data_ff00ff)
+0052f54f int32_t eax_16 = arg1[3]
+0052f565 int32_t ebx_3 = (ror.d(eax_16, 8) & 0xff00ff00) | (rol.d(eax_16, 8) & &data_ff00ff)
+0052f567 arg3[3] = ebx_3
+0052f567 
+0052f570 if (arg2 != 0x80)
+0052f676     int32_t ecx_21 = arg1[4]
+0052f68e     arg3[4] = (ror.d(ecx_21, 8) & 0xff00ff00) | (rol.d(ecx_21, 8) & &data_ff00ff)
+0052f691     int32_t eax_60 = arg1[5]
+0052f6a7     int32_t ebx_7 = (ror.d(eax_60, 8) & 0xff00ff00) | (rol.d(eax_60, 8) & &data_ff00ff)
+0052f6a9     arg3[5] = ebx_7
+0052f6a9     
+0052f6b2     if (arg2 == 0xc0)
+0052f6ba         int32_t i = 0x72a214
+0052f6ff         int32_t ecx_28 = ((*((zx.d((ebx_7 u>> 0x10).b) << 2) + &data_728910) ^ 0x1000000)
+0052f6ff             & 0xff000000) ^ (*((zx.d((ebx_7 u>> 8).b) << 2) + &data_728d10) & &data_ff0000)
+0052f6ff             ^ zx.d(*((ebx_7 u>> 0x18 << 2) + &data_728510))
+0052f714         int32_t ecx_30 = ecx_28 ^ (*((zx.d(ebx_7.b) << 2) + &data_728110) & 0xff00) ^ *arg3
+0052f716         int32_t eax_78 = *esi ^ ecx_30
+0052f718         arg3[6] = ecx_30
+0052f71e         int32_t ecx_32 = arg3[2] ^ eax_78
+0052f720         arg3[7] = eax_78
+0052f726         int32_t eax_80 = arg3[3] ^ ecx_32
+0052f728         arg3[8] = ecx_32
+0052f72b         arg3[9] = eax_80
+0052f72e         void* eax_81 = &arg3[0xa]
+0052f72e         
+0052f7c4         do
+0052f731             int32_t edx_9 = *(eax_81 - 0x18)
+0052f734             eax_81 += 0x18
+0052f737             int32_t edx_10 = edx_9 ^ *(eax_81 - 0x1c)
+0052f73d             int32_t ecx_34 = *(eax_81 - 0x2c) ^ edx_10
+0052f73f             *(eax_81 - 0x18) = edx_10
+0052f742             *(eax_81 - 0x14) = ecx_34
+0052f745             int32_t edx_11 = *(eax_81 - 0x14)
+0052f787             int32_t esi_4 = (*((zx.d((edx_11 u>> 8).b) << 2) + &data_728d10) & &data_ff0000)
+0052f787                 ^ (*((zx.d((edx_11 u>> 0x10).b) << 2) + &data_728910) & 0xff000000)
+0052f787                 ^ zx.d(*((edx_11 u>> 0x18 << 2) + &data_728510))
+0052f79e             int32_t esi_7 =
+0052f79e                 esi_4 ^ (*((zx.d(edx_11.b) << 2) + &data_728110) & 0xff00) ^ *(eax_81 - 0x28) ^ *i
+0052f7a0             i += 4
+0052f7a3             *(eax_81 - 0x10) = esi_7
+0052f7a9             int32_t ecx_50 = *(eax_81 - 0x24) ^ esi_7
+0052f7ab             *(eax_81 - 0xc) = ecx_50
+0052f7b1             int32_t edx_13 = *(eax_81 - 0x20) ^ ecx_50
+0052f7b3             *(eax_81 - 8) = edx_13
+0052f7bb             *(eax_81 - 4) = *(eax_81 - 0x1c) ^ edx_13
+0052f7c4         while (i != 0x72a230)
+0052f7c4         
+0052f7d0         return 0
+0052f7d0     
+0052f7d1     int32_t ecx_53 = arg1[6]
+0052f7e9     arg3[6] = (ror.d(ecx_53, 8) & 0xff00ff00) | (rol.d(ecx_53, 8) & &data_ff00ff)
+0052f7ec     int32_t eax_87 = arg1[7]
+0052f802     int32_t ebx_11 = (ror.d(eax_87, 8) & 0xff00ff00) | (rol.d(eax_87, 8) & &data_ff00ff)
+0052f804     arg3[7] = ebx_11
+0052f804     
+0052f80d     if (arg2 == 0x100)
+0052f815         int32_t i_1 = 0x72a214
+0052f85a         int32_t ecx_60 = ((*((zx.d((ebx_11 u>> 0x10).b) << 2) + &data_728910) ^ 0x1000000)
+0052f85a             & 0xff000000) ^ (*((zx.d((ebx_11 u>> 8).b) << 2) + &data_728d10) & &data_ff0000)
+0052f85a             ^ zx.d(*((ebx_11 u>> 0x18 << 2) + &data_728510))
+0052f86f         int32_t ecx_62 = ecx_60 ^ (*((zx.d(ebx_11.b) << 2) + &data_728110) & 0xff00) ^ *arg3
+0052f871         void* esi_8 = &arg3[0xc]
+0052f874         int32_t eax_105 = *esi ^ ecx_62
+0052f876         arg3[8] = ecx_62
+0052f87c         int32_t ecx_64 = arg3[2] ^ eax_105
+0052f87e         arg3[9] = eax_105
+0052f884         int32_t eax_107 = arg3[3] ^ ecx_64
+0052f886         arg3[0xa] = ecx_64
+0052f889         arg3[0xb] = eax_107
+0052f889         
+0052f97e         do
+0052f890             int32_t ecx_65 = *(esi_8 - 4)
+0052f893             esi_8 += 0x20
+0052f8d6             int32_t edx_17 = (*((zx.d((ecx_65 u>> 0x10).b) << 2) + &data_728d10) & &data_ff0000)
+0052f8d6                 ^ (*((zx.d((ecx_65 u>> 8).b) << 2) + &data_728110) & 0xff00)
+0052f8d6                 ^ (*((ecx_65 u>> 0x18 << 2) + &data_728910) & 0xff000000)
+0052f8db             int32_t ecx_66 = *(esi_8 - 0x38)
+0052f8eb             int32_t edx_19 =
+0052f8eb                 edx_17 ^ zx.d(*((zx.d(ecx_65.b) << 2) + &data_728510)) ^ *(esi_8 - 0x40)
+0052f8ee             int32_t eax_123 = *(esi_8 - 0x3c) ^ edx_19
+0052f8f0             *(esi_8 - 0x20) = edx_19
+0052f8f3             *(esi_8 - 0x1c) = eax_123
+0052f8f6             int32_t ecx_67 = ecx_66 ^ eax_123
+0052f8fb             int32_t eax_125 = *(esi_8 - 0x34) ^ ecx_67
+0052f8fd             *(esi_8 - 0x18) = ecx_67
+0052f900             *(esi_8 - 0x14) = eax_125
+0052f903             int32_t ecx_68 = *(esi_8 - 0x14)
+0052f942             int32_t edx_23 = (*((zx.d((ecx_68 u>> 8).b) << 2) + &data_728d10) & &data_ff0000)
+0052f942                 ^ (*((zx.d((ecx_68 u>> 0x10).b) << 2) + &data_728910) & 0xff000000)
+0052f942                 ^ zx.d(*((ecx_68 u>> 0x18 << 2) + &data_728510))
+0052f958             int32_t edx_26 =
+0052f958                 edx_23 ^ (*((zx.d(ecx_68.b) << 2) + &data_728110) & 0xff00) ^ *(esi_8 - 0x30) ^ *i_1
+0052f95a             i_1 += 4
+0052f95d             *(esi_8 - 0x10) = edx_26
+0052f963             int32_t eax_141 = *(esi_8 - 0x2c) ^ edx_26
+0052f965             *(esi_8 - 0xc) = eax_141
+0052f96b             int32_t ecx_70 = *(esi_8 - 0x28) ^ eax_141
+0052f96d             *(esi_8 - 8) = ecx_70
+0052f975             *(esi_8 - 4) = *(esi_8 - 0x24) ^ ecx_70
+0052f97e         while (i_1 != 0x72a22c)
+0052f570 else
+0052f578     int32_t i_2 = 0x72a214
+0052f5bd     int32_t ecx_13 = ((*((zx.d((ebx_3 u>> 0x10).b) << 2) + &data_728910) ^ 0x1000000) & 0xff000000)
+0052f5bd         ^ (*((zx.d((ebx_3 u>> 8).b) << 2) + &data_728d10) & &data_ff0000)
+0052f5bd         ^ zx.d(*((ebx_3 u>> 0x18 << 2) + &data_728510))
+0052f5d2     int32_t ecx_15 = ecx_13 ^ (*((zx.d(ebx_3.b) << 2) + &data_728110) & 0xff00) ^ *arg3
+0052f5d4     int32_t eax_34 = *esi ^ ecx_15
+0052f5d6     arg3[4] = ecx_15
+0052f5dc     int32_t ecx_17 = arg3[2] ^ eax_34
+0052f5de     arg3[5] = eax_34
+0052f5e3     arg3[6] = ecx_17
+0052f5e8     arg3[7] = ebx_3 ^ ecx_17
+0052f5e8     
+0052f66d     do
+0052f5f0         int32_t ecx_18 = esi[6]
+0052f5f3         esi = &esi[4]
+0052f632         int32_t edx_5 = (*((zx.d((ecx_18 u>> 8).b) << 2) + &data_728d10) & &data_ff0000)
+0052f632             ^ (*((zx.d((ecx_18 u>> 0x10).b) << 2) + &data_728910) & 0xff000000)
+0052f632             ^ zx.d(*((ecx_18 u>> 0x18 << 2) + &data_728510))
+0052f648         int32_t edx_8 = edx_5 ^ (*((zx.d(ecx_18.b) << 2) + &data_728110) & 0xff00) ^ esi[-1] ^ *i_2
+0052f64a         i_2 += 4
+0052f64d         esi[3] = edx_8
+0052f652         int32_t eax_52 = *esi ^ edx_8
+0052f654         esi[4] = eax_52
+0052f65a         int32_t ecx_20 = esi[1] ^ eax_52
+0052f65c         esi[5] = ecx_20
+0052f664         esi[6] = esi[2] ^ ecx_20
+0052f66d     while (i_2 != &data_72a238)
+0052f66d 
+0052f675 return 0

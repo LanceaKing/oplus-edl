@@ -1,0 +1,266 @@
+00428a83 int32_t var_8 = 0xffffffff
+00428a85 int32_t (* var_c)(void* arg1) = __ehhandler$___std_fs_get_stats@16
+00428a90 TEB* fsbase
+00428a90 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00428a9c int32_t __saved_ebp
+00428a9c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00428aa4 int32_t var_d0 = eax_2
+00428aa8 fsbase->NtTib.ExceptionList = &ExceptionList
+00428ab0 enum WIN32_ERROR result = ERROR_INVALID_FUNCTION
+00428ab5 void* var_c0 = nullptr
+00428acc int32_t var_a0 = 0xf
+00428ad6 int32_t ebx = 0xa
+00428ad9 int32_t var_a4 = 0
+00428ae3 char var_b4 = 0
+00428aea sub_402470(&var_b4, "MemoryName=", 0xb)
+00428aef int32_t var_8_1 = 0
+00428b00 int32_t var_70 = 0xf
+00428b07 int32_t var_74 = 0
+00428b0e char var_84 = 0
+00428b12 sub_402470(&var_84, "MaxPayloadSizeToTargetInBytes=", 0x1e)
+00428b17 int32_t var_40 = 0xf
+00428b1e int32_t var_44 = 0
+00428b25 char var_54 = 0
+00428b2d var_8_1.b = 2
+00428b37 char const* const var_d8_2
+00428b37 void* var_d4_2
+00428b37 
+00428b37 if (arg3 == 0 || arg4 == 0)
+00428b42     var_d4_2 = 0x72
+00428b44     var_d8_2 = "  <configure ZlpAwareHost="1" SkipStorageInit="0" TargetName="8974" SkipWrite="0" "
+00428b44     "AckRawDataEveryNumPackets="100" "
+00428b37 else
+00428b39     var_d4_2 = 0x72
+00428b3b     var_d8_2 = "  <configure ZlpAwareHost="1" SkipStorageInit="1" TargetName="8974" SkipWrite="0" "
+00428b3b     "AckRawDataEveryNumPackets="100" "
+00428b3b 
+00428b4c sub_402470(&var_54, var_d8_2, var_d4_2)
+00428b51 void* var_d4_3 = 0x11
+00428b53 char const* const var_d8_3 = "TargetName="8974""
+00428b5b int32_t var_58 = 0xf
+00428b62 int32_t var_5c = 0
+00428b69 char var_6c = 0
+00428b6d sub_402470(&var_6c, var_d8_3, var_d4_3)
+00428b72 int32_t var_d4_4 = arg2
+00428b75 var_8_1.b = 3
+00428b7f char var_24 = 0
+00428b83 void* const var_d8_4 = &data_5b9d7c
+00428b88 char* var_dc = &var_24
+00428b89 int64_t var_23 = 0
+00428b8e char var_1b = 0
+00428b92 sub_42e740(var_dc, var_d8_4)
+00428b9c char var_e8
+00428b9c char* var_b8 = &var_e8
+00428ba2 int32_t var_d4_5 = 0xf
+00428ba9 int32_t var_d8_5 = 0
+00428bb0 var_e8 = 0
+00428bb7 void* ecx_4
+00428bb7 
+00428bb7 if (var_24 != 0)
+00428bbd     char* ecx_5 = &var_24
+00428bd5     char i
+00428bd5     
+00428bd5     do
+00428bd0         i = *ecx_5
+00428bd2         ecx_5 = &ecx_5[1]
+00428bd5     while (i != 0)
+00428bd7     ecx_4 = ecx_5 - &var_23
+00428bb7 else
+00428bb9     ecx_4 = nullptr
+00428bb9 
+00428be4 sub_402470(&var_e8, &var_24, ecx_4)
+00428bec var_8_1.b = 4
+00428bf9 int32_t var_ec_1 = 0xf
+00428c00 int32_t var_f0_1 = 0
+00428c08 char var_100 = 0
+00428c0b sub_402330(&var_100, &var_84, 0, 0xffffffff)
+00428c13 var_8_1.b = 3
+00428c25 var_8_1.b = 5
+00428c29 int32_t var_3c
+00428c29 sub_405fb0(&var_54, sub_42e660(&var_3c, var_100), nullptr, 0xffffffff)
+00428c2e var_8_1.b = 3
+00428c36 int32_t var_28
+00428c36 
+00428c36 if (var_28 u>= 0x10)
+00428c3b     j__free(var_3c)
+00428c3b 
+00428c4a char* ecx_9 = &var_e8
+00428c4c var_b8 = &var_e8
+00428c52 int32_t var_d4_8 = 0xf
+00428c59 int32_t var_d8_7 = 0
+00428c60 var_e8 = 0
+00428c63 char* eax_4
+00428c63 
+00428c63 if (arg3 == 0)
+00428cb5     sub_402470(ecx_9, "emmc", 4)
+00428cbd     var_8_1.b = 8
+00428ccd     int32_t var_ec_5 = 0xf
+00428cd4     int32_t var_f0_5 = 0
+00428cdc     var_100 = 0
+00428cdf     sub_402330(&var_100, &var_b4, 0, 0xffffffff)
+00428ce7     var_8_1.b = 3
+00428cec     eax_4 = sub_42e660(&var_3c, var_100)
+00428cf1     var_8_1.b = 9
+00428c63 else
+00428c6c     sub_402470(ecx_9, &data_5bb010, 3)
+00428c74     var_8_1.b = 6
+00428c84     int32_t var_ec_3 = 0xf
+00428c8b     int32_t var_f0_3 = 0
+00428c93     var_100 = 0
+00428c96     sub_402330(&var_100, &var_b4, 0, 0xffffffff)
+00428c9e     var_8_1.b = 3
+00428ca3     eax_4 = sub_42e660(&var_3c, var_100)
+00428ca8     var_8_1.b = 7
+00428ca8 
+00428cfd sub_405fb0(&var_54, eax_4, nullptr, 0xffffffff)
+00428d02 var_8_1.b = 3
+00428d02 
+00428d0a if (var_28 u>= 0x10)
+00428d0f     j__free(var_3c)
+00428d0f 
+00428d21 sub_406070(&var_54, &data_5bcab0, 2)
+00428d2e void* var_ec_6 = 0xffffffff
+00428d30 int32_t var_f0_6 = 0
+00428d32 int32_t var_d4_12 = 0xf
+00428d39 int32_t var_d8_10 = 0
+00428d40 void** var_f4 = &var_54
+00428d41 var_e8 = 0
+00428d44 sub_402330(&var_e8, var_f4, var_f0_6, var_ec_6)
+00428d50 char var_9c
+00428d50 sub_42e500(&var_9c, var_e8)
+00428d55 var_8_1.b = 0xa
+00428d59 int32_t eax_5 = arg1[2]
+00428d59 
+00428d5e if (eax_5 != 0)
+00428d61     j__free(eax_5)
+00428d69     arg1[2] = 0
+00428d69 
+00428d70 int32_t var_d4_14 = 0x1000
+00428d75 int32_t eax_6 = sub_42e817()
+00428d7d arg1[2] = eax_6
+00428d82 int32_t var_88
+00428d82 
+00428d82 if (eax_6 == 0)
+00428dbe     result = ERROR_NOT_ENOUGH_MEMORY
+00428d82 else
+00428d84     int32_t eax_7 = arg1[3]
+00428d84     
+00428d89     if (eax_7 != 0)
+00428d8c         j__free(eax_7)
+00428d94         arg1[3] = 0
+00428d94     
+00428d9b     int32_t var_d4_16 = 0x1000
+00428da0     int32_t eax_8 = sub_42e817()
+00428da8     arg1[3] = eax_8
+00428da8     
+00428dad     if (eax_8 != 0)
+00428e9f         _memset(arg1[2], 0, 0x1000)
+00428eb1         _memset(arg1[3], 0, 0x1000)
+00428eb6         char* edx_1 = arg1[3]
+00428eb9         char* ecx_18 = &var_9c
+00428eb9         
+00428ec9         if (var_88 u>= 0x10)
+00428ec9             ecx_18 = var_9c.d
+00428ec9         
+00428edc         char i_1
+00428edc         
+00428edc         do
+00428ed0             i_1 = *ecx_18
+00428ed2             ecx_18 = &ecx_18[1]
+00428ed5             *edx_1 = i_1
+00428ed7             edx_1 = &edx_1[1]
+00428edc         while (i_1 != 0)
+00428edc         
+00428ee0         while (true)
+00428ee0             int32_t eax_10 = ebx
+00428ee2             ebx -= 1
+00428ee2             
+00428ee5             if (eax_10 s<= 0)
+00428ee5                 break
+00428ee5             
+00428eeb             char* edx_2 = arg1[3]
+00428eee             char* ecx_19 = edx_2
+00428eee             
+00428ef8             do
+00428ef3                 eax_10.b = *ecx_19
+00428ef5                 ecx_19 = &ecx_19[1]
+00428ef8             while (eax_10.b != 0)
+00428ef8             
+00428f0c             result = sub_426500(*arg1, edx_2, ecx_19 - &ecx_19[1], &var_b8)
+00428f0c             
+00428f10             if (result != NO_ERROR)
+00428f10                 break
+00428f10             
+00428f24             Sleep((0xf - ebx) * 0xc8)
+00428f40             enum WIN32_ERROR result_1 = sub_4266a0(*arg1, arg1[2], 0x1000, &var_c0, 0xbb8)
+00428f45             result = result_1
+00428f45             
+00428f49             if (result != NO_ERROR)
+00428fa3                 if (result != 0x102)
+00428fa3                     break
+00428f49             else
+00428f54                 int32_t var_28_1 = 0xf
+00428f5e                 enum WIN32_ERROR result_2 = result_1
+00428f61                 var_3c.b = result_1.b
+00428f64                 sub_402470(&var_3c, arg1[2], var_c0)
+00428f64                 
+00428f7c                 if (sub_4172e0(&var_3c, "response value="NCK"", result, 0x14) == 0xffffffff)
+00428fb5                     char* eax_15 = &var_6c
+00428fb5                     
+00428fba                     if (var_58 u>= 0x10)
+00428fba                         eax_15 = var_6c.d
+00428fba                     
+00428fca                     int32_t ecx_26 = 0x5e
+00428fca                     
+00428fd4                     if (sub_4172e0(&var_3c, eax_15, nullptr, var_5c) != 0xffffffff)
+00428fd4                         ecx_26 = 0x5b
+00428fd4                     
+00428fdb                     arg1[1] = ecx_26
+00428fdb                     
+00428fde                     if (var_28_1 u>= 0x10)
+00428fe7                         j__free(var_3c)
+00428fe7                     
+00428fd4                     break
+00428fd4                 
+00428f82                 result = ERROR_INVALID_FUNCTION
+00428f82                 
+00428f87                 if (var_28_1 u>= 0x10)
+00428f90                     j__free(var_3c)
+00428dad     else
+00428db6         j__free(arg1[2])
+00428dbe         result = ERROR_NOT_ENOUGH_MEMORY
+00428dbe 
+00428dca if (var_88 u>= 0x10)
+00428dd2     j__free(var_9c.d)
+00428dd2 
+00428dde int32_t var_88_1 = 0xf
+00428de8 int32_t var_8c = 0
+00428df2 var_9c = 0
+00428df2 
+00428df9 if (var_58 u>= 0x10)
+00428dfe     j__free(var_6c.d)
+00428dfe 
+00428e0a int32_t var_58_1 = 0xf
+00428e11 int32_t var_5c_1 = 0
+00428e18 var_6c = 0
+00428e18 
+00428e1c if (var_40 u>= 0x10)
+00428e21     j__free(var_54.d)
+00428e21 
+00428e2d int32_t var_40_1 = 0xf
+00428e34 int32_t var_44_1 = 0
+00428e3b var_54 = 0
+00428e3b 
+00428e3f if (var_70 u>= 0x10)
+00428e44     j__free(var_84.d)
+00428e44 
+00428e53 int32_t var_70_1 = 0xf
+00428e5a int32_t var_74_1 = 0
+00428e61 var_84 = 0
+00428e61 
+00428e65 if (var_a0 u>= 0x10)
+00428e6d     j__free(var_b4.d)
+00428e6d 
+00428e7a fsbase->NtTib.ExceptionList = ExceptionList
+00428e8a sub_54a573(eax_2 ^ &__saved_ebp)
+00428e92 return result

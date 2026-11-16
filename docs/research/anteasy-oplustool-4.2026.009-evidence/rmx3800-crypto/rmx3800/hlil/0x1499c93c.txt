@@ -1,0 +1,15 @@
+1499c960 int64_t i = 0
+1499c964 int32_t x19 = -1
+1499c964 
+1499c970 for (; i != 0x480; i += 0x80)
+1499c97c     if (arg3 != 0 && i != 0x100)
+1499c98c         void* x0_1
+1499c98c         x0_1, arg4, arg5, arg6, arg7, arg8, x19 =
+1499c98c             sub_149ab3a4(&data_80202990 + i, zx.q(arg2), zx.q(arg1), arg4, arg5, arg6, arg7, arg8)
+1499c990         *arg3 = x0_1
+1499c990         
+1499c994         if (x0_1 != 0)
+1499c9a0             x19 = 0
+1499c9a0             break
+1499c9a0 
+1499c9b8 return zx.q(x19)

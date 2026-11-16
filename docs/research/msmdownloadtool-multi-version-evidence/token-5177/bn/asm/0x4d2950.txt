@@ -1,0 +1,87 @@
+004d2950 push    ebp
+004d2951 mov     ebp, esp
+004d2953 sub     esp, 0x30
+004d2956 mov     eax, dword [0x7c0bb0]
+004d295b xor     eax, ebp
+004d295d mov     dword [ebp-0x8], eax
+004d2960 push    ebx
+004d2961 mov     ebx, dword [ebp+0xc]
+004d2964 lea     eax, [ebp-0x2c]
+004d2967 push    esi
+004d2968 push    edi
+004d2969 mov     edi, dword [ebp+0x8]
+004d296c mov     esi, ecx
+004d296e push    eax
+004d296f push    0xc
+004d2971 lea     eax, [ebp-0x14]
+004d2974 mov     dword [ebp-0x2c], 0x0
+004d297b mov     ecx, dword [esi]
+004d297d push    eax
+004d297e mov     dword [ebp-0x28], 0x0
+004d2985 mov     dword [ebp-0x14], 0xd
+004d298c mov     dword [ebp-0x10], 0xc
+004d2993 mov     dword [ebp-0xc], edi
+004d2996 call    0x4b8520
+004d299b test    eax, eax
+004d299d je      0x4d29b7
+004d29b7 mov     ecx, dword [esi]
+004d29b9 lea     eax, [ebp-0x28]
+004d29bc push    0xa
+004d29be push    0x10
+004d29c0 push    eax
+004d29c1 lea     eax, [ebp-0x24]
+004d29c4 push    eax
+004d29c5 call    0x4b86b0
+004d29ca cmp     dword [ebp-0x18], 0x0
+004d29ce jle     0x4d2a28
+004d299f mov     eax, 0xfffffffa
+004d29a4 pop     edi
+004d29a5 pop     esi
+004d29a6 pop     ebx
+004d29a7 mov     ecx, dword [ebp-0x8]
+004d29aa xor     ecx, ebp
+004d29ac call    0x68804f
+004d29b1 mov     esp, ebp
+004d29b3 pop     ebp
+004d29b4 retn    0xc
+004d2a28 mov     ecx, dword [ebp-0x8]
+004d2a2b mov     eax, 0xfffffff3
+004d2a30 pop     edi
+004d2a31 pop     esi
+004d2a32 xor     ecx, ebp
+004d2a34 pop     ebx
+004d2a35 call    0x68804f
+004d2a3a mov     esp, ebp
+004d2a3c pop     ebp
+004d2a3d retn    0xc
+004d29d0 cmp     dword [ebp-0x28], 0x10
+004d29d4 jne     0x4d2a28
+004d29d6 mov     ecx, dword [esi]
+004d29d8 lea     eax, [ebp-0x2c]
+004d29db push    eax
+004d29dc push    0xc
+004d29de lea     eax, [ebp-0x14]
+004d29e1 mov     dword [ebp-0x14], 0xf
+004d29e8 push    eax
+004d29e9 mov     dword [ebp-0x10], 0xc
+004d29f0 mov     dword [ebp-0xc], edi
+004d29f3 call    0x4b8520
+004d29f8 test    eax, eax
+004d29fa jne     0x4d299f
+004d29fc mov     ecx, dword [esi]
+004d29fe lea     eax, [ebp-0x28]
+004d2a01 push    0x7d0
+004d2a06 push    0x100
+004d2a0b push    eax
+004d2a0c push    ebx
+004d2a0d call    0x4b86b0
+004d2a12 mov     eax, dword [ebp-0x28]
+004d2a15 pop     edi
+004d2a16 pop     esi
+004d2a17 pop     ebx
+004d2a18 mov     ecx, dword [ebp-0x8]
+004d2a1b xor     ecx, ebp
+004d2a1d call    0x68804f
+004d2a22 mov     esp, ebp
+004d2a24 pop     ebp
+004d2a25 retn    0xc

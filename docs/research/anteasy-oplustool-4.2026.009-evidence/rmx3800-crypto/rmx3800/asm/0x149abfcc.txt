@@ -1,0 +1,12 @@
+149abfcc sub     sp, sp, #0x20
+149abfd0 stp     fp, lr, [sp, #0x10]
+149abfd4 add     fp, sp, #0x10
+149abfd8 add     x1, sp, #0x8
+149abfdc str     xzr, [sp, #0x8]
+149abfe0 bl      0x1499ca74
+149abfe4 ldr     x8, [sp, #0x8]
+149abfe8 cmp     w0, #0
+149abfec ldp     fp, lr, [sp, #0x10]
+149abff0 csel    x0, x8, xzr, eq
+149abff4 add     sp, sp, #0x20
+149abff8 ret     

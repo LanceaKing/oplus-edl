@@ -1,0 +1,1098 @@
+004be650 int32_t ebp
+004be650 int32_t var_4 = ebp
+004be651 int32_t* ebp_1 = &var_4
+004be653 int32_t var_8 = 0xffffffff
+004be655 int32_t (* var_c)(void* arg1) = __ehhandler$?_Iput@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@ABA?AV?$ostreambuf_iterator@DU?$char_traits@D@std@@@2@V32@AAVios_base@2@DPADI@Z
+004be660 TEB* fsbase
+004be660 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004be66c int32_t eax_2 = __security_cookie ^ &var_4
+004be66e int32_t var_14 = eax_2
+004be671 int32_t entry_ebx
+004be671 int32_t var_c0 = entry_ebx
+004be672 int32_t esi
+004be672 int32_t var_c4 = esi
+004be673 int32_t edi
+004be673 int32_t var_c8 = edi
+004be674 int32_t var_cc = eax_2
+004be678 fsbase->NtTib.ExceptionList = &ExceptionList
+004be67e void* edi_1 = arg1
+004be698 int32_t var_64 = 1
+004be69f char var_20 = 0
+004be6a3 int64_t var_1f = 0
+004be6a8 char var_17 = 0
+004be6d4 void* var_bc = (*(data_7bfb90 + 0xc))() + 0x10
+004be6e0 void** eax_9 = arg3 + 0x4c
+004be6e3 int32_t var_8_1 = 0
+004be6e3 
+004be6ee if (eax_9[5] u>= 0x10)
+004be6f0     eax_9 = *eax_9
+004be6f0 
+004be6f2 void** var_d0 = eax_9
+004be6f9 sub_413fd0(&var_bc, eax_9, var_d0)
+004be708 int32_t eax_11
+004be708 int32_t edx
+004be708 edx:eax_11 = sx.q(*(arg2 + 0x1c))
+004be709 int32_t var_5c = 0x28
+004be710 int64_t var_b4 = 0
+004be718 int64_t var_84 = 0
+004be71d int64_t var_a4 = 0
+004be725 int32_t var_94 = 0
+004be72f int32_t var_50 = eax_11
+004be732 int32_t var_4c = edx
+004be732 
+004be73b if (*(edi_1 + 0x50) != 0 && *(edi_1 + 0x51) == 0)
+004be744     void** eax_12 = edi_1 + 0x70
+004be744     
+004be747     if (*(edi_1 + 0x84) u>= 0x10)
+004be749         eax_12 = *eax_12
+004be749     
+004be74b     var_d0 = eax_12
+004be752     sub_413fd0(&var_bc, eax_12, var_d0)
+004be752 
+004be757 void* esi_2 = var_bc
+004be75d var_d0 = &data_77c6c4
+004be763 int32_t* eax_13 = __wfopen(esi_2, var_d0)
+004be770 int32_t** esp_1
+004be770 int32_t result
+004be770 int32_t* var_dc
+004be770 
+004be770 if (eax_13 != 0)
+004be7d0     var_d0 = eax_13
+004be7d1     uint32_t var_d4_3 = 1
+004be7d6     int32_t var_d8_2 = 8
+004be7d8     var_dc = &var_20
+004be7d8     
+004be7e3     if (_fread(var_dc, var_d8_2, var_d4_3, var_d0) == 0)
+004bf663         var_d0 = eax_13
+004bf666         _fclose(var_d0)
+004bf66b         int32_t var_64_2 = 1
+004bf672         esp_1 = &(&var_d0)[1]
+004bf675         result = ebp_1[-0x18]
+004be7e3     else
+004be7f3         int32_t var_d8_3
+004be7f3         int32_t var_d4_4
+004be7f3         
+004be7f3         if (*(edi_1 + 0x50) == 0 || *(edi_1 + 0x51) != 0)
+004be80c             var_d0 = nullptr
+004be80e             var_d4_4 = 0
+004be810             var_d8_3 = 0
+004be7f3         else
+004be7fb             var_d0 = nullptr
+004be800             int32_t eax_23
+004be800             int32_t edx_2
+004be800             edx_2:eax_23 = sx.q(*(arg3 + 8))
+004be808             var_d4_4 = edx_2 << 9 | eax_23 u>> 0xffffffe9
+004be809             var_d8_3 = eax_23 << 9
+004be809         
+004be812         var_dc = eax_13
+004be815         sub_68aea5(var_dc, var_d8_3, var_d4_4, var_d0)
+004be820         int32_t* esp_2 = &var_cc
+004be823         int32_t var_74_1 = 0
+004be82d         int32_t var_88_1 = *(arg2 + 0x5c)
+004be833         int32_t eax_27 = 0x28
+004be833         
+004be83a         if (eax_27 s>= 0)
+004be840             *(esp_2 - 4) = 4
+004be842             *(esp_2 - 8) = 0x3000
+004be847             *(esp_2 - 0xc) = 0x8000000
+004be84c             *(esp_2 - 0x10) = 0
+004be84e             *(esp_2 - 0x14) = eax_27
+004be84e             esp_2 -= 0x14
+004be84f             sub_c4b4a4()
+004be854             ebp_1[-0x1c] = &data_4be854
+004be854         
+004be930         *(esp_2 - 4) = ebp_1[-0x1d]
+004be936         ebp_1[-0xb] = 0
+004be93d         *(esp_2 - 8) = 1
+004be942         *(ebp_1 - 0x34) = 0
+004be947         *(esp_2 - 0xc) = 0x1c
+004be949         *(esp_2 - 0x10) = &ebp_1[-0x11]
+004be94a         *(ebp_1 - 0x44) = zx.o(0)
+004be94f         ebp_1[-8] = 0
+004be956         *(ebp_1 - 0x28) = 0
+004be95b         *(edi_1 + 0x26) = 0
+004be964         void* esp_39 = esp_2
+004be96a         int32_t ecx_10
+004be96a         int16_t edx_5
+004be96a         
+004be96a         if (_fread() != 1)
+004be96c             int32_t eax_40 = 0x3b77cc()
+004be972             bool cond:2_1 = *(edi_1 + 0x24) == 0
+004be978             *(esp_39 - 4) = eax_40
+004be979             ebp_1[-0x29] = eax_40
+004be985             *(esp_39 - 8) = esi_2
+004be986             void* esp_42
+004be986             
+004be986             if (cond:2_1)
+004be98f                 *(esp_39 - 0xc) = u"Read %s Failed, Errno: %d"
+004be98f                 esp_42 = esp_39 - 0xc
+004be986             else
+004be988                 *(esp_39 - 0xc) = 0x77c7e4
+004be988                 esp_42 = esp_39 - 0xc
+004be988             
+004be994             *(esp_42 - 4) = 0x100
+004be999             *(esp_42 - 8) = edi_1 + 0x2c0
+004be99a             sub_697afe()
+004be9ae             int32_t eax_44 = zx.d((*(edi_1 + 0x38)).w) | 0x1000000
+004be9b3             *(esp_42 + 8) = edi_1 + 0x2c0
+004be9b4             *(esp_42 + 4) = eax_44
+004be9b5             *esp_42 = 0x178c
+004be9ba             *(esp_42 - 4) = *(edi_1 + 0x3c)
+004be9bd             0x3b8730()
+004be9c3             *(esp_42 - 8) = ebp_1[-0x29]
+004be9c9             int32_t eax_45 = *(edi_1 + 0x38)
+004be9cc             *(esp_42 - 0xc) = esi_2
+004be9ce             *(esp_42 - 0x10) = eax_45 + 1
+004be9cf             *(esp_42 - 0x14) = "[%d] Read %ls Failed, Errno: %d"
+004be9d4             *(esp_42 - 0x18) = 4
+004be9d6             *(esp_42 - 0x1c) = &data_7e09e8
+004be9db             ecx_10, edx_5, ebp_1 = sub_4d6270()
+004be9e0             esp_39 = esp_42 - 4
+004be9e3             goto label_4bf5ee
+004be9e3         
+004be9ef         if (ebp_1[-0x11] != 0xed26ff3a)
+004be9f1             bool cond:3_1 = *(edi_1 + 0x24) == 0
+004be9fb             *(esp_39 - 4) = esi_2
+004be9fc             void* esp_57
+004be9fc             
+004be9fc             if (cond:3_1)
+004bea05                 *(esp_39 - 8) = u"%s: Bad magic, is probably not a sparse image"
+004bea05                 esp_57 = esp_39 - 8
+004be9fc             else
+004be9fe                 *(esp_39 - 8) = 0x77c96c
+004be9fe                 esp_57 = esp_39 - 8
+004be9fe             
+004bea0a             *(esp_57 - 4) = 0x100
+004bea0f             *(esp_57 - 8) = edi_1 + 0x2c0
+004bea10             sub_697afe()
+004bea1e             *(esp_57 + 4) = 1
+004bea20             *esp_57 = edi_1 + 0x2c0
+004bea21             *(esp_57 - 4) = 0
+004bea23             *(esp_57 - 8) = *(edi_1 + 0x38)
+004bea26             *(esp_57 - 0xc) = *(edi_1 + 0x3c)
+004bea29             sub_4b9410()
+004bea2e             int32_t eax_49 = *(edi_1 + 0x38)
+004bea31             *(esp_57 - 0xc) = esi_2
+004bea33             *(esp_57 - 0x10) = eax_49 + 1
+004bea34             *(esp_57 - 0x14) = "[%d] Bad magic, is probably not a sparse image (%ls)"
+004bea39             *(esp_57 - 0x18) = 4
+004bea3b             *(esp_57 - 0x1c) = &data_7e09e8
+004bea40             ecx_10, edx_5, ebp_1 = sub_4d6270()
+004bea45             esp_39 = esp_57 - 8
+004bea48             goto label_4bf5ee
+004bea48         
+004bea52         if (ebp_1[-0x10].w != 1)
+004bea54             bool cond:4_1 = *(edi_1 + 0x24) == 0
+004bea5e             *(esp_39 - 4) = esi_2
+004bea5f             void* esp_73
+004bea5f             
+004bea5f             if (cond:4_1)
+004bea68                 *(esp_39 - 8) = u"%s: Unknown header major version number"
+004bea68                 esp_73 = esp_39 - 8
+004bea5f             else
+004bea61                 *(esp_39 - 8) = 0x77c9e0
+004bea61                 esp_73 = esp_39 - 8
+004bea61             
+004bea6d             *(esp_73 - 4) = 0x100
+004bea72             *(esp_73 - 8) = edi_1 + 0x2c0
+004bea73             sub_697afe()
+004bea81             *(esp_73 + 4) = 1
+004bea83             *esp_73 = edi_1 + 0x2c0
+004bea84             *(esp_73 - 4) = 0
+004bea86             *(esp_73 - 8) = *(edi_1 + 0x38)
+004bea89             *(esp_73 - 0xc) = *(edi_1 + 0x3c)
+004bea8c             sub_4b9410()
+004bea91             int32_t eax_53 = *(edi_1 + 0x38)
+004bea94             *(esp_73 - 0xc) = esi_2
+004bea96             *(esp_73 - 0x10) = eax_53 + 1
+004bea97             *(esp_73 - 0x14) = "[%d] Unknown header major version number (%ls)"
+004bea9c             *(esp_73 - 0x18) = 4
+004bea9e             *(esp_73 - 0x1c) = &data_7e09e8
+004beaa3             ecx_10, edx_5, ebp_1 = sub_4d6270()
+004beaa8             esp_39 = esp_73 - 8
+004beaab             goto label_4bf5ee
+004beaab         
+004beab0         int32_t eax_39
+004beab0         eax_39.w = ebp_1[-0xf].w
+004beab0         
+004beab8         if (eax_39.w u> 0x1c)
+004beaba             *(esp_39 - 4) = 0
+004beac2             *(esp_39 - 8) = 0
+004beac4             *(esp_39 - 0xc) = zx.d(eax_39.w) - 0x1c
+004beac5             *(esp_39 - 0x10) = ebp_1[-0x1d]
+004beac8             sub_68aea5()
+004beac8         
+004bead0         void** eax_57 = ebp_1[-0x22]
+004bead0         
+004beada         if (eax_57[5] u>= 0x10)
+004beadc             eax_57 = *eax_57
+004beadc         
+004beade         char const* const ecx_11 = "userdata"
+004beae3         int32_t eax_59
+004beae3         
+004beae3         while (true)
+004beae3             char edx_4 = *eax_57
+004beae5             char const temp3_1 = *ecx_11
+004beae5             bool c_1 = edx_4 u< temp3_1
+004beae5             
+004beae7             if (edx_4 == temp3_1)
+004beaeb                 if (edx_4 == 0)
+004beaff                     eax_59 = 0
+004beb01                     break
+004beb01                 
+004beaed                 edx_4 = *(eax_57 + 1)
+004beaf0                 char temp4_1 = ecx_11[1]
+004beaf0                 c_1 = edx_4 u< temp4_1
+004beaf0                 
+004beaf3                 if (edx_4 == temp4_1)
+004beaf5                     eax_57 += 2
+004beaf8                     ecx_11 = &ecx_11[2]
+004beaf8                     
+004beafd                     if (edx_4 != 0)
+004beafd                         continue
+004beafd                     
+004beaff                     eax_59 = 0
+004beb01                     break
+004beb01             
+004beb05             eax_59 = sbb.d(eax_57, eax_57, c_1) | 1
+004beb05             break
+004beb05         
+004beb0a         int32_t eax_60 = ebp_1[-0xc]
+004beb0a         
+004beb12         if (eax_59 == 0 && eax_60 == 3)
+004beb14             *(edi_1 + 0x26) = 1
+004beb14         
+004beb1c         if (*(edi_1 + 0x26) == 0)
+004beb1e             *(esp_39 - 4) = 0
+004beb20             *(esp_39 - 8) = eax_60
+004beb21             *(esp_39 - 0xc) = 2
+004beb23             *(esp_39 - 0x10) = *(edi_1 + 0x38)
+004beb26             *(esp_39 - 0x14) = *(edi_1 + 0x3c)
+004beb29             sub_4b9410()
+004beb29             esp_39 -= 0x10
+004beb2e             eax_60 = ebp_1[-0xc]
+004beb2e         
+004beb31         ebp_1[-0x25] = 0
+004beb3d         int32_t ecx_57
+004beb3d         int32_t edx_34
+004beb3d         
+004beb3d         if (eax_60 != 0)
+004beb49             ebp_1[-0x14] = ebp_1[-0x2b]
+004beb52             ebp_1[-0x17] = ebp_1[-0x2c]
+004beb58             ebp_1[-0x1b] = ebp_1[-0x1f]
+004beb5e             ebp_1[-0x19] = ebp_1[-0x20]
+004beb67             ebp_1[-0x1e] = ebp_1[-0x28]
+004beb67             
+004beb70             while (true)
+004beb70                 *(esp_39 - 4) = ebp_1[-0x1d]
+004beb76                 *(esp_39 - 8) = 1
+004beb78                 *(esp_39 - 0xc) = 0xc
+004beb7a                 *(esp_39 - 0x10) = &ebp_1[-0xa]
+004beb7b                 int32_t eax_67 = _fread()
+004beb7b                 
+004beb86                 if (eax_67 != 1)
+004bf594                     *(esp_39 - 4) = *__errno()
+004bf596                     int32_t eax_208 = *(edi_1 + 0x38)
+004bf599                     *(esp_39 - 8) = esi_2
+004bf59a                     *(esp_39 - 0xc) = 0x1050
+004bf5a0                     *(esp_39 - 0x10) = eax_208 + 1
+004bf5a1                     *(esp_39 - 0x14) = "[%d] [%d] read file %ls failed, errno = %d"
+004bf5a6                     *(esp_39 - 0x18) = 4
+004bf5a8                     *(esp_39 - 0x1c) = &data_7e09e8
+004bf5ad                     ecx_10, edx_5, ebp_1 = sub_4d6270()
+004bf5b5                     goto label_4bf5ee
+004bf5b5                 
+004beb8c                 int16_t ecx_12 = *(ebp_1 - 0x3a)
+004beb8c                 
+004beb94                 if (ecx_12 u> 0xc)
+004beb96                     *(esp_39 - 4) = eax_67
+004beb9d                     *(esp_39 - 8) = 0
+004beb9f                     *(esp_39 - 0xc) = zx.d(ecx_12) - 0xc
+004beba0                     *(esp_39 - 0x10) = ebp_1[-0x1d]
+004beba3                     sub_68aea5()
+004beba8                     ecx_12 = *(ebp_1 - 0x3a)
+004beba8                 
+004bebaf                 eax_67.b = *(edi_1 + 0x504)
+004bebaf                 
+004bebb7                 if (eax_67.b != 0)
+004bf57f                     ecx_57 = ebp_1[-0x17]
+004bf587                     edx_34 = ebp_1[-0x14]
+004bf58a                     ebp_1[-0x18] = 0x4c7
+004bf58d                     goto label_4bf5cf
+004bf58d                 
+004bebbd                 int16_t edx_6 = ebp_1[-0xa].w
+004bebc1                 uint32_t eax_70 = zx.d(edx_6)
+004bebc1                 
+004bebc9                 if (eax_70 == 0xcac1)
+004bf03a                     int32_t eax_132 = ebp_1[-0xe]
+004bf03a                     
+004bf04b                     if (ebp_1[-8] != eax_132 * ebp_1[-9] + zx.d(ecx_12))
+004bf559                         *(esp_39 - 4) = ebp_1[-0x25]
+004bf55f                         int32_t eax_205 = *(edi_1 + 0x38)
+004bf562                         *(esp_39 - 8) = 0x1063
+004bf568                         *(esp_39 - 0xc) = eax_205 + 1
+004bf569                         *(esp_39 - 0x10) = "[%d] [%d] Bogus chunk size for chunk %d, type RAW\n"
+004bf56e                         *(esp_39 - 0x14) = 4
+004bf570                         *(esp_39 - 0x18) = &data_7e09e8
+004bf575                         ecx_10, edx_5, ebp_1 = sub_4d6270()
+004bf57d                         goto label_4bf5ee
+004bf57d                     
+004bf051                     int32_t eax_133
+004bf051                     int32_t edx_27
+004bf051                     edx_27:eax_133 = mulu.dp.d(eax_132, ebp_1[-9])
+004bf054                     *(esp_39 - 4) = 0
+004bf056                     *(esp_39 - 8) = ebp_1[-0x21]
+004bf05e                     ebp_1[-0x1a] = eax_133
+004bf061                     *(esp_39 - 0xc) = edx_27
+004bf062                     *(esp_39 - 0x10) = eax_133
+004bf063                     ebp_1[-0x16] = edx_27
+004bf066                     int32_t eax_134
+004bf066                     int32_t edx_28
+004bf066                     eax_134, edx_28 = __allrem()
+004bf066                     
+004bf06d                     if ((eax_134 | edx_28) != 0)
+004bf530                         *(esp_39 - 4) = ebp_1[-0x16]
+004bf533                         int32_t eax_203 = *(edi_1 + 0x38)
+004bf536                         *(esp_39 - 8) = ebp_1[-0x1a]
+004bf53a                         *(esp_39 - 0xc) = 0x106b
+004bf53f                         *(esp_39 - 0x10) = eax_203 + 1
+004bf540                         *(esp_39 - 0x14) = "[%d] [%d] File chunk size %d is not a sector-multiple\n"
+004bf545                         *(esp_39 - 0x18) = 4
+004bf547                         *(esp_39 - 0x1c) = &data_7e09e8
+004bf54c                         ecx_10, edx_5, ebp_1 = sub_4d6270()
+004bf554                         goto label_4bf5ee
+004bf554                     
+004bf073                     int32_t ecx_47 = ebp_1[-0x17]
+004bf078                     int32_t edx_29 = ebp_1[-0x14]
+004bf07d                     int32_t eax_138 = ebp_1[-0x1a]
+004bf080                     int32_t eax_143
+004bf080                     int32_t ecx_51
+004bf080                     void* esp_316
+004bf080                     
+004bf080                     if ((ecx_47 | edx_29) == 0)
+004bf086                         int32_t ecx_48 = ebp_1[-0x16]
+004bf086                         
+004bf094                         if (ecx_48 s< 0 || (ecx_48 s<= 0 && eax_138 u<= 0x4000000))
+004bf0f3                             *(esp_39 - 4) = ecx_48
+004bf0f4                             *(esp_39 - 8) = eax_138
+004bf0f5                             *(esp_39 - 0xc) = 0
+004bf0f7                             *(esp_39 - 0x10) = 0
+004bf0f9                             *(esp_39 - 0x14) = ebp_1[-0x1c]
+004bf0fc                             *(esp_39 - 0x18) = ebp_1[-0x1d]
+004bf0ff                             int32_t eax_144
+004bf0ff                             eax_144, ecx_10, edx_5 = sub_4be230()
+004bf104                             ebp_1[-0x18] = eax_144
+004bf104                             
+004bf109                             if (eax_144 != 0)
+004bf109                                 goto label_4bf5ee
+004bf109                             
+004bf10f                             eax_143 = ebp_1[-0x1a]
+004bf112                             ecx_51 = ebp_1[-0x16]
+004bf109                             goto label_4bf238
+004bf109                         
+004bf096                         *(esp_39 - 4) = 0
+004bf098                         *(esp_39 - 8) = ebp_1[-0x21]
+004bf09e                         *(esp_39 - 0xc) = ecx_48
+004bf09f                         *(esp_39 - 0x10) = eax_138
+004bf0a0                         int32_t eax_139
+004bf0a0                         int32_t edx_30
+004bf0a0                         eax_139, edx_30 = __alldiv()
+004bf0a7                         ebp_1[-0x1f] = eax_139
+004bf0aa                         *(esp_39 - 4) = edx_30
+004bf0ab                         *(esp_39 - 8) = eax_139
+004bf0ac                         *(esp_39 - 0xc) = ebp_1[-0x12]
+004bf0af                         ebp_1[-0x27] = edx_30
+004bf0b7                         *(esp_39 - 0x10) = ebp_1[-0x13]
+004bf0ba                         *(esp_39 - 0x14) = ebp_1[-0x23]
+004bf0c0                         *(esp_39 - 0x18) = ebp_1[-0x22]
+004bf0c6                         *(esp_39 - 0x1c) = ebp_1[-0x1d]
+004bf0c9                         int32_t eax_140 = sub_4be310(edi_1)
+004bf0ce                         ebp_1[-0x18] = eax_140
+004bf0ce                         
+004bf0d3                         if (eax_140 == 0)
+004bf0d9                             int32_t eax_141 = ebp_1[-0x1f]
+004bf0dc                             int32_t temp20_1 = ebp_1[-0x13]
+004bf0dc                             ebp_1[-0x13] += eax_141
+004bf0e5                             ebp_1[-0x12] =
+004bf0e5                                 adc.d(ebp_1[-0x12], ebp_1[-0x27], temp20_1 + eax_141 u< temp20_1)
+004bf0e8                             eax_143 = ebp_1[-0x17]
+004bf0eb                             ecx_51 = ebp_1[-0x14]
+004bf0ee                             goto label_4bf23e
+004bf0ee                         
+004bf4b9                         *(esp_39 - 4) = eax_140
+004bf4ba                         *(esp_39 - 8) = 0x1079
+004bf4ba                         esp_316 = esp_39 - 8
+004bf4c3                     label_4bf4c3:
+004bf4c3                         *(esp_316 - 4) = *(edi_1 + 0x38) + 1
+004bf4c4                         *(esp_316 - 8) = "[%d] [%d] Failed to write data to EMMC (%d)\n"
+004bf4c9                         *(esp_316 - 0xc) = 4
+004bf4cb                         *(esp_316 - 0x10) = &data_7e09e8
+004bf4d0                         ecx_10, edx_5, ebp_1 = sub_4d6270()
+004bf4d5                         esp_39 = esp_316 + 8
+004bf4d8                         goto label_4bf5ee
+004bf4d8                     
+004bf11a                     ebp_1[-0x1e] = ecx_47
+004bf11f                     int32_t temp8_1 = ebp_1[-0x1e]
+004bf11f                     ebp_1[-0x1e] += eax_138
+004bf11f                     bool c_18 = temp8_1 + eax_138 u< temp8_1
+004bf122                     int32_t temp10_1 = ebp_1[-0x16]
+004bf122                     bool s_2 = adc.d(edx_29, temp10_1, c_18) s< 0
+004bf122                     bool o_2 = unimplemented  {adc esi, dword [ebp-0x58]}
+004bf125                     ebp_1[-0x1f] = adc.d(edx_29, temp10_1, c_18)
+004bf128                     esi_2 = ebp_1[-0x2e]
+004bf128                     
+004bf13d                     if (s_2 || ((adc.d(edx_29, temp10_1, c_18) == 0 || s_2 != o_2)
+004bf13d                             && ebp_1[-0x1e] u<= 0x8000000))
+004bf216                         *(esp_39 - 4) = ebp_1[-0x16]
+004bf219                         *(esp_39 - 8) = eax_138
+004bf21a                         *(esp_39 - 0xc) = edx_29
+004bf21b                         *(esp_39 - 0x10) = ecx_47
+004bf21c                         *(esp_39 - 0x14) = ebp_1[-0x1c]
+004bf21f                         *(esp_39 - 0x18) = ebp_1[-0x1d]
+004bf222                         int32_t eax_155 = sub_4be230()
+004bf227                         ebp_1[-0x18] = eax_155
+004bf227                         
+004bf22c                         if (eax_155 == 0)
+004bf232                             eax_143 = ebp_1[-0x1e]
+004bf235                             ecx_51 = ebp_1[-0x1f]
+004bf22c                             goto label_4bf238
+004bf22c                         
+004bf50c                         *(esp_39 - 4) = eax_155
+004bf50d                         int32_t eax_201 = *(edi_1 + 0x38)
+004bf510                         *(esp_39 - 8) = 0x10a9
+004bf516                         *(esp_39 - 0xc) = eax_201 + 1
+004bf517                         *(esp_39 - 0x10) = "[%d] [%d] Failed to write data to buffer (%d)\n"
+004bf51c                         *(esp_39 - 0x14) = 4
+004bf51e                         *(esp_39 - 0x18) = &data_7e09e8
+004bf523                         ecx_10, edx_5, ebp_1 = sub_4d6270()
+004bf52b                         goto label_4bf5ee
+004bf52b                     
+004bf149                     if ((ebp_1[-0x19] | ebp_1[-0x1b]) != 0)
+004bf14b                         int32_t temp18_1 = ecx_47
+004bf14b                         ecx_47 -= ebp_1[-0x19]
+004bf14b                         bool c_19 = temp18_1 u< ebp_1[-0x19]
+004bf14e                         ebp_1[-0x17] = ecx_47
+004bf154                         ebp_1[-0x14] = sbb.d(edx_29, ebp_1[-0x1b], c_19)
+004bf154                     
+004bf157                     *(esp_39 - 4) = ebp_1[-0x12]
+004bf15a                     *(esp_39 - 8) = ebp_1[-0x13]
+004bf15d                     *(esp_39 - 0xc) = ecx_47
+004bf15e                     *(esp_39 - 0x10) = ebp_1[-0x1c]
+004bf163                     *(esp_39 - 0x14) = ebp_1[-0x23]
+004bf169                     *(esp_39 - 0x18) = ebp_1[-0x22]
+004bf16f                     int32_t eax_147 = sub_4bdf40(edi_1)
+004bf176                     ebp_1[-0x18] = eax_147
+004bf176                     
+004bf17b                     if (eax_147 != 0)
+004bf4e5                         void* eax_198 = ebp_1[-0x15]
+004bf4e8                         *(esp_39 - 4) = eax_147
+004bf4e9                         *(esp_39 - 8) = 0x1095
+004bf4f2                         *(esp_39 - 0xc) = *(eax_198 + 0x38) + 1
+004bf4f3                         *(esp_39 - 0x10) = "[%d] [%d] Failed to download program files(%d)\n"
+004bf4f8                         *(esp_39 - 0x14) = 4
+004bf4fa                         *(esp_39 - 0x18) = &data_7e09e8
+004bf4ff                         ebp_1 = sub_4d6270()
+004bf507                         break
+004bf507                     
+004bf181                     int32_t ecx_53 = ebp_1[-0x19]
+004bf184                     int32_t ecx_54 = ecx_53 + ebp_1[-0x17]
+004bf18a                     int32_t eax_149 =
+004bf18a                         adc.d(ebp_1[-0x1b], ebp_1[-0x14], ecx_53 + ebp_1[-0x17] u< ecx_53)
+004bf18d                     *(esp_39 - 4) = eax_147
+004bf18e                     *(esp_39 - 8) = ebp_1[-0x21]
+004bf194                     *(esp_39 - 0xc) = eax_149
+004bf195                     *(esp_39 - 0x10) = ecx_54
+004bf196                     int32_t eax_150
+004bf196                     int32_t edx_32
+004bf196                     eax_150, edx_32 = __alldiv()
+004bf19b                     int32_t edi_19 = ebp_1[-0x13]
+004bf1a1                     *(esp_39 - 4) = 0
+004bf1a3                     *(esp_39 - 8) = ebp_1[-0x21]
+004bf1a9                     int32_t edi_20 = edi_19 + eax_150
+004bf1ab                     *(ebp_1 - 0xb0) = 0
+004bf1b3                     *(esp_39 - 0xc) = ebp_1[-0x16]
+004bf1b6                     ebp_1[-0x12] = adc.d(ebp_1[-0x12], edx_32, edi_19 + eax_150 u< edi_19)
+004bf1b9                     *(esp_39 - 0x10) = ebp_1[-0x1a]
+004bf1bc                     ebp_1[-0x13] = edi_20
+004bf1bf                     int32_t eax_151
+004bf1bf                     int32_t edx_33
+004bf1bf                     eax_151, edx_33 = __alldiv()
+004bf1c6                     ebp_1[-0x1f] = eax_151
+004bf1c9                     *(esp_39 - 4) = edx_33
+004bf1ca                     *(esp_39 - 8) = eax_151
+004bf1cb                     *(esp_39 - 0xc) = ebp_1[-0x12]
+004bf1ce                     ebp_1[-0x27] = edx_33
+004bf1d4                     *(esp_39 - 0x10) = edi_20
+004bf1d5                     *(esp_39 - 0x14) = ebp_1[-0x23]
+004bf1db                     edi_1 = ebp_1[-0x15]
+004bf1e0                     void* esp_210
+004bf1e0                     *(esp_210 - 8) = ebp_1[-0x22]
+004bf1e6                     *(esp_210 - 0xc) = ebp_1[-0x1d]
+004bf1e9                     int32_t eax_152 = sub_4be310(edi_1)
+004bf1e9                     esp_39 = esp_210 + 0x10
+004bf1ee                     ebp_1[-0x18] = eax_152
+004bf1ee                     
+004bf1f3                     if (eax_152 != 0)
+004bf4dd                         *(esp_39 - 4) = eax_152
+004bf4de                         *(esp_39 - 8) = 0x109f
+004bf4de                         esp_316 = esp_39 - 8
+004bf4e3                         goto label_4bf4c3
+004bf4e3                     
+004bf1f9                     int32_t eax_153 = ebp_1[-0x1f]
+004bf1fc                     int32_t temp27_1 = ebp_1[-0x13]
+004bf1fc                     ebp_1[-0x13] += eax_153
+004bf205                     ebp_1[-0x12] = adc.d(ebp_1[-0x12], ebp_1[-0x27], temp27_1 + eax_153 u< temp27_1)
+004bf208                     ecx_51 = ebp_1[-0x2b]
+004bf20e                     eax_143 = ebp_1[-0x2c]
+004bf238                 label_4bf238:
+004bf238                     ebp_1[-0x17] = eax_143
+004bf23b                     ebp_1[-0x14] = ecx_51
+004bf23e                 label_4bf23e:
+004bf23e                     ebp_1[-0x1e] = eax_143
+004bf247                     int32_t eax_157 = ebp_1[-0x24] + ebp_1[-9]
+004bf24a                     ebp_1[-0x27] = ecx_51
+004bf250                     ebp_1[-0x24] = eax_157
+004bf259                 label_4bf259:
+004bf259                     *(ebp_1 - 0x80) = 0
+004bf261                     ebp_1[-0x1b] = ebp_1[-0x1f]
+004bf267                     ebp_1[-0x19] = ebp_1[-0x20]
+004bebc9                 else
+004bebd0                     if (eax_70 == 0xcac2)
+004bedbe                         if (ebp_1[-8] != zx.d(ecx_12) + 4)
+004bf480                             *(esp_39 - 4) = ebp_1[-0x25]
+004bf486                             *(esp_39 - 8) = "Bogus chunk size for chunk %d, type Fill \n"
+004bf48b                             sub_6897e9()
+004bf490                             *(esp_39 - 0xc) = ebp_1[-0x25]
+004bf496                             int32_t eax_194 = *(edi_1 + 0x38)
+004bf499                             *(esp_39 - 0x10) = 0x10f4
+004bf49f                             *(esp_39 - 0x14) = eax_194 + 1
+004bf4a0                             *(esp_39 - 0x18) =
+004bf4a0                                 "[%d] [%d] Bogus chunk size for chunk %d, type Fill\n"
+004bf4a5                             *(esp_39 - 0x1c) = 4
+004bf4a7                             *(esp_39 - 0x20) = &data_7e09e8
+004bf4ac                             ecx_10, edx_5, ebp_1 = sub_4d6270()
+004bf4b4                             goto label_4bf5ee
+004bf4b4                         
+004bedc4                         *(esp_39 - 4) = ebp_1[-0x1d]
+004bedcd                         *(esp_39 - 8) = 1
+004bedcf                         *(esp_39 - 0xc) = 4
+004bedd1                         *(esp_39 - 0x10) = &ebp_1[-0x2d]
+004bedd1                         
+004beddd                         if (_fread() != 1)
+004bf445                             *(esp_39 - 4) = *__errno()
+004bf447                             *(esp_39 - 8) = esi_2
+004bf448                             *(esp_39 - 0xc) = "read file %s failed, errno=%d\n"
+004bf44d                             sub_6897e9()
+004bf45a                             *(esp_39 - 4) = *__errno()
+004bf45c                             int32_t eax_192 = *(edi_1 + 0x38)
+004bf45f                             *(esp_39 - 8) = esi_2
+004bf460                             *(esp_39 - 0xc) = 0x10fb
+004bf466                             *(esp_39 - 0x10) = eax_192 + 1
+004bf467                             *(esp_39 - 0x14) = "[%d] [%d] read file %ls failed, errno = %d\n"
+004bf46c                             *(esp_39 - 0x18) = 4
+004bf46e                             *(esp_39 - 0x1c) = &data_7e09e8
+004bf473                             ecx_10, edx_5, ebp_1 = sub_4d6270()
+004bf478                             esp_39 = esp_39
+004bf47b                             goto label_4bf5ee
+004bf47b                         
+004bede6                         int32_t eax_109
+004bede6                         int32_t edx_15
+004bede6                         edx_15:eax_109 = mulu.dp.d(ebp_1[-0xe], ebp_1[-9])
+004bede9                         int32_t edi_8 = eax_109
+004bedeb                         int32_t ecx_32 = edx_15
+004beded                         int32_t edx_16 = ebp_1[-0x17]
+004bedf2                         bool cond:8_1 = (edx_16 | ebp_1[-0x14]) != 0
+004bedf5                         ebp_1[-0x16] = edi_8
+004bedf8                         ebp_1[-0x1a] = ecx_32
+004bedfb                         int32_t eax_116
+004bedfb                         int32_t ecx_36
+004bedfb                         
+004bedfb                         if (cond:8_1)
+004beeb3                             bool c_11 = edx_16 + edi_8 u< edx_16
+004beeb5                             ebp_1[-0x29] = edx_16 + edi_8
+004beebb                             int32_t eax_119 = ebp_1[-0x14]
+004beebe                             ebp_1[-0x1e] = eax_119
+004beec1                             int32_t temp13_1 = ebp_1[-0x1e]
+004beec1                             ebp_1[-0x1e] = adc.d(temp13_1, ecx_32, c_11)
+004beec1                             bool s_1 = adc.d(temp13_1, ecx_32, c_11) s< 0
+004beec1                             bool o_1 = unimplemented  {adc dword [ebp-0x78], ecx}
+004beec1                             
+004beed6                             if (s_1 || ((adc.d(temp13_1, ecx_32, c_11) == 0 || s_1 != o_1)
+004beed6                                     && ebp_1[-0x29] u<= 0x8000000))
+004befee                                 *(esp_39 - 4) = ecx_32
+004befef                                 *(esp_39 - 8) = edi_8
+004beff0                                 *(esp_39 - 0xc) = eax_119
+004beff1                                 *(esp_39 - 0x10) = edx_16
+004beff2                                 *(esp_39 - 0x14) = ebp_1[-0x1c]
+004beff5                                 *(esp_39 - 0x18) = ebp_1[-0x2d]
+004beffb                                 sub_4be1e0()
+004beffb                                 esp_39 = esp_39
+004bf000                                 ebp_1[-0x18] = 0
+004bf00b                                 eax_116 = ebp_1[-0x29]
+004bf011                                 ecx_36 = ebp_1[-0x1e]
+004bf014                                 ebp_1[-0x17] = eax_116
+004beed6                             else
+004beedf                                 int32_t ecx_37 = ebp_1[-0x1b]
+004beedf                                 
+004beee4                                 if ((ebp_1[-0x19] | ecx_37) != 0)
+004beee6                                     int32_t temp24_1 = edx_16
+004beee6                                     edx_16 -= ebp_1[-0x19]
+004beee6                                     bool c_12 = temp24_1 u< ebp_1[-0x19]
+004beee9                                     ebp_1[-0x17] = edx_16
+004beeec                                     ebp_1[-0x14] = sbb.d(ebp_1[-0x14], ecx_37, c_12)
+004beeec                                 
+004beeef                                 *(esp_39 - 4) = ebp_1[-0x12]
+004beef2                                 int32_t ecx_38 = ebp_1[-0x15]
+004beef5                                 *(esp_39 - 8) = ebp_1[-0x13]
+004beef8                                 *(esp_39 - 0xc) = edx_16
+004beef9                                 *(esp_39 - 0x10) = ebp_1[-0x1c]
+004beefc                                 *(esp_39 - 0x14) = ebp_1[-0x23]
+004bef02                                 *(esp_39 - 0x18) = ebp_1[-0x22]
+004bef08                                 int32_t eax_122 = sub_4bdf40(ecx_38)
+004bef0d                                 ebp_1[-0x18] = eax_122
+004bef0d                                 
+004bef12                                 if (eax_122 != 0)
+004bf3f2                                     *(esp_39 - 4) = eax_122
+004bf3f3                                     void* eax_184 = ebp_1[-0x15]
+004bf3f6                                     *(esp_39 - 8) = 0x1132
+004bf3ff                                     *(esp_39 - 0xc) = *(eax_184 + 0x38) + 1
+004bf400                                     *(esp_39 - 0x10) =
+004bf400                                         "[%d] [%d] failed to download program files (%d)\n"
+004bf405                                     *(esp_39 - 0x14) = 4
+004bf407                                     *(esp_39 - 0x18) = &data_7e09e8
+004bf40c                                     ebp_1 = sub_4d6270()
+004bf411                                     esp_39 = esp_39
+004bf414                                     break
+004bf414                                 
+004bef18                                 int32_t ecx_39 = ebp_1[-0x19]
+004bef1b                                 int32_t ecx_40 = ecx_39 + ebp_1[-0x17]
+004bef21                                 int32_t eax_124 = adc.d(ebp_1[-0x1b], ebp_1[-0x14], 
+004bef21                                     ecx_39 + ebp_1[-0x17] u< ecx_39)
+004bef24                                 *(esp_39 - 4) = 0
+004bef26                                 *(esp_39 - 8) = ebp_1[-0x21]
+004bef2c                                 *(esp_39 - 0xc) = eax_124
+004bef2d                                 *(esp_39 - 0x10) = ecx_40
+004bef2e                                 int32_t eax_125
+004bef2e                                 int32_t edx_20
+004bef2e                                 eax_125, edx_20 = __alldiv()
+004bef33                                 int32_t temp30_1 = ebp_1[-0x13]
+004bef33                                 ebp_1[-0x13] += eax_125
+004bef36                                 int32_t eax_126 = ebp_1[-0x1a]
+004bef39                                 ebp_1[-0x12] =
+004bef39                                     adc.d(ebp_1[-0x12], edx_20, temp30_1 + eax_125 u< temp30_1)
+004bef39                                 
+004bef4c                                 if (eax_126 s>= 0 && (eax_126 s> 0 || edi_8 u> 0x4000000))
+004bef50                                     while (true)
+004bef50                                         *(esp_39 - 4) = ebp_1[-0x12]
+004bef53                                         int32_t edx_21 = ebp_1[-0x1c]
+004bef5b                                         *(esp_39 - 8) = ebp_1[-0x13]
+004bef5e                                         int32_t eax_127 = ebp_1[-0x2d]
+004bef66                                         *(esp_39 - 0xc) = 0x4000000
+004bef6b                                         *(esp_39 - 0x10) = edx_21
+004bef6c                                         *(esp_39 - 0x14) = ebp_1[-0x23]
+004bef72                                         int32_t ecx_41
+004bef72                                         int32_t edi_15
+004bef72                                         edi_15, ecx_41 = __memfill_u32(edx_21, eax_127, 0x1000000)
+004bef74                                         *(esp_39 - 0x18) = ebp_1[-0x22]
+004bef7d                                         int32_t eax_128 = sub_4bdf40(ebp_1[-0x15])
+004bef84                                         ebp_1[-0x18] = eax_128
+004bef84                                         
+004bef89                                         if (eax_128 != 0)
+004bf3a4                                             void* eax_178 = ebp_1[-0x15]
+004bf3a7                                             *(esp_39 - 4) = eax_128
+004bf3a8                                             *(esp_39 - 8) = 0x1146
+004bf3b1                                             *(esp_39 - 0xc) = *(eax_178 + 0x38) + 1
+004bf3b2                                             *(esp_39 - 0x10) =
+004bf3b2                                                 "[%d] [%d] failed to download program files (%d)\n"
+004bf3b7                                             *(esp_39 - 0x14) = 4
+004bf3b9                                             *(esp_39 - 0x18) = &data_7e09e8
+004bf3be                                             ebp_1 = sub_4d6270()
+004bf3c3                                             esp_39 = esp_39
+004bf3c6                                             break
+004bf3c6                                         
+004bef96                                         uint32_t temp0_2 = divu.dp.d(0:0x4000000, ebp_1[-0x21])
+004bef9c                                         int32_t temp41_1 = ebp_1[-0x13]
+004bef9c                                         ebp_1[-0x13] += temp0_2
+004bef9f                                         int32_t eax_131 = ebp_1[-0x1a]
+004befa2                                         ebp_1[-0x12] = adc.d(ebp_1[-0x12], eax_128, 
+004befa2                                             temp41_1 + temp0_2 u< temp41_1)
+004befa5                                         int32_t edi_17 = ebp_1[-0x16]
+004befa8                                         edi_8 = edi_17 - 0x4000000
+004befae                                         ebp_1[-0x16] = edi_8
+004befb1                                         eax_126 = adc.d(eax_131, 0xffffffff, edi_17 u>= 0x4000000)
+004befb4                                         ebp_1[-0x1a] = eax_126
+004befb4                                         
+004befb9                                         if (eax_126 s<= 0)
+004befbb                                             if (eax_126 s< 0)
+004befbb                                                 goto label_4befc5
+004befbb                                             
+004befc3                                             if (edi_8 u<= 0x4000000)
+004befc3                                                 goto label_4befc5
+004befc3                                     
+004bef89                                     break
+004bef89                                 
+004befc5                             label_4befc5:
+004befc5                                 *(esp_39 - 4) = eax_126
+004befc6                                 *(esp_39 - 8) = edi_8
+004befc7                                 *(esp_39 - 0xc) = 0
+004befc9                                 *(esp_39 - 0x10) = 0
+004befcb                                 *(esp_39 - 0x14) = ebp_1[-0x1c]
+004befce                                 *(esp_39 - 0x18) = ebp_1[-0x2d]
+004befd4                                 sub_4be1e0()
+004befd4                                 esp_39 = esp_39
+004befd9                                 ebp_1[-0x18] = 0
+004befe4                                 ecx_36 = ebp_1[-0x1a]
+004befe7                                 eax_116 = edi_8
+004befe9                                 ebp_1[-0x17] = edi_8
+004bedfb                         else
+004bee11                             if (ecx_32 s>= 0 && (ecx_32 s> 0 || edi_8 u> 0x4000000))
+004bee13                                 while (true)
+004bee13                                     *(esp_39 - 4) = ebp_1[-0x12]
+004bee16                                     int32_t edx_17 = ebp_1[-0x1c]
+004bee1e                                     *(esp_39 - 8) = ebp_1[-0x13]
+004bee21                                     int32_t eax_112 = ebp_1[-0x2d]
+004bee29                                     *(esp_39 - 0xc) = 0x4000000
+004bee2e                                     *(esp_39 - 0x10) = edx_17
+004bee2f                                     *(esp_39 - 0x14) = ebp_1[-0x23]
+004bee35                                     int32_t ecx_33
+004bee35                                     int32_t edi_10
+004bee35                                     edi_10, ecx_33 = __memfill_u32(edx_17, eax_112, 0x1000000)
+004bee37                                     *(esp_39 - 0x18) = ebp_1[-0x22]
+004bee40                                     int32_t eax_113 = sub_4bdf40(ebp_1[-0x15])
+004bee47                                     ebp_1[-0x18] = eax_113
+004bee47                                     
+004bee4c                                     if (eax_113 != 0)
+004bf356                                         void* eax_172 = ebp_1[-0x15]
+004bf359                                         *(esp_39 - 4) = eax_113
+004bf35a                                         *(esp_39 - 8) = 0x1111
+004bf363                                         *(esp_39 - 0xc) = *(eax_172 + 0x38) + 1
+004bf364                                         *(esp_39 - 0x10) =
+004bf364                                             "[%d] [%d] failed to download program files (%d)\n"
+004bf369                                         *(esp_39 - 0x14) = 4
+004bf36b                                         *(esp_39 - 0x18) = &data_7e09e8
+004bf370                                         ebp_1 = sub_4d6270()
+004bf375                                         esp_39 = esp_39
+004bf378                                         break
+004bf378                                     
+004bee54                                     int32_t ecx_35 = ebp_1[-0x1a]
+004bee5c                                     uint32_t temp0_1 = divu.dp.d(0:0x4000000, ebp_1[-0x21])
+004bee62                                     int32_t temp33_1 = ebp_1[-0x13]
+004bee62                                     ebp_1[-0x13] += temp0_1
+004bee65                                     ebp_1[-0x12] =
+004bee65                                         adc.d(ebp_1[-0x12], eax_113, temp33_1 + temp0_1 u< temp33_1)
+004bee68                                     int32_t edi_12 = ebp_1[-0x16]
+004bee6b                                     edi_8 = edi_12 - 0x4000000
+004bee71                                     ebp_1[-0x16] = edi_8
+004bee74                                     ecx_32 = adc.d(ecx_35, 0xffffffff, edi_12 u>= 0x4000000)
+004bee77                                     ebp_1[-0x1a] = ecx_32
+004bee77                                     
+004bee7c                                     if (ecx_32 s<= 0)
+004bee7e                                         if (ecx_32 s< 0)
+004bee7e                                             goto label_4bee88
+004bee7e                                         
+004bee86                                         if (edi_8 u<= 0x4000000)
+004bee86                                             goto label_4bee88
+004bee86                                 
+004bee4c                                 break
+004bee4c                             
+004bee88                         label_4bee88:
+004bee88                             *(esp_39 - 4) = ecx_32
+004bee89                             *(esp_39 - 8) = edi_8
+004bee8a                             *(esp_39 - 0xc) = 0
+004bee8c                             *(esp_39 - 0x10) = 0
+004bee8e                             *(esp_39 - 0x14) = ebp_1[-0x1c]
+004bee91                             *(esp_39 - 0x18) = ebp_1[-0x2d]
+004bee97                             sub_4be1e0()
+004bee97                             esp_39 = esp_39
+004bee9c                             ebp_1[-0x18] = 0
+004beea7                             ecx_36 = ebp_1[-0x1a]
+004beeaa                             eax_116 = edi_8
+004bf014                             ebp_1[-0x17] = eax_116
+004bf014                         
+004bf017                         edi_1 = ebp_1[-0x15]
+004bf01a                         ebp_1[-0x14] = ecx_36
+004bf01d                         ebp_1[-0x27] = ecx_36
+004bf029                         int32_t ecx_44 = ebp_1[-0x24] + ebp_1[-9]
+004bf02c                         ebp_1[-0x1e] = eax_116
+004bf02f                         ebp_1[-0x24] = ecx_44
+004bedbe                         goto label_4bf259
+004bedbe                     
+004bebd7                     if (eax_70 != 0xcac3)
+004bf343                         *(esp_39 - 4) = zx.d(edx_6)
+004bf344                         *(esp_39 - 8) = "Unkown chunk type 0x%x \n"
+004bf349                         ecx_10, edx_5 = sub_6897e9()
+004bf351                         goto label_4bf5ee
+004bf351                     
+004bebe3                     if (ebp_1[-8] != zx.d(ecx_12))
+004bf309                         *(esp_39 - 4) = ebp_1[-0x25]
+004bf30f                         *(esp_39 - 8) = "Bogus chunk size for chunk %d, type Dont Care \n"
+004bf314                         sub_6897e9()
+004bf31c                         *(esp_39 - 0xc) = ebp_1[-0x18]
+004bf31d                         int32_t eax_169 = *(edi_1 + 0x38)
+004bf320                         *(esp_39 - 0x10) = 0x10bb
+004bf326                         *(esp_39 - 0x14) = eax_169 + 1
+004bf327                         *(esp_39 - 0x18) =
+004bf327                             "[%d] [%d] Bogus chunk size for chunk %d, type Dont Care \n"
+004bf32c                         *(esp_39 - 0x1c) = 4
+004bf32e                         *(esp_39 - 0x20) = &data_7e09e8
+004bf333                         ecx_10, edx_5, ebp_1 = sub_4d6270()
+004bf33b                         goto label_4bf5ee
+004bf33b                     
+004bebec                     int32_t eax_76
+004bebec                     int32_t edx_7
+004bebec                     edx_7:eax_76 = mulu.dp.d(ebp_1[-0xe], ebp_1[-9])
+004bebef                     *(esp_39 - 4) = entry_ebx
+004bebf0                     *(esp_39 - 8) = 0
+004bebf2                     *(esp_39 - 0xc) = ebp_1[-0x21]
+004bebfa                     ebp_1[-0x27] = eax_76
+004bec00                     *(esp_39 - 0x10) = edx_7
+004bec01                     *(esp_39 - 0x14) = eax_76
+004bec02                     ebp_1[-0x1f] = edx_7
+004bec05                     int32_t eax_77
+004bec05                     int32_t ecx_14
+004bec05                     int32_t edx_8
+004bec05                     eax_77, ecx_14, edx_8 = __alldvrm()
+004bec0a                     bool cond:9_1 = (ecx_14 | entry_ebx) != 0
+004bec0c                     entry_ebx = *(esp_39 - 4)
+004bec0d                     ebp_1[-0x16] = eax_77
+004bec10                     ebp_1[-0x1a] = edx_8
+004bec10                     
+004bec13                     if (cond:9_1)
+004bf2cd                         *(esp_39 - 4) = ebp_1[-0x1f]
+004bf2d0                         *(esp_39 - 8) = ebp_1[-0x27]
+004bf2d6                         *(esp_39 - 0xc) = "Number of bytes skipped %d is not a sector-multiple \n"
+004bf2db                         sub_6897e9()
+004bf2e6                         int32_t eax_166 = *(ebp_1[-0x15] + 0x38)
+004bf2e9                         *(esp_39 - 4) = 0x10e7
+004bf2ef                         *(esp_39 - 8) = eax_166 + 1
+004bf2f0                         *(esp_39 - 0xc) =
+004bf2f0                             "[%d] [%d] Number of bytes skipped %d is not a sector-multiple\n"
+004bf2f5                         *(esp_39 - 0x10) = 4
+004bf2f7                         *(esp_39 - 0x14) = &data_7e09e8
+004bf2fc                         ecx_10, edx_5, ebp_1 = sub_4d6270()
+004bf304                         goto label_4bf5ee
+004bf304                     
+004bec19                     int32_t edi_5 = ebp_1[-0x17]
+004bec19                     
+004bec21                     if ((edi_5 | ebp_1[-0x14]) != 0)
+004bec5a                         *(esp_39 - 4) = edx_8
+004bec5b                         *(esp_39 - 8) = ebp_1[-0x16]
+004bec5e                         *(esp_39 - 0xc) = 0
+004bec60                         *(esp_39 - 0x10) = ebp_1[-0x21]
+004bec66                         int32_t eax_82
+004bec66                         int32_t edx_10
+004bec66                         eax_82, edx_10 = __allmul()
+004bec6d                         ebp_1[-0x27] = eax_82
+004bec73                         int32_t eax_83 = eax_82 + edi_5
+004bec75                         ebp_1[-0x1f] = edx_10
+004bec78                         int32_t ecx_20 = ebp_1[-0x14]
+004bec7b                         int32_t edx_11 = adc.d(edx_10, ecx_20, eax_82 + edi_5 u< eax_82)
+004bec7d                         ebp_1[-0x29] = eax_83
+004bec83                         ebp_1[-0x2b] = edx_11
+004bec94                         int32_t temp26_1
+004bec94                         
+004bec94                         if (edx_11 s<= 0 && (edx_11 s< 0 || eax_83 u<= 0x8000000))
+004bec96                             temp26_1 = ebp_1[-0x1b]
+004bec96                         
+004bec9a                         int32_t edx_12
+004bec9a                         
+004bec9a                         if (edx_11 s> 0 || (edx_11 s>= 0 && eax_83 u> 0x8000000) || temp26_1 s> 0)
+004becfc                             edx_12 = ebp_1[-0x19]
+004bed04                         label_4bed04:
+004bed04                             
+004bed04                             if ((edx_12 | ebp_1[-0x1b]) != 0)
+004bed08                                 ebp_1[-0x17] = edi_5 - edx_12
+004bed0e                                 ebp_1[-0x14] = sbb.d(ecx_20, ebp_1[-0x1b], edi_5 u< edx_12)
+004bed0e                             
+004bed11                             *(esp_39 - 4) = ebp_1[-0x12]
+004bed14                             int32_t ecx_24 = ebp_1[-0x15]
+004bed17                             *(esp_39 - 8) = ebp_1[-0x13]
+004bed1a                             *(esp_39 - 0xc) = ebp_1[-0x1e]
+004bed1d                             *(esp_39 - 0x10) = ebp_1[-0x1c]
+004bed20                             *(esp_39 - 0x14) = ebp_1[-0x23]
+004bed26                             *(esp_39 - 0x18) = ebp_1[-0x22]
+004bed2c                             int32_t eax_94 = sub_4bdf40(ecx_24)
+004bed33                             ebp_1[-0x18] = eax_94
+004bed33                             
+004bed38                             if (eax_94 != 0)
+004bf2a6                                 void* eax_162 = ebp_1[-0x15]
+004bf2a9                                 *(esp_39 - 4) = eax_94
+004bf2aa                                 *(esp_39 - 8) = 0x10d3
+004bf2b3                                 *(esp_39 - 0xc) = *(eax_162 + 0x38) + 1
+004bf2b4                                 *(esp_39 - 0x10) =
+004bf2b4                                     "[%d] [%d] Failed to download program file (%d)\n"
+004bf2b9                                 *(esp_39 - 0x14) = 4
+004bf2bb                                 *(esp_39 - 0x18) = &data_7e09e8
+004bf2c0                                 ebp_1 = sub_4d6270()
+004bf2c8                                 break
+004bf2c8                             
+004bed3e                             int32_t ecx_25 = ebp_1[-0x19]
+004bed41                             int32_t ecx_26 = ecx_25 + ebp_1[-0x17]
+004bed47                             int32_t eax_96 =
+004bed47                                 adc.d(ebp_1[-0x1b], ebp_1[-0x14], ecx_25 + ebp_1[-0x17] u< ecx_25)
+004bed4a                             *(esp_39 - 4) = eax_94
+004bed4b                             *(esp_39 - 8) = ebp_1[-0x21]
+004bed51                             *(esp_39 - 0xc) = eax_96
+004bed52                             *(esp_39 - 0x10) = ecx_26
+004bed53                             int32_t eax_97
+004bed53                             int32_t edx_13
+004bed53                             eax_97, edx_13 = __alldiv()
+004bed58                             int32_t ecx_27 = ebp_1[-0x13]
+004bed5e                             edi_1 = ebp_1[-0x15]
+004bed61                             int32_t ecx_28 = ecx_27 + eax_97
+004bed66                             int32_t eax_99 = adc.d(ebp_1[-0x12], edx_13, ecx_27 + eax_97 u< ecx_27)
+004bed68                             *(ebp_1 - 0xb0) = 0
+004bed70                             int32_t edx_14 = ebp_1[-0x16]
+004bed75                             ebp_1[-0x13] = ecx_28 + edx_14
+004bed81                             int32_t ecx_31 = ebp_1[-0x24] + ebp_1[-9]
+004bed84                             ebp_1[-0x12] = adc.d(eax_99, ebp_1[-0x1a], ecx_28 + edx_14 u< ecx_28)
+004bed8d                             ebp_1[-0x14] = ebp_1[-0x2b]
+004bed90                             int32_t eax_102 = ebp_1[-0x2c]
+004bed96                             *(ebp_1 - 0xa0) = 0
+004bed9e                             ebp_1[-0x17] = eax_102
+004beda7                             ebp_1[-0x1e] = ebp_1[-0x28]
+004bedaa                             ebp_1[-0x24] = ecx_31
+004bec9a                         else
+004bec9c                             if (temp26_1 s>= 0)
+004bec9e                                 edx_12 = ebp_1[-0x19]
+004bec9e                             
+004beca7                             if (temp26_1 s>= 0 && edx_12 u> 0x2000000)
+004beca7                                 goto label_4bed04
+004beca7                             
+004becb3                             *(esp_39 - 4) = ebp_1[-0x16] * ebp_1[-0x21]
+004becb7                             int32_t eax_87 = ebp_1[-0x1c] + edi_5
+004becb9                             *(esp_39 - 8) = 0
+004becbb                             *(esp_39 - 0xc) = eax_87
+004becbc                             _memset()
+004becca                             int32_t ecx_21 = ebp_1[-0x24]
+004becd0                             edi_1 = ebp_1[-0x15]
+004becd3                             ebp_1[-0x17] = ebp_1[-0x29]
+004becdc                             ebp_1[-0x14] = ebp_1[-0x2b]
+004becdf                             int32_t eax_90 = ebp_1[-0x27]
+004bece5                             int32_t temp40_1 = ebp_1[-0x19]
+004bece5                             ebp_1[-0x19] += eax_90
+004beceb                             ebp_1[-0x1b] =
+004beceb                                 adc.d(ebp_1[-0x1b], ebp_1[-0x1f], temp40_1 + eax_90 u< temp40_1)
+004becf1                             ebp_1[-0x24] = ecx_21 + ebp_1[-9]
+004bec21                     else
+004bec23                         int32_t edx_9 = ebp_1[-0x16]
+004bec29                         int32_t temp17_1 = ebp_1[-0x13]
+004bec29                         ebp_1[-0x13] += edx_9
+004bec2f                         ebp_1[-0x12] =
+004bec2f                             adc.d(ebp_1[-0x12], ebp_1[-0x1a], temp17_1 + edx_9 u< temp17_1)
+004bec38                         int32_t ecx_18 = ebp_1[-0x24] + ebp_1[-9]
+004bec3b                         edi_1 = ebp_1[-0x15]
+004bec3e                         *(ebp_1 - 0x80) = 0
+004bec46                         ebp_1[-0x1b] = ebp_1[-0x1f]
+004bec4c                         ebp_1[-0x19] = ebp_1[-0x20]
+004bec4f                         ebp_1[-0x24] = ecx_18
+004bec4f                 
+004bf26e                 if (*(edi_1 + 0x26) == 0)
+004bf270                     *(esp_39 - 4) = 0
+004bf272                     *(esp_39 - 8) = ebp_1[-0x25]
+004bf278                     *(esp_39 - 0xc) = 3
+004bf27a                     *(esp_39 - 0x10) = *(edi_1 + 0x38)
+004bf27d                     *(esp_39 - 0x14) = *(edi_1 + 0x3c)
+004bf280                     sub_4b9410()
+004bf280                     esp_39 -= 0x10
+004bf280                 
+004bf28b                 int32_t eax_161 = ebp_1[-0x25] + 1
+004bf28c                 ebp_1[-0x25] = eax_161
+004bf28c                 
+004bf295                 if (eax_161 u>= ebp_1[-0xc])
+004bf29b                     ecx_57 = ebp_1[-0x17]
+004bf29e                     edx_34 = ebp_1[-0x14]
+004bf2a1                     goto label_4bf5cf
+004bf2a1             
+004beb86             goto label_4bf644
+004beb86         
+004bf5ba         edx_34 = ebp_1[-0x2b]
+004bf5c0         ecx_57 = ebp_1[-0x2c]
+004bf5c6         ebp_1[-0x1b] = ebp_1[-0x1f]
+004bf5cc         ebp_1[-0x19] = ebp_1[-0x20]
+004bf5cf     label_4bf5cf:
+004bf5cf         int32_t eax_212 = ebp_1[-0xd]
+004bf5cf         
+004bf5d8         if (eax_212 == ebp_1[-0x24])
+004bf617             if ((ecx_57 | edx_34) != 0)
+004bf61f                 if ((ebp_1[-0x19] | ebp_1[-0x1b]) != 0)
+004bf621                     ecx_57 -= ebp_1[-0x19]
+004bf621                 
+004bf624                 *(esp_39 - 4) = ebp_1[-0x12]
+004bf627                 *(esp_39 - 8) = ebp_1[-0x13]
+004bf62a                 *(esp_39 - 0xc) = ecx_57
+004bf62b                 *(esp_39 - 0x10) = ebp_1[-0x1c]
+004bf630                 *(esp_39 - 0x14) = ebp_1[-0x23]
+004bf636                 *(esp_39 - 0x18) = ebp_1[-0x22]
+004bf641                 ebp_1[-0x18] = sub_4bdf40(edi_1)
+004bf641             
+004bf644         label_4bf644:
+004bf644             int32_t eax_220 = ebp_1[-0x1c]
+004bf644             
+004bf649             if (eax_220 != 0)
+004bf64b                 *(esp_39 - 4) = 0x8000
+004bf650                 *(esp_39 - 8) = 0
+004bf652                 *(esp_39 - 0xc) = eax_220
+004bf653                 *(esp_39 - 0x10) = entry_ebx
+004bf653                 esp_39 -= 0x10
+004bf654                 sub_c9755d()
+004bf654             
+004bf659             *(esp_39 - 4) = ebp_1[-0x1d]
+004bf65c             _fclose()
+004bf672             esp_1 = &(esp_39 - 4)[1]
+004bf675             result = ebp_1[-0x18]
+004bf5d8         else
+004bf5da             *(esp_39 - 4) = eax_212
+004bf5db             *(esp_39 - 8) = ebp_1[-0x24]
+004bf5e1             *(esp_39 - 0xc) = "Wrote %d blocks, expected to write %d blocks \n"
+004bf5e6             ecx_10, edx_5 = sub_6897e9()
+004bf5ee         label_4bf5ee:
+004bf5ee             int32_t eax_213 = ebp_1[-0x1c]
+004bf5ee             
+004bf5f3             if (eax_213 != 0)
+004bf5f5                 *(esp_39 - 4) = 0x8000
+004bf5fa                 *(esp_39 - 8) = 0
+004bf5fc                 *(esp_39 - 0xc) = eax_213
+004bf602                 return sub_b00e5f(ecx_10, edx_5)
+004bf602             
+004bf603             *(esp_39 - 4) = ebp_1[-0x1d]
+004bf606             _fclose()
+004bf60b             esp_1 = esp_39
+004bf60e             result = 0xffffffff
+004be770 else
+004be772     void** eax_14 = 0x3b77cc()
+004be77d     var_d0 = eax_14
+004be77e     void** var_64_1 = eax_14
+004be781     void* var_d4_1 = esi_2
+004be786     int16_t* var_d8
+004be786     
+004be786     if (*(edi_1 + 0x24) == 0)
+004be78f         var_d8 = u"Open %s  Failed, Errno: %d"
+004be786     else
+004be788         var_d8 = &data_77c78c
+004be788     
+004be799     var_dc = 0x100
+004be79f     sub_697afe(edi_1 + 0x2c0, var_dc, var_d8)
+004be7aa     int16_t eax_17 = (*(edi_1 + 0x38)).w
+004be7b3     var_d0 = edi_1 + 0x2c0
+004be7bd     int32_t var_d8_1 = 0x178c
+004be7c2     var_dc = *(edi_1 + 0x3c)
+004be7c2     esp_1 = &var_dc
+004be7c5     0x3b8730(var_dc, var_d8_1, zx.d(eax_17) | 0x1000000, var_d0)
+004bf675     result = ebp_1[-0x18]
+004bf67b ebp_1[-1] = 0xffffffff
+004bf688 int32_t ecx_59 = *(esi_2 - 4)
+004bf688 *(esi_2 - 4) -= 1
+004bf688 
+004bf68f if (ecx_59 - 1 s<= 0)
+004bf691     int32_t* ecx_61 = *(esi_2 - 0x10)
+004bf693     *(esp_1 - 4) = esi_2 - 0x10
+004bf696     (*(*ecx_61 + 4))()
+004bf696 
+004bf69e fsbase->NtTib.ExceptionList = ebp_1[-3]
+004bf6a5 esp_1[1]
+004bf6a6 esp_1[2]
+004bf6a7 esp_1[3]
+004bf6ae sub_687de2(ebp_1[-4] ^ ebp_1)
+004bf6b5 *ebp_1
+004bf6b6 return result

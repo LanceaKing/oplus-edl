@@ -1,0 +1,39 @@
+004ad453 int32_t var_8 = 0xffffffff
+004ad455 int32_t (* var_c)(void* arg1) = sub_6d9cb0
+004ad460 TEB* fsbase
+004ad460 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004ad461 int32_t* var_14 = arg1
+004ad470 fsbase->NtTib.ExceptionList = &ExceptionList
+004ad478 int32_t* var_14_1 = arg1
+004ad49f int32_t __saved_ebp
+004ad49f *arg1 = (*(data_7bfb90 + 0xc))(__security_cookie ^ &__saved_ebp) + 0x10
+004ad4a1 int32_t var_8_1 = 0
+004ad4ce arg1[1] = (*(data_7bfb90 + 0xc))() + 0x10
+004ad4d1 var_8_1.b = 1
+004ad4fe arg1[2] = (*(data_7bfb90 + 0xc))() + 0x10
+004ad500 var_8_1.b = 2
+004ad52a arg1[3] = (*(data_7bfb90 + 0xc))() + 0x10
+004ad52d var_8_1.b = 3
+004ad557 arg1[4] = (*(data_7bfb90 + 0xc))() + 0x10
+004ad55a var_8_1.b = 4
+004ad584 arg1[5] = (*(data_7bfb90 + 0xc))() + 0x10
+004ad587 var_8_1.b = 5
+004ad5b1 arg1[6] = (*(data_7bfb90 + 0xc))() + 0x10
+004ad5b7 sub_4ad690(&arg1[7])
+004ad5bc var_8_1.b = 7
+004ad5e6 arg1[0x11] = (*(data_7bfb90 + 0xc))() + 0x10
+004ad5f2 var_8_1.b = 8
+004ad5f6 sub_41a940(arg1, &data_76a09c, nullptr)
+004ad605 sub_41a940(&arg1[1], &data_76a09c, nullptr)
+004ad614 sub_41a940(&arg1[3], &data_76a09c, nullptr)
+004ad623 sub_41a940(&arg1[4], &data_76a09c, nullptr)
+004ad632 sub_41a940(&arg1[5], &data_76a09c, nullptr)
+004ad641 sub_41a940(&arg1[0xf], &data_76c42c, 1)
+004ad650 sub_41a940(&arg1[0xb], u"Unknown", 7)
+004ad65f sub_41a940(&arg1[8], u"Unknown", 7)
+004ad65f 
+004ad66d if (sub_4ae410(arg1) == 0)
+004ad673     sub_41a720(&arg1[0xb], &arg1[2])
+004ad673 
+004ad67d fsbase->NtTib.ExceptionList = ExceptionList
+004ad68b return arg1

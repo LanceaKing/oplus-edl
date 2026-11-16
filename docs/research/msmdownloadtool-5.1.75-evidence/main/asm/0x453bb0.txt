@@ -1,0 +1,50 @@
+00453bb0 push    ebp
+00453bb1 mov     ebp, esp
+00453bb3 push    0xffffffff
+00453bb5 push    0x6cc6e8
+00453bba mov     eax, dword [fs:0x0]
+00453bc0 push    eax
+00453bc1 sub     esp, 0x8
+00453bc4 push    esi
+00453bc5 push    edi
+00453bc6 mov     eax, dword [0x7c0bb0]
+00453bcb xor     eax, ebp
+00453bcd push    eax
+00453bce lea     eax, [ebp-0xc]
+00453bd1 mov     dword [fs:0x0], eax
+00453bd7 mov     dword [ebp-0x10], 0x0
+00453bde mov     dword [ebp-0x4], 0x0
+00453be5 mov     eax, dword [ebp+0xc]
+00453be8 push    ecx
+00453be9 add     eax, 0xfffffff0
+00453bec mov     esi, esp
+00453bee push    eax
+00453bef call    0x41a8a0
+00453bf4 add     esp, 0x4
+00453bf7 add     eax, 0x10
+00453bfa mov     dword [esi], eax
+00453bfc mov     esi, dword [ebp+0x8]
+00453bff push    esi
+00453c00 call    0x457400
+00453c05 mov     dword [ebp-0x4], 0xffffffff
+00453c0c or      ecx, 0xffffffff
+00453c0f mov     edi, dword [ebp+0xc]
+00453c12 add     edi, 0xfffffff0
+00453c15 lea     eax, [edi+0xc]
+00453c18 lock xadd dword [eax], ecx
+00453c1c dec     ecx
+00453c1d test    ecx, ecx
+00453c1f jg      0x453c29
+00453c29 mov     eax, esi
+00453c2b mov     ecx, dword [ebp-0xc]
+00453c2e mov     dword [fs:0x0], ecx
+00453c35 pop     ecx
+00453c36 pop     edi
+00453c37 pop     esi
+00453c38 mov     esp, ebp
+00453c3a pop     ebp
+00453c3b retn    0x8
+00453c21 mov     ecx, dword [edi]
+00453c23 push    edi
+00453c24 mov     edx, dword [ecx]
+00453c26 call    dword [edx+0x4]

@@ -1,0 +1,304 @@
+100210f0 void* const __return_addr_1 = __return_addr
+100210f6 int32_t var_14 = 0xffffffff
+100210f8 int32_t (* var_18)(struct EHRegistrationNode* arg1) = sub_1006230b
+10021103 TEB* fsbase
+10021103 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+10021104 int32_t __saved_ebx
+10021104 int32_t* var_20 = &__saved_ebx
+1002110a void* ecx = __alloca_probe(0x8860)
+10021114 int32_t __saved_ebp
+10021114 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+10021116 int32_t var_24 = eax_2
+1002111f fsbase->NtTib.ExceptionList = &ExceptionList
+1002113b char _Destination[0x7ea0]
+1002113b memset(&_Destination, 0, 0x8000)
+10021157 uint8_t* _Source_1 = strstr(*(ecx + 0x28) + 0x410, "Version:")
+10021164 uint32_t result
+10021164 int32_t var_3c_1
+10021164 char const* const var_38_1
+10021164 int32_t var_34_2
+10021164 int32_t var_30_2
+10021164 
+10021164 if (_Source_1 != 0)
+100211af     int32_t eax_7 = strstr(_Source_1, &data_1006a2b0)
+100211af     
+100211b6     if (eax_7 == 0)
+100211b8         int32_t ecx_2 = *(ecx + 0x1c)
+100211c1         var_30_2 = ecx_2 + 0x444
+100211c8         var_34_2 = ecx_2 + 0x9e4
+100211c9         var_38_1 =
+100211c9             "[%s] [%s] ERROR: Cannot find the end signal for attribute 'Version' in sign data."
+100211ce         var_3c_1 = 0x1499
+100211d3         goto label_10021186
+100211d3     
+100211e6     strncpy(&_Destination, _Source_1, eax_7 - _Source_1)
+100211e6     
+10021208     for (char* i = strtok(&_Destination, ";"); i != 0; i = strtok(nullptr, ";"))
+10021216         void* eax_12 = strstr(i, "Version:")
+10021216         
+10021221         if (eax_12 == 0)
+10021248             void* eax_13 = strstr(i, "Platform1:")
+10021248             
+10021253             if (eax_13 == 0)
+1002127b                 void* eax_14 = strstr(i, "Platform2:")
+1002127b                 
+10021286                 if (eax_14 == 0)
+100212ab                     void* eax_15 = strstr(i, "Mode:")
+100212ab                     
+100212b6                     if (eax_15 == 0)
+100212db                         void* eax_16 = strstr(i, "Rand:")
+100212db                         
+100212e6                         if (eax_16 == 0)
+1002130b                             void* eax_17 = strstr(i, "ProjectWrite:")
+1002130b                             
+10021316                             if (eax_17 == 0)
+1002133b                                 void* eax_18 = strstr(i, "ProjectRead:")
+1002133b                                 
+10021346                                 if (eax_18 == 0)
+1002136b                                     void* eax_20 = strstr(i, "DigestWrite:")
+1002136b                                     
+10021376                                     if (eax_20 == 0)
+100213b6                                         void* eax_23 = strstr(i, "DigestRead:")
+100213b6                                         
+100213c1                                         if (eax_23 != 0)
+100213c9                                             char* ecx_12 = eax_23 + 0xb
+100213ce                                             void* edx_18 = ecx + 0x83c - ecx_12
+100213ce                                             
+100213db                                             do
+100213d0                                                 eax_23.b = *ecx_12
+100213d2                                                 ecx_12 = &ecx_12[1]
+100213d5                                                 *(ecx_12 + edx_18 - 1) = eax_23.b
+100213db                                             while (eax_23.b != 0)
+100213db                                             
+100213dd                                             int32_t ecx_13 = *(ecx + 0x1c)
+100213fe                                             opdbg_log("QCFlashWorker::resolveSignData", 0x14d8, 
+100213fe                                                 "[%s] [%s] INFO:Old SW Version: %s", 
+100213fe                                                 ecx_13 + 0x9e4, ecx_13 + 0x444, ecx + 0x83c, eax_2)
+10021376                                     else
+1002137e                                         char* ecx_10 = eax_20 + 0xc
+10021383                                         void* edx_16 = ecx + 0x73c - ecx_10
+10021383                                         
+10021390                                         do
+10021385                                             eax_20.b = *ecx_10
+10021387                                             ecx_10 = &ecx_10[1]
+1002138a                                             *(ecx_10 + edx_16 - 1) = eax_20.b
+10021390                                         while (eax_20.b != 0)
+10021390                                         
+10021392                                         int32_t ecx_11 = *(ecx + 0x1c)
+100213fe                                         opdbg_log("QCFlashWorker::resolveSignData", 0x14d0, 
+100213fe                                             "[%s] [%s] INFO:New SW Version: %s", ecx_11 + 0x9e4, 
+100213fe                                             ecx_11 + 0x444, ecx + 0x73c, eax_2)
+10021346                                 else
+10021348                                     char* eax_19 = eax_18 + 0xc
+1002134d                                     void* edx_14 = ecx - eax_19
+1002135e                                     char j
+1002135e                                     
+1002135e                                     do
+10021350                                         j = *eax_19
+10021352                                         eax_19 = &eax_19[1]
+10021355                                         *(eax_19 + edx_14 + 0x63b) = j
+1002135e                                     while (j != 0)
+10021316                             else
+10021318                                 char* ecx_9 = eax_17 + 0xd
+1002131d                                 void* edx_12 = ecx - ecx_9
+1002131d                                 
+1002132e                                 do
+10021320                                     eax_17.b = *ecx_9
+10021322                                     ecx_9 = &ecx_9[1]
+10021325                                     *(ecx_9 + edx_12 + 0x53b) = eax_17.b
+1002132e                                 while (eax_17.b != 0)
+100212e6                         else
+100212e8                             char* ecx_8 = eax_16 + 5
+100212ed                             void* edx_10 = ecx - ecx_8
+100212ed                             
+100212fe                             do
+100212f0                                 eax_16.b = *ecx_8
+100212f2                                 ecx_8 = &ecx_8[1]
+100212f5                                 *(ecx_8 + edx_10 + 0x43b) = eax_16.b
+100212fe                             while (eax_16.b != 0)
+100212b6                     else
+100212b8                         char* ecx_7 = eax_15 + 5
+100212bd                         void* edx_8 = ecx - ecx_7
+100212bd                         
+100212ce                         do
+100212c0                             eax_15.b = *ecx_7
+100212c2                             ecx_7 = &ecx_7[1]
+100212c5                             *(edx_8 + ecx_7 + 0x33b) = eax_15.b
+100212ce                         while (eax_15.b != 0)
+10021286                 else
+10021288                     char* ecx_6 = eax_14 + 0xa
+1002128d                     void* edx_6 = ecx - ecx_6
+1002128d                     
+1002129e                     do
+10021290                         eax_14.b = *ecx_6
+10021292                         ecx_6 = &ecx_6[1]
+10021295                         *(edx_6 + ecx_6 + 0x23b) = eax_14.b
+1002129e                     while (eax_14.b != 0)
+10021253             else
+10021255                 char* ecx_5 = eax_13 + 0xa
+1002125a                 void* edx_4 = ecx - ecx_5
+1002125a                 
+1002126e                 do
+10021260                     eax_13.b = *ecx_5
+10021262                     ecx_5 = &ecx_5[1]
+10021265                     *(edx_4 + ecx_5 + 0x13b) = eax_13.b
+1002126e                 while (eax_13.b != 0)
+10021221         else
+10021223             char* ecx_4 = eax_12 + 8
+10021228             void* edx_2 = ecx - ecx_4
+10021228             
+1002123b             do
+10021230                 eax_12.b = *ecx_4
+10021232                 ecx_4 = &ecx_4[1]
+10021235                 *(edx_2 + ecx_4 + 0x3b) = eax_12.b
+1002123b             while (eax_12.b != 0)
+1002123b     
+10021435     uint8_t* eax_29 = strstr(*(ecx + 0x28) + 0x410, &data_1007222c)
+10021435     
+10021442     if (eax_29 == 0)
+10021444         int32_t ecx_14 = *(ecx + 0x1c)
+1002144d         var_30_2 = ecx_14 + 0x444
+10021454         var_34_2 = ecx_14 + 0x9e4
+10021455         var_38_1 = "[%s] [%s] ERROR: Cannot find attribute 'ID' in sign data."
+1002145a         var_3c_1 = 0x14e2
+1002145f         goto label_10021186
+1002145f     
+1002146a     int32_t eax_32 = strstr(eax_29, &data_1006a2b0)
+1002146a     
+10021477     if (eax_32 == 0)
+10021479         int32_t ecx_15 = *(ecx + 0x1c)
+10021482         var_30_2 = ecx_15 + 0x444
+10021489         var_34_2 = ecx_15 + 0x9e4
+1002148a         var_38_1 =
+1002148a             "[%s] [%s] ERROR: Cannot find the end signal for attribute 'Version' in sign data."
+1002148f         var_3c_1 = 0x14e9
+10021494         goto label_10021186
+10021494     
+100214a7     memset(ecx + 0x93c, 0, 0x100)
+100214c6     strncpy(ecx + 0x93c, &eax_29[3], eax_32 - eax_29 - 4)
+100214dc     strcpy_s(ecx + 0x304f9c, 0x104, ecx + 0x93c)
+100214f7     __builtin_memset(ecx + 0xb3c, 0, 0x20)
+1002150f     uint8_t* eax_43 = strstr(*(ecx + 0x28) + 0x410, &data_1007226c)
+1002151c     int32_t var_3c_3
+1002151c     char const* const var_38_7
+1002151c     int32_t var_34_24
+1002151c     int32_t var_30_24
+1002151c     
+1002151c     if (eax_43 != 0)
+1002155b         int32_t eax_46 = strstr(eax_43, &data_1006a2b0)
+1002155b         
+10021564         if (eax_46 == 0)
+10021566             int32_t ecx_18 = *(ecx + 0x1c)
+1002156f             var_30_24 = ecx_18 + 0x444
+10021576             var_34_24 = ecx_18 + 0x9e4
+10021577             var_38_7 = "[%s] [%s] INFO: Cannot find the nv info for attribute 'NV' in sign data."
+1002157c             var_3c_3 = 0x14fc
+10021581             goto label_10021539
+10021581         
+10021591         void var_6f8
+10021591         memset(&var_6f8, 0, 0x200)
+100215a7         char _Destination_1
+100215a7         memset(&_Destination_1, 0, 0x200)
+100215bd         void var_8870
+100215bd         memset(&var_8870, 0, 0x160)
+100215cb         void* esi_4 = eax_46 - eax_43
+100215cb         
+100215d0         if (esi_4 != 4)
+100215de             strncpy(&_Destination_1, &eax_43[3], esi_4 - 4)
+100215e4             char* ecx_19 = &_Destination_1
+100215f5             char i_1
+100215f5             
+100215f5             do
+100215f0                 i_1 = *ecx_19
+100215f2                 ecx_19 = &ecx_19[1]
+100215f5             while (i_1 != 0)
+10021608             void var_4f7
+10021608             op_base64_decode(&_Destination_1, ecx_19 - &var_4f7, &var_6f8, eax_2)
+10021608         
+10021622         uint32_t _Count = 0x10
+1002162a         __builtin_memcpy(&var_8870, &var_6f8, 0x160)
+1002162c         char* _Destination_2 = ecx + 0xb3c
+10021634         char _Source[0x120]
+10021634         strncpy(_Destination_2, &_Source, _Count)
+10021643         int32_t ecx_21 = *(ecx + 0x1c)
+10021664         opdbg_log("QCFlashWorker::resolveSignData", 0x1511, 
+10021664             "[%s] [%s] INFO: from phone get nvID is %s.", ecx_21 + 0x9e4, ecx_21 + 0x444, 
+10021664             _Destination_2, eax_2)
+10021678         uint8_t var_190[0x140]
+10021678         memset(&var_190, 0, 0x168)
+1002168e         GetModuleFileNameA(nullptr, &var_190, 0x167)
+100216a2         void pszDest
+100216a2         memset(&pszDest, 0, 0x168)
+100216bd         PathCombineA(&pszDest, &var_190, &data_100722e8)
+100216d0         int32_t* lpFileName_1
+100216d0         sub_10001a60(&lpFileName_1, &pszDest)
+100216e0         int32_t var_14_1 = 0
+100216e7         sub_100036d0("\FactoryTest.ini")
+100216f3         int32_t* lpFileName = &lpFileName_1
+100216f9         int32_t var_86fc
+100216f9         
+100216f9         if (var_86fc u>= 0x10)
+100216f9             lpFileName = lpFileName_1
+100216f9         
+10021715         uint32_t eax_53
+10021715         eax_53.b = GetPrivateProfileIntA("test_config", "UseDefaultNv", 0, lpFileName) != 0
+10021718         *(ecx + 0x30630c) = eax_53.b
+10021731         opdbg_log("QCFlashWorker::resolveSignData", 0x151a, "[INFO]FactoryTest UseDefaultNv=%d", 
+10021731             zx.d(eax_53.b))
+10021751         uint32_t result_1
+10021751         
+10021751         if (sub_10028130(ecx) != 1 || *(ecx + 0x3062a8) != 0)
+100217eb             result_1 = 0
+10021751         else
+10021765             uint32_t eax_55
+10021765             
+10021765             do
+10021760                 eax_55.b = *_Destination_2
+10021762                 _Destination_2 = &_Destination_2[1]
+10021765             while (eax_55.b != 0)
+10021765             
+10021769             if (_Destination_2 != &_Destination_2[1])
+100217eb                 result_1 = 0
+10021769             else
+1002176f                 int32_t ecx_25 = *(ecx + 0x1c)
+1002178f                 opdbg_log("QCFlashWorker::resolveSignData", 0x151d, 
+1002178f                     "[%s] [%s] ERROR: cannot flash in manufacture mode while nv id is not in phone.", 
+1002178f                     ecx_25 + 0x9e4, ecx_25 + 0x444)
+1002178f                 
+1002179f                 if (*(ecx + 0x30630c) != 0)
+100217eb                     result_1 = 0
+1002179f                 else if (sub_100294a0(ecx) != 0)
+100217eb                     result_1 = 0
+100217aa                 else if (*(*(ecx + 0x28) + 0x895e) != 0)
+100217db                     reportIssue("E0202005", 0)
+100217e4                     result_1 = 0x754a
+100217b6                 else
+100217c4                     reportIssue("E0202006", 1, "oplusreserve1/opporeserve1")
+100217cd                     result_1 = 0x754a
+100217cd         
+100217f3         sub_100019a0(&lpFileName_1)
+100217f8         result = result_1
+1002151c     else
+1002151e         int32_t ecx_17 = *(ecx + 0x1c)
+10021527         var_30_24 = ecx_17 + 0x444
+1002152e         var_34_24 = ecx_17 + 0x9e4
+1002152f         var_38_7 = "[%s] [%s] INFO: Cannot find the nv info for attribute 'NV' in sign data."
+10021534         var_3c_3 = 0x14f5
+10021539     label_10021539:
+10021539         char const* const var_40_3 = "QCFlashWorker::resolveSignData"
+1002153e         *(ecx + 0xb3c) = 0
+10021545         opdbg_log(var_40_3, var_3c_3, var_38_7, var_34_24, var_30_24, eax_2)
+1002154e         result = 0
+10021164 else
+10021166     int32_t ecx_1 = *(ecx + 0x1c)
+1002116f     var_30_2 = ecx_1 + 0x444
+10021176     var_34_2 = ecx_1 + 0x9e4
+10021177     var_38_1 = "[%s] [%s] ERROR: Cannot find attribute 'Version' in sign data."
+1002117c     var_3c_1 = 0x1492
+10021186 label_10021186:
+10021186     opdbg_log("QCFlashWorker::resolveSignData", var_3c_1, var_38_1, var_34_2, var_30_2, eax_2)
+10021196     reportIssue("E0503010", 0)
+1002119f     result = 0x7928
+100217fd fsbase->NtTib.ExceptionList = ExceptionList
+1002180c CookieCheckFunction(result)
+10021817 return result

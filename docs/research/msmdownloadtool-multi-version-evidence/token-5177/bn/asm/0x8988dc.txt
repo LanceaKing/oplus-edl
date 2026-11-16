@@ -1,0 +1,16 @@
+008988dc mov     eax, dword [ebp]
+008988e0 shld    ecx, esi, 0xd9
+008988e4 or      cx, si
+008988e7 mov     ecx, dword [eax]
+008988e9 shl     al, 0x50
+008988ec btc     eax, esi
+008988ef cmovae  eax, ecx
+008988f2 mov     dword [ebp], ecx
+008988f6 mov     eax, dword [esi]
+008988f8 stc     
+008988f9 clc     
+008988fa add     esi, 0x4
+00898900 stc     
+00898901 clc     
+00898902 xor     eax, ebx
+00898904 jmp     0x10f2d1f

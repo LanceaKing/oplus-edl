@@ -1,0 +1,15 @@
+149a1b10 stp     fp, lr, [sp, #-0x10]!
+149a1b14 mov     fp, sp
+149a1b18 bl      0x149a8b88
+149a1b1c tst     w0, #0xff
+149a1b20 b.eq    0x149a1b3c
+149a1b3c mov     w0, #0x1
+149a1b40 movk    w0, #0x9000, lsl #0x10
+149a1b44 ldp     fp, lr, [sp], #0x10
+149a1b48 ret     
+149a1b24 bl      0x149a15e0
+149a1b28 cmp     w0, #0
+149a1b2c mov     w1, wzr
+149a1b30 cset    w0, eq
+149a1b34 ldp     fp, lr, [sp], #0x10
+149a1b38 b       0x149a84f0

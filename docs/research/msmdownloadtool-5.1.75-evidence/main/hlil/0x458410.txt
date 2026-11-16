@@ -1,0 +1,80 @@
+00458410 int32_t ebp
+00458410 int32_t var_4 = ebp
+00458411 int32_t* ebp_1 = &var_4
+00458413 int32_t var_8 = 0xffffffff
+00458415 int32_t (* var_c)(void* arg1) = sub_6d2e50
+00458420 TEB* fsbase
+00458420 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00458429 int32_t eax_2 = __security_cookie ^ &var_4
+0045842b int32_t var_18 = eax_2
+0045842e int32_t ebx
+0045842e int32_t var_54 = ebx
+0045842f int32_t esi
+0045842f int32_t var_58 = esi
+00458430 int32_t edi
+00458430 int32_t var_5c = edi
+00458435 fsbase->NtTib.ExceptionList = &ExceptionList
+00458444 int32_t var_4c = arg2
+00458449 int32_t var_1c = 7
+00458450 int32_t var_20 = 0
+00458457 int16_t var_30 = 0
+0045845e int32_t ecx
+0045845e 
+0045845e if (*arg3 != 0)
+00458464     int16_t* ecx_1 = arg3
+00458479     int16_t i
+00458479     
+00458479     do
+00458470         i = *ecx_1
+00458473         ecx_1 = &ecx_1[1]
+00458479     while (i != 0)
+0045847d     ecx = (ecx_1 - &ecx_1[1]) s>> 1
+0045845e else
+00458460     ecx = 0
+00458460 
+00458484 sub_45c850(&var_30, arg3, ecx)
+00458489 int32_t var_8_1 = 0
+0045849d int32_t var_8_2 = 0xffffffff
+004584a8 uint32_t edi_1 = zx.d((*(**arg1 + 4))(&var_30, eax_2))
+004584a8 
+004584ab if (var_1c u>= 8)
+004584b0     ebp_1 = j_sub_688543(var_30.d)
+004584b0 
+004584ba int32_t result
+004584ba 
+004584ba if (edi_1 == 0)
+00458526     result = 0
+004584ba else
+004584c0     sub_45a140(&ebp_1[-0x11], arg3)
+004584c8     ebp_1[-1] = 1
+004584de     void** edx_2 = (*(**sub_496080(arg1, &ebp_1[-0x11]) + 0x58))()
+004584de     
+004584e4     if (edx_2[5] u>= 8)
+004584e6         edx_2 = *edx_2
+004584e6     
+004584ea     void* ecx_8
+004584ea     
+004584ea     if (edx_2 != 0)
+004584f0         void** ecx_9 = edx_2
+004584f2         void* esi_2 = ecx_9 + 2
+004584fe         void** eax_10
+004584fe         
+004584fe         do
+004584f5             eax_10.w = *ecx_9
+004584f8             ecx_9 += 2
+004584fe         while (eax_10.w != 0)
+00458502         ecx_8 = (ecx_9 - esi_2) s>> 1
+004584ea     else
+004584ec         ecx_8 = nullptr
+004584ec     
+00458509     sub_41a940(ebp_1[-0x12], edx_2, ecx_8)
+00458509     
+00458512     if (ebp_1[-0xc] u>= 8)
+00458517         ebp_1 = j_sub_688543(ebp_1[-0x11])
+00458517     
+0045851f     result = 1
+0045851f 
+0045852b fsbase->NtTib.ExceptionList = ebp_1[-3]
+0045853b sub_687de2(ebp_1[-5] ^ ebp_1)
+00458542 *ebp_1
+00458543 return result

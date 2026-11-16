@@ -1,0 +1,147 @@
+00429283 int32_t var_8 = 0xffffffff
+00429285 int32_t (* var_c)(void* arg1) = sub_571e38
+00429290 TEB* fsbase
+00429290 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00429299 int32_t __saved_ebp
+00429299 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+004292a5 fsbase->NtTib.ExceptionList = &ExceptionList
+004292b1 enum WIN32_ERROR result = ERROR_INVALID_FUNCTION
+004292b6 int32_t var_7c = 0x1000
+004292bb void* var_5c = nullptr
+004292c2 int32_t* eax_3 = sub_42e817()
+004292c7 void** esi_1 = arg2 + 0x30
+004292c7 
+004292d6 if (esi_1[5] u>= 0x10)
+004292d8     esi_1 = *esi_1
+004292d8 
+004292e0 int32_t* eax_4 = _fopen(esi_1, "rb")
+004292e0 
+004292ef if (eax_4 != 0)
+004292f8     if (eax_3 != 0)
+0042930c         void* eax_6
+0042930c         int32_t edx_1
+0042930c         edx_1:eax_6 = sx.q(sub_54ec39(eax_4))
+0042930f         int32_t var_64 = edx_1
+00429317         sub_54e826(eax_4, nullptr, FILE_END)
+00429328         int32_t eax_8
+00429328         int32_t edx_2
+00429328         edx_2:eax_8 = sx.q(sub_54ec39(eax_4))
+00429334         sub_54e826(eax_4, eax_6, FILE_BEGIN)
+00429349         int32_t xmm0_1[0x4] = _memset(arg1[3], 0, 0x1000)
+00429349         
+0042935f         if (edx_2 s<= 0 && (edx_2 s< 0 || eax_8 u< 0x1000))
+0042936a             xmm0_1 = _fread(arg1[3], eax_8, 1, eax_4)
+0042936a         
+00429375         _fclose(eax_4)
+00429385         char* i_1
+00429385         int32_t xmm0_2[0x4]
+00429385         i_1, xmm0_2 = _strstr(xmm0_1, arg1[3], "<ufs")
+00429391         char* i_2
+00429391         
+00429391         for (char* i = i_1; i != 0; i = i_2)
+004293a6             char* eax_10 = _strstr(xmm0_2, i, "/>")
+004293a6             
+004293b2             if (eax_10 == 0)
+004293b2                 break
+004293b2             
+004293bb             void* esi_5 = eax_10 - i
+004293c0             void* eax_12 = eax_10 - arg1[3] + 2
+004293cf             sub_552500(eax_3, i, esi_5 + 2, eax_2)
+004293d7             *(esi_5 + eax_3 + 2) = 0
+004293de             int32_t var_7c_12 = 0xf
+004293e5             int32_t var_80_8 = 0
+004293ec             char var_90 = 0
+004293f2             void* ecx_1
+004293f2             
+004293f2             if (*eax_3 != 0)
+004293fd                 int32_t* ecx_3 = eax_3
+00429405                 char j
+00429405                 
+00429405                 do
+00429400                     j = *ecx_3
+00429402                     ecx_3 += 1
+00429405                 while (j != 0)
+00429407                 ecx_1 = ecx_3 - (eax_3 + 1)
+004293f2             else
+004293f4                 ecx_1 = nullptr
+004293f4             
+0042940d             sub_402470(&var_90, eax_3, ecx_1)
+00429416             int32_t* var_48
+00429416             int32_t xmm0_3[0x4] = sub_42e500(&var_48, var_90)
+0042941e             int32_t esi_7 = 5
+00429423             int32_t var_8_1 = 0
+00429430             int32_t var_34
+00429430             
+00429430             while (true)
+00429430                 int32_t eax_14 = esi_7
+00429432                 esi_7 -= 1
+00429432                 
+00429435                 if (eax_14 s<= 0)
+00429435                     break
+00429435                 
+0042943f                 int32_t* edx_3 = &var_48
+0042943f                 
+00429442                 if (var_34 u>= 0x10)
+00429442                     edx_3 = var_48
+00429442                 
+00429446                 int32_t* eax_15 = edx_3
+00429448                 void* ebx = eax_15 + 1
+00429455                 char j_1
+00429455                 
+00429455                 do
+00429450                     j_1 = *eax_15
+00429452                     eax_15 += 1
+00429455                 while (j_1 != 0)
+00429461                 enum WIN32_ERROR result_1
+00429461                 result_1, xmm0_3 = sub_426500(*arg1, edx_3, eax_15 - ebx, &var_64)
+00429466                 result = result_1
+00429466                 
+0042946a                 if (result == NO_ERROR)
+0042947e                     uint32_t dwMilliseconds
+0042947e                     
+0042947e                     if (_strstr(xmm0_3, eax_3, "commit="1"") == 0)
+00429496                         dwMilliseconds = (9 - esi_7) * 0x32
+0042947e                     else
+00429487                         dwMilliseconds = (0xa - esi_7) * 0xc8
+00429487                     
+0042949a                     Sleep(dwMilliseconds)
+004294aa                     xmm0_3 = _memset(arg1[2], 0, 0x1000)
+004294c5                     enum WIN32_ERROR result_2 = sub_4266a0(*arg1, arg1[2], 0x1000, &var_5c, 0xbb8)
+004294ca                     result = result_2
+004294ca                     
+004294ce                     if (result != NO_ERROR)
+00429525                         if (result != 0x102)
+00429525                             break
+004294ce                     else
+004294d0                         void* var_7c_18 = var_5c
+004294d6                         int32_t var_1c_1 = 0xf
+004294dd                         int32_t* var_80_13 = arg1[2]
+004294e0                         enum WIN32_ERROR result_3 = result_2
+004294e3                         char var_30 = result_2.b
+004294e6                         xmm0_3 = sub_402470(&var_30, var_80_13, var_7c_18)
+004294e6                         
+004294fe                         if (sub_4172e0(&var_30, "response value="ACK"", result, 0x14) != 0xffffffff)
+00429531                             if (var_1c_1 u>= 0x10)
+00429536                                 j__free(var_30.d)
+00429536                             
+00429531                             break
+00429531                         
+00429504                         result = ERROR_INVALID_FUNCTION
+00429504                         
+00429509                         if (var_1c_1 u>= 0x10)
+00429512                             j__free(var_30.d)
+00429512             
+0042953e             int32_t var_8_2 = 0xffffffff
+0042953e             
+00429549             if (var_34 u>= 0x10)
+0042954e                 j__free(var_48)
+0042954e             
+00429562             i_2, xmm0_2 = _strstr(xmm0_3, arg1[3] + eax_12, "<ufs")
+00429562         
+00429577         j__free(eax_3)
+004292f8     else
+004292fa         _fclose(eax_4)
+004292fa 
+00429584 fsbase->NtTib.ExceptionList = ExceptionList
+00429594 sub_54a573(eax_2 ^ &__saved_ebp)
+0042959c return result

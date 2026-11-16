@@ -1,4 +1,32 @@
+# Rust build output (including nested review/probe workspaces).
 target/
-.DS_Store
+
+# Local experiments, downloaded firmware and device output.
+# Keep the runs index; its linked artifacts remain local.
+/runs/*
+!/runs/README.md
 /backups/
 *.partial
+
+# Local cloud configuration and the default SWM private identity.
+# examples/cloud-config.json and public test fixtures remain versioned.
+/cloud-config.json
+swm-identity.json
+.env
+.env.*
+!.env.example
+
+# Python environments and bytecode used by research scripts.
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# OS metadata and editor recovery files.
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~

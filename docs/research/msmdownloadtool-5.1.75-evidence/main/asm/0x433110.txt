@@ -1,0 +1,140 @@
+00433110 push    ebp
+00433111 mov     ebp, esp
+00433113 push    0xffffffff
+00433115 push    0x6cea38
+0043311a mov     eax, dword [fs:0x0]
+00433120 push    eax
+00433121 sub     esp, 0x10
+00433124 push    ebx
+00433125 push    esi
+00433126 push    edi
+00433127 mov     eax, dword [0x7c0bb0]
+0043312c xor     eax, ebp
+0043312e push    eax
+0043312f lea     eax, [ebp-0xc]
+00433132 mov     dword [fs:0x0], eax
+00433138 mov     dword [ebp-0x4], 0x3
+0043313f mov     eax, dword [ebp+0x14]
+00433142 push    0x7dfdb4
+00433147 push    ecx
+00433148 add     eax, 0xfffffff0
+0043314b mov     dword [ebp-0x10], esp
+0043314e mov     esi, esp
+00433150 push    eax
+00433151 call    0x41a8a0
+00433156 add     eax, 0x10
+00433159 mov     dword [esi], eax
+0043315b mov     byte [ebp-0x4], 0x4
+0043315f mov     esi, esp
+00433161 mov     eax, dword [ebp+0x10]
+00433164 add     eax, 0xfffffff0
+00433167 mov     dword [ebp-0x14], esp
+0043316a push    eax
+0043316b call    0x41a8a0
+00433170 add     eax, 0x10
+00433173 mov     dword [esi], eax
+00433175 mov     byte [ebp-0x4], 0x5
+00433179 mov     esi, esp
+0043317b mov     eax, dword [ebp+0xc]
+0043317e add     eax, 0xfffffff0
+00433181 mov     dword [ebp-0x18], esp
+00433184 push    eax
+00433185 call    0x41a8a0
+0043318a add     eax, 0x10
+0043318d mov     dword [esi], eax
+0043318f mov     byte [ebp-0x4], 0x6
+00433193 mov     esi, esp
+00433195 mov     eax, dword [ebp+0x8]
+00433198 add     eax, 0xfffffff0
+0043319b push    eax
+0043319c call    0x41a8a0
+004331a1 add     esp, 0x4
+004331a4 add     eax, 0x10
+004331a7 mov     dword [esi], eax
+004331a9 mov     byte [ebp-0x4], 0x3
+004331ad call    dword [0x7d4920]
+004331b3 mov     ebx, eax
+004331b5 add     esp, 0x14
+004331b8 test    ebx, ebx
+004331ba je      0x433200
+00433200 mov     dword [0x7df7c8], 0x0
+004331bc lea     eax, [ebp+0x8]
+004331bf mov     ecx, 0x7dfdb0
+004331c4 push    eax
+004331c5 call    0x41a720
+004331ca lea     eax, [ebp+0xc]
+004331cd mov     ecx, 0x7dfdb8
+004331d2 push    eax
+004331d3 call    0x41a720
+004331d8 lea     eax, [ebp+0x10]
+004331db mov     ecx, 0x7dfdbc
+004331e0 push    eax
+004331e1 call    0x41a720
+004331e6 lea     eax, [ebp+0x14]
+004331e9 mov     ecx, 0x7dfdc0
+004331ee push    eax
+004331ef call    0x41a720
+004331f4 mov     dword [0x7df7c8], 0x1
+004331fe jmp     0x43320a
+0043322d mov     byte [ebp-0x4], 0x1
+00433231 mov     ecx, esi
+00433233 mov     edx, dword [ebp+0xc]
+00433236 add     edx, 0xfffffff0
+00433239 lea     eax, [edx+0xc]
+0043323c lock xadd dword [eax], ecx
+00433240 dec     ecx
+00433241 test    ecx, ecx
+00433243 jg      0x43324d
+00433225 mov     ecx, dword [edx]
+00433227 push    edx
+00433228 mov     eax, dword [ecx]
+0043322a call    dword [eax+0x4]
+0043320a mov     byte [ebp-0x4], 0x2
+0043320e or      esi, 0xffffffff
+00433211 mov     edx, dword [ebp+0x8]
+00433214 mov     eax, esi
+00433216 add     edx, 0xfffffff0
+00433219 lea     ecx, [edx+0xc]
+0043321c lock xadd dword [ecx], eax
+00433220 dec     eax
+00433221 test    eax, eax
+00433223 jg      0x43322d
+0043324d mov     byte [ebp-0x4], 0x0
+00433251 mov     ecx, esi
+00433253 mov     edx, dword [ebp+0x10]
+00433256 add     edx, 0xfffffff0
+00433259 lea     eax, [edx+0xc]
+0043325c lock xadd dword [eax], ecx
+00433260 dec     ecx
+00433261 test    ecx, ecx
+00433263 jg      0x43326d
+00433245 mov     ecx, dword [edx]
+00433247 push    edx
+00433248 mov     eax, dword [ecx]
+0043324a call    dword [eax+0x4]
+0043326d mov     dword [ebp-0x4], 0xffffffff
+00433274 mov     edi, dword [ebp+0x14]
+00433277 add     edi, 0xfffffff0
+0043327a lea     eax, [edi+0xc]
+0043327d lock xadd dword [eax], esi
+00433281 dec     esi
+00433282 test    esi, esi
+00433284 jg      0x43328e
+00433265 mov     ecx, dword [edx]
+00433267 push    edx
+00433268 mov     eax, dword [ecx]
+0043326a call    dword [eax+0x4]
+0043328e mov     eax, ebx
+00433290 mov     ecx, dword [ebp-0xc]
+00433293 mov     dword [fs:0x0], ecx
+0043329a pop     ecx
+0043329b pop     edi
+0043329c pop     esi
+0043329d pop     ebx
+0043329e mov     esp, ebp
+004332a0 pop     ebp
+004332a1 retn    
+00433286 mov     ecx, dword [edi]
+00433288 push    edi
+00433289 mov     edx, dword [ecx]
+0043328b call    dword [edx+0x4]

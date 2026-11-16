@@ -1,0 +1,34 @@
+10024b56 int32_t var_c = arg3
+10024b5c var_c = 4
+10024b64 op_device_manager_set_all_disconnect(arg4)
+10024b64 
+10024b73 if (data_10217a0c == 0)
+10024b75     int32_t var_14_1 = 0
+10024b77     int32_t var_18 = 1
+10024b79     int32_t var_1c = 0
+10024b7b     int32_t var_20 = 0
+10024b82     return j_sub_10296238()
+10024b82 
+10024b90 void* var_20_1 = *(arg4 + 0x44c)
+10024b96 *(arg4 + 0x444) = 1
+10024b96 
+10024baa if (sub_10141180(var_20_1, nullptr, sub_10023250, arg4) == 0)
+10024bd1     void** eax_3 = *(arg4 + 0x44c)
+10024bde     sub_10141e10(*eax_3, eax_3[1], 2, &var_c)
+10024bde     
+10024bfb     if (sub_10141180(*(arg4 + 0x450), nullptr, 0x10023070, arg4) == 0)
+10024c0f         void** eax_5 = *(arg4 + 0x450)
+10024c1c         sub_10141e10(*eax_5, eax_5[1], 2, &var_c)
+10024c2a         return 0
+10024c2a     
+10024bfd     void* var_14_5 = arg4
+10024bfe     char const* const var_18_2 = "[opdevice][%s] ERROR: Failed to create listener thread."
+10024c03     int32_t var_1c_3 = 0x3a4
+10024baa else
+10024bac     void* var_14_3 = arg4
+10024bad     char const* const var_18_1 = "[opdevice][%s] ERROR: Failed to create listener thread."
+10024bb2     int32_t var_1c_1 = 0x39f
+10024bb2 
+10024bb7 char const* const var_20_2 = "op_device_manager_start_detect"
+10024bca *opdbg_log()
+10024bcb return 0xffffffff

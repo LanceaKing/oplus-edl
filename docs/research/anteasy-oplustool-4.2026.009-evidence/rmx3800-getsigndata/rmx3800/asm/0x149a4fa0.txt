@@ -1,0 +1,14 @@
+149a4fa0 stp     fp, lr, [sp, #-0x20]!
+149a4fa4 str     x19, [sp, #0x10]
+149a4fa8 mov     fp, sp
+149a4fac adrp    x19, 0x80269000
+149a4fb0 mov     w1, wzr
+149a4fb4 add     x19, x19, #0
+149a4fb8 mov     w2, #0x2
+149a4fbc add     x0, x19, #0x1
+149a4fc0 bl      0x1499c404
+149a4fc4 mov     w8, #0x1
+149a4fc8 strb    w8, [x19]
+149a4fcc ldr     x19, [sp, #0x10]
+149a4fd0 ldp     fp, lr, [sp], #0x20
+149a4fd4 ret     

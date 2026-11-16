@@ -1,0 +1,1859 @@
+10013720 int32_t __saved_ebp_2
+10013720 int32_t __saved_ebp_1 = __saved_ebp_2
+10013723 int32_t var_8 = 0xffffffff
+10013725 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10061b47
+10013730 TEB* fsbase
+10013730 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+10013741 int32_t ebx
+10013741 int32_t var_a54 = ebx
+10013742 int32_t esi
+10013742 int32_t var_a58 = esi
+10013743 int32_t edi
+10013743 int32_t var_a5c = edi
+10013744 int32_t __saved_ebp
+10013744 int32_t var_a60 = __security_cookie ^ &__saved_ebp
+10013744 int32_t* esp_1 = &var_a60
+10013748 fsbase->NtTib.ExceptionList = &ExceptionList
+1001374e void* esi_1 = arg1
+10013753 int32_t var_8_1 = 1
+10013761 int32_t* arg_8
+10013761 int32_t* arg_20
+10013761 uint32_t result
+10013761 
+10013761 if (*(esi_1 + 0x304da0) == 0)
+1001377b     char var_6d4[0x168]
+1001377b     memset(&var_6d4, 0, 0x168)
+10013783     int32_t var_38_1 = 0xf
+1001378a     int64_t var_a0c_1 = 0
+10013792     int32_t var_3c_1 = 0
+10013799     char var_4c = 0
+1001379d     var_8_1.b = 2
+100137a1     int32_t* eax_3 = &arg_8
+100137a8     void* ecx = *(esi_1 + 0x1c)
+100137a8     
+100137ab     if (arg3 u>= 0x10)
+100137ab         eax_3 = arg_8
+100137ab     
+100137bd     char const* const var_a78 = ecx + 0x9e4
+100137cd     opdbg_log("QCFlashWorker::doActionProgramParition", 0x70e, "[%s] [%s] INFO: Partition : %s", 
+100137cd         var_a78, ecx + 0x444, eax_3)
+100137e9     int32_t** edi_1 = sub_10044710(*(*(esi_1 + 0x1768) + 0xc), arg2, &arg_8)
+100137eb     int32_t** var_9dc_1 = edi_1
+100137eb     
+100137f3     if (edi_1 != 0)
+1001384d         void* ecx_3 = *(esi_1 + 0x1764)
+10013864         int32_t var_a74_3
+10013864         char const* const var_a70_3
+10013864         int32_t var_a6c_3
+10013864         int32_t var_a68_4
+10013864         int32_t** var_a64_4
+10013864         int32_t** var_9d8_1
+10013864         int32_t ecx_27
+10013864         
+10013864         if (*(ecx_3 + 0xa0) != 1 || edi_1[6] s>= 0)
+10013bb0             if (arg4 u> 0)
+10013bb8                 int32_t** eax_41
+10013bb8                 eax_41, ecx_27 = sub_10042b00(ecx_3, 4, &arg_20)
+10013bbd                 var_9d8_1 = eax_41
+10013bbd                 
+10013bc5                 if (eax_41 != 0)
+10013bc5                     goto label_10013da5
+10013bc5                 
+10013bcf                 int32_t** eax_42 = &arg_20
+10013bd2                 int32_t ecx_49 = *(esi_1 + 0x1c)
+10013bd2                 
+10013bd5                 if (arg5 u>= 0x10)
+10013bd5                     eax_42 = arg_20
+10013bd5                 
+10013bd9                 var_a64_4 = eax_42
+10013be0                 var_a68_4 = ecx_49 + 0x444
+10013be7                 var_a6c_3 = ecx_49 + 0x9e4
+10013be8                 var_a70_3 = "[%s] [%s] ERROR: File not found: %s "
+10013bed                 var_a74_3 = 0x753
+10013bed                 goto label_10013bf7
+10013bed             
+10013c2b             int64_t var_54 = 0
+10013c31             sub_1002d080(&var_54, &edi_1[0x16])
+10013c36             var_8_1.b = 0xd
+10013c3e             int32_t** eax_52
+10013c3e             
+10013c3e             if (var_54:4.d u<= 1)
+10013cdd                 int32_t** eax_54 = var_9dc_1
+10013cdd                 
+10013ce7                 if (eax_54[5] u>= 0x10)
+10013ce9                     eax_54 = *eax_54
+10013ce9                 
+10013ceb                 int32_t ecx_55 = *(esi_1 + 0x1c)
+10013d02                 char const* const var_a70_8 = "[%s] [%s] INFO: partition %s had only one file."
+10013d07                 int32_t var_a74_7 = 0x76b
+10013d0c                 var_a78 = "QCFlashWorker::doActionProgramParition"
+10013d11                 opdbg_log(var_a78, var_a74_7, var_a70_8, ecx_55 + 0x9e4, ecx_55 + 0x444, eax_54)
+10013d13                 void** eax_57 = edi_1[0x16]
+10013d18                 edi_1 = var_9dc_1
+10013d20                 eax_52 = *(*eax_57 + 8)
+10013c3e             else
+10013c48                 int32_t** eax_46 = &arg_8
+10013c4b                 int32_t ecx_51 = *(esi_1 + 0x1c)
+10013c4b                 
+10013c4e                 if (arg3 u>= 0x10)
+10013c4e                     eax_46 = arg_8
+10013c4e                 
+10013c66                 char const* const var_a70_7 = "[%s] [%s] INFO: partition %s is multiple files."
+10013c6b                 int32_t var_a74_6 = 0x764
+10013c70                 var_a78 = "QCFlashWorker::doActionProgramParition"
+10013c75                 opdbg_log(var_a78, var_a74_6, var_a70_7, ecx_51 + 0x9e4, ecx_51 + 0x444, eax_46)
+10013c82                 uint8_t* eax_49
+10013c82                 int32_t ecx_52
+10013c82                 eax_49, ecx_52 = sub_10007bf0("xbl")
+10013c8a                 uint8_t* eax_50
+10013c8a                 
+10013c8a                 if (eax_49 == 0xffffffff)
+10013c8c                     int32_t var_a64_18 = ecx_52
+10013c95                     eax_50 = sub_10007bf0("imagefv")
+10013c95                 
+10013c9d                 if (eax_49 != 0xffffffff || eax_50 != 0xffffffff)
+10013cca                     sub_10002870(&var_a78, esi_1 + 0x18e4)
+10013ccf                     edi_1 = var_9dc_1
+10013cd6                     eax_52 = sub_10015c80(edi_1, var_a78)
+10013c9d                 else
+10013cab                     sub_10002870(&var_a78, esi_1 + 0x18b4)
+10013cb0                     edi_1 = var_9dc_1
+10013cb7                     eax_52 = sub_10015c80(edi_1, var_a78)
+10013cb7             
+10013d23             var_9d8_1 = eax_52
+10013d23             
+10013d2b             if (eax_52 != 0)
+10013d8f                 var_8_1.b = 2
+10013d93                 ecx_27 = sub_1002d040(&var_54)
+10013d93                 goto label_10013da5
+10013d93             
+10013d31             int32_t* eax_59
+10013d31             
+10013d31             if (edi_1[5] u< 0x10)
+10013d37                 eax_59 = edi_1
+10013d31             else
+10013d33                 eax_59 = *edi_1
+10013d33             
+10013d39             int32_t ecx_56 = *(esi_1 + 0x1c)
+10013d4b             char const* const var_a70_9 = "[%s] [%s] ERROR:No proper files found for partition: %s "
+10013d50             int32_t var_a74_8 = 0x771
+10013d55             var_a78 = "QCFlashWorker::doActionProgramParition"
+10013d5a             opdbg_log(var_a78, var_a74_8, var_a70_9, ecx_56 + 0x9e4, ecx_56 + 0x444, eax_59)
+10013d5a             
+10013d67             if (edi_1[5] u>= 0x10)
+10013d69                 edi_1 = *edi_1
+10013d69             
+10013d6b             int32_t** var_a64_21 = edi_1
+10013d72             sub_10024880(esi_1, "file_not_found(%)")
+10013d77             esp_1 = &var_a60
+10013d7d             sub_1002d040(&var_54)
+10013d82             result = 0x7d08
+10013864         else
+1001386f             int32_t** eax_14 = *(*edi_1[0x16] + 8)
+10013872             var_9d8_1 = eax_14
+10013872             
+1001387a             if (eax_14 != 0)
+100138af                 void var_84
+100138af                 sub_10002870(&var_84, &arg_8)
+100138b7                 var_8_1.b = 3
+100138c1                 sub_10002870(&var_a78, &arg_8)
+100138c8                 char* eax_18 = sub_10024f50(esi_1, var_a78)
+100138cf                 void var_34
+100138cf                 char* eax_20
+100138cf                 
+100138cf                 if (eax_18 == 0)
+100138ec                     sub_100027f0(&arg_8, sub_1002dc10(eax_18, &arg_8, &var_34, "_a"))
+100138f4                     sub_100019a0(&var_34)
+10013902                     sub_10002870(&var_a78, &arg_8)
+10013909                     eax_20 = sub_10024f50(esi_1)
+10013909                 
+10013910                 char const* const var_a90
+10013910                 void var_a38
+10013910                 void var_a04
+10013910                 
+10013910                 if (eax_18 != 0 || eax_20 != 0)
+10013a37                     sub_10002870(&var_a78, &arg_8)
+10013a3e                     sub_10044ee0(edi_1)
+10013a52                     int32_t* eax_32 =
+10013a52                         sub_1002dab0(&arg_8, "write_super_logic_partition(", &var_a38, &arg_8)
+10013a5e                     var_8_1.b = 4
+10013a68                     void var_a50
+10013a68                     char* eax_33 = sub_1002dbc0(eax_32.b, eax_32, &var_a50, ", ")
+10013a74                     var_8_1.b = 5
+10013a7b                     void var_6c
+10013a7b                     char* eax_34 = sub_1002dbc0(eax_33.b, eax_33, &var_6c, &data_1006a03d)
+10013a87                     var_8_1.b = 6
+10013a8e                     sub_1002dbc0(eax_34.b, eax_34, &var_34, ")")
+10013a93                     esp_1 = &var_a60
+10013a99                     sub_100019a0(&var_6c)
+10013aa4                     sub_100019a0(&var_a50)
+10013aaf                     var_8_1.b = 0xa
+10013ab3                     sub_100019a0(&var_a38)
+10013abf                     result = sub_10024fe0()
+10013abf                     
+10013ac3                     if (result == 0)
+10013ad1                         char const* const* var_9e4_1 = &var_a78
+10013ad8                         sub_10002870(&var_a78, &var_34)
+10013ae0                         var_8_1.b = 0xb
+10013ae6                         char const* const var_a94_1 = "run_action"
+10013aeb                         sub_10001a60(&var_a90, "run_action")
+10013af0                         int32_t var_a94_2 = 1
+10013af4                         var_8_1.b = 0xa
+10013af8                         int32_t var_a8c
+10013af8                         int32_t var_a88
+10013af8                         sub_10024c50(esi_1, 1, var_a90, var_a8c, var_a88)
+10013b08                         char const* const* var_9e4_2 = &var_a78
+10013b11                         sub_10045450(var_9d8_1, &var_a78)
+10013b19                         var_8_1.b = 0xc
+10013b23                         sub_10002870(&var_a90, &arg_8)
+10013b2a                         var_8_1.b = 0xa
+10013b2e                         esp_1 = &var_a60
+10013b33                         result = sub_1001b700(esi_1)
+10013b33                         
+10013b37                         if (result == 0)
+10013b95                             result = 0
+10013b37                         else
+10013b47                             char* edx_6 = sub_10045450(var_9d8_1, &var_a04)
+10013b47                             
+10013b4d                             if (*(edx_6 + 0x14) u>= 0x10)
+10013b4f                                 edx_6 = *edx_6
+10013b4f                             
+10013b55                             int32_t** eax_38 = &arg_8
+10013b58                             int32_t ecx_45 = *(esi_1 + 0x1c)
+10013b58                             
+10013b5b                             if (arg3 u>= 0x10)
+10013b5b                                 eax_38 = arg_8
+10013b5b                             
+10013b74                             char const* const var_a74_5 = "[%s] [%s] ERROR:write logical partition "
+10013b74                             "failed, patition name:%s, path=%s."
+10013b79                             var_a78 = 0x736
+10013b83                             opdbg_log("QCFlashWorker::doActionProgramParition", var_a78, var_a74_5, 
+10013b83                                 ecx_45 + 0x9e4, ecx_45 + 0x444, eax_38, edx_6)
+10013b85                             esp_1 = &var_a60
+10013b8e                             sub_100019a0(&var_a04)
+10013b8e                     
+10013b9a                     sub_100019a0(&var_34)
+10013ba2                     sub_100019a0(&var_84)
+10013910                 else
+10013920                     sub_10001bd0(&arg_8, &var_84, eax_20, 0xffffffff)
+1001392e                     sub_10002870(&var_a78, &arg_8)
+1001393a                     char* eax_21 = sub_1002f2a0(*(esi_1 + 0x176c), arg2)
+1001393f                     char* edi_2 = eax_21
+1001393f                     
+10013943                     if (edi_2 != 0)
+100139f3                     label_100139f3:
+100139f3                         sub_10001a60(&var_a78, edi_2)
+100139fe                         sub_10044ee0(var_9dc_1)
+10013a0c                         var_9dc_1[6] = *(edi_2 + 0x24)
+10013a12                         var_9dc_1[7] = *(edi_2 + 0x28)
+10013a18                         edi_1 = var_9dc_1
+10013a1d                         var_8_1.b = 2
+10013a21                         edi_1[8] = *(edi_2 + 0x2c)
+10013a24                         ecx_27 = sub_100019a0(&var_84)
+10013da5                     label_10013da5:
+10013da5                         uint32_t result_1
+10013da5                         
+10013da5                         if (*(*(esi_1 + 0x1764) + 0xa0) == 1)
+10013db0                             sub_10002870(&var_a78, &arg_8)
+10013dba                             int32_t eax_64
+10013dba                             int32_t edx_7
+10013dba                             edx_7:eax_64 = sx.q(edi_1[8])
+10013dc9                             result_1, ecx_27 = sub_1002ca90(esi_1, var_9d8_1[0x10], 
+10013dc9                                 var_9d8_1[0x11], eax_64, edx_7, var_a78)
+10013dc9                             esp_1 = &var_a60
+10013dc9                         
+10013dd3                         if (*(*(esi_1 + 0x1764) + 0xa0) != 1 || result_1 != 0x1869f)
+10013de3                             uint32_t eax_66
+10013de3                             
+10013de3                             if (*(esi_1 + 0x3062bc) u> 0)
+10013dec                                 eax_66, ecx_27 = sub_10013390(esi_1, edi_1)
+10013dec                             
+10013df3                             if (*(esi_1 + 0x3062bc) u<= 0 || eax_66 == 0)
+10013e7c                                 int32_t var_a64_27 = ecx_27
+10013e7c                                 
+10013e8d                                 if (sub_10043fb0(*(esi_1 + 0x20), var_9d8_1) == 0)
+10013f26                                     int32_t eax_76
+10013f26                                     int32_t ecx_73
+10013f26                                     eax_76, ecx_73 = sub_10007bb0(&arg_8, "PrimaryGPT")
+10013f38                                     int32_t eax_78
+10013f38                                     
+10013f38                                     if (eax_76 == 0 && *(esi_1 + 0x17dc) != edi_1[6])
+10013f3d                                         eax_78, ecx_73 = sub_10006ec0(*(esi_1 + 0x28))
+10013f3d                                     
+10013f44                                     if (eax_76 != 0 || *(esi_1 + 0x17dc) == edi_1[6] || eax_78 == 0)
+10013f84                                         int32_t var_a64_34 = ecx_73
+10013f8d                                         uint8_t* eax_81 = sub_10007bf0("reserve1")
+10013f95                                         void var_9bc
+10013f95                                         int32_t eax_88
+10013f95                                         
+10013f95                                         if (eax_81 != 0xffffffff)
+10013fa9                                             memset(&var_9bc, 0, 0x168)
+10013fb7                                             bool cond:10_1 = *(esi_1 + 0x18e0) u< 0x10
+10013fbe                                             int32_t var_9cc_1 = *(esi_1 + 0x17d8)
+10013fc4                                             char* eax_83 = esi_1 + 0x18cc
+10013fca                                             int32_t var_9d4 = 0
+10013fd4                                             int32_t var_9d0_1 = 0
+10013fde                                             int32_t var_9c8_1 = arg2
+10013fde                                             
+10013fe4                                             if (not(cond:10_1))
+10013fe6                                                 eax_83 = *eax_83
+10013fe6                                             
+10013fe8                                             char const* const ecx_76 = "eMMC"
+10013ff0                                             int32_t eax_85
+10013ff0                                             
+10013ff0                                             while (true)
+10013ff0                                                 char edx_8 = *eax_83
+10013ff2                                                 char const temp2_1 = *ecx_76
+10013ff2                                                 bool c_1 = edx_8 u< temp2_1
+10013ff2                                                 
+10013ff4                                                 if (edx_8 == temp2_1)
+10013ff8                                                     if (edx_8 == 0)
+1001400c                                                         eax_85 = 0
+1001400e                                                         break
+1001400e                                                     
+10013ffa                                                     edx_8 = eax_83[1]
+10013ffd                                                     char temp4_1 = ecx_76[1]
+10013ffd                                                     c_1 = edx_8 u< temp4_1
+10013ffd                                                     
+10014000                                                     if (edx_8 == temp4_1)
+10014002                                                         eax_83 = &eax_83[2]
+10014005                                                         ecx_76 = &ecx_76[2]
+10014005                                                         
+1001400a                                                         if (edx_8 != 0)
+1001400a                                                             continue
+1001400a                                                         
+1001400c                                                         eax_85 = 0
+1001400e                                                         break
+1001400e                                                 
+10014012                                                 eax_85 = sbb.d(eax_83, eax_83, c_1) | 1
+10014012                                                 break
+10014012                                             
+10014017                                             int32_t eax_86 = edi_1[7]
+1001401a                                             int32_t eax_87
+1001401a                                             
+1001401a                                             if (eax_85 != 0)
+1001402d                                                 eax_87 = eax_86 + 0x429
+10014032                                                 int32_t var_9c0_2 = 1
+1001401a                                             else
+1001401c                                                 eax_87 = eax_86 + 0x20ca
+10014021                                                 int32_t var_9c0_1 = 2
+10014021                                             
+10014040                                             int32_t** ecx_77 = &arg_8
+10014043                                             int32_t var_9c4_1 = eax_87
+10014049                                             char* edx_9 = &var_9bc
+10014049                                             
+1001404f                                             if (arg3 u>= 0x10)
+1001404f                                                 ecx_77 = arg_8
+1001404f                                             
+1001405f                                             do
+10014053                                                 eax_87.b = *ecx_77
+10014055                                                 ecx_77 += 1
+10014058                                                 *edx_9 = eax_87.b
+1001405a                                                 edx_9 = &edx_9[1]
+1001405f                                             while (eax_87.b != 0)
+1001405f                                             
+1001406b                                             eax_88 = sub_10005540(*(esi_1 + 0x28), &var_9d4)
+1001406b                                         
+10014072                                         if (eax_81 == 0xffffffff || eax_88 == 0)
+100140c7                                             int32_t var_56c
+100140c7                                             memset(&var_56c, 0, 0x4e8)
+100140c7                                             
+100140d9                                             if (sub_10006b90(*(esi_1 + 0x28)) == 0)
+10014126                                                 uint32_t eax_95
+10014126                                                 
+10014126                                                 if (*(*(esi_1 + 0x1764) + 0xa0) != 1)
+10014135                                                     eax_95 = edi_1[0xe]
+10014126                                                 else
+1001412e                                                     eax_95 = sub_10041800(*(esi_1 + 0x1760))
+1001412e                                                 
+1001413a                                                 int32_t var_854
+1001413a                                                 void var_850
+1001413a                                                 char var_568[0x10]
+1001413a                                                 char var_558[0x104]
+1001413a                                                 char var_454
+1001413a                                                 char var_44c
+1001413a                                                 char var_444[0x168]
+1001413a                                                 char var_2dc[0x10]
+1001413a                                                 char var_2cc
+1001413a                                                 char var_2c4[0x40]
+1001413a                                                 char var_284[0x200]
+1001413a                                                 int32_t** ebx_8
+1001413a                                                 
+1001413a                                                 if (eax_95 == 0)
+100150c1                                                     memset(&var_854, 0, 0x2e8)
+100150cf                                                     int32_t eax_247 = *(esi_1 + 0x17d8)
+100150d5                                                     var_854 = eax_247
+100150db                                                     int32_t eax_248
+100150db                                                     uint32_t edx_32
+100150db                                                     edx_32:eax_248 = sx.q(eax_247)
+100150dc                                                     int32_t edi_16 = var_9d8_1[0x10]
+100150f7                                                     int32_t** ecx_186 = &arg_8
+100150fa                                                     int32_t eax_250 = __alldiv(edi_16 - 1, 
+100150fa                                                         sbb.d(var_9d8_1[0x11], 0, edi_16 u< 1), 
+100150fa                                                         eax_248, edx_32) + 1
+100150fb                                                     char (* edx_33)[0x168] = &var_6d4
+1001510b                                                     int32_t eax_251 = var_9dc_1[6]
+1001510b                                                     
+1001510e                                                     if (arg3 u>= 0x10)
+1001510e                                                         ecx_186 = arg_8
+1001510e                                                     
+10015118                                                     int32_t var_6e4_2 = 0
+10015122                                                     int32_t var_6dc_2 = 1
+1001512f                                                     char* var_6d8_2 = var_9dc_1[7]
+10015141                                                     char* eax_252
+10015141                                                     
+10015141                                                     do
+10015135                                                         eax_252.b = *ecx_186
+10015137                                                         ecx_186 += 1
+1001513a                                                         *edx_33 = eax_252.b
+1001513c                                                         edx_33 = &(*edx_33)[1]
+10015141                                                     while (eax_252.b != 0)
+10015157                                                     char* ecx_188 =
+10015157                                                         sub_10045410(var_9d8_1, &var_a04)
+10015157                                                     
+1001515d                                                     if (*(ecx_188 + 0x14) u>= 0x10)
+1001515f                                                         ecx_188 = *ecx_188
+1001515f                                                     
+10015161                                                     char* edx_34 = &var_850
+10015173                                                     char* eax_253
+10015173                                                     
+10015173                                                     do
+10015167                                                         eax_253.b = *ecx_188
+10015169                                                         ecx_188 = &ecx_188[1]
+1001516c                                                         *edx_34 = eax_253.b
+1001516e                                                         edx_34 = &edx_34[1]
+10015173                                                     while (eax_253.b != 0)
+1001517b                                                     sub_100019a0(&var_a04)
+1001518e                                                     memset(&var_56c, 0, 0x4e8)
+10015193                                                     int32_t var_a70_39 = eax_251
+1001519f                                                     char* var_a74_34 = &data_1006cf10
+100151a4                                                     var_a78 = 0x10
+100151a7                                                     sub_10003d10(&var_568, var_a78, var_a74_34)
+100151b2                                                     char (* var_a80_18)[0x168] = &var_6d4
+100151c4                                                     sub_10003d10(&var_558, 0x104, "%s")
+100151c9                                                     var_a90 = var_6d8_2
+100151d5                                                     void* const var_a94_8 = &data_1006cf10
+100151da                                                     int32_t var_a98_5 = 8
+100151dd                                                     sub_10003d10(&var_454, 8, "%d")
+100151e2                                                     int32_t var_aa0_5 = var_854
+100151ee                                                     void* const var_aa4_3 = &data_1006cf10
+100151f3                                                     int32_t var_aa8_3 = 8
+100151f6                                                     sub_10003d10(&var_44c, 8, "%d")
+10015204                                                     void* var_a64_96 = &var_850
+10015216                                                     sub_10003d10(&var_444, 0x168, "%s")
+1001521b                                                     int32_t var_a74_35 = var_9d8_1[0x11]
+10015224                                                     var_a78 = var_9d8_1[0x10]
+1001522f                                                     sub_10003d10(&var_2dc, 0x10, "%lld")
+10015237                                                     int32_t eax_255 = *(esi_1 + 0x1c) + 0xb4c
+1001523c                                                     var_56c = 0
+1001524e                                                     write_flash_event_write_physical_partition_start(
+1001524e                                                         &var_56c, eax_255)
+1001524e                                                     
+10015268                                                     if (sub_10006420(*(esi_1 + 0x28), &var_854)
+10015268                                                             == 0)
+1001530f                                                         void* eax_261 = *(esi_1 + 0x28)
+10015316                                                         *(eax_261 + 0x8920) = 0
+10015320                                                         *(eax_261 + 0x8924) = 0
+1001532a                                                         sub_10002870(&var_34, var_9dc_1)
+10015337                                                         var_8_1.b = 0x12
+1001533b                                                         int32_t eax_262 =
+1001533b                                                             sub_10007bb0(&var_34, "cdt")
+10015342                                                         int32_t eax_263
+10015342                                                         
+10015342                                                         if (eax_262 != 0)
+10015350                                                             eax_263 = sub_10007bb0(&var_34, "CDT")
+10015350                                                         
+10015357                                                         int32_t var_a9c_7
+10015357                                                         char const* const var_a98_7
+10015357                                                         void* var_a94_10
+10015357                                                         
+10015357                                                         if (eax_262 == 0 || eax_263 == 0)
+10015905                                                             memset(esi_1 + 0x203980, 0, 0x100000)
+10015905                                                             
+10015928                                                             if ((*(***(esi_1 + 0x20) + 0xc))(
+10015928                                                                     esi_1 + 0x203980, 0x100000, 
+10015928                                                                     var_9d8_1[0x10]) == 0)
+10015a4d                                                                 sub_10015da0(esi_1 + 0x203980)
+10015a58                                                                 char* eax_344
+10015a58                                                                 int32_t edx_42
+10015a58                                                                 edx_42:eax_344 =
+10015a58                                                                     muls.dp.d(eax_250, var_854)
+10015a58                                                                 
+10015a6b                                                                 if (sub_10006fe0(*(esi_1 + 0x28), 
+10015a6b                                                                     esi_1 + 0x203980, eax_344, edx_42) == 0)
+100154c1                                                                 label_100154c1:
+100154c1                                                                     
+100154c9                                                                     if (sub_10007160(*(esi_1 + 0x28)) != 0)
+100154d7                                                                         sub_10003d10(&var_2cc, 8, "fail")
+100154dc                                                                         char* var_a70_42 = &data_1006a03d
+100154e7                                                                         uint32_t var_a74_37 = 0x40
+100154e9                                                                         var_a78 = &var_2c4
+100154ea                                                                         sub_10003d10(var_a78, var_a74_37, 
+100154ea                                                                             var_a70_42)
+10015500                                                                         sub_10003d10(&var_284, 0x200, 
+10015500                                                                             "Failed to leave firehose RAW mode")
+10015515                                                                         write_flash_event_write_physical_partition_end(
+10015515                                                                             &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+1001551b                                                                         void* ecx_204 = *(esi_1 + 0x1c)
+10015524                                                                         var_a90 = ecx_204 + 0x444
+1001552b                                                                         var_a94_10 = ecx_204 + 0x9e4
+1001552c                                                                         var_a98_7 = "[%s] [%s] ERROR: Failed to "
+1001552c                                                                         "leave firehose RAW mode."
+10015531                                                                         var_a9c_7 = 0x950
+10015531                                                                         goto label_10015536
+10015531                                                                     
+10015aeb                                                                     sub_10003d10(&var_2cc, 8, "success")
+10015af0                                                                     char* var_a70_55 = &data_1006a03d
+10015afb                                                                     uint32_t var_a74_47 = 0x40
+10015afd                                                                     var_a78 = &var_2c4
+10015afe                                                                     sub_10003d10(var_a78, var_a74_47, 
+10015afe                                                                         var_a70_55)
+10015b14                                                                     sub_10003d10(&var_284, 0x200, 
+10015b14                                                                         &data_1006a03d)
+10015b29                                                                     write_flash_event_write_physical_partition_end(
+10015b29                                                                         &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+10015b32                                                                     var_8_1.b = 2
+10015b39                                                                     sub_100019a0(&var_34)
+10015b52                                                                 label_10015b52:
+10015b52                                                                     char* ecx_246 =
+10015b52                                                                         sub_10045410(var_9d8_1, &var_a04)
+10015b54                                                                     var_8_1.b = 0x13
+10015b54                                                                     
+10015b5c                                                                     if (*(ecx_246 + 0x14) u>= 0x10)
+10015b5e                                                                         ecx_246 = *ecx_246
+10015b5e                                                                     
+10015b64                                                                     int32_t** eax_353 = &arg_8
+10015b64                                                                     
+10015b68                                                                     if (arg3 u>= 0x10)
+10015b68                                                                         eax_353 = arg_8
+10015b68                                                                     
+10015b70                                                                     esp_1 = &var_a60
+10015b77                                                                     var_8_1.b = 2
+10015b81                                                                     ebx_8.b = sub_10006ac0(*(esi_1 + 0x28), 
+10015b81                                                                         eax_353, ecx_246) != 0
+10015b84                                                                     sub_100019a0(&var_a04)
+10015b84                                                                     
+10015b8b                                                                     if (ebx_8.b == 0)
+10015bfb                                                                         result = 0
+10015b8b                                                                     else
+10015b9b                                                                         char* edx_43 =
+10015b9b                                                                             sub_10045410(var_9d8_1, &var_a04)
+10015b9b                                                                         
+10015ba1                                                                         if (*(edx_43 + 0x14) u>= 0x10)
+10015ba3                                                                             edx_43 = *edx_43
+10015ba3                                                                         
+10015ba9                                                                         int32_t** eax_356 = &arg_8
+10015bac                                                                         int32_t ecx_250 = *(esi_1 + 0x1c)
+10015bac                                                                         
+10015baf                                                                         if (arg3 u>= 0x10)
+10015baf                                                                             eax_356 = arg_8
+10015baf                                                                         
+10015bc3                                                                         char const* const var_a74_48 = "[%s] [%s"
+10015bc3                                                                         "] ERROR: Failed to execute firehose "
+10015bc3                                                                         "command 'sha256final', partitionName = "
+10015bc3                                                                         ", FileName = %s."
+10015bc8                                                                         var_a78 = 0x95d
+10015bd2                                                                         opdbg_log(
+10015bd2                                                                             "QCFlashWorker::doActionProgramParition", 
+10015bd2                                                                             var_a78, var_a74_48, ecx_250 + 0x9e4, 
+10015bd2                                                                             ecx_250 + 0x444, eax_356, edx_43)
+10015be1                                                                         sub_100019a0(&var_a04)
+10015bec                                                                         sub_10024880(esi_1, 
+10015bec                                                                             "firehouse_exec_command_error(sha256final)")
+10015bf1                                                                         esp_1 = &var_a60
+10015bf4                                                                         result = 0x791b
+10015a6b                                                                 else
+10015a7f                                                                     sub_10003d10(&var_2cc, 8, "fail")
+10015a84                                                                     char* var_a70_54 = &data_1006a03d
+10015a8f                                                                     uint32_t var_a74_46 = 0x40
+10015a91                                                                     var_a78 = &var_2c4
+10015a92                                                                     sub_10003d10(var_a78, var_a74_46, 
+10015a92                                                                         var_a70_54)
+10015aa8                                                                     sub_10003d10(&var_284, 0x200, 
+10015aa8                                                                         "Failed to send raw data to the device")
+10015abd                                                                     write_flash_event_write_physical_partition_end(
+10015abd                                                                         &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+10015ac3                                                                     void* ecx_243 = *(esi_1 + 0x1c)
+10015acc                                                                     var_a90 = ecx_243 + 0x444
+10015ad3                                                                     var_a94_10 = ecx_243 + 0x9e4
+10015ad4                                                                     var_a98_7 = "[%s] [%s] ERROR: Failed to "
+10015ad4                                                                     "send raw data to the device."
+10015ad9                                                                     var_a9c_7 = 0x8ec
+10015536                                                                 label_10015536:
+10015536                                                                     char const* const var_aa0_7 =
+10015536                                                                         "QCFlashWorker::doActionProgramParition"
+1001553b                                                                     opdbg_log(
+1001553b                                                                         "QCFlashWorker::doActionProgramParition", 
+1001553b                                                                         var_a9c_7, var_a98_7, var_a94_10)
+1001554a                                                                     sub_10024880(esi_1, 
+1001554a                                                                         "firehouse_write_raw_data()")
+1001554f                                                                     esp_1 = &var_a60
+10015555                                                                     result = 0x792c
+1001555a                                                                     sub_100019a0(&var_34)
+10015928                                                             else
+1001593c                                                                 sub_10003d10(&var_2cc, 8, "fail")
+10015941                                                                 char* var_a70_51 = &data_1006a03d
+1001594c                                                                 uint32_t var_a74_44 = 0x40
+1001594e                                                                 var_a78 = &var_2c4
+1001594f                                                                 sub_10003d10(var_a78, var_a74_44, 
+1001594f                                                                     var_a70_51)
+10015960                                                                 char* eax_330 =
+10015960                                                                     sub_10045410(var_9d8_1, &var_a04)
+10015960                                                                 
+10015969                                                                 if (*(eax_330 + 0x14) u>= 0x10)
+1001596b                                                                     eax_330 = *eax_330
+1001596b                                                                 
+1001596d                                                                 char* var_a64_136 = eax_330
+1001597f                                                                 sub_10003d10(&var_284, 0x200, 
+1001597f                                                                     "Failed to read data from file: %s")
+1001598d                                                                 sub_100019a0(&var_a04)
+100159a2                                                                 write_flash_event_write_physical_partition_end(
+100159a2                                                                     &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+100159be                                                                 char* eax_336 = sub_10045450(
+100159be                                                                     (*(***(esi_1 + 0x20) + 0x14))(), 
+100159be                                                                     &var_a04)
+100159be                                                                 
+100159c7                                                                 if (*(eax_336 + 0x14) u>= 0x10)
+100159c9                                                                     eax_336 = *eax_336
+100159c9                                                                 
+100159cb                                                                 int32_t ecx_236 = *(esi_1 + 0x1c)
+100159dd                                                                 char const* const var_a70_53 = "[%s] [%s"
+100159dd                                                                 "] ERROR: Failed to read data from file: "
+100159dd                                                                 "
+100159e2                                                                 int32_t var_a74_45 = 0x8d1
+100159e7                                                                 var_a78 =
+100159e7                                                                     "QCFlashWorker::doActionProgramParition"
+100159ec                                                                 opdbg_log(var_a78, var_a74_45, 
+100159ec                                                                     var_a70_53, ecx_236 + 0x9e4, 
+100159ec                                                                     ecx_236 + 0x444, eax_336)
+100159fb                                                                 sub_100019a0(&var_a04)
+10015a13                                                                 char* eax_342 = sub_10045410(
+10015a13                                                                     (*(***(esi_1 + 0x20) + 0x14))(), 
+10015a13                                                                     &var_a04)
+10015a13                                                                 
+10015a1c                                                                 if (*(eax_342 + 0x14) u>= 0x10)
+10015a1e                                                                     eax_342 = *eax_342
+10015a1e                                                                 
+10015a20                                                                 char* var_a64_141 = eax_342
+10015a27                                                                 sub_10024880(esi_1, 
+10015a27                                                                     "read_file_error(%s)")
+10015a2c                                                                 esp_1 = &var_a60
+10015a35                                                                 sub_100019a0(&var_a04)
+10015a3d                                                                 result = 0x7d02
+10015a42                                                                 sub_100019a0(&var_34)
+10015357                                                         else
+10015365                                                             int32_t eax_264 =
+10015365                                                                 sub_10007bb0(&var_34, "ocdt")
+1001536c                                                             int32_t eax_265
+1001536c                                                             
+1001536c                                                             if (eax_264 != 0)
+1001537a                                                                 eax_265 = sub_10007bb0(&var_34, "OCDT")
+1001537a                                                                 esp_1 = &var_a60
+1001537a                                                             
+10015381                                                             if (eax_264 == 0 || eax_265 == 0)
+10015718                                                                 memset(esi_1 + 0x203980, 0, 0x100000)
+10015718                                                                 
+1001573b                                                                 if ((*(***(esi_1 + 0x20) + 0xc))(
+1001573b                                                                         esi_1 + 0x203980, 0x100000, 
+1001573b                                                                         var_9d8_1[0x10]) == 0)
+10015860                                                                     sub_10015e40(esi_1 + 0x203980)
+10015874                                                                     char* eax_321
+10015874                                                                     int32_t edx_41
+10015874                                                                     edx_41:eax_321 = sx.q(eax_250 * var_854)
+10015874                                                                     
+1001587f                                                                     if (sub_10006fe0(*(esi_1 + 0x28), 
+1001587f                                                                             esi_1 + 0x203980, eax_321, edx_41) == 0)
+1001587f                                                                         goto label_100154c1
+1001587f                                                                     
+10015893                                                                     sub_10003d10(&var_2cc, 8, "fail")
+10015898                                                                     char* var_a70_50 = &data_1006a03d
+100158a3                                                                     uint32_t var_a74_43 = 0x40
+100158a5                                                                     var_a78 = &var_2c4
+100158a6                                                                     sub_10003d10(var_a78, var_a74_43, 
+100158a6                                                                         var_a70_50)
+100158bc                                                                     sub_10003d10(&var_284, 0x200, 
+100158bc                                                                         "Failed to send raw data to the device")
+100158d1                                                                     write_flash_event_write_physical_partition_end(
+100158d1                                                                         &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+100158d7                                                                     void* ecx_230 = *(esi_1 + 0x1c)
+100158e0                                                                     var_a90 = ecx_230 + 0x444
+100158e7                                                                     var_a94_10 = ecx_230 + 0x9e4
+100158e8                                                                     var_a98_7 = "[%s] [%s] ERROR: Failed to "
+100158e8                                                                     "send raw data to the device."
+100158ed                                                                     var_a9c_7 = 0x917
+100158f2                                                                     goto label_10015536
+100158f2                                                                 
+1001574f                                                                 sub_10003d10(&var_2cc, 8, "fail")
+10015754                                                                 char* var_a70_47 = &data_1006a03d
+1001575f                                                                 uint32_t var_a74_41 = 0x40
+10015761                                                                 var_a78 = &var_2c4
+10015762                                                                 sub_10003d10(var_a78, var_a74_41, 
+10015762                                                                     var_a70_47)
+10015773                                                                 char* eax_306 =
+10015773                                                                     sub_10045410(var_9d8_1, &var_a04)
+10015773                                                                 
+1001577c                                                                 if (*(eax_306 + 0x14) u>= 0x10)
+1001577e                                                                     eax_306 = *eax_306
+1001577e                                                                 
+10015780                                                                 char* var_a64_123 = eax_306
+10015792                                                                 sub_10003d10(&var_284, 0x200, 
+10015792                                                                     "Failed to read data from file: %s")
+100157a0                                                                 sub_100019a0(&var_a04)
+100157b5                                                                 write_flash_event_write_physical_partition_end(
+100157b5                                                                     &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+100157d1                                                                 char* eax_312 = sub_10045450(
+100157d1                                                                     (*(***(esi_1 + 0x20) + 0x14))(), 
+100157d1                                                                     &var_a04)
+100157d1                                                                 
+100157da                                                                 if (*(eax_312 + 0x14) u>= 0x10)
+100157dc                                                                     eax_312 = *eax_312
+100157dc                                                                 
+100157de                                                                 int32_t ecx_223 = *(esi_1 + 0x1c)
+100157f0                                                                 char const* const var_a70_49 = "[%s] [%s"
+100157f0                                                                 "] ERROR: Failed to read data from file: "
+100157f0                                                                 " "
+100157f5                                                                 int32_t var_a74_42 = 0x8fb
+100157fa                                                                 var_a78 =
+100157fa                                                                     "QCFlashWorker::doActionProgramParition"
+100157ff                                                                 opdbg_log(var_a78, var_a74_42, 
+100157ff                                                                     var_a70_49, ecx_223 + 0x9e4, 
+100157ff                                                                     ecx_223 + 0x444, eax_312)
+1001580e                                                                 sub_100019a0(&var_a04)
+10015826                                                                 char* eax_318 = sub_10045410(
+10015826                                                                     (*(***(esi_1 + 0x20) + 0x14))(), 
+10015826                                                                     &var_a04)
+10015826                                                                 
+1001582f                                                                 if (*(eax_318 + 0x14) u>= 0x10)
+10015831                                                                     eax_318 = *eax_318
+10015831                                                                 
+10015833                                                                 char* var_a64_128 = eax_318
+1001583a                                                                 sub_10024880(esi_1, 
+1001583a                                                                     "read_file_error(%s)")
+1001583f                                                                 esp_1 = &var_a60
+10015848                                                                 sub_100019a0(&var_a04)
+10015850                                                                 result = 0x7d02
+10015855                                                                 sub_100019a0(&var_34)
+10015381                                                             else
+1001538d                                                                 int32_t eax_266 = var_9d8_1[0x11]
+10015390                                                                 int32_t edx_35 = var_9d8_1[0x10]
+10015393                                                                 int32_t var_a10_2 = edx_35
+10015399                                                                 int32_t var_9e4_5 = eax_266
+10015399                                                                 
+100153ab                                                                 if (eax_266 s< 0
+100153ab                                                                         || (eax_266 s<= 0 && edx_35 == 0))
+100153a1                                                                     goto label_100154c1
+100153a1                                                                 
+100153b1                                                                 int32_t edi_19 = var_a0c_1:4.d
+100153b7                                                                 ebx_8 = var_a0c_1.d
+100153bd                                                                 int32_t var_9e0_3 = edi_19
+100153c3                                                                 int32_t** var_a18_2 = ebx_8
+100153c3                                                                 
+100153d7                                                                 while (true)
+100153d7                                                                     if (*(esi_1 + 0x304da0) != 0)
+100156fb                                                                         result = 0x1869f
+10015700                                                                         sub_100019a0(&var_34)
+10015705                                                                         break
+10015705                                                                     
+100153e1                                                                     int32_t eax_267 =
+100153e1                                                                         sbb.d(eax_266, edi_19, edx_35 u< ebx_8)
+100153ef                                                                     void* edi_21
+100153ef                                                                     
+100153ef                                                                     if (eax_267 s> 0 || (eax_267 s>= 0
+100153ef                                                                             && edx_35 - ebx_8 u>= 0x100000))
+100153f7                                                                         edi_21 = 0x100000
+100153ef                                                                     else
+100153f3                                                                         edi_21 = edx_35 - ebx_8
+100153f3                                                                     
+100153fc                                                                     int32_t ebx_17 = *(esi_1 + 0x17d8)
+10015405                                                                     int32_t temp1_7 =
+10015405                                                                         mods.dp.d(sx.q(edi_21), ebx_17)
+10015409                                                                     void* ebx_19
+10015409                                                                     
+10015409                                                                     if (temp1_7 == 0)
+10015427                                                                         ebx_19 = edi_21
+10015409                                                                     else
+1001541b                                                                         ebx_19 = ebx_17 - temp1_7 + edi_21
+1001541d                                                                         memset(esi_1 + 0x203980, 0, 0x100000)
+1001541d                                                                     
+10015442                                                                     if ((*(***(esi_1 + 0x20) + 0xc))(
+10015442                                                                             esi_1 + 0x203980, 0x100000, edi_21)
+10015442                                                                             != 0)
+100155e4                                                                         sub_10003d10(&var_2cc, 8, "fail")
+100155e9                                                                         char* var_a70_44 = &data_1006a03d
+100155f4                                                                         uint32_t var_a74_39 = 0x40
+100155f6                                                                         var_a78 = &var_2c4
+100155f7                                                                         sub_10003d10(var_a78, var_a74_39, 
+100155f7                                                                             var_a70_44)
+1001560c                                                                         char* eax_290 =
+1001560c                                                                             sub_10045410(var_9d8_1, &var_a04)
+1001560c                                                                         
+10015615                                                                         if (*(eax_290 + 0x14) u>= 0x10)
+10015617                                                                             eax_290 = *eax_290
+10015617                                                                         
+10015619                                                                         char* var_a64_113 = eax_290
+1001562b                                                                         sub_10003d10(&var_284, 0x200, 
+1001562b                                                                             "Failed to read data from file: %s")
+10015639                                                                         sub_100019a0(&var_a04)
+1001564e                                                                         write_flash_event_write_physical_partition_end(
+1001564e                                                                             &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+1001566a                                                                         char* eax_296 = sub_10045450(
+1001566a                                                                             (*(***(esi_1 + 0x20) + 0x14))(), 
+1001566a                                                                             &var_a04)
+1001566a                                                                         
+10015673                                                                         if (*(eax_296 + 0x14) u>= 0x10)
+10015675                                                                             eax_296 = *eax_296
+10015675                                                                         
+10015677                                                                         int32_t ecx_211 = *(esi_1 + 0x1c)
+10015689                                                                         char const* const var_a70_46 = "[%s] [%s"
+10015689                                                                         "] ERROR: Failed to read data from file: "
+10015689                                                                         " "
+1001568e                                                                         int32_t var_a74_40 = 0x934
+10015693                                                                         var_a78 =
+10015693                                                                             "QCFlashWorker::doActionProgramParition"
+10015698                                                                         opdbg_log(var_a78, var_a74_40, 
+10015698                                                                             var_a70_46, ecx_211 + 0x9e4, 
+10015698                                                                             ecx_211 + 0x444, eax_296)
+100156a7                                                                         sub_100019a0(&var_a04)
+100156bf                                                                         char* eax_302 = sub_10045410(
+100156bf                                                                             (*(***(esi_1 + 0x20) + 0x14))(), 
+100156bf                                                                             &var_a04)
+100156bf                                                                         
+100156c8                                                                         if (*(eax_302 + 0x14) u>= 0x10)
+100156ca                                                                             eax_302 = *eax_302
+100156ca                                                                         
+100156cc                                                                         char* var_a64_118 = eax_302
+100156d3                                                                         sub_10024880(esi_1, 
+100156d3                                                                             "read_file_error(%s)")
+100156d8                                                                         esp_1 = &var_a60
+100156e1                                                                         sub_100019a0(&var_a04)
+100156e9                                                                         result = 0x7d02
+100156ee                                                                         sub_100019a0(&var_34)
+10015673                                                                         break
+10015673                                                                     
+1001544d                                                                     char* eax_276
+1001544d                                                                     int32_t edx_39
+1001544d                                                                     edx_39:eax_276 = sx.q(ebx_19)
+1001544d                                                                     
+1001545e                                                                     if (sub_10006fe0(*(esi_1 + 0x28), 
+1001545e                                                                             esi_1 + 0x203980, eax_276, edx_39) != 0)
+10015572                                                                         sub_10003d10(&var_2cc, 8, "fail")
+10015577                                                                         char* var_a70_43 = &data_1006a03d
+10015582                                                                         uint32_t var_a74_38 = 0x40
+10015584                                                                         var_a78 = &var_2c4
+10015585                                                                         sub_10003d10(var_a78, var_a74_38, 
+10015585                                                                             var_a70_43)
+1001559b                                                                         sub_10003d10(&var_284, 0x200, 
+1001559b                                                                             "Failed to send raw data to the device")
+100155b0                                                                         write_flash_event_write_physical_partition_end(
+100155b0                                                                             &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+100155b6                                                                         void* ecx_206 = *(esi_1 + 0x1c)
+100155bf                                                                         var_a90 = ecx_206 + 0x444
+100155c6                                                                         var_a94_10 = ecx_206 + 0x9e4
+100155c7                                                                         var_a98_7 = "[%s] [%s] ERROR: Failed to "
+100155c7                                                                         "send raw data to the device."
+100155cc                                                                         var_a9c_7 = 0x93f
+100155d1                                                                         goto label_10015536
+100155d1                                                                     
+10015472                                                                     int32_t eax_280
+10015472                                                                     int32_t edx_40
+10015472                                                                     edx_40:eax_280 = sx.q(edi_21)
+10015473                                                                     ebx_8 = var_a18_2 + eax_280
+10015473                                                                     bool c_8 =
+10015473                                                                         var_a18_2 + eax_280 u< var_a18_2
+1001547b                                                                     var_a18_2 = ebx_8
+10015481                                                                     edi_19 = adc.d(var_9e0_3, edx_40, c_8)
+10015488                                                                     var_9e0_3 = edi_19
+1001548f                                                                     sub_10001a60(&var_a78, &var_6d4)
+10015496                                                                     sub_10021a60(esi_1, var_a78)
+10015496                                                                     esp_1 = &var_a60
+1001549b                                                                     eax_266 = var_9e4_5
+100154a1                                                                     edx_35 = var_a10_2
+100154a1                                                                     
+100154a9                                                                     if (edi_19 s>= eax_266)
+100154af                                                                         if (edi_19 s> eax_266)
+100154af                                                                             goto label_100154c1
+100154af                                                                         
+100154b3                                                                         if (ebx_8 u>= edx_35)
+100154b3                                                                             goto label_100154c1
+10015268                                                     else
+1001527c                                                         sub_10003d10(&var_2cc, 8, "fail")
+10015281                                                         char* var_a70_41 = &data_1006a03d
+1001528c                                                         uint32_t var_a74_36 = 0x40
+1001528e                                                         var_a78 = &var_2c4
+1001528f                                                         sub_10003d10(var_a78, var_a74_36, 
+1001528f                                                             var_a70_41)
+100152a5                                                         sub_10003d10(&var_284, 0x200, 
+100152a5                                                             "execute firehose command 'program' fail")
+100152ba                                                         write_flash_event_write_physical_partition_end(
+100152ba                                                             &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+100152c0                                                         int32_t ecx_191 = *(esi_1 + 0x1c)
+100152c9                                                         var_a90 = &var_850
+100152df                                                         char const* const var_aa0_6 = "[%s] [%s] "
+100152df                                                         "ERROR: Failed to execute firehose command "
+100152df                                                         "'program', partition_name=%s, file_name="
+100152df                                                         "
+100152e4                                                         int32_t var_aa4_4 = 0x8b5
+100152e9                                                         char const* const var_aa8_4 =
+100152e9                                                             "QCFlashWorker::doActionProgramParition"
+100152ee                                                         opdbg_log(
+100152ee                                                             "QCFlashWorker::doActionProgramParition", 
+100152ee                                                             0x8b5, 
+100152ee                                                             "[%s] [%s] ERROR: Failed to execute firehose "
+100152ee                                                         "command 'program', partition_name=%s, "
+100152ee                                                         "file_name=%s.", 
+100152ee                                                             ecx_191 + 0x9e4, ecx_191 + 0x444, 
+100152ee                                                             &var_6d4, var_a90)
+100152fd                                                         sub_10024880(esi_1, 
+100152fd                                                             "firehouse_exec_command_error(program)")
+10015302                                                         esp_1 = &var_a60
+10015305                                                         result = 0x791b
+1001413a                                                 else
+10014140                                                     void* ecx_83 = *(esi_1 + 0x1760)
+10014149                                                     void* var_a64_40 = ecx_83
+1001414d                                                     *(ecx_83 + 0x10) = *(ecx_83 + 0xc)
+10014153                                                     *(ecx_83 + 0x1c) = *(ecx_83 + 0x18)
+10014156                                                     *(ecx_83 + 0x24) = 0
+1001415d                                                     *(ecx_83 + 0x28) = 0
+10014164                                                     *(ecx_83 + 0x30) = 0
+1001416b                                                     *(ecx_83 + 0x34) = 0
+10014172                                                     *(ecx_83 + 0x38) = 0xffffffff
+10014179                                                     *(ecx_83 + 0x3c) = 0
+10014180                                                     *(ecx_83 + 0x40) = 0
+10014187                                                     *(ecx_83 + 0x44) = 0
+10014197                                                     int32_t* eax_99 = *(esi_1 + 0x1764) + 0x168
+1001419c                                                     int64_t var_1c = 0
+100141a2                                                     sub_1000b700(&var_1c, eax_99)
+100141af                                                     var_8_1.b = 0xe
+100141b3                                                     sub_10001a60(&var_34, "SupportFillChunk")
+100141bb                                                     var_8_1.b = 0xf
+100141ca                                                     void** var_9e8
+100141ca                                                     sub_1000bba0(&var_1c, &var_9e8, &var_34)
+100141ca                                                     
+100141dd                                                     if (&var_4c != &var_9e8[0xa])
+100141e4                                                         sub_10001bd0(&var_4c, &var_9e8[0xa], 0, 
+100141e4                                                             0xffffffff)
+100141e4                                                     
+100141ec                                                     var_8_1.b = 0xe
+100141f0                                                     sub_100019a0(&var_34)
+100141f9                                                     int16_t* const edi_4
+100141f9                                                     
+100141f9                                                     if (var_3c_1 != 0)
+10014206                                                         edi_4 = &var_4c
+10014206                                                         
+10014209                                                         if (var_38_1 u>= 0x10)
+10014209                                                             edi_4 = var_4c.d
+100141f9                                                     else
+100141fb                                                         edi_4 = &data_1006d0e0
+100141fb                                                     
+10014213                                                     int32_t** edx_10 = &arg_8
+10014216                                                     int32_t ecx_89 = *(esi_1 + 0x1c)
+1001421e                                                     int32_t var_a68_30 = *(*(esi_1 + 0x1764) + 0xa0)
+1001421e                                                     
+10014224                                                     if (arg3 u>= 0x10)
+10014224                                                         edx_10 = arg_8
+10014224                                                     
+1001422e                                                     int32_t (* const edi_5)() = opdbg_log
+1001423d                                                     var_a78 = "[%s] [%s] INFO: %s partition file is "
+1001423d                                                     "sparse file, pack format is %d, "
+1001423d                                                     "SupportFillChunk is %s"
+1001424c                                                     opdbg_log(
+1001424c                                                         "QCFlashWorker::doActionProgramParition", 
+1001424c                                                         0x7bf, var_a78, ecx_89 + 0x9e4, 
+1001424c                                                         ecx_89 + 0x444, edx_10, var_a68_30, edi_4)
+1001425e                                                     char* var_9ec_1
+1001425e                                                     
+1001425e                                                     if (*(*(esi_1 + 0x1764) + 0xa0) != 1)
+10014299                                                         char** ebx_6 = var_9dc_1
+10014299                                                         
+100142a3                                                         if (ebx_6[5] u< 0x10)
+100142af                                                             var_9ec_1 = ebx_6
+100142a3                                                         else
+100142a7                                                             var_9ec_1 = *ebx_6
+1001425e                                                     else
+1001426d                                                         char* eax_106 = sub_100424c0(
+1001426d                                                             *(esi_1 + 0x1760), &var_a04)
+10014272                                                         var_9ec_1 = eax_106
+10014272                                                         
+1001427c                                                         if (*(eax_106 + 0x14) u>= 0x10)
+10014280                                                             var_9ec_1 = *eax_106
+10014280                                                         
+1001428c                                                         sub_100019a0(&var_a04)
+1001428c                                                     
+100142bb                                                     int32_t eax_110 = *(*(esi_1 + 0x1764) + 0xa0)
+100142c9                                                     int32_t eax_111
+100142c9                                                     
+100142c9                                                     if (eax_110 != 2 && eax_110 != 3)
+100142d1                                                         eax_111 = sub_10042270(*(esi_1 + 0x1760))
+100142c9                                                     else if (var_3c_1 == 0)
+10014302                                                         eax_111, esi_1, edi_5 =
+10014302                                                             sub_10041e60(*(esi_1 + 0x1760), esi_1)
+100142dc                                                     else if (sub_10007bb0(&var_4c, "1") != 0)
+10014302                                                         eax_111, esi_1, edi_5 =
+10014302                                                             sub_10041e60(*(esi_1 + 0x1760), esi_1)
+100142ed                                                     else
+100142f5                                                         eax_111, esi_1, edi_5 =
+100142f5                                                             sub_100418a0(*(esi_1 + 0x1760))
+100142f5                                                     
+10014307                                                     int32_t ecx_96 = *(esi_1 + 0x1c)
+1001430c                                                     char* ebx_7
+1001430c                                                     int32_t* esp_2
+1001430c                                                     
+1001430c                                                     if (eax_111 == 0)
+1001433f                                                         int32_t var_a64_48 =
+1001433f                                                             *(*(esi_1 + 0x1760) + 0x24)
+10014356                                                         char const* const var_a74_16 =
+10014356                                                             "[%s] [%s] file: %s, sectorCount: %d"
+1001435b                                                         var_a78 = 0x7d9
+10014365                                                         edi_5(
+10014365                                                             "QCFlashWorker::doActionProgramParition", 
+10014365                                                             var_a78, var_a74_16, ecx_96 + 0x9e4, 
+10014365                                                             ecx_96 + 0x444, var_9ec_1, var_a64_48)
+10014370                                                         int32_t eax_118
+10014370                                                         eax_118, ebx_8 =
+10014370                                                             sub_10042320(*(esi_1 + 0x1760))
+10014370                                                         
+10014378                                                         if (eax_118 == 1)
+1001505b                                                         label_1001505b:
+1001505b                                                             sub_10003d10(&var_2cc, 8, "success")
+10015060                                                             char* var_a70_37 = &data_1006a03d
+1001506b                                                             uint32_t var_a74_33 = 0x40
+1001506d                                                             var_a78 = &var_2c4
+1001506e                                                             sub_10003d10(var_a78, var_a74_33, 
+1001506e                                                                 var_a70_37)
+10015084                                                             sub_10003d10(&var_284, 0x200, 
+10015084                                                                 &data_1006a03d)
+10015099                                                             write_flash_event_write_physical_partition_end(
+10015099                                                                 &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+100150a2                                                             var_8_1.b = 2
+100150a9                                                             sub_10008c70(&var_1c)
+100150ae                                                             goto label_10015b52
+100150ae                                                         
+10014383                                                         while (true)
+10014383                                                             if (eax_118 == 0xffffffff)
+10014fff                                                                 int32_t ecx_180 = *(esi_1 + 0x1c)
+10015002                                                                 ebx_7 = var_9ec_1
+10015017                                                                 char const* const var_a70_36 = "[%s] [%s"
+10015017                                                                 "] ERROR: next sparse indexes for file: "
+10015017                                                                 "
+1001501c                                                                 int32_t var_a74_32 = 0x7e2
+10015021                                                                 var_a78 =
+10015021                                                                     "QCFlashWorker::doActionProgramParition"
+10015021                                                                 esp_2 = &var_a78
+10015026                                                                 opdbg_log(var_a78, var_a74_32, 
+10015026                                                                     var_a70_36, ecx_180 + 0x9e4, 
+10015026                                                                     ecx_180 + 0x444, ebx_7)
+10015026                                                                 goto label_1001502c
+10015026                                                             
+10014392                                                             int32_t* eax_120 =
+10014392                                                                 *(esi_1 + 0x1760) + 0x18
+10014395                                                             int32_t var_58_1 = 0
+100143a0                                                             int64_t var_60 = 0
+100143a5                                                             sub_1000abf0(&var_60, eax_120)
+100143aa                                                             var_8_1.b = 0x10
+100143ae                                                             int32_t ecx_99 = var_60.d
+100143c0                                                             int32_t* eax_124 = *(ecx_99
+100143c0                                                                 + ((var_60:4.d - ecx_99) s>> 2 << 2)
+100143c0                                                                 - 4)
+100143d1                                                             memset(&var_854, 0, 0x2e8)
+100143d6                                                             void* eax_125 = *(esi_1 + 0x1760)
+100143df                                                             int32_t edi_6 = *(esi_1 + 0x17d8)
+100143e5                                                             var_854 = edi_6
+100143eb                                                             int32_t eax_126 = *(eax_125 + 0x28)
+100143f4                                                             int32_t eax_127
+100143f4                                                             int32_t edx_11
+100143f4                                                             edx_11:eax_127 = sx.q(eax_126)
+100143f5                                                             int32_t temp0_1 =
+100143f5                                                                 divs.dp.d(edx_11:eax_127, edi_6)
+100143fb                                                             int32_t eax_132
+100143fb                                                             
+100143fb                                                             if (mods.dp.d(edx_11:eax_127, edi_6)
+100143fb                                                                     != 0)
+10014418                                                                 int32_t eax_134
+10014418                                                                 int32_t edx_13
+10014418                                                                 edx_13:eax_134 = sx.q(edi_6)
+10014419                                                                 int32_t temp0_2 =
+10014419                                                                     divs.dp.d(edx_13:eax_134, eax_126)
+10014419                                                                 
+10014423                                                                 if (mods.dp.d(edx_13:eax_134, eax_126)
+10014423                                                                         != 0)
+10014fa9                                                                     int32_t ecx_177 = *(esi_1 + 0x1c)
+10014fc1                                                                     char const* const var_a70_35 = "[%s] [%s"
+10014fc1                                                                     "] ERROR: Failed to resolve sparse "
+10014fc1                                                                     "indexes for file: %s "
+10014fc6                                                                     int32_t var_a74_31 = 0x7f6
+10014fcb                                                                     var_a78 =
+10014fcb                                                                         "QCFlashWorker::doActionProgramParition"
+10014fd0                                                                     opdbg_log(var_a78, var_a74_31, 
+10014fd0                                                                         var_a70_35, ecx_177 + 0x9e4, 
+10014fd0                                                                         ecx_177 + 0x444, var_9ec_1)
+10014fd6                                                                     char* var_a7c_38 = var_9ec_1
+10014fdd                                                                     sub_10024880(esi_1, 
+10014fdd                                                                         "invalid_sparse_file(%s)")
+10014fe2                                                                     esp_1 = &var_a60
+10014fe8                                                                     result = 0x7d09
+10014fed                                                                     sub_1000abc0(&var_60)
+10014ff5                                                                     sub_10008c70(&var_1c)
+10014ffa                                                                     break
+10014ffa                                                                 
+10014435                                                                 int32_t var_6e8_2 =
+10014435                                                                     divs.dp.d(sx.q(eax_124[1]), temp0_2)
+1001443e                                                                 eax_132 =
+1001443e                                                                     divs.dp.d(sx.q(*eax_124), temp0_2)
+100143fb                                                             else
+10014409                                                                 int32_t var_6e8_1 = eax_124[1] * temp0_1
+10014411                                                                 eax_132 = *eax_124 * temp0_1
+10014411                                                             
+10014440                                                             char* eax_141 = eax_132 + ebx_8[7]
+10014443                                                             int32_t** ecx_102 = &arg_8
+1001444a                                                             char (* edx_18)[0x168] = &var_6d4
+1001444a                                                             
+10014459                                                             if (arg3 u>= 0x10)
+10014459                                                                 ecx_102 = arg_8
+10014459                                                             
+1001445d                                                             int32_t var_6e0_1 = ebx_8[6]
+10014463                                                             int32_t var_6e4_1 = 0
+1001446d                                                             int32_t var_6dc_1 = 1
+10014483                                                             int32_t eax_142
+10014483                                                             
+10014483                                                             do
+10014477                                                                 eax_142.b = *ecx_102
+10014479                                                                 ecx_102 += 1
+1001447c                                                                 *edx_18 = eax_142.b
+1001447e                                                                 edx_18 = &(*edx_18)[1]
+10014483                                                             while (eax_142.b != 0)
+10014499                                                             char* ecx_104 =
+10014499                                                                 sub_10045410(var_9d8_1, &var_a38)
+10014499                                                             
+1001449f                                                             if (*(ecx_104 + 0x14) u>= 0x10)
+100144a1                                                                 ecx_104 = *ecx_104
+100144a1                                                             
+100144a3                                                             char* edx_19 = &var_850
+100144bc                                                             char* eax_143
+100144bc                                                             
+100144bc                                                             do
+100144b0                                                                 eax_143.b = *ecx_104
+100144b2                                                                 ecx_104 = &ecx_104[1]
+100144b5                                                                 *edx_19 = eax_143.b
+100144b7                                                                 edx_19 = &edx_19[1]
+100144bc                                                             while (eax_143.b != 0)
+100144c4                                                             sub_100019a0(&var_a38)
+100144d7                                                             memset(&var_56c, 0, 0x4e8)
+100144dc                                                             int32_t var_a70_18 = var_6e0_1
+100144e8                                                             char* var_a74_17 = &data_1006cf10
+100144ed                                                             var_a78 = 0x10
+100144f0                                                             sub_10003d10(&var_568, var_a78, 
+100144f0                                                                 var_a74_17)
+100144fb                                                             char (* var_a80_8)[0x168] = &var_6d4
+1001450d                                                             sub_10003d10(&var_558, 0x104, "%s")
+10014512                                                             var_a90 = eax_141
+1001451e                                                             void* const var_a94_4 = &data_1006cf10
+10014523                                                             int32_t var_a98_1 = 8
+10014526                                                             sub_10003d10(&var_454, 8, "%d")
+1001452b                                                             int32_t var_aa0_1 = var_854
+10014537                                                             void* const var_aa4_1 = &data_1006cf10
+1001453c                                                             int32_t var_aa8_1 = 8
+1001453f                                                             sub_10003d10(&var_44c, 8, "%d")
+1001454d                                                             void* var_a64_53 = &var_850
+1001455f                                                             sub_10003d10(&var_444, 0x168, "%s")
+10014564                                                             int32_t var_a74_18 = var_9d8_1[0x11]
+1001456d                                                             var_a78 = var_9d8_1[0x10]
+10014578                                                             sub_10003d10(&var_2dc, 0x10, "%lld")
+10014580                                                             int32_t eax_145 =
+10014580                                                                 *(esi_1 + 0x1c) + 0xb4c
+10014585                                                             var_56c = 1
+10014597                                                             write_flash_event_write_physical_partition_start(
+10014597                                                                 &var_56c, eax_145)
+100145aa                                                             int32_t eax_146 =
+100145aa                                                                 sub_10006420(*(esi_1 + 0x28), &var_854)
+100145aa                                                             
+100145b1                                                             if (eax_146 != 0)
+10014f06                                                                 sub_10003d10(&var_2cc, 8, "fail")
+10014f0b                                                                 char* var_a70_34 = &data_1006a03d
+10014f16                                                                 uint32_t var_a74_30 = 0x40
+10014f18                                                                 var_a78 = &var_2c4
+10014f19                                                                 sub_10003d10(var_a78, var_a74_30, 
+10014f19                                                                     var_a70_34)
+10014f2f                                                                 sub_10003d10(&var_284, 0x200, 
+10014f2f                                                                     "execute firehose command 'program' fail")
+10014f44                                                                 write_flash_event_write_physical_partition_end(
+10014f44                                                                     &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+10014f4a                                                                 int32_t ecx_174 = *(esi_1 + 0x1c)
+10014f53                                                                 var_a90 = &var_850
+10014f69                                                                 char const* const var_aa0_4 = "[%s] [%s] "
+10014f69                                                                 "ERROR: Failed to execute firehose "
+10014f69                                                                 "command 'program', partition_name=%s, "
+10014f69                                                                 "file_name=%s."
+10014f6e                                                                 int32_t var_aa4_2 = 0x812
+10014f73                                                                 char const* const var_aa8_2 =
+10014f73                                                                     "QCFlashWorker::doActionProgramParition"
+10014f78                                                                 opdbg_log(
+10014f78                                                                     "QCFlashWorker::doActionProgramParition", 
+10014f78                                                                     0x812, 
+10014f78                                                                     "[%s] [%s] ERROR: Failed to execute "
+10014f78                                                                 "firehose command 'program', "
+10014f78                                                                 "partition_name=%s, file_name=%s.", 
+10014f78                                                                     ecx_174 + 0x9e4, ecx_174 + 0x444, 
+10014f78                                                                     &var_6d4, var_a90)
+10014f87                                                                 sub_10024880(esi_1, 
+10014f87                                                                     "firehouse_exec_command_error(program)")
+10014f8c                                                                 esp_1 = &var_a60
+10014f92                                                                 result = 0x791b
+10014f97                                                                 sub_1000abc0(&var_60)
+10014f9f                                                                 sub_10008c70(&var_1c)
+10014fa4                                                                 break
+10014fa4                                                             
+100145b7                                                             int32_t* edi_9 = *(esi_1 + 0x28)
+100145ba                                                             void* ebx_10 = edi_9[0x2247]
+100145c0                                                             edi_9[0x2248] = 0x100000
+100145ca                                                             edi_9[0x2249] = eax_146
+100145ca                                                             
+100145d7                                                             if (*(ebx_10 + 8) u< 0x100000)
+100145d9                                                                 int32_t eax_147 = *(ebx_10 + 4)
+100145dc                                                                 uint32_t _Size = 0x100000
+100145e3                                                                 int32_t eax_148
+100145e3                                                                 
+100145e3                                                                 if (eax_147 != 0)
+100145f1                                                                     eax_148 = realloc(eax_147, _Size)
+100145e3                                                                 else
+100145e5                                                                     eax_148 = malloc(_Size)
+100145e5                                                                 
+100145fc                                                                 if (eax_148 == 0)
+10014941                                                                     int32_t ecx_131 = *edi_9
+10014966                                                                     opdbg_log(
+10014966                                                                         "QCFirehose::programModeEnter", 0x54d, 
+10014966                                                                         "[%s] [%s] ERROR: ensure is fail.", 
+10014966                                                                         ecx_131 + 0x9e4, ecx_131 + 0x444)
+10014968                                                                     var_a78 = "fail"
+10014976                                                                     sub_10003d10(&var_2cc, 8, var_a78)
+10014989                                                                     sub_10003d10(&var_2c4, 0x40, 
+10014989                                                                         &data_1006a03d)
+1001498e                                                                     var_a90 =
+1001498e                                                                         "Failed to enter firehose RAW mode"
+10014999                                                                     int32_t var_a94_5 = 0x200
+1001499f                                                                     sub_10003d10(&var_284, 0x200, var_a90)
+100149b4                                                                     write_flash_event_write_physical_partition_end(
+100149b4                                                                         &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+100149ba                                                                     int32_t ecx_132 = *(esi_1 + 0x1c)
+100149dd                                                                     opdbg_log(
+100149dd                                                                         "QCFlashWorker::doActionProgramParition", 
+100149dd                                                                         0x81d, 
+100149dd                                                                         "[%s] [%s] ERROR: Failed to enter "
+100149dd                                                                     "firehose RAW mode.", 
+100149dd                                                                         ecx_132 + 0x9e4, ecx_132 + 0x444)
+100149df                                                                     var_a78 = "firehouse_buffer_reset()"
+100149e5                                                                     sub_10024880(esi_1, var_a78)
+100149ea                                                                     esp_1 = &var_a60
+100149f0                                                                     result = 0x792b
+100149f5                                                                     sub_1000abc0(&var_60)
+100149fd                                                                     sub_10008c70(&var_1c)
+10014a02                                                                     break
+10014a02                                                                 
+10014602                                                                 *(ebx_10 + 4) = eax_148
+10014605                                                                 *(ebx_10 + 8) = 0x100000
+10014605                                                             
+1001460c                                                             void* eax_149 = edi_9[0x2247]
+1001461a                                                             memset(*(eax_149 + 4), 0, 
+1001461a                                                                 *(eax_149 + 8))
+10014622                                                             edi_9[0x224a] = 0
+1001462c                                                             edi_9[0x224b] = 0
+10014642                                                             int32_t* eax_151 =
+10014642                                                                 *(esi_1 + 0x1760) + 0xc
+10014645                                                             int64_t var_28 = 0
+1001464b                                                             int32_t var_20_1 = 0
+10014652                                                             sub_1000abf0(&var_28, eax_151)
+10014652                                                             esp_1 = &var_a60
+1001465d                                                             var_8_1.b = 0x11
+10014661                                                             int32_t eax_152 = eax_124[2]
+10014664                                                             int32_t var_a18_1 = eax_152
+1001466d                                                             int32_t var_a9c_3
+1001466d                                                             char const* const var_a98_3
+1001466d                                                             void* var_a94_6
+1001466d                                                             
+1001466d                                                             if (eax_152 s<= eax_124[4])
+10014676                                                                 while (true)
+10014676                                                                     void* edi_10 =
+10014676                                                                         *(var_28.d + (eax_152 << 2))
+1001467f                                                                     int32_t ecx_110 = *(esi_1 + 0x17d8)
+10014685                                                                     int32_t eax_154
+10014685                                                                     int32_t edx_20
+10014685                                                                     edx_20:eax_154 = sx.q(eax_126)
+1001468c                                                                     int32_t eax_157
+1001468c                                                                     
+1001468c                                                                     if (mods.dp.d(edx_20:eax_154, ecx_110)
+1001468c                                                                             != 0)
+10014698                                                                         int32_t eax_159
+10014698                                                                         int32_t edx_22
+10014698                                                                         edx_22:eax_159 = sx.q(ecx_110)
+10014698                                                                         
+100146a3                                                                         if (mods.dp.d(edx_22:eax_159, eax_126)
+100146a3                                                                                 != 0)
+10014d7f                                                                             sub_10003d10(&var_2cc, 8, "fail")
+10014d84                                                                             char* var_a70_30 = &data_1006a03d
+10014d8f                                                                             uint32_t var_a74_27 = 0x40
+10014d91                                                                             var_a78 = &var_2c4
+10014d92                                                                             sub_10003d10(var_a78, var_a74_27, 
+10014d92                                                                                 var_a70_30)
+10014da7                                                                             char* eax_228 =
+10014da7                                                                                 sub_10045410(var_9d8_1, &var_a38)
+10014da7                                                                             
+10014db0                                                                             if (*(eax_228 + 0x14) u>= 0x10)
+10014db2                                                                                 eax_228 = *eax_228
+10014db2                                                                             
+10014db4                                                                             char* var_a64_83 = eax_228
+10014dc6                                                                             sub_10003d10(&var_284, 0x200, 
+10014dc6                                                                                 "Failed to resolve sparse indexes for "
+10014dc6                                                                             "file: %s")
+10014dd4                                                                             sub_100019a0(&var_a38)
+10014de9                                                                             write_flash_event_write_physical_partition_end(
+10014de9                                                                                 &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+10014def                                                                             int32_t ecx_166 = *(esi_1 + 0x1c)
+10014e07                                                                             var_a78 = "[%s] [%s] ERROR: Failed to "
+10014e07                                                                             "resolve sparse indexes for file: %s "
+10014e16                                                                             opdbg_log(
+10014e16                                                                                 "QCFlashWorker::doActionProgramParition", 
+10014e16                                                                                 0x833, var_a78, ecx_166 + 0x9e4, 
+10014e16                                                                                 ecx_166 + 0x444, var_9ec_1)
+10014e1c                                                                             char* var_a84_11 = var_9ec_1
+10014e23                                                                             sub_10024880(esi_1, 
+10014e23                                                                                 "invalid_sparse_file(%s)")
+10014e28                                                                             esp_1 = &var_a60
+10014e2e                                                                             result = 0x7d09
+10014e33                                                                             sub_1000abc0(&var_28)
+10014e3b                                                                             sub_1000abc0(&var_60)
+10014e43                                                                             sub_10008c70(&var_1c)
+10014e48                                                                             break
+10014e48                                                                         
+100146ad                                                                         eax_157 = divs.dp.d(
+100146ad                                                                             sx.q(*(edi_10 + 0x14)), 
+100146ad                                                                             divs.dp.d(edx_22:eax_159, eax_126))
+1001468c                                                                     else
+10014691                                                                         eax_157 = *(edi_10 + 0x14)
+10014691                                                                             * divs.dp.d(edx_20:eax_154, ecx_110)
+10014691                                                                     
+100146af                                                                     int32_t eax_163
+100146af                                                                     int32_t edx_26
+100146af                                                                     edx_26:eax_163 =
+100146af                                                                         muls.dp.d(eax_157, ecx_110)
+100146b4                                                                     int64_t var_a0c_2 = 0
+100146b4                                                                     
+100146c7                                                                     if (*edi_10 != 0)
+100147ef                                                                         void* ecx_119 = esi_1 + 0x203980
+100147f5                                                                         int32_t i_1 = 0x40000
+1001480c                                                                         int32_t i
+1001480c                                                                         
+1001480c                                                                         do
+10014803                                                                             ecx_119 += 4
+10014806                                                                             *(ecx_119 - 4) = *(edi_10 + 0x18)
+10014809                                                                             i = i_1
+10014809                                                                             i_1 -= 1
+1001480c                                                                         while (i != 1)
+1001480e                                                                         int32_t eax_177 = edx_26
+1001480e                                                                         
+10014820                                                                         if (eax_177 s>= 0
+10014820                                                                                 && (eax_177 s> 0 || eax_163 != 0))
+10014826                                                                             int32_t edx_30 = var_a0c_2:4.d
+1001482c                                                                             void* edi_15 = var_a0c_2.d
+10014832                                                                             int32_t var_9e0_2 = edx_30
+10014832                                                                             
+10014847                                                                             while (*(esi_1 + 0x304da0) == 0)
+10014851                                                                                 int32_t eax_178 = sbb.d(eax_177, 
+10014851                                                                                     edx_30, eax_163 u< edi_15)
+1001485f                                                                                 void* eax_180
+1001485f                                                                                 
+1001485f                                                                                 if (eax_178 s> 0 || (eax_178 s>= 0
+1001485f                                                                                         && eax_163 - edi_15 u>= 0x100000))
+10014867                                                                                     eax_180 = 0x100000
+1001485f                                                                                 else
+10014863                                                                                     eax_180 = eax_163 - edi_15
+10014863                                                                                 
+1001486c                                                                                 char* eax_181
+1001486c                                                                                 int32_t edx_31
+1001486c                                                                                 edx_31:eax_181 = sx.q(eax_180)
+1001487d                                                                                 var_a0c_2:4.d = edx_31
+1001487d                                                                                 
+1001488e                                                                                 if (sub_10006fe0(*(esi_1 + 0x28), 
+1001488e                                                                                         esi_1 + 0x203980, eax_181, edx_31) != 0)
+10014ceb                                                                                     sub_10003d10(&var_2cc, 8, "fail")
+10014cf0                                                                                     char* var_a70_29 = &data_1006a03d
+10014cfb                                                                                     uint32_t var_a74_26 = 0x40
+10014cfd                                                                                     var_a78 = &var_2c4
+10014cfe                                                                                     sub_10003d10(var_a78, var_a74_26, 
+10014cfe                                                                                         var_a70_29)
+10014d14                                                                                     sub_10003d10(&var_284, 0x200, 
+10014d14                                                                                         "Failed to send raw data to the device")
+10014d29                                                                                     write_flash_event_write_physical_partition_end(
+10014d29                                                                                         &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+10014d2f                                                                                     void* ecx_160 = *(esi_1 + 0x1c)
+10014d38                                                                                     var_a90 = ecx_160 + 0x444
+10014d3f                                                                                     var_a94_6 = ecx_160 + 0x9e4
+10014d40                                                                                     var_a98_3 = "[%s] [%s] ERROR: Failed to "
+10014d40                                                                                     "send raw data to the device."
+10014d45                                                                                     var_a9c_3 = 0x87d
+10014d4a                                                                                     goto label_10014eba
+10014d4a                                                                                 
+10014894                                                                                 void* temp16_1 = edi_15
+10014894                                                                                 edi_15 += eax_181
+100148a9                                                                                 var_9e0_2 = adc.d(var_9e0_2, 
+100148a9                                                                                     var_a0c_2:4.d, 
+100148a9                                                                                     temp16_1 + eax_181 u< temp16_1)
+100148b8                                                                                 sub_10001a60(&var_a78, &var_6d4)
+100148bf                                                                                 sub_10021a60(esi_1, var_a78)
+100148bf                                                                                 esp_1 = &var_a60
+100148c4                                                                                 edx_30 = var_9e0_2
+100148ca                                                                                 eax_177 = edx_26
+100148ca                                                                                 
+100148d2                                                                                 if (edx_30 s>= eax_177)
+100148d8                                                                                     if (edx_30 s> eax_177)
+100148d8                                                                                         goto label_100148ee
+100148d8                                                                                     
+100148dc                                                                                     if (edi_15 u>= eax_163)
+100148dc                                                                                         goto label_100148ee
+100148dc                                                                             
+10014d52                                                                         label_10014d52:
+10014d52                                                                             result = 0x1869f
+10014d57                                                                             sub_1000abc0(&var_28)
+10014d5f                                                                             sub_1000abc0(&var_60)
+10014d67                                                                             sub_10008c70(&var_1c)
+10014d6c                                                                             break
+100146c7                                                                     else
+100146d6                                                                         esp_1 = &var_a60
+100146d6                                                                         
+100146dd                                                                         if (sub_10044020(*(esi_1 + 0x20), 
+100146dd                                                                                 *(edi_10 + 8), *(edi_10 + 0xc)) != 0)
+10014bb9                                                                             sub_10003d10(&var_2cc, 8, "fail")
+10014bbe                                                                             char* var_a70_26 = &data_1006a03d
+10014bc9                                                                             uint32_t var_a74_24 = 0x40
+10014bcb                                                                             var_a78 = &var_2c4
+10014bcc                                                                             sub_10003d10(var_a78, var_a74_24, 
+10014bcc                                                                                 var_a70_26)
+10014be1                                                                             char* eax_211 =
+10014be1                                                                                 sub_10045410(var_9d8_1, &var_a04)
+10014be1                                                                             
+10014bea                                                                             if (*(eax_211 + 0x14) u>= 0x10)
+10014bec                                                                                 eax_211 = *eax_211
+10014bec                                                                             
+10014bee                                                                             char* var_a64_74 = eax_211
+10014c00                                                                             sub_10003d10(&var_284, 0x200, 
+10014c00                                                                                 "Failed to seek data in file: %s")
+10014c0e                                                                             sub_100019a0(&var_a04)
+10014c23                                                                             write_flash_event_write_physical_partition_end(
+10014c23                                                                                 &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+10014c3f                                                                             char* eax_217 = sub_10045450(
+10014c3f                                                                                 (*(***(esi_1 + 0x20) + 0x14))(), 
+10014c3f                                                                                 &var_a04)
+10014c3f                                                                             
+10014c48                                                                             if (*(eax_217 + 0x14) u>= 0x10)
+10014c4a                                                                                 eax_217 = *eax_217
+10014c4a                                                                             
+10014c4c                                                                             int32_t ecx_152 = *(esi_1 + 0x1c)
+10014c5e                                                                             char const* const var_a70_28 = "[%s] [%s"
+10014c5e                                                                             "] ERROR: Failed to seek data in file: "
+10014c5e                                                                             "
+10014c63                                                                             int32_t var_a74_25 = 0x843
+10014c68                                                                             var_a78 =
+10014c68                                                                                 "QCFlashWorker::doActionProgramParition"
+10014c6d                                                                             opdbg_log(var_a78, var_a74_25, 
+10014c6d                                                                                 var_a70_28, ecx_152 + 0x9e4, 
+10014c6d                                                                                 ecx_152 + 0x444, eax_217)
+10014c7c                                                                             sub_100019a0(&var_a04)
+10014c94                                                                             char* eax_223 = sub_10045410(
+10014c94                                                                                 (*(***(esi_1 + 0x20) + 0x14))(), 
+10014c94                                                                                 &var_a04)
+10014c94                                                                             
+10014c9d                                                                             if (*(eax_223 + 0x14) u>= 0x10)
+10014c9f                                                                                 eax_223 = *eax_223
+10014c9f                                                                             
+10014ca1                                                                             char* var_a64_79 = eax_223
+10014ca8                                                                             sub_10024880(esi_1, 
+10014ca8                                                                                 "seek_file_error(%s)")
+10014cad                                                                             esp_1 = &var_a60
+10014cb6                                                                             sub_100019a0(&var_a04)
+10014cbe                                                                             result = 0x7d04
+10014cc3                                                                             sub_1000abc0(&var_28)
+10014ccb                                                                             sub_1000abc0(&var_60)
+10014cd3                                                                             sub_10008c70(&var_1c)
+10014c48                                                                             break
+10014c48                                                                         
+100146e3                                                                         int32_t eax_165 = edx_26
+100146e3                                                                         
+100146f5                                                                         if (eax_165 s>= 0
+100146f5                                                                                 && (eax_165 s> 0 || eax_163 != 0))
+100146fb                                                                             int32_t edx_27 = var_a0c_2:4.d
+10014701                                                                             int32_t edi_11 = var_a0c_2.d
+10014707                                                                             int32_t var_9e0_1 = edx_27
+1001470d                                                                             int32_t var_a10_1 = edi_11
+1001470d                                                                             
+1001471a                                                                             while (true)
+1001471a                                                                                 if (*(esi_1 + 0x304da0) != 0)
+1001471a                                                                                     goto label_10014d52
+1001471a                                                                                 
+10014724                                                                                 int32_t eax_166 = sbb.d(eax_165, 
+10014724                                                                                     edx_27, eax_163 u< edi_11)
+10014732                                                                                 int32_t edi_13
+10014732                                                                                 
+10014732                                                                                 if (eax_166 s> 0 || (eax_166 s>= 0
+10014732                                                                                         && eax_163 - edi_11 u>= 0x100000))
+1001473e                                                                                     edi_13 = 0x100000
+10014732                                                                                 else
+10014736                                                                                     edi_13 = eax_163 - var_a10_1
+10014736                                                                                 
+1001475c                                                                                 if ((*(***(esi_1 + 0x20) + 0xc))(
+1001475c                                                                                         esi_1 + 0x203980, 0x100000, edi_13)
+1001475c                                                                                         != 0)
+10014a87                                                                                     sub_10003d10(&var_2cc, 8, "fail")
+10014a8c                                                                                     char* var_a70_23 = &data_1006a03d
+10014a97                                                                                     uint32_t var_a74_22 = 0x40
+10014a99                                                                                     var_a78 = &var_2c4
+10014a9a                                                                                     sub_10003d10(var_a78, var_a74_22, 
+10014a9a                                                                                         var_a70_23)
+10014aaf                                                                                     char* eax_198 =
+10014aaf                                                                                         sub_10045410(var_9d8_1, &var_a04)
+10014aaf                                                                                     
+10014ab8                                                                                     if (*(eax_198 + 0x14) u>= 0x10)
+10014aba                                                                                         eax_198 = *eax_198
+10014aba                                                                                     
+10014abc                                                                                     char* var_a64_66 = eax_198
+10014ace                                                                                     sub_10003d10(&var_284, 0x200, 
+10014ace                                                                                         "Failed to read data from file: %s")
+10014adc                                                                                     sub_100019a0(&var_a04)
+10014af1                                                                                     write_flash_event_write_physical_partition_end(
+10014af1                                                                                         &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+10014b0d                                                                                     char* eax_204 = sub_10045450(
+10014b0d                                                                                         (*(***(esi_1 + 0x20) + 0x14))(), 
+10014b0d                                                                                         &var_a04)
+10014b0d                                                                                     
+10014b16                                                                                     if (*(eax_204 + 0x14) u>= 0x10)
+10014b18                                                                                         eax_204 = *eax_204
+10014b18                                                                                     
+10014b1a                                                                                     int32_t ecx_140 = *(esi_1 + 0x1c)
+10014b2c                                                                                     char const* const var_a70_25 = "[%s] [%s"
+10014b2c                                                                                     "] ERROR: Failed to read data from file: "
+10014b2c                                                                                     " "
+10014b31                                                                                     int32_t var_a74_23 = 0x857
+10014b36                                                                                     var_a78 =
+10014b36                                                                                         "QCFlashWorker::doActionProgramParition"
+10014b3b                                                                                     opdbg_log(var_a78, var_a74_23, 
+10014b3b                                                                                         var_a70_25, ecx_140 + 0x9e4, 
+10014b3b                                                                                         ecx_140 + 0x444, eax_204)
+10014b4a                                                                                     sub_100019a0(&var_a04)
+10014b62                                                                                     char* eax_210 = sub_10045410(
+10014b62                                                                                         (*(***(esi_1 + 0x20) + 0x14))(), 
+10014b62                                                                                         &var_a04)
+10014b62                                                                                     
+10014b6b                                                                                     if (*(eax_210 + 0x14) u>= 0x10)
+10014b6d                                                                                         eax_210 = *eax_210
+10014b6d                                                                                     
+10014b6f                                                                                     char* var_a64_71 = eax_210
+10014b76                                                                                     sub_10024880(esi_1, 
+10014b76                                                                                         "read_file_error(%s)")
+10014b7b                                                                                     esp_1 = &var_a60
+10014b84                                                                                     sub_100019a0(&var_a04)
+10014b8c                                                                                     result = 0x7d02
+10014b91                                                                                     sub_1000abc0(&var_28)
+10014b99                                                                                     sub_1000abc0(&var_60)
+10014ba1                                                                                     sub_10008c70(&var_1c)
+10014b16                                                                                     break
+10014b16                                                                                 
+10014764                                                                                 char* eax_171
+10014764                                                                                 int32_t edx_29
+10014764                                                                                 edx_29:eax_171 = sx.q(edi_13)
+10014767                                                                                 var_a0c_2:4.d = eax_171
+10014767                                                                                 
+10014786                                                                                 if (sub_10006fe0(*(esi_1 + 0x28), 
+10014786                                                                                         esi_1 + 0x203980, eax_171, edx_29) != 0)
+10014a15                                                                                     sub_10003d10(&var_2cc, 8, "fail")
+10014a1a                                                                                     char* var_a70_22 = &data_1006a03d
+10014a25                                                                                     uint32_t var_a74_21 = 0x40
+10014a27                                                                                     var_a78 = &var_2c4
+10014a28                                                                                     sub_10003d10(var_a78, var_a74_21, 
+10014a28                                                                                         var_a70_22)
+10014a3e                                                                                     sub_10003d10(&var_284, 0x200, 
+10014a3e                                                                                         "Failed to send raw data to the device")
+10014a53                                                                                     write_flash_event_write_physical_partition_end(
+10014a53                                                                                         &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+10014a59                                                                                     void* ecx_135 = *(esi_1 + 0x1c)
+10014a62                                                                                     var_a90 = ecx_135 + 0x444
+10014a69                                                                                     var_a94_6 = ecx_135 + 0x9e4
+10014a6a                                                                                     var_a98_3 = "[%s] [%s] ERROR: Failed to "
+10014a6a                                                                                     "send raw data to the device."
+10014a6f                                                                                     var_a9c_3 = 0x862
+10014a74                                                                                     goto label_10014eba
+10014a74                                                                                 
+10014792                                                                                 edi_11 = var_a10_1 + var_a0c_2:4.d
+100147a7                                                                                 var_9e0_1 = adc.d(var_9e0_1, edx_29, 
+100147a7                                                                                     var_a10_1 + var_a0c_2:4.d u< var_a10_1)
+100147b5                                                                                 var_a10_1 = edi_11
+100147bc                                                                                 sub_10001a60(&var_a78, &var_6d4)
+100147c3                                                                                 sub_10021a60(esi_1, var_a78)
+100147c3                                                                                 esp_1 = &var_a60
+100147c8                                                                                 edx_27 = var_9e0_1
+100147ce                                                                                 eax_165 = edx_26
+100147ce                                                                                 
+100147d6                                                                                 if (edx_27 s>= eax_165)
+100147dc                                                                                     if (edx_27 s> eax_165)
+100147dc                                                                                         goto label_100148ee
+100147dc                                                                                     
+100147e4                                                                                     if (edi_11 u>= eax_163)
+100147e4                                                                                         goto label_100148ee
+100147e4                                                                             
+1001471a                                                                             break
+1001471a                                                                     
+100148ee                                                                 label_100148ee:
+100148ee                                                                     eax_152 = var_a18_1 + 1
+100148ef                                                                     var_a18_1 = eax_152
+100148ef                                                                     
+100148f8                                                                     if (eax_152 s> eax_124[4])
+100148f8                                                                         goto label_10014901
+100148f8                                                                 
+100146c7                                                                 break
+100146c7                                                             
+10014901                                                         label_10014901:
+10014901                                                             
+10014908                                                             if (sub_10007160(*(esi_1 + 0x28)) != 0)
+10014e5b                                                                 sub_10003d10(&var_2cc, 8, "fail")
+10014e60                                                                 char* var_a70_33 = &data_1006a03d
+10014e6b                                                                 uint32_t var_a74_29 = 0x40
+10014e6d                                                                 var_a78 = &var_2c4
+10014e6e                                                                 sub_10003d10(var_a78, var_a74_29, 
+10014e6e                                                                     var_a70_33)
+10014e84                                                                 sub_10003d10(&var_284, 0x200, 
+10014e84                                                                     "Failed to leave firehose RAW mode")
+10014e99                                                                 write_flash_event_write_physical_partition_end(
+10014e99                                                                     &var_56c, *(esi_1 + 0x1c) + 0xb4c)
+10014e9f                                                                 void* ecx_170 = *(esi_1 + 0x1c)
+10014ea8                                                                 var_a90 = ecx_170 + 0x444
+10014eaf                                                                 var_a94_6 = ecx_170 + 0x9e4
+10014eb0                                                                 var_a98_3 = "[%s] [%s] ERROR: Failed to "
+10014eb0                                                                 "leave firehose RAW mode."
+10014eb5                                                                 var_a9c_3 = 0x88f
+10014eba                                                             label_10014eba:
+10014eba                                                                 char const* const var_aa0_3 =
+10014eba                                                                     "QCFlashWorker::doActionProgramParition"
+10014ebf                                                                 opdbg_log(
+10014ebf                                                                     "QCFlashWorker::doActionProgramParition", 
+10014ebf                                                                     var_a9c_3, var_a98_3, var_a94_6)
+10014ece                                                                 sub_10024880(esi_1, 
+10014ece                                                                     "firehouse_write_raw_data()")
+10014ed3                                                                 esp_1 = &var_a60
+10014ed9                                                                 result = 0x792c
+10014ede                                                                 sub_1000abc0(&var_28)
+10014ee6                                                                 sub_1000abc0(&var_60)
+10014eee                                                                 sub_10008c70(&var_1c)
+10014ef3                                                                 break
+10014ef3                                                             
+10014911                                                             sub_1000abc0(&var_28)
+10014919                                                             var_8_1.b = 0xe
+1001491d                                                             sub_1000abc0(&var_60)
+10014928                                                             eax_118, ebx_8 =
+10014928                                                                 sub_10042320(*(esi_1 + 0x1760))
+10014928                                                             
+10014930                                                             if (eax_118 == 1)
+10014930                                                                 goto label_1001505b
+10014930                                                             
+10014936                                                             ebx_8 = var_9dc_1
+1001430c                                                     else
+1001430e                                                         ebx_7 = var_9ec_1
+10014323                                                         char const* const var_a70_16 = "[%s] [%s] "
+10014323                                                         "ERROR: Failed to resolve sparse indexes for "
+10014323                                                         "file: %s "
+10014328                                                         int32_t var_a74_15 = 0x7d4
+1001432d                                                         var_a78 =
+1001432d                                                             "QCFlashWorker::doActionProgramParition"
+10014332                                                         edi_5(var_a78, var_a74_15, var_a70_16, 
+10014332                                                             ecx_96 + 0x9e4, ecx_96 + 0x444, ebx_7)
+10014332                                                         esp_2 = &var_a60
+1001502c                                                     label_1001502c:
+1001502c                                                         *(esp_2 - 4) = ebx_7
+1001502d                                                         *(esp_2 - 8) = "invalid_sparse_file(%s)"
+10015032                                                         *(esp_2 - 0xc) = esi_1
+10015033                                                         sub_10024880()
+10015038                                                         esp_1 = &esp_2[6]
+1001503e                                                         result = 0x7d09
+10015043                                                         sub_10008c70(&var_1c)
+100140d9                                             else
+100140db                                                 int32_t ecx_81 = *(esi_1 + 0x1c)
+100140fb                                                 opdbg_log("QCFlashWorker::doActionProgramParition", 
+100140fb                                                     0x7ad, 
+100140fb                                                     "[%s] [%s] ERROR: Failed to execute firehose command "
+100140fb                                                 "'sha256init'.", 
+100140fb                                                     ecx_81 + 0x9e4, ecx_81 + 0x444)
+10014101                                                 var_a78 = "firehouse_exec_command_error(sha256init)"
+10014107                                                 sub_10024880(esi_1, var_a78)
+1001410c                                                 esp_1 = &var_a60
+1001410f                                                 result = 0x791b
+10014072                                         else
+10014074                                             int32_t ecx_79 = *(esi_1 + 0x1c)
+1001407d                                             void* var_a64_37 = &var_9bc
+1001408c                                             char const* const var_a70_13 = "[%s] [%s] ERROR: Failed "
+1001408c                                             "to execute firehose command 'erase %s'."
+10014091                                             int32_t var_a74_12 = 0x7a3
+10014096                                             var_a78 = "QCFlashWorker::doActionProgramParition"
+1001409b                                             opdbg_log(var_a78, var_a74_12, var_a70_13, 
+1001409b                                                 ecx_79 + 0x9e4, ecx_79 + 0x444, var_a64_37)
+100140a7                                             sub_10024880(esi_1, 
+100140a7                                                 "firehouse_exec_command_error(erase)")
+100140ac                                             esp_1 = &var_a60
+100140af                                             result = 0x791b
+10013f44                                     else
+10013f46                                         int32_t ecx_75 = *(esi_1 + 0x1c)
+10013f66                                         opdbg_log("QCFlashWorker::doActionProgramParition", 0x78c, 
+10013f66                                             "[%s] [%s] ERROR:Failed to execute firehose command "
+10013f66                                         "'writever'.", 
+10013f66                                             ecx_75 + 0x9e4, ecx_75 + 0x444)
+10013f6c                                         var_a78 = "firehouse_exec_command_error(writever)"
+10013f72                                         sub_10024880(esi_1, var_a78)
+10013f77                                         esp_1 = &var_a60
+10013f7a                                         result = 0x791b
+10013e8d                                 else
+10013ea2                                     char* eax_72 = sub_10045450(var_9d8_1, &var_a04)
+10013ea2                                     
+10013eab                                     if (*(eax_72 + 0x14) u>= 0x10)
+10013ead                                         eax_72 = *eax_72
+10013ead                                     
+10013eaf                                     int32_t ecx_68 = *(esi_1 + 0x1c)
+10013ec1                                     char const* const var_a70_11 =
+10013ec1                                         "[%s] [%s] ERROR:Failed to open file: %s "
+10013ec6                                     int32_t var_a74_10 = 0x785
+10013ecb                                     var_a78 = "QCFlashWorker::doActionProgramParition"
+10013ed0                                     opdbg_log(var_a78, var_a74_10, var_a70_11, ecx_68 + 0x9e4, 
+10013ed0                                         ecx_68 + 0x444, eax_72)
+10013edf                                     sub_100019a0(&var_a04)
+10013eed                                     char* eax_75 = sub_10045410(var_9d8_1, &var_a04)
+10013eed                                     
+10013ef6                                     if (*(eax_75 + 0x14) u>= 0x10)
+10013ef8                                         eax_75 = *eax_75
+10013ef8                                     
+10013efa                                     char* var_a64_31 = eax_75
+10013f01                                     sub_10024880(esi_1, "open_file_error(%)")
+10013f06                                     esp_1 = &var_a60
+10013f0f                                     sub_100019a0(&var_a04)
+10013f14                                     result = 0x7d03
+10013df3                             else
+10013e08                                 char* eax_67 = sub_10045410(var_9d8_1, &var_a04)
+10013e08                                 
+10013e11                                 if (*(eax_67 + 0x14) u>= 0x10)
+10013e13                                     eax_67 = *eax_67
+10013e13                                 
+10013e2e                                 opdbg_log("QCFlashWorker::doActionProgramParition", 0x77f, 
+10013e2e                                     "[ERROR][%s]Readback error: %s ", *(esi_1 + 0x1c) + 0x444, 
+10013e2e                                     eax_67)
+10013e3d                                 sub_100019a0(&var_a04)
+10013e4b                                 char* eax_70 = sub_10045410(var_9d8_1, &var_a04)
+10013e4b                                 
+10013e54                                 if (*(eax_70 + 0x14) u>= 0x10)
+10013e56                                     eax_70 = *eax_70
+10013e56                                 
+10013e58                                 char* var_a64_26 = eax_70
+10013e5f                                 sub_10024880(esi_1, "partition_readback_error(%s)")
+10013e64                                 esp_1 = &var_a60
+10013e6d                                 sub_100019a0(&var_a04)
+10013e72                                 result = 0x7d0d
+10013dd3                         else
+10013dd5                             result = result_1
+10013943                     else
+10013960                         sub_100027f0(&arg_8, sub_1002dc10(eax_21, &arg_8, &var_34, "_a"))
+10013968                         sub_100019a0(&var_34)
+10013976                         sub_10002870(&var_a78, &arg_8)
+10013987                         edi_2 = sub_1002f2a0(*(esi_1 + 0x176c), arg2)
+10013987                         
+1001398b                         if (edi_2 != 0)
+1001398b                             goto label_100139f3
+1001398b                         
+10013991                         int32_t** eax_24 = &arg_8
+10013994                         int32_t ecx_21 = *(esi_1 + 0x1c)
+10013994                         
+10013997                         if (arg3 u>= 0x10)
+10013997                             eax_24 = arg_8
+10013997                         
+100139b0                         char const* const var_a74_4 = "[%s] [%s] ERROR: No proper files found for "
+100139b0                         "physicalParitionNum=%d, partitionName:%s."
+100139b5                         var_a78 = 0x745
+100139bf                         opdbg_log("QCFlashWorker::doActionProgramParition", var_a78, var_a74_4, 
+100139bf                             ecx_21 + 0x9e4, ecx_21 + 0x444, arg2, eax_24)
+100139c5                         int32_t** eax_27 = &arg_8
+100139c5                         
+100139c8                         if (arg3 u>= 0x10)
+100139c8                             eax_27 = arg_8
+100139c8                         
+100139cc                         int32_t** var_a80_3 = eax_27
+100139d3                         sub_10024880(esi_1, "partition_not_found(%s)")
+100139d8                         esp_1 = &var_a60
+100139de                         result = 0x753b
+100139e3                         sub_100019a0(&var_84)
+1001387a             else
+10013880                 int32_t** eax_15 = &arg_20
+10013883                 int32_t ecx_4 = *(esi_1 + 0x1c)
+10013883                 
+10013886                 if (arg5 u>= 0x10)
+10013886                     eax_15 = arg_20
+10013886                 
+1001388a                 var_a64_4 = eax_15
+10013891                 var_a68_4 = ecx_4 + 0x444
+10013898                 var_a6c_3 = ecx_4 + 0x9e4
+10013899                 var_a70_3 = "[%s] [%s] ERROR: File %s not found."
+1001389e                 var_a74_3 = 0x71c
+10013bf7             label_10013bf7:
+10013bf7                 var_a78 = "QCFlashWorker::doActionProgramParition"
+10013bfc                 opdbg_log(var_a78, var_a74_3, var_a70_3, var_a6c_3, var_a68_4, var_a64_4)
+10013c02                 int32_t** eax_45 = &arg_20
+10013c02                 
+10013c05                 if (arg5 u>= 0x10)
+10013c05                     eax_45 = arg_20
+10013c05                 
+10013c09                 int32_t** var_a7c_15 = eax_45
+10013c10                 sub_10024880(esi_1, "file_not_found(%)")
+10013c15                 esp_1 = &var_a60
+10013c18                 result = 0x7d08
+100137f3     else
+100137f9         int32_t** eax_8 = &arg_8
+100137fc         int32_t ecx_2 = *(esi_1 + 0x1c)
+100137fc         
+100137ff         if (arg3 u>= 0x10)
+100137ff             eax_8 = arg_8
+100137ff         
+10013818         char const* const var_a74_2 =
+10013818             "[%s] [%s] ERROR:Partition not found physicalParitionNum=%d, partitionName=%s."
+1001381d         var_a78 = 0x714
+10013827         opdbg_log("QCFlashWorker::doActionProgramParition", var_a78, var_a74_2, ecx_2 + 0x9e4, 
+10013827             ecx_2 + 0x444, arg2, eax_8)
+1001382d         int32_t** eax_11 = &arg_8
+1001382d         
+10013830         if (arg3 u>= 0x10)
+10013830             eax_11 = arg_8
+10013830         
+10013834         int32_t** var_a80_2 = eax_11
+1001383b         sub_10024880(esi_1, "partition_not_found(%s)")
+10013840         esp_1 = &var_a60
+10013843         result = 0x753b
+10013843     
+10015c03     if (var_38_1 u>= 0x10)
+10015c06         *(esp_1 - 4) = var_38_1 + 1
+10015c07         *(esp_1 - 8) = var_4c.d
+10015c0a         sub_10001d60()
+10015c0a     
+10015c0f     int32_t var_38_2 = 0xf
+10015c16     int32_t var_3c_2 = 0
+10015c1d     var_4c = 0
+10013761 else
+10013763     result = 0x1869f
+10013763 
+10015c27 if (arg3 u>= 0x10)
+10015c2a     *(esp_1 - 4) = arg3 + 1
+10015c2b     *(esp_1 - 8) = arg_8
+10015c2e     sub_10001d60()
+10015c2e 
+10015c36 arg3 = 0xf
+10015c3d int32_t arg_18 = 0
+10015c44 arg_8.b = 0
+10015c44 
+10015c4b if (arg5 u>= 0x10)
+10015c4e     *(esp_1 - 4) = arg5 + 1
+10015c4f     *(esp_1 - 8) = arg_20
+10015c52     sub_10001d60()
+10015c52 
+10015c5c fsbase->NtTib.ExceptionList = ExceptionList
+10015c63 esp_1[1]
+10015c64 esp_1[2]
+10015c65 esp_1[3]
+10015c6c CookieCheckFunction(result)
+10015c74 return result

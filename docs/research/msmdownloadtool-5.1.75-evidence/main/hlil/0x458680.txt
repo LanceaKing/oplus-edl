@@ -1,0 +1,87 @@
+00458680 int32_t ebp
+00458680 int32_t var_4 = ebp
+00458681 int32_t* ebp_1 = &var_4
+00458683 int32_t var_8 = 0xffffffff
+00458685 int32_t (* var_c)(void* arg1) = sub_6d2ee0
+00458690 TEB* fsbase
+00458690 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00458699 int32_t eax_2 = __security_cookie ^ &var_4
+0045869b int32_t var_18 = eax_2
+004586a5 fsbase->NtTib.ExceptionList = &ExceptionList
+004586c1 int32_t result
+004586c1 
+004586c1 if (sub_458410(arg2, arg1 + 0x2c, u"secret") == 0)
+00458778     result = 1
+004586c1 else
+004586cf     int32_t var_30
+004586cf     sub_45a140(&var_30, &data_773e08)
+004586d4     int32_t var_8_1 = 0
+004586e8     int32_t var_8_2 = 0xffffffff
+004586f3     uint32_t ebx_1 = zx.d((*(**arg2 + 4))(&var_30))
+004586f6     int32_t var_1c
+004586f6     
+004586f6     if (var_1c u>= 8)
+004586fb         ebp_1 = j_sub_688543(var_30)
+004586fb     
+00458705     if (ebx_1 == 0)
+00458778         result = 1
+00458705     else
+0045870f         sub_45a140(&ebp_1[-0xb], &data_773e08)
+00458717         ebp_1[-1] = 1
+0045872a         int32_t eax_11 = (*(**sub_496080(arg2, &ebp_1[-0xb]) + 0x40))(eax_2)
+0045872d         ebp_1[-1] = 0xffffffff
+0045872d         
+0045873a         if (ebp_1[-6] u>= 8)
+0045873f             ebp_1 = j_sub_688543(ebp_1[-0xb])
+0045873f         
+00458749         if (eax_11 != 0)
+004587a3             sub_45a140(&ebp_1[-0xb], u"error")
+004587a8             ebp_1[-1] = 2
+004587ba             char eax_17 = (*(**arg2 + 4))(&ebp_1[-0xb])
+004587bc             ebp_1[-1] = 0xffffffff
+004587bc             
+004587ca             if (ebp_1[-6] u>= 8)
+004587cf                 ebp_1 = j_sub_688543(ebp_1[-0xb])
+004587cf             
+004587d9             if (zx.d(eax_17) == 0)
+00458778                 result = 1
+004587d9             else
+004587e3                 sub_45a140(&ebp_1[-0x11], u"error")
+004587eb                 ebp_1[-1] = 3
+004587fe                 int32_t eax_21 = (*(**sub_496080(arg2, &ebp_1[-0x11]) + 0x40))()
+00458806                 sub_45a250(&ebp_1[-0x11])
+00458806                 
+0045880e                 if (eax_21 u> 4)
+0045885d                     *(arg1 + 0x10) = 0xc
+00458864                     result = 0
+0045880e                 else
+0045880e                     switch (eax_21)
+00458817                         case 0
+00458817                             *(arg1 + 0x10) = 4
+0045881e                             result = 0
+00458825                         case 1
+00458825                             *(arg1 + 0x10) = 5
+0045882c                             result = 0
+00458833                         case 2
+00458833                             *(arg1 + 0x10) = 7
+0045883a                             result = 0
+00458841                         case 3
+00458841                             *(arg1 + 0x10) = 6
+00458848                             result = 0
+0045884f                         case 4
+0045884f                             *(arg1 + 0x10) = 8
+00458856                             result = 0
+00458749         else
+00458753             *(arg1 + 0x10) = eax_11
+00458753             
+0045875f             if (sub_458410(arg2, arg1 + 0x30, u"scCode") == 0)
+00458778                 result = 1
+0045875f             else if (sub_458410(arg2, arg1 + 0x34, u"region") != 0)
+00458864                 result = 0
+00458772             else
+00458778                 result = 1
+00458778 
+00458780 fsbase->NtTib.ExceptionList = ebp_1[-3]
+00458790 sub_687de2(ebp_1[-5] ^ ebp_1)
+00458797 *ebp_1
+00458798 return result

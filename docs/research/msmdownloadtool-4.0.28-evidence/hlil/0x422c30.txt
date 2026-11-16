@@ -1,0 +1,62 @@
+00422c3d if (arg2 u> 4)
+00422d99     int32_t* eax_17 = _fopen("C:/ToolLog.txt", "a+")
+00422d99     
+00422da5     if (eax_17 != 0)
+00422dab         int32_t var_10_6 = *(arg1 + 0x2c) + 1
+00422db2         _fprintf(eax_17, "[%d] HANDSET_TYPE_NULL:\n")
+00422db8         _fclose(eax_17)
+00422db8     
+00422dc5     *arg3 = 0
+00422dd1     return 1
+00422dd1 
+00422c3d switch (arg2)
+00422c54     case 0
+00422c54         int32_t* eax_1 = _fopen("C:/ToolLog.txt", "a+")
+00422c54         
+00422c60         if (eax_1 != 0)
+00422c66             int32_t var_10_1 = *(arg1 + 0x2c) + 1
+00422c6d             _fprintf(eax_1, "[%d] HANDSET_TYPE_16G:\n")
+00422c73             _fclose(eax_1)
+00422c73         
+00422c85         *arg3 = *(arg1 + 0x6c)
+00422c88         return 0
+00422c95     case 1
+00422c95         int32_t* eax_5 = _fopen("C:/ToolLog.txt", "a+")
+00422c95         
+00422ca1         if (eax_5 != 0)
+00422ca7             int32_t var_10_2 = *(arg1 + 0x2c) + 1
+00422cae             _fprintf(eax_5, "[%d] HANDSET_TYPE_32G:\n")
+00422cb4             _fclose(eax_5)
+00422cb4         
+00422cc4         *arg3 = *(arg1 + 0x70)
+00422cc9         return 0
+00422cd6     case 2
+00422cd6         int32_t* eax_8 = _fopen("C:/ToolLog.txt", "a+")
+00422cd6         
+00422ce2         if (eax_8 != 0)
+00422ce8             int32_t var_10_3 = *(arg1 + 0x2c) + 1
+00422cef             _fprintf(eax_8, "[%d] HANDSET_TYPE_64G:\n")
+00422cf5             _fclose(eax_8)
+00422cf5         
+00422d05         *arg3 = *(arg1 + 0x74)
+00422d0a         return 0
+00422d17     case 3
+00422d17         int32_t* eax_11 = _fopen("C:/ToolLog.txt", "a+")
+00422d17         
+00422d23         if (eax_11 != 0)
+00422d29             int32_t var_10_4 = *(arg1 + 0x2c) + 1
+00422d30             _fprintf(eax_11, "[%d] HANDSET_TYPE_128G:\n")
+00422d36             _fclose(eax_11)
+00422d36         
+00422d46         *arg3 = *(arg1 + 0x78)
+00422d4b         return 0
+00422d58     case 4
+00422d58         int32_t* eax_14 = _fopen("C:/ToolLog.txt", "a+")
+00422d58         
+00422d64         if (eax_14 != 0)
+00422d6a             int32_t var_10_5 = *(arg1 + 0x2c) + 1
+00422d71             _fprintf(eax_14, "[%d] HANDSET_TYPE_256G:\n")
+00422d77             _fclose(eax_14)
+00422d77         
+00422d87         *arg3 = *(arg1 + 0x7c)
+00422d8c         return 0

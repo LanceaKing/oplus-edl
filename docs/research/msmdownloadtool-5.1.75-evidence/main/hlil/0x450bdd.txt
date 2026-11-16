@@ -1,0 +1,39 @@
+00450bed int32_t ebx
+00450bed 
+00450bed if (arg1 != 0xffffffff && (arg1.b & 0x10) == 0 && data_7e0308 != 1)
+00450bff     for (int32_t i = 0; i s< 3; i += 1)
+00450bf9         if (*((i << 3) + &data_7e0640) == 0)
+00450c17             ebx(*(arg3 + 0xe0), 0x14a, 0, *((i << 3) + &data_7e0644))
+00450c17             break
+00450c17     
+00450c28     int32_t result = ebx(*(arg3 + 0xe0), 0x14e, 0, 0)
+00450c2d     TEB* fsbase
+00450c2d     fsbase->NtTib.ExceptionList = arg2[-3]
+00450c3a     *arg2
+00450c3b     return result
+00450c3b 
+00450c59 for (int32_t i_1 = 0; i_1 s< 3; i_1 += 1)
+00450c53     ebx(*(arg3 + 0xe0), 0x14a, i_1, *((i_1 << 3) + &data_7e0644))
+00450c53 
+00450c7e void* esi_1 = (*(data_7bfb90 + 0xc))() + 0x10
+00450c81 arg2[-4] = esi_1
+00450c84 arg2[-1] = 0
+00450c84 
+00450c9d if (((*(esi_1 - 8) - 0x100) | (1 - *(esi_1 - 4))) s< 0)
+00450ca7     sub_414290(&arg2[-4], 0x100)
+00450cac     esi_1 = arg2[-4]
+00450cac 
+00450cb6 if (*(esi_1 - 8) s< 0x100)
+00450cbd     sub_414340(0x80070057)
+00450cbd     noreturn
+00450cbd 
+00450cc2 wchar16 const* const var_4_3 = u"c:\temp\MsmDownloadTool\customer_settings.ini"
+00450cc7 int32_t var_8_2 = 0x100
+00450ccc void* var_c = esi_1
+00450ccd void* const var_10_4 = &data_76a09c
+00450cd2 wchar16 const* const var_14 = u"Type"
+00450cd9 *(esi_1 - 0xc) = 0x100
+00450ce0 wchar16 const* const var_18 = u"Customer_Login"
+00450ce5 *(esi_1 + 0x200) = 0
+00450cec j_sub_b37e44(esi_1.w)
+00450cec return sub_450cf1() __tailcall

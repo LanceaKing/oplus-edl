@@ -1,0 +1,530 @@
+0040c140 int32_t ebp
+0040c140 int32_t var_4 = ebp
+0040c141 int32_t* ebp_1 = &var_4
+0040c143 int32_t var_8 = 0xffffffff
+0040c145 int32_t (* var_c)() = sub_64aff3
+0040c150 TEB* fsbase
+0040c150 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040c15c int32_t eax_2 = __security_cookie ^ &var_4
+0040c15e int32_t var_14 = eax_2
+0040c161 int32_t ebx
+0040c161 int32_t var_110 = ebx
+0040c162 int32_t esi
+0040c162 int32_t var_114 = esi
+0040c163 int32_t edi
+0040c163 int32_t var_118 = edi
+0040c168 fsbase->NtTib.ExceptionList = &ExceptionList
+0040c176 int32_t var_f4 = 0
+0040c180 struct TiXmlNode::TiXmlDocument::VTable** var_ec = nullptr
+0040c18a int32_t* eax_3 = sub_4f2b78(eax_2)
+0040c195 int32_t eax_4
+0040c195 eax_4.b = eax_3 != 0
+0040c195 
+0040c19a if (eax_4 == 0)
+0040c1a1     sub_405ee0(0x80004005)
+0040c1a1     noreturn
+0040c1a1 
+0040c1ae int16_t* var_fc = (*(*eax_3 + 0xc))() + 0x10
+0040c1b4 int32_t var_8_1 = 0
+0040c1bb int32_t* eax_8 = sub_4f2b78()
+0040c1c6 int32_t eax_9
+0040c1c6 eax_9.b = eax_8 != 0
+0040c1c6 
+0040c1cb if (eax_9 == 0)
+0040c1d2     sub_405ee0(0x80004005)
+0040c1d2     noreturn
+0040c1d2 
+0040c1dc void* edi_1 = (*(*eax_8 + 0xc))() + 0x10
+0040c1df void* var_100 = edi_1
+0040c1e8 int32_t var_28 = 0xf
+0040c1ef int64_t var_108 = 0
+0040c1f7 int32_t var_2c = 0
+0040c1fe char var_3c = 0
+0040c202 var_8_1.b = 2
+0040c206 int32_t* eax_12 = sub_4f2b78()
+0040c211 int32_t eax_13
+0040c211 eax_13.b = eax_12 != 0
+0040c211 
+0040c216 if (eax_13 == 0)
+0040c21d     sub_405ee0(0x80004005)
+0040c21d     noreturn
+0040c21d 
+0040c227 void* esi_1 = (*(*eax_12 + 0xc))() + 0x10
+0040c22a void* var_f8 = esi_1
+0040c233 var_8_1.b = 3
+0040c23f int128_t var_24
+0040c23f int128_t* var_120 = &var_24
+0040c24c var_24 = *(arg1 + 0x101931)
+0040c251 sub_405fb0(&var_fc, &data_6d979c)
+0040c256 int16_t* ebx_2 = var_fc
+0040c263 int32_t var_12c_2
+0040c263 uint32_t var_124_2
+0040c263 wchar16 const* const var_120_2
+0040c263 
+0040c263 if (*(ebx_2 - 0xc) == 0xf)
+0040c30a     int32_t eax_22
+0040c30a     int32_t edx_1
+0040c30a     eax_22, edx_1 = sub_60d90c(0)
+0040c30f     var_108.d = eax_22
+0040c321     var_108:4.d = edx_1
+0040c334     var_8_1.b = 4
+0040c338     sub_4057c0(&var_100, sub_40d290(&var_108, &var_ec))
+0040c33d     var_8_1.b = 3
+0040c34a     int32_t* edx_3 = &var_ec[-4]
+0040c350     int32_t ecx_8 = edx_3[3]
+0040c350     edx_3[3] -= 1
+0040c350     
+0040c357     if (ecx_8 - 1 s<= 0)
+0040c35e         (*(**edx_3 + 4))(edx_3)
+0040c35e     
+0040c363     struct TiXmlNode::TiXmlDocument::VTable** eax_26 = sub_4f07db(0x48)
+0040c36b     struct TiXmlNode::TiXmlDocument::VTable** var_e0_1 = eax_26
+0040c371     var_8_1.b = 5
+0040c377     struct TiXmlNode::TiXmlDocument::VTable** edi_2
+0040c377     
+0040c377     if (eax_26 == 0)
+0040c38a         edi_2 = nullptr
+0040c38c         var_ec = nullptr
+0040c377     else
+0040c37b         struct TiXmlNode::TiXmlDocument::VTable** eax_27 = sub_43fdb0(eax_26)
+0040c380         edi_2 = eax_27
+0040c382         var_ec = eax_27
+0040c382     
+0040c394     var_8_1.b = 3
+0040c398     struct TiXmlNode::TiXmlDeclaration::VTable** eax_28 = sub_4f07db(0x38)
+0040c3a0     struct TiXmlNode::TiXmlDeclaration::VTable** var_e0_2 = eax_28
+0040c3a6     var_8_1.b = 6
+0040c3ac     struct TiXmlNode::TiXmlDeclaration::VTable** eax_29
+0040c3ac     
+0040c3ac     if (eax_28 == 0)
+0040c3ba         eax_29 = nullptr
+0040c3ac     else
+0040c3b3         eax_29 = sub_440830(eax_28)
+0040c3b3     
+0040c3bf     var_8_1.b = 3
+0040c3c3     sub_43f3c0(edi_2, eax_29)
+0040c3ca     struct TiXmlNode::TiXmlElement::VTable** eax_30 = sub_4f07db(0x50)
+0040c3d2     struct TiXmlNode::TiXmlElement::VTable** var_e0_3 = eax_30
+0040c3d8     var_8_1.b = 7
+0040c3de     int32_t* esi_2
+0040c3de     
+0040c3de     if (eax_30 == 0)
+0040c3f0         esi_2 = nullptr
+0040c3de     else
+0040c3ec         esi_2 = std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >(
+0040c3ec             eax_30, "REFLASH")
+0040c3ec     
+0040c3f5     var_8_1.b = 3
+0040c3f9     sub_43f3c0(edi_2, esi_2)
+0040c400     struct TiXmlNode::TiXmlElement::VTable** eax_32 = sub_4f07db(0x50)
+0040c408     struct TiXmlNode::TiXmlElement::VTable** var_e0_4 = eax_32
+0040c40e     var_8_1.b = 8
+0040c414     int32_t* edi_3
+0040c414     
+0040c414     if (eax_32 == 0)
+0040c42c         edi_3 = nullptr
+0040c42e         int32_t var_f0_2 = 0
+0040c414     else
+0040c41d         struct TiXmlNode::TiXmlElement::VTable** eax_33 = std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >(
+0040c41d             eax_32, "UNIT")
+0040c422         edi_3 = eax_33
+0040c424         struct TiXmlNode::TiXmlElement::VTable** var_f0_1 = eax_33
+0040c424     
+0040c437     var_8_1.b = 3
+0040c43b     sub_43f3c0(esi_2, edi_3)
+0040c442     struct TiXmlNode::TiXmlElement::VTable** eax_34 = sub_4f07db(0x50)
+0040c44a     struct TiXmlNode::TiXmlElement::VTable** var_e0_5 = eax_34
+0040c450     var_8_1.b = 9
+0040c456     int32_t* esi_3
+0040c456     
+0040c456     if (eax_34 == 0)
+0040c468         esi_3 = nullptr
+0040c456     else
+0040c464         esi_3 = std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >(
+0040c464             eax_34, "IMEI")
+0040c464     
+0040c472     var_8_1.b = 3
+0040c47d     void var_d8
+0040c47d     void* var_dc = &var_d8
+0040c483     void* ebp_2 = sub_40cf50(&var_dc, ebx_2, 3)
+0040c488     *(ebp_2 - 4) = 0xa
+0040c48c     char* edx_4 = *(ebp_2 - 0xd8)
+0040c495     void* ecx_20
+0040c495     
+0040c495     if (*edx_4 != 0)
+0040c49b         char* ecx_21 = edx_4
+0040c4a5         char i
+0040c4a5         
+0040c4a5         do
+0040c4a0             i = *ecx_21
+0040c4a2             ecx_21 = &ecx_21[1]
+0040c4a5         while (i != 0)
+0040c4a7         ecx_20 = ecx_21 - &ecx_21[1]
+0040c4a9         edi_3 = *(ebp_2 - 0xec)
+0040c495     else
+0040c497         ecx_20 = nullptr
+0040c497     
+0040c4b4     sub_406bd0(ebp_2 - 0x38, edx_4, ecx_20)
+0040c4b9     *(ebp_2 - 4) = 3
+0040c4c3     int32_t eax_36 = *(ebp_2 - 0xd8)
+0040c4c3     
+0040c4cb     if (eax_36 != ebp_2 - 0xd4)
+0040c4ce         sub_60ca29(eax_36)
+0040c4ce     
+0040c4d8     struct TiXmlNode::TiXmlText::VTable** eax_37 = sub_4f07db(0x30)
+0040c4e2     *(ebp_2 - 0xdc) = eax_37
+0040c4e8     *(ebp_2 - 4) = 0xb
+0040c4ee     int32_t* eax_39
+0040c4ee     
+0040c4ee     if (eax_37 == 0)
+0040c503         eax_39 = nullptr
+0040c4ee     else
+0040c4f4         char* eax_38 = ebp_2 - 0x38
+0040c4f4         
+0040c4f7         if (*(ebp_2 - 0x24) u>= 0x10)
+0040c4f7             eax_38 = *(ebp_2 - 0x38)
+0040c4f7         
+0040c4fc         eax_39 = std::basic_string<uint16_t,struct std::char_traits<uint16_t>,class std::allocator<uint16_t> >::basic_string<uint16_t,struct std::char_traits<uint16_t>,class std::allocator<uint16_t> >(
+0040c4fc             eax_37, eax_38)
+0040c4fc     
+0040c508     *(ebp_2 - 4) = 3
+0040c50c     sub_43f3c0(esi_3, eax_39)
+0040c514     sub_43f3c0(edi_3, esi_3)
+0040c51b     struct TiXmlNode::TiXmlElement::VTable** eax_40 = sub_4f07db(0x50)
+0040c523     *(ebp_2 - 0xdc) = eax_40
+0040c529     *(ebp_2 - 4) = 0xc
+0040c52f     struct TiXmlNode::TiXmlElement::VTable** esi_4
+0040c52f     
+0040c52f     if (eax_40 == 0)
+0040c541         esi_4 = nullptr
+0040c52f     else
+0040c53d         esi_4 = std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >(
+0040c53d             eax_40, "TIMESTAMP")
+0040c53d     
+0040c543     *(ebp_2 - 4) = 3
+0040c54d     int16_t* edi_5 = *(ebp_2 - 0xfc)
+0040c55c     *(ebp_2 - 0xd8) = ebp_2 - 0xd4
+0040c562     int32_t ebx_3
+0040c562     void* ebp_3
+0040c562     ebx_3, ebp_3 = sub_40cf50(ebp_2 - 0xd8, edi_5, 3)
+0040c567     *(ebp_3 - 4) = 0xd
+0040c56b     char* edx_5 = *(ebp_3 - 0xd8)
+0040c574     void* ecx_29
+0040c574     
+0040c574     if (*edx_5 != 0)
+0040c57a         char* ecx_30 = edx_5
+0040c57f         *(ebp_3 - 0xe0) = &ecx_30[1]
+0040c58a         void* eax_43
+0040c58a         
+0040c58a         do
+0040c585             eax_43.b = *ecx_30
+0040c587             ecx_30 = &ecx_30[1]
+0040c58a         while (eax_43.b != 0)
+0040c58c         ecx_29 = ecx_30 - *(ebp_3 - 0xe0)
+0040c574     else
+0040c576         ecx_29 = nullptr
+0040c576     
+0040c597     sub_406bd0(ebp_3 - 0x38, edx_5, ecx_29)
+0040c59c     *(ebp_3 - 4) = 3
+0040c5a6     int32_t eax_44 = *(ebp_3 - 0xd8)
+0040c5a6     
+0040c5ae     if (eax_44 != ebp_3 - 0xd4)
+0040c5b1         sub_60ca29(eax_44)
+0040c5b1     
+0040c5bb     struct TiXmlNode::TiXmlText::VTable** eax_45 = sub_4f07db(0x30)
+0040c5c5     *(ebp_3 - 0xdc) = eax_45
+0040c5cb     *(ebp_3 - 4) = 0xe
+0040c5d1     struct TiXmlNode::TiXmlText::VTable** eax_47
+0040c5d1     
+0040c5d1     if (eax_45 == 0)
+0040c5e6         eax_47 = nullptr
+0040c5d1     else
+0040c5d7         char* eax_46 = ebp_3 - 0x38
+0040c5d7         
+0040c5da         if (*(ebp_3 - 0x24) u>= 0x10)
+0040c5da             eax_46 = *(ebp_3 - 0x38)
+0040c5da         
+0040c5df         eax_47 = std::basic_string<uint16_t,struct std::char_traits<uint16_t>,class std::allocator<uint16_t> >::basic_string<uint16_t,struct std::char_traits<uint16_t>,class std::allocator<uint16_t> >(
+0040c5df             eax_45, eax_46)
+0040c5df     
+0040c5eb     *(ebp_3 - 4) = 3
+0040c5ef     sub_43f3c0(esi_4, eax_47)
+0040c5fb     sub_43f3c0(*(ebp_3 - 0xec), esi_4)
+0040c602     struct TiXmlNode::TiXmlElement::VTable** eax_48 = sub_4f07db(0x50)
+0040c60a     *(ebp_3 - 0xdc) = eax_48
+0040c610     *(ebp_3 - 4) = 0xf
+0040c610     
+0040c616     if (eax_48 == 0)
+0040c62c         *(ebp_3 - 0xe0) = 0
+0040c616     else
+0040c624         *(ebp_3 - 0xe0) = std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >(
+0040c624             eax_48, "RESULT")
+0040c624     
+0040c636     void* esi_5 = *(ebp_3 - 0xe4)
+0040c63c     *(ebp_3 - 4) = 3
+0040c647     int32_t eax_50
+0040c647     char const* const edx_6
+0040c647     
+0040c647     if (*(esi_5 + 0x1a8) == 0)
+0040c64f         eax_50 = sub_40ad90(esi_5 + 0x145c)
+0040c654         edx_6 = "PASS"
+0040c654     
+0040c65b     if (*(esi_5 + 0x1a8) != 0 || eax_50 == 0)
+0040c65d         edx_6 = "FAILED"
+0040c65d     
+0040c667     *(ebp_3 - 0xdc) = &edx_6[1]
+0040c66d     char const* const ecx_39 = edx_6
+0040c675     void* eax_51
+0040c675     
+0040c675     do
+0040c670         eax_51.b = *ecx_39
+0040c672         ecx_39 = &ecx_39[1]
+0040c675     while (eax_51.b != 0)
+0040c682     sub_406bd0(ebp_3 - 0x38, edx_6, ecx_39 - *(ebp_3 - 0xdc))
+0040c682     
+0040c694     if (sub_40ad90(esi_5 + 0x145c) == 0)
+0040c6a0         int32_t eax_53 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+0040c6a0         
+0040c6ac         if (eax_53 != 0)
+0040c6c0             _fprintf(eax_53, "[%d] Device's userdata is not flashed\n", *(*(ebp_3 - 0xe4) + 0x1ec))
+0040c6c9             _fclose(eax_53)
+0040c6c9     
+0040c6d3     struct TiXmlNode::TiXmlText::VTable** eax_54 = sub_4f07db(0x30)
+0040c6dd     *(ebp_3 - 0xdc) = eax_54
+0040c6e3     *(ebp_3 - 4) = 0x10
+0040c6e9     struct TiXmlNode::TiXmlText::VTable** eax_56
+0040c6e9     
+0040c6e9     if (eax_54 == 0)
+0040c6fe         eax_56 = nullptr
+0040c6e9     else
+0040c6ef         char* eax_55 = ebp_3 - 0x38
+0040c6ef         
+0040c6f2         if (*(ebp_3 - 0x24) u>= 0x10)
+0040c6f2             eax_55 = *(ebp_3 - 0x38)
+0040c6f2         
+0040c6f7         eax_56 = std::basic_string<uint16_t,struct std::char_traits<uint16_t>,class std::allocator<uint16_t> >::basic_string<uint16_t,struct std::char_traits<uint16_t>,class std::allocator<uint16_t> >(
+0040c6f7             eax_54, eax_55)
+0040c6f7     
+0040c700     int32_t* esi_7 = *(ebp_3 - 0xe0)
+0040c709     *(ebp_3 - 4) = 3
+0040c70d     sub_43f3c0(esi_7, eax_56)
+0040c719     sub_43f3c0(*(ebp_3 - 0xec), esi_7)
+0040c720     struct TiXmlNode::TiXmlElement::VTable** eax_57 = sub_4f07db(0x50)
+0040c728     *(ebp_3 - 0xdc) = eax_57
+0040c72e     *(ebp_3 - 4) = 0x11
+0040c72e     
+0040c734     if (eax_57 == 0)
+0040c74a         *(ebp_3 - 0xe0) = 0
+0040c734     else
+0040c742         *(ebp_3 - 0xe0) = std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >(
+0040c742             eax_57, "SOFTWARE_NAME")
+0040c742     
+0040c756     *(ebp_3 - 4) = 3
+0040c75a     struct TiXmlNode::TiXmlText::VTable** eax_59 = sub_4f07db(0x30)
+0040c764     *(ebp_3 - 0xdc) = eax_59
+0040c76a     *(ebp_3 - 4) = 0x12
+0040c770     struct TiXmlNode::TiXmlText::VTable** eax_62
+0040c770     
+0040c770     if (eax_59 == 0)
+0040c7a1         eax_62 = nullptr
+0040c770     else
+0040c77b         int32_t* eax_61 = sub_4147c0(&data_723df0, ebp_3 - 0x50)
+0040c780         *(ebp_3 - 4) = 0x13
+0040c789         bool cond:3_1 = eax_61[5] u< 0x10
+0040c78d         *(ebp_3 - 0xf0) = 1
+0040c78d         
+0040c793         if (not(cond:3_1))
+0040c795             eax_61 = *eax_61
+0040c795         
+0040c79a         eax_62 = std::basic_string<uint16_t,struct std::char_traits<uint16_t>,class std::allocator<uint16_t> >::basic_string<uint16_t,struct std::char_traits<uint16_t>,class std::allocator<uint16_t> >(
+0040c79a             eax_59, eax_61)
+0040c79a     
+0040c7a3     int32_t* esi_9 = *(ebp_3 - 0xe0)
+0040c7ac     *(ebp_3 - 4) = 0x14
+0040c7b3     sub_43f3c0(esi_9, eax_62)
+0040c7b8     *(ebp_3 - 4) = 3
+0040c7bf     int32_t eax_63 = *(ebp_3 - 0xf0)
+0040c7bf     
+0040c7c7     if ((eax_63.b & 1) != 0)
+0040c7cc         bool cond:4_1 = *(ebp_3 - 0x3c) u< 0x10
+0040c7d0         *(ebp_3 - 0xf0) = eax_63 & 0xfffffffe
+0040c7d0         
+0040c7d6         if (not(cond:4_1))
+0040c7db             sub_4f0808(*(ebp_3 - 0x50))
+0040c7db     
+0040c7ea     sub_43f3c0(*(ebp_3 - 0xec), esi_9)
+0040c7f1     struct TiXmlNode::TiXmlElement::VTable** eax_65 = sub_4f07db(0x50)
+0040c7f9     *(ebp_3 - 0xdc) = eax_65
+0040c7ff     *(ebp_3 - 4) = 0x15
+0040c7ff     
+0040c805     if (eax_65 == 0)
+0040c81b         *(ebp_3 - 0xe0) = 0
+0040c805     else
+0040c813         *(ebp_3 - 0xe0) = std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >(
+0040c813             eax_65, "SOFTWARE_VER")
+0040c813     
+0040c827     *(ebp_3 - 4) = 3
+0040c82b     struct TiXmlNode::TiXmlText::VTable** eax_67 = sub_4f07db(0x30)
+0040c835     *(ebp_3 - 0xdc) = eax_67
+0040c83b     *(ebp_3 - 4) = 0x16
+0040c841     struct TiXmlNode::TiXmlText::VTable** eax_70
+0040c841     
+0040c841     if (eax_67 == 0)
+0040c86e         eax_70 = nullptr
+0040c841     else
+0040c84c         char* eax_69 = sub_40acf0(0x723ebc, ebp_3 - 0x50)
+0040c851         *(ebp_3 - 4) = 0x17
+0040c855         *(ebp_3 - 0xf0) |= 2
+0040c855         
+0040c860         if (*(eax_69 + 0x14) u>= 0x10)
+0040c862             eax_69 = *eax_69
+0040c862         
+0040c867         eax_70 = std::basic_string<uint16_t,struct std::char_traits<uint16_t>,class std::allocator<uint16_t> >::basic_string<uint16_t,struct std::char_traits<uint16_t>,class std::allocator<uint16_t> >(
+0040c867             eax_67, eax_69)
+0040c867     
+0040c870     int32_t* esi_11 = *(ebp_3 - 0xe0)
+0040c879     *(ebp_3 - 4) = 0x18
+0040c880     sub_43f3c0(esi_11, eax_70)
+0040c885     *(ebp_3 - 4) = 3
+0040c885     
+0040c89b     if (((*(ebp_3 - 0xf0)).b & 2) != 0 && *(ebp_3 - 0x3c) u>= 0x10)
+0040c8a0         sub_4f0808(*(ebp_3 - 0x50))
+0040c8a0     
+0040c8af     sub_43f3c0(*(ebp_3 - 0xec), esi_11)
+0040c8b6     struct TiXmlNode::TiXmlElement::VTable** eax_71 = sub_4f07db(0x50)
+0040c8be     *(ebp_3 - 0xdc) = eax_71
+0040c8c4     *(ebp_3 - 4) = 0x19
+0040c8ca     struct TiXmlNode::TiXmlElement::VTable** esi_12
+0040c8ca     
+0040c8ca     if (eax_71 == 0)
+0040c8dc         esi_12 = nullptr
+0040c8ca     else
+0040c8d8         esi_12 = std::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >::basic_string<wchar_t,struct std::char_traits<wchar_t>,class std::allocator<wchar_t> >(
+0040c8d8             eax_71, "OEM_NAME")
+0040c8d8     
+0040c8e0     *(ebp_3 - 4) = 3
+0040c8e4     struct TiXmlNode::TiXmlText::VTable** eax_73 = sub_4f07db(0x30)
+0040c8ec     *(ebp_3 - 0xdc) = eax_73
+0040c8f2     *(ebp_3 - 4) = 0x1a
+0040c8f8     int32_t* eax_74
+0040c8f8     
+0040c8f8     if (eax_73 == 0)
+0040c908         eax_74 = nullptr
+0040c8f8     else
+0040c901         eax_74 = std::basic_string<uint16_t,struct std::char_traits<uint16_t>,class std::allocator<uint16_t> >::basic_string<uint16_t,struct std::char_traits<uint16_t>,class std::allocator<uint16_t> >(
+0040c901             eax_73, "OnePlus")
+0040c901     
+0040c90d     *(ebp_3 - 4) = 3
+0040c911     sub_43f3c0(esi_12, eax_74)
+0040c91d     sub_43f3c0(*(ebp_3 - 0xec), esi_12)
+0040c922     int16_t* var_120_36 = edi_5
+0040c923     int32_t var_124_9 = ebx_3
+0040c930     sub_405fb0(ebp_3 - 0xf4, u"OnePlus_%s_%s.xml")
+0040c935     int16_t* esi_13 = *(ebp_3 - 0xf4)
+0040c944     *(ebp_3 - 0xd8) = ebp_3 - 0xd4
+0040c953     ebx_2, ebp_1 = sub_40cf50(ebp_3 - 0xd8, esi_13, 3)
+0040c958     ebp_1[-1].b = 0x1b
+0040c95c     char* edx_7 = ebp_1[-0x36]
+0040c965     void* ecx_61
+0040c965     
+0040c965     if (*edx_7 != 0)
+0040c96b         char* ecx_62 = edx_7
+0040c970         ebp_1[-0x37] = &ecx_62[1]
+0040c97b         void* eax_77
+0040c97b         
+0040c97b         do
+0040c976             eax_77.b = *ecx_62
+0040c978             ecx_62 = &ecx_62[1]
+0040c97b         while (eax_77.b != 0)
+0040c97d         ecx_61 = ecx_62 - ebp_1[-0x37]
+0040c965     else
+0040c967         ecx_61 = nullptr
+0040c967     
+0040c988     sub_406bd0(&ebp_1[-0xe], edx_7, ecx_61)
+0040c98d     ebp_1[-1].b = 3
+0040c997     int32_t eax_78 = ebp_1[-0x36]
+0040c997     
+0040c99f     if (eax_78 != &ebp_1[-0x35])
+0040c9a2         sub_60ca29(eax_78)
+0040c9a2     
+0040c9ae     void* eax_79 = &ebp_1[-0xe]
+0040c9ae     
+0040c9b7     if (ebp_1[-9] u>= 0x10)
+0040c9b7         eax_79 = ebp_1[-0xe]
+0040c9b7     
+0040c9bc     esi_1, edi_1 = sub_440220(ebp_1[-0x3a], eax_79)
+0040c9ca     sub_40acb0(0x723ebc, &ebp_1[-0x14])
+0040c9ca     
+0040c9d3     if (ebp_1[-0xf] u>= 0x10)
+0040c9d8         sub_4f0808(ebp_1[-0x14])
+0040c9d8     
+0040c9e0     void* eax_81 = ebp_1[-0x39]
+0040c9f4     int32_t ecx_66
+0040c9f4     ecx_66.b = *(eax_81 + 0x1a8) != 0
+0040c9f4     
+0040ca22     if (data_72421c == 0)
+0040ca2b         var_120_2 = u"Mission Completed"
+0040ca22     else
+0040ca24         var_120_2 = &data_6da850
+0040ca24     
+0040ca30     var_124_2 = (zx.d((zx.d((ecx_66 << 1).b + 2) << 8).w) | zx.d((*(eax_81 + 0x1ec)).b)) << 0x10
+0040ca36     var_12c_2 = *(*(ebp_1[-0x39] + 0x1f0) + 0x20)
+0040ca39     0x3095d0(var_12c_2, 0x178c, var_124_2, var_120_2)
+0040ca3f     ebp_1[-0x3a] = 1
+0040c263 else
+0040c273     int32_t eax_16 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+0040c273     
+0040c283     if (eax_16 != 0)
+0040c29a         _fprintf(eax_16, 
+0040c29a             "[%d] mobid is incorrect (%d)! It might be due to flash processing not passing over the "
+0040c29a         "Firehose stage\n", 
+0040c29a             *(arg1 + 0x1ec), *(ebx_2 - 0xc))
+0040c2a5         _fclose(eax_16)
+0040c2a5     
+0040c2b9     void* ecx_5 = *(arg1 + 0x1f0)
+0040c2ca     uint32_t eax_21 = (zx.d((*(arg1 + 0x1ec)).b) | 0x100) << 0x10
+0040c2ca     
+0040c2d4     if (data_72421c == 0)
+0040c2ef         var_120_2 = u"IMEI is incorrect! Report is not generated!"
+0040c2f4         var_124_2 = eax_21
+0040c2fa         var_12c_2 = *(ecx_5 + 0x20)
+0040c2fd         0x3095d0(var_12c_2, 0x178c, var_124_2, u"IMEI is incorrect! Report is not generated!")
+0040c2d4     else
+0040c2d6         var_120_2 = &data_6da700
+0040c2db         var_124_2 = eax_21
+0040c2e1         var_12c_2 = *(ecx_5 + 0x20)
+0040c2e4         0x3095d0(var_12c_2, 0x178c, var_124_2, &data_6da700)
+0040c2e4 
+0040ca4c ebp_1[-1].b = 2
+0040ca56 int32_t ecx_70 = *(esi_1 - 4)
+0040ca56 *(esi_1 - 4) -= 1
+0040ca56 
+0040ca5d if (ecx_70 - 1 s<= 0)
+0040ca64     (*(**(esi_1 - 0x10) + 4))(esi_1 - 0x10)
+0040ca64 
+0040ca6b if (ebp_1[-9] u>= 0x10)
+0040ca70     sub_4f0808(ebp_1[-0xe], var_12c_2, 0x178c, var_124_2, var_120_2)
+0040ca70 
+0040ca7b ebp_1[-9] = 0xf
+0040ca85 ebp_1[-0xa] = 0
+0040ca8c ebp_1[-0xe].b = 0
+0040ca92 ebp_1[-1].b = 0
+0040ca99 int32_t ecx_73 = *(edi_1 - 4)
+0040ca99 *(edi_1 - 4) -= 1
+0040ca99 
+0040caa0 if (ecx_73 - 1 s<= 0)
+0040caa7     (*(**(edi_1 - 0x10) + 4))(edi_1 - 0x10)
+0040caa7 
+0040caad ebp_1[-1] = 0xffffffff
+0040cab7 int32_t esi_15 = *(ebx_2 - 4)
+0040cab7 *(ebx_2 - 4) -= 1
+0040cab7 
+0040cabe if (esi_15 - 1 s<= 0)
+0040cac5     (*(**(ebx_2 - 0x10) + 4))(&ebx_2[-8])
+0040cac5 
+0040cac8 ebp_1[-0x3a]
+0040cad1 fsbase->NtTib.ExceptionList = ebp_1[-3]
+0040cadc ebp_1[-4]
+0040cae1 int32_t result = sub_60bdca()
+0040cae8 *ebp_1
+0040cae9 return result

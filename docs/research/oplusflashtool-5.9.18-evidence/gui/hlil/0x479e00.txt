@@ -1,0 +1,200 @@
+00479e03 int32_t var_8 = 0xffffffff
+00479e05 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_4e0e70
+00479e10 TEB* fsbase
+00479e10 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00479e19 int32_t __saved_ebp
+00479e19 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00479e1e int32_t ebx
+00479e1e int32_t var_48 = ebx
+00479e1f int32_t esi
+00479e1f int32_t var_4c = esi
+00479e20 char* edi
+00479e20 char const* const var_50 = edi
+00479e21 int32_t var_54 = eax_2
+00479e25 fsbase->NtTib.ExceptionList = &ExceptionList
+00479e30 int32_t var_3c = 0
+00479e37 struct QTypedArrayData<uint16_t>* var_30
+00479e37 int32_t* var_58 = &var_30
+00479e54 int32_t var_58_1 = arg2
+00479e55 char const* const var_5c = "login finished:"
+00479e5a void* const var_60 = &data_4f2998
+00479e5f int32_t var_64 = 0x1f6
+00479e64 void* const var_68 = &data_4f2994
+00479e69 char const* const var_6c = "LoginWindow::LoginRequestFinish"
+00479e73 int32_t var_8_1 = 0
+00479eb9 int32_t var_8_2 = 0xffffffff
+00479ec0 char* var_44
+00479ec0 QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+00479ec0     QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+00479ec0         QMessageLogger::info(QMessageLogger::QMessageLogger(arg1, nullptr, 0, nullptr)), 
+00479ec0         "[FTGuiSales][")))), 
+00479ec0     var_44))))
+00479ec2 int32_t var_48_1 = 0xffffffff
+00479ec4 int32_t var_4c_1 = 0
+00479ec9 var_50 = "login"
+00479ecf char* eax_11 = sub_4802a0(&var_30, var_50, var_4c_1, var_48_1)
+00479edb int32_t var_8_3 = 1
+00479eee int32_t var_8_4 = 0xffffffff
+00479ef5 QString::~QString(QAbstractButton::setText(*(*(arg1 + 0x18) + 0x24), eax_11))
+00479efd uint32_t result
+00479efd 
+00479efd if (arg2.b == 0)
+00479f55     QString var_34
+00479f55     sub_41f3c0(&var_34)
+00479f5d     int32_t var_8_7 = 3
+00479f64     void* var_38
+00479f64     var_50 = &var_38
+00479f65     QString* ecx_17
+00479f65     void* esi_2
+00479f65     ecx_17, esi_2 = sub_41ea00(var_50)
+00479f75     var_8_7.b = 4
+00479f81     QString* ecx_22
+00479f81     
+00479f81     if (QString::operator==(ecx_17, "3007") == 0)
+00479fd8         int32_t var_40
+00479fd8         QMessageLogger* ecx_24 = sub_48d840(*(esi_2 + 0x20), &var_40)
+00479fe0         var_8_7.b = 6
+00479fe4         int32_t* var_4c_10 = &var_30
+00479fe5         var_50 = nullptr
+00479ff6         QDebug* eax_16 =
+00479ff6             QMessageLogger::warning(QMessageLogger::QMessageLogger(ecx_24, nullptr, 0, var_50))
+00479fff         var_8_7.b = 7
+0047a003         int32_t* var_4c_11 = &var_38
+0047a004         var_50 = " error:"
+0047a00c         QString* var_54_2 = &var_34
+0047a00d         char const* const var_58_3 = " code:"
+0047a015         int32_t* var_5c_1 = &var_40
+0047a016         char const* const var_60_1 = "login fail, comboText:"
+0047a01b         void* const var_64_1 = &data_4f2998
+0047a020         int32_t var_68_1 = 0x20a
+0047a025         void* const var_6c_1 = &data_4f2994
+0047a02a         char const* const var_70_1 = "LoginWindow::LoginRequestFinish"
+0047a08f         var_8_7.b = 6
+0047a093         QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+0047a093             QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+0047a093             QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(eax_16, 
+0047a093             "[FTGuiSales]["))))))))))))
+0047a095         sub_41cbc0()
+0047a0a3         QString* ecx_47
+0047a0a3         
+0047a0a3         if (sub_43e830(&data_58a018) != 0)
+0047a121             int32_t var_4c_17 = 0
+0047a123             var_50 = &data_4f1ea9
+0047a131             var_30 = QString::fromAscii_helper(var_50, var_4c_17)
+0047a137             var_8_7.b = 0xa
+0047a13e             uint32_t eax_31
+0047a13e             QString* ecx_49
+0047a13e             eax_31, ecx_49 = sub_479a20(esi_2, &var_30)
+0047a146             var_8_7.b = 6
+0047a14c             char* ecx_50 = QString::~QString(ecx_49)
+0047a154             char eax_32
+0047a154             
+0047a154             if (eax_31 != 0)
+0047a15d                 char* var_4c_19 = &data_4f1ea9
+0047a162                 var_50 = eax_31 + 0x24
+0047a163                 eax_32, ecx_50 = sub_418020(var_50, var_4c_19)
+0047a163             
+0047a16d             if (eax_31 == 0 || eax_32 != 0)
+0047a2a0                 int32_t var_4c_29 = 1
+0047a2a2                 var_50 = ecx_50
+0047a2a5                 var_44 = &var_50
+0047a2b2                 sub_4802a0(&var_50, "No service address configured!", 0, 0xffffffff)
+0047a2ba                 var_8_7.b = 0xb
+0047a2be                 sub_41cbc0()
+0047a2c3                 var_8_7.b = 6
+0047a2cd                 ecx_47 = sub_4304c0(data_58a0a8, var_50)
+0047a16d             else
+0047a176                 QString* var_4c_20 = &var_34
+0047a177                 sub_41cbc0()
+0047a189                 QString* ecx_55
+0047a189                 
+0047a189                 if (sub_47b7c0(0x58c2f8, var_4c_20) == 0)
+0047a1e8                     void var_2c
+0047a1e8                     var_50 = &var_2c
+0047a1ee                     int32_t* var_4c_25 = sub_479d70(esi_2, var_50, eax_31 + 0xc)
+0047a1f2                     var_8_7.b = 0xe
+0047a1f6                     var_50 = &var_44
+0047a1f7                     var_3c = 1
+0047a209                     bool eax_39
+0047a209                     QString* ecx_57
+0047a209                     eax_39, ecx_57 = operator==(QString::fromStdString(var_50), &var_40)
+0047a21d                     int32_t ebx_1
+0047a21d                     
+0047a21d                     if (eax_39 == 0 || *(var_38 + 4) == 0)
+0047a223                         ebx_1.b = 0
+0047a21d                     else
+0047a21f                         ebx_1.b = 1
+0047a21f                     
+0047a228                     QString::~QString(ecx_57)
+0047a231                     var_8_7 = 6
+0047a238                     sub_40b420(&var_2c)
+0047a238                     
+0047a23f                     if (ebx_1.b == 0)
+0047a25f                         int32_t var_4c_27 = 0xffffffff
+0047a261                         var_50 = nullptr
+0047a26c                         char* eax_41 = sub_4802a0(&var_44, "login fail!", var_50, var_4c_27)
+0047a278                         var_8_7.b = 0xf
+0047a27f                         ecx_55 = QLabel::setText(*(*(esi_2 + 0x18) + 0x40), eax_41)
+0047a285                         goto label_47a288
+0047a285                     
+0047a24b                     QLabel::setText(*(*(esi_2 + 0x18) + 0x40), &var_38)
+0047a257                     ecx_47 = QWidget::show(*(*(esi_2 + 0x18) + 0x40))
+0047a189                 else
+0047a18b                     int32_t var_4c_21 = 0xffffffff
+0047a18d                     var_50 = nullptr
+0047a198                     char* eax_34 = sub_4802a0(&var_30, "login fail!", var_50, var_4c_21)
+0047a1a4                     var_8_7.b = 0xc
+0047a1a8                     var_50 = &var_34
+0047a1ad                     sub_41cbc0()
+0047a1b8                     QString* eax_35 = sub_429890(0x58c2f8, &var_3c, var_50, eax_34)
+0047a1c1                     var_8_7.b = 0xd
+0047a1d1                     ecx_55 = QString::~QString(QLabel::setText(*(*(esi_2 + 0x18) + 0x40), eax_35))
+0047a288                 label_47a288:
+0047a288                     var_8_7.b = 6
+0047a28c                     QString::~QString(ecx_55)
+0047a298                     ecx_47 = QWidget::show(*(*(esi_2 + 0x18) + 0x40))
+0047a0a3         else
+0047a0a5             sub_41cbc0()
+0047a0b4             class QString* eax_28
+0047a0b4             QString* ecx_39
+0047a0b4             eax_28, ecx_39 = sub_477150(esi_2 + 0x230, &data_58a058)
+0047a0bd             QString::QString(ecx_39, eax_28)
+0047a0c3             int32_t var_4c_14 = 0xffffffff
+0047a0c5             var_50 = nullptr
+0047a0ca             var_8_7.b = 8
+0047a0d4             char* eax_29
+0047a0d4             QString* ecx_40
+0047a0d4             eax_29, ecx_40 = sub_4802a0(&var_3c, " is disable login", var_50, var_4c_14)
+0047a0e0             var_8_7.b = 9
+0047a0ed             var_8_7.b = 8
+0047a0f1             QString::~QString(QString::append(ecx_40, eax_29))
+0047a101             QLabel::setText(*(*(esi_2 + 0x18) + 0x40), &var_30)
+0047a116             ecx_47 = QString::~QString(QWidget::show(*(*(esi_2 + 0x18) + 0x40)))
+0047a116         
+0047a2d5         ecx_22 = QString::~QString(ecx_47)
+00479f81     else
+00479f83         int32_t var_4c_6 = 0xffffffff
+00479f85         var_50 = nullptr
+00479f9b         var_8_7.b = 5
+00479faa         var_8_7.b = 4
+00479fae         QString::~QString(sub_42d210(esi_2 + 0x3c, 
+00479fae             sub_4802a0(&var_30, "You need to change your password to log in", var_50, var_4c_6)))
+00479fb4         sub_41cbc0()
+00479fbe         void* var_4c_8 = &data_58a028
+00479fc6         ecx_22 = QWidget::show(sub_42d500(esi_2 + 0x3c))
+00479fc6     
+0047a2e7     result = QString::~QString(QString::~QString(ecx_22))
+00479efd else
+00479f02     int32_t* var_4c_2 = &var_30
+00479f03     class QDateTime&& eax_12 = QDateTime::currentDateTime()
+00479f0d     int32_t var_8_5 = 2
+00479f14     sub_41cbc0()
+00479f25     int32_t var_8_6 = 0xffffffff
+00479f2c     QDateTime::~QDateTime(QDateTime::operator=(&data_58a020, eax_12))
+00479f38     QLineEdit::clear(*(*(arg1 + 0x18) + 0x1c))
+00479f40     sub_47afb0(arg1)
+00479f47     result = sub_4c3a10(arg1)
+00479f47 
+0047a2f0 fsbase->NtTib.ExceptionList = ExceptionList
+0047a300 CookieCheckFunction(result)
+0047a308 return result

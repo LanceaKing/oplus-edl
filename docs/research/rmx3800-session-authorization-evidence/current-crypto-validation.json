@@ -1,0 +1,81 @@
+{
+  "scope": "original current loader SHA and vendor-key rejection using captured prior-session fields",
+  "sample_sha256": "f23c8b349d0bb20ab33fc6fd031ce364b6e914c96fdb842a7bb0e0679b10d4a2",
+  "sha": {
+    "entry": "0x149a5e6c",
+    "instructions": 3057,
+    "returned": true,
+    "pc": "0x3100f000",
+    "return_x0": "0x0",
+    "code_region_unchanged": true,
+    "input_length": 208,
+    "input_sha256": "357011ad479b5a15c24f4546c1900a46bb0e5ad014d71e09e9774bf52a4b60cd",
+    "digest": "357011ad479b5a15c24f4546c1900a46bb0e5ad014d71e09e9774bf52a4b60cd",
+    "heap_live_bytes_after": 0,
+    "sha_busy_after": 0,
+    "sha_context_after": "0x0",
+    "matches": true
+  },
+  "authorization_negative_cases": [
+    {
+      "entry": "0x149a122c",
+      "instructions": 4672021,
+      "returned": true,
+      "logger_skips": 4,
+      "pc": "0x3100f000",
+      "return_x0": "0xffffffff",
+      "code_region_unchanged": true,
+      "length": 256,
+      "events": [
+        {
+          "phase": "rsa-wrapper",
+          "osig_auth": "Y",
+          "osig_sha256": "357011ad479b5a15c24f4546c1900a46bb0e5ad014d71e09e9774bf52a4b60cd"
+        },
+        {
+          "phase": "rsa-core",
+          "algorithm_id": 11,
+          "digest_length": 32,
+          "digest": "357011ad479b5a15c24f4546c1900a46bb0e5ad014d71e09e9774bf52a4b60cd"
+        },
+        {
+          "phase": "rsa-result",
+          "w0": "0xffffbf00"
+        },
+        {
+          "phase": "rsa-wrapper",
+          "osig_auth": "N",
+          "osig_sha256": "833ceb62ad987ce77c3169813776c338405908caacd22d97af3c7ff485170684"
+        },
+        {
+          "phase": "rsa-core",
+          "algorithm_id": 11,
+          "digest_length": 32,
+          "digest": "833ceb62ad987ce77c3169813776c338405908caacd22d97af3c7ff485170684"
+        },
+        {
+          "phase": "rsa-result",
+          "w0": "0xffffbf00"
+        }
+      ],
+      "auth_pass": 0,
+      "auth_type": 0
+    },
+    {
+      "entry": "0x149a122c",
+      "instructions": 42,
+      "returned": true,
+      "logger_skips": 1,
+      "pc": "0x3100f000",
+      "return_x0": "0xffffffff",
+      "code_region_unchanged": true,
+      "length": 255,
+      "events": [],
+      "auth_pass": 0,
+      "auth_type": 0
+    }
+  ],
+  "adapters": "heap metadata entropy only at three mapped call sites; diagnostic logger skipped without return synthesis",
+  "device_access": false,
+  "positive_authorization_tested": false
+}

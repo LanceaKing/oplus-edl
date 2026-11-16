@@ -1,0 +1,635 @@
+00421956 int32_t var_c = 0xffffffff
+00421958 int32_t (* var_10)() = sub_64c8d5
+00421963 TEB* fsbase
+00421963 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0042196a __security_cookie
+00421980 int32_t __saved_edi
+00421980 int32_t eax_4 = __security_cookie ^ &__saved_edi
+0042198a fsbase->NtTib.ExceptionList = &ExceptionList
+0042198a 
+00421999 if (arg3 != 0)
+004219a2     int32_t* esi_1 = *(arg3 + 0x18)
+004219a7     void* const var_188_1
+004219a7     void* const ebx_1
+004219a7     
+004219a7     if (esi_1 == 0)
+004219c2     label_4219c2:
+004219c2         ebx_1 = nullptr
+004219c4         var_188_1 = nullptr
+004219a7     else
+004219b4         while (true)
+004219b9             if ((*(*esi_1 + 0x18))(eax_4) != 0)
+00421a04                 void* eax_11 = (*(*esi_1 + 0x18))()
+00421a07                 ebx_1 = eax_11
+00421a09                 var_188_1 = eax_11
+00421a0d                 break
+00421a0d             
+004219bb             esi_1 = esi_1[0xa]
+004219bb             
+004219c0             if (esi_1 == 0)
+004219c0                 goto label_4219c2
+004219c0     
+004219ca     if (ebx_1 != 0)
+004219d3         while (true)
+004219d3             char const* const ecx_1 = "program"
+004219d8             char* eax_9 = *(ebx_1 + 0x20) + 8
+004219e0             int32_t eax_13
+004219e0             
+004219e0             while (true)
+004219e0                 char edx = *eax_9
+004219e2                 char const temp1_1 = *ecx_1
+004219e2                 bool c_1 = edx u< temp1_1
+004219e2                 
+004219e4                 if (edx == temp1_1)
+004219e8                     if (edx == 0)
+004219fc                         eax_13 = 0
+004219fe                         break
+004219fe                     
+004219ea                     edx = eax_9[1]
+004219ed                     char temp2_1 = ecx_1[1]
+004219ed                     c_1 = edx u< temp2_1
+004219ed                     
+004219f0                     if (edx == temp2_1)
+004219f2                         eax_9 = &eax_9[2]
+004219f5                         ecx_1 = &ecx_1[2]
+004219f5                         
+004219fa                         if (edx != 0)
+004219fa                             continue
+004219fa                         
+004219fc                         eax_13 = 0
+004219fe                         break
+004219fe                 
+00421a11                 eax_13 = sbb.d(eax_9, eax_9, c_1) | 1
+00421a11                 break
+00421a11             
+00421a16             if (eax_13 == 0)
+00421a1c                 int32_t var_164_1 = 0xf
+00421a24                 int32_t var_168_1 = eax_13
+00421a28                 char var_178 = eax_13.b
+00421a2c                 int32_t var_c_1 = eax_13
+00421a3b                 int32_t* var_144
+00421a3b                 int32_t* var_18c = &var_144
+00421a3f                 var_144 = nullptr
+00421a47                 int32_t var_140_1 = 0
+00421a4f                 int32_t* eax_14 = sub_427f90(nullptr, nullptr)
+00421a54                 var_144 = eax_14
+00421a58                 int32_t var_13c = 0
+00421a60                 int32_t var_134_1 = 0
+00421a68                 var_c_1.b = 2
+00421a74                 int32_t* var_198 = eax_14
+00421a85                 int32_t var_128_1 = 0x3f800000
+00421a91                 int32_t var_138_1 = 0
+00421a9c                 void var_184
+00421a9c                 sub_410520(&var_13c, &var_184, nullptr, 0x10, &var_198)
+00421aa1                 int32_t var_130_1 = 7
+00421aa9                 int32_t var_12c_1 = 8
+00421ab4                 int32_t var_c_2 = 3
+00421abf                 int32_t var_e0_1 = 0xf
+00421aca                 int32_t var_e4_1 = 0
+00421ad5                 char var_f4 = 0
+00421add                 int32_t var_c8_1 = 0xf
+00421ae8                 int32_t var_cc_1 = 0
+00421af3                 char var_dc = 0
+00421afb                 int32_t var_b0_1 = 0xf
+00421b06                 int32_t var_b4_1 = 0
+00421b11                 char var_c4 = 0
+00421b1c                 var_c_2.b = 4
+00421b29                 void* eax_15 = sub_440ca0(ebx_1 + 0x2c, "label")
+00421b30                 void* esi_2
+00421b30                 
+00421b30                 if (eax_15 != 0)
+00421b32                     esi_2 = *(eax_15 + 0x18)
+00421b32                 
+00421b38                 if (eax_15 == 0 || esi_2 == 0xfffffff8)
+00421bae                     int32_t var_14c_3 = 0
+00421b38                 else
+00421b3d                     void* ecx_5
+00421b3d                     
+00421b3d                     if (*(esi_2 + 8) != 0)
+00421b43                         char* ecx_6 = esi_2 + 8
+00421b43                         
+00421b4d                         do
+00421b48                             eax_15.b = *ecx_6
+00421b4a                             ecx_6 = &ecx_6[1]
+00421b4d                         while (eax_15.b != 0)
+00421b4d                         
+00421b4f                         ecx_5 = ecx_6 - &ecx_6[1]
+00421b3d                     else
+00421b3f                         ecx_5 = nullptr
+00421b3f                     
+00421b57                     sub_406bd0(&var_178, esi_2 + 8, ecx_5)
+00421b5c                     char* ecx_8 = esi_2 + 8
+00421b66                     char i
+00421b66                     
+00421b66                     do
+00421b61                         i = *ecx_8
+00421b63                         ecx_8 = &ecx_8[1]
+00421b66                     while (i != 0)
+00421b6d                     void* esi_5 = esi_2 + 6 + ecx_8 - &ecx_8[1]
+00421b6d                     
+00421b81                     if (_strncmp(0x6ddd9c, esi_5, 2, eax_4) != 0)
+00421b96                         int32_t eax_17 = _strncmp(0x6ddda0, esi_5, 2)
+00421b9e                         int32_t eax_18 = neg.d(eax_17)
+00421ba8                         int32_t var_14c_2 = (sbb.d(eax_18, eax_18, eax_17 != 0) & 0xfffffffe) + 2
+00421b81                     else
+00421b88                         int32_t var_14c_1 = 1
+00421b88                 
+00421bcc                 char edx_3 = 0
+00421bd5                 char var_191
+00421bd5                 
+00421bd5                 if (sub_43f880(ebx_1, "multiImage", &var_191) == 0)
+00421bd5                     edx_3 = var_191
+00421bd5                 
+00421bda                 char var_148_1 = edx_3
+00421be3                 int32_t* esi_6 = sub_43f4a0(ebx_1, "Image")
+00421be7                 void* const i_1
+00421be7                 
+00421be7                 if (esi_6 == 0)
+00421c50                 label_421c50:
+00421c50                     i_1 = nullptr
+00421be7                 else
+00421bf4                     while (true)
+00421bf9                         if ((*(*esi_6 + 0x18))(eax_4) != 0)
+00421cbb                             i_1 = (*(*esi_6 + 0x18))()
+00421cbd                             break
+00421cbd                         
+00421bff                         esi_6 = esi_6[0xa]
+00421bff                         
+00421c04                         if (esi_6 == 0)
+00421c04                             goto label_421c50
+00421c04                         
+00421c13                         while (true)
+00421c13                             char const* const ecx_14 = "Image"
+00421c18                             char* eax_26 = esi_6[8] + 8
+00421c20                             int32_t eax_28
+00421c20                             
+00421c20                             while (true)
+00421c20                                 char edx_5 = *eax_26
+00421c22                                 char const temp7_1 = *ecx_14
+00421c22                                 bool c_3 = edx_5 u< temp7_1
+00421c22                                 
+00421c24                                 if (edx_5 == temp7_1)
+00421c28                                     if (edx_5 == 0)
+00421c3c                                         eax_28 = 0
+00421c3e                                         break
+00421c3e                                     
+00421c2a                                     edx_5 = eax_26[1]
+00421c2d                                     char temp10_1 = ecx_14[1]
+00421c2d                                     c_3 = edx_5 u< temp10_1
+00421c2d                                     
+00421c30                                     if (edx_5 == temp10_1)
+00421c32                                         eax_26 = &eax_26[2]
+00421c35                                         ecx_14 = &ecx_14[2]
+00421c35                                         
+00421c3a                                         if (edx_5 != 0)
+00421c3a                                             continue
+00421c3a                                         
+00421c3c                                         eax_28 = 0
+00421c3e                                         break
+00421c3e                                 
+00421c42                                 eax_28 = sbb.d(eax_26, eax_26, c_3) | 1
+00421c42                                 break
+00421c42                             
+00421c47                             if (eax_28 == 0)
+00421c47                                 break
+00421c47                             
+00421c49                             esi_6 = esi_6[0xa]
+00421c49                             
+00421c4e                             if (esi_6 == 0)
+00421c4e                                 goto label_421c50
+00421c4e                 
+00421c54                 char var_199
+00421c54                 
+00421c54                 if (i_1 != 0)
+004220b6                     do
+00421c68                         var_198 = nullptr
+00421c70                         void* eax_29 = sub_440ca0(i_1 + 0x2c, "ID")
+00421c70                         
+00421c77                         if (eax_29 != 0)
+00421c8a                             _swscanf_s(*(eax_29 + 0x18) + 8, 0x6dd920, &var_198, eax_4)
+00421c8a                         
+00421c9a                         void* eax_32 = sub_440ca0(i_1 + 0x2c, "filename")
+00421c9a                         
+00421ca1                         if (eax_32 != 0)
+00421ca3                             void* edx_6 = *(eax_32 + 0x18)
+00421ca3                             
+00421ca9                             if (edx_6 != 0xfffffff8)
+00421cae                                 void* ecx_17
+00421cae                                 
+00421cae                                 if (*(edx_6 + 8) != 0)
+00421cbf                                     char* ecx_19 = edx_6 + 8
+00421cbf                                     
+00421cc9                                     do
+00421cc4                                         eax_32.b = *ecx_19
+00421cc6                                         ecx_19 = &ecx_19[1]
+00421cc9                                     while (eax_32.b != 0)
+00421cc9                                     
+00421ccb                                     ecx_17 = ecx_19 - &ecx_19[1]
+00421cae                                 else
+00421cb0                                     ecx_17 = nullptr
+00421cb0                                 
+00421cd6                                 sub_406bd0(&var_dc, edx_6 + 8, ecx_17)
+00421cd6                         
+00421ce3                         void* eax_35 = sub_440ca0(i_1 + 0x2c, "Sha256")
+00421ce3                         
+00421cea                         if (eax_35 != 0)
+00421cec                             void* edx_8 = *(eax_35 + 0x18)
+00421cec                             
+00421cf2                             if (edx_8 != 0xfffffff8)
+00421cf7                                 void* ecx_22
+00421cf7                                 
+00421cf7                                 if (*(edx_8 + 8) != 0)
+00421cfd                                     char* ecx_23 = edx_8 + 8
+00421cfd                                     
+00421d07                                     do
+00421d02                                         eax_35.b = *ecx_23
+00421d04                                         ecx_23 = &ecx_23[1]
+00421d07                                     while (eax_35.b != 0)
+00421d07                                     
+00421d09                                     ecx_22 = ecx_23 - &ecx_23[1]
+00421cf7                                 else
+00421cf9                                     ecx_22 = nullptr
+00421cf9                                 
+00421d14                                 sub_406bd0(&var_f4, edx_8 + 8, ecx_22)
+00421d14                         
+00421d21                         void* eax_36 = sub_440ca0(i_1 + 0x2c, "filepath")
+00421d28                         void* edx_10
+00421d28                         
+00421d28                         if (eax_36 != 0)
+00421d2a                             edx_10 = *(eax_36 + 0x18)
+00421d2a                         
+00421d30                         if (eax_36 == 0 || edx_10 == 0xfffffff8)
+00421d83                             int32_t var_34
+00421d83                             int32_t* eax_38 = sub_4280f0(&var_dc, arg1 + 0x3c, &var_34, &var_dc)
+00421d83                             
+00421d96                             if (&var_c4 != eax_38)
+00421da4                                 if (var_b0_1 u>= 0x10)
+00421dad                                     sub_4f0808(var_c4.d, eax_4)
+00421dad                                 
+00421db5                                 int32_t var_b0_2 = 0xf
+00421dc0                                 int32_t var_b4_2 = 0
+00421dcb                                 var_c4 = 0
+00421dcb                                 
+00421dd7                                 if (eax_38[5] u>= 0x10)
+00421df5                                     var_c4.d = *eax_38
+00421dfc                                     *eax_38 = 0
+00421dd7                                 else
+00421dd9                                     void* eax_39 = eax_38[4]
+00421dd9                                     
+00421ddd                                     if (eax_39 != 0xffffffff)
+00421de9                                         _memcpy(&var_c4, eax_38, eax_39 + 1, eax_4)
+00421de9                                 
+00421e05                                 int32_t var_b4_3 = eax_38[4]
+00421e0f                                 var_b0_1 = eax_38[5]
+00421e16                                 eax_38[5] = 0xf
+00421e1d                                 eax_38[4] = 0
+00421e24                                 *eax_38 = 0
+00421e24                             
+00421e2f                             int32_t var_20
+00421e2f                             
+00421e2f                             if (var_20 u>= 0x10)
+00421e38                                 sub_4f0808(var_34, eax_4)
+00421d30                         else if (*(edx_10 + 8) != 0)
+00421d4c                             char* ecx_27 = edx_10 + 8
+00421d4c                             
+00421d56                             do
+00421d51                                 eax_36.b = *ecx_27
+00421d53                                 ecx_27 = &ecx_27[1]
+00421d56                             while (eax_36.b != 0)
+00421d56                             
+00421d63                             sub_406bd0(&var_c4, edx_10 + 8, ecx_27 - &ecx_27[1])
+00421d35                         else
+00421d42                             sub_406bd0(&var_c4, edx_10 + 8, nullptr)
+00421d42                         
+00421e42                         char edx_12
+00421e42                         
+00421e42                         if (i_1 != 0)
+00421e4c                             var_199 = 0
+00421e63                             edx_12 = 0
+00421e63                             
+00421e67                             if (sub_43f880(i_1, "sparse", &var_199) == 0)
+00421e67                                 edx_12 = var_199
+00421e42                         else
+00421e44                             edx_12 = 0
+00421e44                         
+00421e6c                         bool var_f8_1 = edx_12 != 0
+00421e6c                         
+00421e76                         if (i_1 != 0)
+00421e80                             var_199 = 0
+00421e97                             edx_12 = 0
+00421e97                             
+00421e9b                             if (sub_43f880(i_1, "readbackverify", &var_199) == 0)
+00421e9b                                 edx_12 = var_199
+00421e76                         else
+00421e78                             edx_12 = 0
+00421e78                         
+00421ea0                         bool var_ac_1 = edx_12 != 0
+00421ea0                         
+00421eaf                         if (data_7241cc != 0)
+00421eb7                             int32_t* eax_46
+00421eb7                             
+00421eb7                             if (i_1 != 0)
+00421ef1                                 var_18c = nullptr
+00421ef9                                 void* eax_50 = sub_440ca0(i_1 + 0x2c, "FileOffsetInSrc")
+00421f00                                 int32_t eax_53
+00421f00                                 
+00421f00                                 if (eax_50 != 0)
+00421f13                                     eax_53 =
+00421f13                                         _swscanf_s(*(eax_50 + 0x18) + 8, 0x6dd920, &var_18c, eax_4)
+00421f13                                 
+00421f1e                                 int32_t* eax_54
+00421f1e                                 
+00421f1e                                 eax_54 = eax_50 == 0 || eax_53 != 1 ? nullptr : var_18c
+00421f1e                                 
+00421f30                                 int32_t* var_108_1 = eax_54
+00421f37                                 var_18c = nullptr
+00421f3f                                 void* eax_55 = sub_440ca0(i_1 + 0x2c, "SizeInSectorInSrc")
+00421f3f                                 
+00421f46                                 if (eax_55 == 0)
+00421ec0                                     eax_46 = nullptr
+00421f46                                 else if (_swscanf_s(*(eax_55 + 0x18) + 8, 0x6dd920, &var_18c, eax_4)
+00421f46                                         != 1)
+00421ec0                                     eax_46 = nullptr
+00421f68                                 else
+00421f6e                                     eax_46 = var_18c
+00421eb7                             else
+00421eb9                                 void* const i_2 = i_1
+00421ec0                                 eax_46 = nullptr
+00421ec0                             
+00421eca                             int32_t* var_10c_1 = eax_46
+00421ed1                             void* eax_47 = sub_440ca0(i_1 + 0x2c, "SizeInByteInSrc")
+00421ed8                             int32_t eax_49
+00421ed8                             
+00421ed8                             if (eax_47 == 0)
+00421f77                                 eax_49 = 0
+00421ed8                             else
+00421ee1                                 eax_49 = *(eax_47 + 0x18) + 8
+00421ee1                             
+00421f7a                             int32_t eax_59
+00421f7a                             int32_t edx_15
+00421f7a                             eax_59, edx_15 = __wtoi64(eax_49, eax_4)
+00421f82                             int32_t var_100_1 = eax_59
+00421f89                             int32_t var_fc_1 = edx_15
+00421f89                         
+00421f9b                         int32_t* var_a8 = var_198
+00421faa                         void var_110
+00421faa                         void var_a0
+00421faa                         sub_421870(&var_a0, &var_110)
+00421faf                         var_c_2.b = 5
+00421fbb                         int32_t* ebx_3 = *var_144
+00421fc9                         int32_t* eax_62 = sub_429b60(ebx_3, ebx_3[1], &var_a8)
+00421fc9                         
+00421fde                         if (0x2222221 - var_140_1 u< 1)
+00422531                             sub_634469("list<T> too long")
+00422531                             noreturn
+00422531                         
+00421fe9                         var_140_1 += 1
+00421fed                         ebx_3[1] = eax_62
+00421ff3                         *eax_62[1] = eax_62
+00421ff9                         int32_t* eax_65 = *var_144
+00422005                         int32_t* var_180
+00422005                         sub_428810(&var_144, &var_180, &eax_65[2], eax_65)
+0042200a                         var_c_2.b = 4
+0042201a                         char var_54
+0042201a                         int32_t var_40
+0042201a                         
+0042201a                         if (var_40 u>= 0x10)
+00422023                             sub_4f0808(var_54.d, eax_4)
+00422023                         
+00422033                         var_40 = 0xf
+0042203e                         int32_t var_44_1 = 0
+00422049                         var_54 = 0
+00422051                         char var_6c
+00422051                         int32_t var_58
+00422051                         
+00422051                         if (var_58 u>= 0x10)
+0042205a                             sub_4f0808(var_6c.d, eax_4)
+0042205a                         
+0042206a                         var_58 = 0xf
+00422075                         int32_t var_5c_1 = 0
+00422080                         var_6c = 0
+00422088                         int32_t var_70
+00422088                         int32_t var_84
+00422088                         
+00422088                         if (var_70 u>= 0x10)
+00422091                             sub_4f0808(var_84, eax_4)
+00422099                         int32_t* esi_12 = *(i_1 + 0x28)
+00422099                         
+0042209e                         if (esi_12 == 0)
+004220b2                         label_4220b2:
+004220b2                             i_1 = nullptr
+0042209e                         else
+004220a4                             while (true)
+004220a9                                 if ((*(*esi_12 + 0x18))(eax_4) != 0)
+0042210c                                     i_1 = (*(*esi_12 + 0x18))()
+0042210e                                     break
+0042210e                                 
+004220ab                                 esi_12 = esi_12[0xa]
+004220ab                                 
+004220b0                                 if (esi_12 == 0)
+004220b0                                     goto label_4220b2
+004220b6                     while (i_1 != 0)
+004220b6                     
+004220bc                     ebx_1 = var_188_1
+004220bc                 
+004220c8                 void* eax_69 = sub_440ca0(ebx_1 + 0x2c, "start_sector")
+004220cf                 int32_t esi_13
+004220cf                 int32_t esi_14
+004220cf                 
+004220cf                 if (eax_69 != 0)
+004220d1                     esi_13 = *(eax_69 + 0x18)
+004220d4                     esi_14 = esi_13 + 8
+004220d4                 
+004220d7                 if (eax_69 == 0 || esi_13 == 0xfffffff8)
+00422110                     int32_t var_15c = 0
+004220d7                 else
+004220eb                     if (_strncmp(esi_14, "NUM_DISK_SECTORS", 0x10, eax_4) == 0)
+004220ed                         esi_14 += 0x10
+004220ed                     
+004220fb                     _swscanf_s(esi_14, 0x6dd920, &var_15c)
+004220fb                 
+00422120                 var_198 = nullptr
+00422128                 void* eax_73 = sub_440ca0(ebx_1 + 0x2c, "num_partition_sectors")
+0042212f                 int32_t eax_76
+0042212f                 
+0042212f                 if (eax_73 != 0)
+00422142                     eax_76 = _swscanf_s(*(eax_73 + 0x18) + 8, 0x6dd920, &var_198, eax_4)
+00422142                 
+0042214d                 int32_t* eax_77
+0042214d                 
+0042214d                 eax_77 = eax_73 == 0 || eax_76 != 1 ? nullptr : var_198
+0042214d                 
+00422157                 int32_t* var_160_1 = eax_77
+00422161                 var_199 = 0
+0042216c                 int32_t eax_78 = sub_43f880(ebx_1, "skip_download", &var_199)
+00422171                 char ecx_46 = var_199
+00422176                 char edx_18 = 0
+0042217a                 var_198 = nullptr
+0042217a                 
+00422187                 if (eax_78 == 0)
+00422187                     edx_18 = ecx_46
+00422187                 
+0042218f                 bool var_124_1 = edx_18 == 0
+0042219f                 bool var_123_1 = var_cc_1 == 0
+004221a7                 void* eax_79 = sub_440ca0(ebx_1 + 0x2c, "file_sector_offset")
+004221ae                 int32_t eax_82
+004221ae                 
+004221ae                 if (eax_79 != 0)
+004221c1                     eax_82 = _swscanf_s(*(eax_79 + 0x18) + 8, 0x6dd920, &var_198, eax_4)
+004221c1                 
+004221cc                 int32_t* eax_83
+004221cc                 
+004221cc                 eax_83 = eax_79 == 0 || eax_82 != 1 ? nullptr : var_198
+004221cc                 
+004221d6                 int32_t* var_158_1 = eax_83
+004221e0                 int32_t var_150_1 = 0
+004221ee                 var_199 = 0
+004221f3                 int32_t eax_84 = sub_43f880(ebx_1, "not_overwrite", &var_199)
+004221f8                 char ecx_49 = var_199
+004221fd                 char edx_19 = 0
+00422201                 var_199 = 0
+00422201                 
+0042220a                 if (eax_84 == 0)
+0042220a                     edx_19 = ecx_49
+0042220a                 
+00422217                 bool var_122_1 = edx_19 == 0
+0042221f                 int32_t eax_85 = sub_43f880(ebx_1, "partofsingleimage", &var_199)
+00422224                 char ecx_51 = var_199
+00422229                 char edx_20 = 0
+0042222d                 var_198 = nullptr
+0042222d                 
+0042223a                 if (eax_85 == 0)
+0042223a                     edx_20 = ecx_51
+0042223a                 
+00422242                 bool var_121_1 = edx_20 != 0
+0042224a                 void* eax_86 = sub_440ca0(ebx_1 + 0x2c, "physical_partition_number")
+00422251                 int32_t eax_89
+00422251                 
+00422251                 if (eax_86 != 0)
+00422264                     eax_89 = _swscanf_s(*(eax_86 + 0x18) + 8, 0x6dd920, &var_198, eax_4)
+00422264                 
+0042226f                 int32_t* eax_90
+0042226f                 
+0042226f                 eax_90 = eax_86 == 0 || eax_89 != 1 ? nullptr : var_198
+0042226f                 
+00422281                 int32_t* var_154_1 = eax_90
+00422285                 char var_120_1 = 0
+0042228d                 var_198 = nullptr
+00422295                 void* eax_91 = sub_440ca0(ebx_1 + 0x2c, "SECTOR_SIZE_IN_BYTES")
+0042229c                 int32_t eax_94
+0042229c                 
+0042229c                 if (eax_91 != 0)
+004222af                     eax_94 = _swscanf_s(*(eax_91 + 0x18) + 8, 0x6dd920, &var_198, eax_4)
+004222af                 
+004222ba                 int32_t* eax_95
+004222ba                 
+004222ba                 eax_95 = eax_91 == 0 || eax_94 != 1 ? nullptr : var_198
+004222ba                 
+004222c4                 int32_t* var_11c_1 = eax_95
+004222d1                 var_199 = 0
+004222dc                 int32_t eax_96 = sub_43f880(ebx_1, "force_erase", &var_199)
+004222e1                 char ecx_55 = var_199
+004222e6                 char edx_21 = 0
+004222ea                 var_199 = 0
+004222ea                 
+004222f3                 if (eax_96 == 0)
+004222f3                     edx_21 = ecx_55
+004222f3                 
+00422300                 bool var_118_1 = edx_21 != 0
+00422312                 char edx_22 = 0
+00422316                 char* eax_98 = &var_178
+00422316                 
+0042231c                 if (sub_43f880(ebx_1, "erase_before_flash", &var_199) == 0)
+0042231c                     edx_22 = var_199
+0042231c                 
+00422326                 bool var_117_1 = edx_22 != 0
+00422326                 
+00422333                 if (var_164_1 u>= 0x10)
+00422333                     eax_98 = var_178.d
+00422333                 
+00422339                 int32_t eax_99 = _strncmp(eax_98, "sdcard", 6, eax_4)
+00422341                 char eax_100 = (neg.d(eax_99)).b
+00422355                 char eax_101 = sbb.b(eax_100, eax_100, eax_99 != 0) & var_124_1
+00422355                 
+00422358                 if (var_cc_1 == 0)
+00422358                     eax_101 = 0
+00422358                 
+0042235b                 char var_124_2 = eax_101
+00422368                 int32_t __saved_ebp
+00422368                 
+00422368                 if (arg4 u> 4)
+004223bd                     if (var_b0_1 u>= 0x10)
+004223c6                         sub_4f0808(var_c4.d)
+004223c6                     
+004223d6                     int32_t var_b0_3 = 0xf
+004223e1                     int32_t var_b4_4 = 0
+004223ec                     var_c4 = 0
+004223ec                     
+004223f4                     if (var_c8_1 u>= 0x10)
+004223fd                         sub_4f0808(var_dc.d)
+004223fd                     
+0042240d                     int32_t var_c8_2 = 0xf
+00422418                     int32_t var_cc_2 = 0
+00422423                     var_dc = 0
+00422423                     
+0042242b                     if (var_e0_1 u>= 0x10)
+00422434                         sub_4f0808(var_f4.d)
+00422434                     
+0042243c                     int32_t var_c_3 = 0xffffffff
+00422447                     int32_t eax_104 = var_13c
+0042244b                     int32_t var_e0_2 = 0xf
+00422456                     int32_t var_e4_2 = 0
+00422461                     var_f4 = 0
+00422461                     
+0042246b                     if (eax_104 != 0)
+0042246e                         sub_4f0808(eax_104)
+00422476                         var_13c = 0
+0042247e                         int32_t var_138_2 = 0
+00422486                         int32_t var_134_2 = 0
+00422486                     
+00422492                     sub_416800(&var_144)
+0042249b                     sub_4f0808(var_144)
+0042249b                     
+004224a8                     if (var_164_1 u>= 0x10)
+004224ae                         sub_4f0808(var_178.d)
+004224ae                     
+004224b6                     int32_t var_164_2 = 0xf
+004224be                     int32_t var_168_2 = 0
+004224c6                     var_178 = 0
+00422368                 else
+00422368                     switch (arg4)
+0042236a                         case 0
+0042236a                             return sub_422371(&__saved_ebp) __tailcall
+0042236a                         case 1
+0042236a                             return sub_42237d(arg2) __tailcall
+0042236a                         case 2
+0042236a                             return sub_422389(arg2) __tailcall
+0042236a                         case 3
+0042236a                             return sub_422395(arg2) __tailcall
+0042236a                         case 4
+0042236a                             jump(0x4223a1)
+0042236a             
+004224cb             int32_t* esi_15 = *(ebx_1 + 0x28)
+004224cb             
+004224d0             if (esi_15 == 0)
+004224e4             label_4224e4:
+004224e4                 ebx_1 = nullptr
+004224e6                 var_188_1 = nullptr
+004224d0             else
+004224d6                 while (true)
+004224db                     if ((*(*esi_15 + 0x18))(eax_4) != 0)
+00422521                         void* eax_110 = (*(*esi_15 + 0x18))()
+00422524                         ebx_1 = eax_110
+00422526                         var_188_1 = eax_110
+0042252a                         break
+0042252a                     
+004224dd                     esi_15 = esi_15[0xa]
+004224dd                     
+004224e2                     if (esi_15 == 0)
+004224e2                         goto label_4224e4
+004224e2             
+004224ec             if (ebx_1 == 0)
+004224ec                 break
+004224ec 
+004224fe fsbase->NtTib.ExceptionList = ExceptionList
+0042251a return sub_60bdca()

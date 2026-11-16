@@ -1,0 +1,37 @@
+FIRST
+0103a0be 90                             nop 
+0103a0bf 57                             push edi
+0103a0c0 e99fccfcff                     jmp 0x1006d64
+01006d64 8b7c2404                       mov edi, dword ptr [esp + 4]
+01006d68 e9f061aeff                     jmp 0xaecf5d
+00aecf5d 8d7f01                         lea edi, [edi + 1]
+00aecf60 e95fd90500                     jmp 0xb4a8c4
+00b4a8c4 897c2404                       mov dword ptr [esp + 4], edi
+00b4a8c8 e99e5e1f00                     jmp 0xd4076b
+00d4076b bf32b36e00                     mov edi, 0x6eb332
+00d40770 8bbfc1946800                   mov edi, dword ptr [edi + 0x6894c1]
+00d40776 e9ed282300                     jmp 0xf73068
+00f73068 8dbf6e0ff837                   lea edi, [edi + 0x37f80f6e]
+00f7306e e94772feff                     jmp 0xf5a2ba
+00f5a2ba 873c24                         xchg dword ptr [esp], edi
+00f5a2bd e992114cff                     jmp 0x41b454
+0041b454 c3                             ret 
+
+LAST
+0103a0be 90                             nop 
+0103a0bf 57                             push edi
+0103a0c0 e99fccfcff                     jmp 0x1006d64
+01006d64 8b7c2404                       mov edi, dword ptr [esp + 4]
+01006d68 e9f061aeff                     jmp 0xaecf5d
+00aecf5d 8d7f01                         lea edi, [edi + 1]
+00aecf60 e95fd90500                     jmp 0xb4a8c4
+00b4a8c4 897c2404                       mov dword ptr [esp + 4], edi
+00b4a8c8 e99e5e1f00                     jmp 0xd4076b
+00d4076b bf32b36e00                     mov edi, 0x6eb332
+00d40770 8bbfc1946800                   mov edi, dword ptr [edi + 0x6894c1]
+00d40776 e9ed282300                     jmp 0xf73068
+00f73068 8dbf6e0ff837                   lea edi, [edi + 0x37f80f6e]
+00f7306e e94772feff                     jmp 0xf5a2ba
+00f5a2ba 873c24                         xchg dword ptr [esp], edi
+00f5a2bd e992114cff                     jmp 0x41b454
+0041b454 c3                             ret 

@@ -1,0 +1,37 @@
+1002b9e0 push    ebx
+1002b9e1 push    esi
+1002b9e2 push    edi
+1002b9e3 mov     edi, ecx
+1002b9e5 mov     eax, dword [edi+0x3564]
+1002b9eb push    dword [eax]
+1002b9ed push    ebp
+1002b9ee call    0x104e9413
+1002b9f3 mov     ebx, eax
+1002b9f5 test    ebx, ebx
+1002b9f7 jne     0x1002ba00
+1002ba00 mov     eax, dword [edi+0x3574]
+1002ba06 mov     esi, dword [eax]
+1002ba08 push    dword [esi+0x8]
+1002ba0b call    0x10141800
+1002ba10 add     esp, 0x4
+1002ba13 mov     ecx, esi
+1002ba15 call    0x10026570
+1002ba1a push    dword [esi+0x8]
+1002ba1d call    0x10141c10
+1002ba22 add     esp, 0x4
+1002ba25 mov     edx, 0x101fca20
+1002ba2a mov     ecx, edi
+1002ba2c push    ebx
+1002ba2d call    0x1002b8d0
+1002ba32 add     esp, 0x4
+1002ba35 neg     eax
+1002ba37 sbb     eax, eax
+1002ba39 pop     edi
+1002ba3a pop     esi
+1002ba3b pop     ebx
+1002ba3c retn    
+1002b9f9 or      eax, 0xffffffff
+1002b9fc pop     edi
+1002b9fd pop     esi
+1002b9fe pop     ebx
+1002b9ff retn    

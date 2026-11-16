@@ -1,0 +1,29 @@
+00420e97 int32_t* ecx_1 = *(arg1 + 0x60) + 0x88
+00420ea1 int32_t esi = ecx_1[4]
+00420ea1 
+00420ea4 if (ecx_1[5] u>= 0x10)
+00420ea6     ecx_1 = *ecx_1
+00420ea6 
+00420ea8 int32_t eax = 3
+00420ea8 
+00420eb4 if (esi u< 3)
+00420eb4     eax = esi
+00420eb4 
+00420eb8 int32_t* result = sub_407560(eax, &data_5bb010, ecx_1, eax)
+00420eb8 
+00420ec7 if (result != 0 || esi u< 3)
+00420f06     *(arg1 + 0x1c) = 0
+00420ec7 else
+00420ecc     result.b = esi != 3
+00420ecc     
+00420ed1     if (result != 0)
+00420f06         *(arg1 + 0x1c) = 0
+00420ed1     else
+00420edd         *(arg1 + 0x1c) = 1
+00420ee1         result = _fopen("C:/ToolLog.txt", "a+")
+00420ee1         
+00420eed         if (result != 0)
+00420ef5             _fprintf(result, "Set device as UFS\n")
+00420f05             return _fclose(result)
+00420f05 
+00420f0c return result

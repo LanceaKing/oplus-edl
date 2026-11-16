@@ -1,0 +1,43 @@
+FIRST
+00ce4698 873424                         xchg dword ptr [esp], esi
+00ce469b e9a5642500                     jmp 0xf3ab45
+00f3ab45 56                             push esi
+00f3ab46 0fbff6                         movsx esi, si
+00f3ab49 50                             push eax
+00f3ab4a f7d6                           not esi
+00f3ab4c 0fb7f2                         movzx esi, dx
+00f3ab4f 98                             cwde 
+00f3ab50 b835de4800                     mov eax, 0x48de35
+00f3ab55 0fbff3                         movsx esi, bx
+00f3ab58 0fce                           bswap esi
+00f3ab5a 66f7d6                         not si
+00f3ab5d 8b80505c5a00                   mov eax, dword ptr [eax + 0x5a5c50]
+00f3ab63 8d803661f374                   lea eax, [eax + 0x74f36136]
+00f3ab69 66be171f                       mov si, 0x1f17
+00f3ab6d 8bf0                           mov esi, eax
+00f3ab6f 66f7d0                         not ax
+00f3ab72 58                             pop eax
+00f3ab73 e9ef2dbbff                     jmp 0xaed967
+00aed967 c3                             ret 
+
+LAST
+00ce4698 873424                         xchg dword ptr [esp], esi
+00ce469b e9a5642500                     jmp 0xf3ab45
+00f3ab45 56                             push esi
+00f3ab46 0fbff6                         movsx esi, si
+00f3ab49 50                             push eax
+00f3ab4a f7d6                           not esi
+00f3ab4c 0fb7f2                         movzx esi, dx
+00f3ab4f 98                             cwde 
+00f3ab50 b835de4800                     mov eax, 0x48de35
+00f3ab55 0fbff3                         movsx esi, bx
+00f3ab58 0fce                           bswap esi
+00f3ab5a 66f7d6                         not si
+00f3ab5d 8b80505c5a00                   mov eax, dword ptr [eax + 0x5a5c50]
+00f3ab63 8d803661f374                   lea eax, [eax + 0x74f36136]
+00f3ab69 66be171f                       mov si, 0x1f17
+00f3ab6d 8bf0                           mov esi, eax
+00f3ab6f 66f7d0                         not ax
+00f3ab72 58                             pop eax
+00f3ab73 e9ef2dbbff                     jmp 0xaed967
+00aed967 c3                             ret 

@@ -1,0 +1,171 @@
+00450340 int32_t ebp
+00450340 int32_t var_4 = ebp
+00450341 int32_t* ebp_1 = &var_4
+00450346 int32_t var_c = 0xffffffff
+00450348 int32_t (* var_10)(void* arg1) = sub_6d1a4d
+00450353 TEB* fsbase
+00450353 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0045035a struct CDialogEx::CLoginDlg::VTable* ebx
+0045035a struct CDialogEx::CLoginDlg::VTable* var_188 = ebx
+0045035b int32_t esi
+0045035b int32_t var_18c = esi
+0045035c void* edi
+0045035c void* var_190 = edi
+00450364 void* var_194 = __security_cookie ^ &var_190
+0045036c fsbase->NtTib.ExceptionList = &ExceptionList
+00450372 void* edi_1 = arg1
+00450374 void* var_180 = edi_1
+0045037d void** eax_3 = sub_5735d5(arg1, 0x43a)
+00450384 void* var_19c = nullptr
+00450386 void* var_1a0 = 0x147
+0045038e int32_t eax_4 = 0x3b8730(eax_3[8], var_1a0, var_19c, 0, var_194)
+00450396 int32_t var_178 = eax_4
+004503c0 void* var_17c = (*(data_7bfb90 + 0xc))() + 0x10
+004503c4 int32_t var_1a8_1 = eax_4
+004503c9 int32_t var_1c = 0
+004503da sub_414410(&var_17c, &data_76c130)
+004503df void* esi_1 = var_17c
+004503e6 wchar16 const* const var_1a8_2 = u"c:\temp\MsmDownloadTool\customer_settings.ini"
+004503ec wchar16 const* const var_1b0_1 = u"Type"
+004503f1 wchar16 const* const var_1b4 = u"Customer_Login"
+004503f6 0x3b786a(var_1b4, var_1b0_1, esi_1, var_1a8_2)
+004503fc int32_t* var_1b8 = u"Login fail!!\r\n"
+00450405 int32_t ecx_2
+00450405 int32_t* edx
+00450405 ecx_2, edx = sub_41a5b0(&var_19c, var_1b8)
+00450405 wchar16 const* const* esp_1 = &var_1b4
+0045040c char var_2c = 1
+0045041c wchar16* var_1bc
+0045041c int32_t var_1a8_3
+0045041c 
+0045041c if (eax_4 == 0)
+00450617     var_1b8 = u"c:\temp\MsmDownloadTool\MES_SETTING_SAVE.ini"
+0045061c     var_1bc = edx
+0045061d     sub_101ce03(var_1bc)
+0045061d     
+00450624     if (eax_4 == 0)
+00450628         ecx_2 = sub_434710(0)
+00450628     
+0045062d     int32_t var_1c0_4 = ecx_2
+00450632     sub_430b50(&var_188)
+00450632     esp_1 = &var_1bc
+0045063b     char var_34_3 = 2
+0045064a     char var_34_4 = 1
+00450655     int32_t ecx_28
+00450655     ecx_28.b = sub_57457c(&var_188) == 1
+00450658     var_1a8_3 = ecx_28
+00450660     edx = sub_430c80(&var_188)
+00450665 label_450665:
+00450665     
+0045066a     if (var_1a8_3 == 0)
+0045066a         goto label_450434
+0045066a     
+0045066a     goto label_450670
+0045066a 
+00450423 if (eax_4 == 1)
+00450515     var_194 = (*(data_7bfb90 + 0xc))() + 0x10
+00450519     char var_2c_1 = 5
+00450547     var_190 = (*(data_7bfb90 + 0xc))() + 0x10
+0045054f     char var_2c_2 = 6
+00450557     var_1b8 = &var_194
+00450558     var_1bc = 0x43b
+0045055f     sub_56eccf(edi_1, var_1bc, var_1b8)
+0045056a     var_1b8 = &var_190
+0045056b     var_1bc = 0x43c
+00450570     int32_t* ecx_19 = sub_56eccf(edi_1, var_1bc, var_1b8)
+00450575     void* eax_25 = var_190
+00450579     var_1b8 = ecx_19
+0045057d     int32_t** var_198_2 = &var_1b8
+00450583     var_1bc = eax_25 - 0x10
+0045058c     var_1b8 = &sub_41a8a0(var_1bc)[4]
+0045058e     char var_2c_3 = 7
+004505a8     esp_1 = &var_1bc
+004505ab     var_1bc = &sub_41a8a0(var_194 - 0x10)[4]
+004505ad     edi_1 = var_1a0
+004505b3     char var_2c_4 = 6
+004505bb     int32_t eax_33
+004505bb     eax_33, ebp_1 = sub_450690()
+004505c0     var_1a8_3 = eax_33
+004505c6     char var_34_1 = 5
+004505dc     int32_t edx_5 = var_198_2[-1]
+004505dc     var_198_2[-1] -= 1
+004505dc     
+004505e3     if (edx_5 - 1 s<= 0)
+004505ed         (*(*var_198_2[-4] + 4))(&var_198_2[-4])
+004505ed         esp_1 = &var_1bc
+004505ed     
+004505f0     char var_34_2 = 1
+004505fe     edx = var_19c - 0x10
+00450604     int32_t ecx_23 = edx[3]
+00450604     edx[3] -= 1
+00450604     
+0045060b     if (ecx_23 - 1 s<= 0)
+00450612         edx = (*(**edx + 4))(edx)
+00450612         esp_1 = &var_1bc
+00450612     
+0045060b     goto label_450665
+0045060b 
+0045042a int32_t* esp_12
+0045042a 
+0045042a if (eax_4 == 2)
+00450670 label_450670:
+00450670     int32_t eax_40 = esp_1[0xb]
+00450676     *(esp_1 - 4) = 0
+00450678     *(edi_1 + 0xbc) = eax_40
+0045067e     ebp_1, esi_1 = sub_57473c(eax_40, edx, edi_1)
+0045067e     esp_12 = esp_1
+0045042a else
+00450434 label_450434:
+00450434     int32_t* eax_12 = sub_421030(&esp_1[7])
+00450439     esp_1[0x62].b = 8
+00450445     void* eax_13 = *eax_12
+00450447     *(esp_1 - 4) = *(eax_13 - 0xc)
+0045044a     *(esp_1 - 8) = eax_13
+0045044b     sub_41a100(&esp_1[6])
+0045044b     void* esp_4 = esp_1
+00450450     *(esp_4 + 0x188) = 1
+0045045e     int32_t* edx_2 = *(esp_4 + 0x1c) - 0x10
+00450464     int32_t ecx_5 = edx_2[3]
+00450464     edx_2[3] -= 1
+00450464     
+0045046b     if (ecx_5 - 1 s<= 0)
+0045046d         int32_t* ecx_7 = *edx_2
+0045046f         *(esp_4 - 4) = edx_2
+00450472         (*(*ecx_7 + 4))()
+00450472     
+00450475     *(esp_4 - 4) = *(esp_4 + 0x18)
+0045047b     *(esp_4 - 8) = 0x440
+00450480     sub_573841(edi_1)
+00450485     *(esp_4 - 4) = 0
+00450487     *(esp_4 - 8) = 0
+00450489     *(esp_4 - 0xc) = *(esp_4 + 0x18)
+0045048d     sub_574c2e()
+0045048d     esp_12 = esp_4
+0045048d 
+00450492 esp_12[0x62].b = 0
+004504a0 int32_t* edx_4 = esp_12[6] - 0x10
+004504a6 int32_t ecx_9 = edx_4[3]
+004504a6 edx_4[3] -= 1
+004504a6 
+004504ad if (ecx_9 - 1 s<= 0)
+004504af     int32_t* ecx_11 = *edx_4
+004504b1     *(esp_12 - 4) = edx_4
+004504b4     (*(*ecx_11 + 4))()
+004504b4 
+004504ba esp_12[0x62] = 0xffffffff
+004504c5 int32_t* result = esi_1 - 4
+004504c8 int32_t ebx_2 = *result
+004504c8 *result -= 1
+004504c8 
+004504cf if (ebx_2 - 1 s<= 0)
+004504d1     int32_t* ecx_12 = *(esi_1 - 0x10)
+004504d3     *(esp_12 - 4) = esi_1 - 0x10
+004504d6     result = (*(*ecx_12 + 4))()
+004504d6 
+004504e0 fsbase->NtTib.ExceptionList = esp_12[0x60]
+004504e7 *esp_12
+004504e7 esp_12[1]
+004504e8 esp_12[2]
+004504e9 esp_12[3]
+004504ed *ebp_1
+004504ee return result

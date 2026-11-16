@@ -1,0 +1,999 @@
+149a8658 uint64_t __saved_fp
+149a8658 int64_t* fp = &__saved_fp
+149a8660 uint64_t x19 = zx.q(arg2.d)
+149a8664 bool v = add_overflow(arg3.d, 0xfffffffb)
+149a8664 bool z = arg3.d == 5
+149a8664 bool n = arg3.d - 5 s< 0
+149a8668 uint64_t x8 = data_149da3f0
+149a8670 int64_t* x3_1
+149a8670 
+149a8670 if (not(z) && arg3.d u>= 5)
+149a86b8 label_149a86b8:
+149a86b8     x3_1 = 0x1000
+149a86c4 label_149a86c4:
+149a86c4     z = x3_1.d == x19.d
+149a86c8 label_149a86c8:
+149a86c8     
+149a86c8     if (not(z))
+149a86c8         goto label_149a86d4
+149a86c8     
+149a86c8     goto label_149a86cc
+149a86c8 
+149a8678 uint64_t x8_1 = zx.q(arg3.d)
+149a867c char* x9_1 = &data_149d15cd
+149a8680 x3_1 = 0x200
+149a8688 uint64_t x11_1 = zx.q(*(&data_149d15cd + x8_1))
+149a868c uint64_t x10_1 = &data_149a8694 + (x11_1 << 2)
+149a8690 uint64_t var_98
+149a8690 uint64_t var_90
+149a8690 uint64_t var_88
+149a8690 int32_t var_80
+149a8690 int32_t var_7c
+149a8690 int32_t var_78
+149a8690 int64_t* var_70
+149a8690 uint64_t* var_60
+149a8690 int32_t* var_50
+149a8690 uint64_t entry_x4
+149a8690 int64_t entry_x5
+149a8690 int64_t entry_x6
+149a8690 int64_t entry_x7
+149a8690 uint64_t x24
+149a8690 
+149a8690 switch (x10_1)
+149a8698     case &data_149a8694
+149a8698         arg1, arg2, x3_1, entry_x4, entry_x5, entry_x6, entry_x7, arg4, arg5, arg6, arg7, arg8, 
+149a8698             arg9, arg10, arg11 = sub_149a64e0(arg1)
+149a869c     label_149a869c:
+149a869c         
+149a869c         if (arg1.d == 0)
+149a869c             goto label_149a86c0
+149a869c         
+149a869c         goto label_149a86a0
+149a8690     case 0x149a869c
+149a8690         goto label_149a869c
+149a86a0     case 0x149a86a0
+149a86a0     label_149a86a0:
+149a86a0         arg2 = "S Boot Partition Enabled: 0x%x"
+149a86a4     label_149a86a4:
+149a86a4         arg3 = zx.q(arg1.d)
+149a86a8     label_149a86a8:
+149a86a8         arg2 += 0x729
+149a86ac     label_149a86ac:
+149a86ac         arg1 = 2
+149a86b0     label_149a86b0:
+149a86b0         arg1, arg2, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11 = sub_149a5c34(arg1.d, arg2, 
+149a86b0             arg3, x3_1, entry_x4, entry_x5, entry_x6, entry_x7, arg4, arg5, arg6, arg7, arg8, arg9, 
+149a86b0             arg10, arg11, x24)
+149a86e8     label_149a86e8:
+149a86e8         arg3 = 0xffffffff
+149a86e8         goto label_149a86ec
+149a8690     case 0x149a86a4
+149a8690         goto label_149a86a4
+149a8690     case 0x149a86a8
+149a8690         goto label_149a86a8
+149a8690     case 0x149a86ac
+149a8690         goto label_149a86ac
+149a8690     case 0x149a86b0
+149a8690         goto label_149a86b0
+149a8690     case 0x149a86b4
+149a8690         goto label_149a86e8
+149a8690     case 0x149a86b8
+149a8690         goto label_149a86b8
+149a8690     case 0x149a86bc
+149a8690         goto label_149a86c4
+149a86c0     case 0x149a86c0
+149a86c0     label_149a86c0:
+149a86c0         int32_t var_8c
+149a86c0         x3_1 = zx.q(var_8c)
+149a86c0         goto label_149a86c4
+149a8690     case 0x149a86c8
+149a8690         goto label_149a86c8
+149a86cc     case 0x149a86cc
+149a86cc     label_149a86cc:
+149a86cc         arg3 = 0
+149a86ec     label_149a86ec:
+149a86ec         x9_1 = &data_149da000
+149a86f0     label_149a86f0:
+149a86f0         x8_1 = x8
+149a86f4     label_149a86f4:
+149a86f4         x9_1 = *(x9_1 + 0x3f0)
+149a86f8     label_149a86f8:
+149a86f8         z = x9_1 == x8_1
+149a86fc     label_149a86fc:
+149a86fc         
+149a86fc         if (not(z))
+149a8714             return sub_149a8718(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8714                 __tailcall
+149a8714         
+149a8710         return 
+149a8690     case 0x149a86d0
+149a8690         goto label_149a86ec
+149a86d4     case 0x149a86d4
+149a86d4     label_149a86d4:
+149a86d4         arg2 = "S Boot Partition Enabled: 0x%x"
+149a86d8     label_149a86d8:
+149a86d8         arg1 = 2
+149a86dc     label_149a86dc:
+149a86dc         arg2 += 0x751
+149a86e0     label_149a86e0:
+149a86e0         arg3 = zx.q(x19.d)
+149a86e4     label_149a86e4:
+149a86e4         arg1, arg2, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11 = sub_149a5c34(arg1.d, arg2, 
+149a86e4             arg3, x3_1, entry_x4, entry_x5, entry_x6, entry_x7, arg4, arg5, arg6, arg7, arg8, arg9, 
+149a86e4             arg10, arg11, x24)
+149a86e4         goto label_149a86e8
+149a8690     case 0x149a86d8
+149a8690         goto label_149a86d8
+149a8690     case 0x149a86dc
+149a8690         goto label_149a86dc
+149a8690     case 0x149a86e0
+149a8690         goto label_149a86e0
+149a8690     case 0x149a86e4
+149a8690         goto label_149a86e4
+149a8690     case 0x149a86f0
+149a8690         goto label_149a86f0
+149a8690     case 0x149a86f4
+149a8690         goto label_149a86f4
+149a8690     case 0x149a86f8
+149a8690         goto label_149a86f8
+149a8690     case 0x149a86fc
+149a8690         goto label_149a86fc
+149a8710     case 0x149a8700
+149a8710         return 
+149a8714     case 0x149a8714
+149a8714         return sub_149a8718(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8714             __tailcall
+149a8690     case sub_149a8718
+149a8690         return sub_149a8718(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8690             __tailcall
+149a871c     case 0x149a871c
+149a871c         var_60 = &__saved_fp
+149a8720     label_149a8720:
+149a8720         var_50 = arg17
+149a8724     label_149a8724:
+149a8724         int32_t* var_40 = arg16
+149a8724         uint64_t var_38 = x19
+149a8728     label_149a8728:
+149a8728         fp = &var_60
+149a872c     label_149a872c:
+149a872c         arg16 = arg1
+149a8734     label_149a8734:
+149a8734         
+149a8734         if (arg16 == 0)
+149a884c             return 
+149a884c         
+149a8734         goto label_149a8738
+149a8690     case 0x149a8720
+149a8690         goto label_149a8720
+149a8690     case 0x149a8724
+149a8690         goto label_149a8724
+149a8690     case 0x149a8728
+149a8690         goto label_149a8728
+149a8690     case 0x149a872c
+149a8690         goto label_149a872c
+149a8690     case 0x149a8730
+149a8690         goto label_149a8734
+149a8738     case 0x149a8738
+149a8738     label_149a8738:
+149a8738         x19 = arg2
+149a873c     label_149a873c:
+149a873c         
+149a873c         if (arg2 == 0)
+149a884c             return 
+149a884c         
+149a873c         goto label_149a8740
+149a8690     case 0x149a873c
+149a8690         goto label_149a873c
+149a8740     case 0x149a8740
+149a8740     label_149a8740:
+149a8740         arg2 = "S Boot Partition Enabled: 0x%x"
+149a8744     label_149a8744:
+149a8744         arg17 = arg3
+149a8748     label_149a8748:
+149a8748         arg2 = &arg2[0x1e6]
+149a874c     label_149a874c:
+149a874c         arg3 = &var_98
+149a8750     label_149a8750:
+149a8750         arg1 = arg16
+149a8754     label_149a8754:
+149a8754         arg1, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11 =
+149a8754             sub_149a8234(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8758     label_149a8758:
+149a8758         
+149a8758         if (arg1.d == 0)
+149a8758             goto label_149a8764
+149a8758         
+149a8758         goto label_149a875c
+149a8690     case 0x149a8744
+149a8690         goto label_149a8744
+149a8690     case 0x149a8748
+149a8690         goto label_149a8748
+149a8690     case 0x149a874c
+149a8690         goto label_149a874c
+149a8690     case 0x149a8750
+149a8690         goto label_149a8750
+149a8690     case 0x149a8754
+149a8690         goto label_149a8754
+149a8690     case 0x149a8758
+149a8690         goto label_149a8758
+149a875c     case 0x149a875c
+149a875c     label_149a875c:
+149a875c         var_98 = arg17
+149a8768     label_149a8768:
+149a8768         arg2 = "S Boot Partition Enabled: 0x%x"
+149a876c     label_149a876c:
+149a876c         arg3 = &var_90
+149a8770     label_149a8770:
+149a8770         arg2 += 0x7a5
+149a8774     label_149a8774:
+149a8774         arg1 = arg16
+149a8778     label_149a8778:
+149a8778         var_70 = arg17
+149a877c     label_149a877c:
+149a877c         arg1, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11 =
+149a877c             sub_149a8234(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8780     label_149a8780:
+149a8780         
+149a8780         if (arg1.d == 0)
+149a8780             goto label_149a8790
+149a8780         
+149a8780         goto label_149a8784
+149a8690     case 0x149a8760
+149a8690         goto label_149a8768
+149a8764     case 0x149a8764
+149a8764     label_149a8764:
+149a8764         arg17 = var_98
+149a8764         goto label_149a8768
+149a8690     case 0x149a876c
+149a8690         goto label_149a876c
+149a8690     case 0x149a8770
+149a8690         goto label_149a8770
+149a8690     case 0x149a8774
+149a8690         goto label_149a8774
+149a8690     case 0x149a8778
+149a8690         goto label_149a8778
+149a8690     case 0x149a877c
+149a8690         goto label_149a877c
+149a8690     case 0x149a8780
+149a8690         goto label_149a8780
+149a8784     case 0x149a8784
+149a8784     label_149a8784:
+149a8784         x8_1 = -1
+149a8788     label_149a8788:
+149a8788         var_90 = x8_1
+149a8794     label_149a8794:
+149a8794         arg2 = "S Boot Partition Enabled: 0x%x"
+149a879c     label_149a879c:
+149a879c         arg2 += 0x7b1
+149a87a0     label_149a87a0:
+149a87a0         arg1 = arg16
+149a87a4     label_149a87a4:
+149a87a4         uint64_t var_68_1 = x8_1
+149a87a8     label_149a87a8:
+149a87a8         arg1, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11 =
+149a87a8             sub_149a8300(arg1, arg2, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a87ac     label_149a87ac:
+149a87ac         char var_84
+149a87ac         x8_1 = zx.q(var_84)
+149a87b0     label_149a87b0:
+149a87b0         z = arg1.d == 0
+149a87b4     label_149a87b4:
+149a87b4         arg2 = "S Boot Partition Enabled: 0x%x"
+149a87bc     label_149a87bc:
+149a87bc         arg2 = &arg2[0x1f0]
+149a87c0     label_149a87c0:
+149a87c0         arg1 = arg16
+149a87c4     label_149a87c4:
+149a87c4         
+149a87c4         if (not(z))
+149a87c4             z = true
+149a87c4             goto label_149a87c8
+149a87c4         
+149a87c4         z = x8_1.d == 0
+149a87c8     label_149a87c8:
+149a87c8         x8_1 = zx.q(not(z) ? 1 : 0)
+149a87cc     label_149a87cc:
+149a87cc         var_80 = x8_1.d
+149a87d0     label_149a87d0:
+149a87d0         arg1, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11 =
+149a87d0             sub_149a8300(arg1, arg2, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a87d4     label_149a87d4:
+149a87d4         x8_1 = zx.q(fp[3].b)
+149a87d8     label_149a87d8:
+149a87d8         z = arg1.d == 0
+149a87dc     label_149a87dc:
+149a87dc         arg2 = "S Boot Partition Enabled: 0x%x"
+149a87e4     label_149a87e4:
+149a87e4         arg2 += 0x7ca
+149a87e8     label_149a87e8:
+149a87e8         arg1 = arg16
+149a87ec     label_149a87ec:
+149a87ec         
+149a87ec         if (not(z))
+149a87ec             z = true
+149a87ec             goto label_149a87f0
+149a87ec         
+149a87ec         z = x8_1.d == 0
+149a87f0     label_149a87f0:
+149a87f0         x8_1 = zx.q(not(z) ? 1 : 0)
+149a87f4     label_149a87f4:
+149a87f4         var_7c = x8_1.d
+149a87f8     label_149a87f8:
+149a87f8         arg1 = sub_149a8300(arg1, arg2, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a87fc     label_149a87fc:
+149a87fc         x8_1 = zx.q(*(fp + 0x1c))
+149a8800     label_149a8800:
+149a8800         z = arg1.d == 0
+149a8804     label_149a8804:
+149a8804         arg2 = &var_80
+149a8808     label_149a8808:
+149a8808         arg1 = x19
+149a880c     label_149a880c:
+149a880c         
+149a880c         if (not(z))
+149a880c             z = true
+149a880c             goto label_149a8810
+149a880c         
+149a880c         z = x8_1.d == 0
+149a8810     label_149a8810:
+149a8810         x8_1 = zx.q(not(z) ? 1 : 0)
+149a8814     label_149a8814:
+149a8814         var_78 = x8_1.d
+149a8818     label_149a8818:
+149a8818         arg1, entry_x5, entry_x6, entry_x7, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11 =
+149a8818             sub_149a6358(arg1, arg2)
+149a881c     label_149a881c:
+149a881c         
+149a881c         if (arg1.d == 0)
+149a884c             return 
+149a884c         
+149a881c         goto label_149a8820
+149a8690     case 0x149a8788
+149a8690         goto label_149a8788
+149a8690     case 0x149a878c
+149a8690         goto label_149a8794
+149a8790     case 0x149a8790
+149a8790     label_149a8790:
+149a8790         x8_1 = var_90
+149a8790         goto label_149a8794
+149a8690     case 0x149a8798
+149a8690         goto label_149a879c
+149a8690     case 0x149a87a0
+149a8690         goto label_149a87a0
+149a8690     case 0x149a87a4
+149a8690         goto label_149a87a4
+149a8690     case 0x149a87a8
+149a8690         goto label_149a87a8
+149a8690     case 0x149a87ac
+149a8690         goto label_149a87ac
+149a8690     case 0x149a87b0
+149a8690         goto label_149a87b0
+149a8690     case 0x149a87b4
+149a8690         goto label_149a87b4
+149a8690     case 0x149a87b8
+149a8690         goto label_149a87bc
+149a8690     case 0x149a87c0
+149a8690         goto label_149a87c0
+149a8690     case 0x149a87c4
+149a8690         goto label_149a87c4
+149a8690     case 0x149a87c8
+149a8690         goto label_149a87c8
+149a8690     case 0x149a87cc
+149a8690         goto label_149a87cc
+149a8690     case 0x149a87d0
+149a8690         goto label_149a87d0
+149a8690     case 0x149a87d4
+149a8690         goto label_149a87d4
+149a8690     case 0x149a87d8
+149a8690         goto label_149a87d8
+149a8690     case 0x149a87dc
+149a8690         goto label_149a87dc
+149a8690     case 0x149a87e0
+149a8690         goto label_149a87e4
+149a8690     case 0x149a87e8
+149a8690         goto label_149a87e8
+149a8690     case 0x149a87ec
+149a8690         goto label_149a87ec
+149a8690     case 0x149a87f0
+149a8690         goto label_149a87f0
+149a8690     case 0x149a87f4
+149a8690         goto label_149a87f4
+149a8690     case 0x149a87f8
+149a8690         goto label_149a87f8
+149a8690     case 0x149a87fc
+149a8690         goto label_149a87fc
+149a8690     case 0x149a8800
+149a8690         goto label_149a8800
+149a8690     case 0x149a8804
+149a8690         goto label_149a8804
+149a8690     case 0x149a8808
+149a8690         goto label_149a8808
+149a8690     case 0x149a880c
+149a8690         goto label_149a880c
+149a8690     case 0x149a8810
+149a8690         goto label_149a8810
+149a8690     case 0x149a8814
+149a8690         goto label_149a8814
+149a8690     case 0x149a8818
+149a8690         goto label_149a8818
+149a8690     case 0x149a881c
+149a8690         goto label_149a881c
+149a8820     case 0x149a8820
+149a8820     label_149a8820:
+149a8820         arg3 = zx.q(var_80)
+149a8820         x3_1 = zx.q(var_7c)
+149a8824     label_149a8824:
+149a8824         arg2 = "S Boot Partition Enabled: 0x%x"
+149a8828     label_149a8828:
+149a8828         arg1 = 2
+149a882c     label_149a882c:
+149a882c         entry_x4 = zx.q(var_78)
+149a8830     label_149a8830:
+149a8834         sub_149a5c34(arg1.d, arg2 + 0x7d7, arg3, x3_1, entry_x4, entry_x5, entry_x6, entry_x7, 
+149a8834             arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, x24)
+149a884c         return 
+149a8690     case 0x149a8824
+149a8690         goto label_149a8824
+149a8690     case 0x149a8828
+149a8690         goto label_149a8828
+149a8690     case 0x149a882c
+149a8690         goto label_149a882c
+149a8690     case 0x149a8830
+149a8690         goto label_149a8830
+149a8834     case 0x149a8834
+149a8834         sub_149a5c34(arg1.d, arg2, arg3, x3_1, entry_x4, entry_x5, entry_x6, entry_x7, arg4, arg5, 
+149a8834             arg6, arg7, arg8, arg9, arg10, arg11, x24)
+149a884c         return 
+149a884c     case 0x149a8838
+149a884c         return 
+149a8690     case sub_149a8850
+149a8690         return sub_149a8850(arg1, arg2.d, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8690             __tailcall
+149a8854     case 0x149a8854
+149a8854         var_90 = arg18
+149a8854         var_88 = arg17
+149a8858     label_149a8858:
+149a8858         var_80.q = arg16
+149a8858         var_78.q = x19
+149a8860     label_149a8860:
+149a8860         v = add_overflow(arg2.d, 0)
+149a8860         z = arg2.d == 0
+149a8860         n = arg2.d s< 0
+149a8864     label_149a8864:
+149a8864         arg17 = nullptr
+149a8868     label_149a8868:
+149a8868         
+149a8868         if (z || n != v)
+149a8868             x8_1 = 0
+149a8868             goto label_149a886c
+149a8868         
+149a8868         x8_1 = zx.q(arg2.d)
+149a886c     label_149a886c:
+149a886c         arg16 = &arg1[8]
+149a8870         arg18 = x8_1 + 1
+149a8870         goto label_149a8878
+149a8690     case 0x149a8858
+149a8690         goto label_149a8858
+149a8690     case 0x149a885c
+149a8690         goto label_149a8860
+149a8690     case 0x149a8864
+149a8690         goto label_149a8864
+149a8690     case 0x149a8868
+149a8690         goto label_149a8868
+149a8690     case 0x149a886c
+149a8690         goto label_149a886c
+149a8870     case 0x149a8870
+149a8870         arg18 = x8_1 + 1
+149a8870         goto label_149a8878
+149a8690     case 0x149a8874
+149a8690         goto label_149a8878
+149a8690     case 0x149a887c
+149a8690         goto label_149a887c
+149a8690     case 0x149a8880
+149a8690         goto label_149a8880
+149a8690     case 0x149a8884
+149a8690         goto label_149a8884
+149a8690     case 0x149a8888
+149a8690         goto label_149a8888
+149a8690     case 0x149a888c
+149a8690         goto label_149a888c
+149a8690     case 0x149a8890
+149a8690         goto label_149a8890
+149a8690     case 0x149a8894
+149a8690         goto label_149a8894
+149a8690     case 0x149a8898
+149a8690         goto label_149a8898
+149a8690     case 0x149a889c
+149a8690         goto label_149a889c
+149a88a0     case 0x149a88a0
+149a88a0         while (true)
+149a88a0             if (not(z))
+149a88bc                 return 
+149a88bc             
+149a8878         label_149a8878:
+149a8878             uint64_t temp0_1 = arg18
+149a8878             arg18 -= 1
+149a8878             z = temp0_1 == 1
+149a887c         label_149a887c:
+149a887c             
+149a887c             if (z)
+149a88bc                 return 
+149a88bc             
+149a8880         label_149a8880:
+149a8880             arg1 = arg16
+149a8884         label_149a8884:
+149a8884             arg1, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11 =
+149a8884                 sub_149a4e9c(arg1, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8888         label_149a8888:
+149a8888             *(arg16 - 8) = arg1
+149a888c         label_149a888c:
+149a888c             
+149a888c             if (arg17.d == 0)
+149a8890             label_149a8890:
+149a8890                 arg17 = zx.q(*arg16)
+149a8890             
+149a8894         label_149a8894:
+149a8894             
+149a8894             if (arg1 == 0)
+149a88bc                 return 
+149a88bc             
+149a8898         label_149a8898:
+149a8898             x8_1 = *arg16
+149a8898             arg16 = &arg16[4]
+149a889c         label_149a889c:
+149a889c             z = x8_1 == sx.q(arg17.d)
+149a88bc     case 0x149a88a8
+149a88bc         return 
+149a8690     case sub_149a88c0
+149a8690         return sub_149a88c0(arg1, arg2.d, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8690             __tailcall
+149a88c4     case 0x149a88c4
+149a88c4         var_90 = arg16
+149a88c4         var_88 = x19
+149a88cc     label_149a88cc:
+149a88cc         v = add_overflow(arg2.d, 0)
+149a88cc         z = arg2.d == 0
+149a88cc         n = arg2.d s< 0
+149a88d0     label_149a88d0:
+149a88d0         x19 = arg1
+149a88d4     label_149a88d4:
+149a88d4         
+149a88d4         if (z || n != v)
+149a88d4             arg16 = nullptr
+149a88d4             goto label_149a88d8
+149a88d4         
+149a88d4         arg16 = zx.q(arg2.d)
+149a88d8     label_149a88d8:
+149a88d8         
+149a88d8         if (arg16 == 0)
+149a88fc             return 
+149a88fc         
+149a88d8         goto label_149a88dc
+149a8690     case 0x149a88c8
+149a8690         goto label_149a88cc
+149a8690     case 0x149a88d0
+149a8690         goto label_149a88d0
+149a8690     case 0x149a88d4
+149a8690         goto label_149a88d4
+149a8690     case 0x149a88d8
+149a8690         goto label_149a88d8
+149a8690     case 0x149a88dc
+149a8690         goto label_149a88dc
+149a8690     case 0x149a88e0
+149a8690         goto label_149a88e0
+149a8690     case 0x149a88e4
+149a8690         goto label_149a88e4
+149a8690     case 0x149a88e8
+149a8690         goto label_149a88e8
+149a8690     case 0x149a88ec
+149a8690         goto label_149a88ec
+149a88f0     case 0x149a88f0
+149a88f0         while (arg16 != 0)
+149a88dc         label_149a88dc:
+149a88dc             arg1 = *x19
+149a88e0         label_149a88e0:
+149a88e0             
+149a88e0             if (arg1 != 0)
+149a88e4             label_149a88e4:
+149a88e4                 arg1, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11 =
+149a88e4                     sub_149a4f28(arg1, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a88e4             
+149a88e8         label_149a88e8:
+149a88e8             arg16 -= 1
+149a88ec         label_149a88ec:
+149a88ec             x19 += 0x10
+149a88ec         
+149a88fc         return 
+149a88fc     case 0x149a88f4
+149a88fc         return 
+149a8690     case sub_149a8900
+149a8690         return sub_149a8900(arg1, arg2.d) __tailcall
+149a8904     case 0x149a8904
+149a8904         var_90 = arg16
+149a8904         var_88 = x19
+149a890c     label_149a890c:
+149a890c         x19 = zx.q(arg2.d)
+149a8910     label_149a8910:
+149a8910         arg16 = arg1
+149a8914     label_149a8914:
+149a8914         arg1 = sub_149abfc0()
+149a8918     label_149a8918:
+149a8918         arg2 = arg16
+149a891c     label_149a891c:
+149a891c         arg3 = sx.q(x19.d)
+149a8920     label_149a8920:
+149a8920         sub_149ac010(arg1, arg2, arg3)
+149a8934         return 
+149a8690     case 0x149a8908
+149a8690         goto label_149a890c
+149a8690     case 0x149a8910
+149a8690         goto label_149a8910
+149a8690     case 0x149a8914
+149a8690         goto label_149a8914
+149a8690     case 0x149a8918
+149a8690         goto label_149a8918
+149a8690     case 0x149a891c
+149a8690         goto label_149a891c
+149a8690     case 0x149a8920
+149a8690         goto label_149a8920
+149a8924     case 0x149a8924
+149a8934         return 
+149a8934     case 0x149a8928
+149a8934         return 
+149a8934     case 0x149a8930
+149a8934         return 
+149a8690     case sub_149a8938
+149a8690         return sub_149a8938(arg1, arg2, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11) __tailcall
+149a893c     case 0x149a893c
+149a8944         return sub_149a8234(arg1, arg2, &var_98, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8944             __tailcall
+149a8944     case 0x149a8940
+149a8944         return sub_149a8234(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8944             __tailcall
+149a8690     case sub_149a8948
+149a8690         return sub_149a8948() __tailcall
+149a8958     case 0x149a894c
+149a8958         return 
+149a8690     case sub_149a895c
+149a8690         return sub_149a895c() __tailcall
+149a8960     case 0x149a8960
+149a8960         var_90 = arg17
+149a8964     label_149a8964:
+149a8964         var_80.q = arg16
+149a8964         var_78.q = x19
+149a896c     label_149a896c:
+149a896c         arg1, x19, arg16, arg17 = sub_149a8b78()
+149a8970     label_149a8970:
+149a8970         z = arg1.d == 3
+149a8974     label_149a8974:
+149a8974         x9_1 = 2
+149a8978     label_149a8978:
+149a8978         
+149a8978         if (not(z))
+149a8978             x8_1 = 1
+149a8978             goto label_149a897c
+149a8978         
+149a8978         x8_1 = zx.q(arg1.d)
+149a897c     label_149a897c:
+149a897c         x10_1 = 0x26
+149a8980     label_149a8980:
+149a8980         x11_1 = 0x260
+149a8984     label_149a8984:
+149a8984         
+149a8984         if (not(z))
+149a8984             x9_1 = zx.q(x9_1.d)
+149a8984             goto label_149a8988
+149a8984         
+149a8984         x9_1 = zx.q(x9_1.d + 1)
+149a8988     label_149a8988:
+149a8988         
+149a8988         if (not(z))
+149a898c             sub_149a8b58(x8_1.d, x9_1.d, x10_1, x19, arg16, arg17, arg1, arg2, arg3)
+149a8994             return 
+149a8994         
+149a898c         sub_149a8b58(x8_1.d, x9_1.d, x11_1, x19, arg16, arg17, arg1, arg2, arg3)
+149a8994         return 
+149a8690     case 0x149a8964
+149a8690         goto label_149a8964
+149a8690     case 0x149a8968
+149a8690         goto label_149a896c
+149a8690     case 0x149a8970
+149a8690         goto label_149a8970
+149a8690     case 0x149a8974
+149a8690         goto label_149a8974
+149a8690     case 0x149a8978
+149a8690         goto label_149a8978
+149a8690     case 0x149a897c
+149a8690         goto label_149a897c
+149a8690     case 0x149a8980
+149a8690         goto label_149a8980
+149a8690     case 0x149a8984
+149a8690         goto label_149a8984
+149a8690     case 0x149a8988
+149a8690         goto label_149a8988
+149a898c     case 0x149a898c
+149a898c         sub_149a8b58(x8_1.d, x9_1.d, x10_1, x19, arg16, arg17, arg1, arg2, arg3)
+149a8994         return 
+149a8994     case 0x149a8990
+149a8994         return 
+149a8690     case sub_149a8998
+149a8690         return sub_149a8998(arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8690             __tailcall
+149a899c     case 0x149a899c
+149a899c         var_70 = &__saved_fp
+149a89a0     label_149a89a0:
+149a89a0         var_60 = arg17
+149a89a4     label_149a89a4:
+149a89a4         var_50 = arg16
+149a89a4         uint64_t var_48 = x19
+149a89a8     label_149a89a8:
+149a89a8         fp = &var_70
+149a89ac     label_149a89ac:
+149a89ac         x8_1 = &data_149da000
+149a89b0     label_149a89b0:
+149a89b0         x9_1 = "%llu"
+149a89b4     label_149a89b4:
+149a89b4         x9_1 = &x9_1[0x83f]
+149a89b8     label_149a89b8:
+149a89b8         arg16 = arg1
+149a89bc     label_149a89bc:
+149a89bc         x19 = arg3
+149a89c0     label_149a89c0:
+149a89c0         arg17 = arg2
+149a89c4     label_149a89c4:
+149a89c4         x8_1 = *(x8_1 + 0x3f0)
+149a89c8     label_149a89c8:
+149a89c8         arg1 = &var_88
+149a89cc     label_149a89cc:
+149a89cc         x10_1 = zx.q(x9_1[3])
+149a89d0     label_149a89d0:
+149a89d0         arg3 = &var_90
+149a89d4     label_149a89d4:
+149a89d4         x11_1 = zx.q(x9_1[1])
+149a89d8     label_149a89d8:
+149a89d8         x3_1 = &var_98
+149a89dc     label_149a89dc:
+149a89dc         arg12 = zx.q(*x9_1)
+149a89e0     label_149a89e0:
+149a89e0         arg2 = arg16
+149a89e4     label_149a89e4:
+149a89e4         fp[-1] = x8_1
+149a89e8     label_149a89e8:
+149a89e8         x8_1 = zx.q(x9_1[2])
+149a89ec     label_149a89ec:
+149a89ec         arg13 = x9_1[5]
+149a89f0     label_149a89f0:
+149a89f0         x9_1 = &x9_1[4]
+149a89f0         arg14 = zx.d(*x9_1)
+149a89f4     label_149a89f4:
+149a89f4         arg15 = x9_1[3]
+149a89f8     label_149a89f8:
+149a89f8         arg12 = (-0xff01 & arg12) | (0xff & x11_1) << 8
+149a89fc     label_149a89fc:
+149a89fc         x9_1 = zx.q(x9_1[2])
+149a8a00     label_149a8a00:
+149a8a00         x8_1 = (-0xff01 & x8_1) | (0xff & x10_1) << 8
+149a8a04     label_149a8a04:
+149a8a04         x10_1 = 0x7265
+149a8a08     label_149a8a08:
+149a8a08         arg14 = (0xffff00ff & arg14) | zx.d(arg13) << 8
+149a8a0c     label_149a8a0c:
+149a8a0c         x10_1 = (zx.q(x10_1.d) & 0xffff) | 0x65760000
+149a8a10     label_149a8a10:
+149a8a10         arg12 = (-0xffff0001 & arg12) | (0xffff & x8_1) << 0x10
+149a8a14     label_149a8a14:
+149a8a14         x9_1 = (0xffff00ff & zx.q(x9_1.d)) | zx.q(zx.d(arg15) << 8)
+149a8a18     label_149a8a18:
+149a8a18         var_80 = x10_1.d
+149a8a1c     label_149a8a1c:
+149a8a1c         arg14 = (0xffff & arg14) | (0xffff & x9_1.d) << 0x10
+149a8a20     label_149a8a20:
+149a8a20         x9_1 = 0x31
+149a8a24     label_149a8a24:
+149a8a24         arg12 = (0xffffffff & arg12) | zx.q(arg14) << 0x20
+149a8a28     label_149a8a28:
+149a8a28         var_7c.w = (x9_1.d).w
+149a8a2c     label_149a8a2c:
+149a8a2c         var_88 = arg12
+149a8a30     label_149a8a30:
+149a8a30         entry_x4, entry_x5, entry_x6, entry_x7, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11 =
+149a8a30             sub_149aa980(arg1, arg2, arg3, x3_1, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8a34     label_149a8a34:
+149a8a34         x8_1 = var_90
+149a8a38     label_149a8a38:
+149a8a38         
+149a8a38         if (x8_1 == 0)
+149a8a38             goto label_149a8a64
+149a8a38         
+149a8a38         goto label_149a8a3c
+149a8690     case 0x149a89a0
+149a8690         goto label_149a89a0
+149a8690     case 0x149a89a4
+149a8690         goto label_149a89a4
+149a8690     case 0x149a89a8
+149a8690         goto label_149a89a8
+149a8690     case 0x149a89ac
+149a8690         goto label_149a89ac
+149a8690     case 0x149a89b0
+149a8690         goto label_149a89b0
+149a8690     case 0x149a89b4
+149a8690         goto label_149a89b4
+149a8690     case 0x149a89b8
+149a8690         goto label_149a89b8
+149a8690     case 0x149a89bc
+149a8690         goto label_149a89bc
+149a8690     case 0x149a89c0
+149a8690         goto label_149a89c0
+149a8690     case 0x149a89c4
+149a8690         goto label_149a89c4
+149a8690     case 0x149a89c8
+149a8690         goto label_149a89c8
+149a8690     case 0x149a89cc
+149a8690         goto label_149a89cc
+149a8690     case 0x149a89d0
+149a8690         goto label_149a89d0
+149a8690     case 0x149a89d4
+149a8690         goto label_149a89d4
+149a8690     case 0x149a89d8
+149a8690         goto label_149a89d8
+149a8690     case 0x149a89dc
+149a8690         goto label_149a89dc
+149a8690     case 0x149a89e0
+149a8690         goto label_149a89e0
+149a8690     case 0x149a89e4
+149a8690         goto label_149a89e4
+149a8690     case 0x149a89e8
+149a8690         goto label_149a89e8
+149a8690     case 0x149a89ec
+149a8690         goto label_149a89ec
+149a8690     case 0x149a89f0
+149a8690         goto label_149a89f0
+149a8690     case 0x149a89f4
+149a8690         goto label_149a89f4
+149a8690     case 0x149a89f8
+149a8690         goto label_149a89f8
+149a8690     case 0x149a89fc
+149a8690         goto label_149a89fc
+149a8690     case 0x149a8a00
+149a8690         goto label_149a8a00
+149a8690     case 0x149a8a04
+149a8690         goto label_149a8a04
+149a8690     case 0x149a8a08
+149a8690         goto label_149a8a08
+149a8690     case 0x149a8a0c
+149a8690         goto label_149a8a0c
+149a8690     case 0x149a8a10
+149a8690         goto label_149a8a10
+149a8690     case 0x149a8a14
+149a8690         goto label_149a8a14
+149a8690     case 0x149a8a18
+149a8690         goto label_149a8a18
+149a8690     case 0x149a8a1c
+149a8690         goto label_149a8a1c
+149a8690     case 0x149a8a20
+149a8690         goto label_149a8a20
+149a8690     case 0x149a8a24
+149a8690         goto label_149a8a24
+149a8690     case 0x149a8a28
+149a8690         goto label_149a8a28
+149a8690     case 0x149a8a2c
+149a8690         goto label_149a8a2c
+149a8690     case 0x149a8a30
+149a8690         goto label_149a8a30
+149a8690     case 0x149a8a34
+149a8690         goto label_149a8a34
+149a8690     case 0x149a8a38
+149a8690         goto label_149a8a38
+149a8a3c     case 0x149a8a3c
+149a8a3c     label_149a8a3c:
+149a8a3c         x8_1 = var_98
+149a8a40     label_149a8a40:
+149a8a40         
+149a8a40         if (x8_1 == 0)
+149a8a40             goto label_149a8a64
+149a8a40         
+149a8a40         goto label_149a8a44
+149a8690     case 0x149a8a40
+149a8690         goto label_149a8a40
+149a8a44     case 0x149a8a44
+149a8a44     label_149a8a44:
+149a8a44         arg1 = sub_149a8bf4()
+149a8a48     label_149a8a48:
+149a8a48         x8_1 = var_90
+149a8a4c     label_149a8a4c:
+149a8a4c         z = arg1.d == 3
+149a8a50     label_149a8a50:
+149a8a50         x9_1 = 0x2344
+149a8a54     label_149a8a54:
+149a8a54         x10_1 = 0x48d
+149a8a58     label_149a8a58:
+149a8a58         
+149a8a58         if (not(z))
+149a8a58             goto label_149a8a5c
+149a8a58         
+149a8a58         x9_1 = x10_1
+149a8a5c     label_149a8a5c:
+149a8a5c         x8_1 = &x9_1[x8_1]
+149a8a90     label_149a8a90:
+149a8a90         *arg17 = x8_1
+149a8a94         int32_t x0_3 = sub_149a8bf4()
+149a8aa0         int32_t x9_5
+149a8aa0         
+149a8aa0         x9_5 = x0_3 == 3 ? 5 : 0
+149a8aa0         
+149a8aa4         int32_t x8_5
+149a8aa4         
+149a8aa4         x8_5 = x0_3 == 3 ? x0_3 : 1
+149a8aa4         
+149a8aac         arg16[2] = x9_5
+149a8ab4         *arg16 = x8_5
+149a8ab4         arg16[1] = 0
+149a8ab8         *x19 = 1
+149a8ab8         
+149a8ac8         if (data_149da3f0 != fp[-1])
+149a8ae0             return sub_149a8ae4() __tailcall
+149a8ae0         
+149a8adc         return 
+149a8690     case 0x149a8a48
+149a8690         goto label_149a8a48
+149a8690     case 0x149a8a4c
+149a8690         goto label_149a8a4c
+149a8690     case 0x149a8a50
+149a8690         goto label_149a8a50
+149a8690     case 0x149a8a54
+149a8690         goto label_149a8a54
+149a8690     case 0x149a8a58
+149a8690         goto label_149a8a58
+149a8690     case 0x149a8a5c
+149a8690         goto label_149a8a5c
+149a8690     case 0x149a8a60
+149a8690         goto label_149a8a90
+149a8a64     case 0x149a8a64
+149a8a64     label_149a8a64:
+149a8a64         arg2 = "S Boot Partition Enabled: 0x%x"
+149a8a68     label_149a8a68:
+149a8a68         arg1 = 4
+149a8a6c     label_149a8a6c:
+149a8a6c         arg2 = &arg2[0x20a]
+149a8a70     label_149a8a70:
+149a8a70         arg3 = 0x20
+149a8a74     label_149a8a74:
+149a8a74         x3_1 = 1
+149a8a78     label_149a8a78:
+149a8a78         sub_149a5c34(arg1.d, arg2, arg3, x3_1, entry_x4, entry_x5, entry_x6, entry_x7, arg4, arg5, 
+149a8a78             arg6, arg7, arg8, arg9, arg10, arg11, x24)
+149a8a7c     label_149a8a7c:
+149a8a7c         arg1 = sub_149a8bf4()
+149a8a80     label_149a8a80:
+149a8a80         x8_1 = 0x2345
+149a8a84     label_149a8a84:
+149a8a84         z = arg1.d == 3
+149a8a88     label_149a8a88:
+149a8a88         x9_1 = 0x4ad
+149a8a8c     label_149a8a8c:
+149a8a8c         
+149a8a8c         if (not(z))
+149a8a8c             goto label_149a8a90
+149a8a8c         
+149a8a8c         x8_1 = x9_1
+149a8a8c         goto label_149a8a90
+149a8690     case 0x149a8a68
+149a8690         goto label_149a8a68
+149a8690     case 0x149a8a6c
+149a8690         goto label_149a8a6c
+149a8690     case 0x149a8a70
+149a8690         goto label_149a8a70
+149a8690     case 0x149a8a74
+149a8690         goto label_149a8a74
+149a8690     case 0x149a8a78
+149a8690         goto label_149a8a78
+149a8690     case 0x149a8a7c
+149a8690         goto label_149a8a7c
+149a8690     case 0x149a8a80
+149a8690         goto label_149a8a80
+149a8690     case 0x149a8a84
+149a8690         goto label_149a8a84
+149a8690     case 0x149a8a88
+149a8690         goto label_149a8a88
+149a8690     case 0x149a8a8c
+149a8690         goto label_149a8a8c

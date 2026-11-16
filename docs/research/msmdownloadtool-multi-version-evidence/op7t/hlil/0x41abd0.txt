@@ -1,0 +1,89 @@
+0041abd3 int32_t var_8 = 0xffffffff
+0041abd5 int32_t (* var_c)() = sub_64c117
+0041abe0 TEB* fsbase
+0041abe0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0041abf8 fsbase->NtTib.ExceptionList = &ExceptionList
+0041ac00 void** var_5b4 = nullptr
+0041ac0a int32_t var_5b0 = 0
+0041ac14 int32_t var_5ac = 0
+0041ac24 int32_t var_8_1 = 0
+0041ac2c int32_t __saved_ebp
+0041ac2c sub_41ae50(&var_5b4, __security_cookie ^ &__saved_ebp, arg2)
+0041ac31 int32_t ebx = var_5b0
+0041ac3c void** edi = var_5b4
+0041ac50 int32_t eax_6 = (ebx - edi) s/ 0x18
+0041ac50 
+0041ac55 if (eax_6 != 1)
+0041ac7a     if (eax_6 != 0)
+0041ac92         int16_t var_24c[0x104]
+0041ac92         sub_c99b41(&__saved_ebp, 0, &var_24c, 0x104)
+0041aca4         void* var_5a4
+0041aca4         sub_405650(&var_5a4, &var_24c)
+0041aca9         var_8_1.b = 1
+0041acb5         int32_t eax_7 = _wcsrchr(var_5a4, 0x5c)
+0041acbf         int32_t eax_8
+0041acbf         
+0041acbf         eax_8 = eax_7 != 0 ? (eax_7 - var_5a4) s>> 1 : 0xffffffff
+0041acbf         
+0041ace9         var_8_1.b = 2
+0041aced         void* var_5a8
+0041aced         sub_4057c0(&var_5a4, sub_404610(&var_5a4, &var_5a8, eax_8 + 1))
+0041acf2         var_8_1.b = 1
+0041ad01         int32_t* edx_3 = var_5a8 - 0x10
+0041ad07         int32_t eax_12 = edx_3[3]
+0041ad07         edx_3[3] -= 1
+0041ad07         
+0041ad0e         if (eax_12 - 1 s<= 0)
+0041ad15             (*(**edx_3 + 4))(edx_3)
+0041ad15         
+0041ad29         int128_t var_44
+0041ad29         __builtin_memcpy(&var_44, u"ops File(*.ops)|*.ops||", 0x30)
+0041ad5d         sub_503e12(1, 0x6dcff0, var_5a4, 0, &var_44, arg1, 0, 1)
+0041ad68         var_8_1.b = 3
+0041ad68         
+0041ad74         if (sub_5047a5() == 1)
+0041ad88             var_8_1.b = 4
+0041ad8c             char* edx_4 = *sub_504926(&var_5a8)
+0041ad91             void* ecx_7
+0041ad91             
+0041ad91             if (*edx_4 != 0)
+0041ad97                 char* ecx_8 = edx_4
+0041ada5                 int32_t* eax_16
+0041ada5                 
+0041ada5                 do
+0041ada0                     eax_16.b = *ecx_8
+0041ada2                     ecx_8 = &ecx_8[1]
+0041ada5                 while (eax_16.b != 0)
+0041ada7                 ecx_7 = ecx_8 - &ecx_8[1]
+0041ad91             else
+0041ad93                 ecx_7 = nullptr
+0041ad93             
+0041adb0             sub_406bd0(&data_7241e8, edx_4, ecx_7)
+0041adb5             var_8_1.b = 3
+0041adc1             int32_t* edx_6 = var_5a8 - 0x10
+0041adc7             int32_t ecx_9 = edx_6[3]
+0041adc7             edx_6[3] -= 1
+0041adc7             
+0041adce             if (ecx_9 - 1 s<= 0)
+0041add5                 (*(**edx_6 + 4))(edx_6)
+0041add5         
+0041ade7         var_8_1.b = 1
+0041adeb         sub_5040e0()
+0041adf0         var_8_1.b = 0
+0041adfa         int32_t* edx_8 = var_5a4 - 0x10
+0041ae00         int32_t ebx_1 = edx_8[3]
+0041ae00         edx_8[3] -= 1
+0041ae00         
+0041ae07         if (ebx_1 - 1 s<= 0)
+0041ae0e             (*(**edx_8 + 4))(edx_8)
+0041ae0e         
+0041ae11         ebx = var_5b0
+0041ac55 else if (edi != &data_7241e8)
+0041ac69     sub_406a50(&data_7241e8, edi, 0, 0xffffffff)
+0041ac69 
+0041ae19 if (edi != 0)
+0041ae1d     sub_410210(edi, ebx)
+0041ae23     sub_4f0808(edi)
+0041ae23 
+0041ae30 fsbase->NtTib.ExceptionList = ExceptionList
+0041ae48 return sub_60bdca()

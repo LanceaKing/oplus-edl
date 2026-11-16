@@ -1,0 +1,106 @@
+10027da0 int32_t edi
+10027da0 int32_t var_110 = edi
+10027da9 void var_108
+10027da9 _memset(&var_108, 0, 0x100)
+10027dae char* eax = arg2
+10027db9 void* edx = 0x102192a0 - eax
+10027dcb char i
+10027dcb 
+10027dcb do
+10027dc0     i = *eax
+10027dc2     eax = &eax[1]
+10027dc5     *(edx + eax - 1) = i
+10027dcb while (i != 0)
+10027dd4 char* var_114 = arg4
+10027dd5 char* var_118 = arg5
+10027dd8 char* var_11c_1 = arg3
+10027de1 _sprintf(&var_108, "%s@%s:%s")
+10027de6 char* ecx_1 = &var_108
+10027df5 char i_1
+10027df5 
+10027df5 do
+10027df0     i_1 = *ecx_1
+10027df2     ecx_1 = &ecx_1[1]
+10027df5 while (i_1 != 0)
+10027dfb void var_107
+10027dfb int32_t* ecx_2 = ecx_1 - &var_107
+10027e00 op_base64_encode(&var_108, &var_107, ecx_2, &var_108, ecx_2, &var_108)
+10027e1b sub_10027440(&var_108, 0x102192a0, *(arg1 + 0x500), &var_108)
+10027e29 *(*(arg1 + 0x500) + 4) = 0
+10027e47 __builtin_strcpy(*(arg1 + 0x500) + 0x108, "/mesplus/service/secLoginExt.json")
+10027e75 op_str_map_put(*(*(arg1 + 0x500) + 0x2b14), "procstep", "1")
+10027e91 op_str_map_put(*(*(arg1 + 0x500) + 0x2b14), "factory", arg5)
+10027ead op_str_map_put(*(*(arg1 + 0x500) + 0x2b14), "userid", arg3)
+10027ec7 op_str_map_put(*(*(arg1 + 0x500) + 0x2b14), "password", arg4)
+10027ee5 op_str_map_put(*(*(arg1 + 0x500) + 0x2b14), "programId", "MESClient")
+10027ee5 
+10027efa if (sub_100275a0(*(arg1 + 0x500)) == 0)
+10027f32     char* ecx_6 = op_str_map_get(*(*(arg1 + 0x500) + 0x2b18), "/msgcode")
+10027f32     
+10027f39     if (ecx_6 == 0)
+10027f3b         char const* const var_114_7 = "/msgcode"
+10027f40         char const* const var_118_4 = "[ERROR]: failed to get param, key=%s. value is null"
+10027f45         int32_t var_11c_9 = 0x1d3
+10027f4a         char const* const var_120 = "mes_helper_get_param_out"
+10027f4f         opdbg_log()
+10027f54         char const* const var_124_1 = "[ERROR]: Cannot get return msgcode from result"
+10027f59         int32_t var_128 = 0xcd
+10027f5e         char const* const var_12c = "mnf_mes_login"
+10027f72         *opdbg_log()
+10027f73         return 0xffffffff
+10027f73     
+10027f76     void* edx_3 = arg1 - ecx_6
+10027f8b     char* eax_12
+10027f8b     
+10027f8b     do
+10027f80         eax_12.b = *ecx_6
+10027f82         ecx_6 = &ecx_6[1]
+10027f85         *(edx_3 + ecx_6 - 1) = eax_12.b
+10027f8b     while (eax_12.b != 0)
+10027f8b     
+10027fa1     int32_t eax_14
+10027fa1     int32_t xmm0_1[0x4]
+10027fa1     eax_14, xmm0_1 = sub_100274f0(eax_12, "/msg", *(arg1 + 0x500), &arg1[0x100], 0)
+10027fa1     
+10027fab     if (eax_14 == 0)
+10027fc2         char* eax_15 = _strstr(xmm0_1, arg1, "CMN-0000")
+10027fc2         
+10027fcc         if (eax_15 == 0)
+10027fce             char* var_114_9 = arg1
+10027fcf             char const* const var_118_8 = "[ERROR]: Server returns error code %s"
+10027fd4             int32_t var_11c_10 = 0xd9
+10027fd9             char const* const var_120_1 = "mnf_mes_login"
+10027fde             void* ecx_8
+10027fde             int32_t* ebp_4
+10027fde             ecx_8, ebp_4 = opdbg_log()
+10027fe3             void* var_124_2 = &arg1[0x100]
+10027fe4             char* var_128_1 = arg1
+10027fe5             int32_t var_12c_1 = 2
+10027fe7             char const* const var_130 = "E0503018"
+10027fed             sub_104b0356(ecx_8)
+10027ffc             *ebp_4
+10027ffd             return 0xffffffff
+10027ffd         
+1002801a         if (sub_100274f0(eax_15, "/secGrpId", *(arg1 + 0x500), 0x102195a0, 0) == 0)
+1002802b             void* ecx_10 = nullptr
+1002803f             int32_t eax_17
+1002803f             
+1002803f             do
+10028030                 eax_17.b = *(&var_108 + ecx_10)
+10028034                 ecx_10 += 1
+10028037                 *(ecx_10 + 0x1021949f) = eax_17.b
+1002803f             while (eax_17.b != 0)
+10028048             return 0
+10028048         
+1002801c         char const* const var_114_10 = "[ERROR]: Cannot get return message from result"
+10028021         int32_t var_118_9 = 0xe0
+10027fab     else
+10027fad         char const* const var_114_8 = "[ERROR]: Cannot get return msg from result"
+10027fb2         int32_t var_118_6 = 0xd3
+10027efa else
+10027efc     char const* const var_114_6 = "[ERROR]: Error occurred when performing MES request"
+10027f01     int32_t var_118_2 = 0xc7
+10027f01 
+10027f06 char const* const var_11c_8 = "mnf_mes_login"
+10027f1a *opdbg_log()
+10027f1b return 0xffffffff

@@ -1,0 +1,303 @@
+{
+  "table_sha256": "9211d9b8d2d77a5d94f9f4484918a16097ad4cf78e436ab1e6ff27ac0838f075",
+  "smc_success_supplied": false,
+  "boundary_cases": [
+    {
+      "case": "aligned_boundary",
+      "execution": {
+        "entry": "0x149a4cf4",
+        "instructions": 4276,
+        "returned": false,
+        "logger_skips": 1,
+        "stopped_at_smc": true,
+        "pc": "0x149c29ac",
+        "return_x0": "0x2000201",
+        "code_region_unchanged": true
+      },
+      "smc": [
+        {
+          "registers": [
+            "0x2000201",
+            "0x14",
+            "0x31000000",
+            "0x8178",
+            "0x1a",
+            "0x0",
+            "0x0",
+            "0x300fefb8"
+          ],
+          "result_before": "000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "cache_lines": 518,
+      "first_cache_line": [
+        "0x31000000"
+      ],
+      "last_cache_line": [
+        "0x31008140"
+      ],
+      "out_pointer": "0xa5a5a5a5a5a5a5a5",
+      "out_length": "0xa5a5a5a5",
+      "input_unchanged": true
+    },
+    {
+      "case": "unaligned",
+      "execution": {
+        "entry": "0x149a4cf4",
+        "instructions": 42,
+        "returned": true,
+        "logger_skips": 3,
+        "pc": "0x3100f000",
+        "return_x0": "0x0",
+        "code_region_unchanged": true
+      },
+      "smc": [],
+      "cache_lines": 0,
+      "first_cache_line": [],
+      "last_cache_line": [],
+      "out_pointer": "0xa5a5a5a5a5a5a5a5",
+      "out_length": "0xa5a5a5a5",
+      "input_unchanged": true
+    },
+    {
+      "case": "smc_failure",
+      "execution": {
+        "entry": "0x149a4cf4",
+        "instructions": 4317,
+        "returned": true,
+        "logger_skips": 3,
+        "pc": "0x3100f000",
+        "return_x0": "0x0",
+        "code_region_unchanged": true
+      },
+      "smc": [
+        {
+          "registers": [
+            "0x2000201",
+            "0x14",
+            "0x31000000",
+            "0x8178",
+            "0x1a",
+            "0x0",
+            "0x0",
+            "0x300fefb8"
+          ],
+          "result_before": "000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "cache_lines": 518,
+      "first_cache_line": [
+        "0x31000000"
+      ],
+      "last_cache_line": [
+        "0x31008140"
+      ],
+      "out_pointer": "0x31000000",
+      "out_length": "0x0",
+      "input_unchanged": true
+    },
+    {
+      "case": "service_failure",
+      "execution": {
+        "entry": "0x149a4cf4",
+        "instructions": 4318,
+        "returned": true,
+        "logger_skips": 3,
+        "pc": "0x3100f000",
+        "return_x0": "0x0",
+        "code_region_unchanged": true
+      },
+      "smc": [
+        {
+          "registers": [
+            "0x2000201",
+            "0x14",
+            "0x31000000",
+            "0x8178",
+            "0x1a",
+            "0x0",
+            "0x0",
+            "0x300fefb8"
+          ],
+          "result_before": "000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "cache_lines": 518,
+      "first_cache_line": [
+        "0x31000000"
+      ],
+      "last_cache_line": [
+        "0x31008140"
+      ],
+      "out_pointer": "0x31000000",
+      "out_length": "0x0",
+      "input_unchanged": true
+    },
+    {
+      "case": "interrupted_then_failure",
+      "execution": {
+        "entry": "0x149a4cf4",
+        "instructions": 4320,
+        "returned": true,
+        "logger_skips": 3,
+        "pc": "0x3100f000",
+        "return_x0": "0x0",
+        "code_region_unchanged": true
+      },
+      "smc": [
+        {
+          "registers": [
+            "0x2000201",
+            "0x14",
+            "0x31000000",
+            "0x8178",
+            "0x1a",
+            "0x0",
+            "0x0",
+            "0x300fefb8"
+          ],
+          "result_before": "000000000000000000000000000000000000000000000000"
+        },
+        {
+          "registers": [
+            "0x1",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x1a",
+            "0x0",
+            "0x0",
+            "0x300fefb8"
+          ],
+          "result_before": "000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "cache_lines": 518,
+      "first_cache_line": [
+        "0x31000000"
+      ],
+      "last_cache_line": [
+        "0x31008140"
+      ],
+      "out_pointer": "0x31000000",
+      "out_length": "0x0",
+      "input_unchanged": true
+    }
+  ],
+  "table_validator_failure": [
+    {
+      "case": "smc_failure",
+      "execution": {
+        "entry": "0x149a8c9c",
+        "instructions": 4397,
+        "returned": true,
+        "logger_skips": 4,
+        "pc": "0x3100f000",
+        "return_x0": "0x7",
+        "code_region_unchanged": true
+      },
+      "queries": [
+        {
+          "function": "0x02000102",
+          "fixture_secure": 1
+        }
+      ],
+      "smc": [
+        {
+          "registers": [
+            "0x2000201",
+            "0x14",
+            "0x31000000",
+            "0x8178",
+            "0x1a",
+            "0x0",
+            "0x0",
+            "0x300fef78"
+          ],
+          "result_before": "000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "payload_pointer_after": "0x31000000",
+      "entries_pointer_after": "0x0"
+    },
+    {
+      "case": "service_failure",
+      "execution": {
+        "entry": "0x149a8c9c",
+        "instructions": 4398,
+        "returned": true,
+        "logger_skips": 4,
+        "pc": "0x3100f000",
+        "return_x0": "0x7",
+        "code_region_unchanged": true
+      },
+      "queries": [
+        {
+          "function": "0x02000102",
+          "fixture_secure": 1
+        }
+      ],
+      "smc": [
+        {
+          "registers": [
+            "0x2000201",
+            "0x14",
+            "0x31000000",
+            "0x8178",
+            "0x1a",
+            "0x0",
+            "0x0",
+            "0x300fef78"
+          ],
+          "result_before": "000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "payload_pointer_after": "0x31000000",
+      "entries_pointer_after": "0x0"
+    }
+  ],
+  "record_serializer": [
+    {
+      "mode_fixture": 0,
+      "execution": {
+        "entry": "0x149a14f0",
+        "instructions": 2375,
+        "returned": true,
+        "pc": "0x3100f000",
+        "return_x0": "0x80100100",
+        "code_region_unchanged": true
+      },
+      "first_512": "00000000000000004e00000000000000000000000000000000000000000000000000000000000000000000000000000030313233343536373839616263646566616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+      "exact_match": true,
+      "auth_pass": 0,
+      "storage": []
+    },
+    {
+      "mode_fixture": 1,
+      "execution": {
+        "entry": "0x149a14f0",
+        "instructions": 2384,
+        "returned": true,
+        "pc": "0x3100f000",
+        "return_x0": "0x80100100",
+        "code_region_unchanged": true
+      },
+      "first_512": "00000000000000005900000000000000000000000000000000000000000000000000000000000000000000000000000030313233343536373839616263646566616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616161616262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626262626200000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff",
+      "exact_match": true,
+      "auth_pass": 0,
+      "storage": []
+    }
+  ],
+  "writever_unauthorized": {
+    "execution": {
+      "entry": "0x149a1b10",
+      "instructions": 13,
+      "returned": true,
+      "pc": "0x3100f000",
+      "return_x0": "0x90000001",
+      "code_region_unchanged": true
+    },
+    "storage": [],
+    "auth_pass": 0
+  }
+}

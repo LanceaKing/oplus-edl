@@ -1,0 +1,275 @@
+004125f3 void* const eax = arg2
+004125f3 
+004125fe if (eax != 0)
+00412610     void* eax_1 = sub_41e090(eax + 0x2c, "Project")
+00412617     char* eax_3
+00412617     
+00412617     if (eax_1 == 0)
+00412621         eax_3 = nullptr
+00412617     else
+0041261c         eax_3 = *(eax_1 + 0x18) + 8
+0041261c     
+00412623     char* esi_1 = &data_5b7a80
+0041262a     char* edx_1 = &data_5b7a80
+0041262a     
+0041262c     if (eax_3 != 0)
+0041262c         edx_1 = eax_3
+0041262c     
+00412632     void* var_c
+00412632     void* ecx_1
+00412632     
+00412632     if (*edx_1 != 0)
+00412638         char* ecx_2 = edx_1
+0041263d         var_c = &ecx_2[1]
+00412645         void* eax_4
+00412645         
+00412645         do
+00412640             eax_4.b = *ecx_2
+00412642             ecx_2 = &ecx_2[1]
+00412645         while (eax_4.b != 0)
+00412647         ecx_1 = ecx_2 - var_c
+00412632     else
+00412634         ecx_1 = nullptr
+00412634     
+00412652     sub_402470(arg1 + 0xa4, edx_1, ecx_1)
+0041265e     void* eax_5 = sub_41e090(eax + 0x2c, "Version")
+00412665     char* eax_7
+00412665     
+00412665     if (eax_5 == 0)
+0041266f         eax_7 = nullptr
+00412665     else
+0041266a         eax_7 = *(eax_5 + 0x18) + 8
+0041266a     
+00412673     char* edx_2 = &data_5b7a80
+00412673     
+00412675     if (eax_7 != 0)
+00412675         edx_2 = eax_7
+00412675     
+0041267b     void* ecx_5
+0041267b     
+0041267b     if (*edx_2 != 0)
+00412681         char* ecx_6 = edx_2
+00412686         var_c = &ecx_6[1]
+00412695         void* eax_8
+00412695         
+00412695         do
+00412690             eax_8.b = *ecx_6
+00412692             ecx_6 = &ecx_6[1]
+00412695         while (eax_8.b != 0)
+00412697         ecx_5 = ecx_6 - var_c
+0041267b     else
+0041267d         ecx_5 = nullptr
+0041267d     
+004126a2     sub_402470(arg1 + 0xbc, edx_2, ecx_5)
+004126ae     void* eax_9 = sub_41e090(eax + 0x2c, "TargetName")
+004126b5     char* eax_11
+004126b5     
+004126b5     if (eax_9 == 0)
+004126bf         eax_11 = nullptr
+004126b5     else
+004126ba         eax_11 = *(eax_9 + 0x18) + 8
+004126ba     
+004126c3     char* edx_3 = &data_5b7a80
+004126c3     
+004126c5     if (eax_11 != 0)
+004126c5         edx_3 = eax_11
+004126c5     
+004126cb     void* ecx_9
+004126cb     
+004126cb     if (*edx_3 != 0)
+004126d1         char* ecx_10 = edx_3
+004126d6         var_c = &ecx_10[1]
+004126e5         void* eax_12
+004126e5         
+004126e5         do
+004126e0             eax_12.b = *ecx_10
+004126e2             ecx_10 = &ecx_10[1]
+004126e5         while (eax_12.b != 0)
+004126e7         ecx_9 = ecx_10 - var_c
+004126cb     else
+004126cd         ecx_9 = nullptr
+004126cd     
+004126f2     sub_402470(arg1 + 0x114, edx_3, ecx_9)
+004126fe     void* eax_13 = sub_41e090(eax + 0x2c, "MemoryName")
+00412705     char* eax_15
+00412705     
+00412705     if (eax_13 == 0)
+0041270f         eax_15 = nullptr
+00412705     else
+0041270a         eax_15 = *(eax_13 + 0x18) + 8
+0041270a     
+00412713     char* edx_4 = &data_5b7a80
+00412713     
+00412715     if (eax_15 != 0)
+00412715         edx_4 = eax_15
+00412715     
+0041271b     void* ecx_13
+0041271b     
+0041271b     if (*edx_4 != 0)
+00412721         char* ecx_14 = edx_4
+00412726         var_c = &ecx_14[1]
+00412735         void* eax_16
+00412735         
+00412735         do
+00412730             eax_16.b = *ecx_14
+00412732             ecx_14 = &ecx_14[1]
+00412735         while (eax_16.b != 0)
+00412737         ecx_13 = ecx_14 - var_c
+0041271b     else
+0041271d         ecx_13 = nullptr
+0041271d     
+00412742     sub_402470(arg1 + 0x12c, edx_4, ecx_13)
+00412747     void* ecx_16 = arg2
+00412753     char var_5 = 0
+00412757     int32_t eax_17 = sub_41cde0(ecx_16, "GrowLastPartToFillDisk", &var_5)
+0041275c     char ecx_17 = var_5
+00412760     char edx_5 = 0
+00412764     var_5 = 0
+00412764     
+00412768     if (eax_17 == 0)
+00412768         edx_5 = ecx_17
+00412768     
+0041276b     void* ecx_18 = arg2
+00412770     eax_17.b = edx_5 != 0
+00412773     *(arg1 + 0x10d) = eax_17.b
+00412782     int32_t eax_18 = sub_41cde0(ecx_18, "LogEnable", &var_5)
+00412787     char ecx_19 = var_5
+0041278b     char edx_6 = 0
+0041278f     var_c = nullptr
+0041278f     
+0041279b     if (eax_18 == 0)
+0041279b         edx_6 = ecx_19
+0041279b     
+004127a2     eax_18.b = edx_6 != 0
+004127a5     *(arg1 + 0x10e) = eax_18.b
+004127ab     void* eax_19 = sub_41e090(eax + 0x2c, "LogPosition")
+004127b2     int32_t eax_22
+004127b2     
+004127b2     if (eax_19 != 0)
+004127ba         int32_t* var_1c_7 = &var_c
+004127c4         eax_22 = sub_54dd68(*(eax_19 + 0x18) + 8, &data_5b9d7c)
+004127c4     
+004127cf     char eax_23
+004127cf     
+004127cf     eax_23 = eax_19 == 0 || eax_22 != 1 ? 0 : var_c.b
+004127cf     
+004127df     *(arg1 + 0x10f) = eax_23
+004127e5     var_c = nullptr
+004127ec     void* eax_24 = sub_41e090(eax + 0x2c, "DelayStartTime")
+004127f3     int32_t eax_27
+004127f3     
+004127f3     if (eax_24 != 0)
+004127fb         int32_t* var_1c_8 = &var_c
+00412805         eax_27 = sub_54dd68(*(eax_24 + 0x18) + 8, &data_5b9d7c)
+00412805     
+00412810     void* eax_28
+00412810     
+00412810     eax_28 = eax_24 == 0 || eax_27 != 1 ? nullptr : var_c
+00412810     
+00412819     void* ecx_22 = arg2
+0041281c     *(arg1 + 0x108) = eax_28
+0041282b     var_5 = 0
+0041282f     int32_t eax_29 = sub_41cde0(ecx_22, "UseGPT", &var_5)
+00412834     char ecx_23 = var_5
+00412838     char edx_7 = 0
+0041283c     var_5 = 0
+0041283c     
+00412840     if (eax_29 == 0)
+00412840         edx_7 = ecx_23
+00412840     
+00412843     void* ecx_24 = arg2
+00412848     eax_29.b = edx_7 != 0
+0041284b     *(arg1 + 0x10c) = eax_29.b
+0041285a     int32_t eax_30 = sub_41cde0(ecx_24, "CheckImage", &var_5)
+0041285f     char ecx_25 = var_5
+00412863     char edx_8 = 0
+00412867     var_5 = 0
+00412867     
+0041286b     if (eax_30 == 0)
+0041286b         edx_8 = ecx_25
+0041286b     
+0041286e     void* ecx_26 = arg2
+00412873     eax_30.b = edx_8 != 0
+00412876     *(arg1 + 0x110) = eax_30.b
+00412885     int32_t eax_31 = sub_41cde0(ecx_26, "CheckHwId", &var_5)
+0041288a     char ecx_27 = var_5
+0041288e     char edx_9 = 0
+00412892     var_5 = 0
+00412892     
+00412896     if (eax_31 == 0)
+00412896         edx_9 = ecx_27
+00412896     
+00412899     void* ecx_28 = arg2
+0041289e     eax_31.b = edx_9 != 0
+004128a1     *(arg1 + 0x144) = eax_31.b
+004128b0     int32_t eax_32 = sub_41cde0(ecx_28, "CheckHwVersion", &var_5)
+004128b5     char ecx_29 = var_5
+004128b9     char edx_10 = 0
+004128bd     var_5 = 0
+004128bd     
+004128c1     if (eax_32 == 0)
+004128c1         edx_10 = ecx_29
+004128c1     
+004128c4     void* ecx_30 = arg2
+004128c9     eax_32.b = edx_10 != 0
+004128cc     *(arg1 + 0x145) = eax_32.b
+004128db     int32_t eax_33 = sub_41cde0(ecx_30, "NeedUsbDownload", &var_5)
+004128e0     char edx_11 = var_5
+004128e4     char ecx_31 = 0
+004128e8     var_5 = 0
+004128e8     
+004128ec     if (eax_33 == 0)
+004128ec         ecx_31 = edx_11
+004128ec     
+004128f1     void* ecx_32 = arg2
+004128f4     eax_33.b = ecx_31 != 0
+004128f7     *(arg1 + 0x111) = eax_33.b
+0041290f     char edx_12 = 0
+0041290f     
+00412918     if (sub_41cde0(ecx_32, "BackupPart", &var_5) == 0)
+00412918         edx_12 = var_5
+00412918     
+0041291f     int32_t eax_34
+0041291f     eax_34.b = edx_12 != 0
+00412922     *(arg1 + 0x112) = eax_34.b
+00412928     void* eax_35 = sub_41e090(eax + 0x2c, "BackupPartId")
+0041292f     char* eax_37
+0041292f     
+0041292f     if (eax_35 == 0)
+00412939         eax_37 = nullptr
+0041292f     else
+00412934         eax_37 = *(eax_35 + 0x18) + 8
+00412934     
+0041293d     if (eax_37 != 0)
+0041293d         esi_1 = eax_37
+0041293d     
+00412943     void* ecx_35
+00412943     
+00412943     if (*esi_1 != 0)
+00412949         char* ecx_36 = esi_1
+00412949         
+00412955         do
+00412950             eax_37.b = *ecx_36
+00412952             ecx_36 = &ecx_36[1]
+00412955         while (eax_37.b != 0)
+00412955         
+00412957         ecx_35 = ecx_36 - &ecx_36[1]
+00412943     else
+00412945         ecx_35 = nullptr
+00412945     
+00412961     sub_402470(arg1 + 0xd4, esi_1, ecx_35)
+0041296d     arg2 = nullptr
+00412974     void* eax_38 = sub_41e090(eax + 0x2c, "ChipType")
+00412974     
+0041297d     if (eax_38 != 0)
+00412985         void** __saved_ebx_1 = &arg2
+00412985         
+0041299a         if (sub_54dd68(*(eax_38 + 0x18) + 8, &data_5b9d7c) == 1)
+0041299c             char eax_42 = arg2.b
+0041299f             *(arg1 + 0x113) = eax_42
+004129a9             return eax_42
+004129a9     
+004129ac     eax = nullptr
+004129ae     *(arg1 + 0x113) = 0
+004129ae 
+004129b8 return eax

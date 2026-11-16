@@ -1,0 +1,94 @@
+0040acb6 int32_t var_c = 0xffffffff
+0040acb8 int32_t (* var_10)(void* arg1) = sub_570553
+0040acc3 TEB* fsbase
+0040acc3 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040accf int16_t* var_8bc
+0040accf int32_t eax_2 = __security_cookie ^ &var_8bc
+0040ace0 int32_t __saved_edi
+0040ace0 int32_t eax_4 = __security_cookie ^ &__saved_edi
+0040acea fsbase->NtTib.ExceptionList = &ExceptionList
+0040acea 
+0040acfd if (GetSystemDefaultLCID() != 0x804)
+0040ad0b     arg1[0xe1] = 0
+0040acfd else
+0040acff     arg1[0xe1] = 1
+0040acff 
+0040ad1f int32_t* eax_6 = _fopen("language.ini", "r")
+0040ad26 char var_24 = 0
+0040ad33 int32_t var_23 = 0
+0040ad3a int16_t var_1f = 0
+0040ad42 char var_1d = 0
+0040ad42 
+0040ad4b if (eax_6 != 0)
+0040ad77     var_8bc = (*(data_5dd008 + 0xc))(eax_4) + 0x10
+0040ad85     int32_t var_c_1 = 0
+0040ad93     _fread(&var_24, 8, 1, eax_6)
+0040ada7     sub_4061e0(&var_8bc, &var_24)
+0040adac     int16_t* esi_1 = var_8bc
+0040adac     
+0040adc0     if (sub_54b4c8(esi_1, 0x5b8578) != 0)
+0040add4         uint32_t eax_11 = sub_54b4c8(esi_1, 0x5b8580)
+0040add4         
+0040adde         if (eax_11 == 0)
+0040ade0             arg1[0xe1] = eax_11
+0040adc0     else
+0040adc2         arg1[0xe1] = 1
+0040adc2     
+0040ade7     _fclose(eax_6)
+0040adef     int32_t var_c_2 = 0xffffffff
+0040ae03     int32_t ecx_2 = *(esi_1 - 4)
+0040ae03     *(esi_1 - 4) -= 1
+0040ae03     
+0040ae0a     if (ecx_2 - 1 s<= 0)
+0040ae11         (*(**(esi_1 - 0x10) + 4))(&esi_1[-8])
+0040ae11 
+0040ae1f CreateSemaphoreW(nullptr, 0, 1, u"MsmDownloadTool")
+0040ae1f 
+0040ae30 if (GetLastError() != ERROR_ALREADY_EXISTS)
+0040ae61     struct INITCOMMONCONTROLSEX picce
+0040ae61     picce.dwSize = 8
+0040ae6a     picce.dwICC = 0xff
+0040ae72     InitCommonControlsEx(&picce)
+0040ae7a     arg1[0xd5] = 0
+0040ae84     arg1[0xd6] = 1
+0040ae8e     sub_43f724(arg1)
+0040ae95     arg1[0xe8] = 0
+0040ae9f     arg1[0xe9] = 0
+0040aea9     arg1[0xea] = 0
+0040aeb3     arg1[0xeb] = 0xffffffff
+0040aebd     arg1[0xec] = 1
+0040aec7     arg1[0xed] = 0
+0040aec7     
+0040aed8     if (sub_40b350(arg1) != 0)
+0040aee0         int16_t* eax_16 = sub_42e7e5(0xc)
+0040aee8         var_8bc = eax_16
+0040aeec         int32_t var_c_3 = 1
+0040aef9         struct CObject::CShellManager::VTable** esi_3
+0040aef9         
+0040aef9         if (eax_16 == 0)
+0040af06             esi_3 = nullptr
+0040aef9         else
+0040af02             esi_3 = sub_43fef4(eax_16)
+0040af02         
+0040af0f         int32_t var_c_4 = 0xffffffff
+0040af1a         sub_44091a(arg1, u"OnePlus MsmDownloadTool")
+0040af24         int32_t var_8d0_6 = sub_40b0b0()
+0040af29         void var_8b0
+0040af29         sub_40c0c0(&var_8b0)
+0040af32         int32_t var_c_5 = 2
+0040af3f         arg1[8] = &var_8b0
+0040af42         sub_42ed81(&var_8b0)
+0040af42         
+0040af49         if (esi_3 != 0)
+0040af51             (*esi_3)->vFunc_1(1)
+0040af51         
+0040af58         int32_t var_c_6 = 0xffffffff
+0040af63         sub_40af90(&var_8b0)
+0040ae30 else if (arg1[0xe1] == 0)
+0040ae53     sub_439ba7(u"Program has been started!", MB_OK, 0)
+0040ae3d else
+0040ae44     sub_439ba7(0x5b85a8, MB_OK, 0)
+0040ae44 
+0040af71 fsbase->NtTib.ExceptionList = ExceptionList
+0040af85 sub_54a573(eax_2 ^ &var_8bc)
+0040af8d return 0

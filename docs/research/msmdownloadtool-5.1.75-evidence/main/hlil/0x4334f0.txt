@@ -1,0 +1,53 @@
+004334f3 int32_t var_8 = 0xffffffff
+004334f5 int32_t (* var_c)(void* arg1) = sub_6cea38
+00433500 TEB* fsbase
+00433500 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0043350e int32_t __saved_ebp
+0043350e int32_t var_30 = __security_cookie ^ &__saved_ebp
+00433512 fsbase->NtTib.ExceptionList = &ExceptionList
+00433518 int32_t var_8_1 = 3
+00433523 class ATL::CStringT<wchar_t, class StrTraitMFC<wchar_t, class ATL::ChTraitsCRT<wchar_t> > >& 
+00433523     var_38 = arg3
+00433527 int32_t* var_14 = &var_38
+0043352c int32_t* var_3c = arg7 - 0x10
+00433535 var_38 = &sub_41a8a0(var_3c)[4]
+00433537 var_8_1.b = 4
+00433543 int32_t** var_18 = &var_3c
+00433546 int32_t* var_40 = arg6 - 0x10
+0043354f var_3c = &sub_41a8a0(var_40)[4]
+00433551 var_8_1.b = 5
+0043355d int32_t** var_1c = &var_40
+00433569 var_40 = &sub_41a8a0(arg5 - 0x10)[4]
+0043356b var_8_1.b = 6
+00433585 var_8_1.b = 3
+00433589 int32_t result = CMESAPI::GetStandardInfo(&sub_41a8a0(arg4 - 0x10)[4], var_40, var_3c, var_38, arg3)
+0043358f var_8_1.b = 2
+004335a6 int32_t ecx = *(arg4 - 4)
+004335a6 *(arg4 - 4) -= 1
+004335a6 
+004335ad if (ecx - 1 s<= 0)
+004335b4     (*(**(arg4 - 0x10) + 4))(arg4 - 0x10)
+004335b4 
+004335b7 var_8_1.b = 1
+004335c6 int32_t ecx_3 = *(arg5 - 4)
+004335c6 *(arg5 - 4) -= 1
+004335c6 
+004335cd if (ecx_3 - 1 s<= 0)
+004335d4     (*(**(arg5 - 0x10) + 4))(arg5 - 0x10)
+004335d4 
+004335d7 var_8_1.b = 0
+004335e6 int32_t ecx_6 = *(arg6 - 4)
+004335e6 *(arg6 - 4) -= 1
+004335e6 
+004335ed if (ecx_6 - 1 s<= 0)
+004335f4     (*(**(arg6 - 0x10) + 4))(arg6 - 0x10)
+004335f4 
+004335f7 int32_t var_8_2 = 0xffffffff
+00433607 int32_t esi = *(arg7 - 4)
+00433607 *(arg7 - 4) -= 1
+00433607 
+0043360e if (esi - 1 s<= 0)
+00433615     (*(**(arg7 - 0x10) + 4))(arg7 - 0x10)
+00433615 
+0043361d fsbase->NtTib.ExceptionList = ExceptionList
+0043362b return result

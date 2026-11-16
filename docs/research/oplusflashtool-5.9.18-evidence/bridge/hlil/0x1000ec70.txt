@@ -1,0 +1,131 @@
+1000ec7e int32_t ebx
+1000ec7e ebx.b = 1
+1000ec87 int32_t eax = *(this + 4)
+1000ec94 int32_t var_71c
+1000ec94 memset(&var_71c, 0, 0x714)
+1000eca2 var_71c = 1
+1000ecac int32_t eax_1 = op_str_map_create()
+1000ecae int32_t var_14 = eax_1
+1000ecae 
+1000ecb3 if (eax_1 != 0)
+1000ecc0     eax_1 = op_str_map_create()
+1000ecc2     int32_t var_10_1 = eax_1
+1000ecc2     
+1000ecc7     if (eax_1 != 0)
+1000ecc9         eax_1 = op_str_map_create()
+1000ecc9         
+1000ecd0         if (eax_1 != 0)
+1000ece7             char _Destination[0x200]
+1000ece7             strcpy_s(&_Destination, 0x200, arg2)
+1000ecfa             char _Destination_1[0x200]
+1000ecfa             strcpy_s(&_Destination_1, 0x200, "/asymes/service/secLoginExt.json")
+1000ed0b             char _Destination_4[0x100]
+1000ed0b             strcpy_s(&_Destination_4, 0x80, arg5)
+1000ed1c             char _Destination_2[0x80]
+1000ed1c             strcpy_s(&_Destination_2, 0x80, arg3)
+1000ed2d             char _Destination_3[0x80]
+1000ed2d             strcpy_s(&_Destination_3, 0x80, arg4)
+1000ed2f             void* __offset(OpFlashAuthManager, 0x20)* _Source = this + 0x20
+1000ed2f             
+1000ed39             if (_Source[5] u>= 0x10)
+1000ed3b                 _Source = *_Source
+1000ed3b             
+1000ed4a             char _Destination_5[0x100]
+1000ed4a             strcpy_s(&_Destination_5, 0x100, _Source)
+1000ed5d             op_str_map_put(var_10_1, "factory", arg5)
+1000ed6a             op_str_map_put(var_10_1, "password", arg4)
+1000ed79             op_str_map_put(var_10_1, "procstep", &data_1004720c)
+1000ed88             op_str_map_put(var_10_1, "programId", "MESClient")
+1000ed97             op_str_map_put(eax_1, "/success", &data_10046add)
+1000eda9             op_str_map_put(eax_1, "/msg", &data_10046add)
+1000edae             void* __offset(OpFlashAuthManager, 0x50)* esi = this + 0x50
+1000edba             sub_10003300(esi, "cannot get err msg from mes!", 0x1c)
+1000edba             
+1000edd4             if (auth_exec_connect_mes_helper(eax, &var_71c) == 0)
+1000ee01                 int32_t eax_3 = op_str_map_get(eax_1, "/msg")
+1000ee01                 
+1000ee0a                 if (eax_3 != 0)
+1000ee2c                     uint32_t ecx_1
+1000ee2c                     
+1000ee2c                     if (*eax_3 != 0)
+1000ee32                         int32_t ecx_2 = eax_3
+1000ee37                         arg5 = ecx_2 + 1
+1000ee45                         char* eax_4
+1000ee45                         
+1000ee45                         do
+1000ee40                             eax_4.b = *ecx_2
+1000ee42                             ecx_2 += 1
+1000ee45                         while (eax_4.b != 0)
+1000ee47                         ecx_1 = ecx_2 - arg5
+1000ee2c                     else
+1000ee2e                         ecx_1 = 0
+1000ee2e                     
+1000ee4e                     sub_10003300(esi, eax_3, ecx_1)
+1000ee5b                     int32_t eax_5 = op_str_map_get(eax_1, "/success")
+1000ee5b                     
+1000ee62                     if (eax_5 == 0)
+1000ee9d                     label_1000ee9d:
+1000ee9d                         
+1000ee9d                         if (esi[5] u>= 0x10)
+1000ee9f                             esi = *esi
+1000ee9f                         
+1000eeb1                         opdbg_log("OpFlashAuthManager::loginFactoryMes", 0xc9, 
+1000eeb1                             "[ERROR]: Login failed: %s", esi)
+1000eeba                         ebx.b = 0
+1000ee62                     else
+1000ee64                         char const* const ecx_4 = "true"
+1000ee70                         int32_t eax_7
+1000ee70                         
+1000ee70                         while (true)
+1000ee70                             char const edx_2 = *ecx_4
+1000ee72                             char temp1_1 = *eax_5
+1000ee72                             bool c_1 = edx_2 u< temp1_1
+1000ee72                             
+1000ee74                             if (edx_2 == temp1_1)
+1000ee78                                 if (edx_2 == 0)
+1000ee8c                                     eax_7 = 0
+1000ee8e                                     break
+1000ee8e                                 
+1000ee7a                                 edx_2 = ecx_4[1]
+1000ee7d                                 char temp2_1 = *(eax_5 + 1)
+1000ee7d                                 c_1 = edx_2 u< temp2_1
+1000ee7d                                 
+1000ee80                                 if (edx_2 == temp2_1)
+1000ee82                                     ecx_4 = &ecx_4[2]
+1000ee85                                     eax_5 += 2
+1000ee85                                     
+1000ee8a                                     if (edx_2 != 0)
+1000ee8a                                         continue
+1000ee8a                                     
+1000ee8c                                     eax_7 = 0
+1000ee8e                                     break
+1000ee8e                             
+1000ee92                             eax_7 = sbb.d(eax_5, eax_5, c_1) | 1
+1000ee92                             break
+1000ee92                         
+1000ee97                         if (eax_7 != 0)
+1000ee97                             goto label_1000ee9d
+1000ee0a                 else
+1000ee1b                     opdbg_log("OpFlashAuthManager::loginFactoryMes", 0xc1, 
+1000ee1b                         "[ERROR]: Cannot get return message from result")
+1000eeba                     ebx.b = 0
+1000edd4             else
+1000ede5                 opdbg_log("OpFlashAuthManager::loginFactoryMes", 0xba, 
+1000ede5                     "[ERROR]: Exec connect mes failed")
+1000eeba                 ebx.b = 0
+1000eeba             
+1000eec7             if (var_14 != 0)
+1000eeca                 op_str_map_destroy(var_14)
+1000eeca             
+1000eed4             if (var_10_1 != 0)
+1000eed7                 op_str_map_destroy(var_10_1)
+1000eed7             
+1000eee1             if (eax_1 != 0)
+1000eee4                 op_str_map_destroy(eax_1)
+1000eee4             
+1000eeeb             int32_t eax_10
+1000eeeb             eax_10.b = ebx.b
+1000eef1             return eax_10.b
+1000eef1 
+1000ecb7 eax_1.b = 0
+1000ecbd return 0

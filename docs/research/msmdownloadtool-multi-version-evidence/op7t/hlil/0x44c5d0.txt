@@ -1,0 +1,56 @@
+0044c5d3 void* var_8 = arg1
+0044c5d4 int32_t ebx
+0044c5d4 int32_t var_c = ebx
+0044c5d5 int32_t esi
+0044c5d5 int32_t var_10 = esi
+0044c5e4 int32_t edi
+0044c5e4 int32_t var_14 = edi
+0044c5ec *(*(arg1 + 0x10057c) + 0x94) = *(arg1 + 0x100550)
+0044c5f2 *(arg1 + 0x2c)
+0044c5f5 int32_t result = sub_458160(arg1 + 0x10057c)
+0044c5ff int32_t eax_4
+0044c5ff void* edi_1
+0044c5ff 
+0044c5ff if (result != 0)
+0044c63f     int32_t eax_5 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+0044c63f     
+0044c64b     if (eax_5 != 0)
+0044c660         _fprintf(eax_5, "[%d] verify uc failed %d\n", *(arg1 + 0x30) + 1, 
+0044c660             *(*(arg1 + 0x10057c) + 0xa0))
+0044c666         _fclose(eax_5)
+0044c666     
+0044c670     edi_1 = arg1 + 0x2b8
+0044c676     int32_t eax_7 = *(*(arg1 + 0x10057c) + 0xa0)
+0044c67d     void* const var_1c_3
+0044c67d     
+0044c67d     if (eax_7 == 1)
+0044c6ae         if (*(arg1 + 0x20) == 0)
+0044c6b7             var_1c_3 = u"uc hash not match\n"
+0044c6ae         else
+0044c6b0             var_1c_3 = &data_6e36e8
+0044c67d     else if (eax_7 == 2)
+0044c69a         if (*(arg1 + 0x20) == 0)
+0044c6a3             var_1c_3 = u"uc magic incorrect or token decrypt failed\n"
+0044c69a         else
+0044c69c             var_1c_3 = &data_6e37e4
+0044c680     else if (*(arg1 + 0x20) == 0)
+0044c68f         var_1c_3 = u"uc verify failed\n"
+0044c686     else
+0044c688         var_1c_3 = &data_6e37a8
+0044c688     
+0044c6bd     sub_44d900(edi_1, var_1c_3)
+0044c6d1     eax_4 = zx.d((*(arg1 + 0x30)).b) << 0x10 | 0x1000001
+0044c5ff else
+0044c601     edi_1 = arg1 + 0x2b8
+0044c60a     void* const var_1c_1
+0044c60a     
+0044c60a     if (*(arg1 + 0x20) == result.b)
+0044c613         var_1c_1 = u"Send uc to device success!\n"
+0044c60a     else
+0044c60c         var_1c_1 = &data_6e3700
+0044c60c     
+0044c619     sub_44d900(edi_1, var_1c_1)
+0044c62d     eax_4 = zx.d((*(arg1 + 0x30)).b) << 0x10 | 1
+0044c62d 
+0044c6e0 0x3095d0(*(arg1 + 0x34), 0x178c, eax_4, edi_1)
+0044c6ef return result

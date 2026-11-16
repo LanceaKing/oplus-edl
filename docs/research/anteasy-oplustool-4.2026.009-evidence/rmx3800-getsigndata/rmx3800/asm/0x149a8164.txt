@@ -1,0 +1,52 @@
+149a8164 stp     fp, lr, [sp, #-0x50]!
+149a8168 stp     x26, x25, [sp, #0x10]
+149a816c stp     x24, x23, [sp, #0x20]
+149a8170 stp     x22, x21, [sp, #0x30]
+149a8174 stp     x20, x19, [sp, #0x40]
+149a8178 mov     fp, sp
+149a817c mov     w8, #0x1
+149a8180 bfi     x8, x1, #0x1, #0x3f
+149a8184 cmp     x8, x3
+149a8188 b.hi    0x149a820c
+149a820c mov     w0, #0xffffffff
+149a818c adrp    x23, 0x149d1000
+149a8190 mov     x20, x3
+149a8194 mov     x19, x2
+149a8198 mov     x21, x1
+149a819c mov     x22, x0
+149a81a0 mov     w8, wzr
+149a81a4 mov     x24, xzr
+149a81a8 add     x23, x23, #0x5dc
+149a8228 mov     w0, wzr
+149a822c strb    wzr, [x19, x24]
+149a8230 b       0x149a8210
+149a81b8 ldrb    w3, [x22, x25]
+149a81bc sub     x26, x20, x24
+149a81c0 add     x0, x19, x24
+149a81c4 mov     x2, x23
+149a81c8 sxtw    x1, w26
+149a81cc bl      0x1499aeac
+149a81d0 mov     w2, w0
+149a81d4 tbnz    w0, #0x1f, 0x149a81ec
+149a8210 ldp     x20, x19, [sp, #0x40]
+149a8214 ldp     x22, x21, [sp, #0x30]
+149a8218 ldp     x24, x23, [sp, #0x20]
+149a821c ldp     x26, x25, [sp, #0x10]
+149a8220 ldp     fp, lr, [sp], #0x50
+149a8224 ret     
+149a81ec adrp    x1, 0x149d1000
+149a81f0 mov     w0, #0x2
+149a81f4 add     x1, x1, #0x5e1
+149a81f8 bl      0x149a5c34
+149a81fc mov     x0, x19
+149a8200 mov     w1, wzr
+149a8204 mov     x2, x20
+149a8208 bl      0x1499c404
+149a81d8 cmp     w2, w26
+149a81dc add     x24, x24, w2, uxtw
+149a81e0 ccmp    x24, x20, #0x2, le
+149a81e4 add     w8, w25, #0x1
+149a81e8 b.lo    0x149a81ac
+149a81ac mov     w25, w8
+149a81b0 cmp     x25, x21
+149a81b4 b.hs    0x149a8228

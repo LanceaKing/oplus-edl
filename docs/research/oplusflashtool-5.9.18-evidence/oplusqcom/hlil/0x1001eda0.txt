@@ -1,0 +1,649 @@
+1001eda0 int32_t __saved_ebx_2
+1001eda0 int32_t __saved_ebx_1 = __saved_ebx_2
+1001edac int32_t __saved_ebp_2
+1001edac int32_t __saved_ebp_1 = __saved_ebp_2
+1001edb0 void* const __return_addr_1 = __return_addr
+1001edb6 int32_t var_14 = 0xffffffff
+1001edb8 int32_t (* var_18)(struct EHRegistrationNode* arg1) = sub_1006214f
+1001edc3 TEB* fsbase
+1001edc3 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+1001edc4 int32_t __saved_ebx
+1001edc4 int32_t* var_20 = &__saved_ebx
+1001edd5 int32_t esi
+1001edd5 int32_t var_c4 = esi
+1001edd6 int32_t edi
+1001edd6 int32_t var_c8 = edi
+1001edd7 int32_t __saved_ebp
+1001edd7 void* var_cc = __security_cookie ^ &__saved_ebp
+1001eddb fsbase->NtTib.ExceptionList = &ExceptionList
+1001ede6 int32_t var_14_1 = 0
+1001eded int32_t* arg_8
+1001eded int32_t* eax_3 = &arg_8
+1001edf4 void* ecx = *(arg1 + 0x1c)
+1001edf4 
+1001edf7 if (arg2 u>= 0x10)
+1001edf7     eax_3 = arg_8
+1001edf7 
+1001ee0f char const* const _Mode = ecx + 0x9e4
+1001ee10 char const* const var_dc = "[%s] [%s] enter doActionDownloadProgrammer preset: %s ."
+1001ee15 int32_t var_e0 = 0x11f2
+1001ee1a char const* const var_e4 = "QCFlashWorker::doActionDownloadProgrammer"
+1001ee1f opdbg_log("QCFlashWorker::doActionDownloadProgrammer", 0x11f2, 
+1001ee1f     "[%s] [%s] enter doActionDownloadProgrammer preset: %s .", _Mode, ecx + 0x444, eax_3)
+1001ee2e int32_t* esp_1
+1001ee2e uint32_t result
+1001ee2e 
+1001ee2e if (*(*(arg1 + 0x1c) + 0xe2c) != 0)
+1001eee5 label_1001eee5:
+1001eee5     int32_t* eax_15 = *(arg1 + 0x1764) + 0x170
+1001eeee     int64_t var_2c = 0
+1001eef3     sub_1002d080(&var_2c, eax_15)
+1001eef8     var_14_1.b = 1
+1001eefc     void* ecx_4 = *(arg1 + 0x1764)
+1001ef09     void** esp_2
+1001ef09     void* var_88
+1001ef09     int32_t var_74
+1001ef09     int32_t* edi_3
+1001ef09     
+1001ef09     if (*(ecx_4 + 0xa0) != 1)
+1001f271         int32_t* eax_43 = &arg_8
+1001f271         
+1001f27a         if (arg2 u>= 0x10)
+1001f27a             eax_43 = arg_8
+1001f27a         
+1001f27e         int32_t* var_d0_33 = eax_43
+1001f27f         char const* const var_d4_24 = "prog_firehose_%s.elf"
+1001f284         _Mode = &arg1[0x1980]
+1001f288         sub_10002230(_Mode, var_d4_24)
+1001f2a3         sub_10002250(&arg1[0x1864], 0x1000, &arg1[0x1980], "{platform}", &arg1[0x1864])
+1001f2a8         char* eax_45 = &arg1[0x18e4]
+1001f2a8         
+1001f2b5         if (*(eax_45 + 0x14) u>= 0x10)
+1001f2b7             eax_45 = *eax_45
+1001f2b7         
+1001f2c6         sub_10002250(eax_45, 0x1000, &arg1[0x1980], "{memory}", eax_45)
+1001f2cb         char* eax_46 = &arg1[0x18b4]
+1001f2cb         
+1001f2d8         if (*(eax_46 + 0x14) u>= 0x10)
+1001f2da             eax_46 = *eax_46
+1001f2da         
+1001f2e9         int32_t eax_47 = sub_10002250(eax_46, 0x1000, &arg1[0x1980], "{project}", eax_46)
+1001f2ee         void** esi_3 = &arg1[0x18cc]
+1001f2ee         
+1001f2fb         if (esi_3[5] u>= 0x10)
+1001f2fd             esi_3 = *esi_3
+1001f2fd         
+1001f30c         sub_10002250(eax_47, 0x1000, &arg1[0x1980], "{storage}", esi_3)
+1001f311         void*** edi_5 = var_2c.d
+1001f317         void** esi_4 = *edi_5
+1001f317         
+1001f31b         if (esi_4 == edi_5)
+1001f31b             goto label_1001f3f6
+1001f31b         
+1001f321         void* edx_3
+1001f321         
+1001f321         while (true)
+1001f321             int32_t* ecx_28 = esi_4[2]
+1001f321             
+1001f327             if (*ecx_28 == 0)
+1001f331                 char* eax_48 = sub_10045410(ecx_28, &var_88)
+1001f336                 char* var_60_2 = eax_48
+1001f336                 
+1001f33d                 if (*(eax_48 + 0x14) u>= 0x10)
+1001f33f                     eax_48 = *eax_48
+1001f341                     var_60_2 = eax_48
+1001f341                 
+1001f344                 char* ecx_29 = eax_48
+1001f344                 
+1001f355                 do
+1001f350                     eax_48.b = *ecx_29
+1001f352                     ecx_29 = &ecx_29[1]
+1001f355                 while (eax_48.b != 0)
+1001f355                 
+1001f357                 void* ecx_30 = ecx_29 - &ecx_29[1]
+1001f359                 uint8_t* edx_5 = &arg1[0x1980]
+1001f36a                 void* eax_49
+1001f36a                 
+1001f36a                 do
+1001f365                     eax_49.b = *edx_5
+1001f367                     edx_5 = &edx_5[1]
+1001f36a                 while (eax_49.b != 0)
+1001f36c                 edx_3 = edx_5 - &edx_5[1]
+1001f374                 int32_t var_60_3
+1001f374                 
+1001f374                 if (ecx_30 s>= edx_3)
+1001f384                     void* var_60_4
+1001f384                     
+1001f384                     if (var_60_2 != 0)
+1001f393                         int32_t eax_51 = strstr(var_60_2, &arg1[0x1980])
+1001f39e                         void* ecx_32 = eax_51 - var_60_2
+1001f39e                         
+1001f3ab                         if (eax_51 == 0)
+1001f3ab                             ecx_32 = 0xffffffff
+1001f3ab                         
+1001f3ae                         var_60_4 = ecx_32
+1001f384                     else
+1001f386                         var_60_4 = 0xffffffff
+1001f386                     
+1001f3bb                     int32_t eax_52
+1001f3bb                     eax_52.b = ecx_30 - edx_3 == var_60_4
+1001f3be                     var_60_3 = eax_52
+1001f374                 else
+1001f376                     var_60_3 = 0
+1001f376                 
+1001f3c7                 if (var_74 u>= 0x10)
+1001f3ce                     sub_10001d60(var_88, var_74 + 1)
+1001f3ce                 
+1001f3d7                 if (var_60_3 != 0)
+1001f3d7                     break
+1001f3d7             
+1001f3d9             esi_4 = *esi_4
+1001f3d9             
+1001f3dd             if (esi_4 == edi_5)
+1001f3dd                 goto label_1001f3f0
+1001f3dd         
+1001f3e5         edi_3 = esi_4[2]
+1001f3e5         
+1001f3ea         if (edi_3 != 0)
+1001f5d5         label_1001f5d5:
+1001f5d5             int32_t* eax_71 = *(arg1 + 0x20)
+1001f5db             int32_t* ecx_48 = *eax_71
+1001f5db             
+1001f5df             if (ecx_48 != 0)
+1001f5e5                 (**ecx_48)(1)
+1001f5e5             
+1001f5e9             int32_t* eax_73 = sub_1005f651(0x20)
+1001f5f9             int32_t* var_68_4 = eax_73
+1001f5fc             __builtin_memset(eax_73, 0, 0x24)
+1001f600             *(eax_73 + 0x10) = zx.o(0)
+1001f604             *eax_73 = &SynFileReader::`vftable'{for `AbsFileReader'}
+1001f634             *eax_71 = eax_73
+1001f644             char* var_d0_48 = &var_88
+1001f644             
+1001f645             if ((*(*eax_73 + 4))(edi_3) == 0)
+1001f6d2                 char* eax_86 = sub_10045450(edi_3, var_d0_48)
+1001f6d2                 
+1001f6db                 if (*(eax_86 + 0x14) u>= 0x10)
+1001f6dd                     eax_86 = *eax_86
+1001f6dd                 
+1001f6df                 void* ecx_53 = *(arg1 + 0x1c)
+1001f6f0                 _Mode = ecx_53 + 0x9e4
+1001f6f1                 char const* const var_dc_10 = "[%s] [%s] INFO: Find Firehose: %s"
+1001f6f6                 int32_t var_e0_7 = 0x1270
+1001f6fb                 char const* const var_e4_6 = "QCFlashWorker::doActionDownloadProgrammer"
+1001f700                 opdbg_log("QCFlashWorker::doActionDownloadProgrammer", 0x1270, 
+1001f700                     "[%s] [%s] INFO: Find Firehose: %s", _Mode, ecx_53 + 0x444, eax_86)
+1001f700                 
+1001f70f                 if (var_74 u>= 0x10)
+1001f716                     sub_10001d60(var_88, var_74 + 1)
+1001f716                 
+1001f724                 int32_t var_d0_56 = edi_3[0x10]
+1001f727                 int32_t var_d4_40 = 0x200000
+1001f72c                 int32_t* ecx_54 = **(arg1 + 0x20)
+1001f72e                 _Mode = &arg1[0x3980]
+1001f72e                 
+1001f738                 if ((*(*ecx_54 + 0xc))(_Mode, var_d4_40, var_d0_56) == 0)
+1001f7d4                     *(*(arg1 + 0x24) + 0x8c) = &arg1[0x3980]
+1001f7e0                     int32_t eax_105 = *(*(arg1 + 0x1764) + 0xa0)
+1001f7ee                     int32_t eax_106
+1001f7ee                     
+1001f7ee                     eax_106 = eax_105 == 4 || eax_105 == 1 ? 1 : 0
+1001f7ee                     
+1001f803                     esp_2 = &_Mode
+1001f803                     
+1001f80a                     if (sub_10037670(*(arg1 + 0x24), edi_3, eax_106, *(arg1 + 0x3062a4)) == 0)
+1001f866                         result = 0
+1001f80a                     else
+1001f80c                         int32_t ecx_60 = *(arg1 + 0x1c)
+1001f82d                         char const* const var_ec_4 = "[%s] [%s] ERROR: Failed to flash program file "
+1001f82d                         "via sahara protocol, status=%d, file=%s"
+1001f832                         int32_t var_f0_4 = 0x12e7
+1001f837                         char const* const var_f4_1 = "QCFlashWorker::doActionDownloadProgrammer"
+1001f83c                         opdbg_log("QCFlashWorker::doActionDownloadProgrammer", 0x12e7, 
+1001f83c                             "[%s] [%s] ERROR: Failed to flash program file via sahara protocol, status="
+1001f83c                         ", file=%s", 
+1001f83c                             ecx_60 + 0x9e4, ecx_60 + 0x444, *(*(arg1 + 0x24) + 0x90), &arg1[0x1980])
+1001f848                         int32_t var_dc_19 = *(*(arg1 + 0x24) + 0x90)
+1001f84e                         char const* const var_e0_14 = "sahara_protocol_error(%d)"
+1001f854                         sub_10024880(arg1, "sahara_protocol_error(%d)")
+1001f859                         esp_2 = &_Mode
+1001f85c                         result = 0x7919
+1001f738                 else
+1001f744                     char* eax_95 = sub_10045450(edi_3, &var_88)
+1001f744                     
+1001f74d                     if (*(eax_95 + 0x14) u>= 0x10)
+1001f74f                         eax_95 = *eax_95
+1001f74f                     
+1001f751                     int32_t ecx_56 = *(arg1 + 0x1c)
+1001f763                     char const* const var_e8_4 =
+1001f763                         "[%s] [%s] ERROR: Failed to read data from file: %s"
+1001f768                     int32_t var_ec_3 = 0x1273
+1001f76d                     char const* const var_f0_3 = "QCFlashWorker::doActionDownloadProgrammer"
+1001f772                     opdbg_log("QCFlashWorker::doActionDownloadProgrammer", 0x1273, 
+1001f772                         "[%s] [%s] ERROR: Failed to read data from file: %s", ecx_56 + 0x9e4, 
+1001f772                         ecx_56 + 0x444, eax_95)
+1001f772                     
+1001f781                     if (var_74 u>= 0x10)
+1001f788                         sub_10001d60(var_88, var_74 + 1)
+1001f788                     
+1001f793                     char* eax_100 = sub_10045410(edi_3, &var_88)
+1001f793                     
+1001f79c                     if (*(eax_100 + 0x14) u>= 0x10)
+1001f79e                         eax_100 = *eax_100
+1001f79e                     
+1001f7a0                     char* var_dc_15 = eax_100
+1001f7a1                     char const* const var_e0_10 = "read_file_error(%s)"
+1001f7a7                     sub_10024880(arg1, "read_file_error(%s)")
+1001f7af                     esp_2 = &_Mode
+1001f7af                     
+1001f7b5                     if (var_74 u>= 0x10)
+1001f7bc                         sub_10001d60(var_88, var_74 + 1)
+1001f7bc                         esp_2 = &_Mode
+1001f7bc                     
+1001f7c1                     result = 0x7d02
+1001f645             else
+1001f64b                 char* eax_78 = sub_10045450(edi_3, var_d0_48)
+1001f64b                 
+1001f654                 if (*(eax_78 + 0x14) u>= 0x10)
+1001f656                     eax_78 = *eax_78
+1001f656                 
+1001f658                 void* ecx_51 = *(arg1 + 0x1c)
+1001f669                 _Mode = ecx_51 + 0x9e4
+1001f66a                 char const* const var_dc_9 = "[%s] [%s] ERROR: Cannot open file: %s"
+1001f66f                 int32_t var_e0_6 = 0x126b
+1001f674                 char const* const var_e4_5 = "QCFlashWorker::doActionDownloadProgrammer"
+1001f679                 opdbg_log("QCFlashWorker::doActionDownloadProgrammer", 0x126b, 
+1001f679                     "[%s] [%s] ERROR: Cannot open file: %s", _Mode, ecx_51 + 0x444, eax_78)
+1001f679                 
+1001f688                 if (var_74 u>= 0x10)
+1001f68f                     sub_10001d60(var_88, var_74 + 1)
+1001f68f                 
+1001f69a                 char* eax_83 = sub_10045410(edi_3, &var_88)
+1001f69a                 
+1001f6a3                 if (*(eax_83 + 0x14) u>= 0x10)
+1001f6a5                     eax_83 = *eax_83
+1001f6a5                 
+1001f6a7                 char* var_d0_52 = eax_83
+1001f6a8                 char* var_d4_36 = "open_file_error(%)"
+1001f6ad                 _Mode = arg1
+1001f6ae                 sub_10024880(_Mode, var_d4_36)
+1001f6b6                 esp_2 = &var_cc
+1001f6b6                 
+1001f6bc                 if (var_74 u>= 0x10)
+1001f6c3                     sub_10001d60(var_88, var_74 + 1)
+1001f6c3                     esp_2 = &var_cc
+1001f6c3                 
+1001f6c8                 result = 0x7d03
+1001f3ea         else
+1001f3f0         label_1001f3f0:
+1001f3f0             edi_5 = var_2c.d
+1001f3f6         label_1001f3f6:
+1001f3f6             char const* const ecx_34 = "prog_firehose_ddr_fwupdate.elf"
+1001f3fb             char* eax_55 = &arg1[0x1980]
+1001f400             int32_t eax_57
+1001f400             
+1001f400             while (true)
+1001f400                 edx_3.b = *eax_55
+1001f402                 char const temp1_1 = *ecx_34
+1001f402                 bool c_2 = edx_3.b u< temp1_1
+1001f402                 
+1001f404                 if (edx_3.b == temp1_1)
+1001f408                     if (edx_3.b == 0)
+1001f41c                         eax_57 = 0
+1001f41e                         break
+1001f41e                     
+1001f40a                     edx_3.b = eax_55[1]
+1001f40d                     char temp2_1 = ecx_34[1]
+1001f40d                     c_2 = edx_3.b u< temp2_1
+1001f40d                     
+1001f410                     if (edx_3.b == temp2_1)
+1001f412                         eax_55 = &eax_55[2]
+1001f415                         ecx_34 = &ecx_34[2]
+1001f415                         
+1001f41a                         if (edx_3.b != 0)
+1001f41a                             continue
+1001f41a                         
+1001f41c                         eax_57 = 0
+1001f41e                         break
+1001f41e                 
+1001f422                 eax_57 = sbb.d(eax_55, eax_55, c_2) | 1
+1001f422                 break
+1001f422             
+1001f427             if (eax_57 == 0)
+1001f434                 __builtin_strcpy(&arg1[0x1980], "prog_firehose_ddr.elf")
+1001f449                 void** esi_6 = *edi_5
+1001f449                 
+1001f44d                 if (esi_6 == edi_5)
+1001f44d                     goto label_1001f51a
+1001f44d                 
+1001f453                 while (true)
+1001f453                     int32_t* ecx_35 = esi_6[2]
+1001f453                     
+1001f459                     if (*ecx_35 == 0)
+1001f463                         uint8_t* eax_58 = sub_10045410(ecx_35, &var_88)
+1001f468                         uint8_t* var_60_5 = eax_58
+1001f468                         
+1001f46f                         if (*(eax_58 + 0x14) u>= 0x10)
+1001f471                             eax_58 = *eax_58
+1001f473                             var_60_5 = eax_58
+1001f473                         
+1001f476                         char* ecx_36 = eax_58
+1001f476                         
+1001f485                         do
+1001f480                             eax_58.b = *ecx_36
+1001f482                             ecx_36 = &ecx_36[1]
+1001f485                         while (eax_58.b != 0)
+1001f485                         
+1001f487                         void* ecx_37 = ecx_36 - &ecx_36[1]
+1001f489                         uint8_t* edx_7 = &arg1[0x1980]
+1001f49a                         void* eax_59
+1001f49a                         
+1001f49a                         do
+1001f495                             eax_59.b = *edx_7
+1001f497                             edx_7 = &edx_7[1]
+1001f49a                         while (eax_59.b != 0)
+1001f49c                         void* edx_8 = edx_7 - &edx_7[1]
+1001f4a4                         int32_t var_60_6
+1001f4a4                         
+1001f4a4                         if (ecx_37 s>= edx_8)
+1001f4b4                             void* var_60_7
+1001f4b4                             
+1001f4b4                             if (var_60_5 != 0)
+1001f4c3                                 int32_t eax_61 = strstr(var_60_5, &arg1[0x1980])
+1001f4ce                                 void* ecx_39 = eax_61 - var_60_5
+1001f4ce                                 
+1001f4db                                 if (eax_61 == 0)
+1001f4db                                     ecx_39 = 0xffffffff
+1001f4db                                 
+1001f4de                                 var_60_7 = ecx_39
+1001f4b4                             else
+1001f4b6                                 var_60_7 = 0xffffffff
+1001f4b6                             
+1001f4eb                             int32_t eax_62
+1001f4eb                             eax_62.b = ecx_37 - edx_8 == var_60_7
+1001f4ee                             var_60_6 = eax_62
+1001f4a4                         else
+1001f4a6                             var_60_6 = 0
+1001f4a6                         
+1001f4f7                         if (var_74 u>= 0x10)
+1001f4fe                             sub_10001d60(var_88, var_74 + 1)
+1001f4fe                         
+1001f507                         if (var_60_6 != 0)
+1001f5c7                             edi_3 = esi_6[2]
+1001f5c7                             break
+1001f5c7                     
+1001f50d                     esi_6 = *esi_6
+1001f50d                     
+1001f511                     if (esi_6 == edi_5)
+1001f511                         goto label_1001f51a
+1001f511                 
+1001f5ca             label_1001f5ca:
+1001f5ca                 
+1001f5cc                 if (edi_3 == 0)
+1001f5cc                     goto label_1001f51a
+1001f5cc                 
+1001f5cc                 goto label_1001f5d5
+1001f5cc             
+1001f51a         label_1001f51a:
+1001f51a             void* ecx_41 = *(arg1 + 0x1c)
+1001f531             _Mode = ecx_41 + 0x9e4
+1001f532             char const* const var_dc_8 = "[%s] [%s] ERROR: Cannot find file: %s"
+1001f537             int32_t var_e0_5 = 0x1265
+1001f53c             char const* const var_e4_4 = "QCFlashWorker::doActionDownloadProgrammer"
+1001f541             opdbg_log("QCFlashWorker::doActionDownloadProgrammer", 0x1265, 
+1001f541                 "[%s] [%s] ERROR: Cannot find file: %s", _Mode, ecx_41 + 0x444, &arg1[0x1980])
+1001f547             void* var_e8_3 = &arg1[0x1980]
+1001f548             char const* const var_ec_2 = "file_not_found(%)"
+1001f54e             sub_10024880(arg1, "file_not_found(%)")
+1001f553             esp_2 = &var_cc
+1001f556             result = 0x7d08
+1001ef09     else
+1001ef13         int32_t* var_5c
+1001ef13         sub_10043f40(ecx_4, &var_5c)
+1001ef1b         var_14_1.b = 2
+1001ef26         char var_44
+1001ef26         sub_10043f00(*(arg1 + 0x1764), &var_44)
+1001ef2e         var_14_1.b = 3
+1001ef3b         int32_t* eax_17 = sub_1002dab0(&var_44, "_", &var_88, &var_44)
+1001ef4a         int32_t var_34
+1001ef4a         int32_t var_30
+1001ef4a         
+1001ef4a         if (&var_44 != eax_17)
+1001ef52             if (var_30 u>= 0x10)
+1001ef59                 sub_10001d60(var_44.d, var_30 + 1)
+1001ef59             
+1001ef62             var_30 = 0xf
+1001ef69             var_34 = 0
+1001ef70             var_44 = 0
+1001ef74             sub_10001cf0(&var_44, eax_17)
+1001ef74         
+1001ef79         var_14_1.b = 3
+1001ef7d         int32_t eax_20 = var_74
+1001ef7d         
+1001ef83         if (eax_20 u>= 0x10)
+1001ef8a             eax_20 = sub_10001d60(var_88, eax_20 + 1)
+1001ef8a         
+1001ef93         char* ecx_8 = &var_44
+1001ef93         
+1001ef99         if (var_30 u>= 0x10)
+1001ef99             ecx_8 = var_44.d
+1001ef99         
+1001efa4         int32_t eax_22 = sub_10007cc0(eax_20, var_34, ecx_8, "_oppo", 5)
+1001efa4         
+1001efae         if (eax_22 == 0)
+1001efb9             sub_10001ad0(&var_44, &data_1006a03d, eax_22)
+1001efb9         
+1001efcb         char* var_64_1 = &arg1[0x1980]
+1001efcb         
+1001efce         if (*(arg1 + 0x18a4) != 0)
+1001eff6             int32_t* ecx_11 = &arg_8
+1001eff9             int32_t* eax_24 = &data_10084b98
+1001eff9             
+1001effe             if (arg2 u>= 0x10)
+1001effe                 ecx_11 = arg_8
+1001effe             
+1001f009             int32_t* var_d0_17 = ecx_11
+1001f009             
+1001f00a             if (data_10084bac u>= 0x10)
+1001f00a                 eax_24 = data_10084b98
+1001f00a             
+1001f011             int32_t* var_d4_10 = eax_24
+1001f012             _Mode = "%s\prog_firehose_%s.elf"
+1001efce         else
+1001efdd             int32_t* ecx_10 = &data_10084b98
+1001efdd             
+1001efe2             if (data_10084bac u>= 0x10)
+1001efe2                 ecx_10 = data_10084b98
+1001efe2             
+1001efe9             void* var_d0_16 = &arg1[0x1864]
+1001efea             int32_t* var_d4_9 = ecx_10
+1001efeb             _Mode = "%s\prog_firehose_%s_eMMC_ddr.elf"
+1001efeb         
+1001f018         sub_10002230(&arg1[0x1980], _Mode)
+1001f020         int32_t* eax_25 = &var_5c
+1001f02e         int32_t var_48
+1001f02e         
+1001f02e         if (var_48 u>= 0x10)
+1001f02e             eax_25 = var_5c
+1001f02e         
+1001f038         sub_10002250(eax_25, 0x1000, &arg1[0x1980], "{platform}", eax_25)
+1001f03d         void** eax_26 = &arg1[0x18e4]
+1001f03d         
+1001f04a         if (eax_26[5] u>= 0x10)
+1001f04c             eax_26 = *eax_26
+1001f04c         
+1001f05b         sub_10002250(eax_26, 0x1000, &arg1[0x1980], "{memory}", eax_26)
+1001f064         char* _Mode_1 = &var_44
+1001f064         
+1001f06e         if (var_30 u>= 0x10)
+1001f06e             _Mode_1 = var_44.d
+1001f06e         
+1001f072         _Mode = _Mode_1
+1001f073         char const* const var_dc_4 = "_{brand}"
+1001f078         sub_10002250(_Mode_1, 0x1000, &arg1[0x1980], "_{brand}", _Mode)
+1001f07d         void** eax_27 = &arg1[0x18cc]
+1001f07d         
+1001f08a         if (eax_27[5] u>= 0x10)
+1001f08c             eax_27 = *eax_27
+1001f08c         
+1001f09b         sub_10002250(eax_27, 0x1000, &arg1[0x1980], "{storage}", eax_27)
+1001f0a0         _Mode = &data_10071924
+1001f0a6         FILE* _Stream = fopen(&arg1[0x1980], _Mode)
+1001f0a6         
+1001f0b5         if (_Stream != 0)
+1001f0bb             void* edx_2 = *(arg1 + 0x1c)
+1001f0cb             _Mode = edx_2 + 0x9e4
+1001f0cc             char const* const var_dc_6 = "[%s] [%s] INFO: find firehose: %s"
+1001f0d1             int32_t var_e0_3 = 0x123b
+1001f0d6             char const* const var_e4_2 = "QCFlashWorker::doActionDownloadProgrammer"
+1001f0db             opdbg_log("QCFlashWorker::doActionDownloadProgrammer", 0x123b, 
+1001f0db                 "[%s] [%s] INFO: find firehose: %s", _Mode, edx_2 + 0x444, &arg1[0x1980])
+1001f0e1             int32_t var_e8_1 = 0x50
+1001f0e3             char* _Mode_2 = sub_1005f651(0x50)
+1001f0ed             char* _Mode_3 = _Mode_2
+1001f0f0             uint32_t count = 0x50
+1001f0f2             int32_t c = 0
+1001f0f4             _Mode = _Mode_2
+1001f0f5             var_14_1.b = 5
+1001f0f9             memset(_Mode, c, count)
+1001f108             edi_3 = sub_100450c0(_Mode_2)
+1001f10a             var_14_1.b = 3
+1001f10e             char const* const var_d0_22 = "prog_firehose_ddr.elf"
+1001f119             *edi_3 = 0
+1001f11f             void* var_a8
+1001f11f             sub_10001a60(&var_a8, var_d0_22)
+1001f127             var_14_1.b = 6
+1001f127             
+1001f133             if (&edi_3[1] != &var_a8)
+1001f135                 uint32_t var_d0_23 = 0xffffffff
+1001f137                 int32_t var_d4_15 = 0
+1001f139                 _Mode = &var_a8
+1001f13a                 sub_10001bd0(&edi_3[1], _Mode, var_d4_15, var_d0_23)
+1001f13a             
+1001f13f             var_14_1.b = 3
+1001f14c             int32_t var_94
+1001f14c             
+1001f14c             if (var_94 u>= 0x10)
+1001f156                 sub_10001d60(var_a8, var_94 + 1)
+1001f156             
+1001f164             void* var_c0
+1001f164             sub_10001a60(&var_c0, var_64_1)
+1001f16c             var_14_1.b = 7
+1001f16c             
+1001f178             if (&edi_3[7] != &var_c0)
+1001f17a                 uint32_t var_d0_26 = 0xffffffff
+1001f17c                 int32_t var_d4_17 = 0
+1001f17e                 _Mode = &var_c0
+1001f17f                 sub_10001bd0(&edi_3[7], _Mode, var_d4_17, var_d0_26)
+1001f17f             
+1001f18d             int32_t var_ac
+1001f18d             
+1001f18d             if (var_ac u>= 0x10)
+1001f197                 sub_10001d60(var_c0, var_ac + 1)
+1001f197             
+1001f19f             fclose(_Stream)
+1001f19f             
+1001f1ae             if (var_30 u>= 0x10)
+1001f1b5                 sub_10001d60(var_44.d, var_30 + 1)
+1001f1b5             
+1001f1ba             var_14_1.b = 1
+1001f1c1             int32_t var_30_1 = 0xf
+1001f1c8             int32_t var_34_1 = 0
+1001f1cf             var_44 = 0
+1001f1cf             
+1001f1d6             if (var_48 u>= 0x10)
+1001f1dd                 sub_10001d60(var_5c, var_48 + 1)
+1001f1dd             
+1001f1e2             int32_t var_48_1 = 0xf
+1001f1e9             int32_t var_4c_1 = 0
+1001f1f0             var_5c.b = 0
+1001f14c             goto label_1001f5ca
+1001f14c         
+1001f1f9         void* ecx_23 = *(arg1 + 0x1c)
+1001f209         _Mode = ecx_23 + 0x9e4
+1001f20a         char const* const var_dc_7 = "[%s] [%s] ERROR: canot find firehose: %s"
+1001f20f         int32_t var_e0_4 = 0x1242
+1001f214         char const* const var_e4_3 = "QCFlashWorker::doActionDownloadProgrammer"
+1001f219         opdbg_log("QCFlashWorker::doActionDownloadProgrammer", 0x1242, 
+1001f219             "[%s] [%s] ERROR: canot find firehose: %s", _Mode, ecx_23 + 0x444, &arg1[0x1980])
+1001f21f         uint8_t* var_e8_2 = &arg1[0x1980]
+1001f220         char const* const var_ec_1 = "file_not_found(%)"
+1001f226         sub_10024880(arg1, "file_not_found(%)")
+1001f22e         esp_2 = &var_cc
+1001f22e         
+1001f234         if (var_30 u>= 0x10)
+1001f23b             sub_10001d60(var_44.d, var_30 + 1)
+1001f23b             esp_2 = &var_cc
+1001f23b         
+1001f243         int32_t var_30_2 = 0xf
+1001f24a         int32_t var_34_2 = 0
+1001f251         var_44 = 0
+1001f251         
+1001f258         if (var_48 u>= 0x10)
+1001f263             sub_10001d60(var_5c, var_48 + 1)
+1001f263             esp_2 = &var_cc
+1001f263         
+1001f556         result = 0x7d08
+1001f55b     int32_t* eax_67 = var_2c.d
+1001f55e     int32_t* ecx_42 = *eax_67
+1001f560     *eax_67 = eax_67
+1001f562     void* eax_68 = var_2c.d
+1001f565     *(eax_68 + 4) = eax_68
+1001f568     int32_t eax_69 = var_2c.d
+1001f56b     var_2c:4.d = 0
+1001f56b     
+1001f574     if (ecx_42 != eax_69)
+1001f588         int32_t* esi_8
+1001f588         
+1001f588         do
+1001f576             esi_8 = *ecx_42
+1001f578             *(esp_2 - 4) = ecx_42
+1001f579             sub_1005f684()
+1001f57e             eax_69 = var_2c.d
+1001f584             ecx_42 = esi_8
+1001f588         while (esi_8 != eax_69)
+1001f588     
+1001f58a     *(esp_2 - 4) = eax_69
+1001f58b     sub_1005f684()
+1001f590     esp_1 = esp_2
+1001ee2e else
+1001ee3f     enum WAIT_EVENT eax_7 = WaitForSingleObject(*(arg1 + 0x3062c4), 0x4e20)
+1001ee3f     
+1001ee47     if (eax_7 == WAIT_OBJECT_0)
+1001eebb         for (int32_t i = 0; i s<= 0xa; i += 1)
+1001ee81             if (op_device_open(*(arg1 + 0x1c)) == 0)
+1001ee81                 goto label_1001eee5
+1001ee81             
+1001ee83             int32_t ecx_2 = *(arg1 + 0x1c)
+1001ee94             _Mode = "[%s] [%s] ERROR: Failed open device."
+1001ee99             int32_t var_dc_2 = 0x11fe
+1001ee9e             char const* const var_e0_2 = "QCFlashWorker::doActionDownloadProgrammer"
+1001eea3             opdbg_log("QCFlashWorker::doActionDownloadProgrammer", 0x11fe, _Mode, ecx_2 + 0x9e4, 
+1001eea3                 ecx_2 + 0x444)
+1001eeb1             Sleep(0x3e8)
+1001ee47     else
+1001ee49         void* ecx_1 = *(arg1 + 0x1c)
+1001ee5a         _Mode = ecx_1 + 0x9e4
+1001ee5b         char const* const var_dc_1 = "[%s] [%s] ERROR: wait failed. ret: %d"
+1001ee60         int32_t var_e0_1 = 0x11f6
+1001ee65         char const* const var_e4_1 = "QCFlashWorker::doActionDownloadProgrammer"
+1001ee6a         opdbg_log("QCFlashWorker::doActionDownloadProgrammer", 0x11f6, 
+1001ee6a             "[%s] [%s] ERROR: wait failed. ret: %d", _Mode, ecx_1 + 0x444, eax_7)
+1001ee6a     
+1001eec3     enum WIN32_ERROR var_d0_6 = GetLastError()
+1001eec4     char const* const var_d4_4 = "qcom_device_open_failed(%d)"
+1001eec9     _Mode = arg1
+1001eeca     sub_10024880(_Mode, var_d4_4)
+1001eecf     esp_1 = &var_cc
+1001eed2     result = 0x7533
+1001eed2 
+1001f599 if (arg2 u>= 0x10)
+1001f59c     *(esp_1 - 4) = arg2 + 1
+1001f59d     *(esp_1 - 8) = arg_8
+1001f5a0     sub_10001d60()
+1001f5a0 
+1001f5aa fsbase->NtTib.ExceptionList = ExceptionList
+1001f5b1 esp_1[1]
+1001f5b2 esp_1[2]
+1001f5b9 CookieCheckFunction(result)
+1001f5c4 return result

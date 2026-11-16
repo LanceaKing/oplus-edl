@@ -1,0 +1,97 @@
+180004d40 int64_t rbx
+180004d40 int64_t arg_18 = rbx
+180004d45 int64_t rsi
+180004d45 int64_t var_8 = rsi
+180004d46 int64_t rdi
+180004d46 int64_t var_10 = rdi
+180004d47 int64_t r14
+180004d47 int64_t var_18 = r14
+180004d49 void var_88
+180004d49 void* rsp = &var_88
+180004d57 int64_t var_20 = __security_cookie ^ &var_88
+180004d68 int32_t result
+180004d68 
+180004d68 if (arg2 == 0)
+180004ec0     result = 1
+180004d68 else
+180004d6e     *arg2 = 0
+180004d6e     
+180004d7d     if (arg1 == 0 || *arg1 != 0x18)
+180004ec0         result = 1
+180004d7d     else
+180004d83         char* rcx = *(arg1 + 8)
+180004d83         
+180004d8a         if (rcx == 0)
+180004ec0             result = 1
+180004d8a         else if (strlen(rcx) - 1 u> 0x1fff)
+180004ec0             result = 1
+180004d9e         else if (sub_180036ad0() != 0)
+180004db7             int64_t rcx_1
+180004db7             int64_t rdx
+180004db7             result, rcx_1, rdx = sub_180003820(rdi)
+180004db7             
+180004dbe             if (result == 0)
+180004dc4                 char* rdi_1 = *(arg1 + 0x10)
+180004dc9                 int64_t* rbp
+180004dc9                 int64_t r12
+180004dc9                 uint64_t rax_5 = sub_1801f7bc7(rcx_1, rdx, arg1, rbp, rdi_1, r12)
+180004dc9                 void var_80
+180004dc9                 rsp = &var_80
+180004dd1                 char rax_6
+180004dd1                 
+180004dd1                 if (rdi_1 s> 0)
+180004de0                     rax_6 = sub_180057af0(rdi_1, rax_5, rax_5)
+180004de0                 
+180004de7                 if (rdi_1 s<= 0 || rax_6 == 0)
+180004eb9                     result = 0x10
+180004de7                 else
+180004ded                     sub_180003540()
+180004df2                     int32_t* rbx_2 = *(arg1 + 8)
+180004df9                     int128_t var_38 = zx.o(0)
+180004dfe                     int64_t var_28_1 = 0
+180004e03                     int64_t var_20_1 = 0
+180004e0b                     void* rax_7
+180004e0b                     uint64_t r9_1
+180004e0b                     rax_7, r9_1 = strlen(rbx_2)
+180004e1b                     int16_t* rdx_3
+180004e1b                     int64_t r8_3
+180004e1b                     uint64_t r9_2
+180004e1b                     rdx_3, r8_3, r9_2 = sub_1800017c0(&var_38, rbx_2, rax_7, r9_1)
+180004e26                     int32_t* rax_8 = sub_1800d1b80(0x168, rdx_3, r8_3, r9_2)
+180004e2b                     int32_t* rbx_3 = rax_8
+180004e31                     int64_t rdi_2
+180004e31                     
+180004e31                     if (rax_8 == 0)
+180004e60                         rbx_3 = nullptr
+180004e63                         rdi_2 = var_20_1
+180004e31                     else
+180004e3d                         rdi_2 = 0xf
+180004e42                         var_38.b = 0
+180004e47                         int128_t var_58 = var_38
+180004e4c                         int128_t var_48_1 = var_28_1.o
+180004e59                         sub_180002640(rax_8, &var_58)
+180004e59                     
+180004e6c                     if (rdi_2 u> 0xf)
+180004e72                         void* rcx_6 = var_38.q
+180004e72                         
+180004e7e                         if (rdi_2 + 1 u>= 0x1000)
+180004e80                             void* rax_9 = *(rcx_6 - 8)
+180004e80                             
+180004e8f                             if (rcx_6 - rax_9 - 8 u> 0x1f)
+180004eb0                                 trap(0xd)
+180004eb0                             
+180004e95                             rcx_6 = rax_9
+180004e95                         
+180004e98                         j_sub_18012c540(rcx_6)
+180004e98                     
+180004e9d                     *arg2 = rbx_3
+180004ea0                     result = 0
+180004dab         else
+180004dad             result = 4
+180004dad 
+180004ecd __security_check_cookie(*(rsp + 0x68) ^ rsp)
+180004ed2 *(rsp + 0xa0)
+180004ede *(rsp + 0x70)
+180004ee0 *(rsp + 0x78)
+180004ee1 *(rsp + 0x80)
+180004ee2 return result

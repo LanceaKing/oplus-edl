@@ -1,0 +1,35 @@
+004b81f3 void* ecx
+004b81f3 void* var_8 = ecx
+004b81f4 bool cond:0 = data_7df820 != 1
+004b81ff void* ebx = arg1
+004b8203 char* esi = arg2
+004b8207 void* var_8_1 = ecx
+004b820a arg2 = nullptr
+004b8211 *arg3 = 0
+004b8211 
+004b8217 if (not(cond:0))
+004b8227     return sub_4b83c0(ecx, ebx, esi, arg3)
+004b8227 
+004b822c if (esi != 0)
+004b8261     char* edi_1
+004b8261     char* temp1_1
+004b8261     
+004b8261     do
+004b8239         edi_1 = esi
+004b8239         
+004b823b         if (esi u> 0x8000)
+004b823b             edi_1 = 0x8000
+004b823b         
+004b8244         int32_t result = sub_4b83c0(ecx, ebx, edi_1, &arg2)
+004b8244         
+004b824b         if (result != 0)
+004b826b             return result
+004b826b         
+004b8250         ebx += edi_1
+004b8255         *arg3 = &arg2[*arg3]
+004b825c         ecx = var_8_1
+004b825f         temp1_1 = esi
+004b825f         esi -= edi_1
+004b8261     while (temp1_1 != edi_1)
+004b8261 
+004b8263 return 0

@@ -1,0 +1,291 @@
+[
+  {
+    "trace": "main-0x4d4e00-native-slot0x1.json",
+    "raw_sha256": "c691906d2cb0726a0eb4ca180047ae7329ab29c0a8fc1d42b3b69cc7ee5d1e01",
+    "slot_change": 1,
+    "tsc_step": null,
+    "cpuid_clear": null,
+    "peb_build": null,
+    "final": {
+      "eax": "0xdeadc0de",
+      "ebx": "0x0",
+      "ecx": "0x31000000",
+      "edx": "0x0",
+      "esi": "0x31000000",
+      "edi": "0x0",
+      "ebp": "0x300efffc",
+      "esp": "0x300effe0",
+      "eip": "0x0",
+      "eflags": "0x86"
+    },
+    "counts": {
+      "dispatch": 2614480,
+      "blocks": 14795227,
+      "image_reads_dword": 2983009,
+      "stack_writes": 4960090,
+      "zero_reads": 0,
+      "object_reads": 0
+    },
+    "tsc_events": null
+  },
+  {
+    "trace": "main-0x4d4e00-native-tsc100.json",
+    "raw_sha256": "0eabc3c09e9350315ddab754eaac4e3dee86191ea2cc58d41d0018778f429511",
+    "slot_change": null,
+    "tsc_step": 100,
+    "cpuid_clear": null,
+    "peb_build": null,
+    "final": {
+      "eax": "0xdeadc0de",
+      "ebx": "0x0",
+      "ecx": "0x31000000",
+      "edx": "0x0",
+      "esi": "0x31000000",
+      "edi": "0x0",
+      "ebp": "0x300efffc",
+      "esp": "0x300effe0",
+      "eip": "0x0",
+      "eflags": "0x86"
+    },
+    "counts": {
+      "dispatch": 2614480,
+      "blocks": 14795184,
+      "image_reads_dword": 2982994,
+      "stack_writes": 4960090,
+      "zero_reads": 1,
+      "object_reads": 0
+    },
+    "tsc_events": [
+      {
+        "phase": "after-cpuid",
+        "pc": "0xa0ecb2",
+        "eax": "0x306c4",
+        "edx": "0x78bfbfd",
+        "ecx": "0xced82203"
+      },
+      {
+        "phase": "before",
+        "pc": "0x10a5303",
+        "eax": "0x64",
+        "edx": "0x1",
+        "ecx": "0xfffe12bb"
+      },
+      {
+        "phase": "after",
+        "pc": "0x10a5305",
+        "eax": "0x64",
+        "edx": "0x1",
+        "ecx": "0xfffe12bb"
+      },
+      {
+        "phase": "before",
+        "pc": "0xb3c873",
+        "eax": "0xc8",
+        "edx": "0x1",
+        "ecx": "0xc"
+      },
+      {
+        "phase": "after",
+        "pc": "0xb3c875",
+        "eax": "0xc8",
+        "edx": "0x1",
+        "ecx": "0xc"
+      }
+    ]
+  },
+  {
+    "trace": "main-0x4d4e00-native-cpuidclear0x80000000.json",
+    "raw_sha256": "bdb868abffe587ba38966cf9164ac25f74b8d9e4a702b232c17172254a9df358",
+    "slot_change": null,
+    "tsc_step": null,
+    "cpuid_clear": 2147483648,
+    "peb_build": null,
+    "final": {
+      "eax": "0xdeadc0de",
+      "ebx": "0x0",
+      "ecx": "0x31000000",
+      "edx": "0x0",
+      "esi": "0x31000000",
+      "edi": "0x0",
+      "ebp": "0x300efffc",
+      "esp": "0x300effe0",
+      "eip": "0x0",
+      "eflags": "0x86"
+    },
+    "counts": {
+      "dispatch": 2614480,
+      "blocks": 14795182,
+      "image_reads_dword": 2982994,
+      "stack_writes": 4960090,
+      "zero_reads": 1,
+      "object_reads": 0
+    },
+    "tsc_events": [
+      {
+        "phase": "after-cpuid",
+        "pc": "0xa0ecb2",
+        "eax": "0x306c4",
+        "edx": "0x78bfbfd",
+        "ecx": "0x4ed82203"
+      },
+      {
+        "phase": "before",
+        "pc": "0x10a5303",
+        "eax": "0xc12823",
+        "edx": "0x300eff54",
+        "ecx": "0xfffe12bb"
+      },
+      {
+        "phase": "after",
+        "pc": "0x10a5305",
+        "eax": "0x5a665670",
+        "edx": "0x1a61c",
+        "ecx": "0xfffe12bb"
+      },
+      {
+        "phase": "before",
+        "pc": "0xb3c873",
+        "eax": "0xffa69ca9",
+        "edx": "0x46",
+        "ecx": "0xc"
+      },
+      {
+        "phase": "after",
+        "pc": "0xb3c875",
+        "eax": "0x5b218080",
+        "edx": "0x1a61c",
+        "ecx": "0xc"
+      }
+    ]
+  },
+  {
+    "trace": "main-0x4d4e00-native-tsc100-cpuidclear0x80000000.json",
+    "raw_sha256": "841e8e30573a9a69b4fc7ab2fabab8d45385518f8e2974f0e20a9d9bbbd2c20f",
+    "slot_change": null,
+    "tsc_step": 100,
+    "cpuid_clear": 2147483648,
+    "peb_build": null,
+    "final": {
+      "eax": "0xdeadc0de",
+      "ebx": "0x0",
+      "ecx": "0x31000000",
+      "edx": "0x0",
+      "esi": "0x31000000",
+      "edi": "0x0",
+      "ebp": "0x300efffc",
+      "esp": "0x300effe0",
+      "eip": "0x0",
+      "eflags": "0x86"
+    },
+    "counts": {
+      "dispatch": 2614480,
+      "blocks": 14795184,
+      "image_reads_dword": 2982994,
+      "stack_writes": 4960090,
+      "zero_reads": 1,
+      "object_reads": 0
+    },
+    "tsc_events": [
+      {
+        "phase": "after-cpuid",
+        "pc": "0xa0ecb2",
+        "eax": "0x306c4",
+        "edx": "0x78bfbfd",
+        "ecx": "0x4ed82203"
+      },
+      {
+        "phase": "before",
+        "pc": "0x10a5303",
+        "eax": "0x64",
+        "edx": "0x1",
+        "ecx": "0xfffe12bb"
+      },
+      {
+        "phase": "after",
+        "pc": "0x10a5305",
+        "eax": "0x64",
+        "edx": "0x1",
+        "ecx": "0xfffe12bb"
+      },
+      {
+        "phase": "before",
+        "pc": "0xb3c873",
+        "eax": "0xc8",
+        "edx": "0x1",
+        "ecx": "0xc"
+      },
+      {
+        "phase": "after",
+        "pc": "0xb3c875",
+        "eax": "0xc8",
+        "edx": "0x1",
+        "ecx": "0xc"
+      }
+    ]
+  },
+  {
+    "trace": "main-0x4d4e00-native-peb19041.json",
+    "raw_sha256": "dfc09d86e3cc0dbf331c7f9acd800da0f1b15ef4e4b32dd7d377753d8fbf8c6e",
+    "slot_change": null,
+    "tsc_step": null,
+    "cpuid_clear": null,
+    "peb_build": 19041,
+    "final": {
+      "eax": "0xdeadc0de",
+      "ebx": "0x0",
+      "ecx": "0x31000000",
+      "edx": "0x0",
+      "esi": "0x31000000",
+      "edi": "0x0",
+      "ebp": "0x300efffc",
+      "esp": "0x300effe0",
+      "eip": "0x0",
+      "eflags": "0x86"
+    },
+    "counts": {
+      "dispatch": 2614480,
+      "blocks": 14806957,
+      "image_reads_dword": 2986919,
+      "stack_writes": 4960090,
+      "zero_reads": 1,
+      "object_reads": 0
+    },
+    "tsc_events": [
+      {
+        "phase": "after-cpuid",
+        "pc": "0xa0ecb2",
+        "eax": "0x306c4",
+        "edx": "0x78bfbfd",
+        "ecx": "0xced82203"
+      },
+      {
+        "phase": "before",
+        "pc": "0x10a5303",
+        "eax": "0xc12823",
+        "edx": "0x300eff54",
+        "ecx": "0xfffe12bb"
+      },
+      {
+        "phase": "after",
+        "pc": "0x10a5305",
+        "eax": "0xdcdeb770",
+        "edx": "0x1a63d",
+        "ecx": "0xfffe12bb"
+      },
+      {
+        "phase": "before",
+        "pc": "0xb3c873",
+        "eax": "0xffa69ca9",
+        "edx": "0x46",
+        "ecx": "0xc"
+      },
+      {
+        "phase": "after",
+        "pc": "0xb3c875",
+        "eax": "0xdd8bc050",
+        "edx": "0x1a63d",
+        "ecx": "0xc"
+      }
+    ]
+  }
+]

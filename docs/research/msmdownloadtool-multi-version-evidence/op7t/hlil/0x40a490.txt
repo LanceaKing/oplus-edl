@@ -1,0 +1,43 @@
+0040a4a0 void var_24
+0040a4a0 int32_t var_c = __security_cookie ^ &var_24
+0040a4aa int32_t ebx
+0040a4aa int32_t var_28 = ebx
+0040a4ab int32_t esi
+0040a4ab int32_t var_2c = esi
+0040a4ac int32_t edi
+0040a4ac int32_t var_30 = edi
+0040a4ad int32_t var_34 = 0
+0040a4b6 int128_t var_1c
+0040a4b6 int128_t* var_3c = &var_1c
+0040a4b7 int32_t var_40 = 0x50001000
+0040a4bc var_1c = zx.o(0)
+0040a4bc 
+0040a4c9 if (sub_4f30c6(var_40, var_3c, arg2, var_34) == 0)
+0040a4d5     int32_t eax_4 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+0040a4d5     
+0040a4e1     if (eax_4 != 0)
+0040a4e9         _fprintf(eax_4, "init status bar failed\n")
+0040a4ef         _fclose(eax_4)
+0040a4ef 
+0040a516 if (0x3095d0(*(arg1 + 0x20), 0x404, 5, &data_712e70) == 0)
+0040a522     int32_t eax_6 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+0040a522     
+0040a52e     if (eax_6 != 0)
+0040a536         _fprintf(eax_6, "partitioning status bar failed\n")
+0040a53c         _fclose(eax_6)
+0040a53c 
+0040a548 int32_t eax_7 = data_72420c
+0040a54e wchar16 const* const var_54_3
+0040a54e 
+0040a54e if (eax_7 == 1)
+0040a561     var_54_3 = u"Intranet"
+0040a54e else if (eax_7 == 2)
+0040a55a     var_54_3 = u"Factory"
+0040a551 else
+0040a553     var_54_3 = u"Unknown"
+0040a553 
+0040a570 0x3095d0(*(arg1 + 0x20), 0x40b, 4, var_54_3)
+0040a574 sub_40a5c0(arg1)
+0040a579 int32_t var_64 = 0
+0040a588 0x3096f0(*(arg1 + 0x20), 0x3e9, 0x3e8, var_64)
+0040a5a1 return sub_60bdca()

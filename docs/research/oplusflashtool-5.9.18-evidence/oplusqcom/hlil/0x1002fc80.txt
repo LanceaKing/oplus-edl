@@ -1,0 +1,57 @@
+1002fc83 int32_t var_8 = 0xffffffff
+1002fc85 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10063076
+1002fc90 TEB* fsbase
+1002fc90 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+1002fca4 int32_t __saved_ebp
+1002fca4 int32_t var_160 = __security_cookie ^ &__saved_ebp
+1002fca8 fsbase->NtTib.ExceptionList = &ExceptionList
+1002fcc3 uint8_t filename
+1002fcc3 memset(&filename, 0, 0x104)
+1002fcd9 GetModuleFileNameA(nullptr, &filename, 0x104)
+1002fcdf bool cond:0 = filename != 0
+1002fce6 int32_t var_13c = 0xf
+1002fcf0 int32_t var_140 = 0
+1002fcfa char var_150 = 0
+1002fd01 uint32_t eax_3
+1002fd01 
+1002fd01 if (cond:0)
+1002fd07     uint8_t* eax_4 = &filename
+1002fd15     uint8_t i
+1002fd15     
+1002fd15     do
+1002fd10         i = *eax_4
+1002fd12         eax_4 = &eax_4[1]
+1002fd15     while (i != 0)
+1002fd17     void var_11f
+1002fd17     eax_3 = eax_4 - &var_11f
+1002fd01 else
+1002fd03     eax_3 = 0
+1002fd03 
+1002fd2c int32_t var_164_1 = 1
+1002fd3a int32_t var_8_1 = 0
+1002fd57 char* var_138
+1002fd57 sub_100025c0(&var_150, &var_138, 0, 
+1002fd57     sub_1002d6a0(&var_150, &data_100715c8, sub_10001ad0(&var_150, &filename, eax_3)) + 1)
+1002fd69 var_8_1.b = 1
+1002fd6d int32_t* eax_7 = sub_10003830(&var_138, "qcplatform.json", 0xf)
+1002fd79 char* ecx_5 = &var_138
+1002fd80 int32_t var_124
+1002fd80 
+1002fd80 if (var_124 u>= 0x10)
+1002fd80     ecx_5 = var_138
+1002fd80 
+1002fd8a uint32_t result = sub_1002f760(eax_7, arg3, ecx_5, arg2, arg4)
+1002fd8a 
+1002fd9d if (var_124 u>= 0x10)
+1002fda7     sub_10001d60(var_138, var_124 + 1)
+1002fda7 
+1002fdb2 int32_t var_124_1 = 0xf
+1002fdbc int32_t var_128 = 0
+1002fdc6 var_138.b = 0
+1002fdc6 
+1002fdd0 if (var_13c u>= 0x10)
+1002fdda     sub_10001d60(var_150.d, var_13c + 1)
+1002fdda 
+1002fde4 fsbase->NtTib.ExceptionList = ExceptionList
+1002fdf4 CookieCheckFunction(result)
+1002fdfc return result

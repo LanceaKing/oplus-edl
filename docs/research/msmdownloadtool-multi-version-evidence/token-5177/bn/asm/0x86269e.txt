@@ -1,0 +1,11 @@
+0086269e mov     eax, dword [ebp]
+008626a2 mov     ecx, dword [eax]
+008626a4 mov     dword [ebp], ecx
+008626a8 movzx   eax, ax
+008626ab mov     eax, dword [esi]
+008626ad cmc     
+008626ae lea     esi, [esi+0x4]
+008626b4 cmc     
+008626b5 cmp     bp, cx
+008626b8 xor     eax, ebx
+008626ba jmp     0x1108196

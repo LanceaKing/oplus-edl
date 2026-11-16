@@ -1,0 +1,441 @@
+100097b3 int32_t var_8 = 0xffffffff
+100097b5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_100612a4
+100097c0 TEB* fsbase
+100097c0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+100097cc int32_t __saved_ebp
+100097cc int32_t eax_2 = __security_cookie ^ &__saved_ebp
+100097d8 fsbase->NtTib.ExceptionList = &ExceptionList
+100097de int32_t var_ec = 0
+100097eb int32_t var_8_1 = 0
+100097f2 int64_t var_74 = 0
+100097fa char* esi = arg1.d
+100097ff int32_t* arg_8
+100097ff 
+100097ff if (arg_8 != 0)
+10009801     arg_8[1] += 1
+10009801 
+10009805 var_74:4.d = arg_8
+10009808 var_74.d = esi
+1000980b var_8_1.b = 2
+1000980f reportIssueCancel(eax_2)
+10009815 int32_t ecx = *(esi + 0x1c)
+1000982d write_flash_event_flash_start(ecx + 0x9e4, ecx + 0x444, ecx + 0xb4c)
+10009838 int32_t var_124_1 = 0
+1000983f int32_t var_120_1 = 0
+10009846 int32_t var_120_2 = 0xf
+10009851 int32_t var_124_2 = 0
+10009867 char* var_134
+10009867 var_134.b = 0
+1000986a sub_10001ad0(&var_134, &data_1006a03d, 0)
+10009873 int32_t var_130
+10009873 sub_10024b10(esi, 0, var_134, var_130)
+1000987d void** var_ec_1 = &var_134
+10009883 int32_t var_124_3 = 0
+1000988a int32_t var_120_3 = 0
+10009891 int32_t var_120_4 = 0xf
+1000989c int32_t var_124_4 = 0
+100098b2 var_134.b = 0
+100098b5 sub_10001ad0(&var_134, &data_1006a03d, 0)
+100098bd var_8_1.b = 3
+100098c3 int32_t var_13c_2 = 0
+100098ca int32_t var_138_3 = 0
+100098d1 int32_t var_138_4 = 0xf
+100098dc int32_t var_13c_3 = 0
+100098f2 int32_t VfDelta
+100098f2 VfDelta.b = 0
+100098f5 sub_10001ad0(&VfDelta, "init", 4)
+100098fe var_8_1.b = 2
+10009902 int32_t var_148
+10009902 int32_t var_144
+10009902 int32_t var_140
+10009902 sub_10024c50(esi, 1, VfDelta, var_148, var_144, var_140)
+1000990e uint32_t edi = sub_1000f050(esi)
+10009912 char* var_124_5
+10009912 char var_10c
+10009912 
+10009912 if (edi == 0)
+10009966     if (*(esi + 0x304da8) != 0)
+10009971         char** var_f0_1 = &var_134
+10009977         int32_t var_124_6 = 0
+1000997e         int32_t var_120_6 = 0
+10009985         int32_t var_120_7 = 0xf
+10009990         int32_t var_124_7 = 0
+100099a6         var_134.b = 0
+100099a9         sub_10001ad0(&var_134, &data_1006a03d, 0)
+100099b1         var_8_1.b = 4
+100099b7         int32_t var_13c_6 = 0
+100099be         int32_t var_138_7 = 0
+100099c5         int32_t var_138_8 = 0xf
+100099d0         int32_t var_13c_7 = 0
+100099e6         VfDelta.b = 0
+100099e9         sub_10001ad0(&VfDelta, "circuit_on", 0xa)
+100099f2         var_8_1.b = 2
+100099f6         sub_10024c50(esi, 1)
+100099f6     
+10009a01     *(esi + 0x304dac) = clock()
+10009a10     edi = op_device_open(*(esi + 0x1c))
+10009a10     
+10009a17     if (edi == 0)
+10009a67         int32_t ecx_10 = *(esi + 0x1c)
+10009a87         opdbg_log("QCFlashAgent::doFlashThreadFuc", 0x10e, "[INFO][%s] [%s] Download start.", 
+10009a87             ecx_10 + 0x9e4, ecx_10 + 0x444)
+10009a98         int32_t edi_1 = *(*(esi + 0x1764) + 0xa0)
+10009a98         
+10009aa1         if (edi_1 != 1)
+10009b35             char* eax_25 = sub_1000d920(esi, &var_10c)
+10009b35             
+10009b41             if (*(eax_25 + 0x14) u>= 0x10)
+10009b43                 eax_25 = *eax_25
+10009b43             
+10009b50             int32_t eax_26 = sub_10007cc0(eax_25, eax_25[0x10].d, eax_25, "eMMC", 4)
+10009b5a             char var_e5_1
+10009b5a             
+10009b5a             if (eax_26 == 0)
+10009b5c                 var_e5_1 = 1
+10009b5c             
+10009b66             if (eax_26 != 0 || edi_1 != 2)
+10009b68                 var_e5_1 = 0
+10009b68             
+10009b78             int32_t var_f8
+10009b78             
+10009b78             if (var_f8 u>= 0x10)
+10009b82                 sub_10001d60(var_10c.d, var_f8 + 1)
+10009b82             
+10009b8e             if (var_e5_1 != 0)
+10009b93                 *(*(esi + 0x28) + 8) = 1
+10009b93             
+10009b5a             goto label_10009b9f
+10009b5a         
+10009aac         edi = sub_1000ee80(esi)
+10009aac         
+10009ab0         if (edi == 0)
+10009b9f         label_10009b9f:
+10009b9f             int32_t var_124_12 = 0
+10009ba6             int32_t var_120_17 = 0
+10009bad             int32_t var_120_18 = 0xf
+10009bb8             var_124_5 = nullptr
+10009bce             var_134.b = 0
+10009bd1             sub_10001ad0(&var_134, &data_1006a03d, 0)
+10009bda             sub_10024b10(esi, 3)
+10009be1             uint32_t eax_31 = sub_1000d960(esi)
+10009be6             edi = eax_31
+10009be6             
+10009bea             if (edi == 0)
+10009bf1                 uint32_t var_124_13 = eax_31
+10009bf4                 uint32_t var_120_19 = eax_31
+10009bf7                 int32_t var_120_20 = 0xf
+10009c02                 var_124_5 = eax_31
+10009c14                 var_134.b = 0
+10009c17                 sub_10001ad0(&var_134, &data_1006a03d, 0)
+10009c20                 sub_10024b10(esi, 0x64)
+10009ab0         else
+10009ab6             void* edx_1 = *(esi + 0x3062c8)
+10009abc             void* const eax_21 = &data_1006a03d
+10009ac1             int32_t ecx_12 = *(esi + 0x1c)
+10009ac1             
+10009acc             if (edx_1 != 0)
+10009acc                 eax_21 = edx_1
+10009acc             
+10009adf             char const* const var_130_4 =
+10009adf                 "[%s] [%s] ERROR: Failed to initialize manual mode, ret=%d, errMsg=%s."
+10009ae4             var_134 = 0x115
+10009aee             opdbg_log("QCFlashAgent::doFlashThreadFuc", var_134, var_130_4, ecx_12 + 0x9e4, 
+10009aee                 ecx_12 + 0x444, edi, eax_21)
+10009aee             
+10009aff             if (edx_1 == 0)
+10009b21                 sub_100248b0(esi, 0x7d10, "manual_mode_init_error()")
+10009aff             else
+10009b01                 void* var_120_12 = edx_1
+10009b09                 sub_100248b0(esi, edi, "%s")
+10009a17     else
+10009a1f         enum WIN32_ERROR var_120_9 = GetLastError()
+10009a26         sub_10024880(esi, "qcom_device_open_failed(%d)")
+10009a2b         int32_t var_12c_1 = *(esi + 0x3062c8)
+10009a31         char* var_130_2 = &data_1006cd98
+10009a36         var_134 = 0x7533
+10009a3c         sub_100248b0(esi, var_134, var_130_2)
+10009a59         opdbg_log("QCFlashAgent::doFlashThreadFuc", 0x10b, "[INFO][%s] Failed to open device.", 
+10009a59             *(esi + 0x1c) + 0x444)
+10009912 else
+1000991a     sub_10024880(esi, "no_proper_solution(%)")
+1000991f     int32_t var_128_1 = *(esi + 0x3062c8)
+10009925     char* var_12c = &data_1006cd98
+1000992a     int32_t var_130_1 = 0x7d0f
+1000992f     var_134 = esi
+10009930     sub_100248b0(var_134, var_130_1, var_12c)
+1000993c     reportIssue("E0101010", 0)
+10009951     opdbg_log("QCFlashAgent::doFlashThreadFuc", 0xfd, "[INFO] Failed to prepare flashing solution.")
+10009951 
+10009c28 op_device_close(*(esi + 0x1c))
+10009c2e int32_t* ecx_19 = *(esi + 0x20)
+10009c2e 
+10009c36 if (ecx_19 != 0)
+10009c38     int32_t* ecx_20 = *ecx_19
+10009c38     
+10009c3c     if (ecx_20 != 0)
+10009c40         (*(*ecx_20 + 0x10))()
+10009c40 
+10009c49 *(esi + 0x304db0) = clock()
+10009c49 
+10009c56 if (*(esi + 0x304da4) != 0)
+10009c5a     if (edi == 0)
+10009c5c         reportIssueCancel()
+10009c5c     
+10009c6c     if (sub_10028130(esi) == 1)
+10009c72         sub_10023310(esi, 0)
+10009c7d         int32_t eax_36
+10009c7d         eax_36.b = edi == 0
+10009c83         sub_10022d50(esi, nullptr, eax_36)
+10009c83 
+10009c8a if (edi != 0)
+10009c94     reportIssueEnd()
+10009c8a else
+10009c8c     reportIssueCancel()
+10009c8c 
+10009ca3 int32_t eax_38 = *(esi + 0x304db0) - *(esi + 0x304dac)
+10009cac int128_t var_24 = zx.o(0)
+10009cbb double xmm1_2 = _mm_cvtepi32_pd(zx.q(eax_38)) / 1000.0
+10009cc3 var_124_5.q = xmm1_2
+10009cc8 char const* const var_128_7 = "%.2f"
+10009ccd char* var_12c_5 = &var_24
+10009cce double var_f4 = xmm1_2
+10009cd6 sub_10002230(var_12c_5, var_128_7)
+10009cdb void* eax_39 = *(esi + 0x28)
+10009ce9 int32_t var_120_24 = *(eax_39 + 0x8934)
+10009cef int32_t var_124_14 = *(eax_39 + 0x8930)
+10009cfb int32_t eax_41 = *(esi + 0x1c) + 0x444
+10009d00 var_12c_5.q = var_f4
+10009d06 var_134 = "[INFO] [%s] Time Elapsed: %.2f, total send size: %lld "
+10009d15 opdbg_log("QCFlashAgent::doFlashThreadFuc", 0x149, var_134, eax_41, var_12c_5)
+10009d1b int32_t isReference = 0
+10009d1d struct { void* const pVFTable; void* spare; char name[0x12]; }* targetVoid =
+10009d1d     &class QComPackData `RTTI Type Descriptor'
+10009d22 struct { void* const pVFTable; void* spare; char name[0xe]; }* srcVoid =
+10009d22     &class PackData `RTTI Type Descriptor'
+10009d27 VfDelta = 0
+10009d3a int32_t* eax_43 =
+10009d3a     __RTDynamicCast(*(esi + 0x1764), VfDelta, srcVoid, targetVoid, isReference) + 0x168
+10009d42 int64_t var_3c = 0
+10009d48 sub_1000b700(&var_3c, eax_43)
+10009d4d var_8_1.b = 5
+10009d57 uint32_t var_120_25 = 0xa
+10009d59 char const* const var_124_16 = "TargetName"
+10009d5e int32_t var_f8_1 = 0xf
+10009d68 int32_t var_fc = 0
+10009d72 var_10c = 0
+10009d79 sub_10001ad0(&var_10c, var_124_16, var_120_25)
+10009d84 var_8_1.b = 6
+10009d93 sub_1000bba0(&var_3c, &var_f4, &var_10c)
+10009da1 uint32_t var_120_27 = 0xffffffff
+10009da3 void** eax_45 = var_f4.d + 0x28
+10009da6 int32_t var_40 = 0xf
+10009dad int32_t var_124_18 = 0
+10009db0 int32_t var_44 = 0
+10009db7 char var_54 = 0
+10009dbb sub_10001bd0(&var_54, eax_45, var_124_18, var_120_27)
+10009dc0 var_8_1.b = 8
+10009dc0 
+10009dcd if (var_f8_1 u>= 0x10)
+10009dd7     sub_10001d60(var_10c.d, var_f8_1 + 1)
+10009dd7 
+10009ddf int32_t var_f8_2 = 0xf
+10009de9 char* var_6c
+10009de9 char* var_120_29 = &var_6c
+10009dec int32_t var_fc_1 = 0
+10009df6 var_10c = 0
+10009dfd sub_1000d700(esi, var_120_29)
+10009e02 uint32_t var_120_30 = edi
+10009e06 var_8_1.b = 9
+10009e0d char* var_124_20 = &data_1006cf10
+10009e12 int128_t var_34
+10009e12 char* var_128_9 = &var_34
+10009e13 var_34 = zx.o(0)
+10009e17 sub_10002230(var_128_9, var_124_20)
+10009e1c uint32_t count = 0x70
+10009e24 int32_t c = 0
+10009e26 void var_e4
+10009e26 var_134 = &var_e4
+10009e27 memset(var_134, c, count)
+10009e2f int32_t ecx_29 = 0
+10009e41 char const i
+10009e41 
+10009e41 do
+10009e31     i = *(&var_24 + ecx_29)
+10009e35     ecx_29 += 1
+10009e38     char var_d5[0x11]
+10009e38     var_d5[ecx_29] = i
+10009e41 while (i != 0)
+10009e41 
+10009e47 char const* const ecx_30
+10009e47 
+10009e47 if (var_44 != 0)
+10009e54     ecx_30 = &var_54
+10009e54     
+10009e57     if (var_40 u>= 0x10)
+10009e57         ecx_30 = var_54.d
+10009e47 else
+10009e49     ecx_30 = "unknown"
+10009e49 
+10009e5b void var_b4
+10009e5b char* edx_4 = &var_b4
+10009e5b 
+10009e6d do
+10009e61     i = *ecx_30
+10009e63     ecx_30 = &ecx_30[1]
+10009e66     *edx_4 = i
+10009e68     edx_4 = &edx_4[1]
+10009e6d while (i != 0)
+10009e6d 
+10009e73 int32_t var_5c
+10009e73 int32_t var_58
+10009e73 char const* const ecx_31
+10009e73 
+10009e73 if (var_5c != 0)
+10009e80     ecx_31 = &var_6c
+10009e80     
+10009e83     if (var_58 u>= 0x10)
+10009e83         ecx_31 = var_6c
+10009e73 else
+10009e75     ecx_31 = "unknown"
+10009e75 
+10009e87 void var_a4
+10009e87 char* edx_5 = &var_a4
+10009e87 
+10009e9c do
+10009e90     i = *ecx_31
+10009e92     ecx_31 = &ecx_31[1]
+10009e95     *edx_5 = i
+10009e97     edx_5 = &edx_5[1]
+10009e9c while (i != 0)
+10009e9c 
+10009e9e int32_t var_c4 = 0x302e32
+10009ea8 int32_t ecx_32 = 0
+10009ea8 
+10009ec0 do
+10009eb0     i = *(&var_34 + ecx_32)
+10009eb4     ecx_32 += 1
+10009eb7     char var_85[0x11]
+10009eb7     var_85[ecx_32] = i
+10009ec0 while (i != 0)
+10009ec0 
+10009ec4 if (edi == 0)
+10009ecd     *(esi + 0x18) = 2
+10009edc     sub_100235f0(esi, "success", &var_24)
+10009ee6     char** var_f0_2 = &var_134
+10009eec     uint32_t var_124_22 = edi
+10009eef     uint32_t var_120_32 = edi
+10009ef2     int32_t var_120_33 = 0xf
+10009efd     uint32_t var_124_23 = edi
+10009f0f     var_134.b = 0
+10009f12     sub_10001ad0(&var_134, &data_1006a03d, 0)
+10009f1a     var_8_1.b = 0xa
+10009f20     int32_t var_13c_13 = 0
+10009f27     int32_t var_138_17 = 0
+10009f2e     int32_t var_138_18 = 0xf
+10009f39     int32_t var_13c_14 = 0
+10009f4f     VfDelta.b = 0
+10009f52     sub_10001ad0(&VfDelta, "flash_end", 9)
+10009f5b     var_8_1.b = 9
+10009f5f     sub_10024c50(esi, 0)
+10009f74     write_flash_event_flash_success(&var_e4, *(esi + 0x1c) + 0xb4c)
+10009f7a     int32_t ecx_37 = *(esi + 0x1c)
+10009f8b     char const* const var_130_6 = "[INFO] [%s] [%s] Download success."
+10009f90     var_134 = 0x15e
+10009f9a     opdbg_log("QCFlashAgent::doFlashThreadFuc", var_134, var_130_6, ecx_37 + 0x9e4, ecx_37 + 0x444)
+10009ec4 else if (edi != 0x1869f)
+1000a037     *(esi + 0x18) = 3
+1000a046     sub_100235f0(esi, "failed", &var_24)
+1000a04b     int32_t var_120_37 = *(esi + 0x3062c8)
+1000a058     sub_100248b0(esi, edi, "%s")
+1000a060     int32_t eax_59 = *(esi + 0x1c) + 0xb4c
+1000a06c     var_134 = &var_e4
+1000a06d     write_flash_event_flash_failed(var_134, eax_59)
+1000a07d     bool eax_63
+1000a07d     
+1000a07d     if (*(esi + 0x3062a4) != 0)
+1000a087         int32_t var_120_38 = *(esi + 0x1c) + 0x9e4
+1000a090         eax_63 = OtestRetryHelper::isNeedRetry(OtestRetryHelper::GetInstance())
+1000a090     
+1000a098     int32_t var_12c_9
+1000a098     char const* const var_128_13
+1000a098     int32_t var_124_28
+1000a098     int32_t var_120_39
+1000a098     
+1000a098     if (*(esi + 0x3062a4) == 0 || eax_63 == 0)
+1000a0b7         int32_t ecx_45 = *(esi + 0x1c)
+1000a0c0         var_120_39 = ecx_45 + 0x444
+1000a0c7         var_124_28 = ecx_45 + 0x9e4
+1000a0c8         var_128_13 = "[INFO] [%s] [%s] Download failed."
+1000a0cd         var_12c_9 = 0x16f
+1000a098     else
+1000a09a         int32_t ecx_44 = *(esi + 0x1c)
+1000a0a3         var_120_39 = ecx_44 + 0x444
+1000a0aa         var_124_28 = ecx_44 + 0x9e4
+1000a0ab         var_128_13 =
+1000a0ab             "[INFO] [%s] [%s] Download--failed,USB disconnected!, device will retry later!!"
+1000a0b0         var_12c_9 = 0x16d
+1000a0b0     
+1000a0d7     opdbg_log("QCFlashAgent::doFlashThreadFuc", var_12c_9, var_128_13, var_124_28, var_120_39)
+10009fae else
+10009fb7     *(esi + 0x18) = 4
+10009fc0     char** var_f0_3 = &var_134
+10009fcb     sub_10001a60(&var_134, &data_1006a03d)
+10009fd3     var_8_1.b = 0xb
+10009fde     sub_10001a60(&VfDelta, "flash_cancel")
+10009fe7     var_8_1.b = 9
+10009feb     sub_10024c50(esi, 3)
+1000a000     write_flash_event_flash_cancel(&var_e4, *(esi + 0x1c) + 0xb4c)
+1000a006     int32_t ecx_41 = *(esi + 0x1c)
+1000a017     char const* const var_130_7 = "[INFO] [%s] [%s] Download canceled."
+1000a01c     var_134 = 0x164
+1000a026     opdbg_log("QCFlashAgent::doFlashThreadFuc", var_134, var_130_7, ecx_41 + 0x9e4, ecx_41 + 0x444)
+1000a026 
+1000a0e6 if (var_58 u>= 0x10)
+1000a0ed     sub_10001d60(var_6c, var_58 + 1)
+1000a0ed 
+1000a0f5 int32_t var_58_1 = 0xf
+1000a0fc int32_t var_5c_1 = 0
+1000a103 var_6c.b = 0
+1000a103 
+1000a10a if (var_40 u>= 0x10)
+1000a111     sub_10001d60(var_54.d, var_40 + 1)
+1000a111 
+1000a116 int32_t** eax_72 = var_3c.d
+1000a11d int32_t var_40_1 = 0xf
+1000a124 int32_t var_44_1 = 0
+1000a12b var_54 = 0
+1000a138 sub_1000afb0(&var_3c, &var_f4:4, *eax_72, eax_72)
+1000a140 uint32_t eax_73 = sub_1005f684(var_3c.d)
+1000a14b var_8_1.b = 0xc
+1000a14b 
+1000a151 if (arg_8 != 0)
+1000a155     bool cond:13_1 = arg_8[1] != 1
+1000a155     eax_73 = arg_8[1]
+1000a155     arg_8[1] -= 1
+1000a155     
+1000a15a     if (not(cond:13_1))
+1000a160         (**arg_8)()
+1000a164         bool cond:15_1 = arg_8[2] != 1
+1000a164         eax_73 = arg_8[2]
+1000a164         arg_8[2] -= 1
+1000a164         
+1000a169         if (not(cond:15_1))
+1000a16f             eax_73 = (*(*arg_8 + 4))()
+1000a16f 
+1000a172 int32_t var_8_2 = 0xd
+1000a172 
+1000a17e if (arg_8 != 0)
+1000a182     bool cond:14_1 = arg_8[1] != 1
+1000a182     eax_73 = arg_8[1]
+1000a182     arg_8[1] -= 1
+1000a182     
+1000a187     if (not(cond:14_1))
+1000a18d         eax_73 = (**arg_8)()
+1000a18f         int32_t edi_2 = arg_8[2]
+1000a18f         arg_8[2] -= 1
+1000a18f         
+1000a195         if (edi_2 == 1)
+1000a19b             eax_73 = (*(*arg_8 + 4))()
+1000a19b 
+1000a1a1 fsbase->NtTib.ExceptionList = ExceptionList
+1000a1b1 CookieCheckFunction(eax_73)

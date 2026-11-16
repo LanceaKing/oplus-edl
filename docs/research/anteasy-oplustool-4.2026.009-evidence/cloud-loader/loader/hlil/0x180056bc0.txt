@@ -1,0 +1,140 @@
+180056be6 void var_4c8
+180056be6 int64_t var_58 = __security_cookie ^ &var_4c8
+180056bed int64_t* var_428 = arg4
+180056bf1 int64_t* var_498 = arg3
+180056bf9 int64_t* var_4a8 = arg1
+180056c16 int128_t var_408
+180056c16 __builtin_memset(&var_408, 0, 0x50)
+180056c3d int64_t rax_2 = sub_18001acf0(&var_408)
+180056c4b char rax_3 = sub_18005d8f0(rax_2, 0x10)
+180056c52 int128_t var_3f8
+180056c52 char rax_6
+180056c52 char r9
+180056c52 
+180056c52 if (rax_3 != 0)
+180056c5b     uint16_t* rax_4 = sub_18001c4b0(arg5)
+180056c75     rax_6, r9 = sub_18005d930(sub_18001ad90(arg5), rax_4, &var_3f8)
+180056c75 
+180056c7c uint64_t result
+180056c7c int64_t var_478
+180056c7c int128_t var_468[0x2]
+180056c7c int128_t var_448[0x2]
+180056c7c 
+180056c7c if (rax_3 == 0 || rax_6 == 0)
+180057088     var_478 = 6
+180057093     int32_t var_470_2 = 0
+180057097     int32_t var_46c_2 = 0x4b7
+1800570a4     sub_1800023b0(&var_468)
+1800570b5     sub_180002360(&var_448, "loader request binding failed")
+1800570c3     sub_180035500(arg7, &var_478)
+1800570cd     sub_180002ea0(&var_478)
+1800570d2     result.b = 0
+180056c7c else
+180056c8c     void var_398
+180056c8c     sub_180058da0(&var_398, rax_2, 0x10, r9)
+180056c9e     void var_3b8
+180056c9e     char r9_1 = sub_180057100(&var_3b8, j_sub_180057c80())
+180056cc6     void var_1f8
+180056cc6     int64_t* rax_9
+180056cc6     char r9_2
+180056cc6     rax_9, r9_2 = sub_180058da0(&var_1f8, sub_18001ad30(&var_3f8), 0x20, r9_1)
+180056cdf     void var_218
+180056cdf     int64_t* rax_10
+180056cdf     char r9_3
+180056cdf     rax_10, r9_3 = sub_180056700(&var_218, arg2, "\n", r9_2)
+180056d0b     void var_258
+180056d0b     void var_238
+180056d0b     int128_t* rax_12
+180056d0b     char r9_4
+180056d0b     rax_12, r9_4 =
+180056d0b         sub_1800384c0(&var_258, sub_180038450(&var_238, rax_10, var_498, r9_3), &data_180159580)
+180056d60     void var_2d8
+180056d60     void var_2b8
+180056d60     void var_298
+180056d60     void var_278
+180056d60     int128_t* rax_16
+180056d60     char r9_5
+180056d60     rax_16, r9_5 = sub_1800384c0(&var_2d8, 
+180056d60         sub_180038420(&var_2b8, 
+180056d60             sub_1800384c0(&var_298, sub_180038450(&var_278, rax_12, var_428, r9_4), 
+180056d60                 &data_180159580), 
+180056d60             rax_9), 
+180056d60         &data_180159580)
+180056d8b     void var_318
+180056d8b     void var_2f8
+180056d8b     int128_t* rax_18
+180056d8b     char r9_6
+180056d8b     rax_18, r9_6 =
+180056d8b         sub_1800384c0(&var_318, sub_180038450(&var_2f8, rax_16, &var_3b8, r9_5), &data_180159580)
+180056db3     void var_358
+180056db3     void var_338
+180056db3     int128_t* rax_20
+180056db3     char r9_7
+180056db3     rax_20, r9_7 =
+180056db3         sub_1800384c0(&var_358, sub_180038450(&var_338, rax_18, &var_398, r9_6), &data_180159580)
+180056db9     int64_t* rbx_3 = var_4a8
+180056dc8     void var_378
+180056dc8     sub_180038450(&var_378, rax_20, rbx_3, r9_7)
+180056dd2     sub_180002b10(&var_358)
+180056ddf     sub_180002b10(&var_338)
+180056dec     sub_180002b10(&var_318)
+180056df9     sub_180002b10(&var_2f8)
+180056e06     sub_180002b10(&var_2d8)
+180056e13     sub_180002b10(&var_2b8)
+180056e20     sub_180002b10(&var_298)
+180056e2d     sub_180002b10(&var_278)
+180056e3a     sub_180002b10(&var_258)
+180056e47     sub_180002b10(&var_238)
+180056e54     sub_180002b10(&var_218)
+180056e61     sub_180002b10(&var_1f8)
+180056e77     var_4a8.o = *sub_18000e6e0(&var_378, &var_498)
+180056e8d     void var_488
+180056e8d     var_428.o = *sub_18000e6e0(rbx_3 + 0x20, &var_488)
+180056ea5     int128_t var_3d8
+180056ea5     
+180056ea5     if (sub_18005d680(&var_428, &var_4a8, &var_3d8) != 0)
+180056f0e         char const* const rcx_41 = "application/json"
+180056f0e         
+180056f17         if (sub_1800383b0(arg2, &data_180158f8c) != 0)
+180056f17             rcx_41 = "application/octet-stream"
+180056f17         
+180056f1b         var_4a8 = rcx_41
+180056f33         int128_t var_1d8[0x4]
+180056f33         sub_1800565d0(&var_1d8, "Accept", &var_4a8)
+180056f4a         int128_t var_198[0x4]
+180056f4a         sub_180056690(&var_198, "X-Client-ID", rbx_3)
+180056f62         int128_t var_158[0x4]
+180056f62         sub_180056690(&var_158, "X-Timestamp", &var_3b8)
+180056f7a         int128_t var_118[0x4]
+180056f7a         sub_180056610(&var_118, "X-Nonce", &var_398)
+180056f95         int128_t var_d8[0x4]
+180056f95         char r9_8 = sub_180056650(&var_d8, "X-Signature-Version", &data_1801595d0)
+180056fab         int64_t rax_25 = sub_18001ad30(&var_3d8)
+180056fd4         int128_t var_98[0x4]
+180056fd4         sub_1800566d0(&var_98, "X-Signature", sub_180058da0(&var_428, rax_25, 0x20, r9_8))
+180056ff5         var_4a8.o = *__FrameHandler3::TryBlockMap::TryBlockMap(&var_488, &var_1d8, &var_58)
+180057002         sub_180049810(arg6, &var_4a8)
+180057021         sub_1800d2560(&var_1d8, 0x40, 6, sub_18003e750)
+18005702b         sub_180002b10(&var_428)
+18005702b         
+180057041         if (sub_1800383b0(arg2, &data_180158f8c) == 0)
+180057054             j_sub_1800567f0(arg6, "Content-Type", "application/json")
+180057054         
+18005705f         sub_180047eb0(rax_25, 0x20)
+180057064         rbx_3.b = 1
+180056ea5     else
+180056ea7         var_478 = 6
+180056eb2         int32_t var_470_1 = 0
+180056eb6         int32_t var_46c_1 = 0x4b7
+180056ec3         sub_1800023b0(&var_468)
+180056ed4         sub_180002360(&var_448, "loader request signing failed")
+180056ee2         sub_180035500(arg7, &var_478)
+180056eec         sub_180002ea0(&var_478)
+180056ef1         rbx_3.b = 0
+180056ef1     
+18005706a     sub_180002b10(&var_378)
+180057074     sub_180002b10(&var_3b8)
+18005707e     sub_180002b10(&var_398)
+180057083     result = zx.q(rbx_3.b)
+1800570de __security_check_cookie(var_58 ^ &var_4c8)
+1800570f6 return result

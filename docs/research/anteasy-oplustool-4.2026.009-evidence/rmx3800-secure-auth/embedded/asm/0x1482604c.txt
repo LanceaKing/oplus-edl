@@ -1,0 +1,78 @@
+14825ff0 mov     x19, x0
+14825ff4 mov     x0, #0
+14825ff8 mov     sp, x0
+14825ffc mrs     x0, currentel
+14826000 lsr     x0, x0, #0x2
+14826004 cmp     x0, #0x3
+14826008 b.eq    0x1482604c
+1482604c dsb     sy
+14826050 isb     
+14826054 tlbi    alle3
+14826058 ic      iallu
+1482605c dsb     sy
+14826060 isb     
+14826064 mrs     x0, sctlr_el3
+14826068 and     x0, x0, #0xfffffffffffffffe
+1482606c and     x0, x0, #0xfffffffffffffffb
+14826070 orr     x0, x0, #0x8
+14826074 msr     sctlr_el3, x0
+14826078 dsb     sy
+1482607c isb     
+14826080 mrs     x0, scr_el3
+14826084 orr     x0, x0, #0xe00
+14826088 msr     scr_el3, x0
+1482608c ldr     x0, 0x14826148
+14826090 msr     vbar_el3, x0
+14826094 mrs     x0, scr_el3
+14826098 orr     x0, x0, #0x8
+1482609c msr     scr_el3, x0
+148260a0 mrs     x0, sctlr_el3
+148260a4 orr     x0, x0, #0x1000
+148260a8 msr     sctlr_el3, x0
+148260ac isb     
+148260b0 b       0x14826014
+1482600c cmp     x0, #0x1
+14826010 b.eq    0x148260b4
+14826014 ldr     x0, 0x14826130
+14826018 mov     sp, x0
+1482601c ldr     x0, 0x14826138
+14826020 ldr     x1, 0x14826140
+14826024 and     x1, x1, #0xfffffffffffffff0
+14826028 mov     x2, #0
+148260b4 dsb     sy
+148260b8 isb     
+148260bc tlbi    vmalle1
+148260c0 ic      iallu
+148260c4 dsb     sy
+148260c8 isb     
+148260cc mrs     x0, sctlr_el1
+148260d0 and     x0, x0, #0xfffffffffffffffe
+148260d4 and     x0, x0, #0xfffffffffffffffb
+148260d8 orr     x0, x0, #0x8
+148260dc msr     sctlr_el1, x0
+148260e0 dsb     sy
+148260e4 isb     
+148260e8 ldr     x0, 0x14826150
+148260ec msr     vbar_el1, x0
+148260f0 mrs     x0, cpacr_el1
+148260f4 orr     x0, x0, #0x300000
+148260f8 msr     cpacr_el1, x0
+148260fc isb     
+14826100 mrs     x0, isr_el1
+14826104 and     x0, x0, #0x100
+14826108 cbnz    x0, 0x14826128
+1482602c stp     xzr, xzr, [x0], #0x10
+14826030 add     x2, x2, #0x10
+14826034 cmp     x1, x2
+14826038 b.ne    0x1482602c
+1482603c bl      0x148296f4
+14826040 mov     w0, w19
+14826044 bl      0x14826acc
+14826048 bl      0x14826128
+1482610c msr     daifclr, #0x4
+14826110 isb     
+14826114 mrs     x0, sctlr_el1
+14826118 orr     x0, x0, #0x1000
+1482611c orr     x0, x0, #0x800000
+14826120 msr     sctlr_el1, x0
+14826124 b       0x14826014

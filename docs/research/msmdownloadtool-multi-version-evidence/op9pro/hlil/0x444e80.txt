@@ -1,0 +1,138 @@
+00444e83 int32_t var_8 = 0xffffffff
+00444e85 int32_t (* var_c)() = sub_6d0bf0
+00444e90 TEB* fsbase
+00444e90 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00444e99 int32_t __saved_ebp
+00444e99 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00444ea5 fsbase->NtTib.ExceptionList = &ExceptionList
+00444ec2 sub_438ec0(*(*(arg1 + 0x25c) + 4))
+00444ec7 void* eax_4 = *(arg1 + 0x25c)
+00444ec9 *(eax_4 + 4) = eax_4
+00444ecc int32_t* eax_5 = *(arg1 + 0x25c)
+00444ece *eax_5 = eax_5
+00444ed0 void* eax_6 = *(arg1 + 0x25c)
+00444ed2 *(eax_6 + 8) = eax_6
+00444ed5 *(arg1 + 0x260) = 0
+00444ed5 
+00444ede if (arg2 != 0)
+00444f20     if (sub_4431c0("SupportedList") != 0)
+00444f35         int32_t* i = sub_4431c0("Target")
+00444f35         
+00444f39         while (i != 0)
+00444f48             void* eax_10 = sub_4b5880("name")
+00444f4f             int32_t* edi_2
+00444f4f             
+00444f4f             if (eax_10 == 0)
+00444f59                 edi_2 = nullptr
+00444f4f             else
+00444f54                 edi_2 = *(eax_10 + 0x18) + 8
+00444f54             
+00444f63             void* eax_11 = sub_4b5880("ModelVerifyPrjName")
+00444f6a             int32_t* edx_2
+00444f6a             
+00444f6a             if (eax_11 == 0)
+00444f74                 edx_2 = nullptr
+00444f6a             else
+00444f6f                 edx_2 = *(eax_11 + 0x18) + 8
+00444f6f             
+00444f76             bool cond:0_1 = *edx_2 != 0
+00444f79             int32_t var_38_1 = 0xf
+00444f80             int32_t var_3c_1 = 0
+00444f87             char var_4c = 0
+00444f8b             void* ecx_8
+00444f8b             
+00444f8b             if (cond:0_1)
+00444f91                 char* ecx_9 = edx_2
+00444f91                 
+00444f9b                 do
+00444f96                     eax_11.b = *ecx_9
+00444f98                     ecx_9 = &ecx_9[1]
+00444f9b                 while (eax_11.b != 0)
+00444f9b                 
+00444f9d                 ecx_8 = ecx_9 - &ecx_9[1]
+00444f8b             else
+00444f8d                 ecx_8 = nullptr
+00444f8d             
+00444fa4             sub_412e10(&var_4c, edx_2, ecx_8)
+00444fa9             int32_t var_8_1 = 0
+00444fb0             char* esi_2 = &var_4c
+00444fb0             
+00444fb7             if (var_38_1 u>= 0x10)
+00444fb7                 esi_2 = var_4c.d
+00444fb7             
+00444fc2             *__errno(eax_2) = 0
+00444fcd             int32_t var_58
+00444fcd             int32_t eax_13 = sub_68cc5c(esi_2, &var_58, 0x10)
+00444fcd             
+00444fdb             if (esi_2 == var_58)
+004450d4                 sub_6c69fd("invalid stoul argument")
+004450d4                 noreturn
+004450d4             
+00444fe9             if (*__errno() == 0x22)
+004450ca                 sub_6c6a59("stoul argument out of range")
+004450ca                 noreturn
+004450ca             
+00444fef             int32_t var_8_2 = 0xffffffff
+00444fef             
+00444ffa             if (var_38_1 u>= 0x10)
+00444fff                 sub_56c751(var_4c.d)
+00444fff             
+00445007             int32_t* esi_3 = i[0xa]
+00445007             
+0044500c             if (esi_3 == 0)
+00445022             label_445022:
+00445022                 i = nullptr
+0044500c             else
+00445014                 while (true)
+00445019                     if ((*(*esi_3 + 0x18))() != 0)
+00445046                         i = (*(*esi_3 + 0x18))()
+00445048                         break
+00445048                     
+0044501b                     esi_3 = esi_3[0xa]
+0044501b                     
+00445020                     if (esi_3 == 0)
+00445020                         goto label_445022
+00445020             
+00445024             bool cond:1_1 = *edi_2 != 0
+00445027             int32_t var_20_1 = 0xf
+0044502e             int32_t var_24_1 = 0
+00445035             char var_34 = 0
+00445039             void* ecx_12
+00445039             
+00445039             if (cond:1_1)
+0044504a                 char* ecx_14 = edi_2
+00445055                 int32_t* eax_14
+00445055                 
+00445055                 do
+00445050                     eax_14.b = *ecx_14
+00445052                     ecx_14 = &ecx_14[1]
+00445055                 while (eax_14.b != 0)
+00445057                 ecx_12 = ecx_14 - &ecx_14[1]
+00445039             else
+0044503b                 ecx_12 = nullptr
+0044503b             
+0044505e             sub_412e10(&var_34, edi_2, ecx_12)
+00445066             int32_t var_1c_1 = eax_13
+00445070             int32_t var_8_3 = 1
+00445077             void* eax_18
+00445077             void* ecx_17
+00445077             eax_18, ecx_17 = sub_44d360(&var_34)
+0044507c             void* var_74_6 = eax_18
+00445080             void* var_78_4 = eax_18 + 0x10
+00445089             void* var_60
+00445089             sub_44d3a0(arg1 + 0x25c, &var_60, ecx_17)
+0044508e             int32_t var_8_4 = 0xffffffff
+0044508e             
+00445099             if (var_20_1 u>= 0x10)
+0044509e                 sub_56c751(var_34.d)
+0044509e             
+004450a6             int32_t var_20_2 = 0xf
+004450ad             int32_t var_24_2 = 0
+004450b4             var_34 = 0
+00444f20     else
+00444eec         sub_4d6500(&data_7e4a58, 4, "Can't find ATO supported list element\n", eax_2)
+00444ede else
+00444eec     sub_4d6500(&data_7e4a58, 4, "ATO element doesn't exist. Skip.\n", eax_2)
+00444eec 
+00444ef7 fsbase->NtTib.ExceptionList = ExceptionList
+00444f0f return sub_68804f()

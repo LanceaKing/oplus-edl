@@ -1,0 +1,214 @@
+1002b15b _memset(arg1 + 0x5578, 0, 0x1000)
+1002b160 char* edx = arg1 + 0x104
+1002b169 char* esi_1 = edx
+1002b175 char i
+1002b175 
+1002b175 do
+1002b170     i = *edx
+1002b172     edx = &edx[1]
+1002b175 while (i != 0)
+1002b175 
+1002b178 void* edx_1 = edx - esi_1
+1002b17a void* edi = arg1 + 0x5577
+1002b17a 
+1002b186 do
+1002b180     i = *(edi + 1)
+1002b183     edi += 1
+1002b186 while (i != 0)
+1002b186 
+1002b18d int32_t esi_2
+1002b18d int32_t edi_1
+1002b18d edi_1, esi_2 = __builtin_memcpy(edi, esi_1, edx_1 u>> 2 << 2)
+1002b194 __builtin_memcpy(edi_1, esi_2, edx_1 & 3)
+1002b196 void* ecx_4 = arg1 + 0x5577
+1002b196 
+1002b1a8 do
+1002b1a0     i = *(ecx_4 + 1)
+1002b1a3     ecx_4 += 1
+1002b1a8 while (i != 0)
+1002b1a8 
+1002b1b2 __builtin_strncpy(ecx_4, "\napp_id=", 9)
+1002b1b4 char* edx_3 = arg1 + 0x204
+1002b1bf char* esi_3 = edx_3
+1002b1d5 char i_1
+1002b1d5 
+1002b1d5 do
+1002b1d0     i_1 = *edx_3
+1002b1d2     edx_3 = &edx_3[1]
+1002b1d5 while (i_1 != 0)
+1002b1d5 
+1002b1d7 void* edx_4 = edx_3 - esi_3
+1002b1d9 void* edi_2 = arg1 + 0x5577
+1002b1d9 
+1002b1e6 do
+1002b1e0     i_1 = *(edi_2 + 1)
+1002b1e3     edi_2 += 1
+1002b1e6 while (i_1 != 0)
+1002b1e6 
+1002b1ed int32_t esi_4
+1002b1ed int32_t edi_3
+1002b1ed edi_3, esi_4 = __builtin_memcpy(edi_2, esi_3, edx_4 u>> 2 << 2)
+1002b1f4 __builtin_memcpy(edi_3, esi_4, edx_4 & 3)
+1002b1f6 void* ecx_9 = arg1 + 0x5577
+1002b1f6 
+1002b208 do
+1002b200     i_1 = *(ecx_9 + 1)
+1002b203     ecx_9 += 1
+1002b208 while (i_1 != 0)
+1002b208 
+1002b212 __builtin_strcpy(ecx_9, "\ns_msg=")
+1002b214 char* edx_6 = arg1 + 0xd64
+1002b21f char* esi_5 = edx_6
+1002b229 char i_2
+1002b229 
+1002b229 do
+1002b224     i_2 = *edx_6
+1002b226     edx_6 = &edx_6[1]
+1002b229 while (i_2 != 0)
+1002b229 
+1002b22b void* edx_7 = edx_6 - esi_5
+1002b22d void* edi_4 = arg1 + 0x5577
+1002b22d 
+1002b236 do
+1002b230     i_2 = *(edi_4 + 1)
+1002b233     edi_4 += 1
+1002b236 while (i_2 != 0)
+1002b236 
+1002b23d int32_t esi_6
+1002b23d int32_t edi_5
+1002b23d edi_5, esi_6 = __builtin_memcpy(edi_4, esi_5, edx_7 u>> 2 << 2)
+1002b244 __builtin_memcpy(edi_5, esi_6, edx_7 & 3)
+1002b246 void* edi_8 = arg1
+1002b249 char* edx_8 = edi_8 + 0x1d64
+1002b24f char* ecx_14 = edx_8
+1002b24f 
+1002b259 do
+1002b254     i_2 = *ecx_14
+1002b256     ecx_14 = &ecx_14[1]
+1002b259 while (i_2 != 0)
+1002b259 
+1002b25d if (ecx_14 != &ecx_14[1])
+1002b25f     void* ecx_16 = arg1 + 0x5577
+1002b25f     
+1002b26a     do
+1002b262         i_2 = *(ecx_16 + 1)
+1002b265         ecx_16 += 1
+1002b26a     while (i_2 != 0)
+1002b26a     
+1002b271     char* esi_8 = edx_8
+1002b273     __builtin_strcpy(ecx_16, "\ns_msg_c=")
+1002b273     
+1002b28c     do
+1002b287         i_2 = *edx_8
+1002b289         edx_8 = &edx_8[1]
+1002b28c     while (i_2 != 0)
+1002b28c     
+1002b28e     void* edx_9 = edx_8 - esi_8
+1002b290     void* edi_6 = arg1 + 0x5577
+1002b290     
+1002b299     do
+1002b293         i_2 = *(edi_6 + 1)
+1002b296         edi_6 += 1
+1002b299     while (i_2 != 0)
+1002b299     
+1002b2a0     int32_t esi_9
+1002b2a0     int32_t edi_7
+1002b2a0     edi_7, esi_9 = __builtin_memcpy(edi_6, esi_8, edx_9 u>> 2 << 2)
+1002b2a7     __builtin_memcpy(edi_7, esi_9, edx_9 & 3)
+1002b2a9     edi_8 = arg1
+1002b2a9 
+1002b2ac void* ecx_21 = arg1 + 0x5577
+1002b2ac 
+1002b2b8 do
+1002b2b0     i_2 = *(ecx_21 + 1)
+1002b2b3     ecx_21 += 1
+1002b2b8 while (i_2 != 0)
+1002b2b8 
+1002b2bf char* edx_10 = edi_8 + 0x1564
+1002b2c5 __builtin_strncpy(ecx_21, "\ns_msg_md_5=", 0xd)
+1002b2c7 char* esi_10 = edx_10
+1002b2e6 char i_3
+1002b2e6 
+1002b2e6 do
+1002b2e1     i_3 = *edx_10
+1002b2e3     edx_10 = &edx_10[1]
+1002b2e6 while (i_3 != 0)
+1002b2e6 
+1002b2e8 int32_t edx_11 = edx_10 - esi_10
+1002b2ea void* edi_9 = arg1 + 0x5577
+1002b2ea 
+1002b2f6 do
+1002b2f0     i_3 = *(edi_9 + 1)
+1002b2f3     edi_9 += 1
+1002b2f6 while (i_3 != 0)
+1002b2f6 
+1002b2fd int32_t esi_11
+1002b2fd int32_t edi_10
+1002b2fd edi_10, esi_11 = __builtin_memcpy(edi_9, esi_10, edx_11 u>> 2 << 2)
+1002b304 __builtin_memcpy(edi_10, esi_11, edx_11 & 3)
+1002b306 void* ecx_26 = arg1 + 0x5577
+1002b306 
+1002b318 do
+1002b310     i_3 = *(ecx_26 + 1)
+1002b313     ecx_26 += 1
+1002b318 while (i_3 != 0)
+1002b318 
+1002b322 __builtin_strcpy(ecx_26, "\ntimestamp=")
+1002b324 char* edx_13 = arg1 + 0xcc4
+1002b32f char* esi_12 = edx_13
+1002b345 char i_4
+1002b345 
+1002b345 do
+1002b340     i_4 = *edx_13
+1002b342     edx_13 = &edx_13[1]
+1002b345 while (i_4 != 0)
+1002b345 
+1002b347 void* edx_14 = edx_13 - esi_12
+1002b349 void* edi_11 = arg1 + 0x5577
+1002b349 
+1002b356 do
+1002b350     i_4 = *(edi_11 + 1)
+1002b353     edi_11 += 1
+1002b356 while (i_4 != 0)
+1002b356 
+1002b35d int32_t esi_13
+1002b35d int32_t edi_12
+1002b35d edi_12, esi_13 = __builtin_memcpy(edi_11, esi_12, edx_14 u>> 2 << 2)
+1002b364 __builtin_memcpy(edi_12, esi_13, edx_14 & 3)
+1002b366 int16_t* edi_13 = arg1 + 0x5577
+1002b366 
+1002b378 do
+1002b370     i_4 = *(edi_13 + 1)
+1002b373     edi_13 += 1
+1002b378 while (i_4 != 0)
+1002b378 
+1002b383 char* edx_16 = arg1 + 0x244
+1002b389 *edi_13 = 0xa
+1002b38c char* esi_14 = edx_16
+1002b38c 
+1002b395 do
+1002b390     i_4 = *edx_16
+1002b392     edx_16 = &edx_16[1]
+1002b395 while (i_4 != 0)
+1002b395 
+1002b397 void* edx_17 = edx_16 - esi_14
+1002b399 void* edi_14 = arg1 + 0x5577
+1002b399 
+1002b3a6 do
+1002b3a0     i_4 = *(edi_14 + 1)
+1002b3a3     edi_14 += 1
+1002b3a6 while (i_4 != 0)
+1002b3a6 
+1002b3ad int32_t esi_15
+1002b3ad int32_t edi_15
+1002b3ad edi_15, esi_15 = __builtin_memcpy(edi_14, esi_14, edx_17 u>> 2 << 2)
+1002b3b4 __builtin_memcpy(edi_15, esi_15, edx_17 & 3)
+1002b3b6 uint32_t (* ecx_35)[0x4] = arg1 + 0x5578
+1002b3b9 void* edx_18 = ecx_35 + 1
+1002b3b9 
+1002b3c5 do
+1002b3c0     i_4 = *ecx_35
+1002b3c2     ecx_35 += 1
+1002b3c5 while (i_4 != 0)
+1002b3c5 
+1002b3e1 return op_md5_str(arg1 + 0x5578, ecx_35 - edx_18, arg1 + 0xce4)

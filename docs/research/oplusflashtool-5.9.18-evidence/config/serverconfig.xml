@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+  <!-- 服务器配置说明 -->
+  <!-- Type: 服务器类型，目前包括: OCSM、WCSM、ECSM、TOOLSHUB、MES -->
+  <!-- Name: 服务器名称 -->
+  <!-- Addr: 服务器地址 -->
+  <!-- HeadGroup: 服务器使用的分组，主要TOOLSHUB平台使用 -->
+  <!-- BizVersion: 服务器获取公钥时使用的，主要TOOLSHUB平台使用 -->
+  <!-- ShowGetVerifyCode: 是否显示获取验证码 -->
+  <!-- ShowForgetPassword: 是否显示忘记密码 -->
+  <!-- ShowForgetPassword: 是否显示重置密码密码 -->
+  <!-- DefaultVerifyCode: 显示默认验证码 -->
+  <!-- UseRange: 服务器使用范围,主要是哪些工具显示登录入口,多个标识使用,分割：DEV、SALES -->
+  <ServerConfig type="aftersale">
+    <ServerItem Name="OCSM:CHINA">
+      <Type>OCSM</Type>
+      <Name>UI_LOGIN_REGION_CHINA</Name>
+      <Addr>https://api.myoas.com</Addr>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>true</ShowGetVerifyCode>
+      <ShowForgetPassword>true</ShowForgetPassword>
+      <ShowResetPassword>true</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="WCSM:NON_EUROPE">
+      <Type>WCSM</Type>
+      <Name>UI_LOGIN_REGION_NON_EUROPE</Name>
+      <Addr>https://service-sg.myoppo.com</Addr>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>true</ShowForgetPassword>
+      <ShowResetPassword>true</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV,SALES</UseRange>
+    </ServerItem>
+    <ServerItem Name="WCSM:EUROPE">
+      <Type>WCSM</Type>
+      <Name>UI_LOGIN_REGION_EUROPE</Name>
+      <Addr>https://service-eu.myoppo.com</Addr>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>true</ShowForgetPassword>
+      <ShowResetPassword>true</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV,SALES</UseRange>
+    </ServerItem>
+    <ServerItem Name="WCSM:INDIA">
+      <Type>WCSM</Type>
+      <Name>UI_LOGIN_REGION_INDIA</Name>
+      <Addr>https://service-in-wcsm.myoppo.com</Addr>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>true</ShowForgetPassword>
+      <ShowResetPassword>true</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV,SALES</UseRange>
+    </ServerItem>
+    <ServerItem Name="WCSM:NORTH_AMERICA">
+      <Type>WCSM</Type>
+      <Name>UI_LOGIN_REGION_NORTH_AMERICA</Name>
+      <Addr>https://crmna.oneplus.com</Addr>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>true</ShowGetVerifyCode>
+      <ShowForgetPassword>flase</ShowForgetPassword>
+      <ShowResetPassword>true</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV,SALES</UseRange>
+    </ServerItem>
+    <!-- 欧加云控平台配置注意事项 -->
+    <!-- 如果为正式服务器，BizVersion：为common -->
+    <!-- 如果测测试服务器，BizVersion：为common-rsa -->
+    <ServerItem Name="CSM:O+Support">
+      <Type>TOOLSHUB</Type>
+      <Name>UI_LOGIN_REGION_O+Support</Name>
+      <Addr>https://dfs-server-gl.allawntech.com</Addr>
+      <HeadGroup>use_for: default</HeadGroup>
+      <BizVersion>common</BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>true</ShowForgetPassword>
+      <ShowResetPassword>true</ShowResetPassword>
+      <DefaultVerifyCode>000000</DefaultVerifyCode>
+      <UseRange>DEV,SALES</UseRange>
+    </ServerItem>
+    <ServerItem Name="CSM:O+Support">
+      <Type>TOOLSHUB</Type>
+      <Name>UI_LOGIN_REGION_O+Support_TEST</Name>
+      <Addr>https://dfs-server-test.wanyol.com</Addr>
+      <HeadGroup>use_for: default</HeadGroup>
+      <BizVersion>common-rsa</BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>true</ShowForgetPassword>
+      <ShowResetPassword>true</ShowResetPassword>
+      <DefaultVerifyCode>000000</DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="RCSM:India">
+      <Type>RCSM</Type>
+      <Name>UI_LOGIN_REGION_RCSM:India</Name>
+      <Addr>https://rcsm-in.realmeservice.com</Addr>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>true</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV,SALES</UseRange>
+    </ServerItem>
+    <ServerItem Name="RCSM:China">
+      <Type>RCSM</Type>
+      <Name>UI_LOGIN_REGION_RCSM:China</Name>
+      <Addr>https://rcsm-cn.realmeservice.com</Addr>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>true</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV,SALES</UseRange>
+    </ServerItem>
+    <ServerItem Name="RCSM:Europe">
+      <Type>RCSM</Type>
+      <Name>UI_LOGIN_REGION_RCSM:Europe</Name>
+      <Addr>https://rcsm-eu.realmeservice.com</Addr>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>true</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV,SALES</UseRange>
+    </ServerItem>
+    <ServerItem Name="RCSM:Other-Areas">
+      <Type>RCSM</Type>
+      <Name>UI_LOGIN_REGION_RCSM:Other</Name>
+      <Addr>https://rcsm-sg.realmeservice.com</Addr>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>true</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV,SALES</UseRange>
+    </ServerItem>
+  </ServerConfig>
+  <ServerConfig type="dev">
+
+    <ServerItem Name="MES_SERVER_ASY_CHANGAN1_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHANGAN1_CN</Name>
+      <Addr>http://asy1.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="CSM:O+Support">
+      <Type>TOOLSHUB</Type>
+      <Name>UI_LOGIN_REGION_O+Support</Name>
+      <Addr>dfs-server.oppoer.me</Addr>
+      <HeadGroup>use_for: default</HeadGroup>
+      <BizVersion>common</BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>true</ShowForgetPassword>
+      <ShowResetPassword>true</ShowResetPassword>
+      <DefaultVerifyCode>000000</DefaultVerifyCode>
+      <UseRange>DEV,SALES</UseRange>
+    </ServerItem>
+    <ServerItem Name="CSM:O+Support">
+      <Type>TOOLSHUB</Type>
+      <Name>UI_LOGIN_REGION_O+Support</Name>
+      <Addr>dfs-server-test-innerdev.wanyol.com</Addr>
+      <HeadGroup>use_for: default</HeadGroup>
+      <BizVersion>common-rsa</BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>true</ShowForgetPassword>
+      <ShowResetPassword>true</ShowResetPassword>
+      <DefaultVerifyCode>000000</DefaultVerifyCode>
+      <UseRange>DEV,SALES</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_CHANGAN2_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHANGAN2_CN</Name>
+      <Addr>http://asy2.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_CHANGAN3_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHANGAN3_CN</Name>
+      <Addr>http://asy3.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_CHANGAN_TEST_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHANGAN_TEST_CN</Name>
+      <Addr>http://asytest.adc.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_CHANGAN_TEST2_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHANGAN_TEST2_CN</Name>
+      <Addr>http://172.16.255.222</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_CHONGQING_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHONGQING_CN</Name>
+      <Addr>http://cqasy1.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_CHONGQING_TEST_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHONGQING_TEST_CN</Name>
+      <Addr>http://172.20.248.113</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_ID">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_ID</Name>
+      <Addr>http://172.24.100.82</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_TEST_ID">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_TEST_ID</Name>
+      <Addr>http://172.24.100.111</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_FACTORY2_IN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_FACTORY2_IN</Name>
+      <Addr>http://172.24.192.72</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_FACTORY2_TEST_IN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_FACTORY2_TEST_IN</Name>
+      <Addr>http://172.24.157.180</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_IDST_PARK_IN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_IDST_PARK_IN</Name>
+      <Addr>http://inasy3.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_IDST_PARK_TEST_IN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_IDST_PARK_TEST_IN</Name>
+      <Addr>http://172.24.157.187</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_DZ">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_DZ</Name>
+      <Addr>http://172.24.123.37</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+  </ServerConfig>
+  <ServerConfig type="factory">
+    <ServerItem Name="MES_SERVER_ASY_CHANGAN1_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHANGAN1_CN</Name>
+      <Addr>http://asy1.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_CHANGAN2_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHANGAN2_CN</Name>
+      <Addr>http://asy2.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_CHANGAN3_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHANGAN3_CN</Name>
+      <Addr>http://asy3.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_CHANGAN_TEST_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHANGAN_TEST_CN</Name>
+      <Addr>http://asytest.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_CHANGAN_TEST2_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHANGAN_TEST2_CN</Name>
+      <Addr>http://172.16.255.222</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_CHONGQING_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHONGQING_CN</Name>
+      <Addr>http://cqasy1.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_CHONGQING_TEST_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_CHONGQING_TEST_CN</Name>
+      <Addr>http://172.20.248.113</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_ID">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_ID</Name>
+      <Addr>http://172.24.100.82</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_TEST_ID">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_TEST_ID</Name>
+      <Addr>http://172.24.100.111</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_BAN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_BAN</Name>
+      <Addr>http://bdasy1.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_TUR">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_TUR</Name>
+      <Addr>http://trasy1.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_FACTORY2_IN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_FACTORY2_IN</Name>
+      <Addr>http://172.24.192.72</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_FACTORY2_TEST_IN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_FACTORY2_TEST_IN</Name>
+      <Addr>http://172.24.157.180</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_IDST_PARK_IN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_IDST_PARK_IN</Name>
+      <Addr>http://inasy3.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_IDST_PARK_TEST_IN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_IDST_PARK_TEST_IN</Name>
+      <Addr>http://172.24.157.187</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_DZ">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_DZ</Name>
+      <Addr>http://172.24.123.37</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_PAK">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_PAK</Name>
+      <Addr>http://pkasy1.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_PAKTEST">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_PAKTEST</Name>
+      <Addr>http://pkasypre.myoas.com</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_LONGQI_ODM">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_LONGQI_ODM</Name>
+      <Addr>http://172.16.255.221</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_ASY_WENTAI_ODM">
+      <Type>MES</Type>
+      <Name>MES_SERVER_ASY_WENTAI_ODM</Name>
+      <Addr>http://10.250.255.255</Addr>
+      <SmtServer>false</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_CHANGAN1_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_CHANGAN1_CN</Name>
+      <Addr>http://smt1.myoas.com</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_CHANGAN2_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_CHANGAN2_CN</Name>
+      <Addr>http://smt2.myoas.com</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_CHANGAN_TEST_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_CHANGAN_TEST_CN</Name>
+      <Addr>http://smttest.myoas.com</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_CHANGAN_UAT_TEST1">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_CHANGAN_UAT_TEST1</Name>
+      <Addr>http://smt-uat1.oasqa.com</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_CHANGAN_UAT_TEST2">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_CHANGAN_UAT_TEST2</Name>
+      <Addr>http://smt-uat2.oasqa.com</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_IDST_PARK_IN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_IDST_PARK_IN</Name>
+      <Addr>http://insmt3.myoas.com</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_IDST_PARK_TEST_IN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_IDST_PARK_TEST_IN</Name>
+      <Addr>http://172.24.157.177</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_CHONGQING_CN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_CHONGQING_CN</Name>
+      <Addr>http://cqsmt1.myoas.com</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_FACTORY1_BAN">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_FACTORY1_BAN</Name>
+      <Addr>http://bdsmt1.myoas.com</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_FACTORY1_TUR">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_FACTORY1_TUR</Name>
+      <Addr>http://trsmt1.myoas.com</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_LONGQI_ODM">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_LONGQI_ODM</Name>
+      <Addr>http://172.16.255.221</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_WENTAI_ODM">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_WENTAI_ODM</Name>
+      <Addr>http://10.250.255.255</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_CHONGQING_TEST">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_CHONGQING_TEST</Name>
+      <Addr>http://172.20.248.133</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+    <ServerItem Name="MES_SERVER_SMT_CHONGQING_UAT_TEST">
+      <Type>MES</Type>
+      <Name>MES_SERVER_SMT_CHONGQING_UAT_TEST</Name>
+      <Addr>http://cqsmt-uat.oasqa.com</Addr>
+      <SmtServer>true</SmtServer>
+      <HeadGroup></HeadGroup>
+      <BizVersion></BizVersion>
+      <ShowGetVerifyCode>false</ShowGetVerifyCode>
+      <ShowForgetPassword>false</ShowForgetPassword>
+      <ShowResetPassword>false</ShowResetPassword>
+      <DefaultVerifyCode></DefaultVerifyCode>
+      <UseRange>DEV</UseRange>
+    </ServerItem>
+  </ServerConfig>
+  <TrackConfig>
+    <!-- ConfigUrl: 获取埋点配置服务器接口地址 -->
+    <!-- UploadUrl: 埋点事件上传服务器接口地址 -->
+    <!-- ToolsID: 工具ID -->
+    <!-- BrandName: 默认为公司名称 -->
+    <Item name="dev">
+      <ConfigUrl>https://dfs-server-gl.allawntech.com/api/event/trace/getBizCfgByBusinessId</ConfigUrl>
+      <UploadUrl>https://dfs-server-gl.allawntech.com/api/event/trace/saveEventTrace</UploadUrl>
+      <ToolsID>FLASHDEV_TOOL</ToolsID>
+      <BrandName>OPPO</BrandName>
+    </Item>
+    <Item name="factory">
+      <ConfigUrl>https://dfs-server-gl.allawntech.com/api/event/trace/getBizCfgByBusinessId</ConfigUrl>
+      <UploadUrl>https://dfs-server-gl.allawntech.com/api/event/trace/saveEventTrace</UploadUrl>
+      <ToolsID>FLASHFACTORY_TOOL</ToolsID>
+      <BrandName>OPPO</BrandName>
+    </Item>
+    <Item name="aftersale">
+      <ConfigUrl>https://dfs-server-gl.allawntech.com/api/event/trace/getBizCfgByBusinessId</ConfigUrl>
+      <UploadUrl>https://dfs-server-gl.allawntech.com/api/event/trace/saveEventTrace</UploadUrl>
+      <ToolsID>FLASHAFTERSALE_TOOL</ToolsID>
+      <BrandName>OPPO</BrandName>
+    </Item>
+  </TrackConfig>
+  <UpdateServerConfig>
+    <Item area="cn">
+      <ServerUrl>https://diagnostic-tool.coloros.com</ServerUrl>
+    </Item>
+    <Item area="eu">
+      <ServerUrl>https://diagnostic-tool-fr.allawnos.com</ServerUrl>
+    </Item>
+    <Item area="in">
+      <ServerUrl>https://diagnostic-tool-in.allawnos.com</ServerUrl>
+    </Item>
+    <Item area="sg">
+      <ServerUrl>https://diagnostic-tool-sg.allawnos.com</ServerUrl>
+    </Item>
+  </UpdateServerConfig>
+</Config>

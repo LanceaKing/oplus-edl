@@ -1,0 +1,164 @@
+004c03f0 push    ebp
+004c03f1 mov     ebp, esp
+004c03f3 push    ecx
+004c03f4 push    ebx
+004c03f5 push    esi
+004c03f6 mov     esi, ecx
+004c03f8 push    edi
+004c03f9 mov     eax, dword [esi+0x90]
+004c03ff mov     ecx, dword [eax+0xcc]
+004c0405 cmp     ecx, 0x1
+004c0408 je      0x4c0412
+004c0412 sub     esp, 0x18
+004c0415 mov     ecx, esp
+004c0417 push    0xffffffff
+004c0419 push    0x0
+004c041b mov     dword [ecx+0x14], 0xf
+004c0422 mov     dword [ecx+0x10], 0x0
+004c0429 push    eax
+004c042a mov     byte [ecx], 0x0
+004c042d call    0x412b40
+004c0432 lea     ecx, [esi+0x5a0]
+004c0438 call    0x4d1210
+004c040a cmp     ecx, 0x2
+004c040d jne     0x4c043d
+004c0540 mov     eax, dword [edi]
+004c0542 push    dword [eax+0x16c]
+004c0548 push    dword [eax+0x168]
+004c054e mov     eax, dword [esi+0x38]
+004c0551 inc     eax
+004c0552 push    eax
+004c0553 push    0x77d168
+004c0558 push    0x4
+004c055a push    0x7e09e8
+004c055f call    0x4d6270
+004c0564 mov     eax, dword [edi]
+004c0566 add     esp, 0x18
+004c0569 mov     ecx, dword [eax+0x168]
+004c056f cmp     ecx, 0x3
+004c0572 ja      0x4c05f0
+004c0511 lea     edi, [esi+0x2c0]
+004c0517 cmp     byte [esi+0x24], al
+004c051a je      0x4c0523
+004c043d mov     ecx, dword [esi+0x5a0]
+004c0443 lea     edi, [esi+0x5a0]
+004c0449 mov     eax, dword [esi+0x58]
+004c044c sub     esp, 0x18
+004c044f mov     dword [ecx+0x98], eax
+004c0455 mov     ecx, dword [edi]
+004c0457 mov     eax, dword [esi+0x570]
+004c045d mov     dword [ecx+0x9c], eax
+004c0463 mov     ecx, esp
+004c0465 mov     eax, dword [esi+0x90]
+004c046b push    0xffffffff
+004c046d add     eax, 0x30
+004c0470 push    0x0
+004c0472 mov     dword [ecx+0x14], 0xf
+004c0479 mov     dword [ecx+0x10], 0x0
+004c0480 push    eax
+004c0481 mov     byte [ecx], 0x0
+004c0484 call    0x412b40
+004c0489 mov     ecx, edi
+004c048b call    0x4d13f0
+004c0490 mov     eax, dword [esi+0x90]
+004c0496 sub     esp, 0x18
+004c0499 mov     ecx, esp
+004c049b add     eax, 0xe4
+004c04a0 push    0xffffffff
+004c04a2 push    0x0
+004c04a4 mov     dword [ecx+0x14], 0xf
+004c04ab mov     dword [ecx+0x10], 0x0
+004c04b2 push    eax
+004c04b3 mov     byte [ecx], 0x0
+004c04b6 call    0x412b40
+004c04bb mov     ecx, edi
+004c04bd call    0x4d12b0
+004c04c2 mov     eax, dword [esi+0x90]
+004c04c8 sub     esp, 0x18
+004c04cb mov     ecx, esp
+004c04cd add     eax, 0xfc
+004c04d2 push    0xffffffff
+004c04d4 push    0x0
+004c04d6 mov     dword [ecx+0x14], 0xf
+004c04dd mov     dword [ecx+0x10], 0x0
+004c04e4 push    eax
+004c04e5 mov     byte [ecx], 0x0
+004c04e8 call    0x412b40
+004c04ed mov     ecx, edi
+004c04ef call    0x4d1350
+004c04f4 mov     ecx, dword [edi]
+004c04f6 call    0x4d4e00
+004c04fb mov     ecx, dword [edi]
+004c04fd call    0x4d4e80
+004c0502 mov     ecx, dword [esi+0x34]
+004c0505 push    edi
+004c0506 call    0x4ceb40
+004c050b mov     ebx, eax
+004c050d test    ebx, ebx
+004c050f jne     0x4c0540
+004c040f add     eax, 0x18
+004c05f0 cmp     byte [esi+0x24], 0x0
+004c05f4 lea     eax, [esi+0x2c0]
+004c05fa je      0x4c0603
+004c0574 jmp     dword [ecx*4+0x4c063c]
+004c0523 push    0x77d118
+004c051c push    0x77d044
+004c0521 jmp     0x4c0528
+004c0603 push    0x77d230
+004c05fc push    0x77d21c
+004c0601 jmp     0x4c0608
+004c057b cmp     dword [eax+0x16c], 0x0
+004c0582 je      0x4c0611
+004c05a2 cmp     byte [esi+0x24], 0x0
+004c05a6 lea     eax, [esi+0x2c0]
+004c05ac je      0x4c05b5
+004c05bc cmp     byte [esi+0x24], 0x0
+004c05c0 lea     eax, [esi+0x2c0]
+004c05c6 je      0x4c05cf
+004c05d6 cmp     byte [esi+0x24], 0x0
+004c05da lea     eax, [esi+0x2c0]
+004c05e0 je      0x4c05e9
+004c0621 push    eax
+004c0622 push    0x178c
+004c0627 push    dword [esi+0x3c]
+004c062a call    dword [0x6f19d4]
+004c0630 pop     edi
+004c0631 pop     esi
+004c0632 mov     eax, ebx
+004c0634 pop     ebx
+004c0635 mov     esp, ebp
+004c0637 pop     ebp
+004c0638 retn    
+004c0528 push    edi
+004c0529 call    0x4c2470
+004c052e movzx   eax, word [esi+0x38]
+004c0532 add     esp, 0x8
+004c0535 or      eax, 0x10000
+004c053a push    edi
+004c053b jmp     0x4c0621
+004c0608 push    eax
+004c0609 call    0x4c2470
+004c060e add     esp, 0x8
+004c0611 lea     eax, [esi+0x2c0]
+004c0617 push    eax
+004c0618 movzx   eax, word [esi+0x38]
+004c061c or      eax, 0x1010000
+004c0588 cmp     byte [esi+0x24], 0x0
+004c058c lea     eax, [esi+0x2c0]
+004c0592 je      0x4c059b
+004c05b5 push    0x77d1f0
+004c05ba jmp     0x4c0608
+004c05ae push    0x77d1e0
+004c05b3 jmp     0x4c0608
+004c05cf push    0x77d1a4
+004c05d4 jmp     0x4c0608
+004c05c8 push    0x77d188
+004c05cd jmp     0x4c0608
+004c05e9 push    0x77d26c
+004c05ee jmp     0x4c0608
+004c05e2 push    0x77d25c
+004c05e7 jmp     0x4c0608
+004c059b push    0x77d0e8
+004c05a0 jmp     0x4c0608
+004c0594 push    0x77d0d4
+004c0599 jmp     0x4c0608

@@ -1,0 +1,207 @@
+10009473 int32_t var_8 = 0xffffffff
+10009475 int32_t (* var_c)(struct EHRegistrationNode* arg1) =
+10009475     __ehhandler$?_Init@?$numpunct@D@std@@IAEXABV_Locinfo@2@_N@Z
+10009480 TEB* fsbase
+10009480 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+10009489 int32_t __saved_ebp
+10009489 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+10009495 fsbase->NtTib.ExceptionList = &ExceptionList
+100094a0 int32_t var_8_1 = 0
+100094a7 void** edx = *this
+100094a7 
+100094ad if (edx[5] u>= 0x10)
+100094af     edx = *edx
+100094af 
+100094b4 uint32_t ecx
+100094b4 
+100094b4 if (*edx != 0)
+100094ba     void** ecx_1 = edx
+100094bc     void* esi_1 = ecx_1 + 1
+100094c5     char i
+100094c5     
+100094c5     do
+100094c0         i = *ecx_1
+100094c2         ecx_1 += 1
+100094c5     while (i != 0)
+100094c7     ecx = ecx_1 - esi_1
+100094b4 else
+100094b6     ecx = 0
+100094b6 
+100094ce sub_10001ad0(arg2.d, edx, ecx)
+100094d3 void* eax_3 = *this
+100094d8 int64_t var_20 = 0
+100094dd int32_t var_18 = 0
+100094ea *(arg2.d + 0x304da8) = *(eax_3 + 0x1c)
+100094f8 *(arg2.d + 0x304e24) = *(*this + 0x70)
+10009506 *(arg2.d + 0x304e20) = *(*this + 0x74)
+10009514 *(arg2.d + 0x3062a4) = *(*this + 0x20)
+10009523 sub_1000abf0(&var_20, *this + 0x64)
+10009528 var_8_1.b = 1
+1000952c int32_t* eax_13 = var_20.d
+1000952f int32_t* esi_2 = eax_13
+1000952f 
+1000953a if (eax_13 != var_20:4.d)
+10009540     while (true)
+10009540         void** ebx_2 = *esi_2
+10009546         int32_t* var_28_1 = ebx_2
+10009550         void* var_44
+10009550         char* edx_1 = sub_10043e80(*ebx_2, &var_44)
+10009550         
+10009556         if (*(edx_1 + 0x14) u>= 0x10)
+10009558             edx_1 = *edx_1
+10009558         
+1000955d         char* edi_1 = &ebx_2[2]
+10009562         int32_t ecx_9 = *(arg2.d + 0x1c)
+10009582         opdbg_log("QCFlashAgent::initWorker", 0xce, 
+10009582             "[%s] [%s] Profile data: pack name = %s, chip id = %s", ecx_9 + 0x9e4, ecx_9 + 0x444, 
+10009582             edx_1, edi_1, eax_2)
+10009591         int32_t var_30
+10009591         
+10009591         if (var_30 u>= 0x10)
+10009598             sub_10001d60(var_44, var_30 + 1)
+10009598         
+100095a6         void* edx_2
+100095a6         char* ebx_1
+100095a6         
+100095a6         if (*(*this + 0x20) == 0)
+10009624             char* ecx_14 = edi_1
+10009635             void* eax_21
+10009635             
+10009635             do
+10009630                 eax_21.b = *ecx_14
+10009632                 ecx_14 = &ecx_14[1]
+10009635             while (eax_21.b != 0)
+10009637             void* eax_31 = arg2.d
+10009637             
+1000963f             if (ecx_14 == &ecx_14[1])
+1000963f                 goto label_100096af
+1000963f             
+10009641             edx_2 = *(eax_31 + 0x1c)
+10009644             ebx_1 = edx_2 + 0x9e4
+1000964a             char* eax_32 = ebx_1
+10009650             int32_t eax_34
+10009650             
+10009650             while (true)
+10009650                 char ecx_15 = *eax_32
+10009652                 char temp6_1 = *edi_1
+10009652                 bool c_2 = ecx_15 u< temp6_1
+10009652                 
+10009654                 if (ecx_15 == temp6_1)
+10009658                     if (ecx_15 == 0)
+1000966c                         eax_34 = 0
+1000966e                         break
+1000966e                     
+1000965a                     ecx_15 = eax_32[1]
+1000965d                     char temp7_1 = edi_1[1]
+1000965d                     c_2 = ecx_15 u< temp7_1
+1000965d                     
+10009660                     if (ecx_15 == temp7_1)
+10009662                         eax_32 = &eax_32[2]
+10009665                         edi_1 = &edi_1[2]
+10009665                         
+1000966a                         if (ecx_15 != 0)
+1000966a                             continue
+1000966a                         
+1000966c                         eax_34 = 0
+1000966e                         break
+1000966e                 
+10009672                 eax_34 = sbb.d(eax_32, eax_32, c_2) | 1
+10009672                 break
+10009672             
+10009677             if (eax_34 == 0)
+100096ac                 ebx_2 = var_28_1
+100096af             label_100096af:
+100096af                 *(eax_31 + 0x30) = ebx_2
+100096b7                 *(arg2.d + 0x1764) = *ebx_2
+100096c0                 int32_t ecx_17 = *(arg2.d + 0x1c)
+100096e6                 opdbg_log("QCFlashAgent::initWorker", 0xdb, 
+100096e6                     "[%s] [%s] Case matched. Using this profile.", ecx_17 + 0x9e4, ecx_17 + 0x444)
+100096e8                 break
+100095a6         else
+100095a8             void* eax_22 = arg2.d
+100095ae             edx_2 = *(eax_22 + 0x1c)
+100095b1             ebx_1 = edx_2 + 0x9e4
+100095b7             char* eax_23 = ebx_1
+100095c0             int32_t eax_25
+100095c0             
+100095c0             while (true)
+100095c0                 char ecx_10 = *eax_23
+100095c2                 char temp2_1 = *edi_1
+100095c2                 bool c_1 = ecx_10 u< temp2_1
+100095c2                 
+100095c4                 if (ecx_10 == temp2_1)
+100095c8                     if (ecx_10 == 0)
+100095dc                         eax_25 = 0
+100095de                         break
+100095de                     
+100095ca                     ecx_10 = eax_23[1]
+100095cd                     char temp5_1 = edi_1[1]
+100095cd                     c_1 = ecx_10 u< temp5_1
+100095cd                     
+100095d0                     if (ecx_10 == temp5_1)
+100095d2                         eax_23 = &eax_23[2]
+100095d5                         edi_1 = &edi_1[2]
+100095d5                         
+100095da                         if (ecx_10 != 0)
+100095da                             continue
+100095da                         
+100095dc                         eax_25 = 0
+100095de                         break
+100095de                 
+100095e2                 eax_25 = sbb.d(eax_23, eax_23, c_1) | 1
+100095e2                 break
+100095e2             
+100095e7             if (eax_25 == 0)
+100095f3                 *(eax_22 + 0x30) = var_28_1
+100095fb                 *(arg2.d + 0x1764) = *var_28_1
+10009604                 int32_t ecx_13 = *(arg2.d + 0x1c)
+100096e6                 opdbg_log("QCFlashAgent::initWorker", 0xd4, 
+100096e6                     "[%s] [%s] Otest mode Case matched. Using this profile.", ecx_13 + 0x9e4, 
+100096e6                     ecx_13 + 0x444)
+100096e8                 break
+100096e8         
+10009696         opdbg_log("QCFlashAgent::initWorker", 0xdf, 
+10009696             "[%s] [%s] Case is not matched. Try next profile.", ebx_1, edx_2 + 0x444)
+10009698         esi_2 = &esi_2[1]
+10009698         
+100096a1         if (esi_2 == var_20:4.d)
+100096a1             break
+100096a1 
+100096eb void* eax_40 = arg2.d
+100096f2 uint32_t result
+100096f2 
+100096f2 if (*(eax_40 + 0x30) != 0)
+10009743     result = 0
+100096f2 else
+100096f4     void* const var_58_7 = &data_1006a03d
+10009704     sub_100248b0(eax_40, 0x7531, "no_proper_profile(%s)")
+1000970c     int32_t ecx_18 = *(arg2.d + 0x1c)
+1000972c     opdbg_log("QCFlashAgent::initWorker", 0xe4, "[%s] [%s] No proper profile for current device.", 
+1000972c         ecx_18 + 0x9e4, ecx_18 + 0x444)
+10009735     reportIssue("E0101010", 0)
+1000973e     result = 0xffffffff
+1000973e 
+10009745 void* ecx_19 = var_20.d
+10009745 
+1000974a if (ecx_19 != 0)
+10009756     sub_1000ae90(ecx_19, (var_18 - ecx_19) s>> 2)
+10009756 
+1000975b int32_t var_8_2 = 2
+10009767 int32_t* arg_8
+10009767 
+10009767 if (arg_8 != 0)
+1000976e     bool cond:0_1 = arg_8[1] != 1
+1000976e     arg_8[1]
+1000976e     arg_8[1] -= 1
+1000976e     
+10009773     if (not(cond:0_1))
+10009779         (**arg_8)(eax_2)
+1000977b         int32_t ebx_3 = arg_8[2]
+1000977b         arg_8[2] -= 1
+1000977b         
+10009781         if (ebx_3 == 1)
+10009787             (*(*arg_8 + 4))()
+10009787 
+1000978f fsbase->NtTib.ExceptionList = ExceptionList
+1000979f CookieCheckFunction(result)
+100097a7 return result

@@ -1,0 +1,44 @@
+14693000 bti     c
+14693004 msr     tpidr_el0, x0
+14693008 msr     tpidr_el1, x1
+1469300c adr     x0, 0x14693000
+14693010 ldr     x1, 0x146932c8
+14693014 cmp     x0, x1
+14693018 b.ne    0x14693018
+1469301c mrs     x0, sctlr_el3
+14693020 mov     x1, #0x1
+14693024 bic     x0, x0, x1
+14693028 msr     sctlr_el3, x0
+1469302c isb     
+14693030 ldr     x1, 0x146932d0
+14693034 ldrb    w0, [x1]
+14693038 cmp     w0, #0
+1469303c b.ne    0x14693084
+14693084 bl      0x146933c0
+14693088 ldr     x0, 0x146932e0
+1469308c and     x0, x0, #0x3f
+14693090 msr     tcr_el3, x0
+14693094 isb     
+14693098 mrs     x0, sctlr_el3
+1469309c orr     x0, x0, #0x80000000
+146930a0 msr     sctlr_el3, x0
+146930a4 isb     
+146930a8 ldr     x16, 0x146932e8
+146930ac br      x16
+14693040 ldr     x2, 0x146932d8
+14693044 mrs     x0, apiakeyhi_el1
+14693048 mrs     x1, apiakeylo_el1
+1469304c stp     x0, x1, [x2]
+14693050 mrs     x0, apibkeyhi_el1
+14693054 mrs     x1, apibkeylo_el1
+14693058 stp     x0, x1, [x2, #0x10]
+1469305c mrs     x0, apdakeyhi_el1
+14693060 mrs     x1, apdakeylo_el1
+14693064 stp     x0, x1, [x2, #0x20]
+14693068 mrs     x0, apdbkeyhi_el1
+1469306c mrs     x1, apdbkeylo_el1
+14693070 stp     x0, x1, [x2, #0x30]
+14693074 mrs     x0, apgakeyhi_el1
+14693078 mrs     x1, apgakeylo_el1
+1469307c stp     x0, x1, [x2, #0x40]
+14693080 dsb     sy

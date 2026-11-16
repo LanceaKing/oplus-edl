@@ -1,0 +1,33 @@
+FIRST
+00b38c7d 90                             nop 
+00b38c7e 0fb7f1                         movzx esi, cx
+00b38c81 5e                             pop esi
+00b38c82 e9f3525b00                     jmp 0x10edf7a
+010edf7a 873424                         xchg dword ptr [esp], esi
+010edf7d e98220faff                     jmp 0x1090004
+01090004 56                             push esi
+01090005 66f7d6                         not si
+01090008 be511e5300                     mov esi, 0x531e51
+0109000d e92176cdff                     jmp 0xd67633
+00d67633 8bb6a2298400                   mov esi, dword ptr [esi + 0x8429a2]
+00d67639 8db66e0ff837                   lea esi, [esi + 0x37f80f6e]
+00d6763f e9f1b3faff                     jmp 0xd12a35
+00d12a35 873424                         xchg dword ptr [esp], esi
+00d12a38 c3                             ret 
+
+LAST
+00b38c7d 90                             nop 
+00b38c7e 0fb7f1                         movzx esi, cx
+00b38c81 5e                             pop esi
+00b38c82 e9f3525b00                     jmp 0x10edf7a
+010edf7a 873424                         xchg dword ptr [esp], esi
+010edf7d e98220faff                     jmp 0x1090004
+01090004 56                             push esi
+01090005 66f7d6                         not si
+01090008 be511e5300                     mov esi, 0x531e51
+0109000d e92176cdff                     jmp 0xd67633
+00d67633 8bb6a2298400                   mov esi, dword ptr [esi + 0x8429a2]
+00d67639 8db66e0ff837                   lea esi, [esi + 0x37f80f6e]
+00d6763f e9f1b3faff                     jmp 0xd12a35
+00d12a35 873424                         xchg dword ptr [esp], esi
+00d12a38 c3                             ret 

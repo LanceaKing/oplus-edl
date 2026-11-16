@@ -1,0 +1,153 @@
+140784608 int64_t __saved_rbp
+140784608 int64_t* rbp = &__saved_rbp
+140784612 int64_t var_60 = 0
+140784619 int64_t var_58 = (zx.o(0)).q
+14078461d int128_t var_48
+14078461d __builtin_memset(&var_48, 0, 0x20)
+140784629 int64_t* rdx = arg1
+14078462f int32_t var_24 = rdx[1].d
+140784632 int64_t* rbx = *rdx
+140784635 var_58:8.q = rbx
+14078463d int128_t var_38
+14078463d 
+14078463d if (var_24 == 0)
+140784643     arg3.o = *(rdx + 0x20)
+140784646     var_38 = arg3.o
+14078464d     rdx[4] = 0
+140784650     rdx[5] = 0
+140784654     var_24 = 0xffffffff
+14078465b     rdx[1].d = 0xffffffff
+140784662 label_140784662:
+140784662     rdx = arg1
+140784666     int64_t* rcx_2 = var_38.q
+140784666     
+14078467f     if ((*(rcx_2 + 0x34) & 0x11000000) != 0x1000000)
+140784687         arg3, arg2 = sub_14097d4c0(rcx_2, (var_38:8.d).b, arg3, arg2)
+14078468c         rdx = arg1
+14078468c     
+14078467f     goto label_14078473b
+14078467f 
+140784699 if (var_24 == 1)
+14078473b label_14078473b:
+14078473b     
+14078473f     if (var_24 != 1)
+1407847b7         int64_t rsi_3 = rbx[3]
+1407847b7         
+1407847be         if (rsi_3 == 0)
+1407847c4             void* rax_7 = rbx[1]
+1407847d0             int64_t rax_8 = (*(rax_7 + 0x20))(*(rax_7 + 8), rdx[3])
+1407847d3             *rax_8
+1407847d5             var_48.q = rax_8
+1407847db             var_48:8.d = 0
+1407847db             
+1407847ef             if ((var_48:8.b & 4) == 0 && (*(var_48.q + 0x34) & 0x1600000) != 0)
+1407847ef                 goto label_140784767
+1407847ef             
+1407847f5             int32_t var_24_1 = 1
+140784800             arg1[1].d = 1
+14078480f             sub_1411945e0(&arg1[6], var_48.q)
+14078481c             arg1[7].d = var_48:8.d
+14078482b             int64_t* rax_9
+14078482b             int512_t zmm0_1
+14078482b             rax_9, zmm0_1 = sub_1410156c0(&data_1429032c0, arg1, &arg1[2], arg3)
+1407848dd             return sub_140784a41(sub_141092bc0(zmm0_1, &var_48, rax_9), rbp)
+1407848dd         
+140784879         var_58 = rsi_3
+1407848ed         arg3, arg2 = sub_140784a41(arg3, rbp)
+14078473f     else
+140784745         arg3.o = *(rdx + 0x30)
+140784748         var_48 = arg3.o
+14078474e         rdx[6] = 0
+140784751         rdx[7] = 0
+140784755         var_24 = 0xffffffff
+14078475c         rdx[1].d = 0xffffffff
+140784767     label_140784767:
+140784767         int64_t* rcx_8 = var_48.q
+140784767         
+140784778         if ((*(rcx_8 + 0x34) & 0x11000000) != 0x1000000)
+14078477c             sub_14097d4c0(rcx_8, 0, arg3, arg2)
+14078477c         
+140784789         void* rsi_2 = *(var_48.q + 0x38)
+140784790         int32_t rax_6
+140784790         
+140784790         if (rsi_2 != 0)
+14078479a             rax_6 = sub_1408d0f40(*(rsi_2 + 8))
+14078479a         
+1407847ac         if (rsi_2 == 0 || rax_6 != 0 || *(rsi_2 + 0x10) s<= 0)
+140784886             void** rax_11 = sub_141194310(&data_142a99d68)
+140784898             sub_1408f5f30(rax_11, &data_143582980)
+1407848a4             void** rax_12
+1407848a4             int512_t zmm0_3
+1407848a4             rax_12, zmm0_3 = sub_141194310(&data_142a77a60)
+1407848bf             uint64_t ssp
+1407848bf             sub_1411948d0(rax_12, ssp, sub_140786df0(rax_12, 0x4b4, rax_11, zmm0_3))
+1407848bf             noreturn
+1407848bf         
+14078484f         void** rax_10 = sub_141194310(&data_142a77390)
+14078485d         arg3, arg2 = sub_1407814d0(rax_10, rsi_2)
+140784869         sub_141194570(&rbx[3], rax_10)
+140784873         var_58 = rbx[3]
+140784873         
+1407848c9         if (var_24 s< 0)
+1407848cb             int64_t* rcx_21 = rbx[2]
+1407848cf             *rcx_21
+1407848d6             arg3, arg2 = sub_140940100(rcx_21, 1, arg3)
+140784699 else
+1407846a3     if (*(rbx + 0x31) != 0)
+1407848f7         sub_140900b70(rbx, arg3)
+1407848f7         noreturn
+1407848f7     
+1407846a9     int64_t rsi_1 = rbx[3]
+1407846a9     
+1407846b0     if (rsi_1 == 0)
+1407846b6         int64_t* rcx_3 = rbx[2]
+1407846be         *rcx_3
+1407846ca         void** rax_2
+1407846ca         rax_2, arg3, arg2 = sub_14093fe30(rcx_3, -1, rdx[3], arg3)
+1407846cf         *rax_2
+1407846d1         var_38.q = rax_2
+1407846d7         var_38:8.d = 0
+1407846d7         
+1407846eb         if ((var_38:8.b & 4) == 0 && (*(var_38.q + 0x34) & 0x1600000) != 0)
+1407846eb             goto label_140784662
+1407846eb         
+1407846f7         arg1[1].d = 0
+140784702         sub_1411945e0(&arg1[4], var_38.q)
+14078470f         arg1[5].d = var_38:8.d
+14078471e         int64_t* rax_3
+14078471e         int512_t zmm0
+14078471e         rax_3, zmm0 = sub_1410156c0(&data_1429032c0, arg1, &arg1[2], arg3)
+140784731         return sub_141092bc0(zmm0, &var_38, rax_3)
+140784731     
+1407848e7     var_58 = rsi_1
+1407848e7 
+140784901 arg1[1].d = 0xfffffffe
+14078490c int64_t* rcx_23 = arg1[2]
+140784912 uint64_t result
+140784912 
+140784912 if (rcx_23 == 0)
+14078492a     uint64_t result_1
+14078492a     
+14078492a     if (var_58 == 0)
+140784951         result = &data_1436c0980
+140784951         
+14078495d         if (data_1436c0978 != 0)
+14078497f             result = sub_14116cfb0(arg3)
+14078497f         
+140784966         result_1 = *(data_1436d1188 + 8)
+14078492a     else
+140784933         result = sub_141194310(&data_142c8b9f8)
+140784938         result_1 = result
+14078493b         *(result_1 + 0x34) = 0x1000000
+14078494a         sub_141194570(result_1 + 0x38, var_58)
+14078494a     
+140784970     sub_1411945e0(&arg1[2], result_1)
+140784912 else
+140784918     *rcx_23
+14078491a     result = sub_140e81890(rcx_23, var_58, arg3, arg2)
+14078491a     
+140784921     if (result.d == 0)
+14078498b         sub_1409009d0(0x18)
+14078498b         noreturn
+14078498b 
+14078497e return result

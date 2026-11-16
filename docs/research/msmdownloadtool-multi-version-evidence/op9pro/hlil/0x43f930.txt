@@ -1,0 +1,148 @@
+0043f930 int32_t ebp
+0043f930 int32_t var_4 = ebp
+0043f931 int32_t* ebp_1 = &var_4
+0043f933 int32_t var_8 = 0xffffffff
+0043f935 int32_t (* var_c)() = sub_6d0367
+0043f940 TEB* fsbase
+0043f940 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0043f94c int32_t eax_2 = __security_cookie ^ &var_4
+0043f94e int32_t var_14 = eax_2
+0043f951 int32_t ebx
+0043f951 int32_t var_4bc = ebx
+0043f952 int32_t esi
+0043f952 int32_t var_4c0 = esi
+0043f953 int32_t edi
+0043f953 int32_t var_4c4 = edi
+0043f958 fsbase->NtTib.ExceptionList = &ExceptionList
+0043f95e int32_t __saved_ecx_1
+0043f95e int32_t __saved_ecx = __saved_ecx_1
+0043f96c int32_t var_4cc = 1
+0043f96e int32_t var_4d0 = 0
+0043f970 int128_t var_4c
+0043f970 __builtin_memcpy(&var_4c, u"License File(*.dat)|*.dat||", 0x38)
+0043f975 int32_t var_4d4 = 0
+0043f988 int32_t var_4dc = 0
+0043f992 wchar16 const* const var_4e0 = u"License4.dat"
+0043f997 wchar16 const* const var_4e4 = u".dat"
+0043f9af int32_t var_4e8 = 1
+0043f9b6 sub_57e5c0(1, u".dat", u"License4.dat", 0, &var_4c, 0, 0, 1, eax_2)
+0043f9c2 int32_t* eax_3 = sub_575e46(ExceptionList, var_c, 0)
+0043f9cd int32_t ecx
+0043f9cd ecx.b = eax_3 != 0
+0043f9cd 
+0043f9d2 if (ecx == 0)
+0043f9d9     sub_414340(0x80004005)
+0043f9d9     noreturn
+0043f9d9 
+0043f9e5 void* edi_1 = (*(*eax_3 + 0xc))() + 0x10
+0043f9e8 void* var_4b0 = edi_1
+0043f9f4 int32_t var_8_1
+0043f9f4 var_8_1.b = 1
+0043f9f9 void* var_4b4
+0043f9f9 sub_4397d0(&var_4b4)
+0043f9fe var_8_1.b = 2
+0043fa02 int32_t* eax_6 = sub_575e46()
+0043fa0d int32_t ecx_2
+0043fa0d ecx_2.b = eax_6 != 0
+0043fa0d 
+0043fa12 if (ecx_2 == 0)
+0043fa19     sub_414340(0x80004005)
+0043fa19     noreturn
+0043fa19 
+0043fa25 void* esi_1 = (*(*eax_6 + 0xc))() + 0x10
+0043fa28 void* var_4a8 = esi_1
+0043fa34 var_8_1.b = 3
+0043fa38 int32_t eax_9 = sub_57ef9c()
+0043fa3d void* ebx_1 = var_4b4
+0043fa46 int64_t var_1c_1
+0043fa46 
+0043fa46 if (eax_9 == 1)
+0043fa65     var_8_1.b = 4
+0043fa69     void* var_4b8
+0043fa69     sub_41a720(&var_4b0, sub_57f11d(&var_4b8))
+0043fa6e     var_8_1.b = 3
+0043fa7b     int32_t* edx_3 = var_4b8 - 0x10
+0043fa81     int32_t ecx_5 = edx_3[3]
+0043fa81     edx_3[3] -= 1
+0043fa81     
+0043fa88     if (ecx_5 - 1 s<= 0)
+0043fa8f         (*(**edx_3 + 4))(edx_3)
+0043fa8f     
+0043fa92     edi_1 = var_4b0
+0043fa98     int32_t var_14_7 = 0
+0043fa9a     var_1c_1:4.d = ebx_1
+0043fa9b     var_1c_1.d = edi_1
+0043fa9c     int128_t var_2c_1
+0043fa9c     var_2c_1:0xc.d = edi_1
+0043fa9c     
+0043faa5     if (sub_e1fe1b() == 1)
+0043fab1         int32_t eax_14
+0043fab1         eax_14, ebp_1, edi_1 = sub_440300(ebp_1)
+0043fac0         int32_t var_14_9
+0043fac0         
+0043fac0         if (eax_14 != 0)
+0043faf9             if (eax_14 != 0x1b90)
+0043fb2e                 sub_4b09a0()
+0043fb33                 int32_t var_14_11 = eax_14
+0043fb3a                 *(ebp_1 - 0x13d) = 0
+0043fb41                 var_1c_1:4.d = &ebp_1[-0x53]
+0043fb48                 var_1c_1.d = u"%S(%u)"
+0043fb4d                 var_2c_1:0xc.d = &ebp_1[-0x129]
+0043fb4e                 sub_414410()
+0043faf9             else
+0043fb00                 sub_4b09a0()
+0043fb0b                 ebp_1[-0x4f].b = 0
+0043fb19                 var_1c_1:4.d = &data_76b468
+0043fb1e                 var_1c_1.d = &ebp_1[-0x129]
+0043fb1f                 sub_414410(var_1c_1, &ebp_1[-0x53])
+0043fb1f             
+0043fb56             var_14_9 = 0
+0043fb58             var_1c_1:4.d = 0x10
+0043fac0         else
+0043fac7             sub_4b09a0()
+0043fad2             *(ebp_1 - 0x13b) = 0
+0043fae0             var_1c_1:4.d = &data_76b468
+0043fae5             var_1c_1.d = &ebp_1[-0x129]
+0043fae6             sub_414410(var_1c_1, &ebp_1[-0x53])
+0043faee             var_14_9 = eax_14
+0043faef             var_1c_1:4.d = 0x30
+0043faef         
+0043fb5a         esi_1 = ebp_1[-0x129]
+0043fb60         var_1c_1.d = esi_1
+0043fb61         sub_574f2f(var_1c_1, var_14_9)
+0043fb61 
+0043fb6c int32_t ecx_12 = sub_573b79(ebp_1[-0x12a])
+0043fb77 int32_t var_14_12 = *(ebp_1[-0x12a] + 0x20)
+0043fb7a var_1c_1:4.d = ecx_12
+0043fb81 sub_56ee74(sub_de6062())
+0043fb89 ebp_1[-1].b = 2
+0043fb95 int32_t ecx_13 = *(esi_1 - 4)
+0043fb95 *(esi_1 - 4) -= 1
+0043fb95 
+0043fb9c if (ecx_13 - 1 s<= 0)
+0043fba0     var_1c_1:4.d = esi_1 - 0x10
+0043fba3     (*(**(esi_1 - 0x10) + 4))()
+0043fba3 
+0043fba9 ebp_1[-1].b = 1
+0043fbb2 int32_t ecx_16 = *(ebx_1 - 4)
+0043fbb2 *(ebx_1 - 4) -= 1
+0043fbb2 
+0043fbb9 if (ecx_16 - 1 s<= 0)
+0043fbbd     var_1c_1:4.d = ebx_1 - 0x10
+0043fbc0     (*(**(ebx_1 - 0x10) + 4))()
+0043fbc0 
+0043fbc6 ebp_1[-1].b = 0
+0043fbcd int32_t esi_3 = *(edi_1 - 4)
+0043fbcd *(edi_1 - 4) -= 1
+0043fbcd 
+0043fbd4 if (esi_3 - 1 s<= 0)
+0043fbd8     var_1c_1:4.d = edi_1 - 0x10
+0043fbdb     (*(**(edi_1 - 0x10) + 4))()
+0043fbdb 
+0043fbe4 ebp_1[-1] = 0xffffffff
+0043fbeb sub_57e8cc()
+0043fbf3 fsbase->NtTib.ExceptionList = ebp_1[-3]
+0043fbfe ebp_1[-4]
+0043fc03 int32_t result = sub_68804f()
+0043fc0a *ebp_1
+0043fc0b return result

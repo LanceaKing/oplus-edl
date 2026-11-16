@@ -1,0 +1,5 @@
+00420e73 void* eax = *(arg1 + 0x20)
+00420e76 HANDLE hFile = *(eax + 8)
+00420e79 *(eax + 4) = 4
+00420e80 CancelIo(hFile)
+00420e8a return sub_4264e0(*(arg1 + 0x20)) __tailcall

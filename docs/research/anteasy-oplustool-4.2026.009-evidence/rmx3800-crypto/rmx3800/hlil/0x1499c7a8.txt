@@ -1,0 +1,29 @@
+1499c7c0 if (arg3 s> 8)
+1499c7c4     return 0xffffffff
+1499c7c4 
+1499c7e8 if (arg3 != 0xffffffff)
+1499c7ec     int64_t result = 0xffffffff
+1499c7ec     
+1499c800     if ((arg3 & 0x80000000) == 0 && zx.d(*((sx.q(arg3) << 7) + 0x80202a00)) == 0)
+1499c850     label_1499c850:
+1499c850         *((zx.q(arg3) << 7) + 0x80202a00) = 1
+1499c854         sub_1499c404(&data_80202990 + (zx.q(arg3) << 7), 0, 0x70)
+1499c86c         sub_149ab0bc(&data_80202990 + (zx.q(arg3) << 7), arg1, zx.q(arg2), zx.q(arg4), zx.q(arg5), 
+1499c86c             arg6, arg7, arg8)
+1499c870         result = 0
+1499c874         *((zx.q(arg3) << 7) + 0x80202a08) = arg1
+1499c874     
+1499c888     return result
+1499c888 
+1499c80c int64_t x9_4 = -6
+1499c814 char* x10_1 = &data_80202b80
+1499c814 
+1499c820 while (zx.d(*x10_1) != 0)
+1499c824     x9_4 += 1
+1499c828     x10_1 = &x10_1[0x80]
+1499c828     
+1499c82c     if (x9_4 == 0)
+1499c888         return 0xffffffff
+1499c888 
+1499c834 arg3 = x9_4.d + 9
+1499c834 goto label_1499c850

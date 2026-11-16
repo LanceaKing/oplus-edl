@@ -1,0 +1,67 @@
+149adbd8 int32_t x20 = arg3
+149adbe0 int32_t* x0 = sub_149ac0b4(arg1)
+149adbe0 
+149adbe4 if (x0 != 0)
+149adbe8     *x0
+149adbe8 
+149adbfc int32_t x22_1
+149adbfc bool z
+149adbfc 
+149adbfc if (x0 == 0 || not(z) || *(x0 + 8) == 0)
+149adc14     x22_1 = 6
+149adbfc else
+149adc04     bool c_1
+149adc04     bool z_1
+149adc04     
+149adc04     if (arg2 u<= 0xb)
+149adc04         c_1 = x20 u>= 9
+149adc04         z_1 = x20 == 9
+149adc04     else
+149adc04         z_1 = false
+149adc04         c_1 = true
+149adc04     
+149adc08     if (z_1 || not(c_1))
+149adc2c         int64_t x8_3 = *(x0 + 0x60)
+149adc2c         
+149adc30         if (x8_3 == 0)
+149adc30             goto label_149adc54
+149adc30         
+149adc34         int32_t x0_2 = sub_149addec(x8_3)
+149adc38         x22_1 = x0_2
+149adc38         
+149adc3c         if (x0_2 == 0)
+149adc40             __builtin_memset(&x0[0x10], 0, 0x30)
+149adc54         label_149adc54:
+149adc54             int64_t x0_4 = sub_149ac708(arg2, x20)
+149adc58             *(x0 + 0x40) = x0_4
+149adc58             
+149adc5c             if (x0_4 == 0)
+149adcac                 x22_1 = 5
+149adc5c             else
+149adc60                 x0[4] = arg2
+149adc60                 
+149adc64                 if (x20 == 0)
+149adc68                     j_sub_149ac764()
+149adc6c                     x20 = 1
+149adc6c                 
+149adc74                 x0[5] = x20
+149adc7c                 int32_t x0_6
+149adc7c                 
+149adc7c                 if (x20 - 1 u<= 1)
+149adc84                     x0_6 = sub_149ac61c(*(x0 + 8))
+149adc84                 
+149adc88                 if (x20 - 1 u<= 1 && (x0_6 & 1) == 0)
+149adcb4                     x22_1 = 0xd
+149adc88                 else
+149adc90                     int32_t x0_7 = sub_149addec(*(x0 + 0x40))
+149adc94                     x22_1 = x0_7
+149adc94                     
+149adc98                     if (x0_7 != 0)
+149adc9c                         int64_t x8_6 = *(x0 + 0x60)
+149adc9c                         
+149adca0                         if (x8_6 != 0)
+149adca4                             sub_149addec(x8_6)
+149adc08     else
+149adc0c         x22_1 = 2
+149adc0c 
+149adc28 return zx.q(x22_1)

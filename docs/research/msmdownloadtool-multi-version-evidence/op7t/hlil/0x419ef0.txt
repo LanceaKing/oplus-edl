@@ -1,0 +1,139 @@
+00419ef0 int32_t ebp
+00419ef0 int32_t var_4 = ebp
+00419ef3 void* var_8 = arg1
+00419ef4 int32_t ebx
+00419ef4 int32_t var_c = ebx
+00419ef5 int32_t esi
+00419ef5 int32_t var_10 = esi
+00419ef6 int32_t edi
+00419ef6 int32_t var_14 = edi
+00419efe void* var_8_1 = arg1
+00419f01 void* eax = sub_4fe79b(arg1, 0x3ef)
+00419f0f void* eax_1 = sub_4fe79b(arg1, 0x3f0)
+00419f28 0x3095d0(*(eax + 0x20), 0xf1, 1, 0)
+00419f36 0x3095d0(*(eax_1 + 0x20), 0xf1, 0, 0)
+00419f38 int32_t var_38 = 0
+00419f3a int32_t var_3c = 0x411
+00419f41 void* eax_2
+00419f41 int32_t edx
+00419f41 eax_2, edx = sub_4fe79b(arg1, var_3c)
+00419f48 sub_4feaee(eax_2, edx, eax_2, var_38)
+00419f4d var_3c = 0
+00419f4f int32_t var_40 = 0x417
+00419f56 void* eax_3
+00419f56 int32_t edx_1
+00419f56 eax_3, edx_1 = sub_4fe79b(arg1, var_40)
+00419f5d void* ebp_1 = sub_4feaee(eax_3, edx_1, eax_3, var_3c)
+00419f62 var_40 = 0
+00419f64 int32_t var_44 = 0x418
+00419f72 sub_4fe74f(sub_4fe79b(arg1, 0x418), var_40)
+00419f77 var_40 = 0
+00419f79 int32_t var_44_1 = 0x424
+00419f87 sub_4fe74f(sub_4fe79b(arg1, 0x424), var_40)
+00419f8c var_40 = 0
+00419f8e int32_t var_44_2 = 0x41a
+00419f9c sub_4fe74f(sub_4fe79b(arg1, 0x41a), var_40)
+00419f9c int32_t* esp_1 = &var_3c
+00419fab int16_t* eax_8 = *data_72423c
+00419fad wchar16 const* const ecx_11 = u"cbbdcaaca74088039b03d81ad7766ef3"
+00419fb0 int32_t eax_10
+00419fb0 
+00419fb0 while (true)
+00419fb0     int16_t edx_2 = *eax_8
+00419fb3     wchar16 const temp0_1 = *ecx_11
+00419fb3     bool c_1 = edx_2 u< temp0_1
+00419fb3     
+00419fb6     if (edx_2 == temp0_1)
+00419fbb         if (edx_2 == 0)
+00419fd2             eax_10 = 0
+00419fd4             break
+00419fd4         
+00419fbd         edx_2 = eax_8[1]
+00419fc1         int16_t temp1_1 = ecx_11[1]
+00419fc1         c_1 = edx_2 u< temp1_1
+00419fc1         
+00419fc5         if (edx_2 == temp1_1)
+00419fc7             eax_8 = &eax_8[2]
+00419fca             ecx_11 = &ecx_11[2]
+00419fca             
+00419fd0             if (edx_2 != 0)
+00419fd0                 continue
+00419fd0             
+00419fd2             eax_10 = 0
+00419fd4             break
+00419fd4     
+00419fd8     eax_10 = sbb.d(eax_8, eax_8, c_1) | 1
+00419fd8     break
+00419fd8 
+00419fe6 if (eax_10 == 0 && data_72420c == 1)
+00419fe8     var_40 = 5
+00419fea     int32_t var_44_3 = 0x415
+00419ff1     void* eax_11
+00419ff1     int32_t edx_3
+00419ff1     eax_11, edx_3 = sub_4fe79b(arg1, 0x415)
+00419ff8     ebp_1 = sub_4feaee(eax_11, edx_3, eax_11, var_40)
+00419ffd     int32_t var_44_4 = 1
+00419fff     int32_t var_48_1 = 0x415
+0041a00d     sub_4fe74f(sub_4fe79b(arg1, 0x415), 1)
+0041a00d     esp_1 = &var_40
+0041a00d 
+0041a012 data_724274 = 2
+0041a01c int32_t i = 0
+0041a01c 
+0041a023 while (i u> 4)
+0041a056     for (void* j = *nullptr; j != *4; j += 0x64)
+0041a060         *(esp_1 - 4) = j
+0041a061         *(j + 0x54) = 1
+0041a061         
+0041a075         if (sub_41be30() != 0 && data_724214 == 1)
+0041a077             *(j + 0x54) = 0
+0041a077     
+0041a083     i += 1
+0041a083     
+0041a087     if (i s>= 5)
+0041a089         void* esi_2 = *(ebp_1 - 4)
+0041a089         
+0041a093         if (*(esi_2 + 0xd0) == 0)
+0041a0a1             *(esi_2 + 0x194) = 0
+0041a0ab             bool cond:0_1 = data_72421c == 0
+0041a0b2             *(esp_1 - 4) = 0
+0041a0b4             *(esp_1 - 8) = 0x30
+0041a0b6             void* esp_5
+0041a0b6             
+0041a0b6             if (cond:0_1)
+0041a0bf                 *(esp_1 - 0xc) =
+0041a0bf                     u"SMT download mode: not verify or verify failed, Not allowed to downloa"
+0041a0bf                 esp_5 = esp_1 - 0xc
+0041a0b6             else
+0041a0b8                 *(esp_1 - 0xc) = "*g!h"
+0041a0b8                 esp_5 = esp_1 - 0xc
+0041a0b8             
+0041a0c4             sub_4f1c19()
+0041a0c4             esp_1 = esp_5 + 0xc
+0041a093         else
+0041a095             *(esi_2 + 0x194) = 1
+0041a095         
+0041a0cb         int32_t eax_14
+0041a0cb         int32_t edx_4
+0041a0cb         eax_14, edx_4 = sub_41b890(esi_2)
+0041a0d0         *(esp_1 - 4) = 0
+0041a0d4         int32_t eax_15
+0041a0d4         int32_t edx_5
+0041a0d4         eax_15, edx_5 = sub_4feaee(eax_14, edx_4, esi_2)
+0041a0d9         *(esp_1 - 8) = 5
+0041a0dd         sub_4feaee(eax_15, edx_5, esi_2)
+0041a0e4         sub_4fea07(esi_2)
+0041a0e9         *(esp_1 - 0xc) = *(esi_2 + 0x20)
+0041a0f1         return sub_c8d7b3()
+0041a0f1 
+0041a025 switch (i)
+0041a025     case 0
+0041a025         jump(0x41a02c)
+0041a025     case 1
+0041a025         jump(0x41a033)
+0041a025     case 2
+0041a025         jump(0x41a03a)
+0041a025     case 3
+0041a025         jump(0x41a041)
+0041a025     case 4
+0041a025         jump(0x41a048)

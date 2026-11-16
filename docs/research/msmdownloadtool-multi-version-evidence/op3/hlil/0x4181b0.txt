@@ -1,0 +1,30 @@
+004181c1 if (arg3 u> 3)
+00418826     int32_t eax_2 = std::_Deallocate<64,0>("ToolLog.txt", &data_5a02f4)
+00418826     
+00418832     if (eax_2 != 0)
+0041883f         _fprintf(eax_2, "[%d] HANDSET_TYPE_NULL:\n", *(arg1 + 0x2c) + 1)
+00418848         _fclose(eax_2)
+00418848     
+0041885a     char const* const var_24_3
+0041885a     
+0041885a     if (*(arg1 + 0x1b) == 0)
+00418863         var_24_3 = "No suitable software available for download"
+0041885a     else
+0041885c         var_24_3 = &data_5a20e4
+0041885c     
+00418869     sub_410900(arg1 + 0x164, var_24_3)
+0041888c     SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 0x1000001, arg1 + 0x164)
+0041889d     return 1
+0041889d 
+004181c1 int32_t __saved_ebp
+004181c1 int32_t entry_ebx
+004181c1 
+004181c1 switch (arg3)
+004181c7     case 0
+004181c7         return sub_4181ce() __tailcall
+004181c7     case 1
+004181c7         return sub_41820a() __tailcall
+004181c7     case 2
+004181c7         return sub_418243() __tailcall
+004181c7     case 3
+004181c7         return sub_41827c(&__saved_ebp, arg1, arg2, entry_ebx) __tailcall

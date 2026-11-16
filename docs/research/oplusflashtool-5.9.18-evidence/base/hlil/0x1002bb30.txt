@@ -1,0 +1,119 @@
+1002bb37 char* ecx = &data_1021a780
+1002bb37 
+1002bb4e do
+1002bb43     arg1 = *ecx
+1002bb45     ecx = &ecx[1]
+1002bb48     *(arg3 - 0x1021a77c + ecx - 1) = arg1
+1002bb4e while (arg1 != 0)
+1002bb4e 
+1002bb56 char* eax
+1002bb56 int32_t xmm0[0x4]
+1002bb56 int32_t xmm0_1[0x4]
+1002bb56 eax, xmm0_1 = _strstr(xmm0, arg3 + 4, "https://rcsm-sg.realmeservice.com")
+1002bb60 char* eax_1
+1002bb60 
+1002bb60 if (eax == 0)
+1002bbb9     char* eax_2
+1002bbb9     int32_t xmm0_2[0x4]
+1002bbb9     eax_2, xmm0_2 = _strstr(xmm0_1, arg3 + 4, "https://rcsm-in.realmeservice.com")
+1002bbb9     
+1002bbc3     if (eax_2 == 0)
+1002bc1c         char* eax_3
+1002bc1c         int32_t xmm0_3[0x4]
+1002bc1c         eax_3, xmm0_3 = _strstr(xmm0_2, arg3 + 4, "https://rcsm-eu.realmeservice.com")
+1002bc1c         
+1002bc26         if (eax_3 == 0)
+1002bc7f             char* eax_4
+1002bc7f             int32_t xmm0_4[0x4]
+1002bc7f             eax_4, xmm0_4 = _strstr(xmm0_3, arg3 + 4, "https://rcsm-cn.realmeservice.com")
+1002bc7f             
+1002bc89             if (eax_4 == 0)
+1002bcef                 if (_strstr(xmm0_4, arg3 + 4, "https://test-rcsm-cn.wanyol.com") != 0)
+1002bcf8                     char* ecx_5 = "-----BEGIN PUBLIC KEY-----\n"
+1002bcf8                     "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvKQDEFoKtFkEE1ITBAE0\n"
+1002bcf8                     "faVTEjzVWMSH1VD3PzpREBxrwJSQwNAXzQfAcYXa/0NrIf3LWWPhQ63P6s2H/aFH\nHIc"
+1002bd05                     __builtin_strncpy(arg3 + 0x244, "5cf1fce1-bc0a-4629-9d37-8439bbc3d58c", 0x25)
+1002bd25                     eax_1.b = 0
+1002bd25                     
+1002bd3b                     do
+1002bd30                         eax_1.b = *ecx_5
+1002bd32                         ecx_5 = &ecx_5[1]
+1002bd35                         ecx_5[arg3 + 0xefe055a3] = eax_1.b
+1002bd3b                     while (eax_1.b != 0)
+1002bc89             else
+1002bc92                 char const* const ecx_4 = "-----BEGIN PUBLIC KEY-----\n"
+1002bc92                 "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvKQDEFoKtFkEE1ITBAE0\n"
+1002bc92                 "faVTEjzVWMSH1VD3PzpREBxrwJSQwNAXzQfAcYXa/0NrIf3LWWPhQ63P6s2H/aFH\nHIc"
+1002bc9f                 __builtin_strncpy(arg3 + 0x244, "1557a67f-24c9-4bd4-845d-716e86723064", 0x25)
+1002bcbf                 eax_1.b = 0
+1002bcbf                 
+1002bcdb                 do
+1002bcd0                     eax_1.b = *ecx_4
+1002bcd2                     ecx_4 = &ecx_4[1]
+1002bcd5                     ecx_4[arg3 + 0xefe055a3] = eax_1.b
+1002bcdb                 while (eax_1.b != 0)
+1002bc26         else
+1002bc2f             char const* const ecx_3 = "-----BEGIN PUBLIC KEY-----\n"
+1002bc2f             "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvKQDEFoKtFkEE1ITBAE0\n"
+1002bc2f             "faVTEjzVWMSH1VD3PzpREBxrwJSQwNAXzQfAcYXa/0NrIf3LWWPhQ63P6s2H/aFH\nHIc"
+1002bc3c             __builtin_strncpy(arg3 + 0x244, "36b655ac-f2b9-4d7b-9068-77573f09e932", 0x25)
+1002bc5c             eax_1.b = 0
+1002bc5c             
+1002bc72             do
+1002bc67                 eax_1.b = *ecx_3
+1002bc69                 ecx_3 = &ecx_3[1]
+1002bc6c                 ecx_3[arg3 + 0xefe055a3] = eax_1.b
+1002bc72             while (eax_1.b != 0)
+1002bbc3     else
+1002bbcc         char const* const ecx_2 = "-----BEGIN PUBLIC KEY-----\n"
+1002bbcc         "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvKQDEFoKtFkEE1ITBAE0\n"
+1002bbcc         "faVTEjzVWMSH1VD3PzpREBxrwJSQwNAXzQfAcYXa/0NrIf3LWWPhQ63P6s2H/aFH\nHIc"
+1002bbd9         __builtin_strncpy(arg3 + 0x244, "1a8fc48b-a114-4dbc-9592-7171273af020", 0x25)
+1002bbf9         eax_1.b = 0
+1002bbf9         
+1002bc0f         do
+1002bc04             eax_1.b = *ecx_2
+1002bc06             ecx_2 = &ecx_2[1]
+1002bc09             ecx_2[arg3 + 0xefe055a3] = eax_1.b
+1002bc0f         while (eax_1.b != 0)
+1002bb60 else
+1002bb69     char const* const ecx_1 = "-----BEGIN PUBLIC KEY-----\n"
+1002bb69     "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAvKQDEFoKtFkEE1ITBAE0\n"
+1002bb69     "faVTEjzVWMSH1VD3PzpREBxrwJSQwNAXzQfAcYXa/0NrIf3LWWPhQ63P6s2H/aFH\nHIc"
+1002bb76     __builtin_strncpy(arg3 + 0x244, "dad18bcb-1aee-45c6-bf0d-994fd28d7534", 0x25)
+1002bb96     eax_1.b = 0
+1002bb96     
+1002bbac     do
+1002bba1         eax_1.b = *ecx_1
+1002bba3         ecx_1 = &ecx_1[1]
+1002bba6         *(arg3 - 0x101faa5c + ecx_1 - 1) = eax_1.b
+1002bbac     while (eax_1.b != 0)
+1002bbac 
+1002bd3d char* ecx_6 = arg4
+1002bd46 void* edx_13 = arg3 + 0xb84 - ecx_6
+1002bd46 
+1002bd5b do
+1002bd50     eax_1.b = *ecx_6
+1002bd52     ecx_6 = &ecx_6[1]
+1002bd55     *(edx_13 + ecx_6 - 1) = eax_1.b
+1002bd5b while (eax_1.b != 0)
+1002bd5b 
+1002bd63 int32_t* esi_1 = **(arg3 + 0x3570)
+1002bd68 sub_10141800(esi_1[2])
+1002bd6f int32_t eax_6
+1002bd6f int32_t* ecx_8
+1002bd6f int32_t* edx_14
+1002bd6f eax_6, ecx_8, edx_14 = sub_10026570(esi_1)
+1002bd74 int32_t var_14_5 = esi_1[2]
+1002bd77 sub_10141c10(eax_6, edx_14, ecx_8)
+1002bd82 int32_t* esi_2 = **(arg3 + 0x3574)
+1002bd87 sub_10141800(esi_2[2])
+1002bd8e int32_t eax_8
+1002bd8e int32_t* ecx_10
+1002bd8e int32_t* edx_15
+1002bd8e eax_8, ecx_10, edx_15 = sub_10026570(esi_2)
+1002bd93 int32_t var_1c = esi_2[2]
+1002bd96 int32_t result = sub_10141c10(eax_8, edx_15, ecx_10)
+1002bd9e *(arg3 + 0x356c) = 0
+1002bda8 *(arg3 + 0x3568) = 0
+1002bdb5 return result

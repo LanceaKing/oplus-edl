@@ -1,0 +1,151 @@
+1001c3d0 push    ebp
+1001c3d1 mov     ebp, esp
+1001c3d3 and     esp, 0xfffffff8
+1001c3d6 push    ecx
+1001c3d7 push    ebx
+1001c3d8 push    esi
+1001c3d9 mov     esi, dword [ebp+0xc]
+1001c3dc push    edi
+1001c3dd lea     eax, [esi+0x900]
+1001c3e3 push    eax
+1001c3e4 push    0x101fe36c
+1001c3e9 push    0x977
+1001c3ee push    0x101fe384
+1001c3f3 call    0x10022900
+1001c3f8 mov     edi, dword [ebp+0x8]
+1001c3fb add     esp, 0x10
+1001c3fe xor     ebx, ebx
+1001c583 push    ecx
+1001c584 push    0x101fe39c
+1001c589 push    0x992
+1001c58e push    0x101fe384
+1001c593 call    0x10022900
+1001c598 add     esp, 0x10
+1001c59b mov     eax, 0x7d0b
+1001c5a0 pop     edi
+1001c5a1 pop     esi
+1001c5a2 pop     ebx
+1001c5a3 mov     esp, ebp
+1001c5a5 pop     ebp
+1001c5a6 retn    
+1001c413 jmp     dword [eax*4+0x1001c5a8]
+1001c41a mov     ecx, 0x1021b880
+1001c41f mov     edx, edi
+1001c421 sub     edx, ecx
+1001c444 mov     ecx, 0x1021a940
+1001c449 mov     edx, edi
+1001c44b sub     edx, ecx
+1001c44d nop     dword [eax]
+1001c46e mov     ecx, 0x1021a740
+1001c473 mov     edx, edi
+1001c475 sub     edx, ecx
+1001c477 nop     word [eax+eax]
+1001c49e mov     ecx, 0x1021a900
+1001c4a3 mov     edx, edi
+1001c4a5 sub     edx, ecx
+1001c4a7 nop     word [eax+eax]
+1001c4ce push    dword [ebp+0x10]
+1001c4d1 mov     edx, esi
+1001c4d3 mov     ecx, edi
+1001c4d5 call    0x1001f4e0
+1001c423 mov     al, byte [ecx]
+1001c425 lea     ecx, [ecx+0x1]
+1001c428 mov     byte [edx+ecx+0x487], al
+1001c42f test    al, al
+1001c431 jne     0x1001c423
+1001c433 push    dword [ebp+0x10]
+1001c436 mov     edx, esi
+1001c438 mov     ecx, edi
+1001c43a call    0x100157e0
+1001c43f jmp     0x1001c4da
+1001c450 mov     al, byte [ecx]
+1001c452 lea     ecx, [ecx+0x1]
+1001c455 mov     byte [edx+ecx+0x487], al
+1001c45c test    al, al
+1001c45e jne     0x1001c450
+1001c460 push    dword [ebp+0x10]
+1001c463 mov     edx, esi
+1001c465 mov     ecx, edi
+1001c467 call    0x10017b10
+1001c46c jmp     0x1001c4da
+1001c480 mov     al, byte [ecx]
+1001c482 lea     ecx, [ecx+0x1]
+1001c485 mov     byte [edx+ecx+0x487], al
+1001c48c test    al, al
+1001c48e jne     0x1001c480
+1001c490 push    dword [ebp+0x10]
+1001c493 mov     edx, esi
+1001c495 mov     ecx, edi
+1001c497 call    0x100198f0
+1001c49c jmp     0x1001c4da
+1001c4b0 mov     al, byte [ecx]
+1001c4b2 lea     ecx, [ecx+0x1]
+1001c4b5 mov     byte [edx+ecx+0x487], al
+1001c4bc test    al, al
+1001c4be jne     0x1001c4b0
+1001c4c0 push    dword [ebp+0x10]
+1001c4c3 mov     edx, esi
+1001c4c5 mov     ecx, edi
+1001c4c7 call    0x10019410
+1001c4cc jmp     0x1001c4da
+1001c57a mov     eax, esi
+1001c57c pop     edi
+1001c57d pop     esi
+1001c57e pop     ebx
+1001c57f mov     esp, ebp
+1001c581 pop     ebp
+1001c582 retn    
+1001c4eb test    esi, esi
+1001c4ed jne     0x1001c57a
+1001c4da mov     esi, eax
+1001c4dc add     esp, 0x4
+1001c4df cmp     esi, 0x490
+1001c4e5 je      0x1001c57a
+1001c4f3 mov     eax, dword [ebp+0xc]
+1001c4f6 cmp     dword [eax+0xb20], esi
+1001c4fc jne     0x1001c57a
+1001c4fe push    0x1
+1001c500 push    dword [ebp+0x10]
+1001c503 mov     edx, eax
+1001c505 mov     ecx, edi
+1001c507 call    0x1001d420
+1001c50c add     esp, 0x8
+1001c50f test    eax, eax
+1001c511 je      0x1001c563
+1001c563 push    0x101fe400
+1001c568 push    0x9a3
+1001c56d push    0x101fe384
+1001c572 call    0x10022900
+1001c577 add     esp, 0xc
+1001c513 mov     edx, dword [ebp+0xc]
+1001c516 mov     ecx, edi
+1001c518 push    esi
+1001c519 push    dword [ebp+0x10]
+1001c51c call    0x1001d420
+1001c521 add     esp, 0x8
+1001c524 test    eax, eax
+1001c526 je      0x1001c563
+1001c528 push    esi
+1001c529 push    0x101fe3c8
+1001c52e push    edx
+1001c52f call    0x1055e0d3
+1001c534 push    0x101fe3d4
+1001c539 push    0x99f
+1001c53e push    0x101fe384
+1001c543 call    0x10022900
+1001c548 mov     esi, dword [ebp+0xc]
+1001c54b add     esp, 0x14
+1001c54e cmp     ebx, 0x5
+1001c551 jl      0x1001c400
+1001c400 mov     ecx, dword [0x102177ec]
+1001c406 inc     ebx
+1001c407 lea     eax, [ecx-0x1]
+1001c40a cmp     eax, 0x5
+1001c40d ja      0x1001c583
+1001c557 mov     eax, 0x7d0b
+1001c55c pop     edi
+1001c55d pop     esi
+1001c55e pop     ebx
+1001c55f mov     esp, ebp
+1001c561 pop     ebp
+1001c562 retn    

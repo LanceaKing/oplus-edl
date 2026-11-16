@@ -1,0 +1,21 @@
+10049763 int32_t var_8 = 0xffffffff
+10049765 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10065f18
+10049770 TEB* fsbase
+10049770 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+10049771 int32_t ecx
+10049771 int32_t var_14 = ecx
+1004977a int32_t __saved_ebp
+1004977a int32_t var_1c = __security_cookie ^ &__saved_ebp
+1004977e fsbase->NtTib.ExceptionList = &ExceptionList
+10049787 int32_t var_14_1 = 0
+1004978e int32_t var_8_1 = 0
+10049799 *(arg1 + 0x14) = 0xf
+100497a0 *(arg1 + 0x10) = 0
+100497ac *arg1 = 0
+100497af sub_10001ad0(arg1, "Projectconfig.xml", 0x11)
+100497af 
+100497ba if (arg3 u>= 0x10)
+100497c1     sub_10001d60(arg2, arg3 + 1)
+100497c1 
+100497cb fsbase->NtTib.ExceptionList = ExceptionList
+100497d7 return arg1

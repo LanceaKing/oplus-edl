@@ -1,0 +1,15 @@
+Share validated GPT and partition operations through qdl storage API
+
+Move bounded GPT reads, validation, unique partition lookup and partition
+transfers into qdl::storage. Preserve explicit storage slots and provide
+read callbacks for caller capture and device adapters. Reject short GPT
+callback results before parsing.
+
+Use the shared API from CLI named reads, writes and erase. Add library
+and CLI regression coverage and document the boundary with caller policy.
+
+Validation: formatting, Clippy with warnings denied, 95 workspace tests,
+and workspace build passed offline with all features. Two fresh-context
+review rounds completed without Blocker or Major findings.
+
+Assisted-by: Codex:GPT-6

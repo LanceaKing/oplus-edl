@@ -1,0 +1,43 @@
+00412769 __security_cookie
+00412779 int32_t* var_58 = arg2
+00412779 
+0041278c if (arg1 != 0 && arg2 != 0)
+004127b0     *arg2 = sub_4208b2(8)
+004127b2     int128_t NotificationFilter
+004127b2     __builtin_memset(&NotificationFilter, 0, 0x20)
+004127c1     HDEVNOTIFY* edi_1 = nullptr
+004127c3     NotificationFilter.d = 0x20
+004127cb     int128_t* esi_1 = &data_5c4570
+004127d0     NotificationFilter:4.d = 5
+004127d0     
+004127ef     while (true)
+004127ef         NotificationFilter:0xc.o = *esi_1
+004127f5         HDEVNOTIFY eax_5 =
+004127f5             RegisterDeviceNotificationA(arg1, &NotificationFilter, DEVICE_NOTIFY_WINDOW_HANDLE)
+004127fb         int32_t* edx_1 = var_58
+00412801         *(edi_1 + *edx_1) = eax_5
+00412801         
+0041280a         if (*(edi_1 + *edx_1) == 0)
+0041280a             break
+0041280a         
+0041280c         esi_1 = &esi_1[1]
+0041280f         edi_1 = &edi_1[1]
+0041280f         
+00412818         if (esi_1 s>= &data_5c4590)
+0041282f             return sub_53b554()
+0041282f     
+00412830     enum WIN32_ERROR eax_9 = GetLastError()
+0041283a     struct _com_error::VTable* const var_54 = &_com_error::`vftable'
+00412842     enum WIN32_ERROR var_50_1 = eax_9
+00412846     int32_t* var_4c_1 = nullptr
+0041284e     HLOCAL hMem = nullptr
+00412861     sub_53c55b("Can't register device notification: %s", sub_411d30(&var_54))
+0041286d     var_54 = &_com_error::`vftable'
+0041286d     
+00412877     if (var_4c_1 != 0)
+0041287c         (*(*var_4c_1 + 8))(var_4c_1)
+0041287c     
+00412885     if (hMem != 0)
+00412888         LocalFree(hMem)
+00412888 
+004128a0 return sub_53b554()

@@ -1,0 +1,105 @@
+1000a743 int32_t var_8 = 0xffffffff
+1000a745 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10061392
+1000a750 TEB* fsbase
+1000a750 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+1000a756 __alloca_probe(0x1498)
+1000a760 int32_t __saved_ebp
+1000a760 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+1000a762 int32_t var_14 = eax_2
+1000a76c fsbase->NtTib.ExceptionList = &ExceptionList
+1000a77e struct _oplus_device* var_24 = "QCFlashAgent::onDeviceCallback triggered"
+1000a798 opdbg_log("QCFlashAgent::onDeviceCallback", 0x1c7, &data_1006cd98, var_24, eax_2)
+1000a7a1 int32_t result
+1000a7a1 
+1000a7a1 if (arg2 == 0xffffffff)
+1000a7aa     var_24 = arg3
+1000a7bc     opdbg_log("QCFlashAgent::onDeviceCallback", 0x1cd, 
+1000a7bc         "arrival parameter is not valid: arrival = %d, status = %d.", 0xffffffff, var_24)
+1000a7be     int32_t _Radix = 0xa
+1000a7c3     int32_t var_14a0 = 4
+1000a7d1     int32_t var_149c_1 = arg3
+1000a7d8     var_24.o = zx.o(0)
+1000a7dc     _itoa(arg3, &var_24, _Radix)
+1000a7e5     int32_t ecx_1 = 0
+1000a800     char i
+1000a800     
+1000a800     do
+1000a7f0         i = *(&var_24 + ecx_1)
+1000a7f4         ecx_1 += 1
+1000a7f7         char var_1129[0x10e9]
+1000a7f7         var_1129[ecx_1] = i
+1000a800     while (i != 0)
+1000a807     char* ecx_2 = arg1 + 0x444
+1000a82d     int64_t var_1228
+1000a82d     __builtin_strncpy(&var_1228, "error_occurred", 0xf)
+1000a82d     
+1000a83d     if (arg1 == 0)
+1000a83f         ecx_2 = &data_1006a03d
+1000a83f     
+1000a84a     void var_1494
+1000a84a     int32_t edx_1 = &var_1494 - ecx_2
+1000a85b     char i_1
+1000a85b     
+1000a85b     do
+1000a850         i_1 = *ecx_2
+1000a852         ecx_2 = &ecx_2[1]
+1000a855         ecx_2[edx_1 - 1] = i_1
+1000a85b     while (i_1 != 0)
+1000a863     void* eax_3 = *arg4
+1000a86b     var_24 = *(eax_3 + 0x74)
+1000a872     (*(eax_3 + 0x70))(&var_14a0, var_24)
+1000a877     result = 0
+1000a7a1 else if (*(*arg4 + 0x18) != 0)
+1000a8ac     var_24 = "Qualcomm HS-USB QDLoader 9008"
+1000a8ac     
+1000a8c3     if (strstr(arg1 + 0x2dc, var_24) != 0)
+1000a8e8         struct _oplus_device* esi_3 = *arg4 + 0x28
+1000a8eb         var_24 = esi_3
+1000a8ec         struct _oplus_device* var_14a8_2 = esi_3
+1000a8f2         int32_t eax_8 = _Mtx_lock(var_24)
+1000a8f2         
+1000a8fd         if (eax_8 != 0)
+1000a8ff             var_24 = eax_8
+1000a900             std::_Throw_C_error(var_24)
+1000a900             noreturn
+1000a900         
+1000a913         var_24 = arg1 + 0x5ac
+1000a91a         int32_t var_8_1 = 0
+1000a929         int32_t var_30_4 = *arg1
+1000a92b         int32_t result_1
+1000a92b         
+1000a92b         if (arg2 == 0)
+1000a95e             opdbg_log("QCFlashAgent::onDeviceCallback", 0x1ec, 
+1000a95e                 "[%s] Device removal on %s: SN = %s, Path = %s", var_30_4, arg1 + 0x444, 
+1000a95e                 arg1 + 0x9e4)
+1000a969             var_24 = arg1
+1000a96a             result_1 = QCFlashAgent::onDeviceRemoval(arg4, var_24)
+1000a92b         else
+1000a93c             opdbg_log("QCFlashAgent::onDeviceCallback", 0x1e8, 
+1000a93c                 "[%s] Device arrival on %s: SN = %s, Path = %s", var_30_4, arg1 + 0x444, 
+1000a93c                 arg1 + 0x9e4)
+1000a947             var_24 = arg1
+1000a948             result_1 = QCFlashAgent::onDeviceArrival(arg4, var_24)
+1000a948         
+1000a971         var_24 = esi_3
+1000a972         int32_t var_8_2 = 1
+1000a979         int32_t eax_12 = _Mtx_unlock(var_24)
+1000a979         
+1000a984         if (eax_12 != 0)
+1000a986             var_24 = eax_12
+1000a987             std::_Throw_C_error(var_24)
+1000a987             noreturn
+1000a987         
+1000a990         result = result_1
+1000a8c3     else
+1000a8c5         var_24 = arg1 + 0x2dc
+1000a8da         opdbg_log("QCFlashAgent::onDeviceCallback", 0x1e1, "Device name is not valid: %s", var_24)
+1000a8df         result = 0
+1000a884 else
+1000a886     var_24 = "QCFlashAgent is not activated."
+1000a89a     opdbg_log("QCFlashAgent::onDeviceCallback", 0x1dc, &data_1006cd98, var_24)
+1000a89f     result = 0
+1000a89f 
+1000a995 fsbase->NtTib.ExceptionList = ExceptionList
+1000a9a5 CookieCheckFunction(result)
+1000a9ad return result

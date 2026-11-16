@@ -1,0 +1,314 @@
+004181d8 int32_t eax = std::_Deallocate<64,0>("ToolLog.txt", &data_5a02f4)
+004181d8 
+004181e4 if (eax != 0)
+004181f1     _fprintf(eax, "[%d] HANDSET_TYPE_16G:\n", *(arg2 + 0x2c) + 1)
+004181fa     _fclose(eax)
+004181fa 
+00418202 int32_t* esi_1 = *(arg2 + 0x48)
+004182b3 arg1[-1] = esi_1
+004182b8 uint32_t wParam
+004182b8 LPARAM lParam_1
+004182b8 
+004182b8 if (esi_1 == 0)
+00418854     lParam_1 = arg2 + 0x164
+0041885a     char const* const var_4_33
+0041885a     
+0041885a     if (*(arg2 + 0x1b) == 0)
+00418863         var_4_33 = "No suitable software available for download"
+0041885a     else
+0041885c         var_4_33 = &data_5a20e4
+0041885c     
+00418869     sub_410900(lParam_1, var_4_33)
+0041887d     wParam = zx.d((*(arg2 + 0x2c)).b) << 0x10 | 0x1000001
+004182b8 else
+004182c6     int32_t ecx_4 = esi_1[1] - *esi_1
+004182c8     int32_t eax_1
+004182c8     int32_t edx_1
+004182c8     edx_1:eax_1 = muls.dp.d(0x8d3dcb09, ecx_4)
+004182ca     arg1[-3] = 0
+004182d3     int32_t edx_3 = (edx_1 + ecx_4) s>> 6
+004182dd     arg1[2] = ecx_4 s/ 0x74
+004182dd     
+004182e6     if (edx_3 u>> 0x1f == neg.d(edx_3))
+004186ae     label_4186ae:
+004186ae         *(arg2 + 0x28)
+004186b1         int32_t esi_9
+004186b1         
+004186b1         if (*(arg2 + 0x1c) != 0)
+0041872b             esi_9 =
+0041872b                 boost::math::policies::detail::raise_error<class std::domain_error,long double>(1)
+0041872b             
+0041872f             if (esi_9 != 0)
+0041873f                 int32_t wParam_1 = (zx.d((*(arg2 + 0x2c)).b) | 0x100) << 0x10
+0041873f                 
+00418746                 if (*(arg2 + 0x1b) == 0)
+00418771                     SendMessageA(*(arg2 + 0x30), 0x178c, wParam_1, 
+00418771                         "SetBootAbleStorageDriveTo1 Failed")
+0041877a                     *arg1
+0041877b                     return esi_9
+0041877b                 
+00418756                 SendMessageA(*(arg2 + 0x30), 0x178c, wParam_1, "SetBootAbleStorageDriveTo1")
+0041875f                 *arg1
+00418760                 return esi_9
+004186b1         else
+004186ba             esi_9 =
+004186ba                 boost::math::policies::detail::raise_error<class std::domain_error,long double>(0)
+004186ba             
+004186be             if (esi_9 != 0)
+004186c8                 if (*(arg2 + 0x1b) == 0)
+00418717                     SendMessageA(*(arg2 + 0x30), 0x178c, 
+00418717                         (zx.d((*(arg2 + 0x2c)).b) | 0x100) << 0x10, 
+00418717                         "SetBootAbleStorageDriveTo0 Failed")
+00418720                     *arg1
+00418721                     return esi_9
+00418721                 
+004186eb                 SendMessageA(*(arg2 + 0x30), 0x178c, (zx.d((*(arg2 + 0x2c)).b) | 0x100) << 0x10, 
+004186eb                     "SetBootAbleStorageDriveTo0")
+004186f4                 *arg1
+004186f5                 return esi_9
+004186f5         
+0041878c         int32_t wParam_2 = (zx.d((*(arg2 + 0x2c)).b) | 0x200) << 0x10
+00418793         LPARAM lParam
+00418793         
+00418793         if (*(arg2 + 0x1b) == 0)
+004187ba             SendMessageA(*(arg2 + 0x30), 0x178c, wParam_2, "Download Complete")
+004187bc             lParam = "Download Complete"
+00418793         else
+004187a3             SendMessageA(*(arg2 + 0x30), 0x178c, wParam_2, 0x5a234c)
+004187a5             lParam = 0x5a234c
+004187a5         
+004187db         SendMessageA(*(arg2 + 0x30), 0x178c, zx.d((*(arg2 + 0x2c)).b) << 0x10 | 0x2000001, lParam)
+004187e7         int32_t eax_67 = std::_Deallocate<64,0>("ToolLog.txt", &data_5a02f4)
+004187e7         
+004187f3         if (eax_67 != 0)
+00418800             _fprintf(eax_67, "[%d] Download Complete.\n", *(arg2 + 0x2c) + 1)
+00418809             _fclose(eax_67)
+00418809         
+00418818         *arg1
+00418819         return esi_9
+00418819     
+004182ec     int32_t eax_2 = arg1[2]
+004182ef     int32_t ebx_4 = 0
+004182f1     arg1[-2] = 0
+004182f1     
+004182f6     while (true)
+004182f6         void** esi_3 = *esi_1 + ebx_4
+004182f6         
+004182ff         if (*(arg2 + 0x1e4) != 0)
+004186a6             *arg1
+004186a7             return 0x4c7
+004186a7         
+00418307         if (esi_3 == 0)
+00418651             int32_t eax_43 = 0x18
+00418656             char const* const var_8_15
+00418656             
+00418656             if (*(arg2 + 0x1b) == 0)
+00418672                 if (*0x2c u>= 0x10)
+00418674                     eax_43 = *0x18
+00418674                 
+00418676                 int32_t var_4_30 = eax_43
+00418677                 var_8_15 = "Cannot find file %s"
+00418656             else
+0041865f                 if (*0x2c u>= 0x10)
+00418661                     eax_43 = *0x18
+00418661                 
+00418663                 int32_t var_4_29 = eax_43
+00418664                 var_8_15 = &data_5a1f74
+00418664             
+0041867c             lParam_1 = arg2 + 0x164
+00418683             sub_410900(lParam_1, var_8_15)
+00418694             wParam = zx.d((*(arg2 + 0x2c)).b) << 0x10
+00418697             break
+00418697         
+00418311         if (esi_3[0x17].b != 0)
+0041831b             LPARAM var_8_14
+0041831b             LPARAM eax_41
+0041831b             int32_t ebx_6
+0041831b             
+0041831b             if (*(esi_3 + 0x5d) != 0)
+00418325                 char const* const var_8_1
+00418325                 
+00418325                 if (*(arg2 + 0x1b) == 0)
+00418345                     void** eax_5
+00418345                     
+00418345                     if (esi_3[5] u< 0x10)
+0041834b                         eax_5 = esi_3
+00418345                     else
+00418347                         eax_5 = *esi_3
+00418347                     
+0041834d                     void** var_4_5 = eax_5
+0041834e                     var_8_1 = "Erasing partition %s"
+00418325                 else if (esi_3[5] u< 0x10)
+00418339                     void** var_4_4 = esi_3
+0041833a                     var_8_1 = &data_5a213c
+0041832b                 else
+0041832f                     void* var_4_3 = *esi_3
+00418330                     var_8_1 = &data_5a213c
+00418330                 
+0041835a                 sub_410900(arg2 + 0x164, var_8_1)
+0041836c                 int32_t eax_6 = std::_Deallocate<64,0>("ToolLog.txt", &data_5a02f4)
+00418376                 arg1[-4] = eax_6
+00418376                 
+0041837b                 if (eax_6 != 0)
+00418381                     void** eax_7
+00418381                     
+00418381                     if (esi_3[5] u< 0x10)
+00418387                         eax_7 = esi_3
+00418381                     else
+00418383                         eax_7 = *esi_3
+00418383                     
+00418398                     _fprintf(eax_6, "[%d] Erasing rawprogram%d Label %s\n", *(arg2 + 0x2c) + 1, 
+00418398                         esi_3[0x15], eax_7)
+004183a3                     _fclose(arg1[-4])
+004183a3                 
+004183c1                 SendMessageA(*(arg2 + 0x30), 0x178c, zx.d((*(arg2 + 0x2c)).b) << 0x10, arg2 + 0x164)
+004183e0                 SendMessageA(*(arg2 + 0x30), 0x178c, zx.d((*(arg2 + 0x2c)).b) << 0x10 | 1, 
+004183e0                     arg2 + 0x164)
+004183e0                 
+004183ea                 if (esi_3[0x12] != 0)
+0041844c                     ebx_6 = sub_418bb0(esi_3)
+0041844c                     
+00418450                     if (ebx_6 != 0)
+0041845a                         char const* const var_8_7
+0041845a                         
+0041845a                         if (*(arg2 + 0x1b) == 0)
+004185ee                             if (esi_3[5] u>= 0x10)
+004185f0                                 esi_3 = *esi_3
+004185f0                             
+004185f2                             void** var_4_25 = esi_3
+004185f3                             var_8_7 = "Erasing partition %s Failed"
+0041845a                         else
+00418464                             if (esi_3[5] u>= 0x10)
+00418466                                 esi_3 = *esi_3
+00418466                             
+00418468                             void** var_4_14 = esi_3
+00418469                             var_8_7 = &data_5a21ec
+00418469                         
+004185ff                         sub_410900(arg2 + 0x164, var_8_7)
+00418607                         eax_41 = arg2 + 0x164
+0041860d                         int32_t var_4_26 = 1
+0041860f                         var_8_14 = eax_41
+0041860f                         goto label_418618
+0041860f                     
+004185c3                     eax_2 = arg1[2]
+004183ea                 else
+004183f0                     char const* const var_8_5
+004183f0                     
+004183f0                     if (*(arg2 + 0x1b) == 0)
+00418406                         if (esi_3[5] u>= 0x10)
+00418408                             esi_3 = *esi_3
+00418408                         
+0041840a                         void** var_4_11 = esi_3
+0041840b                         var_8_5 = "Skip erasing partition %s, num_partition_sectors = 0"
+004183f0                     else
+004183f6                         if (esi_3[5] u>= 0x10)
+004183f8                             esi_3 = *esi_3
+004183f8                         
+004183fa                         void** var_4_10 = esi_3
+004183fb                         var_8_5 = &data_5a2188
+004183fb                     
+00418411                     sub_410900(arg2 + 0x164, var_8_5)
+0041843a                     SendMessageA(*(arg2 + 0x30), 0x178c, 
+0041843a                         zx.d((*(arg2 + 0x2c)).b) << 0x10 | 0x1000001, arg2 + 0x164)
+0041843c                     eax_2 = arg1[2]
+0041831b             else if (esi_3[0xa] == 0)
+00418589                 int32_t eax_36 = std::_Deallocate<64,0>("ToolLog.txt", &data_5a02f4)
+00418589                 
+00418595                 if (eax_36 != 0)
+0041859b                     void** eax_37
+0041859b                     
+0041859b                     if (esi_3[5] u< 0x10)
+004185a1                         eax_37 = esi_3
+0041859b                     else
+0041859d                         eax_37 = *esi_3
+0041859d                     
+004185b2                     _fprintf(eax_36, "[%d] Skip rawprogram%d Label: %s\n", *(arg2 + 0x2c) + 1, 
+004185b2                         esi_3[0x15], eax_37)
+004185bb                     _fclose(eax_36)
+004185bb                 
+004185c3                 eax_2 = arg1[2]
+00418477             else
+00418481                 int32_t* ebx_7 = &esi_3[6]
+00418484                 char const* const var_8_8
+00418484                 
+00418484                 if (*(arg2 + 0x1b) == 0)
+004184a4                     int32_t* ecx_9
+004184a4                     
+004184a4                     if (ebx_7[5] u< 0x10)
+004184aa                         ecx_9 = ebx_7
+004184a4                     else
+004184a6                         ecx_9 = *ebx_7
+004184a6                     
+004184ac                     int32_t* var_4_17 = ecx_9
+004184ad                     var_8_8 = "Downloading %s"
+00418484                 else if (ebx_7[5] u< 0x10)
+00418498                     int32_t* var_4_16 = ebx_7
+00418499                     var_8_8 = &data_5a221c
+0041848a                 else
+0041848e                     int32_t var_4_15 = *ebx_7
+0041848f                     var_8_8 = &data_5a221c
+0041848f                 
+004184b9                 sub_410900(arg2 + 0x164, var_8_8)
+004184cb                 int32_t eax_23 = std::_Deallocate<64,0>("ToolLog.txt", &data_5a02f4)
+004184d5                 arg1[-4] = eax_23
+004184d5                 
+004184da                 if (eax_23 != 0)
+004184e0                     if (ebx_7[5] u>= 0x10)
+004184e2                         ebx_7 = *ebx_7
+004184e2                     
+004184e8                     void** eax_24
+004184e8                     
+004184e8                     if (esi_3[5] u< 0x10)
+004184ee                         eax_24 = esi_3
+004184e8                     else
+004184ea                         eax_24 = *esi_3
+004184ea                     
+00418500                     _fprintf(eax_23, "[%d] Downloading rawprogram%d Label: %s FileName: %s\n", 
+00418500                         *(arg2 + 0x2c) + 1, esi_3[0x15], eax_24, ebx_7)
+00418508                     _fclose(arg1[-4])
+00418508                 
+0041852c                 SendMessageA(*(arg2 + 0x30), 0x178c, zx.d((*(arg2 + 0x2c)).b) << 0x10, arg2 + 0x164)
+0041854b                 SendMessageA(*(arg2 + 0x30), 0x178c, zx.d((*(arg2 + 0x2c)).b) << 0x10 | 1, 
+0041854b                     arg2 + 0x164)
+00418559                 ebx_6 = sub_418e50(esi_3)
+00418559                 
+0041855d                 if (ebx_6 != 0)
+00418563                     void** eax_35 = &esi_3[6]
+00418566                     char const* const var_8_12
+00418566                     
+00418566                     if (*(arg2 + 0x1b) == 0)
+0041862f                         if (eax_35[5] u>= 0x10)
+00418631                             eax_35 = *eax_35
+00418631                         
+00418633                         void** var_4_27 = eax_35
+00418634                         var_8_12 = "Donwloading %s Failed"
+00418566                     else
+00418570                         if (eax_35[5] u>= 0x10)
+00418572                             eax_35 = *eax_35
+00418572                         
+00418574                         void** var_4_22 = eax_35
+00418575                         var_8_12 = &data_5a2274
+00418575                     
+00418640                     eax_41 = sub_410900(arg2 + 0x164, var_8_12)
+00418648                     int32_t var_4_28 = 1
+0041864a                     var_8_14 = arg2 + 0x164
+00418618                 label_418618:
+00418618                     sub_417200(eax_41, (*(arg2 + 0x2c)).b, *(arg2 + 0x30), 1, var_8_14, 1)
+00418627                     *arg1
+00418628                     return ebx_6
+00418628                 
+004185c3                 eax_2 = arg1[2]
+004185c3         
+004185cc         int32_t esi_4 = arg1[-3]
+004185cf         arg1[-2] += 0x74
+004185d4         arg1[-3] = esi_4 + 1
+004185d4         
+004185d9         if (esi_4 + 1 u>= eax_2)
+004185d9             goto label_4186ae
+004185d9         
+004185df         ebx_4 = arg1[-2]
+004185e2         esi_1 = arg1[-1]
+004185e2 
+0041888c SendMessageA(*(arg2 + 0x30), 0x178c, wParam, lParam_1)
+0041889c *arg1
+0041889d return 1

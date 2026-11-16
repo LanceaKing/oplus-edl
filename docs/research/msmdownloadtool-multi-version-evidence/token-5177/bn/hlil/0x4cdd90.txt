@@ -1,0 +1,130 @@
+004cdd90 int32_t ebp
+004cdd90 int32_t var_4 = ebp
+004cdd93 int32_t var_8 = 0xffffffff
+004cdd95 int32_t (* var_c)() = sub_6dc363
+004cdda0 TEB* fsbase
+004cdda0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004cddac int32_t eax_2 = __security_cookie ^ &var_4
+004cddae int32_t var_18 = eax_2
+004cddb1 int32_t ebx
+004cddb1 int32_t var_ac = ebx
+004cddb2 int32_t esi
+004cddb2 int32_t var_b0 = esi
+004cddb3 int32_t edi
+004cddb3 int32_t var_b4 = edi
+004cddb4 int32_t var_b8 = eax_2
+004cddb8 fsbase->NtTib.ExceptionList = &ExceptionList
+004cddcc sub_4d0d40()
+004cddd4 int32_t var_8_1 = 0
+004cdde3 int32_t var_34 = 0xf
+004cddea int32_t var_38 = 0
+004cddf1 char var_48 = 0
+004cddf5 int32_t var_cc = 0
+004cddf7 var_8_1.b = 2
+004cddfb int32_t eax_3
+004cddfb int32_t* ebp_1
+004cddfb eax_3, ebp_1 = sub_689b04(sub_4d0d40())
+004cde04 _srand(eax_3)
+004cde1a 0x3b78b0(mods.dp.d(sx.q(sub_68d467()), 0x1f4))
+004cde27 int32_t var_d0 = 0xf
+004cde2e int32_t var_d4 = 0
+004cde3a char var_e4 = 0
+004cde3d sub_412e10(&var_e4, "setprocstart", 0xc)
+004cde58 int32_t esi_1 = sub_4cd480(arg1, &ebp_1[-0x28], &ebp_1[-0x20], &ebp_1[-0x11], var_e4)
+004cde58 
+004cde5c if (esi_1 == 0)
+004cde87     void* var_d0_2 = 5
+004cde89     char const* const var_d4_2 = "value"
+004cde91     ebp_1[-6] = 0xf
+004cde98     ebp_1[-7] = 0
+004cde9f     ebp_1[-0xb].b = 0
+004cdea3     sub_412e10(&ebp_1[-0xb], var_d4_2, var_d0_2)
+004cdeb3     sub_42bd10(&ebp_1[-0x20], &ebp_1[-0x18], &ebp_1[-0xb])
+004cdeb3     
+004cdebc     if (ebp_1[-6] u>= 0x10)
+004cdec1         sub_56c751(ebp_1[-0xb])
+004cdec1     
+004cdec9     void* esi_2 = ebp_1[-0x18]
+004cdecc     ebp_1[-6] = 0xf
+004cded3     ebp_1[-7] = 0
+004cdeda     ebp_1[-0xb].b = 0
+004cdeda     
+004cdee1     if (esi_2 == ebp_1[-0x20])
+004cdfdf         sub_4d6500(&data_7e4a58, 4, "[%d] [Firehose][%s] Can't find response value\n", arg1[4] + 1, 
+004cdfdf             "CFirehose::SendSetProcessStartCommand")
+004cdee1     else if (sub_42b840(esi_2 + 0x20, "ACK") != 0)
+004cdf9d         void** esi_3 = esi_2 + 0x20
+004cdf9d         
+004cdfa4         if (esi_3[5] u>= 0x10)
+004cdfa6             esi_3 = *esi_3
+004cdfa6         
+004cdfba         var_e4.d = &data_7e4a58
+004cdfbf         sub_4d6500(var_e4, 4, "[%d] [Firehose][%s] Resp value is not ACK (%s)\n", arg1[4] + 1, 
+004cdfbf             "CFirehose::SendSetProcessStartCommand", esi_3)
+004cdef6     else
+004cdf04         sub_4129b0(&ebp_1[-0xb], "device_timestamp")
+004cdf14         sub_42bd10(&ebp_1[-0x20], &ebp_1[-0x18], &ebp_1[-0xb])
+004cdf14         
+004cdf1d         if (ebp_1[-6] u>= 0x10)
+004cdf22             sub_56c751(ebp_1[-0xb])
+004cdf22         
+004cdf2d         char* eax_19 = ebp_1[-0x18] + 0x20
+004cdf30         ebp_1[-6] = 0xf
+004cdf37         ebp_1[-7] = 0
+004cdf3e         ebp_1[-0xb].b = 0
+004cdf3e         
+004cdf46         if (*(eax_19 + 0x14) u>= 0x10)
+004cdf48             eax_19 = *eax_19
+004cdf48         
+004cdf53         int32_t var_d0_10 = sub_4129b0(&ebp_1[-0x17], eax_19)
+004cdf57         ebp_1[-1].b = 3
+004cdf5b         int32_t eax_20
+004cdf5b         int32_t edx_2
+004cdf5b         eax_20, edx_2 = sub_4c6500(&ebp_1[-0x17])
+004cdf63         ebp_1[-1].b = 2
+004cdf67         bool cond:0_1 = ebp_1[-0x12] u< 0x10
+004cdf6b         *arg2 = eax_20
+004cdf6d         arg2[1] = edx_2
+004cdf6d         
+004cdf70         if (not(cond:0_1))
+004cdf75             sub_56c751(ebp_1[-0x17])
+004cdf75         
+004cdf8e         var_e4.d = &data_7e4a58
+004cdf93         sub_4d6500(var_e4, 4, "[%d] [Firehose] Device start timestamp is %llu\n", arg1[4] + 1, 
+004cdf93             *arg2, arg2[1])
+004cde5c else
+004cde73     var_e4.d = 4
+004cde7a     sub_4d6500(&data_7e4a58, var_e4, "[%d] [Firehose] %s: Failed to send %s. (%d).\n", arg1[4] + 1, 
+004cde7a         "CFirehose::SendSetProcessStartCommand", "setprocstart", esi_1)
+004cde7a 
+004cdfed if (ebp_1[-0xc] u>= 0x10)
+004cdff2     sub_56c751(ebp_1[-0x11])
+004cdff2 
+004cdffa int32_t eax_27 = ebp_1[-0x1e]
+004cdffd ebp_1[-0xc] = 0xf
+004ce004 ebp_1[-0xd] = 0
+004ce00b ebp_1[-0x11].b = 0
+004ce00b 
+004ce011 if (eax_27 != 0)
+004ce014     sub_56c751(eax_27)
+004ce01c     ebp_1[-0x1e] = 0
+004ce023     ebp_1[-0x1d] = 0
+004ce02a     ebp_1[-0x1c] = 0
+004ce02a 
+004ce034 sub_4d0e10()
+004ce03c sub_56c751(ebp_1[-0x20])
+004ce041 int32_t eax_28 = ebp_1[-0x26]
+004ce041 
+004ce04c if (eax_28 != 0)
+004ce04f     sub_56c751(eax_28)
+004ce057     ebp_1[-0x26] = 0
+004ce061     ebp_1[-0x25] = 0
+004ce06b     ebp_1[-0x24] = 0
+004ce06b 
+004ce07b sub_4d0e10()
+004ce086 sub_56c751(ebp_1[-0x28])
+004ce093 fsbase->NtTib.ExceptionList = ebp_1[-3]
+004ce09e ebp_1[-5]
+004ce0a3 int32_t result = sub_68804f()
+004ce0aa *ebp_1
+004ce0ab return result

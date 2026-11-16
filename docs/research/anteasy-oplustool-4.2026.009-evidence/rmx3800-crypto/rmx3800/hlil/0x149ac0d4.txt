@@ -1,0 +1,27 @@
+149ac0e4 int64_t x8 = *(arg1 + 0x18)
+149ac0f0 int64_t result
+149ac0f0 
+149ac0f0 if (x8 == 0)
+149ac128     result = 0
+149ac128     
+149ac134     if (arg2 u<= 0xfffffffe)
+149ac138         void* x8_2 = *(arg1 + 0x30)
+149ac138         
+149ac13c         if (x8_2 != 0)
+149ac144             if (zx.d(*(x8_2 + 0xb8)) == 0)
+149ac170                 j_sub_149ac750()
+149ac144             else
+149ac148                 j_sub_149ac750()
+149ac148             
+149ac230             return 0
+149ac0f0 else
+149ac0fc     if (arg2 u>= 0xffffffff)
+149ac230         return 0
+149ac230     
+149ac104     int64_t result_1 = x8(zx.q(arg2.d))
+149ac108     result = result_1
+149ac108     
+149ac10c     if (result_1 != 0)
+149ac120         (*(arg1 + 0x40))(result, 0, arg2)
+149ac120 
+149ac244 return result

@@ -1,0 +1,75 @@
+180044933 void var_1b8
+180044933 int64_t rax_1 = __security_cookie ^ &var_1b8
+18004495c uint64_t result
+18004495c 
+18004495c if (sub_1800375f0(arg1).b != 0)
+180044c16     result.b = 0
+18004495c else if (sub_18001c4b0(arg1) u> 0x40000)
+180044c16     result.b = 0
+180044970 else
+180044979     uint64_t rax_2 = sub_18001c4b0(arg1)
+180044993     int128_t var_f8
+180044993     __FrameHandler3::TryBlockMap::TryBlockMap(&var_f8, sub_18001ad90(arg1), rax_2)
+180044998     char var_128 = 0
+18004499c     char var_127 = 0
+1800449a0     char var_126 = 0
+1800449a4     char var_125 = 0
+1800449a8     char var_124 = 0
+1800449ac     char var_123 = 0
+1800449b0     char var_122 = 0
+1800449b4     char var_121 = 0
+1800449b8     char var_120 = 0
+1800449bc     char var_11f = 0
+1800449c0     char var_11e = 0
+1800449c4     char var_11d = 0
+1800449c8     char var_11c = 0
+1800449d0     void var_68
+1800449d0     sub_1800023b0(&var_68)
+1800449d6     int64_t var_118 = 0
+1800449e2     var_f8 = var_f8
+180044a6b     int64_t var_e8
+180044a6b     int64_t* rax_4 =
+180044a6b         <lambda_e1cd321f42ef62af934d422167de95fa>::<lambda_e1cd321f42ef62af934d422167de95fa>(
+180044a6b         &var_e8, &var_128, &var_127, &var_126, arg5, &var_125, &var_124, &var_123, &var_122, 
+180044a6b         &var_120, &var_68, &var_11f, &var_11e, &var_11d, &var_121, &var_118, &var_11c)
+180044b00     uint64_t rbx_1
+180044b00     
+180044b00     if (sub_180042d90(&var_f8, rax_4) == 0 || var_128 == 0 || var_127 == 0 || var_126 == 0
+180044b00             || var_125 == 0 || var_124 == 0 || var_123 == 0 || var_122 == 0 || var_121 == 0
+180044b00             || var_120 == 0 || var_11f == 0 || var_11e == 0 || var_11d == 0 || var_11c == 0)
+180044c06         rbx_1.b = 0
+180044b00     else
+180044b14         void var_110
+180044b14         char* rax_6 = sub_180044cf0(&var_110, arg5, var_118, arg4)
+180044b19         char rbx_2 = *rax_6
+180044b1c         char rdi_1 = rax_6[1]
+180044b20         char rsi_1 = rax_6[2]
+180044b24         var_e8 = arg3
+180044b2f         int64_t var_e0_1 = arg5[0x18]
+180044b37         int64_t r9
+180044b37         int64_t var_d8_1 = r9
+180044b42         int64_t var_d0_1 = arg5[0x19]
+180044b4d         int64_t var_c8_1 = arg5[0x1a]
+180044b55         int64_t var_c0_1 = var_118
+180044b5e         int64_t var_b8_1 = j_sub_180057c80()
+180044b72         char var_b0_1 = sub_1800383b0(&var_68, "cloud_loader_ticket_v2")
+180044b84         char var_af_1 = j_sub_180045080(&arg5[0x14], arg4)
+180044b93         char var_ae_1 = j_sub_180045080(&arg5[8], arg2)
+180044ba4         char var_ad_1 = sub_180044800(&arg5[0xc], 0x40)
+180044bb5         char var_ac_1 = sub_180044800(&arg5[4], 0x40)
+180044bc9         char var_ab_1 = sub_180044800(&arg5[0x10], 0x40)
+180044bcc         char var_aa_1 = rbx_2
+180044bcf         char var_a9_1 = rdi_1
+180044bd3         char var_a8_1 = rsi_1
+180044be6         char var_a7_1 = sub_1800383b0(arg2, "auth")
+180044bed         char rax_20 = sub_180044c40(&var_e8)
+180044bf2         rbx_1 = zx.q(rax_20)
+180044bf2         
+180044bf7         if (rax_20 != 0)
+180044bfd             arg5[0x1b] = var_118
+180044bfd     
+180044c0c     sub_180002b10(&var_68)
+180044c11     result = zx.q(rbx_1.b)
+180044c11 
+180044c1f __security_check_cookie(rax_1 ^ &var_1b8)
+180044c3e return result

@@ -1,0 +1,139 @@
+004b9010 int32_t* ebp
+004b9010 int32_t* var_4 = ebp
+004b9013 int32_t var_8 = 0xffffffff
+004b9015 int32_t (* var_c)() = sub_6db165
+004b9020 TEB* fsbase
+004b9020 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004b902c int32_t eax_2 = __security_cookie ^ &var_4
+004b902e int32_t var_14 = eax_2
+004b9031 int32_t ebx
+004b9031 int32_t var_230 = ebx
+004b9032 int32_t esi
+004b9032 int32_t var_234 = esi
+004b9033 int32_t edi
+004b9033 int32_t var_238 = edi
+004b9038 fsbase->NtTib.ExceptionList = &ExceptionList
+004b9040 *arg3 = &CSerialComDload::`vftable'{for `IParamInterface'}
+004b9046 arg3[6] = 0xf
+004b904d arg3[5] = 0
+004b9054 struct IParamInterface::CSerialComDload::VTable** var_228 = arg3
+004b905a arg3[1].b = 0
+004b905e int32_t var_8_1 = 0
+004b9065 int32_t* eax_3 = sub_575e46(eax_2)
+004b9070 int32_t eax_4
+004b9070 eax_4.b = eax_3 != 0
+004b9070 
+004b9075 if (eax_4 == 0)
+004b907c     sub_414340(0x80004005)
+004b907c     noreturn
+004b907c 
+004b9089 arg3[0xa] = (*(*eax_3 + 0xc))() + 0x10
+004b908f var_8_1.b = 1
+004b9093 sub_4b88f0(&arg3[0xb])
+004b9098 arg3[0x22] = 0xf
+004b90a2 arg3[0x21] = 0
+004b90ac arg3[0x1d].b = 0
+004b90b0 var_8_1.b = 3
+004b90b4 int32_t* eax_8 = sub_575e46()
+004b90bf int32_t eax_9
+004b90bf eax_9.b = eax_8 != 0
+004b90bf 
+004b90c4 if (eax_9 == 0)
+004b90cb     sub_414340(0x80004005)
+004b90cb     noreturn
+004b90cb 
+004b90d8 arg3[0x141] = (*(*eax_8 + 0xc))() + 0x10
+004b90e3 var_8_1.b = 4
+004b90e7 int32_t eax_13 = sub_56c71b(0x1a8)
+004b90f1 int32_t eax_14
+004b90f1 
+004b90f1 if (eax_13 == 0)
+004b90fc     eax_14 = 0
+004b90f1 else
+004b90f5     eax_14 = sub_4d4530(eax_13, &var_4, 0x10002c)
+004b90f5 
+004b9100 arg3[0x169] = eax_14
+004b9106 sub_4d4fb0()
+004b910b arg3[0x174] = 0xf
+004b9115 arg3[0x173] = 0
+004b911f arg3[0x16f].b = 0
+004b9129 var_8_1.b = 6
+004b912d var_4 = 0x34
+004b912f arg3[0xf] = arg4
+004b9132 int32_t* eax_16 = sub_56c71b(var_4)
+004b913a int32_t* var_220 = eax_16
+004b9140 var_8_1.b = 7
+004b9146 int32_t eax_17
+004b9146 
+004b9146 if (eax_16 == 0)
+004b9151     eax_17 = 0
+004b9146 else
+004b914a     eax_17 = sub_4b8030()
+004b914a 
+004b9153 var_8_1.b = 6
+004b9157 var_4 = 0x5c
+004b9159 arg3[0xc] = eax_17
+004b915c int32_t* eax_18
+004b915c int32_t* ecx_6
+004b915c eax_18, ecx_6 = sub_56c71b(var_4)
+004b9164 var_220 = eax_18
+004b916a var_8_1.b = 8
+004b9170 int32_t eax_19
+004b9170 
+004b9170 if (eax_18 == 0)
+004b917f     eax_19 = 0
+004b9170 else
+004b9172     var_4 = ecx_6
+004b9178     eax_19 = sub_4d1700(eax_18, arg3[0xc])
+004b9178 
+004b9181 var_8_1.b = 6
+004b9185 var_4 = 0x14
+004b9187 arg3[0xd] = eax_19
+004b918a int32_t* eax_20 = sub_56c71b(var_4)
+004b9192 var_220 = eax_20
+004b9198 var_8_1.b = 9
+004b919e int32_t* eax_21
+004b919e 
+004b919e if (eax_20 == 0)
+004b91ac     eax_21 = nullptr
+004b919e else
+004b91a0     var_4 = arg3[0xc]
+004b91a5     eax_21 = sub_4c66e0(eax_20, var_4)
+004b91a5 
+004b91ae var_8_1.b = 6
+004b91b2 void* ecx_9 = arg3[0xc]
+004b91b5 arg3[0xe] = eax_21
+004b91bb *(ecx_9 + 0x2c) = arg3[0xf]
+004b91c4 *(arg3[0xd] + 0xc) = arg3[0xf]
+004b91cd arg3[0xe][2].vFunc_0 = arg3[0xf]
+004b91d0 void* esi_1 = arg3[0xb]
+004b91d6 arg3[0x10] = arg5
+004b91d9 __builtin_memset(&arg3[0x24], 0, 0x28)
+004b9243 arg3[0x14] = 0xffffffff
+004b924a arg3[0x142].w = 0x100
+004b9253 *(arg3 + 0x25) = 0
+004b9257 *(arg3 + 0x59) = 0
+004b925b sub_42c220(esi_1 + 0x100004)
+004b9260 int32_t* eax_26 = *(esi_1 + 0x100004)
+004b926c var_4 = &var_220
+004b9273 var_220 = eax_26
+004b9279 void* eax_27 = *(esi_1 + 0x10000c)
+004b927b int32_t var_8_2 = 0x10
+004b927e *(esi_1 + 0x100010) = eax_27
+004b9287 void var_224
+004b9287 ExceptionList = &var_224
+004b9288 sub_4132f0(esi_1 + 0x10000c, ExceptionList, eax_27, var_8_2, var_4)
+004b928f *(esi_1 + 0x100018) = 7
+004b9299 *(esi_1 + 0x10001c) = 8
+004b92a3 var_4 = 0x100
+004b92a8 int32_t var_8_3 = 0
+004b92a9 int16_t var_1c = 0
+004b92ad char var_1a = 0
+004b92b6 void var_21c
+004b92b6 void* var_c_2 = &var_21c
+004b92b7 *(arg3 + 0x27) = 0
+004b92bb _memset(var_c_2, var_8_3, var_4)
+004b92c9 var_4 = 0x104
+004b92d1 _memset(&arg3[0x2f], 0, var_4)
+004b92d9 var_4 = 0x104
+004b92e6 return sub_c5fea5(0, &arg3[0x2f], var_4)

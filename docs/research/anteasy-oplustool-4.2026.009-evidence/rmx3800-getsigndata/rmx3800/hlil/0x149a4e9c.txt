@@ -1,0 +1,29 @@
+149a4eb0 int64_t x8 = 0
+149a4eb4 void* result = &data_80267000
+149a4eb4 
+149a4ec0 while (true)
+149a4ec0     if (x8 == 2)
+149a4eec         int64_t* entry_x3
+149a4eec         int64_t entry_x4
+149a4eec         int64_t entry_x5
+149a4eec         int64_t entry_x6
+149a4eec         int64_t entry_x7
+149a4eec         uint64_t x24
+149a4eec         sub_149a5c34(2, "Failed to get a buffer for transfer", 2, entry_x3, entry_x4, entry_x5, 
+149a4eec             entry_x6, entry_x7, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9, x24)
+149a4ef0         return nullptr
+149a4ef0     
+149a4ecc     if (zx.d(*(x8 + &data_80269001)) == 0)
+149a4ecc         break
+149a4ecc     
+149a4ed0     x8 += 1
+149a4ed4     result += 0x1000
+149a4ed4 
+149a4ef8 uint32_t x9_1 = zx.d(data_80269000)
+149a4f00 *(x8 + &data_80269001) = 1
+149a4f00 
+149a4f08 if (x9_1 == 1)
+149a4f14     return sub_149aaf98(x8, arg1) __tailcall
+149a4f14 
+149a4f1c *arg1 = 0x1000
+149a4f24 return result

@@ -1,0 +1,14 @@
+149a7fd8 int64_t i = 0
+149a7fdc int64_t x9 = 0x3c
+149a7fdc 
+149a7ff4 for (; i != 0x10; i += 1)
+149a7ff8     int64_t x14_1 = x9 & 0xfffffffc
+149a7ffc     x9 += 0xfffffffc
+149a8008     uint32_t x14_2 = ((0xf << x14_1 & arg1) u>> x14_1).d
+149a8010     char x15_3
+149a8010     
+149a8010     x15_3 = x14_2 s< 0xa ? 0x30 : 0x57
+149a8010     
+149a8018     arg2[i] = x15_3 + x14_2.b
+149a8018 
+149a8024 arg2[0x10] = 0

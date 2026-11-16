@@ -1,0 +1,78 @@
+004304bf int32_t entry_result
+004304bf 
+004304bf if (arg1 != 0)
+004304c5     int32_t eax = arg2[-0x47]
+004304c5     
+004304ce     if (eax == 4)
+0043061a         int32_t eax_17 = arg2[-0x46]
+0043061a         
+00430622         if (eax_17 == 0)
+0043065a             int32_t eax_20 = arg2[-0x44]
+0043065a             
+00430663             if (eax_20 == 2)
+0043066f                 sub_687de2(arg2[-1] ^ arg2)
+00430676                 *arg2
+00430677                 return 0
+00430677             
+0043067f             if (eax_20 == 1)
+0043067f                 entry_result = 1
+00430622         else
+00430627             if (eax_17 == 0xa)
+00430651                 sub_687de2(arg2[-1] ^ arg2)
+00430658                 *arg2
+00430659                 return 2
+00430659             
+0043062c             if (eax_17 == 0x5a)
+0043063b                 sub_687de2(arg2[-1] ^ arg2)
+00430642                 *arg2
+00430643                 return 3
+004304ce     else if (eax == 5)
+00430567         int32_t eax_9 = arg2[-0x46]
+00430567         
+00430570         if (eax_9 == 0)
+00430611             sub_687de2(arg2[-1] ^ arg2)
+00430618             *arg2
+00430619             return 4
+00430619         
+00430577         if (eax_9 == 1)
+004305fb             sub_687de2(arg2[-1] ^ arg2)
+00430602             *arg2
+00430603             return 5
+00430603         
+0043057a         if (eax_9 == 2)
+0043058e             if (*(arg2 - 6) != 1 || arg2[-0x51].w != 9)
+004305a6                 int32_t var_4 = 0x59
+004305ad                 return sub_fe3fd2(eax_9 - 2)
+004305ad             
+0043059d             sub_687de2(arg2[-1] ^ arg2)
+004305a4             *arg2
+004305a5             return 6
+004304d5     else if (eax == 6)
+004304e2         int32_t ecx_1 = arg2[-0x46]
+004304e2         
+004304ea         if (ecx_1 == 0)
+00430550             int32_t ebx_3
+00430550             ebx_3.b = *(arg2 - 6) != 1
+0043055e             sub_687de2(arg2[-1] ^ arg2)
+00430565             *arg2
+00430566             return ebx_3 + 9
+00430566         
+004304f2         if (ecx_1 - 1 u<= 1)
+004304fc             if (*(arg2 - 6) == 1)
+00430501                 if (ecx_1 == 1)
+00430510                     sub_687de2(arg2[-1] ^ arg2)
+00430517                     *arg2
+00430518                     return 0xb
+00430518                 
+0043051c                 if (ecx_1 == 2)
+0043052b                     sub_687de2(arg2[-1] ^ arg2)
+00430532                     *arg2
+00430533                     return 0xc
+00430533             
+00430541             sub_687de2(arg2[-1] ^ arg2)
+00430548             *arg2
+00430549             return 0xd
+00430549 
+0043068a sub_687de2(arg2[-1] ^ arg2)
+00430691 *arg2
+00430692 return entry_result

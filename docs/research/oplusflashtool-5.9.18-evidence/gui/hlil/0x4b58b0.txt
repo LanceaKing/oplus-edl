@@ -1,0 +1,77 @@
+004b58b3 int32_t var_8 = 0xffffffff
+004b58b5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_4e957e
+004b58c0 TEB* fsbase
+004b58c0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004b58cb int32_t __saved_ebp
+004b58cb char* eax_2 = __security_cookie ^ &__saved_ebp
+004b58d1 fsbase->NtTib.ExceptionList = &ExceptionList
+004b58d9 int32_t result = sub_41cbc0()
+004b58d9 
+004b58e5 if (data_58a0e8 == 0)
+004b58eb     QWidget* ecx = *(arg1 + 0x3c)
+004b58eb     
+004b58f0     if (ecx != 0)
+004b58f2         sub_48c640(ecx)
+004b58f2     
+004b58f7     QWidget* ecx_1 = *(arg1 + 0x38)
+004b58f7     
+004b58fc     if (ecx_1 != 0)
+004b58fe         sub_48c640(ecx_1)
+004b58fe     
+004b5911     QWidget::setEnabled(*(*(arg1 + 0x34) + 0x70), false)
+004b591b     QWidget::setEnabled(*(*(arg1 + 0x34) + 0x74), false)
+004b5921     sub_41cbc0()
+004b5930     int32_t var_8_1 = 0
+004b593f     class QStringList var_28
+004b593f     class QChar var_14
+004b593f     
+004b593f     if (QListData::size(sub_441760(&var_14)) s> 0)
+004b5955         struct QTypedArrayData<uint16_t>* var_18 = QString::fromAscii_helper(",", 1)
+004b595b         var_8_1.b = 1
+004b5967         class QStringList* eax_5 = sub_425e60(&var_14, &var_28, &var_18)
+004b5975         var_8_1.b = 2
+004b598d         var_8_1.b = 3
+004b599c         var_8_1.b = 4
+004b59b1         var_8_1.b = 5
+004b59e1         var_8_1.b = 0
+004b59e5         char var_24
+004b59e5         QString var_20
+004b59e5         QString var_1c
+004b59e5         QString::~QString(QString::~QString(QString::~QString(QString::~QString(QString::~QString(
+004b59e5             sub_492920(arg1 + 0x18, 
+004b59e5             sub_41b220(&var_1c, 
+004b59e5                 sub_41b290(&var_20, 
+004b59e5                     sub_4ba340(&var_24, 
+004b59e5                         "It is detected that you are running the following tools, it may cause the flashing failure, "
+004b59e5         "please close the following tools and then flash", 
+004b59e5                         0, 0xffffffff), 
+004b59e5                     &data_4f3f2c), 
+004b59e5                 eax_5), 
+004b59e5             1, 0))))))
+004b59ee         QWidget::show(arg1 + 0x18)
+004b59ee     
+004b59f6     char eax_9
+004b59f6     QMessageLogger* ecx_17
+004b59f6     eax_9, ecx_17 = sub_4b48f0(arg1)
+004b59f6     
+004b59fd     if (eax_9 == 0)
+004b5a06         class QStringList* var_4c_3 = &var_28
+004b5a1e         char const* const var_4c_4 = "set flash profile property is fail."
+004b5a23         void* const var_50_2 = &data_4f2998
+004b5a28         int32_t var_54_2 = 0x3b4
+004b5a2d         void* const var_58_2 = &data_4f2994
+004b5a32         char const* const var_5c_1 = "StartFlashing::StartFlash"
+004b5a3e         var_8_1.b = 6
+004b5a73         var_8_1.b = 0
+004b5a77         QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(
+004b5a77             QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+004b5a77                 QMessageLogger::warning(QMessageLogger::QMessageLogger(ecx_17, nullptr, 0, 
+004b5a77                     nullptr)), 
+004b5a77                 "[FTGuiSales][")))), 
+004b5a77             eax_2)))
+004b5a81         sub_4b5cf0(arg1, 1)
+004b5a81     
+004b5a89     result = sub_4251b0(&var_14)
+004b5a89 
+004b5a91 fsbase->NtTib.ExceptionList = ExceptionList
+004b5a9e return result

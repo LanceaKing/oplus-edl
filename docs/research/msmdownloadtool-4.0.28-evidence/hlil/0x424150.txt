@@ -1,0 +1,112 @@
+00424157 void* ebx = arg4
+00424160 int64_t var_20 = 0
+00424168 int32_t var_10 = 0
+00424168 
+00424172 if (*(arg1 + 0x100390) != 0)
+0042417f     return 0x4c7
+0042417f 
+00424185 int32_t eax_2 = arg2[0x1f]
+00424185 
+00424190 if (eax_2 != 0x200)
+0042419e     if (eax_2 != 0x1000)
+004243d2         return 1
+004243d2     
+004241a4     struct DOS_Header* const var_34_1 = &__dos_header
+00424190 else
+00424192     int32_t var_34 = 0x80000
+00424192 
+004241a9 int32_t* eax_3 = sub_42e817()
+004241a9 
+004241b6 if (eax_3 == 0)
+004241c3     return 8
+004241c3 
+004241da char* eax_7 = sub_42ac20(*(arg1 + 0x28), arg2, divu.dp.d(0:ebx, eax_2), arg5, arg6)
+004241da 
+004241e4 if (eax_7 != 0)
+004241f0     char* var_34_3 = eax_7
+004241f1     wchar16 const* const var_38_1
+004241f1     
+004241f1     if (*(arg1 + 0x1b) == 0)
+004241fa         var_38_1 = u"SendProgromCommand Failed, Errno: %d"
+004241f1     else
+004241f3         var_38_1 = u"SendProgromComman"
+004241f3     
+00424200     sub_426230(arg1 + 0x290, var_38_1)
+00424223     SendMessageW(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, arg1 + 0x290)
+0042422c     j__free(eax_3)
+0042423d     return eax_7
+0042423d 
+0042424c if (ebx != 0)
+00424255     int32_t var_18_1 = var_20:4.d
+00424258     char* eax_14 = var_20.d
+0042425b     arg6 = eax_14
+0042425b     
+00424267     while (true)
+00424267         if (*(arg1 + 0x100390) != 0)
+00424267             goto label_424359
+00424267         
+00424270         void* edi_4 = eax_2 << 0xa
+00424270         
+00424277         if (var_10 s< 0)
+0042427f             edi_4 = ebx
+00424277         else if (var_10 s<= 0 && ebx u<= edi_4)
+0042427f             edi_4 = ebx
+0042427f         
+00424289         sub_552500(eax_3, &eax_14[arg3], edi_4)
+00424297         var_20:4.d = 0
+0042429e         char* temp5_1 = arg6
+0042429e         arg6 += edi_4
+004242a3         var_18_1 = adc.d(var_18_1, 0, temp5_1 + edi_4 u< temp5_1)
+004242ac         enum WIN32_ERROR eax_16 = sub_426500(**(arg1 + 0x28), eax_3, edi_4, &var_20:4)
+004242b1         var_20:4.d = eax_16
+004242b1         
+004242b6         if (eax_16 != NO_ERROR)
+0042430b             enum WIN32_ERROR var_34_9 = eax_16
+0042430c             wchar16 const* const var_38_6
+0042430c             
+0042430c             if (*(arg1 + 0x1b) == 0)
+00424315                 var_38_6 = u"FirehoseWriteData Failed, Errno: %d"
+0042430c             else
+0042430e                 var_38_6 = u"FirehoseWriteDat"
+0042430e             
+0042432e             sub_420d10(sub_426230(arg1 + 0x290, var_38_6), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+0042432e                 arg1 + 0x290, 1)
+00424339             j__free(eax_3)
+0042434a             return var_20:4.d
+0042434a         
+004242b8         void* temp6_1 = ebx
+004242b8         ebx -= edi_4
+004242bd         int32_t edi_6 = sbb.d(var_10, eax_16, temp6_1 u< edi_4)
+004242c2         var_10 = edi_6
+004242c2         
+004242c9         if (*(arg2 + 0x77) == 0)
+004242e9             SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 3, arg4 - ebx)
+004242e9         
+004242f1         if (edi_6 s< 0)
+004242f1             break
+004242f1         
+004242f7         if (edi_6 s<= 0 && ebx == 0)
+004242f7             break
+004242f7         
+004242f9         eax_14 = arg6
+004242f9 
+00424354 if (*(arg1 + 0x100390) == 0)
+00424371     enum WIN32_ERROR eax_27 = sub_42ab30(*(arg1 + 0x28), 0x32)
+00424371     
+0042437a     if (eax_27 != NO_ERROR)
+00424386         enum WIN32_ERROR var_34_12 = eax_27
+00424387         wchar16 const* const var_38_8
+00424387         
+00424387         if (*(arg1 + 0x1b) == 0)
+00424390             var_38_8 = u"FirehoseCheckRSP Failed, Errno: %d"
+00424387         else
+00424389             var_38_8 = u"FirehoseCheckRS"
+00424389         
+004243a9         sub_420d10(sub_426230(arg1 + 0x290, var_38_8), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+004243a9             arg1 + 0x290, 1)
+004243b4         j__free(eax_3)
+004243c4         return eax_27
+004243c4 
+00424359 label_424359:
+00424359 j__free(eax_3)
+00424369 return 0

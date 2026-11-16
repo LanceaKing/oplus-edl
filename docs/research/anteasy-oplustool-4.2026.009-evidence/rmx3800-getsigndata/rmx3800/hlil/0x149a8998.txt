@@ -1,0 +1,63 @@
+149a89c4 int64_t x8 = data_149da3f0
+149a8a10 uint32_t x12_2 = zx.d((*"oplusreserve1")[0]) | zx.d((zx.q((*"plusreserve1")[0]) << 8).w)
+149a8a10     | ((zx.q((*"lusreserve1")[0]) | zx.q((zx.q((*"usreserve1")[0]) << 8).w)) << 0x10).d
+149a8a18 int32_t var_40
+149a8a18 __builtin_strcpy(&var_40, "erve1")
+149a8a2c uint64_t var_48 = zx.q(x12_2) | (zx.q((*"sreserve1")[0]) | zx.q((zx.d((*"reserve1")[0]) << 8).w)
+149a8a2c     | zx.q((zx.d((*"eserve1")[0]) | zx.d((zx.d((*"serve1")[0]) << 8).w)) << 0x10)) << 0x20
+149a8a30 int64_t var_58
+149a8a30 int64_t var_50
+149a8a30 int64_t x4
+149a8a30 int64_t x5
+149a8a30 int64_t x6
+149a8a30 int64_t x7
+149a8a30 int128_t v0
+149a8a30 int128_t v1
+149a8a30 int128_t v2
+149a8a30 int128_t v3
+149a8a30 int128_t v4
+149a8a30 int128_t v5
+149a8a30 int128_t v6
+149a8a30 int128_t v7
+149a8a30 x4, x5, x6, x7, v0, v1, v2, v3, v4, v5, v6, v7 =
+149a8a30     sub_149aa980(&var_48, arg1, &var_50, &var_58, arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11)
+149a8a40 int64_t x8_6
+149a8a40 
+149a8a40 if (var_50 == 0 || var_58 == 0)
+149a8a78     uint64_t x24
+149a8a78     sub_149a5c34(4, "use default op1 offset:ufs(%d) emmc(%d)", 0x20, 1, x4, x5, x6, x7, v0, v1, v2, 
+149a8a78         v3, v4, v5, v6, v7, x24)
+149a8a78     
+149a8a8c     if (sub_149a8bf4() == 3)
+149a8a8c         x8_6 = 0x4ad
+149a8a8c     else
+149a8a8c         x8_6 = 0x2345
+149a8a40 else
+149a8a58     int64_t x9_2
+149a8a58     
+149a8a58     if (sub_149a8bf4() == 3)
+149a8a58         x9_2 = 0x48d
+149a8a58     else
+149a8a58         x9_2 = 0x2344
+149a8a58     
+149a8a5c     x8_6 = x9_2 + var_50
+149a8a5c 
+149a8a90 *arg2 = x8_6
+149a8a94 int32_t result = sub_149a8bf4()
+149a8aa0 int32_t x9_3
+149a8aa0 
+149a8aa0 x9_3 = result == 3 ? 5 : 0
+149a8aa0 
+149a8aa4 int32_t result_1
+149a8aa4 
+149a8aa4 result_1 = result == 3 ? result : 1
+149a8aa4 
+149a8aac arg1[2] = x9_3
+149a8ab4 *arg1 = result_1
+149a8ab4 arg1[1] = 0
+149a8ab8 *arg3 = 1
+149a8ab8 
+149a8ac8 if (data_149da3f0 != x8)
+149a8ae0     return sub_149a8ae4() __tailcall
+149a8ae0 
+149a8adc return result

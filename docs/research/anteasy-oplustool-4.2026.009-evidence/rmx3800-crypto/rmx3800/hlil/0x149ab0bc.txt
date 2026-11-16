@@ -1,0 +1,106 @@
+149ab0c4 int64_t x26
+149ab0c4 int64_t var_40 = x26
+149ab0c4 int64_t x25
+149ab0c4 int64_t var_38 = x25
+149ab0c8 int64_t x24
+149ab0c8 int64_t var_30 = x24
+149ab0c8 int64_t x23
+149ab0c8 int64_t var_28 = x23
+149ab0cc int64_t x22
+149ab0cc int64_t var_20 = x22
+149ab0cc int64_t x21
+149ab0cc int64_t var_18 = x21
+149ab0d0 int64_t x20
+149ab0d0 int64_t var_10 = x20
+149ab0d0 int64_t x19
+149ab0d0 int64_t var_8 = x19
+149ab0d8 int32_t x20_1 = arg5.d
+149ab0dc int32_t x21_1 = arg4.d
+149ab0e0 int32_t* x19_1 = arg1
+149ab0e4 int32_t x22_1 = arg3.d
+149ab0e4 
+149ab0ec if (arg1 == 0)
+149ab0f8     while (true)
+149ab0f8         nop
+149ab0f8 
+149ab108 if (data_80269cd0 u>= 9)
+149ab114     while (true)
+149ab114         nop
+149ab114 
+149ab118 int32_t x8_1 = *x19_1
+149ab118 
+149ab138 if (x8_1 != 0 && x8_1 == *((zx.q(x19_1[0x13].w) << 2) + &data_149dd5c4))
+149ab124     return 
+149ab124 
+149ab148 sub_1499c404(x19_1, 0, 0x70)
+149ab148 
+149ab14c if (arg2 == 0)
+149ab158     while (true)
+149ab158         nop
+149ab158 
+149ab15c if (x22_1 == 0)
+149ab168     while (true)
+149ab168         nop
+149ab168 
+149ab170 if (x22_1 u<= 0xe)
+149ab17c     while (true)
+149ab17c         nop
+149ab17c 
+149ab190 sub_1499cd4c(0x10, &x19_1[0x10], nullptr)
+149ab1b0 void* x10_3 = &arg2[zx.q(neg.d(arg2.d)) & 0xf]
+149ab1b4 uint64_t x11_1 = zx.q(data_80269cd0)
+149ab1bc *(x19_1 + 0x30) = sub_149ab2ec
+149ab1bc *(x19_1 + 0x38) = sub_149ab2f4
+149ab1c4 *(x19_1 + 8) = x10_3
+149ab1c4 *(x19_1 + 0x10) = x10_3
+149ab1e0 sub_149ab2fc(&data_149dd5c4 + (zx.q(*(&data_149dd5b0 + (x11_1 << 1))) << 2), 4)
+149ab1f8 *x19_1 = *(&data_149dd5c4 + (zx.q(*(&data_149dd5b0 + (zx.q(data_80269cd0) << 1))) << 2))
+149ab204 x19_1[0x13].w = *(&data_149dd5b0 + (zx.q(data_80269cd0) << 1))
+149ab208 sub_149ab2fc(&x19_1[0x12], 2)
+149ab214 arg4, arg5, arg6, arg7, arg8 = sub_149ab2fc(x19_1 + 0x4a, 2)
+149ab21c int32_t x22_3 = (((&arg2[zx.q(x22_1)] - x10_3) s/ 8) << 3).d
+149ab220 arg1 = *(x19_1 + 8)
+149ab22c data_80269cd0 += 1
+149ab230 arg2, arg3 = sub_149ab348(arg1, x22_3)
+149ab234 void* x8_11 = *(x19_1 + 8)
+149ab240 *(x8_11 + 3) = 0x10 | (zx.d(*(x8_11 + 3)) & 0xf).b
+149ab248 int16_t* x9_6 = *(x19_1 + 8)
+149ab24c x19_1[9] = 0
+149ab24c x19_1[0xa] = 0
+149ab250 x19_1[7] = x22_3
+149ab250 x19_1[8] = 0
+149ab254 int16_t x8_12
+149ab254 int16_t x10_4
+149ab254 int16_t x11_2
+149ab254 x8_12, x10_4, x11_2 = sub_149abf6c(1, x9_6, x19_1)
+149ab25c sub_149abf58(x8_12, x9_6, x10_4, x11_2, x19_1[0x12].w)
+149ab25c 
+149ab264 if (x21_1 == 0 || x20_1 == 0)
+149ab264     return 
+149ab264 
+149ab268 int32_t x22_4 = x20_1 * x21_1
+149ab268 
+149ab270 if (x20_1 u>= 0x41)
+149ab27c     while (true)
+149ab27c         nop
+149ab27c 
+149ab28c void* x19_2
+149ab28c arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, x19_2 =
+149ab28c     sub_149ab3a4(x19_1, zx.q(x21_1), zx.q(x22_4), arg4, arg5, arg6, arg7, arg8)
+149ab290 *(x19_2 + 0x60) = arg1
+149ab290 
+149ab294 if (arg1 == 0)
+149ab2a0     while (true)
+149ab2a0         nop
+149ab2a0 
+149ab2a4 int64_t x8_13 = *(x19_2 + 0x58)
+149ab2a8 int32_t x9_7 = 0
+149ab2b0 *(x19_2 + 0x50) = x21_1
+149ab2b0 
+149ab2b8 while (x20_1 != x9_7)
+149ab2bc     int32_t x11_3 = 1 << x9_7
+149ab2c0     x9_7 += 1
+149ab2c8     x8_13 |= sx.q(x11_3)
+149ab2c8 
+149ab2d4 *(x19_2 + 0x58) = x8_13
+149ab2d8 *(x19_2 + 0x68) = &arg1[zx.q(x22_4)]

@@ -1,0 +1,77 @@
+004266ab int32_t __saved_ebp
+004266ab int32_t eax_1 = __security_cookie ^ &__saved_ebp
+004266b4 uint32_t nNumberOfBytesToRead_2 = arg3
+004266b7 bool cond:0 = nNumberOfBytesToRead_2 == 0
+004266b9 uint8_t* lpBuffer_1 = arg2
+004266c7 uint32_t numberOfBytesRead = 0
+004266ce *arg4 = 0
+004266d4 enum WIN32_ERROR result
+004266d4 
+004266d4 while (true)
+004266d4     if (cond:0)
+00426786         result = NO_ERROR
+00426786         break
+00426786     
+004266df     uint32_t nNumberOfBytesToRead_1 = nNumberOfBytesToRead_2
+004266df     
+004266e3     if (nNumberOfBytesToRead_2 u> 0x1000)
+004266e3         nNumberOfBytesToRead_1 = 0x1000
+004266e3     
+004266e6     uint32_t eax_4
+004266e6     int32_t ecx
+004266e6     eax_4, ecx = _clock(0x1000)
+004266fe     uint8_t* lpBuffer
+004266fe     
+004266fe     while (true)
+004266fe         enum CLEAR_COMM_ERROR_FLAGS errors
+004266fe         COMSTAT stat
+004266fe         BOOL eax_6
+004266fe         int32_t ecx_2
+004266fe         eax_6, ecx_2 = ClearCommError(*(arg1 + 8), &errors, &stat)
+004266fe         
+00426706         if (eax_6 == 0)
+00426765             result = GetLastError()
+0042676b             lpBuffer = lpBuffer_1
+0042676b             break
+0042676b         
+00426708         uint32_t eax_7 = _clock(ecx_2)
+0042670d         uint32_t cbInQue = stat.cbInQue
+0042670d         
+00426715         if (eax_7 - eax_4 s>= arg5)
+00426739             if (cbInQue == 0)
+0042672c                 sub_54a573(eax_1 ^ &__saved_ebp)
+00426734                 return 0x102
+00426715         else if (cbInQue == 0)
+0042671d             if (nNumberOfBytesToRead_1 != 0)
+0042671d                 continue
+0042671d             
+0042672c             sub_54a573(eax_1 ^ &__saved_ebp)
+00426734             return 0x102
+00426734         
+0042673b         lpBuffer = lpBuffer_1
+00426742         uint32_t nNumberOfBytesToRead = nNumberOfBytesToRead_1
+00426742         
+00426744         if (nNumberOfBytesToRead_1 u>= cbInQue)
+00426744             nNumberOfBytesToRead = cbInQue
+00426744         
+0042675b         if (ReadFile(*(arg1 + 8), lpBuffer, nNumberOfBytesToRead, &numberOfBytesRead, nullptr) != 0)
+0042675b             goto label_426775
+0042675b         
+0042675d         result = GetLastError()
+00426763         goto label_42676e
+00426763     
+0042676e label_42676e:
+0042676e     
+00426770     if (result != NO_ERROR)
+00426770         break
+00426770     
+00426775 label_426775:
+00426775     uint32_t numberOfBytesRead_1 = numberOfBytesRead
+0042677a     lpBuffer_1 = &lpBuffer[numberOfBytesRead_1]
+0042677d     *arg4 += numberOfBytesRead_1
+0042677f     uint32_t nNumberOfBytesToRead_3 = nNumberOfBytesToRead_2
+0042677f     nNumberOfBytesToRead_2 -= nNumberOfBytesToRead_1
+0042677f     cond:0 = nNumberOfBytesToRead_3 == nNumberOfBytesToRead_1
+0042677f 
+00426790 sub_54a573(eax_1 ^ &__saved_ebp)
+00426798 return result

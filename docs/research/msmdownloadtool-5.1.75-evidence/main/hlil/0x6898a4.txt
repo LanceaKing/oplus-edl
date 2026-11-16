@@ -1,0 +1,17 @@
+006898a8 int32_t var_c = arg3
+006898ac int32_t* var_10 = &var_c
+006898ae sub_c557f3(&var_c)
+006898b3 int32_t ecx = var_c
+006898cd uint32_t result
+006898cd int32_t edx
+006898cd result, edx = __aulldiv(ecx + 0x2ac18000, adc.d(arg3, 0xfe624e21, ecx u>= 0xd53e8000), 0x989680, 0)
+006898cd 
+006898de if (edx s>= 7 && (edx s> 7 || result u> 0x93406fff))
+006898e0     result = 0xffffffff
+006898e3     edx = 0xffffffff
+006898e3 
+006898ea if (arg4 != 0)
+006898ec     *arg4 = result
+006898ee     arg4[1] = edx
+006898ee 
+006898f4 return result

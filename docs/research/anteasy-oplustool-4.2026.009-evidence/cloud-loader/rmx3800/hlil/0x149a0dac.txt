@@ -1,0 +1,85 @@
+149a0dd8 int64_t var_38 = data_149da3f0
+149a0ddc int64_t var_120 = 0xd0
+149a0de0 int64_t var_130 = 0x100
+149a0de4 int32_t x0
+149a0de4 int64_t x7
+149a0de4 x0, x7 = sub_149a4c9c()
+149a0de8 int64_t result
+149a0de8 bool cond:0
+149a0de8 uint64_t x24
+149a0de8 
+149a0de8 if (x0 == 0)
+149a0ef0     arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 = sub_149a5c34(3, 
+149a0ef0         "Secure Boot is not enabled on the HW, so no need to check the sign data%c", 0x2e, nullptr, 
+149a0ef0         0, 0, 0, x7, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, x24)
+149a0ef4     result = 0
+149a0de8 else if (arg1 == 0)
+149a0f08 label_149a0f08:
+149a0f08     int64_t* x3_1
+149a0f08     int64_t x4_1
+149a0f08     int64_t x5_1
+149a0f08     int64_t x6_1
+149a0f08     int64_t x7_1
+149a0f08     int128_t v0
+149a0f08     int128_t v1
+149a0f08     int128_t v2
+149a0f08     int128_t v3
+149a0f08     int128_t v4
+149a0f08     int128_t v5
+149a0f08     int128_t v6
+149a0f08     int128_t v7
+149a0f08     x3_1, x4_1, x5_1, x6_1, x7_1, v0, v1, v2, v3, v4, v5, v6, v7 =
+149a0f08         sub_149a1c4c(arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)
+149a0f1c     arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 = sub_149a5c34(3, "sw version error%c", 0x2e, 
+149a0f1c         x3_1, x4_1, x5_1, x6_1, x7_1, v0, v1, v2, v3, v4, v5, v6, v7, x24)
+149a0f20     result = 0xffffffff
+149a0dec else
+149a0df0     cond:0 = arg2 != 0x200
+149a0df0     
+149a0df4     if (arg2 != 0x200)
+149a0df4         goto label_149a0f08
+149a0df4     
+149a0e08     void var_108
+149a0e08     sub_1499c404(&var_108, 0, 0xd0)
+149a0e0c     sub_149a1c7c()
+149a0e1c     sub_149a1c54(&var_108 | 4, "0")
+149a0e28     void var_100
+149a0e28     sub_149a1c54(&var_100, arg1 + 8)
+149a0e38     void var_fc
+149a0e38     sub_149a1c54(&var_fc, "W")
+149a0e44     void var_f8
+149a0e44     sub_149a1d0c(&var_f8, "NVALID failed")
+149a0e50     void var_f0
+149a0e50     sub_149a1d00(&var_f0, "NVALID failed")
+149a0e64     void var_e8
+149a0e64     sub_1499bf38(&var_e8, 0x8025b281, 8)
+149a0e74     void var_d8
+149a0e74     sub_1499bf38(&var_d8, arg1 + 0x30, 0x10)
+149a0e80     void var_c8
+149a0e80     sub_149a1c74(&var_c8, arg1 + 0x40)
+149a0e8c     void var_88
+149a0e8c     sub_149a1c74(&var_88, arg1 + 0x80)
+149a0ea4     void var_48
+149a0ea4     sub_1499bf38(&var_48, "00000", 6)
+149a0eb4     void var_40
+149a0eb4     sub_1499bf38(&var_40, "00000", 6)
+149a0ec0     int64_t* x0_13
+149a0ec0     int64_t* x1_4
+149a0ec0     int64_t* x2_1
+149a0ec0     x0_13, x1_4, x2_1 = sub_149a1c5c()
+149a0ec4     char* var_118_1 = "D9C9781CF5967AF904125F01845345846BA3CF2E0060F353C7D8D73A3DC27B9F5042AAED5B7B5A3EE09E27270C0A820C444B4485F40A9FB87A3FA752C6A6FE8C6110EF21C0F26707963D636F98BAE61E7D0C8502F5DAEC5EB9EE6E14697B534D37CCECE5DE9C644DC9CAF59057F64332A33FD521A06BE9655B8F09D92142061339D2554CEB8F80A295E8056FE69A771B68FDD5F5037D7F74810BC51EEFA509203D6E4FBC7139E404438C20E67A7359D5F7EAD4A1"
+149a0ec4     char* var_110_1 = "10001"
+149a0ec8     void* var_128_1 = &var_108
+149a0ecc     void* var_138_1 = arg1 + 0x100
+149a0ed0     int32_t x0_14
+149a0ed0     x0_14, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 = sub_149a4610(x0_13, x1_4, x2_1)
+149a0ed0     
+149a0ed4     if (x0_14 != 0)
+149a0ed4         goto label_149a0f08
+149a0ed4     
+149a0ef4     result = 0
+149a0ef4 
+149a0f28 if (cond:0)
+149a0f40     return sub_149a0f44(arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10) __tailcall
+149a0f40 
+149a0f3c return result

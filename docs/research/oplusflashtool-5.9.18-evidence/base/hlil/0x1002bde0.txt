@@ -1,0 +1,31 @@
+1002bde3 int32_t* eax = *arg1
+1002bde3 
+1002bde7 if (eax != 0)
+1002be11     sub_100f84e0(eax)
+1002be1b label_1002be1b:
+1002be1b     uint32_t eax_3
+1002be1b     int32_t edx_1
+1002be1b     eax_3, edx_1 = common_time<int64_t>(nullptr)
+1002be23     int32_t var_8_3 = edx_1
+1002be24     uint32_t var_c_1 = eax_3
+1002be31     _sprintf(&arg1[0x331], "%lld")
+1002be31     
+1002be42     if (sub_1002b3f0(arg1) == 0 && sub_1002b140(arg1) == 0 && sub_1002b600(arg1) == 0
+1002be42             && sub_1002b760(arg1) == 0)
+1002be67         void* ebp
+1002be67         int32_t eax_9 = sub_1002b9e0(arg1, ebp)
+1002be6c         int32_t eax_10 = neg.d(eax_9)
+1002be71         return sbb.d(eax_10, eax_10, eax_9 != 0)
+1002bde7 else
+1002bde9     int32_t eax_1 = sub_100f8490(arg1)
+1002bdee     *arg1 = eax_1
+1002bdee     
+1002bdf2     if (eax_1 != 0)
+1002bdf2         goto label_1002be1b
+1002bdf2     
+1002bdf4     char const* const var_8_1 = "[INFO][RCSM][rcsm_helper_perform][curl_easy_init] exec error"
+1002bdf9     int32_t var_c = 0x1b5
+1002bdfe     char const* const var_10_1 = "rcsm_helper_perform"
+1002be03     opdbg_log()
+1002be03 
+1002be0f return 0xffffffff

@@ -1,0 +1,104 @@
+0041c3e0 struct _EXCEPTION_REGISTRATION_RECORD** ExceptionRecord_3
+0041c3e0 struct _EXCEPTION_REGISTRATION_RECORD** ExceptionRecord = ExceptionRecord_3
+0041c3e1 int32_t* ebp = &ExceptionRecord
+0041c3e3 int32_t var_8 = 0xffffffff
+0041c3e5 int32_t (* var_c)() = sub_64c287
+0041c3f0 TEB* fsbase
+0041c3f0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0041c3fc int32_t eax_2 = __security_cookie ^ &ExceptionRecord
+0041c3fe int32_t var_14 = eax_2
+0041c401 int32_t ebx
+0041c401 int32_t var_4bc = ebx
+0041c402 int32_t esi
+0041c402 int32_t var_4c0 = esi
+0041c403 int32_t edi
+0041c403 int32_t var_4c4 = edi
+0041c408 fsbase->NtTib.ExceptionList = &ExceptionList
+0041c420 int128_t var_4c
+0041c420 __builtin_memcpy(&var_4c, u"License File(*.dat)|*.dat||", 0x38)
+0041c466 sub_503e12(1, u".dat", u"License4.dat", 0, &var_4c, 0, 0, 1, eax_2)
+0041c46b int32_t var_8_1 = 0
+0041c472 int32_t* eax_3 = sub_4f2b78()
+0041c47d int32_t ecx
+0041c47d ecx.b = eax_3 != 0
+0041c47d 
+0041c482 if (ecx == 0)
+0041c484     ExceptionRecord = 0x80004005
+0041c489     sub_405ee0(ExceptionRecord)
+0041c489     noreturn
+0041c489 
+0041c498 int32_t var_4b0 = (*(*eax_3 + 0xc))() + 0x10
+0041c4a4 var_8_1.b = 1
+0041c4a8 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList_2
+0041c4a8 ExceptionRecord = &ExceptionList_2
+0041c4a9 sub_416d90(ExceptionRecord)
+0041c4ae var_8_1.b = 2
+0041c4b2 int32_t* eax_6 = sub_4f2b78()
+0041c4bd int32_t ecx_2
+0041c4bd ecx_2.b = eax_6 != 0
+0041c4bd 
+0041c4c2 if (ecx_2 == 0)
+0041c4c4     ExceptionRecord = 0x80004005
+0041c4c9     sub_405ee0(ExceptionRecord)
+0041c4c9     noreturn
+0041c4c9 
+0041c4d8 int32_t var_4a8 = (*(*eax_6 + 0xc))() + 0x10
+0041c4e4 var_8_1.b = 3
+0041c4e8 int32_t eax_9 = sub_5047a5()
+0041c4ed struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList_1 = ExceptionList_2
+0041c4ed 
+0041c4f6 if (eax_9 == 1)
+0041c502     struct _EXCEPTION_REGISTRATION_RECORD* var_4b8
+0041c502     ExceptionRecord = &var_4b8
+0041c50e     ExceptionRecord = sub_504926(ExceptionRecord)
+0041c515     var_8_1.b = 4
+0041c519     sub_4057c0(&var_4b0, ExceptionRecord)
+0041c51e     var_8_1.b = 3
+0041c52b     struct _EXCEPTION_REGISTRATION_RECORD** ExceptionRecord_2 = &var_4b8[-2]
+0041c531     int32_t ecx_5 = ExceptionRecord_2[3]
+0041c531     ExceptionRecord_2[3] -= 1
+0041c531     
+0041c538     if (ecx_5 - 1 s<= 0)
+0041c53a         struct _EXCEPTION_REGISTRATION_RECORD* ecx_7 = *ExceptionRecord_2
+0041c53c         ExceptionRecord = ExceptionRecord_2
+0041c53f         ecx_7->Next->Handler(ExceptionRecord)
+0041c53f     
+0041c542     int32_t edi_2 = var_4b0
+0041c548     ExceptionRecord = nullptr
+0041c54c     ExceptionList = ExceptionList_1
+0041c54c     
+0041c555     if (sub_cfff1b(ExceptionList, edi_2, ExceptionList_1, ExceptionRecord) == 1)
+0041c561         struct _EXCEPTION_REGISTRATION_RECORD** ExceptionRecord_1
+0041c561         ExceptionRecord_1, ebp = sub_41c8b0()
+0041c570         int32_t var_8_4
+0041c570         
+0041c570         if (ExceptionRecord_1 != 0)
+0041c5a9             if (ExceptionRecord_1 != 0x1b90)
+0041c5de                 sub_4393c0("4c6963656e7365204661696c656421", &ebp[-0x53])
+0041c5e3                 ExceptionRecord = ExceptionRecord_1
+0041c5ea                 *(ebp - 0x13d) = 0
+0041c5f1                 void* var_8_6 = &ebp[-0x53]
+0041c5f8                 wchar16 const* const var_c_4 = u"%S(%u)"
+0041c5fd                 ExceptionList = &ebp[-0x129]
+0041c5fe                 sub_405fb0(ExceptionList, var_c_4)
+0041c5a9             else
+0041c5b0                 sub_4393c0("4c6963656e7365204578706972656421", &ebp[-0x53])
+0041c5bb                 ebp[-0x4f].b = 0
+0041c5c2                 ExceptionRecord = &ebp[-0x53]
+0041c5cf                 sub_405fb0(&ebp[-0x129], &data_6d979c)
+0041c5cf             
+0041c606             ExceptionRecord = nullptr
+0041c608             var_8_4 = 0x10
+0041c570         else
+0041c577             sub_4393c0("4c6963656e736520566572696669656421", &ebp[-0x53])
+0041c582             *(ebp - 0x13b) = 0
+0041c589             ExceptionRecord = &ebp[-0x53]
+0041c596             sub_405fb0(&ebp[-0x129], &data_6d979c)
+0041c59e             ExceptionRecord = ExceptionRecord_1
+0041c59f             var_8_4 = 0x30
+0041c59f         
+0041c611         sub_4f1c19(ebp[-0x129], var_8_4)
+0041c611 
+0041c61c sub_4fea07(ebp[-0x12a])
+0041c627 ExceptionRecord = *(ebp[-0x12a] + 0x20)
+0041c62f return sub_dabc64(ExceptionRecord)

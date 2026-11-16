@@ -1,0 +1,132 @@
+0041afee int32_t __saved_ebp
+0041afee int32_t eax_1 = __security_cookie ^ &__saved_ebp
+0041aff7 struct SP_DEVINFO_DATA var_248
+0041aff7 var_248.cbSize = 0x1c
+0041b001 uint32_t __saved_esi = 0xc
+0041b009 struct SP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+0041b009 DeviceInterfaceData.cbSize = 0x1c
+0041b013 uint32_t var_250 = 0
+0041b01d int32_t* eax_2 = sub_42e7e5(__saved_esi)
+0041b01d 
+0041b027 if (eax_2 == 0)
+0041b03f     eax_2 = nullptr
+0041b027 else
+0041b029     *eax_2 = 0
+0041b02f     eax_2[1] = 0
+0041b036     eax_2[2] = 0
+0041b036 
+0041b041 uint32_t __saved_esi_1 = 0x12
+0041b043 HWND hwndParent = nullptr
+0041b045 PWSTR Enumerator = nullptr
+0041b047 GUID* ClassGuid = &data_5ba90c
+0041b04c *arg1 = eax_2
+0041b054 HDEVINFO DeviceInfoSet_1 = SetupDiGetClassDevsW(ClassGuid, Enumerator, hwndParent, __saved_esi_1)
+0041b056 uint32_t MemberIndex = 0
+0041b05e HDEVINFO DeviceInfoSet = DeviceInfoSet_1
+0041b06d uint32_t MemberIndex_1 = 0
+0041b06d 
+0041b07b if (SetupDiEnumDeviceInterfaces(DeviceInfoSet_1, nullptr, &data_5ba90c, 0, &DeviceInterfaceData)
+0041b07b         != 0)
+0041b317     BOOL i
+0041b317     
+0041b317     do
+0041b0a5         SetupDiGetDeviceInterfaceDetailW(DeviceInfoSet_1, &DeviceInterfaceData, nullptr, 0, 
+0041b0a5             &var_250, nullptr)
+0041b0a7         uint32_t var_284_2 = var_250
+0041b0b5         int32_t* DeviceInterfaceDetailData = sub_42e817()
+0041b0c3         struct SP_DEVINFO_DATA* DeviceInfoData = &var_248
+0041b0ca         *DeviceInterfaceDetailData = 6
+0041b0ca         
+0041b0e9         if (SetupDiGetDeviceInterfaceDetailW(DeviceInfoSet, &DeviceInterfaceData, 
+0041b0e9                 DeviceInterfaceDetailData, var_250, &var_250, DeviceInfoData) != 0)
+0041b0f9             PWSTR var_284_4 = &DeviceInterfaceDetailData[1]
+0041b0fd             int32_t var_288_3 = MemberIndex + 1
+0041b103             sub_54b82f("\n[index:%d]\n  dev_path=%s\n")
+0041b108             uint32_t DevInst = var_248.DevInst
+0041b113             sub_54b82f("  Handle=%d\n")
+0041b126             void var_210
+0041b126             _memset(&var_210, 0, 0x104)
+0041b142             CM_Get_Device_IDW(var_248.DevInst, &var_210, 0x104, 0)
+0041b14e             void* var_284_6 = &var_210
+0041b154             sub_54b82f("  DeviceIdString=%s\n")
+0041b154             
+0041b171             if (_wcsncmp(&var_210, u"USB\ROOT_HUB\", 0xd) != 0)
+0041b194                 uint32_t dwBytes = 0x4c
+0041b196                 HANDLE ebx_1 = CreateFileW(&DeviceInterfaceDetailData[1], 0x80000000, 
+0041b196                     FILE_SHARE_READ, nullptr, OPEN_EXISTING, SECURITY_ANONYMOUS, nullptr)
+0041b1a6                 HGLOBAL esi_2 = GlobalAlloc(GMEM_ZEROINIT, dwBytes)
+0041b1a6                 
+0041b1b0                 if (esi_2 != 0)
+0041b1d3                     uint32_t bytesReturned
+0041b1d3                     
+0041b1d3                     if (DeviceIoControl(ebx_1, 0x220408, esi_2, 0x4c, esi_2, 0x4c, &bytesReturned, 
+0041b1d3                             nullptr) != 0)
+0041b1d9                         uint32_t j = zx.d(*(esi_2 + 6))
+0041b1dd                         uint32_t j_1 = j
+0041b1e9                         sub_54b82f("  NumberOfPorts=%d\n")
+0041b1f1                         int32_t var_24c_1 = 1
+0041b1f1                         
+0041b1fe                         if (j s>= 1)
+0041b2b7                             int32_t edx_1
+0041b2b7                             
+0041b2b7                             do
+0041b209                                 char* eax_12 = sub_42e7e5(0x20c)
+0041b20e                                 int32_t var_288_10 = 0x20c
+0041b215                                 char var_28c_8 = 0
+0041b218                                 char* var_258 = eax_12
+0041b21e                                 _memset(eax_12, var_28c_8, var_288_10)
+0041b22f                                 edx_1 = var_24c_1
+0041b23f                                 __builtin_memcpy(eax_12, &var_210, 0x208)
+0041b241                                 *(eax_12 + 0x208) = edx_1
+0041b247                                 int32_t* ecx = &var_258
+0041b24d                                 int32_t* esi_3 = *arg1
+0041b24f                                 int32_t eax_14 = esi_3[1]
+0041b24f                                 
+0041b254                                 if (&var_258 u< eax_14)
+0041b256                                     ecx = *esi_3
+0041b256                                 
+0041b260                                 if (&var_258 u>= eax_14 || ecx u> &var_258)
+0041b28d                                     if (eax_14 == esi_3[2])
+0041b28f                                         int32_t* var_284_12 = ecx
+0041b292                                         sub_404830(esi_3)
+0041b297                                         edx_1 = var_24c_1
+0041b297                                     
+0041b29d                                     char** eax_17 = esi_3[1]
+0041b29d                                     
+0041b2a2                                     if (eax_17 != 0)
+0041b2a4                                         *eax_17 = eax_12
+0041b260                                 else
+0041b26a                                     if (eax_14 == esi_3[2])
+0041b26c                                         int32_t* var_284_11 = ecx
+0041b26f                                         sub_404830(esi_3)
+0041b274                                         edx_1 = var_24c_1
+0041b274                                     
+0041b27a                                     int32_t* ecx_2 = esi_3[1]
+0041b27a                                     
+0041b27f                                     if (ecx_2 != 0)
+0041b286                                         *ecx_2 = *(*esi_3 + ((&var_258 - ecx) s>> 2 << 2))
+0041b286                                 
+0041b2a6                                 esi_3[1] += 4
+0041b2ab                                 var_24c_1 = edx_1 + 1
+0041b2b7                             while (edx_1 + 1 s<= j)
+0041b2b7                     
+0041b2d0                     GlobalFree(esi_2)
+0041b2d0                 
+0041b2d7                 CloseHandle(ebx_1)
+0041b2de                 j__free(DeviceInterfaceDetailData)
+0041b2e3                 MemberIndex = MemberIndex_1
+0041b171             else
+0041b174                 j__free(DeviceInterfaceDetailData)
+0041b0e9         else
+0041b0ec             j__free(DeviceInterfaceDetailData)
+0041b0ec         
+0041b2ef         DeviceInfoSet_1 = DeviceInfoSet
+0041b2fe         MemberIndex += 1
+0041b2ff         MemberIndex_1 = MemberIndex
+0041b30f         i = SetupDiEnumDeviceInterfaces(DeviceInfoSet_1, nullptr, &data_5ba90c, MemberIndex, 
+0041b30f             &DeviceInterfaceData)
+0041b317     while (i != 0)
+0041b317 
+0041b31f BOOL result = SetupDiDestroyDeviceInfoList(DeviceInfoSet_1)
+0041b32c sub_54a573(eax_1 ^ &__saved_ebp)
+0041b334 return result

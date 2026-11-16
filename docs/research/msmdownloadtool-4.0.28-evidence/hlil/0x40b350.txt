@@ -1,0 +1,126 @@
+0040b353 int32_t var_8 = 0xffffffff
+0040b355 int32_t (* var_c)(void* arg1) =
+0040b355     __ehhandler$?_wcrtomb_s_l@@YAHQAHQADI_WQAU_Mbstatet@@QAU__crt_locale_pointers@@@Z
+0040b360 TEB* fsbase
+0040b360 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040b36c int32_t __saved_ebp
+0040b36c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+0040b372 fsbase->NtTib.ExceptionList = &ExceptionList
+0040b372 
+0040b381 if (data_5e8fdc s> 1)
+0040b3a9     *(arg1 + 0x3a0) = 1
+0040b3ba     PWSTR* eax_5 = CommandLineToArgvW(GetCommandLineW(), &data_5e8fdc)
+0040b3ba     
+0040b3cf     if (sub_40b160(arg1) != 1)
+0040b3d1         int32_t esi_1 = 1
+0040b3d1         
+0040b3dc         if (data_5e8fdc s> 1)
+0040b3de             PWSTR* edi_2 = eax_5
+0040b3de             
+0040b3ea             while (true)
+0040b3f4                 if (_wcsncmp(0x5b8688, edi_2[esi_1], 2) != 0)
+0040b521                     uint32_t eax_20 = _wcsncmp(0x5b8690, edi_2[esi_1], 2)
+0040b521                     
+0040b52b                     if (eax_20 != 0)
+0040b549                         if (_wcsncmp(0x5b8698, edi_2[esi_1], 2) != 0)
+0040b56b                             if (_wcsncmp(0x5b86a0, edi_2[esi_1], 2) != 0)
+0040b58d                                 if (_wcsncmp(u"--help", edi_2[esi_1], 6) == 0)
+0040b595                                     int32_t ecx_12
+0040b595                                     int32_t edx_5
+0040b595                                     ecx_12, edx_5 = AttachConsole(0xffffffff)
+0040b5ae                                     sub_54cdb8(&data_5de060, edx_5, ecx_12, "CONOUT$", 0x5b86b8, 
+0040b5ae                                         &data_5de060)
+0040b5b8                                     sub_54cdde(u"\nMsmDownloadTool V4.0.exe\n-s: Auto Start\n-r: Do "
+0040b5b8                                     "not reboot when flash success.\n-t: Do not p")
+0040b5c6                                     _fclose(&data_5de060)
+0040b5ce                                     FreeConsole()
+0040b5d9                                     fsbase->NtTib.ExceptionList = ExceptionList
+0040b5e7                                     return 0
+0040b56b                             else
+0040b56d                                 *(arg1 + 0x3a4) = 1
+0040b549                         else
+0040b54b                             *(arg1 + 0x3b4) = 1
+0040b52b                     else
+0040b52d                         *(arg1 + 0x3b0) = eax_20
+0040b3f4                 else
+0040b405                     int16_t* var_18
+0040b405                     sub_40bca0(&var_18, edi_2[esi_1 + 1])
+0040b40a                     int32_t var_8_1 = 0
+0040b42f                     int16_t* var_14 = (*(data_5dd008 + 0xc))(eax_2) + 0x10
+0040b432                     var_8_1.b = 1
+0040b436                     int32_t edi_3 = 0
+0040b440                     int16_t* esi_4
+0040b440                     
+0040b440                     while (true)
+0040b440                         int32_t* edx_2 = (&data_5b6d94)[edi_3 * 2]
+0040b449                         void* eax_10
+0040b449                         
+0040b449                         if (edx_2 != 0)
+0040b44f                             int32_t* eax_11 = edx_2
+0040b451                             void* esi_3 = eax_11 + 2
+0040b45d                             int16_t i
+0040b45d                             
+0040b45d                             do
+0040b454                                 i = *eax_11
+0040b457                                 eax_11 += 2
+0040b45d                             while (i != 0)
+0040b461                             eax_10 = (eax_11 - esi_3) s>> 1
+0040b449                         else
+0040b44b                             eax_10 = nullptr
+0040b44b                         
+0040b468                         sub_4037b0(&var_14, edx_2, eax_10)
+0040b46d                         esi_4 = var_14
+0040b474                         int32_t eax_13
+0040b474                         eax_13.b = esi_4 != 0
+0040b474                         
+0040b479                         if (eax_13 == 0)
+0040b5ed                             sub_402ba0(0x80004005)
+0040b5ed                             noreturn
+0040b5ed                         
+0040b48d                         int32_t eax_15
+0040b48d                         
+0040b48d                         if (sub_54b4c8(var_18, esi_4) == 0)
+0040b49a                             eax_15 = edi_3
+0040b49a                             
+0040b49f                             if (edi_3 u> 3)
+0040b4b3                                 *(arg1 + 0x3a8) = 0
+0040b4b3                                 break
+0040b48d                         else
+0040b48f                             edi_3 += 1
+0040b48f                             
+0040b493                             if (edi_3 s< 4)
+0040b493                                 continue
+0040b493                             else
+0040b495                                 eax_15 = 0
+0040b495                         
+0040b4a1                         *(arg1 + 0x3ac) = eax_15
+0040b4a7                         *(arg1 + 0x3a8) = 1
+0040b4b1                         break
+0040b4b1                     
+0040b4c0                     var_8_1.b = 0
+0040b4ca                     int32_t ecx_6 = *(esi_4 - 4)
+0040b4ca                     *(esi_4 - 4) -= 1
+0040b4ca                     
+0040b4d1                     if (ecx_6 - 1 s<= 0)
+0040b4d8                         (*(**(esi_4 - 0x10) + 4))(&esi_4[-8])
+0040b4d8                     
+0040b4db                     int32_t var_8_2 = 0xffffffff
+0040b4e8                     int32_t* edx_4 = &var_18[-8]
+0040b4ee                     int32_t ecx_9 = edx_4[3]
+0040b4ee                     edx_4[3] -= 1
+0040b4ee                     
+0040b4f5                     if (ecx_9 - 1 s<= 0)
+0040b4fc                         (*(**edx_4 + 4))(edx_4)
+0040b4fc                     
+0040b4ff                     edi_2 = eax_5
+0040b502                     esi_1 += 1
+0040b502                 
+0040b505                 esi_1 += 1
+0040b505                 
+0040b50c                 if (esi_1 s>= data_5e8fdc)
+0040b50c                     break
+0040b381 else
+0040b383     *(arg1 + 0x3a0) = 0
+0040b383 
+0040b395 fsbase->NtTib.ExceptionList = ExceptionList
+0040b3a3 return 1

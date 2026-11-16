@@ -1,0 +1,54 @@
+0042e503 int32_t var_8 = 0xffffffff
+0042e505 int32_t (* var_c)(void* arg1) = sub_572581
+0042e510 TEB* fsbase
+0042e510 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0042e519 int32_t __saved_ebp
+0042e519 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+0042e51f int32_t var_58 = eax_2
+0042e523 fsbase->NtTib.ExceptionList = &ExceptionList
+0042e52c char* var_50 = arg1
+0042e52f int32_t var_4c = 0
+0042e536 int32_t var_8_1 = 1
+0042e547 int32_t var_1c = 0xf
+0042e54e int32_t var_20 = 0
+0042e555 char var_30 = 0
+0042e559 sub_402470(&var_30, "<?xml version="1.0" ?>\n<data>\n", 0x1e)
+0042e55e var_8_1.b = 2
+0042e56c int32_t var_34 = 0xf
+0042e573 int32_t var_38 = 0
+0042e57a char var_48 = 0
+0042e57e sub_402470(&var_48, "\n</data>", 8)
+0042e583 var_8_1.b = 3
+0042e58b *(arg1 + 0x14) = 0xf
+0042e592 *(arg1 + 0x10) = 0
+0042e59e *arg1 = 0
+0042e5a1 sub_402470(arg1, &data_5b7a80, nullptr)
+0042e5a9 int32_t var_4c_1 = 1
+0042e5a9 
+0042e5b2 if (arg1 != &var_30)
+0042e5bb     sub_402330(arg1, &var_30, 0, 0xffffffff)
+0042e5bb 
+0042e5ca void* arg_8
+0042e5ca sub_405fb0(arg1, &arg_8, nullptr, 0xffffffff)
+0042e5d9 sub_405fb0(arg1, &var_48, nullptr, 0xffffffff)
+0042e5d9 
+0042e5e2 if (var_34 u>= 0x10)
+0042e5e7     j__free(var_48.d)
+0042e5e7 
+0042e5f3 int32_t var_34_1 = 0xf
+0042e5fa int32_t var_38_1 = 0
+0042e601 var_48 = 0
+0042e601 
+0042e605 if (var_1c u>= 0x10)
+0042e60a     j__free(var_30.d)
+0042e60a 
+0042e616 int32_t var_1c_1 = 0xf
+0042e61d int32_t var_20_1 = 0
+0042e624 var_30 = 0
+0042e624 
+0042e628 if (arg2 u>= 0x10)
+0042e62d     j__free(arg_8)
+0042e62d 
+0042e63a fsbase->NtTib.ExceptionList = ExceptionList
+0042e648 sub_54a573(eax_2 ^ &__saved_ebp)
+0042e650 return arg1

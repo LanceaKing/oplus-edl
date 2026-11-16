@@ -1,0 +1,240 @@
+004c13f3 int32_t var_8 = 0xffffffff
+004c13f5 int32_t (* var_c)() = sub_6db548
+004c1400 TEB* fsbase
+004c1400 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004c1405 int32_t esi
+004c1405 int32_t var_28 = esi
+004c140c int32_t __saved_ebp
+004c140c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+004c1412 fsbase->NtTib.ExceptionList = &ExceptionList
+004c1423 void** eax_4 = *(arg1 + 0xb8) + 0x18
+004c1423 
+004c142a if (eax_4[5] u>= 0x10)
+004c142c     eax_4 = *eax_4
+004c142c 
+004c1432 int16_t* var_20
+004c1432 Concurrency::details::_Micro_queue::_Pop_finalizer::~_Pop_finalizer(&var_20, eax_4)
+004c143f int32_t var_8_1 = 0
+004c1446 int16_t* var_1c
+004c1446 Concurrency::details::_Micro_queue::_Pop_finalizer::~_Pop_finalizer(&var_1c, "128G")
+004c1453 var_8_1.b = 1
+004c1457 int16_t* var_18
+004c1457 Concurrency::details::_Micro_queue::_Pop_finalizer::~_Pop_finalizer(&var_18, "256G")
+004c145e var_8_1.b = 2
+004c1462 int16_t* ecx_3 = var_1c
+004c1467 int32_t eax_5
+004c1467 eax_5.b = ecx_3 != 0
+004c1467 
+004c146c if (eax_5 == 0)
+004c1473     sub_414340(0x80004005)
+004c1473     noreturn
+004c1473 
+004c1478 int16_t* eax_6 = var_20
+004c147b int16_t* edx = eax_6
+004c147d int16_t* ecx_4 = ecx_3
+004c1480 int32_t ecx_6
+004c1480 
+004c1480 while (true)
+004c1480     esi.w = *edx
+004c1483     int16_t temp1_1 = *ecx_4
+004c1483     bool c_1 = esi.w u< temp1_1
+004c1483     
+004c1486     if (esi.w == temp1_1)
+004c148b         if (esi.w == 0)
+004c14a2             ecx_6 = 0
+004c14a4             break
+004c14a4         
+004c148d         esi.w = edx[1]
+004c1491         int16_t temp2_1 = ecx_4[1]
+004c1491         c_1 = esi.w u< temp2_1
+004c1491         
+004c1495         if (esi.w == temp2_1)
+004c1497             edx = &edx[2]
+004c149a             ecx_4 = &ecx_4[2]
+004c149a             
+004c14a0             if (esi.w != 0)
+004c14a0                 continue
+004c14a0             
+004c14a2             ecx_6 = 0
+004c14a4             break
+004c14a4     
+004c14a8     ecx_6 = sbb.d(ecx_4, ecx_4, c_1) | 1
+004c14a8     break
+004c14a8 
+004c14ad int32_t result
+004c14ad int32_t* arg_4
+004c14ad int32_t* edi_1
+004c14ad 
+004c14ad if (ecx_6 != 0)
+004c160e     int32_t ecx_14
+004c160e     ecx_14.b = var_18 != 0
+004c160e     
+004c1613     if (ecx_14 == 0)
+004c161a         sub_414340(0x80004005)
+004c161a         noreturn
+004c161a     
+004c161f     int16_t* ecx_15 = var_18
+004c1622     int32_t eax_18
+004c1622     
+004c1622     while (true)
+004c1622         edx.w = *eax_6
+004c1625         int16_t temp3_1 = *ecx_15
+004c1625         bool c_2 = edx.w u< temp3_1
+004c1625         
+004c1628         if (edx.w == temp3_1)
+004c162d             if (edx.w == 0)
+004c1644                 eax_18 = 0
+004c1646                 break
+004c1646             
+004c162f             edx.w = eax_6[1]
+004c1633             int16_t temp4_1 = ecx_15[1]
+004c1633             c_2 = edx.w u< temp4_1
+004c1633             
+004c1637             if (edx.w == temp4_1)
+004c1639                 eax_6 = &eax_6[2]
+004c163c                 ecx_15 = &ecx_15[2]
+004c163c                 
+004c1642                 if (edx.w != 0)
+004c1642                     continue
+004c1642                 
+004c1644                 eax_18 = 0
+004c1646                 break
+004c1646         
+004c164a         eax_18 = sbb.d(eax_6, eax_6, c_2) | 1
+004c164a         break
+004c164a     
+004c164f     if (eax_18 != 0)
+004c1727         result = 2
+004c164f     else
+004c1655         int32_t* esi_4 = arg1 + 0x5bc
+004c1662         int32_t eax_19 = sub_42b840(esi_4, "400")
+004c1667         edi_1 = arg_4
+004c1667         
+004c166c         if (eax_19 == 0)
+004c1675             sub_41aa40(edi_1, esi_4, u"UFS_FW\SELEN_UFS3.0_256GB_P09.bin")
+004c1675         
+004c1688         if (sub_42b840(esi_4, "900") != 0)
+004c1688             goto label_4c1709
+004c1688         
+004c168a         int32_t* var_34_6 = *(arg1 + 0x94)
+004c1693         *(arg1 + 0x500) = &data_7e48c0
+004c169d         int32_t esi_5 = data_7e48c0
+004c16a9         sub_42bd10(&data_7e48c0, &arg_4, var_34_6)
+004c16a9         
+004c16b1         if (arg_4 == esi_5)
+004c16c3             int32_t* var_34_7 = *(arg1 + 0x94)
+004c16cc             *(arg1 + 0x500) = &data_7e48a0
+004c16d6             int32_t esi_6 = data_7e48a0
+004c16e2             sub_42bd10(&data_7e48a0, &arg_4, var_34_7)
+004c16e2             
+004c16ea             if (arg_4 == esi_6)
+004c16fc                 esi_4 = arg1 + 0x5bc
+004c1709             label_4c1709:
+004c1709                 
+004c1710                 if (sub_42b840(esi_4, "302") == 0)
+004c171d                     sub_41aa40(edi_1, esi_4, u"UFS_FW\SELEN_UFS_3_1_V5_256Gb_TLC_256GB_HID_P19.bin")
+004c171d                 
+004c15fa                 sub_4d6500(&data_7e4a58, 4, "[%d] UFS fw file: %S\n", *(arg1 + 0x3c) + 1, *edi_1, 
+004c15fa                     eax_2)
+004c1602                 result = 0
+004c16ea             else
+004c16f3                 sub_41aa40(edi_1, esi_6, u"UFS_FW\SELEN_UFS 3.1_V5_256Gb TLC_256GB_P13.bin")
+004c16f8                 result = 0
+004c16b1         else
+004c16ba             sub_41aa40(edi_1, esi_5, u"UFS_FW\SELEN_UFS_3_1_V5_256Gb_TLC_256GB_HID_P19.bin")
+004c16bf             result = 0
+004c14ad else
+004c14b3     int32_t esi_1 = *(arg1 + 0x5cc)
+004c14c3     int32_t* ecx_7
+004c14c3     
+004c14c3     if (*(arg1 + 0x5d0) u< 0x10)
+004c14c9         ecx_7 = arg1 + 0x5bc
+004c14c3     else
+004c14c5         ecx_7 = *(arg1 + 0x5bc)
+004c14c5     
+004c14cb     int32_t eax_7 = 3
+004c14cb     
+004c14d7     if (esi_1 u< 3)
+004c14d7         eax_7 = esi_1
+004c14d7     
+004c14db     int32_t eax_8 = sub_4241f0(eax_7, &data_77a26c, ecx_7, eax_7)
+004c14e0     edi_1 = arg_4
+004c14e0     
+004c14ed     if (eax_8 == 0 && esi_1 u>= 3)
+004c14f4         int32_t eax_9
+004c14f4         eax_9.b = esi_1 != 3
+004c14f4         
+004c14f9         if (eax_9 == 0)
+004c1504             sub_41a940(edi_1, u"UFS_FW\SELEN_UFS3.0_128GB_P09.bin", 0x21, eax_2)
+004c1504     
+004c1509     int32_t* ecx_9 = arg1 + 0x5bc
+004c150f     int32_t esi_2 = ecx_9[4]
+004c150f     
+004c1512     if (ecx_9[5] u>= 0x10)
+004c1514         ecx_9 = *ecx_9
+004c1514     
+004c1519     int32_t eax_10 = 3
+004c1519     
+004c1523     if (esi_2 u< 3)
+004c1523         eax_10 = esi_2
+004c1523     
+004c153a     if (sub_4241f0(eax_10, &data_77a4ac, ecx_9, eax_10) != 0 || esi_2 u< 3)
+004c15cf     label_4c15cf:
+004c15cf         
+004c15d6         if (sub_42b840(arg1 + 0x5bc, "302") == 0)
+004c15df             sub_41aa40(edi_1, esi_2, u"UFS_FW\SELEN_UFS_3_1_V5_256Gb_TLC_128GB_HID_P19.bin")
+004c15df         
+004c15fa         sub_4d6500(&data_7e4a58, 4, "[%d] UFS fw file: %S\n", *(arg1 + 0x3c) + 1, *edi_1, eax_2)
+004c1602         result = 0
+004c153a     else
+004c1543         int32_t eax_11
+004c1543         eax_11.b = esi_2 != 3
+004c1543         
+004c1548         if (eax_11 != 0)
+004c1548             goto label_4c15cf
+004c1548         
+004c1552         int32_t* var_34_3 = *(arg1 + 0x94)
+004c1558         *(arg1 + 0x500) = &data_7e48c0
+004c1565         int32_t esi_3 = data_7e48c0
+004c156c         sub_42bd10(&data_7e48c0, &arg_4, var_34_3)
+004c156c         
+004c1574         if (arg_4 == esi_3)
+004c1591             int32_t* var_34_4 = *(arg1 + 0x94)
+004c1597             *(arg1 + 0x500) = &data_7e48a0
+004c15a4             esi_2 = data_7e48a0
+004c15ab             sub_42bd10(&data_7e48a0, &arg_4, var_34_4)
+004c15ab             
+004c15b3             if (arg_4 == esi_2)
+004c15b3                 goto label_4c15cf
+004c15b3             
+004c15bc             sub_41aa40(edi_1, esi_2, u"UFS_FW\SELEN_UFS 3.1_V5_256Gb TLC_128GB_P13.bin")
+004c15c1             result = 0
+004c1574         else
+004c157d             sub_41aa40(edi_1, esi_3, u"UFS_FW\SELEN_UFS_3_1_V5_256Gb_TLC_128GB_HID_P19.bin")
+004c1582             result = 0
+004c172c var_8_1.b = 1
+004c1738 int32_t* edx_2 = &var_18[-8]
+004c173e int32_t eax_22 = edx_2[3]
+004c173e edx_2[3] -= 1
+004c173e 
+004c1745 if (eax_22 - 1 s<= 0)
+004c174c     (*(**edx_2 + 4))(edx_2)
+004c174c 
+004c174f var_8_1.b = 0
+004c1758 int32_t* edx_4 = &var_1c[-8]
+004c175e int32_t ecx_25 = edx_4[3]
+004c175e edx_4[3] -= 1
+004c175e 
+004c1765 if (ecx_25 - 1 s<= 0)
+004c176c     (*(**edx_4 + 4))(edx_4)
+004c176c 
+004c176f int32_t var_8_2 = 0xffffffff
+004c1779 int32_t* edi_3 = &var_20[-8]
+004c177f int32_t esi_7 = edi_3[3]
+004c177f edi_3[3] -= 1
+004c177f 
+004c1786 if (esi_7 - 1 s<= 0)
+004c178d     (*(**edi_3 + 4))(edi_3)
+004c178d 
+004c1795 fsbase->NtTib.ExceptionList = ExceptionList
+004c17a3 return result

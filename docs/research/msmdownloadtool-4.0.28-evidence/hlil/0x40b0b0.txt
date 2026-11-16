@@ -1,0 +1,28 @@
+0040b0be int32_t __saved_ebp
+0040b0be int32_t eax_1 = __security_cookie ^ &__saved_ebp
+0040b0c3 wchar16 const* const var_214 = u"c:\temp"
+0040b0d4 void var_210
+0040b0d4 sub_54c83d(&var_210, &data_5b64cc)
+0040b0e3 uint32_t eax_2 = GetFileAttributesW(&var_210)
+0040b0ec BOOL eax_3
+0040b0ec 
+0040b0ec if (eax_2 == 0xffffffff)
+0040b0f7     eax_3 = CreateDirectoryW(&var_210, nullptr)
+0040b0f7 
+0040b0ff uint32_t result
+0040b0ff 
+0040b0ff if (eax_2 == 0xffffffff && eax_3 == 0)
+0040b148     result = sub_439ba7(u"create %s fail", MB_OK, 0)
+0040b0ff else
+0040b101     wchar16 const* const var_214_2 = u"c:\temp\MsmDownloadTool"
+0040b112     sub_54c83d(&var_210, &data_5b64cc)
+0040b121     result = GetFileAttributesW(&var_210)
+0040b121     
+0040b12a     if (result == 0xffffffff)
+0040b135         result = CreateDirectoryW(&var_210, nullptr)
+0040b135         
+0040b13d         if (result == 0)
+0040b148             result = sub_439ba7(u"create %s fail", MB_OK, 0)
+0040b148 
+0040b152 sub_54a573(eax_1 ^ &__saved_ebp)
+0040b15a return result

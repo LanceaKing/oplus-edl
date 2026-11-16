@@ -1,0 +1,94 @@
+18005d933 void* rbx
+18005d933 void* var_8 = rbx
+18005d947 void* rdi
+18005d947 void* arg_18 = rdi
+18005d959 int64_t var_48
+18005d959 uint64_t rdx
+18005d959 int64_t r8
+18005d959 int64_t r9
+18005d959 rdx, r8, r9 = sub_18005d260(&var_48)
+18005d970 char* var_40
+18005d970 
+18005d970 if (var_48 == 0 || var_40 == 0)
+18005da08 labelid_18:
+18005da08     rbx.b = 0
+18005d970 else
+18005d976     char var_20
+18005d976     char rax_1 = var_20
+18005d976     
+18005d98b     if (rax_1 != 0 || (arg2 != 0 && arg1 == 0))
+18005da08     labelid_18:
+18005da08         rbx.b = 0
+18005d98b     else
+18005d98d         rdi = nullptr
+18005d98d         
+18005d992         if (arg2 != 0)
+18005d9cd             do
+18005d9ac                 rbx = arg2 - rdi
+18005d9ac                 
+18005d9b2                 if (rbx u> 0xffffffff)
+18005d9b2                     rbx = 0xffffffff
+18005d9b2                 
+18005d9bc                 int32_t rax_2
+18005d9bc                 rax_2, rdx, r8, r9 = sub_180032c20(var_40, rdi + arg1, zx.q(rbx.d), 0, rbx, arg1, 
+18005d9bc                     arg2, rdi, arg3, 0xffffffff)
+18005d9bc                 
+18005d9c3                 if (rax_2 s< 0)
+18005d9c3                     goto label_18005da08_1
+18005d9c3                 
+18005d9c7                 rdi += zx.q(rbx.d)
+18005d9cd             while (rdi u< arg2)
+18005d9cd             
+18005d9cf             rax_1 = var_20
+18005d9cf         
+18005d9e8         if (var_48 == 0 || var_40 == 0 || rax_1 != 0)
+18005da08         label_18005da08:
+18005da08             rbx.b = 0
+18005d9e8         else
+18005d9f6             int32_t rax_4
+18005d9f6             rax_4, rdx, r8, r9 = j_sub_1806a9a02(var_40, arg3, arg1, 0x20, 0)
+18005d9f6             
+18005d9fd             if (rax_4 s< 0)
+18005da08             label_18005da08_1:
+18005da08                 rbx.b = 0
+18005d9fd             else
+18005d9ff                 char var_20_1 = 1
+18005da04                 rbx.b = 1
+18005da04 
+18005da26 long double x87_r0
+18005da26 
+18005da26 if (var_40 != 0)
+18005da28     r8, r9 = j_sub_180818e4b(var_40, rdx, r8, r9, rdi, x87_r0)
+18005da2d int64_t rcx_4 = var_48
+18005da2d 
+18005da35 if (rcx_4 != 0)
+18005da39     sub_180032c00(rcx_4, 0, r8, r9, rbx)
+18005da39 
+18005da3e void* var_38
+18005da3e void* rax_5 = var_38
+18005da43 int64_t var_30
+18005da43 int64_t rcx_5 = var_30
+18005da43 
+18005da4b if (rax_5 != rcx_5)
+18005da55     __builtin_memset(rax_5, 0, rcx_5 - rax_5)
+18005da57     rcx_5 = var_30
+18005da5c     rax_5 = var_38
+18005da5c 
+18005da6c if (rax_5 != rcx_5)
+18005da6e     void* var_30_1 = rax_5
+18005da6e 
+18005da76 if (rax_5 != 0)
+18005da87     int64_t var_28
+18005da87     
+18005da87     if (var_28 - rax_5 u>= 0x1000)
+18005da89         int64_t rcx_7 = *(rax_5 - 8)
+18005da89         
+18005da98         if (rax_5 - rcx_7 - 8 u> 0x1f)
+18005dab1             trap(0xd)
+18005dab1         
+18005da9e         j_sub_18012c540(rcx_7)
+18005daab         return zx.q(rbx.b)
+18005daab     
+18005dab6     j_sub_18012c540(rax_5)
+18005dab6 
+18005dac3 return zx.q(rbx.b)

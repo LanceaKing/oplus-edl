@@ -1,0 +1,456 @@
+180004db0 void var_198
+180004db0 int64_t rax_1 = __security_cookie ^ &var_198
+180004dba char var_168 = arg3
+180004dd1 int32_t var_160 = 0
+180004ddc sub_1800abb50(arg4)
+180004de4 int64_t rax_3 = sub_18000a680(arg1[1])
+180004dec var_160.q = rax_3
+180004df4 int128_t var_130 = zx.o(0)
+180004df9 int128_t var_120 = zx.o(0)
+180004e0d uint64_t r9 = memcpy(&var_130, &arg1[0xa], 0x20)
+180004e12 int128_t* i_1 = &var_130
+180004e17 uint32_t zmm1[0x4] = zx.o(0)
+180004e1a uint32_t zmm2[0x4] = zx.o(0)
+180004e1d int64_t i_2 = 1
+180004e4b uint32_t temp0_2[0x4]
+180004e4b int64_t i
+180004e4b 
+180004e4b do
+180004e34     zmm1 = _mm_or_ps(zmm1, *i_1)
+180004e3c     temp0_2 = _mm_or_ps(i_1[1], zmm2)
+180004e3f     zmm2 = temp0_2
+180004e43     i_1 = &i_1[2]
+180004e47     i = i_2
+180004e47     i_2 -= 1
+180004e4b while (i != 1)
+180004e4d uint32_t temp0_3[0x4] = _mm_or_ps(zmm1, temp0_2)
+180004e59 uint32_t temp0_5[0x4] = _mm_or_ps(temp0_3, _mm_bsrli_si128(temp0_3, 8))
+180004e65 uint32_t temp0_7[0x4] = _mm_or_ps(temp0_5, _mm_bsrli_si128(temp0_5, 4))
+180004e71 uint32_t temp0_9[0x4] = _mm_or_ps(temp0_7, _mm_bsrli_si128(temp0_7, 2))
+180004e80 char rcx_3 = _mm_or_ps(temp0_9, _mm_bsrli_si128(temp0_9, 1))[0].b
+180004e8b char var_110
+180004e8b 
+180004e8b for (; i_1 != &var_110; i_1 += 1)
+180004e90     rcx_3 |= *i_1
+180004e90 
+180004e9e int32_t r8 = arg1[1]
+180004ea9 int64_t rsi
+180004ea9 int64_t r12
+180004ea9 
+180004ea9 if (r8 - 1 u<= 4)
+180004eab     r12.b = 4
+180004eae     rsi = 4
+180004ea9 else if (r8 - 0xa u<= 7)
+180004ebe     r12.b = 5
+180004ec1     rsi = 5
+180004ebc else if (r8 - 0x14 u<= 2)
+180004ed1     r12.b = 6
+180004ed4     rsi = 6
+180004ecf else if (r8 - 0x1e u> 3)
+180004eee     r12.b = 0
+180004ef1     rsi = 0
+180004ee2 else
+180004ee4     r12.b = 7
+180004ee7     rsi = 7
+180004ee7 
+180004eff int64_t* result
+180004eff char const* const rdx_3
+180004eff void* r8_2
+180004eff 
+180004eff if (*arg1 != 0x48 || rax_3 == 0)
+180005637 label_180005637:
+180005637     r8_2 = 0x2f
+18000563d     rdx_3 = "operation authorization v3 host request invalid"
+180005650 label_180005650:
+180005650     __builtin_memset(&var_130, 0, 0x20)
+180005657     sub_1800018b0(arg5, rdx_3, r8_2, r9)
+18000565c     result.b = 0
+180004eff else
+180004f05     int64_t* r14_1 = *(arg1 + 8)
+180004f05     
+180004f0c     if (r14_1 == 0)
+180004f0c         goto label_180005637
+180004f0c     
+180004f12     int64_t r15_1 = *(arg1 + 0x10)
+180004f12     
+180004f20     if (r15_1 - 1 u> 0x3fffff)
+180004f20         goto label_180005637
+180004f20     
+180004f26     r9 = zx.q(arg1[6])
+180004f26     
+180004f3b     if ((r9 - 1).d u> 0x1869f || rcx_3 == 0)
+180004f33         goto label_180005637
+180004f33     
+180004f50     char rax_11
+180004f50     int512_t zmm1_1
+180004f50     rax_11, r9, zmm1_1 = sub_18000a9f0(r14_1, r15_1, r8, r9.d, *(arg1 + 0x20))
+180004f50     
+180004f57     if (rax_11 == 0)
+180004f57         goto label_180005637
+180004f57     
+180004f62     if (var_168 != 0)
+180004f6c         if (*(arg2 + 0x1b8) != 2)
+180004f6c             goto label_180005637
+180004f6c         
+180004f75         char rax_12
+180004f75         rax_12, r9 = sub_180006b90(arg2)
+180004f75         
+180004f7c         if (rax_12 != 0)
+180004f7c             goto label_180005637
+180004f7c         
+180004f86         char rax_13
+180004f86         rax_13, r9 = sub_180006b90(&arg2[2])
+180004f86         
+180004f8d         if (rax_13 != 0)
+180004f8d             goto label_180005637
+180004f8d         
+180004fa1         char rax_14
+180004fa1         rax_14, r9, zmm1_1 = sub_180006b90((rsi << 5) + 0x60 + arg2)
+180004fa1         
+180004fa8         if (rax_14 != 0)
+180004fa8             goto label_180005637
+180004fa8     
+180004fb1     int128_t var_70
+180004fb1     __builtin_memset(&var_70, 0, 0x20)
+180004fc3     char rax_15
+180004fc3     rax_15, r9 = sub_1800acb60(r14_1, r15_1, &var_70, r9, zmm1_1)
+180004fc3     
+180004fca     if (rax_15 == 0)
+180004fcc         r8_2 = 0x1e
+180004fd2         rdx_3 = "cannot hash operation manifest"
+180004fd9         goto label_180005650
+180004fd9     
+180004fe5     char const* const rdx_4 = "{"schema":"operation_grant_v3_unbound","operation":""
+180004fec     char r14_2 = var_168
+180004fec     
+180004ff5     if (r14_2 != 0)
+180004ff5         rdx_4 = "{"schema":"operation_grant_v3_host","operation":""
+180004ff5     
+180004ffc     sub_180003640(arg4, rdx_4)
+180005032     void* var_150
+180005032     int64_t* rax_16
+180005032     char r9_3
+180005032     rax_16, r9_3 = sub_1800ab440(&var_150, &var_70, 0x20, 
+180005032         sub_180001820(arg4, "","plan_sha256":"", 0x11, sub_180004c50(arg4, var_160.q)))
+18000503d     int64_t* rdx_7
+18000503d     
+18000503d     if (rax_16[3] u<= 0xf)
+180005044         rdx_7 = rax_16
+18000503d     else
+18000503f         rdx_7 = *rax_16
+18000503f     
+18000504e     sub_180001820(arg4, rdx_7, rax_16[2], r9_3)
+18000505d     int64_t var_138
+18000505d     
+18000505d     if (var_138 u> 0xf)
+180005062         void* rcx_17 = var_150
+180005062         
+18000506e         if (var_138 + 1 u>= 0x1000)
+180005070             void* rax_17 = *(rcx_17 - 8)
+180005070             
+18000507f             if (rcx_17 - rax_17 - 8 u> 0x1f)
+180005635                 trap(0xd)
+180005635             
+180005089             rcx_17 = rax_17
+180005089         
+18000508c         j_sub_180182fc0(rcx_17)
+18000508c     
+180005099     char* rax_18
+180005099     char r9_4
+180005099     rax_18, r9_4 = sub_18000b720(&var_150, arg1[6])
+1800050ad     int128_t* rax_19
+1800050ad     char r9_5
+1800050ad     rax_19, r9_5 = sub_1800013f0(&var_110, "","step_count":", rax_18, r9_4)
+1800050b8     int128_t* rdx_12
+1800050b8     
+1800050b8     if (*(rax_19 + 0x18) u<= 0xf)
+1800050bf         rdx_12 = rax_19
+1800050b8     else
+1800050ba         rdx_12 = *rax_19
+1800050ba     
+1800050c9     sub_180001820(arg4, rdx_12, rax_19[1].q, r9_5)
+1800050d7     int64_t var_f8
+1800050d7     
+1800050d7     if (var_f8 u> 0xf)
+1800050dc         void* rcx_23 = var_110.q
+1800050dc         
+1800050e7         if (var_f8 + 1 u>= 0x1000)
+1800050e9             void* rax_20 = *(rcx_23 - 8)
+1800050e9             
+1800050f8             if (rcx_23 - rax_20 - 8 u> 0x1f)
+1800051a5                 trap(0xd)
+1800051a5             
+180005102             rcx_23 = rax_20
+180005102         
+180005105         j_sub_180182fc0(rcx_23)
+180005105     
+18000510d     int64_t var_100 = 0
+180005111     int64_t var_f8_1 = 0xf
+180005119     var_110 = 0
+180005119     
+180005126     if (var_138 u> 0xf)
+18000512b         void* rcx_26 = var_150
+18000512b         
+180005137         if (var_138 + 1 u>= 0x1000)
+180005139             void* rax_21 = *(rcx_26 - 8)
+180005139             
+180005148             if (rcx_26 - rax_21 - 8 u> 0x1f)
+180005635                 trap(0xd)
+180005635             
+180005152             rcx_26 = rax_21
+180005152         
+180005155         j_sub_180182fc0(rcx_26)
+180005155     
+18000518e     char var_90
+18000518e     int128_t* rax_23
+18000518e     char r9_8
+18000518e     rax_23, r9_8 = sub_1800013f0(&var_90, ","total_bytes":", &var_150, 
+18000518e         sub_180001130(&var_150, sub_1800025f0(&var_100:5, *(arg1 + 0x20)), &var_100:5, &var_168))
+180005199     int128_t* rdx_21
+180005199     
+180005199     if (*(rax_23 + 0x18) u<= 0xf)
+1800051a7         rdx_21 = rax_23
+180005199     else
+18000519b         rdx_21 = *rax_23
+18000519b     
+1800051b1     char r9_9 = sub_180001820(arg4, rdx_21, rax_23[1].q, r9_8)
+1800051bf     int64_t var_78
+1800051bf     
+1800051bf     if (var_78 u> 0xf)
+1800051c4         void* rcx_34 = var_90.q
+1800051c4         
+1800051cf         if (var_78 + 1 u>= 0x1000)
+1800051d1             void* rax_24 = *(rcx_34 - 8)
+1800051d1             
+1800051e0             if (rcx_34 - rax_24 - 8 u> 0x1f)
+18000527b                 trap(0xd)
+18000527b             
+1800051ea             rcx_34 = rax_24
+1800051ea         
+1800051ed         r9_9 = j_sub_180182fc0(rcx_34)
+1800051ed     
+1800051f2     int64_t var_80_1 = 0
+1800051f6     int64_t var_78_1 = 0xf
+1800051fe     var_90 = 0
+1800051fe     
+18000520b     if (var_138 u> 0xf)
+180005210         void* rcx_37 = var_150
+180005210         
+18000521c         if (var_138 + 1 u>= 0x1000)
+18000521e             void* rax_25 = *(rcx_37 - 8)
+18000521e             
+18000522d             if (rcx_37 - rax_25 - 8 u> 0x1f)
+180005635                 trap(0xd)
+180005635             
+180005237             rcx_37 = rax_25
+180005237         
+18000523a         r9_9 = j_sub_180182fc0(rcx_37)
+18000523a     
+180005264     int64_t* rax_26
+180005264     char r9_11
+180005264     rax_26, r9_11 = sub_1800ab440(&var_150, &var_130, 0x20, 
+180005264         sub_180001820(arg4, ","consumer_challenge":"", 0x17, r9_9))
+18000526f     int64_t* rdx_29
+18000526f     
+18000526f     if (rax_26[3] u<= 0xf)
+18000527d         rdx_29 = rax_26
+18000526f     else
+180005271         rdx_29 = *rax_26
+180005271     
+180005287     char r9_12 = sub_180001820(arg4, rdx_29, rax_26[2], r9_11)
+180005287     
+180005296     if (var_138 u> 0xf)
+18000529b         void* rcx_44 = var_150
+18000529b         
+1800052a7         if (var_138 + 1 u>= 0x1000)
+1800052a9             void* rax_27 = *(rcx_44 - 8)
+1800052a9             
+1800052b8             if (rcx_44 - rax_27 - 8 u> 0x1f)
+180005635                 trap(0xd)
+180005635             
+1800052c2             rcx_44 = rax_27
+1800052c2         
+1800052c5         r9_12 = j_sub_180182fc0(rcx_44)
+1800052c5     
+1800052da     int64_t r9_13 = sub_180001820(arg4, "","integrity_manifest_sha256":"", 0x1f, r9_12)
+1800052e2     int128_t var_f0
+1800052e2     int64_t var_d8
+1800052e2     int64_t* rax_28
+1800052e2     int32_t rdi_1
+1800052e2     
+1800052e2     if (r14_2 == 0)
+180005302         var_f0 = zx.o(0)
+180005306         int64_t var_e0_1 = 0
+18000530a         var_d8 = 0xf
+180005312         var_f0.b = 0
+180005316         rax_28 = &var_f0
+18000531a         rdi_1 = 0xc2
+1800052e2     else
+1800052f2         rax_28, r9_13 = sub_1800ab440(&var_150, arg2, 0x20, r9_13)
+1800052f8         rdi_1 = 0xc1
+1800052f8     
+18000531f     int32_t var_160_1 = rdi_1
+180005328     int64_t* rdx_34
+180005328     
+180005328     if (rax_28[3] u<= 0xf)
+18000532f         rdx_34 = rax_28
+180005328     else
+18000532a         rdx_34 = *rax_28
+18000532a     
+180005339     char r9_14 = sub_180001820(arg4, rdx_34, rax_28[2], r9_13.b)
+180005339     
+180005343     if ((rdi_1.b & 2) != 0)
+180005345         rdi_1 &= 0xfffffffd
+180005345         
+180005350         if (var_d8 u> 0xf)
+180005355             void* rcx_50 = var_f0.q
+180005355             
+180005360             if (var_d8 + 1 u>= 0x1000)
+180005362                 void* rax_29 = *(rcx_50 - 8)
+180005362                 
+180005371                 if (rcx_50 - rax_29 - 8 u> 0x1f)
+180005403                     trap(0xd)
+180005403                 
+18000537b                 rcx_50 = rax_29
+18000537b             
+18000537e             r9_14 = j_sub_180182fc0(rcx_50)
+18000537e     
+180005388     if ((rdi_1.b & 1) != 0)
+18000538a         rdi_1 &= 0xfffffffe
+18000538a         
+180005396         if (var_138 u> 0xf)
+18000539b             void* rcx_53 = var_150
+18000539b             
+1800053a7             if (var_138 + 1 u>= 0x1000)
+1800053a9                 void* rax_30 = *(rcx_53 - 8)
+1800053a9                 
+1800053b8                 if (rcx_53 - rax_30 - 8 u> 0x1f)
+180005635                     trap(0xd)
+180005635                 
+1800053c2                 rcx_53 = rax_30
+1800053c2             
+1800053c5             r9_14 = j_sub_180182fc0(rcx_53)
+1800053c5     
+1800053da     int64_t r9_15 = sub_180001820(arg4, "","host_exe_sha256":"", 0x15, r9_14)
+1800053e2     int128_t var_d0
+1800053e2     int64_t var_b8
+1800053e2     int64_t* rax_31
+1800053e2     int32_t rdi_2
+1800053e2     
+1800053e2     if (r14_2 == 0)
+180005408         var_d0 = zx.o(0)
+18000540c         int64_t var_c0_1 = 0
+180005410         var_b8 = 0xf
+180005418         var_d0.b = 0
+18000541c         rax_31 = &var_d0
+180005420         rdi_2 = rdi_1 | 8
+1800053e2     else
+1800053f3         rax_31, r9_15 = sub_1800ab440(&var_150, &arg2[2], 0x20, r9_15)
+1800053f9         rdi_2 = rdi_1 | 4
+1800053f9     
+180005423     int32_t var_160_2 = rdi_2
+18000542c     int64_t* rdx_42
+18000542c     
+18000542c     if (rax_31[3] u<= 0xf)
+180005433         rdx_42 = rax_31
+18000542c     else
+18000542e         rdx_42 = *rax_31
+18000542e     
+18000543d     char r9_16 = sub_180001820(arg4, rdx_42, rax_31[2], r9_15.b)
+18000543d     
+180005447     if ((rdi_2.b & 8) != 0)
+180005449         rdi_2 &= 0xfffffff7
+180005449         
+180005454         if (var_b8 u> 0xf)
+180005459             void* rcx_60 = var_d0.q
+180005459             
+180005464             if (var_b8 + 1 u>= 0x1000)
+180005466                 void* rax_32 = *(rcx_60 - 8)
+180005466                 
+180005475                 if (rcx_60 - rax_32 - 8 u> 0x1f)
+180005537                     trap(0xd)
+180005537                 
+18000547f                 rcx_60 = rax_32
+18000547f             
+180005482             r9_16 = j_sub_180182fc0(rcx_60)
+180005482     
+18000548c     if ((rdi_2.b & 4) != 0)
+18000548e         rdi_2 &= 0xfffffffb
+18000548e         
+18000549a         if (var_138 u> 0xf)
+18000549f             void* rcx_63 = var_150
+18000549f             
+1800054ab             if (var_138 + 1 u>= 0x1000)
+1800054ad                 void* rax_33 = *(rcx_63 - 8)
+1800054ad                 
+1800054bc                 if (rcx_63 - rax_33 - 8 u> 0x1f)
+180005635                     trap(0xd)
+180005635                 
+1800054c6                 rcx_63 = rax_33
+1800054c6             
+1800054c9             r9_16 = j_sub_180182fc0(rcx_63)
+1800054c9     
+1800054de     sub_180001820(arg4, "","consumer_module":"", 0x15, r9_16)
+180005507     int64_t r9_18 = sub_180001820(arg4, "","consumer_module_sha256":"", 0x1c, 
+180005507         sub_180004c50(arg4, sub_180088220(r12.b)))
+18000550f     int128_t var_b0
+18000550f     int64_t var_98
+18000550f     int32_t** rax_35
+18000550f     int32_t rdi_3
+18000550f     
+18000550f     if (r14_2 == 0)
+18000553c         var_b0 = zx.o(0)
+180005540         int64_t var_a0_1 = 0
+180005544         var_98 = 0xf
+18000554c         var_b0.b = 0
+180005550         rax_35 = &var_b0
+180005554         rdi_3 = rdi_2 | 0x20
+18000550f     else
+180005527         rax_35, r9_18 = sub_1800ab440(&var_150, &arg2[6 + rsi * 2], 0x20, r9_18)
+18000552d         rdi_3 = rdi_2 | 0x10
+18000552d     
+180005557     int32_t var_160_3 = rdi_3
+180005560     int32_t* rdx_52
+180005560     
+180005560     if (rax_35[3] u<= 0xf)
+180005567         rdx_52 = rax_35
+180005560     else
+180005562         rdx_52 = *rax_35
+180005562     
+180005571     char r9_19 = sub_180001820(arg4, rdx_52, rax_35[2], r9_18.b)
+180005571     
+18000557b     if ((rdi_3.b & 0x20) != 0)
+18000557d         rdi_3 &= 0xffffffdf
+18000557d         
+180005588         if (var_98 u> 0xf)
+18000558d             void* rcx_73 = var_b0.q
+18000558d             
+180005598             if (var_98 + 1 u>= 0x1000)
+18000559a                 void* rax_36 = *(rcx_73 - 8)
+18000559a                 
+1800055a9                 if (rcx_73 - rax_36 - 8 u> 0x1f)
+18000562e                     trap(0xd)
+18000562e                 
+1800055af                 rcx_73 = rax_36
+1800055af             
+1800055b2             r9_19 = j_sub_180182fc0(rcx_73)
+1800055b2     
+1800055c7     if ((rdi_3.b & 0x10) != 0 && var_138 u> 0xf)
+1800055cc         void* rcx_76 = var_150
+1800055cc         
+1800055d8         if (var_138 + 1 u>= 0x1000)
+1800055da             void* rax_37 = *(rcx_76 - 8)
+1800055da             
+1800055e9             if (rcx_76 - rax_37 - 8 u> 0x1f)
+180005635                 trap(0xd)
+180005635             
+1800055ef             rcx_76 = rax_37
+1800055ef         
+1800055f2         r9_19 = j_sub_180182fc0(rcx_76)
+1800055f2     
+180005607     sub_180001820(arg4, &data_1801b4fd8, 2, r9_19)
+180005617     __builtin_memset(&var_70, 0, 0x20)
+180005623     __builtin_memset(&var_130, 0, 0x20)
+180005625     result.b = 1
+180005665 __security_check_cookie(rax_1 ^ &var_198)
+18000567d return result

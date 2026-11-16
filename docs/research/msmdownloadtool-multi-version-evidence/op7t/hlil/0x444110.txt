@@ -1,0 +1,264 @@
+00444110 int32_t __saved_ebp_2
+00444110 int32_t __saved_ebp_1 = __saved_ebp_2
+00444116 __security_cookie
+00444120 int32_t ebx
+00444120 int32_t var_28 = ebx
+00444127 int32_t esi
+00444127 int32_t var_2c = esi
+00444128 int32_t edi
+00444128 int32_t var_30 = edi
+00444128 int32_t* esp_1 = &var_30
+0044412e void* j_1 = nullptr
+00444137 char var_14 = 0
+0044413d int32_t var_13 = 0
+00444140 int32_t i = 2
+00444143 int16_t var_f = 0
+00444147 char var_d = 0
+0044414a int32_t var_20 = 0
+0044414a 
+004443d2 do
+0044415d     uint32_t eax_5 = zx.d((*(arg1 + 0x30)).b) << 0x10
+00444164     void* esp_2
+00444164     
+00444164     if (*(arg1 + 0x20) == 0)
+0044416d         *(esp_1 - 4) = u"Open Serial device"
+0044416d         esp_2 = esp_1 - 4
+00444164     else
+00444166         *(esp_1 - 4) = &data_6e04ec
+00444166         esp_2 = esp_1 - 4
+00444166     
+00444172     *(esp_2 - 4) = eax_5
+00444173     *(esp_2 - 8) = 0x178c
+00444178     *(esp_2 - 0xc) = *(arg1 + 0x34)
+0044417b     0x3095d0()
+0044417d     *(arg1 + 0x24)
+00444180     sub_44e390()
+0044418e     *(arg1 + 0x24)
+00444196     *(esp_2 - 0x20) = *(arg1 + 0x84) + 0x414
+00444196     
+0044419e     if (sub_44e290() != 0)
+004443a9         int32_t eax_35 = (zx.d((*(arg1 + 0x30)).b) | 0x100) << 0x10
+004443b0         void* esp_40
+004443b0         
+004443b0         if (*(arg1 + 0x20) == 0)
+004443b9             *esp_2 = u"Open Serial Device Failed"
+004443b9             esp_40 = esp_2
+004443b0         else
+004443b2             *esp_2 = &data_6e04a4
+004443b2             esp_40 = esp_2
+004443b2         
+004443be         *(esp_40 - 4) = eax_35
+004443bf         *(esp_40 - 8) = 0x178c
+004443c4         *(esp_40 - 0xc) = *(arg1 + 0x34)
+004443c4         esp_1 = esp_40 - 0xc
+004443c7         0x3095d0()
+004443c9         i -= 1
+004443c9         
+004443ce         if (i s<= 0)
+004443ce             break
+0044419e     else
+004441a7         *(*(arg1 + 0x24) + 4) = 3
+004441b3         int32_t* edi_2 = *(arg1 + 0x8c)
+004441be         int32_t eax_10
+004441be         int32_t edx_1
+004441be         edx_1:eax_10 = muls.dp.d(0x51eb851f, edi_2[1] - *edi_2)
+004441c0         int32_t edx_2 = edx_1 s>> 5
+004441c0         
+004441ca         if (edx_2 u>> 0x1f != neg.d(edx_2))
+004441d3             for (void* j = *edi_2; j != edi_2[1]; j += 0x64)
+004441d5                 int32_t ecx_4
+004441d5                 ecx_4.b = *(j + 0x62)
+004441d5                 
+004441da                 if (ecx_4.b != 0)
+004441e5                 label_4441e5:
+004441e5                     
+004441e9                     if (*(arg1 + 0x4d) == 1)
+004441f4                         j_1 = j
+004441f4                         break
+004441da                 else
+004441df                     if (*(arg1 + 0x4d) == ecx_4.b)
+004441f4                         j_1 = j
+004441f4                         break
+004441f4                     
+004441e3                     if (ecx_4.b != 0)
+004441e3                         goto label_4441e5
+004441e3         
+004441f7         *esp_2 = 0xc8
+004441fc         0x3086d4()
+00444202         *(esp_2 - 4) = j_1
+00444210         int32_t edx_4
+00444210         void* esp_26
+00444210         void* esp_44
+00444210         
+00444210         if (sub_444450(arg1) != 0)
+004443f0             bool cond:0_1 = *(arg1 + 0x20) == 0
+004443f4             *(esp_2 - 4) = 1
+004443f4             
+004443f6             if (cond:0_1)
+004443ff                 *(esp_2 - 8) = u"Sahara Communication Faile"
+004443ff                 esp_44 = esp_2 - 8
+004443f6             else
+004443f8                 *(esp_2 - 8) = u"Sahar"
+004443f8                 esp_44 = esp_2 - 8
+004443f8             
+00444404         label_444404:
+00444404             *(esp_44 - 4) = 0
+00444406             *(esp_44 - 8) = *(arg1 + 0x30)
+00444409             *(esp_44 - 0xc) = *(arg1 + 0x34)
+0044440c             edx_4 = sub_443400()
+0044440c             esp_26 = esp_44 - 8
+00444411         label_444411:
+00444411             void* eax_36 = *(arg1 + 0x24)
+00444414             *(eax_36 + 4) = 4
+0044441b             *(esp_26 - 4) = *(eax_36 + 8)
+0044441e             *(esp_26 - 8) = edx_4
+0044441f             sub_e1750c()
+0044441f             esp_1 = esp_26
+00444424             *(arg1 + 0x24)
+00444427             sub_44e390()
+00444427             break
+00444427         
+00444216         *(esp_2 - 4) = 0xc8
+0044421b         0x3086d4()
+0044422a         uint32_t eax_17 = zx.d((*(arg1 + 0x30)).b) << 0x10
+00444231         void* esp_13
+00444231         
+00444231         if (*(arg1 + 0x20) == 0)
+0044423a             *(esp_2 - 8) = u"Try Firehose Communication Handshake"
+0044423a             esp_13 = esp_2 - 8
+00444231         else
+00444233             *(esp_2 - 8) = 0x6e0598
+00444233             esp_13 = esp_2 - 8
+00444233         
+0044423f         *(esp_13 - 4) = eax_17
+00444240         *(esp_13 - 8) = 0x178c
+00444245         *(esp_13 - 0xc) = *(arg1 + 0x34)
+00444248         0x3095d0()
+0044424a         *(arg1 + 0x2c)
+0044424a         
+00444256         if (sub_451160() != 0)
+004443da             bool cond:1_1 = *(arg1 + 0x20) == 0
+004443de             *(esp_13 + 4) = 1
+004443de             
+004443e0             if (cond:1_1)
+004443e9                 *esp_13 = u"Firehose Communication Handshake Failed"
+004443e9                 esp_44 = esp_13
+004443e0             else
+004443e2                 *esp_13 = 0x6e0524
+004443e2                 esp_44 = esp_13
+004443e2             
+004443e0             goto label_444404
+004443e0         
+0044425c         *(esp_13 + 4) = 0x3e8
+00444261         0x3086d4()
+00444270         uint32_t eax_21 = zx.d((*(arg1 + 0x30)).b) << 0x10
+00444277         void* esp_19
+00444277         
+00444277         if (*(arg1 + 0x20) == 0)
+00444280             *esp_13 = u"Setting Firehose Communication data transmission"
+00444280             esp_19 = esp_13
+00444277         else
+00444279             *esp_13 = "ck(WM"
+00444279             esp_19 = esp_13
+00444279         
+00444285         *(esp_19 - 4) = eax_21
+00444286         *(esp_19 - 8) = 0x178c
+0044428b         *(esp_19 - 0xc) = *(arg1 + 0x34)
+0044428e         0x3095d0()
+00444290         bool cond:2_1 = *(arg1 + 0x21) == 0
+00444294         *(arg1 + 0x2c)
+00444297         *(esp_19 - 0x10) = 0
+00444299         void* esp_24
+00444299         
+00444299         if (cond:2_1)
+0044429f             *(esp_19 - 0x14) = 0
+0044429f             esp_24 = esp_19 - 0x14
+00444299         else
+0044429b             *(esp_19 - 0x14) = 1
+0044429b             esp_24 = esp_19 - 0x14
+0044429b         
+004442a1         *(esp_24 - 4) = 0x8000
+004442a6         int32_t eax_22
+004442a6         eax_22, edx_4 = std::num_put<uint16_t,class std::ostreambuf_iterator<uint16_t,struct std::char_traits<uint16_t> > >::_Iput()
+004442a6         esp_26 = esp_24 + 0x1c
+004442a6         
+004442af         if (eax_22 != 0)
+004442af             goto label_444411
+004442af         
+004442b8         int32_t eax_23
+004442b8         
+004442b8         if (*(arg1 + 0x21) != eax_22.b)
+004442ba             *(arg1 + 0x2c)
+004442c0             *(esp_26 - 4) = &var_20
+004442c4             *(esp_26 - 8) = &var_14
+004442c5             eax_23, edx_4 = sub_452140()
+004442c5         
+004442ce         if (*(arg1 + 0x21) != eax_22.b && eax_23 != 0)
+004442ce             goto label_444411
+004442ce         
+004442d4         *(esp_26 - 4) = var_20
+004442d9         int32_t eax_24
+004442d9         eax_24, edx_4 = sub_445070(arg1)
+004442d9         
+004442e2         if (eax_24 != 0)
+004442e2             goto label_444411
+004442e2         
+004442ea         int32_t eax_25
+004442ea         eax_25, edx_4 = sub_448c80()
+004442ea         
+004442f3         if (eax_25 != 0)
+004442f3             goto label_444411
+004442f3         
+004442f9         *(arg1 + 0x2c)
+004442fc         *(esp_26 - 4) = &data_6e0a98
+00444301         int32_t eax_26 = sub_453560()
+00444306         void* ecx_12 = *(arg1 + 0x24)
+0044430b         *(esp_26 - 4) = *(ecx_12 + 8)
+0044430e         *(ecx_12 + 4) = 4
+00444315         *(esp_26 - 8) = eax_26
+00444316         sub_cd0433()
+00444316         esp_1 = esp_26
+0044431b         *(arg1 + 0x24)
+0044431e         sub_44e390()
+0044431e         
+00444325         if (eax_26 == 0)
+00444325             break
+00444325         
+0044432b         void* eax_27 = *(arg1 + 0x24)
+0044432e         *(esp_1 - 4) = *(eax_27 + 8)
+00444331         *(eax_27 + 4) = 4
+00444338         *(esp_1 - 8) = arg1
+00444339         sub_c5b7a3()
+0044433e         *(arg1 + 0x24)
+00444341         sub_44e390()
+00444341         
+0044434a         if (i == 1)
+0044434a             break
+0044434a         
+00444357         if (*(arg1 + 0x1004e5) != 0)
+00444357             break
+00444357         
+0044436b         int32_t eax_31 = (zx.d((*(arg1 + 0x30)).b) | 0x100) << 0x10
+00444372         void* esp_36
+00444372         
+00444372         if (*(arg1 + 0x20) == 0)
+0044437b             *(esp_1 - 4) = u"Serial ReadBack Failed, Ready to try again"
+0044437b             esp_36 = esp_1 - 4
+00444372         else
+00444374             *(esp_1 - 4) = 0x6e0b80
+00444374             esp_36 = esp_1 - 4
+00444374         
+00444380         *(esp_36 - 4) = eax_31
+00444381         *(esp_36 - 8) = 0x178c
+00444386         *(esp_36 - 0xc) = *(arg1 + 0x34)
+00444389         0x3095d0()
+0044438b         *(esp_36 - 0x10) = 0x3e8
+0044438b         esp_1 = esp_36 - 0x10
+00444390         0x3086d4()
+00444396         i -= 1
+004443d2 while (i != 0)
+004443d2 
+00444431 *esp_1
+00444431 esp_1[1]
+00444432 esp_1[2]
+0044443e return sub_60bdca()

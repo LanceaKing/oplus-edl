@@ -1,0 +1,46 @@
+1499c9bc stp     fp, lr, [sp, #-0x40]!
+1499c9c0 str     x23, [sp, #0x10]
+1499c9c4 stp     x22, x21, [sp, #0x20]
+1499c9c8 stp     x20, x19, [sp, #0x30]
+1499c9cc mov     fp, sp
+1499c9d0 mov     w21, #0xffffffff
+1499c9d4 cbz     x1, 0x1499ca5c
+1499ca5c mov     w0, w21
+1499ca60 ldr     x23, [sp, #0x10]
+1499ca64 ldp     x20, x19, [sp, #0x30]
+1499ca68 ldp     x22, x21, [sp, #0x20]
+1499ca6c ldp     fp, lr, [sp], #0x40
+1499ca70 ret     
+1499c9d8 cmp     w2, #0x8
+1499c9dc b.gt    0x1499ca5c
+1499c9e0 mov     x19, x1
+1499c9e4 mov     w20, w0
+1499c9e8 cmn     w2, #0x1
+1499c9ec b.eq    0x1499ca18
+1499ca18 adrp    x22, 0x80202000
+1499ca1c mov     x23, xzr
+1499ca20 mov     w21, #0xffffffff
+1499ca24 add     x22, x22, #0x990
+1499c9f0 adrp    x9, 0x80202000
+1499c9f4 sxtw    x8, w2
+1499c9f8 add     x9, x9, #0x990
+1499c9fc mov     w1, w20
+1499ca00 add     x0, x9, x8, lsl #0x7
+1499ca04 bl      0x149ab6f8
+1499ca08 cmp     x0, #0
+1499ca0c str     x0, [x19]
+1499ca10 csetm   w21, eq
+1499ca14 b       0x1499ca5c
+1499ca4c add     x23, x23, #0x1
+1499ca50 add     x22, x22, #0x80
+1499ca54 b       0x1499ca28
+1499ca30 cmp     x23, #0x9
+1499ca34 b.eq    0x1499ca5c
+1499ca28 cmp     x23, #0x2
+1499ca2c b.eq    0x1499ca4c
+1499ca38 mov     x0, x22
+1499ca3c mov     w1, w20
+1499ca40 bl      0x149ab6f8
+1499ca44 str     x0, [x19]
+1499ca48 cbnz    x0, 0x1499ca58
+1499ca58 mov     w21, wzr

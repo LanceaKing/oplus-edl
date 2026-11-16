@@ -1,0 +1,61 @@
+149ba1f0 int64_t result = -0x7ffffffffffffffe
+149ba1f0 
+149ba1f8 if (arg1 != 0 && arg4 != 0)
+149ba1fc     if (arg2 == 0)
+149ba2bc         int64_t x8 = *arg4
+149ba2c4         *arg4 = 1
+149ba2c4         
+149ba2c8         if (x8 == 0)
+149ba2dc             return -0x7ffffffffffffffb
+149ba2dc         
+149ba2cc         result = 0
+149ba2d0         *arg3 = 0
+149ba1fc     else if (not.q(arg1) u> arg2)
+149ba20c         int64_t x9_2 = *arg4
+149ba20c         
+149ba218         if (x9_2 u< not.q(arg3))
+149ba22c             int64_t x10_3 = 1 | (0x3fffffffffffffff & ((arg2 + 2) u/ 3)) << 2
+149ba22c             
+149ba238             if (arg3 == 0 || x9_2 u< x10_3)
+149ba2e4                 *arg4 = x10_3
+149ba2e8                 return -0x7ffffffffffffffb
+149ba2e8             
+149ba23c             char* x9_3 = arg1 + 1
+149ba23c             
+149ba24c             while (arg2 u>= 3)
+149ba254                 arg2 -= 3
+149ba260                 *arg3 = (*"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")[
+149ba260                     zx.q(x9_3[-1]) u>> 2]
+149ba27c                 arg3[1] = (*"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")[(
+149ba27c                     zx.q(zx.d(x9_3[-1]) << 4) & 0x30) | zx.q(*x9_3) u>> 4]
+149ba29c                 arg3[2] = (*"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")[(
+149ba29c                     zx.q(zx.d(*x9_3) << 2) & 0x3c) | zx.q(x9_3[1]) u>> 6]
+149ba2a0                 uint64_t x11_15 = zx.q(x9_3[1])
+149ba2a4                 x9_3 = &x9_3[3]
+149ba2b0                 arg3[3] = (*"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")[
+149ba2b0                     x11_15 & 0x3f]
+149ba2b4                 arg3 = &arg3[4]
+149ba2b4             
+149ba2f0             if (arg2 == 1)
+149ba34c                 *arg3 = (*"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")[
+149ba34c                     zx.q(x9_3[-1]) u>> 2]
+149ba35c                 char x8_2 = (*"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")[
+149ba35c                     zx.q(zx.d(x9_3[-1]) << 4) & 0x30]
+149ba364                 arg3[2] = 0x3d
+149ba368                 arg3[1] = x8_2
+149ba374                 arg3[3] = 0x3d
+149ba378                 arg3 = &arg3[4]
+149ba2f0             else if (arg2 == 2)
+149ba308                 *arg3 = (*"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")[
+149ba308                     zx.q(x9_3[-1]) u>> 2]
+149ba324                 arg3[1] = (*"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")[(
+149ba324                     zx.q(zx.d(x9_3[-1]) << 4) & 0x30) | zx.q(*x9_3) u>> 4]
+149ba338                 arg3[2] = (*"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/")[
+149ba338                     zx.q(zx.d(*x9_3) << 2) & 0x3c]
+149ba374                 arg3[3] = 0x3d
+149ba378                 arg3 = &arg3[4]
+149ba378             
+149ba2cc             result = 0
+149ba2d0             *arg3 = 0
+149ba2d0 
+149ba2d4 return result

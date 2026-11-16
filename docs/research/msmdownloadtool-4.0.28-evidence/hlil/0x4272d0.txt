@@ -1,0 +1,127 @@
+004272db int32_t __saved_ebp
+004272db int32_t eax_1 = __security_cookie ^ &__saved_ebp
+004272e3 uint32_t ebx = 0
+004272e5 uint32_t var_58 = 0
+004272f1 uint32_t var_4c = 0
+004272fc uint32_t var_50 = 0
+004272ff int32_t var_38
+004272ff _memset(&var_38, 0, 0x30)
+0042730c void* ecx = *arg1
+0042730e int32_t var_30 = data_5df814
+00427316 int32_t var_2c = data_5df818
+0042731e int32_t var_24 = data_5df820
+0042732a var_38 = 2
+00427332 int32_t var_34 = 0x30
+00427339 int32_t var_28 = 0
+0042733c enum WIN32_ERROR result_2
+0042733c int32_t ecx_1
+0042733c result_2, ecx_1 = sub_4267a0(ecx, &var_38, 0x30, &var_50)
+00427341 enum WIN32_ERROR result_1 = result_2
+00427343 uint32_t eax_5 = _clock(ecx_1)
+00427348 var_50 = eax_5
+00427362 enum WIN32_ERROR result
+00427362 
+00427362 while (true)
+00427362     if (ebx - eax_5 s>= 0x3a98 || arg1[3].b != 0)
+004274bd     label_4274bd:
+004274bd         
+004274bf         if (result_1 == NO_ERROR)
+004274c4         label_4274c4:
+004274c4             
+004274cf             if (*(arg1 + 0x1d) != *(arg1 + 0xd) || *(arg1 + 0x21) != *(arg1 + 0x11))
+004274d5                 result_1 = ERROR_MUTUAL_AUTH_FAILED
+004274d5                 
+004274df                 if (*(arg1 + 0xd) == 0)
+004274df                     result_1 = ERROR_INVALID_FUNCTION
+004274df         
+004274e2         result = result_1
+004274e2         break
+004274e2     
+00427378     enum WIN32_ERROR result_3
+00427378     int32_t ecx_3
+00427378     result_3, ecx_3 = sub_4268c0(*arg1, arg1[2], &var_58, 0x20, 0x7d0)
+0042737d     result_1 = result_3
+0042737d     
+00427381     if (result_1 != NO_ERROR)
+0042747e         if (result_1 != 0x102)
+0042747e             goto label_4274bd
+0042747e         
+00427485         ebx = _clock(ecx_3)
+00427487         eax_5 = var_50
+0042748a         continue
+0042748a     
+00427387     int32_t* edi = arg1[2]
+0042738a     int32_t eax_6 = *edi
+0042738d     char* var_70_4
+0042738d     uint32_t var_6c_1
+0042738d     uint32_t* var_68_3
+0042738d     uint32_t var_48
+0042738d     int32_t ecx_6
+0042738d     
+0042738d     if (eax_6 == 1)
+00427410         var_48 = 0
+0042741a         _memset(&var_38, 0, 0x30)
+00427425         int32_t var_30_1 = edi[2]
+0042742b         int32_t var_2c_1 = edi[3]
+00427431         int32_t var_24_1 = edi[5]
+00427437         var_68_3 = &var_48
+00427438         var_6c_1 = 0x30
+0042743d         var_38 = 2
+00427444         int32_t var_34_1 = 0x30
+0042744b         int32_t var_28_1 = 0
+00427452         var_70_4 = &var_38
+00427455     label_427455:
+00427455         result, ecx_6 = sub_4267a0(*arg1, var_70_4, var_6c_1, var_68_3)
+00427455         
+0042745c         if (result != NO_ERROR)
+0042745c             break
+0042745c         
+00427462     label_427462:
+00427462         result_1 = NO_ERROR
+00427469         ebx = _clock(ecx_6)
+00427469         
+0042746e         if (var_4c == 0)
+00427470             eax_5 = var_50
+00427473             continue
+0042738d     else
+00427392         if (eax_6 == 0xb)
+004273f6             var_48 = 0
+004273fd             var_68_3 = &var_48
+004273fe             var_6c_1 = data_5df798
+00427404             var_70_4 = &data_5df794
+00427409             goto label_427455
+00427409         
+00427397         if (eax_6 == 0xe)
+004273a0             result = sub_427580(arg1, edi)
+004273a0             
+004273a7             if (result != NO_ERROR)
+004273a7                 break
+004273a7             
+004273af             Sleep(0x32)
+004273b5             void* ecx_5 = *arg1
+004273c0             var_4c = 0
+004273c8             int32_t var_44 = 0xc
+004273cf             int32_t var_40_1 = 0xc
+004273d6             int32_t var_3c_1 = 0
+004273dd             result, ecx_6 = sub_4267a0(ecx_5, &var_44, 0xc, &var_4c)
+004273dd             
+004273e4             if (result != NO_ERROR)
+004273e4                 break
+004273e4             
+004273ea             var_4c = 1
+004273a7             goto label_427462
+004273a7         
+0042748f         void* ecx_8 = *arg1
+0042749a         var_48 = 0
+004274a2         int32_t var_54 = 7
+004274a9         var_50 = 8
+004274b0         result = sub_4267a0(ecx_8, &var_54, 8, &var_48)
+004274b0         
+004274b7         if (result != NO_ERROR)
+004274b7             break
+004274b7         
+004274b9         result_1 = NO_ERROR
+0042738d     goto label_4274c4
+0042738d 
+004274ec sub_54a573(eax_1 ^ &__saved_ebp)
+004274f4 return result

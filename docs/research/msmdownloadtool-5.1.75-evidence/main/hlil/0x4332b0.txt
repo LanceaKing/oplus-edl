@@ -1,0 +1,114 @@
+004332b3 int32_t var_8 = 0xffffffff
+004332b5 int32_t (* var_c)(void* arg1) = sub_6ceab0
+004332c0 TEB* fsbase
+004332c0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004332ce int32_t __saved_ebp
+004332ce int32_t var_4c = __security_cookie ^ &__saved_ebp
+004332d2 fsbase->NtTib.ExceptionList = &ExceptionList
+004332e2 void* var_1c
+004332e2 sub_41a5b0(&var_1c, &data_76a09c)
+004332ef int32_t var_8_1 = 0
+004332f6 void* var_18
+004332f6 sub_41a5b0(&var_18, &data_76a09c)
+00433303 var_8_1.b = 1
+00433307 void* var_24
+00433307 sub_41a5b0(&var_24, &data_76a09c)
+00433314 var_8_1.b = 2
+00433318 void* var_20
+00433318 sub_41a5b0(&var_20, &data_76a09c)
+00433325 var_8_1.b = 3
+00433329 void* var_14
+00433329 void* ecx_5 = sub_41a5b0(&var_14, &data_76a09c)
+0043332e var_8_1.b = 4
+00433334 int32_t* var_58
+00433334 void* const var_54
+00433334 
+00433334 if (arg1 != 0)
+00433336     int32_t var_50_5 = *(arg1 + 4)
+0043333c     var_54 = &data_76f150
+00433341     var_58 = &var_1c
+00433342     ecx_5 = sub_414410(var_58, var_54)
+00433347     int32_t eax_3 = *(arg1 + 8)
+00433347     
+0043334f     if (eax_3 != 0)
+00433351         int32_t var_50_6 = eax_3
+00433355         var_54 = &data_76b468
+0043335a         var_58 = &var_18
+0043335b         ecx_5 = sub_414410(var_58, var_54)
+0043335b     
+00433363     int32_t eax_4 = *(arg1 + 0xc)
+00433363     
+00433368     if (eax_4 != 0)
+0043336a         int32_t var_50_7 = eax_4
+0043336e         var_54 = &data_76b468
+00433373         var_58 = &var_14
+00433374         ecx_5 = sub_414410(var_58, var_54)
+00433374 
+0043337c void* eax_5 = var_14
+0043337f class ATL::CStringT<wchar_t, class StrTraitMFC<wchar_t, class ATL::ChTraitsCRT<wchar_t> > >& 
+0043337f     var_50_8 = &data_7dfdb4
+00433384 var_54 = ecx_5
+00433388 void* const* var_28 = &var_54
+0043338d var_58 = eax_5 - 0x10
+00433396 var_54 = &sub_41a8a0(var_58)[4]
+00433398 var_8_1.b = 5
+004333a4 int32_t** var_2c = &var_58
+004333a7 int32_t* var_5c = var_20 - 0x10
+004333b0 var_58 = &sub_41a8a0(var_5c)[4]
+004333b2 var_8_1.b = 6
+004333be int32_t** var_30 = &var_5c
+004333c1 int32_t* var_60 = var_24 - 0x10
+004333ca var_5c = &sub_41a8a0(var_60)[4]
+004333cc var_8_1.b = 7
+004333d8 int32_t** var_34 = &var_60
+004333db int32_t* var_64 = var_18 - 0x10
+004333e4 var_60 = &sub_41a8a0(var_64)[4]
+004333e6 var_8_1.b = 8
+004333f2 int32_t** var_38 = &var_64
+004333fe var_64 = &sub_41a8a0(var_1c - 0x10)[4]
+00433400 var_8_1.b = 9
+0043341c var_8_1.b = 4
+00433420 int32_t result = CMESAPI::VerifyPcbaUpgrade(&sub_41a8a0(data_7dfdb0 - 0x10)[4], var_64, var_60, 
+00433420     var_5c, var_58, var_54, var_50_8)
+00433426 var_8_1.b = 3
+00433433 int32_t* edi_1 = var_14 - 0x10
+0043343d int32_t ecx_6 = edi_1[3]
+0043343d edi_1[3] -= 1
+0043343d 
+00433444 if (ecx_6 - 1 s<= 0)
+0043344b     (*(**edi_1 + 4))(edi_1)
+0043344b 
+0043344e var_8_1.b = 2
+00433457 int32_t* edx_2 = var_20 - 0x10
+0043345d int32_t ecx_9 = edx_2[3]
+0043345d edx_2[3] -= 1
+0043345d 
+00433464 if (ecx_9 - 1 s<= 0)
+0043346b     (*(**edx_2 + 4))(edx_2)
+0043346b 
+0043346e var_8_1.b = 1
+00433477 int32_t* edx_4 = var_24 - 0x10
+0043347d int32_t ecx_12 = edx_4[3]
+0043347d edx_4[3] -= 1
+0043347d 
+00433484 if (ecx_12 - 1 s<= 0)
+0043348b     (*(**edx_4 + 4))(edx_4)
+0043348b 
+0043348e var_8_1.b = 0
+00433497 int32_t* edx_6 = var_18 - 0x10
+0043349d int32_t ecx_15 = edx_6[3]
+0043349d edx_6[3] -= 1
+0043349d 
+004334a4 if (ecx_15 - 1 s<= 0)
+004334ab     (*(**edx_6 + 4))(edx_6)
+004334ab 
+004334ae int32_t var_8_2 = 0xffffffff
+004334b8 int32_t* edx_8 = var_1c - 0x10
+004334be int32_t esi_1 = edx_8[3]
+004334be edx_8[3] -= 1
+004334be 
+004334c5 if (esi_1 - 1 s<= 0)
+004334cc     (*(**edx_8 + 4))(edx_8)
+004334cc 
+004334d4 fsbase->NtTib.ExceptionList = ExceptionList
+004334e2 return result

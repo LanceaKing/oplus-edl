@@ -1,0 +1,88 @@
+004d9f30 push    ebp
+004d9f31 mov     ebp, dword [esp+0xc]
+004d9f35 push    edi
+004d9f36 mov     edi, dword [esp+0x14]
+004d9f3a test    edi, edi
+004d9f3c je      0x4d9ffd
+004d9ffd pop     edi
+004d9ffe mov     eax, 0x1
+004da003 pop     ebp
+004da004 retn    
+004d9f42 push    ebx
+004d9f43 mov     ebx, dword [esp+0x10]
+004d9f47 mov     eax, dword [ebx+0x20]
+004d9f4a lea     ecx, [eax+edi*8]
+004d9f4d cmp     ecx, eax
+004d9f4f jae     0x4d9f54
+004d9f54 mov     eax, edi
+004d9f56 mov     dword [ebx+0x20], ecx
+004d9f59 mov     ecx, dword [ebx+0x68]
+004d9f5c shr     eax, 0x1d
+004d9f5f add     dword [ebx+0x24], eax
+004d9f62 push    esi
+004d9f63 test    ecx, ecx
+004d9f65 je      0x4d9fcb
+004d9f51 inc     dword [ebx+0x24]
+004d9fcb mov     esi, edi
+004d9fcd shr     esi, 0x6
+004d9fd0 test    esi, esi
+004d9fd2 je      0x4d9fe6
+004d9f67 lea     edx, [ebx+0x28]
+004d9f6a cmp     edi, 0x40
+004d9f6d jae     0x4d9f92
+004d9fe6 test    edi, edi
+004d9fe8 je      0x4d9ffb
+004d9fd4 push    esi
+004d9fd5 push    ebp
+004d9fd6 push    ebx
+004d9fd7 call    0x4da010
+004d9fdc shl     esi, 0x6
+004d9fdf add     esp, 0xc
+004d9fe2 add     ebp, esi
+004d9fe4 sub     edi, esi
+004d9f92 mov     esi, 0x40
+004d9f97 lea     eax, [edx+ecx]
+004d9f9a sub     esi, ecx
+004d9f9c push    esi
+004d9f9d push    ebp
+004d9f9e push    eax
+004d9f9f call    0x692ab0
+004d9fa4 push    0x1
+004d9fa6 lea     eax, [ebx+0x28]
+004d9fa9 push    eax
+004d9faa push    ebx
+004d9fab call    0x4da010
+004d9fb0 push    0x40
+004d9fb2 lea     eax, [ebx+0x28]
+004d9fb5 mov     dword [ebx+0x68], 0x0
+004d9fbc push    0x0
+004d9fbe push    eax
+004d9fbf add     ebp, esi
+004d9fc1 sub     edi, esi
+004d9fc3 call    0x693100
+004d9fc8 add     esp, 0x24
+004d9f6f lea     eax, [ecx+edi]
+004d9f72 cmp     eax, 0x40
+004d9f75 jae     0x4d9f92
+004d9ffb pop     esi
+004d9ffc pop     ebx
+004d9fea push    edi
+004d9feb lea     eax, [ebx+0x28]
+004d9fee mov     dword [ebx+0x68], edi
+004d9ff1 push    ebp
+004d9ff2 push    eax
+004d9ff3 call    0x692ab0
+004d9ff8 add     esp, 0xc
+004d9f77 push    edi
+004d9f78 lea     eax, [edx+ecx]
+004d9f7b push    ebp
+004d9f7c push    eax
+004d9f7d call    0x692ab0
+004d9f82 add     esp, 0xc
+004d9f85 mov     eax, 0x1
+004d9f8a add     dword [ebx+0x68], edi
+004d9f8d pop     esi
+004d9f8e pop     ebx
+004d9f8f pop     edi
+004d9f90 pop     ebp
+004d9f91 retn    

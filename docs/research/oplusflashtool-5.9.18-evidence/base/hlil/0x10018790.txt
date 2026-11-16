@@ -1,0 +1,241 @@
+10018790 int32_t ebp
+10018790 int32_t var_4 = ebp
+10018791 int32_t* ebp_1 = &var_4
+10018796 void* var_c = arg1
+100187a3 char* esi = arg2 + 4
+100187a6 void* ecx = &data_1021a5c0 - esi
+100187bb char i
+100187bb 
+100187bb do
+100187b0     i = *esi
+100187b2     esi = &esi[1]
+100187b5     *(ecx + esi - 1) = i
+100187bb while (i != 0)
+100187bb 
+100187cd sub_10030920(i, &data_1021a5c0, *(arg1 + 0x534), &data_101fc2f9)
+100187e2 __builtin_strncpy(*(arg1 + 0x534) + 0x104, "/api/tools/login", 0x11)
+1001880c op_str_map_put(*(*(arg1 + 0x534) + 0x3570), "board_id", arg1 + 0x840)
+1001882c op_str_map_put(*(*(arg1 + 0x534) + 0x3570), "cpu_id", arg1 + 0x740)
+1001884c op_str_map_put(*(*(arg1 + 0x534) + 0x3570), "disk_id", arg1 + 0x940)
+1001886c op_str_map_put(*(*(arg1 + 0x534) + 0x3570), &data_101fce20, arg1 + 0x540)
+1001888a op_str_map_put(*(*(arg1 + 0x534) + 0x3570), "login_type", "1")
+100188aa op_str_map_put(*(*(arg1 + 0x534) + 0x3570), &data_101fce1c, arg1 + 0x640)
+100188ca op_str_map_put(*(*(arg1 + 0x534) + 0x3570), "password", arg2 + 0x284)
+100188ea op_str_map_put(*(*(arg1 + 0x534) + 0x3570), "user_id", arg2 + 0x204)
+10018908 op_str_map_put(*(*(arg1 + 0x534) + 0x3570), "version", "0")
+10018928 op_str_map_put(*(*(arg1 + 0x534) + 0x3570), "verification_code", arg2 + 0x384)
+10018928 
+1001893d if (sub_10030c00(*(arg1 + 0x534)) != 0)
+1001893f     char const* const var_1c_8 = "[ERROR]: Error occurred when performing WCSM request"
+10018944     int32_t var_20 = 0x50b
+10018949     char const* const var_24_10 = "auth_wcsm_login"
+1001895e     *opdbg_log()
+1001895f     return 0xffffffff
+1001895f 
+10018979 char* ecx_4 = op_str_map_get(*(*(arg1 + 0x534) + 0x3574), "/Data/response")
+10018979 
+10018980 if (ecx_4 != 0)
+10018a68     if (arg1 != 0xffffffb8)
+10018a6c         void* edx_5 = arg1 + 0x48 - ecx_4
+10018a7b         char* eax_21
+10018a7b         
+10018a7b         do
+10018a70             eax_21.b = *ecx_4
+10018a72             ecx_4 = &ecx_4[1]
+10018a75             *(edx_5 + ecx_4 - 1) = eax_21.b
+10018a7b         while (eax_21.b != 0)
+10018a7b     
+10018a68     goto label_10018a99
+10018a68 
+10018986 char const* const var_1c_9 = "/Data/response"
+1001898b char const* const var_20_2 = "[ERROR]: failed to get param, key=%s. value is null"
+10018990 int32_t var_24_11 = 0x1e7
+10018995 char const* const var_28_1 = "wcsm_helper_get_param_out"
+1001899a ebp_1 = opdbg_log()
+100189b5 char* ecx_5 = op_str_map_get(*(*(arg1 + 0x534) + 0x3574), "/Data/response/message")
+100189b5 
+100189bc if (ecx_5 != 0)
+10018a51     if (arg1 != 0xffffffb8)
+10018a55         void* edx_3 = arg1 + 0x48 - ecx_5
+10018a62         char* eax_23
+10018a62         
+10018a62         do
+10018a57             eax_23.b = *ecx_5
+10018a59             ecx_5 = &ecx_5[1]
+10018a5c             *(edx_3 + ecx_5 - 1) = eax_23.b
+10018a62         while (eax_23.b != 0)
+10018a62     
+10018a51     goto label_10018a99
+10018a51 
+100189c2 char const* const var_1c_10 = "/Data/response/message"
+100189c7 char const* const var_20_3 = "[ERROR]: failed to get param, key=%s. value is null"
+100189cc int32_t var_24_12 = 0x1e7
+100189d1 char const* const var_28_2 = "wcsm_helper_get_param_out"
+100189d6 ebp_1 = opdbg_log()
+100189f1 char* ecx_6 = op_str_map_get(*(*(arg1 + 0x534) + 0x3574), "/Data/message")
+100189f1 
+100189f8 if (ecx_6 != 0)
+10018a36     if (arg1 != 0xffffffb8)
+10018a3a         void* edx_1 = arg1 + 0x48 - ecx_6
+10018a4b         char* eax_25
+10018a4b         
+10018a4b         do
+10018a40             eax_25.b = *ecx_6
+10018a42             ecx_6 = &ecx_6[1]
+10018a45             *(edx_1 + ecx_6 - 1) = eax_25.b
+10018a4b         while (eax_25.b != 0)
+10018a4b     
+10018a99 label_10018a99:
+10018a99     char* ecx_7 = op_str_map_get(*(*(arg1 + 0x534) + 0x3574), "/message")
+10018a99     
+10018aa0     if (ecx_7 == 0)
+10018aa6         char const* const var_1c_12 = "/message"
+10018aab         char const* const var_20_6 = "[ERROR]: failed to get param, key=%s. value is null"
+10018ab0         int32_t var_24_14 = 0x1e7
+10018ab5         char const* const var_28_4 = "wcsm_helper_get_param_out"
+10018aba         ebp_1 = opdbg_log()
+10018ad5         char* ecx_8 = op_str_map_get(*(*(arg1 + 0x534) + 0x3574), "/response/message")
+10018ad5         
+10018adc         if (ecx_8 == 0)
+10018ade             char const* const var_1c_13 = "/response/message"
+10018ae3             char const* const var_20_7 = "[ERROR]: failed to get param, key=%s. value is null"
+10018ae8             int32_t var_24_15 = 0x1e7
+10018aed             char const* const var_28_5 = "wcsm_helper_get_param_out"
+10018af2             opdbg_log()
+10018af7             char const* const var_2c_2 =
+10018af7                 "[WARNING]: Cannot get 'message' attribute from WCSM response"
+10018afc             int32_t var_30_5 = 0x51a
+10018b01             char const* const var_34_2 = "auth_wcsm_login"
+10018b06             ebp_1 = opdbg_log()
+10018adc         else if (arg1 != 0xffffff78)
+10018b14             void* esi_2 = arg1 + 0x88 - ecx_8
+10018b21             char* eax_30
+10018b21             
+10018b21             do
+10018b16                 eax_30.b = *ecx_8
+10018b18                 ecx_8 = &ecx_8[1]
+10018b1b                 *(esi_2 + ecx_8 - 1) = eax_30.b
+10018b21             while (eax_30.b != 0)
+10018aa0     else if (arg1 != 0xffffff78)
+10018b29         void* esi_3 = arg1 + 0x88 - ecx_7
+10018b3b         char* eax_28
+10018b3b         
+10018b3b         do
+10018b30             eax_28.b = *ecx_7
+10018b32             ecx_7 = &ecx_7[1]
+10018b35             *(esi_3 + ecx_7 - 1) = eax_28.b
+10018b3b         while (eax_28.b != 0)
+10018b3b     
+10018b3d     char const* const ecx_9 = "0000"
+10018b42     char* eax_31 = arg1 + 0x48
+10018b44     int32_t eax_33
+10018b44     
+10018b44     while (true)
+10018b44         char edx_6 = *eax_31
+10018b46         char const temp0_1 = *ecx_9
+10018b46         bool c_1 = edx_6 u< temp0_1
+10018b46         
+10018b48         if (edx_6 == temp0_1)
+10018b4c             if (edx_6 == 0)
+10018b60                 eax_33 = 0
+10018b62                 break
+10018b62             
+10018b4e             edx_6 = eax_31[1]
+10018b51             char temp1_1 = ecx_9[1]
+10018b51             c_1 = edx_6 u< temp1_1
+10018b51             
+10018b54             if (edx_6 == temp1_1)
+10018b56                 eax_31 = &eax_31[2]
+10018b59                 ecx_9 = &ecx_9[2]
+10018b59                 
+10018b5e                 if (edx_6 != 0)
+10018b5e                     continue
+10018b5e                 
+10018b60                 eax_33 = 0
+10018b62                 break
+10018b62         
+10018b66         eax_33 = sbb.d(eax_31, eax_31, c_1) | 1
+10018b66         break
+10018b66     
+10018b6b     if (eax_33 != 0)
+10018b6d         char* var_1c_14 = arg1 + 0x48
+10018b6e         char const* const var_20_8 = "[ERROR]: Server returns error code %s"
+10018b73         int32_t var_24_16 = 0x51e
+10018b78         char const* const var_28_6 = "auth_wcsm_login"
+10018b8d         *opdbg_log()
+10018b8e         return 0xffffffff
+10018b8e     
+10018b95     char* esi_4 = arg1 + 0x488
+10018bab     char* ecx_10 = op_str_map_get(*(*(arg1 + 0x534) + 0x3574), "/Data/response/countryname")
+10018bab     
+10018bb2     if (ecx_10 != 0)
+10018bde         if (esi_4 != 0)
+10018be2             void* edx_8 = esi_4 - ecx_10
+10018bef             char* eax_36
+10018bef             
+10018bef             do
+10018be4                 eax_36.b = *ecx_10
+10018be6                 ecx_10 = &ecx_10[1]
+10018be9                 *(edx_8 + ecx_10 - 1) = eax_36.b
+10018bef             while (eax_36.b != 0)
+10018bef         
+10018c07         char* ecx_11 = op_str_map_get(*(*(arg1 + 0x534) + 0x3574), "/Data/response/token")
+10018c07         
+10018c0e         if (ecx_11 != 0)
+10018c3d             void* edx_9 = &data_1021bec0 - ecx_11
+10018c4b             char* eax_38
+10018c4b             
+10018c4b             do
+10018c40                 eax_38.b = *ecx_11
+10018c42                 ecx_11 = &ecx_11[1]
+10018c45                 *(edx_9 + ecx_11 - 1) = eax_38.b
+10018c4b             while (eax_38.b != 0)
+10018c4d             void* ecx_12 = *(arg1 + 0x534)
+10018c6d             int32_t eax_40
+10018c6d             
+10018c6d             if (sub_10030b30(ecx_12 + 0xc84, "/Data/response/usertype", ecx_12, ecx_12 + 0xc84, 
+10018c6d                     nullptr, 0) != 0)
+10018c6f                 char const* const var_1c_17 = "[ERROR]: Cannot get 'usertype' attribute from result"
+10018c74                 int32_t var_20_13 = 0x530
+10018c79                 char const* const var_24_20 = "auth_wcsm_login"
+10018c7e                 eax_40, ebp_1 = opdbg_log()
+10018c7e             
+10018c8b             int32_t ecx_13 = &data_1021a740 - esi_4
+10018c8b             
+10018c9b             do
+10018c90                 eax_40.b = *esi_4
+10018c92                 esi_4 = &esi_4[1]
+10018c95                 esi_4[ecx_13 - 1] = eax_40.b
+10018c9b             while (eax_40.b != 0)
+10018c9b             
+10018c9f             data_102177ec = 3
+10018cae             *ebp_1
+10018caf             return 0
+10018caf         
+10018c10         char const* const var_1c_16 = "/Data/response/token"
+10018c15         char const* const var_20_12 = "[ERROR]: failed to get param, key=%s. value is null"
+10018c1a         int32_t var_24_18 = 0x1e7
+10018c1f         char const* const var_28_8 = "wcsm_helper_get_param_out"
+10018c24         opdbg_log()
+10018c29         char const* const var_2c_4 = "[ERROR]: Cannot get 'token' attribute from result"
+10018c2e         int32_t var_30_7 = 0x52a
+10018bb2     else
+10018bb4         char const* const var_1c_15 = "/Data/response/countryname"
+10018bb9         char const* const var_20_10 = "[ERROR]: failed to get param, key=%s. value is null"
+10018bbe         int32_t var_24_17 = 0x1e7
+10018bc3         char const* const var_28_7 = "wcsm_helper_get_param_out"
+10018bc8         opdbg_log()
+10018bcd         char const* const var_2c_3 = "[ERROR]: Cannot get 'countryname' attribute from result"
+10018bd2         int32_t var_30_6 = 0x524
+100189f8 else
+100189fa     char const* const var_1c_11 = "/Data/message"
+100189ff     char const* const var_20_4 = "[ERROR]: failed to get param, key=%s. value is null"
+10018a04     int32_t var_24_13 = 0x1e7
+10018a09     char const* const var_28_3 = "wcsm_helper_get_param_out"
+10018a0e     opdbg_log()
+10018a13     char const* const var_2c_1 = "[ERROR]: Cannot get 'message' attribute from result"
+10018a18     int32_t var_30_3 = 0x513
+10018a18 
+10018a1d char const* const var_34_1 = "auth_wcsm_login"
+10018a32 *opdbg_log()
+10018a33 return 0xffffffff

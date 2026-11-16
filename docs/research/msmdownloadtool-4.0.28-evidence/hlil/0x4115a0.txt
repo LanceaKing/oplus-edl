@@ -1,0 +1,46 @@
+004115ae int32_t __saved_ebp
+004115ae int32_t eax_1 = __security_cookie ^ &__saved_ebp
+004115c5 int32_t ebx
+004115c5 ebx.b = 0
+004115c7 WSADATA wSAData
+004115c7 WSAStartup(0x202, &wSAData)
+004115d9 SOCKET s = socket(2, SOCK_RAW, 1)
+004115de SOCKET eax_2
+004115de 
+004115de if (s != 0xffffffff)
+004115f6     eax_2 = gethostbyname(arg1)
+004115f6     
+00411600     if (eax_2 != 0)
+00411610         var_18
+00411610         sub_552500(&var_18, **(eax_2 + 0xc), sx.d(*(eax_2 + 0xa)))
+0041161c         SOCKADDR var_1c
+0041161c         var_1c.sa_family = *(eax_2 + 8)
+00411622         var_1c.sa_data[0] = 0
+00411622         var_1c.sa_data[1] = 0
+00411622         
+0041167d         for (int32_t i = 0; i s< 1; i += 1)
+0041162d             sub_4116a0(s, &var_1c)
+00411638             FD_SET readfds
+00411638             readfds.fd_count = 1
+0041164d             readfds.fd_array[0] = s
+00411656             TIMEVAL timeout
+00411656             timeout.tv_sec = 5
+00411660             timeout.tv_usec = 0
+0041166a             int32_t eax_6 = select(1, &readfds, nullptr, nullptr, &timeout)
+0041166a             
+00411673             if (eax_6 == 0xffffffff)
+00411673                 break
+00411673             
+00411677             if (eax_6 != 0)
+00411681                 ebx.b = 1
+00411681                 break
+00411681         
+00411684         closesocket(s)
+0041168d         int32_t eax_7
+0041168d         eax_7.b = ebx.b
+00411694         sub_54a573(eax_1 ^ &__saved_ebp)
+0041169c         return eax_7
+0041169c 
+004115e0 eax_2.b = 0
+004115ea sub_54a573(eax_1 ^ &__saved_ebp)
+004115f2 return eax_2

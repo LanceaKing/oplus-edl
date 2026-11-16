@@ -1,0 +1,288 @@
+00423aa3 int32_t var_8 = 0xffffffff
+00423aa5 int32_t (* var_c)(void* arg1) = sub_571ab0
+00423ab0 TEB* fsbase
+00423ab0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00423ab9 int32_t __saved_ebp
+00423ab9 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00423ac1 int32_t var_50 = eax_2
+00423ac5 fsbase->NtTib.ExceptionList = &ExceptionList
+00423acd void** edi = arg2
+00423ad4 int32_t* eax_3 = &edi[6]
+00423ad7 void** var_3c = edi
+00423ada int32_t var_38 = 3
+00423ada 
+00423ae1 if (edi[0xb] u>= 0x10)
+00423ae3     eax_3 = *eax_3
+00423ae3 
+00423ae9 void* var_34
+00423ae9 int32_t ecx_1 = sub_426050(&var_34, eax_3)
+00423aee int32_t var_8_1 = 0
+00423afd enum WIN32_ERROR result
+00423afd 
+00423afd if (*(arg1 + 0x100390) == 0)
+00423b26     while (true)
+00423b26         if (*(edi + 0x79) == 1 && *(arg1 + 0x36) != 0 && *(arg1 + 0x34) != 0 && *(arg1 + 0x35) == 0)
+00423b28             int32_t var_54_1 = ecx_1
+00423b29             *(arg1 + 0x28)
+00423b31             result = sub_42d940(arg1)
+00423b31         
+00423b35         wchar16 const* const var_58_5
+00423b35         LPARAM lParam_1
+00423b35         
+00423b35         if (*(edi + 0x79) == 1 && *(arg1 + 0x36) != 0 && *(arg1 + 0x34) != 0 && *(arg1 + 0x35) == 0
+00423b35                 && result != NO_ERROR)
+00423d79             lParam_1 = arg1 + 0x290
+00423d7f             void* var_54_9 = var_34
+00423d7f             
+00423d82             if (*(arg1 + 0x1b) == 0)
+00423d8e                 var_58_5 = u"Failed to send SHA256 init commmand, %s"
+00423d82             else
+00423d84                 var_58_5 = &data_5bc238
+00423d84             
+00423d82             goto label_423e8c
+00423d82         
+00423b42         char* result_1
+00423b42         
+00423b42         if (*(edi + 0x77) == 0)
+00423b4b             result_1 = sub_425480(arg1)
+00423b42         else
+00423b44             result_1 = sub_4247f0(arg1, edi)
+00423b44         
+00423b50         result = result_1
+00423b54         LPARAM lParam
+00423b54         WPARAM wParam
+00423b54         
+00423b54         if (result != NO_ERROR)
+00423e74             lParam_1 = arg1 + 0x290
+00423e7a             void* var_54_16 = var_34
+00423e7a             
+00423e7d             if (*(arg1 + 0x1b) == 0)
+00423e86                 var_58_5 = u"Failed to download %s"
+00423e7d             else
+00423e7f                 var_58_5 = &data_5bbc9c
+00423e7f             
+00423e8c         label_423e8c:
+00423e8c             sub_426230(lParam_1, var_58_5)
+00423ea5             lParam = lParam_1
+00423ea6             wParam = (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10 | 1
+00423b54         else
+00423b79             if (*(edi + 0x79) == 1 && *(arg1 + 0x36) != result_1.b && *(arg1 + 0x34) != result_1.b
+00423b79                     && *(arg1 + 0x35) == result_1.b)
+00423b7f                 int32_t var_1c_1 = 0xf
+00423b89                 char var_30 = result_1.b
+00423b8f                 var_8_1.b = 1
+00423b93                 *(arg1 + 0x28)
+00423b9c                 result = sub_42dc60(arg1, &var_30)
+00423b9c                 
+00423ba3                 if (result != NO_ERROR)
+00423e0d                     void* var_54_13 = var_34
+00423e10                     wchar16 const* const var_58_6
+00423e10                     
+00423e10                     if (*(arg1 + 0x1b) == 0)
+00423e19                         var_58_6 = u"Failed to get SHA256, %s"
+00423e10                     else
+00423e12                         var_58_6 = &data_5bc2dc
+00423e12                     
+00423e1f                     sub_426230(arg1 + 0x290, var_58_6)
+00423e45                     SendMessageW(*(arg1 + 0x30), 0x178c, 
+00423e45                         (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10 | 1, arg1 + 0x290)
+00423e45                     
+00423e4f                     if (var_1c_1 u>= 0x10)
+00423e54                         j__free(var_30.d)
+00423e54                     
+00423e5c                     int32_t var_1c_4 = 0xf
+00423e63                     int32_t var_20_4 = 0
+00423e6a                     var_30 = 0
+00423e4f                     break
+00423e4f                 
+00423bb3                 int32_t* eax_7 = _fopen("C:/ToolLog.txt", "a+")
+00423bb3                 
+00423bc2                 if (eax_7 != 0)
+00423bc8                     void** ecx_5 = &var_3c[0x12]
+00423bc8                     
+00423bcb                     if (var_3c[0x17] u>= 0x10)
+00423bcd                         ecx_5 = *ecx_5
+00423bcd                     
+00423bd3                     char* eax_8 = &var_30
+00423bd6                     void** var_54_4 = ecx_5
+00423bd6                     
+00423bd7                     if (var_1c_1 u>= 0x10)
+00423bd7                         eax_8 = var_30.d
+00423bd7                     
+00423bdb                     char* var_58_1 = eax_8
+00423be2                     _fprintf(eax_7, "SHA256=%s, sha image = %s\n")
+00423be8                     _fclose(eax_7)
+00423be8                 
+00423bf4                 void** ecx_6 = &var_3c[0x12]
+00423bf4                 
+00423bf7                 if (var_3c[0x17] u>= 0x10)
+00423bf9                     ecx_6 = *ecx_6
+00423bf9                 
+00423bfe                 char* result_4
+00423bfe                 
+00423bfe                 if (*ecx_6 != 0)
+00423c04                     char* edx_1 = ecx_6
+00423c04                     
+00423c15                     do
+00423c10                         eax_7.b = *edx_1
+00423c12                         edx_1 = &edx_1[1]
+00423c15                     while (eax_7.b != 0)
+00423c15                     
+00423c17                     result_4 = edx_1 - &edx_1[1]
+00423bfe                 else
+00423c00                     result_4 = nullptr
+00423c00                 
+00423c1d                 char* ebx_2 = &var_30
+00423c20                 char* result_2 = result_1
+00423c23                 char* result_3 = result_4
+00423c23                 
+00423c25                 if (var_1c_1 u>= 0x10)
+00423c25                     ebx_2 = var_30.d
+00423c25                 
+00423c2b                 if (result_2 u< result_4)
+00423c2b                     result_3 = result_2
+00423c2b                 
+00423c30                 if (result_3 == 0)
+00423c30                     goto label_423c8a
+00423c30                 
+00423c32                 void* i_1 = result_3 - 4
+00423c32                 
+00423c35                 if (result_3 u>= 4)
+00423c46                     void* i
+00423c46                     
+00423c46                     do
+00423c3b                         if (*ebx_2 != *ecx_6)
+00423c3b                             goto label_423c4d
+00423c3b                         
+00423c3d                         ebx_2 = &ebx_2[4]
+00423c40                         ecx_6 = &ecx_6[1]
+00423c43                         i = i_1
+00423c43                         i_1 -= 4
+00423c46                     while (i u>= 4)
+00423c46                 
+00423c4b                 int32_t eax_10
+00423c4b                 
+00423c4b                 if (i_1 == 0xfffffffc)
+00423c81                     eax_10 = 0
+00423c4b                 else
+00423c4d                 label_423c4d:
+00423c4d                     result_2.b = *ebx_2
+00423c4f                     char temp2_1 = *ecx_6
+00423c4f                     
+00423c51                     if (result_2.b != temp2_1)
+00423c7c                         eax_10 = sbb.d(result_2, result_2, result_2.b u< temp2_1) | 1
+00423c51                     else if (i_1 == 0xfffffffd)
+00423c81                         eax_10 = 0
+00423c56                     else
+00423c58                         result_2.b = ebx_2[1]
+00423c5b                         char temp4_1 = *(ecx_6 + 1)
+00423c5b                         
+00423c5e                         if (result_2.b != temp4_1)
+00423c7c                             eax_10 = sbb.d(result_2, result_2, result_2.b u< temp4_1) | 1
+00423c5e                         else if (i_1 == 0xfffffffe)
+00423c81                             eax_10 = 0
+00423c63                         else
+00423c65                             result_2.b = ebx_2[2]
+00423c68                             char temp5_1 = *(ecx_6 + 2)
+00423c68                             
+00423c6b                             if (result_2.b != temp5_1)
+00423c7c                                 eax_10 = sbb.d(result_2, result_2, result_2.b u< temp5_1) | 1
+00423c6b                             else if (i_1 == 0xffffffff)
+00423c81                                 eax_10 = 0
+00423c70                             else
+00423c72                                 result_2.b = ebx_2[3]
+00423c75                                 char temp6_1 = *(ecx_6 + 3)
+00423c75                                 
+00423c78                                 if (result_2.b == temp6_1)
+00423c81                                     eax_10 = 0
+00423c78                                 else
+00423c7c                                     eax_10 = sbb.d(result_2, result_2, result_2.b u< temp6_1) | 1
+00423c7c                 
+00423c85                 if (eax_10 != 0)
+00423c85                     goto label_423ca7
+00423c85                 
+00423c87                 result_2 = result_1
+00423c8a             label_423c8a:
+00423c8a                 
+00423c8c                 if (result_2 u< result_4)
+00423ca7                 label_423ca7:
+00423ca7                     void* var_54_5 = var_34
+00423caa                     int32_t eax_13 = var_38 - 1
+00423cab                     result = ERROR_INVALID_FUNCTION
+00423cb0                     var_38 = eax_13
+00423cb5                     wchar16 const* const var_58_2
+00423cb5                     
+00423cb5                     if (eax_13 s<= 0)
+00423ccf                         if (*(arg1 + 0x1b) == 0)
+00423cd8                             var_58_2 = u"SHA256 does not match, %ls"
+00423ccf                         else
+00423cd1                             var_58_2 = u"SHA25"
+00423cb5                     else if (*(arg1 + 0x1b) == 0)
+00423cc4                         var_58_2 = u"SHA256 does not match, repeat to download %ls"
+00423cbb                     else
+00423cbd                         var_58_2 = u"SHA25"
+00423cbd                     
+00423cde                     sub_426230(arg1 + 0x290, var_58_2)
+00423d04                     SendMessageW(*(arg1 + 0x30), 0x178c, 
+00423d04                         (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10 | 1, arg1 + 0x290)
+00423d14                     int32_t* eax_20
+00423d14                     eax_20, ecx_1 = _fopen("C:/ToolLog.txt", "a+")
+00423d14                     
+00423d20                     if (eax_20 != 0)
+00423d22                         int32_t var_54_7 = var_38
+00423d25                         void* var_58_4 = var_34
+00423d2e                         _fprintf(eax_20, "SHA256 does not match, filename: %ls, retry count: %d \n")
+00423d34                         ecx_1 = _fclose(eax_20)
+00423d34                     
+00423d3c                     var_8_1.b = 0
+00423d3c                     
+00423d44                     if (var_1c_1 u>= 0x10)
+00423d49                         ecx_1 = j__free(var_30.d)
+00423d49                     
+00423d55                     int32_t var_1c_2 = 0xf
+00423d5c                     int32_t var_20_2 = 0
+00423d63                     var_30 = 0
+00423d63                     
+00423d67                     if (var_38 s> 0)
+00423d6d                         edi = var_3c
+00423d70                         continue
+00423c8c                 else
+00423c93                     int32_t eax_11
+00423c93                     eax_11.b = result_1 != result_4
+00423c93                     
+00423c98                     if (eax_11 != 0)
+00423c98                         goto label_423ca7
+00423c98                     
+00423da2                     int32_t* eax_21 = _fopen("C:/ToolLog.txt", "a+")
+00423da2                     
+00423dae                     if (eax_21 != 0)
+00423db0                         void* var_54_10 = var_34
+00423db9                         _fprintf(eax_21, "Readback Sha256 verify ok, %ls \n")
+00423dc2                         _fclose(eax_21)
+00423dc2                     
+00423dce                     if (var_1c_1 u>= 0x10)
+00423dd3                         j__free(var_30.d)
+00423dd3                     
+00423dde                     int32_t var_1c_3 = 0xf
+00423de5                     int32_t var_20_3 = 0
+00423dec                     var_30 = 0
+00423dec             
+00423df9             lParam = 0
+00423dfb             wParam = zx.d((*(arg1 + 0x2c)).b) << 0x10 | 4
+00423dfb         
+00423eb2         SendMessageW(*(arg1 + 0x30), 0x178c, wParam, lParam)
+00423eb2         break
+00423afd else
+00423aff     result = ERROR_CANCELLED
+00423aff 
+00423eb8 int32_t var_8_2 = 0xffffffff
+00423ec5 int32_t* esi_2 = var_34 - 0x10
+00423ecb int32_t ecx_7 = esi_2[3]
+00423ecb esi_2[3] -= 1
+00423ecb 
+00423ed2 if (ecx_7 - 1 s<= 0)
+00423ed9     (*(**esi_2 + 4))(esi_2)
+00423ed9 
+00423ee1 fsbase->NtTib.ExceptionList = ExceptionList
+00423ef1 sub_54a573(eax_2 ^ &__saved_ebp)
+00423ef9 return result

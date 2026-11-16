@@ -1,0 +1,19 @@
+1003f860 push    esi
+1003f861 mov     esi, dword [esp+0x8]
+1003f865 push    0x70
+1003f867 push    0x0
+1003f869 push    esi
+1003f86a call    0x10149f30
+1003f86f add     esp, 0xc
+1003f872 mov     dword [esi], 0x6a09e667
+1003f878 mov     dword [esi+0x4], 0xbb67ae85
+1003f87f mov     eax, 0x1
+1003f884 mov     dword [esi+0x8], 0x3c6ef372
+1003f88b mov     dword [esi+0xc], 0xa54ff53a
+1003f892 mov     dword [esi+0x10], 0x510e527f
+1003f899 mov     dword [esi+0x14], 0x9b05688c
+1003f8a0 mov     dword [esi+0x18], 0x1f83d9ab
+1003f8a7 mov     dword [esi+0x1c], 0x5be0cd19
+1003f8ae mov     dword [esi+0x6c], 0x20
+1003f8b5 pop     esi
+1003f8b6 retn    

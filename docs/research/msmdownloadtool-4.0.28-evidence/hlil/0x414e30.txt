@@ -1,0 +1,96 @@
+00414e33 int32_t var_8 = 0xffffffff
+00414e35 int32_t (* var_c)(void* arg1) = sub_5710b3
+00414e40 TEB* fsbase
+00414e40 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00414e49 int32_t __saved_ebp
+00414e49 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00414e51 int32_t var_68 = eax_2
+00414e55 fsbase->NtTib.ExceptionList = &ExceptionList
+00414e5b int32_t* var_14 = &var_68
+00414e65 struct _EXCEPTION_REGISTRATION_RECORD** result
+00414e65 
+00414e65 if (arg2 == 0)
+00414f33     result.b = 0
+00414e65 else
+00414e75     struct _EXCEPTION_REGISTRATION_RECORD** esi_1 = sub_41cab0(arg2, "File")
+00414e75     
+00414e79     if (esi_1 == 0)
+00414fd3     label_414fd3:
+00414fd3         result.b = 1
+00414e79     else
+00414e84         while ((*esi_1)->__offset(0x18).d() == 0)
+00414e97             esi_1 = sub_41cb10(esi_1, "File")
+00414e97             
+00414e9b             if (esi_1 == 0)
+00414e9b                 goto label_414fd3_2
+00414e9b         
+00414ea4         result = (*esi_1)->__offset(0x18).d()
+00414ea4         
+00414ea9         if (result == 0)
+00414fd3         label_414fd3_1:
+00414fd3             result.b = 1
+00414ea9         else
+00414eb7             void* eax_5 = sub_41e090(&result[0xb], "Path")
+00414ebe             int32_t* edi_2
+00414ebe             
+00414ebe             if (eax_5 == 0)
+00414ec8                 edi_2 = nullptr
+00414ebe             else
+00414ec3                 edi_2 = *(eax_5 + 0x18) + 8
+00414ec3             
+00414ecc             struct TiXmlNode::TiXmlDocument::VTable** eax_6
+00414ecc             int32_t ecx_4
+00414ecc             eax_6, ecx_4 = sub_42e7e5(0x48)
+00414ed4             struct TiXmlNode::TiXmlDocument::VTable** var_54_1 = eax_6
+00414ed7             int32_t var_8_1 = 0
+00414ee0             struct TiXmlNode::TiXmlDocument::VTable** esi_2
+00414ee0             
+00414ee0             if (eax_6 == 0)
+00414ef1                 esi_2 = nullptr
+00414ef3                 int32_t var_54_3 = 0
+00414ee0             else
+00414ee5                 struct TiXmlNode::TiXmlDocument::VTable** eax_7
+00414ee5                 eax_7, ecx_4 = sub_41d3f0(eax_6, edi_2)
+00414eea                 esi_2 = eax_7
+00414eec                 struct TiXmlNode::TiXmlDocument::VTable** var_54_2 = eax_7
+00414eec             
+00414ef6             int32_t var_8_2 = 1
+00414f00             int32_t var_6c_2 = ecx_4
+00414f06             int32_t var_70_1 = &esi_2[8]->vFunc_2
+00414f06             
+00414f0e             if (sub_41d4f0(esi_2) != 0)
+00414f3e                 char var_34
+00414f3e                 sub_4022a0(&var_34, edi_2)
+00414f46                 var_8_2.b = 2
+00414f4d                 char var_50 = 0x5c
+00414f55                 void* eax_12 = sub_4173e0(&var_34, &var_50)
+00414f55                 
+00414f5d                 if (eax_12 != 0xffffffff)
+00414f73                     void var_4c
+00414f73                     sub_410200(&arg1[0x28], sub_4160f0(&var_34, &var_4c, 0, eax_12 + 1))
+00414f7b                     sub_402300(&var_4c)
+00414f7b                 
+00414f8a                 sub_413fd0(arg1, sub_4117a0(esi_2))
+00414f93                 int32_t var_20
+00414f93                 
+00414f93                 if (var_20 u>= 0x10)
+00414f98                     j__free(var_34.d)
+00414f98                 
+00414fa0                 int32_t var_20_1 = 0xf
+00414fa7                 int32_t var_24_1 = 0
+00414fae                 var_34 = 0
+00414fb2                 int32_t var_8_3 = 0xffffffff
+00414fd1                 (*esi_2)->vFunc_0(1)
+00414fd3             label_414fd3_2:
+00414fd3                 result.b = 1
+00414f0e             else
+00414f16                 (*esi_2)->vFunc_0(1)
+00414f18                 int32_t* var_6c_3 = edi_2
+00414f25                 sub_418850(&arg1[0x1f0], "%s ??????!")
+00414f2d                 *arg1 = 1
+00414f30                 *(arg1 + 4) = &arg1[0x1f0]
+00414f33                 result.b = 0
+00414f33 
+00414fd8 fsbase->NtTib.ExceptionList = ExceptionList
+00414fe8 sub_54a573(eax_2 ^ &__saved_ebp)
+00414ff0 return result

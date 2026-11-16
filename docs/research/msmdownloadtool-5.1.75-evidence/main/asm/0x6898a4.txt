@@ -1,0 +1,32 @@
+006898a4 push    ebp
+006898a5 mov     ebp, esp
+006898a7 push    ecx
+006898a8 push    ecx
+006898a9 lea     eax, [ebp-0x8]
+006898ac push    eax
+006898ad push    eax
+006898ae call    0xc557f3
+006898b3 mov     ecx, dword [ebp-0x8]
+006898b6 mov     eax, dword [ebp-0x4]
+006898b9 add     ecx, 0x2ac18000
+006898bf push    0x0
+006898c1 push    0x989680
+006898c6 adc     eax, 0xfe624e21
+006898cb push    eax
+006898cc push    ecx
+006898cd call    0x696a00
+006898d2 cmp     edx, 0x7
+006898d5 jl      0x6898e5
+006898e5 mov     ecx, dword [ebp+0x8]
+006898e8 test    ecx, ecx
+006898ea je      0x6898f1
+006898d7 jg      0x6898e0
+006898f1 mov     esp, ebp
+006898f3 pop     ebp
+006898f4 retn    
+006898ec mov     dword [ecx], eax
+006898ee mov     dword [ecx+0x4], edx
+006898e0 or      eax, 0xffffffff
+006898e3 mov     edx, eax
+006898d9 cmp     eax, 0x93406fff
+006898de jbe     0x6898e5

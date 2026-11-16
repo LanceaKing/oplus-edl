@@ -1,0 +1,194 @@
+1001ee90 int32_t ebp
+1001ee90 int32_t var_4 = ebp
+1001ee9b void* ecx
+1001ee9b void* edx
+1001ee9b ecx, edx = __alloca_probe(0x2004)
+1001eea7 void* var_18 = ecx
+1001eeae sub_1001e410(*(ecx + 0x53c))
+1001eec2 _memset(&data_10219880, 0, 0x200)
+1001eed6 _memset(&data_102196c0, 0, 0x168)
+1001eee7 __builtin_memset(&data_10219840, 0, 0x20)
+1001ef00 __builtin_memset(&data_1021a320, 0, 0x20)
+1001ef0e _strcpy_s(&data_10219880, 0x200, edx + 0x204)
+1001ef16 char* esi = edx + 4
+1001ef24 _strcpy_s(&data_102196c0, 0x168, esi)
+1001ef3a _strcpy_s(&data_10219840, 0x20, edx + 0x9c4)
+1001ef50 _strcpy_s(&data_1021a320, 0x20, edx + 0x9e4)
+1001ef66 _strcpy_s(0x10219860, 0x20, edx + 0x904)
+1001ef66 
+1001ef77 if (sub_1001e800() == 0)
+1001ef9f     void* ecx_3 = &data_102196c0 - esi
+1001efac     int32_t eax_4
+1001efac     
+1001efac     do
+1001efa1         eax_4.b = *esi
+1001efa3         esi = &esi[1]
+1001efa6         *(ecx_3 + esi - 1) = eax_4.b
+1001efac     while (eax_4.b != 0)
+1001efae     void* var_18_7 = ecx_3
+1001efb5     sub_1001e410(*(ecx + 0x53c))
+1001efd7     __builtin_strcpy(*(ecx + 0x53c) + 0x104, "/api/platform/login")
+1001efe6     *(ecx + 0x53c)
+1001eff9     int32_t* var_18_8 = &var_4
+1001effa     int32_t var_1c_1 = _memset(&var_4, 0, 0x1000)
+1001f016     op_str_map_put(*(sub_100222b0() + 0x5508), "account", &var_4)
+1001f01b     *(ecx + 0x53c)
+1001f042     void arg_ffc
+1001f042     void* var_18_9 = &arg_ffc
+1001f043     int32_t var_1c_2 = _memset(&arg_ffc, 0, 0x1000)
+1001f062     op_str_map_put(*(sub_100222b0() + 0x5508), "password", &arg_ffc)
+1001f067     *(ecx + 0x53c)
+1001f088     int32_t* var_18_10 = &var_4
+1001f089     int32_t var_1c_3 = _memset(&var_4, 0, 0x1000)
+1001f090     int32_t* ebp_3
+1001f090     void* esi_6
+1001f090     ebp_3, esi_6 = sub_100222b0()
+1001f0a5     op_str_map_put(*(esi_6 + 0x5508), &data_101fce1c, &var_4)
+1001f0c3     op_str_map_put(*(*(ecx + 0x53c) + 0x5508), "toolCode", "TOOLSHUB")
+1001f0c3     
+1001f0d8     if (sub_10021020(*(ecx + 0x53c)) == 0)
+1001f102         char* ecx_14 = op_str_map_get(*(*(ecx + 0x53c) + 0x550c), "/code")
+1001f102         
+1001f109         if (ecx_14 == 0)
+1001f10b             char const* const var_18_12 = "/code"
+1001f110             char const* const var_1c_6 = "[ERROR]: failed to get param, key=%s. value is null"
+1001f115             int32_t var_20_9 = 0xf9
+1001f11a             char const* const var_24_1 = "toolshub_helper_get_param_out"
+1001f11f             opdbg_log()
+1001f124             char const* const var_28_4 = "[ERROR]: Cannot get 'code' attribute from result"
+1001f129             int32_t var_2c_1 = 0x27f
+1001f12e             char const* const var_30_1 = "auth_toolshub_login"
+1001f143             *opdbg_log()
+1001f144             return 0xffffffff
+1001f144         
+1001f147         if (ecx != 0xffffffb8)
+1001f14b             void* edx_2 = ecx + 0x48 - ecx_14
+1001f15b             char* eax_9
+1001f15b             
+1001f15b             do
+1001f150                 eax_9.b = *ecx_14
+1001f152                 ecx_14 = &ecx_14[1]
+1001f155                 *(edx_2 + ecx_14 - 1) = eax_9.b
+1001f15b             while (eax_9.b != 0)
+1001f15b         
+1001f174         char* eax_12
+1001f174         void* edx_3
+1001f174         eax_12, edx_3 = op_str_map_get(*(*(ecx + 0x53c) + 0x550c), "/msg")
+1001f179         char* ecx_15 = eax_12
+1001f179         
+1001f180         if (ecx_15 == 0)
+1001f182             char const* const var_18_13 = "/msg"
+1001f187             char const* const var_1c_8 = "[ERROR]: failed to get param, key=%s. value is null"
+1001f18c             int32_t var_20_10 = 0xf9
+1001f191             char const* const var_24_2 = "toolshub_helper_get_param_out"
+1001f196             opdbg_log()
+1001f19b             char const* const var_28_5 = "[WARNING]: Cannot get 'msg' attribute from CSM response"
+1001f1a0             int32_t var_2c_2 = 0x285
+1001f1a5             char const* const var_30_2 = "auth_toolshub_login"
+1001f1aa             edx_3, ebp_3 = opdbg_log()
+1001f180         else if (ecx != 0xffffff78)
+1001f1ba             edx_3 = ecx + 0x88 - ecx_15
+1001f1ba             
+1001f1cb             do
+1001f1c0                 eax_12.b = *ecx_15
+1001f1c2                 ecx_15 = &ecx_15[1]
+1001f1c5                 *(edx_3 + ecx_15 - 1) = eax_12.b
+1001f1cb             while (eax_12.b != 0)
+1001f1cb         
+1001f1cd         char const* const ecx_16 = "000000"
+1001f1d2         char* eax_13 = ecx + 0x48
+1001f1d4         int32_t eax_15
+1001f1d4         
+1001f1d4         while (true)
+1001f1d4             edx_3.b = *eax_13
+1001f1d6             char const temp0_1 = *ecx_16
+1001f1d6             bool c_1 = edx_3.b u< temp0_1
+1001f1d6             
+1001f1d8             if (edx_3.b == temp0_1)
+1001f1dc                 if (edx_3.b == 0)
+1001f1f0                     eax_15 = 0
+1001f1f2                     break
+1001f1f2                 
+1001f1de                 edx_3.b = eax_13[1]
+1001f1e1                 char temp1_1 = ecx_16[1]
+1001f1e1                 c_1 = edx_3.b u< temp1_1
+1001f1e1                 
+1001f1e4                 if (edx_3.b == temp1_1)
+1001f1e6                     eax_13 = &eax_13[2]
+1001f1e9                     ecx_16 = &ecx_16[2]
+1001f1e9                     
+1001f1ee                     if (edx_3.b != 0)
+1001f1ee                         continue
+1001f1ee                     
+1001f1f0                     eax_15 = 0
+1001f1f2                     break
+1001f1f2             
+1001f1f6             eax_15 = sbb.d(eax_13, eax_13, c_1) | 1
+1001f1f6             break
+1001f1f6         
+1001f1fb         if (eax_15 != 0)
+1001f1fd             char* var_18_14 = ecx + 0x48
+1001f1fe             char const* const var_1c_9 = "[ERROR]: Server returns error code %s"
+1001f203             int32_t var_20_11 = 0x289
+1001f208             char const* const var_24_3 = "auth_toolshub_login"
+1001f21d             *opdbg_log()
+1001f21e             return 0xffffffff
+1001f21e         
+1001f23f         if (sub_1001e570(ecx + 0x4d8, "/data/areaCode", *(ecx + 0x53c), ecx + 0x4d8, nullptr, 0)
+1001f23f                 == 0)
+1001f285             if (sub_1001e570(ecx + 0x4e8, "/data/regionCode", *(ecx + 0x53c), ecx + 0x4e8, nullptr, 
+1001f285                     0) == 0)
+1001f2c1                 char* ecx_19 = op_str_map_get(*(*(ecx + 0x53c) + 0x550c), "/data/token")
+1001f2c1                 
+1001f2c8                 if (ecx_19 == 0)
+1001f2ca                     char const* const var_18_17 = "/data/token"
+1001f2cf                     char const* const var_1c_13 =
+1001f2cf                         "[ERROR]: failed to get param, key=%s. value is null"
+1001f2d4                     int32_t var_20_14 = 0xf9
+1001f2d9                     char const* const var_24_4 = "toolshub_helper_get_param_out"
+1001f2de                     opdbg_log()
+1001f2ea                     char const* const var_28_6 = "[ERROR]: Cannot get 'token' attribute from result"
+1001f2ef                     int32_t var_2c_3 = 0x29e
+1001f2f4                     __builtin_strcpy(ecx + 0x88, "server return data is exception")
+1001f2f7                     char const* const var_30_3 = "auth_toolshub_login"
+1001f317                     *opdbg_log()
+1001f318                     return 0xffffffff
+1001f318                 
+1001f31e                 void* edx_5 = &data_10219f20 - ecx_19
+1001f32b                 char* eax_22
+1001f32b                 
+1001f32b                 do
+1001f320                     eax_22.b = *ecx_19
+1001f322                     ecx_19 = &ecx_19[1]
+1001f325                     *(edx_5 + ecx_19 - 1) = eax_22.b
+1001f32b                 while (eax_22.b != 0)
+1001f32d                 void* ecx_20 = *(ecx + 0x53c)
+1001f32d                 
+1001f34d                 if (sub_1001e570(ecx_20 + 0x53c8, "/data/usrTypeCode", ecx_20, ecx_20 + 0x53c8, 
+1001f34d                         nullptr, 0) == 0)
+1001f37a                     *ebp_3
+1001f37b                     return 0
+1001f37b                 
+1001f356                 char const* const var_18_18 =
+1001f356                     "[WARNING]: Cannot get 'usrTypeCode' attribute from result"
+1001f35b                 int32_t var_1c_14 = 0x2a5
+1001f360                 __builtin_strcpy(ecx + 0x88, "server return data is exception")
+1001f285             else
+1001f28e                 char const* const var_18_16 =
+1001f28e                     "[ERROR]: Cannot get 'regionCode' attribute from result"
+1001f293                 int32_t var_1c_11 = 0x297
+1001f298                 __builtin_strcpy(ecx + 0x88, "server return data is exception")
+1001f23f         else
+1001f248             char const* const var_18_15 = "[ERROR]: Cannot get 'regionCode' attribute from result"
+1001f24d             int32_t var_1c_10 = 0x290
+1001f252             __builtin_strcpy(ecx + 0x88, "server return data is exception")
+1001f0d8     else
+1001f0da         char const* const var_18_11 = "[ERROR]: Error occurred when performing WCSM request"
+1001f0df         int32_t var_1c_4 = 0x279
+1001ef77 else
+1001ef79     char const* const var_18_6 = "[ERROR] csm login error,get public key failed!!"
+1001ef7e     int32_t var_1c = 0x26a
+1001ef7e 
+1001ef83 char const* const var_20_1 = "auth_toolshub_login"
+1001ef98 *opdbg_log()
+1001ef99 return 0xffffffff

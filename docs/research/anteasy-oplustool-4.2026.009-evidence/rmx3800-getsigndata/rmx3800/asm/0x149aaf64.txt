@@ -1,0 +1,13 @@
+149aaf64 stp     fp, lr, [sp, #-0x10]!
+149aaf68 mov     fp, sp
+149aaf6c mov     w8, #0x8610
+149aaf70 adrp    x1, 0x149d2000
+149aaf74 movk    w8, #0x221c, lsl #0x10
+149aaf78 add     x1, x1, #0x6bb
+149aaf7c ldr     w2, [x8]
+149aaf80 str     w2, [x0]
+149aaf84 mov     w0, #0x4
+149aaf88 bl      0x149a5c34
+149aaf8c mov     w0, wzr
+149aaf90 ldp     fp, lr, [sp], #0x10
+149aaf94 ret     

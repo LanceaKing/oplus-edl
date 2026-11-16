@@ -1,0 +1,28 @@
+00459bd3 int32_t var_8 = 0xffffffff
+00459bd5 int32_t (* var_c)() = __ehhandler$?FindSegment@FairScheduleGroup@details@Concurrency@@MAEPAVScheduleGroupSegmentBase@23@PAVlocation@3@PAVSchedulingRing@23@@Z
+00459be0 TEB* fsbase
+00459be0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00459bea int32_t __saved_ebp
+00459bea int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00459bf0 fsbase->NtTib.ExceptionList = &ExceptionList
+00459bfa int32_t var_8_1 = 0
+00459c0a int32_t var_14 = 0xf
+00459c11 int32_t var_18 = 0
+00459c18 char var_28 = 0
+00459c1c int32_t arg_4
+00459c1c sub_406a50(&var_28, &arg_4, 0, 0xffffffff)
+00459c23 int32_t* ecx_2 = *arg1 + 0x30
+00459c26 var_8_1.b = 1
+00459c2a char* result = &var_28
+00459c2a 
+00459c2f if (ecx_2 != &var_28)
+00459c36     result = sub_406a50(ecx_2, &var_28, 0, 0xffffffff)
+00459c36 
+00459c3f if (var_14 u>= 0x10)
+00459c44     result = sub_4f0808(var_28.d, eax_2)
+00459c44 
+00459c50 if (arg2 u>= 0x10)
+00459c55     result = sub_4f0808(arg_4, eax_2)
+00459c55 
+00459c60 fsbase->NtTib.ExceptionList = ExceptionList
+00459c6c return result

@@ -1,0 +1,719 @@
+{
+  "openssl": "OpenSSL 4.1.0 23 Oct 2026 (Library: OpenSSL 4.1.0 23 Oct 2026)",
+  "tables": [
+    {
+      "path": "runs/phase-6-auth/package/GKI_IMAGES/DigestsToSign_nv00000000.bin.mbn",
+      "bytes": 33144,
+      "sha256": "6d8e8a57391bb9829cd72125198212ff24e1c197c6d2cc1824d2688bba9d2be1",
+      "hash_segment_offset": "0x7000",
+      "mbn_header_words": [
+        0,
+        7,
+        24,
+        0,
+        224,
+        144,
+        0,
+        0,
+        104,
+        3360
+      ],
+      "image_id_at_segment_0x30": "0x1a",
+      "signed_range_in_file": [
+        "0x7000",
+        "0x71b0"
+      ],
+      "signature_range_in_file": [
+        "0x71b0",
+        "0x7218"
+      ],
+      "der_signature_bytes": 103,
+      "signature_slot_padding": "00",
+      "certificates": [
+        {
+          "role": "leaf",
+          "hash_segment_offset": "0x218",
+          "bytes": 656,
+          "sha256": "27d73540329792de191792f3df2e2c692bce3d859d509ef5813701887079d039",
+          "metadata": "subject=C=CN, ST=Guangdong, L=Shenzhen, OU=OPLUS Technologies, O=OPLUS, CN=OPLUS SM8650 Attestation\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"OPLUS Technologies\", O=OPLUS, CN=\"OPLUS Attestation CA\"\nnotBefore=Jun 13 06:54:29 2023 GMT\nnotAfter=Jun  8 06:54:29 2043 GMT\nsha256 Fingerprint=27:D7:35:40:32:97:92:DE:19:17:92:F3:DF:2E:2C:69:2B:CE:3D:85:9D:50:9E:F5:81:37:01:88:70:79:D0:39"
+        },
+        {
+          "role": "intermediate",
+          "hash_segment_offset": "0x4a8",
+          "bytes": 668,
+          "sha256": "f36bd0f8eb425000d2870d7d777c30dde8dc17472c2f3ae4d25ffd334fb72047",
+          "metadata": "subject=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"OPLUS Technologies\", O=OPLUS, CN=\"OPLUS Attestation CA\"\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nnotBefore=Jun 13 06:54:29 2023 GMT\nnotAfter=Jun  8 06:54:29 2043 GMT\nsha256 Fingerprint=F3:6B:D0:F8:EB:42:50:00:D2:87:0D:7D:77:7C:30:DD:E8:DC:17:47:2C:2F:3A:E4:D2:5F:FD:33:4F:B7:20:47"
+        },
+        {
+          "role": "root",
+          "hash_segment_offset": "0x744",
+          "bytes": 630,
+          "sha256": "c785747dff01f3f83db665c159d81d1a5977a6a7b1e2e65bc84afb50ad21cd83",
+          "metadata": "subject=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nnotBefore=Jun 13 06:54:28 2023 GMT\nnotAfter=Jun  8 06:54:28 2043 GMT\nsha256 Fingerprint=C7:85:74:7D:FF:01:F3:F8:3D:B6:65:C1:59:D8:1D:1A:59:77:A6:A7:B1:E2:E6:5B:C8:4A:FB:50:AD:21:CD:83"
+        }
+      ],
+      "key": "Public-Key: (384 bit field, 192 bit security level)\npub:\n    04:84:5d:75:1a:7d:44:a3:f9:fd:67:e7:43:4d:7e:ed:\n    77:07:58:54:c1:aa:fa:e0:4a:65:7b:6e:18:0d:dd:72:\n    6e:ce:65:a0:d9:e2:62:b0:b1:a0:77:39:b9:1c:60:cb:\n    21:a3:9e:8c:ec:44:7d:4d:9e:a3:47:01:31:30:83:d2:\n    18:02:6c:da:36:05:ab:0e:6f:48:bb:c5:3d:f1:48:be:\n    58:8b:e3:36:ab:53:5b:2b:92:a6:f8:45:74:53:05:ce:\n    27\nASN1 OID: secp384r1\nNIST CURVE: P-384",
+      "certificate_chain": {
+        "argv": [
+          "openssl",
+          "verify",
+          "-no_check_time",
+          "-check_ss_sig",
+          "-CAfile",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv00000000.bin/root.pem",
+          "-untrusted",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv00000000.bin/intermediate.pem",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv00000000.bin/leaf.pem"
+        ],
+        "exit_code": 0,
+        "stdout": "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv00000000.bin/leaf.pem: OK",
+        "stderr": ""
+      },
+      "signature_verification": {
+        "argv": [
+          "openssl",
+          "dgst",
+          "-sha384",
+          "-verify",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv00000000.bin/pub.pem",
+          "-signature",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv00000000.bin/signature.der",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv00000000.bin/signed.bin"
+        ],
+        "exit_code": 0,
+        "stdout": "Verified OK",
+        "stderr": ""
+      },
+      "one_bit_tamper_rejected": {
+        "argv": [
+          "openssl",
+          "dgst",
+          "-sha384",
+          "-verify",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv00000000.bin/pub.pem",
+          "-signature",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv00000000.bin/signature.der",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv00000000.bin/tampered.bin"
+        ],
+        "exit_code": 1,
+        "stdout": "Verification failure",
+        "stderr": "80E1A1EE01000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:476:Global default library context, Algorithm (dgst : 0), Properties (<null>)\n80E1A1EE01000000:error:030000EA:digital envelope routines:EVP_DigestVerifyFinal:provider signature failure:crypto/evp/m_sigver.c:533:ECDSA digest_verify_final:"
+      },
+      "segment_hashes": [
+        {
+          "index": 0,
+          "file_offset": "0x0",
+          "bytes": 232,
+          "sha384": "8c690781dc22ba2b251d3cf33c23b971ed3427ee7b7cfaa8f7f46f103025f4054d3bdc56ccd10c9aa906eef8196ef044",
+          "hash_segment_offset": "0x120",
+          "matches": true
+        },
+        {
+          "index": 1,
+          "file_offset": "0xe8",
+          "bytes": 25772,
+          "sha384": "ad6f5e089cec3cc05d3280cf8f374a7978877af8b8b2979ec86f9f402c6281ec1862c3f2225ad24c854cbefaba44eebc",
+          "hash_segment_offset": "0x150",
+          "matches": true
+        }
+      ],
+      "hash_segment_self_entry_zero": true
+    },
+    {
+      "path": "runs/phase-6-auth/package/GKI_IMAGES/DigestsToSign_nv10010111.bin.mbn",
+      "bytes": 33144,
+      "sha256": "6d8e8a57391bb9829cd72125198212ff24e1c197c6d2cc1824d2688bba9d2be1",
+      "hash_segment_offset": "0x7000",
+      "mbn_header_words": [
+        0,
+        7,
+        24,
+        0,
+        224,
+        144,
+        0,
+        0,
+        104,
+        3360
+      ],
+      "image_id_at_segment_0x30": "0x1a",
+      "signed_range_in_file": [
+        "0x7000",
+        "0x71b0"
+      ],
+      "signature_range_in_file": [
+        "0x71b0",
+        "0x7218"
+      ],
+      "der_signature_bytes": 103,
+      "signature_slot_padding": "00",
+      "certificates": [
+        {
+          "role": "leaf",
+          "hash_segment_offset": "0x218",
+          "bytes": 656,
+          "sha256": "27d73540329792de191792f3df2e2c692bce3d859d509ef5813701887079d039",
+          "metadata": "subject=C=CN, ST=Guangdong, L=Shenzhen, OU=OPLUS Technologies, O=OPLUS, CN=OPLUS SM8650 Attestation\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"OPLUS Technologies\", O=OPLUS, CN=\"OPLUS Attestation CA\"\nnotBefore=Jun 13 06:54:29 2023 GMT\nnotAfter=Jun  8 06:54:29 2043 GMT\nsha256 Fingerprint=27:D7:35:40:32:97:92:DE:19:17:92:F3:DF:2E:2C:69:2B:CE:3D:85:9D:50:9E:F5:81:37:01:88:70:79:D0:39"
+        },
+        {
+          "role": "intermediate",
+          "hash_segment_offset": "0x4a8",
+          "bytes": 668,
+          "sha256": "f36bd0f8eb425000d2870d7d777c30dde8dc17472c2f3ae4d25ffd334fb72047",
+          "metadata": "subject=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"OPLUS Technologies\", O=OPLUS, CN=\"OPLUS Attestation CA\"\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nnotBefore=Jun 13 06:54:29 2023 GMT\nnotAfter=Jun  8 06:54:29 2043 GMT\nsha256 Fingerprint=F3:6B:D0:F8:EB:42:50:00:D2:87:0D:7D:77:7C:30:DD:E8:DC:17:47:2C:2F:3A:E4:D2:5F:FD:33:4F:B7:20:47"
+        },
+        {
+          "role": "root",
+          "hash_segment_offset": "0x744",
+          "bytes": 630,
+          "sha256": "c785747dff01f3f83db665c159d81d1a5977a6a7b1e2e65bc84afb50ad21cd83",
+          "metadata": "subject=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nnotBefore=Jun 13 06:54:28 2023 GMT\nnotAfter=Jun  8 06:54:28 2043 GMT\nsha256 Fingerprint=C7:85:74:7D:FF:01:F3:F8:3D:B6:65:C1:59:D8:1D:1A:59:77:A6:A7:B1:E2:E6:5B:C8:4A:FB:50:AD:21:CD:83"
+        }
+      ],
+      "key": "Public-Key: (384 bit field, 192 bit security level)\npub:\n    04:84:5d:75:1a:7d:44:a3:f9:fd:67:e7:43:4d:7e:ed:\n    77:07:58:54:c1:aa:fa:e0:4a:65:7b:6e:18:0d:dd:72:\n    6e:ce:65:a0:d9:e2:62:b0:b1:a0:77:39:b9:1c:60:cb:\n    21:a3:9e:8c:ec:44:7d:4d:9e:a3:47:01:31:30:83:d2:\n    18:02:6c:da:36:05:ab:0e:6f:48:bb:c5:3d:f1:48:be:\n    58:8b:e3:36:ab:53:5b:2b:92:a6:f8:45:74:53:05:ce:\n    27\nASN1 OID: secp384r1\nNIST CURVE: P-384",
+      "certificate_chain": {
+        "argv": [
+          "openssl",
+          "verify",
+          "-no_check_time",
+          "-check_ss_sig",
+          "-CAfile",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10010111.bin/root.pem",
+          "-untrusted",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10010111.bin/intermediate.pem",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10010111.bin/leaf.pem"
+        ],
+        "exit_code": 0,
+        "stdout": "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10010111.bin/leaf.pem: OK",
+        "stderr": ""
+      },
+      "signature_verification": {
+        "argv": [
+          "openssl",
+          "dgst",
+          "-sha384",
+          "-verify",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10010111.bin/pub.pem",
+          "-signature",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10010111.bin/signature.der",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10010111.bin/signed.bin"
+        ],
+        "exit_code": 0,
+        "stdout": "Verified OK",
+        "stderr": ""
+      },
+      "one_bit_tamper_rejected": {
+        "argv": [
+          "openssl",
+          "dgst",
+          "-sha384",
+          "-verify",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10010111.bin/pub.pem",
+          "-signature",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10010111.bin/signature.der",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10010111.bin/tampered.bin"
+        ],
+        "exit_code": 1,
+        "stdout": "Verification failure",
+        "stderr": "80E1A1EE01000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:476:Global default library context, Algorithm (dgst : 0), Properties (<null>)\n80E1A1EE01000000:error:030000EA:digital envelope routines:EVP_DigestVerifyFinal:provider signature failure:crypto/evp/m_sigver.c:533:ECDSA digest_verify_final:"
+      },
+      "segment_hashes": [
+        {
+          "index": 0,
+          "file_offset": "0x0",
+          "bytes": 232,
+          "sha384": "8c690781dc22ba2b251d3cf33c23b971ed3427ee7b7cfaa8f7f46f103025f4054d3bdc56ccd10c9aa906eef8196ef044",
+          "hash_segment_offset": "0x120",
+          "matches": true
+        },
+        {
+          "index": 1,
+          "file_offset": "0xe8",
+          "bytes": 25772,
+          "sha384": "ad6f5e089cec3cc05d3280cf8f374a7978877af8b8b2979ec86f9f402c6281ec1862c3f2225ad24c854cbefaba44eebc",
+          "hash_segment_offset": "0x150",
+          "matches": true
+        }
+      ],
+      "hash_segment_self_entry_zero": true
+    },
+    {
+      "path": "runs/phase-6-auth/package/GKI_IMAGES/DigestsToSign_nv10011101.bin.mbn",
+      "bytes": 33144,
+      "sha256": "c4a3f2d78b44a982350aa81670c4d80f11a3d1ea851df829641acc8dde418d16",
+      "hash_segment_offset": "0x7000",
+      "mbn_header_words": [
+        0,
+        7,
+        24,
+        0,
+        224,
+        144,
+        0,
+        0,
+        104,
+        3360
+      ],
+      "image_id_at_segment_0x30": "0x1a",
+      "signed_range_in_file": [
+        "0x7000",
+        "0x71b0"
+      ],
+      "signature_range_in_file": [
+        "0x71b0",
+        "0x7218"
+      ],
+      "der_signature_bytes": 102,
+      "signature_slot_padding": "0000",
+      "certificates": [
+        {
+          "role": "leaf",
+          "hash_segment_offset": "0x218",
+          "bytes": 656,
+          "sha256": "27d73540329792de191792f3df2e2c692bce3d859d509ef5813701887079d039",
+          "metadata": "subject=C=CN, ST=Guangdong, L=Shenzhen, OU=OPLUS Technologies, O=OPLUS, CN=OPLUS SM8650 Attestation\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"OPLUS Technologies\", O=OPLUS, CN=\"OPLUS Attestation CA\"\nnotBefore=Jun 13 06:54:29 2023 GMT\nnotAfter=Jun  8 06:54:29 2043 GMT\nsha256 Fingerprint=27:D7:35:40:32:97:92:DE:19:17:92:F3:DF:2E:2C:69:2B:CE:3D:85:9D:50:9E:F5:81:37:01:88:70:79:D0:39"
+        },
+        {
+          "role": "intermediate",
+          "hash_segment_offset": "0x4a8",
+          "bytes": 668,
+          "sha256": "f36bd0f8eb425000d2870d7d777c30dde8dc17472c2f3ae4d25ffd334fb72047",
+          "metadata": "subject=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"OPLUS Technologies\", O=OPLUS, CN=\"OPLUS Attestation CA\"\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nnotBefore=Jun 13 06:54:29 2023 GMT\nnotAfter=Jun  8 06:54:29 2043 GMT\nsha256 Fingerprint=F3:6B:D0:F8:EB:42:50:00:D2:87:0D:7D:77:7C:30:DD:E8:DC:17:47:2C:2F:3A:E4:D2:5F:FD:33:4F:B7:20:47"
+        },
+        {
+          "role": "root",
+          "hash_segment_offset": "0x744",
+          "bytes": 630,
+          "sha256": "c785747dff01f3f83db665c159d81d1a5977a6a7b1e2e65bc84afb50ad21cd83",
+          "metadata": "subject=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nnotBefore=Jun 13 06:54:28 2023 GMT\nnotAfter=Jun  8 06:54:28 2043 GMT\nsha256 Fingerprint=C7:85:74:7D:FF:01:F3:F8:3D:B6:65:C1:59:D8:1D:1A:59:77:A6:A7:B1:E2:E6:5B:C8:4A:FB:50:AD:21:CD:83"
+        }
+      ],
+      "key": "Public-Key: (384 bit field, 192 bit security level)\npub:\n    04:84:5d:75:1a:7d:44:a3:f9:fd:67:e7:43:4d:7e:ed:\n    77:07:58:54:c1:aa:fa:e0:4a:65:7b:6e:18:0d:dd:72:\n    6e:ce:65:a0:d9:e2:62:b0:b1:a0:77:39:b9:1c:60:cb:\n    21:a3:9e:8c:ec:44:7d:4d:9e:a3:47:01:31:30:83:d2:\n    18:02:6c:da:36:05:ab:0e:6f:48:bb:c5:3d:f1:48:be:\n    58:8b:e3:36:ab:53:5b:2b:92:a6:f8:45:74:53:05:ce:\n    27\nASN1 OID: secp384r1\nNIST CURVE: P-384",
+      "certificate_chain": {
+        "argv": [
+          "openssl",
+          "verify",
+          "-no_check_time",
+          "-check_ss_sig",
+          "-CAfile",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10011101.bin/root.pem",
+          "-untrusted",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10011101.bin/intermediate.pem",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10011101.bin/leaf.pem"
+        ],
+        "exit_code": 0,
+        "stdout": "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10011101.bin/leaf.pem: OK",
+        "stderr": ""
+      },
+      "signature_verification": {
+        "argv": [
+          "openssl",
+          "dgst",
+          "-sha384",
+          "-verify",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10011101.bin/pub.pem",
+          "-signature",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10011101.bin/signature.der",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10011101.bin/signed.bin"
+        ],
+        "exit_code": 0,
+        "stdout": "Verified OK",
+        "stderr": ""
+      },
+      "one_bit_tamper_rejected": {
+        "argv": [
+          "openssl",
+          "dgst",
+          "-sha384",
+          "-verify",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10011101.bin/pub.pem",
+          "-signature",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10011101.bin/signature.der",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/GKI_IMAGES-DigestsToSign_nv10011101.bin/tampered.bin"
+        ],
+        "exit_code": 1,
+        "stdout": "Verification failure",
+        "stderr": "80E1A1EE01000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:476:Global default library context, Algorithm (dgst : 0), Properties (<null>)\n80E1A1EE01000000:error:030000EA:digital envelope routines:EVP_DigestVerifyFinal:provider signature failure:crypto/evp/m_sigver.c:533:ECDSA digest_verify_final:"
+      },
+      "segment_hashes": [
+        {
+          "index": 0,
+          "file_offset": "0x0",
+          "bytes": 232,
+          "sha384": "8c690781dc22ba2b251d3cf33c23b971ed3427ee7b7cfaa8f7f46f103025f4054d3bdc56ccd10c9aa906eef8196ef044",
+          "hash_segment_offset": "0x120",
+          "matches": true
+        },
+        {
+          "index": 1,
+          "file_offset": "0xe8",
+          "bytes": 25772,
+          "sha384": "6b90e6af9c28c70c55e0b0d9a067bd6bd339ff2f02cef7aca69317bcf2a5aafaa53f1c7d64626d779beb67617a20b830",
+          "hash_segment_offset": "0x150",
+          "matches": true
+        }
+      ],
+      "hash_segment_self_entry_zero": true
+    },
+    {
+      "path": "runs/phase-6-auth/package/IMAGES/DigestsToSign_nv00000000.bin.mbn",
+      "bytes": 33144,
+      "sha256": "9211d9b8d2d77a5d94f9f4484918a16097ad4cf78e436ab1e6ff27ac0838f075",
+      "hash_segment_offset": "0x7000",
+      "mbn_header_words": [
+        0,
+        7,
+        24,
+        0,
+        224,
+        144,
+        0,
+        0,
+        104,
+        3360
+      ],
+      "image_id_at_segment_0x30": "0x1a",
+      "signed_range_in_file": [
+        "0x7000",
+        "0x71b0"
+      ],
+      "signature_range_in_file": [
+        "0x71b0",
+        "0x7218"
+      ],
+      "der_signature_bytes": 104,
+      "signature_slot_padding": "",
+      "certificates": [
+        {
+          "role": "leaf",
+          "hash_segment_offset": "0x218",
+          "bytes": 656,
+          "sha256": "27d73540329792de191792f3df2e2c692bce3d859d509ef5813701887079d039",
+          "metadata": "subject=C=CN, ST=Guangdong, L=Shenzhen, OU=OPLUS Technologies, O=OPLUS, CN=OPLUS SM8650 Attestation\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"OPLUS Technologies\", O=OPLUS, CN=\"OPLUS Attestation CA\"\nnotBefore=Jun 13 06:54:29 2023 GMT\nnotAfter=Jun  8 06:54:29 2043 GMT\nsha256 Fingerprint=27:D7:35:40:32:97:92:DE:19:17:92:F3:DF:2E:2C:69:2B:CE:3D:85:9D:50:9E:F5:81:37:01:88:70:79:D0:39"
+        },
+        {
+          "role": "intermediate",
+          "hash_segment_offset": "0x4a8",
+          "bytes": 668,
+          "sha256": "f36bd0f8eb425000d2870d7d777c30dde8dc17472c2f3ae4d25ffd334fb72047",
+          "metadata": "subject=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"OPLUS Technologies\", O=OPLUS, CN=\"OPLUS Attestation CA\"\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nnotBefore=Jun 13 06:54:29 2023 GMT\nnotAfter=Jun  8 06:54:29 2043 GMT\nsha256 Fingerprint=F3:6B:D0:F8:EB:42:50:00:D2:87:0D:7D:77:7C:30:DD:E8:DC:17:47:2C:2F:3A:E4:D2:5F:FD:33:4F:B7:20:47"
+        },
+        {
+          "role": "root",
+          "hash_segment_offset": "0x744",
+          "bytes": 630,
+          "sha256": "c785747dff01f3f83db665c159d81d1a5977a6a7b1e2e65bc84afb50ad21cd83",
+          "metadata": "subject=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nnotBefore=Jun 13 06:54:28 2023 GMT\nnotAfter=Jun  8 06:54:28 2043 GMT\nsha256 Fingerprint=C7:85:74:7D:FF:01:F3:F8:3D:B6:65:C1:59:D8:1D:1A:59:77:A6:A7:B1:E2:E6:5B:C8:4A:FB:50:AD:21:CD:83"
+        }
+      ],
+      "key": "Public-Key: (384 bit field, 192 bit security level)\npub:\n    04:84:5d:75:1a:7d:44:a3:f9:fd:67:e7:43:4d:7e:ed:\n    77:07:58:54:c1:aa:fa:e0:4a:65:7b:6e:18:0d:dd:72:\n    6e:ce:65:a0:d9:e2:62:b0:b1:a0:77:39:b9:1c:60:cb:\n    21:a3:9e:8c:ec:44:7d:4d:9e:a3:47:01:31:30:83:d2:\n    18:02:6c:da:36:05:ab:0e:6f:48:bb:c5:3d:f1:48:be:\n    58:8b:e3:36:ab:53:5b:2b:92:a6:f8:45:74:53:05:ce:\n    27\nASN1 OID: secp384r1\nNIST CURVE: P-384",
+      "certificate_chain": {
+        "argv": [
+          "openssl",
+          "verify",
+          "-no_check_time",
+          "-check_ss_sig",
+          "-CAfile",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv00000000.bin/root.pem",
+          "-untrusted",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv00000000.bin/intermediate.pem",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv00000000.bin/leaf.pem"
+        ],
+        "exit_code": 0,
+        "stdout": "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv00000000.bin/leaf.pem: OK",
+        "stderr": ""
+      },
+      "signature_verification": {
+        "argv": [
+          "openssl",
+          "dgst",
+          "-sha384",
+          "-verify",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv00000000.bin/pub.pem",
+          "-signature",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv00000000.bin/signature.der",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv00000000.bin/signed.bin"
+        ],
+        "exit_code": 0,
+        "stdout": "Verified OK",
+        "stderr": ""
+      },
+      "one_bit_tamper_rejected": {
+        "argv": [
+          "openssl",
+          "dgst",
+          "-sha384",
+          "-verify",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv00000000.bin/pub.pem",
+          "-signature",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv00000000.bin/signature.der",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv00000000.bin/tampered.bin"
+        ],
+        "exit_code": 1,
+        "stdout": "Verification failure",
+        "stderr": "80E1A1EE01000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:476:Global default library context, Algorithm (dgst : 0), Properties (<null>)\n80E1A1EE01000000:error:030000EA:digital envelope routines:EVP_DigestVerifyFinal:provider signature failure:crypto/evp/m_sigver.c:533:ECDSA digest_verify_final:"
+      },
+      "segment_hashes": [
+        {
+          "index": 0,
+          "file_offset": "0x0",
+          "bytes": 232,
+          "sha384": "8c690781dc22ba2b251d3cf33c23b971ed3427ee7b7cfaa8f7f46f103025f4054d3bdc56ccd10c9aa906eef8196ef044",
+          "hash_segment_offset": "0x120",
+          "matches": true
+        },
+        {
+          "index": 1,
+          "file_offset": "0xe8",
+          "bytes": 25772,
+          "sha384": "6c0d7d3a374c630d94fdda472a8dfe9f7569a015e54bb42329a3432b86c66208ad1aab7db6352a9e05841ef975e230a8",
+          "hash_segment_offset": "0x150",
+          "matches": true
+        }
+      ],
+      "hash_segment_self_entry_zero": true
+    },
+    {
+      "path": "runs/phase-6-auth/package/IMAGES/DigestsToSign_nv10010111.bin.mbn",
+      "bytes": 33144,
+      "sha256": "9211d9b8d2d77a5d94f9f4484918a16097ad4cf78e436ab1e6ff27ac0838f075",
+      "hash_segment_offset": "0x7000",
+      "mbn_header_words": [
+        0,
+        7,
+        24,
+        0,
+        224,
+        144,
+        0,
+        0,
+        104,
+        3360
+      ],
+      "image_id_at_segment_0x30": "0x1a",
+      "signed_range_in_file": [
+        "0x7000",
+        "0x71b0"
+      ],
+      "signature_range_in_file": [
+        "0x71b0",
+        "0x7218"
+      ],
+      "der_signature_bytes": 104,
+      "signature_slot_padding": "",
+      "certificates": [
+        {
+          "role": "leaf",
+          "hash_segment_offset": "0x218",
+          "bytes": 656,
+          "sha256": "27d73540329792de191792f3df2e2c692bce3d859d509ef5813701887079d039",
+          "metadata": "subject=C=CN, ST=Guangdong, L=Shenzhen, OU=OPLUS Technologies, O=OPLUS, CN=OPLUS SM8650 Attestation\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"OPLUS Technologies\", O=OPLUS, CN=\"OPLUS Attestation CA\"\nnotBefore=Jun 13 06:54:29 2023 GMT\nnotAfter=Jun  8 06:54:29 2043 GMT\nsha256 Fingerprint=27:D7:35:40:32:97:92:DE:19:17:92:F3:DF:2E:2C:69:2B:CE:3D:85:9D:50:9E:F5:81:37:01:88:70:79:D0:39"
+        },
+        {
+          "role": "intermediate",
+          "hash_segment_offset": "0x4a8",
+          "bytes": 668,
+          "sha256": "f36bd0f8eb425000d2870d7d777c30dde8dc17472c2f3ae4d25ffd334fb72047",
+          "metadata": "subject=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"OPLUS Technologies\", O=OPLUS, CN=\"OPLUS Attestation CA\"\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nnotBefore=Jun 13 06:54:29 2023 GMT\nnotAfter=Jun  8 06:54:29 2043 GMT\nsha256 Fingerprint=F3:6B:D0:F8:EB:42:50:00:D2:87:0D:7D:77:7C:30:DD:E8:DC:17:47:2C:2F:3A:E4:D2:5F:FD:33:4F:B7:20:47"
+        },
+        {
+          "role": "root",
+          "hash_segment_offset": "0x744",
+          "bytes": 630,
+          "sha256": "c785747dff01f3f83db665c159d81d1a5977a6a7b1e2e65bc84afb50ad21cd83",
+          "metadata": "subject=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nnotBefore=Jun 13 06:54:28 2023 GMT\nnotAfter=Jun  8 06:54:28 2043 GMT\nsha256 Fingerprint=C7:85:74:7D:FF:01:F3:F8:3D:B6:65:C1:59:D8:1D:1A:59:77:A6:A7:B1:E2:E6:5B:C8:4A:FB:50:AD:21:CD:83"
+        }
+      ],
+      "key": "Public-Key: (384 bit field, 192 bit security level)\npub:\n    04:84:5d:75:1a:7d:44:a3:f9:fd:67:e7:43:4d:7e:ed:\n    77:07:58:54:c1:aa:fa:e0:4a:65:7b:6e:18:0d:dd:72:\n    6e:ce:65:a0:d9:e2:62:b0:b1:a0:77:39:b9:1c:60:cb:\n    21:a3:9e:8c:ec:44:7d:4d:9e:a3:47:01:31:30:83:d2:\n    18:02:6c:da:36:05:ab:0e:6f:48:bb:c5:3d:f1:48:be:\n    58:8b:e3:36:ab:53:5b:2b:92:a6:f8:45:74:53:05:ce:\n    27\nASN1 OID: secp384r1\nNIST CURVE: P-384",
+      "certificate_chain": {
+        "argv": [
+          "openssl",
+          "verify",
+          "-no_check_time",
+          "-check_ss_sig",
+          "-CAfile",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10010111.bin/root.pem",
+          "-untrusted",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10010111.bin/intermediate.pem",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10010111.bin/leaf.pem"
+        ],
+        "exit_code": 0,
+        "stdout": "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10010111.bin/leaf.pem: OK",
+        "stderr": ""
+      },
+      "signature_verification": {
+        "argv": [
+          "openssl",
+          "dgst",
+          "-sha384",
+          "-verify",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10010111.bin/pub.pem",
+          "-signature",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10010111.bin/signature.der",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10010111.bin/signed.bin"
+        ],
+        "exit_code": 0,
+        "stdout": "Verified OK",
+        "stderr": ""
+      },
+      "one_bit_tamper_rejected": {
+        "argv": [
+          "openssl",
+          "dgst",
+          "-sha384",
+          "-verify",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10010111.bin/pub.pem",
+          "-signature",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10010111.bin/signature.der",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10010111.bin/tampered.bin"
+        ],
+        "exit_code": 1,
+        "stdout": "Verification failure",
+        "stderr": "80E1A1EE01000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:476:Global default library context, Algorithm (dgst : 0), Properties (<null>)\n80E1A1EE01000000:error:030000EA:digital envelope routines:EVP_DigestVerifyFinal:provider signature failure:crypto/evp/m_sigver.c:533:ECDSA digest_verify_final:"
+      },
+      "segment_hashes": [
+        {
+          "index": 0,
+          "file_offset": "0x0",
+          "bytes": 232,
+          "sha384": "8c690781dc22ba2b251d3cf33c23b971ed3427ee7b7cfaa8f7f46f103025f4054d3bdc56ccd10c9aa906eef8196ef044",
+          "hash_segment_offset": "0x120",
+          "matches": true
+        },
+        {
+          "index": 1,
+          "file_offset": "0xe8",
+          "bytes": 25772,
+          "sha384": "6c0d7d3a374c630d94fdda472a8dfe9f7569a015e54bb42329a3432b86c66208ad1aab7db6352a9e05841ef975e230a8",
+          "hash_segment_offset": "0x150",
+          "matches": true
+        }
+      ],
+      "hash_segment_self_entry_zero": true
+    },
+    {
+      "path": "runs/phase-6-auth/package/IMAGES/DigestsToSign_nv10011101.bin.mbn",
+      "bytes": 33144,
+      "sha256": "73ed6533bd57620b650ccdade5adca2584d8eceb9a16e54422f9a542e77ce188",
+      "hash_segment_offset": "0x7000",
+      "mbn_header_words": [
+        0,
+        7,
+        24,
+        0,
+        224,
+        144,
+        0,
+        0,
+        104,
+        3360
+      ],
+      "image_id_at_segment_0x30": "0x1a",
+      "signed_range_in_file": [
+        "0x7000",
+        "0x71b0"
+      ],
+      "signature_range_in_file": [
+        "0x71b0",
+        "0x7218"
+      ],
+      "der_signature_bytes": 104,
+      "signature_slot_padding": "",
+      "certificates": [
+        {
+          "role": "leaf",
+          "hash_segment_offset": "0x218",
+          "bytes": 656,
+          "sha256": "27d73540329792de191792f3df2e2c692bce3d859d509ef5813701887079d039",
+          "metadata": "subject=C=CN, ST=Guangdong, L=Shenzhen, OU=OPLUS Technologies, O=OPLUS, CN=OPLUS SM8650 Attestation\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"OPLUS Technologies\", O=OPLUS, CN=\"OPLUS Attestation CA\"\nnotBefore=Jun 13 06:54:29 2023 GMT\nnotAfter=Jun  8 06:54:29 2043 GMT\nsha256 Fingerprint=27:D7:35:40:32:97:92:DE:19:17:92:F3:DF:2E:2C:69:2B:CE:3D:85:9D:50:9E:F5:81:37:01:88:70:79:D0:39"
+        },
+        {
+          "role": "intermediate",
+          "hash_segment_offset": "0x4a8",
+          "bytes": 668,
+          "sha256": "f36bd0f8eb425000d2870d7d777c30dde8dc17472c2f3ae4d25ffd334fb72047",
+          "metadata": "subject=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"OPLUS Technologies\", O=OPLUS, CN=\"OPLUS Attestation CA\"\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nnotBefore=Jun 13 06:54:29 2023 GMT\nnotAfter=Jun  8 06:54:29 2043 GMT\nsha256 Fingerprint=F3:6B:D0:F8:EB:42:50:00:D2:87:0D:7D:77:7C:30:DD:E8:DC:17:47:2C:2F:3A:E4:D2:5F:FD:33:4F:B7:20:47"
+        },
+        {
+          "role": "root",
+          "hash_segment_offset": "0x744",
+          "bytes": 630,
+          "sha256": "c785747dff01f3f83db665c159d81d1a5977a6a7b1e2e65bc84afb50ad21cd83",
+          "metadata": "subject=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nissuer=C=CN, ST=Guangdong, L=\"Shenzhen\", OU=\"General OPLUS Use Key\", O=OPLUS, CN=\"OPLUS ROOT CA 1\"\nnotBefore=Jun 13 06:54:28 2023 GMT\nnotAfter=Jun  8 06:54:28 2043 GMT\nsha256 Fingerprint=C7:85:74:7D:FF:01:F3:F8:3D:B6:65:C1:59:D8:1D:1A:59:77:A6:A7:B1:E2:E6:5B:C8:4A:FB:50:AD:21:CD:83"
+        }
+      ],
+      "key": "Public-Key: (384 bit field, 192 bit security level)\npub:\n    04:84:5d:75:1a:7d:44:a3:f9:fd:67:e7:43:4d:7e:ed:\n    77:07:58:54:c1:aa:fa:e0:4a:65:7b:6e:18:0d:dd:72:\n    6e:ce:65:a0:d9:e2:62:b0:b1:a0:77:39:b9:1c:60:cb:\n    21:a3:9e:8c:ec:44:7d:4d:9e:a3:47:01:31:30:83:d2:\n    18:02:6c:da:36:05:ab:0e:6f:48:bb:c5:3d:f1:48:be:\n    58:8b:e3:36:ab:53:5b:2b:92:a6:f8:45:74:53:05:ce:\n    27\nASN1 OID: secp384r1\nNIST CURVE: P-384",
+      "certificate_chain": {
+        "argv": [
+          "openssl",
+          "verify",
+          "-no_check_time",
+          "-check_ss_sig",
+          "-CAfile",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10011101.bin/root.pem",
+          "-untrusted",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10011101.bin/intermediate.pem",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10011101.bin/leaf.pem"
+        ],
+        "exit_code": 0,
+        "stdout": "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10011101.bin/leaf.pem: OK",
+        "stderr": ""
+      },
+      "signature_verification": {
+        "argv": [
+          "openssl",
+          "dgst",
+          "-sha384",
+          "-verify",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10011101.bin/pub.pem",
+          "-signature",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10011101.bin/signature.der",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10011101.bin/signed.bin"
+        ],
+        "exit_code": 0,
+        "stdout": "Verified OK",
+        "stderr": ""
+      },
+      "one_bit_tamper_rejected": {
+        "argv": [
+          "openssl",
+          "dgst",
+          "-sha384",
+          "-verify",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10011101.bin/pub.pem",
+          "-signature",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10011101.bin/signature.der",
+          "/Users/Apple/Documents/oplus-edl/runs/rmx3800-secure-auth/table-crypto/IMAGES-DigestsToSign_nv10011101.bin/tampered.bin"
+        ],
+        "exit_code": 1,
+        "stdout": "Verification failure",
+        "stderr": "80E1A1EE01000000:error:0308010C:digital envelope routines:inner_evp_generic_fetch:unsupported:crypto/evp/evp_fetch.c:476:Global default library context, Algorithm (dgst : 0), Properties (<null>)\n80E1A1EE01000000:error:030000EA:digital envelope routines:EVP_DigestVerifyFinal:provider signature failure:crypto/evp/m_sigver.c:533:ECDSA digest_verify_final:"
+      },
+      "segment_hashes": [
+        {
+          "index": 0,
+          "file_offset": "0x0",
+          "bytes": 232,
+          "sha384": "8c690781dc22ba2b251d3cf33c23b971ed3427ee7b7cfaa8f7f46f103025f4054d3bdc56ccd10c9aa906eef8196ef044",
+          "hash_segment_offset": "0x120",
+          "matches": true
+        },
+        {
+          "index": 1,
+          "file_offset": "0xe8",
+          "bytes": 25772,
+          "sha384": "1ed7f6b957341a3bded4f531a9e83c23d110d59896b245f74dacc56194c752cd32e487a877cce47d29ea1f8b977839c3",
+          "hash_segment_offset": "0x150",
+          "matches": true
+        }
+      ],
+      "hash_segment_self_entry_zero": true
+    }
+  ],
+  "limits": [
+    "Offline cryptographic consistency only. Root supplied by same package.",
+    "Certificate chain time checks deliberately disabled; chain signatures checked.",
+    "No device root/fuse, rollback, image policy, or SMC acceptance verified.",
+    "P-384 table signature is not the device-bound RSA-2048 dinfo record."
+  ]
+}

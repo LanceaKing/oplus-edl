@@ -1,0 +1,290 @@
+18004a7b6 if (arg1 != 0)
+18004a7bc     int64_t* rsi_1 = *arg1
+18004a7bc     
+18004a7c2     if (rsi_1 != 0)
+18004a7cf         int32_t rax
+18004a7cf         int32_t* rdx
+18004a7cf         int32_t* r8_1
+18004a7cf         rax, rdx, r8_1 = sub_180076ac0(&rsi_1[0x1f])
+18004a7cf         
+18004a7d6         if (rax != 0)
+18004adbf             std::_Throw_Cpp_error(5)
+18004adbf             noreturn
+18004adbf         
+18004a7dc         int32_t rax_1 = *(rsi_1 + 0x144)
+18004a7dc         
+18004a7e7         if (rax_1 == 0x7fffffff)
+18004adc7             *(rsi_1 + 0x144) = rax_1 - 1
+18004add2             std::_Throw_Cpp_error(6)
+18004add2             noreturn
+18004add2         
+18004a804         if (*(rsi_1 + 0x153) != 0 && rsi_1[0x2c] != 0)
+18004a80a             rsi_1[0x2c] = 0
+18004a811             int64_t rax_2 = rsi_1[0x2e]
+18004a811             
+18004a81f             if (rax_2 != rsi_1[0x2f])
+18004a821                 rsi_1[0x2f] = rax_2
+18004a821             
+18004a828             rsi_1[0x31] = 0
+18004a82f             int64_t rax_3 = rsi_1[0x32]
+18004a82f             
+18004a83d             if (rax_3 != rsi_1[0x33])
+18004a83f                 rsi_1[0x33] = rax_3
+18004a83f             
+18004a846             rsi_1[0x2d].d = 0
+18004a84d             __builtin_memset(&rsi_1[0x35], 0, 0x23)
+18004a87f             rdx = sub_180036490(&rsi_1[0x3a])
+18004a884             rsi_1[0x46].w = 0
+18004a88c             rsi_1[0x2b] += 1
+18004a88c         
+18004a8b4         if (*(rsi_1 + 0x151) == 0 && *(rsi_1 + 0x152) == 0 && rsi_1[0x2c] == 0)
+18004a8ba             void* r9_1 = *rsi_1
+18004a8bd             int32_t* rcx_2 = *(r9_1 + 8)
+18004a8c1             rdx = rsi_1[0x2b]
+18004a8c1             
+18004a8d6             if (rdx u< (*(r9_1 + 0x10) - rcx_2) s>> 5)
+18004a8e3                 while (true)
+18004a8e3                     int64_t rax_8 = rdx << 5
+18004a8e3                     
+18004a8ea                     if (rcx_2[rdx * 8] u< arg2)
+18004a8f0                         rdx = *(rcx_2 + rax_8 + 8)
+18004a8f5                         int64_t rax_9 = *(rcx_2 + rax_8 + 0x10)
+18004a8f5                         
+18004a8fd                         if (rdx != rax_9)
+18004a8ff                             r8_1 = rdx
+18004a8ff                             
+18004a918                             do
+18004a90c                                 if (((r8_1[1] u>> 4).b & 1) == 0)
+18004a90c                                     goto label_18004a91f
+18004a90c                                 
+18004a90e                                 r8_1 = &r8_1[0x22]
+18004a918                             while (r8_1 != rax_9)
+18004a918                             
+18004a91a                             r8_1.b = 1
+18004a90c                             goto label_18004a944
+18004a90c                         
+18004a91f                     label_18004a91f:
+18004a91f                         r8_1.b = 0
+18004a91f                         
+18004a925                         if (rdx == rax_9)
+18004a94a                         label_18004a94a:
+18004a94a                             rax_9.b = 0
+18004a925                         else
+18004a944                         label_18004a944:
+18004a944                             
+18004a944                             do
+18004a938                                 if (((rdx[1] u>> 1).b & 1) == 0)
+18004a938                                     goto label_18004a94a
+18004a938                                 
+18004a93a                                 rdx = &rdx[0x22]
+18004a944                             while (rdx != rax_9)
+18004a944                             
+18004a946                             rax_9.b = 1
+18004a946                         
+18004a94f                         if (r8_1.b == 0)
+18004a958                             if (*(rsi_1 + 0x153) == 0)
+18004a958                                 break
+18004a958                             
+18004a960                             if (rax_9.b == 0)
+18004a960                                 break
+18004a960                         
+18004a966                         rsi_1[0x2b] += 1
+18004a96d                         rdx = rsi_1[0x2b]
+18004a974                         rcx_2 = *(r9_1 + 8)
+18004a974                         
+18004a986                         if (rdx u< (*(r9_1 + 0x10) - rcx_2) s>> 5)
+18004a986                             continue
+18004a986                     
+18004a99a                     if (rdx u>= (*(r9_1 + 0x10) - rcx_2) s>> 5)
+18004a99a                         break
+18004a99a                     
+18004a9a0                     rdx <<= 5
+18004a9a4                     r8_1 = rdx + rcx_2
+18004a9a4                     
+18004a9ab                     if (*r8_1 == arg2)
+18004a9b1                         int64_t rax_16 = *(r8_1 + 0x10)
+18004a9b5                         rdx = *(r8_1 + 8)
+18004a9b5                         
+18004a9bc                         if (rdx == rax_16)
+18004a9d6                         label_18004a9d6:
+18004a9d6                             rax_16.b = 1
+18004a9bc                         else
+18004a9c8                             while (((rdx[1] u>> 1).b & 1) != 0)
+18004a9ca                                 rdx = &rdx[0x22]
+18004a9ca                                 
+18004a9d4                                 if (rdx == rax_16)
+18004a9d4                                     goto label_18004a9d6
+18004a9d4                             
+18004aa2e                             rax_16.b = 0
+18004aa2e                         
+18004a9de                         if (rax_16.b == *(rsi_1 + 0x153))
+18004a9e4                             rsi_1[0x2c] = r8_1
+18004a9eb                             rsi_1[0x2d].d = 0
+18004a9f2                             int64_t* r15_1 = &rsi_1[0x2e]
+18004a9fd                             int64_t rax_18 = *(r8_1 + 0x10) - *(r8_1 + 8)
+18004aa12                             int64_t rbp_3 = (rax_18 s>> 3) * -0xf0f0f0f0f0f0f0f
+18004aa16                             int128_t* r14_1 = *r15_1
+18004aa19                             int128_t* rcx_9 = rsi_1[0x2f]
+18004aa19                             
+18004aa23                             if (r14_1 == rcx_9)
+18004aa32                                 r14_1 = rcx_9
+18004aa23                             else
+18004aa25                                 rsi_1[0x2f] = r14_1
+18004aa25                             
+18004aa35                             rsi_1[0x31] = 0
+18004aa3f                             int32_t* r11_1
+18004aa3f                             
+18004aa3f                             if (rax_18 == 0)
+18004ac90                                 r11_1 = *r15_1
+18004aa3f                             else
+18004aa52                                 if (rbp_3 u> 0x7fffffffffffffff)
+18004add8                                     sub_180029de0()
+18004add8                                     noreturn
+18004add8                                 
+18004aa58                                 int64_t rax_19 = *r15_1
+18004aa5f                                 uint64_t rdi_2 = (rbp_3 + 0x1f) u>> 5
+18004aa66                                 void* r13_2 = r14_1 - rax_19
+18004aa6c                                 int64_t r12_2 = r13_2 s>> 2
+18004aa6c                                 
+18004aa73                                 if (rdi_2 u< r12_2)
+18004ab91                                     rsi_1[0x2f] = rax_19 + (rdi_2 << 2)
+18004aa73                                 else if (rdi_2 u> r12_2)
+18004aa8e                                     int64_t rcx_12 = (rsi_1[0x30] - rax_19) s>> 2
+18004aa8e                                     
+18004aa95                                     if (rdi_2 u<= rcx_12)
+18004ab75                                         int64_t rdi_4 = (rdi_2 - r12_2) << 2
+18004ab85                                         r8_1 = sub_18009a050(r14_1, 0, rdi_4)
+18004ab91                                         rsi_1[0x2f] = rdi_4 + r14_1
+18004aa95                                     else
+18004aa9e                                         char* rdx_2 = rcx_12 u>> 1
+18004aa9e                                         
+18004aab4                                         if (rcx_12 u> 0x3fffffffffffffff - rdx_2)
+18004adb4                                             stdext::threads::_Throw_lock_error()
+18004adb4                                             noreturn
+18004adb4                                         
+18004aaba                                         void* r15_2 = &rdx_2[rcx_12]
+18004aaba                                         
+18004aac1                                         if (r15_2 u< rdi_2)
+18004aac3                                             r15_2 = rdi_2
+18004aac1                                         else if (r15_2 u> 0x3fffffffffffffff)
+18004adb4                                             stdext::threads::_Throw_lock_error()
+18004adb4                                             noreturn
+18004adb4                                         
+18004aad1                                         int64_t rcx_13 = r15_2 << 2
+18004aadc                                         int128_t* r14_2
+18004aadc                                         
+18004aadc                                         if (rcx_13 == 0)
+18004aade                                             r14_2 = nullptr
+18004aadc                                         else if (rcx_13 u< 0x1000)
+18004ab20                                             r14_2 = sub_180077bc0(rcx_13, rdx_2, 0x3fffffffffffffff)
+18004aaea                                         else
+18004aaf3                                             if (rcx_13 + 0x27 u<= rcx_13)
+18004adb4                                                 stdext::threads::_Throw_lock_error()
+18004adb4                                                 noreturn
+18004adb4                                             
+18004aafc                                             int64_t rax_23 = sub_180077bc0(rcx_13 + 0x27, rdx_2, 
+18004aafc                                                 0x3fffffffffffffff)
+18004aafc                                             
+18004ab04                                             if (rax_23 == 0)
+18004ab0b                                                 trap(0xd)
+18004ab0b                                             
+18004ab11                                             r14_2 = (rax_23 + 0x27) & 0xffffffffffffffe0
+18004ab15                                             *(r14_2 - 8) = rax_23
+18004ab15                                         
+18004ab37                                         sub_18009a050(r14_2 + (r13_2 & 0xfffffffffffffffc), 0, 
+18004ab37                                             (rdi_2 - r12_2) << 2)
+18004ab3c                                         int32_t* rdx_3 = rsi_1[0x2e]
+18004ab50                                         memcpy(r14_2, rdx_3, rsi_1[0x2f] - rdx_3)
+18004ab5e                                         r15_1 = &rsi_1[0x2e]
+18004ab68                                         r8_1 = sub_180006c20(r15_1, r14_2, rdi_2, r15_2)
+18004ab68                                 
+18004ab98                                 int64_t rdx_5 = rsi_1[0x31]
+18004ab9f                                 r11_1 = *r15_1
+18004ab9f                                 
+18004aba5                                 if (rdx_5 != 0)
+18004abbf                                     int32_t* r9_5
+18004abbf                                     
+18004abbf                                     if (rdx_5 s>= 0 || neg.q(rdx_5) == 0)
+18004abe2                                         r9_5 = &r11_1[rdx_5 u>> 5]
+18004abbf                                     else
+18004abd5                                         r9_5 = r11_1 - (not.q(rdx_5) u>> 5 << 2) - 4
+18004abd5                                     
+18004abe9                                     uint64_t rcx_21 = zx.q(rdx_5.d) & 0x1f
+18004abec                                     int64_t rdx_6 = rdx_5 + rbp_3
+18004abef                                     rsi_1[0x31] = rdx_6
+18004abfe                                     int32_t* r10_3
+18004abfe                                     
+18004abfe                                     if (rdx_5 + rbp_3 s>= 0 || neg.q(rdx_6) == 0)
+18004ac21                                         r10_3 = &r11_1[rdx_6 u>> 5]
+18004abfe                                     else
+18004ac14                                         r10_3 = r11_1 - (not.q(rdx_6) u>> 5 << 2) - 4
+18004ac14                                     
+18004ac25                                     uint64_t rdx_7 = zx.q(rdx_6.d) & 0x1f
+18004ac25                                     
+18004ac30                                     while (r11_1 != r9_5 || rcx_21 != 0)
+18004ac32                                         uint64_t rdi_5 = rdx_7
+18004ac35                                         uint64_t r8_9 = rcx_21
+18004ac35                                         
+18004ac3b                                         rcx_21 = rcx_21 == 0 ? 0x1f : rcx_21 - 1
+18004ac3b                                         
+18004ac4e                                         if (r8_9 == 0)
+18004ac4e                                             r9_5 = &r9_5[-1]
+18004ac4e                                         
+18004ac55                                         rdx_7 = rdx_7 == 0 ? 0x1f : rdx_7 - 1
+18004ac55                                         
+18004ac68                                         if (rdi_5 == 0)
+18004ac68                                             r10_3 = &r10_3[-1]
+18004ac68                                         
+18004ac6c                                         int32_t r8_10 = *r10_3
+18004ac6c                                         
+18004ac79                                         if ((*r9_5 & 1 << rcx_21.b) == 0)
+18004ac84                                             r8_1 = zx.q(r8_10) & zx.q(not.d(1 << (rdx_7.d u% 0x20)))
+18004ac88                                             *r10_3 = r8_1.d
+18004ac79                                         else
+18004ac7b                                             r8_1 = zx.q(r8_10) | zx.q(1 << (rdx_7.d u% 0x20))
+18004ac7f                                             *r10_3 = r8_1.d
+18004ac7f                                     
+18004ac90                                     r11_1 = *r15_1
+18004aba5                                 else
+18004abab                                     rsi_1[0x31] = rdx_5 + rbp_3
+18004abab                             
+18004ac96                             if (rbp_3 != 0)
+18004aca4                                 int32_t* rdi_8
+18004aca4                                 
+18004aca4                                 if (rbp_3 s>= 0 || neg.q(rbp_3) == 0)
+18004accb                                     rdi_8 = &r11_1[rbp_3 u>> 5]
+18004aca4                                 else
+18004acbe                                     rdi_8 = r11_1 - ((-1 - rbp_3) u>> 5 << 2) - 4
+18004acbe                                 
+18004accf                                 uint64_t rbp_4 = zx.q(rbp_3.d) & 0x1f
+18004accf                                 
+18004acd5                                 if (r11_1 != rdi_8)
+18004acf7                                 label_18004acf7:
+18004acf7                                     *r11_1 = 0
+18004ad06                                     r8_1 = sub_18009a050(&r11_1[1], 0, rdi_8 - &r11_1[1])
+18004ad06                                     
+18004ad0e                                     if (rbp_4 != 0)
+18004ad21                                         *rdi_8 &= not.d(0xffffffff u>> (0x20 - rbp_4.b))
+18004acd5                                 else if (rbp_4 != 0)
+18004acdf                                     if (r11_1 != rdi_8)
+18004acdf                                         goto label_18004acf7
+18004acdf                                     
+18004acf2                                     *r11_1 &= not.d(0xffffffff u>> (0x20 - rbp_4.b))
+18004acf2                             
+18004ad23                             int64_t rax_56 = rsi_1[0x32]
+18004ad23                             
+18004ad31                             if (rax_56 != rsi_1[0x33])
+18004ad33                                 rsi_1[0x33] = rax_56
+18004ad33                             
+18004ad3c                             __builtin_memset(&rsi_1[0x35], 0, 0x23)
+18004ad6d                             int64_t rdx_8 = sub_180036490(&rsi_1[0x3a])
+18004ad72                             rsi_1[0x46].w = 0
+18004ad80                             sub_180076b50(&rsi_1[0x1f], rdx_8, r8_1)
+18004ad86                             return 0
+18004ad86                     
+18004a9ab                     break
+18004a9ab         
+18004ad91         sub_180076b50(&rsi_1[0x1f], rdx, r8_1)
+18004ad97         return 0x2b
+18004ad97 
+18004ad9e return 1

@@ -1,0 +1,249 @@
+1000a1c0 int32_t __saved_ebp_2
+1000a1c0 int32_t __saved_ebp_1 = __saved_ebp_2
+1000a1c3 int32_t var_8 = 0xffffffff
+1000a1c5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_100612fc
+1000a1d0 TEB* fsbase
+1000a1d0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+1000a1de int32_t ebx
+1000a1de int32_t var_34 = ebx
+1000a1df int32_t esi
+1000a1df int32_t var_38 = esi
+1000a1e0 int32_t edi
+1000a1e0 int32_t var_3c = edi
+1000a1e1 int32_t __saved_ebp
+1000a1e1 int32_t var_40 = __security_cookie ^ &__saved_ebp
+1000a1e5 fsbase->NtTib.ExceptionList = &ExceptionList
+1000a1f4 int32_t** esi_1 = this + 4
+1000a1fd int32_t* ecx
+1000a1fd 
+1000a1fd if (*(this + 0x18) u< 0x10)
+1000a203     ecx = esi_1
+1000a1fd else
+1000a1ff     ecx = *esi_1
+1000a1ff 
+1000a219 uint32_t result
+1000a219 int32_t* esp_1
+1000a219 
+1000a219 if (sub_10007cc0(&ExceptionList, esi_1[4], ecx, &data_1006a03d, 0) == 0)
+1000a276 label_1000a276:
+1000a276     int32_t* ebx_3 = nullptr
+1000a278     int64_t var_1c = 0
+1000a27d     var_1c.d = 0
+1000a284     var_1c:4.d = 0
+1000a287     int32_t var_8_1 = 0
+1000a28a     void* eax_6 = *this
+1000a295     int32_t ecx_6 = (*(eax_6 + 0x5c) - *(eax_6 + 0x58)) s>> 3
+1000a2ab     opdbg_log("QCFlashAgent::onDeviceArrival", 0x17f, 
+1000a2ab         "[QCFlashAgent]onDeviceArrival workCount: %d, m_isOTest: %d", ecx_6, *(eax_6 + 0x20))
+1000a2b1     void* eax_7 = *this
+1000a2b9     int32_t* i = *(eax_7 + 0x58)
+1000a2bf     uint32_t result_1
+1000a2bf     
+1000a2bf     if (i != *(eax_7 + 0x5c))
+1000a339         do
+1000a2c1             int32_t* eax_8 = i[1]
+1000a2c4             void* ecx_7 = *i
+1000a2c6             void* var_20_1 = ecx_7
+1000a2c6             
+1000a2cb             if (eax_8 != 0)
+1000a2cd                 eax_8[1] += 1
+1000a2cd             
+1000a2d1             int32_t* edi_2 = ebx_3
+1000a2d3             var_1c.d = ecx_7
+1000a2d6             ebx_3 = eax_8
+1000a2d8             var_1c:4.d = ebx_3
+1000a2db             var_8_1.b = 2
+1000a2db             
+1000a2e1             if (edi_2 != 0)
+1000a2e5                 bool cond:2_1 = edi_2[1] != 1
+1000a2e5                 edi_2[1]
+1000a2e5                 edi_2[1] -= 1
+1000a2e5                 
+1000a2ea                 if (not(cond:2_1))
+1000a2f0                     (**edi_2)()
+1000a2f7                     bool cond:5_1 = edi_2[2] != 1
+1000a2f7                     edi_2[2]
+1000a2f7                     edi_2[2] -= 1
+1000a2f7                     
+1000a2fc                     if (not(cond:5_1))
+1000a302                         (*(*edi_2 + 4))()
+1000a302                     
+1000a308                     ecx_7 = var_20_1
+1000a308             
+1000a30e             var_8_1.b = 0
+1000a30e             
+1000a315             if (*(ecx_7 + 0x1c) == arg2)
+1000a317                 int32_t eax_14 = *(ecx_7 + 0x18)
+1000a317                 
+1000a31d                 if (eax_14 == 1)
+1000a3af                     opdbg_log("QCFlashAgent::onDeviceArrival", 0x186, 
+1000a3af                         "[QCFlashAgent]onDeviceArrival kStateRunning")
+1000a3af                     
+1000a3be                     if (*(var_20_1 + 0x304d9c) != 0)
+1000a3c5                         void var_58
+1000a3c5                         void* var_2c_2 = &var_58
+1000a3cd                         sub_10001a60(&var_58, &data_1006d0e0)
+1000a3d5                         var_8_1.b = 3
+1000a3db                         char const* const var_74_1 = "reboot_ok"
+1000a3e0                         void var_70
+1000a3e0                         sub_10001a60(&var_70, "reboot_ok")
+1000a3e5                         int32_t var_74_2 = 1
+1000a3e9                         var_8_1.b = 0
+1000a3ed                         sub_10024c50(var_20_1, 1)
+1000a3ed                     
+1000a3fc                     ReleaseSemaphore(*(var_20_1 + 0x3062c4), 1, nullptr)
+1000a3fc                     esp_1 = &var_40
+1000a402                     result_1 = 0
+1000a407                     goto label_1000a553
+1000a407                 
+1000a32c                 if (eax_14 == 3 || eax_14 == 2 || eax_14 == 4)
+1000a36e                     var_20_1.b = 0
+1000a372                     int32_t var_44_5 = 0
+1000a375                     void* edi_3 = *this
+1000a37b                     operator new[](this, *(edi_3 + 0x5c), &i[2], i)
+1000a380                     void* edx_3 = *(edi_3 + 0x5c)
+1000a386                     int32_t var_44_6 = ecx_6
+1000a38c                     void* var_48_6 = edx_3 - 8
+1000a38d                     Concurrency::details::Etw::Etw(edx_3 - 8, edx_3)
+1000a395                     *(edi_3 + 0x5c) -= 8
+1000a399                     break
+1000a399             
+1000a331             i = &i[2]
+1000a339         while (i != *(*this + 0x5c))
+1000a339     
+1000a33f     if (ecx_6 s< 0x40)
+1000a418         void var_30
+1000a418         ___dyn_tls_init@12(&var_1c, sub_1000b560(&var_30))
+1000a418         int32_t* esp_2 = &var_40
+1000a41d         var_8_1.b = 4
+1000a41d         
+1000a429         if (ecx_6 != 0)
+1000a42d             bool cond:1_1 = *(ecx_6 + 4) != 1
+1000a42d             *(ecx_6 + 4)
+1000a42d             *(ecx_6 + 4) -= 1
+1000a42d             
+1000a432             if (not(cond:1_1))
+1000a438                 (**ecx_6)()
+1000a438                 esp_2 = &var_3c
+1000a43c                 bool cond:3_1 = *(ecx_6 + 8) != 1
+1000a43c                 *(ecx_6 + 8)
+1000a43c                 *(ecx_6 + 8) -= 1
+1000a43c                 
+1000a441                 if (not(cond:3_1))
+1000a447                     (*(*ecx_6 + 4))()
+1000a447         
+1000a450         *(esp_2 - 4) = arg2
+1000a451         var_8_1.b = 0
+1000a455         QCFlashAgent::InitDeviceData(this)
+1000a45a         void* esi_4 = var_1c.d
+1000a45d         *(esp_2 - 4) = 0x146c
+1000a462         *(esp_2 - 8) = 0
+1000a464         struct _oplus_device** eax_23 = *(esi_4 + 0x24)
+1000a467         *(esi_4 + 0x1c) = arg2
+1000a46a         *eax_23 = arg2
+1000a46f         **(esi_4 + 0x28) = arg2
+1000a474         **(esi_4 + 0x2c) = arg2
+1000a47c         *(esp_2 - 0xc) = esi_4 + 0x304e34
+1000a47d         *(esi_4 + 0x304e28) = 1
+1000a487         *(esi_4 + 0x304e2c) = 0
+1000a491         *(esi_4 + 0x304e30) = 0
+1000a49b         *(esi_4 + 0x3062a0) = 0
+1000a4a5         memset()
+1000a4aa         char* ecx_20 = arg2 + 0x444
+1000a4b9         void* esi_6 = esi_4 + 0x304e34 - ecx_20
+1000a4cb         char i_1
+1000a4cb         
+1000a4cb         do
+1000a4c0             i_1 = *ecx_20
+1000a4c2             ecx_20 = &ecx_20[1]
+1000a4c5             *(esi_6 + ecx_20 - 1) = i_1
+1000a4cb         while (i_1 != 0)
+1000a4d5         *(esp_2 - 0xc) = &var_1c
+1000a4d6         Concurrency::details::_SyncOriginator<uint32_t>::~_SyncOriginator<uint32_t>(esp_2 - 8)
+1000a4d6         
+1000a4e7         if (QCFlashAgent::initWorker(this) == 0)
+1000a50f             *(esp_2 - 0x10) = &var_1c
+1000a510             *(esp_2 - 0x14) = esp_2 - 0xc
+1000a511             sub_1000b600(esp_2 - 0xc)
+1000a516             void* esi_7 = var_1c.d
+1000a51b             int32_t ecx_25 = sub_1000d740(esi_7)
+1000a51b             esp_1 = esp_2 - 4
+1000a520             *(esi_7 + 0x18) = 1
+1000a527             void* esi_8 = *this
+1000a527             
+1000a52f             if (*(esi_8 + 0x5c) == *(esi_8 + 0x60))
+1000a531                 *(esp_1 - 4) = ecx_25
+1000a535                 sub_1000b890(esi_8 + 0x58)
+1000a535             
+1000a53a             int32_t ecx_27 = *(esi_8 + 0x5c)
+1000a53a             
+1000a53f             if (ecx_27 != 0)
+1000a544                 *(esp_1 - 4) = &var_1c
+1000a545                 Concurrency::details::_SyncOriginator<uint32_t>::~_SyncOriginator<uint32_t>(ecx_27)
+1000a545             
+1000a54a             *(esi_8 + 0x5c) += 8
+1000a54e             result_1 = 0
+1000a4e7         else
+1000a4ee             *(esp_2 - 8) = "[QCFlashAgent]onDeviceArrival initWorker is fail."
+1000a4f3             *(esp_2 - 0xc) = 0x1a5
+1000a4f8             *(esp_2 - 0x10) = "QCFlashAgent::onDeviceArrival"
+1000a4fd             opdbg_log()
+1000a4ff             esp_1 = esp_2 - 4
+1000a502             result_1 = 0xffffffff
+1000a502         
+1000a550         ebx_3 = var_1c:4.d
+1000a33f     else
+1000a359         opdbg_log("QCFlashAgent::onDeviceArrival", 0x199, 
+1000a359             "[QCFlashAgent]onDeviceArrival kFlashWorkerCountMax")
+1000a35b         result_1 = 0xffffffff
+1000a35e         esp_1 = &var_40
+1000a35e     
+1000a553 label_1000a553:
+1000a553     int32_t var_8_2 = 5
+1000a553     
+1000a55c     if (ebx_3 != 0)
+1000a560         bool cond:4_1 = ebx_3[1] != 1
+1000a560         ebx_3[1]
+1000a560         ebx_3[1] -= 1
+1000a560         
+1000a565         if (not(cond:4_1))
+1000a56b             (**ebx_3)()
+1000a56d             int32_t edi_4 = ebx_3[2]
+1000a56d             ebx_3[2] -= 1
+1000a56d             
+1000a573             if (edi_4 == 1)
+1000a579                 (*(*ebx_3 + 4))()
+1000a579     
+1000a57c     result = result_1
+1000a219 else
+1000a224     void* ecx_1
+1000a224     
+1000a224     if (*(arg2 + 0x444) != 0)
+1000a22a         char* ecx_2 = arg2 + 0x444
+1000a235         int32_t eax_4
+1000a235         
+1000a235         do
+1000a230             eax_4.b = *ecx_2
+1000a232             ecx_2 = &ecx_2[1]
+1000a235         while (eax_4.b != 0)
+1000a237         ecx_1 = ecx_2 - &ecx_2[1]
+1000a224     else
+1000a226         ecx_1 = nullptr
+1000a226     
+1000a247     if (sub_10002930(esi_1, arg2 + 0x444, nullptr, ecx_1) != 0xffffffff)
+1000a247         goto label_1000a276
+1000a247     
+1000a24d     if (esi_1[5] u>= 0x10)
+1000a24f         esi_1 = *esi_1
+1000a24f     
+1000a262     opdbg_log("QCFlashAgent::onDeviceArrival", 0x179, "[Warning][ODM]the current port", esi_1, 
+1000a262         arg2 + 0x444)
+1000a268     esp_1 = &var_40
+1000a26b     result = 0xffffffff
+1000a26b 
+1000a581 fsbase->NtTib.ExceptionList = ExceptionList
+1000a588 esp_1[1]
+1000a589 esp_1[2]
+1000a58a esp_1[3]
+1000a591 CookieCheckFunction(result)
+1000a599 return result

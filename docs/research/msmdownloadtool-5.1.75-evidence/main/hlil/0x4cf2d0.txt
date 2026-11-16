@@ -1,0 +1,241 @@
+004cf2d0 int32_t ebp
+004cf2d0 int32_t var_4 = ebp
+004cf2d3 int32_t var_8 = 0xffffffff
+004cf2d5 int32_t (* var_c)(void* arg1) = sub_6dc2c9
+004cf2e0 TEB* fsbase
+004cf2e0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004cf2ec int32_t eax_2 = __security_cookie ^ &var_4
+004cf2ee int32_t var_14 = eax_2
+004cf2f1 int32_t esi
+004cf2f1 int32_t var_fc = esi
+004cf2f2 int32_t edi
+004cf2f2 int32_t var_100 = edi
+004cf2f3 int32_t var_104 = eax_2
+004cf2f7 fsbase->NtTib.ExceptionList = &ExceptionList
+004cf2ff int32_t ecx
+004cf2ff int32_t var_ac = ecx
+004cf314 int32_t* var_b0 = arg1
+004cf31a int32_t var_d4 = arg2
+004cf320 void var_d0
+004cf320 sub_4d0ad0(&var_d0)
+004cf328 int32_t var_8_1 = 0
+004cf335 void var_f4
+004cf335 sub_4d0ad0(&var_f4)
+004cf33a int32_t var_5c = 0xf
+004cf341 int32_t var_60 = 0
+004cf348 char var_70 = 0
+004cf34c int32_t var_74 = 0xf
+004cf353 int32_t var_78 = 0
+004cf35a char var_88 = 0
+004cf361 var_8_1.b = 3
+004cf36a char var_28
+004cf36a __builtin_memset(&var_28, 0, 0x11)
+004cf373 *(*arg1 + 0x16c) = 1
+004cf37f *(*arg1 + 0x168) = 4
+004cf38f *arg1
+004cf391 char* var_108 = &var_88
+004cf392 int32_t result_2
+004cf392 void* ebp_1
+004cf392 void* esi_2
+004cf392 result_2, ebp_1, esi_2 = sub_4d4680()
+004cf397 int32_t result = result_2
+004cf397 
+004cf39c if (result != 1)
+004cf3a2     int32_t* eax_6 = *(ebp_1 - 0xac)
+004cf3ab     void* var_10c_1 = 5
+004cf3ad     int32_t* var_110_1 = "token"
+004cf3b2     *(ebp_1 - 0x40) = 0xf
+004cf3b9     void* eax_7 = *eax_6
+004cf3bb     *(ebp_1 - 0x44) = 0
+004cf3c2     *(ebp_1 - 0x54) = 0
+004cf3c6     int128_t xmm0_1 = *(eax_7 + 0x194)
+004cf3ce     *(ebp_1 - 0x14) = 0
+004cf3d2     *(ebp_1 - 0x24) = xmm0_1
+004cf3d7     sub_412e10(ebp_1 - 0x54, var_110_1, var_10c_1)
+004cf3dc     void* var_10c_2 = 0xffffffff
+004cf3de     *(ebp_1 - 4) = 4
+004cf3e8     int32_t var_110_2 = 0
+004cf3ee     *(ebp_1 - 0x28) = 0xf
+004cf3f5     *(ebp_1 - 0x2c) = 0
+004cf3fc     *(ebp_1 - 0x3c) = 0
+004cf400     sub_412b40(ebp_1 - 0x3c, ebp_1 - 0x84, var_110_2, var_10c_2)
+004cf405     *(ebp_1 - 4) = 5
+004cf413     int32_t* eax_10 = **(ebp_1 - 0xcc)
+004cf415     *(ebp_1 - 0xa0) = eax_10
+004cf41f     int32_t* eax_11 = sub_4d11a0(eax_10, eax_10[1], ebp_1 - 0x54)
+004cf424     int32_t edx_1 = *(ebp_1 - 0xc8)
+004cf424     
+004cf436     if (0x4924923 - edx_1 u< 1)
+004cf43d         sub_6c67bc("list<T> too long")
+004cf43d         noreturn
+004cf43d     
+004cf442     void* eax_12 = *(ebp_1 - 0xa0)
+004cf44f     *(ebp_1 - 0xc8) = edx_1 + 1
+004cf455     *(eax_12 + 4) = eax_11
+004cf45b     *eax_11[1] = eax_11
+004cf463     void** eax_15 = **(ebp_1 - 0xcc)
+004cf471     char* ecx_9 = sub_4d0e40(ebp_1 - 0xcc, ebp_1 - 0xa4, &eax_15[2], eax_15)
+004cf476     *(ebp_1 - 4) = 3
+004cf476     
+004cf47e     if (*(ebp_1 - 0x28) u>= 0x10)
+004cf483         ecx_9, ebp_1 = j_sub_688543(*(ebp_1 - 0x3c))
+004cf483     
+004cf48b     bool cond:1_1 = *(ebp_1 - 0x40) u< 0x10
+004cf48f     *(ebp_1 - 0x28) = 0xf
+004cf496     *(ebp_1 - 0x2c) = 0
+004cf49d     *(ebp_1 - 0x3c) = 0
+004cf49d     
+004cf4a1     if (not(cond:1_1))
+004cf4a6         ecx_9, ebp_1 = j_sub_688543(*(ebp_1 - 0x54))
+004cf4a6     
+004cf4b1     void* var_10c_8 = ebp_1 - 0x24
+004cf4b6     char* eax_19 = sub_4d0da0(ebp_1 - 0x54, ecx_9)
+004cf4bb     *(ebp_1 - 4) = 6
+004cf4c6     int32_t* edi_3 = **(ebp_1 - 0xcc)
+004cf4cc     int32_t* eax_20 = sub_4d11a0(edi_3, edi_3[1], eax_19)
+004cf4d1     int32_t ecx_12 = *(ebp_1 - 0xc8)
+004cf4d1     
+004cf4e3     if (0x4924923 - ecx_12 u< 1)
+004cf4ea         sub_6c67bc("list<T> too long")
+004cf4ea         noreturn
+004cf4ea     
+004cf4f0     *(ebp_1 - 0xc8) = ecx_12 + 1
+004cf4fc     edi_3[1] = eax_20
+004cf502     *eax_20[1] = eax_20
+004cf50a     void** eax_24 = **(ebp_1 - 0xcc)
+004cf518     sub_4d0e40(ebp_1 - 0xcc, ebp_1 - 0xa4, &eax_24[2], eax_24)
+004cf51d     *(ebp_1 - 4) = 3
+004cf51d     
+004cf525     if (*(ebp_1 - 0x28) u>= 0x10)
+004cf52a         ebp_1 = j_sub_688543(*(ebp_1 - 0x3c))
+004cf52a     
+004cf532     bool cond:2_1 = *(ebp_1 - 0x40) u< 0x10
+004cf536     *(ebp_1 - 0x28) = 0xf
+004cf53d     *(ebp_1 - 0x2c) = 0
+004cf544     *(ebp_1 - 0x3c) = 0
+004cf544     
+004cf548     if (not(cond:2_1))
+004cf54d         ebp_1 = j_sub_688543(*(ebp_1 - 0x54))
+004cf54d     
+004cf55c     int32_t var_10c_14 = 0xf
+004cf563     int32_t var_110_8 = 0
+004cf56f     char var_120 = 0
+004cf572     sub_412e10(&var_120, "setswprojmodel", 0xe)
+004cf590     result = sub_4cd210(esi_2, ebp_1 - 0xcc, ebp_1 - 0xf0, ebp_1 - 0x6c, var_120)
+004cf590     
+004cf594     if (result == 0)
+004cf5c3         void* eax_33 = ebp_1 - 0x6c
+004cf5c3         
+004cf5c6         if (*(ebp_1 - 0x58) u>= 0x10)
+004cf5c6             eax_33 = *(ebp_1 - 0x6c)
+004cf5c6         
+004cf5ca         void* var_10c_15 = eax_33
+004cf5cf         int32_t var_110_10 = *(esi_2 + 0x10) + 1
+004cf5d0         char const* const var_114_7 = "[%d] Log: %s"
+004cf5d5         int32_t var_118_2 = 4
+004cf5dc         ebp_1 = sub_4d6270(&data_7e09e8)
+004cf5ef         sub_4129b0(ebp_1 - 0x9c, "value")
+004cf608         sub_42bc00(ebp_1 - 0xf0, ebp_1 - 0xa0, ebp_1 - 0x9c)
+004cf608         
+004cf614         if (*(ebp_1 - 0x88) u>= 0x10)
+004cf61c             ebp_1 = j_sub_688543(*(ebp_1 - 0x9c))
+004cf61c         
+004cf624         void* esi_3 = *(ebp_1 - 0xa0)
+004cf62a         *(ebp_1 - 0x88) = 0xf
+004cf634         *(ebp_1 - 0x8c) = 0
+004cf63e         *(ebp_1 - 0x9c) = 0
+004cf63e         
+004cf64b         if (esi_3 == *(ebp_1 - 0xf0))
+004cf769             result = 1
+004cf76e             char const* const var_10c_28 = "CFirehose::SendSoftwareBasedProjectModelIDCommand"
+004cf777             int32_t var_110_15 = *(*(ebp_1 - 0xa8) + 0x10) + 1
+004cf778             char const* const var_114_9 = "[%d] [Firehose][%s] Can't find response value\n"
+004cf77d             int32_t var_118_4 = 4
+004cf784             ebp_1 = sub_4d6270(&data_7e09e8)
+004cf64b         else if (sub_42b730(esi_3 + 0x20, "ACK") != 0)
+004cf72c             void** esi_5 = esi_3 + 0x20
+004cf72f             result = 1
+004cf72f             
+004cf738             if (esi_5[5] u>= 0x10)
+004cf73a                 esi_5 = *esi_5
+004cf73a             
+004cf742             void** var_10c_27 = esi_5
+004cf743             char const* const var_110_14 = "CFirehose::SendSoftwareBasedProjectModelIDCommand"
+004cf74c             int32_t var_114_8 = *(*(ebp_1 - 0xa8) + 0x10) + 1
+004cf74d             char const* const var_118_3 = "[%d] [Firehose][%s] Resp value is not ACK (%s)\n"
+004cf752             int32_t var_11c_3 = 4
+004cf754             var_120.d = &data_7e09e8
+004cf759             ebp_1 = sub_4d6270(var_120)
+004cf660         else
+004cf671             result = 0
+004cf673             sub_4129b0(ebp_1 - 0x9c, "model_check")
+004cf68c             sub_42bc00(ebp_1 - 0xf0, ebp_1 - 0xa0, ebp_1 - 0x9c)
+004cf697             sub_412a10(ebp_1 - 0x9c)
+004cf6a2             void** eax_42 = *(ebp_1 - 0xa0) + 0x20
+004cf6a2             
+004cf6a9             if (eax_42[5] u>= 0x10)
+004cf6ab                 eax_42 = *eax_42
+004cf6ab             
+004cf6b6             int32_t var_10c_23 = sub_4129b0(ebp_1 - 0x3c, eax_42)
+004cf6ba             *(ebp_1 - 4) = 7
+004cf6be             int32_t eax_43 = sub_4b8da0(ebp_1 - 0x3c)
+004cf6c6             *(ebp_1 - 4) = 3
+004cf6cf             sub_412a10(ebp_1 - 0x3c)
+004cf6da             char* var_10c_24 = "device_proj_name"
+004cf6e1             *(**(ebp_1 - 0xac) + 0x16c) = eax_43
+004cf6ea             sub_4129b0(ebp_1 - 0x3c, var_10c_24)
+004cf700             sub_42bc00(ebp_1 - 0xf0, ebp_1 - 0xa0, ebp_1 - 0x3c)
+004cf708             sub_412a10(ebp_1 - 0x3c)
+004cf713             void** eax_48 = *(ebp_1 - 0xa0) + 0x20
+004cf713             
+004cf71a             if (eax_48[5] u>= 0x10)
+004cf71c                 eax_48 = *eax_48
+004cf71c             
+004cf725             sub_413fd0(*(ebp_1 - 0xd0), eax_48, eax_48)
+004cf594     else
+004cf599         int32_t result_1 = result
+004cf59a         char const* const var_110_9 = "setswprojmodel"
+004cf59f         char const* const var_114_6 = "CFirehose::SendSoftwareBasedProjectModelIDCommand"
+004cf5a5         int32_t var_118_1 = *(esi_2 + 0x10) + 1
+004cf5a6         char const* const var_11c_1 = "[%d] [Firehose] %s: Failed to send %s. (%d).\n"
+004cf5ab         var_120.d = 4
+004cf5b2         ebp_1 = sub_4d6270(&data_7e09e8)
+004cf5b2 
+004cf790 if (*(ebp_1 - 0x70) u>= 0x10)
+004cf798     ebp_1 = j_sub_688543(*(ebp_1 - 0x84))
+004cf798 
+004cf7a0 bool cond:0 = *(ebp_1 - 0x58) u< 0x10
+004cf7a4 *(ebp_1 - 0x70) = 0xf
+004cf7ab *(ebp_1 - 0x74) = 0
+004cf7b2 *(ebp_1 - 0x84) = 0
+004cf7b2 
+004cf7b9 if (not(cond:0))
+004cf7be     ebp_1 = j_sub_688543(*(ebp_1 - 0x6c))
+004cf7be 
+004cf7c6 int32_t eax_55 = *(ebp_1 - 0xe8)
+004cf7cc *(ebp_1 - 0x58) = 0xf
+004cf7d3 *(ebp_1 - 0x5c) = 0
+004cf7da *(ebp_1 - 0x6c) = 0
+004cf7da 
+004cf7e0 if (eax_55 != 0)
+004cf7e3     ebp_1 = j_sub_688543(eax_55)
+004cf7eb     *(ebp_1 - 0xe8) = 0
+004cf7f5     *(ebp_1 - 0xe4) = 0
+004cf7ff     *(ebp_1 - 0xe0) = 0
+004cf7ff 
+004cf80f sub_4d0ba0(ebp_1 - 0xf0)
+004cf81a void* ebp_2 = j_sub_688543(*(ebp_1 - 0xf0))
+004cf81f int32_t eax_56 = *(ebp_2 - 0xc4)
+004cf81f 
+004cf82a if (eax_56 != 0)
+004cf82d     ebp_2 = j_sub_688543(eax_56)
+004cf835     *(ebp_2 - 0xc4) = 0
+004cf83f     *(ebp_2 - 0xc0) = 0
+004cf849     *(ebp_2 - 0xbc) = 0
+004cf849 
+004cf859 sub_4d0ba0(ebp_2 - 0xcc)
+004cf864 int32_t* ebp_3 = j_sub_688543(*(ebp_2 - 0xcc))
+004cf871 fsbase->NtTib.ExceptionList = ebp_3[-3]
+004cf880 sub_687de2(ebp_3[-4] ^ ebp_3)
+004cf887 *ebp_3
+004cf888 return result

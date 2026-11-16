@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+  <DefaultFlashConfig>
+    <!-- Mode: 刷机模式，SMT=空板刷机模式，Upgrade=升级刷机模式，默认为升级模式刷机(Upgrade) -->
+    <!-- UpdateFW: 是否需要刷机过程中升级存储固件，默认值：false，SMT模式下默认为TRUE -->
+    <!-- UpdateOcdt: 刷机过程中覆写ocdt数据，同时取消项目编号防呆检查，仅内网刷机可选 -->
+    <!-- Region: 国家码（研发模式登录时强制按指定的国家码刷机，生产模式登录时，如果手机里读不到国家码才强制应用），仅内网刷机有效 -->
+    <!-- ClearUserData: 刷机过程中清除userdata和metadata，默认清除userdata分区数据 -->
+    <!-- UpdateEfuse: 刷机时更新设备的efuse状态，默认值：false -->
+    <!-- SkipGuide: 刷机时写入跳过开机向导的标志位，默认值：false -->
+    <!-- EnableUARTLog: 刷机时写入开启UART日志的标志位，默认值：NONE，取值：USB、UART、NONE -->
+    <!-- KeepFastboot: 刷机时保留fastboot权限，默认值：true -->
+    <!-- Reboot: 刷机完成后自动重启，默认值：true -->
+    <!-- EnableAutoEDL: 是否启用autoedl，默认值：false -->
+    <PackConfig name="dev">
+      <Mode>Upgrade</Mode>
+      <UpdateFW>false</UpdateFW>
+      <UpdateOcdt>false</UpdateOcdt>
+      <Region>00000000</Region>
+      <ClearUserData>true</ClearUserData>
+      <UpdateEfuse>false</UpdateEfuse>
+      <SkipGuide>false</SkipGuide>
+      <EnableUARTLog>NONE</EnableUARTLog>
+      <KeepFastboot>true</KeepFastboot>
+      <Reboot>true</Reboot>
+      <EnableAutoEDL>flase</EnableAutoEDL>
+    </PackConfig>
+    <PackConfig name="factory">
+      <Mode>Upgrade</Mode>
+      <UpdateFW>false</UpdateFW>
+      <UpdateOcdt>false</UpdateOcdt>
+      <Region>00000000</Region>
+      <ClearUserData>true</ClearUserData>
+      <UpdateEfuse>false</UpdateEfuse>
+      <SkipGuide>false</SkipGuide>
+      <EnableUARTLog>NONE</EnableUARTLog>
+      <KeepFastboot>true</KeepFastboot>
+      <Reboot>true</Reboot>
+      <EnableAutoEDL>flase</EnableAutoEDL>
+    </PackConfig>
+    <PackConfig name="aftersale">
+      <Mode>Upgrade</Mode>
+      <UpdateFW>false</UpdateFW>
+      <UpdateOcdt>false</UpdateOcdt>
+      <Region>00000000</Region>
+      <ClearUserData>true</ClearUserData>
+      <UpdateEfuse>false</UpdateEfuse>
+      <SkipGuide>false</SkipGuide>
+      <EnableUARTLog>NONE</EnableUARTLog>
+      <KeepFastboot>true</KeepFastboot>
+      <Reboot>true</Reboot>
+      <EnableAutoEDL>flase</EnableAutoEDL>
+    </PackConfig>
+  </DefaultFlashConfig>
+  <!-- 一加ofp包刷机时机型限制列表 -->
+  <OnePlusFlashLimit>
+    <OfpPackageModelLimit>19815, 19816,19825 , 19826 ,20801,20854,20851,20828,19805,19811,19821,20851,20852,20853,20857,20858,20859,2085A,19855,20809,19823,19837,20813,20814,20818,2083C</OfpPackageModelLimit>
+  </OnePlusFlashLimit>
+  <!-- 单镜像刷机配置 -->
+  <SingleImageFlashConfig>
+    <!-- 芯片支持的平台系列 -->
+    <SupportChipPlatform>
+      <MTK>MT6983, MT6895, MT6789, MT6985, MT6835, MT6989,MT6897,MT6878,MT6991</MTK>
+      <QCOM>sm8750, sm7550, sm8650, sm8550, sm8475, sm8450, sm8350, sm8250, sm7475, sm7450, sm7325, sm7225, sm6375, sm6225, sm7435, sm6450, sm7675, sm8635</QCOM>
+    </SupportChipPlatform>
+    <!-- 支持的品牌 -->
+    <SupportBrand>
+      <Brand>oppo, oneplus</Brand>
+    </SupportBrand>
+  </SingleImageFlashConfig>
+</Config>

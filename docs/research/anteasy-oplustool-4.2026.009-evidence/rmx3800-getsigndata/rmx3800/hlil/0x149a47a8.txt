@@ -1,0 +1,57 @@
+149a47c4 int64_t* var_18 = nullptr
+149a47c8 uint64_t var_38 = 0
+149a47d0 int32_t x21
+149a47d0 
+149a47d0 if (sub_149a8c54() == 0)
+149a47f8     sub_149a4e88(&var_18)
+149a4810     int64_t* entry_x3
+149a4810     int64_t entry_x4
+149a4810     int64_t entry_x5
+149a4810     int64_t entry_x6
+149a4810     int64_t entry_x7
+149a4810     uint64_t x24
+149a4810     sub_149a5c34(4, "VIP is enabled, receiving the partition info of size %llu", var_18, entry_x3, 
+149a4810         entry_x4, entry_x5, entry_x6, entry_x7, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10, 
+149a4810         x24)
+149a4820     int64_t __saved_fp
+149a4820     int32_t x0_5
+149a4820     int64_t x4
+149a4820     int64_t x5
+149a4820     int64_t x6
+149a4820     int64_t x7
+149a4820     int128_t v0
+149a4820     int128_t v1
+149a4820     int128_t v2
+149a4820     int128_t v3
+149a4820     int128_t v4
+149a4820     int128_t v5
+149a4820     int128_t v6
+149a4820     int128_t v7
+149a4820     x0_5, x4, x5, x6, x7, v0, v1, v2, v3, v4, v5, v6, v7 =
+149a4820         sub_149a49a0(&data_8025e000, var_18, &var_38, &__saved_fp)
+149a4824     uint64_t x2_3 = var_38
+149a4824     
+149a4828     if (x0_5 == 0)
+149a4854         if (sub_149a8c9c(&data_8025e000, x2_3.d, v0, v1, v2, v3, v4, v5, v6, v7) == 0)
+149a4884             sub_149a0ca4(&data_8025e000, var_38.d)
+149a488c             sub_149a474c(1)
+149a4890             x21 = 0
+149a4894             goto label_149a47d8
+149a4894         
+149a4858         x21 = 7
+149a4860         sub_149a474c(0)
+149a4828     else
+149a483c         sub_149a5c34(2, "Failed to receive signed hash table %llu %llu", x2_3, var_18, x4, x5, x6, 
+149a483c             x7, v0, v1, v2, v3, v4, v5, v6, v7, x24)
+149a4840         x21 = 6
+149a4860         sub_149a474c(0)
+149a47d0 else
+149a47d4     x21 = 7
+149a47d8 label_149a47d8:
+149a47d8     
+149a47dc     if (sub_149a8c54() == 0)
+149a4860         sub_149a474c(0)
+149a47dc     else
+149a47ec         x21 = sub_149a49e4(arg1, arg2)
+149a47ec 
+149a4878 return zx.q(x21)

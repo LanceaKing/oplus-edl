@@ -1,0 +1,53 @@
+0042fa00 int32_t ebp
+0042fa00 int32_t var_4 = ebp
+0042fa03 int32_t var_8 = 0xffffffff
+0042fa05 int32_t (* var_c)(void* arg1) = sub_6ce490
+0042fa10 TEB* fsbase
+0042fa10 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0042fa14 int32_t ebx
+0042fa14 int32_t var_1c = ebx
+0042fa15 int32_t esi
+0042fa15 int32_t var_20 = esi
+0042fa16 int32_t edi
+0042fa16 int32_t var_24 = edi
+0042fa22 fsbase->NtTib.ExceptionList = &ExceptionList
+0042fa4e int32_t var_14 = (*(data_7bfb90 + 0xc))(__security_cookie ^ &var_4) + 0x10
+0042fa51 int32_t var_8_1 = 0
+0042fa7b void* edi_1 = (*(data_7bfb90 + 0xc))() + 0x10
+0042fa7e void* var_18 = edi_1
+0042fa83 var_8_1.b = 1
+0042fa87 sub_5748e5(arg1)
+0042fa93 void** eax_7 = sub_5735d5(arg1, 0x420)
+0042faa2 int32_t ecx_3
+0042faa2 
+0042faa2 if (arg1 != 0xffffff40)
+0042faa8     ecx_3 = arg1[0x31]
+0042faa2 else
+0042faa4     ecx_3 = 0
+0042faa4 
+0042faab int32_t var_8_4 = 1
+0042faae ExceptionList = 0x30
+0042fab3 0x3b8730(eax_7[8], ExceptionList, ecx_3, var_8_4)
+0042fab9 wchar16 const* const var_18_1 = u"Please copy following license token and paste to <a href="http:"
+0042fab9 "//10.8.0.92:51000/license/download">http://10.8.0.92:51000/license/download<"
+0042facc int32_t* ebp_1
+0042facc void* esi_2
+0042facc ebp_1, esi_2 = sub_57390c(sub_5735d5(arg1, 0x420))
+0042fad3 sub_42fb70(arg1, esi_2, edi_1)
+0042fadb ebp_1[-1].b = 0
+0042fae7 int32_t eax_10 = *(edi_1 - 4)
+0042fae7 *(edi_1 - 4) -= 1
+0042fae7 
+0042faee if (eax_10 - 1 s<= 0)
+0042faf5     (*(**(edi_1 - 0x10) + 4))(edi_1 - 0x10)
+0042faf5 
+0042fafb ebp_1[-1] = 0xffffffff
+0042fb05 int32_t edi_2 = *(esi_2 - 4)
+0042fb05 *(esi_2 - 4) -= 1
+0042fb05 
+0042fb0c if (edi_2 - 1 s<= 0)
+0042fb13     (*(**(esi_2 - 0x10) + 4))(esi_2 - 0x10)
+0042fb13 
+0042fb1e fsbase->NtTib.ExceptionList = ebp_1[-3]
+0042fb2b *ebp_1
+0042fb2c return 1

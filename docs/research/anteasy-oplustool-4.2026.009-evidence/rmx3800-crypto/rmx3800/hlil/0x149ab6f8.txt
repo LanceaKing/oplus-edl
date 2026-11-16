@@ -1,0 +1,127 @@
+149ab714 if (arg1 == 0)
+149ab720     while (true)
+149ab720         nop
+149ab720 
+149ab724 if (arg2 != 0)
+149ab730     bool c_2
+149ab730     
+149ab730     if (arg2 == 0xffffffef || arg2 u< 0xffffffef)
+149ab730         c_2 = arg1[7] u>= arg2
+149ab730     else
+149ab730         c_2 = false
+149ab730     
+149ab734     if (c_2)
+149ab740         int64_t x8_2 = *(arg1 + 0x30)
+149ab740         
+149ab744         if (x8_2 != 0)
+149ab748             sub_149abf18(x8_2)
+149ab748         
+149ab754         int16_t* x1 = *(arg1 + 8)
+149ab75c         void* x8_4 = &data_149dd5b0 + (zx.q(arg1[0x13].w) << 2)
+149ab760         int32_t x9_1 = *arg1
+149ab764         *(arg1 + 0x10) = x1
+149ab764         
+149ab774         if (x9_1 != *(x8_4 + 0x14))
+149ab780             while (true)
+149ab780                 nop
+149ab780         
+149ab784         if (arg1 == 0)
+149ab790             while (true)
+149ab790                 nop
+149ab790         
+149ab798         if (x1 == 0)
+149ab7a4             while (true)
+149ab7a4                 nop
+149ab7a4         
+149ab7ac         int64_t x23_1 = (zx.q(arg2) + 0xf) & 0x1fffffff8
+149ab7c8         uint32_t x8_8 = zx.d(x1[1]) ^ zx.d(*x1) ^ zx.d(x1[2]) ^ zx.d(x1[3])
+149ab7c8         
+149ab7d4         if ((zx.d(*(x1 + 3)) & 0xf) != 1)
+149ab7fc             if (x8_8 != zx.d(*(arg1 + 0x4a)))
+149ab808                 while (true)
+149ab808                     nop
+149ab7d4         else if (x8_8 != zx.d(arg1[0x12].w))
+149ab7ec             while (true)
+149ab7ec                 nop
+149ab7ec         
+149ab80c         uint64_t x22_1 = zx.q(arg1[6])
+149ab814         int16_t* x0_1
+149ab814         int16_t* x21_1
+149ab814         
+149ab814         while (true)
+149ab814             x0_1 = sub_149ab9ec(arg1, x1)
+149ab818             x1 = x0_1
+149ab81c             uint64_t temp0_1 = x22_1
+149ab81c             x22_1 -= 1
+149ab81c             
+149ab820             if (temp0_1 s< 1)
+149ab874                 break
+149ab874             
+149ab824             x21_1 = *(arg1 + 0x10)
+149ab824             
+149ab82c             if (*(x21_1 + 4) == 0)
+149ab838                 while (true)
+149ab838                     nop
+149ab838             
+149ab840             if (*(x1 + 4) == 0)
+149ab84c                 while (true)
+149ab84c                     nop
+149ab84c             
+149ab858             if ((zx.d(*(x21_1 + 3)) & 0xf) != 0)
+149ab85c                 uint64_t x8_12 = zx.q(*(x21_1 + 4))
+149ab85c                 
+149ab864                 if (x23_1 u<= x8_12)
+149ab878                     if (x8_12.d == 0)
+149ab884                         while (true)
+149ab884                             nop
+149ab884                         
+149ab888                         x8_12 = zx.q(*(x21_1 + 4))
+149ab888                     
+149ab88c                     uint64_t x9_6 = zx.q(x8_12.d)
+149ab88c                     
+149ab898                     if (x23_1 + 0x10 u<= zx.q(x8_12.d))
+149ab8a8                         int16_t* x22_2 = x21_1 + x23_1
+149ab8b4                         sub_149ab348(x22_2, x9_6.d - x23_1.d)
+149ab8cc                         *(x22_2 + 3) = (*(x21_1 + 3) & 0xf0) | (zx.d(*(x22_2 + 3)) & 0xf).b
+149ab8d4                         *(x21_1 + 4) = x23_1.d
+149ab8dc                         *(x21_1 + 3) &= 0xf
+149ab8ec                         arg1[6] += 1
+149ab900                         *x22_2 = sub_149abf20(zx.d(x22_2[1]), zx.d(x22_2[2]), zx.d(x22_2[3]), 
+149ab900                             zx.d(arg1[0x12].w))
+149ab904                         sub_149ab9b4(x22_2, arg1)
+149ab898                     else
+149ab89c                         void* x8_13 = x21_1 + x9_6
+149ab8a0                         *(x8_13 - 8) = 0
+149ab8a0                         *(x8_13 - 4) = 0
+149ab8a0                     
+149ab924                     *(x21_1 + 3) &= 0xf0
+149ab928                     x21_1[1].b = (*(x21_1 + 4)).b - arg2.b - 8
+149ab92c                     x0_1 = sub_149ab9ec(arg1, x21_1)
+149ab934                     *(arg1 + 0x10) = x0_1
+149ab938                     int32_t x8_25 = arg1[8] + arg2
+149ab940                     arg1[8] = x8_25
+149ab940                     
+149ab944                     if (arg1[7] u< x8_25)
+149ab950                         while (true)
+149ab950                             nop
+149ab950                     
+149ab95c                     if (x8_25 u> arg1[9])
+149ab960                         arg1[9] = x8_25
+149ab960                     
+149ab96c                     if (arg1[0xa] u< arg2)
+149ab970                         arg1[0xa] = arg2
+149ab970                     
+149ab98c                     *x21_1 = sub_149abf20(zx.d(x21_1[1]), zx.d(x21_1[2]), zx.d(x21_1[3]), 
+149ab98c                         zx.d(*(arg1 + 0x4a)))
+149ab898                     break
+149ab898             
+149ab868             *(arg1 + 0x10) = x1
+149ab868         
+149ab990         int64_t x8_29 = *(arg1 + 0x38)
+149ab990         
+149ab994         if (x8_29 != 0)
+149ab998             sub_149abf18(x8_29, x0_1, x21_1)
+149ab998         
+149ab9b0         return &x21_1[4]
+149ab9b0 
+149ab738 return nullptr

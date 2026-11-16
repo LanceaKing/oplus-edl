@@ -1,0 +1,171 @@
+004415c0 int32_t ebp
+004415c0 int32_t var_4 = ebp
+004415c1 int32_t* ebp_1 = &var_4
+004415c6 int32_t var_c = 0xffffffff
+004415c8 int32_t (* var_10)(void* arg1) = sub_6d034b
+004415d3 TEB* fsbase
+004415d3 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004415df void var_9c
+004415df int32_t eax_2 = __security_cookie ^ &var_9c
+004415f2 int32_t __saved_edi
+004415f2 int32_t var_ac = __security_cookie ^ &__saved_edi
+004415fa fsbase->NtTib.ExceptionList = &ExceptionList
+00441607 int32_t result_1 = 1
+0044160f int32_t result
+0044160f 
+0044160f if (data_7df7c8 == 0)
+004418e1     result = result_1
+0044160f else
+0044161b     char const* const var_b0_10
+0044161b     
+0044161b     if (data_7df7c4 == 1)
+004418ec         if (*(arg1 + 0x401a0) == 0)
+004418ee             var_b0_10 = "MES Upload unchecked. Not sending sw version to MES\n"
+004418f3             goto label_4418fa
+004418f3         
+004418f5         char const* const var_b0_11 = "SMT station. No need to send sw version to MES\n"
+004418fa     label_4418fa:
+004418fa         int32_t var_b4_8 = 4
+00441901         ebp_1 = sub_4d6270(&data_7e09e8)
+00441909         result = 0
+0044161b     else
+00441628         if (*(arg1 + 0x401a0) == 0)
+004418ee             var_b0_10 = "MES Upload unchecked. Not sending sw version to MES\n"
+004418f3             goto label_4418fa
+004418f3         
+00441630         int32_t* eax_5 = sub_56c49b(0x10)
+00441630         
+0044163c         if (eax_5 != 0)
+00441642             eax_5[1] = 0
+00441649             eax_5[2] = 0
+00441650             eax_5[3] = 0
+00441657             *eax_5 = 0
+00441657             
+0044165f             if (arg2 != 0)
+00441663                 eax_5[1] = *arg2
+00441663             
+00441679             int32_t* eax_8
+00441679             char* ecx
+00441679             void* esi_1
+00441679             
+00441679             if (data_7e015c == 0)
+004416ab                 esi_1 = data_7e0004 + 1
+004416ac                 void* var_b0_2 = esi_1
+004416b2                 ecx = sub_56c4c8()
+004416b7                 eax_5[2] = ecx
+004416ba                 eax_8 = &data_7dfff4
+004416ba                 
+004416c6                 if (data_7e0008 u>= 0x10)
+004416c6                     eax_8 = data_7dfff4
+00441679             else
+00441681                 esi_1 = data_7e0170 + 1
+00441682                 void* var_b0_1 = esi_1
+00441688                 ecx = sub_56c4c8()
+0044168d                 eax_5[2] = ecx
+00441690                 eax_8 = &data_7e0160
+00441690                 
+0044169c                 if (data_7e0174 u>= 0x10)
+0044169c                     eax_8 = data_7e0160
+0044169c             
+004416d1             _memcpy_s(ecx, esi_1, eax_8, esi_1)
+004416df             void* esi_4 = data_7e0034 + 1
+004416e0             void* var_b0_4 = esi_4
+004416e1             char* eax_10 = sub_56c4c8()
+004416eb             eax_5[3] = eax_10
+004416ee             int32_t* eax_11 = &data_7e0024
+004416ee             
+004416fa             if (data_7e0038 u>= 0x10)
+004416fa                 eax_11 = data_7e0024
+004416fa             
+00441705             _memcpy_s(eax_10, esi_4, eax_11, esi_4)
+0044170f             int32_t eax_12 = sub_4332b0(eax_5)
+00441714             int32_t var_b0_6 = eax_5[2]
+00441719             int32_t eax_13 = arg2[0xb]
+0044171c             int32_t var_b4_3 = eax_5[3]
+0044171f             int32_t var_b8_3 = eax_5[1]
+0044171f             
+00441722             if (eax_12 == 0)
+00441742                 int32_t var_bc_4 = eax_13 + 1
+00441743                 char const* const var_c0_2 = "[OnUmVerifyPcbaUpgrade][%d] Send %lu: %s(%s) FAILED\n"
+00441748                 int32_t var_c4_2 = 4
+0044174f                 sub_4d6270(&data_7e09e8)
+00441778                 void** eax_20
+00441778                 int32_t ecx_3
+00441778                 eax_20, ecx_3 = PSGSI1::Close(&sub_41a8a0(data_7dfdb4 - 0x10)[4])
+00441780                 int32_t var_c_1 = 0
+00441780                 
+0044178f                 if (eax_20[5] u>= 0x10)
+00441791                     eax_20 = *eax_20
+00441791                 
+00441793                 void** var_b0_8 = eax_20
+00441799                 int32_t var_b4_5 = ecx_3
+004417b6                 void** eax_25
+004417b6                 int32_t ecx_4
+004417b6                 eax_25, ecx_4 = PSGSI1::Close(&sub_41a8a0(data_7dfdb8 - 0x10)[4])
+004417be                 var_c_1.b = 1
+004417be                 
+004417ca                 if (eax_25[5] u>= 0x10)
+004417cc                     eax_25 = *eax_25
+004417cc                 
+004417ce                 void** var_b4_7 = eax_25
+004417d4                 int32_t var_b8_5 = ecx_4
+004417f1                 void** eax_30
+004417f1                 int32_t ecx_5
+004417f1                 eax_30, ecx_5 = PSGSI1::Close(&sub_41a8a0(data_7dfdb0 - 0x10)[4])
+004417f9                 var_c_1.b = 2
+004417f9                 
+00441805                 if (eax_30[5] u>= 0x10)
+00441807                     eax_30 = *eax_30
+00441807                 
+00441809                 void** var_b8_7 = eax_30
+0044180f                 int32_t var_bc_6 = ecx_5
+0044182c                 void** eax_35
+0044182c                 int32_t ecx_6
+0044182c                 eax_35, ecx_6 = PSGSI1::Close(&sub_41a8a0(data_7dfdc8 - 0x10)[4])
+00441834                 var_c_1.b = 3
+00441834                 
+00441840                 if (eax_35[5] u>= 0x10)
+00441842                     eax_35 = *eax_35
+00441842                 
+00441844                 void** var_bc_8 = eax_35
+0044184a                 int32_t var_c0_4 = ecx_6
+00441867                 void** eax_40 = PSGSI1::Close(&sub_41a8a0(data_7dfdc4 - 0x10)[4])
+0044186f                 var_c_1.b = 4
+0044186f                 
+0044187b                 if (eax_40[5] u>= 0x10)
+0044187d                     eax_40 = *eax_40
+0044187d                 
+0044187f                 void** var_c0_6 = eax_40
+00441880                 char const* const var_c4_4 = "[OnUmVerifyPcbaUpgrade] MES_VerifyPcbaUpgrade failed:"
+00441880                 " IP(%s)\n MAC(%s)\n URL(%s)\n FACTORY(%s)\n MESSAGE(%s)\n"
+00441885                 int32_t var_c8_1 = 4
+0044188c                 sub_4d6270(&data_7e09e8)
+00441898                 void var_4c
+00441898                 sub_412a10(&var_4c)
+004418a1                 void var_94
+004418a1                 sub_412a10(&var_94)
+004418aa                 void var_7c
+004418aa                 sub_412a10(&var_7c)
+004418b3                 void var_64
+004418b3                 sub_412a10(&var_64)
+004418bc                 int32_t var_c_2 = 0xffffffff
+004418c7                 void var_34
+004418c7                 sub_412a10(&var_34)
+004418cc                 result_1 = 1
+00441722             else
+00441725                 int32_t var_bc_3 = eax_13 + 1
+00441726                 char const* const var_c0_1 =
+00441726                     "[OnUmVerifyPcbaUpgrade][%d] Send %lu: %s(%s) Success\n"
+0044172b                 int32_t var_c4_1 = 4
+00441732                 sub_4d6270(&data_7e09e8)
+0044173a                 result_1 = 0
+0044173a             
+004418d3             sub_4397e0(eax_5)
+004418d9             ebp_1 = j_sub_688543(eax_5)
+004418d9         
+004418e1         result = result_1
+004418e1 
+00441912 fsbase->NtTib.ExceptionList = ExceptionList
+00441926 sub_687de2(eax_2 ^ &var_9c)
+0044192d *ebp_1
+0044192e return result

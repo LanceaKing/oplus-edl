@@ -1,0 +1,256 @@
+00444450 int32_t __saved_ebp_2
+00444450 int32_t __saved_ebp_1 = __saved_ebp_2
+00444453 int32_t var_8 = 0xffffffff
+00444455 int32_t (* var_c)() = sub_64ea9c
+00444460 TEB* fsbase
+00444460 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00444471 int32_t ebx
+00444471 int32_t var_134 = ebx
+00444472 int32_t esi
+00444472 int32_t var_138 = esi
+00444473 int32_t edi
+00444473 int32_t var_13c = edi
+00444474 int32_t __saved_ebp
+00444474 int32_t var_140 = __security_cookie ^ &__saved_ebp
+00444478 fsbase->NtTib.ExceptionList = &ExceptionList
+00444486 int32_t var_d0 = 0xf
+00444490 int32_t var_d4 = 0
+0044449a char var_e4 = 0
+004444a1 int32_t var_b8 = 0xf
+004444ab int32_t var_bc = 0
+004444b5 char var_cc = 0
+004444bc int32_t var_a0 = 0xf
+004444c6 int32_t var_a4 = 0
+004444d0 char var_b4 = 0
+004444d7 int32_t var_8_1 = 0
+004444de int32_t* eax_3 = sub_4f2b78(var_140)
+004444e9 int32_t ecx
+004444e9 ecx.b = eax_3 != 0
+004444e9 
+004444ee if (ecx == 0)
+004444f5     sub_405ee0(0x80004005)
+004444f5     noreturn
+004444f5 
+00444501 void* esi_1 = (*(*eax_3 + 0xc))() + 0x10
+00444504 void* var_104 = esi_1
+0044450a var_8_1.b = 1
+0044450e int32_t* eax_6 = sub_4f2b78()
+00444519 int32_t ecx_2
+00444519 ecx_2.b = eax_6 != 0
+00444519 
+0044451e if (ecx_2 == 0)
+00444525     sub_405ee0(0x80004005)
+00444525     noreturn
+00444525 
+00444531 void* edi_1 = (*(*eax_6 + 0xc))() + 0x10
+00444534 void* var_12c = edi_1
+00444543 var_8_1.b = 2
+00444550 void var_100
+00444550 sub_4448f0(&var_100, **(arg2 + 0x34) + 0x10)
+0044455c int32_t* esp_1
+0044455c int32_t var_150
+0044455c int32_t var_108
+0044455c 
+0044455c if (var_a4 == 0)
+00444837     char const* const var_148_5
+00444837     
+00444837     if (*(arg1 + 0x20) == 0)
+00444840         var_148_5 = u"Can't find file %s"
+00444837     else
+00444839         var_148_5 = "~b\rN0R"
+00444839     
+00444846     sub_44d900(arg1 + 0x2b8, var_148_5, edi_1)
+00444862     uint32_t eax_38 = (zx.d((*(arg1 + 0x30)).b) | 0x100) << 0x10
+00444867     int32_t var_14c_6 = 0x178c
+0044486c     var_150 = *(arg1 + 0x34)
+0044486c     esp_1 = &var_150
+0044486f     0x3095d0(var_150, var_14c_6, eax_38, arg1 + 0x2b8)
+00444875     var_108 = 1
+0044455c else
+00444568     uint32_t eax_15 = zx.d((*(arg1 + 0x30)).b) << 0x10
+0044456b     bool cond:1_1 = *(arg1 + 0x20) == 0
+0044456f     *(arg1 + 0x81) = 0
+00444576     wchar16 const* const var_144_3
+00444576     
+00444576     var_144_3 = cond:1_1 ? u"Try Send Sahara Message" : &data_6e0c50
+00444576     
+00444585     int32_t var_14c = 0x178c
+0044458a     var_150 = *(arg1 + 0x34)
+0044458d     0x3095d0(var_150, var_14c, eax_15, var_144_3)
+00444599     uint32_t eax_18 = zx.d((*(arg1 + 0x30)).b) << 0x10
+004445a0     wchar16 const* const var_154_1
+004445a0     
+004445a0     if (*(arg1 + 0x20) == 0)
+004445a9         var_154_1 = u"Try to get PBL info"
+004445a0     else
+004445a2         var_154_1 = &data_6e0d80
+004445a2     
+004445af     int32_t var_15c_1 = 0x178c
+004445b4     int32_t var_160 = *(arg1 + 0x34)
+004445b7     0x3095d0(var_160, var_15c_1, eax_18, var_154_1)
+004445bf     int32_t eax_19 = sub_44ce80()
+004445bf     
+004445cc     if (eax_19 == 0)
+00444685         int32_t var_144_8 = 0
+00444687         wchar16 const* const var_148_4
+00444687         
+00444687         if (*(arg1 + 0x20) == 0)
+00444690             var_148_4 = u"Start Download Firehose Binary"
+00444687         else
+00444689             var_148_4 = &data_6e0d94
+00444689         
+00444695         int16_t var_14c_4 = 0
+00444697         var_150 = *(arg1 + 0x30)
+0044469d         sub_443400(*(arg1 + 0x34), var_150.b, var_14c_4, var_148_4, var_144_8)
+004446a8         void* var_154_5 = 0xffffffff
+004446aa         int32_t var_158_3 = 0
+004446ac         *(*(arg1 + 0x28) + 0x50) = arg2
+004446b2         void* ecx_9
+004446b2         ecx_9.b = *(arg1 + 0x48)
+004446b5         int32_t var_114_1 = 0xf
+004446bf         int32_t var_118_1 = 0
+004446c9         *(*(arg1 + 0x28) + 0x31) = ecx_9.b
+004446d6         char var_128 = 0
+004446dd         sub_406a50(&var_128, arg1 + 0x68, var_158_3, var_154_5)
+004446dd         esp_1 = &var_150
+004446e5         int32_t* ecx_12 = *(arg1 + 0x28) + 0x34
+004446e8         var_8_1.b = 3
+004446e8         
+004446f4         if (ecx_12 != &var_128)
+004446fb             sub_406a50(ecx_12, &var_128, 0, 0xffffffff)
+004446fb             esp_1 = &var_150
+004446fb         
+00444700         var_8_1.b = 2
+00444700         
+0044470b         if (var_114_1 u>= 0x10)
+00444713             sub_4f0808(var_128.d)
+00444718             esp_1 = &var_150
+00444718         
+00444728         if (*(*(arg1 + 0x88) + 0xa4) == 0)
+004447c5         label_4447c5:
+004447c5             int32_t eax_32 = sub_44ef20(*(arg1 + 0x28))
+004447ca             var_108 = eax_32
+004447ca             
+004447d2             if (eax_32 != 0)
+004447d8                 bool cond:4_1 = *(arg1 + 0x20) == 0
+004447dc                 *(esp_1 - 4) = eax_32
+004447e3                 void* esp_3
+004447e3                 
+004447e3                 if (cond:4_1)
+004447ec                     *(esp_1 - 8) = u"Sahara Communication Faile"
+004447ec                     esp_3 = esp_1 - 8
+004447e3                 else
+004447e5                     *(esp_1 - 8) = u"Sahar"
+004447e5                     esp_3 = esp_1 - 8
+004447e5                 
+004447f1                 *(esp_3 - 4) = &var_104
+004447f2                 sub_405fb0()
+004447f7                 esi_1 = var_104
+004447fd                 void* esp_5 = esp_3 + 8
+004447fd                 
+00444804                 if (*(esi_1 - 4) s> 1)
+00444806                     *(esp_5 - 4) = *(esi_1 - 0xc)
+0044480f                     sub_405d60(&var_104)
+00444814                     esi_1 = var_104
+00444814                 
+0044481a                 *(esp_5 - 4) = 1
+0044481c                 *(esp_5 - 8) = esi_1
+0044481d                 *(esp_5 - 0xc) = 0
+0044481f                 *(esp_5 - 0x10) = *(arg1 + 0x30)
+00444822                 *(esp_5 - 0x14) = *(arg1 + 0x34)
+00444825                 sub_443400()
+00444825                 esp_1 = esp_5 - 0x10
+00444728         else
+0044472e             *(arg1 + 0x28)
+00444731             sub_44f2f0()
+00444736             *(arg1 + 0x28)
+00444739             int32_t eax_30
+00444739             int32_t ecx_15
+00444739             eax_30, ecx_15 = sub_44f7e0()
+00444739             
+00444743             if (eax_30 != 0x575)
+00444797                 if (eax_30 != 0)
+0044479d                     int32_t var_154_11 = 1
+0044479f                     wchar16 const* const var_158_8
+0044479f                     
+0044479f                     if (*(arg1 + 0x20) == 0)
+004447a8                         var_158_8 = u"Sahara Communication Faile"
+0044479f                     else
+004447a1                         var_158_8 = u"Sahar"
+004447a1                     
+004447ad                     int16_t var_15c_6 = 0
+004447af                     var_160 = *(arg1 + 0x30)
+004447b5                     sub_443400(*(arg1 + 0x34), var_160.b, var_15c_6, var_158_8, var_154_11)
+004447b5                     esp_1 = &var_160
+004447b5                 
+004447ba                 *(esp_1 - 4) = 0x32
+004447ba                 esp_1 -= 4
+004447bc                 0x3086d4()
+004447bc                 goto label_4447c5
+004447bc             
+00444746             *(arg1 + 0x28)
+00444750             void var_98
+00444750             sub_44f630(&var_98, ecx_15)
+00444768             sub_44d900(arg1 + 0x2b8, &data_6d9d00, &var_98)
+00444776             int32_t var_154_10 = 1
+00444779             int16_t var_15c_5 = 0
+0044477b             var_160 = *(arg1 + 0x30)
+00444781             sub_443400(*(arg1 + 0x34), var_160.b, var_15c_5, arg1 + 0x2b8, var_154_10)
+00444781             esp_1 = &var_160
+00444786             var_108 = 0x575
+004445cc     else
+004445d6         int32_t var_144_4 = eax_19
+004445dd         wchar16 const* const var_148_1
+004445dd         
+004445dd         if (*(arg1 + 0x20) == 0)
+004445e6             var_148_1 = u"Sahara Communication Faile"
+004445dd         else
+004445df             var_148_1 = u"Sahar"
+004445df         
+004445ec         sub_405fb0(&var_104, var_148_1)
+004445f1         esi_1 = var_104
+004445f1         
+004445fe         if (*(esi_1 - 4) s> 1)
+00444609             sub_405d60(&var_104, *(esi_1 - 0xc))
+0044460e             esi_1 = var_104
+0044460e         
+00444623         uint32_t eax_24 = (zx.d((*(arg1 + 0x30)).b) | 0x100) << 0x10
+00444627         int32_t var_14c_2 = 0x178c
+0044462c         var_150 = *(arg1 + 0x34)
+0044462f         0x3095d0(var_150, var_14c_2, eax_24, esi_1)
+0044463f         int32_t eax_25 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00444644         esp_1 = &var_140
+00444644         
+0044464f         if (eax_25 != 0)
+0044465a             int32_t ecx_8 = *(arg1 + 0x30) + 1
+0044465c             char const* const var_14c_3 = "[%d] Failed to get PBL info. (%d)\n"
+00444661             var_150 = eax_25
+00444662             _fprintf(var_150, var_14c_3, ecx_8, eax_19)
+0044466d             _fclose(eax_25)
+00444672             esp_1 = &var_140
+00444672         
+00444675         *(arg1 + 0x81) = 1
+00444882 var_8_1.b = 1
+0044488e int32_t eax_39 = *(edi_1 - 4)
+0044488e *(edi_1 - 4) -= 1
+0044488e 
+00444895 if (eax_39 - 1 s<= 0)
+00444897     int32_t* ecx_21 = *(edi_1 - 0x10)
+00444899     *(esp_1 - 4) = edi_1 - 0x10
+0044489c     (*(*ecx_21 + 4))()
+0044489c 
+004448a2 var_8_1.b = 0
+004448a9 int32_t edi_2 = *(esi_1 - 4)
+004448a9 *(esi_1 - 4) -= 1
+004448a9 
+004448b0 if (edi_2 - 1 s<= 0)
+004448b2     int32_t* ecx_22 = *(esi_1 - 0x10)
+004448b4     *(esp_1 - 4) = esi_1 - 0x10
+004448b7     (*(*ecx_22 + 4))()
+004448b7 
+004448c0 sub_4168b0(&var_100)
+004448ce fsbase->NtTib.ExceptionList = ExceptionList
+004448d5 esp_1[1]
+004448d6 esp_1[2]
+004448d7 esp_1[3]
+004448e6 return sub_60bdca()

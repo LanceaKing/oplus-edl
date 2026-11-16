@@ -1,0 +1,94 @@
+0042650b int32_t __saved_ebp
+0042650b int32_t eax_1 = __security_cookie ^ &__saved_ebp
+00426510 bool cond:0 = data_5ea200 != 1
+0042651b uint32_t nNumberOfBytesToWrite_1 = arg3
+00426528 char* lpBuffer = arg2
+0042652b uint32_t numberOfBytesWritten = 0
+00426532 *arg4 = 0
+00426532 
+00426538 if (not(cond:0))
+0042653f     enum WIN32_ERROR eax_2 = sub_4267a0(arg1, arg2, nNumberOfBytesToWrite_1, arg4)
+0042654c     sub_54a573(eax_1 ^ &__saved_ebp)
+00426554     return eax_2
+00426554 
+00426559 while (true)
+00426559     enum WIN32_ERROR eax_15
+00426559     
+00426559     if (nNumberOfBytesToWrite_1 == 0)
+0042666d         eax_15 = NO_ERROR
+00426559     else
+0042655f         int32_t eax_3 = *(arg1 + 4)
+00426569         uint32_t nNumberOfBytesToWrite = nNumberOfBytesToWrite_1
+00426569         
+0042656b         if (nNumberOfBytesToWrite_1 u> 0x8000)
+0042656b             nNumberOfBytesToWrite = 0x8000
+0042656b         
+00426574         if (eax_3 u> 4)
+00426574             break
+00426574         
+0042657a         switch (eax_3)
+0042657a             case 0, 1, 2, 4
+0042657a                 break
+00426586             case 3
+0042658e                 if (PurgeComm(*(arg1 + 8), PURGE_RXCLEAR) != 0)
+0042659d                     if (PurgeComm(*(arg1 + 8), PURGE_TXCLEAR) == 0)
+0042659d                         goto label_42660d
+0042659d                     
+004265ac                     BOOL eax_6
+004265ac                     int32_t ecx_4
+004265ac                     eax_6, ecx_4 = WriteFile(*(arg1 + 8), lpBuffer, nNumberOfBytesToWrite, 
+004265ac                         &numberOfBytesWritten, nullptr)
+004265ac                     
+004265b4                     if (eax_6 == 0)
+004265b4                         goto label_42660d
+004265b4                     
+004265b6                     uint32_t eax_7
+004265b6                     int32_t ecx_5
+004265b6                     eax_7, ecx_5 = _clock(ecx_4)
+004265b6                     
+004265cb                     while (true)
+004265cb                         enum CLEAR_COMM_ERROR_FLAGS errors
+004265cb                         COMSTAT stat
+004265cb                         BOOL eax_8
+004265cb                         int32_t ecx_7
+004265cb                         eax_8, ecx_7 = ClearCommError(*(arg1 + 8), &errors, &stat)
+004265cb                         
+004265d3                         if (eax_8 == 0)
+004265d3                             goto label_42660d
+004265d3                         
+004265e7                         if (_clock(ecx_7) - eax_7 s< 0x3e8 && stat.cbOutQue u> 0)
+004265e7                             continue
+004265e7                         
+004265ef                         int32_t var_30
+004265ef                         sub_4022a0(&var_30, lpBuffer)
+004265f8                         int32_t var_1c
+004265f8                         
+004265f8                         if (stat.cbOutQue == 0)
+004265fe                             if (var_1c u>= 0x10)
+00426603                                 j__free(var_30)
+00426603                             
+004265f8                             break
+004265f8                         
+00426630                         if (var_1c u>= 0x10)
+00426635                             j__free(var_30)
+00426635                         
+0042664a                         sub_54a573(eax_1 ^ &__saved_ebp)
+00426652                         return 1
+00426652                     
+004265d3                     goto label_42661a
+004265d3                 
+0042660d             label_42660d:
+0042660d                 eax_15 = GetLastError()
+0042660d                 
+00426615                 if (eax_15 == NO_ERROR)
+0042661a                 label_42661a:
+0042661a                     nNumberOfBytesToWrite_1 -= nNumberOfBytesToWrite
+0042661f                     lpBuffer = &lpBuffer[nNumberOfBytesToWrite]
+00426625                     *arg4 += numberOfBytesWritten
+00426627                     continue
+00426627     
+00426677     sub_54a573(eax_1 ^ &__saved_ebp)
+0042667f     return eax_15
+0042667f 
+00426662 sub_54a573(eax_1 ^ &__saved_ebp)
+0042666a return 0x80004005

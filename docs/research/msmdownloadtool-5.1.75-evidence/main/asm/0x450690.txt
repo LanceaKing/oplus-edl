@@ -1,0 +1,19 @@
+00450690 push    ebp
+00450691 mov     ebp, esp
+00450693 push    0xffffffff
+00450695 push    0x6d1a88
+0045069a mov     eax, dword [fs:0x0]
+004506a0 push    eax
+004506a1 sub     esp, 0x14
+004506a4 push    ebx
+004506a5 push    esi
+004506a6 push    edi
+004506a7 mov     eax, dword [0x7c0bb0]
+004506ac xor     eax, ebp
+004506ae push    eax
+004506af lea     eax, [ebp-0xc]
+004506b2 mov     dword [fs:0x0], eax
+004506b8 mov     dword [ebp-0x14], ecx
+004506bb push    0x77334c
+004506c0 mov     dword [ebp-0x4], 0x1
+004506c7 jmp     0xc24d9d

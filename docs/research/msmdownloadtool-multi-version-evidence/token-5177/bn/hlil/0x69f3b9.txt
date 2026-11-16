@@ -1,0 +1,31 @@
+0069f3bf int32_t* eax_3
+0069f3bf 
+0069f3bf if (arg1 == 0 || divu.dp.d(0:0xffffffe0, arg1) u>= arg2)
+0069f3d0     int32_t esi_1 = arg1 * arg2
+0069f3d0     
+0069f3d6     if (esi_1 == 0)
+0069f3d8         esi_1 += 1
+0069f3d8     
+0069f3de     while (true)
+0069f3de         if (esi_1 u<= 0xffffffe0)
+0069f3ee             return sub_979945(data_7dc700, 8, esi_1)
+0069f3ee         
+0069f3fc         if (data_7dd084 == 0)
+0069f417             if (arg3 != 0)
+0069f419                 *arg3 = 0xc
+0069f419             
+0069f417             break
+0069f417         
+0069f407         if (sub_6a00e5(esi_1) == 0)
+0069f409             eax_3 = arg3
+0069f409             
+0069f40e             if (eax_3 == 0)
+0069f40e                 goto label_69f423
+0069f40e             
+0069f40e             goto label_69f3c6
+0069f3bf else
+0069f3c1     eax_3 = __errno()
+0069f3c6 label_69f3c6:
+0069f3c6     *eax_3 = 0xc
+0069f423 label_69f423:
+0069f423 return 0

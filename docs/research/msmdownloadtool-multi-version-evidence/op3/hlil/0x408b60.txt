@@ -1,0 +1,95 @@
+00408b63 int32_t var_8 = 0xffffffff
+00408b65 int32_t (* var_c)() = __ehhandler$?_Open_dir@sys@tr2@std@@YAPAXPA_WPB_WAAHAAW4file_type@123@@Z
+00408b70 TEB* fsbase
+00408b70 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00408b7c int32_t __saved_ebp
+00408b7c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00408b88 fsbase->NtTib.ExceptionList = &ExceptionList
+00408b88 
+00408b9b if (GetSystemDefaultLCID() != 0x804)
+00408ba9     *(arg1 + 0x31c) = 0
+00408b9b else
+00408b9d     *(arg1 + 0x31c) = 1
+00408b9d 
+00408bbd int32_t eax_4 = std::_Deallocate<64,0>("language.ini", 0x59ff48, eax_2)
+00408bc4 char var_1c = 0
+00408bcd int32_t var_1b = 0
+00408bd0 int16_t var_17 = 0
+00408bd4 char var_15 = 0
+00408bd9 void* var_20
+00408bd9 
+00408bd9 if (eax_4 != 0)
+00408bdf     int32_t* eax_5 = sub_421c0b()
+00408bea     int32_t ecx
+00408bea     ecx.b = eax_5 != 0
+00408bea     
+00408bef     if (ecx == 0)
+00408bf6         sub_402b80(0x80004005)
+00408bf6         noreturn
+00408bf6     
+00408c05     var_20 = (*(*eax_5 + 0xc))() + 0x10
+00408c0e     int32_t var_8_1 = 0
+00408c18     ___vswprintf_l(&var_1c, 8, 1, eax_4)
+00408c1d     char* ecx_2 = &var_1c
+00408c2b     char i
+00408c2b     
+00408c2b     do
+00408c26         i = *ecx_2
+00408c28         ecx_2 = &ecx_2[1]
+00408c2b     while (i != 0)
+00408c37     int32_t ebx_1 = sub_405330(&var_20, &var_1c, ecx_2 - &var_1b)
+00408c3c     void* esi_1 = var_20
+00408c3c     
+00408c4f     if (__atoldbl(esi_1, 0x59ff5c) != 0)
+00408c63         int32_t eax_10 = __atoldbl(esi_1, 0x59ff60)
+00408c63         
+00408c6d         if (eax_10 == 0)
+00408c6f             *(arg1 + 0x31c) = eax_10
+00408c4f     else
+00408c51         *(arg1 + 0x31c) = 1
+00408c51     
+00408c76     _fclose(ebx_1)
+00408c7e     int32_t var_8_2 = 0xffffffff
+00408c8e     int32_t ecx_5 = *(esi_1 - 4)
+00408c8e     *(esi_1 - 4) -= 1
+00408c8e     
+00408c95     if (ecx_5 - 1 s<= 0)
+00408c9c         (*(**(esi_1 - 0x10) + 4))(esi_1 - 0x10)
+00408c9c 
+00408caa CreateSemaphoreA(nullptr, 0, 1, "MsmDownloadTool")
+00408caa 
+00408cbb if (GetLastError() != ERROR_ALREADY_EXISTS)
+00408ceb     struct INITCOMMONCONTROLSEX picce
+00408ceb     picce.dwSize = 8
+00408cf3     picce.dwICC = 0xff
+00408cfa     InitCommonControlsEx(&picce)
+00408d02     sub_431fb1()
+00408d09     void* eax_14 = sub_420885(0xc)
+00408d11     var_20 = eax_14
+00408d14     int32_t var_8_3 = 1
+00408d1d     int32_t* esi_3
+00408d1d     
+00408d1d     if (eax_14 == 0)
+00408d2a         esi_3 = nullptr
+00408d1d     else
+00408d26         esi_3 = sub_4327cd()
+00408d26     
+00408d33     int32_t var_8_4 = 0xffffffff
+00408d46     sub_4094e0(sub_4331f6("OnePlus MsmDownloadTool"))
+00408d51     int32_t var_8_5 = 2
+00408d5a     void var_284
+00408d5a     *(arg1 + 0x20) = &var_284
+00408d5d     sub_420e24()
+00408d5d     
+00408d64     if (esi_3 != 0)
+00408d6c         (*(*esi_3 + 4))(1)
+00408d6c     
+00408d75     int32_t var_8_6 = 0xffffffff
+00408d7c     std::get_new_handler()
+00408cbb else if (*(arg1 + 0x31c) == 0)
+00408cde     sub_42f6a2("Program has been started!", 0, 0)
+00408cc8 else
+00408ccf     sub_42f6a2(0x59ff74, 0, 0)
+00408ccf 
+00408d86 fsbase->NtTib.ExceptionList = ExceptionList
+00408d9e return sub_53b554()

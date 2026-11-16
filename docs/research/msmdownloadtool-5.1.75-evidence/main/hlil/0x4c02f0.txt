@@ -1,0 +1,52 @@
+004c02f0 int32_t ebx
+004c02f0 int32_t var_4 = ebx
+004c02f1 int32_t esi
+004c02f1 int32_t var_8 = esi
+004c02fa int32_t edi
+004c02fa int32_t var_c = edi
+004c0307 *(*(arg1 + 0x5a0) + 0x9c) = *(arg1 + 0x570)
+004c0311 int32_t result = sub_4ce470(*(arg1 + 0x34), arg1 + 0x5a0)
+004c031a int32_t eax_2
+004c031a int16_t* edi_2
+004c031a 
+004c031a if (result != 0)
+004c034c     int32_t var_10_2 = *(*(arg1 + 0x5a0) + 0x170)
+004c0356     int32_t var_14_1 = *(arg1 + 0x38) + 1
+004c0357     char const* const var_18_1 = "[%d] verify uc failed %d\n"
+004c035c     int32_t var_1c_1 = 4
+004c0363     sub_4d6270(&data_7e09e8)
+004c036d     edi_2 = arg1 + 0x2c0
+004c0373     int32_t eax_7 = *(*(arg1 + 0x5a0) + 0x170)
+004c037a     wchar16 const* const var_10_3
+004c037a     
+004c037a     if (eax_7 == 1)
+004c03ab         if (*(arg1 + 0x24) == 0)
+004c03b4             var_10_3 = u"uc hash not match\n"
+004c03ab         else
+004c03ad             var_10_3 = &data_77d008
+004c037a     else if (eax_7 == 2)
+004c0397         if (*(arg1 + 0x24) == 0)
+004c03a0             var_10_3 = u"uc magic incorrect or token decrypt failed\n"
+004c0397         else
+004c0399             var_10_3 = &data_77cfd0
+004c037d     else if (*(arg1 + 0x24) == 0)
+004c038c         var_10_3 = u"uc verify failed\n"
+004c0383     else
+004c0385         var_10_3 = &data_77d0c0
+004c0385     
+004c03ba     sub_4c2470(edi_2, var_10_3)
+004c03c6     eax_2 = zx.d(*(arg1 + 0x38)) | 0x1010000
+004c031a else
+004c031c     edi_2 = arg1 + 0x2c0
+004c0325     wchar16 const* const var_10_1
+004c0325     
+004c0325     if (*(arg1 + 0x24) == result.b)
+004c032e         var_10_1 = u"Send uc to device success!\n"
+004c0325     else
+004c0327         var_10_1 = &data_77cf24
+004c0327     
+004c0334     sub_4c2470(edi_2, var_10_1)
+004c0340     eax_2 = zx.d(*(arg1 + 0x38)) | 0x10000
+004c0340 
+004c03d5 0x3b8730(*(arg1 + 0x3c), 0x178c, eax_2, edi_2)
+004c03e0 return result

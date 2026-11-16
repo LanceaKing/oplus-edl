@@ -1,0 +1,140 @@
+18004c7b4 void var_68
+18004c7b4 int64_t rax_1 = __security_cookie ^ &var_68
+18004c7d6 int64_t result
+18004c7d6 
+18004c7d6 if (arg1 == 0 || arg2 == 0 || arg3 == 0)
+18004ca6a     result = 1
+18004c7d6 else
+18004c7eb     int32_t rbx_1
+18004c7eb     
+18004c7eb     if (((*(arg1 + 0x50) - 2) & 0xfffffffd) != 0)
+18004c7ed         rbx_1 = 3
+18004c7f2         *(arg1 + 0x54) = 3
+18004c7eb     else if (arg3 u> 0x100000 || *(arg1 + 0xa8) u> 0x100000 - arg3)
+18004ca47         *(arg1 + 0x54) = 1
+18004ca4e         rbx_1 = 1
+18004c812     else
+18004c818         void** rbx_2 = arg1 + 0x98
+18004c822         sub_180004a60(rbx_2, arg2, arg3, arg4)
+18004c822         
+18004c82f         if (*(arg1 + 0xb0) u> 0xf)
+18004c831             rbx_2 = *rbx_2
+18004c831         
+18004c837         int128_t var_40 = zx.o(0)
+18004c83c         void* var_30_1 = nullptr
+18004c841         int64_t var_28_1 = 0
+18004c855         sub_180004790(&var_40, rbx_2, *(arg1 + 0xa8))
+18004c85a         int128_t* r14_1 = &var_40
+18004c85f         int128_t* rcx_2 = var_40.q
+18004c864         int64_t rdx_1 = var_28_1
+18004c864         
+18004c86d         if (rdx_1 u> 0xf)
+18004c86d             r14_1 = rcx_2
+18004c86d         
+18004c871         int128_t* rbx_3 = &var_40
+18004c871         
+18004c876         if (rdx_1 u> 0xf)
+18004c876             rbx_3 = rcx_2
+18004c876         
+18004c87a         void* r8_1 = var_30_1
+18004c87f         void* rbx_4 = rbx_3 + r8_1
+18004c882         int128_t* rdi_1 = &var_40
+18004c882         
+18004c88b         if (rdx_1 u> 0xf)
+18004c88b             rdi_1 = rcx_2
+18004c88b         
+18004c892         if (rdi_1 != rbx_4)
+18004c8a9             do
+18004c89c                 *r14_1 = tolower(zx.d(*rdi_1))
+18004c89f                 r14_1 += 1
+18004c8a3                 rdi_1 += 1
+18004c8a9             while (rdi_1 != rbx_4)
+18004c8a9             
+18004c8ab             rdx_1 = var_28_1
+18004c8b0             r8_1 = var_30_1
+18004c8b5             rcx_2 = var_40.q
+18004c8b5         
+18004c8ba         int128_t* rdi_2 = &var_40
+18004c8ba         
+18004c8c3         if (rdx_1 u> 0xf)
+18004c8c3             rdi_2 = rcx_2
+18004c8c3         
+18004c8cb         if (r8_1 u< 7)
+18004c8cb             goto label_18004ca00
+18004c8cb         
+18004c8d1         uint8_t (* rbx_5)[0x20] = r8_1 + rdi_2
+18004c8e8         uint8_t (* rax_6)[0x20] = j_sub_180075f90(rdi_2, rbx_5, "</data>", 7)
+18004c8e8         
+18004c8fd         if (rax_6 == rbx_5 || rax_6 - rdi_2 == -1)
+18004c9f6             rdx_1 = var_28_1
+18004c9fb             rcx_2 = var_40.q
+18004ca00         label_18004ca00:
+18004ca00             *(arg1 + 0x54) = 4
+18004ca00             
+18004ca0b             if (rdx_1 u<= 0xf)
+18004ca36                 rbx_1 = 4
+18004ca0b             else if (rdx_1 + 1 u< 0x1000)
+18004ca31                 j_sub_1800899c0(rcx_2)
+18004ca36                 rbx_1 = 4
+18004ca17             else
+18004ca19                 int128_t* rax_15 = *(rcx_2 - 8)
+18004ca19                 
+18004ca28                 if (rcx_2 - rax_15 - 8 u> 0x1f)
+18004ca45                     trap(0xd)
+18004ca45                 
+18004ca31                 j_sub_1800899c0(rax_15)
+18004ca36                 rbx_1 = 4
+18004c8fd         else
+18004c908             int128_t* rdi_3 = &var_40
+18004c908             
+18004c913             if (var_28_1 u> 0xf)
+18004c913                 rdi_3 = var_40.q
+18004c913             
+18004c91d             if (var_30_1 u< 0xb)
+18004c9a5             label_18004c9a5:
+18004c9a5                 
+18004c9a5                 if (*(arg1 + 0x50) != 2)
+18004c9f2                     rbx_1 = sub_180003a90(arg1)
+18004c9a5                 else
+18004c9ac                     rbx_1 = sub_1800038a0(arg1)
+18004c9ac                 
+18004c9b7                 if (var_28_1 u> 0xf)
+18004c9c7                     void* rcx_10 = var_40.q
+18004c9c7                     
+18004c9cc                     if (var_28_1 + 1 u< 0x1000)
+18004c9e6                         j_sub_1800899c0(rcx_10)
+18004c9cc                     else
+18004c9ce                         void* rax_13 = *(rcx_10 - 8)
+18004c9ce                         
+18004c9dd                         if (rcx_10 - rax_13 - 8 u> 0x1f)
+18004ca45                             trap(0xd)
+18004ca45                         
+18004c9e6                         j_sub_1800899c0(rax_13)
+18004c91d             else
+18004c91f                 uint8_t (* rbx_6)[0x20] = var_30_1 + rdi_3
+18004c936                 uint8_t (* rax_9)[0x20] = j_sub_180075f90(rdi_3, rbx_6, "value="nak"", 0xb)
+18004c936                 
+18004c947                 if (rax_9 == rbx_6 || rax_9 - rdi_3 == -1)
+18004c93e                     goto label_18004c9a5
+18004c93e                 
+18004c949                 *(arg1 + 0x50) = 6
+18004c950                 rbx_1 = 5
+18004c955                 *(arg1 + 0x54) = 5
+18004c955                 
+18004c961                 if (var_28_1 u> 0xf)
+18004c96a                     void* rcx_6 = var_40.q
+18004c96a                     
+18004c976                     if (var_28_1 + 1 u< 0x1000)
+18004c994                         j_sub_1800899c0(rcx_6)
+18004c976                     else
+18004c978                         void* rax_11 = *(rcx_6 - 8)
+18004c978                         
+18004c987                         if (rcx_6 - rax_11 - 8 u> 0x1f)
+18004ca45                             trap(0xd)
+18004ca45                         
+18004c994                         j_sub_1800899c0(rax_11)
+18004c994     
+18004ca55     result = sub_18004bdf0(rbx_1)
+18004ca55 
+18004ca77 __security_check_cookie(rax_1 ^ &var_68)
+18004ca8c return result

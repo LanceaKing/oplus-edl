@@ -1,0 +1,23 @@
+004188c3 int32_t var_14 = 1
+004188c3 
+004188c9 if (arg2 u> 3)
+00418b50     char const* const var_24
+00418b50     
+00418b50     if (*(arg1 + 0x1b) == 0)
+00418b59         var_24 = "No suitable setting available for read back"
+00418b50     else
+00418b52         var_24 = &data_5a238c
+00418b52     
+00418b5f     sub_410900(arg1 + 0x164, var_24)
+00418b82     SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 0x1000001, arg1 + 0x164)
+00418b93     return 1
+00418b93 
+004188c9 switch (arg2)
+004188cf     case 0
+004188cf         return sub_4188d6() __tailcall
+004188cf     case 1
+004188cf         jump(0x4188db)
+004188cf     case 2
+004188cf         jump(0x4188e0)
+004188cf     case 3
+004188cf         return sub_4188e5() __tailcall

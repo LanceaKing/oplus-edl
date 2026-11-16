@@ -1,0 +1,148 @@
+00441796 int32_t var_c = 0xffffffff
+00441798 int32_t (* var_10)() = sub_6d05eb
+004417a3 TEB* fsbase
+004417a3 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004417aa __security_cookie
+004417c0 int32_t __saved_edi
+004417c0 int32_t eax_4 = __security_cookie ^ &__saved_edi
+004417ca fsbase->NtTib.ExceptionList = &ExceptionList
+004417ca 
+004417df if (data_7df7c8 != 0)
+004417eb     if (data_7df7c4 == 1)
+00441abc         if (*(arg1 + 0x401a0) != 0)
+00441ad1             sub_4d6500(&data_7e4a58, 4, "SMT station. No need to send sw version to MES\n", eax_4)
+00441abc         else
+00441ad1             sub_4d6500(&data_7e4a58, 4, "MES Upload unchecked. Not sending sw version to MES\n", 
+00441ad1                 eax_4)
+004417eb     else if (*(arg1 + 0x401a0) == 0)
+00441ad1         sub_4d6500(&data_7e4a58, 4, "MES Upload unchecked. Not sending sw version to MES\n", eax_4)
+004417f8     else
+00441800         int32_t* eax_5 = sub_56c71b(0x10, eax_4)
+00441800         
+0044180c         if (eax_5 != 0)
+00441812             eax_5[1] = 0
+00441819             eax_5[2] = 0
+00441820             eax_5[3] = 0
+00441827             *eax_5 = 0
+00441827             
+0044182f             if (arg2 != 0)
+00441833                 eax_5[1] = *arg2
+00441833             
+00441849             int32_t* eax_8
+00441849             int32_t ecx
+00441849             int32_t esi_2
+00441849             
+00441849             if (data_7e41c4 == 0)
+0044187b                 esi_2 = data_7e4054 + 1
+00441882                 ecx = sub_56c748(esi_2)
+00441887                 eax_5[2] = ecx
+0044188a                 eax_8 = &data_7e4044
+0044188a                 
+00441896                 if (data_7e4058 u>= 0x10)
+00441896                     eax_8 = data_7e4044
+00441849             else
+00441851                 esi_2 = data_7e41d8 + 1
+00441858                 ecx = sub_56c748(esi_2)
+0044185d                 eax_5[2] = ecx
+00441860                 eax_8 = &data_7e41c8
+00441860                 
+0044186c                 if (data_7e41dc u>= 0x10)
+0044186c                     eax_8 = data_7e41c8
+0044186c             
+004418a1             _memcpy_s(ecx, esi_2, eax_8, esi_2)
+004418af             int32_t esi_5 = data_7e409c + 1
+004418b1             int32_t eax_10 = sub_56c748(esi_5)
+004418bb             eax_5[3] = eax_10
+004418be             int32_t* eax_11 = &data_7e408c
+004418be             
+004418ca             if (data_7e40a0 u>= 0x10)
+004418ca                 eax_11 = data_7e408c
+004418ca             
+004418d5             _memcpy_s(eax_10, esi_5, eax_11, esi_5)
+004418df             int32_t eax_12 = DBI1::QueryImodFromAddrHelper<struct SC>(eax_5)
+004418e4             int32_t var_b0_6 = eax_5[2]
+004418e9             int32_t eax_13 = arg2[0xb]
+004418ec             int32_t var_b4_3 = eax_5[3]
+004418ef             int32_t var_b8_3 = eax_5[1]
+004418ef             
+004418f2             if (eax_12 == 0)
+0044191f                 sub_4d6500(&data_7e4a58, 4, 
+0044191f                     "[OnUmVerifyPcbaUpgrade][%d] Send %lu: %s(%s) FAILED\n", eax_13 + 1, var_b8_3, 
+0044191f                     var_b4_3, var_b0_6)
+0044193e                 void* eax_19 = &sub_41a8a0(data_7dfdb4 - 0x10)[4]
+00441948                 void var_34
+00441948                 char* eax_20
+00441948                 int32_t ecx_4
+00441948                 eax_20, ecx_4 = xcf5fba64::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >::operator[]::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >(
+00441948                     eax_19, 0xfde9, &var_34, eax_19)
+00441950                 int32_t var_c_1 = 0
+00441950                 
+0044195f                 if (*(eax_20 + 0x14) u>= 0x10)
+00441961                     eax_20 = *eax_20
+00441961                 
+00441969                 int32_t var_b4_5 = ecx_4
+0044197c                 void* eax_24 = &sub_41a8a0(data_7dfdb8 - 0x10)[4]
+00441986                 void var_64
+00441986                 char* eax_25
+00441986                 int32_t ecx_6
+00441986                 eax_25, ecx_6 = xcf5fba64::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >::operator[]::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >(
+00441986                     eax_24, 0xfde9, &var_64, eax_24)
+0044198e                 var_c_1.b = 1
+0044198e                 
+0044199a                 if (*(eax_25 + 0x14) u>= 0x10)
+0044199c                     eax_25 = *eax_25
+0044199c                 
+004419a4                 int32_t var_b8_5 = ecx_6
+004419b7                 void* eax_29 = &sub_41a8a0(data_7dfdb0 - 0x10)[4]
+004419c1                 void var_7c
+004419c1                 char* eax_30
+004419c1                 int32_t ecx_8
+004419c1                 eax_30, ecx_8 = xcf5fba64::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >::operator[]::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >(
+004419c1                     eax_29, 0xfde9, &var_7c, eax_29)
+004419c9                 var_c_1.b = 2
+004419c9                 
+004419d5                 if (*(eax_30 + 0x14) u>= 0x10)
+004419d7                     eax_30 = *eax_30
+004419d7                 
+004419df                 int32_t var_bc_6 = ecx_8
+004419f2                 void* eax_34 = &sub_41a8a0(data_7dfdc8 - 0x10)[4]
+004419fc                 void var_94
+004419fc                 char* eax_35
+004419fc                 int32_t ecx_10
+004419fc                 eax_35, ecx_10 = xcf5fba64::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >::operator[]::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >(
+004419fc                     eax_34, 0xfde9, &var_94, eax_34)
+00441a04                 var_c_1.b = 3
+00441a04                 
+00441a10                 if (*(eax_35 + 0x14) u>= 0x10)
+00441a12                     eax_35 = *eax_35
+00441a12                 
+00441a1a                 int32_t var_c0_2 = ecx_10
+00441a2d                 void* eax_39 = &sub_41a8a0(data_7dfdc4 - 0x10)[4]
+00441a37                 void var_4c
+00441a37                 char* eax_40 = xcf5fba64::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >::operator[]::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >(
+00441a37                     eax_39, 0xfde9, &var_4c, eax_39)
+00441a3f                 var_c_1.b = 4
+00441a3f                 
+00441a4b                 if (*(eax_40 + 0x14) u>= 0x10)
+00441a4d                     eax_40 = *eax_40
+00441a4d                 
+00441a5c                 sub_4d6500(&data_7e4a58, 4, 
+00441a5c                     "[OnUmVerifyPcbaUpgrade] MES_VerifyPcbaUpgrade failed:\n IP(%s)\n MAC(%s)\n URL(%s)"
+00441a5c                 " FACTORY(%s)\n MESSAGE(%s)\n", 
+00441a5c                     eax_40, eax_35, eax_30, eax_25, eax_20)
+00441a68                 sub_412a10(&var_4c)
+00441a71                 sub_412a10(&var_94)
+00441a7a                 sub_412a10(&var_7c)
+00441a83                 sub_412a10(&var_64)
+00441a8c                 int32_t var_c_2 = 0xffffffff
+00441a97                 sub_412a10(&var_34)
+004418f2             else
+00441902                 sub_4d6500(&data_7e4a58, 4, 
+00441902                     "[OnUmVerifyPcbaUpgrade][%d] Send %lu: %s(%s) Success\n", eax_13 + 1, var_b8_3, 
+00441902                     var_b4_3, var_b0_6)
+00441902             
+00441aa3             sub_4399d0(eax_5)
+00441aa9             sub_56c751(eax_5)
+00441aa9 
+00441ae2 fsbase->NtTib.ExceptionList = ExceptionList
+00441afe return sub_68804f()

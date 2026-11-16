@@ -1,0 +1,349 @@
+18002adf0 push    rbp
+18002adf2 push    rbx
+18002adf3 push    rsi
+18002adf4 push    rdi
+18002adf5 lea     rbp, [rsp-0x3f]
+18002adfa sub     rsp, 0xc8
+18002ae01 mov     r11, qword [rcx+0x8]
+18002ae05 mov     rdi, qword [rcx]
+18002ae08 cmp     r11, 0x7
+18002ae0c jne     0x18002ae74
+18002ae74 cmp     r11, 0x5
+18002ae78 jne     0x18002af36
+18002ae0e xor     ebx, ebx
+18002ae10 lea     r10, [rel 0x180000000]
+18002ae17 nop     word [rax+rax]
+18002af36 cmp     r11, 0xd
+18002af3a jne     0x18002afa4
+18002ae7e xor     ebx, ebx
+18002ae80 lea     r10, [rel 0x180000000]
+18002ae87 nop     word [rax+rax]
+18002b1c0 lea     rax, [rel 0x1800b07e0]
+18002b1c7 mov     qword [rsp+0x8], 0x9
+18002b1d0 mov     qword [rsp], rax
+18002b1d4 lea     rbx, [rsp]
+18002b1d8 lea     rax, [rel 0x1800b07ec]
+18002b1df mov     qword [rbp-0x71], 0x3
+18002b1e7 mov     qword [rbp-0x79], rax
+18002b1eb mov     rsi, rdi
+18002b1ee lea     rax, [rel 0x1800b07f0]
+18002b1f5 mov     qword [rbp-0x61], 0x5
+18002b1fd mov     qword [rbp-0x69], rax
+18002b201 lea     rax, [rel 0x1800b07f8]
+18002b208 mov     qword [rbp-0x59], rax
+18002b20c lea     rax, [rel 0x1800b0808]
+18002b213 mov     qword [rbp-0x49], rax
+18002b217 lea     rax, [rel 0x1800b0818]
+18002b21e mov     qword [rbp-0x39], rax
+18002b222 lea     rax, [rel 0x1800b0830]
+18002b229 mov     qword [rbp-0x29], rax
+18002b22d lea     rax, [rel 0x1800b0838]
+18002b234 mov     qword [rbp-0x19], rax
+18002b238 lea     rax, [rel 0x1800b0840]
+18002b23f mov     qword [rbp-0x9], rax
+18002b243 lea     rax, [rel 0x1800b0850]
+18002b24a mov     qword [rbp+0x7], rax
+18002b24e lea     rax, [rel 0x1800b0860]
+18002b255 mov     qword [rbp+0x17], rax
+18002b259 lea     rax, [rel 0x1800b0870]
+18002b260 mov     qword [rbp+0x27], rax
+18002b264 mov     qword [rbp-0x51], 0xe
+18002b26c mov     qword [rbp-0x41], 0xa
+18002b274 mov     qword [rbp-0x31], 0x17
+18002b27c mov     qword [rbp-0x21], 0x4
+18002b284 mov     qword [rbp-0x11], 0x7
+18002b28c mov     qword [rbp-0x1], 0xc
+18002b294 mov     qword [rbp+0xf], 0xc
+18002b29c mov     qword [rbp+0x1f], 0xc
+18002b2a4 mov     qword [rbp+0x2f], 0xd
+18002b2ac nop     dword [rax]
+18002ae5a inc     rbx
+18002ae5d cmp     rbx, 0x7
+18002ae61 jb      0x18002ae20
+18002afa4 cmp     r11, 0xe
+18002afa8 jne     0x18002b014
+18002af3c xor     ebx, ebx
+18002af3e lea     r10, [rel 0x180000000]
+18002af45 nop     word [rax+rax]
+18002aee0 xor     ebx, ebx
+18002aec6 inc     rbx
+18002aec9 cmp     rbx, 0x5
+18002aecd jb      0x18002ae90
+18002b30e add     rbx, 0x10
+18002b312 lea     rax, [rbp+0x37]
+18002b316 cmp     rbx, rax
+18002b319 jne     0x18002b2b0
+18002b2b6 mov     rdi, qword [rbx]
+18002b2b9 xor     eax, eax
+18002b2bb test    r11, r11
+18002b2be je      0x18002b2fd
+18002ae20 movzx   edx, byte [r10+rbx+0xb0770]
+18002ae29 movzx   r9d, byte [rdi+rbx]
+18002ae2e lea     ecx, [rdx-0x41]
+18002ae31 cmp     cl, 0x19
+18002ae34 lea     eax, [rdx+0x20]
+18002ae37 movzx   r8d, al
+18002ae3b lea     eax, [r9+0x20]
+18002ae3f cmova   r8d, edx
+18002ae43 movzx   ecx, al
+18002ae46 lea     edx, [r9-0x41]
+18002ae4a cmp     dl, 0x19
+18002ae4d cmova   ecx, r9d
+18002ae51 cmp     cl, r8b
+18002ae54 jne     0x18002b1c0
+18002ae63 mov     eax, 0x3
+18002ae68 add     rsp, 0xc8
+18002ae6f pop     rdi
+18002ae70 pop     rsi
+18002ae71 pop     rbx
+18002ae72 pop     rbp
+18002ae73 retn    
+18002b014 cmp     r11, 0x4
+18002b018 jne     0x18002b084
+18002afaa xor     ebx, ebx
+18002afac lea     r10, [rel 0x180000000]
+18002afb3 nop     dword [rax]
+18002afb7 nop     word [rax+rax]
+18002af8a inc     rbx
+18002af8d cmp     rbx, 0xd
+18002af91 jb      0x18002af50
+18002af1c inc     rbx
+18002af1f cmp     rbx, 0x5
+18002af23 jb      0x18002aee2
+18002ae90 movzx   edx, byte [r10+rbx+0xb0778]
+18002ae99 movzx   r9d, byte [rdi+rbx]
+18002ae9e lea     ecx, [rdx-0x41]
+18002aea1 cmp     cl, 0x19
+18002aea4 lea     eax, [rdx+0x20]
+18002aea7 movzx   r8d, al
+18002aeab lea     eax, [r9+0x20]
+18002aeaf cmova   r8d, edx
+18002aeb3 movzx   ecx, al
+18002aeb6 lea     edx, [r9-0x41]
+18002aeba cmp     dl, 0x19
+18002aebd cmova   ecx, r9d
+18002aec1 cmp     cl, r8b
+18002aec4 jne     0x18002aee0
+18002aecf mov     eax, 0x4
+18002aed4 add     rsp, 0xc8
+18002aedb pop     rdi
+18002aedc pop     rsi
+18002aedd pop     rbx
+18002aede pop     rbp
+18002aedf retn    
+18002b2b0 cmp     r11, qword [rbx+0x8]
+18002b2b4 jne     0x18002b30e
+18002b31b mov     eax, 0x7
+18002b320 add     rsp, 0xc8
+18002b327 pop     rdi
+18002b328 pop     rsi
+18002b329 pop     rbx
+18002b32a pop     rbp
+18002b32b retn    
+18002b2fd mov     eax, 0x1
+18002b302 add     rsp, 0xc8
+18002b309 pop     rdi
+18002b30a pop     rsi
+18002b30b pop     rbx
+18002b30c pop     rbp
+18002b30d retn    
+18002b2c0 movzx   r8d, byte [rdi+rax]
+18002b2c5 movzx   r10d, byte [rsi+rax]
+18002b2ca lea     edx, [r8-0x41]
+18002b2ce cmp     dl, 0x19
+18002b2d1 lea     ecx, [r8+0x20]
+18002b2d5 movzx   r9d, cl
+18002b2d9 lea     ecx, [r10+0x20]
+18002b2dd cmova   r9d, r8d
+18002b2e1 movzx   edx, cl
+18002b2e4 lea     r8d, [r10-0x41]
+18002b2e8 cmp     r8b, 0x19
+18002b2ec cmova   edx, r10d
+18002b2f0 cmp     dl, r9b
+18002b2f3 jne     0x18002b30e
+18002b084 cmp     r11, 0x17
+18002b088 jne     0x18002b0f4
+18002b01a xor     ebx, ebx
+18002b01c lea     r10, [rel 0x180000000]
+18002b023 nop     dword [rax]
+18002b027 nop     word [rax+rax]
+18002affa inc     rbx
+18002affd cmp     rbx, 0xe
+18002b001 jb      0x18002afc0
+18002af50 movzx   edx, byte [r10+rbx+0xb0780]
+18002af59 movzx   r9d, byte [rdi+rbx]
+18002af5e lea     ecx, [rdx-0x41]
+18002af61 cmp     cl, 0x19
+18002af64 lea     eax, [rdx+0x20]
+18002af67 movzx   r8d, al
+18002af6b lea     eax, [r9+0x20]
+18002af6f cmova   r8d, edx
+18002af73 movzx   ecx, al
+18002af76 lea     edx, [r9-0x41]
+18002af7a cmp     dl, 0x19
+18002af7d cmova   ecx, r9d
+18002af81 cmp     cl, r8b
+18002af84 jne     0x18002b1c0
+18002af93 mov     eax, 0x4
+18002af98 add     rsp, 0xc8
+18002af9f pop     rdi
+18002afa0 pop     rsi
+18002afa1 pop     rbx
+18002afa2 pop     rbp
+18002afa3 retn    
+18002aee2 movzx   edx, byte [r10+rbx+0xb07a8]
+18002aeeb movzx   r9d, byte [rdi+rbx]
+18002aef0 lea     ecx, [rdx-0x41]
+18002aef3 cmp     cl, 0x19
+18002aef6 lea     eax, [rdx+0x20]
+18002aef9 movzx   r8d, al
+18002aefd lea     eax, [r9+0x20]
+18002af01 cmova   r8d, edx
+18002af05 movzx   ecx, al
+18002af08 lea     edx, [r9-0x41]
+18002af0c cmp     dl, 0x19
+18002af0f cmova   ecx, r9d
+18002af13 cmp     cl, r8b
+18002af16 jne     0x18002b1c0
+18002af25 mov     eax, 0x5
+18002af2a add     rsp, 0xc8
+18002af31 pop     rdi
+18002af32 pop     rsi
+18002af33 pop     rbx
+18002af34 pop     rbp
+18002af35 retn    
+18002b2f5 inc     rax
+18002b2f8 cmp     rax, r11
+18002b2fb jb      0x18002b2c0
+18002b0f4 cmp     r11, 0x6
+18002b0f8 jne     0x18002b160
+18002b08a xor     ebx, ebx
+18002b08c lea     r10, [rel 0x180000000]
+18002b093 nop     dword [rax]
+18002b097 nop     word [rax+rax]
+18002b06a inc     rbx
+18002b06d cmp     rbx, 0x4
+18002b071 jb      0x18002b030
+18002afc0 movzx   edx, byte [r10+rbx+0xb0790]
+18002afc9 movzx   r9d, byte [rdi+rbx]
+18002afce lea     ecx, [rdx-0x41]
+18002afd1 cmp     cl, 0x19
+18002afd4 lea     eax, [rdx+0x20]
+18002afd7 movzx   r8d, al
+18002afdb lea     eax, [r9+0x20]
+18002afdf cmova   r8d, edx
+18002afe3 movzx   ecx, al
+18002afe6 lea     edx, [r9-0x41]
+18002afea cmp     dl, 0x19
+18002afed cmova   ecx, r9d
+18002aff1 cmp     cl, r8b
+18002aff4 jne     0x18002b1c0
+18002b003 mov     eax, 0x4
+18002b008 add     rsp, 0xc8
+18002b00f pop     rdi
+18002b010 pop     rsi
+18002b011 pop     rbx
+18002b012 pop     rbp
+18002b013 retn    
+18002b160 cmp     r11, 0xb
+18002b164 jne     0x18002b1c0
+18002b0fa xor     ebx, ebx
+18002b0fc lea     r10, [rel 0x180000000]
+18002b103 nop     dword [rax]
+18002b107 nop     word [rax+rax]
+18002b0da inc     rbx
+18002b0dd cmp     rbx, 0x17
+18002b0e1 jb      0x18002b0a0
+18002b030 movzx   edx, byte [r10+rbx+0xb07a0]
+18002b039 movzx   r9d, byte [rdi+rbx]
+18002b03e lea     ecx, [rdx-0x41]
+18002b041 cmp     cl, 0x19
+18002b044 lea     eax, [rdx+0x20]
+18002b047 movzx   r8d, al
+18002b04b lea     eax, [r9+0x20]
+18002b04f cmova   r8d, edx
+18002b053 movzx   ecx, al
+18002b056 lea     edx, [r9-0x41]
+18002b05a cmp     dl, 0x19
+18002b05d cmova   ecx, r9d
+18002b061 cmp     cl, r8b
+18002b064 jne     0x18002b1c0
+18002b073 mov     eax, 0x6
+18002b078 add     rsp, 0xc8
+18002b07f pop     rdi
+18002b080 pop     rsi
+18002b081 pop     rbx
+18002b082 pop     rbp
+18002b083 retn    
+18002b166 xor     ebx, ebx
+18002b168 lea     r10, [rel 0x180000000]
+18002b16f nop     
+18002b146 inc     rbx
+18002b149 cmp     rbx, 0x6
+18002b14d jb      0x18002b110
+18002b0a0 movzx   edx, byte [r10+rbx+0xb07b0]
+18002b0a9 movzx   r9d, byte [rdi+rbx]
+18002b0ae lea     ecx, [rdx-0x41]
+18002b0b1 cmp     cl, 0x19
+18002b0b4 lea     eax, [rdx+0x20]
+18002b0b7 movzx   r8d, al
+18002b0bb lea     eax, [r9+0x20]
+18002b0bf cmova   r8d, edx
+18002b0c3 movzx   ecx, al
+18002b0c6 lea     edx, [r9-0x41]
+18002b0ca cmp     dl, 0x19
+18002b0cd cmova   ecx, r9d
+18002b0d1 cmp     cl, r8b
+18002b0d4 jne     0x18002b1c0
+18002b0e3 mov     eax, 0x5
+18002b0e8 add     rsp, 0xc8
+18002b0ef pop     rdi
+18002b0f0 pop     rsi
+18002b0f1 pop     rbx
+18002b0f2 pop     rbp
+18002b0f3 retn    
+18002b1a6 inc     rbx
+18002b1a9 cmp     rbx, 0xb
+18002b1ad jb      0x18002b170
+18002b110 movzx   edx, byte [r10+rbx+0xb07c8]
+18002b119 movzx   r9d, byte [rdi+rbx]
+18002b11e lea     ecx, [rdx-0x41]
+18002b121 cmp     cl, 0x19
+18002b124 lea     eax, [rdx+0x20]
+18002b127 movzx   r8d, al
+18002b12b lea     eax, [r9+0x20]
+18002b12f cmova   r8d, edx
+18002b133 movzx   ecx, al
+18002b136 lea     edx, [r9-0x41]
+18002b13a cmp     dl, 0x19
+18002b13d cmova   ecx, r9d
+18002b141 cmp     cl, r8b
+18002b144 jne     0x18002b1c0
+18002b14f mov     eax, 0x2
+18002b154 add     rsp, 0xc8
+18002b15b pop     rdi
+18002b15c pop     rsi
+18002b15d pop     rbx
+18002b15e pop     rbp
+18002b15f retn    
+18002b170 movzx   edx, byte [r10+rbx+0xb07d0]
+18002b179 movzx   r9d, byte [rdi+rbx]
+18002b17e lea     ecx, [rdx-0x41]
+18002b181 cmp     cl, 0x19
+18002b184 lea     eax, [rdx+0x20]
+18002b187 movzx   r8d, al
+18002b18b lea     eax, [r9+0x20]
+18002b18f cmova   r8d, edx
+18002b193 movzx   ecx, al
+18002b196 lea     edx, [r9-0x41]
+18002b19a cmp     dl, 0x19
+18002b19d cmova   ecx, r9d
+18002b1a1 cmp     cl, r8b
+18002b1a4 jne     0x18002b1c0
+18002b1af mov     eax, 0x2
+18002b1b4 add     rsp, 0xc8
+18002b1bb pop     rdi
+18002b1bc pop     rsi
+18002b1bd pop     rbx
+18002b1be pop     rbp
+18002b1bf retn    

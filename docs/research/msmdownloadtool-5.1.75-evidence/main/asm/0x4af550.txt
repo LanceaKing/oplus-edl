@@ -1,0 +1,79 @@
+004af550 push    ebp
+004af551 mov     ebp, esp
+004af553 push    ecx
+004af554 push    ebx
+004af555 push    esi
+004af556 push    edi
+004af557 sub     esp, 0x18
+004af55a xor     edx, edx
+004af55c mov     ecx, esp
+004af55e mov     eax, 0x386
+004af563 mov     esi, 0x1
+004af568 mov     dword [ecx+0x14], 0xf
+004af56f mov     dword [ecx+0x10], 0x0
+004af576 mov     byte [ecx], 0x0
+004af579 cmp     byte [0x7782d0], dl
+004af57f cmove   eax, edx
+004af582 push    eax
+004af583 push    0x7782d0
+004af588 call    0x412e10
+004af58d call    0x4aece0
+004af592 mov     edi, eax
+004af594 mov     dword [ebp-0x4], edi
+004af597 call    0x4eac40
+004af59c push    edi
+004af59d mov     ebx, eax
+004af59f push    0x6
+004af5a1 push    ebx
+004af5a2 call    0x4ea970
+004af5a7 add     esp, 0xc
+004af5aa call    0x4d8390
+004af5af push    ebx
+004af5b0 push    0x0
+004af5b2 mov     edi, eax
+004af5b4 call    0x4d71d0
+004af5b9 push    eax
+004af5ba push    0x0
+004af5bc push    edi
+004af5bd call    0x5064e0
+004af5c2 add     esp, 0x14
+004af5c5 test    eax, eax
+004af5c7 jle     0x4af612
+004af612 push    dword [ebp-0x4]
+004af615 call    0x503dc0
+004af61a push    ebx
+004af61b call    0x4eaae0
+004af620 add     esp, 0x8
+004af623 mov     eax, esi
+004af625 pop     edi
+004af626 pop     esi
+004af627 pop     ebx
+004af628 mov     esp, ebp
+004af62a pop     ebp
+004af62b retn    0x14
+004af5c9 push    dword [ebp+0xc]
+004af5cc push    dword [ebp+0x8]
+004af5cf push    edi
+004af5d0 call    0x4d8200
+004af5d5 add     esp, 0xc
+004af5d8 test    eax, eax
+004af5da jle     0x4af612
+004af5dc push    dword [ebp+0x14]
+004af5df push    dword [ebp+0x10]
+004af5e2 push    edi
+004af5e3 call    0x5063b0
+004af5e8 add     esp, 0xc
+004af5eb cmp     eax, esi
+004af5ed jne     0x4af5fc
+004af5fc test    eax, eax
+004af5fe jne     0x4af609
+004af5ef mov     eax, dword [ebp+0x18]
+004af5f2 xor     esi, esi
+004af5f4 mov     dword [eax], 0x1
+004af5fa jmp     0x4af612
+004af609 mov     ecx, dword [ebp+0x18]
+004af60c mov     dword [ecx], 0x0
+004af600 mov     eax, dword [ebp+0x18]
+004af603 xor     esi, esi
+004af605 mov     dword [eax], esi
+004af607 jmp     0x4af612

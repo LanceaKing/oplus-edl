@@ -1,0 +1,38 @@
+{
+  "scope": "Isolated native helper, synthetic inputs; not a login execution",
+  "image_sha256": "cf526788045211590d6fc3d5a1688b87d6377db05532516f5a4f570bd860e68f",
+  "entry_va": "0x4d7200",
+  "api_hooks": 0,
+  "vectors": [
+    {
+      "input_ascii": "",
+      "actual": "d41d8cd98f00b204e9800998ecf8427e",
+      "expected_md5": "d41d8cd98f00b204e9800998ecf8427e",
+      "returned": true,
+      "eax": "0x31001000",
+      "error": null,
+      "faults": [],
+      "match": true
+    },
+    {
+      "input_ascii": "abc",
+      "actual": "900150983cd24fb0d6963f7d28e17f72",
+      "expected_md5": "900150983cd24fb0d6963f7d28e17f72",
+      "returned": true,
+      "eax": "0x31001000",
+      "error": null,
+      "faults": [],
+      "match": true
+    },
+    {
+      "input_ascii": "analysis-only-test-vector",
+      "actual": "4a42c1eff982d3677b33ed41e2b4a13d",
+      "expected_md5": "4a42c1eff982d3677b33ed41e2b4a13d",
+      "returned": true,
+      "eax": "0x31001000",
+      "error": null,
+      "faults": [],
+      "match": true
+    }
+  ]
+}

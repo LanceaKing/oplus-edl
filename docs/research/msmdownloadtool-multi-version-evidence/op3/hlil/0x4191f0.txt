@@ -1,0 +1,119 @@
+004191f7 int32_t ebx = arg4
+00419200 int64_t var_20 = 0
+00419208 int32_t var_10 = 0
+00419208 
+00419212 if (*(arg1 + 0x1e4) != 0)
+0041921f     return 0x4c7
+0041921f 
+00419225 int32_t eax_2 = *(arg2 + 0x64)
+00419230 struct DOS_Header* const var_34
+00419230 
+00419230 if (eax_2 != 0x200)
+0041923e     if (eax_2 != 0x1000)
+00419471         return 1
+00419471     
+00419244     var_34 = &__dos_header
+00419230 else
+00419232     var_34 = 0x80000
+00419232 
+00419249 int32_t* eax_3 = sub_4208b2(var_34)
+00419249 
+00419256 if (eax_3 == 0)
+00419263     return 8
+00419263 
+00419268 *(arg1 + 0x28)
+0041927a void* eax_7
+0041927a int32_t ecx_1
+0041927a eax_7, ecx_1 = sub_41d880(arg2, divu.dp.d(0:ebx, eax_2), arg5, arg6)
+0041927a 
+00419284 if (eax_7 != 0)
+00419290     void* var_34_2 = eax_7
+00419291     char const* const var_38_1
+00419291     
+00419291     if (*(arg1 + 0x1b) == 0)
+0041929a         var_38_1 = "SendProgromCommand Failed, Errno: %d"
+00419291     else
+00419293         var_38_1 = "SendProgromCommand"
+00419293     
+004192a0     sub_410900(arg1 + 0x164, var_38_1)
+004192c3     SendMessageA(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, arg1 + 0x164)
+004192cc     sub_4208bb(eax_3)
+004192dd     return eax_7
+004192dd 
+004192ec if (ebx != 0)
+004192f5     int32_t var_18_1 = var_20:4.d
+004192f8     void* eax_14 = var_20.d
+004192fb     arg6 = eax_14
+004192fb     
+00419307     while (true)
+00419307         if (*(arg1 + 0x1e4) != 0)
+00419307             goto label_4193f9
+00419307         
+00419310         int32_t edi_4 = eax_2 << 0xa
+00419310         
+00419317         if (var_10 s< 0)
+0041931f             edi_4 = ebx
+00419317         else if (var_10 s<= 0 && ebx u<= edi_4)
+0041931f             edi_4 = ebx
+0041931f         
+00419329         sub_542370(eax_3, eax_14 + arg3, edi_4)
+00419337         var_20:4.d = 0
+0041933e         void* temp5_1 = arg6
+0041933e         arg6 += edi_4
+00419343         var_18_1 = adc.d(var_18_1, 0, temp5_1 + edi_4 u< temp5_1)
+0041934c         int32_t eax_16
+0041934c         eax_16, ecx_1 = sub_41ad40(**(arg1 + 0x28), eax_3, edi_4, &var_20:4)
+00419351         var_20:4.d = eax_16
+00419351         
+00419356         if (eax_16 != 0)
+004193ab             int32_t var_34_8 = eax_16
+004193ac             char const* const var_38_6
+004193ac             
+004193ac             if (*(arg1 + 0x1b) == 0)
+004193b5                 var_38_6 = "FirehoseWriteData Failed, Errno: %d"
+004193ac             else
+004193ae                 var_38_6 = "FirehoseWriteData"
+004193ae             
+004193ce             sub_417200(sub_410900(arg1 + 0x164, var_38_6), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+004193ce                 arg1 + 0x164, 1)
+004193d9             sub_4208bb(eax_3)
+004193ea             return var_20:4.d
+004193ea         
+00419358         int32_t temp6_1 = ebx
+00419358         ebx -= edi_4
+0041935d         int32_t edi_6 = sbb.d(var_10, eax_16, temp6_1 u< edi_4)
+00419362         var_10 = edi_6
+00419362         
+00419369         if (*(arg2 + 0x5f) == 0)
+00419389             ecx_1 = SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 3, 
+00419389                 arg4 - ebx)
+00419389         
+00419391         if (edi_6 s< 0)
+00419391             break
+00419391         
+00419397         if (edi_6 s<= 0 && ebx == 0)
+00419397             break
+00419397         
+00419399         eax_14 = arg6
+00419399 
+004193f4 if (*(arg1 + 0x1e4) == 0)
+0041940d     *(arg1 + 0x28)
+00419410     int32_t eax_27 = sub_41d790(ecx_1)
+00419410     
+00419419     if (eax_27 != 0)
+00419425         int32_t var_34_12 = eax_27
+00419426         char const* const var_38_8
+00419426         
+00419426         if (*(arg1 + 0x1b) == 0)
+0041942f             var_38_8 = "FirehoseCheckRSP Failed, Errno: %d"
+00419426         else
+00419428             var_38_8 = "FirehoseCheckRSP"
+00419428         
+00419448         sub_417200(sub_410900(arg1 + 0x164, var_38_8), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+00419448             arg1 + 0x164, 1)
+00419453         sub_4208bb(eax_3)
+00419463         return eax_27
+00419463 
+004193f9 label_4193f9:
+004193f9 sub_4208bb(eax_3)
+00419409 return 0

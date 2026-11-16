@@ -1,0 +1,41 @@
+FIRST
+00c6f81f 90                             nop 
+00c6f820 8afa                           mov bh, dl
+00c6f822 660f47de                       cmova bx, si
+00c6f826 5b                             pop ebx
+00c6f827 e91c7f0c00                     jmp 0xd37748
+00d37748 871c24                         xchg dword ptr [esp], ebx
+00d3774b e9e4c32900                     jmp 0xfd3b34
+00fd3b34 53                             push ebx
+00fd3b35 c6c7b7                         mov bh, 0xb7
+00fd3b38 0fbfdf                         movsx ebx, di
+00fd3b3b bbacc65500                     mov ebx, 0x55c6ac
+00fd3b40 e91142a8ff                     jmp 0xa57d56
+00a57d56 8b9ba0655800                   mov ebx, dword ptr [ebx + 0x5865a0]
+00a57d5c e95aa34c00                     jmp 0xf220bb
+00f220bb 8d9b58083c1d                   lea ebx, [ebx + 0x1d3c0858]
+00f220c1 e93dadcdff                     jmp 0xbfce03
+00bfce03 871c24                         xchg dword ptr [esp], ebx
+00bfce06 e9d9174300                     jmp 0x102e5e4
+0102e5e4 c3                             ret 
+
+LAST
+00c6f81f 90                             nop 
+00c6f820 8afa                           mov bh, dl
+00c6f822 660f47de                       cmova bx, si
+00c6f826 5b                             pop ebx
+00c6f827 e91c7f0c00                     jmp 0xd37748
+00d37748 871c24                         xchg dword ptr [esp], ebx
+00d3774b e9e4c32900                     jmp 0xfd3b34
+00fd3b34 53                             push ebx
+00fd3b35 c6c7b7                         mov bh, 0xb7
+00fd3b38 0fbfdf                         movsx ebx, di
+00fd3b3b bbacc65500                     mov ebx, 0x55c6ac
+00fd3b40 e91142a8ff                     jmp 0xa57d56
+00a57d56 8b9ba0655800                   mov ebx, dword ptr [ebx + 0x5865a0]
+00a57d5c e95aa34c00                     jmp 0xf220bb
+00f220bb 8d9b58083c1d                   lea ebx, [ebx + 0x1d3c0858]
+00f220c1 e93dadcdff                     jmp 0xbfce03
+00bfce03 871c24                         xchg dword ptr [esp], ebx
+00bfce06 e9d9174300                     jmp 0x102e5e4
+0102e5e4 c3                             ret 

@@ -1,0 +1,77 @@
+180053dbf if (arg1 != 0 && arg2 != 0 && *arg1 == 0x28)
+180053dc5     int32_t rax_1 = arg1[1]
+180053dc5     
+180053de4     if (rax_1 u<= 1 && arg1[2] u<= 1 && (rax_1 != 0 || *(arg1 + 0x20) != 0))
+180053ded         __builtin_memset(arg2, 0, 0x30)
+180053df8         int32_t rax_2 = arg1[3]
+180053df8         
+180053dfd         if (rax_2 != 0)
+180053e03             int64_t r10 = *(arg1 + 0x10)
+180053e07             uint64_t r11 = zx.q(rax_2)
+180053e0a             int64_t rdx = 0
+180053e0f             uint64_t temp0 = divu.dp.q(rdx:r10, r11)
+180053e12             uint64_t rcx = temp0
+180053e12             
+180053e18             if (modu.dp.q(rdx:r10, r11) != 0)
+180053e1e                 if (temp0 == -1)
+180053e89                     return 0xc
+180053e89                 
+180053e20                 rcx += 1
+180053e20             
+180053e2b             if (r10 u< r11)
+180053e2b                 rcx = 1
+180053e2b             
+180053e34             if (arg1[1] == 0)
+180053e36                 int64_t rax_5 = *(arg1 + 0x20)
+180053e36                 
+180053e42                 if (rax_5 != 0 && rcx u> rax_5)
+180053e4d                     return 0x25
+180053e4d                 
+180053e42                 goto label_180053e6a
+180053e42             
+180053e4e             uint64_t rax_7 = *(arg1 + 0x18)
+180053e4e             
+180053e55             if (rax_7 == 0)
+180053e6a             label_180053e6a:
+180053e6a                 
+180053e6d                 if (rcx != 0)
+180053e6d                     goto label_180053e7b
+180053e55             else
+180053e5c                 if (arg1[2] == 0)
+180053e66                     if (rax_7 u< rcx)
+180053e66                         rcx = rax_7
+180053e66                     
+180053e66                     goto label_180053e6a
+180053e66                 
+180053e5e                 rcx = rax_7
+180053e7b             label_180053e7b:
+180053e7b                 
+180053e7e                 if (r11 u> divu.dp.q(-1, rcx))
+180053e89                     return 0xc
+180053e89             
+180053e92             int64_t rdx_4 = r11 * rcx
+180053e9a             int64_t r8_1 = r10
+180053e9a             
+180053ea6             if (rdx_4 u< r10)
+180053ea6                 r8_1 = rdx_4
+180053ea6             
+180053eb3             int32_t rax_10
+180053eb3             
+180053eb3             if (r10 u>= r11)
+180053ec3                 rax_10 = 0x2000
+180053ec3                 
+180053ece                 if (r10 u>= 0x1000000)
+180053ece                     rax_10 = 0x100000
+180053eb3             else
+180053eb5                 rax_10 = 0x200
+180053eb5             
+180053ed2             *arg2 = 0x30
+180053ed9             arg2[1] = rax_10
+180053edf             *(arg2 + 8) = rcx
+180053ee3             *(arg2 + 0x10) = rdx_4
+180053ee7             *(arg2 + 0x18) = r8_1
+180053eeb             *(arg2 + 0x20) = rdx_4 - r8_1
+180053eef             *(arg2 + 0x28) = r10 - r8_1
+180053f00             return 0
+180053f00 
+180053f0a return 1

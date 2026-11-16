@@ -1,0 +1,80 @@
+0041e21b void* esi = arg3
+0041e226 int32_t* ecx_1 = *arg1 ^ *esi
+0041e228 int32_t ebx_1 = arg1[1] ^ *(esi + 4)
+0041e233 int32_t ecx_3 = arg1[2] ^ *(esi + 8)
+0041e236 int32_t edx_1 = arg1[3] ^ *(esi + 0xc)
+0041e26e int32_t ecx_9 = *((zx.d((ecx_3 u>> 0x10).b) << 3) + &data_5b6e32)
+0041e26e     ^ *((zx.d((ebx_1 u>> 8).b) << 3) + &data_5b6e33) ^ *((edx_1 u>> 0x18 << 3) + &data_5b6e31)
+0041e26e     ^ *((zx.d(ecx_1.b) << 3) + &data_5b6e30)
+0041e27b int32_t var_8 = ecx_9 ^ *(esi + 0x10)
+0041e2af int32_t ecx_17 = *((zx.d((edx_1 u>> 0x10).b) << 3) + &data_5b6e32)
+0041e2af     ^ *((zx.d((ecx_3 u>> 8).b) << 3) + &data_5b6e33) ^ *((ecx_1 u>> 0x18 << 3) + &data_5b6e31)
+0041e2af     ^ *((zx.d(ebx_1.b) << 3) + &data_5b6e30)
+0041e2bc arg3 = ecx_17 ^ *(esi + 0x14)
+0041e305 int32_t edi_3 = *((zx.d((edx_1 u>> 8).b) << 3) + &data_5b6e33)
+0041e305     ^ *((zx.d((ecx_1 u>> 0x10).b) << 3) + &data_5b6e32) ^ *((ebx_1 u>> 0x18 << 3) + &data_5b6e31)
+0041e305     ^ *((zx.d(ecx_3.b) << 3) + &data_5b6e30)
+0041e30f int32_t edi_4 = edi_3 ^ *(esi + 0x18)
+0041e31a int32_t var_10 = edi_4
+0041e334 int32_t edx_2 = var_8
+0041e337 int32_t ebx_7 = *((zx.d((ebx_1 u>> 0x10).b) << 3) + &data_5b6e32)
+0041e337     ^ *((zx.d((ecx_1 u>> 8).b) << 3) + &data_5b6e33) ^ *((ecx_3 u>> 0x18 << 3) + &data_5b6e31)
+0041e337     ^ *((zx.d(edx_1.b) << 3) + &data_5b6e30)
+0041e341 int32_t i_2 = *(esi + 0xf0) - 2
+0041e344 void* eax_24 = arg3
+0041e347 arg1 = ebx_7 ^ *(esi + 0x1c)
+0041e34a int32_t ebx_9 = edi_4
+0041e34c int32_t var_c_1 = ebx_9
+0041e34f void* edi_5 = esi + 0x20
+0041e352 int32_t i_1 = i_2
+0041e352 
+0041e357 if (i_2 s> 0)
+0041e35d     void* esi_1 = eax_24
+0041e479     int32_t i
+0041e479     
+0041e479     do
+0041e394         int32_t ecx_31 = *((zx.d((ebx_9 u>> 0x10).b) << 3) + &data_5b6e32)
+0041e394             ^ *((zx.d((eax_24 u>> 8).b) << 3) + &data_5b6e33)
+0041e394             ^ *((arg1 u>> 0x18 << 3) + &data_5b6e31) ^ *((zx.d(var_8.b) << 3) + &data_5b6e30)
+0041e39f         var_8 = ecx_31 ^ *edi_5
+0041e3d6         int32_t ecx_39 = *((zx.d((arg1 u>> 0x10).b) << 3) + &data_5b6e32)
+0041e3d6             ^ *((zx.d((ebx_9 u>> 8).b) << 3) + &data_5b6e33)
+0041e3d6             ^ *((edx_2 u>> 0x18 << 3) + &data_5b6e31) ^ *((zx.d(arg3.b) << 3) + &data_5b6e30)
+0041e3e2         arg3 = ecx_39 ^ *(edi_5 + 4)
+0041e428         int32_t ecx_47 = *((zx.d((arg1 u>> 8).b) << 3) + &data_5b6e33)
+0041e428             ^ *((zx.d((edx_2 u>> 0x10).b) << 3) + &data_5b6e32)
+0041e428             ^ *((esi_1 u>> 0x18 << 3) + &data_5b6e31) ^ *((zx.d(ebx_9.b) << 3) + &data_5b6e30)
+0041e435         ebx_9 = ecx_47 ^ *(edi_5 + 8)
+0041e43e         int32_t ecx_50 = *((zx.d((esi_1 u>> 0x10).b) << 3) + &data_5b6e32)
+0041e43e             ^ *((zx.d((edx_2 u>> 8).b) << 3) + &data_5b6e33)
+0041e445         edx_2 = var_8
+0041e448         uint32_t eax_45 = var_c_1 u>> 0x18
+0041e44b         var_c_1 = ebx_9
+0041e462         int32_t* ecx_53 = ecx_50 ^ *((eax_45 << 3) + &data_5b6e31)
+0041e462             ^ *((zx.d(arg1.b) << 3) + &data_5b6e30) ^ *(edi_5 + 0xc)
+0041e465         edi_5 += 0x10
+0041e468         eax_24 = arg3
+0041e46b         esi_1 = eax_24
+0041e46d         arg1 = ecx_53
+0041e473         i = i_1 - 1
+0041e474         i_1 = i
+0041e479     while (i s> 0)
+0041e479 
+0041e4c4 int32_t ecx_58 = (*((zx.d((ebx_9 u>> 0x10).b) << 3) + &data_5b6e30) & 0xff0000)
+0041e4c4     ^ (*((zx.d((arg3 u>> 8).b) << 3) + &data_5b6e31) & 0xff00)
+0041e4c4     ^ (*((arg1 u>> 0x18 << 3) + &data_5b6e33) & 0xff000000)
+0041e4e3 *arg2 = ecx_58 ^ zx.d(*((zx.d(var_8.b) << 3) + &data_5b6e32)) ^ *edi_5
+0041e51c int32_t ecx_64 = (*((zx.d((arg1 u>> 0x10).b) << 3) + &data_5b6e30) & 0xff0000)
+0041e51c     ^ (*((zx.d((ebx_9 u>> 8).b) << 3) + &data_5b6e31) & 0xff00)
+0041e51c     ^ (*((var_8 u>> 0x18 << 3) + &data_5b6e33) & 0xff000000)
+0041e53c arg2[1] = ecx_64 ^ zx.d(*((zx.d(arg3.b) << 3) + &data_5b6e32)) ^ *(edi_5 + 4)
+0041e577 int32_t ecx_70 = (*((zx.d((var_8 u>> 0x10).b) << 3) + &data_5b6e30) & 0xff0000)
+0041e577     ^ (*((zx.d((arg1 u>> 8).b) << 3) + &data_5b6e31) & 0xff00)
+0041e577     ^ (*((arg3 u>> 0x18 << 3) + &data_5b6e33) & 0xff000000)
+0041e597 arg2[2] = ecx_70 ^ zx.d(*((zx.d(ebx_9.b) << 3) + &data_5b6e32)) ^ *(edi_5 + 8)
+0041e5cc int32_t ecx_76 = (*((zx.d((arg3 u>> 0x10).b) << 3) + &data_5b6e30) & 0xff0000)
+0041e5cc     ^ (*((zx.d((var_8 u>> 8).b) << 3) + &data_5b6e31) & 0xff00)
+0041e5cc     ^ (*((ebx_9 u>> 0x18 << 3) + &data_5b6e33) & 0xff000000)
+0041e5d4 uint32_t result = zx.d(*((zx.d(arg1.b) << 3) + &data_5b6e32))
+0041e5e3 arg2[3] = ecx_76 ^ result ^ *(edi_5 + 0xc)
+0041e5ea return result

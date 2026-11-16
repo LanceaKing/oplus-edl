@@ -1,0 +1,117 @@
+004c0590 int32_t ebp
+004c0590 int32_t var_4_7 = ebp
+004c0593 void* var_8 = arg1
+004c0594 int32_t ebx
+004c0594 int32_t var_c = ebx
+004c0595 int32_t esi
+004c0595 int32_t var_10 = esi
+004c0598 int32_t edi
+004c0598 int32_t var_14 = edi
+004c0599 void** eax = *(arg1 + 0x94)
+004c059f int32_t ecx = eax[0x39]
+004c059f 
+004c05a8 if (ecx == 1)
+004c05a8     goto label_4c05bb
+004c05a8 
+004c05ad char var_2c
+004c05ad void* var_18
+004c05ad 
+004c05ad if (ecx == 2)
+004c05af     eax = &eax[0xc]
+004c05bb label_4c05bb:
+004c05bb     var_18 = 0xf
+004c05c2     int32_t var_1c_1 = 0
+004c05ca     var_2c = 0
+004c05cd     sub_412b40(&var_2c, eax, 0, 0xffffffff)
+004c05d8     std::_Fac_node::~_Fac_node(var_2c)
+004c05d8 
+004c05ef *(*(arg1 + 0x5a4) + 0x98) = *(arg1 + 0x5c)
+004c05fd *(*(arg1 + 0x5a4) + 0x9c) = *(arg1 + 0x574)
+004c060d void** eax_4 = *(arg1 + 0x94) + 0x48
+004c0612 var_18 = 0xf
+004c0619 int32_t var_1c_2 = 0
+004c0621 var_2c = 0
+004c0624 sub_412b40(&var_2c, eax_4, 0, 0xffffffff)
+004c062b sub_4d1660(var_2c)
+004c0644 int32_t var_4 = 0xf
+004c064b int32_t var_8_1 = 0
+004c0653 var_18.b = 0
+004c0656 sub_412b40(&var_18, *(arg1 + 0x94) + 0xfc, 0, 0xffffffff)
+004c065d sub_4d1520(var_18)
+004c0676 int32_t var_4_1 = 0xf
+004c067d int32_t var_8_2 = 0
+004c0685 var_18.b = 0
+004c0688 sub_412b40(&var_18, *(arg1 + 0x94) + 0x114, 0, 0xffffffff)
+004c068f sub_4d15c0(var_18)
+004c0694 *(arg1 + 0x5a4)
+004c0696 sub_4d5070()
+004c069b *(arg1 + 0x5a4)
+004c069d int32_t* ebp_1
+004c069d void* esi_2
+004c069d ebp_1, esi_2 = sub_4d50f0()
+004c06a6 int32_t result = sub_4cedb0(*(esi_2 + 0x38), arg1 + 0x5a4)
+004c06af void* var_4_4
+004c06af int32_t eax_10
+004c06af 
+004c06af if (result != 0)
+004c06e0     void* eax_11 = *(arg1 + 0x5a4)
+004c06e2     int32_t var_4_5 = *(eax_11 + 0x16c)
+004c06e8     int32_t var_8_4 = *(eax_11 + 0x168)
+004c06f1     int32_t eax_13 = *(esi_2 + 0x3c) + 1
+004c06f3     char const* const var_10_1 = "[%d] model check failed %d, %d\n"
+004c06f8     int32_t var_14_1 = 4
+004c06fa     var_18 = &data_7e4a58
+004c06ff     sub_4d6500(var_18, var_14_1, var_10_1, eax_13, var_8_4, var_4_5)
+004c0704     void* eax_14 = *(arg1 + 0x5a4)
+004c0709     int32_t ecx_14 = *(eax_14 + 0x168)
+004c0712     wchar16 const* const var_4_6
+004c0712     void* eax_16
+004c0712     
+004c0712     if (ecx_14 u> 3)
+004c0794         eax_16 = esi_2 + 0x2c4
+004c0794         
+004c079a         if (*(esi_2 + 0x24) == 0)
+004c07a3             var_4_6 = u"Token process failed\n"
+004c079a         else
+004c079c             var_4_6 = "CgVg!h"
+004c079c         
+004c07a9     label_4c07a9:
+004c07a9         sub_4c26f0(eax_16, var_4_6)
+004c07b7         var_4_4 = esi_2 + 0x2c4
+004c07bc         eax_10 = zx.d(*(esi_2 + 0x3c)) | 0x1010000
+004c0712     else
+004c0714         switch (ecx_14)
+004c0722             case 0
+004c0722                 if (*(eax_14 + 0x16c) != 0)
+004c072c                     eax_16 = esi_2 + 0x2c4
+004c072c                     
+004c0732                     if (*(esi_2 + 0x24) == 0)
+004c073b                         var_4_6 = u"Device not match image\n"
+004c0732                     else
+004c0734                         var_4_6 = &data_77d1b8
+004c0734                     
+004c0732                     goto label_4c07a9
+004c0732                 
+004c07b7                 var_4_4 = esi_2 + 0x2c4
+004c07bc                 eax_10 = zx.d(*(esi_2 + 0x3c)) | 0x1010000
+004c0714             case 1
+004c0714                 return sub_4c0742(ebp_1, esi_2) __tailcall
+004c0714             case 2
+004c0714                 return sub_4c075c(ebp_1, esi_2) __tailcall
+004c0714             case 3
+004c0714                 return sub_4c0776(ebp_1, esi_2) __tailcall
+004c06af else
+004c06ba     wchar16 const* const var_4_3
+004c06ba     
+004c06ba     if (*(esi_2 + 0x24) == result.b)
+004c06c3         var_4_3 = u"Send project model to device success!\n"
+004c06ba     else
+004c06bc         var_4_3 = &data_77d0a8
+004c06bc     
+004c06c9     sub_4c26f0(esi_2 + 0x2c4, var_4_3)
+004c06d5     eax_10 = zx.d(*(esi_2 + 0x3c)) | 0x10000
+004c06da     var_4_4 = esi_2 + 0x2c4
+004c06da 
+004c07ca 0x3b87d0(*(esi_2 + 0x40), 0x178c, eax_10, var_4_4)
+004c07d7 *ebp_1
+004c07d8 return result

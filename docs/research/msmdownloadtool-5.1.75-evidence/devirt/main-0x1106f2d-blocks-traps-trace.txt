@@ -1,0 +1,41 @@
+FIRST
+01106f2d 90                             nop 
+01106f2e e939b1e4ff                     jmp 0xf5206c
+00f5206c 51                             push ecx
+00f5206d 87c9                           xchg ecx, ecx
+00f5206f 66b9a70b                       mov cx, 0xba7
+00f52073 8b4c2404                       mov ecx, dword ptr [esp + 4]
+00f52077 e980190900                     jmp 0xfe39fc
+00fe39fc 8d4901                         lea ecx, [ecx + 1]
+00fe39ff 894c2404                       mov dword ptr [esp + 4], ecx
+00fe3a03 c6c514                         mov ch, 0x14
+00fe3a06 b9a83e4d00                     mov ecx, 0x4d3ea8
+00fe3a0b e9db90d0ff                     jmp 0xcecaeb
+00cecaeb 8b8964dbb700                   mov ecx, dword ptr [ecx + 0xb7db64]
+00cecaf1 e995b33200                     jmp 0x1017e8b
+01017e8b 8d89470a4f0e                   lea ecx, [ecx + 0xe4f0a47]
+01017e91 e91dfef6ff                     jmp 0xf87cb3
+00f87cb3 870c24                         xchg dword ptr [esp], ecx
+00f87cb6 e9840060ff                     jmp 0x587d3f
+00587d3f c3                             ret 
+
+LAST
+01106f2d 90                             nop 
+01106f2e e939b1e4ff                     jmp 0xf5206c
+00f5206c 51                             push ecx
+00f5206d 87c9                           xchg ecx, ecx
+00f5206f 66b9a70b                       mov cx, 0xba7
+00f52073 8b4c2404                       mov ecx, dword ptr [esp + 4]
+00f52077 e980190900                     jmp 0xfe39fc
+00fe39fc 8d4901                         lea ecx, [ecx + 1]
+00fe39ff 894c2404                       mov dword ptr [esp + 4], ecx
+00fe3a03 c6c514                         mov ch, 0x14
+00fe3a06 b9a83e4d00                     mov ecx, 0x4d3ea8
+00fe3a0b e9db90d0ff                     jmp 0xcecaeb
+00cecaeb 8b8964dbb700                   mov ecx, dword ptr [ecx + 0xb7db64]
+00cecaf1 e995b33200                     jmp 0x1017e8b
+01017e8b 8d89470a4f0e                   lea ecx, [ecx + 0xe4f0a47]
+01017e91 e91dfef6ff                     jmp 0xf87cb3
+00f87cb3 870c24                         xchg dword ptr [esp], ecx
+00f87cb6 e9840060ff                     jmp 0x587d3f
+00587d3f c3                             ret 

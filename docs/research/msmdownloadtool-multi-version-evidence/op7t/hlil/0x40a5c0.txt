@@ -1,0 +1,159 @@
+0040a5c6 int32_t var_c = 0xffffffff
+0040a5c8 int32_t (* var_10)() = sub_64ac28
+0040a5d3 TEB* fsbase
+0040a5d3 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040a5d7 int32_t ebx
+0040a5d7 int32_t var_40 = ebx
+0040a5d8 int32_t esi
+0040a5d8 int32_t var_44 = esi
+0040a5d9 int32_t edi
+0040a5d9 int32_t var_48 = edi
+0040a5e1 int32_t var_4c = __security_cookie ^ &var_48
+0040a5e1 int32_t* esp = &var_4c
+0040a5e2 struct _EXCEPTION_REGISTRATION_RECORD** result = &ExceptionList
+0040a5e6 fsbase->NtTib.ExceptionList = &ExceptionList
+0040a5e6 
+0040a5f7 if (data_72420c == 1)
+0040a5fd     int32_t* eax_3 = sub_4f2b78()
+0040a608     int32_t edx_1
+0040a608     edx_1.b = eax_3 != 0
+0040a608     
+0040a60d     if (edx_1 == 0)
+0040a614         sub_405ee0(0x80004005)
+0040a614         noreturn
+0040a614     
+0040a621     void* var_38 = (*(*eax_3 + 0xc))() + 0x10
+0040a625     int32_t var_c_1 = 0
+0040a62d     wchar16 const* const eax_7 = u"cbbdcaaca74088039b03d81ad7766ef3"
+0040a632     int32_t* esi_1 = data_72423c
+0040a638     int16_t* ecx_1 = *esi_1
+0040a640     int32_t ecx_3
+0040a640     
+0040a640     while (true)
+0040a640         int16_t edx_2 = *ecx_1
+0040a643         wchar16 const temp1_1 = *eax_7
+0040a643         bool c_1 = edx_2 u< temp1_1
+0040a643         
+0040a646         if (edx_2 == temp1_1)
+0040a64b             if (edx_2 == 0)
+0040a662                 ecx_3 = 0
+0040a664                 break
+0040a664             
+0040a64d             edx_2 = ecx_1[1]
+0040a651             int16_t temp2_1 = eax_7[1]
+0040a651             c_1 = edx_2 u< temp2_1
+0040a651             
+0040a655             if (edx_2 == temp2_1)
+0040a657                 ecx_1 = &ecx_1[2]
+0040a65a                 eax_7 = &eax_7[2]
+0040a65a                 
+0040a660                 if (edx_2 != 0)
+0040a660                     continue
+0040a660                 
+0040a662                 ecx_3 = 0
+0040a664                 break
+0040a664         
+0040a668         ecx_3 = sbb.d(ecx_1, ecx_1, c_1) | 1
+0040a668         break
+0040a668     
+0040a66f     int32_t eax_8
+0040a66f     eax_8.b = ecx_3 == 0
+0040a681     int32_t var_5c
+0040a681     
+0040a681     if (eax_8 != 1 || data_72420c != eax_8)
+0040a782         int32_t eax_18 = data_724220
+0040a782         
+0040a78c         if (eax_18 != 0x1b90)
+0040a7a0             int32_t var_50_11 = eax_18
+0040a7ab             sub_405fb0(&var_38, u"Verify Failed(%u)")
+0040a78c         else
+0040a799             sub_405a80(&var_38, u"License Expired", 0xf, var_4c)
+0040a681     else
+0040a68a         int32_t eax_9 = _atol(esi_1[0xf])
+0040a694         int32_t eax_10
+0040a694         int32_t edx_3
+0040a694         eax_10, edx_3 = sub_60d90c(0)
+0040a69c         int32_t ebx_3 = eax_9 - eax_10
+0040a69c         bool c_2 = eax_9 u< eax_10
+0040a69e         int32_t esi_2 = sbb.d(0, edx_3, c_2)
+0040a69e         bool s_1 = sbb.d(0, edx_3, c_2) s< 0
+0040a69e         bool o_1 = unimplemented  {sbb esi, edx}
+0040a69e         
+0040a6aa         if (s_1 || ((sbb.d(0, edx_3, c_2) == 0 || s_1 != o_1) && ebx_3 u< 0))
+0040a799             sub_405a80(&var_38, u"License Expired", 0xf, var_4c)
+0040a6aa         else
+0040a6b0             int32_t var_50_3 = 0
+0040a6b2             int32_t var_54_2 = 0x15180
+0040a6b8             var_5c = ebx_3
+0040a6b9             int32_t eax_11
+0040a6b9             int32_t edx_4
+0040a6b9             eax_11, edx_4 = __alldiv(var_5c, esi_2, var_54_2, var_50_3)
+0040a6be             int32_t var_50_4 = 0xffffffff
+0040a6c4             int32_t var_54_3 = 0xfffeae80
+0040a6ca             var_5c = eax_11
+0040a6d3             int32_t eax_13
+0040a6d3             int32_t edx_5
+0040a6d3             eax_13, edx_5 = __allmul(var_5c, edx_4, var_54_3, var_50_4)
+0040a6d8             int32_t ebx_4 = ebx_3 + eax_13
+0040a6da             int32_t var_50_5 = 0
+0040a6dc             int32_t var_54_4 = 0xe10
+0040a6e1             int32_t esi_3 = adc.d(esi_2, edx_5, ebx_3 + eax_13 u< ebx_3)
+0040a6e4             var_5c = ebx_4
+0040a6e5             int32_t eax_14
+0040a6e5             int32_t edx_6
+0040a6e5             eax_14, edx_6 = __alldiv(var_5c, esi_3, var_54_4, var_50_5)
+0040a6ea             int32_t var_50_6 = 0xffffffff
+0040a6f0             int32_t var_54_5 = 0xfffff1f0
+0040a6f6             var_5c = eax_14
+0040a6ff             int32_t eax_16
+0040a6ff             int32_t edx_7
+0040a6ff             eax_16, edx_7 = __allmul(var_5c, edx_6, var_54_5, var_50_6)
+0040a704             int32_t ebx_5 = ebx_4 + eax_16
+0040a706             int32_t var_50_7 = 0
+0040a708             int32_t esi_4 = adc.d(esi_3, edx_7, ebx_4 + eax_16 u< ebx_4)
+0040a70e             int32_t var_54_6 = 0x3c
+0040a711             var_5c = ebx_5
+0040a716             int32_t eax_17
+0040a716             int32_t edx_8
+0040a716             eax_17, edx_8 = __alldiv(var_5c, esi_4, var_54_6, var_50_7)
+0040a729             int32_t ecx_7 = eax_17 << 4
+0040a72c             int32_t ecx_8 = ecx_7 - eax_17
+0040a735             int32_t ecx_9 = neg.d(ecx_8)
+0040a740             int32_t ecx_10 = ecx_9 << 2
+0040a743             int32_t var_30_2 = ebx_5 + ecx_10
+0040a74b             int32_t var_34_2 = adc.d(esi_4, 
+0040a74b                 neg.d(adc.d(sbb.d(edx_8 << 4 | eax_17 u>> 0xffffffe4, edx_8, ecx_7 u< eax_17), 0, 
+0040a74b                     ecx_8 != 0)) << 2 | ecx_9 u>> 0xffffffe2, 
+0040a74b                 ebx_5 + ecx_10 u< ebx_5)
+0040a74f             sub_405a80(&var_38, u"License Exp: ", 0xd, var_4c)
+0040a754             int32_t var_50_9 = var_34_2
+0040a75c             int32_t var_54_8 = var_30_2
+0040a760             int32_t var_58_6 = edx_8
+0040a761             var_5c = eax_17
+0040a762             int32_t var_60_1 = edx_6
+0040a766             int32_t var_64_1 = eax_14
+0040a76a             int32_t var_68_1 = edx_4
+0040a76e             int32_t var_6c_1 = eax_11
+0040a778             sub_40aa80(&var_38, u"%llu day %02llu:%02llu:%02llu")
+0040a778     
+0040a7b3     void* esi_11 = var_38
+0040a7bc     int32_t var_54_11 = 3
+0040a7be     int32_t var_58_8 = 0x40b
+0040a7c3     var_5c = *(arg1 + 0x20)
+0040a7c3     esp = &var_5c
+0040a7c6     0x3095d0(var_5c, var_58_8, var_54_11, esi_11)
+0040a7cf     int32_t var_1c_1 = 0xffffffff
+0040a7da     result = esi_11 - 4
+0040a7dd     struct _EXCEPTION_REGISTRATION_RECORD* ecx_13 = *result
+0040a7dd     *result -= 1
+0040a7dd     
+0040a7e4     if (ecx_13 - 1 s<= 0)
+0040a7eb         result = (*(**(esi_11 - 0x10) + 4))(esi_11 - 0x10)
+0040a7eb         esp = &var_5c
+0040a7eb 
+0040a7f2 fsbase->NtTib.ExceptionList = esp[0xe]
+0040a7f9 *esp
+0040a7f9 esp[1]
+0040a7fa esp[2]
+0040a7fb esp[3]
+0040a800 return result

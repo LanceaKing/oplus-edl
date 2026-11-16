@@ -1,0 +1,64 @@
+0044344a wchar16 const* const var_8
+0044344a int32_t eax_4
+0044344a 
+0044344a if (*(arg1 + 0x84) == 0)
+0044345a     eax_4 = (zx.d((*(arg1 + 0x30)).b) | 0x100) << 0x10
+0044345a     
+00443461     if (*(arg1 + 0x20) == 0)
+0044346a         var_8 = u"No device info set"
+00443461     else
+00443463         var_8 = &data_6e0340
+0044344a else if (*(arg1 + 0x88) != 0)
+004434be     if (*(arg1 + 0x8c) != 0)
+004434ec         if (*(arg1 + 0x90) == 0)
+004434f4             if (*(arg1 + 0x20) == 0)
+00443520                 sub_443400(*(arg1 + 0x34), (*(arg1 + 0x30)).b, 0, u"No UFS Provison file list set", 
+00443520                     1)
+00443525                 *(arg1 + 0x80) = 1
+0044352c                 int32_t eax_13
+0044352c                 eax_13.b = 0
+0044352f                 return eax_13
+0044352f             
+00443503             sub_443400(*(arg1 + 0x34), (*(arg1 + 0x30)).b, 0, 0x6e037c, 1)
+00443508             *(arg1 + 0x80) = 1
+0044350f             int32_t eax_12
+0044350f             eax_12.b = 0
+00443512             return eax_12
+00443512         
+00443537         if (*(arg1 + 0x94) != 0)
+0044357b             int32_t eax
+0044357b             eax.b = 1
+0044357e             return eax
+0044357e         
+0044353f         if (*(arg1 + 0x20) == 0)
+0044356b             sub_443400(*(arg1 + 0x34), (*(arg1 + 0x30)).b, 0, u"No Program image list set", 1)
+00443570             *(arg1 + 0x80) = 1
+00443577             int32_t eax_15
+00443577             eax_15.b = 0
+0044357a             return eax_15
+0044357a         
+0044354e         sub_443400(*(arg1 + 0x34), (*(arg1 + 0x30)).b, 0, 0x6e0450, 1)
+00443553         *(arg1 + 0x80) = 1
+0044355a         int32_t eax_14
+0044355a         eax_14.b = 0
+0044355d         return eax_14
+0044355d     
+004434ce     eax_4 = (zx.d((*(arg1 + 0x30)).b) | 0x100) << 0x10
+004434ce     
+004434d5     if (*(arg1 + 0x20) == 0)
+004434de         var_8 = u"No Sahara image list set"
+004434d5     else
+004434d7         var_8 = &data_6e03e0
+00443490 else
+004434a0     eax_4 = (zx.d((*(arg1 + 0x30)).b) | 0x100) << 0x10
+004434a0     
+004434a7     if (*(arg1 + 0x20) == 0)
+004434b0         var_8 = u"No basic info set"
+004434a7     else
+004434a9         var_8 = &data_6e0304
+004434a9 
+00443478 0x3095d0(*(arg1 + 0x34), 0x178c, eax_4, var_8)
+0044347e *(arg1 + 0x80) = 1
+00443485 int32_t eax_5
+00443485 eax_5.b = 0
+00443488 return eax_5

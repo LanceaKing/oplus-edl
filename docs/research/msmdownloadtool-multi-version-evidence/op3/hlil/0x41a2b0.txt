@@ -1,0 +1,212 @@
+0041a2c2 if (*(arg1 + 0x1e4) != 0)
+0041a2cf     return 0x4c7
+0041a2cf 
+0041a2d5 int32_t eax_2 = arg3[0x19]
+0041a2e0 struct DOS_Header* const var_40_1
+0041a2e0 
+0041a2e0 if (eax_2 == 0x200)
+0041a2e2     var_40_1 = 0x80000
+0041a2f9 label_41a2f9:
+0041a2f9     int32_t eax_3 = sub_4208b2(var_40_1)
+0041a2f9     
+0041a306     if (eax_3 == 0)
+0041a313         return 8
+0041a313     
+0041a322     int32_t eax_6
+0041a322     int32_t edx_1
+0041a322     edx_1:eax_6 = sx.q(sub_53ea2f(arg2))
+0041a325     int32_t var_28_1 = edx_1
+0041a32d     sub_53e61c(arg2, 0, 2)
+0041a33e     int32_t eax_8
+0041a33e     int32_t edx_2
+0041a33e     edx_2:eax_8 = sx.q(sub_53ea2f(arg2))
+0041a34a     sub_53e61c(arg2, eax_6, 0)
+0041a35b     LPARAM lParam_2
+0041a35b     int32_t ecx
+0041a35b     int32_t edx_3
+0041a35b     lParam_2, ecx, edx_3 = __alldvrm(eax_8, edx_2, eax_2, 0)
+0041a360     int32_t var_20_1 = edx_3
+0041a363     LPARAM lParam_1 = lParam_2
+0041a36f     LPARAM lParam = lParam_1
+0041a36f     
+0041a372     if ((ecx | eax_6) != 0)
+0041a375         lParam = lParam_2 + 1
+0041a375     
+0041a382     int32_t eax_10 = sub_404c40(arg3, "BackupGPT")
+0041a389     int32_t eax_11
+0041a389     
+0041a389     if (eax_10 != 0)
+0041a3b7         *(arg1 + 0x28)
+0041a3ba         int32_t eax_13
+0041a3ba         int32_t edx_6
+0041a3ba         edx_6:eax_13 = sx.q(arg3[0x13])
+0041a3c1         eax_11 = sub_41d880(arg3, lParam, eax_13, edx_6)
+0041a389     else
+0041a393         char* var_58_1
+0041a393         
+0041a393         if (*(arg1 + 0x1c) == eax_10.b)
+0041a3ad             var_58_1 = "NUM_DISK_SECTORS-33."
+0041a393         else
+0041a395             var_58_1 = "NUM_DISK_SECTORS-5."
+0041a395         
+0041a39a         void var_54
+0041a39a         sub_402270(&var_54, var_58_1)
+0041a3a2         *(arg1 + 0x28)
+0041a3a6         eax_11 = sub_41f290(arg3, arg3[0x12])
+0041a3a6     
+0041a3ca     if (eax_11 != 0)
+0041a3d6         int32_t var_40_9 = eax_11
+0041a3d7         char const* const var_44_5
+0041a3d7         
+0041a3d7         if (*(arg1 + 0x1b) == 0)
+0041a3e0             var_44_5 = "SendProgromCommand Failed, Errno: %d"
+0041a3d7         else
+0041a3d9             var_44_5 = "SendProgromCommand"
+0041a3d9         
+0041a3e6         sub_410900(arg1 + 0x164, var_44_5)
+0041a409         SendMessageA(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, 
+0041a409             arg1 + 0x164)
+0041a412         sub_4208bb(eax_3)
+0041a422         return eax_11
+0041a422     
+0041a440     int32_t ecx_5 =
+0041a440         SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 2, lParam)
+0041a448     void** eax_35
+0041a448     int32_t ebx_4
+0041a448     
+0041a448     if (lParam_1 != 0)
+0041a44e         ebx_4 = eax_3
+0041a44e         
+0041a45d         while (true)
+0041a45d             if (*(arg1 + 0x1e4) != 0)
+0041a45d                 goto label_41a4ed
+0041a45d             
+0041a468             LPARAM lParam_3 = lParam_1
+0041a468             
+0041a46c             if (lParam_1 u> 0x400)
+0041a46c                 lParam_3 = 0x400
+0041a46c             
+0041a472             int32_t ecx_7 = eax_2 * lParam_3
+0041a472             
+0041a488             if (___vswprintf_l(ebx_4, ecx_7, 1, arg2) != 1)
+0041a54d                 eax_35 = &arg3[6]
+0041a54d                 
+0041a554                 if (*(arg1 + 0x1b) == 0)
+0041a554                     break
+0041a554                 
+0041a554                 goto label_41a556
+0041a554             
+0041a48e             void** ecx_8 = *(arg1 + 0x28)
+0041a494             int32_t var_18
+0041a494             int32_t* var_40_14 = &var_18
+0041a498             var_18 = 0
+0041a4a2             int32_t eax_24 = sub_41ad40(*ecx_8, ebx_4, ecx_7, var_40_14)
+0041a4a2             
+0041a4ac             if (eax_24 != 0)
+0041a50a                 int32_t var_40_17 = eax_24
+0041a50b                 char const* const var_44_11
+0041a50b                 
+0041a50b                 if (*(arg1 + 0x1b) == 0)
+0041a514                     var_44_11 = "FirehoseWriteData Failed, Errno: %d"
+0041a50b                 else
+0041a50d                     var_44_11 = "FirehoseWriteData"
+0041a50d                 
+0041a52d                 sub_417200(sub_410900(arg1 + 0x164, var_44_11), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 
+0041a52d                     0, arg1 + 0x164, 1)
+0041a536                 sub_4208bb(ebx_4)
+0041a547                 return eax_24
+0041a547             
+0041a4ae             lParam_1 -= lParam_3
+0041a4cf             ecx_5 = SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 3, 
+0041a4cf                 lParam - lParam_1)
+0041a4cf             
+0041a4d7             if (lParam_1 == 0)
+0041a4d7                 goto label_41a4dd
+0041a4d7         
+0041a45d         goto label_41a56c
+0041a45d     
+0041a4dd label_41a4dd:
+0041a4dd     
+0041a4e4     if (*(arg1 + 0x1e4) != 0)
+0041a4ed     label_41a4ed:
+0041a4ed         sub_4208bb(eax_3)
+0041a4fd         return 0
+0041a4fd     
+0041a5b7     ebx_4 = eax_3
+0041a5b7     
+0041a5ba     if ((ecx | eax_6) == 0)
+0041a66a     label_41a66a:
+0041a66a         
+0041a671         if (*(arg1 + 0x1e4) != 0)
+0041a674             sub_4208bb(ebx_4)
+0041a684             return 0
+0041a684         
+0041a688         *(arg1 + 0x28)
+0041a68b         int32_t* eax_46 = sub_41d790(ecx_5)
+0041a68b         
+0041a695         if (eax_46 != 0)
+0041a6a1             int32_t* var_40_33 = eax_46
+0041a6a2             char const* const var_44_22
+0041a6a2             
+0041a6a2             if (*(arg1 + 0x1b) == 0)
+0041a6ab                 var_44_22 = "FirehoseCheckRSP Failed, Errno: %d"
+0041a6a2             else
+0041a6a4                 var_44_22 = "FirehoseCheckRSP"
+0041a6a4             
+0041a6c4             sub_417200(sub_410900(arg1 + 0x164, var_44_22), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+0041a6c4                 arg1 + 0x164, 1)
+0041a6c4         
+0041a6cd         sub_4208bb(ebx_4)
+0041a6de         return eax_46
+0041a6de     
+0041a5c7     _memset(ebx_4, 0, eax_2)
+0041a5c7     
+0041a5e3     if (___vswprintf_l(ebx_4, ecx, 1, arg2) == 1)
+0041a5fa         *(arg1 + 0x28)
+0041a5ff         int32_t* eax_42 = sub_41d760(ebx_4, eax_2)
+0041a5ff         
+0041a609         if (eax_42 == 0)
+0041a662             ecx_5 = sub_417200(eax_42, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 3, lParam, 0)
+0041a609             goto label_41a66a
+0041a609         
+0041a615         int32_t* var_40_27 = eax_42
+0041a616         char const* const var_44_19
+0041a616         
+0041a616         if (*(arg1 + 0x1b) == 0)
+0041a61f             var_44_19 = "FirehoseWriteData Failed, Errno: %d"
+0041a616         else
+0041a618             var_44_19 = "FirehoseWriteData"
+0041a618         
+0041a638         sub_417200(sub_410900(arg1 + 0x164, var_44_19), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+0041a638             arg1 + 0x164, 1)
+0041a641         sub_4208bb(ebx_4)
+0041a652         return eax_42
+0041a652     
+0041a5e8     eax_35 = &arg3[6]
+0041a5e8     
+0041a5ef     if (*(arg1 + 0x1b) != 0)
+0041a556     label_41a556:
+0041a556         
+0041a55a         if (eax_35[5] u>= 0x10)
+0041a55c             eax_35 = *eax_35
+0041a55c         
+0041a55e         int32_t var_40_20 = 1
+0041a560         void** var_44_13 = eax_35
+0041a592         sub_417200(sub_410900(arg1 + 0x164, &data_5a2804), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+0041a592             arg1 + 0x164, 0)
+0041a59b         sub_4208bb(ebx_4)
+0041a5ef     else
+0041a56c     label_41a56c:
+0041a56c         
+0041a56c         if (eax_35[5] u>= 0x10)
+0041a56e             eax_35 = *eax_35
+0041a56e         
+0041a570         int32_t var_40_21 = 1
+0041a572         void** var_44_14 = eax_35
+0041a592         sub_417200(sub_410900(arg1 + 0x164, "Read %s Failed"), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 
+0041a592             0, arg1 + 0x164, 0)
+0041a59b         sub_4208bb(ebx_4)
+0041a2e0 else if (eax_2 == 0x1000)
+0041a2f4     var_40_1 = &__dos_header
+0041a2f4     goto label_41a2f9
+0041a5ae return 1

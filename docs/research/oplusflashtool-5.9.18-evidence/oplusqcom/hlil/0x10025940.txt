@@ -1,0 +1,14 @@
+10025943 int32_t edx = *(arg1 + 0x1c)
+10025963 opdbg_log("QCFlashWorker::doActionGetSignData", 0x196f, 
+10025963     "[%s] [%s] INFO: enter doActionGetSignData.", edx + 0x9e4, edx + 0x444)
+10025971 Sleep(0x3e8)
+10025971 
+10025981 if (sub_10005b90(*(arg1 + 0x28)) == 0)
+100259c1     return 0
+100259c1 
+10025983 int32_t ecx_1 = *(arg1 + 0x1c)
+100259a3 opdbg_log("QCFlashWorker::doActionGetSignData", 0x1973, 
+100259a3     "[%s] [%s] ERROR: Failed to execute firehose command 'getsigndata'.", ecx_1 + 0x9e4, 
+100259a3     ecx_1 + 0x444)
+100259af sub_10024880(arg1, "firehouse_exec_command_error(getsigndata)")
+100259bd return 0x791b

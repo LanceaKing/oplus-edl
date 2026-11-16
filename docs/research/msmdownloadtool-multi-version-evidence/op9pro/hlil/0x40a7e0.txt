@@ -1,0 +1,17 @@
+0040a7e3 int32_t var_8 = 0xffffffff
+0040a7e5 int32_t (* var_c)() = __ehhandler$??1_UShinit@std@@QAE@XZ
+0040a7f0 TEB* fsbase
+0040a7f0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040a7f6 int32_t __saved_ebp
+0040a7f6 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+0040a7fc fsbase->NtTib.ExceptionList = &ExceptionList
+0040a80c sub_41a5b0(&data_7e46b4, u"Factory")
+0040a811 int32_t var_8_1 = 0
+0040a822 data_7e46b8 = 1
+0040a82c sub_41a5b0(0x7e46bc, u"Customer Service")
+0040a831 var_8_1.b = 1
+0040a83f data_7e46c0 = 2
+0040a849 sub_41a5b0(0x7e46c4, u"Others")
+0040a853 int32_t result = _atexit(sub_6ed600, eax_2, ExceptionList, var_c, var_8_1)
+0040a85e fsbase->NtTib.ExceptionList = ExceptionList
+0040a869 return result

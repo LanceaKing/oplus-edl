@@ -1,0 +1,48 @@
+0040f083 int32_t var_8 = 0xffffffff
+0040f085 int32_t (* var_c)(void* arg1) = sub_570a78
+0040f090 TEB* fsbase
+0040f090 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040f092 int32_t esi
+0040f092 int32_t var_18 = esi
+0040f093 int32_t edi
+0040f093 int32_t var_1c = edi
+0040f099 int32_t __saved_ebp
+0040f099 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+0040f09c struct _EXCEPTION_REGISTRATION_RECORD** eax_3 = &ExceptionList
+0040f09f fsbase->NtTib.ExceptionList = &ExceptionList
+0040f0a7 WPARAM arg_4
+0040f0a7 WPARAM ebx = arg_4
+0040f0a7 
+0040f0b0 if (ebx u< 0x100)
+0040f0b6     arg1[ebx + 0x64] += 1
+0040f0e3     arg_4 = (*(data_5dd008 + 0xc))(eax_2) + 0x10
+0040f0e6     int32_t var_8_1 = 0
+0040f0f0     int32_t var_24_1 = arg1[ebx + 0x64]
+0040f0fd     sub_402ab0(&arg_4, u"%d s")
+0040f102     WPARAM esi_1 = arg_4
+0040f112     sub_43989a(&arg1[0x33], ebx, 6, esi_1)
+0040f11a     int32_t var_8_2 = 0xffffffff
+0040f124     eax_3 = esi_1 - 4
+0040f127     struct _EXCEPTION_REGISTRATION_RECORD* ecx_2 = *eax_3
+0040f127     *eax_3 -= 1
+0040f127     
+0040f12e     if (ecx_2 - 1 s<= 0)
+0040f135         int32_t eax_8 = (*(**(esi_1 - 0x10) + 4))(esi_1 - 0x10)
+0040f13b         fsbase->NtTib.ExceptionList = ExceptionList
+0040f149         return eax_8
+0040f0b0 else if (ebx == 0x3e8)
+0040f159     KillTimer(arg1[8], 1)
+0040f16c     PWSTR var_2c_3
+0040f16c     
+0040f16c     if (data_5ea5ac == 0)
+0040f175         var_2c_3 = u"Program running time is more than 6 hours, please exit the program "
+0040f16c     else
+0040f16e         var_2c_3 = 0x5b99c4
+0040f16e     
+0040f17a     sub_432b89(arg1, var_2c_3, nullptr, MB_OK)
+0040f181     sub_40e4b0(arg1)
+0040f196     sub_4369b1(sub_4369fd(arg1, 0x3e9), 0)
+0040f19d     eax_3 = sub_432083(arg1)
+0040f19d 
+0040f1a5 fsbase->NtTib.ExceptionList = ExceptionList
+0040f1b3 return eax_3

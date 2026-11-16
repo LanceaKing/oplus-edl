@@ -1,0 +1,43 @@
+0041ac26 __security_cookie
+0041ac46 HANDLE hFile = CreateFileA(arg2, 0xc0000000, FILE_SHARE_NONE, nullptr, OPEN_EXISTING, 
+0041ac46     SECURITY_ANONYMOUS, nullptr)
+0041ac4c *(arg1 + 8) = hFile
+0041ac4c 
+0041ac52 if (hFile != 0xffffffff)
+0041ac6d     DCB dCB
+0041ac6d     dCB.DCBlength = 0x1c
+0041ac79     dCB.BaudRate = 0
+0041ac79     dCB.__bitfield8.fBinary = 0
+0041ac79     dCB.wReserved = 0
+0041ac79     dCB.XonLim = 0
+0041ac79     dCB.XoffLim = 0
+0041ac79     dCB.ByteSize = 0
+0041ac79     dCB.Parity = 0
+0041ac7e     dCB.StopBits = 0
+0041ac7e     dCB.XonChar = 0
+0041ac7e     dCB.XoffChar = 0
+0041ac7e     dCB.ErrorChar = 0
+0041ac7e     dCB.EofChar = 0
+0041ac7e     dCB.EvtChar = 0
+0041ac7e     dCB.wReserved1 = 0
+0041ac7e     
+0041ac8b     if (GetCommState(hFile, &dCB) != 0)
+0041ac8d         dCB.__bitfield8.fBinary &= 0xffffff87
+0041ac98         dCB.BaudRate = 0x1c200
+0041ac9f         dCB.ByteSize = 8
+0041ac9f         dCB.Parity = 0
+0041aca5         dCB.StopBits = 0
+0041aca5         
+0041acb1         if (SetCommState(*(arg1 + 8), &dCB) != 0)
+0041acb6             COMMTIMEOUTS commTimeouts
+0041acb6             commTimeouts.ReadIntervalTimeout = 0xffffffff
+0041acc1             commTimeouts.ReadTotalTimeoutMultiplier = 0xffffffff
+0041acc8             commTimeouts.ReadTotalTimeoutConstant = 0x1f4
+0041accf             commTimeouts.WriteTotalTimeoutMultiplier = 1
+0041acd6             commTimeouts.WriteTotalTimeoutConstant = 0x1c
+0041acd6             
+0041ace5             if (SetCommTimeouts(*(arg1 + 8), &commTimeouts) != 0 && PurgeComm(*(arg1 + 8), 
+0041ace5                     PURGE_RXABORT | PURGE_RXCLEAR | PURGE_TXABORT | PURGE_TXCLEAR) != 0)
+0041ad03                 *(arg1 + 4) = 2
+0041ad03 
+0041ac67 return sub_53b554()

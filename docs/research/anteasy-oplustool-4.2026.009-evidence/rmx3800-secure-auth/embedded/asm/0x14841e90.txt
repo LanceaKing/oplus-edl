@@ -1,0 +1,18 @@
+14841e90 stp     fp, lr, [sp, #-0x30]!
+14841e94 str     x21, [sp, #0x10]
+14841e98 stp     x20, x19, [sp, #0x20]
+14841e9c mov     fp, sp
+14841ea0 adrp    x21, 0x148c1000
+14841ea4 adrp    x20, 0x148ae000
+14841ea8 add     x21, x21, #0xde0
+14841eac mov     w19, #0x3d9
+14841eb0 add     x20, x20, #0xe8d
+14841eb4 mov     w0, wzr
+14841eb8 mov     w1, #0x6
+14841ebc bl      0x14842014
+14841ec0 ldr     x8, [x21, #0x8]
+14841ec4 mov     x0, x20
+14841ec8 mov     w1, w19
+14841ecc mov     w2, #0x6
+14841ed0 blr     x8
+14841ed4 b       0x14841ed4

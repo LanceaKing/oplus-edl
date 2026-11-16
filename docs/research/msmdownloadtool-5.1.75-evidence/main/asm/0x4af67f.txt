@@ -1,0 +1,21 @@
+004af67f test    eax, eax
+004af681 jne     0x4af69c
+004af69c push    edi
+004af69d xor     esi, esi
+004af69f call    dword [0x6f156c]
+004af6a5 mov     eax, esi
+004af6a7 pop     esi
+004af6a8 pop     edi
+004af6a9 mov     esp, ebp
+004af6ab pop     ebp
+004af6ac retn    0xc
+004af683 call    dword [0x6f1588]
+004af689 push    edi
+004af68a mov     esi, eax
+004af68c call    dword [0x6f156c]
+004af692 mov     eax, esi
+004af694 pop     esi
+004af695 pop     edi
+004af696 mov     esp, ebp
+004af698 pop     ebp
+004af699 retn    0xc

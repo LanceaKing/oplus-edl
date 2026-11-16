@@ -1,0 +1,345 @@
+File: /Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/op6/bn/analysis.bndb
+
+# Block 1 at 0x415300
+00415300  55               push    ebp
+00415301  8b ec            mov     ebp, esp
+00415303  6a ff            push    0xffffffff
+00415305  68 39 11 57 00   push    0x571139
+0041530a  64 a1 00 00 00 00 mov     eax, dword [fs:0x0]
+00415310  50               push    eax
+00415311  81 ec 44 01 00 00 sub     esp, 0x144
+00415317  a1 30 e4 5d 00   mov     eax, dword [0x5de430]
+0041531c  33 c5            xor     eax, ebp
+0041531e  89 45 ec         mov     dword [ebp-0x14], eax
+00415321  53               push    ebx
+00415322  56               push    esi
+00415323  57               push    edi
+00415324  50               push    eax
+00415325  8d 45 f4         lea     eax, [ebp-0xc]
+00415328  64 a3 00 00 00 00 mov     dword [fs:0x0], eax
+0041532e  89 65 f0         mov     dword [ebp-0x10], esp
+00415331  8b f9            mov     edi, ecx
+00415333  89 bd c8 fe ff ff mov     dword [ebp-0x138], edi
+00415339  c7 85 04 ff ff ff 00 00 00 00 mov     dword [ebp-0xfc], 0x0
+00415343  c7 85 14 ff ff ff 00 00 00 00 mov     dword [ebp-0xec], 0x0
+0041534d  e8 e9 a6 01 00   call    0x42fa3b
+00415352  33 c9            xor     ecx, ecx
+00415354  8b d0            mov     edx, eax
+00415356  85 d2            test    edx, edx
+00415358  0f 95 c1         setne   cl
+0041535b  85 c9            test    ecx, ecx
+0041535d  75 0a            jne     0x415369
+
+# Block 3 at 0x41535f
+0041535f  68 05 40 00 80   push    0x80004005
+00415364  e8 37 d8 fe ff   call    0x402ba0
+
+# Block 2 at 0x415369
+00415369  8b 02            mov     eax, dword [edx]
+0041536b  8b ca            mov     ecx, edx
+0041536d  8b 40 0c         mov     eax, dword [eax+0xc]
+00415370  ff d0            call    eax
+00415372  83 c0 10         add     eax, 0x10
+00415375  89 85 1c ff ff ff mov     dword [ebp-0xe4], eax
+0041537b  8d 87 88 00 00 00 lea     eax, [edi+0x88]
+00415381  c7 45 fc 00 00 00 00 mov     dword [ebp-0x4], 0x0
+00415388  83 78 14 10      cmp     dword [eax+0x14], 0x10
+0041538c  72 02            jb      0x415390
+
+# Block 5 at 0x41538e
+0041538e  8b 00            mov     eax, dword [eax]
+
+# Block 4 at 0x415390
+00415390  50               push    eax
+00415391  8d 8d 1c ff ff ff lea     ecx, [ebp-0xe4]
+00415397  e8 44 0e ff ff   call    0x4061e0
+0041539c  68 ac 00 00 00   push    0xac
+004153a1  8d 85 28 ff ff ff lea     eax, [ebp-0xd8]
+004153a7  6a 00            push    0x0
+004153a9  50               push    eax
+004153aa  e8 f1 b2 13 00   call    _memset
+004153af  8b b5 1c ff ff ff mov     esi, dword [ebp-0xe4]
+004153b5  83 c4 0c         add     esp, 0xc
+004153b8  0f 57 c0         xorps   xmm0, xmm0
+004153bb  c7 45 d8 00 00 00 00 mov     dword [ebp-0x28], 0x0
+004153c2  f3 0f 7f 45 dc   movdqu  xmmword [ebp-0x24], xmm0
+004153c7  6a 00            push    0x0
+004153c9  68 80 00 00 00   push    0x80
+004153ce  6a 03            push    0x3
+004153d0  6a 00            push    0x0
+004153d2  6a 01            push    0x1
+004153d4  68 00 00 00 80   push    0x80000000
+004153d9  56               push    esi
+004153da  ff 15 1c 24 58 00 call    dword [CreateFileW]
+004153e0  89 85 20 ff ff ff mov     dword [ebp-0xe0], eax
+004153e6  83 f8 ff         cmp     eax, 0xffffffff
+004153e9  75 2c            jne     0x415417
+
+# Block 7 at 0x4153eb
+004153eb  ff 15 90 24 58 00 call    dword [GetLastError]
+004153f1  50               push    eax
+004153f2  8d 87 f0 01 00 00 lea     eax, [edi+0x1f0]
+004153f8  68 30 a1 5b 00   push    0x5ba130
+004153fd  50               push    eax
+004153fe  e8 61 69 13 00   call    0x54bd64
+00415403  8d 87 f0 01 00 00 lea     eax, [edi+0x1f0]
+00415409  c6 07 01         mov     byte [edi], 0x1
+0041540c  83 c4 0c         add     esp, 0xc
+0041540f  89 47 04         mov     dword [edi+0x4], eax
+00415412  e9 94 06 00 00   jmp     0x415aab
+
+# Block 6 at 0x415417
+00415417  8d 8d 04 ff ff ff lea     ecx, [ebp-0xfc]
+0041541d  51               push    ecx
+0041541e  50               push    eax
+0041541f  ff 15 18 24 58 00 call    dword [GetFileSize]
+00415425  33 d2            xor     edx, edx
+00415427  0b d0            or      edx, eax
+00415429  0b 95 04 ff ff ff or      edx, dword [ebp-0xfc]
+0041542f  75 11            jne     0x415442
+
+# Block 9 at 0x415431
+00415431  ff 15 90 24 58 00 call    dword [GetLastError]
+00415437  50               push    eax
+00415438  68 54 a1 5b 00   push    0x5ba154
+0041543d  e9 42 06 00 00   jmp     0x415a84
+
+# Block 8 at 0x415442
+00415442  6a 02            push    0x2
+00415444  8d 85 0c ff ff ff lea     eax, [ebp-0xf4]
+0041544a  c7 85 08 ff ff ff 00 fe ff ff mov     dword [ebp-0xf8], 0xfffffe00
+00415454  50               push    eax
+00415455  68 00 fe ff ff   push    0xfffffe00
+0041545a  ff b5 20 ff ff ff push    dword [ebp-0xe0]
+00415460  c7 85 0c ff ff ff ff ff ff ff mov     dword [ebp-0xf4], 0xffffffff
+0041546a  ff 15 20 24 58 00 call    dword [SetFilePointer]
+00415470  89 85 08 ff ff ff mov     dword [ebp-0xf8], eax
+00415476  ff 15 90 24 58 00 call    dword [GetLastError]
+0041547c  8b 8d 08 ff ff ff mov     ecx, dword [ebp-0xf8]
+00415482  83 f9 ff         cmp     ecx, 0xffffffff
+00415485  75 7a            jne     0x415501
+
+# Block 12 at 0x415487
+00415487  85 c0            test    eax, eax
+00415489  74 76            je      0x415501
+
+# Block 18 at 0x41548b
+0041548b  89 8d 08 ff ff ff mov     dword [ebp-0xf8], ecx
+00415491  89 8d 0c ff ff ff mov     dword [ebp-0xf4], ecx
+
+# Block 16 at 0x415497
+00415497  6a 00            push    0x0
+00415499  8d 85 14 ff ff ff lea     eax, [ebp-0xec]
+0041549f  50               push    eax
+004154a0  68 ac 00 00 00   push    0xac
+004154a5  8d 85 28 ff ff ff lea     eax, [ebp-0xd8]
+004154ab  50               push    eax
+004154ac  ff b5 20 ff ff ff push    dword [ebp-0xe0]
+004154b2  ff 15 10 24 58 00 call    dword [ReadFile]
+004154b8  85 c0            test    eax, eax
+004154ba  0f 84 b7 05 00 00 je      0x415a77
+
+# Block 20 at 0x4154c0
+004154c0  83 bd 14 ff ff ff 00 cmp     dword [ebp-0xec], 0x0
+004154c7  0f 84 aa 05 00 00 je      0x415a77
+
+# Block 22 at 0x4154cd
+004154cd  b8 ef 7c 00 00   mov     eax, 0x7cef
+004154d2  66 3b 85 38 ff ff ff cmp     ax, word [ebp-0xc8]
+004154d9  74 46            je      0x415521
+
+# Block 24 at 0x4154db
+004154db  c7 47 04 1c a2 5b 00 mov     dword [edi+0x4], 0x5ba21c
+
+# Block 32 at 0x4154e2
+004154e2  c6 07 01         mov     byte [edi], 0x1
+
+# Block 30 at 0x4154e5
+004154e5  ff b5 20 ff ff ff push    dword [ebp-0xe0]
+004154eb  ff 15 14 24 58 00 call    dword [CloseHandle]
+004154f1  8d 8d 1c ff ff ff lea     ecx, [ebp-0xe4]
+004154f7  e8 84 d6 fe ff   call    0x402b80
+004154fc  e9 c7 05 00 00   jmp     0x415ac8
+
+# Block 11 at 0x415501
+00415501  83 f9 ff         cmp     ecx, 0xffffffff
+00415504  75 91            jne     0x415497
+
+# Block 17 at 0x415506
+00415506  83 bd 0c ff ff ff 00 cmp     dword [ebp-0xf4], 0x0
+0041550d  75 88            jne     0x415497
+
+# Block 21 at 0x41550f
+0041550f  a1 90 24 58 00   mov     eax, dword [0x582490]
+00415514  ff d0            call    eax
+00415516  50               push    eax
+00415517  68 74 a1 5b 00   push    0x5ba174
+0041551c  e9 63 05 00 00   jmp     0x415a84
+
+# Block 23 at 0x415521
+00415521  8b 85 3c ff ff ff mov     eax, dword [ebp-0xc4]
+00415527  8b b5 20 ff ff ff mov     esi, dword [ebp-0xe0]
+0041552d  8b ce            mov     ecx, esi
+0041552f  99               cdq
+00415530  0f a4 c2 09      shld    edx, eax, 0x9
+00415534  52               push    edx
+00415535  c1 e0 09         shl     eax, 0x9
+00415538  33 d2            xor     edx, edx
+0041553a  50               push    eax
+0041553b  e8 a0 f8 ff ff   call    0x414de0
+00415540  83 c4 08         add     esp, 0x8
+00415543  83 f8 ff         cmp     eax, 0xffffffff
+00415546  75 28            jne     0x415570
+
+# Block 26 at 0x415548
+00415548  85 d2            test    edx, edx
+0041554a  75 24            jne     0x415570
+
+# Block 29 at 0x41554c
+0041554c  a1 90 24 58 00   mov     eax, dword [0x582490]
+00415551  8d b7 f0 01 00 00 lea     esi, [edi+0x1f0]
+00415557  ff d0            call    eax
+00415559  50               push    eax
+0041555a  68 4c a2 5b 00   push    0x5ba24c
+0041555f  56               push    esi
+00415560  e8 ff 67 13 00   call    0x54bd64
+00415565  83 c4 0c         add     esp, 0xc
+00415568  89 77 04         mov     dword [edi+0x4], esi
+0041556b  e9 72 ff ff ff   jmp     0x4154e2
+
+# Block 25 at 0x415570
+00415570  ff b5 40 ff ff ff push    dword [ebp-0xc0]
+00415576  e8 9c 92 01 00   call    0x42e817
+0041557b  83 c4 04         add     esp, 0x4
+0041557e  89 85 18 ff ff ff mov     dword [ebp-0xe8], eax
+00415584  ff b5 40 ff ff ff push    dword [ebp-0xc0]
+0041558a  e8 88 92 01 00   call    0x42e817
+0041558f  83 c4 04         add     esp, 0x4
+00415592  89 85 10 ff ff ff mov     dword [ebp-0xf0], eax
+00415598  8d 85 14 ff ff ff lea     eax, [ebp-0xec]
+0041559e  6a 00            push    0x0
+004155a0  50               push    eax
+004155a1  ff b5 40 ff ff ff push    dword [ebp-0xc0]
+004155a7  ff b5 18 ff ff ff push    dword [ebp-0xe8]
+004155ad  56               push    esi
+004155ae  ff 15 10 24 58 00 call    dword [ReadFile]
+004155b4  85 c0            test    eax, eax
+004155b6  0f 84 78 04 00 00 je      0x415a34
+
+# Block 28 at 0x4155bc
+004155bc  83 bd 14 ff ff ff 00 cmp     dword [ebp-0xec], 0x0
+004155c3  0f 84 6b 04 00 00 je      0x415a34
+
+# Block 31 at 0x4155c9
+004155c9  56               push    esi
+004155ca  ff 15 14 24 58 00 call    dword [CloseHandle]
+004155d0  ff b5 14 ff ff ff push    dword [ebp-0xec]
+004155d6  8b b5 18 ff ff ff mov     esi, dword [ebp-0xe8]
+004155dc  56               push    esi
+004155dd  ff b5 10 ff ff ff push    dword [ebp-0xf0]
+004155e3  e8 18 cf 13 00   call    0x552500
+004155e8  8b 8d 10 ff ff ff mov     ecx, dword [ebp-0xf0]
+004155ee  83 c4 08         add     esp, 0x8
+004155f1  8b d6            mov     edx, esi
+004155f3  ff b5 14 ff ff ff push    dword [ebp-0xec]
+004155f9  e8 32 91 00 00   call    0x41e730
+004155fe  83 c4 08         add     esp, 0x8
+00415601  8b cf            mov     ecx, edi
+00415603  e8 08 cb ff ff   call    0x412110
+00415608  6a 48            push    0x48
+0041560a  e8 d6 91 01 00   call    0x42e7e5
+0041560f  83 c4 04         add     esp, 0x4
+00415612  89 85 0c ff ff ff mov     dword [ebp-0xf4], eax
+00415618  c6 45 fc 01      mov     byte [ebp-0x4], 0x1
+0041561c  85 c0            test    eax, eax
+0041561e  74 11            je      0x415631
+
+# Block 34 at 0x415620
+00415620  8b c8            mov     ecx, eax
+00415622  e8 e9 7c 00 00   call    0x41d310
+00415627  8b f0            mov     esi, eax
+00415629  89 85 20 ff ff ff mov     dword [ebp-0xe0], eax
+0041562f  eb 08            jmp     0x415639
+
+# Block 33 at 0x415631
+00415631  33 f6            xor     esi, esi
+00415633  89 b5 20 ff ff ff mov     dword [ebp-0xe0], esi
+
+# Block 35 at 0x415639
+00415639  c6 45 fc 02      mov     byte [ebp-0x4], 0x2
+0041563d  8b ce            mov     ecx, esi
+0041563f  8b 06            mov     eax, dword [esi]
+00415641  6a 00            push    0x0
+00415643  6a 00            push    0x0
+00415645  ff b5 18 ff ff ff push    dword [ebp-0xe8]
+0041564b  8b 40 08         mov     eax, dword [eax+0x8]
+0041564e  89 b5 0c ff ff ff mov     dword [ebp-0xf4], esi
+00415654  ff d0            call    eax
+
+# Block 27 at 0x415a34
+00415a34  a1 90 24 58 00   mov     eax, dword [0x582490]
+00415a39  8d b7 f0 01 00 00 lea     esi, [edi+0x1f0]
+00415a3f  ff d0            call    eax
+00415a41  50               push    eax
+00415a42  68 70 a2 5b 00   push    0x5ba270
+00415a47  56               push    esi
+00415a48  e8 17 63 13 00   call    0x54bd64
+00415a4d  83 c4 0c         add     esp, 0xc
+00415a50  c6 07 01         mov     byte [edi], 0x1
+00415a53  89 77 04         mov     dword [edi+0x4], esi
+00415a56  ff b5 18 ff ff ff push    dword [ebp-0xe8]
+00415a5c  e8 b1 8d 01 00   call    j__free
+00415a61  83 c4 04         add     esp, 0x4
+00415a64  ff b5 10 ff ff ff push    dword [ebp-0xf0]
+00415a6a  e8 a3 8d 01 00   call    j__free
+00415a6f  83 c4 04         add     esp, 0x4
+00415a72  e9 6e fa ff ff   jmp     0x4154e5
+
+# Block 19 at 0x415a77
+00415a77  a1 90 24 58 00   mov     eax, dword [0x582490]
+00415a7c  ff d0            call    eax
+00415a7e  50               push    eax
+00415a7f  68 98 a1 5b 00   push    0x5ba198
+
+# Block 13 at 0x415a84
+00415a84  8d 87 f0 01 00 00 lea     eax, [edi+0x1f0]
+00415a8a  50               push    eax
+00415a8b  e8 d4 62 13 00   call    0x54bd64
+00415a90  83 c4 0c         add     esp, 0xc
+00415a93  c6 07 01         mov     byte [edi], 0x1
+00415a96  8d 87 f0 01 00 00 lea     eax, [edi+0x1f0]
+00415a9c  89 47 04         mov     dword [edi+0x4], eax
+00415a9f  ff b5 20 ff ff ff push    dword [ebp-0xe0]
+00415aa5  ff 15 14 24 58 00 call    dword [CloseHandle]
+
+# Block 10 at 0x415aab
+00415aab  83 c6 f0         add     esi, 0xfffffff0
+00415aae  83 c9 ff         or      ecx, 0xffffffff
+00415ab1  89 4d fc         mov     dword [ebp-0x4], ecx
+00415ab4  8d 46 0c         lea     eax, [esi+0xc]
+00415ab7  f0 0f c1 08      lock xadd dword [eax], ecx
+00415abb  49               dec     ecx
+00415abc  85 c9            test    ecx, ecx
+00415abe  7f 08            jg      0x415ac8
+
+# Block 15 at 0x415ac0
+00415ac0  8b 0e            mov     ecx, dword [esi]
+00415ac2  56               push    esi
+00415ac3  8b 01            mov     eax, dword [ecx]
+00415ac5  ff 50 04         call    dword [eax+0x4]
+
+# Block 14 at 0x415ac8
+00415ac8  32 c0            xor     al, al
+00415aca  8b 4d f4         mov     ecx, dword [ebp-0xc]
+00415acd  64 89 0d 00 00 00 00 mov     dword [fs:0x0], ecx
+00415ad4  59               pop     ecx
+00415ad5  5f               pop     edi
+00415ad6  5e               pop     esi
+00415ad7  5b               pop     ebx
+00415ad8  8b 4d ec         mov     ecx, dword [ebp-0x14]
+00415adb  33 cd            xor     ecx, ebp
+00415add  e8 91 4a 13 00   call    0x54a573
+00415ae2  8b e5            mov     esp, ebp
+00415ae4  5d               pop     ebp
+00415ae5  c3               retn
+

@@ -1,0 +1,54 @@
+10076900 push    ebp
+10076901 mov     ebp, esp
+10076903 push    0xffffffff
+10076905 push    0x101baa60
+1007690a mov     eax, dword [fs:0x0]
+10076910 push    eax
+10076911 sub     esp, 0x30
+10076914 push    ebx
+10076915 push    esi
+10076916 push    edi
+10076917 mov     eax, dword [0x10247210]
+1007691c xor     eax, ebp
+1007691e push    eax
+1007691f lea     eax, [ebp-0xc]
+10076922 mov     dword [fs:0x0], eax
+10076928 push    0x10225c10
+1007692d mov     dword [ebp-0x4], 0x8
+10076934 jmp     0x109acdbb
+109acdbb push    0xde5dff20
+109acdc0 call    0x10a665c1
+109acdc5 mov     edx, dword [ebp]
+109acdc9 test    ebp, ecx
+109acdcb xor     al, 0xa1
+109acdcd rol     al, 0xd0
+109acdd0 mov     al, byte [ebp+0x4]
+109acdd3 clc     
+109acdd4 stc     
+109acdd5 cmp     edx, esp
+109acdd7 add     ebp, 0x6
+109acddd test    dh, 0xed
+109acde0 test    bh, dl
+109acde2 mov     byte [es:edx], al
+109acde5 bt      dx, si
+109acde9 not     dh
+109acdeb mov     edx, dword [edi]
+109acded lea     edi, [edi+0x4]
+109acdf3 jmp     0x10911c74
+10911c74 xor     edx, ebx
+10911c76 not     edx
+10911c78 jmp     0x102c2ee6
+102c2ee6 bswap   edx
+102c2ee8 jmp     0x10382b67
+10382b67 inc     edx
+10382b68 neg     edx
+10382b6a clc     
+10382b6b test    si, dx
+10382b6e jmp     0x10a263f9
+10a263f9 xor     ebx, edx
+10a263fb test    sp, dx
+10a263fe cmp     dl, 0x14
+10a26401 add     esi, edx
+10a26403 jmp     0x103b224a
+103b224a push    esi
+103b224b retn    

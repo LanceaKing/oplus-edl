@@ -1,0 +1,81 @@
+0040f156 int32_t var_c = 0xffffffff
+0040f158 int32_t (* var_10)() = sub_6daf0d
+0040f163 TEB* fsbase
+0040f163 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040f16f void var_d8
+0040f16f int32_t eax_2 = __security_cookie ^ &var_d8
+0040f17f int32_t var_dc = __security_cookie ^ &var_d8
+0040f187 fsbase->NtTib.ExceptionList = &ExceptionList
+0040f18d void* var_e0 = 5
+0040f198 int32_t var_b4 = 0xf
+0040f1a0 int32_t var_b8 = 0
+0040f1a8 char var_c8 = 0
+0040f1ad sub_412e10(&var_c8, "19805", var_e0)
+0040f1b2 int32_t var_c_1 = 0
+0040f1c1 var_e0 = 5
+0040f1c8 int32_t var_9c = 0xf
+0040f1d0 int32_t var_a0 = 0
+0040f1d8 char var_b0 = 0
+0040f1dd sub_412e10(&var_b0, "20806", var_e0)
+0040f1e2 var_c_1.b = 1
+0040f1ee var_e0 = 5
+0040f1f5 int32_t var_84 = 0xf
+0040f1fd int32_t var_88 = 0
+0040f205 char var_98 = 0
+0040f20a sub_412e10(&var_98, "20807", var_e0)
+0040f20f var_c_1.b = 2
+0040f21b var_e0 = 5
+0040f222 int32_t var_6c = 0xf
+0040f22a int32_t var_70 = 0
+0040f232 char var_80 = 0
+0040f237 sub_412e10(&var_80, "20808", var_e0)
+0040f23c var_c_1.b = 3
+0040f248 var_e0 = 5
+0040f24f int32_t var_54 = 0xf
+0040f25a int32_t var_58 = 0
+0040f265 char var_68 = 0
+0040f26a sub_412e10(&var_68, "20809", var_e0)
+0040f26f var_c_1.b = 4
+0040f27e var_e0 = 5
+0040f285 int32_t var_3c = 0xf
+0040f290 int32_t var_40 = 0
+0040f29b char var_50 = 0
+0040f2a3 sub_412e10(&var_50, "20828", var_e0)
+0040f2a8 var_c_1.b = 5
+0040f2b7 var_e0 = 5
+0040f2be int32_t var_24 = 0xf
+0040f2c9 int32_t var_28 = 0
+0040f2d4 char var_38 = 0
+0040f2dc sub_412e10(&var_38, "20838", var_e0)
+0040f2e1 int32_t var_c_2 = 6
+0040f2f0 void* var_d4
+0040f2f0 var_e0 = var_d4
+0040f2f4 void* var_e4 = var_d4
+0040f2fd var_e0 = nullptr
+0040f301 data_7e48a0 = 0
+0040f30b data_7e48a4 = 0
+0040f315 int32_t eax_5
+0040f315 int32_t ecx_8
+0040f315 eax_5, ecx_8 = sub_4c26b0(0, var_e0, var_dc)
+0040f31a data_7e48a0 = eax_5
+0040f31f int32_t var_e8 = ecx_8
+0040f329 data_7e48a8 = 0
+0040f333 data_7e48ac = 0
+0040f33d data_7e48b0 = 0
+0040f347 ExceptionList.b = 8
+0040f352 int32_t eax_6 = data_7e48a0
+0040f357 data_7e48bc = 0x3f800000
+0040f361 var_dc = eax_6
+0040f36a int32_t eax_7 = data_7e48a8
+0040f377 data_7e48ac = eax_7
+0040f386 sub_4132f0(&data_7e48a8, &var_d4, eax_7, 0x10, &var_dc)
+0040f38b data_7e48b4 = 7
+0040f395 data_7e48b8 = 8
+0040f3a6 ExceptionList.b = 9
+0040f3b9 void var_d0
+0040f3b9 sub_4c2710(&var_d0, &var_28)
+0040f3cb ExceptionList = 0xffffffff
+0040f3d7 `eh vector vbase constructor iterator'(&var_d0, 0x18, 7, sub_412a10)
+0040f3e1 _atexit(sub_6f00b0)
+0040f3f0 fsbase->NtTib.ExceptionList = eax_2
+0040f409 return sub_68804f()

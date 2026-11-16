@@ -1,0 +1,145 @@
+1001c3d0 int32_t ebp
+1001c3d0 int32_t var_4 = ebp
+1001c3d6 int32_t ecx
+1001c3d6 int32_t var_c = ecx
+1001c3d7 int32_t ebx
+1001c3d7 int32_t var_10 = ebx
+1001c3d8 int32_t esi
+1001c3d8 int32_t var_14 = esi
+1001c3d9 char* esi_1 = arg1
+1001c3dc int32_t edi
+1001c3dc int32_t var_18 = edi
+1001c3e3 void* var_1c = &esi_1[0x900]
+1001c3e4 char const* const var_20 = "[Factory TAG]chipSN=%s"
+1001c3e9 int32_t var_24 = 0x977
+1001c3ee char const* const var_28 = "auth_exec_flash_sign"
+1001c3f3 int32_t* ebp_1 = opdbg_log()
+1001c3f8 int32_t* edi_1 = ebp_1[2]
+1001c3fb int32_t* esp_1 = &var_18
+1001c3fb 
+1001c551 for (int32_t i = 0; i s< 5; )
+1001c400     int32_t ecx_1 = data_102177ec
+1001c406     i += 1
+1001c406     
+1001c40d     if (ecx_1 - 1 u> 5)
+1001c583         *(esp_1 - 4) = ecx_1
+1001c584         *(esp_1 - 8) = "[ERROR]: unknow auth type, g_auth_type=%d"
+1001c589         *(esp_1 - 0xc) = 0x992
+1001c58e         *(esp_1 - 0x10) = "auth_exec_flash_sign"
+1001c593         int32_t* ebp_4 = opdbg_log()
+1001c5a0         *esp_1
+1001c5a0         esp_1[1]
+1001c5a1         esp_1[2]
+1001c5a5         *ebp_4
+1001c5a6         return 0x7d0b
+1001c5a6     
+1001c40d     int32_t eax_1
+1001c40d     int32_t result
+1001c40d     void* esp_2
+1001c40d     
+1001c40d     switch (ecx_1)
+1001c41a         case 1
+1001c41a             int32_t* ecx_2 = &data_1021b880
+1001c41a             
+1001c431             do
+1001c423                 eax_1.b = *ecx_2
+1001c425                 ecx_2 += 1
+1001c428                 *(edi_1 - &data_1021b880 + ecx_2 + 0x487) = eax_1.b
+1001c431             while (eax_1.b != 0)
+1001c431             
+1001c433             *(esp_1 - 4) = ebp_1[4]
+1001c433             esp_2 = esp_1 - 4
+1001c43a             result = sub_100157e0(edi_1, esi_1)
+1001c444         case 2
+1001c444             int16_t* ecx_4 = &data_1021a940
+1001c444             
+1001c45e             do
+1001c450                 eax_1.b = *ecx_4
+1001c452                 ecx_4 += 1
+1001c455                 *(edi_1 - &data_1021a940 + ecx_4 + 0x487) = eax_1.b
+1001c45e             while (eax_1.b != 0)
+1001c45e             
+1001c460             *(esp_1 - 4) = ebp_1[4]
+1001c460             esp_2 = esp_1 - 4
+1001c467             result = sub_10017b10(edi_1, esi_1)
+1001c46e         case 3
+1001c46e             char* ecx_6 = &data_1021a740
+1001c46e             
+1001c48e             do
+1001c480                 eax_1.b = *ecx_6
+1001c482                 ecx_6 = &ecx_6[1]
+1001c485                 ecx_6[edi_1 - 0x1021a2b9] = eax_1.b
+1001c48e             while (eax_1.b != 0)
+1001c48e             
+1001c490             *(esp_1 - 4) = ebp_1[4]
+1001c490             esp_2 = esp_1 - 4
+1001c497             result = sub_100198f0(edi_1, esi_1)
+1001c49e         case 4
+1001c49e             char* ecx_8 = &data_1021a900
+1001c49e             
+1001c4be             do
+1001c4b0                 eax_1.b = *ecx_8
+1001c4b2                 ecx_8 = &ecx_8[1]
+1001c4b5                 ecx_8[edi_1 - 0x1021a479] = eax_1.b
+1001c4be             while (eax_1.b != 0)
+1001c4be             
+1001c4c0             *(esp_1 - 4) = ebp_1[4]
+1001c4c0             esp_2 = esp_1 - 4
+1001c4c7             result = sub_10019410(eax_1, esi_1, edi_1)
+1001c4ce         case 5, 6
+1001c4ce             *(esp_1 - 4) = ebp_1[4]
+1001c4ce             esp_2 = esp_1 - 4
+1001c4d5             result = sub_1001f4e0(edi_1, esi_1)
+1001c4d5     
+1001c4dc     int32_t* esp_3 = esp_2 + 4
+1001c4dc     
+1001c4ed     if (result == 0x490 || result != 0)
+1001c4e5         goto label_1001c57c
+1001c4e5     
+1001c4f3     void* eax_2 = ebp_1[3]
+1001c4f3     
+1001c4fc     if (*(eax_2 + 0xb20) != result)
+1001c4fc         goto label_1001c57c
+1001c4fc     
+1001c4fe     *(esp_3 - 4) = 1
+1001c500     *(esp_3 - 8) = ebp_1[4]
+1001c507     int32_t eax_3 = sub_1001d420(eax_2, eax_2, edi_1)
+1001c50c     void* esp_6 = esp_3
+1001c511     int32_t eax_4
+1001c511     int32_t edx_16
+1001c511     
+1001c511     if (eax_3 != 0)
+1001c513         int32_t edx_15 = ebp_1[3]
+1001c518         *(esp_6 - 4) = result
+1001c519         *(esp_6 - 8) = ebp_1[4]
+1001c51c         eax_4, edx_16 = sub_1001d420(eax_3, edx_15, edi_1)
+1001c51c     
+1001c526     if (eax_3 == 0 || eax_4 == 0)
+1001c563         *(esp_6 - 4) = "[INFO]: Pre verify flash sign OK!!!"
+1001c568         *(esp_6 - 8) = 0x9a3
+1001c56d         *(esp_6 - 0xc) = "auth_exec_flash_sign"
+1001c572         ebp_1 = opdbg_log()
+1001c577         esp_3 = esp_6
+1001c57c     label_1001c57c:
+1001c57c         *esp_3
+1001c57c         esp_3[1]
+1001c57d         esp_3[2]
+1001c581         *ebp_1
+1001c582         return result
+1001c582     
+1001c528     *(esp_6 - 4) = result
+1001c529     *(esp_6 - 8) = "E0703001"
+1001c52e     *(esp_6 - 0xc) = edx_16
+1001c52f     sub_1055e0d3()
+1001c534     *(esp_6 - 0x10) = "[ERROR]: Pre verify flash sign failed!!!"
+1001c539     *(esp_6 - 0x14) = 0x99f
+1001c53e     *(esp_6 - 0x18) = "auth_exec_flash_sign"
+1001c543     ebp_1 = opdbg_log()
+1001c548     esi_1 = ebp_1[3]
+1001c54b     esp_1 = esp_6 - 4
+1001c54b 
+1001c55c *esp_1
+1001c55c esp_1[1]
+1001c55d esp_1[2]
+1001c561 *ebp_1
+1001c562 return 0x7d0b

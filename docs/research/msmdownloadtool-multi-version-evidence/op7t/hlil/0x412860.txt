@@ -1,0 +1,36 @@
+00412867 wchar16 const* const ecx = u"http://10.8.0.92:51000/license/download"
+0041286f int16_t* eax = arg1 + 0x7c
+00412871 int32_t eax_2
+00412871 
+00412871 while (true)
+00412871     int16_t edx = *eax
+00412874     wchar16 const temp1_1 = *ecx
+00412874     bool c_1 = edx u< temp1_1
+00412874     
+00412877     if (edx == temp1_1)
+0041287c         if (edx == 0)
+00412893             eax_2 = 0
+00412895             break
+00412895         
+0041287e         edx = eax[1]
+00412882         int16_t temp2_1 = ecx[1]
+00412882         c_1 = edx u< temp2_1
+00412882         
+00412886         if (edx == temp2_1)
+00412888             eax = &eax[2]
+0041288b             ecx = &ecx[2]
+0041288b             
+00412891             if (edx != 0)
+00412891                 continue
+00412891             
+00412893             eax_2 = 0
+00412895             break
+00412895     
+00412899     eax_2 = sbb.d(eax, eax, c_1) | 1
+00412899     break
+00412899 
+0041289e if (eax_2 == 0)
+004128b0     return sub_cbe641(eax_2, u"open", arg1 + 0x7c, eax_2, eax_2, 1)
+004128b0 
+004128b5 *arg2 = 0
+004128bc return arg2

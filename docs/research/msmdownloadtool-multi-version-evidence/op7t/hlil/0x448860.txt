@@ -1,0 +1,16 @@
+0044886c if (*(arg1 + 0x1c) == 2)
+004488bf     return 1
+004488bf 
+0044886e int32_t var_14_1 = arg2
+00448877 int32_t result = sub_446c60(arg1, arg1, 0x84)
+00448877 
+00448880 if (result == 0)
+004488c8     return result
+004488c8 
+0044888c int32_t eax = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+0044888c 
+00448898 if (eax != 0)
+004488a5     _fprintf(eax, "[%d] Set Param Encrypted data failed.\n", *(arg1 + 0x30) + 1)
+004488ae     _fclose(eax)
+004488ae 
+004488bc return result

@@ -1,0 +1,34 @@
+10077d80 push    ebp
+10077d81 mov     ebp, esp
+10077d83 sub     esp, 0x8
+10077d86 cmp     dword [ebp+0x8], 0x0
+10077d8a push    esi
+10077d8b je      0x10077e79
+10077e79 or      eax, 0xffffffff
+10077e7c pop     esi
+10077e7d mov     esp, ebp
+10077e7f pop     ebp
+10077e80 retn    
+10077d91 mov     esi, dword [ebp+0xc]
+10077d94 test    esi, esi
+10077d96 jle     0x10077e79
+10077d9c cmp     dword [ebp+0x10], 0x0
+10077da0 je      0x10077e79
+10077da6 cmp     dword [ebp+0x14], 0x0
+10077daa jle     0x10077e79
+10077db0 push    edi
+10077db1 push    0x10225dc4
+10077db6 jmp     0x108491da
+108491da push    0xf614a6ad
+108491df call    0x10a765a4
+108491e4 lea     ebp, [ebp+0x1]
+108491e7 mov     dword [esp+0x4], ebp
+108491eb mov     ebp, 0x100a5b33
+108491f0 jmp     0x1073cb3d
+1073cb3d mov     ebp, dword [ebp+0x6d1858]
+1073cb43 jmp     0x10a1adbc
+10a1adbc lea     ebp, [ebp+0x66240f0a]
+10a1adc2 jmp     0x107c0264
+107c0264 xchg    dword [esp], ebp
+107c0267 jmp     0x100c1ce6
+100c1ce6 retn    

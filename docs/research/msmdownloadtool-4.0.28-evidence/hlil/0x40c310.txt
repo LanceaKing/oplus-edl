@@ -1,0 +1,433 @@
+0040c316 int32_t var_c = 0xffffffff
+0040c318 int32_t (* var_10)(void* arg1) = sub_570880
+0040c323 TEB* fsbase
+0040c323 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040c32f void var_184
+0040c32f int32_t eax_2 = __security_cookie ^ &var_184
+0040c340 int32_t __saved_edi
+0040c340 int32_t eax_4 = __security_cookie ^ &__saved_edi
+0040c34a fsbase->NtTib.ExceptionList = &ExceptionList
+0040c350 int32_t* edi = arg1
+0040c352 int32_t* var_178 = edi
+0040c356 sub_42f10e(arg1)
+0040c35d void* eax_5 = sub_42e7e5(0x48)
+0040c35d 
+0040c369 if (eax_5 != 0)
+0040c391     *(eax_5 + 4) = (*(data_5dd008 + 0xc))(eax_4) + 0x10
+0040c391 
+0040c3a0 if (sub_4115a0("pjira.oneplus.cn") != 0)
+0040c3be label_40c3be:
+0040c3be     bool cond:0_1 = data_5ea5ac == 0
+0040c3c7     data_5ea584 = 1
+0040c3d1     PWSTR var_198_1
+0040c3d1     
+0040c3d1     var_198_1 = cond:0_1 ? u"Intranet" : 0x5b90f8
+0040c3d1     
+0040c3e4     sub_436d0c(sub_4369fd(edi, 0x410), var_198_1)
+0040c3a0 else
+0040c3ae     if (sub_4115a0("romsign.onepluscorp.cn") != 0)
+0040c3ae         goto label_40c3be
+0040c3ae     
+0040c3bc     if (sub_4115a0("mo.adc.com") != 0)
+0040c3bc         goto label_40c3be
+0040c3bc     
+0040c3f2     data_5ea584 = 0
+0040c3f2 
+0040c3fe data_5ea5a8 = 1
+0040c408 int32_t eax_13 = sub_40f620(edi)
+0040c410 char eax_14
+0040c410 
+0040c410 if (eax_13 == 1)
+0040c423     int32_t var_14c_1 = 0xf
+0040c42b     int32_t var_150_1 = 0
+0040c433     char var_160 = 0
+0040c438     sub_402330(&var_160, &data_5ea590, 0, 0xffffffff)
+0040c445     int32_t var_c_1 = 0
+0040c456     sub_402330(0x5ea37c, &var_160, 0, 0xffffffff)
+0040c45b     int32_t var_c_2 = 0xffffffff
+0040c45b     
+0040c46b     if (var_14c_1 u>= 0x10)
+0040c471         j__free(var_160.d)
+0040c471     
+0040c47e     eax_14 = sub_415000(0x5ea2f4)
+0040c47e 
+0040c485 WPARAM result
+0040c485 
+0040c485 if (eax_13 != 1 || eax_14 == 0)
+0040c504     bool cond:1_1 = data_5ea584 != 0
+0040c50b     data_5ea578 = 0
+0040c50b     
+0040c515     if (cond:1_1)
+0040c515         goto label_40c49b
+0040c515     
+0040c526     PWSTR var_1a0_3
+0040c526     
+0040c526     if (data_5ea5ac == 0)
+0040c52f         var_1a0_3 = u"Software image not exist!"
+0040c526     else
+0040c528         var_1a0_3 = 0x5b9118
+0040c528     
+0040c534     sub_439ba7(var_1a0_3, MB_ICONEXCLAMATION, 0)
+0040c53d     (*(*edi + 0x180))(eax_4)
+0040c543     result = 0
+0040c485 else
+0040c487     data_5ea578 = 1
+0040c49b label_40c49b:
+0040c49b     int32_t* eax_15 = _fopen("C:/ToolLog.txt", "a+")
+0040c49b     
+0040c4a7     if (eax_15 != 0)
+0040c4a9         int32_t var_198_3 = data_5ea578
+0040c4b5         _fprintf(eax_15, "m_bIsPackImage=%d\n")
+0040c4be         _fclose(eax_15)
+0040c4be     
+0040c4ca     void var_144
+0040c4ca     sub_443258(&var_144)
+0040c4cf     int32_t var_198_5 = 0
+0040c4da     int32_t var_c_3 = 1
+0040c4ea     int32_t var_c_4 = 0xffffffff
+0040c4f5     int32_t* ecx_7 = &var_144
+0040c4f5     
+0040c4fb     if (sub_4434a5(&var_144, u"c:\temp\MsmDownloadTool\QCOM_DownloadTool_Com_Config.ini") != 0)
+0040c54a         sub_443409(ecx_7)
+0040c54f         void* const var_198_6 = &data_443439
+0040c555         sub_415af0(0x5ea2f4)
+0040c4fb     else
+0040c4fd         sub_443409(ecx_7)
+0040c4fd     
+0040c568     HACCEL eax_20 = LoadAcceleratorsW(*(sub_438917() + 0xc), 0x88)
+0040c570     HWND hWnd = edi[8]
+0040c573     edi[0x5e] = eax_20
+0040c57f     HMENU var_198_7 = GetSystemMenu(hWnd, 0)
+0040c580     void* eax_22 = sub_4411b2()
+0040c589     WPARAM wParam
+0040c589     
+0040c589     if (eax_22 != 0)
+0040c5b2         PWSTR lpNewItem = (*(data_5dd008 + 0xc))(eax_4) + 0x10
+0040c5b5         wParam = lpNewItem
+0040c5b9         int32_t var_198_8 = 0x65
+0040c5bb         int32_t var_c_5 = 2
+0040c5c6         HMODULE eax_25 = sub_4414c0()
+0040c5c6         
+0040c5cd         if (eax_25 != 0)
+0040c5d6             sub_40bb60(&wParam, eax_25, 0x65)
+0040c5db             lpNewItem = wParam
+0040c5db         
+0040c5e3         if (*(lpNewItem - 0xc) != 0)
+0040c5f7             AppendMenuW(*(eax_22 + 4), MF_SEPARATOR, 0, nullptr)
+0040c601             AppendMenuW(*(eax_22 + 4), MF_BYCOMMAND, 0x10, lpNewItem)
+0040c603             edi = var_178
+0040c603         
+0040c60a         int32_t var_c_6 = 0xffffffff
+0040c61b         int32_t ecx_11 = *(lpNewItem - 4)
+0040c61b         *(lpNewItem - 4) -= 1
+0040c61b         
+0040c622         if (ecx_11 - 1 s<= 0)
+0040c629             (*(**(lpNewItem - 0x10) + 4))(&lpNewItem[-8])
+0040c629     
+0040c649     sub_440c35(&edi[0x164], LoadMenuW(*(sub_438917() + 0xc), 0x94))
+0040c653     (*(*edi + 0x70))(&edi[0x164])
+0040c663     EnableMenuItem(edi[0x165], 0, 0x401)
+0040c67f     SendMessageW(edi[8], 0x80, 1, edi[0x221])
+0040c691     SendMessageW(edi[8], 0x80, 0, edi[0x221])
+0040c6a5     sub_43a7a2(&edi[0x1b1], CreateSolidBrush(0xff))
+0040c6b9     sub_43a7a2(&edi[0x1b3], GetSysColorBrush(COLOR_SCROLLBAR))
+0040c6d6     SendMessageW(sub_4369fd(edi, 0x3f0)[8], 0xf1, 1, 0)
+0040c6f0     SendMessageW(sub_4369fd(edi, 0x411)[8], 0xf1, 1, 0)
+0040c70a     SendMessageW(sub_4369fd(edi, 0x412)[8], 0xf1, 1, 0)
+0040c70c     data_5ea570 = 0
+0040c716     data_5ea574 = 0
+0040c720     edi[0x32] = 0
+0040c72a     edi[0x31] = 0
+0040c734     edi[0x30] = 0
+0040c73e     edi[0x63] = 1
+0040c76e     PWSTR var_168 = (*(data_5dd008 + 0xc))(eax_4) + 0x10
+0040c776     int32_t var_c_7 = 3
+0040c784     sub_4327bb(edi, &var_168)
+0040c793     void buffer
+0040c793     uint32_t eax_40 = GetCurrentDirectoryA(0x104, &buffer)
+0040c7bb     void* eax_42
+0040c7bb     int32_t ecx_24
+0040c7bb     eax_42, ecx_24 = (*(data_5dd008 + 0xc))()
+0040c7be     void* ebx_2 = eax_42 + 0x10
+0040c7c1     void* var_16c = ebx_2
+0040c7c5     var_c_7.b = 4
+0040c7c5     
+0040c7cf     if (eax_40 s>= 0)
+0040c7d8         char* eax_43
+0040c7d8         eax_43, ecx_24 = _strrchr(&buffer, 0x5c)
+0040c7d8         
+0040c7e2         if (eax_43 != 0)
+0040c7ea             ecx_24 = sub_4061e0(&var_16c, &eax_43[1])
+0040c7ef             ebx_2 = var_16c
+0040c7ef     
+0040c7f7     LPARAM lParam_1
+0040c7f7     void* var_170
+0040c7f7     
+0040c7f7     if (*(ebx_2 - 0xc) != 0)
+0040c7fd         int32_t var_198_20 = ecx_24
+0040c802         sub_411040(&wParam)
+0040c80b         var_c_7.b = 5
+0040c824         var_c_7.b = 6
+0040c82c         int32_t** eax_47 = *sub_411360(&wParam, var_168, &var_170, &wParam)
+0040c830         int32_t* eax_48
+0040c830         
+0040c830         if (eax_47 == 0)
+0040c836             eax_48 = nullptr
+0040c830         else
+0040c832             eax_48 = *eax_47
+0040c832         
+0040c84b         var_c_7.b = 7
+0040c857         sub_436d0c(edi, *sub_411450(&lParam_1, eax_48, &var_16c))
+0040c85c         var_c_7.b = 6
+0040c86b         int32_t* edx_3 = lParam_1 - 0x10
+0040c871         int32_t ecx_29 = edx_3[3]
+0040c871         edx_3[3] -= 1
+0040c871         
+0040c878         if (ecx_29 - 1 s<= 0)
+0040c87f             (*(**edx_3 + 4))(edx_3)
+0040c87f         
+0040c886         sub_411300(&var_170)
+0040c88f         var_c_7.b = 4
+0040c897         sub_411300(&wParam)
+0040c897     
+0040c8a3     WPARAM wParam_5
+0040c8a3     WPARAM wParam_1
+0040c8a3     PWSTR wParam_2
+0040c8a3     
+0040c8a3     if (data_5ea578 == 0)
+0040c986         int32_t* eax_60
+0040c986         int32_t ecx_38
+0040c986         eax_60, ecx_38 = _fopen("C:/ToolLog.txt", "a+")
+0040c986         
+0040c992         if (eax_60 != 0)
+0040c99a             _fprintf(eax_60, "LoadFromFile\n")
+0040c9a0             ecx_38 = _fclose(eax_60)
+0040c9a0         
+0040c9a8         int32_t var_198_26 = ecx_38
+0040c9a8         
+0040c9b5         if (sub_412260(0x5ea2f4) != 0)
+0040c9b5             goto label_40cac6
+0040c9b5         
+0040c9e1         wParam_5 = (*(data_5dd008 + 0xc))() + 0x10
+0040c9e5         var_c_7.b = 0xa
+0040ca13         wParam = (*(data_5dd008 + 0xc))() + 0x10
+0040ca17         var_c_7.b = 0xb
+0040ca29         sub_4061e0(&wParam, data_5ea2f8)
+0040ca39         wParam_1 = wParam
+0040ca3d         WPARAM wParam_4 = wParam_1
+0040ca3e         wchar16 const* const var_19c_8
+0040ca3e         
+0040ca3e         if (data_5ea5ac == 0)
+0040ca47             var_19c_8 = u"%s\n Read config file failed!"
+0040ca3e         else
+0040ca40             var_19c_8 = &data_5b9178
+0040ca40         
+0040ca4d         sub_402ab0(&wParam_5, var_19c_8)
+0040ca52         wParam_2 = wParam_5
+0040ca5e         sub_439ba7(wParam_2, MB_ICONHAND, 0)
+0040ca69         (*(*var_178 + 0x180))()
+0040ca6f         var_c_7.b = 0xa
+0040ca82     label_40ca82:
+0040ca82         int32_t ecx_43 = *(wParam_1 - 4)
+0040ca82         *(wParam_1 - 4) -= 1
+0040ca82         
+0040ca89         if (ecx_43 - 1 s<= 0)
+0040ca90             (*(**(wParam_1 - 0x10) + 4))(wParam_1 - 0x10)
+0040ca90         
+0040ca96         var_c_7.b = 4
+0040caa3         int32_t ecx_46 = *(wParam_2 - 4)
+0040caa3         *(wParam_2 - 4) -= 1
+0040caa3         
+0040caaa         if (ecx_46 - 1 s<= 0)
+0040cab1             (*(**(wParam_2 - 0x10) + 4))(&wParam_2[-8])
+0040cab1         
+0040cab4         wParam = 0
+0040c8a3     else
+0040c8b5         if (sub_415300(0x5ea2f4) == 0)
+0040c8e1             wParam = (*(data_5dd008 + 0xc))() + 0x10
+0040c8e5             var_c_7.b = 8
+0040c913             wParam_5 = (*(data_5dd008 + 0xc))() + 0x10
+0040c917             var_c_7.b = 9
+0040c929             sub_4061e0(&wParam_5, data_5ea2f8)
+0040c939             wParam_1 = wParam_5
+0040c93d             WPARAM wParam_3 = wParam_1
+0040c93e             wchar16 const* const var_19c_6
+0040c93e             
+0040c93e             if (data_5ea5ac == 0)
+0040c947                 var_19c_6 = u"%s\n Read config file failed!"
+0040c93e             else
+0040c940                 var_19c_6 = &data_5b9178
+0040c940             
+0040c94d             sub_402ab0(&wParam, var_19c_6)
+0040c952             wParam_2 = wParam
+0040c95e             sub_439ba7(wParam_2, MB_ICONHAND, 0)
+0040c969             (*(*var_178 + 0x180))()
+0040c96f             var_c_7.b = 8
+0040c977             goto label_40ca82
+0040c977         
+0040cac6     label_40cac6:
+0040cac6         sub_413480(0x5ea2f4)
+0040caf1         var_170 = (*(data_5dd008 + 0xc))() + 0x10
+0040caf5         var_c_7.b = 0xc
+0040cb08         uint8_t* eax_76 = &data_5ea398
+0040cb08         
+0040cb0d         if (data_5ea3ac u>= 0x10)
+0040cb0d             eax_76 = data_5ea398
+0040cb0d         
+0040cb1f         var_c_7.b = 0xd
+0040cb27         sub_4038e0(&var_170, sub_410fa0(&lParam_1, eax_76))
+0040cb2c         var_c_7.b = 0xc
+0040cb3b         int32_t* edx_6 = lParam_1 - 0x10
+0040cb41         int32_t ecx_52 = edx_6[3]
+0040cb41         edx_6[3] -= 1
+0040cb45         int32_t ecx_53 = ecx_52 - 1
+0040cb45         
+0040cb48         if (ecx_53 s<= 0)
+0040cb4f             ecx_53 = (*(**edx_6 + 4))(edx_6)
+0040cb4f         
+0040cb52         void* esi_6 = var_170
+0040cb56         int32_t var_198_33 = ecx_53
+0040cb6e         int32_t eax_83 = sub_40be40(&sub_403870(esi_6 - 0x10)[4])
+0040cb7d         bool cond:7_1
+0040cb7d         
+0040cb7d         if (eax_83 s>= 0 && eax_83 s< 4)
+0040cb7f             cond:7_1 = *((eax_83 << 3) + &data_5b6db4) != 0
+0040cb87             data_5ea588 = 1
+0040cb87         
+0040cb91         if (eax_83 s< 0 || eax_83 s>= 4 || not(cond:7_1))
+0040cb93             data_5ea588 = 0
+0040cb93         
+0040cba7         int32_t* eax_84 = _fopen("C:/ToolLog.txt", "a+")
+0040cba7         
+0040cbb3         if (eax_84 != 0)
+0040cbc1             char const* const ecx_55 = "support"
+0040cbc1             
+0040cbc6             if (data_5ea588 != 1)
+0040cbc6                 ecx_55 = "not support"
+0040cbc6             
+0040cbc9             char const* const var_198_35 = ecx_55
+0040cbca             void* var_19c_10 = esi_6
+0040cbd1             _fprintf(eax_84, "project %S %s boot mode feature\n")
+0040cbd7             _fclose(eax_84)
+0040cbd7         
+0040cc05         wParam_5 = (*(data_5dd008 + 0xc))() + 0x10
+0040cc09         PWSTR esi_7 = var_178
+0040cc0f         var_c_7.b = 0xe
+0040cc1e         PWSTR var_198_36
+0040cc1e         
+0040cc1e         if (data_5ea5ac == 0)
+0040cc27             var_198_36 = u"Project:"
+0040cc1e         else
+0040cc20             var_198_36 = 0x5b9224
+0040cc20         
+0040cc38         sub_436d0c(sub_4369fd(esi_7, 0x413), var_198_36)
+0040cc48         int32_t* eax_89 = &data_5ea398
+0040cc48         
+0040cc4d         if (data_5ea3ac u>= 0x10)
+0040cc4d             eax_89 = data_5ea398
+0040cc4d         
+0040cc55         sub_4061e0(&wParam_5, eax_89)
+0040cc5a         WPARAM wParam_6 = wParam_5
+0040cc6d         sub_436d0c(sub_4369fd(esi_7, 0x414), wParam_6)
+0040cc74         sub_40d4d0(esi_7)
+0040cc7b         sub_40d130(esi_7)
+0040cc82         sub_40d990(esi_7)
+0040cc95         struct CCmdTarget::CWinThread::VTable** eax_91 =
+0040cc95             sub_43bb29(sub_40da50, esi_7, THREAD_PRIORITY_NORMAL, 0, 0, nullptr)
+0040cc9a         HANDLE ecx_65 = *(esi_7 + 0x20)
+0040cca3         *(esi_7 + 0x17c) = eax_91
+0040cca9         sub_41bad0(ecx_65, &esi_7[0xc4])
+0040ccb0         sub_40e570(esi_7)
+0040ccb0         
+0040ccbc         if (data_5ea5ac != 0)
+0040ccd5             sub_436d0c(sub_4369fd(esi_7, 0x401), "te:gGS")
+0040cced             sub_436d0c(sub_4369fd(esi_7, 0x3f2), 0x5b927c)
+0040cd05             sub_436d0c(sub_4369fd(esi_7, 0x3ef), 0x5b9284)
+0040cd1d             sub_436d0c(sub_4369fd(esi_7, 0x3f0), 0x5b9294)
+0040cd35             sub_436d0c(sub_4369fd(esi_7, 0x411), 0x5b92a4)
+0040cd4d             sub_436d0c(sub_4369fd(esi_7, 0x412), u"Sha25")
+0040cd4d         
+0040cd52         WPARAM i = nullptr
+0040cd54         wParam = 0
+0040cd54         
+0040cdfc         do
+0040cd76             lParam_1 = (*(data_5dd008 + 0xc))() + 0x10
+0040cd7a             var_c_7.b = 0xf
+0040cd82             int32_t* edx_9 = (&data_5b6df4)[i * 2]
+0040cd8b             int32_t ecx_80
+0040cd8b             
+0040cd8b             if (edx_9 != 0)
+0040cd91                 int16_t* ecx_81 = edx_9
+0040cd9f                 LPARAM eax_99
+0040cd9f                 
+0040cd9f                 do
+0040cd96                     eax_99.w = *ecx_81
+0040cd99                     ecx_81 = &ecx_81[1]
+0040cd9f                 while (eax_99.w != 0)
+0040cda3                 ecx_80 = (ecx_81 - &ecx_81[1]) s>> 1
+0040cd8b             else
+0040cd8d                 ecx_80 = 0
+0040cd8d             
+0040cdab             sub_4037b0(&lParam_1, edx_9, ecx_80)
+0040cdb0             LPARAM lParam = lParam_1
+0040cdc8             SendMessageW(var_178[0x19c], 0x14a, wParam, lParam)
+0040cdd1             var_c_7.b = 0xe
+0040cddf             int32_t ecx_84 = *(lParam - 4)
+0040cddf             *(lParam - 4) -= 1
+0040cddf             
+0040cde6             if (ecx_84 - 1 s<= 0)
+0040cded                 (*(**(lParam - 0x10) + 4))(lParam - 0x10)
+0040cded             
+0040cdf4             i = wParam + 1
+0040cdf5             wParam = i
+0040cdfc         while (i s< 3)
+0040cdfc         
+0040ce15         SendMessageW(var_178[0x19c], 0x14e, 0, 0)
+0040ce24         enum SHOW_WINDOW_CMD var_198_42
+0040ce24         
+0040ce24         if (data_5ea584 != 1)
+0040ce2a             var_198_42 = SW_HIDE
+0040ce24         else
+0040ce26             var_198_42 = SW_SHOW
+0040ce26         
+0040ce38         sub_436d50(sub_4369fd(var_178, 0x419), var_198_42)
+0040ce3f         sub_40d2b0(var_178)
+0040ce3f         
+0040ce4b         if (data_5ea5dc == 0)
+0040ce5c             SetTimer(var_178[8], 0x3e8, 0x1499700, nullptr)
+0040ce5c         
+0040ce64         sub_40d460(var_178)
+0040ce6c         wParam = 1
+0040ce77         var_c_7.b = 0xc
+0040ce84         int32_t ecx_91 = *(wParam_6 - 4)
+0040ce84         *(wParam_6 - 4) -= 1
+0040ce84         
+0040ce8b         if (ecx_91 - 1 s<= 0)
+0040ce92             (*(**(wParam_6 - 0x10) + 4))(wParam_6 - 0x10)
+0040ce92         
+0040ce9b         var_c_7.b = 4
+0040cea6         int32_t ecx_94 = *(esi_6 - 4)
+0040cea6         *(esi_6 - 4) -= 1
+0040cea6         
+0040cead         if (ecx_94 - 1 s<= 0)
+0040ceb4             (*(**(esi_6 - 0x10) + 4))(esi_6 - 0x10)
+0040ceba     var_c_7.b = 3
+0040cec7     int32_t ecx_97 = *(ebx_2 - 4)
+0040cec7     *(ebx_2 - 4) -= 1
+0040cec7     
+0040cece     if (ecx_97 - 1 s<= 0)
+0040ced5         (*(**(ebx_2 - 0x10) + 4))(ebx_2 - 0x10)
+0040ced5     
+0040ced8     int32_t var_c_8 = 0xffffffff
+0040cee7     int32_t* edi_5 = &var_168[-8]
+0040ceed     int32_t esi_12 = edi_5[3]
+0040ceed     edi_5[3] -= 1
+0040ceed     
+0040cef4     if (esi_12 - 1 s<= 0)
+0040cefb         (*(**edi_5 + 4))(edi_5)
+0040cefb     
+0040cefe     result = wParam
+0040cefe 
+0040cf09 fsbase->NtTib.ExceptionList = ExceptionList
+0040cf1d sub_54a573(eax_2 ^ &var_184)
+0040cf25 return result

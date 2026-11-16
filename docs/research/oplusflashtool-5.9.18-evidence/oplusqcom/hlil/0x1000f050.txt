@@ -1,0 +1,319 @@
+1000f053 int32_t var_8 = 0xffffffff
+1000f055 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10061900
+1000f060 TEB* fsbase
+1000f060 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+1000f069 int32_t __saved_ebp
+1000f069 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+1000f075 fsbase->NtTib.ExceptionList = &ExceptionList
+1000f07d void* eax_3 = *(arg1 + 0x1764)
+1000f085 uint32_t result
+1000f085 
+1000f085 if (eax_3 != 0)
+1000f0ba     void* var_70_1 = arg1
+1000f0c7     int64_t var_44 = 0
+1000f0cc     sub_1000b700(&var_44, eax_3 + 0x168)
+1000f0d1     int32_t var_8_1 = 0
+1000f0e2     int32_t var_48_1 = 0xf
+1000f0e9     int32_t var_4c_1 = 0
+1000f0f0     char var_5c = 0
+1000f0f4     sub_10001ad0(&var_5c, "IsRootVer", 9)
+1000f0fc     var_8_1.b = 1
+1000f108     void** var_1c
+1000f108     sub_1000bba0(&var_44, &var_1c, &var_5c)
+1000f118     int32_t var_20_1 = 0xf
+1000f122     int32_t var_24_1 = 0
+1000f129     char var_34 = 0
+1000f12d     int32_t ecx_5 = sub_10001bd0(&var_34, &var_1c[0xa], 0, 0xffffffff)
+1000f132     var_8_1.b = 3
+1000f136     int32_t eax_9 = var_48_1
+1000f136     
+1000f13c     if (eax_9 u>= 0x10)
+1000f143         eax_9, ecx_5 = sub_10001d60(var_5c.d, eax_9 + 1)
+1000f143     
+1000f14b     int32_t var_48_2 = 0xf
+1000f152     int32_t var_4c_2 = 0
+1000f159     var_5c = 0
+1000f15f     int32_t var_18
+1000f15f     uint32_t result_1
+1000f15f     
+1000f15f     if (var_24_1 == 0)
+1000f1cc     label_1000f1cc:
+1000f1cc         int32_t var_70_5 = ecx_5
+1000f1cd         int32_t* eax_17 = *(arg1 + 0x30) + 0x170
+1000f1d2         int64_t var_3c = 0
+1000f1db         sub_1000b700(&var_3c, eax_17)
+1000f1e0         var_8_1.b = 4
+1000f1ee         int32_t var_48_3 = 0xf
+1000f1f5         int32_t var_4c_3 = 0
+1000f1fc         var_5c = 0
+1000f200         sub_10001ad0(&var_5c, "project", 7)
+1000f208         var_8_1.b = 5
+1000f214         sub_1000bba0(&var_3c, &var_1c, &var_5c)
+1000f214         
+1000f224         if (&var_34 != &var_1c[0xa])
+1000f22b             sub_10001bd0(&var_34, &var_1c[0xa], 0, 0xffffffff)
+1000f22b         
+1000f230         var_8_1.b = 4
+1000f230         
+1000f23a         if (var_48_3 u>= 0x10)
+1000f241             sub_10001d60(var_5c.d, var_48_3 + 1)
+1000f241         
+1000f257         if (var_24_1 != 0 && arg1 + 0x18b4 != &var_34)
+1000f25e             sub_10001bd0(arg1 + 0x18b4, &var_34, 0, 0xffffffff)
+1000f25e         
+1000f26d         int32_t* var_48_4 = 0xf
+1000f274         int32_t var_4c_4 = 0
+1000f27b         var_5c = 0
+1000f27f         sub_10001ad0(&var_5c, "storage", 7)
+1000f287         var_8_1.b = 6
+1000f293         sub_1000bba0(&var_3c, &var_1c, &var_5c)
+1000f293         
+1000f2a3         if (&var_34 != &var_1c[0xa])
+1000f2aa             sub_10001bd0(&var_34, &var_1c[0xa], 0, 0xffffffff)
+1000f2aa         
+1000f2af         var_8_1.b = 4
+1000f2b3         int32_t* eax_24 = var_48_4
+1000f2b3         
+1000f2b9         if (eax_24 u>= 0x10)
+1000f2c0             eax_24 = sub_10001d60(var_5c.d, eax_24 + 1)
+1000f2c0         
+1000f2c5         int32_t edx_3 = var_24_1
+1000f2c5         
+1000f2ca         if (edx_3 == 0)
+1000f2d6             eax_24 = sub_10001ad0(&var_34, &data_1006dc74, 3)
+1000f2db             edx_3 = var_24_1
+1000f2db             
+1000f2e0             if (edx_3 == 0)
+1000f2e0                 goto label_1000f364
+1000f2e0             
+1000f2e0             goto label_1000f2e5
+1000f2e0         
+1000f2e5     label_1000f2e5:
+1000f2e5         int32_t* ecx_17 = &var_34
+1000f2e8         int32_t* ebx_1 = var_34.d
+1000f2e8         
+1000f2f0         if (var_20_1 u>= 0x10)
+1000f2f0             ecx_17 = ebx_1
+1000f2f0         
+1000f302         if (sub_10007cc0(eax_24, edx_3, ecx_17, "eMMC", 4) != 0)
+1000f329             if (sub_10007bb0(&var_34, "ufs") == 0)
+1000f32f                 *(arg1 + 0x17d8) = 0x1000
+1000f339                 *(arg1 + 0x17dc) = 3
+1000f339                 goto label_1000f34c
+1000f339             
+1000f687             int32_t ecx_44 = *(arg1 + 0x1c)
+1000f68a             int32_t* eax_56 = &var_34
+1000f68a             
+1000f690             if (var_20_1 u>= 0x10)
+1000f690                 eax_56 = ebx_1
+1000f690             
+1000f6b1             opdbg_log("QCFlashWorker::prepareSolution", 0x29a, 
+1000f6b1                 "[%s] [%s] ERROR: Unknown storage type : %s ", ecx_44 + 0x9e4, ecx_44 + 0x444, 
+1000f6b1                 eax_56, eax_2)
+1000f6ba             result_1 = 0x7549
+1000f302         else
+1000f304             *(arg1 + 0x17d8) = 0x200
+1000f30e             *(arg1 + 0x17dc) = 2
+1000f34c         label_1000f34c:
+1000f34c             
+1000f34e             if (arg1 + 0x18cc == &var_34)
+1000f34e                 goto label_1000f364
+1000f34e             
+1000f355             sub_10001bd0(arg1 + 0x18cc, &var_34, 0, 0xffffffff)
+1000f364         label_1000f364:
+1000f364             int32_t var_48_5 = 0xf
+1000f36b             int32_t var_4c_5 = 0
+1000f372             var_5c = 0
+1000f376             sub_10001ad0(&var_5c, &data_1006dda4, 3)
+1000f37e             var_8_1.b = 7
+1000f38a             sub_1000bba0(&var_3c, &var_1c, &var_5c)
+1000f38a             
+1000f39a             if (&var_34 != &var_1c[0xa])
+1000f3a1                 sub_10001bd0(&var_34, &var_1c[0xa], 0, 0xffffffff)
+1000f3a1             
+1000f3a6             var_8_1.b = 4
+1000f3aa             int32_t eax_30 = var_48_5
+1000f3aa             
+1000f3b0             if (eax_30 u>= 0x10)
+1000f3b7                 eax_30 = sub_10001d60(var_5c.d, eax_30 + 1)
+1000f3b7             
+1000f3c1             if (var_24_1 != 0)
+1000f3c7                 char* ecx_23 = &var_34
+1000f3c7                 
+1000f3cc                 if (var_20_1 u>= 0x10)
+1000f3cc                     ecx_23 = var_34.d
+1000f3cc                 
+1000f3df                 if (sub_10007cc0(eax_30, var_24_1, ecx_23, "true", 4) == 0)
+1000f3e1                     *(arg1 + 0x3062a8) = 1
+1000f3e1             
+1000f3f2             int32_t var_48_6 = 0xf
+1000f3f9             int32_t var_4c_6 = 0
+1000f400             var_5c = 0
+1000f404             sub_10001ad0(&var_5c, 0x1006dda8, 2)
+1000f40c             var_8_1.b = 8
+1000f418             sub_1000bba0(&var_3c, &var_1c, &var_5c)
+1000f418             
+1000f428             if (&var_34 != &var_1c[0xa])
+1000f42f                 sub_10001bd0(&var_34, &var_1c[0xa], 0, 0xffffffff)
+1000f42f             
+1000f434             var_8_1.b = 4
+1000f434             
+1000f43e             if (var_48_6 u>= 0x10)
+1000f445                 sub_10001d60(var_5c.d, var_48_6 + 1)
+1000f445             
+1000f44e             int32_t* edi_2
+1000f44e             
+1000f44e             if (var_24_1 == 0)
+1000f47d                 void* eax_37
+1000f47d                 int32_t ecx_29
+1000f47d                 eax_37, ecx_29 = sub_100439e0(*(arg1 + 0x1764), &data_10084c10)
+1000f47d                 
+1000f486                 if (eax_37 != 0)
+1000f4f1                     edi_2 = arg1 + 0x18fc
+1000f4f1                     
+1000f4fd                     if (edi_2 != &data_10084c10)
+1000f50a                         ecx_29 = sub_10001bd0(edi_2, &data_10084c10, 0, 0xffffffff)
+1000f50a                     
+1000f50f                     int32_t var_70_18 = ecx_29
+1000f512                     sub_1000f750(eax_37)
+1000f486                 else
+1000f495                     var_1c.q = 0
+1000f49a                     sub_10043cf0(*(arg1 + 0x1764), &var_1c)
+1000f49f                     var_8_1.b = 9
+1000f4a3                     edi_2 = arg1 + 0x18fc
+1000f4a3                     
+1000f4ac                     if (var_18 != eax_37)
+1000f4b3                         void** eax_40 = *var_1c + 8
+1000f4b3                         
+1000f4b8                         if (edi_2 != eax_40)
+1000f4ba                             int32_t var_70_15 = 0xffffffff
+1000f4d3                             sub_10001bd0(edi_2, eax_40, eax_37, 0xffffffff)
+1000f4ac                     else if (edi_2 != &data_10084c10)
+1000f4c8                         int32_t var_70_16 = 0xffffffff
+1000f4d3                         sub_10001bd0(edi_2, &data_10084c10, nullptr, 0xffffffff)
+1000f4d3                     
+1000f4db                     var_8_1.b = 4
+1000f4df                     sub_1002d7b0(&var_1c)
+1000f4e7                     sub_1005f684(var_1c)
+1000f44e             else
+1000f450                 edi_2 = arg1 + 0x18fc
+1000f450                 
+1000f45b                 if (edi_2 != &var_34)
+1000f468                     sub_10001bd0(edi_2, &var_34, 0, 0xffffffff)
+1000f468             
+1000f51f             if (arg1 + 0x1914 != edi_2)
+1000f526                 sub_10001bd0(arg1 + 0x1914, edi_2, 0, 0xffffffff)
+1000f526             
+1000f52f             if (edi_2[5] u>= 0x10)
+1000f531                 edi_2 = *edi_2
+1000f531             
+1000f533             int32_t ecx_36 = *(arg1 + 0x1c)
+1000f55a             opdbg_log("QCFlashWorker::prepareSolution", 0x2bb, 
+1000f55a                 "[%s] [%s] INFO: prepareSolution get nv %s", ecx_36 + 0x9e4, ecx_36 + 0x444, edi_2, 
+1000f55a                 eax_2)
+1000f55f             int32_t var_48_7 = 0xf
+1000f569             int32_t var_4c_7 = 0
+1000f570             var_5c = 0
+1000f57b             sub_10001ad0(&var_5c, "readbackpath", 0xc)
+1000f583             var_8_1.b = 0xa
+1000f58f             sub_1000bba0(&var_3c, &var_1c, &var_5c)
+1000f58f             
+1000f59f             if (&var_34 != &var_1c[0xa])
+1000f5a6                 sub_10001bd0(&var_34, &var_1c[0xa], 0, 0xffffffff)
+1000f5a6             
+1000f5ab             var_8_1.b = 4
+1000f5ab             
+1000f5b5             if (var_48_7 u>= 0x10)
+1000f5bc                 sub_10001d60(var_5c.d, var_48_7 + 1)
+1000f5bc             
+1000f5d4             if (*(*(arg1 + 0x1764) + 0xa0) == 1 && var_24_1 != 0)
+1000f5d6                 PSTR* edi_3 = arg1 + 0x3062ac
+1000f5d6                 
+1000f5e1                 if (edi_3 != &var_34)
+1000f5ea                     sub_10001bd0(edi_3, &var_34, 0, 0xffffffff)
+1000f5ea                 
+1000f5f3                 CHAR* eax_48
+1000f5f3                 
+1000f5f3                 if (edi_3[5] u< 0x10)
+1000f5f9                     eax_48 = edi_3
+1000f5f3                 else
+1000f5f5                     eax_48 = *edi_3
+1000f5f5                 
+1000f5fc                 sub_10029fe0(eax_48)
+1000f605                 PSTR eax_49
+1000f605                 
+1000f605                 if (edi_3[5] u< 0x10)
+1000f60b                     eax_49 = edi_3
+1000f605                 else
+1000f607                     eax_49 = *edi_3
+1000f607                 
+1000f610                 sub_10029eb0(arg1, eax_49)
+1000f610                 
+1000f619                 if (edi_3[5] u>= 0x10)
+1000f61b                     edi_3 = *edi_3
+1000f61b                 
+1000f636                 opdbg_log("QCFlashWorker::prepareSolution", 0x2c2, 
+1000f636                     "[INFO][%s]set readback path  %s", *(arg1 + 0x1c) + 0x444, edi_3)
+1000f636             
+1000f64b             if (sub_10037f90(*(arg1 + 0x1768), *(arg1 + 0x30)) == 0)
+1000f67c                 result_1 = 0
+1000f67e                 *(*(arg1 + 0x28) + 0xc) = 1
+1000f64b             else
+1000f64d                 int32_t ecx_43 = *(arg1 + 0x1c)
+1000f66d                 opdbg_log("QCFlashWorker::prepareSolution", 0x2c6, 
+1000f66d                     "[%s] [%s] ERROR: Failed to create flashing script in after-sale mode.", 
+1000f66d                     ecx_43 + 0x9e4, ecx_43 + 0x444)
+1000f672                 result_1 = 0x7532
+1000f672         
+1000f6bf         int32_t** eax_59 = var_3c.d
+1000f6cc         sub_1000afb0(&var_3c, &var_18, *eax_59, eax_59)
+1000f6d4         sub_1005f684(var_3c.d)
+1000f15f     else
+1000f165         char* ecx_6 = &var_34
+1000f165         
+1000f16a         if (var_20_1 u>= 0x10)
+1000f16a             ecx_6 = var_34.d
+1000f16a         
+1000f173         int32_t eax_11
+1000f173         eax_11, ecx_5 = sub_10007cc0(eax_9, var_24_1, ecx_6, &data_1006dd28, 1)
+1000f173         
+1000f17d         if (eax_11 != 0)
+1000f17d             goto label_1000f1cc
+1000f17d         
+1000f17f         int32_t eax_12
+1000f17f         eax_12, ecx_5 = get_root_token(eax_2)
+1000f185         int32_t edx_2 = eax_12 + 1
+1000f185         
+1000f18d         do
+1000f188             ecx_5.b = *eax_12
+1000f18a             eax_12 += 1
+1000f18d         while (ecx_5.b != 0)
+1000f18d         
+1000f191         if (eax_12 != edx_2)
+1000f191             goto label_1000f1cc
+1000f191         
+1000f193         int32_t ecx_7 = *(arg1 + 0x1c)
+1000f1b3         opdbg_log("QCFlashWorker::prepareSolution", 0x284, 
+1000f1b3             "[%s] [%s] ERROR: Unauthorized root package flashing. Stop.", ecx_7 + 0x9e4, 
+1000f1b3             ecx_7 + 0x444)
+1000f1bc         result_1 = 0x7548
+1000f1bc     
+1000f6e2     if (var_20_1 u>= 0x10)
+1000f6e9         sub_10001d60(var_34.d, var_20_1 + 1)
+1000f6e9     
+1000f6ee     int32_t* ecx_46 = var_44.d
+1000f6f5     int32_t var_20_2 = 0xf
+1000f6fc     int32_t var_24_2 = 0
+1000f703     var_34 = 0
+1000f70d     sub_1000afb0(&var_44, &var_18, *ecx_46, ecx_46)
+1000f715     sub_1005f684(var_44.d)
+1000f71d     result = result_1
+1000f085 else
+1000f087     int32_t ecx = *(arg1 + 0x1c)
+1000f0a7     opdbg_log("QCFlashWorker::prepareSolution", 0x27d, 
+1000f0a7         "[%s] [%s] ERROR: No proper pack data for current device.", ecx + 0x9e4, ecx + 0x444, eax_2)
+1000f0b0     result = 0x7532
+1000f0b0 
+1000f722 fsbase->NtTib.ExceptionList = ExceptionList
+1000f732 CookieCheckFunction(result)
+1000f73a return result

@@ -1,0 +1,155 @@
+1001a920 int32_t ebp
+1001a920 int32_t var_4 = ebp
+1001a926 void* var_c = arg1
+1001a937 char eax
+1001a937 int32_t edx
+1001a937 sub_1002bb30(eax, edx, *(arg1 + 0x538), 0x1021b480)
+1001a945 *(*(arg1 + 0x538) + 0x356c) = 1
+1001a95c __builtin_strcpy(*(arg1 + 0x538) + 0x104, "/api/tools/get_countrytype_code")
+1001a989 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), &data_101fce1c, arg1 + 0x640)
+1001a9a7 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), "logintype", "1")
+1001a9c5 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), "token", 0x1021b480)
+1001a9c5 
+1001a9da if (sub_1002bde0(*(arg1 + 0x538)) == 0)
+1001a9fe     int32_t* ebx_1 = *(*(arg1 + 0x538) + 0x3574)
+1001aa05     char* eax_9
+1001aa05     void* edx_1
+1001aa05     eax_9, edx_1 = op_str_map_get(ebx_1, "/Data/response")
+1001aa0a     char* ecx_2 = eax_9
+1001aa0a     
+1001aa11     if (ecx_2 != 0)
+1001aa15         if (arg1 != 0xffffffb8)
+1001aa19             edx_1 = arg1 + 0x48 - ecx_2
+1001aa19             
+1001aa2b             do
+1001aa20                 eax_9.b = *ecx_2
+1001aa22                 ecx_2 = &ecx_2[1]
+1001aa25                 *(edx_1 + ecx_2 - 1) = eax_9.b
+1001aa2b             while (eax_9.b != 0)
+1001aa2b         
+1001aa15         goto label_1001aa8d
+1001aa15     
+1001aa35     char* eax_10
+1001aa35     eax_10, edx_1 = op_str_map_get(ebx_1, "/Data/response/message")
+1001aa3a     char* ecx_3 = eax_10
+1001aa3a     
+1001aa41     if (ecx_3 != 0)
+1001aa45         if (arg1 != 0xffffffb8)
+1001aa49             edx_1 = arg1 + 0x48 - ecx_3
+1001aa49             
+1001aa5b             do
+1001aa50                 eax_10.b = *ecx_3
+1001aa52                 ecx_3 = &ecx_3[1]
+1001aa55                 *(edx_1 + ecx_3 - 1) = eax_10.b
+1001aa5b             while (eax_10.b != 0)
+1001aa5b         
+1001aa45         goto label_1001aa8d
+1001aa45     
+1001aa65     char* eax_11
+1001aa65     eax_11, edx_1 = op_str_map_get(ebx_1, "/Data/message")
+1001aa6a     char* ecx_4 = eax_11
+1001aa6a     
+1001aa71     if (ecx_4 == 0)
+1001ab91         char const* const var_1c_7 = "[Auth] ERROR: Cannot get 'message' attribute from result."
+1001ab96         void* const var_20_11 = &data_101fccd0
+1001ab9b         int32_t var_24_8 = 0x72e
+1001aa71     else
+1001aa79         if (arg1 != 0xffffffb8)
+1001aa7d             edx_1 = arg1 + 0x48 - ecx_4
+1001aa7d             
+1001aa8b             do
+1001aa80                 eax_11.b = *ecx_4
+1001aa82                 ecx_4 = &ecx_4[1]
+1001aa85                 *(edx_1 + ecx_4 - 1) = eax_11.b
+1001aa8b             while (eax_11.b != 0)
+1001aa8b         
+1001aa8d     label_1001aa8d:
+1001aa8d         char const* const ecx_5 = "0000"
+1001aa92         char* eax_12 = arg1 + 0x48
+1001aa94         int32_t eax_14
+1001aa94         
+1001aa94         while (true)
+1001aa94             edx_1.b = *eax_12
+1001aa96             char const temp0_1 = *ecx_5
+1001aa96             bool c_1 = edx_1.b u< temp0_1
+1001aa96             
+1001aa98             if (edx_1.b == temp0_1)
+1001aa9c                 if (edx_1.b == 0)
+1001aab0                     eax_14 = 0
+1001aab2                     break
+1001aab2                 
+1001aa9e                 edx_1.b = eax_12[1]
+1001aaa1                 char temp1_1 = ecx_5[1]
+1001aaa1                 c_1 = edx_1.b u< temp1_1
+1001aaa1                 
+1001aaa4                 if (edx_1.b == temp1_1)
+1001aaa6                     eax_12 = &eax_12[2]
+1001aaa9                     ecx_5 = &ecx_5[2]
+1001aaa9                     
+1001aaae                     if (edx_1.b != 0)
+1001aaae                         continue
+1001aaae                     
+1001aab0                     eax_14 = 0
+1001aab2                     break
+1001aab2             
+1001aab6             eax_14 = sbb.d(eax_12, eax_12, c_1) | 1
+1001aab6             break
+1001aab6         
+1001aabb         if (eax_14 == 0)
+1001aae3             char* ecx_6 = op_str_map_get(*(*(arg1 + 0x538) + 0x3574), "/Data/response/modellist")
+1001aae3             
+1001aaea             if (ecx_6 == 0)
+1001ab80                 char const* const var_1c_6 =
+1001ab80                     "[Auth] ERROR: Cannot get 'modellist' attribute from result."
+1001ab85                 void* const var_20_10 = &data_101fccd0
+1001ab8a                 int32_t var_24_7 = 0x73a
+1001aaea             else
+1001aaf8                 char* eax_16
+1001aaf8                 
+1001aaf8                 do
+1001aaf3                     eax_16.b = *ecx_6
+1001aaf5                     ecx_6 = &ecx_6[1]
+1001aaf8                 while (eax_16.b != 0)
+1001ab06                 int32_t eax_18
+1001ab06                 int32_t* ebp_1
+1001ab06                 eax_18, ebp_1 = op_buf_ensure(*(arg1 + 0xa44), ecx_6 - &ecx_6[1] + 1)
+1001ab06                 
+1001ab10                 if (eax_18 == 0)
+1001ab31                     int32_t esi_2 = **(arg1 + 0xa44)
+1001ab44                     char* ecx_8 =
+1001ab44                         op_str_map_get(*(*(arg1 + 0x538) + 0x3574), "/Data/response/modellist")
+1001ab44                     
+1001ab4b                     if (ecx_8 != 0)
+1001ab4f                         if (esi_2 != 0)
+1001ab51                             void* esi_3 = esi_2 - ecx_8
+1001ab5e                             char* eax_21
+1001ab5e                             
+1001ab5e                             do
+1001ab53                                 eax_21.b = *ecx_8
+1001ab55                                 ecx_8 = &ecx_8[1]
+1001ab58                                 *(esi_3 + ecx_8 - 1) = eax_21.b
+1001ab5e                             while (eax_21.b != 0)
+1001ab5e                         
+1001ab6d                         *ebp_1
+1001ab6e                         return **(arg1 + 0xa44)
+1001ab6e                     
+1001ab6f                     char const* const var_1c_5 =
+1001ab6f                         "[Auth] ERROR: Cannot get 'modellist' attribute from result."
+1001ab74                     void* const var_20_9 = &data_101fccd0
+1001ab79                     int32_t var_24_6 = 0x746
+1001ab10                 else
+1001ab12                     char const* const var_1c_4 = "[Auth] ERROR: Cannot get 'modellist' attribute from result: memory overflow."
+1001ab17                     void* const var_20_7 = &data_101fccd0
+1001ab1c                     int32_t var_24_5 = 0x740
+1001aabb         else
+1001aabd             char* var_1c_2 = arg1 + 0x48
+1001aabe             char const* const var_20_4 = "[Auth] ERROR: Server returns error code %s"
+1001aac3             int32_t var_24_4 = 0x734
+1001a9da else
+1001a9dc     char const* const var_1c_1 = "[Auth] ERROR: Error occurred when performing RCSM request."
+1001a9e1     void* const var_20 = &data_101fccd0
+1001a9e6     int32_t var_24_3 = 0x726
+1001a9e6 
+1001aba0 char const* const var_28 = "auth_rcsm_get_country_type_code"
+1001abb4 *opdbg_log()
+1001abb5 return 0

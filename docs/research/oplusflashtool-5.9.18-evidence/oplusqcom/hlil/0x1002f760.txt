@@ -1,0 +1,251 @@
+1002f763 int32_t var_8 = 0xffffffff
+1002f765 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10063036
+1002f770 TEB* fsbase
+1002f770 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+1002f77c int32_t __saved_ebp
+1002f77c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+1002f788 fsbase->NtTib.ExceptionList = &ExceptionList
+1002f7ad void* var_194
+1002f7ad memset(&var_194, 0, 0xb8)
+1002f7b9 sub_10030010(&var_194, arg3)
+1002f7c9 int32_t var_8_1 = 0
+1002f7d3 void* var_dc
+1002f7d3 memset(&var_dc, 0, 0xb0)
+1002f7e1 Concurrency::details::_StructuredTaskCollection::~_StructuredTaskCollection(&var_dc)
+1002f7ec var_8_1.b = 1
+1002f7f7 void var_184
+1002f7f7 class std::basic_ostream<unsigned short> var_cc
+1002f7f7 std::ostream::operator<<(&var_cc, &var_184)
+1002f807 void** var_2c
+1002f807 sub_10030b60(&var_dc, &var_2c)
+1002f810 uint32_t var_198
+1002f810 int32_t var_1c
+1002f810 int32_t var_18
+1002f810 uint32_t result
+1002f810 
+1002f810 if (var_1c != 0)
+1002f830     void** eax_4 = &var_2c
+1002f830     
+1002f833     if (var_18 u>= 0x10)
+1002f833         eax_4 = var_2c
+1002f833     
+1002f83e     int32_t edi_1 = _cJSON_Parse@4(eax_4)
+1002f840     int32_t var_19c_1 = edi_1
+1002f840     
+1002f848     if (edi_1 != 0)
+1002f86c         int32_t eax_7 = _cJSON_GetArraySize@4(edi_1)
+1002f86c         
+1002f87a         if (eax_7 s> 0)
+1002f89f             char* _String_1 = nullptr
+1002f8a9             char* esi_1 = nullptr
+1002f8ab             char* var_1a4_1 = nullptr
+1002f8b1             int32_t ebx_1 = 0
+1002f8b3             char* var_1a8_1 = nullptr
+1002f8b9             int32_t var_1ac_1 = 3
+1002f8c3             int32_t var_1b0_1 = 0
+1002f8c9             int32_t var_1b4_1 = 0
+1002f8c9             
+1002f8d1             if (eax_7 s<= 0)
+1002f9c3             label_1002f9c3:
+1002f9c3                 _cJSON_Delete@4(edi_1)
+1002f9c9                 result = 0xffffffff
+1002f8d1             else
+1002f8d9                 while (true)
+1002f8d9                     int32_t eax_8 = _cJSON_GetArrayItem@8(edi_1, ebx_1)
+1002f8d9                     
+1002f8e3                     if (eax_8 != 0)
+1002f8ef                         int32_t eax_9 = _cJSON_GetObjectItem@8(eax_8, &data_10074788)
+1002f8f7                         char* _String
+1002f8f7                         
+1002f8f7                         if (eax_9 == 0)
+1002f904                             _String = _String_1
+1002f8f7                         else
+1002f8f9                             _String = *(eax_9 + 0x10)
+1002f8fc                             _String_1 = _String
+1002f8fc                         
+1002f90c                         if (_String == 0)
+1002f924                             var_198 = 0
+1002f90c                         else
+1002f91c                             var_198 = strtoul(_String, nullptr, 0)
+1002f91c                         
+1002f934                         int32_t eax_11 = _cJSON_GetObjectItem@8(eax_8, "hash")
+1002f934                         
+1002f93c                         if (eax_11 != 0)
+1002f93e                             esi_1 = *(eax_11 + 0x10)
+1002f93e                         
+1002f951                         if (var_198 == arg2 && esi_1 != 0)
+1002f953                             char* ecx_4 = esi_1
+1002f95d                             int32_t eax_12
+1002f95d                             
+1002f95d                             do
+1002f958                                 eax_12.b = *ecx_4
+1002f95a                                 ecx_4 = &ecx_4[1]
+1002f95d                             while (eax_12.b != 0)
+1002f95d                             
+1002f961                             if (ecx_4 != &ecx_4[1])
+1002f963                                 char* ecx_6 = arg4
+1002f966                                 char* eax_13 = esi_1
+1002f966                                 
+1002f968                                 while (true)
+1002f968                                     void* edx
+1002f968                                     edx.b = *eax_13
+1002f96a                                     char temp1_1 = *ecx_6
+1002f96a                                     bool c_1 = edx.b u< temp1_1
+1002f96a                                     
+1002f96c                                     if (edx.b == temp1_1)
+1002f970                                         if (edx.b == 0)
+1002f984                                             eax_12 = 0
+1002f986                                             break
+1002f986                                         
+1002f972                                         edx.b = eax_13[1]
+1002f975                                         char temp3_1 = ecx_6[1]
+1002f975                                         c_1 = edx.b u< temp3_1
+1002f975                                         
+1002f978                                         if (edx.b == temp3_1)
+1002f97a                                             eax_13 = &eax_13[2]
+1002f97d                                             ecx_6 = &ecx_6[2]
+1002f97d                                             
+1002f982                                             if (edx.b != 0)
+1002f982                                                 continue
+1002f982                                             
+1002f984                                             eax_12 = 0
+1002f986                                             break
+1002f986                                     
+1002f98a                                     eax_12 = sbb.d(eax_13, eax_13, c_1) | 1
+1002f98a                                     break
+1002f98a                                 
+1002f98f                                 if (eax_12 == 0)
+1002f98f                                     goto label_1002fac1
+1002f98f                             
+1002f995                             char* ecx_7 = esi_1
+1002f995                             
+1002f9a5                             do
+1002f9a0                                 eax_12.b = *ecx_7
+1002f9a2                                 ecx_7 = &ecx_7[1]
+1002f9a5                             while (eax_12.b != 0)
+1002f9a5                             
+1002f9a9                             if (ecx_7 == &ecx_7[1])
+1002fac1                             label_1002fac1:
+1002fac1                                 int32_t eax_24 = _cJSON_GetObjectItem@8(eax_8, "name")
+1002fac1                                 
+1002fac5                                 if (eax_24 != 0)
+1002faca                                     var_1a4_1 = *(eax_24 + 0x10)
+1002faca                                 
+1002fad6                                 int32_t eax_25 = _cJSON_GetObjectItem@8(eax_8, &data_100707b8)
+1002fad6                                 
+1002fada                                 if (eax_25 != 0)
+1002fadf                                     var_1a8_1 = *(eax_25 + 0x10)
+1002fadf                                 
+1002faeb                                 int32_t eax_26 = _cJSON_GetObjectItem@8(eax_8, "storage")
+1002faeb                                 
+1002faef                                 if (eax_26 != 0)
+1002faf4                                     var_1ac_1 = *(eax_26 + 0x14)
+1002faf4                                 
+1002fb00                                 int32_t eax_28 = _cJSON_GetObjectItem@8(eax_8, "disable_vip")
+1002fb00                                 
+1002fb04                                 if (eax_28 != 0)
+1002fb09                                     var_1b0_1 = *(eax_28 + 0x14)
+1002fb09                                 
+1002fb15                                 int32_t eax_30 = _cJSON_GetObjectItem@8(eax_8, "lanuch_delay")
+1002fb15                                 
+1002fb19                                 if (eax_30 != 0)
+1002fb1e                                     var_1b4_1 = *(eax_30 + 0x14)
+1002fb1e                                 
+1002fb2a                                 int32_t eax_32 = _cJSON_GetObjectItem@8(eax_8, "digest_size")
+1002fb2e                                 int32_t edi_3
+1002fb2e                                 
+1002fb2e                                 if (eax_32 == 0)
+1002fb35                                     edi_3 = 0
+1002fb2e                                 else
+1002fb30                                     edi_3 = *(eax_32 + 0x14)
+1002fb30                                 
+1002fb46                                 *arg5 = var_198
+1002fb48                                 void* ecx_25 = &arg5[1] - esi_1
+1002fb5b                                 uint32_t eax_33
+1002fb5b                                 
+1002fb5b                                 do
+1002fb50                                     eax_33.b = *esi_1
+1002fb52                                     esi_1 = &esi_1[1]
+1002fb55                                     *(ecx_25 + esi_1 - 1) = eax_33.b
+1002fb5b                                 while (eax_33.b != 0)
+1002fb69                                 char* ecx_26 = &data_1006a03d
+1002fb70                                 char* edx_3 = &data_1006a03d
+1002fb70                                 
+1002fb72                                 if (var_1a4_1 != 0)
+1002fb72                                     edx_3 = var_1a4_1
+1002fb72                                 
+1002fb75                                 void* esi_3 = &arg5[0x21] - edx_3
+1002fb82                                 char* eax_34
+1002fb82                                 
+1002fb82                                 do
+1002fb77                                     eax_34.b = *edx_3
+1002fb79                                     edx_3 = &edx_3[1]
+1002fb7c                                     *(esi_3 + edx_3 - 1) = eax_34.b
+1002fb82                                 while (eax_34.b != 0)
+1002fb82                                 
+1002fb92                                 if (var_1a8_1 != 0)
+1002fb92                                     ecx_26 = var_1a8_1
+1002fb92                                 
+1002fb95                                 void* edx_5 = &arg5[0x29] - ecx_26
+1002fba2                                 char* eax_35
+1002fba2                                 
+1002fba2                                 do
+1002fb97                                     eax_35.b = *ecx_26
+1002fb99                                     ecx_26 = &ecx_26[1]
+1002fb9c                                     *(edx_5 + ecx_26 - 1) = eax_35.b
+1002fba2                                 while (eax_35.b != 0)
+1002fbb0                                 arg5[0x31] = var_1ac_1
+1002fbbc                                 arg5[0x32] = var_1b0_1
+1002fbc8                                 arg5[0x33] = var_1b4_1
+1002fbce                                 arg5[0x34] = edi_3
+1002fbd4                                 _cJSON_Delete@4(var_19c_1)
+1002fbda                                 result = 0
+1002fada                                 break
+1002fada                     
+1002f9af                     edi_1 = var_19c_1
+1002f9b5                     ebx_1 += 1
+1002f9b5                     
+1002f9bc                     if (ebx_1 s>= eax_7)
+1002f9bc                         goto label_1002f9c3
+1002f87a         else
+1002f87d             _cJSON_Delete@4(edi_1)
+1002f88f             opdbg_log("queryPlatformImp", 0x22, "[QComPlatform]Invaild platform information", eax_2)
+1002f9c9             result = 0xffffffff
+1002f848     else
+1002f85d         opdbg_log("queryPlatformImp", 0x1b, "[QComPlatform]failed prase json and error:%s ", 
+1002f85d             _cJSON_GetErrorPtr@0(eax_2))
+1002f9c9         result = 0xffffffff
+1002f810 else
+1002f81e     opdbg_log("queryPlatformImp", 0x12, 
+1002f81e         "[QComPlatform]failed to read content from qcplatform.json ", eax_2)
+1002f9c9     result = 0xffffffff
+1002f9c9 
+1002f9d2 if (var_18 u>= 0x10)
+1002f9d9     sub_10001d60(var_2c, var_18 + 1)
+1002f9d9 
+1002f9e4 int32_t var_18_1 = 0xf
+1002f9eb int32_t var_1c_1 = 0
+1002f9f2 var_2c.b = 0
+1002f9f9 *(&var_dc + *(var_dc + 4)) = &std::stringstream::`vftable'
+1002fa0a int32_t ecx_9 = *(var_dc + 4)
+1002fa10 var_e0
+1002fa10 *(&var_e0 + ecx_9) = ecx_9 - 0x68
+1002fa1d var_cc.__offset(0x8).d = &std::stringbuf::`vftable'{for `std::streambuf'}
+1002fa27 var_c4
+1002fa27 sub_10031680(&var_c4)
+1002fa32 std::streambuf::~streambuf<char, struct std::char_traits<char> >(&var_c4)
+1002fa3e var_bc
+1002fa3e std::iostream::~iostream<char, struct std::char_traits<char> >(&var_bc)
+1002fa47 var_74
+1002fa47 std::ios::~ios<char, struct std::char_traits<char> >(&var_74)
+1002fa56 *(&var_194 + *(var_194 + 4)) = &std::ifstream::`vftable'
+1002fa67 int32_t edx_2 = *(var_194 + 4)
+1002fa6d *(&var_198 + edx_2) = edx_2 - 0x70
+1002fa7a sub_10030aa0(&var_184)
+1002fa85 class std::istream_1 var_17c[0x58]
+1002fa85 std::istream::~istream<char, struct std::char_traits<char> >(&var_17c)
+1002fa91 class std::wios var_124
+1002fa91 std::ios::~ios<char, struct std::char_traits<char> >(&var_124)
+1002fa9c fsbase->NtTib.ExceptionList = ExceptionList
+1002faac CookieCheckFunction(result)
+1002fab4 return result

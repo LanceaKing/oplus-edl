@@ -1,0 +1,1388 @@
+{
+  "checked_at_utc": "2026-11-15T08:15:50.212247+00:00",
+  "runtime": {
+    "python": "3.11.16 (main, Aug 12 2026, 23:03:19) [Clang 21.0.0 (clang-2100.1.1.101)]",
+    "unicorn": "2.1.4",
+    "openssl": "OpenSSL 4.1.0 23 Oct 2026 (Library: OpenSSL 4.1.0 23 Oct 2026)"
+  },
+  "checks": {
+    "old_manifested_evidence_unchanged": true,
+    "source_identity": true,
+    "inner_extraction_equal": true,
+    "result_sample_binding": true,
+    "baseline_failure_reproduced": true,
+    "context_allocation_null_observed": true,
+    "missing_mmio_observed": true,
+    "original_heap_initialized": true,
+    "heap_entropy_scope": true,
+    "sha_twelve_matches": true,
+    "prior_host_three_matches": true,
+    "sha_contexts_released": true,
+    "rsa_six_expected_results": true,
+    "vendor_five_rejections": true,
+    "vendor_yn_order": true,
+    "vendor_eight_native_digests": true,
+    "vendor_public_key_binding": true,
+    "rsa_thirteen_encoded_block_checks": true,
+    "code_region_unchanged": true,
+    "positive_vendor_gap_disclosed": true,
+    "bn_exports_resolved": true,
+    "new_database_integrity": true,
+    "previous_database_unchanged": true,
+    "local_links": true
+  },
+  "previous_manifest_file_count": 210,
+  "previous_evidence_hash_changes": [],
+  "coverage": {
+    "sha_boundary_cases": 9,
+    "prior_osig_cases": 3,
+    "rsa_test_key_cases": 6,
+    "vendor_auth_rejection_cases": 5,
+    "vendor_rsa_attempts": 8,
+    "independent_encoded_block_comparisons": 13,
+    "vendor_positive_authentication_executed": false,
+    "device_or_network_operations": false
+  },
+  "database": {
+    "path": "runs/rmx3800-loader-crypto/rmx3800-firehose-crypto.bndb",
+    "bytes": 7176192,
+    "sha256": "5c1d76d9547ed0a0812193d4eaf1bf22a66be85c7d64bc703ce894a88a367c57",
+    "quick_check": "ok"
+  },
+  "reproduction_scripts": [
+    {
+      "path": "runs/rmx3800-loader-crypto/bn_bridge.py",
+      "sha256": "e09a17641285a14a962653d475029295642df7f042e3070afbec1f4695d1abf8"
+    },
+    {
+      "path": "runs/rmx3800-loader-crypto/bn_request.py",
+      "sha256": "a8cce441c80e32e35eb42604227925c6bfedc5f693bb995216646daaf47d3fa3"
+    },
+    {
+      "path": "runs/rmx3800-loader-crypto/collect.py",
+      "sha256": "927570e3393e26c21fbfa84d3062229ebe7612b16231c0fd5f4150c2561bef22"
+    },
+    {
+      "path": "runs/rmx3800-loader-crypto/native_env.py",
+      "sha256": "231be067cd36e8f1c19a4c6a7023b535040e4c93efd6ac21399339d2b1db1e49"
+    },
+    {
+      "path": "runs/rmx3800-loader-crypto/validate_artifacts.py",
+      "sha256": "0fb60b0f4833b14362b5299e4cde1c59d29751248a74ff2e908c30d4d3d84c31"
+    },
+    {
+      "path": "runs/rmx3800-loader-crypto/validate_rsa.py",
+      "sha256": "39e8d1d64720112294a4ce22947a88dfaf9c62ee9fc5b4a1198c8a79b4317aa9"
+    }
+  ],
+  "reports": [
+    {
+      "path": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "sha256": "b282718df60ec37ead99c64acbf5f3d5d446874d7bb31c5023632deb632c26da"
+    },
+    {
+      "path": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "sha256": "c7832636b161fdf5deb6ea8d789b10af572ca80a6761b0bac456f76c8b63fdec"
+    },
+    {
+      "path": "docs/research/msmdownloadtool/auth.md",
+      "sha256": "3cb529b2187b601e169b9a9133ce2f3a0510529a344c9336fd4a33ab8c0ce287"
+    },
+    {
+      "path": "docs/research/msmdownloadtool/flash.md",
+      "sha256": "d05f36059e38121b4d5958b072a43874526db929870ac5a55e1919fd6a366f8e"
+    }
+  ],
+  "local_links": [
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/acquisition.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/releases-preview.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/release-48.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/zip-members.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/pe-inventory.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../../runs/anteasy-oplustool-preview/sample/OplusTool_preview_v4.2026.009.zip",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../../runs/anteasy-oplustool-preview/bn_bridge.py",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/qcom/hlil/0x18004be60.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/qcom/hlil/0x18004c680.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/qcom/hlil/0x18004c7a0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/qcom/hlil/0x1800038a0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/qcom/hlil/0x180003a90.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "msmdownloadtool/auth.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/qcom/asm/0x180002a10.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/qcom/asm/0x180002cd0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/qcom/hlil/0x1800016d0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/qcom/asm/0x180001d00.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../../runs/anteasy-oplustool-preview/validate_token_serialization.py",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/token-serialization-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/app/hlil/0x1405a0d40.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/app/hlil/0x1405a6ea0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/app/hlil/0x14059e240.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/swm/hlil/0x18000a680.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/app-literal-readback.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/swm/hlil/0x18005e090.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/swm/hlil/0x180004d90.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/swm/hlil/0x180046e80.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/swm/hlil/0x180041290.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/loader/hlil/0x18003ba10.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/loader/hlil/0x18003abe0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/loader/hlil/0x18003f3b0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/loader/hlil/0x180044910.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/loader/hlil/0x180049d00.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/keyword-inventory.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/MySwm-raw-strings.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/loader-raw-strings.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/app/hlil/0x1407681d0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/app-literal-readback.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "oplusflashtool-5.9.18-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "msmdownloadtool/auth.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "msmdownloadtool/flash.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../../runs/anteasy-oplustool-preview/bn/app.bndb",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../../runs/anteasy-oplustool-preview/bn/qcom.bndb",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../../runs/anteasy-oplustool-preview/bn/swm.bndb",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../../runs/anteasy-oplustool-preview/bn/loader.bndb",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/artifact-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/evidence-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/swm/asm/0x18005dd30.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/swm/hlil/0x1800451d0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/swm/hlil/0x180046e80.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/app/hlil/0x140784600.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/loader/hlil/0x18003ebb0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/loader/hlil/0x18003ee40.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/loader/asm/0x180056bc0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/anonymous-list-attempt.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/app/hlil/0x1405ba2a0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/app/hlil/0x14077f8f0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/app-cloud-literals.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/official-loader-identity.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/metadata.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800-command-table.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../../runs/anteasy-cloud-loader/rmx3800-firehose-a64.bndb",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../implementation/phase-6-resources/offline-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/asm/0x149a19b8.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/hlil/0x149a1150.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/asm/0x149a1224.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/asm/0x149a1414.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/asm/0x149a27fc.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/asm/0x149a29e8.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/asm/0x149a8cbc.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../../runs/anteasy-cloud-loader/validate_loader_osig.py",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/osig-loader-unadapted-attempt.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/osig-loader-native-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/hlil/0x149a6090.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/hlil/0x149c2a04.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/hlil/0x1499c9bc.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/hlil/0x149ab6f8.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/asm/0x149ad76c.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/hlil/0x149c2a04.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/hlil/0x149a5f80.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/hlil/0x149a601c.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/asm/0x149ab0bc.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/asm/0x149ab2fc.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/asm/0x149ac010.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../../runs/rmx3800-loader-crypto/native_env.py",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/sha-environment-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/asm/0x149a4610.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/asm/0x149c5720.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/asm/0x149c55e8.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/asm/0x149a1d18.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rsa-authorization-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../../runs/rmx3800-loader-crypto/validate_rsa.py",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/asm/0x149a1224.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/asm/0x149a8bd4.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/asm/0x149a1414.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "../../runs/rmx3800-loader-crypto/rmx3800-firehose-crypto.bndb",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rmx3800/metadata.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/anteasy-oplustool-4.2026.009-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/evidence-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "msmdownloadtool-multi-version-analysis.md#13-oplusflashtool-59180rmx3800--sm8650-补充",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/acquisition.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/exe-metadata.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/pe-inventory.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/FTLibBase.unpack.log",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/unpack-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/unpacker-provenance.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "../../runs/oplusflashtool-5.9.18-analysis/collect.py",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/bridge/hlil/0x1001d050.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/bridge/hlil/0x100013f0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/bridge/hlil/0x10018590.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/firmware/member-list.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/hlil/0x1001f870.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/asm/0x1002f760.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/config/qcplatform.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/config/toolsconfig.xml",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/firmware/selected-member-provenance.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/hlil/0x1004f9f0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/hlil/0x100506d0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/hlil/0x1000f050.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/asm/0x10016a50.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/bridge/hlil/0x1000fcc0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/hlil/0x10018cb0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/asm/0x10018cb0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/config/serverconfig.xml",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/hlil/0x1001da80.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/asm/0x1002b140.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/hlil/0x1002b600.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/hlil/0x1002b760.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/asm/0x1002b3f0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/asm/0x1002b9e0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/asm/0x100210e0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/hlil/0x10019410.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/asm/0x10020ce0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/hlil/0x1001cc50.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/asm/0x10019410.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/literal-readback.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/rcsm-sign-guard-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "../../runs/oplusflashtool-5.9.18-analysis/validate_rcsm_guard.py",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/asm/0x1001d420.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/hlil/0x1003f860.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/base/asm/0x1001c3d0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/osig-native-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "../../runs/oplusflashtool-5.9.18-analysis/validate_osig.py",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/asm/0x10006c60.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/hlil/0x10038a20.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/hlil/0x1000d960.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/hlil/0x1001eda0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/hlil/0x1001d9d0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/oplusqcom/hlil/0x10013720.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/firmware/Setting.xml",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "../../runs/oplusflashtool-5.9.18-analysis/bn/gui.bndb",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "../../runs/oplusflashtool-5.9.18-analysis/bn/bridge.bndb",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "../../runs/oplusflashtool-5.9.18-analysis/bn/base.bndb",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "../../runs/oplusflashtool-5.9.18-analysis/bn/oplusqcom.bndb",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "../../runs/oplusflashtool-5.9.18-analysis/bn/qcom.bndb",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/artifact-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "oplusflashtool-5.9.18-evidence/evidence-manifest.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "msmdownloadtool/auth.md#9-oplusflashtool-59180rcsm-与设备签名",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "msmdownloadtool/flash.md#11-oplusflashtool-59180rmx3800--sm8650",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "msmdownloadtool/ota.md#10-oplusflashtool-59180-与-rmx3800-服务包",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-analysis.md#9-云端-loader-与-rmx3800-对照样本的继续追踪",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-analysis.md#10-官方-rmx3800-loader-的-sha-环境修复与-rsayn-执行验证",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/official-loader-identity.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/cloud-loader/osig-loader-native-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/sha-environment-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/oplusflashtool-5.9.18-analysis.md",
+      "target": "anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rsa-authorization-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "flash.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "ota.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-4.0.28-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-5.1.75-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-evidence/token-5177/input-mapping-vectors.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-evidence/token-5177/bn/asm/0x4c1ef0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-5.1.75-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-evidence/token-5177/token-differential.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-evidence/token-5177/boundary-differential.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-evidence/token-5177/verification.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-evidence/token-5177/SHA256SUMS.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-5.1.75-evidence/main/hlil/0x4575d0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-5.1.75-evidence/main/hlil/0x457400.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-evidence/op9pro/hlil/0x457560.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-5.1.75-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-5.1.75-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-evidence/op9pro/asm/0x441790.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-evidence/pcba-gate-vectors.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-5.1.75-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-5.1.75-evidence/main/asm/0x4ad930.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-5.1.75-evidence/main/asm/0x4af550.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-5.1.75-evidence/main/asm/0x4b08a0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-5.1.75-evidence/main/asm/0x4ae8e0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-multi-version-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../msmdownloadtool-4.0.28-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../oplusflashtool-5.9.18-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../oplusflashtool-5.9.18-analysis.md#42-rcsm-外层封装与-vm-缺口",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../oplusflashtool-5.9.18-analysis.md#51-208-字节结构",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../oplusflashtool-5.9.18-evidence/base/hlil/0x10018cb0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../oplusflashtool-5.9.18-evidence/base/hlil/0x10019410.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../oplusflashtool-5.9.18-evidence/osig-native-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../oplusflashtool-5.9.18-evidence/rcsm-sign-guard-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../oplusflashtool-5.9.18-evidence/oplusqcom/asm/0x10006c60.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../anteasy-oplustool-4.2026.009-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/token-serialization-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/app/hlil/0x1405a0d40.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/swm/hlil/0x180046e80.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../anteasy-oplustool-4.2026.009-analysis.md#9-云端-loader-与-rmx3800-对照样本的继续追踪",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../anteasy-oplustool-4.2026.009-analysis.md#10-官方-rmx3800-loader-的-sha-环境修复与-rsayn-执行验证",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/cloud-loader/anonymous-list-attempt.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/asm/0x149a1224.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/cloud-loader/osig-loader-native-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/sha-environment-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/auth.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/rmx3800-crypto/rsa-authorization-validation.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "auth.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "ota.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-multi-version-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-4.0.28-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-5.1.75-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-multi-version-evidence/op3/asm/0x41b200.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-4.0.28-evidence/hlil/0x426c10.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-5.1.75-evidence/main/asm/0x4b9690.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "auth.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-4.0.28-evidence/hlil/0x42e500.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-4.0.28-evidence/hlil/0x428a80.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-4.0.28-evidence/hlil/0x42ab30.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-4.0.28-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-4.0.28-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-4.0.28-evidence/hlil/0x4247f0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-4.0.28-evidence/hlil/0x425dc0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-5.1.75-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "auth.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "auth.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-multi-version-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-multi-version-evidence/op9pro/asm/0x4c17b0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-multi-version-evidence/op9pro/hlil/0x4c13f0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-multi-version-evidence/op9pro/hlil/0x4cfff0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "ota.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-4.0.28-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-4.0.28-evidence/hlil/0x4233c0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../msmdownloadtool-4.0.28-evidence/hlil/0x425a10.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../oplusflashtool-5.9.18-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "auth.md#9-oplusflashtool-59180rcsm-与设备签名",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../oplusflashtool-5.9.18-evidence/bridge/hlil/0x10018590.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../oplusflashtool-5.9.18-evidence/oplusqcom/asm/0x1002f760.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../oplusflashtool-5.9.18-evidence/oplusqcom/hlil/0x10038a20.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../oplusflashtool-5.9.18-evidence/oplusqcom/asm/0x10016a50.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../oplusflashtool-5.9.18-evidence/oplusqcom/hlil/0x10013720.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../anteasy-oplustool-4.2026.009-analysis.md",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/app/hlil/0x14059e240.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/app/hlil/0x1407681d0.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/loader/hlil/0x18003ba10.txt",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../anteasy-oplustool-4.2026.009-analysis.md#10-官方-rmx3800-loader-的-sha-环境修复与-rsayn-执行验证",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../anteasy-oplustool-4.2026.009-analysis.md#9-云端-loader-与-rmx3800-对照样本的继续追踪",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800-command-table.json",
+      "exists": true
+    },
+    {
+      "document": "docs/research/msmdownloadtool/flash.md",
+      "target": "../anteasy-oplustool-4.2026.009-evidence/cloud-loader/rmx3800/asm/0x149a27fc.txt",
+      "exists": true
+    }
+  ]
+}

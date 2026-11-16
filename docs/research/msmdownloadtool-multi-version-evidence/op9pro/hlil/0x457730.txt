@@ -1,0 +1,539 @@
+00457733 int32_t var_8 = 0xffffffff
+00457735 int32_t (* var_c)() = sub_6d2fe0
+00457740 TEB* fsbase
+00457740 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0045774e int32_t ebx
+0045774e int32_t var_70 = ebx
+0045774f int32_t esi
+0045774f int32_t var_74 = esi
+00457750 int32_t edi
+00457750 int32_t var_78 = edi
+00457751 int32_t __saved_ebp
+00457751 int32_t* var_7c = __security_cookie ^ &__saved_ebp
+00457755 fsbase->NtTib.ExceptionList = &ExceptionList
+0045775b int32_t* var_14 = &var_7c
+00457766 int32_t* var_58 = arg1
+0045776c int32_t var_4c = 1
+00457773 int32_t* eax_4 = sub_499840(var_7c)
+00457778 int32_t* edi_1 = *eax_4
+0045777a *eax_4 = 0
+00457780 int32_t* var_40 = edi_1
+00457783 int32_t var_8_1 = 0
+0045778f int32_t* var_54
+0045778f 
+0045778f if (var_54 != 0)
+00457795     (*(*var_54 + 0x60))(1)
+00457795 
+00457798 int32_t var_8_2 = 1
+0045779f int32_t* eax_6 = sub_575e46()
+004577aa int32_t ecx_1
+004577aa ecx_1.b = eax_6 != 0
+004577aa 
+004577af if (ecx_1 == 0)
+004577b6     sub_414340(0x80004005)
+004577b6     noreturn
+004577b6 
+004577c5 int32_t* var_44 = (*(*eax_6 + 0xc))() + 0x10
+004577c8 var_8_2.b = 2
+004577cc int32_t* eax_10 = sub_575e46()
+004577d7 int32_t ecx_3
+004577d7 ecx_3.b = eax_10 != 0
+004577d7 
+004577dc if (ecx_3 == 0)
+004577e3     sub_414340(0x80004005)
+004577e3     noreturn
+004577e3 
+004577f2 int16_t* var_50 = (*(*eax_10 + 0xc))() + 0x10
+004577f8 var_8_2.b = 3
+004577fc int32_t* eax_14 = sub_496100()
+004577fc 
+00457808 if (&var_40 != eax_14)
+0045780c     var_40 = *eax_14
+0045780f     *eax_14 = edi_1
+0045780f 
+00457811 int32_t* var_34
+00457811 int32_t* ecx_6 = var_34
+00457811 
+00457816 if (ecx_6 != 0)
+0045781c     (*(*ecx_6 + 0x60))(1)
+0045781c 
+0045782c var_8_2.b = 4
+00457830 sub_41a720(&var_44, sub_4589e0(&var_34))
+00457835 var_8_2.b = 3
+00457841 int32_t* edx_3 = &var_34[-4]
+00457847 int32_t eax_18 = edx_3[3]
+00457847 edx_3[3] -= 1
+00457847 
+0045784e if (eax_18 - 1 s<= 0)
+00457855     (*(**edx_3 + 4))(edx_3)
+00457855 
+00457858 void* var_70_8 = 2
+0045785c int32_t var_1c = 7
+00457863 int32_t* var_74_1 = &data_773d5c
+0045786b int32_t var_20 = 0
+00457872 int16_t var_30 = 0
+00457876 sub_45c9b0(&var_30, var_74_1, var_70_8)
+00457881 var_8_2.b = 5
+00457887 int16_t* edi_2 = arg2[2]
+0045788c int32_t var_70_9 = 7
+00457893 int32_t var_74_2 = 0
+0045789a int16_t var_84 = 0
+004578a0 int32_t* ecx_11
+004578a0 
+004578a0 if (*edi_2 != 0)
+004578a6     int16_t* ecx_12 = edi_2
+004578ab     var_34 = &ecx_12[1]
+004578b9     int32_t* eax_22
+004578b9     
+004578b9     do
+004578b0         eax_22.w = *ecx_12
+004578b3         ecx_12 = &ecx_12[1]
+004578b9     while (eax_22.w != 0)
+004578be     ecx_11 = (ecx_12 - var_34) s>> 1
+004578a0 else
+004578a2     ecx_11 = nullptr
+004578a2 
+004578c0 int32_t* var_88 = ecx_11
+004578c1 int16_t* var_8c = edi_2
+004578c4 sub_45c9b0(&var_84, var_8c, var_88)
+004578cc int32_t* eax_23 = sub_496080()
+004578d9 var_8_2.b = 6
+004578dd int16_t* var_70_10 = &var_30
+004578e1 int32_t* eax_24 = sub_496250(&var_40)
+004578e1 
+004578ea if (eax_24 != eax_23)
+004578ec     int32_t ecx_16 = *eax_24
+004578f0     *eax_24 = *eax_23
+004578f2     *eax_23 = ecx_16
+004578f2 
+004578f4 var_8_2.b = 5
+004578fd int32_t* var_38
+004578fd 
+004578fd if (var_38 != 0)
+00457903     (*(*var_38 + 0x60))(1)
+00457903 
+00457906 var_8_2.b = 3
+00457906 
+0045790e if (var_1c u>= 8)
+00457913     sub_56c751(var_30.d, var_70_10)
+00457913 
+0045791b void* var_74_5 = 2
+0045791f int32_t var_1c_1 = 7
+00457926 int32_t* var_78_1 = &data_773d78
+0045792e int32_t var_20_1 = 0
+00457935 var_30 = 0
+00457939 sub_45c9b0(&var_30, var_78_1, var_74_5)
+00457944 var_8_2.b = 7
+0045794a int16_t* edi_4 = arg2[3]
+0045794f int32_t var_74_6 = 7
+00457956 int32_t var_78_2 = 0
+0045795d var_88.w = 0
+00457963 int32_t ecx_19
+00457963 
+00457963 if (*edi_4 != 0)
+00457969     int16_t* ecx_20 = edi_4
+0045796e     var_38 = &ecx_20[1]
+0045797a     int32_t* eax_28
+0045797a     
+0045797a     do
+00457971         eax_28.w = *ecx_20
+00457974         ecx_20 = &ecx_20[1]
+0045797a     while (eax_28.w != 0)
+0045797f     ecx_19 = (ecx_20 - var_38) s>> 1
+00457963 else
+00457965     ecx_19 = 0
+00457965 
+00457981 var_8c = ecx_19
+00457982 int32_t* var_90 = edi_4
+00457985 sub_45c9b0(&var_88, var_90, var_8c)
+0045798d int32_t* eax_29 = sub_496080()
+0045799a var_8_2.b = 8
+0045799e int16_t* var_74_7 = &var_30
+004579a2 int32_t* eax_30 = sub_496250(&var_40)
+004579a2 
+004579ab if (eax_30 != eax_29)
+004579ad     int32_t ecx_24 = *eax_30
+004579b1     *eax_30 = *eax_29
+004579b3     *eax_29 = ecx_24
+004579b3 
+004579b5 var_8_2.b = 7
+004579b9 int32_t* ecx_25 = var_34
+004579b9 
+004579be if (ecx_25 != 0)
+004579c4     (*(*ecx_25 + 0x60))(1)
+004579c4 
+004579c7 var_8_2.b = 3
+004579c7 
+004579cf if (var_1c_1 u>= 8)
+004579d4     sub_56c751(var_30.d, var_74_7, var_70_10)
+004579d4 
+004579dc void* var_78_5 = 2
+004579e0 int32_t var_1c_2 = 7
+004579e7 var_7c = &data_773d70
+004579ef int32_t var_20_2 = 0
+004579f6 var_30 = 0
+004579fa sub_45c9b0(&var_30, var_7c, var_78_5)
+00457a05 var_8_2.b = 9
+00457a0b int16_t* edi_6 = arg2[4]
+00457a10 int32_t var_78_6 = 7
+00457a17 var_7c = nullptr
+00457a1e var_8c.w = 0
+00457a24 int32_t* ecx_27
+00457a24 
+00457a24 if (*edi_6 != 0)
+00457a2a     int16_t* ecx_28 = edi_6
+00457a2f     var_38 = &ecx_28[1]
+00457a3b     int32_t* eax_34
+00457a3b     
+00457a3b     do
+00457a32         eax_34.w = *ecx_28
+00457a35         ecx_28 = &ecx_28[1]
+00457a3b     while (eax_34.w != 0)
+00457a40     ecx_27 = (ecx_28 - var_38) s>> 1
+00457a24 else
+00457a26     ecx_27 = nullptr
+00457a26 
+00457a42 var_90 = ecx_27
+00457a43 int16_t* var_94 = edi_6
+00457a46 sub_45c9b0(&var_8c, var_94, var_90)
+00457a4e int32_t* eax_35 = sub_496080()
+00457a5b var_8_2.b = 0xa
+00457a5f int16_t* var_78_7 = &var_30
+00457a63 int32_t* eax_36 = sub_496250(&var_40)
+00457a63 
+00457a6c if (eax_36 != eax_35)
+00457a6e     int32_t ecx_32 = *eax_36
+00457a72     *eax_36 = *eax_35
+00457a74     *eax_35 = ecx_32
+00457a74 
+00457a76 var_8_2.b = 9
+00457a7a int32_t* ecx_33 = var_34
+00457a7a 
+00457a7f if (ecx_33 != 0)
+00457a81     int32_t eax_38 = *ecx_33
+00457a83     var_7c = 1
+00457a85     (*(eax_38 + 0x60))(var_7c)
+00457a85 
+00457a88 var_8_2.b = 3
+00457a88 
+00457a90 if (var_1c_2 u>= 8)
+00457a92     var_7c = var_30.d
+00457a95     sub_56c751(var_7c, var_78_7, var_74_7, var_70_10)
+00457a95 
+00457a9d var_7c = 7
+00457aa1 int32_t var_1c_3 = 7
+00457aa8 wchar16 const* const var_80 = u"account"
+00457ab0 int32_t var_20_3 = 0
+00457ab7 var_30 = 0
+00457abb sub_45c9b0(&var_30, var_80, var_7c)
+00457ac6 var_8_2.b = 0xb
+00457acc int16_t* edi_8 = *arg2
+00457ad0 var_7c = 7
+00457ad7 int32_t var_80_1 = 0
+00457ade var_90.w = 0
+00457ae4 int16_t* ecx_35
+00457ae4 
+00457ae4 if (*edi_8 != 0)
+00457aea     int16_t* ecx_36 = edi_8
+00457aef     var_38 = &ecx_36[1]
+00457afb     int32_t* eax_40
+00457afb     
+00457afb     do
+00457af2         eax_40.w = *ecx_36
+00457af5         ecx_36 = &ecx_36[1]
+00457afb     while (eax_40.w != 0)
+00457b00     ecx_35 = (ecx_36 - var_38) s>> 1
+00457ae4 else
+00457ae6     ecx_35 = nullptr
+00457ae6 
+00457b02 var_94 = ecx_35
+00457b03 int16_t* var_98 = edi_8
+00457b06 sub_45c9b0(&var_90, var_98, var_94)
+00457b0e int32_t* eax_41 = sub_496080()
+00457b1b var_8_2.b = 0xc
+00457b1f var_7c = &var_30
+00457b23 int32_t* eax_42 = sub_496250(&var_40)
+00457b23 
+00457b2c if (eax_42 != eax_41)
+00457b2e     int32_t ecx_40 = *eax_42
+00457b32     *eax_42 = *eax_41
+00457b34     *eax_41 = ecx_40
+00457b34 
+00457b36 var_8_2.b = 0xb
+00457b3a int32_t* ecx_41 = var_34
+00457b3a 
+00457b3f if (ecx_41 != 0)
+00457b45     (*(*ecx_41 + 0x60))(1)
+00457b45 
+00457b48 var_8_2.b = 3
+00457b48 
+00457b50 if (var_1c_3 u>= 8)
+00457b55     sub_56c751(var_30.d)
+00457b55 
+00457b5d void* var_80_4 = 8
+00457b61 int32_t var_1c_4 = 7
+00457b68 var_84.d = u"password"
+00457b70 int32_t var_20_4 = 0
+00457b77 var_30 = 0
+00457b7b sub_45c9b0(&var_30, var_84, var_80_4)
+00457b86 var_8_2.b = 0xd
+00457b8c int16_t* edi_10 = arg2[1]
+00457b91 int32_t var_80_5 = 7
+00457b98 var_84.d = 0
+00457b9f var_94.w = 0
+00457ba5 int16_t* ecx_43
+00457ba5 
+00457ba5 if (*edi_10 != 0)
+00457bab     int16_t* ecx_44 = edi_10
+00457bb0     var_38 = &ecx_44[1]
+00457bbc     int32_t* eax_46
+00457bbc     
+00457bbc     do
+00457bb3         eax_46.w = *ecx_44
+00457bb6         ecx_44 = &ecx_44[1]
+00457bbc     while (eax_46.w != 0)
+00457bc1     ecx_43 = (ecx_44 - var_38) s>> 1
+00457ba5 else
+00457ba7     ecx_43 = nullptr
+00457ba7 
+00457bc3 var_98 = ecx_43
+00457bc7 sub_45c9b0(&var_94, edi_10, var_98)
+00457bcf int32_t* eax_47 = sub_496080()
+00457bdc var_8_2.b = 0xe
+00457be0 int16_t* var_80_6 = &var_30
+00457be4 int32_t* eax_48 = sub_496250(&var_40)
+00457be4 
+00457bed if (eax_48 != eax_47)
+00457bef     int32_t ecx_48 = *eax_48
+00457bf3     *eax_48 = *eax_47
+00457bf5     *eax_47 = ecx_48
+00457bf5 
+00457bf7 var_8_2.b = 0xd
+00457bfb int32_t* ecx_49 = var_34
+00457bfb 
+00457c00 if (ecx_49 != 0)
+00457c04     var_84.d = 1
+00457c06     (*(*ecx_49 + 0x60))(var_84)
+00457c06 
+00457c09 var_8_2.b = 3
+00457c09 
+00457c11 if (var_1c_4 u>= 8)
+00457c13     var_84.d = var_30.d
+00457c16     sub_56c751(var_84, var_80_6)
+00457c16 
+00457c1e var_84.d = 2
+00457c22 int32_t var_1c_5 = 7
+00457c29 var_88 = &data_773ddc
+00457c31 int32_t var_20_5 = 0
+00457c38 var_30 = 0
+00457c3c sub_45c9b0(&var_30, var_88, var_84)
+00457c44 var_8_2.b = 0xf
+00457c4c var_84.d = 7
+00457c53 var_88 = nullptr
+00457c5a var_98.w = 0
+00457c64 int32_t ecx_51
+00457c64 
+00457c64 if (*var_44 != 0)
+00457c6a     int16_t* ecx_52 = var_44
+00457c79     int16_t* eax_51
+00457c79     
+00457c79     do
+00457c70         eax_51.w = *ecx_52
+00457c73         ecx_52 = &ecx_52[1]
+00457c79     while (eax_51.w != 0)
+00457c7d     ecx_51 = (ecx_52 - &ecx_52[1]) s>> 1
+00457c64 else
+00457c66     ecx_51 = 0
+00457c66 
+00457c85 sub_45c9b0(&var_98, var_44, ecx_51)
+00457c8d int32_t* eax_52 = sub_496080()
+00457c9a var_8_2.b = 0x10
+00457c9e var_84.d = &var_30
+00457ca2 int32_t* eax_53 = sub_496250(&var_40)
+00457ca2 
+00457cab if (eax_53 != eax_52)
+00457cad     int32_t ecx_56 = *eax_53
+00457cb1     *eax_53 = *eax_52
+00457cb3     *eax_52 = ecx_56
+00457cb3 
+00457cb5 var_8_2.b = 0xf
+00457cb5 
+00457cbe if (var_38 != 0)
+00457cc0     int32_t eax_55 = *var_38
+00457cc2     var_88 = 1
+00457cc4     (*(eax_55 + 0x60))(var_88)
+00457cc4 
+00457ccb if (var_1c_5 u>= 8)
+00457ccd     var_88 = var_30.d
+00457cd0     sub_56c751(var_88)
+00457cd0 
+00457cdb var_8_2.b = 0x11
+00457cdf var_88 = &arg1[2]
+00457ce5 var_8c = &var_40
+00457ce9 void var_3c
+00457ce9 var_90 = &var_3c
+00457cef var_8_2.b = 0x12
+00457cf3 void* ecx_59 = *sub_459210(arg1, var_90, var_8c, var_88)
+00457cf3 
+00457cf7 if (ecx_59 == 0)
+00457cf9     var_88 = "wait() cannot be called on a default constructed task."
+00457d01     sub_68f240(var_88)
+00457d06     var_88 = &data_7b5934
+00457d0e     void var_68
+00457d0e     var_8c = &var_68
+00457d0f     ecx_59 = sub_69889f(var_8c, var_88)
+00457d0f 
+00457d14 int32_t* ecx_60 = sub_4558a0(ecx_59)
+00457d19 var_8_2.b = 0x11
+00457d19 
+00457d22 if (var_38 != 0)
+00457d29     bool cond:0_1 = var_38[1] != 1
+00457d29     ecx_60 = var_38[1]
+00457d29     var_38[1] -= 1
+00457d29     
+00457d2d     if (not(cond:0_1))
+00457d33         ecx_60 = (**var_38)()
+00457d3a         bool cond:1_1 = var_38[2] != 1
+00457d35         var_38[2]
+00457d3a         var_38[2] -= 1
+00457d3a         
+00457d3e         if (not(cond:1_1))
+00457d44             ecx_60 = (*(*var_38 + 4))()
+00457d44 
+00457d50 if (0xc8 != arg1[2].w)
+00457ed6     var_88 = ecx_60
+00457ed9     var_8c = u"Request Failed!"
+00457ede     sub_41a5b0(&var_88, var_8c)
+00457ee5     sub_458a80(arg1, var_88)
+00457eea     arg1[4] = 1
+00457f2e     sub_458510(arg1)
+00457d50 else
+00457d56     int32_t* eax_62 = sub_575e46()
+00457d61     int32_t ecx_63
+00457d61     ecx_63.b = eax_62 != 0
+00457d61     
+00457d66     if (ecx_63 == 0)
+00457d68         var_88 = 0x80004005
+00457d6d         sub_414340(var_88)
+00457d6d         noreturn
+00457d6d     
+00457d7c     var_34 = (*(*eax_62 + 0xc))() + 0x10
+00457d82     var_8_2.b = 0x13
+00457d86     var_88 = &var_30
+00457d8a     void** eax_66 = sub_4961c0(var_88)
+00457d8f     var_8_2.b = 0x14
+00457d8f     
+00457d97     if (eax_66[5] u>= 8)
+00457d99         eax_66 = *eax_66
+00457d99     
+00457d9b     var_88 = eax_66
+00457d9f     var_8c = u"Request Success!\nResp: %s\n"
+00457da4     var_90 = &var_34
+00457da5     int32_t* ecx_66 = sub_414410(var_90, var_8c)
+00457dad     var_8_2.b = 0x13
+00457dad     
+00457db5     if (var_1c_5 u>= 8)
+00457db7         var_88 = var_30.d
+00457dba         ecx_66 = sub_56c751(var_88)
+00457dba     
+00457dc2     int32_t* edi_15 = var_34
+00457dc5     var_88 = ecx_66
+00457dc9     int32_t** var_38_1 = &var_88
+00457dcc     var_8c = &edi_15[-4]
+00457ddb     *var_38_1 = &sub_41a8a0(var_8c)[4]
+00457ddf     sub_458a80(arg1, var_88)
+00457de9     var_88 = &arg1[3]
+00457df1     var_8_2.b = 0x11
+00457df1     
+00457dfa     if (sub_4587e0(arg1, var_88) == 0)
+00457e1d         int32_t ecx_73 = edi_15[-1]
+00457e1d         edi_15[-1] -= 1
+00457e1d         
+00457e24         if (ecx_73 - 1 s<= 0)
+00457e26             int32_t* ecx_75 = edi_15[-4]
+00457e28             var_88 = &edi_15[-4]
+00457e2b             (*(*ecx_75 + 4))(var_88)
+00457e2b         
+00457e34         var_88 = &var_50
+00457e38         var_8_2 = 3
+00457e3f         var_8c = &var_44
+00457e40         var_90 = arg2
+00457e41         int32_t eax_74 = sub_4581d0(var_90, var_8c, var_88)
+00457e46         var_4c = eax_74
+00457e46         
+00457e4b         if (eax_74 != 0)
+00457f2e             sub_458510(arg1)
+00457e4b         else
+00457e51             int32_t* edx_12 = arg1[0xb]
+00457e58             int32_t ecx_76
+00457e58             ecx_76.b = edx_12 != 0
+00457e58             
+00457e5d             if (ecx_76 == 0)
+00457e5f                 var_88 = 0x80004005
+00457e64                 sub_414340(var_88)
+00457e64                 noreturn
+00457e64             
+00457e69             var_88 = edx_12
+00457e6a             var_8c = var_50
+00457e6a             
+00457e77             if (sub_6898c6(var_8c, var_88) == 0)
+00457e88                 var_88 = &var_44
+00457e89                 sub_41a720(&arg1[0xa], var_88)
+00457e94                 var_88 = &arg2[4]
+00457e95                 sub_41a720(&arg1[9], var_88)
+00457ea0                 var_88 = &arg2[2]
+00457ea1                 sub_41a720(&arg1[7], var_88)
+00457ea9                 var_88 = arg2
+00457eaa                 sub_41a720(&arg1[5], var_88)
+00457eb5                 var_88 = &arg2[1]
+00457eb6                 sub_41a720(&arg1[6], var_88)
+00457ec1                 var_88 = &arg2[3]
+00457ec2                 sub_41a720(&arg1[8], var_88)
+00457ec7                 var_4c = 0
+00457e77             else
+00457e79                 arg1[4] = 9
+00457e79             
+00457ed2             if (arg1[4] != 0)
+00457f2e                 sub_458510(arg1)
+00457dfa     else
+00457dfc         arg1[4] = 0xb
+00457e03         int32_t ecx_70 = edi_15[-1]
+00457e03         edi_15[-1] -= 1
+00457e03         
+00457e0a         if (ecx_70 - 1 s<= 0)
+00457e10             int32_t* ecx_72 = edi_15[-4]
+00457e12             var_88 = &edi_15[-4]
+00457e15             (*(*ecx_72 + 4))(var_88)
+00457e15         
+00457f2e         sub_458510(arg1)
+00457f2e 
+00457f33 var_8_2.b = 2
+00457f3c int32_t* edx_14 = &var_50[-8]
+00457f42 int32_t ecx_86 = edx_14[3]
+00457f42 edx_14[3] -= 1
+00457f42 
+00457f49 if (ecx_86 - 1 s<= 0)
+00457f4b     int32_t* ecx_88 = *edx_14
+00457f4d     var_88 = edx_14
+00457f50     (*(*ecx_88 + 4))(var_88)
+00457f50 
+00457f53 var_8_2.b = 1
+00457f5a int32_t* edx_16 = &var_44[-4]
+00457f60 int32_t ebx_1 = edx_16[3]
+00457f60 edx_16[3] -= 1
+00457f60 
+00457f67 if (ebx_1 - 1 s<= 0)
+00457f69     int32_t* ecx_89 = *edx_16
+00457f6b     var_88 = edx_16
+00457f6e     (*(*ecx_89 + 4))(var_88)
+00457f6e 
+00457f71 int32_t var_8_3 = 0xffffffff
+00457f78 int32_t* ecx_90 = var_40
+00457f78 
+00457f7d if (ecx_90 != 0)
+00457f7f     int32_t eax_84 = *ecx_90
+00457f81     var_88 = 1
+00457f83     (*(eax_84 + 0x60))(var_88)
+00457f83 
+00457f8c fsbase->NtTib.ExceptionList = ExceptionList
+00457fa4 return sub_68804f(var_74_7, var_70_10)

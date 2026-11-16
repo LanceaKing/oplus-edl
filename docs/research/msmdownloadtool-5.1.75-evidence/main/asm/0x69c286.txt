@@ -1,0 +1,42 @@
+0069c286 push    0x8
+0069c288 push    0x7b4530
+0069c28d call    0x698600
+0069c292 mov     esi, dword [ebp+0x8]
+0069c295 mov     dword [esi+0x5c], 0x760ca0
+0069c29c and     dword [esi+0x8], 0x0
+0069c2a0 xor     edi, edi
+0069c2a2 inc     edi
+0069c2a3 mov     dword [esi+0x14], edi
+0069c2a6 mov     dword [esi+0x70], edi
+0069c2a9 push    0x43
+0069c2ab pop     eax
+0069c2ac mov     word [esi+0xb8], ax
+0069c2b3 mov     word [esi+0x1be], ax
+0069c2ba mov     dword [esi+0x68], 0x7c0ee0
+0069c2c1 and     dword [esi+0x3b8], 0x0
+0069c2c8 push    0xd
+0069c2ca call    0x6a2f74
+0069c2cf pop     ecx
+0069c2d0 and     dword [ebp-0x4], 0x0
+0069c2d4 mov     eax, dword [esi+0x68]
+0069c2d7 mov     ecx, edi
+0069c2d9 lock xadd dword [eax], ecx
+0069c2dd mov     dword [ebp-0x4], 0xfffffffe
+0069c2e4 call    0x69c327
+0069c2e9 push    0xc
+0069c2eb call    0x6a2f74
+0069c2f0 pop     ecx
+0069c2f1 mov     dword [ebp-0x4], edi
+0069c2f4 mov     eax, dword [ebp+0xc]
+0069c2f7 mov     dword [esi+0x6c], eax
+0069c2fa test    eax, eax
+0069c2fc jne     0x69c306
+0069c306 push    dword [esi+0x6c]
+0069c309 call    0x69f36b
+0069c30e pop     ecx
+0069c30f mov     dword [ebp-0x4], 0xfffffffe
+0069c316 call    0x69c330
+0069c31b call    0x698645
+0069c320 retn    
+0069c2fe mov     eax, dword [0x7c1364]
+0069c303 mov     dword [esi+0x6c], eax

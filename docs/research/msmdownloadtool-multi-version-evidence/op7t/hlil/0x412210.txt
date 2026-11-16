@@ -1,0 +1,64 @@
+00412213 int32_t var_8 = 0xffffffff
+00412215 int32_t (* var_c)() =
+00412215     __ehhandler$??0?$basic_string@_WU?$char_traits@_W@std@@V?$allocator@_W@2@@std@@QAE@XZ
+00412220 TEB* fsbase
+00412220 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00412224 int32_t ebx
+00412224 int32_t var_1c = ebx
+00412225 int32_t esi
+00412225 int32_t var_20 = esi
+00412226 int32_t edi
+00412226 int32_t var_24 = edi
+00412232 fsbase->NtTib.ExceptionList = &ExceptionList
+0041223a int32_t __saved_ebp
+0041223a int32_t* eax_3 = sub_4f2b78(__security_cookie ^ &__saved_ebp)
+00412245 int32_t edx
+00412245 edx.b = eax_3 != 0
+00412245 
+0041224a if (edx == 0)
+00412251     sub_405ee0(0x80004005)
+00412251     noreturn
+00412251 
+0041225b int32_t esi_1 = (*(*eax_3 + 0xc))() + 0x10
+00412261 int32_t var_8_1 = 0
+00412268 int32_t* eax_6 = sub_4f2b78()
+00412273 int32_t ecx_1
+00412273 ecx_1.b = eax_6 != 0
+00412273 
+00412278 if (ecx_1 == 0)
+0041227f     sub_405ee0(0x80004005)
+0041227f     noreturn
+0041227f 
+0041228b void* edi_1 = (*(*eax_6 + 0xc))() + 0x10
+00412293 var_8_1.b = 1
+00412297 sub_500335()
+004122a3 void* eax_9 = sub_4fe79b(arg1, 0x420)
+004122b2 int32_t ecx_5
+004122b2 
+004122b2 if (arg1 != 0xffffff40)
+004122b8     ecx_5 = *(arg1 + 0xc4)
+004122b2 else
+004122b4     ecx_5 = 0
+004122b4 
+004122c3 0x3095d0(*(eax_9 + 0x20), 0x30, ecx_5, 1, edi_1, esi_1)
+004122d5 void* eax_11 = sub_4fe79b(arg1, 0x420)
+004122dc sub_4feaaa(eax_11, eax_11, 
+004122dc     u"Please copy following license token and paste to <a href="http://10.8.0.92:"
+004122dc "51000/license/download">http://10.8.0.92:51000/license/d")
+004122e3 void* esi_2 = sub_412380(arg1)
+004122eb var_8_1.b = 0
+004122f7 int32_t eax_12 = *(edi_1 - 4)
+004122f7 *(edi_1 - 4) -= 1
+004122f7 
+004122fe if (eax_12 - 1 s<= 0)
+00412305     (*(**(edi_1 - 0x10) + 4))(edi_1 - 0x10)
+00412305 
+0041230b int32_t var_8_2 = 0xffffffff
+00412315 int32_t edi_2 = *(esi_2 - 4)
+00412315 *(esi_2 - 4) -= 1
+00412315 
+0041231c if (edi_2 - 1 s<= 0)
+00412323     (*(**(esi_2 - 0x10) + 4))(esi_2 - 0x10)
+00412323 
+0041232e fsbase->NtTib.ExceptionList = ExceptionList
+0041233c return 1

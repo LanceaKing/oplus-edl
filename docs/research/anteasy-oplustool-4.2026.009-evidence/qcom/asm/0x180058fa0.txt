@@ -1,0 +1,15 @@
+180058fa0 test    rcx, rcx
+180058fa3 je      0x180058fc8
+180058fc8 mov     eax, 0x1
+180058fcd retn    
+180058fa5 test    rdx, rdx
+180058fa8 je      0x180058fc8
+180058faa test    r9, r9
+180058fad je      0x180058fc8
+180058faf cmp     qword [rsp+0x28], 0x0
+180058fb5 je      0x180058fc8
+180058fb7 test    r8d, r8d
+180058fba mov     eax, 0x1
+180058fbf mov     ecx, 0x2b
+180058fc4 cmovne  eax, ecx
+180058fc7 retn    

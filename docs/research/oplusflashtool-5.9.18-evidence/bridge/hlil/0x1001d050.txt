@@ -1,0 +1,81 @@
+1001d053 int32_t var_8 = 0xffffffff
+1001d055 int32_t var_c = 0x100404d0
+1001d060 TEB* fsbase
+1001d060 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+1001d061 fsbase->NtTib.ExceptionList = &ExceptionList
+1001d072 int32_t var_8_1 = 0
+1001d07a class PackageFileLoaderBase* eax_1 = PackageFileLoaderFactory::CreatePackageFileLoader(&arg2)
+1001d07a 
+1001d087 if (eax_1 != 0)
+1001d098     char eax_4 = (*(*eax_1 + 0x14))()
+1001d09a     *(this + 4) = 0
+1001d09a     
+1001d0a3     if (eax_4 != 0)
+1001d0b5         void** var_20
+1001d0b5         sub_10015600(&var_20, (*(*eax_1 + 0x18))())
+1001d0ba         var_8_1.b = 1
+1001d0be         void** ecx_3 = var_20
+1001d0c1         void** esi_1 = ecx_3
+1001d0c3         int32_t var_1c
+1001d0c3         int32_t eax_7 = var_1c
+1001d0c3         
+1001d0c8         if (ecx_3 != eax_7)
+1001d131             do
+1001d0d8                 int32_t var_24_1 = 0xf
+1001d0df                 int32_t var_28_1 = 0
+1001d0e6                 char var_38 = 0
+1001d0ea                 sub_10003400(&var_38, esi_1, 0, 0xffffffff)
+1001d0ff                 int32_t* eax_8 = &data_1005b078
+1001d0ff                 
+1001d104                 if (data_1005b08c u>= 0x10)
+1001d104                     eax_8 = data_1005b078
+1001d104                 
+1001d10e                 uint8_t* eax_9
+1001d10e                 eax_9, ecx_3 = sub_100045a0(&var_38, eax_8, nullptr, data_1005b088)
+1001d10e                 
+1001d118                 if (eax_9 == 0)
+1001d135                     *(this + 4) = 1
+1001d135                     
+1001d13f                     if (var_24_1 u>= 0x10)
+1001d146                         ecx_3 = sub_100037a0(var_38.d, var_24_1 + 1)
+1001d146                     
+1001d14b                     eax_7 = var_1c
+1001d14b                     break
+1001d14b                 
+1001d11d                 if (var_24_1 u>= 0x10)
+1001d124                     ecx_3 = sub_100037a0(var_38.d, var_24_1 + 1)
+1001d124                 
+1001d129                 eax_7 = var_1c
+1001d12c                 esi_1 = &esi_1[6]
+1001d131             while (esi_1 != eax_7)
+1001d131         
+1001d14e         var_8_1.b = 0
+1001d152         void** esi_2 = var_20
+1001d152         
+1001d157         if (esi_2 != 0)
+1001d159             int32_t var_14
+1001d159             int32_t var_48_5 = var_14
+1001d15e             void** var_4c_3 = ecx_3
+1001d161             sub_10003d40(esi_2, eax_7)
+1001d181             int32_t var_18
+1001d181             sub_10003940(esi_2, (var_18 - esi_2) s/ 0x18)
+1001d087 else
+1001d089     *(this + 4) = eax_1
+1001d089 
+1001d188 PackageFileLoaderFactory::DeletePackageFileLoader(eax_1)
+1001d188 
+1001d199 if (this + 8 != &arg2)
+1001d1a0     sub_10003400(this + 8, &arg2, 0, 0xffffffff)
+1001d1a0 
+1001d1ac class std::string* _Buf = &arg2
+1001d1ac 
+1001d1af if (arg2._Mypair._Myval2._Myres u>= 0x10)
+1001d1af     _Buf = arg2._Mypair._Myval2._Bx._Buf.d
+1001d1af 
+1001d1c0 opdbg_log("OpFlashMode::init", 0x31, "[OpFlashMode] int path: %s, mode: %d", _Buf, *(this + 4))
+1001d1c6 uint32_t _Myres = arg2._Mypair._Myval2._Myres
+1001d1c6 
+1001d1d1 if (_Myres u>= 0x10)
+1001d1d8     sub_100037a0(arg2._Mypair._Myval2._Bx._Buf.d, _Myres + 1)
+1001d1d8 
+1001d1e0 fsbase->NtTib.ExceptionList = ExceptionList

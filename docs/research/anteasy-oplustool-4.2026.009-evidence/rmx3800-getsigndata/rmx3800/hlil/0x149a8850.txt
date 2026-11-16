@@ -1,0 +1,33 @@
+149a8864 int32_t x21 = 0
+149a8868 uint64_t x8
+149a8868 
+149a8868 x8 = arg2 s> 0 ? zx.q(arg2) : 0
+149a8868 
+149a886c int32_t* x20 = arg1 + 8
+149a8870 int64_t x22 = x8 + 1
+149a8874 int32_t x19 = -1
+149a88a0 int64_t i
+149a88a0 
+149a88a0 do
+149a8878     int64_t temp0_1 = x22
+149a8878     x22 -= 1
+149a8878     
+149a887c     if (temp0_1 == 1)
+149a88a8         x19 = 0
+149a88a8         break
+149a88a8     
+149a8884     void* x0_1
+149a8884     x0_1, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10 =
+149a8884         sub_149a4e9c(x20, arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)
+149a8888     *(x20 - 8) = x0_1
+149a8888     
+149a888c     if (x21 == 0)
+149a8890         x21 = *x20
+149a8890     
+149a8894     if (x0_1 == 0)
+149a8894         break
+149a8894     
+149a8898     i = *x20
+149a8898     x20 = &x20[4]
+149a88a0 while (i == sx.q(x21))
+149a88bc return zx.q(x19)

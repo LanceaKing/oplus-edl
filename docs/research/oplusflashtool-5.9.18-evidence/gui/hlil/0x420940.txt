@@ -1,0 +1,104 @@
+00420943 int32_t var_8 = 0xffffffff
+00420945 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_4d1f08
+00420950 TEB* fsbase
+00420950 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0042095c int32_t __saved_ebp
+0042095c char* eax_2 = __security_cookie ^ &__saved_ebp
+00420962 fsbase->NtTib.ExceptionList = &ExceptionList
+0042097b void var_14
+0042097b QMessageLogger* ecx
+0042097b 
+0042097b if (data_58c824 != 0)
+00420984     void* var_5c_1 = &var_14
+00420998     char const* const var_5c_2 = "Acquire the lock."
+0042099d     void* const var_60_1 = &data_4f2998
+004209a2     int32_t var_64_1 = 0x177
+004209a7     void* const var_68_1 = &data_4f2994
+004209ac     char const* const var_6c_1 = "ServerApi::loginRcsmBlock"
+004209b8     int32_t var_8_1 = 0
+004209f0     int32_t var_8_2 = 0xffffffff
+004209f7     QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(
+004209f7         QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+004209f7             QMessageLogger::debug(QMessageLogger::QMessageLogger(ecx, nullptr, 0, nullptr)), 
+004209f7             "[FTGuiSales][")))), 
+004209f7         eax_2)))
+004209fe     ecx = QMutex::lock(&data_58c84c)
+004209fe 
+00420a07 void* var_5c_3 = &var_14
+00420a1b char const* const var_5c_4 = "Start calling."
+00420a20 void* const var_60_2 = &data_4f2998
+00420a25 int32_t var_64_2 = 0x17a
+00420a2a void* const var_68_2 = &data_4f2994
+00420a2f char const* const var_6c_2 = "ServerApi::loginRcsmBlock"
+00420a3b int32_t var_8_3 = 1
+00420a73 int32_t var_8_4 = 0xffffffff
+00420a7a QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(
+00420a7a     QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+00420a7a         QMessageLogger::debug(QMessageLogger::QMessageLogger(ecx, nullptr, 0, nullptr)), 
+00420a7a         "[FTGuiSales][")))), 
+00420a7a     eax_2)))
+00420a82 void var_20
+00420a82 void* var_5c_5 = &var_20
+00420a83 QString* eax_17 = QString::toUtf8(arg2)
+00420a92 void var_1c
+00420a92 void* var_5c_6 = &var_1c
+00420a93 int32_t var_8_5 = 2
+00420a9a QString* arg_c
+00420a9a * eax_18 = QString::toUtf8(arg_c)
+00420aa8 void var_18
+00420aa8 void* var_5c_7 = &var_18
+00420aa9 var_8_5.b = 3
+00420aad QString* arg_8
+00420aad * eax_19 = QString::toUtf8(arg_8)
+00420abb void* var_5c_8 = &var_14
+00420abc var_8_5.b = 4
+00420ac0 * eax_20 = QString::toUtf8(arg1)
+00420acb var_8_5.b = 5
+00420ad5 char* var_5c_9 = QByteArray(eax_17)
+00420ade char* var_60_3 = QByteArray(eax_18)
+00420ae7 char* var_64_3 = QByteArray(eax_19)
+00420af0 char* var_68_3 = QByteArray(eax_20)
+00420af1 sub_41cbc0()
+00420b04 bool eax_26
+00420b04 QByteArray* ecx_26
+00420b04 eax_26, ecx_26 = OpFlashAuthManager::loginRcsm(OpFlashManager::getAuthManager(&data_58a0f0))
+00420b0a * ebx
+00420b0a ebx.b = eax_26
+00420b0f arg2.b = ebx.b
+00420b2d int32_t var_8_6 = 0xffffffff
+00420b34 QMessageLogger* ecx_30 = QByteArray::~QByteArray(QByteArray::~QByteArray(QByteArray::~QByteArray(
+00420b34     QByteArray::~QByteArray(ecx_26))))
+00420b3d data_58c825 = 0
+00420b44 QString** var_5c_10 = &arg_c
+00420b63 int32_t var_8_7 = 6
+00420b6a char const* const var_60_4 = "end. output:"
+00420b6f void* const var_64_4 = &data_4f2998
+00420b74 int32_t var_68_4 = 0x181
+00420b79 void* const var_6c_3 = &data_4f2994
+00420b7e char const* const var_70 = "ServerApi::loginRcsmBlock"
+00420bc7 int32_t var_8_8 = 0xffffffff
+00420bce int32_t result
+00420bce QMessageLogger* ecx_40
+00420bce result, ecx_40 = QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+00420bce     QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+00420bce         QMessageLogger::debug(QMessageLogger::QMessageLogger(ecx_30, nullptr, 0, nullptr)), 
+00420bce         "[FTGuiSales][")))), 
+00420bce     arg2))))
+00420bce 
+00420bd7 if (data_58c824 != 0)
+00420bdc     QString** var_5c_12 = &arg_8
+00420bf0     char const* const var_5c_13 = "Release lock."
+00420bf5     void* const var_60_5 = &data_4f2998
+00420bfa     int32_t var_64_5 = 0x183
+00420bff     void* const var_68_5 = &data_4f2994
+00420c04     char const* const var_6c_4 = "ServerApi::loginRcsmBlock"
+00420c10     int32_t var_8_9 = 7
+00420c48     QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+00420c48         QDebug::operator<<(QDebug::operator<<(
+00420c48         QMessageLogger::debug(QMessageLogger::QMessageLogger(ecx_40, nullptr, 0, nullptr)), 
+00420c48         "[FTGuiSales][")))))))
+00420c4f     QMutex::unlock(&data_58c84c)
+00420c4f 
+00420c55 result.b = ebx.b
+00420c5a fsbase->NtTib.ExceptionList = ExceptionList
+00420c68 return result

@@ -1,0 +1,25 @@
+004c0bf0 push    ecx
+004c0bf1 push    esi
+004c0bf2 push    edi
+004c0bf3 mov     edi, ecx
+004c0bf5 mov     ecx, dword [edi+0x34]
+004c0bf8 lea     eax, [edi+0x574]
+004c0bfe push    eax
+004c0bff call    0x4d2a40
+004c0c04 mov     esi, eax
+004c0c06 test    esi, esi
+004c0c08 je      0x4c0c26
+004c0c26 pop     edi
+004c0c27 pop     esi
+004c0c28 pop     ecx
+004c0c29 retn    
+004c0c0a mov     ecx, dword [edi+0x3c]
+004c0c0d push    esi
+004c0c0e inc     ecx
+004c0c0f push    ecx
+004c0c10 push    0x77d444
+004c0c15 push    0x4
+004c0c17 push    0x7e4a58
+004c0c1c call    0x4d6500
+004c0c21 add     esp, 0x14
+004c0c24 mov     eax, esi

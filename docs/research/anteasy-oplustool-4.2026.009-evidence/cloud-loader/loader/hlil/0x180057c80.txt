@@ -1,0 +1,38 @@
+180057c94 void* entry_rdx
+180057c94 
+180057c94 if (sub_180064350(&data_18018cbc0, entry_rdx) != 0)
+180057d4c     std::_Throw_Cpp_error(5)
+180057d4c     noreturn
+180057d4c 
+180057ca4 if (data_18018cc0c == 0x7fffffff)
+180057d32     data_18018cc0c = 0x7ffffffe
+180057d41     std::_Throw_Cpp_error(6)
+180057d41     noreturn
+180057d41 
+180057cab int64_t rax_1
+180057cab int32_t* rdx
+180057cab int32_t* rsi
+180057cab rax_1, rdx = sub_18075bcf8(rsi)
+180057cab 
+180057cb7 if (data_18018cc10 == 0)
+180057d22     sub_180064490(&data_18018cbc0, rdx)
+180057cb7 else
+180057cb9     rdx = data_18018cc20
+180057cb9     
+180057cc3     if (rax_1 u< rdx)
+180057d22         sub_180064490(&data_18018cbc0, rdx)
+180057cc3     else
+180057cc5         void* rax_2 = rax_1 - rdx
+180057cc8         void* r8_1 = data_18018cc18
+180057cd9         rdx = 0x7fffffffffffffff - rax_2
+180057cd9         
+180057ce6         if (r8_1 u> rdx)
+180057d22             sub_180064490(&data_18018cbc0, rdx)
+180057ce6         else
+180057ce8             void* rbx_1 = r8_1 + rax_2
+180057cec             sub_180064490(&data_18018cbc0, rdx)
+180057cec             
+180057cf5             if (rbx_1 s> 0)
+180057d1a                 return rbx_1 s/ 0x3e8
+180057d1a 
+180057d31 return 0

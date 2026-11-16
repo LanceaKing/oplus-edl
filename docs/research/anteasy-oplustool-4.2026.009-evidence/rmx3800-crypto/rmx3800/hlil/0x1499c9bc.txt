@@ -1,0 +1,29 @@
+1499c9d0 int32_t x21 = -1
+1499c9d0 
+1499c9dc if (arg2 != 0 && arg3 s<= 8)
+1499c9ec     if (arg3 == 0xffffffff)
+1499ca1c         int64_t x23_1 = 0
+1499ca20         x21 = -1
+1499ca24         int32_t* x22_1 = &data_80202990
+1499ca24         
+1499ca2c         while (true)
+1499ca2c             if (x23_1 != 2)
+1499ca34                 if (x23_1 == 9)
+1499ca34                     break
+1499ca34                 
+1499ca40                 void* x0_3 = sub_149ab6f8(x22_1, arg1)
+1499ca44                 *arg2 = x0_3
+1499ca44                 
+1499ca48                 if (x0_3 != 0)
+1499ca58                     x21 = 0
+1499ca58                     break
+1499ca58             
+1499ca4c             x23_1 += 1
+1499ca50             x22_1 = &x22_1[0x20]
+1499c9ec     else
+1499ca04         void* x0_1 = sub_149ab6f8(&data_80202990 + (sx.q(arg3) << 7), arg1)
+1499ca0c         *arg2 = x0_1
+1499ca0c         
+1499ca10         x21 = x0_1 == 0 ? -1 : 0
+1499ca10 
+1499ca70 return zx.q(x21)

@@ -1,0 +1,307 @@
+00425483 int32_t var_8 = 0xffffffff
+00425485 int32_t (* var_c)(void* arg1) = sub_571b70
+00425490 TEB* fsbase
+00425490 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0042549e int32_t __saved_ebp
+0042549e int32_t var_68 = __security_cookie ^ &__saved_ebp
+004254a2 fsbase->NtTib.ExceptionList = &ExceptionList
+004254b3 int64_t var_58 = 0
+004254b8 char var_15 = 0
+004254b8 
+004254be if (*(arg1 + 0x100390) != 0)
+004254c8     fsbase->NtTib.ExceptionList = ExceptionList
+004254d6     return 0x4c7
+004254d6 
+004254d9 int32_t* arg_4
+004254d9 int32_t* esi = arg_4
+004254dc uint32_t eax_5 = esi[0x1f]
+004254e7 uint8_t* var_20
+004254e7 uint8_t* ebx
+004254e7 
+004254e7 if (eax_5 != 0x200)
+004254ff     if (eax_5 != 0x1000)
+004259f3         fsbase->NtTib.ExceptionList = ExceptionList
+00425a01         return 1
+00425a01     
+00425505     struct DOS_Header* const var_6c_1 = &__dos_header
+0042550a     uint8_t* eax_7 = sub_42e817()
+0042550f     ebx = eax_7
+00425511     var_20 = eax_7
+004254e7 else
+004254e9     int32_t var_6c = 0x80000
+004254f3     ebx = sub_42e817()
+004254f5     var_20 = ebx
+004254f5 
+00425519 if (ebx == 0)
+00425521     fsbase->NtTib.ExceptionList = ExceptionList
+0042552f     return &ebx[8]
+0042552f 
+0042553c if (*(arg1 + 0x34) != 0 && *(arg1 + 0x35) != 0)
+00425545     int32_t eax_9 = sub_4094a0(esi, "PrimaryGPT")
+0042554c     int32_t eax_10
+0042554c     
+0042554c     if (eax_9 != 0)
+00425555         eax_10 = sub_4094a0(esi, "BackupGPT")
+0042555a         var_15 = 1
+0042555a     
+00425560     if (eax_9 == 0 || eax_10 == 0)
+00425562         var_15 = 0
+00425562 
+0042556a void** eax_11 = &esi[0xc]
+0042556a 
+0042556d if (esi[0x11] u>= 0x10)
+0042556f     eax_11 = *eax_11
+0042556f 
+00425575 PWSTR lpFileName
+00425575 sub_426050(&lpFileName, eax_11)
+0042557a void** eax_12 = &esi[6]
+0042557d int32_t var_8_1 = 0
+0042557d 
+00425588 if (eax_12[5] u>= 0x10)
+0042558a     eax_12 = *eax_12
+0042558a 
+00425590 void* var_2c
+00425590 sub_426050(&var_2c, eax_12)
+00425595 var_8_1.b = 1
+00425595 
+004255a3 if (*(arg1 + 0x34) != 0 && var_15 == 0)
+004255a9     void** eax_13 = arg1 + 0x40
+004255a9     
+004255ac     if (*(arg1 + 0x54) u>= 0x10)
+004255ae         eax_13 = *eax_13
+004255ae     
+004255b4     sub_4061e0(&lpFileName, eax_13)
+004255b4 
+004255b9 HANDLE hTemplateFile = nullptr
+004255bb enum FILE_FLAGS_AND_ATTRIBUTES dwFlagsAndAttributes = SECURITY_ANONYMOUS
+004255bd enum FILE_CREATION_DISPOSITION dwCreationDisposition = OPEN_EXISTING
+004255bf SECURITY_ATTRIBUTES* lpSecurityAttributes = nullptr
+004255c1 enum FILE_SHARE_MODE dwShareMode = FILE_SHARE_READ
+004255c3 uint32_t dwDesiredAccess = 0x80000000
+004255cb HANDLE hFile = CreateFileW(lpFileName, dwDesiredAccess, dwShareMode, lpSecurityAttributes, 
+004255cb     dwCreationDisposition, dwFlagsAndAttributes, hTemplateFile)
+004255d1 HANDLE hObject = hFile
+004255d7 enum WIN32_ERROR result
+004255d7 
+004255d7 if (hFile != 0xffffffff)
+00425645     uint32_t fileSizeHigh
+00425645     int32_t var_28_1
+00425645     int32_t var_24_1
+00425645     uint32_t fileSizeHigh_1
+00425645     int32_t ebx_1
+00425645     
+00425645     if (*(arg1 + 0x34) == 0 || var_15 != 0)
+00425679         ebx_1 = GetFileSize(hFile, &fileSizeHigh)
+00425682         int32_t ecx_13 = eax_5 + ebx_1
+00425697         esi[0x18] = __alldiv(ecx_13 - 1, 
+00425697             sbb.d(adc.d(0, fileSizeHigh, eax_5 + ebx_1 u< eax_5), 0, ecx_13 u< 1), eax_5, 0)
+0042569d         var_24_1 = var_58:4.d
+004256a3         var_28_1 = var_58.d
+004256a6         fileSizeHigh_1 = fileSizeHigh
+00425645     else
+0042564d         ebx_1 = esi[0x24]
+00425653         int32_t eax_22
+00425653         int32_t edx_1
+00425653         edx_1:eax_22 = sx.q(esi[0x22])
+0042565d         var_28_1 = eax_22 << 9
+00425660         fileSizeHigh_1 = esi[0x25]
+00425666         var_24_1 = edx_1 << 9 | eax_22 u>> 0xffffffe9
+00425666     
+004256b0     uint32_t fileSizeHigh_5
+004256b0     uint32_t ecx_15
+004256b0     fileSizeHigh_5, ecx_15 = __alldvrm(ebx_1, fileSizeHigh_1, eax_5, 0)
+004256bd     uint32_t fileSizeHigh_6 = fileSizeHigh_5
+004256c2     uint32_t fileSizeHigh_4 = fileSizeHigh_5
+004256c5     uint32_t fileSizeHigh_7 = fileSizeHigh_6
+004256c5     
+004256c8     if ((ecx_15 | ebx_1) != 0)
+004256ca         fileSizeHigh_6 += 1
+004256cd         fileSizeHigh_7 = fileSizeHigh_6
+004256cd     
+004256d0     int32_t* esi_3 = arg_4
+004256da     int32_t eax_30 = sub_4094a0(esi_3, "BackupGPT")
+004256e1     char* result_5
+004256e1     
+004256e1     if (eax_30 != 0)
+00425712         int32_t eax_32
+00425712         int32_t edx_3
+00425712         edx_3:eax_32 = sx.q(esi_3[0x19])
+00425717         result_5 = sub_42ac20(*(arg1 + 0x28), esi_3, fileSizeHigh_6, eax_32, edx_3)
+004256e1     else
+004256eb         char* var_84_1
+004256eb         
+004256eb         if (*(arg1 + 0x1c) == eax_30.b)
+00425705             var_84_1 = "NUM_DISK_SECTORS-33."
+004256eb         else
+004256ed             var_84_1 = "NUM_DISK_SECTORS-5."
+004256ed         
+004256f2         sub_4022a0(&dwDesiredAccess, var_84_1)
+004256fe         result_5 = sub_42c630(*(arg1 + 0x28), esi_3, esi_3[0x18], dwDesiredAccess)
+004256fe     
+0042571c     result = result_5
+0042571c     
+00425720     if (result == NO_ERROR)
+0042577b         sub_420d10(result_5, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 2, fileSizeHigh_6, 0)
+00425780         uint32_t fileSizeHigh_3 = fileSizeHigh_4
+00425788         uint8_t* ebx_3
+00425788         
+00425788         if (fileSizeHigh_3 != 0)
+0042578e             ebx_3 = var_20
+0042578e             
+0042579e             while (*(arg1 + 0x100390) == 0)
+004257a6                 uint32_t fileSizeHigh_2 = fileSizeHigh_3
+004257a6                 
+004257ad                 if (fileSizeHigh_3 u> 0x400)
+004257ad                     fileSizeHigh_2 = 0x400
+004257ad                 
+004257b0                 HANDLE hObject_1 = hObject
+004257b3                 uint32_t esi_5 = eax_5 * fileSizeHigh_2
+004257b6                 fileSizeHigh = fileSizeHigh_2
+004257bd                 var_58:4.d = esi_5
+004257c3                 enum WIN32_ERROR eax_35 =
+004257c3                     sub_42e760(fileSizeHigh_2, ebx_3, hObject_1, var_28_1, var_24_1, esi_5)
+004257c3                 
+004257cd                 if (eax_35 != NO_ERROR)
+004257cd                     goto label_42588f
+004257cd                 
+004257d3                 void** ecx_22 = *(arg1 + 0x28)
+004257d6                 arg_4 = eax_35
+004257e6                 result = sub_426500(*ecx_22, ebx_3, esi_5, &arg_4)
+004257e6                 
+004257ea                 if (result != NO_ERROR)
+004257ea                     goto label_4258ed
+004257ea                 
+004257f3                 fileSizeHigh_3 = fileSizeHigh_4 - fileSizeHigh
+004257f9                 bool c_3 = var_28_1 + var_58:4.d u< var_28_1
+004257fc                 var_28_1 += var_58:4.d
+00425802                 var_24_1 = adc.d(var_24_1, 0, c_3)
+0042580e                 fileSizeHigh_4 = fileSizeHigh_3
+00425823                 SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 3, 
+00425823                     fileSizeHigh_7 - fileSizeHigh_3)
+00425823                 
+0042582b                 if (fileSizeHigh_3 == 0)
+0042582b                     break
+0042582b         
+00425839         uint8_t* var_6c_21
+00425839         
+00425839         if (*(arg1 + 0x100390) == 0)
+00425853             ebx_3 = var_20
+00425853             
+00425856             if ((ecx_15 | ebx_1) == 0)
+00425856                 goto label_425916
+00425856             
+00425883             if (sub_42e760(_memset(ebx_3, 0, eax_5), ebx_3, hObject, var_28_1, var_24_1, ecx_15)
+00425883                     == NO_ERROR)
+004258de                 enum WIN32_ERROR result_6 = sub_42ab00(*(arg1 + 0x28), ebx_3, eax_5)
+004258e3                 result = result_6
+004258e7                 wchar16 const* const var_70_11
+004258e7                 int16_t* eax_50
+004258e7                 
+004258e7                 if (result == NO_ERROR)
+0042590e                     sub_420d10(result_6, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 3, fileSizeHigh_7, 0)
+00425916                 label_425916:
+00425916                     LRESULT eax_46
+00425916                     eax_46.b = *(arg1 + 0x100390)
+00425916                     
+0042591e                     if (eax_46.b != 0)
+00425920                         var_6c_21 = ebx_3
+00425920                         goto label_425921
+00425920                     
+0042593f                     result = sub_42ab30(*(arg1 + 0x28), 0x32)
+0042593f                     
+00425943                     if (result != NO_ERROR)
+00425949                         eax_50 = arg1 + 0x290
+0042594f                         enum WIN32_ERROR result_4 = result
+0042594f                         
+00425950                         if (*(arg1 + 0x1b) == 0)
+00425959                             var_70_11 = u"FirehoseCheckRSP Failed, Errno: %d"
+00425950                         else
+00425952                             var_70_11 = u"FirehoseCheckRS"
+00425952                         
+00425950                         goto label_42595f
+00425950                     
+00425981                     j__free(ebx_3)
+0042598c                     sub_420cf0(&hObject)
+004258e7                 else
+004258ed                 label_4258ed:
+004258ed                     eax_50 = arg1 + 0x290
+004258f3                     enum WIN32_ERROR result_3 = result
+004258f3                     
+004258f4                     if (*(arg1 + 0x1b) == 0)
+00425843                         var_70_11 = u"FirehoseWriteData Failed, Errno: %d"
+004258f4                     else
+004258fa                         var_70_11 = u"FirehoseWriteDat"
+004258fa                     
+0042595f                 label_42595f:
+0042595f                     sub_426230(eax_50, var_70_11)
+00425978                     sub_420d10(arg1 + 0x290, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, arg1 + 0x290, 1)
+00425981                     j__free(ebx_3)
+0042598c                     sub_420cf0(&hObject)
+00425883             else
+0042588f             label_42588f:
+0042588f                 int32_t var_6c_24 = 1
+00425891                 void* var_70_14 = var_2c
+00425894                 wchar16 const* const var_74_13
+00425894                 
+00425894                 if (*(arg1 + 0x1b) == 0)
+0042589d                     var_74_13 = u"Read %s Failed"
+00425894                 else
+00425896                     var_74_13 = &data_5bc7c4
+00425896                 
+004258b6                 sub_420d10(sub_426230(arg1 + 0x290, var_74_13), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 
+004258b6                     0, arg1 + 0x290, 0)
+004258bf                 j__free(ebx_3)
+004258ca                 sub_420cf0(&hObject)
+004258cf                 result = ERROR_INVALID_FUNCTION
+00425839         else
+0042583b             var_6c_21 = var_20
+00425921         label_425921:
+00425921             j__free(var_6c_21)
+0042592c             sub_420cf0(&hObject)
+00425931             result = NO_ERROR
+00425720     else
+0042572c         enum WIN32_ERROR result_2 = result
+0042572d         wchar16 const* const var_70_5
+0042572d         
+0042572d         if (*(arg1 + 0x1b) == 0)
+00425736             var_70_5 = u"SendProgromCommand Failed, Errno: %d"
+0042572d         else
+0042572f             var_70_5 = u"SendProgromComman"
+0042572f         
+0042574f         sub_420d10(sub_426230(arg1 + 0x290, var_70_5), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+0042574f             arg1 + 0x290, 1)
+0042575a         j__free(var_20)
+00425765         CloseHandle(hObject)
+004255d7 else
+004255e3     result = GetLastError()
+004255e5     enum WIN32_ERROR result_1 = result
+004255e6     PWSTR lpFileName_1 = lpFileName
+004255ef     wchar16 const* const var_74
+004255ef     
+004255ef     if (*(arg1 + 0x1b) == 0)
+004255f8         var_74 = u"Open %s  Failed, Errno: %d"
+004255ef     else
+004255f1         var_74 = &data_5bc498
+004255f1     
+004255fe     sub_426230(arg1 + 0x290, var_74)
+00425627     SendMessageW(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, arg1 + 0x290)
+0042562e     j__free(ebx)
+0042562e 
+00425991 var_8_1.b = 0
+0042599d int32_t* edx_12 = var_2c - 0x10
+004259a3 int32_t eax_53 = edx_12[3]
+004259a3 edx_12[3] -= 1
+004259a3 
+004259aa if (eax_53 - 1 s<= 0)
+004259b1     (*(**edx_12 + 4))(edx_12)
+004259b1 
+004259b4 int32_t var_8_2 = 0xffffffff
+004259be int32_t* ebx_5 = &lpFileName[-8]
+004259c4 int32_t edi_1 = ebx_5[3]
+004259c4 ebx_5[3] -= 1
+004259c4 
+004259cb if (edi_1 - 1 s<= 0)
+004259d2     (*(**ebx_5 + 4))(ebx_5)
+004259d2 
+004259da fsbase->NtTib.ExceptionList = ExceptionList
+004259e8 return result

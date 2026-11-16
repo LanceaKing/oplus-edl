@@ -124,7 +124,7 @@ fn capture_primary(
                 file: &mut file,
                 bytes,
             };
-            qdl::firehose_read_storage(channel, &mut out, sectors, 0, lun, start)
+            crate::firehose::read_storage(channel, &mut out, sectors, 0, lun, start)
         })();
         item.transferred_bytes = Some(bytes.len().to_string());
         match &result {
@@ -285,7 +285,7 @@ fn backup_lun(
     if backup_sectors * sector > 16 * 1024 * 1024 {
         backup.reject(Status::Unsupported, "backup GPT capture exceeds 16 MiB");
     } else if let Err(e) = save_read(&backup_path, overwrite, &mut backup, |mut out| {
-        qdl::firehose_read_storage(
+        crate::firehose::read_storage(
             channel,
             &mut out,
             usize::try_from(backup_sectors)?,

@@ -1,0 +1,142 @@
+00446ff3 void* var_8 = arg1
+00446ff5 int32_t esi
+00446ff5 int32_t var_10 = esi
+00446ff6 int32_t edi
+00446ff6 int32_t var_14 = edi
+00446ff6 
+00447007 if (&arg2[-0x4b] u> 0xd3)
+00447013     int32_t eax_1 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00447013     
+0044701f     if (eax_1 != 0)
+0044702d         _fprintf(eax_1, "[%d] Invalid primary sid (%d)\n", *(arg1 + 0x30) + 1, arg2)
+00447033         _fclose(eax_1)
+00447033     
+00447043     return 0
+00447043 
+0044704e int32_t eax_4 = arg2 << 0xa
+00447057 int32_t* ecx_3 = arg1 + 0x4b8 + eax_4
+00447059 int32_t* esi_4 = arg1 + 0x804b8 + eax_4
+00447061 int32_t eax_5 = sub_447c60(arg2)
+00447061 
+00447068 if (eax_5 != 0)
+00447092     int32_t eax_8 = sub_446e90(arg1, ecx_3)
+0044709d     int32_t eax_9 = sub_446e90(arg1, esi_4)
+0044709d     
+004470a9     if (arg3 != 0)
+004470ce         char const* const var_20
+004470ce         int32_t var_1c_2
+004470ce         int32_t* var_18_6
+004470ce         int32_t eax_12
+004470ce         int32_t result
+004470ce         
+004470ce         if (eax_8 == 1)
+004470d6             if (eax_9 == eax_8)
+004470df                 int32_t eax_11 = esi_4[4]
+004470e2                 int32_t ecx_9 = ecx_3[4]
+004470e2                 
+004470e7                 if (ecx_9 == eax_11)
+004470f3                     result = 1
+004470f8                     eax_12 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00447100                     arg3 = eax_12
+00447100                     
+00447105                     if (eax_12 == 0)
+004472fb                         return result
+004472fb                     
+0044710e                     var_18_6 = arg2
+00447110                     var_1c_2 = *(arg1 + 0x30) + 1
+00447111                     var_20 = "[%d] Verify SID %d success\n"
+0044722e                 label_44722e:
+0044722e                     _fprintf(eax_12, var_20, var_1c_2, var_18_6)
+00447236                     _fclose(arg3)
+00447246                     return result
+00447246                 
+0044711b                 if (ecx_9 u<= eax_11)
+00447138                     if (ecx_9 != 0 || eax_11 != 0xffffffff)
+00447141                         arg3 = 1
+00447138                     else
+0044713a                         arg3 = ecx_9
+0044713d                         esi_4 = ecx_3
+0044711b                 else if (ecx_9 != 0xffffffff || eax_11 != 0)
+00447126                     arg3 = 0
+0044712d                     esi_4 = ecx_3
+00447124                 else
+00447141                     arg3 = 1
+00447141                 
+00447151                 result = sub_446900(arg1, arg2, esi_4)
+00447151                 
+00447155                 if (result == 0)
+00447165                     int32_t* eax_14 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00447165                     
+00447174                     if (eax_14 != 0)
+00447183                         char const* const ecx_13 = "backup"
+00447183                         
+00447188                         if (arg3 != 1)
+00447188                             ecx_13 = "primary"
+00447188                         
+00447198                         _fprintf(eax_14, "[%d] sync %d from %s region failed\n", 
+00447198                             *(arg1 + 0x30) + 1, arg2, ecx_13)
+004471a3                         _fclose(eax_14)
+004471a3                 
+004472fb                 return result
+004472fb             
+004471b8             if (eax_9 == 0)
+004471c8                 int32_t eax_18 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+004471c8                 
+004471d4                 if (eax_18 != 0)
+004471e2                     _fprintf(eax_18, "[%d] Backup region of SID %d is incorrect, start restore\n", 
+004471e2                         *(arg1 + 0x30) + 1, arg2)
+004471e8                     _fclose(eax_18)
+004471e8                 
+004471fb                 result = sub_446900(arg1, arg2, ecx_3)
+004471fb                 
+004471ff                 if (result != 0)
+004472fb                     return result
+004472fb                 
+0044720f                 eax_12 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00447217                 arg3 = eax_12
+00447217                 
+0044721c                 if (eax_12 == 0)
+004472fb                     return result
+004472fb                 
+00447225                 var_18_6 = arg2
+00447227                 var_1c_2 = *(arg1 + 0x30) + 1
+00447228                 var_20 = "[%d] Restore %d from primary region failed\n"
+00447228                 goto label_44722e
+004470ce         else if (eax_8 == 0 && eax_9 == 1)
+0044725c             int32_t eax_21 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+0044725c             
+00447269             if (eax_21 != 0)
+00447277                 _fprintf(eax_21, "[%d] Primary region of SID %d is incorrect, start restore\n", 
+00447277                     *(arg1 + 0x30) + 1, arg2)
+0044727f                 _fclose(eax_21)
+0044727f             
+00447290             result = sub_446900(arg1, arg2, esi_4)
+00447290             
+00447294             if (result != 0)
+004472fb                 return result
+004472fb             
+004472a0             eax_12 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+004472a8             arg3 = eax_12
+004472a8             
+004472ad             if (eax_12 == 0)
+004472fb                 return result
+004472fb             
+004472b2             var_18_6 = arg2
+004472b4             var_1c_2 = *(arg1 + 0x30) + 1
+004472b5             var_20 = "[%d] Restore %d from backup region failed\n"
+004472ba             goto label_44722e
+004472c9         int32_t eax_23 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+004472c9         
+004472d5         if (eax_23 != 0)
+004472e3             _fprintf(eax_23, 
+004472e3                 "[%d] Both checksums of primary and backup of %d region incorrect. Consider as corrupt\n", 
+004472e3                 *(arg1 + 0x30) + 1, arg2)
+004472e9             _fclose(eax_23)
+004470a9     else if (eax_8 != 0 && eax_9 != 0)
+004470c8         return 1
+00447068 else if (arg3 != eax_5)
+00447076     int32_t eax_6 = sub_447cf0(arg2)
+0044707d     int32_t esi_6 = neg.d(eax_6)
+0044708a     return sbb.d(esi_6, esi_6, eax_6 != 0) + 1
+0044708a 
+004472f1 return 0

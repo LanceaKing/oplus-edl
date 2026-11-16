@@ -1,0 +1,17 @@
+149a49a0 stp     fp, lr, [sp, #-0x20]!
+149a49a4 str     x19, [sp, #0x10]
+149a49a8 mov     fp, sp
+149a49ac adrp    x8, 0x8025b000
+149a49b0 mov     x19, x2
+149a49b4 ldr     x8, [x8, #0x788]
+149a49b8 ldr     x8, [x8, #0x8]
+149a49bc ldr     x8, [x8, #0x8]
+149a49c0 blr     x8
+149a49c4 cbz     w0, 0x149a49d4
+149a49d4 mov     x0, x19
+149a49d8 ldr     x19, [sp, #0x10]
+149a49dc ldp     fp, lr, [sp], #0x20
+149a49e0 b       0x149a49f8
+149a49c8 ldr     x19, [sp, #0x10]
+149a49cc ldp     fp, lr, [sp], #0x20
+149a49d0 ret     

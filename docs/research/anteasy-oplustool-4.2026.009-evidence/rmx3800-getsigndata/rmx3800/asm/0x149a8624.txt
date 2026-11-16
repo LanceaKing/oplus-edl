@@ -1,0 +1,10 @@
+149a8624 cbz     x0, 0x149a8644
+149a8644 mov     w0, wzr
+149a8648 ret     
+149a8628 stp     fp, lr, [sp, #-0x10]!
+149a862c mov     fp, sp
+149a8630 bl      0x149a6300
+149a8634 ldp     fp, lr, [sp], #0x10
+149a8638 cbz     w0, 0x149a8644
+149a863c mov     w0, #0xffffffff
+149a8640 ret     

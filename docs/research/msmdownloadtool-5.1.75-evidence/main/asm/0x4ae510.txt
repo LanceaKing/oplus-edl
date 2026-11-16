@@ -1,0 +1,36 @@
+004ae510 push    ebp
+004ae511 mov     ebp, esp
+004ae513 push    0xffffffff
+004ae515 push    0x6d9e08
+004ae51a mov     eax, dword [fs:0x0]
+004ae520 push    eax
+004ae521 sub     esp, 0x34
+004ae524 mov     eax, dword [0x7c0bb0]
+004ae529 xor     eax, ebp
+004ae52b mov     dword [ebp-0x10], eax
+004ae52e push    ebx
+004ae52f push    esi
+004ae530 push    edi
+004ae531 push    eax
+004ae532 lea     eax, [ebp-0xc]
+004ae535 mov     dword [fs:0x0], eax
+004ae53b mov     dword [ebp-0x3c], ecx
+004ae53e call    0x575b26
+004ae543 mov     ecx, eax
+004ae545 xor     eax, eax
+004ae547 test    ecx, ecx
+004ae549 setne   al
+004ae54c test    eax, eax
+004ae54e jne     0x4ae55a
+004ae55a mov     eax, dword [ecx]
+004ae55c call    dword [eax+0xc]
+004ae55f lea     edi, [eax+0x10]
+004ae562 mov     dword [ebp-0x40], edi
+004ae565 mov     dword [ebp-0x4], 0x0
+004ae56c push    0x288
+004ae571 mov     dword [ebp-0x34], 0x288
+004ae578 call    0x689262
+004ae57d call    0xf9f688
+004ae582 retn    
+004ae550 push    0x80004005
+004ae555 call    0x414340

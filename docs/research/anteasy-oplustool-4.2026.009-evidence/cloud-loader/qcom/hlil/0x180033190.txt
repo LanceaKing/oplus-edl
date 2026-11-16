@@ -1,0 +1,145 @@
+1800331b3 void var_138
+1800331b3 int64_t rax_1 = __security_cookie ^ &var_138
+1800331bd char** var_118 = arg1
+1800331c5 int64_t var_d0
+1800331c5 __builtin_memset(&var_d0, 0, 0x80)
+180033205 int32_t var_d8 = arg2
+180033208 int32_t r8
+180033208 int32_t var_d4 = r8
+18003320c var_118 = nullptr
+18003321f int32_t rax_2
+18003321f char* rdx
+18003321f int64_t r8_1
+18003321f rax_2, rdx, r8_1 = sub_180033ee0(&var_d8, nullptr, 0, &var_118)
+180033227 void var_f0
+180033227 
+180033227 if (rax_2 == 2)
+18003322d     char** rbx_1 = var_118
+18003322d     
+180033235     if (rbx_1 != 0)
+18003323e         int128_t var_110
+18003323e         __builtin_memset(&var_110, 0, 0x18)
+18003324c         int64_t r15 = 0x7fffffffffffffff
+18003324c         
+180033259         if (rbx_1 u> 0x7fffffffffffffff)
+18003349c             sub_1800022b0()
+18003349c             noreturn
+18003349c         
+180033266         int128_t* rsi_2
+180033266         
+180033266         if (rbx_1 u< 0x1000)
+180033299             rsi_2 = sub_180077bc0(rbx_1, rdx, r8_1)
+18003329c         label_18003329c:
+18003329c             var_110.q = rsi_2
+1800332a1             void* r14_1 = rsi_2 + rbx_1
+1800332a5             void* var_100_1 = r14_1
+1800332b2             sub_18009a050(rsi_2, 0, rbx_1)
+1800332ba             var_110:8.q = r14_1
+1800332bf             var_118 = nullptr
+1800332c7             int64_t rdi_2 = r14_1 - rsi_2
+1800332d9             int32_t rax_5
+1800332d9             char* rdx_2
+1800332d9             int64_t r8_4
+1800332d9             rax_5, rdx_2, r8_4 = sub_180033ee0(&var_d8, rsi_2, rdi_2, &var_118)
+1800332d9             
+1800332eb             if (rax_5 != 0 || var_118 != rdi_2)
+18003346d                 sub_18007a330(&var_f0, &data_1800c2f40, 
+18003346d                     sub_180008650(&var_f0, "Digest Auth command build failed"))
+180033472                 breakpoint
+180033472             
+1800332f4             __builtin_memset(arg1, 0, 0x18)
+1800332fe             arg1[3] = 0xf
+1800332fe             
+18003330a             if (rsi_2 != r14_1)
+180033315                 void* rbx_3 = r14_1 - rsi_2
+180033315                 
+18003331b                 if (rbx_3 u> 0x7fffffffffffffff)
+1800334a8                     sub_1800023e0()
+1800334a8                     noreturn
+1800334a8                 
+180033325                 char* rax_10
+180033325                 
+180033325                 if (rbx_3 u<= 0xf)
+1800333c0                     r15 = 0xf
+1800333c6                     rax_10 = nullptr
+180033325                 else
+18003332e                     int64_t rax_7 = rbx_3 | 0xf
+180033335                     int64_t rcx_5
+180033335                     
+180033335                     if (rax_7 u<= 0x7fffffffffffffff)
+180033359                         r15 = rax_7
+180033359                         
+180033364                         if (rax_7 u< 0x16)
+180033364                             r15 = 0x16
+180033364                         
+18003336f                         if (r15 != -1)
+180033385                             if (r15 + 1 u>= 0x1000)
+180033387                                 rcx_5 = r15 + 0x28
+180033387                                 
+18003338e                                 if (rcx_5 u> r15 + 1)
+18003338e                                     goto label_180033345
+18003338e                                 
+180033473                                 stdext::threads::_Throw_lock_error()
+180033473                                 noreturn
+180033473                             
+1800333b0                             rax_10 = sub_180077bc0(r15 + 1, rdx_2, r8_4)
+1800333b5                             *arg1 = rax_10
+1800333b9                             arg1[3] = r15
+18003336f                         else
+180033371                             rax_10 = nullptr
+180033374                             *arg1 = nullptr
+180033378                             arg1[3] = r15
+180033335                     else
+180033341                         rcx_5 = -0x7fffffffffffffd9
+180033345                     label_180033345:
+180033345                         int64_t rax_8 = sub_180077bc0(rcx_5, rdx_2, r8_4)
+180033345                         
+180033350                         if (rax_8 == 0)
+180033357                             trap(0xd)
+180033357                         
+18003339a                         rax_10 = (rax_8 + 0x27) & 0xffffffffffffffe0
+18003339e                         *(rax_10 - 8) = rax_8
+1800333a2                         *arg1 = rax_10
+1800333a6                         arg1[3] = r15
+1800333a6                 
+1800333c9                 char* rdi_3 = arg1
+1800333c9                 
+1800333d0                 if (r15 u> 0xf)
+1800333d0                     rdi_3 = rax_10
+1800333d0                 
+1800333dd                 memcpy(rdi_3, rsi_2, rbx_3)
+1800333e2                 arg1[2] = rbx_3
+1800333e7                 *(rdi_3 + rbx_3) = 0
+18003330a             else
+18003330c                 *arg1 = rax_5.b
+18003330c             
+1800333ee             if (rsi_2 == 0)
+180033429                 __security_check_cookie(rax_1 ^ &var_138)
+180033448                 return arg1
+180033448             
+1800333fa             if (r14_1 - rsi_2 u< 0x1000)
+1800333fa                 goto label_18003341a
+1800333fa             
+1800333fc             int128_t* rax_12 = *(rsi_2 - 8)
+1800333fc             
+18003340b             if (rsi_2 - rax_12 - 8 u<= 0x1f)
+180033411                 rsi_2 = rax_12
+18003341a             label_18003341a:
+18003341a                 j_sub_1800899c0(rsi_2)
+180033429                 __security_check_cookie(rax_1 ^ &var_138)
+180033448                 return arg1
+180033266         else
+18003326f             if (rbx_1 + 0x27 u<= rbx_1)
+1800334a2                 stdext::threads::_Throw_lock_error()
+1800334a2                 noreturn
+1800334a2             
+180033275             int64_t rax_3 = sub_180077bc0(rbx_1 + 0x27, rdx, r8_1)
+180033275             
+18003327d             if (rax_3 != 0)
+180033287                 rsi_2 = (rax_3 + 0x27) & 0xffffffffffffffe0
+18003328b                 *(rsi_2 - 8) = rax_3
+18003328f                 goto label_18003329c
+18003344e         trap(0xd)
+18003344e 
+180033496 sub_18007a330(&var_f0, &data_1800c2fa0, sub_180026740(&var_f0, "invalid Digest Auth command"))
+18003349b breakpoint

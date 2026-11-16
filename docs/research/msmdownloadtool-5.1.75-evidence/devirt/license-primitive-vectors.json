@@ -1,0 +1,72 @@
+{
+  "scope": "Synthetic primitive tests only, no application/authorization execution",
+  "image_sha256": "cf526788045211590d6fc3d5a1688b87d6377db05532516f5a4f570bd860e68f",
+  "api_hooks": 0,
+  "header": {
+    "entry": "0x4ade70",
+    "error": null,
+    "returned": true,
+    "eax": "0x100",
+    "input_be16_fields": [
+      818,
+      4660,
+      320,
+      22136,
+      32,
+      256
+    ],
+    "output_le16_fields": [
+      818,
+      4660,
+      320,
+      22136,
+      32,
+      256
+    ],
+    "match": true
+  },
+  "aes128_cbc_vectors": [
+    {
+      "name": "zero",
+      "key": "00000000000000000000000000000000",
+      "iv": "00000000000000000000000000000000",
+      "ciphertext": "66e94bd4ef8a2c3b884cfa59ca342b2e",
+      "expected_plaintext": "00000000000000000000000000000000",
+      "actual_plaintext": "00000000000000000000000000000000",
+      "setup": {
+        "entry": "0x52f290",
+        "error": null,
+        "returned": true,
+        "eax": "0x0"
+      },
+      "decrypt": {
+        "entry": "0x52f990",
+        "error": null,
+        "returned": true,
+        "eax": "0x31002000"
+      },
+      "match": true
+    },
+    {
+      "name": "cbc-block",
+      "key": "2b7e151628aed2a6abf7158809cf4f3c",
+      "iv": "000102030405060708090a0b0c0d0e0f",
+      "ciphertext": "7649abac8119b246cee98e9b12e9197d",
+      "expected_plaintext": "6bc1bee22e409f96e93d7e117393172a",
+      "actual_plaintext": "6bc1bee22e409f96e93d7e117393172a",
+      "setup": {
+        "entry": "0x52f290",
+        "error": null,
+        "returned": true,
+        "eax": "0x0"
+      },
+      "decrypt": {
+        "entry": "0x52f990",
+        "error": null,
+        "returned": true,
+        "eax": "0x31002000"
+      },
+      "match": true
+    }
+  ]
+}

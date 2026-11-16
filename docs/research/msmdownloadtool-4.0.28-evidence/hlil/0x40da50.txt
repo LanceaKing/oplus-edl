@@ -1,0 +1,89 @@
+0040da50 int32_t ebp
+0040da50 int32_t var_4 = ebp
+0040da56 int32_t var_c = 0xffffffff
+0040da58 int32_t (* var_10)(void* arg1) = sub_570966
+0040da63 TEB* fsbase
+0040da63 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040da64 void* var_18 = arg1
+0040da6a __chkstk(0x1094)
+0040da74 int32_t eax_2 = __security_cookie ^ &var_18
+0040da85 int32_t __saved_edi
+0040da85 int32_t eax_4 = __security_cookie ^ &__saved_edi
+0040da8f int32_t arg_1080
+0040da8f fsbase->NtTib.ExceptionList = &arg_1080
+0040daa2 MSG msg
+0040daa2 PeekMessageW(&msg, nullptr, 0, 0, PM_NOREMOVE)
+0040daa2 
+0040dabb if (GetMessageW(&msg, nullptr, 0, 0) != 0)
+0040dc74     BOOL i
+0040dc74     
+0040dc74     do
+0040dac9         if (msg.message == 0x1788)
+0040dacf             uint32_t wParam = msg.wParam
+0040dad7             void* edi_1 = *wParam
+0040dad7             
+0040dadf             if (edi_1 != 0)
+0040dae8                 var_4 = *(wParam + 8)
+0040daef                 var_18 = *(wParam + 4)
+0040db0e                 void* ebx_1 = (*(data_5dd008 + 0xc))(eax_4) + 0x10
+0040db11                 void* arg_4 = ebx_1
+0040db15                 int32_t arg_1088 = 0
+0040db38                 int32_t* eax_9 = (*(data_5dd008 + 0xc))()
+0040db42                 __return_addr = &eax_9[4]
+0040db4c                 arg_1088.b = 1
+0040db5c                 (*(*(edi_1 + 0x180) + 0xc))(0xffffffff)
+0040db5c                 
+0040db68                 if (var_4 == 0x8000)
+0040db78                     int32_t* eax_13
+0040db78                     int32_t edx_3
+0040db78                     eax_13, edx_3 = _fopen("C:/ToolLog.txt", "a+")
+0040db78                     
+0040db84                     if (eax_13 != 0)
+0040db8d                         void* var_2c_1 = var_18 + 0x1c
+0040db94                         _fprintf(eax_13, "Device Arrival: %ls \n")
+0040db9d                         edx_3 = _fclose(eax_13)
+0040db9d                     
+0040dba5                     void* ecx_5 = var_18
+0040dbb6                     MSG* var_38
+0040dbb6                     var_38.o = *(ecx_5 + 0xc)
+0040dbd5                     char arg_24[0x828]
+0040dbd5                     int32_t arg_84c
+0040dbd5                     __builtin_memcpy(&arg_84c, 
+0040dbd5                         sub_41bc50(&arg_24, edx_3, ecx_5 + 0x1c, &arg_24, var_38), 0x828)
+0040dbd5                     
+0040dbdf                     if (arg_84c != 0)
+0040dbf3                         sub_403d70(edi_1 + 0x598, &arg_84c)
+0040db68                 else if (var_4 == 0x8004)
+0040dcb5                     int32_t* eax_22 = _fopen("C:/ToolLog.txt", "a+")
+0040dcb5                     
+0040dcc3                     if (eax_22 != 0)
+0040dccc                         void* var_2c_8 = var_18 + 0x1c
+0040dcd3                         _fprintf(eax_22, "Device Remove:  %ls \n")
+0040dcdf                         _fclose(eax_22)
+0040dcdf                     
+0040dcf5                     sub_4042a0(edi_1 + 0x598, var_18 + 0x1c)
+0040dcf5                 
+0040dc02                 (*(*(edi_1 + 0x180) + 0x14))()
+0040dc0c                 arg_1088.b = 0
+0040dc17                 int32_t ecx_10 = eax_9[3]
+0040dc17                 eax_9[3] -= 1
+0040dc17                 
+0040dc1e                 if (ecx_10 - 1 s<= 0)
+0040dc25                     (*(**eax_9 + 4))(eax_9)
+0040dc25                 
+0040dc2b                 arg_1088 = 0xffffffff
+0040dc3c                 int32_t ecx_13 = *(ebx_1 - 4)
+0040dc3c                 *(ebx_1 - 4) -= 1
+0040dc3c                 
+0040dc43                 if (ecx_13 - 1 s<= 0)
+0040dc4a                     (*(**(ebx_1 - 0x10) + 4))(ebx_1 - 0x10)
+0040dc4a                 
+0040dc50                 j__free(*(wParam + 4))
+0040dc59                 j__free(wParam)
+0040dc59         
+0040dc6c         i = GetMessageW(&msg, nullptr, 0, 0)
+0040dc74     while (i != 0)
+0040dc74 
+0040dc83 fsbase->NtTib.ExceptionList = arg_1080
+0040dc97 sub_54a573(eax_2 ^ &var_18)
+0040dc9f return 0

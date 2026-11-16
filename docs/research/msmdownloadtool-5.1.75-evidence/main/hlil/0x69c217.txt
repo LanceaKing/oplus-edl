@@ -1,0 +1,36 @@
+0069c217 int32_t esi
+0069c217 int32_t var_4 = esi
+0069c218 int32_t edi
+0069c218 int32_t var_8 = edi
+0069c219 int32_t eax
+0069c219 void* ecx
+0069c219 int32_t edx
+0069c219 eax, edx, ecx = 0x3b77cc()
+0069c21f uint32_t var_c = data_7c0c80
+0069c22e int32_t* esp = &var_8
+0069c22e 
+0069c231 if (sub_69ce76(eax, edx, ecx, var_c) == 0)
+0069c233     var_c = 0x3bc
+0069c23a     uint32_t eax_2 = sub_69d518(1, var_c)
+0069c242     esp = &var_8
+0069c242     
+0069c245     if (eax_2 != 0)
+0069c247         var_c = eax_2
+0069c247         
+0069c257         if (sub_69ce95(data_7c0c80, var_c) == 0)
+0069c271             var_c = eax_2
+0069c272             sub_688543(var_c)
+0069c277             esp = &var_8
+0069c257         else
+0069c259             var_c = 0
+0069c25c             int32_t eax_4
+0069c25c             void* edx_1
+0069c25c             eax_4, edx_1 = __initptd(eax_2)
+0069c263             var_c = var_c
+0069c263             esp = &var_c
+0069c264             sub_d0e829(eax_4.b, edx_1)
+0069c269             *(eax_2 + 4) = 0xffffffff
+0069c26d             *eax_2 = eax_4
+0069c26d 
+0069c27a *(esp - 4) = eax
+0069c280 return j_sub_af954d()

@@ -1,0 +1,131 @@
+004ae010 int32_t ebp
+004ae010 int32_t var_4_1 = ebp
+004ae016 int32_t var_c = 0xffffffff
+004ae018 int32_t (* var_10)(void* arg1) = sub_6d9dc1
+004ae023 TEB* fsbase
+004ae023 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004ae031 void var_dc
+004ae031 int32_t var_1c = __security_cookie ^ &var_dc
+004ae038 int32_t ebx
+004ae038 int32_t var_e0 = ebx
+004ae039 int32_t esi
+004ae039 int32_t var_e4 = esi
+004ae03a int32_t edi
+004ae03a int32_t var_e8 = edi
+004ae04a fsbase->NtTib.ExceptionList = &ExceptionList
+004ae052 void* var_c4 = arg3
+004ae07a __return_addr = (*(data_7bfb90 + 0xc))(__security_cookie ^ &var_e8) + 0x10
+004ae07e int32_t arg_c8 = 0
+004ae089 int32_t arg_28 = 0xf
+004ae091 void* const arg_24 = nullptr
+004ae099 char arg_14 = 0
+004ae0a1 arg_c8.b = 1
+004ae0b2 int32_t var_1c_1 = 0xf
+004ae0b9 int32_t var_20 = 0
+004ae0c0 char var_30 = 0
+004ae0d7 int32_t var_2c
+004ae0d7 char* eax_9 = sub_4aece0(
+004ae0d7     sub_412e10(&var_30, 
+004ae0d7         "2d2d2d2d2d424547494e205055424c4943204b45592d2d2d2d2d0a4d494942496a414e42676b71686b6947397730424151454641414f43415138414d49494243674b43415145416e65747970575132792f4679524830496a", 
+004ae0d7         0x386), 
+004ae0d7     var_30, var_2c)
+004ae0e1 int32_t eax_10
+004ae0e1 int32_t ecx_2
+004ae0e1 int32_t edx
+004ae0e1 eax_10, ecx_2, edx = sub_5042d0(eax_9)
+004ae0e9 int32_t var_4 = eax_10
+004ae0f2 uint32_t eax_11
+004ae0f2 int32_t edx_1
+004ae0f2 eax_11, edx_1 = sub_6898a4(eax_10, edx, ecx_2, nullptr)
+004ae0fa int32_t var_1c_4 = edx_1
+004ae0fb uint32_t var_20_1 = eax_11
+004ae102 sub_414410(arg3 + 0x10, u"%llu")
+004ae107 int32_t var_2c_1 = *(arg3 + 0x10)
+004ae10d var_30.d = *(arg3 + 0xc)
+004ae110 int32_t var_34_1 = *(arg3 + 4)
+004ae113 int32_t var_38_1 = *(arg3 + 8)
+004ae11c sub_414410(&__return_addr, u"%s:%s:%s:%s")
+004ae121 void* const __return_addr_1 = __return_addr
+004ae12c void arg_30
+004ae12c char* arg_2c = &arg_30
+004ae137 sub_412d40(&arg_2c, __return_addr_1, 3)
+004ae13c arg_c8.b = 2
+004ae144 char* edx_2 = arg_2c
+004ae14b void* ecx_4
+004ae14b 
+004ae14b if (*edx_2 != 0)
+004ae151     char* ecx_5 = edx_2
+004ae15b     char i
+004ae15b     
+004ae15b     do
+004ae156         i = *ecx_5
+004ae158         ecx_5 = &ecx_5[1]
+004ae15b     while (i != 0)
+004ae15d     ecx_4 = ecx_5 - &ecx_5[1]
+004ae14b else
+004ae14d     ecx_4 = nullptr
+004ae14d 
+004ae165 sub_412e10(&arg_14, edx_2, ecx_4)
+004ae16a arg_c8.b = 1
+004ae176 char* eax_12 = arg_2c
+004ae176 
+004ae17c if (eax_12 != &arg_30)
+004ae17f     sub_688543(eax_12)
+004ae17f 
+004ae18f char* eax_13 = _malloc(var_4)
+004ae1a4 _memset(eax_13, 0, var_4)
+004ae1ac char* eax_14 = &arg_14
+004ae1ac 
+004ae1b5 if (arg_28 u>= 0x10)
+004ae1b5     eax_14 = arg_14.d
+004ae1b5 
+004ae1c3 int32_t eax_15 = sub_504120(arg_24, eax_14, eax_13, eax_9, 1)
+004ae1d3 int32_t result
+004ae1d3 
+004ae1d3 if (eax_15 s>= 0)
+004ae1e3     void* var_1c_11 = (eax_15 << 1) + 1
+004ae1e4     int32_t eax_16 = sub_56c4c8()
+004ae1ec     var_4 = eax_16
+004ae1f4     _memset(eax_16, 0, (eax_15 << 1) + 1)
+004ae1fc     void* edi_4 = nullptr
+004ae1fc     
+004ae200     if (eax_15 s> 0)
+004ae20a         int32_t ebx_5 = var_4
+004ae20a         
+004ae231         do
+004ae218             uint32_t var_1c_13 = zx.d(*(edi_4 + eax_13))
+004ae223             __snwprintf_s(ebx_5, 3, 3, "%02X")
+004ae228             edi_4 += 1
+004ae22c             ebx_5 += 2
+004ae231         while (edi_4 s< eax_15)
+004ae231         
+004ae233         __return_addr_1 = __return_addr
+004ae233     
+004ae237     int32_t var_1c_14 = var_4
+004ae248     sub_414410(arg4 + 0x14, &data_76b468)
+004ae250     result = 0
+004ae1d3 else
+004ae1d5     result = 1
+004ae1d5 
+004ae256 j_sub_688543(var_4)
+004ae262 int32_t* ebp_1 = j_sub_688543(eax_13)
+004ae26e sub_503dc0(eax_9)
+004ae26e 
+004ae27b if (arg_28 u>= 0x10)
+004ae281     ebp_1 = j_sub_688543(arg_14.d)
+004ae281 
+004ae28c arg_28 = 0xf
+004ae294 arg_24 = nullptr
+004ae29f arg_14 = 0
+004ae2a4 arg_c8 = 0xffffffff
+004ae2b2 int32_t ecx_7 = *(__return_addr_1 - 4)
+004ae2b2 *(__return_addr_1 - 4) -= 1
+004ae2b2 
+004ae2b9 if (ecx_7 - 1 s<= 0)
+004ae2c0     (*(**(__return_addr_1 - 0x10) + 4))(__return_addr_1 - 0x10)
+004ae2c0 
+004ae2cc fsbase->NtTib.ExceptionList = arg6
+004ae2e0 void var_8
+004ae2e0 sub_687de2(arg5 ^ &var_8)
+004ae2e7 *ebp_1
+004ae2e8 return result

@@ -1,0 +1,15 @@
+149ac63c if (arg3 == 1)
+149ac640     void* x8 = *(arg1 + 0x130)
+149ac640     
+149ac644     if (x8 != 0)
+149ac64c         if (arg2 == 3)
+149ac668             *(x8 + 0x29) = 0
+149ac66c             return 0
+149ac66c         
+149ac654         if (arg2 != 2)
+149ac678             return zx.q(zx.d(*(x8 + 0x29)) != 0 ? 1 : 0)
+149ac678         
+149ac65c         *(x8 + 0x29) = 1
+149ac660         return 1
+149ac660 
+149ac67c return 0

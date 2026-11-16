@@ -1,0 +1,42 @@
+14057ff61 int64_t var_50
+14057ff61 __builtin_memset(&var_50, 0, 0x28)
+14057ff61 
+14057ff88 if (data_1436bbe88 != 0)
+14058001b     arg5 = sub_141168d38(arg5)
+14058001b 
+14057ff8e int512_t zmm0 = sub_14057bbc0(arg5)
+14057ff93 int128_t var_48
+14057ff93 var_48.d = 0x20
+14057ff9a var_48:4.d = arg3
+14057ff9d var_48:8.d = arg4
+14057ffa4 var_48:0xc.d = arg6
+14057ffa7 int128_t var_38
+14057ffa7 var_38.q = arg1
+14057ffab var_38:8.q = arg2
+14057ffb7 uint32_t rax
+14057ffb7 int512_t zmm0_1
+14057ffb7 rax, zmm0_1 = sub_1405803b0(&var_48, &var_50, zmm0)
+14057ffb7 
+14057ffc0 if (rax != 0)
+14057ffc7     if (var_50 != 0)
+14057ffcd         zmm0_1 = sub_1405806f0(var_50, zmm0_1)
+14057ffcd     
+14057ffdb     sub_14057dbe0(rax, &data_14362b090, zmm0_1)
+14057ffdb 
+14057ffe5 if (var_50 == 0)
+14058002c     void** rax_1
+14058002c     int512_t zmm0_2
+14058002c     rax_1, zmm0_2 = sub_141194310(&data_142a99d68)
+14058003e     sub_1408f5f30(rax_1, &data_143541b08)
+140580046     uint64_t ssp
+140580046     sub_1411948d0(rax_1, ssp, zmm0_2)
+140580046     noreturn
+140580046 
+14057ffe7 int64_t rbx_2 = var_50
+14057fff2 void* result = j_sub_141194360(&data_142a5c2d8)
+14057fff9 *(result + 8) = 0
+14057fffd *(result + 0x10) = 4
+140580004 *(result + 0x14) = 1
+140580008 *(result + 0x15) = 1
+14058000c *(result + 8) = rbx_2
+14058001a return result

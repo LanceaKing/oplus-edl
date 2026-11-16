@@ -1,0 +1,38 @@
+1001bf07 int32_t eax = *arg2
+1001bf09 data_102177ec = eax
+1001bf09 
+1001bf14 if (eax - 1 u> 5)
+1001bf82     int32_t var_c = eax
+1001bf83     char const* const var_10 = "[ERROR]: unkonw auth type, type=%d"
+1001bf88     int32_t var_14 = 0x8e6
+1001bf8d     char const* const var_18 = "auth_exec_login"
+1001bf92     opdbg_log()
+1001bf9f     return 0xffffffff
+1001bf9f 
+1001bf14 int32_t result_1
+1001bf14 
+1001bf14 switch (eax)
+1001bf22     case 1
+1001bf22         result_1 = sub_100153f0(arg1, arg2)
+1001bf2e     case 2
+1001bf2e         result_1 = sub_10016f90(arg1, arg2)
+1001bf3a     case 3
+1001bf3a         result_1 = sub_10018790(arg1, arg2)
+1001bf52     case 4
+1001bf52         result_1 = sub_10018cb0(arg1, arg2)
+1001bf46     case 5, 6
+1001bf46         result_1 = sub_1001ee90()
+1001bf46 
+1001bf57 int32_t result = result_1
+1001bf57 
+1001bf5b if (result == 0)
+1001bf5d     char* ecx_6 = &arg2[0x101]
+1001bf68     void* esi_1 = 0x1021c2c0 - ecx_6
+1001bf68     
+1001bf7b     do
+1001bf70         result_1.b = *ecx_6
+1001bf72         ecx_6 = &ecx_6[1]
+1001bf75         *(esi_1 + ecx_6 - 1) = result_1.b
+1001bf7b     while (result_1.b != 0)
+1001bf7b 
+1001bf81 return result

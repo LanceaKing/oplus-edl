@@ -1,0 +1,37 @@
+004b08a0 int32_t ebp
+004b08a0 int32_t var_4 = ebp
+004b08a1 int32_t* ebp_1 = &var_4
+004b08b0 int32_t var_8 = __security_cookie ^ &var_4
+004b08bc int32_t result = arg7
+004b08ce int32_t ebx_1
+004b08ce 
+004b08ce if (result == 0)
+004b08d0     ebx_1 = 0x80
+004b08e9 label_4b08e9:
+004b08e9     int128_t* eax_3 = sub_56c4c8()
+004b08f2     int32_t eax_5
+004b08f2     int32_t edx
+004b08f2     edx:eax_5 = sx.q(ebx_1)
+004b08f9     int32_t esi_2 = ((edx & 7) + eax_5) s>> 3
+004b08fd     int32_t* eax_6 = sub_56c4c8()
+004b090b     int32_t* var_10c_1 = eax_6
+004b0912     sub_692ab0(eax_6, arg6, esi_2, esi_2, 0x10)
+004b0927     *eax_3 = *arg5
+004b092b     void var_fc
+004b092b     sub_52f290(eax_6, ebx_1, &var_fc)
+004b0930     int32_t var_13c_1 = 0
+004b0932     int128_t* var_140_1 = eax_3
+004b0939     void* var_144_1 = &var_fc
+004b093a     int32_t var_148_1 = arg4
+004b093d     int32_t var_14c_1 = arg2
+004b0949     sub_52f990(arg3)
+004b094f     result, ebp_1 = j_sub_688543(eax_3)
+004b094f     
+004b0959     if (eax_6 != 0)
+004b095c         result, ebp_1 = j_sub_688543(eax_6)
+004b08ce else if (result == 1)
+004b08e0     ebx_1 = 0x100
+004b08e0     goto label_4b08e9
+004b096c sub_687de2(ebp_1[-1] ^ ebp_1)
+004b0973 *ebp_1
+004b0974 return result

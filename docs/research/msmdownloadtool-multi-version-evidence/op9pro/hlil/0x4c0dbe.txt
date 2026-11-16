@@ -1,0 +1,125 @@
+004c0dbe arg2[-0x1f] = arg1
+004c0dc4 int32_t eax = *(arg3 + 0x3c)
+004c0dc7 char const* const* esp_1
+004c0dc7 char const* const var_c
+004c0dc7 
+004c0dc7 if (arg1 s> 0)
+004c0deb     var_c = "[%d] [FFU] show fw size %d\n"
+004c0df0     int32_t var_10_1 = 4
+004c0df2     void* var_14_1 = &data_7e4a58
+004c0df7     sub_4d6500(&data_7e4a58, 4, var_c, eax + 1, arg1)
+004c0dfc     *(arg3 + 0x38)
+004c0e08     sub_4cfff0(*(arg3 + 0x3c), arg2[-0x1f])
+004c0e0d     int32_t var_4_2 = arg2[-0x1f]
+004c0e14     int32_t var_8_3 = 0
+004c0e16     var_c = nullptr
+004c0e18     sub_4d6b50(var_c, var_8_3, var_4_2)
+004c0e1d     int32_t* ecx_3 = *(arg3 + 0x38)
+004c0e29     arg2[-0x23] = 0
+004c0e33     *ecx_3
+004c0e35     void* var_4_3 = &arg2[-0x23]
+004c0e36     int32_t var_8_4 = arg2[-0x1f]
+004c0e39     char* esi
+004c0e39     var_c = esi
+004c0e3a     int32_t* ecx_5 = sub_4b8350()
+004c0e42     void* var_10_2 = &arg2[-0x18]
+004c0e44     *(arg3 + 0x38)
+004c0e47     sub_4d05b0(ecx_5)
+004c0e53     char* eax_5 = &arg2[-0x12]
+004c0e56     int32_t var_14_3 = 0
+004c0e56     
+004c0e58     if (arg2[-0xd] u>= 0x10)
+004c0e58         eax_5 = arg2[-0x12]
+004c0e58     
+004c0e6b     int32_t var_10_4 = 2
+004c0e72     int32_t* eax_9
+004c0e72     int32_t ecx_9
+004c0e72     eax_9, ecx_9 = sub_427890(&arg2[-0x18], &arg2[-0x1e], 
+004c0e72         sub_4278d0(&arg2[-0x18], eax_5, 0, arg2[-0xe]) + arg2[-0xe], 2)
+004c0e72     
+004c0e7e     if (&arg2[-0xc] != eax_9)
+004c0e84         if (arg2[-7] u>= 0x10)
+004c0e89             sub_56c751(arg2[-0xc])
+004c0e89         
+004c0e95         arg2[-7] = 0xf
+004c0e9c         arg2[-8] = 0
+004c0ea3         arg2[-0xc].b = 0
+004c0ea7         ecx_9 = sub_4234c0(&arg2[-0xc], eax_9)
+004c0ea7     
+004c0eb0     if (arg2[-0x19] u>= 0x10)
+004c0eb5         ecx_9 = sub_56c751(arg2[-0x1e])
+004c0eb5     
+004c0ebd     int32_t var_10_8 = ecx_9
+004c0ec1     arg2[-1].b = 4
+004c0ecd     int32_t esi_1 = sub_4b8f00(&arg2[-0xc])
+004c0f05     arg2[-1] = 3
+004c0f12     char const* const var_18_3 = "[%d] [FFU] show fw contents %d\n"
+004c0f17     int32_t var_1c_1 = 4
+004c0f19     void* var_20_1 = &data_7e4a58
+004c0f1e     sub_4d6500(&data_7e4a58, 4, "[%d] [FFU] show fw contents %d\n", *(arg3 + 0x3c) + 1, esi_1)
+004c0f23     esp_1 = &var_c
+004c0f23     
+004c0f32     switch (esi_1)
+004c0f32         case 0x11
+004c0f32             return sub_4c0f59() __tailcall
+004c0dc7 else
+004c0dcb     var_c = "[%d] [FFU]fw can't be found %d\n"
+004c0dd0     int32_t var_10 = 4
+004c0dd2     void* var_14 = &data_7e4a58
+004c0dd7     sub_4d6500(&data_7e4a58, 4, var_c, eax + 1, arg1)
+004c0ddc     esp_1 = &__return_addr
+004c0f61 int32_t entry_ebx
+004c0f61 
+004c0f61 if (entry_ebx != 0xffffffff)
+004c0f63     *(esp_1 - 4) = entry_ebx
+004c0f63     esp_1 -= 4
+004c0f64     0x3b78c8()
+004c0f64 
+004c0f6a *(esp_1 - 4) = arg2[-0x20]
+004c0f6d sub_56c751()
+004c0f72 void* esp_3 = esp_1
+004c0f72 
+004c0f79 if (arg2[-7] u>= 0x10)
+004c0f7b     *(esp_3 - 4) = arg2[-0xc]
+004c0f7e     sub_56c751()
+004c0f7e 
+004c0f86 bool cond:2 = arg2[-0xd] u< 0x10
+004c0f8a arg2[-7] = 0xf
+004c0f91 arg2[-8] = 0
+004c0f98 arg2[-0xc].b = 0
+004c0f98 
+004c0f9c if (not(cond:2))
+004c0f9e     *(esp_3 - 4) = arg2[-0x12]
+004c0fa1     sub_56c751()
+004c0fa1 
+004c0fa9 bool cond:3 = arg2[-0x13] u< 0x10
+004c0fad arg2[-0xd] = 0xf
+004c0fb4 arg2[-0xe] = 0
+004c0fbb arg2[-0x12].b = 0
+004c0fbb 
+004c0fbf if (not(cond:3))
+004c0fc1     *(esp_3 - 4) = arg2[-0x18]
+004c0fc4     sub_56c751()
+004c0fc4 
+004c0fcc arg2[-1] = 0xffffffff
+004c0fd9 int32_t* edi_1 = arg2[2] - 0x10
+004c0fdc arg2[-0x13] = 0xf
+004c0fe3 arg2[-0x14] = 0
+004c0fea arg2[-0x18].b = 0
+004c0ff1 int32_t ecx_13 = edi_1[3]
+004c0ff1 edi_1[3] -= 1
+004c0ff1 
+004c0ff8 if (ecx_13 - 1 s<= 0)
+004c0ffa     int32_t* ecx_15 = *edi_1
+004c0ffc     *(esp_3 - 4) = edi_1
+004c0fff     (*(*ecx_15 + 4))()
+004c0fff 
+004c1007 TEB* fsbase
+004c1007 fsbase->NtTib.ExceptionList = arg2[-3]
+004c100f *(esp_3 + 4)
+004c1010 *(esp_3 + 8)
+004c1011 *(esp_3 + 0xc)
+004c1012 arg2[-6]
+004c1017 int32_t result = sub_68804f()
+004c101e *arg2
+004c101f return result

@@ -1,0 +1,41 @@
+0042329e int32_t __saved_ebp
+0042329e int32_t eax_1 = __security_cookie ^ &__saved_ebp
+004232aa uint32_t eax_2
+004232aa int32_t edx
+004232aa int32_t edx_1
+004232aa eax_2, edx_1 = sub_54f436(eax_1, edx, arg1, nullptr)
+004232b2 uint32_t var_134 = eax_2
+004232b8 __builtin_memset(arg1 + 0x3390, 0, 0x18)
+004232c3 int32_t var_130 = edx_1
+004232d1 int128_t var_1f
+004232d1 __builtin_memset(&var_1f, 0, 0x17)
+004232d6 char var_20 = 0
+004232e2 __builtin_strncpy(arg1 + 0x3390, "DOWNLOAD", 9)
+0042330a char* ebx_1
+0042330a 
+0042330a if (*(arg1 + 0x19) == 0)
+00423314     ebx_1 = arg1 + 0x3468
+0042330a else
+0042330c     ebx_1 = arg1 + 0x33a8
+0042330c 
+0042331a int32_t i = 2
+0042331f int32_t* esi = &ebx_1[0x80]
+0042331f 
+0042333a do
+0042332c     sub_552500(esi, &esi[-0x10], 0x40)
+00423331     i -= 1
+00423335     esi -= 0x40
+0042333a while (i s> 0)
+0042333a 
+00423354 _strftime(&var_20, 0x18, "%Y/%m/%d %H:%M:%S", sub_54f197(&var_134))
+00423360 _strncpy(ebx_1, &var_20, 0x18)
+0042337c void buffer
+0042337c 
+0042337c if (GetCurrentDirectoryA(0x104, &buffer) s>= 0)
+00423387     char* eax_6 = _strrchr(&buffer, 0x5c)
+00423387     
+00423391     if (eax_6 != 0)
+0042339b         _strncpy(&ebx_1[0x20], &eax_6[1], 0x20)
+0042339b 
+004233ad sub_54a573(eax_1 ^ &__saved_ebp)
+004233b5 return 0

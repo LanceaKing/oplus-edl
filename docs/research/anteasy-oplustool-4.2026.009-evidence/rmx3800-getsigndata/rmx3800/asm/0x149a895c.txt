@@ -1,0 +1,15 @@
+149a895c stp     fp, lr, [sp, #-0x30]!
+149a8960 str     x21, [sp, #0x10]
+149a8964 stp     x20, x19, [sp, #0x20]
+149a8968 mov     fp, sp
+149a896c bl      0x149a8b78
+149a8970 cmp     w0, #0x3
+149a8974 mov     w9, #0x2
+149a8978 csinc   w8, w0, wzr, eq
+149a897c mov     w10, #0x26
+149a8980 mov     w11, #0x260
+149a8984 cinc    w9, w9, eq
+149a8988 csel    x10, x11, x10, eq
+149a898c bl      0x149a8b58
+149a8990 ldp     fp, lr, [sp], #0x30
+149a8994 ret     

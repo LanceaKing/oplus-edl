@@ -1,0 +1,126 @@
+00407cd3 int32_t* var_8 = arg1
+00407cd8 int32_t result = 0
+00407ce4 int32_t ebx = arg1[0xa]
+00407ce7 int32_t* ecx
+00407ce7 
+00407ce7 if (arg1[0xb] u< 0x10)
+00407cee     ecx = &arg1[6]
+00407ce7 else
+00407ce9     ecx = arg1[6]
+00407ce9 
+00407cf1 int32_t eax = 0xd
+00407cf1 
+00407cfd if (ebx u< 0xd)
+00407cfd     eax = ebx
+00407cfd 
+00407d10 if (sub_407560(eax, "gpt_main0.bin", ecx, eax) != 0 || ebx u< 0xd)
+00407d24 label_407d24:
+00407d24     int32_t ebx_1 = arg1[4]
+00407d27     int32_t* ecx_1
+00407d27     
+00407d27     if (arg1[5] u< 0x10)
+00407d2d         ecx_1 = arg1
+00407d27     else
+00407d29         ecx_1 = *arg1
+00407d29     
+00407d2f     int32_t eax_2 = 0xa
+00407d2f     
+00407d3b     if (ebx_1 u< 0xa)
+00407d3b         eax_2 = ebx_1
+00407d3b     
+00407d4e     if (sub_407560(eax_2, "PrimaryGPT", ecx_1, eax_2) != 0 || ebx_1 u< 0xa)
+00407d66     label_407d66:
+00407d66         
+00407d6d         if (sub_4094a0(&arg1[6], "gpt_backup0.bin") == 0)
+00407e59             result = 1
+00407d6d         else if (sub_4094a0(arg1, "BackupGPT") == 0)
+00407e59             result = 1
+00407d81         else if (sub_4094a0(arg1, "grow") == 0)
+00407e59             result = 1
+00407d95         else if (sub_4094a0(&arg1[6], "dynamic_nvbk.bin") == 0)
+00407e59             result = 1
+00407daa         else if (sub_4094a0(arg1, "oppodycnvbk") == 0)
+00407e59             result = 1
+00407dbe         else if (sub_4094a0(arg1, "reserve1") == 0)
+00407e59             result = 1
+00407dd2         else if (sub_4094a0(arg1, "reserve3") == 0)
+00407e59             result = 1
+00407de6         else if (sub_4094a0(arg1, "reserve4") == 0)
+00407e59             result = 1
+00407df6         else if (sub_4094a0(arg1, "fsg") == 0)
+00407e59             result = 1
+00407e06         else if (sub_4094a0(arg1, "fsc") == 0)
+00407e59             result = 1
+00407e16         else if (sub_4094a0(arg1, "persist") == 0)
+00407e59             result = 1
+00407e26         else if (sub_4094a0(&arg1[6], &data_5b7a80) == 0)
+00407e59             result = 1
+00407e37         else if (sub_4094a0(arg1, "param") == 0)
+00407e59             result = 1
+00407e47         else if (sub_4094a0(arg1, "op1") == 0)
+00407e59             result = 1
+00407d4e     else
+00407d53         int32_t eax_3
+00407d53         eax_3.b = ebx_1 != 0xa
+00407d53         
+00407d58         if (eax_3 != 0)
+00407d58             goto label_407d66
+00407d58         
+00407e59         result = 1
+00407d10 else
+00407d15     int32_t eax_1
+00407d15     eax_1.b = ebx != 0xd
+00407d15     
+00407d1a     if (eax_1 != 0)
+00407d1a         goto label_407d24
+00407d1a     
+00407e59     result = 1
+00407e59 
+00407e60 int32_t ebx_2 = arg1[5]
+00407e63 int32_t edi = arg1[4]
+00407e69 int32_t* ecx_16
+00407e69 
+00407e69 if (ebx_2 u< 0x10)
+00407e6f     ecx_16 = arg1
+00407e69 else
+00407e6b     ecx_16 = *arg1
+00407e6b 
+00407e71 int32_t eax_18 = 7
+00407e71 
+00407e7d if (edi u< 7)
+00407e7d     eax_18 = edi
+00407e7d 
+00407e90 if (sub_407560(eax_18, "devinfo", ecx_16, eax_18) != 0 || edi u< 7)
+00407e9f label_407e9f:
+00407e9f     int32_t* ecx_17
+00407e9f     
+00407e9f     if (ebx_2 u< 0x10)
+00407ea5         ecx_17 = arg1
+00407e9f     else
+00407ea1         ecx_17 = *arg1
+00407ea1     
+00407ea7     int32_t eax_20 = 3
+00407ea7     
+00407eb3     if (edi u< 3)
+00407eb3         eax_20 = edi
+00407eb3     
+00407ec6     if (sub_407560(eax_20, 0x5b807c, ecx_17, eax_20) != 0 || edi u< 3)
+00407ed9     label_407ed9:
+00407ed9         
+00407ee0         if (sub_4094a0(arg1, "DDR") != 0 && sub_4094a0(arg1, "modemst1") != 0
+00407ee0                 && sub_4094a0(arg1, "modemst2") != 0)
+00407f0b             return result
+00407ec6     else
+00407ecb         int32_t eax_21
+00407ecb         eax_21.b = edi != 3
+00407ecb         
+00407ed0         if (eax_21 != 0)
+00407ed0             goto label_407ed9
+00407e90 else
+00407e95     int32_t eax_19
+00407e95     eax_19.b = edi != 7
+00407e95     
+00407e9a     if (eax_19 != 0)
+00407e9a         goto label_407e9f
+00407e9a 
+00407f14 return 0

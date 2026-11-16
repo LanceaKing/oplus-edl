@@ -1,0 +1,24 @@
+004ade70 push    ebp
+004ade71 mov     ebp, esp
+004ade73 mov     edx, dword [ebp+0x8]
+004ade76 mov     ecx, dword [ebp+0xc]
+004ade79 movzx   eax, word [edx]
+004ade7c rol     ax, 0x8
+004ade80 mov     word [ecx], ax
+004ade83 movzx   eax, word [edx+0x2]
+004ade87 rol     ax, 0x8
+004ade8b mov     word [ecx+0x2], ax
+004ade8f movzx   eax, word [edx+0x4]
+004ade93 rol     ax, 0x8
+004ade97 mov     word [ecx+0x4], ax
+004ade9b movzx   eax, word [edx+0x6]
+004ade9f rol     ax, 0x8
+004adea3 mov     word [ecx+0x6], ax
+004adea7 movzx   eax, word [edx+0x8]
+004adeab rol     ax, 0x8
+004adeaf mov     word [ecx+0x8], ax
+004adeb3 movzx   eax, word [edx+0xa]
+004adeb7 rol     ax, 0x8
+004adebb mov     word [ecx+0xa], ax
+004adebf pop     ebp
+004adec0 retn    0x8

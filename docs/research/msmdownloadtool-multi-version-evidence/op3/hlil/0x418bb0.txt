@@ -1,0 +1,124 @@
+00418bb6 int32_t ebx
+00418bb6 int32_t var_18 = ebx
+00418bb7 int32_t esi
+00418bb7 int32_t var_1c = esi
+00418bb7 
+00418bc2 if (*(arg1 + 0x1e4) != 0)
+00418bcf     return 0x4c7
+00418bcf 
+00418bd2 int32_t* ebx_2 = arg2
+00418bd5 int32_t eax_1 = ebx_2[0x19]
+00418be0 int32_t* edi
+00418be0 
+00418be0 if (eax_1 != 0x200)
+00418bf8     if (eax_1 != 0x1000)
+00418e43         return 1
+00418e43     
+00418c03     int32_t* eax_3 = sub_4208b2(&__dos_header)
+00418c08     edi = eax_3
+00418c0a     arg2 = eax_3
+00418be0 else
+00418bec     edi = sub_4208b2(0x80000)
+00418bee     arg2 = edi
+00418bee 
+00418c12 if (edi == 0)
+00418c1d     return &edi[2]
+00418c1d 
+00418c2a _memset(edi, 0, eax_1 << 0xa)
+00418c39 int32_t eax_7 = sub_404c40(ebx_2, "BackupGPT")
+00418c40 int32_t __saved_edi_14
+00418c40 
+00418c40 if (eax_7 != 0)
+00418c6e     *(arg1 + 0x28)
+00418c71     int32_t eax_9
+00418c71     int32_t edx_1
+00418c71     edx_1:eax_9 = sx.q(ebx_2[0x13])
+00418c78     __saved_edi_14 = sub_41d880(ebx_2, ebx_2[0x12], eax_9, edx_1)
+00418c40 else
+00418c4a     char* var_38_1
+00418c4a     
+00418c4a     if (*(arg1 + 0x1c) == eax_7.b)
+00418c64         var_38_1 = "NUM_DISK_SECTORS-33."
+00418c4a     else
+00418c4c         var_38_1 = "NUM_DISK_SECTORS-5."
+00418c4c     
+00418c51     void var_34
+00418c51     sub_402270(&var_34, var_38_1)
+00418c59     *(arg1 + 0x28)
+00418c5d     __saved_edi_14 = sub_41f290(ebx_2, ebx_2[0x12])
+00418c5d 
+00418c7d int32_t __saved_edi_16 = __saved_edi_14
+00418c7d 
+00418c82 if (__saved_edi_14 != 0)
+00418c8e     int32_t __saved_edi_3 = __saved_edi_14
+00418c8f     void* const var_24_4
+00418c8f     
+00418c8f     if (*(arg1 + 0x1b) == 0)
+00418c98         var_24_4 = "SendProgromCommand Failed, Errno: %d"
+00418c8f     else
+00418c91         var_24_4 = "SendProgromCommand"
+00418c91     
+00418c9e     sub_410900(arg1 + 0x164, var_24_4)
+00418cc1     SendMessageA(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, arg1 + 0x164)
+00418cc8     sub_4208bb(edi)
+00418cd9     return __saved_edi_16
+00418cd9 
+00418cf7 int32_t ecx_4 =
+00418cf7     SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 2, ebx_2[0x12])
+00418cfd int32_t edi_3 = ebx_2[0x12]
+00418d02 int32_t __saved_edi_15
+00418d02 
+00418d02 while (true)
+00418d02     if (edi_3 == 0)
+00418dc6         if (*(arg1 + 0x1e4) == 0)
+00418ddf             *(arg1 + 0x28)
+00418de2             int32_t eax_30 = sub_41d790(ecx_4)
+00418de2             
+00418deb             if (eax_30 != 0)
+00418df7                 int32_t var_24_11 = eax_30
+00418df8                 void* const var_28_9
+00418df8                 
+00418df8                 if (*(arg1 + 0x1b) == 0)
+00418e01                     var_28_9 = "FirehoseCheckRSP Failed, Errno: %d"
+00418df8                 else
+00418dfa                     var_28_9 = "FirehoseCheckRSP"
+00418dfa                 
+00418e1a                 sub_417200(sub_410900(arg1 + 0x164, var_28_9), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 
+00418e1a                     0, arg1 + 0x164, 1)
+00418e1a             
+00418e25             sub_4208bb(arg2)
+00418e35             return eax_30
+00418d02     else if (*(arg1 + 0x1e4) == 0)
+00418d1a         void** ecx_5 = *(arg1 + 0x28)
+00418d1f         int32_t edx_2 = edi_3
+00418d21         __saved_edi_16 = 0
+00418d21         
+00418d28         if (edi_3 u> 0x400)
+00418d28             edx_2 = 0x400
+00418d28         
+00418d3e         __saved_edi_15 = sub_41ad40(*ecx_5, arg2, eax_1 * edx_2, &__saved_edi_16)
+00418d43         __saved_edi_16 = __saved_edi_15
+00418d43         
+00418d48         if (__saved_edi_15 != 0)
+00418d48             break
+00418d48         
+00418d4a         edi_3 -= edx_2
+00418d6b         ecx_4 = SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 3, 
+00418d6b             ebx_2[0x12] - edi_3)
+00418d71         continue
+00418d71     
+00418dcb     sub_4208bb(arg2)
+00418ddb     return 0
+00418ddb 
+00418d7d int32_t __saved_edi_9 = __saved_edi_15
+00418d7e void* const var_24_9
+00418d7e 
+00418d7e if (*(arg1 + 0x1b) == 0)
+00418d87     var_24_9 = "FirehoseWriteData Failed, Errno: %d"
+00418d7e else
+00418d80     var_24_9 = "FirehoseWriteData"
+00418d80 
+00418da0 sub_417200(sub_410900(arg1 + 0x164, var_24_9), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, arg1 + 0x164, 
+00418da0     1)
+00418dab sub_4208bb(arg2)
+00418dbc return __saved_edi_16

@@ -1,0 +1,102 @@
+File: /Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/op6/bn/analysis.bndb
+
+# Block 1 at 0x42ab30
+0042ab30  55               push    ebp
+0042ab31  8b ec            mov     ebp, esp
+0042ab33  83 ec 28         sub     esp, 0x28
+0042ab36  a1 30 e4 5d 00   mov     eax, dword [0x5de430]
+0042ab3b  33 c5            xor     eax, ebp
+0042ab3d  89 45 f8         mov     dword [ebp-0x8], eax
+0042ab40  53               push    ebx
+0042ab41  56               push    esi
+0042ab42  57               push    edi
+0042ab43  8b d9            mov     ebx, ecx
+0042ab45  c7 45 dc 00 00 00 00 mov     dword [ebp-0x24], 0x0
+0042ab4c  68 00 10 00 00   push    0x1000
+0042ab51  6a 00            push    0x0
+0042ab53  be 05 00 00 00   mov     esi, 0x5
+0042ab58  ff 73 08         push    dword [ebx+0x8]
+0042ab5b  e8 40 5b 12 00   call    _memset
+0042ab60  83 c4 0c         add     esp, 0xc
+
+# Block 8 at 0x42ab63
+0042ab63  b8 05 00 00 00   mov     eax, 0x5
+0042ab68  2b c6            sub     eax, esi
+0042ab6a  0f af 45 08      imul    eax, dword [ebp+0x8]
+0042ab6e  83 c0 32         add     eax, 0x32
+0042ab71  50               push    eax
+0042ab72  ff 15 78 22 58 00 call    dword [Sleep]
+0042ab78  8b 0b            mov     ecx, dword [ebx]
+0042ab7a  8d 45 dc         lea     eax, [ebp-0x24]
+0042ab7d  68 e8 03 00 00   push    0x3e8
+0042ab82  50               push    eax
+0042ab83  68 00 10 00 00   push    0x1000
+0042ab88  ff 73 08         push    dword [ebx+0x8]
+0042ab8b  e8 10 bb ff ff   call    0x4266a0
+0042ab90  8b f8            mov     edi, eax
+0042ab92  85 ff            test    edi, edi
+0042ab94  75 49            jne     0x42abdf
+
+# Block 3 at 0x42ab96
+0042ab96  ff 75 dc         push    dword [ebp-0x24]
+0042ab99  8d 4d e0         lea     ecx, [ebp-0x20]
+0042ab9c  c7 45 f4 0f 00 00 00 mov     dword [ebp-0xc], 0xf
+0042aba3  ff 73 08         push    dword [ebx+0x8]
+0042aba6  89 45 f0         mov     dword [ebp-0x10], eax
+0042aba9  88 45 e0         mov     byte [ebp-0x20], al
+0042abac  e8 bf 78 fd ff   call    0x402470
+0042abb1  6a 24            push    0x24
+0042abb3  57               push    edi
+0042abb4  68 c4 cd 5b 00   push    0x5bcdc4
+0042abb9  8d 4d e0         lea     ecx, [ebp-0x20]
+0042abbc  e8 1f c7 fe ff   call    0x4172e0
+0042abc1  83 f8 ff         cmp     eax, 0xffffffff
+0042abc4  75 2c            jne     0x42abf2
+
+# Block 7 at 0x42abc6
+0042abc6  4e               dec     esi
+0042abc7  bf fe ff ff ff   mov     edi, 0xfffffffe
+0042abcc  83 7d f4 10      cmp     dword [ebp-0xc], 0x10
+0042abd0  72 16            jb      0x42abe8
+
+# Block 12 at 0x42abd2
+0042abd2  ff 75 e0         push    dword [ebp-0x20]
+0042abd5  e8 38 3c 00 00   call    j__free
+0042abda  83 c4 04         add     esp, 0x4
+0042abdd  eb 09            jmp     0x42abe8
+
+# Block 2 at 0x42abdf
+0042abdf  81 ff 02 01 00 00 cmp     edi, 0x102
+0042abe5  75 1c            jne     0x42ac03
+
+# Block 5 at 0x42abe7
+0042abe7  4e               dec     esi
+
+# Block 11 at 0x42abe8
+0042abe8  85 f6            test    esi, esi
+0042abea  0f 85 73 ff ff ff jne     0x42ab63
+
+# Block 9 at 0x42abf0
+0042abf0  eb 11            jmp     0x42ac03
+
+# Block 6 at 0x42abf2
+0042abf2  83 7d f4 10      cmp     dword [ebp-0xc], 0x10
+0042abf6  72 0b            jb      0x42ac03
+
+# Block 10 at 0x42abf8
+0042abf8  ff 75 e0         push    dword [ebp-0x20]
+0042abfb  e8 12 3c 00 00   call    j__free
+0042ac00  83 c4 04         add     esp, 0x4
+
+# Block 4 at 0x42ac03
+0042ac03  8b 4d f8         mov     ecx, dword [ebp-0x8]
+0042ac06  8b c7            mov     eax, edi
+0042ac08  5f               pop     edi
+0042ac09  5e               pop     esi
+0042ac0a  33 cd            xor     ecx, ebp
+0042ac0c  5b               pop     ebx
+0042ac0d  e8 61 f9 11 00   call    0x54a573
+0042ac12  8b e5            mov     esp, ebp
+0042ac14  5d               pop     ebp
+0042ac15  c2 04 00         retn    0x4
+

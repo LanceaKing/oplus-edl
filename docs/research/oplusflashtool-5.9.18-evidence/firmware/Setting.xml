@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Setting>
+  <BasicInfo Brand="oplus" Project="22825" Version="Unknown Version" MemoryName="ufs" TargetName="SM8650"
+        GrowLastPartToFillDisk="true" LogEnable="false"
+        LogPositionIndex="-1" DelayStartTime="0" UseGPT="true"
+        CheckImage="false" NeedUsbDownload="true" VerifyCdt="true" DownloadConfigSigned="true"
+        BackupPart="false" BackupPartId="" ChipType="1" IsOcdtVer="1" IsEncryptOCdtVer="1"
+	ClearRootConfig="true" MultiImage="oplusdycnvbk,oplusstanvbk_a" supportFwConfig="false"
+	ProversionUseFfuFirehose="false"
+	ModelVerifyVersion="1"
+	ImgSHA256Check="true"
+  />
+  <!-- ChipType: 0=A-Family Chip, 1=B-Family Chip -->
+
+  <SAHARA>
+    <File Id="13" Path="prog_firehose_ddr.elf" />
+  </SAHARA>
+  <UFS_PROVISION>
+    <File Name="hynix"   Path="provision_hynix.xml" />
+    <File Name="samsung" Path="provision_samsung.xml" />
+    <File Name="toshiba" Path="provision_toshiba.xml" />
+    <File Name="micron"  Path="provision_micron.xml" />
+  </UFS_PROVISION>
+  <UFS_FIRMWARE>
+    <File Name="samsung"  Path="SS_KLUGGARHHD-B0G1_1901.fw" />
+    <File Name="samsung"  Path="SS_KLUFG8RHHD-B0G1_1801.fw" />
+    <File Name="samsung"  Path="SS_KLUEG4RHHD-B0G1_1801.fw" />
+    <File Name="oplus"  Path="fwupdateConfig.xml" />
+  </UFS_FIRMWARE>
+  <Program0>
+    <File Name="rawprogram0.xml" Path="rawprogram0.xml" SizeInSector="0" FileOffset="0" />
+  </Program0>
+  <Patch0>
+    <File Name="patch0.xml" Path="patch0.xml" SizeInSector="0" FileOffset="0" />
+  </Patch0>
+  <Program1>
+    <File Name="rawprogram1.xml" Path="rawprogram1.xml" SizeInSector="0" FileOffset="0" />
+  </Program1>
+  <Patch1>
+    <File Name="patch1.xml" Path="patch1.xml" SizeInSector="0" FileOffset="0" />
+  </Patch1>
+  <Program2>
+    <File Name="rawprogram2.xml" Path="rawprogram2.xml" SizeInSector="0" FileOffset="0" />
+  </Program2>
+  <Patch2>
+    <File Name="patch2.xml" Path="patch2.xml" SizeInSector="0" FileOffset="0" />
+  </Patch2>
+   <Program3>
+    <File Name="rawprogram3.xml" Path="rawprogram3.xml" SizeInSector="0" FileOffset="0" />
+  </Program3>
+  <Patch3>
+    <File Name="patch3.xml" Path="patch3.xml" SizeInSector="0" FileOffset="0" />
+  </Patch3>
+  <Program4>
+    <File Name="rawprogram4.xml" Path="rawprogram4.xml" SizeInSector="0" FileOffset="0" />
+  </Program4>
+  <Patch4>
+    <File Name="patch4.xml" Path="patch4.xml" SizeInSector="0" FileOffset="0" />
+  </Patch4>
+  <Program5>
+    <File Name="rawprogram5.xml" Path="rawprogram5.xml" SizeInSector="0" FileOffset="0" />
+  </Program5>
+  <Patch5>
+    <File Name="patch5.xml" Path="patch5.xml" SizeInSector="0" FileOffset="0" />
+  </Patch5>
+</Setting>

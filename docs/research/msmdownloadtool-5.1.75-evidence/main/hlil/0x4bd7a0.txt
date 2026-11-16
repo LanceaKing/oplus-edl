@@ -1,0 +1,357 @@
+004bd7a0 int32_t ebp
+004bd7a0 int32_t var_4 = ebp
+004bd7a1 int32_t* ebp_1 = &var_4
+004bd7a3 int32_t var_8 = 0xffffffff
+004bd7a5 int32_t (* var_c)(void* arg1) = sub_6db0c0
+004bd7b0 TEB* fsbase
+004bd7b0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004bd7b9 int32_t eax_2 = __security_cookie ^ &var_4
+004bd7bb int32_t var_14 = eax_2
+004bd7be int32_t ebx
+004bd7be int32_t var_48 = ebx
+004bd7bf int32_t esi
+004bd7bf int32_t var_4c = esi
+004bd7c0 int32_t edi
+004bd7c0 int32_t var_50 = edi
+004bd7c1 int32_t var_54 = eax_2
+004bd7c5 fsbase->NtTib.ExceptionList = &ExceptionList
+004bd7cb void* esi_1 = arg1
+004bd7cd void* edi_1 = arg3
+004bd7d4 int32_t* eax_3 = edi_1 + 0x34
+004bd7d7 int32_t ebx_1 = arg2
+004bd7da int32_t var_3c = ebx_1
+004bd7dd void* var_40 = edi_1
+004bd7e0 int32_t var_34 = 3
+004bd7e0 
+004bd7e7 if (*(edi_1 + 0x48) u>= 0x10)
+004bd7e9     eax_3 = *eax_3
+004bd7e9 
+004bd7ef void var_30
+004bd7ef Concurrency::details::_Micro_queue::_Pop_finalizer::~_Pop_finalizer(&var_30, eax_3)
+004bd7ef int32_t* esp_1 = &var_54
+004bd7f4 int32_t var_8_1 = 0
+004bd803 int32_t result
+004bd803 int32_t* esp_2
+004bd803 
+004bd803 if (*(esi_1 + 0x504) == 0)
+004bd846     while (true)
+004bd846         if (*(edi_1 + 0x64) != 1 || *(esi_1 + 0x52) == 0 || *(esi_1 + 0x50) == 0
+004bd846                 || *(esi_1 + 0x51) != 0)
+004bd834             goto label_4bd85d
+004bd834         
+004bd848         *(esi_1 + 0x34)
+004bd850         result = sub_4cca50()
+004bd854         void* esp_44
+004bd854         
+004bd854         if (result != 0)
+004bda16             bool cond:3_1 = *(esi_1 + 0x24) == 0
+004bda20             *(esp_1 - 4) = ebp_1[-0xb]
+004bda23             *(esp_1 - 8) = result
+004bda24             void* esp_34
+004bda24             
+004bda24             if (cond:3_1)
+004bda2d                 *(esp_1 - 0xc) = u"Failed to send SHA256 init commmand(%d), %s"
+004bda2d                 esp_34 = esp_1 - 0xc
+004bda24             else
+004bda26                 *(esp_1 - 0xc) = 0x77c264
+004bda26                 esp_34 = esp_1 - 0xc
+004bda26             
+004bda32             *(esp_34 - 4) = esi_1 + 0x2c0
+004bda33             sub_4c2470()
+004bda41             int32_t eax_24 = zx.d((*(esi_1 + 0x38)).w) | 0x1010000
+004bda46             *(esp_34 + 8) = esi_1 + 0x2c0
+004bda47             *(esp_34 + 4) = eax_24
+004bda48             *esp_34 = 0x178c
+004bda4d             *(esp_34 - 4) = *(esi_1 + 0x3c)
+004bda50             0x3b8730()
+004bda56             *(esp_34 - 8) = ebp_1[-0xb]
+004bda59             int32_t eax_25 = *(esi_1 + 0x38)
+004bda5c             *(esp_34 - 0xc) = result
+004bda5e             *(esp_34 - 0x10) = eax_25 + 1
+004bda5f             *(esp_34 - 0x14) = "[%d] Failed to send SHA256 init commmand (%d), %ls"
+004bda5f             esp_44 = esp_34 - 0x14
+004bd854         else
+004bd85a             ebx_1 = ebp_1[-0xe]
+004bd85d         label_4bd85d:
+004bd85d             bool cond:1_1 = *(edi_1 + 0x18) == 0
+004bd863             *(esp_1 - 4) = edi_1
+004bd864             *(esp_1 - 8) = ebx_1
+004bd865             int32_t result_1
+004bd865             void* esp_5
+004bd865             
+004bd865             if (cond:1_1)
+004bd86e                 result_1, ebp_1, esi_1 = sub_4bf6c0(esi_1)
+004bd86e                 esp_5 = esp_1
+004bd865             else
+004bd867                 result_1 = sub_4be650(esi_1)
+004bd867                 esp_5 = esp_1
+004bd867             
+004bd873             result = result_1
+004bd873             
+004bd877             if (result == 0)
+004bd89c                 if (*(edi_1 + 0x64) != 1 || *(esi_1 + 0x52) == result_1.b
+004bd89c                         || *(esi_1 + 0x50) == result_1.b || *(esi_1 + 0x51) != result_1.b)
+004bdb36                     *(esp_5 - 4) = zx.d(*(esi_1 + 0x51))
+004bdb3b                     *(esp_5 - 8) = zx.d(*(esi_1 + 0x50))
+004bdb40                     *(esp_5 - 0xc) = zx.d(*(esi_1 + 0x52))
+004bdb45                     *(esp_5 - 0x10) = sx.d(*(edi_1 + 0x64))
+004bdb46                     *(esp_5 - 0x14) = ebp_1[-0xb]
+004bdb4d                     *(esp_5 - 0x18) = *(esi_1 + 0x38) + 1
+004bdb4e                     *(esp_5 - 0x1c) = "[%d] Skip sha256 checking (%ls) (%d:%d:%d,%d)\n"
+004bdb53                     *(esp_5 - 0x20) = 4
+004bdb55                     *(esp_5 - 0x24) = &data_7e09e8
+004bdb5a                     ebp_1 = sub_4d6270()
+004bdb5f                     esp_1 = esp_5
+004bd89c                 else
+004bd8a2                     ebp_1[-5] = 0xf
+004bd8a9                     ebp_1[-6] = result_1
+004bd8ac                     ebp_1[-0xa].b = result_1.b
+004bd8b2                     ebp_1[-1].b = 1
+004bd8b6                     *(esi_1 + 0x34)
+004bd8b9                     *(esp_5 - 4) = &ebp_1[-0xa]
+004bd8bf                     result = sub_4ccd70()
+004bd8bf                     
+004bd8c3                     if (result != 0)
+004bdaad                         bool cond:4_1 = *(esi_1 + 0x24) == 0
+004bdab7                         *(esp_5 - 4) = result
+004bdab8                         *(esp_5 - 8) = ebp_1[-0xb]
+004bdabb                         void* esp_53
+004bdabb                         
+004bdabb                         if (cond:4_1)
+004bdac4                             *(esp_5 - 0xc) = u"Failed to get SHA256, %ls (%d)"
+004bdac4                             esp_53 = esp_5 - 0xc
+004bdabb                         else
+004bdabd                             *(esp_5 - 0xc) = 0x77c2f0
+004bdabd                             esp_53 = esp_5 - 0xc
+004bdabd                         
+004bdac9                         *(esp_53 - 4) = esi_1 + 0x2c0
+004bdaca                         sub_4c2470()
+004bdad8                         int32_t eax_31 = zx.d((*(esi_1 + 0x38)).w) | 0x1010000
+004bdadd                         *(esp_53 + 8) = esi_1 + 0x2c0
+004bdade                         *(esp_53 + 4) = eax_31
+004bdadf                         *esp_53 = 0x178c
+004bdae4                         *(esp_53 - 4) = *(esi_1 + 0x3c)
+004bdae7                         0x3b8730()
+004bdaed                         int32_t eax_32 = *(esi_1 + 0x38)
+004bdaf0                         *(esp_53 - 8) = result
+004bdaf1                         *(esp_53 - 0xc) = ebp_1[-0xb]
+004bdaf5                         *(esp_53 - 0x10) = eax_32 + 1
+004bdaf6                         *(esp_53 - 0x14) = "[%d] Failed to get SHA256, %ls (%d)"
+004bdafb                         *(esp_53 - 0x18) = 4
+004bdafd                         *(esp_53 - 0x1c) = &data_7e09e8
+004bdb02                         ebp_1 = sub_4d6270()
+004bdb07                         esp_2 = esp_53 - 4
+004bdb07                         
+004bdb0e                         if (ebp_1[-5] u>= 0x10)
+004bdb10                             *(esp_2 - 4) = ebp_1[-0xa]
+004bdb13                             ebp_1 = j_sub_688543()
+004bdb13                         
+004bdb1b                         ebp_1[-5] = 0xf
+004bdb22                         ebp_1[-6] = 0
+004bdb29                         ebp_1[-0xa].b = 0
+004bdb0e                         break
+004bdb0e                     
+004bd8c9                     int32_t* edi_2 = edi_1 + 0x1c
+004bd8cc                     ebp_1[-0xd] = edi_2
+004bd8d3                     int32_t* ecx_4
+004bd8d3                     
+004bd8d3                     if (edi_2[5] u< 0x10)
+004bd8d9                         ecx_4 = edi_2
+004bd8d3                     else
+004bd8d5                         ecx_4 = *edi_2
+004bd8d5                     
+004bd8db                     bool cond:5_1 = ebp_1[-5] u>= 0x10
+004bd8df                     void* eax_10 = &ebp_1[-0xa]
+004bd8e2                     *(esp_5 - 4) = ecx_4
+004bd8e2                     
+004bd8e3                     if (cond:5_1)
+004bd8e3                         eax_10 = ebp_1[-0xa]
+004bd8e3                     
+004bd8e7                     *(esp_5 - 8) = eax_10
+004bd8ec                     *(esp_5 - 0xc) = *(esi_1 + 0x38) + 1
+004bd8ed                     *(esp_5 - 0x10) = "[%d] SHA256=%s, sha image = %s\n"
+004bd8f2                     *(esp_5 - 0x14) = 4
+004bd8f4                     *(esp_5 - 0x18) = &data_7e09e8
+004bd8f9                     void* ebp_2 = sub_4d6270()
+004bd8f9                     
+004bd905                     if (edi_2[5] u>= 0x10)
+004bd907                         edi_2 = *edi_2
+004bd909                         *(ebp_2 - 0x34) = edi_2
+004bd909                     
+004bd90f                     void* edi_3
+004bd90f                     
+004bd90f                     if (*edi_2 != 0)
+004bd915                         void* ecx_5 = edi_2 + 1
+004bd91d                         char i
+004bd91d                         
+004bd91d                         do
+004bd918                             i = *edi_2
+004bd91a                             edi_2 += 1
+004bd91d                         while (i != 0)
+004bd91f                         edi_3 = edi_2 - ecx_5
+004bd90f                     else
+004bd911                         edi_3 = nullptr
+004bd911                     
+004bd925                     void* ecx_6 = ebp_2 - 0x28
+004bd928                     int32_t edx_1 = *(ebp_2 - 0x34)
+004bd92b                     void* eax_13 = edi_3
+004bd92b                     
+004bd92d                     if (*(ebp_2 - 0x14) u>= 0x10)
+004bd92d                         ecx_6 = *(ebp_2 - 0x28)
+004bd92d                     
+004bd934                     if (*(ebp_2 - 0x18) u< edi_3)
+004bd934                         eax_13 = *(ebp_2 - 0x18)
+004bd934                     
+004bd938                     *(esp_5 - 4) = eax_13
+004bd938                     
+004bd943                     if (sub_4241f0(eax_13, edx_1, ecx_6) != 0)
+004bd959                     label_4bd959:
+004bd959                         int32_t eax_15 = *(ebp_2 - 0x30)
+004bd962                         *(esp_5 - 4) = *(ebp_2 - 0x2c)
+004bd966                         result = 1
+004bd96b                         *(ebp_2 - 0x30) = eax_15 - 1
+004bd970                         void* esp_18
+004bd970                         
+004bd970                         if (eax_15 - 1 s<= 0)
+004bd98a                             if (*(esi_1 + 0x24) == 0)
+004bd993                                 *(esp_5 - 8) = u"SHA256 does not match, %ls"
+004bd993                                 esp_18 = esp_5 - 8
+004bd98a                             else
+004bd98c                                 *(esp_5 - 8) = u"SHA25"
+004bd98c                                 esp_18 = esp_5 - 8
+004bd970                         else if (*(esi_1 + 0x24) == 0)
+004bd97f                             *(esp_5 - 8) = u"SHA256 does not match, repeat to download %ls"
+004bd97f                             esp_18 = esp_5 - 8
+004bd976                         else
+004bd978                             *(esp_5 - 8) = u"SHA25"
+004bd978                             esp_18 = esp_5 - 8
+004bd978                         
+004bd998                         *(esp_18 - 4) = esi_1 + 0x2c0
+004bd999                         sub_4c2470()
+004bd9a7                         int32_t eax_19 = zx.d((*(esi_1 + 0x38)).w) | 0x1010000
+004bd9ac                         *(esp_18 + 4) = esi_1 + 0x2c0
+004bd9ad                         *esp_18 = eax_19
+004bd9ae                         *(esp_18 - 4) = 0x178c
+004bd9b3                         *(esp_18 - 8) = *(esi_1 + 0x3c)
+004bd9b6                         0x3b8730()
+004bd9bc                         int32_t edi_5 = *(ebp_2 - 0x30)
+004bd9bf                         int32_t eax_20 = *(esi_1 + 0x38)
+004bd9c2                         *(esp_18 - 0xc) = edi_5
+004bd9c3                         *(esp_18 - 0x10) = *(ebp_2 - 0x2c)
+004bd9c7                         *(esp_18 - 0x14) = eax_20 + 1
+004bd9c8                         *(esp_18 - 0x18) =
+004bd9c8                             "[%d] SHA256 does not match, filename: %ls, retry count: %d \n"
+004bd9cd                         *(esp_18 - 0x1c) = 4
+004bd9cf                         *(esp_18 - 0x20) = &data_7e09e8
+004bd9d4                         ebp_1 = sub_4d6270()
+004bd9d9                         esp_1 = esp_18 - 8
+004bd9dc                         ebp_1[-1].b = 0
+004bd9dc                         
+004bd9e4                         if (ebp_1[-5] u>= 0x10)
+004bd9e6                             *(esp_1 - 4) = ebp_1[-0xa]
+004bd9e9                             ebp_1 = j_sub_688543()
+004bd9e9                         
+004bd9f1                         ebp_1[-5] = 0xf
+004bd9f8                         ebp_1[-6] = 0
+004bd9ff                         ebp_1[-0xa].b = 0
+004bd9ff                         
+004bda05                         if (edi_5 s> 0)
+004bda0b                             edi_1 = ebp_1[-0xf]
+004bda0e                             ebx_1 = ebp_1[-0xe]
+004bda11                             continue
+004bd943                     else
+004bd945                         int32_t ecx_7 = *(ebp_2 - 0x18)
+004bd945                         
+004bd94a                         if (ecx_7 u< edi_3)
+004bd94a                             goto label_4bd959
+004bd94a                         
+004bd94e                         int32_t eax_14
+004bd94e                         eax_14.b = ecx_7 != edi_3
+004bd94e                         
+004bd953                         if (eax_14 != 0)
+004bd953                             goto label_4bd959
+004bd953                         
+004bda69                         *(esp_5 - 4) = *(ebp_2 - 0x2c)
+004bda70                         *(esp_5 - 8) = *(esi_1 + 0x38) + 1
+004bda71                         *(esp_5 - 0xc) = "[%d] Readback Sha256 verify ok, %ls \n"
+004bda76                         *(esp_5 - 0x10) = 4
+004bda78                         *(esp_5 - 0x14) = &data_7e09e8
+004bda7d                         ebp_1 = sub_4d6270()
+004bda82                         esp_1 = esp_5
+004bda82                         
+004bda89                         if (ebp_1[-5] u>= 0x10)
+004bda8b                             *(esp_1 - 4) = ebp_1[-0xa]
+004bda8e                             ebp_1 = j_sub_688543()
+004bda8e                         
+004bda96                         ebp_1[-5] = 0xf
+004bda9d                         ebp_1[-6] = 0
+004bdaa4                         ebp_1[-0xa].b = 0
+004bdaa4                 
+004bdb62                 int16_t eax_40 = (*(esi_1 + 0x38)).w
+004bdb65                 *(esp_1 - 4) = 0
+004bdb6f                 *(esp_1 - 8) = zx.d(eax_40) | 0x40000
+004bdb70                 *(esp_1 - 0xc) = 0x178c
+004bdb75                 *(esp_1 - 0x10) = *(esi_1 + 0x3c)
+004bdb75                 esp_2 = esp_1 - 0x10
+004bdb78                 0x3b8730()
+004bdb7e                 break
+004bdb7e             
+004bdb80             bool cond:2_1 = *(esi_1 + 0x24) == 0
+004bdb8a             *(esp_5 - 4) = result
+004bdb8b             *(esp_5 - 8) = ebp_1[-0xb]
+004bdb8e             void* esp_81
+004bdb8e             
+004bdb8e             if (cond:2_1)
+004bdb97                 *(esp_5 - 0xc) = u"Failed to download %s (%d)"
+004bdb97                 esp_81 = esp_5 - 0xc
+004bdb8e             else
+004bdb90                 *(esp_5 - 0xc) = 0x77c244
+004bdb90                 esp_81 = esp_5 - 0xc
+004bdb90             
+004bdb9c             *(esp_81 - 4) = esi_1 + 0x2c0
+004bdb9d             sub_4c2470()
+004bdbab             int32_t eax_45 = zx.d((*(esi_1 + 0x38)).w) | 0x1010000
+004bdbb0             *(esp_81 + 8) = esi_1 + 0x2c0
+004bdbb1             *(esp_81 + 4) = eax_45
+004bdbb2             *esp_81 = 0x178c
+004bdbb7             *(esp_81 - 4) = *(esi_1 + 0x3c)
+004bdbba             0x3b8730()
+004bdbc0             int32_t eax_46 = *(esi_1 + 0x38)
+004bdbc3             *(esp_81 - 8) = result
+004bdbc4             *(esp_81 - 0xc) = ebp_1[-0xb]
+004bdbc8             *(esp_81 - 0x10) = eax_46 + 1
+004bdbc9             *(esp_81 - 0x14) = "[%d] Failed to download %ls (%d)"
+004bdbc9             esp_44 = esp_81 - 0x14
+004bdbc9         
+004bdbce         *(esp_44 - 4) = 4
+004bdbd0         *(esp_44 - 8) = &data_7e09e8
+004bdbd5         ebp_1 = sub_4d6270()
+004bdbda         esp_2 = esp_44 + 0x10
+004bdbda         break
+004bd803 else
+004bd808     int32_t var_58_1 = 0x4c7
+004bd80e     int32_t var_5c_1 = *(esi_1 + 0x38) + 1
+004bd80f     char const* const var_60_1 = "[%d] The thread job has been cancelled (%d)\n"
+004bd814     int32_t var_64_1 = 4
+004bd816     void* var_68_1 = &data_7e09e8
+004bd81b     ebp_1 = sub_4d6270(&data_7e09e8)
+004bd820     esp_2 = &var_54
+004bd823     result = 0x4c7
+004bd823 
+004bdbdd ebp_1[-1] = 0xffffffff
+004bdbea int32_t* esi_3 = ebp_1[-0xb] - 0x10
+004bdbf0 int32_t ecx_8 = esi_3[3]
+004bdbf0 esi_3[3] -= 1
+004bdbf0 
+004bdbf7 if (ecx_8 - 1 s<= 0)
+004bdbf9     int32_t* ecx_10 = *esi_3
+004bdbfb     *(esp_2 - 4) = esi_3
+004bdbfe     (*(*ecx_10 + 4))()
+004bdbfe 
+004bdc06 fsbase->NtTib.ExceptionList = ebp_1[-3]
+004bdc0d esp_2[1]
+004bdc0e esp_2[2]
+004bdc0f esp_2[3]
+004bdc16 sub_687de2(ebp_1[-4] ^ ebp_1)
+004bdc1d *ebp_1
+004bdc1e return result

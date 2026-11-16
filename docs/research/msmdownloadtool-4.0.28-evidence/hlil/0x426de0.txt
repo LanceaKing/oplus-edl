@@ -1,0 +1,146 @@
+00426de3 int32_t var_8 = 0xffffffff
+00426de5 int32_t (* var_c)(void* arg1) = sub_571c68
+00426df0 TEB* fsbase
+00426df0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00426dfd int32_t __saved_ebp
+00426dfd int32_t var_44 = __security_cookie ^ &__saved_ebp
+00426e01 fsbase->NtTib.ExceptionList = &ExceptionList
+00426e0e int32_t var_34
+00426e0e __builtin_strcpy(&var_34, "HW_ID")
+00426e1b HANDLE hObject_4 = *(arg1 + 0x4c)
+00426e1b 
+00426e23 if (hObject_4 == 0)
+00426e2d     fsbase->NtTib.ExceptionList = ExceptionList
+00426e3a     return 1
+00426e3a 
+00426e3b void** eax_4 = hObject_4 + 0x30
+00426e3b 
+00426e42 if (eax_4[5] u>= 0x10)
+00426e44     eax_4 = *eax_4
+00426e44 
+00426e4a PWSTR lpFileName
+00426e4a sub_426050(&lpFileName, eax_4)
+00426e4f int32_t var_48_1 = 0x800
+00426e54 int32_t var_8_1 = 0
+00426e5b int32_t var_14 = 0
+00426e62 uint32_t var_20 = 0
+00426e6e int32_t* esi = sub_42e817()
+00426e78 enum WIN32_ERROR result
+00426e78 HANDLE hObject_5
+00426e78 HANDLE hObject_2
+00426e78 
+00426e78 if (esi != 0)
+00426e90     if (*(arg1 + 0x2d) != 0)
+00426e96         uint8_t* eax_6 = arg1 + 0x30
+00426e96         
+00426e99         if (*(arg1 + 0x44) u>= 0x10)
+00426e9b             eax_6 = *eax_6
+00426e9b         
+00426ea1         sub_4061e0(&lpFileName, eax_6)
+00426eb8         var_20 = *(hObject_4 + 0x90)
+00426ebb         var_14 = *(hObject_4 + 0x88) << 9
+00426ebb     
+00426ed3     HANDLE hObject = CreateFileW(lpFileName, 0x80000000, FILE_SHARE_READ, nullptr, OPEN_EXISTING, 
+00426ed3         FILE_ATTRIBUTE_NORMAL, nullptr)
+00426ee1     HANDLE hObject_1
+00426ee1     
+00426ee1     if (hObject != 0xffffffff)
+00426efc         HANDLE hObject_3 = nullptr
+00426eff         hObject_1 = nullptr
+00426f05         enum WIN32_ERROR result_1
+00426f05         
+00426f05         if (*(arg1 + 0x2d) == 0)
+00426f8a             int32_t edx_3
+00426f8a             result_1, edx_3 = sub_42e760(0, esi, hObject, 0x1100, 0, 0x800)
+00426f92             result = result_1
+00426f95         label_426f95:
+00426f95             
+00426f97             if (result_1 == NO_ERROR)
+00426f9d                 edx_3.b = 0x44
+00426fa6                 int128_t* var_20_1 = arg1 + 0x1d
+00426fa9                 *(arg1 + 0x1d) = zx.o(0)
+00426fa9                 
+00426fe7                 for (int32_t i = 0x12; i u< 0x800; i += 1)
+00426fb2                     edx_3:1.b = 0x48
+00426fb8                     edx_3:1.b = 0x49
+00426fb8                     
+00426fbb                     if (*(i + esi) == 0x48)
+00426fbd                         edx_3.b = 0x57
+00426fc4                         edx_3.b = 0x44
+00426fc4                         
+00426fdf                         if (*(i + esi + 1) == 0x57 && *(i + esi + 2) == 0x5f
+00426fdf                                 && *(i + esi + 3) == 0x49 && *(i + esi + 4) == 0x44)
+00426ff0                             int128_t xmm0_1
+00426ff0                             
+00426ff0                             if (*(i + esi - 1) != 0x20)
+00426ffa                                 xmm0_1 = *(i + esi - 0x10)
+00426ff0                             else
+00426ff2                                 xmm0_1 = *(i + esi - 0x11)
+00426ff2                             
+00427000                             *var_20_1 = xmm0_1
+00427000                             break
+00427000                 
+0042700e                 int32_t* eax_18 = _fopen("C:/ToolLog.txt", "a+")
+0042700e                 
+0042701a                 if (eax_18 != 0)
+0042701c                     int32_t var_48_6 = 0x10
+00427024                     _fprintf(eax_18, "m_ImageHwId %d: ")
+0042702d                     _fclose(eax_18)
+0042702d                 
+0042707b                 for (int32_t i_1 = 0; i_1 u< 0x10; i_1 += 1)
+0042704a                     int32_t* eax_19 = _fopen("C:/ToolLog.txt", "a+")
+0042704a                     
+00427056                     if (eax_19 != 0)
+0042705f                         int32_t var_48_8 = sx.d(*(var_20_1 + i_1))
+00427066                         _fprintf(eax_19, "%c")
+0042706f                         _fclose(eax_19)
+0042706f                 
+00427087                 int32_t* eax_21 = _fopen("C:/ToolLog.txt", "a+")
+00427087                 
+00427093                 if (eax_21 != 0)
+0042709b                     _fprintf(eax_21, "\n")
+004270a1                     _fclose(eax_21)
+00426f05         else
+00426f07             int32_t var_48_3 = 0x200000
+00426f14             hObject_3 = sub_42e817()
+00426f17             int32_t var_48_4 = 0x200000
+00426f21             hObject_1 = sub_42e817()
+00426f21             
+00426f2c             if (hObject_3 != 0)
+00426f55                 result = sub_42e760(hObject_3, hObject_3, hObject, var_14, 0, var_20)
+00426f5b                 sub_41e730(var_20)
+00426f6f                 sub_552500(esi, hObject_1 + 0x1100, 0x800)
+00426f74                 result_1 = result
+00426f7a                 goto label_426f95
+00426f7a             
+00426f2e             result = ERROR_NOT_ENOUGH_MEMORY
+004270af         CloseHandle(hObject)
+004270b5         hObject_2 = hObject_3
+00426ee1     else
+00426ee9         hObject_2 = hObject
+00426eec         result = GetLastError()
+00426ef2         hObject_1 = hObject
+00426ef2     
+004270b9     j__free(esi)
+004270be     hObject_5 = hObject_1
+00426e78 else
+00426e7a     hObject_2 = hObject_4
+00426e7d     hObject_5 = hObject_4
+00426e80     result = ~ERROR_BAD_FORMAT~DNS_ERROR_RCODE_NO_ERROR
+00426e80 
+004270c6 if (hObject_2 != 0)
+004270c9     j__free(hObject_2)
+004270c9 
+004270d3 if (hObject_5 != 0)
+004270d6     j__free(hObject_5)
+004270d6 
+004270de int32_t var_8_2 = 0xffffffff
+004270eb int32_t* edx_6 = &lpFileName[-8]
+004270f1 int32_t ecx_10 = edx_6[3]
+004270f1 edx_6[3] -= 1
+004270f1 
+004270f8 if (ecx_10 - 1 s<= 0)
+004270ff     (*(**edx_6 + 4))(edx_6)
+004270ff 
+00427108 fsbase->NtTib.ExceptionList = ExceptionList
+00427115 return result

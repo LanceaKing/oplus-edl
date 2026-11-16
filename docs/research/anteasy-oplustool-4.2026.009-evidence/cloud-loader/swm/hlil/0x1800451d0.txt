@@ -1,0 +1,57 @@
+1800451dc if (zx.d(arg1) - 1 u> 6)
+180045348     int32_t result
+180045348     result.b = 0
+18004534e     return result
+18004534e 
+1800451f6 int16_t var_13
+1800451f6 char var_11
+1800451f6 
+1800451f6 switch (arg1)
+1800451ff     case 1
+1800451ff         arg2[2].d = 1
+180045206         *arg2 = "POST"
+180045210         arg2[1] = "/api/client/update-check"
+180045219         *(arg2 + 0x15) = var_13
+180045222         *(arg2 + 0x17) = var_11
+180045227         *(arg2 + 0x14) = 1
+18004522f         return 1
+180045237     case 2, 3
+180045237         arg2[2].d = 3
+18004523e         *arg2 = "POST"
+180045248         arg2[1] = "/api/client/events"
+180045251         *(arg2 + 0x15) = var_13
+18004525a         *(arg2 + 0x17) = var_11
+18004525f         *(arg2 + 0x14) = 1
+180045267         return 1
+18004526f     case 4
+18004526f         arg2[2].d = 2
+180045276         *arg2 = "POST"
+180045280         arg2[1] = "/api/client/heartbeat"
+180045289         *(arg2 + 0x15) = var_13
+180045292         *(arg2 + 0x17) = var_11
+180045297         *(arg2 + 0x14) = 1
+18004529f         return 1
+1800452a7     case 5
+1800452a7         arg2[2].d = 4
+1800452ae         *arg2 = "POST"
+1800452b8         arg2[1] = "/api/client/feedback"
+1800452c1         *(arg2 + 0x15) = var_13
+1800452ca         *(arg2 + 0x17) = var_11
+1800452cf         *(arg2 + 0x14) = 1
+1800452d7         return 1
+1800452df     case 6
+1800452df         arg2[2].d = 5
+1800452e6         *arg2 = "POST"
+1800452f0         arg2[1] = "/api/client/enrollment-ticket"
+1800452f9         *(arg2 + 0x15) = var_13
+180045302         *(arg2 + 0x17) = var_11
+180045307         *(arg2 + 0x14) = 1
+18004530f         return 1
+180045317     case 7
+180045317         arg2[2].d = 8
+18004531e         *arg2 = "POST"
+180045328         arg2[1] = "/api/client/operation-authorizations"
+180045331         *(arg2 + 0x15) = var_13
+18004533a         *(arg2 + 0x17) = var_11
+18004533f         *(arg2 + 0x14) = 1
+180045347         return 1

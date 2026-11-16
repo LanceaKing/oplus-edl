@@ -1,0 +1,74 @@
+149a4ae8 int64_t x28
+149a4ae8 int64_t var_50 = x28
+149a4ae8 int64_t x27
+149a4ae8 int64_t var_48 = x27
+149a4aec int64_t x26
+149a4aec int64_t var_40 = x26
+149a4aec int64_t x25
+149a4aec int64_t var_38 = x25
+149a4af0 int64_t x24
+149a4af0 int64_t var_30 = x24
+149a4af0 int64_t x23
+149a4af0 int64_t var_28 = x23
+149a4af4 int64_t x22
+149a4af4 int64_t var_20 = x22
+149a4af4 int64_t x21
+149a4af4 int64_t var_18 = x21
+149a4af8 int64_t x20
+149a4af8 int64_t var_10 = x20
+149a4af8 int64_t x19
+149a4af8 int64_t var_8 = x19
+149a4b14 int32_t i_1
+149a4b14 int64_t x1
+149a4b14 uint64_t x2
+149a4b14 int64_t x3
+149a4b14 int64_t x4
+149a4b14 int64_t x5
+149a4b14 int64_t x6
+149a4b14 int64_t x7
+149a4b14 i_1, x1, x2, x3, x4, x5, x6, x7 = (*(*(data_8025b788 + 8) + 0x18))()
+149a4b18 int32_t i = i_1
+149a4b18 
+149a4b1c if (i_1 == 0)
+149a4b24     sub_149a4c50(&data_80272000)
+149a4b28     bool c
+149a4b28     int32_t x25_1 = not(c) ? 1 : 0
+149a4b30     int64_t x20_1
+149a4b30     
+149a4b30     if (x25_1 != 1)
+149a4b40         x20_1 = 0
+149a4b30     else
+149a4b38         x20_1 = sub_149a75e8()
+149a4b38     
+149a4bac     do
+149a4b70         int32_t i_2
+149a4b70         int128_t v0_1
+149a4b70         int128_t v1_1
+149a4b70         int128_t v2_1
+149a4b70         int128_t v3_1
+149a4b70         int128_t v4_1
+149a4b70         int128_t v5_1
+149a4b70         int128_t v6_1
+149a4b70         int128_t v7_1
+149a4b70         i_2, x1, x2, x3, x4, x5, x6, x7, v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, v6_1, v7_1 =
+149a4b70             (*(*(data_8025b788 + 8) + 0x20))(arg2)
+149a4b74         i = i_2
+149a4b74         
+149a4b78         if (x25_1 != 0 && (sub_149a75e8() - x20_1) u/ 0x3e8 u> zx.q(data_8027282c))
+149a4b94             data_80272828
+149a4ba0             int128_t v0_2
+149a4ba0             int128_t v1_2
+149a4ba0             int128_t v2_2
+149a4ba0             int128_t v3_2
+149a4ba0             int128_t v4_2
+149a4ba0             int128_t v5_2
+149a4ba0             int128_t v6_2
+149a4ba0             int128_t v7_2
+149a4ba0             v0_2, v1_2, v2_2, v3_2, v4_2, v5_2, v6_2, v7_2 = sub_149a5eb4(
+149a4ba0                 "%s devprg_transport_timeout_handler, total_time_ms=%llu reboot_type=%d", 
+149a4ba0                 "devprg_transport_tx_blocking", v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, v6_1, v7_1)
+149a4ba4             x1, x2, x3, x4, x5, x6, x7 =
+149a4ba4                 sub_149a4950(v0_2, v1_2, v2_2, v3_2, v4_2, v5_2, v6_2, v7_2)
+149a4bac     while (i == 0xb)
+149a4bac 
+149a4bbc return zx.q(i)

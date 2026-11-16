@@ -1,0 +1,84 @@
+00432350 push    esi
+00432351 push    edi
+00432352 push    0x448
+00432357 mov     esi, ecx
+00432359 call    0x5735d5
+0043235e mov     edi, dword [0x6f19d4]
+00432364 push    0x0
+00432366 push    0x0
+00432368 push    0xf1
+0043236d push    dword [eax+0x20]
+00432370 call    edi
+00432372 push    0x446
+00432377 mov     ecx, esi
+00432379 call    0x5735d5
+0043237e push    0x0
+00432380 push    0x0
+00432382 push    0xf1
+00432387 push    dword [eax+0x20]
+0043238a call    edi
+0043238c push    0x447
+00432391 mov     ecx, esi
+00432393 call    0x5735d5
+00432398 push    0x0
+0043239a push    0x0
+0043239c push    0xf1
+004323a1 push    dword [eax+0x20]
+004323a4 call    edi
+004323a6 mov     eax, dword [esi+0x130]
+004323ac sub     eax, 0x0
+004323af je      0x4323c5
+004323c5 push    0x448
+004323b1 dec     eax
+004323b2 je      0x4323be
+0043241f call    0x5735d5
+00432424 push    0x0
+00432426 push    0x1
+00432428 push    0xf1
+0043242d push    dword [eax+0x20]
+00432430 call    edi
+00432432 push    0x444
+00432437 mov     ecx, esi
+00432439 call    0x5735d5
+0043243e push    0x0
+00432440 push    0x0
+00432442 push    0xf1
+00432447 push    dword [eax+0x20]
+0043244a call    edi
+0043244c pop     edi
+0043244d pop     esi
+0043244e retn    
+004323ef call    0x5735d5
+004323f4 push    0x0
+004323f6 push    0x0
+004323f8 push    0xf1
+004323fd push    dword [eax+0x20]
+00432400 call    edi
+00432402 push    0x444
+00432407 mov     ecx, esi
+00432409 call    0x5735d5
+0043240e push    0x0
+00432410 push    0x1
+00432412 push    0xf1
+00432417 push    dword [eax+0x20]
+0043241a call    edi
+0043241c pop     edi
+0043241d pop     esi
+0043241e retn    
+004323be push    0x446
+004323c3 jmp     0x4323ca
+004323b4 dec     eax
+004323b5 jne     0x4323df
+004323ca mov     ecx, esi
+004323cc call    0x5735d5
+004323d1 push    0x0
+004323d3 push    0x1
+004323d5 push    0xf1
+004323da push    dword [eax+0x20]
+004323dd call    edi
+004323df cmp     dword [esi+0x138], 0x1
+004323e6 mov     ecx, esi
+004323e8 push    0x445
+004323ed jne     0x43241f
+004323b7 push    0x447
+004323bc jmp     0x4323ca

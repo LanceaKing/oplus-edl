@@ -1,0 +1,68 @@
+004c2203 void* var_8 = arg1
+004c2209 var_8 = nullptr
+004c2210 void* eax = *(arg1 + 0x94)
+004c2216 *(arg1 + 0x5e8) = 0
+004c2216 
+004c223e if (*(eax + 0xe8) s> 0 && *(eax + 0x158) == 0 && *(arg1 + 0x20) == 2)
+004c224e     wchar16 const* const var_18_1
+004c224e     
+004c224e     if (*(arg1 + 0x24) == 0)
+004c2257         var_18_1 = u"Param preload"
+004c224e     else
+004c2250         var_18_1 = u"Param"
+004c2250     
+004c225d     sub_68ae2f(arg1 + 0x2c4, var_18_1)
+004c2279     0x3b87d0(*(arg1 + 0x40), 0x178c, zx.d(*(arg1 + 0x3c)), arg1 + 0x2c4)
+004c228e     0x3b87d0(*(arg1 + 0x40), 0x178c, zx.d(*(arg1 + 0x3c)) | 0x10000, arg1 + 0x2c4)
+004c2290     void* eax_4 = *(arg1 + 0x2c)
+004c22ac     int32_t eax_5 = (*(**(eax_4 + 0x100000) + 4))("param", 0, 0, eax_4, 0x100000, 0)
+004c22ac     
+004c22b3     if (eax_5 != 0)
+004c22c7         sub_4d6500(&data_7e4a58, 4, "[%d] ReadParamFromUFS Failed. (%d)\n", *(arg1 + 0x3c) + 1, 
+004c22c7             eax_5)
+004c22d3         wchar16 const* const var_18_4
+004c22d3         
+004c22d3         if (*(arg1 + 0x24) == 0)
+004c22dc             var_18_4 = u"Param preload failed"
+004c22d3         else
+004c22d5             var_18_4 = u"Param"
+004c22d5         
+004c22e2         sub_68ae2f(arg1 + 0x2c4, var_18_4)
+004c22ec         void* var_1c_5 = arg1 + 0x2c4
+004c22f5         sub_4b95c0(*(arg1 + 0x40), *(arg1 + 0x3c))
+004c2302         return eax_5
+004c2302     
+004c2303     void* eax_7 = *(arg1 + 0x2c)
+004c2306     int32_t ecx_3 = *(arg1 + 0x574)
+004c230c     *(eax_7 + 0x100024) = ecx_3
+004c2318     **(eax_7 + 0x100028) = ecx_3
+004c231d     *(arg1 + 0x2c)
+004c2323     int32_t eax_9 = sub_4c31c0(0x27, &var_8)
+004c2323     
+004c232c     if (eax_9 != 0)
+004c2340         sub_4d6500(&data_7e4a58, 4, "[%d] Failed to read project sw id. (%d)\n", 
+004c2340             *(arg1 + 0x3c) + 1, eax_9)
+004c234c         void* const var_18_7
+004c234c         
+004c234c         if (*(arg1 + 0x24) == 0)
+004c2355             var_18_7 = u"Failed to read sw proj id"
+004c234c         else
+004c234e             var_18_7 = &data_77e348
+004c234e         
+004c235b         sub_68ae2f(arg1 + 0x2c4, var_18_7)
+004c2363         int32_t var_18_8 = 1
+004c2365         void* var_1c_8 = arg1 + 0x2c4
+004c2366         int32_t var_20 = 0
+004c236e         sub_4b95c0(*(arg1 + 0x40), *(arg1 + 0x3c))
+004c2375         void* var_28_4 = arg1 + 0x2c4
+004c237e         sub_4b95c0(*(arg1 + 0x40), *(arg1 + 0x3c))
+004c238b         return eax_9
+004c238b     
+004c2391     *(arg1 + 0x5e8) = var_8
+004c2397     int32_t eax_12 = double __cdecl `anonymous namespace'::_Boost_call<class `double __stdcall __std_smf_assoc_legendre(unsigned int, unsigned int, double)'::`2'::<lambda_1>>(class `double __stdcall __std_smf_assoc_legendre(unsigned int, unsigned int, double)'::`2'::<lambda_1> const &)(
+004c2397         arg1)
+004c2397     
+004c239e     if (eax_12 != 0)
+004c23a8         return eax_12
+004c23a8 
+004c23a0 return 0

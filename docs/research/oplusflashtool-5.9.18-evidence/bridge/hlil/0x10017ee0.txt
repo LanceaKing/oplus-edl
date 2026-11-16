@@ -1,0 +1,246 @@
+10017ee0 int32_t __saved_ebp_1
+10017ee0 int32_t __saved_ebp = __saved_ebp_1
+10017ee9 int32_t var_8 = 0xffffffff
+10017eeb int32_t (* var_c)() = sub_10040140
+10017ef0 TEB* fsbase
+10017ef0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+10017ef1 fsbase->NtTib.ExceptionList = &ExceptionList
+10017efb int32_t __saved_esi_1
+10017efb int32_t __saved_esi = __saved_esi_1
+10017efc int32_t __saved_edi_1
+10017efc int32_t __saved_edi = __saved_edi_1
+10017f02 class OpFlashProfile* eax_1 = OpFlashManager::createProfile(this, arg3)
+10017f07 class OpFlashProfile* edi = eax_1
+10017f07 
+10017f0b if (edi == 0)
+10017f12     fsbase->NtTib.ExceptionList = ExceptionList
+10017f1c     return eax_1
+10017f1c 
+10017f1f int32_t __saved_ebx_3
+10017f1f int32_t __saved_ebx_2 = __saved_ebx_3
+10017f25 char* var_68 = arg2
+10017f25 
+10017f2d if (OpFlashProfile::loadFlashPack(edi, var_68) == 0)
+10017f2f     var_68 = edi
+10017f32     OpFlashManager::deleteProfile(this, var_68)
+10017f3f     fsbase->NtTib.ExceptionList = ExceptionList
+10017f49     return 0
+10017f49 
+10017f4c var_68 = 1
+10017f50 OpFlashProfile::setRebootAfterDownload(edi, var_68.b)
+10017f55 var_68 = 0x1f
+10017f57 int32_t var_6c = "Load pack succeed,file path is:"
+10017f5f int32_t var_14 = 0xf
+10017f66 int32_t var_18 = 0
+10017f6d char var_28 = 0
+10017f71 sub_10003300(&var_28, var_6c, var_68)
+10017f76 var_68 = arg2
+10017f7a int32_t var_8_1 = 0
+10017f81 int32_t var_40
+10017f81 char* eax_4 = sub_10003190(&var_40, var_68)
+10017f86 var_68 = 0xffffffff
+10017f88 var_6c = 0
+10017f8e var_8_1.b = 1
+10017f92 sub_10003640(&var_28, eax_4, var_6c, var_68)
+10017f97 var_8_1.b = 0
+10017fa1 void* var_2c
+10017fa1 
+10017fa1 if (var_2c u>= 0x10)
+10017fa4     var_68 = var_2c + 1
+10017fa5     var_6c = var_40
+10017fa8     sub_100037a0(var_6c, var_68)
+10017fa8 
+10017fb1 char* eax_7 = &var_28
+10017fb1 
+10017fb4 if (var_14 u>= 0x10)
+10017fb4     eax_7 = var_28.d
+10017fb4 
+10017fb8 var_68 = eax_7
+10017fb9 var_6c = 0x10c
+10017fbe char const* const var_70_1 = "OpFlashManager::rapidCreateProfile"
+10017fc3 OpFlashLogManager::getInstance()
+10017fc8 char* var_74 = &data_1005b124
+10017fc9 OpFlashLogManager::print(&data_1005b124, "OpFlashManager::rapidCreateProfile", var_6c, var_68)
+10017fce int32_t __saved_ebx
+10017fce int32_t* esp_1 = &__saved_ebx
+10017fd5 void var_58
+10017fd5 int32_t* esp_2
+10017fd5 
+10017fd5 if (*(edi + 0x2c) == 0)
+10017fdb     OpFlashMode::getInstance()
+10017fe0     var_68 = *(edi + 0x90)
+10017fe0     esp_1 = &var_68
+10017fe0     
+10017fea     if (data_1005b150 != 1)
+10018031         int32_t eax_11 = *(this + 0x2188)
+10018037         var_6c = eax_11
+10018041         esp_1 = &__saved_ebx
+10018041         
+10018046         if (qcom_flash_agent_add_profile(var_6c) != 0)
+1001804c             char* eax_13 = &var_28
+1001804f             int32_t var_18_1 = 0
+1001804f             
+10018059             if (var_14 u>= 0x10)
+10018059                 eax_13 = var_28.d
+10018059             
+1001805d             var_68 = arg2
+1001805e             *eax_13 = 0
+10018061             char* eax_14 = sub_10003190(&var_58, var_68)
+10018066             var_68 = eax_14
+1001806c             var_8_1.b = 2
+10018073             char* eax_15 =
+10018073                 sub_100197d0(eax_14.b, "Qcom add profile failed ,the path is:", &var_40, var_68)
+1001807b             var_68 = 0xffffffff
+1001807d             var_6c = 0
+10018083             var_8_1.b = 3
+10018087             sub_10003640(&var_28, eax_15, var_6c, var_68)
+1001808f             sub_10003060(&var_40)
+10018097             var_8_1.b = 0
+1001809b             sub_10003060(&var_58)
+100180a4             char* eax_16 = &var_28
+100180a4             
+100180a7             if (var_14 u>= 0x10)
+100180a7                 eax_16 = var_28.d
+100180a7             
+100180ab             var_68 = eax_16
+100180ac             var_6c = 0x11e
+100180ac             esp_2 = &var_6c
+100180a7             goto label_1001821b
+100180a7         
+100180b6         *(this + 0x2194) += 1
+100180b6         
+100180cd         if (*(this + 4) != 0 && *(this + 0x2194) == 1)
+100180cf             var_68 = eax_11
+100180d2             qcom_flash_agent_start(var_68)
+100180de             sub_100122f0(&var_28)
+100180e3             var_68 = arg2
+100180e7             char* eax_17 = sub_10003190(&var_40, var_68)
+100180ec             var_68 = eax_17
+100180f2             var_8_1.b = 4
+100180f9             char* eax_18 = sub_100197d0(eax_17.b, "Start agent,the path is:", &var_58, var_68)
+10018101             var_68 = 0xffffffff
+10018103             var_6c = 0
+10018109             var_8_1.b = 5
+1001810d             sub_10003640(&var_28, eax_18, var_6c, var_68)
+10018115             sub_10003060(&var_58)
+1001811d             var_8_1.b = 0
+10018121             sub_10003060(&var_40)
+1001812a             char* eax_19 = &var_28
+1001812a             
+1001812d             if (var_14 u>= 0x10)
+1001812d                 eax_19 = var_28.d
+1001812d             
+10018131             var_68 = eax_19
+10018132             var_6c = 0x127
+10018137             char const* const var_70_4 = "OpFlashManager::rapidCreateProfile"
+1001813c             OpFlashLogManager::getInstance()
+10018141             char* var_74_1 = &data_1005b124
+10018142             OpFlashLogManager::print(&data_1005b124, "OpFlashManager::rapidCreateProfile", var_6c, 
+10018142                 var_68)
+10018147             esp_1 = &__saved_ebx
+10017fea     else
+10017ff4         int32_t eax_9 = QCFlashAgent::addProfile(QCFlashAgent::getInstance(), var_68)
+10017ff4         
+10017ffc         if (eax_9 != 0)
+10017ffc             goto label_1001822e
+10017ffc         
+10018002         *(this + 0x2194) += 1
+10018002         
+10018018         if (*(this + 4) != eax_9.b && *(this + 0x2194) == 1)
+10018026             QCFlashAgent::start(QCFlashAgent::getInstance())
+10018026 
+1001814e if (*(edi + 0x2c) == 1)
+10018154     OpFlashMode::getInstance()
+10018159     *(esp_1 - 4) = *(edi + 0x90)
+10018159     esp_1 -= 4
+10018159     
+10018163     if (data_1005b150 != 1)
+100181a8         int32_t eax_23 = *(this + 0x218c)
+100181ae         *(esp_1 - 4) = eax_23
+100181b8         esp_1 = &esp_1[1]
+100181b8         
+100181bd         if (mtk_flash_agent_add_profile() == 0)
+1001823d             *(this + 0x2198) += 1
+1001823d             
+10018254             if (*(this + 4) != 0 && *(this + 0x2198) == 1)
+10018256                 *(esp_1 - 4) = eax_23
+10018259                 mtk_flash_agent_start()
+10018265                 sub_100122f0(&var_28)
+1001826a                 *(esp_1 - 4) = arg2
+1001826e                 int32_t eax_28 = sub_10003190(&var_40)
+10018273                 *(esp_1 - 4) = eax_28
+10018279                 var_8_1.b = 8
+10018280                 int32_t eax_29 = sub_100197d0(eax_28, "Start agent,the path is:", &var_58)
+10018288                 *(esp_1 - 4) = 0xffffffff
+1001828a                 *(esp_1 - 8) = 0
+1001828c                 *(esp_1 - 0xc) = eax_29
+10018290                 var_8_1.b = 9
+10018294                 sub_10003640(&var_28)
+1001829c                 sub_10003060(&var_58)
+100182a4                 sub_10003060(&var_40)
+100182ad                 char* eax_30 = &var_28
+100182ad                 
+100182b0                 if (var_14 u>= 0x10)
+100182b0                     eax_30 = var_28.d
+100182b0                 
+100182b4                 *(esp_1 - 4) = eax_30
+100182b5                 *(esp_1 - 8) = 0x146
+100182ba                 *(esp_1 - 0xc) = "OpFlashManager::rapidCreateProfile"
+100182bf                 OpFlashLogManager::getInstance()
+100182c4                 *(esp_1 - 0x10) = &data_1005b124
+100182c5                 OpFlashLogManager::print()
+100181bd         else
+100181c2             sub_100122f0(&var_28)
+100181c7             *(esp_1 - 4) = arg2
+100181cb             int32_t eax_25 = sub_10003190(&var_40)
+100181d0             *(esp_1 - 4) = eax_25
+100181d6             var_8_1.b = 6
+100181dd             int32_t eax_26 = sub_100197d0(eax_25, "mtk add profile failed ,the path is:", &var_58)
+100181e5             *(esp_1 - 4) = 0xffffffff
+100181e7             *(esp_1 - 8) = 0
+100181e9             *(esp_1 - 0xc) = eax_26
+100181ed             var_8_1.b = 7
+100181f1             sub_10003640(&var_28)
+100181f9             sub_10003060(&var_58)
+10018201             var_8_1.b = 0
+10018205             sub_10003060(&var_40)
+1001820e             char* eax_27 = &var_28
+1001820e             
+10018211             if (var_14 u>= 0x10)
+10018211                 eax_27 = var_28.d
+10018211             
+10018215             *(esp_1 - 4) = eax_27
+10018216             *(esp_1 - 8) = 0x13c
+10018216             esp_2 = esp_1 - 8
+1001821b         label_1001821b:
+1001821b             *(esp_2 - 4) = "OpFlashManager::rapidCreateProfile"
+10018220             OpFlashLogManager::getInstance()
+10018225             *(esp_2 - 8) = &data_1005b124
+10018226             OpFlashLogManager::print()
+1001822b             esp_1 = &esp_2[2]
+1001822e         label_1001822e:
+1001822e             *(esp_1 - 4) = edi
+10018231             OpFlashManager::deleteProfile(this)
+10018236             edi = nullptr
+10018163     else
+1001816b         OplusMTKAgent::getInstance()
+1001816f         int32_t eax_21 = OplusMTKAgent::addProfile()
+1001816f         
+10018177         if (eax_21 != 0)
+10018177             goto label_1001822e
+10018177         
+1001817d         *(this + 0x2198) += 1
+1001817d         
+10018193         if (*(this + 4) != eax_21.b && *(this + 0x2198) == 1)
+1001819d             OplusMTKAgent::start(OplusMTKAgent::getInstance())
+1001819d 
+100182d3 if (var_14 u>= 0x10)
+100182d6     *(esp_1 - 4) = var_14 + 1
+100182d7     *(esp_1 - 8) = var_28.d
+100182da     sub_100037a0()
+100182da 
+100182e4 *esp_1
+100182e4 esp_1[1]
+100182e5 esp_1[2]
+100182e7 fsbase->NtTib.ExceptionList = ExceptionList
+100182f1 return edi

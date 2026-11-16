@@ -1,0 +1,78 @@
+149c55e8 sub     sp, sp, #0x50
+149c55ec stp     fp, lr, [sp, #0x10]
+149c55f0 add     fp, sp, #0x10
+149c55f4 stp     x24, x23, [sp, #0x20]
+149c55f8 stp     x22, x21, [sp, #0x30]
+149c55fc stp     x20, x19, [sp, #0x40]
+149c5600 add     x20, x0, #0x10
+149c5604 mov     x21, x0
+149c5608 ldr     x23, [x0, #0x8]
+149c560c mov     x0, x20
+149c5610 mov     x19, x2
+149c5614 mov     x22, x1
+149c5618 bl      0x149c3a4c
+149c561c cmp     x23, x0
+149c5620 b.ne    0x149c56a4
+149c56a4 mov     w0, #0xffffbf80
+149c5624 ldr     x8, [x21, #0x8]
+149c5628 cmp     x8, #0x400
+149c562c b.hi    0x149c56a4
+149c5630 mov     x0, x20
+149c5634 mov     w1, wzr
+149c5638 bl      0x149c4054
+149c563c cmp     w0, #0x1
+149c5640 b.lt    0x149c56a4
+149c5644 mov     x0, x20
+149c5648 mov     x1, xzr
+149c564c bl      0x149c3a0c
+149c5650 cbz     w0, 0x149c56a4
+149c5654 add     x23, x21, #0x20
+149c5658 mov     w1, wzr
+149c565c mov     x0, x23
+149c5660 bl      0x149c4054
+149c5664 cmp     w0, #0x1
+149c5668 b.lt    0x149c56a4
+149c566c mov     x0, sp
+149c5670 bl      0x149c3888
+149c5674 ldr     x2, [x21, #0x8]
+149c5678 mov     x0, sp
+149c567c mov     x1, x22
+149c5680 bl      0x149c3d7c
+149c5684 mov     w22, w0
+149c5688 cbnz    w0, 0x149c56e4
+149c56e4 mov     x0, sp
+149c56e8 bl      0x149c3898
+149c568c mov     x0, sp
+149c5690 mov     x1, x20
+149c5694 bl      0x149c3f68
+149c5698 tbnz    w0, #0x1f, 0x149c56c0
+149c56a8 ldp     x20, x19, [sp, #0x40]
+149c56ac ldp     x22, x21, [sp, #0x30]
+149c56b0 ldp     x24, x23, [sp, #0x20]
+149c56b4 ldp     fp, lr, [sp, #0x10]
+149c56b8 add     sp, sp, #0x50
+149c56bc ret     
+149c56c0 ldr     x24, [x21, #0x8]
+149c56c4 add     x4, x21, #0x90
+149c56c8 mov     x0, sp
+149c56cc mov     x1, sp
+149c56d0 mov     x2, x23
+149c56d4 mov     x3, x20
+149c56d8 bl      0x149c4774
+149c56dc mov     w22, w0
+149c56e0 cbz     w0, 0x149c56f8
+149c569c mov     w22, #0xfffffffc
+149c56a0 b       0x149c56e4
+149c56f8 mov     x0, sp
+149c56fc mov     x1, x19
+149c5700 mov     x2, x24
+149c5704 bl      0x149c3e18
+149c5708 mov     w22, w0
+149c570c mov     x0, sp
+149c5710 bl      0x149c3898
+149c5714 cbnz    w22, 0x149c56ec
+149c56ec mov     w8, #0xffffbd80
+149c56f0 add     w0, w22, w8
+149c56f4 b       0x149c56a8
+149c5718 mov     w0, wzr
+149c571c b       0x149c56a8

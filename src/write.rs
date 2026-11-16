@@ -7,7 +7,7 @@ use crate::{
     sparse::Data,
 };
 use anyhow::{Context, Result, bail};
-use qdl::types::{FirehoseResetMode, MutationFailure, QdlChan, ReadRejected};
+use qdl::types::{MutationFailure, QdlChan, ReadRejected};
 use std::{
     fs::File,
     io::{self, Read, Seek, SeekFrom, Write},
@@ -82,6 +82,7 @@ struct Step {
 pub struct Writes {
     steps: Vec<Step>,
     restore: bool,
+    wire_mode: crate::firehose::WireMode,
     sector: u64,
 }
 fn numeric(s: &str) -> Option<u64> {
@@ -111,6 +112,9 @@ fn file_payload(path: &std::path::Path, offset: u64, available: u64) -> Result<P
     })
 }
 impl Writes {
+    pub fn set_wire_mode(&mut self, mode: crate::firehose::WireMode) {
+        self.wire_mode = mode;
+    }
     pub fn restore(mappings: Vec<Mapping>, sector: u64) -> Result<Self> {
         let mut steps = vec![];
         for m in mappings {
@@ -142,6 +146,7 @@ impl Writes {
             });
         }
         Ok(Self {
+            wire_mode: crate::firehose::WireMode::Direct,
             steps,
             restore: true,
             sector,
@@ -269,6 +274,7 @@ impl Writes {
             });
         }
         Ok(Self {
+            wire_mode: crate::firehose::WireMode::Direct,
             steps,
             restore: false,
             sector,
@@ -401,7 +407,7 @@ impl Writes {
             if stopped {
                 break;
             }
-            stopped = !mutate(channel, &mut self.steps[index], self.sector);
+            stopped = !mutate(channel, &mut self.steps[index], self.sector, self.wire_mode);
             if !stopped && self.restore {
                 stopped = !verify_step(
                     channel,
@@ -410,12 +416,21 @@ impl Writes {
                     index + 1,
                     self.sector,
                     verify,
+                    self.wire_mode,
                 );
             }
         }
         if !stopped && !self.restore {
             for index in 0..finals {
-                if !verify_step(channel, &mut self.steps, index, finals, self.sector, verify) {
+                if !verify_step(
+                    channel,
+                    &mut self.steps,
+                    index,
+                    finals,
+                    self.sector,
+                    verify,
+                    self.wire_mode,
+                ) {
                     stopped = true;
                     break;
                 }
@@ -423,7 +438,7 @@ impl Writes {
         }
         if !stopped {
             for index in finals..self.steps.len() {
-                if !mutate(channel, &mut self.steps[index], self.sector) {
+                if !mutate(channel, &mut self.steps[index], self.sector, self.wire_mode) {
                     stopped = true;
                     break;
                 }
@@ -485,7 +500,12 @@ impl Writes {
         report.summarize();
     }
 }
-fn mutate(channel: &mut impl QdlChan, s: &mut Step, sector: u64) -> bool {
+fn mutate(
+    channel: &mut impl QdlChan,
+    s: &mut Step,
+    sector: u64,
+    mode: crate::firehose::WireMode,
+) -> bool {
     let result = match &mut s.action {
         Action::Skip => return true,
         Action::Program(p) => {
@@ -500,12 +520,13 @@ fn mutate(channel: &mut impl QdlChan, s: &mut Step, sector: u64) -> bool {
                         inner: channel,
                         raw: &raw,
                         accepted: 0,
+                        count_unknown: false,
                     };
                     let mut reader = StartRaw {
                         inner: reader,
                         raw: &raw,
                     };
-                    let result = qdl::firehose_program_storage(
+                    let result = crate::firehose::program_with_mode(
                         &mut counted,
                         &mut reader,
                         s.item.partition.as_deref().unwrap_or("image"),
@@ -513,8 +534,10 @@ fn mutate(channel: &mut impl QdlChan, s: &mut Step, sector: u64) -> bool {
                         s.slot,
                         s.item.lun.unwrap(),
                         &p.start,
+                        mode,
                     );
-                    s.item.transferred_bytes = Some(counted.accepted.to_string());
+                    s.item.transferred_bytes =
+                        (!counted.count_unknown).then(|| counted.accepted.to_string());
                     result
                 }
                 Err(e) => Err(e),
@@ -525,7 +548,7 @@ fn mutate(channel: &mut impl QdlChan, s: &mut Step, sector: u64) -> bool {
             offset,
             size,
             value,
-        } => qdl::firehose_patch(
+        } => crate::firehose::patch(
             channel,
             *offset,
             s.slot,
@@ -534,8 +557,8 @@ fn mutate(channel: &mut impl QdlChan, s: &mut Step, sector: u64) -> bool {
             start,
             value,
         ),
-        Action::Boot(lun) => qdl::firehose_set_bootable(channel, *lun),
-        Action::Reboot => qdl::firehose_reset(channel, &FirehoseResetMode::Reset, 0),
+        Action::Boot(lun) => crate::firehose::set_bootable(channel, *lun),
+        Action::Reboot => crate::firehose::reset(channel),
     };
     match result {
         Ok(()) => {
@@ -659,6 +682,7 @@ fn verify_step(
     limit: usize,
     sector: u64,
     mode: Verify,
+    wire_mode: crate::firehose::WireMode,
 ) -> bool {
     if steps[index].item.write != "acknowledged"
         || !matches!(
@@ -727,13 +751,14 @@ fn verify_step(
                         remaining: span.end - span.start,
                         mismatch: false,
                     };
-                    let result = qdl::firehose_read_storage(
+                    let result = crate::firehose::read_storage_with_mode(
                         channel,
                         &mut compare,
                         ((end - first) / sector) as usize,
                         s.slot,
                         s.item.lun.unwrap(),
                         first / sector,
+                        wire_mode,
                     );
                     let mismatch = compare.mismatch;
                     match result {
@@ -827,7 +852,7 @@ pub fn prepare_restore(
         let table = crate::storage::read_gpt_with(channel, |ch, out, sectors, start| {
             let sector = ch.fh_config().storage_sector_size as u64;
             let mut i = Item::read(lun, None, start * sector, sectors as u64 * sector);
-            let result = qdl::firehose_read_storage(ch, out, sectors, 0, lun, start);
+            let result = crate::firehose::read_storage(ch, out, sectors, 0, lun, start);
             i.transferred_bytes = Some(out.len().to_string());
             match &result {
                 Ok(()) => i.execution = "done".into(),
@@ -875,6 +900,7 @@ struct CountChannel<'a, T> {
     inner: &'a mut T,
     raw: &'a std::cell::Cell<bool>,
     accepted: u64,
+    count_unknown: bool,
 }
 impl<T: QdlChan> Read for CountChannel<'_, T> {
     fn read(&mut self, out: &mut [u8]) -> io::Result<usize> {
@@ -891,7 +917,20 @@ impl<T: QdlChan> io::BufRead for CountChannel<'_, T> {
 }
 impl<T: QdlChan> Write for CountChannel<'_, T> {
     fn write(&mut self, data: &[u8]) -> io::Result<usize> {
-        let n = self.inner.write(data)?;
+        let n = match self.inner.write(data) {
+            Ok(n) => n,
+            Err(error) => {
+                // The USB adapter can report an error after accepting bytes,
+                // but its error does not retain that completion length.
+                if self.raw.get()
+                    && !data.is_empty()
+                    && self.inner.fh_config().backend == qdl::types::QdlBackend::Usb
+                {
+                    self.count_unknown = true;
+                }
+                return Err(error);
+            }
+        };
         if self.raw.get() {
             self.accepted += n as u64;
         }

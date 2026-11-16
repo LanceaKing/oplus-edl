@@ -1,0 +1,79 @@
+004c0c30 int32_t* ebp
+004c0c30 int32_t* var_4 = ebp
+004c0c33 int32_t var_8 = 0xffffffff
+004c0c35 int32_t (* var_c)() = sub_6db500
+004c0c40 TEB* fsbase
+004c0c40 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004c0c51 int32_t ebx
+004c0c51 int32_t var_9c = ebx
+004c0c52 int32_t esi
+004c0c52 int32_t var_a0 = esi
+004c0c53 int32_t edi
+004c0c53 int32_t var_a4 = edi
+004c0c54 int32_t var_a8 = __security_cookie ^ &var_4
+004c0c58 fsbase->NtTib.ExceptionList = &ExceptionList
+004c0c5e int32_t* var_14 = &var_a8
+004c0c63 void* var_88 = arg3
+004c0c69 int32_t var_8_1 = 0
+004c0c70 int32_t var_50 = 0xf
+004c0c77 int32_t var_54 = 0
+004c0c7e char var_64 = 0
+004c0c82 var_8_1.b = 1
+004c0c90 int32_t var_38 = 0xf
+004c0c97 int32_t var_3c = 0
+004c0c9e char var_4c = 0
+004c0ca2 sub_412e10(&var_4c, "ufs_fw_update_type="", 0x14)
+004c0ca7 int32_t var_20 = 0xf
+004c0cae int32_t var_24 = 0
+004c0cb5 char var_34 = 0
+004c0cbe var_8_1.b = 3
+004c0cc2 int32_t eax_3 = sub_56c748(0x100000, var_a8)
+004c0ccc int32_t var_84 = eax_3
+004c0ccc 
+004c0cd1 if (eax_3 != 0)
+004c0d75     uint32_t eax_8 = zx.d((*(arg3 + 0x3c)).w)
+004c0d75     
+004c0d78     if (*(arg3 + 0x24) == 0)
+004c0d81         var_4 = u"Update UFS firmware"
+004c0d78     else
+004c0d7a         var_4 = &data_77d4f4
+004c0d7a     
+004c0d87     int32_t var_c_1 = 0x178c
+004c0d8c     ExceptionList = *(arg3 + 0x40)
+004c0d8f     0x3b87d0(ExceptionList, var_c_1, eax_8)
+004c0dac     return sub_ce3e4f(arg4, 0x80000000, 1, 0, 3, 0, 0)
+004c0dac 
+004c0cdb if (var_20 u>= 0x10)
+004c0cdd     var_4 = var_34.d
+004c0ce0     sub_56c751(var_4)
+004c0ce0 
+004c0cec int32_t var_20_1 = 0xf
+004c0cf3 int32_t var_24_1 = 0
+004c0cfa char var_34_1 = 0
+004c0cfa 
+004c0cfe if (var_38 u>= 0x10)
+004c0d00     var_4 = var_4c.d
+004c0d03     sub_56c751(var_4)
+004c0d03 
+004c0d0f int32_t var_38_1 = 0xf
+004c0d16 int32_t var_3c_1 = 0
+004c0d1d var_4c = 0
+004c0d1d 
+004c0d21 if (var_50 u>= 0x10)
+004c0d23     var_4 = var_64.d
+004c0d26     sub_56c751(var_4)
+004c0d26 
+004c0d2e int32_t var_8_2 = 0xffffffff
+004c0d3e int32_t var_50_1 = 0xf
+004c0d45 int32_t var_54_1 = 0
+004c0d4c char var_64_1 = 0
+004c0d53 int32_t ecx_1 = *(arg4 - 4)
+004c0d53 *(arg4 - 4) -= 1
+004c0d53 
+004c0d5a if (ecx_1 - 1 s<= 0)
+004c0d5c     int32_t* ecx_3 = *(arg4 - 0x10)
+004c0d5e     var_4 = arg4 - 0x10
+004c0d61     (*(*ecx_3 + 4))(var_4)
+004c0d61 
+004c1007 fsbase->NtTib.ExceptionList = ExceptionList
+004c101f return sub_68804f()

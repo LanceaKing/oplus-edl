@@ -1,0 +1,49 @@
+004b0980 int32_t ebp
+004b0980 int32_t var_4 = ebp
+004b0981 int32_t* ebp_1 = &var_4
+004b0983 int32_t var_8 = 0xffffffff
+004b0985 int32_t (* var_c)(void* arg1) = sub_6da140
+004b0990 TEB* fsbase
+004b0990 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004b0999 int32_t eax_2 = __security_cookie ^ &var_4
+004b099b int32_t var_14 = eax_2
+004b099f int32_t var_3c = eax_2
+004b09a3 fsbase->NtTib.ExceptionList = &ExceptionList
+004b09ab int32_t var_30 = 0
+004b09b2 int32_t var_8_1 = 0
+004b09b2 
+004b09be if (arg4 != 0)
+004b09d0     int32_t var_18_1 = 7
+004b09d7     int32_t var_1c_1 = 0
+004b09de     int16_t var_2c = 0
+004b09e2     var_8_1.b = 1
+004b09e6     int32_t* arg_4
+004b09e6     int32_t* eax_3 = &arg_4
+004b09e6     
+004b09ed     if (arg5 u>= 0x10)
+004b09ed         eax_3 = arg_4
+004b09ed     
+004b09f8     int32_t* eax_4 = &arg_4
+004b09f8     
+004b09fb     if (arg5 u>= 0x10)
+004b09fb         eax_4 = arg_4
+004b09fb     
+004b0a07     sub_4b0a70(&var_2c, &var_2c, &var_2c, eax_4, arg4 + eax_3)
+004b0a12     sub_45a1a0(arg3, &var_2c)
+004b0a12     
+004b0a1b     if (var_18_1 u>= 8)
+004b0a20         ebp_1 = j_sub_688543(var_2c.d)
+004b0a20     
+004b0a2a     ebp_1[-5] = 7
+004b0a31     ebp_1[-6] = 0
+004b0a38     ebp_1[-0xa].w = 0
+004b09be else
+004b09c7     sub_45a140(arg3, &data_76a09c)
+004b09c7 
+004b0a40 if (ebp_1[7] u>= 0x10)
+004b0a45     ebp_1 = j_sub_688543(ebp_1[2])
+004b0a45 
+004b0a52 fsbase->NtTib.ExceptionList = ebp_1[-3]
+004b0a60 sub_687de2(ebp_1[-4] ^ ebp_1)
+004b0a67 *ebp_1
+004b0a68 return arg3

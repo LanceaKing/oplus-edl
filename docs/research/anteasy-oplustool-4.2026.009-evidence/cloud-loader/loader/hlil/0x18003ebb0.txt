@@ -1,0 +1,108 @@
+18003ebba int64_t r11 = arg2[3]
+18003ebc1 int64_t r10 = arg2[2]
+18003ebc5 int64_t* rax = arg2
+18003ebc5 
+18003ebcc if (r11 u> 0xf)
+18003ebce     rax = *arg2
+18003ebce 
+18003ebda int64_t rcx_1
+18003ebda 
+18003ebda if (r10 == 9)
+18003ebdc     int64_t rcx = *rax
+18003ebe9     rcx_1 = rcx - 0x695f746e65696c63
+18003ebe9     
+18003ebec     if (rcx == 0x695f746e65696c63)
+18003ebf6         rcx_1 = zx.q(rax[1].b) - 0x64
+18003ebf6 
+18003ebfc if (r10 != 9 || rcx_1 != 0)
+18003ec44     int64_t** r9_1 = arg2
+18003ec44     
+18003ec4b     if (r11 u> 0xf)
+18003ec4d         r9_1 = *arg2
+18003ec4d     
+18003ec54     void* rcx_6
+18003ec54     
+18003ec54     if (r10 == 0xd)
+18003ec5a         int64_t* rcx_5 = *r9_1
+18003ec67         rcx_6 = rcx_5 - 0x735f746e65696c63
+18003ec67         
+18003ec6a         if (rcx_5 == 0x735f746e65696c63)
+18003ec6c             uint64_t rcx_7 = zx.q(r9_1[1].d)
+18003ec75             rcx_6 = rcx_7 - 0x65726365
+18003ec75             
+18003ec78             if (rcx_7 == 0x65726365)
+18003ec87                 rcx_6 = zx.q(*(r9_1 + 0xc)) - 0x74
+18003ec87     
+18003ec8d     if (r10 != 0xd || rcx_6 != 0)
+18003ecda         int64_t** r9_2 = arg2
+18003ecda         
+18003ece1         if (r11 u> 0xf)
+18003ece3             r9_2 = *arg2
+18003ece3         
+18003ecea         void* rcx_13
+18003ecea         
+18003ecea         if (r10 == 0xd)
+18003ecec             int64_t* rcx_12 = *r9_2
+18003ecf9             rcx_13 = rcx_12 - 0x69746167656c6564
+18003ecf9             
+18003ecfc             if (rcx_12 == 0x69746167656c6564)
+18003ecfe                 uint64_t rcx_14 = zx.q(r9_2[1].d)
+18003ed07                 rcx_13 = rcx_14 - 0x695f6e6f
+18003ed07                 
+18003ed0a                 if (rcx_14 == 0x695f6e6f)
+18003ed15                     rcx_13 = zx.q(*(r9_2 + 0xc)) - 0x64
+18003ed15         
+18003ed1b         if (r10 != 0xd || rcx_13 != 0)
+18003ed6c             if (r11 u> 0xf)
+18003ed6e                 arg2 = *arg2
+18003ed6e             
+18003ed75             if (r10 != 0xa)
+18003ec37                 rax.b = 1
+18003ec43                 return rax
+18003ec43             
+18003ed7b             int64_t* rcx_19 = *arg2
+18003ed88             void* rcx_20 = rcx_19 - 0x5f73657269707865
+18003ed88             
+18003ed8b             if (rcx_19 == 0x5f73657269707865)
+18003ed99                 rcx_20 = zx.q(arg2[1].w) - 0x7461
+18003ed99             
+18003ed9f             if (rcx_20 != 0)
+18003ec37                 rax.b = 1
+18003ec43                 return rax
+18003ec43             
+18003edab             if (*arg1[4] == rcx_20.b && sub_18005ae60(arg3, arg1[5]).b != 0
+18003edab                     && *arg1[5] u<= 0x7fffffffffffffff)
+18003edd4                 *arg1[4] = 1
+18003ede2                 *(arg1[1] + 0x60) = *arg1[5]
+18003ede6                 int64_t rax_8
+18003ede6                 rax_8.b = 1
+18003edf2                 return rax_8
+18003ed1b         else
+18003ed1d             char* rcx_16 = arg1[3]
+18003ed1d             
+18003ed41             if (*rcx_16 == 0 && *arg3 == 1 && *(arg3 + 0x18) - 1 u<= 0x3ff)
+18003ed47                 *rcx_16 = 1
+18003ed56                 sub_180002fc0(arg1[1] + 0x40, &arg3[8])
+18003ed5b                 int64_t* rax_5
+18003ed5b                 rax_5.b = 1
+18003ed67                 return rax_5
+18003ec8d     else
+18003ec8f         char* rcx_9 = arg1[2]
+18003ec8f         
+18003ecb3         if (*rcx_9 == 0 && *arg3 == 1 && *(arg3 + 0x18) - 1 u<= 0x3ff)
+18003ecb9             *rcx_9 = 1
+18003ecc8             sub_180002fc0(arg1[1] + 0x20, &arg3[8])
+18003eccd             int64_t* rax_3
+18003eccd             rax_3.b = 1
+18003ecd9             return rax_3
+18003ebfc else
+18003ebfe     char* rcx_3 = *arg1
+18003ebfe     
+18003ec21     if (*rcx_3 == 0 && *arg3 == 1 && *(arg3 + 0x18) - 1 u<= 0xff)
+18003ec27         *rcx_3 = 1
+18003ec32         sub_180002fc0(arg1[1], &arg3[8])
+18003ec37         rax.b = 1
+18003ec43         return rax
+18003ec43 
+18003edf8 rax.b = 0
+18003edff return rax

@@ -1,0 +1,80 @@
+004bf6c3 int32_t var_8 = 0xffffffff
+004bf6c5 int32_t (* var_c)(void* arg1) = sub_6db190
+004bf6d0 TEB* fsbase
+004bf6d0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004bf6de int32_t __saved_ebp
+004bf6de int32_t var_5c = __security_cookie ^ &__saved_ebp
+004bf6e2 fsbase->NtTib.ExceptionList = &ExceptionList
+004bf6f3 int64_t var_4c = 0
+004bf6f8 char var_11 = 0
+004bf6f8 
+004bf6fe if (*(arg1 + 0x504) != 0)
+004bf708     fsbase->NtTib.ExceptionList = ExceptionList
+004bf716     return 0x4c7
+004bf716 
+004bf71c int32_t eax_5 = arg2[0x17]
+004bf71f int32_t var_34 = eax_5
+004bf727 int32_t ebx
+004bf727 
+004bf727 if (eax_5 != 0x200)
+004bf73f     if (eax_5 != 0x1000)
+004bfc3d         fsbase->NtTib.ExceptionList = ExceptionList
+004bfc4b         return 1
+004bfc4b     
+004bf745     struct DOS_Header* const var_60_1 = &__dos_header
+004bf74a     int32_t eax_7 = sub_56c4c8()
+004bf74f     ebx = eax_7
+004bf751     int32_t var_1c_1 = eax_7
+004bf727 else
+004bf729     int32_t var_60 = 0x80000
+004bf733     ebx = sub_56c4c8()
+004bf735     int32_t var_1c = ebx
+004bf735 
+004bf759 if (ebx == 0)
+004bf761     fsbase->NtTib.ExceptionList = ExceptionList
+004bf76f     return ebx + 8
+004bf76f 
+004bf77c if (*(arg1 + 0x50) != 0 && *(arg1 + 0x51) != 0)
+004bf785     int32_t eax_9 = sub_42b730(arg2, "PrimaryGPT")
+004bf78c     int32_t eax_10
+004bf78c     
+004bf78c     if (eax_9 != 0)
+004bf795         eax_10 = sub_42b730(arg2, "BackupGPT")
+004bf79a         var_11 = 1
+004bf79a     
+004bf7a0     if (eax_9 == 0 || eax_10 == 0)
+004bf7a2         var_11 = 0
+004bf7a2 
+004bf7a9 void** eax_12 = arg3 + 0x4c
+004bf7a9 
+004bf7b0 if (eax_12[5] u>= 0x10)
+004bf7b2     eax_12 = *eax_12
+004bf7b2 
+004bf7b8 int32_t var_30
+004bf7b8 Concurrency::details::_Micro_queue::_Pop_finalizer::~_Pop_finalizer(&var_30, eax_12)
+004bf7bd int32_t var_8_1 = 0
+004bf7c7 void** eax_14 = arg3 + 0x34
+004bf7c7 
+004bf7ce if (eax_14[5] u>= 0x10)
+004bf7d0     eax_14 = *eax_14
+004bf7d0 
+004bf7d6 void var_2c
+004bf7d6 Concurrency::details::_Micro_queue::_Pop_finalizer::~_Pop_finalizer(&var_2c, eax_14)
+004bf7db var_8_1.b = 1
+004bf7db 
+004bf7e9 if (*(arg1 + 0x50) != 0 && var_11 == 0)
+004bf7f2     void** eax_15 = arg1 + 0x70
+004bf7f2     
+004bf7f5     if (*(arg1 + 0x84) u>= 0x10)
+004bf7f7         eax_15 = *eax_15
+004bf7f7     
+004bf7fd     sub_413fd0(&var_30, eax_15, eax_15)
+004bf7fd 
+004bf802 int32_t var_60_5 = 0
+004bf804 int32_t var_64 = 0
+004bf806 int32_t var_68 = 3
+004bf808 int32_t var_6c = 0
+004bf80a int32_t var_70 = 1
+004bf80c int32_t var_74 = 0x80000000
+004bf811 int32_t var_78 = var_30
+004bf819 return sub_103a0be()

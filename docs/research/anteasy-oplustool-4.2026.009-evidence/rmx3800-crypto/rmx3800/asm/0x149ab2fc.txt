@@ -1,0 +1,19 @@
+149ab2fc sub     sp, sp, #0x30
+149ab300 stp     fp, lr, [sp, #0x10]
+149ab304 stp     x20, x19, [sp, #0x20]
+149ab308 add     fp, sp, #0x10
+149ab30c mov     w19, w1
+149ab310 mov     x20, x0
+149ab314 bl      0x149abfc0
+149ab318 mov     w2, w19
+149ab31c mov     x1, x20
+149ab320 bl      0x149ac010
+149ab324 cmp     w0, w19
+149ab328 b.eq    0x149ab338
+149ab338 ldp     x20, x19, [sp, #0x20]
+149ab33c ldp     fp, lr, [sp, #0x10]
+149ab340 add     sp, sp, #0x30
+149ab344 ret     
+149ab32c str     xzr, [sp, #0x8]
+149ab330 ldr     x8, [sp, #0x8]
+149ab334 cbz     x8, 0x149ab330

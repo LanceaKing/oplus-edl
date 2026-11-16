@@ -1,0 +1,113 @@
+004b8270 int32_t ebp
+004b8270 int32_t var_4 = ebp
+004b8271 int32_t* ebp_1 = &var_4
+004b827d int32_t var_8 = __security_cookie ^ &var_4
+004b8283 int32_t ebx
+004b8283 int32_t var_2c = ebx
+004b8284 int32_t var_18 = arg2
+004b828c int32_t ecx = arg3
+004b828f int32_t esi
+004b828f int32_t var_30 = esi
+004b8290 int32_t edi
+004b8290 int32_t var_34 = edi
+004b8290 int32_t* esp_1 = &var_34
+004b8291 int32_t* var_20 = arg4
+004b8294 int32_t var_1c = 0
+004b829b *arg4 = 0
+004b82a1 label_4b82a1:
+004b82a3 int32_t result
+004b82a3 
+004b82a3 if (ecx == 0)
+004b83a4     result = 0
+004b83a9 label_4b83a9:
+004b83a9     *esp_1
+004b83a9     esp_1[1]
+004b83aa     esp_1[2]
+004b83ae     sub_687de2(ebp_1[-1] ^ ebp_1)
+004b83b5     *ebp_1
+004b83b6     return result
+004b83b6 
+004b82ae int32_t edi_1 = ecx
+004b82ae 
+004b82b2 if (ecx u> 0x1000)
+004b82b2     edi_1 = 0x1000
+004b82b2 
+004b82b5 int32_t eax_4
+004b82b5 int32_t ecx_1
+004b82b5 int32_t* ebp_2
+004b82b5 eax_4, ecx_1, ebp_2 = sub_697887(ecx)
+004b82ba int32_t esi_1 = eax_4
+004b82bc int32_t* esp_2 = esp_1
+004b82bc 
+004b82c3 while (true)
+004b82c3     *(esp_2 - 4) = &ebp_2[-4]
+004b82c7     *(esp_2 - 8) = &ebp_2[-8]
+004b82c8     *(esp_2 - 0xc) = *(arg1 + 8)
+004b82cb     *(esp_2 - 0x10) = esi_1
+004b82cb     esp_2 -= 0x10
+004b82cc     esi_1 = sub_1008e7e()
+004b82cc     
+004b82d3     if (ebp_2 == 0x20)
+004b834c         int32_t result_1 = 0x3b77cc()
+004b8354         int32_t eax_13 = *(arg1 + 0x2c)
+004b8357         *(esp_2 - 4) = result_1
+004b8359         *(esp_2 - 8) = eax_13 + 1
+004b835a         *(esp_2 - 0xc) = "[%d] [CSerialCommHelper]ClearCommError Failed for Read, errno=(%d)\n"
+004b835f         *(esp_2 - 0x10) = 4
+004b8361         *(esp_2 - 0x14) = &data_7e09e8
+004b8366         ebp_1 = sub_4d6270()
+004b836b         esp_1 = esp_2
+004b836e         result = result_1
+004b836e         
+004b8372         if (result_1 != 0)
+004b8372             break
+004b8372         
+004b8377         int32_t* edx_2 = ebp_1[-7]
+004b837a         ecx = ebp_1[3] - edi_1
+004b837c         int32_t eax_15 = ebp_1[-6]
+004b837f         ebp_1[-5] += eax_15
+004b8382         ebp_1[3] = ecx
+004b8385         *edx_2 += eax_15
+004b8387         goto label_4b82a1
+004b8387     
+004b82d5     int32_t eax_7
+004b82d5     eax_7, ebp_2 = sub_697887(ecx_1)
+004b82da     int32_t edx_1 = ebp_2[5]
+004b82e3     ecx_1 = ebp_2[-3]
+004b82e3     
+004b82ee     if (eax_7 - &data_4b82d1 s< edx_1 && ecx_1 == 0 && edi_1 != 0)
+004b82ee         continue
+004b82ee     
+004b82f4     if (eax_7 - &data_4b82d1 s> edx_1)
+004b82f6         *(esp_2 - 4) = edx_1
+004b82f7         *(esp_2 - 8) = eax_7 - &data_4b82d1
+004b82f8         int32_t eax_9 = *(arg1 + 0x2c)
+004b82fb         *(esp_2 - 0xc) = ecx_1
+004b82fd         *(esp_2 - 0x10) = eax_9 + 1
+004b82fe         *(esp_2 - 0x14) = "[%d] [CSerialCommHelper] Buf: %d (%d/%d)\n"
+004b8303         *(esp_2 - 0x18) = 4
+004b8305         *(esp_2 - 0x1c) = &data_7e09e8
+004b830a         ebp_2 = sub_4d6270()
+004b830f         ecx_1 = ebp_2[-3]
+004b830f     
+004b8317     if (ecx_1 == 0)
+004b8391         *esp_2
+004b8391         esp_2[1]
+004b8392         esp_2[2]
+004b8399         sub_687de2(ebp_2[-1] ^ ebp_2)
+004b83a0         *ebp_2
+004b83a1         return 0x102
+004b83a1     
+004b831b     int32_t eax_11 = edi_1
+004b831d     *(esp_2 - 4) = 0
+004b831d     
+004b831f     if (edi_1 u>= ecx_1)
+004b831f         eax_11 = ecx_1
+004b831f     
+004b8325     *(esp_2 - 8) = &ebp_2[-6]
+004b8326     *(esp_2 - 0xc) = eax_11
+004b8327     *(esp_2 - 0x10) = ebp_2[-5]
+004b832a     *(esp_2 - 0x14) = *(arg1 + 8)
+004b8332     return j_sub_c02b56()
+004b8332 
+004b8372 goto label_4b83a9

@@ -1,0 +1,38 @@
+100776a0 push    ebp
+100776a1 mov     ebp, esp
+100776a3 push    0xffffffff
+100776a5 push    0x101bab91
+100776aa mov     eax, dword [fs:0x0]
+100776b0 push    eax
+100776b1 sub     esp, 0x64
+100776b4 mov     eax, dword [0x10247210]
+100776b9 xor     eax, ebp
+100776bb mov     dword [ebp-0x10], eax
+100776be push    ebx
+100776bf push    esi
+100776c0 push    edi
+100776c1 push    eax
+100776c2 lea     eax, [ebp-0xc]
+100776c5 mov     dword [fs:0x0], eax
+100776cb mov     edi, dword [ebp+0x8]
+100776ce mov     dword [ebp-0x4], 0x0
+100776d5 push    0x10225d40
+100776da mov     dword [ebp-0x60], edi
+100776dd mov     dword [ebp-0x70], edi
+100776e0 mov     dword [ebp-0x6c], 0x0
+100776e7 jmp     0x1073cb96
+1073cb96 push    0xbb589301
+1073cb9b call    0x10a411bf
+1073cba0 adc     dword [ebx-0x74], esp
+1073cba3 dec     esp
+1073cba4 lea     edi, [edi+0x1]
+1073cba7 mov     dword [esp+0x4], edi
+1073cbab movzx   edi, ax
+1073cbae mov     edi, 0x100dc46d
+1073cbb3 jmp     0x1090d1fd
+1090d1fd mov     edi, dword [edi+0x281cbe]
+1090d203 jmp     0x108d4cd4
+108d4cd4 lea     edi, [edi+0x4ccb14dd]
+108d4cda xchg    dword [esp], edi
+108d4cdd jmp     0x1014306e
+1014306e retn    

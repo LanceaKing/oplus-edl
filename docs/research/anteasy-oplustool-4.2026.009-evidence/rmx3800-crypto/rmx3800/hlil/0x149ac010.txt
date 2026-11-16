@@ -1,0 +1,127 @@
+149ac010 int64_t __saved_x23_1
+149ac010 int64_t __saved_x23 = __saved_x23_1
+149ac010 
+149ac03c if (arg1 == 0 || arg2 == 0 || arg3 - 1 u>= not.q(arg2))
+149ac07c     return 0
+149ac07c 
+149ad4f0 int64_t fp
+149ad4f0 int64_t var_50 = fp
+149ad4fc int64_t x21
+149ad4fc int64_t var_18 = x21
+149ad500 int64_t x20
+149ad500 int64_t var_10_1 = x20
+149ad500 int64_t x19
+149ad500 int64_t var_8_1 = x19
+149ad50c uint64_t x21_5 = arg2
+149ad50c 
+149ad518 if (sub_149ac420(arg1, arg2, arg3, &data_149ad4ec) != 0)
+149ad51c     return 0
+149ad51c 
+149ad528 int32_t x0_7 = sub_149ac470(arg1)
+149ad52c int32_t x22_1 = x0_7
+149ad52c 
+149ad530 if (x0_7 == 0)
+149ad540     x22_1 = *zx.q(sub_149ad750())
+149ad548     sub_149ac47c(arg1, x22_1)
+149ad548 
+149ad55c int64_t result
+149ad55c 
+149ad55c if ((sub_149ac630(arg1, 1, 1) & 1) != 0)
+149ad648 label_149ad648:
+149ad648     
+149ad64c     if (sub_149ac3a8(arg1) != 0)
+149ad720         result = 0
+149ad64c     else if (sub_149ac488(arg1, arg3 u> 0x3ff ? 1 : 0) != 0)
+149ad720         result = 0
+149ad660     else
+149ad668         int32_t x0_33 = sub_149ac39c(arg1)
+149ad66c         result = 0
+149ad674         uint64_t i = arg3
+149ad678         int32_t x25_1 = x0_33 << 0xc
+149ad67c         int32_t x24_1 = 4 | (0xfffff & x0_33) << 0xc
+149ad67c         
+149ad680         while (i != 0)
+149ad684             int32_t var_54 = 0
+149ad690             int32_t x26_1
+149ad690             
+149ad690             while (true)
+149ad694                 if ((*zx.q(x24_1 + sub_149ad750()) & 1) != 0)
+149ad6a0                     x26_1 = *zx.q(sub_149ad750() + x25_1)
+149ad6a0                     
+149ad6a8                     if ((x26_1 & 0xffff) != 0)
+149ad6a8                         break
+149ad6a8             
+149ad6b4             int32_t x8_22
+149ad6b4             
+149ad6b4             while (true)
+149ad6b8                 if ((*zx.q(x24_1 + sub_149ad750()) & 1) != 0)
+149ad6c4                     x8_22 = *zx.q(sub_149ad750() + x25_1)
+149ad6c4                     
+149ad6cc                     if (x8_22 u>= 0x10000)
+149ad6cc                         break
+149ad6cc             
+149ad6e8             var_54 = x8_22 ^ x26_1
+149ad6ec             int64_t x0_39 = sub_149ac300(arg1, x21_5, i, &var_54, 4, arg1)
+149ad6f0             x21_5 += x0_39
+149ad6f4             i -= x0_39
+149ad6f8             result += x0_39
+149ad6f8         
+149ad710         if (sub_149ac540(arg1, arg3 u> 0x3ff ? 1 : 0) != 0)
+149ad720             result = 0
+149ad710         else if (sub_149ac3ec(arg1) != 0)
+149ad720             result = 0
+149ad55c else
+149ad560     j_sub_149ac764()
+149ad560     
+149ad570     if (sub_149ac3a8(arg1) != 0)
+149ad720         result = 0
+149ad570     else
+149ad584         int32_t x23_1
+149ad584         
+149ad584         x23_1 = x22_1 u< 0x30000 ? 0xcccc : 0x4444
+149ad584         
+149ad5a4         int32_t x8_7
+149ad5a4         
+149ad5a4         do
+149ad59c             x8_7 = *zx.q(sub_149ad75c(zx.q(sub_149ad750() + 0x1100), x23_1) + 0x1100) & 0x1ffff
+149ad5a4         while (x23_1 != x8_7)
+149ad5d8         int32_t i_1
+149ad5d8         
+149ad5d8         do
+149ad5b0             int32_t x0_16
+149ad5b0             uint64_t x2_3
+149ad5b0             uint64_t x3_2
+149ad5b0             uint64_t x4_2
+149ad5b0             x0_16, x2_3, x3_2, x4_2 = sub_149ad750()
+149ad5c0             *zx.q(x0_16 + 0x1104) = 2
+149ad5d0             i_1 = *zx.q(sub_149ac344(arg1, 3, x2_3, x3_2, x4_2, arg1, arg3, x21_5, x22_1, 0x1104)
+149ad5d0                 + 0x1104) & 0x3f
+149ad5d8         while (i_1 != 2)
+149ad5d8         
+149ad5e4         if (x22_1 u>> 0x10 u<= 2 && (sub_149ac608(arg1) & 1) != 0)
+149ad624             int32_t x8_15
+149ad624             
+149ad624             do
+149ad5fc                 int32_t x0_21
+149ad5fc                 uint64_t x2_4
+149ad5fc                 uint64_t x3_3
+149ad5fc                 uint64_t x4_3
+149ad5fc                 x0_21, x2_4, x3_3, x4_3 = sub_149ad750()
+149ad60c                 *zx.q(x0_21 + 0x1144)
+149ad620                 x8_15 = *zx.q(sub_149ad75c(
+149ad620                     zx.q(sub_149ac344(arg1, 3, x2_4, x3_3, x4_3, arg1, arg3, x21_5, 0x1144, 1)
+149ad620                         + 0x1144), 
+149ad620                     1) + 0x1144)
+149ad624             while ((x8_15 & 1) == 0)
+149ad624         
+149ad634         sub_149ac630(arg1, 2, 1)
+149ad634         
+149ad640         if (sub_149ac3ec(arg1) == 0)
+149ad640             goto label_149ad648
+149ad640         
+149ad720         result = 0
+149ad720 
+149ad730 if (sub_149ac448(arg1) == 0)
+149ad730     return result
+149ad730 
+149ad730 return 0

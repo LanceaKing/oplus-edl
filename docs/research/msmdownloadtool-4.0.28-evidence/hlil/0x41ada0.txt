@@ -1,0 +1,11 @@
+0041adae int32_t __saved_ebp
+0041adae int32_t eax_1 = __security_cookie ^ &__saved_ebp
+0041adc0 int32_t result = 0
+0041add6 void PropertyBuffer
+0041add6 
+0041add6 if (SetupDiGetDeviceRegistryPropertyW(arg1, arg2, 0xc, nullptr, &PropertyBuffer, 0x200, nullptr)
+0041add6         != 0 && _wcsncmp(&PropertyBuffer, u"Qualcomm MMC Storage USB Device", 0x1f) == 0)
+0041adf5     result = 1
+0041adf5 
+0041ae00 sub_54a573(eax_1 ^ &__saved_ebp)
+0041ae08 return result

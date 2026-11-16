@@ -1,0 +1,88 @@
+File: /Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/op6/bn/analysis.bndb
+
+0041565a        int32_t* result
+0041565a        if (arg1 != 0)
+00415698        sub_4117a0(arg3)
+004156b2        arg2[-0x4d] = sub_411760("BasicInfo")
+004156c4        arg2[-0x54] = sub_411760("MEMORY_SIZE")
+004156d6        arg2[-0x50] = sub_411760("SAHARA")
+004156e8        arg2[-0x52] = sub_411760("UFS_PROVISION")
+004156fa        arg2[-0x4b] = sub_411760("Program0")
+0041570c        arg2[-0x43] = sub_411760("Program1")
+0041571e        arg2[-0x53] = sub_411760("Program2")
+00415730        arg2[-0x45] = sub_411760("Program3")
+00415742        arg2[-0x40] = sub_411760("Program4")
+00415754        arg2[-0x47] = sub_411760("Program5")
+00415766        arg2[-0x51] = sub_411760("Program6")
+00415778        arg2[-0x49] = sub_411760("Program7")
+0041578a        arg2[-0x41] = sub_411760("Patch0")
+0041579c        arg2[-0x42] = sub_411760("Patch1")
+004157ae        arg2[-0x44] = sub_411760("Patch2")
+004157c0        arg2[-0x46] = sub_411760("Patch3")
+004157d2        arg2[-0x48] = sub_411760("Patch4")
+004157e4        arg2[-0x4a] = sub_411760("Patch5")
+004157f6        arg2[-0x4c] = sub_411760("Patch6")
+004157fc        void* eax_21 = sub_411760("Patch7")
+00415801        void* var_4_2 = arg2[-0x4d]
+00415807        void* esi_1 = eax_21
+0041580b        arg2[-0x4f] = esi_1
+00415811        sub_4125f0(arg4, var_4_2)
+0041581e        sub_414330(arg4, arg2[-0x50])
+0041582b        sub_4129c0(arg4, arg2[-0x52])
+00415838        if (arg2[-0x54] != 0)
+00415845        void* eax_23
+00415845        int32_t ecx_25
+00415845        eax_23, ecx_25 = sub_411760("Memory")
+00415851        int32_t var_4_5 = ecx_25
+0041585e        arg2[-0xa] = sub_41e1c0(eax_23, "Is16GSupport")
+0041586d        arg2[-9] = sub_41e1c0(eax_23, "Is32GSupport")
+0041587c        arg2[-8] = sub_41e1c0(eax_23, "Is64GSupport")
+0041588b        arg2[-7] = sub_41e1c0(eax_23, "Is128GSupport")
+00415890        void* eax_28
+00415890        int32_t ecx_31
+00415890        eax_28, ecx_31 = sub_41e1c0(eax_23, "Is256GSupport")
+00415898        arg2[-6] = eax_28
+0041589b        int32_t i = 0
+004158a3        while (i s< 5)
+004158aa        if (arg2[i - 0xa] == 1)
+004158b5        sub_4138d0(arg4, arg2[-0x4b], i)
+004158c3        sub_4138d0(arg4, arg2[-0x43], i)
+004158d1        sub_4138d0(arg4, arg2[-0x53], i)
+004158df        sub_4138d0(arg4, arg2[-0x45], i)
+004158ed        sub_4138d0(arg4, arg2[-0x40], i)
+004158fb        sub_4138d0(arg4, arg2[-0x47], i)
+00415909        sub_4138d0(arg4, arg2[-0x51], i)
+00415917        sub_4138d0(arg4, arg2[-0x49], i)
+0041591c        i += 1
+0041591f        esi_1 = arg2[-0x4f]
+0041592d        sub_413fd0(arg4, arg2[-0x41])
+0041593a        sub_413fd0(arg4, arg2[-0x42])
+00415947        sub_413fd0(arg4, arg2[-0x44])
+00415954        sub_413fd0(arg4, arg2[-0x46])
+00415961        sub_413fd0(arg4, arg2[-0x48])
+0041596e        sub_413fd0(arg4, arg2[-0x4a])
+0041597b        sub_413fd0(arg4, arg2[-0x4c])
+00415983        sub_413fd0(arg4, esi_1)
+00415995        sub_410240(&arg2[-0x2f])
+004159a7        sub_410240(&arg2[-0x2b])
+004159ac        int32_t* ecx_51 = arg2[-0x38]
+004159b2        *(arg2 - 0xd9) = 1
+004159b9        arg2[-1] = 0
+004159fa        if (ecx_51 != 0)
+00415a00        (**ecx_51)(1)
+00415a08        j__free(arg2[-0x3a])
+00415a16        j__free(arg2[-0x3c])
+00415a24        sub_402b80(&arg2[-0x39])
+00415a29        result.b = *(arg2 - 0xd9)
+0041565c        *arg4 = 1
+0041565f        *(arg4 + 4) = "Load program file failed."
+0041566a        (**arg3)(1)
+00415672        j__free(arg2[-0x3a])
+00415680        j__free(arg2[-0x3c])
+0041568e        sub_402b80(&arg2[-0x39])
+00415ac8        result.b = 0
+00415acd        TEB* fsbase
+00415acd        fsbase->NtTib.ExceptionList = arg2[-3]
+00415add        sub_54a573(arg2[-5] ^ arg2)
+00415ae4        *arg2
+00415ae5        return result

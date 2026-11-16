@@ -1,0 +1,199 @@
+00412040 int32_t __saved_ebp_2
+00412040 int32_t __saved_ebp_1 = __saved_ebp_2
+00412049 __security_cookie
+00412053 int32_t ebx
+00412053 int32_t var_174 = ebx
+00412054 int32_t edi
+00412054 int32_t var_178 = edi
+00412057 int32_t var_144 = 0x1c
+00412061 uint32_t var_17c = 0xc
+00412069 int32_t var_128 = 0x1c
+00412073 int32_t var_14c = 0
+0041207d int32_t* eax_2 = sub_420885(var_17c)
+0041207d 
+00412087 if (eax_2 == 0)
+0041209f     eax_2 = nullptr
+00412087 else
+00412089     *eax_2 = 0
+0041208f     eax_2[1] = 0
+00412096     eax_2[2] = 0
+00412096 
+004120a1 var_17c = 0x12
+004120a3 HWND hwndParent = nullptr
+004120a5 PSTR Enumerator = nullptr
+004120a7 GUID* ClassGuid = &data_5a15c8
+004120ac *arg1 = eax_2
+004120b4 HDEVINFO DeviceInfoSet = SetupDiGetClassDevsA(ClassGuid, Enumerator, hwndParent, var_17c)
+004120b6 int32_t ebx_2 = 0
+004120be HDEVINFO DeviceInfoSet_1 = DeviceInfoSet
+004120c4 var_17c = &var_128
+004120cd int32_t var_150 = 0
+004120d3 int32_t* esp_1 = &var_178
+004120d3 
+004120db if (SetupDiEnumDeviceInterfaces(DeviceInfoSet, nullptr, &data_5a15c8, 0, var_17c) != 0)
+004120e1     uint32_t esi
+004120e1     var_17c = esi
+004120e1     uint32_t* esp_2 = &var_17c
+00412377     int32_t i
+00412377     
+00412377     do
+004120f0         *(esp_2 - 4) = 0
+004120f8         *(esp_2 - 8) = &var_14c
+004120f9         *(esp_2 - 0xc) = 0
+004120fb         *(esp_2 - 0x10) = 0
+00412103         *(esp_2 - 0x14) = &var_128
+00412104         *(esp_2 - 0x18) = DeviceInfoSet
+00412105         SetupDiGetDeviceInterfaceDetailA()
+00412107         *(esp_2 - 4) = var_14c
+00412115         int32_t* edi_1 = sub_4208b2()
+00412123         *(esp_2 - 4) = &var_144
+0041212a         *edi_1 = 5
+00412130         *(esp_2 - 8) = &var_14c
+00412131         *(esp_2 - 0xc) = var_14c
+0041213d         *(esp_2 - 0x10) = edi_1
+0041213e         *(esp_2 - 0x14) = &var_128
+0041213f         *(esp_2 - 0x18) = DeviceInfoSet_1
+00412149         void* esp_20
+00412149         
+00412149         if (SetupDiGetDeviceInterfaceDetailA() != 0)
+00412159             *(esp_2 - 4) = &edi_1[1]
+0041215d             *(esp_2 - 8) = ebx_2 + 1
+0041215e             *(esp_2 - 0xc) = "\n[index:%d]\n  dev_path=%s\n"
+00412163             sub_53c55b()
+00412168             int32_t var_130
+00412168             *(esp_2 - 0x10) = var_130
+0041216e             *(esp_2 - 0x14) = "  Handle=%d\n"
+00412173             sub_53c55b()
+00412178             *(esp_2 - 0x18) = 0x104
+00412183             *(esp_2 - 0x1c) = 0
+00412185             void var_10c
+00412185             *(esp_2 - 0x20) = &var_10c
+00412186             _memset()
+00412194             *(esp_2 - 4) = 0
+00412196             *(esp_2 - 8) = 0x104
+0041219b             *(esp_2 - 0xc) = &var_10c
+0041219c             *(esp_2 - 0x10) = var_130
+004121a2             CM_Get_Device_IDA()
+004121ae             *(esp_2 - 4) = &var_10c
+004121af             *(esp_2 - 8) = "  DeviceIdString=%s\n"
+004121b4             sub_53c55b()
+004121b9             *(esp_2 - 0xc) = 0xd
+004121c1             *(esp_2 - 0x10) = "USB\ROOT_HUB\"
+004121c6             *(esp_2 - 0x14) = &var_10c
+004121c6             
+004121d1             if (_strncmp() != 0)
+004121de                 *(esp_2 - 4) = 0
+004121e0                 *(esp_2 - 8) = 0
+004121e2                 *(esp_2 - 0xc) = 3
+004121e4                 *(esp_2 - 0x10) = 0
+004121e6                 *(esp_2 - 0x14) = 1
+004121e8                 *(esp_2 - 0x18) = 0x80000000
+004121ed                 *(esp_2 - 0x1c) = &edi_1[1]
+004121ee                 int32_t eax_9 = CreateFileA()
+004121f4                 *(esp_2 - 4) = 0x4c
+004121f8                 *(esp_2 - 8) = 0x40
+00412200                 void* esp_52 = esp_2
+00412206                 void* esi_2 = GlobalAlloc()
+00412206                 
+00412210                 if (esi_2 != 0)
+00412216                     *(esp_52 - 4) = 0
+0041221e                     void var_170
+0041221e                     *(esp_52 - 8) = &var_170
+0041221f                     *(esp_52 - 0xc) = 0x4c
+00412221                     *(esp_52 - 0x10) = esi_2
+00412222                     *(esp_52 - 0x14) = 0x4c
+00412224                     *(esp_52 - 0x18) = esi_2
+00412225                     *(esp_52 - 0x1c) = 0x220408
+0041222a                     *(esp_52 - 0x20) = eax_9
+0041222a                     
+00412233                     if (DeviceIoControl() != 0)
+00412239                         uint32_t j = zx.d(*(esi_2 + 6))
+0041223d                         *(esp_52 - 4) = j
+0041223e                         *(esp_52 - 8) = "  NumberOfPorts=%d\n"
+00412249                         sub_53c55b()
+00412251                         int32_t var_148_1 = 1
+00412251                         
+0041225e                         if (j s>= 1)
+00412317                             int32_t edx_1
+00412317                             
+00412317                             do
+00412264                                 *(esp_52 - 4) = 0x108
+00412269                                 void* eax_12 = sub_420885()
+0041226e                                 *(esp_52 - 8) = 0x108
+00412275                                 *(esp_52 - 0xc) = 0
+00412277                                 *(esp_52 - 0x10) = eax_12
+00412278                                 void* var_154 = eax_12
+0041227e                                 _memset()
+0041228f                                 edx_1 = var_148_1
+0041229f                                 __builtin_memcpy(eax_12, &var_10c, 0x104)
+004122a1                                 *(eax_12 + 0x104) = edx_1
+004122a7                                 int32_t* ecx = &var_154
+004122ad                                 int32_t* esi_3 = *arg1
+004122af                                 int32_t eax_14 = esi_3[1]
+004122af                                 
+004122b4                                 if (&var_154 u< eax_14)
+004122b6                                     ecx = *esi_3
+004122b6                                 
+004122c0                                 if (&var_154 u>= eax_14 || ecx u> &var_154)
+004122ed                                     if (eax_14 == esi_3[2])
+004122ef                                         *(esp_52 - 4) = ecx
+004122f2                                         sub_4034b0(esi_3)
+004122f7                                         edx_1 = var_148_1
+004122f7                                     
+004122fd                                     void** eax_17 = esi_3[1]
+004122fd                                     
+00412302                                     if (eax_17 != 0)
+00412304                                         *eax_17 = eax_12
+004122c0                                 else
+004122ca                                     if (eax_14 == esi_3[2])
+004122cc                                         *(esp_52 - 4) = ecx
+004122cf                                         sub_4034b0(esi_3)
+004122d4                                         edx_1 = var_148_1
+004122d4                                     
+004122da                                     int32_t* ecx_2 = esi_3[1]
+004122da                                     
+004122df                                     if (ecx_2 != 0)
+004122e6                                         *ecx_2 = *(*esi_3 + ((&var_154 - ecx) s>> 2 << 2))
+004122e6                                 
+00412306                                 esi_3[1] += 4
+0041230b                                 var_148_1 = edx_1 + 1
+00412317                             while (edx_1 + 1 s<= j)
+00412317                     
+0041232f                     *(esp_52 - 4) = esi_2
+00412330                     GlobalFree()
+00412330                     esp_52 = esp_52
+00412330                 
+00412336                 *(esp_52 - 4) = eax_9
+00412337                 CloseHandle()
+0041233d                 *(esp_52 - 4) = edi_1
+0041233e                 sub_4208bb()
+0041233e                 esp_20 = esp_52
+00412343                 ebx_2 = var_150
+004121d1             else
+004121d3                 *(esp_2 - 4) = edi_1
+004121d4                 sub_4208bb()
+004121d4                 esp_20 = esp_2
+00412149         else
+0041214b             *(esp_2 - 4) = edi_1
+0041214c             sub_4208bb()
+0041214c             esp_20 = esp_2
+0041214c         
+0041234f         DeviceInfoSet = DeviceInfoSet_1
+0041235e         ebx_2 += 1
+0041235f         var_150 = ebx_2
+00412365         *esp_20 = &var_128
+00412366         *(esp_20 - 4) = ebx_2
+00412367         *(esp_20 - 8) = 0x5a15c8
+0041236c         *(esp_20 - 0xc) = 0
+0041236e         *(esp_20 - 0x10) = DeviceInfoSet
+0041236f         i = SetupDiEnumDeviceInterfaces()
+0041236f         esp_2 = esp_20 + 4
+00412377     while (i != 0)
+0041237d     *esp_2
+0041237d     esp_1 = &esp_2[1]
+0041237d 
+0041237e *(esp_1 - 4) = DeviceInfoSet
+0041237f SetupDiDestroyDeviceInfoList()
+00412388 *esp_1
+00412388 esp_1[1]
+00412394 return sub_53b554()

@@ -1,0 +1,122 @@
+0041f520 int32_t ebp
+0041f520 int32_t var_4 = ebp
+0041f521 int32_t* ebp_1 = &var_4
+0041f523 int32_t var_8 = 0xffffffff
+0041f525 int32_t (* var_c)() = sub_64c606
+0041f530 TEB* fsbase
+0041f530 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0041f541 int32_t var_13c = __security_cookie ^ &var_4
+0041f545 fsbase->NtTib.ExceptionList = &ExceptionList
+0041f54b int32_t* var_14 = &var_13c
+0041f550 char* var_60 = arg1
+0041f553 char* var_140 = arg1
+0041f55a void var_12c
+0041f55a sub_4261b0(&var_12c)
+0041f561 int32_t var_8_1 = 0
+0041f568 sub_41f320(arg1)
+0041f56f struct TiXmlNode::TiXmlDocument::VTable** eax_3
+0041f56f int32_t ecx_2
+0041f56f eax_3, ecx_2 = sub_4f07db(0x48, var_13c)
+0041f577 struct TiXmlNode::TiXmlDocument::VTable** var_1c = eax_3
+0041f57a var_8_1.b = 1
+0041f580 struct TiXmlNode::TiXmlDocument::VTable** ebx
+0041f580 
+0041f580 if (eax_3 == 0)
+0041f592     ebx = nullptr
+0041f580 else
+0041f589     struct TiXmlNode::TiXmlDocument::VTable** eax_4
+0041f589     eax_4, ecx_2 = sub_43fe90(eax_3, "Setting.xml")
+0041f58e     ebx = eax_4
+0041f58e 
+0041f594 var_8_1.b = 2
+0041f59b int32_t var_140_1 = ecx_2
+0041f59f struct TiXmlNode::TiXmlDocument::VTable** var_1c_1 = ebx
+0041f5a2 int32_t var_144 = &ebx[8]->vFunc_2
+0041f5a2 
+0041f5ac if (sub_43ff90(ebx) != 0)
+0041f612     for (int32_t* i = ebx[6]; i != 0; i = i[0xa])
+0041f61d         if ((*(*i + 0x18))() != 0)
+0041f623             (*(*i + 0x18))()
+0041f628             break
+0041f628     
+0041f638     int32_t eax_15 = sub_41e880("BasicInfo")
+0041f653     int32_t var_68_1 = sub_41e880("SAHARA")
+0041f662     int32_t var_4c_1 = sub_41e880("UFS_PROVISION")
+0041f671     int32_t var_2c_1 = sub_41e880("SupportMultiTarget")
+0041f680     int32_t var_6c_1 = sub_41e880("Program0")
+0041f68f     int32_t var_34_1 = sub_41e880("Program1")
+0041f69e     int32_t var_54_1 = sub_41e880("Program2")
+0041f6ad     int32_t var_3c_1 = sub_41e880("Program3")
+0041f6bc     int32_t var_64_1 = sub_41e880("Program4")
+0041f6cb     int32_t var_44_1 = sub_41e880("Program5")
+0041f6da     int32_t var_20_1 = sub_41e880("Program6")
+0041f6e9     int32_t var_24_1 = sub_41e880("Program7")
+0041f6f8     int32_t var_28_1 = sub_41e880("Patch0")
+0041f707     int32_t var_30_1 = sub_41e880("Patch1")
+0041f716     int32_t var_38_1 = sub_41e880("Patch2")
+0041f725     int32_t var_40_1 = sub_41e880("Patch3")
+0041f734     int32_t var_48_1 = sub_41e880("Patch4")
+0041f743     int32_t var_50_1 = sub_41e880("Patch5")
+0041f752     int32_t var_58_1 = sub_41e880("Patch6")
+0041f755     int32_t eax_34 = sub_41e880("Patch7")
+0041f761     int32_t* ebx_1
+0041f761     char* edi_1
+0041f761     ebx_1, ebp_1, edi_1 = sub_41fb10(arg1, eax_15)
+0041f76b     sub_4228f0(edi_1, ebp_1[-0x19])
+0041f775     sub_420460(edi_1, ebp_1[-0x12])
+0041f77f     sub_420280(edi_1, ebp_1[-0xa])
+0041f77f     
+0041f790     if (std::num_get<char,class std::istreambuf_iterator<char,struct std::char_traits<char> > >::_Getffldx(
+0041f790             ebp_1[-0x1a]) != 0)
+0041f79b         std::num_get<char,class std::istreambuf_iterator<char,struct std::char_traits<char> > >::_Getffldx(
+0041f79b             ebp_1[-0xc])
+0041f7a5         std::num_get<char,class std::istreambuf_iterator<char,struct std::char_traits<char> > >::_Getffldx(
+0041f7a5             ebp_1[-0x14])
+0041f7af         std::num_get<char,class std::istreambuf_iterator<char,struct std::char_traits<char> > >::_Getffldx(
+0041f7af             ebp_1[-0xe])
+0041f7b9         std::num_get<char,class std::istreambuf_iterator<char,struct std::char_traits<char> > >::_Getffldx(
+0041f7b9             ebp_1[-0x18])
+0041f7c3         std::num_get<char,class std::istreambuf_iterator<char,struct std::char_traits<char> > >::_Getffldx(
+0041f7c3             ebp_1[-0x10])
+0041f7cd         std::num_get<char,class std::istreambuf_iterator<char,struct std::char_traits<char> > >::_Getffldx(
+0041f7cd             ebp_1[-7])
+0041f7d7         std::num_get<char,class std::istreambuf_iterator<char,struct std::char_traits<char> > >::_Getffldx(
+0041f7d7             ebp_1[-8])
+0041f7d7         
+0041f7e8         if (sub_4236f0(edi_1, ebp_1[-9]) != 0)
+0041f7f3             sub_4236f0(edi_1, ebp_1[-0xb])
+0041f7fd             sub_4236f0(edi_1, ebp_1[-0xd])
+0041f807             sub_4236f0(edi_1, ebp_1[-0xf])
+0041f811             sub_4236f0(edi_1, ebp_1[-0x11])
+0041f81b             sub_4236f0(edi_1, ebp_1[-0x13])
+0041f825             sub_4236f0(edi_1, ebp_1[-0x15])
+0041f82d             sub_4236f0(edi_1, eax_34)
+0041f832             *(ebp_1 - 0x11) = 1
+0041f836             ebp_1[-1] = 0
+0041f836             
+0041f868             if (ebx_1 != 0)
+0041f870                 (**ebx_1)(1)
+0041f870             
+0041f878             ebp_1[-1] = 0xffffffff
+0041f87f             sub_4262d0(&ebp_1[-0x2c])
+0041f88a             ebp_1[-0x2c] = &std::ios_base::`vftable'
+0041f895             std::ios_base::_Ios_base_dtor(&ebp_1[-0x2c])
+0041f89a             int32_t eax_39
+0041f89a             eax_39.b = *(ebp_1 - 0x11)
+0041f8a3             fsbase->NtTib.ExceptionList = ebp_1[-3]
+0041f8b0             *ebp_1
+0041f8b1             return eax_39
+0041f5ac else
+0041f5b8     *arg1 = 1
+0041f5bb     sub_406bd0(&arg1[4], "Load setting xml file failed.", 0x1d)
+0041f5c6     (*ebx)->vFunc_0(1)
+0041f5c6 
+0041f5ce ebp_1[-1] = 0xffffffff
+0041f5d5 sub_4262d0(&ebp_1[-0x2c])
+0041f5e0 ebp_1[-0x2c] = &std::ios_base::`vftable'
+0041f5eb std::ios_base::_Ios_base_dtor(&ebp_1[-0x2c])
+0041f5f3 int32_t eax_10
+0041f5f3 eax_10.b = 0
+0041f5f8 fsbase->NtTib.ExceptionList = ebp_1[-3]
+0041f605 *ebp_1
+0041f606 return eax_10

@@ -1,0 +1,41 @@
+004d26eb int32_t __saved_ebp
+004d26eb int32_t eax_1 = __security_cookie ^ &__saved_ebp
+004d2704 int32_t var_30 = 0
+004d270b void* ecx = *arg1
+004d270e int32_t result_1 = 0
+004d2715 int32_t var_18 = 0xd
+004d271c int32_t var_14 = 0xc
+004d2723 int32_t var_10 = arg2
+004d2726 int32_t eax_2
+004d2726 int32_t edx
+004d2726 eax_2, edx = sub_4b83c0(ecx, &var_18, 0xc, &var_30)
+004d2726 
+004d272d if (eax_2 == 0)
+004d274c     int32_t var_44_1 = 0xa
+004d274e     int32_t var_48_1 = 0x10
+004d2755     void var_28
+004d2755     int32_t edi_1 = sub_4b8550(&var_28, edx, *arg1, &var_28, &result_1)
+004d2764     int32_t var_1c
+004d2764     
+004d2764     if (var_1c s<= 0 || result_1 != 0x10)
+004d27c5         sub_687de2(eax_1 ^ &__saved_ebp)
+004d27cd         return 0xfffffff3
+004d27cd     
+004d2766     void* ecx_4 = *arg1
+004d2771     var_18 = 0xf
+004d2779     int32_t var_14_1 = 0xc
+004d2780     int32_t var_10_1 = edi_1
+004d2783     int32_t eax_5
+004d2783     int32_t edx_1
+004d2783     eax_5, edx_1 = sub_4b83c0(ecx_4, &var_18, 0xc, &var_30)
+004d2783     
+004d278a     if (eax_5 == 0)
+004d2791         int32_t var_44_3 = 0x7d0
+004d2796         int32_t var_48_2 = 0x100
+004d279d         sub_4b8550(&result_1, edx_1, *arg1, arg3, &result_1)
+004d27a2         int32_t result = result_1
+004d27ad         sub_687de2(eax_1 ^ &__saved_ebp)
+004d27b5         return result
+004d27b5 
+004d273c sub_687de2(eax_1 ^ &__saved_ebp)
+004d2744 return 0xfffffffa

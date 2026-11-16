@@ -1,0 +1,39 @@
+FIRST
+00d40be5 90                             nop 
+00d40be6 8ada                           mov bl, dl
+00d40be8 e93698faff                     jmp 0xcea423
+00cea423 5b                             pop ebx
+00cea424 e91c564000                     jmp 0x10efa45
+010efa45 871c24                         xchg dword ptr [esp], ebx
+010efa48 e9b6d4ffff                     jmp 0x10ecf03
+010ecf03 53                             push ebx
+010ecf04 8adc                           mov bl, ah
+010ecf06 bbf96e6600                     mov ebx, 0x666ef9
+010ecf0b e94dbab1ff                     jmp 0xc0895d
+00c0895d 8b9b745f4f00                   mov ebx, dword ptr [ebx + 0x4f5f74]
+00c08963 e945ac0400                     jmp 0xc535ad
+00c535ad 8d9b830e066d                   lea ebx, [ebx + 0x6d060e83]
+00c535b3 e91cc7ffff                     jmp 0xc4fcd4
+00c4fcd4 871c24                         xchg dword ptr [esp], ebx
+00c4fcd7 e92eef4700                     jmp 0x10cec0a
+010cec0a c3                             ret 
+
+LAST
+00d40be5 90                             nop 
+00d40be6 8ada                           mov bl, dl
+00d40be8 e93698faff                     jmp 0xcea423
+00cea423 5b                             pop ebx
+00cea424 e91c564000                     jmp 0x10efa45
+010efa45 871c24                         xchg dword ptr [esp], ebx
+010efa48 e9b6d4ffff                     jmp 0x10ecf03
+010ecf03 53                             push ebx
+010ecf04 8adc                           mov bl, ah
+010ecf06 bbf96e6600                     mov ebx, 0x666ef9
+010ecf0b e94dbab1ff                     jmp 0xc0895d
+00c0895d 8b9b745f4f00                   mov ebx, dword ptr [ebx + 0x4f5f74]
+00c08963 e945ac0400                     jmp 0xc535ad
+00c535ad 8d9b830e066d                   lea ebx, [ebx + 0x6d060e83]
+00c535b3 e91cc7ffff                     jmp 0xc4fcd4
+00c4fcd4 871c24                         xchg dword ptr [esp], ebx
+00c4fcd7 e92eef4700                     jmp 0x10cec0a
+010cec0a c3                             ret 

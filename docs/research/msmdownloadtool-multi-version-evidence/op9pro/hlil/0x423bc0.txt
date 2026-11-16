@@ -1,0 +1,51 @@
+00423bc6 int32_t var_c = 0xffffffff
+00423bc8 int32_t (* var_10)() = sub_6ccf48
+00423bd3 TEB* fsbase
+00423bd3 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00423bd7 int32_t ebx
+00423bd7 int32_t var_40 = ebx
+00423bd8 int32_t esi
+00423bd8 int32_t var_44 = esi
+00423bd9 int32_t edi
+00423bd9 int32_t var_48 = edi
+00423be6 fsbase->NtTib.ExceptionList = &ExceptionList
+00423bee void* var_1c = arg3
+00423bf2 int32_t* eax_3 = sub_575e46(__security_cookie ^ &var_48)
+00423bfd int32_t edx
+00423bfd edx.b = eax_3 != 0
+00423bfd 
+00423c02 if (edx == 0)
+00423c09     sub_414340(0x80004005)
+00423c09     noreturn
+00423c09 
+00423c13 void* esi_1 = (*(*eax_3 + 0xc))() + 0x10
+00423c16 void* arg_10 = esi_1
+00423c1a int32_t arg_3c = 0
+00423c27 int32_t eax_7 = data_7e43ec - 1
+00423c27 
+00423c2b if (eax_7 u> 3)
+00423daf     wchar16 const* const var_8_1 = u"Normal"
+00423db4     int32_t var_c_1 = 3
+00423db6     int32_t var_10_1 = 0x40b
+00423dbb     ExceptionList = *(arg3 + 0x20)
+00423dbe     0x3b87d0(ExceptionList, var_10_1, var_c_1, var_8_1)
+00423dc7     int32_t arg_2c = 0xffffffff
+00423dd2     int32_t* result = esi_1 - 4
+00423dd5     int32_t ecx_1 = *result
+00423dd5     *result -= 1
+00423dd5     
+00423ddc     if (ecx_1 - 1 s<= 0)
+00423de3         result = (*(**(esi_1 - 0x10) + 4))(esi_1 - 0x10)
+00423de3     
+00423dea     fsbase->NtTib.ExceptionList = arg4
+00423df8     return result
+00423df8 
+00423c31 switch (eax_7)
+00423c31     case 0
+00423c31         jump(0x423da1)
+00423c31     case 1
+00423c31         jump(0x423d9a)
+00423c31     case 2
+00423c31         jump(0x423c38)
+00423c31     case 3
+00423c31         jump(0x423da8)

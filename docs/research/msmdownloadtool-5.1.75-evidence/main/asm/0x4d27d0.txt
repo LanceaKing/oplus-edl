@@ -1,0 +1,105 @@
+004d27d0 push    ebp
+004d27d1 mov     ebp, esp
+004d27d3 sub     esp, 0x114
+004d27d9 mov     eax, dword [0x7c0bb0]
+004d27de xor     eax, ebp
+004d27e0 mov     dword [ebp-0x8], eax
+004d27e3 push    esi
+004d27e4 push    edi
+004d27e5 mov     edi, dword [ebp+0x8]
+004d27e8 mov     esi, ecx
+004d27ea push    ecx
+004d27eb push    0x1
+004d27ed mov     dword [ebp-0x110], 0x0
+004d27f7 call    0x4d23e0
+004d27fc test    eax, eax
+004d27fe jne     0x4d2901
+004d2901 mov     ecx, dword [ebp-0x8]
+004d2904 pop     edi
+004d2905 xor     ecx, ebp
+004d2907 pop     esi
+004d2908 call    0x687de2
+004d290d mov     esp, ebp
+004d290f pop     ebp
+004d2910 retn    0x4
+004d2804 mov     ecx, dword [esi]
+004d2806 lea     eax, [ebp-0x110]
+004d280c push    0x7d0
+004d2811 push    0x400
+004d2816 push    eax
+004d2817 push    dword [esi+0x8]
+004d281a call    0x4b8550
+004d281f test    eax, eax
+004d2821 jne     0x4d28fc
+004d28fc mov     eax, 0x57
+004d2827 cmp     dword [ebp-0x110], eax
+004d282d je      0x4d28fc
+004d2833 mov     eax, dword [esi+0x8]
+004d2836 cmp     dword [eax], 0xb
+004d2839 jne     0x4d28fc
+004d283f push    ecx
+004d2840 lea     eax, [ebp-0x10c]
+004d2846 mov     ecx, esi
+004d2848 push    eax
+004d2849 push    0x1
+004d284b call    0x4d26e0
+004d2850 test    eax, eax
+004d2852 jle     0x4d2863
+004d2863 push    ecx
+004d2864 lea     eax, [ebp-0x10c]
+004d286a mov     ecx, esi
+004d286c push    eax
+004d286d push    0x2
+004d286f call    0x4d26e0
+004d2874 test    eax, eax
+004d2876 jle     0x4d2888
+004d2854 cmp     eax, 0x100
+004d2859 jae     0x4d2863
+004d2888 push    ecx
+004d2889 lea     eax, [ebp-0x10c]
+004d288f mov     ecx, esi
+004d2891 push    eax
+004d2892 push    0x3
+004d2894 call    0x4d26e0
+004d2899 test    eax, eax
+004d289b jle     0x4d28bb
+004d2878 cmp     eax, 0x100
+004d287d jae     0x4d2888
+004d285b mov     eax, dword [ebp-0x10c]
+004d2861 mov     dword [edi], eax
+004d28bb push    ecx
+004d28bc lea     eax, [ebp-0x10c]
+004d28c2 mov     ecx, esi
+004d28c4 push    eax
+004d28c5 push    0x7
+004d28c7 call    0x4d26e0
+004d28cc test    eax, eax
+004d28ce jle     0x4d28e0
+004d289d cmp     eax, 0x100
+004d28a2 jae     0x4d28bb
+004d287f mov     eax, dword [ebp-0x108]
+004d2885 mov     dword [edi+0x4], eax
+004d28e0 push    ecx
+004d28e1 mov     ecx, esi
+004d28e3 call    0x4d2370
+004d28e8 xor     eax, eax
+004d28ea pop     edi
+004d28eb pop     esi
+004d28ec mov     ecx, dword [ebp-0x8]
+004d28ef xor     ecx, ebp
+004d28f1 call    0x687de2
+004d28f6 mov     esp, ebp
+004d28f8 pop     ebp
+004d28f9 retn    0x4
+004d28d0 cmp     eax, 0x100
+004d28d5 jae     0x4d28e0
+004d28a4 push    0x20
+004d28a6 lea     eax, [ebp-0x10c]
+004d28ac push    eax
+004d28ad lea     eax, [edi+0x8]
+004d28b0 push    0x20
+004d28b2 push    eax
+004d28b3 call    0x6884c4
+004d28b8 add     esp, 0x10
+004d28d7 mov     eax, dword [ebp-0x10c]
+004d28dd mov     dword [edi+0x28], eax

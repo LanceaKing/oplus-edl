@@ -1,0 +1,275 @@
+00421e60 int32_t __saved_ebp_2
+00421e60 int32_t __saved_ebp_1 = __saved_ebp_2
+00421e63 int32_t var_8 = 0xffffffff
+00421e65 int32_t (* var_c)(void* arg1) = sub_5719c8
+00421e70 TEB* fsbase
+00421e70 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00421e74 int32_t __saved_ebx_1
+00421e74 int32_t __saved_ebx = __saved_ebx_1
+00421e75 int32_t __saved_esi_1
+00421e75 int32_t __saved_esi = __saved_esi_1
+00421e76 int32_t __saved_edi_1
+00421e76 int32_t __saved_edi = __saved_edi_1
+00421e7c int32_t __saved_ebp
+00421e7c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00421e82 fsbase->NtTib.ExceptionList = &ExceptionList
+00421e90 void* const var_48 = &data_5b7a80
+00421e95 int64_t var_34 = 0
+00421e9a int64_t var_2c = 0
+00421e9f int16_t* var_14
+00421e9f sub_426050(&var_14, &data_5b7a80)
+00421ea4 int32_t var_8_1 = 0
+00421eab sub_41a930()
+00421ece int16_t* lParam_1 = (*(data_5ea194 + 0xc))(eax_2) + 0x10
+00421ed1 int16_t* lParam_2 = lParam_1
+00421ed4 __saved_ebx_1.b = 0
+00421ed6 var_8_1.b = 1
+00421edd int32_t* var_50
+00421edd float var_1c_1
+00421edd float xmm1_1
+00421edd 
+00421edd if (*(arg1 + 0x1c) != 0)
+00421ee6     int32_t eax_6
+00421ee6     int32_t edx_1
+00421ee6     edx_1:eax_6 = sx.q(arg3)
+00421ef6     void* const var_48_2 = &data_5b7e64
+00421efb     char const* const var_4c_1 = "C:/ToolLog.txt"
+00421f0c     var_1c_1 = fconvert.s(sub_56fcaf(eax_6, edx_1) * 512.0 * 9.3132257461547852e-10)
+00421f11     int32_t* eax_7 = _fopen()
+00421f11     
+00421f1e     if (eax_7 != 0)
+00421f25         enum WIN32_ERROR var_48_3 = arg3
+00421f2e         var_50 = _mm_cvtps_pd(var_1c_1)
+00421f33         char const* const var_54_1 = "EmmcSizeInGB = %f, TotalLogicalBlocks = %d\n"
+00421f39         _fprintf(eax_7, "EmmcSizeInGB = %f, TotalLogicalBlocks = %d\n")
+00421f44         _fclose(eax_7)
+00421f44     
+00421f4c     xmm1_1 = var_1c_1
+00421f4c     goto label_421f65
+00421f4c 
+00421fa1 enum WIN32_ERROR eax_9 = sub_42d180(*(arg1 + 0x28), &var_34)
+00421fa6 arg3 = eax_9
+00421fa6 
+00421fab if (eax_9 == NO_ERROR)
+00421fcf     xmm1_1 = fconvert.s(sub_56fcaf(var_34.d, var_34:4.d) * 512.0 * 9.3132257461547852e-10)
+00421fd3     var_1c_1 = xmm1_1
+00421f65 label_421f65:
+00421f65     
+00421f65     if (not(xmm1_1 <= 8f) && not(16f < xmm1_1))
+00421f67         int32_t var_48_5 = 3
+00421f69         void* const var_4c_2 = &data_5bb79c
+00421f71         sub_4037b0(&var_14)
+00421f76         bool cond:3_1 = *(arg1 + 0x19) != 0
+00421f7d         *arg2 = 0
+00421f7d         
+00421f8d         if (not(cond:3_1) && *(arg1 + 0x6c) != 0)
+00421f93             __saved_ebx_1.b = 1
+00421f65     else if (not(xmm1_1 <= 16f) && not(32f < xmm1_1))
+00421fef         int32_t var_48_7 = 3
+00421ff1         void* const var_4c_3 = &data_5bb7a4
+00421ff9         sub_4037b0(&var_14)
+00421ffe         bool cond:5_1 = *(arg1 + 0x19) != 0
+00422005         *arg2 = 1
+00422005         
+00422015         if (not(cond:5_1) && *(arg1 + 0x70) != 0)
+0042201b             __saved_ebx_1.b = 1
+00421fed     else if (not(xmm1_1 <= 32f) && not(64f < xmm1_1))
+00422034         void* const var_48_8 = &data_5bb7ac
+0042203c         sub_406570(&var_14, &data_5bb7ac)
+00422041         bool cond:6_1 = *(arg1 + 0x19) != 0
+00422048         *arg2 = 2
+00422048         
+00422054         if (not(cond:6_1) && *(arg1 + 0x74) != 0)
+00422056             __saved_ebx_1.b = 1
+00422032     else if (not(xmm1_1 <= 64f) && not(128f < xmm1_1))
+0042206c         wchar16 const* const var_48_9 = u"128G"
+00422074         sub_406570(&var_14, u"128G")
+00422079         bool cond:7_1 = *(arg1 + 0x19) != 0
+00422080         *arg2 = 3
+00422080         
+0042208c         if (not(cond:7_1) && *(arg1 + 0x78) != 0)
+0042208e             __saved_ebx_1.b = 1
+0042206a     else if (not(xmm1_1 <= 128f) && not(256f < xmm1_1))
+004220a4         wchar16 const* const var_48_10 = u"256G"
+004220ac         sub_406570(&var_14, u"256G")
+004220b1         bool cond:8_1 = *(arg1 + 0x19) != 0
+004220b8         *arg2 = 4
+004220b8         
+004220be         if (not(cond:8_1))
+004220c9             __saved_ebx_1 = 0
+004220c9             
+004220cc             if (*(arg1 + 0x78) != 0)
+004220cc                 __saved_ebx_1 = 1
+004220cc     
+004220d5     void** eax_15 = *(arg1 + 0x84) + 0x18
+004220d5     
+004220dc     if (eax_15[5] u>= 0x10)
+004220de         eax_15 = *eax_15
+004220de     
+004220e4     int16_t* var_20
+004220e4     sub_426050(&var_20, eax_15)
+004220e9     void* const var_48_12 = &data_5b7e64
+004220ee     char const* const var_4c_4 = "C:/ToolLog.txt"
+004220f3     var_8_1.b = 2
+004220f7     int32_t* eax_16 = _fopen()
+004220f7     
+00422104     if (eax_16 != 0)
+00422106         int16_t* var_48_13 = var_20
+00422109         var_4c_4 = "Memory size:%ls\n"
+0042210f         _fprintf(eax_16, "Memory size:%ls\n")
+0042211a         _fclose(eax_16)
+0042211a     
+0042212c     int16_t* lParam
+0042212c     uint32_t eax_22
+0042212c     
+0042212c     if (sub_4260f0(&var_14) == 0)
+004221cb     label_4221cb:
+004221cb         int32_t* ecx_15 = &lParam_2
+004221ce         arg3 = ERROR_INVALID_FUNCTION
+004221d5         wchar16 const* const var_4c_7
+004221d5         
+004221d5         if (*(arg1 + 0x1b) == 0)
+0042221b             int32_t var_48_20 = 0x25
+0042221d             wchar16 const* const var_4c_8 = u"Memory size not match, selected siz"
+00422222             sub_4037b0(ecx_15)
+00422227             int16_t* eax_25 = var_20
+0042222d             int32_t var_48_21 = *(eax_25 - 0xc)
+00422230             int16_t* var_4c_9 = eax_25
+00422231             sub_410d60(&lParam_2)
+00422236             int16_t* eax_26 = var_14
+00422236             
+00422248             if ((*(eax_26 - 8) | (1 - *(eax_26 - 4))) s< 0)
+0042224a                 int32_t var_48_22 = 0
+0042224f                 sub_402950(&var_14, nullptr)
+00422254                 eax_26 = var_14
+00422254             
+00422257             int16_t* var_48_23 = eax_26
+00422258             var_4c_7 = u",actual siz"
+004221d5         else
+004221d7             int32_t var_48_16 = 0x11
+004221d9             wchar16 const* const var_4c_5 = u"Memor"
+004221de             sub_4037b0(ecx_15)
+004221e3             int16_t* eax_23 = var_20
+004221e9             int32_t var_48_17 = *(eax_23 - 0xc)
+004221ec             int16_t* var_4c_6 = eax_23
+004221ed             sub_410d60(&lParam_2)
+004221f2             int16_t* eax_24 = var_14
+004221f2             
+00422204             if ((*(eax_24 - 8) | (1 - *(eax_24 - 4))) s< 0)
+00422206                 int32_t var_48_18 = 0
+0042220b                 sub_402950(&var_14, nullptr)
+00422210                 eax_24 = var_14
+00422210             
+00422213             int16_t* var_48_19 = eax_24
+00422214             var_4c_7 = &data_5bb844
+00422214         
+00422264         sub_426230(arg1 + 0x290, var_4c_7)
+0042226e         int32_t ecx_24
+0042226e         
+0042226e         if (arg1 != 0xfffffd70)
+00422274             int32_t* ecx_25 = arg1 + 0x290
+00422276             void* edx_6 = ecx_25 + 2
+00422289             int16_t i
+00422289             
+00422289             do
+00422280                 i = *ecx_25
+00422283                 ecx_25 += 2
+00422289             while (i != 0)
+0042228d             ecx_24 = (ecx_25 - edx_6) s>> 1
+0042226e         else
+00422270             ecx_24 = 0
+00422270         
+0042228f         int32_t var_48_24 = ecx_24
+00422290         int32_t* var_4c_10 = arg1 + 0x290
+00422294         sub_410d60(&lParam_2)
+00422299         lParam_1 = lParam_2
+00422299         
+004222a4         if ((*(lParam_1 - 8) | (1 - *(lParam_1 - 4))) s< 0)
+004222a6             int32_t var_48_25 = 0
+004222ab             sub_402950(&lParam_2, nullptr)
+004222b0             lParam_1 = lParam_2
+004222b0         
+004222be         lParam = lParam_1
+004222bf         eax_22 = zx.d((*(arg1 + 0x2c)).b) | 0x100
+0042212c     else
+00422132         int16_t* eax_18 = var_20
+00422139         int32_t ecx_12
+00422139         ecx_12.b = eax_18 != 0
+00422139         
+0042213e         if (ecx_12 == 0)
+00422140             int32_t var_48_15 = 0x80004005
+00422145             sub_402ba0(0x80004005)
+00422145             noreturn
+00422145         
+0042214d         int16_t* ecx_14 = var_14
+00422150         int32_t eax_20
+00422150         
+00422150         while (true)
+00422150             int16_t edx_3 = *ecx_14
+00422153             int16_t temp1_1 = *eax_18
+00422153             bool c_1 = edx_3 u< temp1_1
+00422153             
+00422156             if (edx_3 == temp1_1)
+0042215b                 if (edx_3 == 0)
+00422172                     eax_20 = 0
+00422174                     break
+00422174                 
+0042215d                 edx_3 = ecx_14[1]
+00422161                 int16_t temp2_1 = eax_18[1]
+00422161                 c_1 = edx_3 u< temp2_1
+00422161                 
+00422165                 if (edx_3 == temp2_1)
+00422167                     ecx_14 = &ecx_14[2]
+0042216a                     eax_18 = &eax_18[2]
+0042216a                     
+00422170                     if (edx_3 != 0)
+00422170                         continue
+00422170                     
+00422172                     eax_20 = 0
+00422174                     break
+00422174             
+00422178             eax_20 = sbb.d(eax_18, eax_18, c_1) | 1
+00422178             break
+00422178         
+00422181         if (eax_20 != 0 && __saved_ebx_1.b == 0)
+0042217d             goto label_4221cb
+0042217d         
+00422194         arg3 = NO_ERROR
+0042219f         var_4c_4.q = _mm_cvtps_pd(var_1c_1)
+0042219f         
+004221a4         if (*(arg1 + 0x1b) == 0)
+004221ad             var_50 = u"Memory Siz"
+004221a4         else
+004221a6             var_50 = u"Memor"
+004221a6         
+004221b3         sub_426230(arg1 + 0x290, var_50)
+004221be         eax_22 = zx.d((*(arg1 + 0x2c)).b)
+004221c1         lParam = arg1 + 0x290
+004221c1     
+004222c6     var_50 = 0x178c
+004222ce     SendMessageW(*(arg1 + 0x30), 0x178c, eax_22 << 0x10, lParam)
+004222d4     var_8_1.b = 1
+004222e0     int32_t* edx_8 = &var_20[-8]
+004222e6     int32_t ecx_29 = edx_8[3]
+004222e6     edx_8[3] -= 1
+004222e6     
+004222ed     if (ecx_29 - 1 s<= 0)
+004222f4         (*(**edx_8 + 4))(edx_8)
+004222f4 
+004222ff var_8_1.b = 0
+00422308 int32_t ecx_32 = *(lParam_1 - 4)
+00422308 *(lParam_1 - 4) -= 1
+00422308 
+0042230f if (ecx_32 - 1 s<= 0)
+00422316     (*(**(lParam_1 - 0x10) + 4))(&lParam_1[-8])
+00422316 
+00422319 int32_t var_8_2 = 0xffffffff
+00422323 int32_t* edx_10 = &var_14[-8]
+00422329 int32_t ebx_2 = edx_10[3]
+00422329 edx_10[3] -= 1
+00422329 
+00422330 if (ebx_2 - 1 s<= 0)
+00422337     (*(**edx_10 + 4))(edx_10)
+00422337 
+00422340 fsbase->NtTib.ExceptionList = ExceptionList
+0042234e return arg3

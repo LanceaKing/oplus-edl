@@ -1,0 +1,124 @@
+1001d43e int32_t var_d4
+1001d43e _memset(&var_d4, 0, 0xd0)
+1001d44f __builtin_strncpy(&var_d4, "OSIG", 4)
+1001d457 int32_t var_d0 = *arg2
+1001d457 
+1001d45d if (arg5 == 0)
+1001d48d     var_d0:1.w = 0
+1001d494     var_d0:3.b = 0
+1001d45d else
+1001d46e     var_d0:1.b = _atoi(&arg2[0x349])
+1001d483     var_d0:2.b = _atoi(&arg2[0x309])
+1001d483 
+1001d4ac int16_t var_cc = 0x59
+1001d4b9 int128_t var_b4 = *(arg2 + 0x900)
+1001d4c0 int32_t var_c8 = arg2[0xc0]
+1001d4d3 int32_t var_c4 = arg2[0x40]
+1001d4df int128_t var_a4 = *(arg2 + 0x400)
+1001d4e6 int32_t var_c0 = arg2[0x41]
+1001d4f5 int32_t var_bc = arg2[0x80]
+1001d4fe int128_t var_94 = *(arg2 + 0x700)
+1001d505 int32_t var_b8 = arg2[0x81]
+1001d518 int32_t var_14 = arg2[0x140]
+1001d521 int128_t var_84 = *(arg2 + 0x710)
+1001d525 int32_t var_10 = arg2[0x141]
+1001d535 int32_t var_c = arg2[0x180]
+1001d53e int128_t var_74 = *(arg2 + 0x720)
+1001d542 int32_t var_8 = arg2[0x181]
+1001d553 int128_t var_64 = *(arg2 + 0x730)
+1001d55e int128_t var_54 = *(arg2 + 0x800)
+1001d569 int128_t var_44 = *(arg2 + 0x810)
+1001d574 int128_t var_34 = *(arg2 + 0x820)
+1001d57f int128_t var_24 = *(arg2 + 0x830)
+1001d583 void var_164
+1001d583 sub_1003f860(&var_164)
+1001d59e sub_1003f8c0(&var_164, &var_d4, 0xd0)
+1001d5b4 void var_f4
+1001d5b4 sub_1003f580(&var_f4, &var_164)
+1001d5c1 void var_df4
+1001d5c1 int32_t eax_14
+1001d5c1 int32_t xmm0_10[0x4]
+1001d5c1 eax_14, xmm0_10 = auth_get_platform_infomation(&arg2[0x80], &var_df4)
+1001d5c1 
+1001d5cb if (eax_14 != 0)
+1001d5cd     int32_t* var_e08_5 = &arg2[0x80]
+1001d5ce     char const* const var_e0c_2 = "[ERROR]: Platform is not supported: %s"
+1001d5d3     int32_t var_e10_3 = 0xb93
+1001d5d8     char const* const var_e14_1 = "pre_verify_flash_sign"
+1001d5ef     *opdbg_log()
+1001d5f0     return 0x7535
+1001d5f0 
+1001d5f1 int32_t* esi_1 = &arg2[0x80]
+1001d5f3 void* ecx = esi_1 + 1
+1001d5f3 
+1001d5fb do
+1001d5f6     eax_14.b = *esi_1
+1001d5f8     esi_1 += 1
+1001d5fb while (eax_14.b != 0)
+1001d5fb 
+1001d5fd void* esi_2 = esi_1 - ecx
+1001d5fd 
+1001d602 if (esi_2 s>= 1)
+1001d60a     char* eax_16 = _strstr(xmm0_10, &arg2[0x80], "W")
+1001d614     void* ecx_2 = eax_16 - &arg2[0x80]
+1001d614     
+1001d61d     if (eax_16 == 0)
+1001d61d         ecx_2 = 0xffffffff
+1001d61d     
+1001d625     eax_14.b = esi_2 - 1 == ecx_2
+1001d625 
+1001d62a if (esi_2 s< 1 || eax_14 == 0)
+1001d659     void var_dd4
+1001d659     char* edx_1 = &var_dd4
+1001d65f     char* ecx_6 = *(arg3 + 0x528) + 0xa08
+1001d65f     
+1001d671     do
+1001d665         eax_14.b = *edx_1
+1001d667         edx_1 = &edx_1[1]
+1001d66a         *ecx_6 = eax_14.b
+1001d66c         ecx_6 = &ecx_6[1]
+1001d671     while (eax_14.b != 0)
+1001d62a else
+1001d632     void var_bd4
+1001d632     char* edx = &var_bd4
+1001d638     char* ecx_4 = *(arg3 + 0x528) + 0xa08
+1001d638     
+1001d64c     do
+1001d640         eax_14.b = *edx
+1001d642         edx = &edx[1]
+1001d645         *ecx_4 = eax_14.b
+1001d647         ecx_4 = &ecx_4[1]
+1001d64c     while (eax_14.b != 0)
+1001d64c 
+1001d681 uint32_t (* eax_19)[0x4] = sub_10040f60(*(arg3 + 0x528) + 0xa08, 0xffffffff)
+1001d681 
+1001d68d if (eax_19 == 0)
+1001d68f     char const* const var_e08_6 = "[ERROR]: malloc buffer fail"
+1001d694     int32_t var_e0c_5 = 0xb9f
+1001d699     char const* const var_e10_4 = "pre_verify_flash_sign"
+1001d6ad     *opdbg_log()
+1001d6ae     return 0xffffffff
+1001d6ae 
+1001d6b6 void* eax_21 = sub_10041160(eax_19, 0, nullptr, nullptr)
+1001d6be sub_100429f0(eax_19)
+1001d6be 
+1001d6c8 if (eax_21 == 0)
+1001d6ca     char const* const var_e08_7 = "[ERROR]: read RSA public key fail"
+1001d6cf     int32_t var_e0c_6 = 0xba6
+1001d6d4     char const* const var_e10_5 = "pre_verify_flash_sign"
+1001d6e9     *opdbg_log()
+1001d6ea     return 0xffffffff
+1001d6ea 
+1001d708 int32_t esi_5 = sub_10044d80(0x2a0, &var_f4, 0x20, arg4, 0x100, eax_21)
+1001d708 
+1001d710 if (esi_5 != 1)
+1001d717     int16_t var_cc_1 = 0x4e
+1001d725     void var_1d4
+1001d725     sub_1003f860(&var_1d4)
+1001d740     sub_1003f8c0(&var_1d4, &var_d4, 0xd0)
+1001d756     sub_1003f580(&var_f4, &var_1d4)
+1001d778     esi_5 = sub_10044d80(0x2a0, &var_f4, 0x20, arg4, 0x100, eax_21)
+1001d778 
+1001d77b sub_10045250(eax_21)
+1001d784 int32_t esi_7 = neg.d(esi_5 - 1)
+1001d790 return sbb.d(esi_7, esi_7, esi_5 != 1)

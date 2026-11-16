@@ -1,0 +1,133 @@
+1001cc5c __security_cookie
+1001cc74 Sleep(0x3e8)
+1001cc74 
+1001cc84 if (sub_10005b90(*(arg1 + 0x28)) != 0)
+1001cc86     int32_t ecx_1 = *(arg1 + 0x1c)
+1001cca6     opdbg_log("QCFlashWorker::doActionVerify", 0x1032, 
+1001cca6         "[%s] [%s] ERROR: Failed to execute firehose command 'getsigndata'.", ecx_1 + 0x9e4, 
+1001cca6         ecx_1 + 0x444)
+1001ccb5     sub_10024880(arg1, "firehouse_exec_command_error(getsigndata)")
+1001ccce     CookieCheckFunction(0x791b)
+1001ccd6     return 0x791b
+1001ccd6 
+1001cce2 if (sub_100210e0(arg1) != 0)
+1001cce4     int32_t ecx_5 = *(arg1 + 0x1c)
+1001cd04     opdbg_log("QCFlashWorker::doActionVerify", 0x1039, 
+1001cd04         "[%s] [%s] ERROR: Failed to resolve sign data.", ecx_5 + 0x9e4, ecx_5 + 0x444)
+1001cd13     sub_10024880(arg1, "firehouse_sign_data_resolve()")
+1001cd1f     reportIssue("E0503010", 0)
+1001cd39     CookieCheckFunction(0x7928)
+1001cd41     return 0x7928
+1001cd41 
+1001cd52 memset(arg1 + 0x1980, 0, 0x1000)
+1001cd66 char _Destination[0x100]
+1001cd66 memset(&_Destination, 0, 0x750)
+1001cd85 strcpy_s(&_Destination, 0x100, arg1 + 0x83c)
+1001cd9e char _Destination_1[0x100]
+1001cd9e strcpy_s(&_Destination_1, 0x100, arg1 + 0x73c)
+1001cdb7 char _Destination_2[0x100]
+1001cdb7 strcpy_s(&_Destination_2, 0x100, arg1 + 0x33c)
+1001cdbe int32_t result = sub_10020ce0(arg1)
+1001cdc7 char _Destination_3[0x10]
+1001cdc7 char _Destination_4[0x40]
+1001cdc7 char _Destination_5[0x404]
+1001cdc7 
+1001cdc7 if (result == 0)
+1001cf94     strcpy_s(&_Destination_3, 0x10, "success")
+1001cfaa     strcpy_s(&_Destination_4, 0x40, *(arg1 + 0x34) + 0x48)
+1001cfc5     strcpy_s(&_Destination_5, 0x400, *(arg1 + 0x34) + 0x88)
+1001cfd8     write_flash_event_user_auth(&_Destination, *(arg1 + 0x1c) + 0xb4c)
+1001cfee     int32_t eax_43
+1001cfee     
+1001cfee     if (*(arg1 + 0x18a8) != 0 || arg3 == 0)
+1001cff7         eax_43 = 0
+1001cfee     else
+1001cff0         eax_43 = 1
+1001cff0     
+1001d007     int32_t eax_45
+1001d007     int32_t ecx_22
+1001d007     eax_45, ecx_22 = sub_10006c60(*(arg1 + 0x28), arg1 + 0x1980, arg2, eax_43)
+1001d007     
+1001d00e     if (eax_45 != 0)
+1001d010         int32_t ecx_23 = *(arg1 + 0x1c)
+1001d030         opdbg_log("QCFlashWorker::doActionVerify", 0x1077, 
+1001d030             "[%s] [%s] ERROR: Flashing is not allowed due to the verification error.", 
+1001d030             ecx_23 + 0x9e4, ecx_23 + 0x444)
+1001d03f         sub_10024880(arg1, "firehouse_exec_command_error(verify)")
+1001d058         CookieCheckFunction(0x791b)
+1001d060         return 0x791b
+1001d060     
+1001d069     int32_t eax_49 = *(*(arg1 + 0x1764) + 0xa0)
+1001d069     
+1001d077     if (eax_49 == 4 || eax_49 == 1)
+1001d07c         *(*(arg1 + 0x2c) + 0x14) = 0
+1001d07c     
+1001d083     int32_t var_774_21 = ecx_22
+1001d086     sub_10023040(arg1)
+1001d086     
+1001d092     if (*(arg1 + 0x304da4) != 0)
+1001d098         sub_10023310(arg1, 1)
+1001d0a3         sub_10022d50(arg1, 1, 0)
+1001d0a3     
+1001d0b6     CookieCheckFunction(0)
+1001d0be     return 0
+1001d0be 
+1001cdcd int32_t eax_12 = *(arg1 + 0x34)
+1001cdd0 int32_t edx = *(arg1 + 0x1c)
+1001cdfc opdbg_log("QCFlashWorker::doActionVerify", 0x1049, 
+1001cdfc     "[%s] [%s] ERROR: Error occurred when signing data, ret = %d. Status = %s, Message = %s", 
+1001cdfc     edx + 0x9e4, edx + 0x444, result, eax_12 + 0x48, eax_12 + 0x88)
+1001ce11 strcpy_s(&_Destination_3, 0x10, "fail")
+1001ce27 strcpy_s(&_Destination_4, 0x40, *(arg1 + 0x34) + 0x48)
+1001ce42 strcpy_s(&_Destination_5, 0x400, *(arg1 + 0x34) + 0x88)
+1001ce55 write_flash_event_user_auth(&_Destination, *(arg1 + 0x1c) + 0xb4c)
+1001ce55 
+1001ce64 if (result == 0x7d0c)
+1001ce6c     sub_10024880(arg1, "package_is_old()")
+1001ce78     reportIssue("E0504002", 0)
+1001ce8f     CookieCheckFunction(result)
+1001ce97     return result
+1001ce97 
+1001cea0 if (result == 0x7535)
+1001cea8     void* var_774_9 = arg1 + 0x23c
+1001ceaf     sub_10024880(arg1, "qcom_unsupport_platform(%s)")
+1001cec5     CookieCheckFunction(result)
+1001cecd     return result
+1001cecd 
+1001ced6 int32_t eax_26 = auth_get_current_type() - 1
+1001ced6 
+1001ceda if (eax_26 u> 5)
+1001cf4c     void* const var_774_15 = &data_1006a03d
+1001cf51     void* const var_778_12 = &data_1006a03d
+1001cf56     char const* const var_77c_14 = "UNKNOWN TYPE"
+1001ceda else
+1001cedc     switch (eax_26)
+1001cee3         case 0
+1001cee3             int32_t ecx_14 = *(arg1 + 0x34)
+1001ceec             int32_t var_774_10 = ecx_14 + 0x88
+1001cef0             int32_t var_778_7 = ecx_14 + 0x48
+1001cef1             void* const var_77c_9 = &data_10070fa4
+1001cef8         case 1
+1001cef8             int32_t ecx_15 = *(arg1 + 0x34)
+1001cf01             int32_t var_774_11 = ecx_15 + 0x88
+1001cf05             int32_t var_778_8 = ecx_15 + 0x48
+1001cf06             char const* const var_77c_10 = "OCSM"
+1001cf0d         case 2
+1001cf0d             int32_t ecx_16 = *(arg1 + 0x34)
+1001cf16             int32_t var_774_12 = ecx_16 + 0x88
+1001cf1a             int32_t var_778_9 = ecx_16 + 0x48
+1001cf1b             char const* const var_77c_11 = "WCSM"
+1001cf22         case 3
+1001cf22             int32_t ecx_17 = *(arg1 + 0x34)
+1001cf2b             int32_t var_774_13 = ecx_17 + 0x88
+1001cf2f             int32_t var_778_10 = ecx_17 + 0x48
+1001cf30             char const* const var_77c_12 = "RCSM"
+1001cf37         case 4, 5
+1001cf37             int32_t ecx_18 = *(arg1 + 0x34)
+1001cf40             int32_t var_774_14 = ecx_18 + 0x88
+1001cf44             int32_t var_778_11 = ecx_18 + 0x48
+1001cf45             char const* const var_77c_13 = "TOOLSHUB"
+1001cf45 
+1001cf61 sub_10024880(arg1, "flash_sign_error(%s, %s, %s)")
+1001cf7a CookieCheckFunction(0x7d0b)
+1001cf82 return 0x7d0b

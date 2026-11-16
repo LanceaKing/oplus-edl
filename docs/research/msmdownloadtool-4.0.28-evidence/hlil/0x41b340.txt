@@ -1,0 +1,149 @@
+0041b34e int32_t __saved_ebp
+0041b34e int32_t eax_1 = __security_cookie ^ &__saved_ebp
+0041b35e int32_t* eax_2 = sub_42e7e5(0xc)
+0041b35e 
+0041b368 if (eax_2 == 0)
+0041b380     eax_2 = nullptr
+0041b368 else
+0041b36a     *eax_2 = 0
+0041b370     eax_2[1] = 0
+0041b377     eax_2[2] = 0
+0041b377 
+0041b382 *arg1 = eax_2
+0041b3a6 HKEY var_640
+0041b3a6 
+0041b3a6 if (RegOpenKeyExW(0x80000002, u"SYSTEM\CurrentControlSet\Enum\USB\VID_05C6&PID_9008", 0, KEY_READ, 
+0041b3a6         &var_640) != NO_ERROR)
+0041b3ae     enum WIN32_ERROR eax_4 = RegCloseKey(var_640)
+0041b3ba     sub_54a573(eax_1 ^ &__saved_ebp)
+0041b3c2     return eax_4
+0041b3c2 
+0041b3cb uint32_t dwIndex = 0
+0041b3cb 
+0041b3db while (true)
+0041b3db     wchar16 name = 0
+0041b3e9     char var_632[0x204]
+0041b3e9     _memset(&var_632, 0, 0x206)
+0041b3f1     uint32_t lpcchName = 0x208
+0041b418     enum WIN32_ERROR eax_5 =
+0041b418         RegEnumKeyExW(var_640, dwIndex, &name, &lpcchName, nullptr, nullptr, nullptr, nullptr)
+0041b418     
+0041b427     if (eax_5 != NO_ERROR && eax_5 != ERROR_MORE_DATA)
+0041b6c2         enum WIN32_ERROR eax_23 = RegCloseKey(var_640)
+0041b6cc         sub_54a573(eax_1 ^ &__saved_ebp)
+0041b6d4         return eax_23
+0041b6d4     
+0041b435     int16_t subKey = 0
+0041b443     char var_42a[0x206]
+0041b443     _memset(&var_42a, 0, 0x206)
+0041b44b     int32_t eax_6 = 0
+0041b465     void var_42e
+0041b465     int16_t i
+0041b465     
+0041b465     do
+0041b450         i = *(eax_6 + u"SYSTEM\CurrentControlSet\Enum\USB\VID_05C6&PID_9008")
+0041b457         eax_6 += 2
+0041b45a         *(&var_42e + eax_6) = i
+0041b465     while (i != 0)
+0041b46d     int32_t* edi_1 = &var_42e
+0041b46d     
+0041b47a     do
+0041b470         eax_6.w = *(edi_1 + 2)
+0041b474         edi_1 += 2
+0041b47a     while (eax_6.w != 0)
+0041b47a     
+0041b481     wchar16* edx_1 = &name
+0041b487     *edi_1 = 0x5c
+0041b499     wchar16 i_1
+0041b499     
+0041b499     do
+0041b490         i_1 = *edx_1
+0041b493         edx_1 = &edx_1[1]
+0041b499     while (i_1 != 0)
+0041b499     
+0041b4a1     int32_t edx_2 = edx_1 - &name
+0041b4a3     void* edi_2 = &var_42e
+0041b4a3     
+0041b4b0     do
+0041b4a6         i_1 = *(edi_2 + 2)
+0041b4aa         edi_2 += 2
+0041b4b0     while (i_1 != 0)
+0041b4b0     
+0041b4bd     int32_t esi
+0041b4bd     int32_t edi_3
+0041b4bd     edi_3, esi = __builtin_memcpy(edi_2, &name, edx_2 u>> 2 << 2)
+0041b4d3     __builtin_memcpy(edi_3, esi, edx_2 & 3)
+0041b4da     HKEY var_63c
+0041b4da     enum WIN32_ERROR eax_7 = RegOpenKeyExW(0x80000002, &subKey, 0, KEY_READ, &var_63c)
+0041b4da     
+0041b4de     if (eax_7 == NO_ERROR)
+0041b4ea         int16_t data = eax_7.w
+0041b4f8         enum REG_VALUE_TYPE type = REG_SZ
+0041b502         char var_222[0x206]
+0041b502         _memset(&var_222, eax_7.b, 0x206)
+0041b50c         uint32_t lpcbData = 0x208
+0041b516         char* eax_8 = sub_42e7e5(0x824)
+0041b525         char* var_638 = eax_8
+0041b52b         _memset(eax_8, 0, 0x824)
+0041b52b         
+0041b55d         if (RegQueryValueExW(var_63c, u"FriendlyName", nullptr, &type, &data, &lpcbData)
+0041b55d                 == NO_ERROR)
+0041b57b             __builtin_memcpy(&eax_8[0x208], &data, 0x208)
+0041b57e             int128_t* eax_11 = _wcsstr(&eax_8[0x208], 0x5b9328)
+0041b588             int128_t* ecx_8 = eax_11
+0041b58f             int16_t var_1c
+0041b58f             __builtin_memset(&var_1c, 0, 0x14)
+0041b59c             void* edx_3 = ecx_8 + 2
+0041b5a9             int16_t i_2
+0041b5a9             
+0041b5a9             do
+0041b5a0                 i_2 = *ecx_8
+0041b5a3                 ecx_8 += 2
+0041b5a9             while (i_2 != 0)
+0041b5bb             sub_54e5d0(&eax_8[0x618], eax_11, ((ecx_8 - edx_3) s>> 1) - 1)
+0041b5c0             int128_t* ecx_11 = eax_11
+0041b5c5             void* edx_4 = ecx_11 + 2
+0041b5d9             int16_t i_3
+0041b5d9             
+0041b5d9             do
+0041b5d0                 i_3 = *ecx_11
+0041b5d3                 ecx_11 += 2
+0041b5d9             while (i_3 != 0)
+0041b5eb             sub_54e5d0(&var_1c, eax_11 + 6, ((ecx_11 - edx_4) s>> 1) - 1)
+0041b5f3             int16_t* var_670_2 = &var_1c
+0041b5fc             *(eax_8 + 0x820) = sub_54b3d7()
+0041b5fc         
+0041b62c         if (RegQueryValueExW(var_63c, u"LocationInformation", nullptr, &type, &data, &lpcbData)
+0041b62c                 == NO_ERROR)
+0041b63b             __builtin_memcpy(eax_8, &data, 0x208)
+0041b63b         
+0041b643         int32_t* ecx_14 = &var_638
+0041b649         int32_t* esi_2 = *arg1
+0041b64b         int32_t eax_19 = esi_2[1]
+0041b64b         
+0041b650         if (&var_638 u< eax_19)
+0041b652             ecx_14 = *esi_2
+0041b652         
+0041b65c         if (&var_638 u>= eax_19 || ecx_14 u> &var_638)
+0041b685             if (eax_19 == esi_2[2])
+0041b687                 int32_t* var_664_7 = ecx_14
+0041b68a                 sub_404830(esi_2)
+0041b68a             
+0041b68f             void** eax_22 = esi_2[1]
+0041b68f             
+0041b694             if (eax_22 != 0)
+0041b696                 *eax_22 = eax_8
+0041b65c         else
+0041b668             if (eax_19 == esi_2[2])
+0041b66a                 int32_t* var_664_6 = ecx_14
+0041b66d                 sub_404830(esi_2)
+0041b66d             
+0041b672             int32_t* ecx_16 = esi_2[1]
+0041b672             
+0041b677             if (ecx_16 != 0)
+0041b67e                 *ecx_16 = *(*esi_2 + ((&var_638 - ecx_14) s>> 2 << 2))
+0041b67e         
+0041b69e         esi_2[1] += 4
+0041b69e     
+0041b6ae     RegCloseKey(var_63c)
+0041b6b6     dwIndex += 1

@@ -1,0 +1,60 @@
+004c2f43 void* var_8 = arg1
+004c2f47 int32_t var_18 = 0x1000
+004c2f4e int32_t* eax = sub_56c4c8()
+004c2f4e 
+004c2f5d if (eax == 0)
+004c2f6e     int32_t* esi_1 = _fopen("D:/ToolLog.txt", "a+")
+004c2f6e     
+004c2f75     if (esi_1 == 0)
+004c2fa8         esi_1 = _fopen("C:/ToolLog.txt", "a+")
+004c2fa8         
+004c2faf         if (esi_1 != 0)
+004c2f7d             _fprintf(esi_1, "Failed to allocate buffer\n")
+004c2f83             _fclose(esi_1)
+004c2f75     else
+004c2f7d         _fprintf(esi_1, "Failed to allocate buffer\n")
+004c2f83         _fclose(esi_1)
+004c2f83     
+004c2f96     return 1
+004c2f96 
+004c2fbb void* eax_4 = sub_4c5000(arg1, arg2, 0)
+004c2fc2 void* result
+004c2fc2 
+004c2fc2 if (eax_4 != 0)
+004c3032     result = sub_4c2d70(arg1, arg2, eax)
+004c3032     
+004c3036     if (result == 0)
+004c3081         void* var_18_4 = arg1
+004c308d         int32_t esi_2 = sub_4c4210(arg2, eax, arg3) - 1
+004c3090         int32_t esi_3 = neg.d(esi_2)
+004c30a5         *j_sub_688543(eax)
+004c30a6         return neg.d(sbb.d(esi_3, esi_3, esi_2 != 0))
+004c30a6     
+004c3047     int32_t* edi_1 = _fopen("D:/ToolLog.txt", "a+")
+004c3047     
+004c304e     if (edi_1 != 0)
+004c306e         _fprintf(edi_1, "Failed to get param encrypted region\n")
+004c3074         _fclose(edi_1)
+004c304e     else
+004c305f         edi_1 = _fopen("C:/ToolLog.txt", "a+")
+004c305f         
+004c3066         if (edi_1 != 0)
+004c306e             _fprintf(edi_1, "Failed to get param encrypted region\n")
+004c3074             _fclose(edi_1)
+004c2fc2 else
+004c2fce     result = eax_4 + 1
+004c2fd6     int32_t* ebx_1 = _fopen("D:/ToolLog.txt", "a+")
+004c2fd6     
+004c2fdd     if (ebx_1 != 0)
+004c2ff7     label_4c2ff7:
+004c2ff7         int32_t var_18_1 = arg2
+004c2ffe         _fprintf(ebx_1, "Encrytped block of item %d is incorrect\n")
+004c3007         _fclose(ebx_1)
+004c2fdd     else
+004c2fee         ebx_1 = _fopen("C:/ToolLog.txt", "a+")
+004c2fee         
+004c2ff5         if (ebx_1 != 0)
+004c2ff5             goto label_4c2ff7
+004c2ff5 
+004c3022 *j_sub_688543(eax)
+004c3023 return result

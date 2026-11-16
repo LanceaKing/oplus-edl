@@ -1,0 +1,47 @@
+0069f3aa push    ebp
+0069f3ab mov     ebp, esp
+0069f3ad push    esi
+0069f3ae mov     esi, dword [ebp+0x8]
+0069f3b1 test    esi, esi
+0069f3b3 je      0x69f3d0
+0069f3d0 imul    esi, dword [ebp+0xc]
+0069f3d4 test    esi, esi
+0069f3d6 jne     0x69f3d9
+0069f3b5 push    0xffffffe0
+0069f3b7 xor     edx, edx
+0069f3b9 pop     eax
+0069f3ba div     esi
+0069f3bc cmp     eax, dword [ebp+0xc]
+0069f3bf jae     0x69f3d0
+0069f3d9 xor     ecx, ecx
+0069f3db cmp     esi, 0xffffffe0
+0069f3de ja      0x69f3f5
+0069f3d8 inc     esi
+0069f3c1 call    0x68ce9c
+0069f3f5 cmp     dword [0x7dd084], 0x0
+0069f3fc je      0x69f412
+0069f3e0 push    esi
+0069f3e1 push    0x8
+0069f3e3 push    dword [0x7dc700]
+0069f3e9 call    0x979945
+0069f3ee retn    
+0069f421 pop     esi
+0069f422 pop     ebp
+0069f423 retn    
+0069f412 mov     eax, dword [ebp+0x10]
+0069f415 test    eax, eax
+0069f417 je      0x69f41f
+0069f3fe push    esi
+0069f3ff call    0x6a00e5
+0069f404 pop     ecx
+0069f405 test    eax, eax
+0069f407 jne     0x69f3d9
+0069f41f mov     eax, ecx
+0069f419 mov     dword [eax], 0xc
+0069f409 mov     eax, dword [ebp+0x10]
+0069f40c test    eax, eax
+0069f40e je      0x69f3cc
+0069f3cc xor     eax, eax
+0069f3ce jmp     0x69f421
+0069f410 jmp     0x69f3c6
+0069f3c6 mov     dword [eax], 0xc

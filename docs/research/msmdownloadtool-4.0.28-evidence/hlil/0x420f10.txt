@@ -1,0 +1,434 @@
+00420f1e void var_3c
+00420f1e int32_t eax_1 = __security_cookie ^ &var_3c
+00420f27 void* var_2c = nullptr
+00420f31 int32_t var_4c = 0x1000
+00420f38 char var_14 = 0
+00420f3d enum WIN32_ERROR ebx = ERROR_INVALID_FUNCTION
+00420f42 int32_t var_13 = 0
+00420f46 int16_t var_f = 0
+00420f4b char var_d = 0
+00420f4f enum WIN32_ERROR var_1c = NO_ERROR
+00420f53 void** var_38 = 0xffffffff
+00420f5f int32_t* var_30 = nullptr
+00420f63 char var_3a = 0
+00420f67 uint8_t* eax_2 = sub_42e817()
+00420f6c char ecx = 0
+00420f6c 
+00420f84 if (*(arg1 + 0x19) != 0)
+00420f84     ecx = 1
+00420f84 
+00420f87 int32_t eax_3 = 2
+00420f8c char var_20 = ecx
+00420f90 char var_28 = ecx
+00420fa9 enum WIN32_ERROR edi_2
+00420fa9 
+00420fa9 while (true)
+00420fa9     LPARAM lParam
+00420fa9     
+00420fa9     if (*(arg1 + 0x1b) == 0)
+00420fb2         lParam = u"Open Serial device"
+00420fa9     else
+00420fab         lParam = &data_5bb028
+00420fab     
+00420fc0     SendMessageW(arg1[0xc], 0x178c, zx.d((arg1[0xb].w).b) << 0x10, lParam)
+00420fc5     sub_4264e0(arg1[8])
+00420fc5     
+00420fe0     if (sub_4263e0(arg1[8], arg1[0x17] + 0x414) != 0)
+004215dc         LPARAM lParam_5
+004215dc         
+004215dc         if (*(arg1 + 0x1b) == 0)
+004215e5             lParam_5 = u"Open Serial Device Failed"
+004215dc         else
+004215de             lParam_5 = &data_5bb060
+004215de         
+004215f3         SendMessageW(arg1[0xc], 0x178c, (zx.d((arg1[0xb].w).b) | 0x100) << 0x10, lParam_5)
+004215f5         eax_3 -= 1
+004215f5         
+004215ff         if (eax_3 s> 0 && eax_3 != 0)
+004215ff             continue
+00420fe0     else
+00420fe9         *(arg1[8] + 4) = 3
+00420ff5         int32_t* edi_1 = arg1[0x19]
+00420ffd         int32_t eax_12
+00420ffd         int32_t edx_1
+00420ffd         edx_1:eax_12 = muls.dp.d(0x66666667, edi_1[1] - *edi_1)
+00420fff         int32_t edx_2 = edx_1 s>> 6
+00420fff         
+00421009         if (edx_2 u>> 0x1f != neg.d(edx_2))
+0042100d             var_2c = *edi_1
+0042100d         
+0042101c         Sleep(0xc8)
+00421029         edi_2 = sub_421bc0(arg1, var_2c)
+00421029         
+0042102d         if (edi_2 != NO_ERROR)
+0042102d             break
+0042102d         
+00421038         Sleep(0xc8)
+00421050         LPARAM lParam_1
+00421050         
+00421050         if (*(arg1 + 0x1b) == 0)
+00421059             lParam_1 = u"Try Firehose Communication Handshake"
+00421050         else
+00421052             lParam_1 = 0x5bb0a8
+00421052         
+00421067         SendMessageW(arg1[0xc], 0x178c, zx.d((arg1[0xb].w).b) << 0x10, lParam_1)
+00421069         arg1[0xa]
+00421071         edi_2 = sub_4286a0()
+00421071         
+00421075         if (edi_2 != NO_ERROR)
+0042180f             LPARAM lParam_6
+0042180f             
+0042180f             if (*(arg1 + 0x1b) == 0)
+00421818                 lParam_6 = u"Firehose Communication Handshake Failed"
+0042180f             else
+00421811                 lParam_6 = 0x5bb11c
+00421811             
+00421826             SendMessageW(arg1[0xc], 0x178c, (zx.d((arg1[0xb].w).b) | 0x100) << 0x10, lParam_6)
+00421826             break
+00421826             break
+00421826         
+00421080         Sleep(0x3e8)
+00421096         LPARAM lParam_2
+00421096         
+00421096         if (*(arg1 + 0x1b) == 0)
+0042109f             lParam_2 = u"Setting Firehose Communication data transmission"
+00421096         else
+00421098             lParam_2 = "ck(WM"
+00421098         
+004210ad         SendMessageW(arg1[0xc], 0x178c, zx.d((arg1[0xb].w).b) << 0x10, lParam_2)
+004210b6         int32_t var_50_4
+004210b6         char var_4c_2
+004210b6         
+004210b6         if (arg1[7].b == 0)
+004210c0             var_4c_2 = 0
+004210c2             var_50_4 = 0
+004210b6         else
+004210b8             var_4c_2 = var_28
+004210bc             var_50_4 = 1
+004210bc         
+004210c9         enum WIN32_ERROR eax_25 = sub_428a80(arg1[0xa], 0x80000, var_50_4, var_4c_2)
+004210ce         edi_2 = eax_25
+004210ce         
+004210d2         if (edi_2 != NO_ERROR)
+004210d2             break
+004210d2         
+004210db         LRESULT (__stdcall* const ebx_1)(HWND hWnd, uint32_t Msg, WPARAM wParam, LPARAM lParam)
+004210db         
+004210db         if (arg1[7].b == eax_25.b)
+0042118b         label_42118b:
+0042118b             ebx_1.b = var_3a
+004210db         else
+004210e6             Sleep(0xc8)
+004210fc             LPARAM lParam_3
+004210fc             
+004210fc             if (*(arg1 + 0x1b) == 0)
+00421105                 lParam_3 = u"Firehose GetUfsInfo"
+004210fc             else
+004210fe                 lParam_3 = 0x5bb224
+004210fe             
+00421113             SendMessageW(arg1[0xc], 0x178c, zx.d((arg1[0xb].w).b) << 0x10, lParam_3)
+00421122             enum WIN32_ERROR eax_29 = sub_429680(arg1[0xa], &var_14, &var_1c)
+00421127             edi_2 = eax_29
+00421127             
+0042112b             if (edi_2 != NO_ERROR)
+00421649                 char edx_15 = (arg1[0xb]).b
+0042164c                 HWND ecx_44 = arg1[0xc]
+0042164c                 
+00421651                 if (*(arg1 + 0x1b) == 0)
+0042166e                     sub_420d10(eax_29, edx_15, ecx_44, 0, u"Firehose GetUfsInfo Failed", 1)
+00421651                 else
+0042165a                     sub_420d10(eax_29, edx_15, ecx_44, 0, 0x5bb260, 1)
+0042165a                 
+00421651                 break
+00421651             
+00421131             int32_t* eax_30 = arg1[0x1a]
+00421134             ebx_1 = edi_2
+00421140             int32_t eax_31
+00421140             int32_t edx_3
+00421140             edx_3:eax_31 = muls.dp.d(0x66666667, eax_30[1] - *eax_30)
+00421142             int32_t edx_4 = edx_3 s>> 6
+00421147             uint32_t eax_33 = edx_4 u>> 0x1f
+00421147             
+00421150             if (eax_33 == neg.d(edx_4))
+0042118b             label_42118b_1:
+0042118b                 ebx_1.b = var_3a
+00421150             else
+00421157                 while (true)
+00421157                     int32_t* eax_37 = *arg1[0x1a] + edi_2
+00421160                     var_30 = eax_37
+00421160                     
+00421164                     if (arg1[0x400e4].b != 0)
+0042163a                         sub_54a573(eax_1 ^ &var_3c)
+00421642                         return 0x4c7
+00421642                     
+00421178                     if (sub_4094a0(eax_37, &var_14) == 0)
+0042121d                         ebx_1.b = 1
+0042121f                         var_3a = 1
+00421223                         break
+00421223                     
+0042117e                     ebx_1 += 1
+0042117f                     edi_2 += 0xa0
+0042117f                     
+00421189                     if (ebx_1 u>= eax_33 + edx_4)
+00421189                         goto label_42118b_1
+00421189         
+0042119a         enum WIN32_ERROR eax_39 = sub_421e60(arg1, &var_38, var_1c)
+0042119f         edi_2 = eax_39
+0042119f         
+004211a3         if (edi_2 != NO_ERROR)
+004211a3             break
+004211a3         
+004211c7         enum WIN32_ERROR edi_3
+004211c7         
+004211c7         if (arg1[7].b != eax_39.b && *(arg1 + 0x19) != eax_39.b && ebx_1.b != 0
+004211c7                 && var_20 != eax_39.b)
+004211da             sub_420d10(eax_39, (arg1[0xb]).b, arg1[0xc], eax_39.w, u"Provisioning UFS", eax_39)
+004211e7             Sleep(0xc8)
+004211f1             enum WIN32_ERROR eax_40
+004211f1             
+004211f1             if (arg1[0xd].b == 0)
+0042122f                 eax_40 = sub_429280(arg1[0xa], var_30)
+004211f1             else
+004211fe                 _memset(eax_2, edi_2.b, 0x1000)
+00421208                 int32_t* var_4c_7 = var_30
+0042120d                 sub_425f60(arg1, eax_2)
+00421216                 eax_40 = sub_429000(arg1[0xa], eax_2)
+00421216             
+00421234             edi_3 = eax_40
+00421234             
+00421238             if (edi_3 != NO_ERROR)
+0042168a                 sub_420d10(eax_40, (arg1[0xb]).b, arg1[0xc], 0, u"Provisioning UFS failed", 1)
+00421694             label_421694:
+00421694                 sub_420e70(arg1)
+004216a4                 sub_54a573(eax_1 ^ &var_3c)
+004216ac                 return edi_3
+004216ac             
+00421246             sub_429da0(arg1[0xa], "reset_to_edl")
+0042124f             ebx = NO_ERROR
+00421258             LPARAM var_50_10
+00421258             
+00421258             if (*(arg1 + 0x1b) == 0)
+00421261                 var_50_10 = u"reset_to_edl"
+00421258             else
+0042125a                 var_50_10 = 0x5bb314
+0042125a             
+00421268             sub_420d10(0, (arg1[0xb]).b, arg1[0xc], 0, var_50_10, edi_3)
+00421272             sub_420e70(arg1)
+00421280             Sleep(0x1388)
+0042128e             var_20 = 0
+00421292             var_28 = 0
+00421296             eax_3 -= 1
+00421279             goto label_4215fd
+00421279         
+0042129f         void** ebx_3 = var_38
+004212ab         edi_2 = sub_423090(arg1, ebx_3)
+004212ab         
+004212af         if (edi_2 != NO_ERROR)
+004217ce             int32_t* eax_80 = _fopen("C:/ToolLog.txt", "a+")
+004217ce             
+004217da             if (eax_80 != 0)
+004217e0                 int32_t var_4c_32 = arg1[0xb] + 1
+004217e7                 _fprintf(eax_80, "[%d] ReadParamRegion Failed.\n")
+004217f0                 _fclose(eax_80)
+004217f0             
+004217da             break
+004217da             break
+004217da         
+004212c5         LPARAM lParam_4
+004212c5         
+004212c5         if (*(arg1 + 0x1b) == 0)
+004212ce             lParam_4 = u"Recording download time"
+004212c5         else
+004212c7             lParam_4 = "ck(W"
+004212c7         
+004212e1         SendMessageW(arg1[0xc], 0x178c, zx.d((arg1[0xb].w).b) << 0x10, lParam_4)
+004212ff         SendMessageW(arg1[0xc], 0x178c, zx.d((arg1[0xb].w).b) << 0x10, &arg1[0xa4])
+0042131e         SendMessageW(arg1[0xc], 0x178c, zx.d((arg1[0xb].w).b) << 0x10 | 1, &arg1[0xa4])
+00421326         sub_423290(arg1)
+00421334         int32_t eax_53 = 0xf0
+00421334         
+00421339         if (*(arg1 + 0x19) != 0)
+00421339             eax_53 = 0x30
+00421339         
+0042133e         void** var_4c_14 = ebx_3
+0042133f         *(eax_53 + arg1 + 0x3390) = 0x53
+0042134f         ebx = sub_423190(arg1)
+0042134f         
+00421353         if (ebx != NO_ERROR)
+0042177a             int32_t* eax_78 = _fopen("C:/ToolLog.txt", "a+")
+0042177a             
+00421786             if (eax_78 != 0)
+0042178c                 int32_t var_4c_30 = arg1[0xb] + 1
+00421793                 _fprintf(eax_78, "[%d] WriteParamRegion Failed.\n")
+0042179c                 _fclose(eax_78)
+0042179c             
+004217a4             void* eax_79 = arg1[8]
+004217a7             HANDLE hFile = *(eax_79 + 8)
+004217aa             *(eax_79 + 4) = 4
+004217b1             CancelIo(hFile)
+004217ba             sub_4264e0(arg1[8])
+00421621             sub_54a573(eax_1 ^ &var_3c)
+00421629             return ebx
+00421629         
+00421359         void** ebx_4 = var_38
+00421360         enum WIN32_ERROR eax_55 = sub_422360(arg1, ebx_4)
+00421365         edi_3 = eax_55
+00421365         
+00421369         if (edi_3 != NO_ERROR)
+00421369             goto label_421694
+00421369         
+00421379         LPARAM var_50_14
+00421379         
+00421379         if (*(arg1 + 0x1b) == eax_55.b)
+00421382             var_50_14 = u"Write patch to DISK"
+00421379         else
+0042137b             var_50_14 = 0x5bb3cc
+0042137b         
+00421389         sub_420d10(eax_55, (arg1[0xb]).b, arg1[0xc], 0, var_50_14, eax_55)
+00421393         char* eax_56 = sub_425dc0(arg1)
+00421393         
+0042139c         if (eax_56 != 0)
+0042173b             LPARAM var_50_22
+0042173b             
+0042173b             if (*(arg1 + 0x1b) == 0)
+00421744                 var_50_22 = u"Write patch to DISK Failed"
+0042173b             else
+0042173d                 var_50_22 = 0x5bb410
+0042173d             
+0042174b             sub_420d10(eax_56, (arg1[0xb]).b, arg1[0xc], 0, var_50_22, 1)
+00421755             sub_420e70(arg1)
+00421765             sub_54a573(eax_1 ^ &var_3c)
+0042176d             return eax_56
+0042176d         
+004213a7         Sleep(0x3e8)
+004213b0         enum WIN32_ERROR eax_57 = sub_423090(arg1, ebx_4)
+004213b0         
+004213b9         if (eax_57 != NO_ERROR)
+004216f9             int32_t* eax_76 = _fopen("C:/ToolLog.txt", "a+")
+004216f9             
+00421705             if (eax_76 != 0)
+0042170b                 int32_t var_4c_28 = arg1[0xb] + 1
+00421712                 _fprintf(eax_76, "[%d] ReadParamRegion Failed.\n")
+0042171b                 _fclose(eax_76)
+0042171b             
+00421725             sub_420e70(arg1)
+00421621             sub_54a573(eax_1 ^ &var_3c)
+00421629             return eax_57
+00421629         
+004213c9         LPARAM var_50_15
+004213c9         
+004213c9         if (*(arg1 + 0x1b) == eax_57.b)
+004213d2             var_50_15 = u"Recording download time"
+004213c9         else
+004213cb             var_50_15 = "ck(W"
+004213cb         
+00421405         sub_420d10(
+00421405             sub_420d10(sub_420d10(eax_57, (arg1[0xb]).b, arg1[0xc], 0, var_50_15, eax_57), 
+00421405                 (arg1[0xb]).b, arg1[0xc], 0, &arg1[0xa4], 0), 
+00421405             (arg1[0xb]).b, arg1[0xc], 1, &arg1[0xa4], 0)
+0042140f         sub_423290(arg1)
+0042140f         
+00421418         if (*(arg1 + 0x19) != 1 && *(arg1 + 0x1d) != 0)
+00421420             arg1[0xd4a] = 0
+0042142a             arg1[0xd4b] = 0
+0042142a         
+00421438         if (*(arg1 + 0x19) == 1 || *(arg1 + 0x3d) == 1)
+0042143a             arg1[0xd4c] = 1
+0042143a         
+00421448         if (*(arg1 + 0x37) == 0)
+00421465             arg1[0xd4d] = 0
+00421465             
+00421473             if (arg1[0xf].b != 0)
+00421475                 arg1[0xd4e] = 0
+00421448         else
+0042144a             arg1[0xd4d] = 1
+0042144a             
+00421458             if (arg1[0xf].b != 0)
+0042145d                 arg1[0xd4e] = arg1[0xe]
+0042145d         
+00421488         void** var_4c_19 = var_38
+0042148c         int32_t eax_61 = 0xf0
+0042148c         
+00421491         if (*(arg1 + 0x19) != 0)
+00421491             eax_61 = 0x30
+00421491         
+00421496         *(eax_61 + arg1 + 0x3390) = 0x46
+004214a6         ebx = sub_423190(arg1)
+004214a6         
+004214aa         if (ebx != NO_ERROR)
+004216b9             int32_t* eax_75 = _fopen("C:/ToolLog.txt", "a+")
+004216b9             
+004216c5             if (eax_75 != 0)
+004216cb                 int32_t var_4c_26 = arg1[0xb] + 1
+004216d2                 _fprintf(eax_75, "[%d] WriteParamRegion Failed.\n")
+004216db                 _fclose(eax_75)
+004216db             
+004216e5             sub_420e70(arg1)
+00421621             sub_54a573(eax_1 ^ &var_3c)
+00421629             return ebx
+00421629         
+004214b5         int32_t eax_63 = Sleep(0xbb8)
+004214be         LPARAM var_50_18
+004214be         LRESULT eax_64
+004214be         
+004214be         if (*(arg1 + 0x1b) == ebx.b)
+004214f5             eax_64 = sub_420d10(sub_54c83d(&arg1[0xa4], u"Download Complete\n"), (arg1[0xb]).b, 
+004214f5                 arg1[0xc], 0, &arg1[0xa4], 2)
+004214fd             int32_t var_4c_21 = 2
+004214ff             var_50_18 = &arg1[0xa4]
+004214be         else
+004214ce             eax_64 = sub_420d10(eax_63, (arg1[0xb]).b, arg1[0xc], ebx.w, 0x5bb464, 2)
+004214d6             int32_t var_4c_20 = 2
+004214d8             var_50_18 = 0x5bb464
+004214d8         
+00421508         sub_420d10(eax_64, (arg1[0xb]).b, arg1[0xc], 1, var_50_18, 2)
+0042151a         int32_t* eax_66 = _fopen("C:/ToolLog.txt", "a+")
+0042151a         
+00421526         if (eax_66 != 0)
+0042152c             int32_t var_4c_22 = arg1[0xb] + 1
+00421533             _fprintf(eax_66, "[%d] Download Complete.\n")
+0042153c             _fclose(eax_66)
+0042153c         
+00421548         if (*(arg1 + 0x19) == 0)
+00421554             char const* const var_4c_24
+00421554             
+00421554             if (*(arg1 + 0x100391) == 0)
+0042155d                 var_4c_24 = &data_5bb4c0
+00421554             else
+00421556                 var_4c_24 = "reset"
+00421556             
+00421562             sub_429da0(arg1[0xa], var_4c_24)
+00421567             ebx = NO_ERROR
+00421567         
+0042156b         sub_420e70(arg1)
+0042156b         
+0042158a         if (ebx != NO_ERROR && eax_3 != 1 && arg1[0x400e4].b == 0)
+00421598             LPARAM var_50_20
+00421598             
+00421598             if (*(arg1 + 0x1b) == 0)
+004215a1                 var_50_20 = u"Serial Download Failed, Ready to try again"
+00421598             else
+0042159a                 var_50_20 = 0x5bb4c4
+0042159a             
+004215a8             sub_420d10(0, (arg1[0xb]).b, arg1[0xc], 0, var_50_20, 1)
+004215b5             Sleep(0x3e8)
+004215c1             eax_3 -= 1
+004215fd         label_4215fd:
+004215fd             
+004215ff             if (eax_3 != 0)
+004215ff                 continue
+004215ff     
+0042160b     if (eax_2 == 0)
+00421621         sub_54a573(eax_1 ^ &var_3c)
+00421629         return ebx
+00421629     
+0042160e     j__free(eax_2)
+00421621     sub_54a573(eax_1 ^ &var_3c)
+00421629     return ebx
+00421629 
+00421828 void* eax_85 = arg1[8]
+0042182b *(eax_85 + 4) = 4
+00421835 CancelIo(*(eax_85 + 8))
+0042183e sub_4264e0(arg1[8])
+0042184e sub_54a573(eax_1 ^ &var_3c)
+00421856 return edi_2

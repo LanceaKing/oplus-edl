@@ -1,0 +1,815 @@
+180049d22 void var_478
+180049d22 int64_t rax_1 = __security_cookie ^ &var_478
+180049d33 void* r13 = arg2
+180049d4e void** var_428 = arg6
+180049d56 int128_t var_338 = zx.o(0)
+180049d61 int64_t var_328 = 0
+180049d68 int64_t var_320 = 7
+180049d73 var_338.w = 0
+180049d7b int128_t var_318 = zx.o(0)
+180049d83 int64_t var_308 = 0
+180049d8a int64_t var_300 = 7
+180049d95 var_318.w = 0
+180049d9d int128_t var_2f8 = zx.o(0)
+180049da5 int64_t var_2e8 = 0
+180049dac int64_t var_2e0 = 7
+180049db7 var_2f8.w = 0
+180049dbf int128_t var_2d8 = zx.o(0)
+180049dc7 int64_t var_2c8 = 0
+180049dce int64_t var_2c0 = 0xf
+180049dd9 var_2d8.b = 0
+180049de0 int128_t var_2b8 = zx.o(0)
+180049de8 int64_t var_2a8 = 0
+180049def int64_t var_2a0 = 0xf
+180049dfa var_2b8.b = 0
+180049e01 int16_t var_298 = 0
+180049e0e int64_t* rax_2
+180049e0e 
+180049e0e if (arg4[3] u<= 0xf)
+180049e15     rax_2 = arg4
+180049e0e else
+180049e10     rax_2 = *arg4
+180049e10 
+180049e18 int64_t* var_408 = rax_2
+180049e21 int64_t var_400 = arg4[2]
+180049e33 char rax_4
+180049e33 int16_t* rdx_1
+180049e33 int64_t r8
+180049e33 uint64_t r9
+180049e33 rax_4, rdx_1, r8, r9 = _input_l(&var_408, &var_338)
+180049e3a int32_t var_288
+180049e3a int128_t var_278
+180049e3a int128_t var_258
+180049e3a 
+180049e3a if (rax_4 == 0)
+180049e40     var_288 = 0xa
+180049e4e     int32_t var_284_1 = 0
+180049e55     int32_t var_280_1 = 0
+180049e5d     int32_t var_27c_1 = 0x641
+180049e6b     var_278 = zx.o(0)
+180049e73     int64_t var_268_1 = 0
+180049e7b     int64_t var_260_1 = 0xf
+180049e87     var_278.b = 0
+180049e8e     __builtin_memset(&var_258, 0, 0x20)
+180049eab     int64_t rax_5 = sub_1800d1b80(0x20, rdx_1, r8, r9)
+180049eb0     var_258.q = rax_5
+180049eb8     int64_t var_248_1 = 0x1c
+180049ec4     int64_t var_240_1 = 0x1f
+180049ed7     __builtin_strncpy(rax_5, "loader ticket URL is invalid", 0x1d)
+180049ee9     *arg6 = 0xa
+180049eef     arg6[1] = 0
+180049ef2     arg6[2] = 0
+180049ef6     arg6[3] = 0x641
+180049f09     sub_1800352b0(&arg6[4], &var_278)
+180049f1a     sub_1800352b0(&arg6[0xc], &var_258)
+180049f1a     
+180049f2b     if (var_240_1 u> 0xf)
+180049f30         void* rcx_3 = var_258.q
+180049f30         
+180049f3f         if (var_240_1 + 1 u>= 0x1000)
+180049f41             void* rax_6 = *(rcx_3 - 8)
+180049f41             
+180049f50             if (rcx_3 - rax_6 - 8 u> 0x1f)
+180049fab                 trap(0xd)
+180049fab             
+180049f56             rcx_3 = rax_6
+180049f56         
+180049f59         j_sub_18012c540(rcx_3)
+180049f59     
+180049f6a     if (var_260_1 u> 0xf)
+180049f73         void* rcx_6 = var_278.q
+180049f73         
+180049f82         if (var_260_1 + 1 u>= 0x1000)
+180049f84             void* rax_7 = *(rcx_6 - 8)
+180049f84             
+180049f93             if (rcx_6 - rax_7 - 8 u> 0x1f)
+180049fab                 trap(0xd)
+180049fab             
+180049f99             rcx_6 = rax_7
+180049f99         
+180049f9c         j_sub_18012c540(rcx_6)
+180049f9c     
+180049f6a     goto label_18004af36
+180049f6a 
+180049fbb void var_158
+180049fbb int64_t r8_2
+180049fbb uint64_t r9_1
+180049fbb r8_2, r9_1 = sub_180049a20(&var_158, arg4, zx.q(*arg3), r9)
+180049fcd void var_440
+180049fcd sub_18005ef90(&var_440, r13 + 0x110, r8_2, r9_1)
+180049fd3 char var_368 = 0
+180049fdb int32_t var_364_1 = 0
+180049fe6 int128_t var_360 = zx.o(0)
+180049fee int64_t var_350_1 = 0
+180049ff6 int64_t var_348_1 = 0xf
+18004a002 var_360.b = 0
+18004a026 int32_t var_3b8
+18004a026 int128_t var_3a8
+18004a026 int128_t var_388
+18004a026 int64_t result
+18004a026 
+18004a026 if (sub_18005f8b0(&var_440, &var_158, &var_368) != 0)
+18004a09e     int32_t rax_10 = sub_1800622a0(&var_440)
+18004a0a6     int32_t var_430 = rax_10
+18004a0b3     int32_t var_280
+18004a0b3     
+18004a0b3     if (rax_10 - 0xc8 u> 0x63)
+18004ae3f         var_288 = 0
+18004ae47         __builtin_memset(&var_280, 0, 0x31)
+18004ae7b         var_258:0xc.d = 0
+18004ae7b         
+18004aea2         if (sub_18004b530(&var_440, r13, rax_10, &var_288, arg6) == 0)
+18004aeb0             sub_180059a30(&var_288)
+18004aeb5             goto label_18004aec2
+18004aeb5         
+18004b118         int64_t r8_25
+18004b118         uint64_t r9_16
+18004b118         r8_25, r9_16 = sub_18005f7f0(&var_440)
+18004b118         
+18004b12a         if (((0xfffffe6f + rax_10) & 0xfffffffd) == 0)
+18004b172             var_3b8 = 9
+18004b17d             int32_t var_3b4_8 = rax_10
+18004b185             int32_t var_3b0_8 = 0
+18004b18d             int32_t var_3ac_8 = 0x643
+18004b19b             var_3a8 = zx.o(0)
+18004b1a3             int64_t var_398_7 = 0
+18004b1ab             int64_t var_390_7 = 0xf
+18004b1b7             var_3a8.b = 0
+18004b1bf             __builtin_memset(&var_388, 0, 0x20)
+18004b1d7             var_430.q = 0x2f
+18004b1ed             void* rax_54 = sub_180001480(&var_388, &var_430, r8_25, r9_16)
+18004b1f2             var_388.q = rax_54
+18004b1fa             int64_t var_378_1 = 0x26
+18004b206             int64_t rcx_149 = var_430.q
+18004b21a             __builtin_strncpy(rax_54, "PDS rejected the loader asset do", 0x20)
+18004b230             *(rax_54 + 0x1e) = 0x64616f6c6e776f64
+18004b235             *(rax_54 + 0x26) = 0
+18004b244             sub_180035500(arg6, &var_3b8)
+18004b244             
+18004b255             if (rcx_149 u> 0xf)
+18004b25a                 void* rcx_151 = var_388.q
+18004b25a                 
+18004b269                 if (rcx_149 + 1 u>= 0x1000)
+18004b26b                     void* rax_55 = *(rcx_151 - 8)
+18004b26b                     
+18004b27a                     if (rcx_151 - rax_55 - 8 u> 0x1f)
+18004b514                         trap(0xd)
+18004b514                     
+18004b284                     rcx_151 = rax_55
+18004b284                 
+18004b287                 j_sub_18012c540(rcx_151)
+18004b287             
+18004b298             if (var_390_7 u> 0xf)
+18004b29d                 void* rcx_154 = var_3a8.q
+18004b29d                 
+18004b2ac                 if (var_390_7 + 1 u>= 0x1000)
+18004b2ae                     void* rax_56 = *(rcx_154 - 8)
+18004b2ae                     
+18004b2bd                     if (rcx_154 - rax_56 - 8 u> 0x1f)
+18004b514                         trap(0xd)
+18004b514                     
+18004b2c7                     rcx_154 = rax_56
+18004b2c7                 
+18004b2ca                 j_sub_18012c540(rcx_154)
+18004b12a         else
+18004b14e             sub_180035500(arg6, 
+18004b14e                 sub_18003f260(&var_3b8, &var_288, "loader PDS asset request failed"))
+18004b15b             sub_1800040d0(&var_388)
+18004b168             sub_1800040d0(&var_3a8)
+18004b168         
+18004b2d8         sub_180059a30(&var_288)
+18004b2d8         
+18004b2ea         if (var_348_1 u> 0xf)
+18004b2ef             void* rcx_158 = var_360.q
+18004b2ef             
+18004b2fe             if (var_348_1 + 1 u>= 0x1000)
+18004b300                 void* rax_57 = *(rcx_158 - 8)
+18004b300                 
+18004b30f                 if (rcx_158 - rax_57 - 8 u> 0x1f)
+18004b51b                     trap(0xd)
+18004b51b                 
+18004b319                 rcx_158 = rax_57
+18004b319             
+18004b31c             j_sub_18012c540(rcx_158)
+18004b31c         
+18004b321         int64_t var_350_6 = 0
+18004b329         int64_t var_348_6 = 0xf
+18004b335         var_360.b = 0
+18004b342         sub_18005f120(&var_440)
+18004b350         sub_180059aa0(&var_158)
+18004b350         
+18004b362         if (var_2a0 u<= 0xf)
+18004b362             goto label_18004b399
+18004b362         
+18004b367         void* rcx_163 = var_2b8.q
+18004b367         
+18004b376         if (var_2a0 + 1 u< 0x1000)
+18004b376             goto label_18004b394
+18004b376         
+18004b378         void* rax_58 = *(rcx_163 - 8)
+18004b378         
+18004b387         if (rcx_163 - rax_58 - 8 u<= 0x1f)
+18004b391             rcx_163 = rax_58
+18004b394         label_18004b394:
+18004b394             j_sub_18012c540(rcx_163)
+18004b399         label_18004b399:
+18004b399             int64_t var_2a8_4 = 0
+18004b3a1             int64_t var_2a0_4 = 0xf
+18004b3ad             var_2b8.b = 0
+18004b3ad             
+18004b3c1             if (var_2c0 u<= 0xf)
+18004b3c1                 goto label_18004b3f8
+18004b3c1             
+18004b3c6             void* rcx_166 = var_2d8.q
+18004b3c6             
+18004b3d5             if (var_2c0 + 1 u< 0x1000)
+18004b3d5                 goto label_18004b3f3
+18004b3d5             
+18004b3d7             void* rax_59 = *(rcx_166 - 8)
+18004b3d7             
+18004b3e6             if (rcx_166 - rax_59 - 8 u<= 0x1f)
+18004b3f0                 rcx_166 = rax_59
+18004b3f3             label_18004b3f3:
+18004b3f3                 j_sub_18012c540(rcx_166)
+18004b3f8             label_18004b3f8:
+18004b3f8                 int64_t var_2c8_3 = 0
+18004b400                 int64_t var_2c0_3 = 0xf
+18004b40c                 var_2d8.b = 0
+18004b40c                 
+18004b420                 if (var_2e0 u<= 7)
+18004b420                     goto label_18004b468
+18004b420                 
+18004b42a                 void* rcx_169 = var_2f8.q
+18004b42a                 
+18004b439                 if ((var_2e0 << 1) + 2 u< 0x1000)
+18004b439                     goto label_18004b45b
+18004b439                 
+18004b43b                 void* rdi_8 = *(rcx_169 - 8)
+18004b43b                 
+18004b44a                 if (rcx_169 - rdi_8 - 8 u<= 0x1f)
+18004b458                     rcx_169 = rdi_8
+18004b45b                 label_18004b45b:
+18004b45b                     j_sub_18012c540(rcx_169)
+18004b468                 label_18004b468:
+18004b468                     int64_t var_2e8_2 = 0
+18004b470                     int64_t var_2e0_2 = 7
+18004b47c                     var_2f8.w = 0
+18004b47c                     
+18004b489                     if (var_300 u> 7)
+18004b49b                         sub_180003c10(&var_318, var_318.q, var_300)
+18004b49b                     
+18004b4a8                     int64_t var_308_2 = 0
+18004b4b0                     int64_t var_300_2 = 7
+18004b4bc                     var_318.w = 0
+18004b4bc                     
+18004b4c9                     if (var_320 u> 7)
+18004b4db                         sub_180003c10(&var_338, var_338.q, var_320)
+18004b4db                     
+18004b4c9                     goto label_18004b4e0
+18004a0b3     else
+18004a0b9         int64_t var_418 = 0
+18004a0d7         char rax_11
+18004a0d7         int64_t r8_5
+18004a0d7         uint64_t r9_3
+18004a0d7         rax_11, r8_5, r9_3 = sub_180061c90(&var_440, u"Content-Length", &var_418, &var_368)
+18004a0d7         
+18004a0f4         if (rax_11 == 2 || (rax_11 == 1 && var_418 != arg4[0x1a]))
+18004ad16             uint64_t r9_14 = sub_18005f7f0(&var_440)
+18004ad1b             var_3b8 = 0xa
+18004ad26             int32_t var_3b4_7 = rax_10
+18004ad35             int32_t var_3b0_7 = var_364_1
+18004ad3c             int32_t var_3ac_7 = 0x6a6
+18004ad4a             var_3a8 = zx.o(0)
+18004ad52             int64_t var_398_6 = 0
+18004ad5a             int64_t var_390_6 = 0xf
+18004ad66             var_3a8.b = 0
+18004ad6e             __builtin_memset(&var_388, 0, 0x20)
+18004ad9b             sub_1800017c0(&var_388, "loader asset length header is invalid", 0x25, r9_14)
+18004adac             sub_180035500(arg6, &var_3b8)
+18004adbd             int64_t var_370_4
+18004adbd             
+18004adbd             if (var_370_4 u> 0xf)
+18004adc2                 void* rcx_114 = var_388.q
+18004adc2                 
+18004add1                 if (var_370_4 + 1 u>= 0x1000)
+18004add3                     void* rax_44 = *(rcx_114 - 8)
+18004add3                     
+18004ade2                     if (rcx_114 - rax_44 - 8 u> 0x1f)
+18004ae3d                         trap(0xd)
+18004ae3d                     
+18004ade8                     rcx_114 = rax_44
+18004ade8                 
+18004adeb                 j_sub_18012c540(rcx_114)
+18004adeb             
+18004adfc             if (var_390_6 u> 0xf)
+18004ae05                 void* rcx_117 = var_3a8.q
+18004ae05                 
+18004ae14                 if (var_390_6 + 1 u>= 0x1000)
+18004ae16                     void* rax_45 = *(rcx_117 - 8)
+18004ae16                     
+18004ae25                     if (rcx_117 - rax_45 - 8 u> 0x1f)
+18004ae3d                         trap(0xd)
+18004ae3d                     
+18004ae2b                     rcx_117 = rax_45
+18004ae2b                 
+18004ae2e                 j_sub_18012c540(rcx_117)
+18004ae2e             
+18004adfc             goto label_18004a2d7
+18004adfc         
+18004a0fa         int64_t rcx_25 = *arg5
+18004a0fd         int64_t rdi_2 = arg5[1]
+18004a0fd         
+18004a104         if (rcx_25 != rdi_2)
+18004a106             arg5[1] = rcx_25
+18004a10a             rdi_2 = rcx_25
+18004a10a         
+18004a10d         int64_t* r12_1 = arg4[0x1a]
+18004a114         var_408 = r12_1
+18004a114         
+18004a123         if (r12_1 u> arg5[2] - rcx_25)
+18004a132             if (r12_1 u> 0x7fffffffffffffff)
+18004b524                 sub_18001a550()
+18004b524                 noreturn
+18004b524             
+18004a143             int128_t* rax_15 = sub_180005be0(arg5, &var_408, r8_5, r9_3)
+18004a14b             int32_t* rdx_17 = *arg5
+18004a158             memcpy(rax_15, rdx_17, arg5[1] - rdx_17)
+18004a169             sub_180019170(arg5, rax_15, rdi_2 - rcx_25, r12_1)
+18004a16e             r13 = arg2
+18004a16e         
+18004a17e         int64_t var_3f0[0x7]
+18004a17e         sub_18005d260(&var_3f0)
+18004a193         uint64_t rdx_25
+18004a193         int64_t r8_9
+18004a193         int64_t r9_6
+18004a193         
+18004a193         if (sub_18005d8d0(&var_3f0) == 0)
+18004a19e             uint64_t r9_5 = sub_18005f7f0(&var_440)
+18004a1a3             var_3b8 = 6
+18004a1ae             int32_t var_3b4_1 = rax_10
+18004a1b9             int32_t var_3b0_1 = 0
+18004a1c1             int32_t var_3ac_1 = 0x6a7
+18004a1cf             var_3a8 = zx.o(0)
+18004a1d7             int64_t var_398_1 = 0
+18004a1df             uint64_t var_390_1 = 0xf
+18004a1eb             var_3a8.b = 0
+18004a1f3             __builtin_memset(&var_388, 0, 0x20)
+18004a220             sub_1800017c0(&var_388, "cannot initialize loader SHA-256", 0x20, r9_5)
+18004a231             r8_9, r9_6 = sub_180035500(arg6, &var_3b8)
+18004a242             int64_t var_370
+18004a242             
+18004a242             if (var_370 u> 0xf)
+18004a247                 void* rcx_34 = var_388.q
+18004a247                 
+18004a256                 if (var_370 + 1 u>= 0x1000)
+18004a258                     void* rax_17 = *(rcx_34 - 8)
+18004a258                     
+18004a267                     if (rcx_34 - rax_17 - 8 u> 0x1f)
+18004a432                         trap(0xd)
+18004a432                     
+18004a271                     rcx_34 = rax_17
+18004a271                 
+18004a274                 r8_9, r9_6 = j_sub_18012c540(rcx_34)
+18004a274             
+18004a279             rdx_25 = var_390_1
+18004a279             
+18004a285             if (rdx_25 u> 0xf)
+18004a28a                 void* rcx_37 = var_3a8.q
+18004a28a                 
+18004a299                 if (rdx_25 + 1 u>= 0x1000)
+18004a29b                     void* rax_18 = *(rcx_37 - 8)
+18004a29b                     
+18004a2aa                     if (rcx_37 - rax_18 - 8 u> 0x1f)
+18004a432                         trap(0xd)
+18004a432                     
+18004a2b4                     rcx_37 = rax_18
+18004a2b4                 
+18004a2b7                 rdx_25, r8_9, r9_6 = j_sub_18012c540(rcx_37)
+18004a2b7             
+18004a285             goto label_18004a2c5
+18004a285         
+18004a434         char var_448 = 0
+18004a440         struct std::_Func_base<bool,uint8_t const* __ptr64,uint64_t,struct oplus::cloud::transport::NetworkError& __ptr64>::std::_Func_impl_no_alloc<class `bool __cdecl oplus::loader::DownloadTicketAsset(struct oplus::loader::Context &, class oplus::loader::TaskState &, struct oplus::loader::RequestOptions const &, struct oplus::loader::Ticket const &, class std::vector<unsigned char, class std::allocator<unsigned char>> &, struct oplus::loader::TaskError &)'::`2'::<lambda_1>, bool, unsigned char const *, unsigned __int64, struct oplus::cloud::transport::NetworkError &>::VTable
+18004a440             * const var_238 = &std::_Func_impl_no_alloc<class `bool __cdecl oplus::loader::DownloadTicketAsset(struct oplus::loader::Context &, class oplus::loader::TaskState &, struct oplus::loader::RequestOptions const &, struct oplus::loader::Ticket const &, class std::vector<unsigned char, class std::allocator<unsigned char>> &, struct oplus::loader::TaskError &)'::`2'::<lambda_1>, bool, unsigned char const *, unsigned __int64, struct oplus::cloud::transport::NetworkError &>::`vftable'{for `std::_Func_base<bool,uint8_t const* __ptr64,uint64_t,struct oplus::cloud::transport::NetworkError& __ptr64>'}
+18004a448         int64_t* var_230_1 = arg5
+18004a458         int64_t (* var_228_1)[0x7] = &var_3f0
+18004a465         char* var_220_1 = &var_448
+18004a475         struct std::_Func_base<bool,uint8_t const* __ptr64,uint64_t,struct oplus::cloud::transport::NetworkError& __ptr64>::std::_Func_impl_no_alloc<class `bool __cdecl oplus::loader::DownloadTicketAsset(struct oplus::loader::Context &, class oplus::loader::TaskState &, struct oplus::loader::RequestOptions const &, struct oplus::loader::Ticket const &, class std::vector<unsigned char, class std::allocator<unsigned char>> &, struct oplus::loader::TaskError &)'::`2'::<lambda_1>, bool, unsigned char const *, unsigned __int64, struct oplus::cloud::transport::NetworkError &>::VTable
+18004a475             * const* var_200_1 = &var_238
+18004a484         struct std::_Func_base<void, uint64_t, uint64_t>::std::_Func_impl_no_alloc<class `bool __cdecl oplus::loader::DownloadTicketAsset(struct oplus::loader::Context &, class oplus::loader::TaskState &, struct oplus::loader::RequestOptions const &, struct oplus::loader::Ticket const &, class std::vector<unsigned char, class std::allocator<unsigned char>> &, struct oplus::loader::TaskError &)'::`2'::<lambda_3>, void, unsigned __int64, unsigned __int64>::VTable
+18004a484             * const var_198 = &std::_Func_impl_no_alloc<class `bool __cdecl oplus::loader::DownloadTicketAsset(struct oplus::loader::Context &, class oplus::loader::TaskState &, struct oplus::loader::RequestOptions const &, struct oplus::loader::Ticket const &, class std::vector<unsigned char, class std::allocator<unsigned char>> &, struct oplus::loader::TaskError &)'::`2'::<lambda_3>, void, unsigned __int64, unsigned __int64>::`vftable'{for `std::_Func_base<void, uint64_t, uint64_t>'}
+18004a48c         void* var_190_1 = r13
+18004a49c         struct std::_Func_base<void, uint64_t, uint64_t>::std::_Func_impl_no_alloc<class `bool __cdecl oplus::loader::DownloadTicketAsset(struct oplus::loader::Context &, class oplus::loader::TaskState &, struct oplus::loader::RequestOptions const &, struct oplus::loader::Ticket const &, class std::vector<unsigned char, class std::allocator<unsigned char>> &, struct oplus::loader::TaskError &)'::`2'::<lambda_3>, void, unsigned __int64, unsigned __int64>::VTable
+18004a49c             * const* var_160_1 = &var_198
+18004a4ab         struct std::_Func_base<bool>::std::_Func_impl_no_alloc<class `bool __cdecl oplus::loader::DownloadTicketAsset(struct oplus::loader::Context &, class oplus::loader::TaskState &, struct oplus::loader::RequestOptions const &, struct oplus::loader::Ticket const &, class std::vector<unsigned char, class std::allocator<unsigned char>> &, struct oplus::loader::TaskError &)'::`2'::<lambda_2>, bool>::VTable
+18004a4ab             * const var_1d8 = &std::_Func_impl_no_alloc<class `bool __cdecl oplus::loader::DownloadTicketAsset(struct oplus::loader::Context &, class oplus::loader::TaskState &, struct oplus::loader::RequestOptions const &, struct oplus::loader::Ticket const &, class std::vector<unsigned char, class std::allocator<unsigned char>> &, struct oplus::loader::TaskError &)'::`2'::<lambda_2>, bool>::`vftable'{for `std::_Func_base<bool>'}
+18004a4b3         void* var_1d0_1 = r13
+18004a4c3         struct std::_Func_base<bool>::std::_Func_impl_no_alloc<class `bool __cdecl oplus::loader::DownloadTicketAsset(struct oplus::loader::Context &, class oplus::loader::TaskState &, struct oplus::loader::RequestOptions const &, struct oplus::loader::Ticket const &, class std::vector<unsigned char, class std::allocator<unsigned char>> &, struct oplus::loader::TaskError &)'::`2'::<lambda_2>, bool>::VTable
+18004a4c3             * const* var_1a0_1 = &var_1d8
+18004a4cb         int64_t rax_22 = arg4[0x1a]
+18004a4d2         var_288.q = rax_22
+18004a4da         var_280.q = rax_22
+18004a4e2         var_278.b = 1
+18004a4ea         var_278:8.q = 0x10000
+18004a4f9         int64_t var_268_2 = 0
+18004a538         char rax_23 = sub_180062430(&var_440, &var_288, &var_238, &var_1d8, &var_198, &var_368)
+18004a538         
+18004a54b         if (var_1a0_1 != 0)
+18004a562             (*var_1a0_1)->vFunc_4(var_1a0_1, var_1a0_1 != &var_1d8)
+18004a568             int64_t var_1a0_2 = 0
+18004a568         
+18004a57b         if (var_160_1 != 0)
+18004a592             (*var_160_1)->vFunc_4(var_160_1, var_160_1 != &var_198)
+18004a592         
+18004a59d         uint64_t r9_8 = sub_18005f7f0(&var_440)
+18004a59d         
+18004a5a5         if (rax_23 == 0)
+18004a82f             int128_t var_1f8
+18004a82f             __builtin_memset(&var_1f8, 0, 0x20)
+18004a84f             char rax_33 = sub_18005d630(&var_3f0, &var_1f8)
+18004a858             void** rcx_74 = &arg4[0xc]
+18004a858             
+18004a861             if (arg4[0xf] u> 0xf)
+18004a863                 rcx_74 = *rcx_74
+18004a863             
+18004a866             var_428 = rcx_74
+18004a86f             int64_t var_420_1 = arg4[0xe]
+18004a885             uint64_t r9_9 = &var_1f8
+18004a894             char rax_35 = sub_180057130(arg5[1] - *arg5, arg4[0x1a], rax_33, r9_9, &var_428)
+18004a8ab             __builtin_memset(&var_1f8, 0, 0x20)
+18004a8ab             
+18004a8af             if (rax_35 == 0)
+18004a8b8                 sub_180059500(arg5)
+18004a8bd                 var_3b8 = 0xa
+18004a8c8                 int32_t var_3b4_5 = rax_10
+18004a8d0                 int32_t var_3b0_5 = 0
+18004a8d8                 int32_t var_3ac_5 = 0x6a5
+18004a8e6                 var_3a8 = zx.o(0)
+18004a8ee                 int64_t var_398_4 = 0
+18004a8f6                 int64_t var_390_4 = 0xf
+18004a902                 var_3a8.b = 0
+18004a90a                 __builtin_memset(&var_388, 0, 0x20)
+18004a937                 sub_1800017c0(&var_388, "loader asset size or SHA-256 does not match ticket", 0x32, 
+18004a937                     r9_9)
+18004a948                 uint64_t rdx_50
+18004a948                 int64_t r9_10
+18004a948                 rdx_50, r9_10 = sub_180035500(arg6, &var_3b8)
+18004a959                 int64_t var_370_2
+18004a959                 
+18004a959                 if (var_370_2 u> 0xf)
+18004a96b                     rdx_50, r9_10 = sub_180003bd0(&var_388, var_388.q, var_370_2)
+18004a96b                 
+18004a970                 int64_t r8_16 = var_390_4
+18004a970                 
+18004a97c                 if (r8_16 u> 0xf)
+18004a98e                     rdx_50, r8_16, r9_10 = sub_180003bd0(&var_3a8, var_3a8.q, r8_16)
+18004a98e                 
+18004a99f                 if (var_200_1 != 0)
+18004a9b6                     rdx_50, r8_16, r9_10 = (*var_200_1)->vFunc_4(var_200_1, var_200_1 != &var_238)
+18004a9bc                     int64_t var_200_3 = 0
+18004a9bc                 
+18004a9cc                 sub_18005d500(&var_3f0, rdx_50, r8_16, r9_10)
+18004a9cc                 
+18004a9de                 if (var_348_1 u> 0xf)
+18004a9f0                     sub_180003bd0(&var_360, var_360.q, var_348_1)
+18004a9f0                 
+18004a9f5                 int64_t var_350_3 = 0
+18004a9fd                 int64_t var_348_3 = 0xf
+18004aa09                 var_360.b = 0
+18004aa16                 sub_18005f120(&var_440)
+18004aa24                 sub_180059aa0(&var_158)
+18004aa24                 
+18004aa36                 if (var_2a0 u> 0xf)
+18004aa48                     sub_180003bd0(&var_2b8, var_2b8.q, var_2a0)
+18004aa48                 
+18004aa4d                 int64_t var_2a8_2 = 0
+18004aa55                 int64_t var_2a0_2 = 0xf
+18004aa61                 var_2b8.b = 0
+18004aa61                 
+18004aa75                 if (var_2c0 u> 0xf)
+18004aa8b                     sub_180003bd0(&var_2d8, var_2d8.q, var_2c0)
+18004aa8b                 
+18004a97c                 goto label_18004a3e5
+18004a97c             
+18004aa95             void** rax_38 = &arg4[8]
+18004aa95             
+18004aa9e             if (arg4[0xb] u> 0xf)
+18004aaa0                 rax_38 = *rax_38
+18004aaa0             
+18004aaa3             var_428 = rax_38
+18004aaac             int64_t var_420_2 = arg4[0xa]
+18004aab9             char rax_40
+18004aab9             uint64_t r9_11
+18004aab9             int512_t zmm0_1
+18004aab9             rax_40, r9_11, zmm0_1 = sub_1800573b0(&var_428, arg5)
+18004aab9             
+18004aac0             if (rax_40 != 0)
+18004ac89                 uint64_t rdx_64
+18004ac89                 int64_t r8_23
+18004ac89                 int64_t r9_13
+18004ac89                 rdx_64, r8_23, r9_13 = sub_180049790(&var_238, zmm0_1)
+18004ac97                 sub_18005d500(&var_3f0, rdx_64, r8_23, r9_13)
+18004aca5                 sub_1800040d0(&var_360)
+18004acb0                 sub_18005f120(&var_440)
+18004acbe                 sub_180059aa0(&var_158)
+18004accc                 sub_18003e780(&var_338)
+18004acd1                 result.b = 1
+18004b4ed                 __security_check_cookie(rax_1 ^ &var_478)
+18004b50e                 return result
+18004b50e             
+18004aac9             sub_180059500(arg5)
+18004aace             var_3b8 = 0xa
+18004aad9             int32_t var_3b4_6 = rax_10
+18004aae1             int32_t var_3b0_6 = 0
+18004aae9             int32_t var_3ac_6 = 0x6a9
+18004aaf7             var_3a8 = zx.o(0)
+18004aaff             int64_t var_398_5 = 0
+18004ab07             int64_t var_390_5 = 0xf
+18004ab13             var_3a8.b = 0
+18004ab1b             __builtin_memset(&var_388, 0, 0x20)
+18004ab48             sub_1800017c0(&var_388, "cloud asset does not satisfy the signed payload format", 0x36, 
+18004ab48                 r9_11)
+18004ab59             uint64_t rdx_59
+18004ab59             int64_t r9_12
+18004ab59             rdx_59, r9_12 = sub_180035500(arg6, &var_3b8)
+18004ab6a             int64_t var_370_3
+18004ab6a             
+18004ab6a             if (var_370_3 u> 0xf)
+18004ab7c                 rdx_59, r9_12 = sub_180003bd0(&var_388, var_388.q, var_370_3)
+18004ab7c             
+18004ab81             int64_t r8_21 = var_390_5
+18004ab81             
+18004ab8d             if (r8_21 u> 0xf)
+18004ab9f                 rdx_59, r8_21, r9_12 = sub_180003bd0(&var_3a8, var_3a8.q, r8_21)
+18004ab9f             
+18004abb0             if (var_200_1 != 0)
+18004abc7                 rdx_59, r8_21, r9_12 = (*var_200_1)->vFunc_4(var_200_1, var_200_1 != &var_238)
+18004abcd                 int64_t var_200_4 = 0
+18004abcd             
+18004abdd             sub_18005d500(&var_3f0, rdx_59, r8_21, r9_12)
+18004abdd             
+18004abef             if (var_348_1 u> 0xf)
+18004ac01                 sub_180003bd0(&var_360, var_360.q, var_348_1)
+18004ac01             
+18004ac06             int64_t var_350_4 = 0
+18004ac0e             int64_t var_348_4 = 0xf
+18004ac1a             var_360.b = 0
+18004ac27             sub_18005f120(&var_440)
+18004ac35             sub_180059aa0(&var_158)
+18004ac43             sub_1800040d0(&var_2b8)
+18004ac50             sub_1800040d0(&var_2d8)
+18004ac5d             sub_180002b80(&var_2f8)
+18004ac6a             sub_180002b80(&var_318)
+18004ac77             sub_180002b80(&var_338)
+18004ab8d             goto label_18004b4e0
+18004ab8d         
+18004a5ae         sub_180059500(arg5)
+18004a5ae         
+18004a5b8         if (var_448 != 0)
+18004a5be             var_3b8 = 6
+18004a5c9             int32_t var_3b4_2 = rax_10
+18004a5d1             int32_t var_3b0_2 = 0
+18004a5d9             int32_t var_3ac_2 = 0x6a7
+18004a5e7             var_3a8 = zx.o(0)
+18004a5ef             int64_t var_398_2 = 0
+18004a5f7             int64_t var_390_2 = 0xf
+18004a603             var_3a8.b = 0
+18004a60b             __builtin_memset(&var_388, 0, 0x20)
+18004a638             sub_1800017c0(&var_388, "cannot hash loader asset", 0x18, r9_8)
+18004a649             sub_180035500(arg6, &var_3b8)
+18004a656             sub_1800040d0(&var_388)
+18004a663             rdx_25, r8_9, r9_6 = sub_1800040d0(&var_3a8)
+18004a5b8         else if (rax_23 != 2)
+18004a760             int32_t* rdx_43
+18004a760             
+18004a760             if (rax_23 != 3)
+18004a7da                 rdx_43 = sub_180040340(&var_3b8, &var_368, zx.q(rax_10), "cannot read loader asset")
+18004a760             else
+18004a762                 var_3b8 = 0xa
+18004a76d                 int32_t var_3b4_4 = rax_10
+18004a77c                 int32_t var_3b0_4 = var_364_1
+18004a783                 int32_t var_3ac_4 = 0x644
+18004a796                 sub_1800023b0(&var_3a8)
+18004a7ab                 sub_180002360(&var_388, "loader asset transfer ended early")
+18004a7b1                 rdx_43 = &var_3b8
+18004a7b1             
+18004a7e0             sub_180035500(arg6, rdx_43)
+18004a7ed             rdx_25, r8_9, r9_6 = sub_180002ea0(&var_3b8)
+18004a671         else
+18004a677             var_3b8 = 0xa
+18004a682             int32_t var_3b4_3 = rax_10
+18004a691             int32_t var_3b0_3 = var_364_1
+18004a698             int32_t var_3ac_3 = 0x645
+18004a6a6             var_3a8 = zx.o(0)
+18004a6ae             int64_t var_398_3 = 0
+18004a6b6             int64_t var_390_3 = 0xf
+18004a6c2             var_3a8.b = 0
+18004a6ca             __builtin_memset(&var_388, 0, 0x20)
+18004a6f7             sub_1800017c0(&var_388, "loader asset exceeds the ticket size", 0x24, r9_8)
+18004a708             rdx_25, r9_6 = sub_180035500(arg6, &var_3b8)
+18004a719             int64_t var_370_1
+18004a719             
+18004a719             if (var_370_1 u> 0xf)
+18004a72b                 rdx_25, r9_6 = sub_180003bd0(&var_388, var_388.q, var_370_1)
+18004a72b             
+18004a730             r8_9 = var_390_3
+18004a730             
+18004a73c             if (r8_9 u> 0xf)
+18004a752                 rdx_25, r8_9, r9_6 = sub_180003bd0(&var_3a8, var_3a8.q, r8_9)
+18004a752         
+18004a7fe         if (var_200_1 != 0)
+18004a819             rdx_25, r8_9, r9_6 = (*var_200_1)->vFunc_4(var_200_1, var_200_1 != &var_238)
+18004a81f             int64_t var_200_2 = 0
+18004a81f         
+18004a2c5     label_18004a2c5:
+18004a2c5         sub_18005d500(&var_3f0, rdx_25, r8_9, r9_6)
+18004a2d7     label_18004a2d7:
+18004a2d7         
+18004a2d7         if (var_348_1 u> 0xf)
+18004a2dc             void* rcx_41 = var_360.q
+18004a2dc             
+18004a2eb             if (var_348_1 + 1 u>= 0x1000)
+18004a2ed                 void* rax_19 = *(rcx_41 - 8)
+18004a2ed                 
+18004a2fc                 if (rcx_41 - rax_19 - 8 u> 0x1f)
+18004b51b                     trap(0xd)
+18004b51b                 
+18004a306                 rcx_41 = rax_19
+18004a306             
+18004a309             j_sub_18012c540(rcx_41)
+18004a309         
+18004a30e         int64_t var_350_2 = 0
+18004a316         int64_t var_348_2 = 0xf
+18004a322         var_360.b = 0
+18004a32f         sub_18005f120(&var_440)
+18004a33d         sub_180059aa0(&var_158)
+18004a33d         
+18004a34f         if (var_2a0 u<= 0xf)
+18004a34f             goto label_18004a392
+18004a34f         
+18004a354         void* rcx_46 = var_2b8.q
+18004a354         
+18004a363         if (var_2a0 + 1 u< 0x1000)
+18004a363             goto label_18004a381
+18004a363         
+18004a365         void* rax_20 = *(rcx_46 - 8)
+18004a365         
+18004a374         if (rcx_46 - rax_20 - 8 u<= 0x1f)
+18004a37e             rcx_46 = rax_20
+18004a381         label_18004a381:
+18004a381             j_sub_18012c540(rcx_46)
+18004a392         label_18004a392:
+18004a392             var_2b8.b = 0
+18004a39a             int64_t var_2a0_1 = 0xf
+18004a3a6             int64_t var_2a8_1 = 0
+18004a3a6             
+18004a3ae             if (var_2c0 u<= 0xf)
+18004a3ae                 goto label_18004a3e5
+18004a3ae             
+18004a3ba             void* rcx_49 = var_2d8.q
+18004a3ba             
+18004a3c2             if (var_2c0 + 1 u< 0x1000)
+18004a3c2                 goto label_18004a3e0
+18004a3c2             
+18004a3c4             void* rax_21 = *(rcx_49 - 8)
+18004a3c4             
+18004a3d3             if (rcx_49 - rax_21 - 8 u<= 0x1f)
+18004a3dd                 rcx_49 = rax_21
+18004a3e0             label_18004a3e0:
+18004a3e0                 j_sub_18012c540(rcx_49)
+18004a3e5             label_18004a3e5:
+18004a3e5                 int64_t var_2c8_1 = 0
+18004a3ed                 int64_t var_2c0_1 = 0xf
+18004a3f9                 var_2d8.b = 0
+18004a3f9                 
+18004a40d                 if (var_2e0 u> 7)
+18004a423                     sub_180003c10(&var_2f8, var_2f8.q, var_2e0)
+18004a423                 
+18004a40d                 goto label_18004b468
+18004a026 else
+18004a042     int32_t* rax_9 = sub_180040340(&var_3b8, &var_368, 0, "loader asset request failed")
+18004a04c     *arg6 = *rax_9
+18004a051     arg6[1] = rax_9[1]
+18004a057     arg6[2] = rax_9[2]
+18004a05d     arg6[3] = rax_9[3]
+18004a068     sub_1800352b0(&arg6[4], &rax_9[4])
+18004a075     sub_1800352b0(&arg6[0xc], &rax_9[0xc])
+18004a082     sub_1800040d0(&var_388)
+18004a08f     sub_1800040d0(&var_3a8)
+18004aec2 label_18004aec2:
+18004aec2     
+18004aec2     if (var_348_1 u> 0xf)
+18004aece         void* rcx_123 = var_360.q
+18004aece         
+18004aed6         if (var_348_1 + 1 u>= 0x1000)
+18004aed8             void* rax_47 = *(rcx_123 - 8)
+18004aed8             
+18004aee7             if (rcx_123 - rax_47 - 8 u> 0x1f)
+18004b51b                 trap(0xd)
+18004b51b             
+18004aef1             rcx_123 = rax_47
+18004aef1         
+18004aef4         j_sub_18012c540(rcx_123)
+18004aef4     
+18004aef9     var_360.b = 0
+18004af01     int64_t var_348_5 = 0xf
+18004af0d     int64_t var_350_5 = 0
+18004af1a     sub_18005f120(&var_440)
+18004af28     sub_180059aa0(&var_158)
+18004af36 label_18004af36:
+18004af36     
+18004af3a     if (var_2a0 u<= 0xf)
+18004af3a         goto label_18004af79
+18004af3a     
+18004af3f     void* rcx_128 = var_2b8.q
+18004af3f     
+18004af4e     if (var_2a0 + 1 u< 0x1000)
+18004af4e         goto label_18004af6c
+18004af4e     
+18004af50     void* rax_48 = *(rcx_128 - 8)
+18004af50     
+18004af5f     if (rcx_128 - rax_48 - 8 u<= 0x1f)
+18004af69         rcx_128 = rax_48
+18004af6c     label_18004af6c:
+18004af6c         j_sub_18012c540(rcx_128)
+18004af79     label_18004af79:
+18004af79         int64_t var_2a8_3 = 0
+18004af81         int64_t var_2a0_3 = 0xf
+18004af8d         var_2b8.b = 0
+18004af8d         
+18004af99         if (var_2c0 u<= 0xf)
+18004af99             goto label_18004afd8
+18004af99         
+18004af9e         void* rcx_131 = var_2d8.q
+18004af9e         
+18004afad         if (var_2c0 + 1 u< 0x1000)
+18004afad             goto label_18004afcb
+18004afad         
+18004afaf         void* rax_49 = *(rcx_131 - 8)
+18004afaf         
+18004afbe         if (rcx_131 - rax_49 - 8 u<= 0x1f)
+18004afc8             rcx_131 = rax_49
+18004afcb         label_18004afcb:
+18004afcb             j_sub_18012c540(rcx_131)
+18004afd8         label_18004afd8:
+18004afd8             int64_t var_2c8_2 = 0
+18004afe0             int64_t var_2c0_2 = 0xf
+18004afec             var_2d8.b = 0
+18004afec             
+18004aff8             if (var_2e0 u<= 7)
+18004aff8                 goto label_18004b040
+18004aff8             
+18004b002             void* rcx_134 = var_2f8.q
+18004b002             
+18004b011             if ((var_2e0 << 1) + 2 u< 0x1000)
+18004b011                 goto label_18004b033
+18004b011             
+18004b013             void* rdi_5 = *(rcx_134 - 8)
+18004b013             
+18004b022             if (rcx_134 - rdi_5 - 8 u<= 0x1f)
+18004b030                 rcx_134 = rdi_5
+18004b033             label_18004b033:
+18004b033                 j_sub_18012c540(rcx_134)
+18004b040             label_18004b040:
+18004b040                 int64_t var_2e8_1 = 0
+18004b048                 int64_t var_2e0_1 = 7
+18004b054                 var_2f8.w = 0
+18004b054                 
+18004b061                 if (var_300 u<= 7)
+18004b061                     goto label_18004b0a9
+18004b061                 
+18004b06b                 void* rcx_137 = var_318.q
+18004b06b                 
+18004b07a                 if ((var_300 << 1) + 2 u< 0x1000)
+18004b07a                     goto label_18004b09c
+18004b07a                 
+18004b07c                 void* rdi_6 = *(rcx_137 - 8)
+18004b07c                 
+18004b08b                 if (rcx_137 - rdi_6 - 8 u<= 0x1f)
+18004b099                     rcx_137 = rdi_6
+18004b09c                 label_18004b09c:
+18004b09c                     j_sub_18012c540(rcx_137)
+18004b0a9                 label_18004b0a9:
+18004b0a9                     int64_t var_308_1 = 0
+18004b0b1                     int64_t var_300_1 = 7
+18004b0bd                     var_318.w = 0
+18004b0bd                     
+18004b0ca                     if (var_320 u<= 7)
+18004b0ca                         goto label_18004b4e0
+18004b0ca                     
+18004b0d8                     void* rcx_140 = var_338.q
+18004b0d8                     
+18004b0e7                     if ((var_320 << 1) + 2 u< 0x1000)
+18004b0e7                         goto label_18004b109
+18004b0e7                     
+18004b0e9                     void* rdi_7 = *(rcx_140 - 8)
+18004b0e9                     
+18004b0f8                     if (rcx_140 - rdi_7 - 8 u<= 0x1f)
+18004b106                         rcx_140 = rdi_7
+18004b109                     label_18004b109:
+18004b109                         j_sub_18012c540(rcx_140)
+18004b4e0                     label_18004b4e0:
+18004b4e0                         result.b = 0
+18004b4ed                         __security_check_cookie(rax_1 ^ &var_478)
+18004b50e                         return result
+18004b522 trap(0xd)

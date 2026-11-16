@@ -1,0 +1,23 @@
+004ae510 int32_t ebp
+004ae510 int32_t var_4 = ebp
+004ae513 int32_t var_8 = 0xffffffff
+004ae515 int32_t (* var_c)(void* arg1) = sub_6d9e08
+004ae520 TEB* fsbase
+004ae520 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004ae529 int32_t eax_2 = __security_cookie ^ &var_4
+004ae52b int32_t var_14 = eax_2
+004ae52e int32_t ebx
+004ae52e int32_t var_48 = ebx
+004ae52f int32_t esi
+004ae52f int32_t var_4c = esi
+004ae530 int32_t edi
+004ae530 int32_t var_50 = edi
+004ae535 fsbase->NtTib.ExceptionList = &ExceptionList
+004ae53b int32_t ecx
+004ae53b int32_t var_40 = ecx
+004ae562 int32_t var_44 = (*(data_7bfb90 + 0xc))(eax_2) + 0x10
+004ae565 int32_t var_8_1 = 0
+004ae571 int32_t var_38 = 0x288
+004ae578 int32_t result = _malloc(0x288)
+004ae57d j_sub_b23c90(&var_4)
+004ae582 return result

@@ -1,0 +1,12 @@
+149c554c mov     w8, wzr
+149c5550 cbz     x2, 0x149c5570
+149c5570 and     w9, w8, #0xffff
+149c5574 orr     w0, w9, w8, lsr #0x10
+149c5578 ret     
+149c5554 ldrb    w9, [x0], #0x1
+149c5558 ldrb    w10, [x1], #0x1
+149c555c eor     w9, w10, w9
+149c5560 sub     x2, x2, #0x1
+149c5564 and     w9, w9, #0xff
+149c5568 orr     w8, w8, w9
+149c556c cbnz    x2, 0x149c5554

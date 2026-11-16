@@ -1,0 +1,110 @@
+00426c19 uint32_t edi = 0
+00426c1b uint32_t var_14 = 0
+00426c22 int32_t var_38 = 0x200000
+00426c29 int32_t var_c = 0
+00426c30 uint32_t var_10 = 0
+00426c33 uint8_t* eax = sub_42e817()
+00426c33 
+00426c40 if (eax == 0)
+00426c4b     return 8
+00426c4b 
+00426c58 enum WIN32_ERROR result = sub_4277a0(arg1, eax, &var_10)
+00426c58 
+00426c5c if (result == NO_ERROR)
+00426c69     enum WIN32_ERROR result_1
+00426c69     int32_t ecx_2
+00426c69     result_1, ecx_2 = sub_427500(arg1, 0x5df7dc)
+00426c6e     result = result_1
+00426c70     uint32_t eax_3 = _clock(ecx_2)
+00426c75     var_10 = eax_3
+00426c75     
+00426c88     while (edi - eax_3 s< 0x3a98)
+00426c92         if (arg1[3].b != 0)
+00426c92             break
+00426c92         
+00426ca8         enum WIN32_ERROR result_2
+00426ca8         int32_t ecx_4
+00426ca8         result_2, ecx_4 = sub_4268c0(*arg1, arg1[2], &var_14, 0x20, 0x7d0)
+00426cad         result = result_2
+00426cad         
+00426cb1         if (result == NO_ERROR)
+00426cb7             int32_t* ecx_5 = arg1[2]
+00426ccd             uint32_t var_3c_1
+00426ccd             uint32_t* var_38_3
+00426ccd             void* eax_7
+00426ccd             
+00426ccd             switch (*ecx_5 - 1)
+00426cd7                 case 0
+00426cd7                     enum WIN32_ERROR result_3
+00426cd7                     result_3, ecx_5 = sub_427500(arg1, ecx_5)
+00426cdc                     result = result_3
+00426cdc                     
+00426ce0                     if (result != NO_ERROR)
+00426ce0                         break
+00426ce0                     
+00426ce0                     goto label_426d65
+00426ceb                 case 2
+00426ceb                     void var_1c
+00426ceb                     var_38_3 = &var_1c
+00426cec                     var_3c_1 = ecx_5[4]
+00426cef                     eax_7 = ecx_5[3]
+00426cf8                 label_426cf8:
+00426cf8                     enum WIN32_ERROR result_4
+00426cf8                     result_4, ecx_5 = sub_4267a0(*arg1, eax_7 + eax, var_3c_1, var_38_3)
+00426cfd                     result = result_4
+00426cfd                     
+00426d01                     if (result != NO_ERROR)
+00426d01                         break
+00426d01                     
+00426d01                     goto label_426d65
+00426d19                 case 3
+00426d19                     if (ecx_5[3] == 0)
+00426d1b                         void* ecx_8 = *arg1
+00426d26                         uint32_t var_18 = 0
+00426d2e                         int32_t var_28 = 5
+00426d35                         int32_t var_24_1 = 8
+00426d3c                         enum WIN32_ERROR result_5
+00426d3c                         result_5, ecx_5 = sub_4267a0(ecx_8, &var_28, 8, &var_18)
+00426d41                         result = result_5
+00426d41                         
+00426d45                         if (result != NO_ERROR)
+00426d45                             break
+00426d45                         
+00426d45                         goto label_426d65
+00426d49                 case 5
+00426d49                     result = ecx_5[2]
+00426d4e                     int32_t eax_9 = var_c
+00426d51                     ecx_5 = 1
+00426d51                     
+00426d56                     if (result == NO_ERROR)
+00426d56                         eax_9 = 1
+00426d56                     
+00426d59                     var_c = eax_9
+00426d59                     goto label_426d65
+00426d65                 case 7
+00426d65                 label_426d65:
+00426d65                     edi = _clock(ecx_5)
+00426d65                     
+00426d67                     if (var_c != 0)
+00426d67                         break
+00426d67                     
+00426d69                     eax_3 = var_10
+00426d6c                     continue
+00426d0c                 case 0x11
+00426d0c                     void var_20
+00426d0c                     var_38_3 = &var_20
+00426d0d                     var_3c_1 = ecx_5[6]
+00426d10                     eax_7 = ecx_5[4]
+00426d13                     goto label_426cf8
+00426d13             
+00426d8f             result = sub_427770(arg1)
+00426d8f             break
+00426d8f         
+00426d77         if (result != 0x102)
+00426d77             break
+00426d77         
+00426d7e         edi = _clock(ecx_4)
+00426d80         eax_3 = var_10
+00426d80 
+00426d94 j__free(eax)
+00426da4 return result

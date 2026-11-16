@@ -1,0 +1,66 @@
+10076d50 push    ebp
+10076d51 mov     ebp, esp
+10076d53 push    0xffffffff
+10076d55 push    0x101bab08
+10076d5a mov     eax, dword [fs:0x0]
+10076d60 push    eax
+10076d61 sub     esp, 0x60
+10076d64 mov     eax, dword [0x10247210]
+10076d69 xor     eax, ebp
+10076d6b mov     dword [ebp-0x10], eax
+10076d6e push    esi
+10076d6f push    edi
+10076d70 push    eax
+10076d71 lea     eax, [ebp-0xc]
+10076d74 mov     dword [fs:0x0], eax
+10076d7a mov     eax, dword [ebp+0x20]
+10076d7d mov     dword [ebp-0x40], eax
+10076d80 push    0x10225ce0
+10076d85 mov     dword [ebp-0x4], 0x5
+10076d8c jmp     0x10a00d56
+10a00d56 push    0xde5b876b
+10a00d5b call    0x10a665c1
+10a00d60 jmp     0x10a1ee42
+10a1ee42 lea     ecx, [esp+0x60]
+10a1ee46 cmp     di, 0x36e1
+10a1ee4b stc     
+10a1ee4c cmp     esi, ecx
+10a1ee4e jmp     0x10a2580b
+10a2580b ja      0x1031fb8f
+1031fb8f push    ebp
+1031fb90 retn    
+10a25811 mov     edx, esp
+10a25813 test    dx, ax
+10a25816 cbw     
+10a25818 mov     ecx, 0x40
+10a2581d or      eax, 0x1f422d1f
+10a25822 bt      eax, esi
+10a25825 movsx   eax, bp
+10a25828 lea     eax, [esi-0x80]
+10a2582c cmp     cx, 0x4996
+10a25831 and     eax, 0xfffffffc
+10a25836 cmc     
+10a25837 sub     eax, ecx
+10a25839 jmp     0x104af0fb
+104af0fb mov     esp, eax
+104af0fd jmp     0x10316185
+10316185 push    edi
+10316186 jmp     0x102e8034
+102e8034 push    esi
+102e8035 movsx   edi, sp
+102e8038 pushfd  
+102e8039 mov     esi, edx
+102e803b mov     edi, eax
+102e803d jmp     0x109466d0
+109466d0 cld     
+109466d1 rep movsb byte [edi], [esi]
+109466d3 sub     si, 0x12e6
+109466d8 dec     si
+109466db xchg    edi, edi
+109466dd popfd   
+109466de not     edi
+109466e0 mov     esi, 0x7a5d5306
+109466e5 pop     esi
+109466e6 xchg    edi, edi
+109466e8 pop     edi
+109466e9 jmp     0x1031fb8f

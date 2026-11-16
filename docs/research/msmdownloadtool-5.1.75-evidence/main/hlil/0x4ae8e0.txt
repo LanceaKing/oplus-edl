@@ -1,0 +1,191 @@
+004ae8e3 int32_t var_8 = 0xffffffff
+004ae8e5 int32_t (* var_c)(void* arg1) = sub_6d9ee8
+004ae8f0 TEB* fsbase
+004ae8f0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004ae902 fsbase->NtTib.ExceptionList = &ExceptionList
+004ae931 int32_t __saved_ebp
+004ae931 void* var_18 = (*(data_7bfb90 + 0xc))(__security_cookie ^ &__saved_ebp) + 0x10
+004ae934 int32_t var_8_1 = 0
+004ae961 void* var_14 = (*(data_7bfb90 + 0xc))() + 0x10
+004ae964 var_8_1.b = 1
+004ae98e int32_t* var_1c = (*(data_7bfb90 + 0xc))() + 0x10
+004ae991 void* var_58_3 = nullptr
+004ae993 int32_t* var_5c = &data_76a09c
+004ae99a var_8_1.b = 2
+004ae99e sub_41a940(arg1, var_5c, var_58_3)
+004ae9aa var_5c = u"3d76ca2c926f758d"
+004ae9b8 var_8_1.b = 3
+004ae9ca var_8_1.b = 4
+004ae9dc var_8_1.b = 5
+004ae9ee var_8_1.b = 6
+004ae9f8 void* var_34
+004ae9f8 void* var_30
+004ae9f8 void* var_2c
+004ae9f8 void* var_28
+004ae9f8 int32_t** result
+004ae9f8 int32_t* eax_16 = sub_4276b0(&result, 
+004ae9f8     sub_4276b0(&var_28, 
+004ae9f8         sub_4276b0(&var_2c, sub_4276b0(&var_30, sub_41e370(&var_34, var_5c, &arg1[7]), &arg1[0xb]), 
+004ae9f8             &arg1[0xa]), 
+004ae9f8         &arg1[0xc]), 
+004ae9f8     &arg1[9])
+004aea04 var_8_1.b = 7
+004aea08 sub_41a720(&var_18, eax_16)
+004aea0d var_8_1.b = 6
+004aea19 int32_t* edx_1 = &result[-4]
+004aea1f int32_t eax_17 = edx_1[3]
+004aea1f edx_1[3] -= 1
+004aea1f 
+004aea26 if (eax_17 - 1 s<= 0)
+004aea2d     (*(**edx_1 + 4))(edx_1)
+004aea2d 
+004aea30 var_8_1.b = 5
+004aea39 int32_t* edx_3 = var_28 - 0x10
+004aea3f int32_t ecx_10 = edx_3[3]
+004aea3f edx_3[3] -= 1
+004aea3f 
+004aea46 if (ecx_10 - 1 s<= 0)
+004aea4d     (*(**edx_3 + 4))(edx_3)
+004aea4d 
+004aea50 var_8_1.b = 4
+004aea59 int32_t* edx_5 = var_2c - 0x10
+004aea5f int32_t ecx_13 = edx_5[3]
+004aea5f edx_5[3] -= 1
+004aea5f 
+004aea66 if (ecx_13 - 1 s<= 0)
+004aea6d     (*(**edx_5 + 4))(edx_5)
+004aea6d 
+004aea70 var_8_1.b = 3
+004aea79 int32_t* edx_7 = var_30 - 0x10
+004aea7f int32_t ecx_16 = edx_7[3]
+004aea7f edx_7[3] -= 1
+004aea7f 
+004aea86 if (ecx_16 - 1 s<= 0)
+004aea8d     (*(**edx_7 + 4))(edx_7)
+004aea8d 
+004aea90 var_8_1.b = 2
+004aea99 int32_t* edx_9 = var_34 - 0x10
+004aea9f int32_t ecx_19 = edx_9[3]
+004aea9f edx_9[3] -= 1
+004aea9f 
+004aeaa6 if (ecx_19 - 1 s<= 0)
+004aeaad     (*(**edx_9 + 4))(edx_9)
+004aeaad 
+004aeab7 var_5c = &arg1[7]
+004aeac1 var_8_1.b = 8
+004aead3 var_8_1.b = 9
+004aeae5 var_8_1.b = 0xa
+004aeaf7 var_8_1.b = 0xb
+004aeb01 void* var_3c
+004aeb01 void* var_38
+004aeb01 int32_t* eax_33 = sub_4276b0(&var_30, 
+004aeb01     sub_4276b0(&var_2c, 
+004aeb01         sub_4276b0(&var_28, 
+004aeb01             sub_4276b0(&var_38, sub_4276b0(&var_3c, var_5c, &arg1[0xb]), &arg1[0xa]), &arg1[0xc]), 
+004aeb01         &arg1[9]), 
+004aeb01     &arg1[0xe])
+004aeb09 var_8_1.b = 0xc
+004aeb1f var_8_1.b = 0xd
+004aeb23 sub_41a720(&var_14, sub_4276b0(&var_34, eax_33, &arg1[0xf]))
+004aeb28 var_8_1.b = 0xc
+004aeb31 int32_t* edx_11 = var_34 - 0x10
+004aeb37 int32_t ecx_28 = edx_11[3]
+004aeb37 edx_11[3] -= 1
+004aeb37 
+004aeb3e if (ecx_28 - 1 s<= 0)
+004aeb45     (*(**edx_11 + 4))(edx_11)
+004aeb45 
+004aeb48 var_8_1.b = 0xb
+004aeb51 int32_t* edx_13 = var_30 - 0x10
+004aeb57 int32_t ecx_31 = edx_13[3]
+004aeb57 edx_13[3] -= 1
+004aeb57 
+004aeb5e if (ecx_31 - 1 s<= 0)
+004aeb65     (*(**edx_13 + 4))(edx_13)
+004aeb65 
+004aeb68 var_8_1.b = 0xa
+004aeb71 int32_t* edx_15 = var_2c - 0x10
+004aeb77 int32_t ecx_34 = edx_15[3]
+004aeb77 edx_15[3] -= 1
+004aeb77 
+004aeb7e if (ecx_34 - 1 s<= 0)
+004aeb85     (*(**edx_15 + 4))(edx_15)
+004aeb85 
+004aeb88 var_8_1.b = 9
+004aeb91 int32_t* edx_17 = var_28 - 0x10
+004aeb97 int32_t ecx_37 = edx_17[3]
+004aeb97 edx_17[3] -= 1
+004aeb97 
+004aeb9e if (ecx_37 - 1 s<= 0)
+004aeba5     (*(**edx_17 + 4))(edx_17)
+004aeba5 
+004aeba8 var_8_1.b = 8
+004aebb1 int32_t* edx_19 = var_38 - 0x10
+004aebb7 int32_t ecx_40 = edx_19[3]
+004aebb7 edx_19[3] -= 1
+004aebb7 
+004aebbe if (ecx_40 - 1 s<= 0)
+004aebc5     (*(**edx_19 + 4))(edx_19)
+004aebc5 
+004aebc8 var_8_1.b = 2
+004aebd1 int32_t* edx_21 = var_3c - 0x10
+004aebd7 int32_t ecx_43 = edx_21[3]
+004aebd7 edx_21[3] -= 1
+004aebdb int32_t* ecx_44 = ecx_43 - 1
+004aebdb 
+004aebde if (ecx_44 s<= 0)
+004aebe5     ecx_44 = (*(**edx_21 + 4))(edx_21)
+004aebe5 
+004aebeb int32_t* var_58_19 = &var_1c
+004aebec void* eax_47 = var_14
+004aebef var_5c = ecx_44
+004aebf3 result = &var_5c
+004aec04 var_5c = &sub_41a8a0(eax_47 - 0x10)[4]
+004aec06 var_8_1.b = 0xe
+004aec0f int32_t* ebx_2 = var_18 - 0x10
+004aec20 var_8_1.b = 2
+004aec24 int32_t** result_1 = sub_4adc50(&sub_41a8a0(ebx_2)[4], var_5c)
+004aec29 int32_t* esi_1 = var_1c
+004aec2e result = result_1
+004aec2e 
+004aec33 if (result_1 == 0)
+004aec38     int16_t* ecx_46 = arg1[0x10]
+004aec3f     int32_t eax_54
+004aec3f     eax_54.b = ecx_46 != 0
+004aec3f     
+004aec44     if (eax_54 == 0)
+004aec4b         sub_414340(0x80004005)
+004aec4b         noreturn
+004aec4b     
+004aec51     var_5c = esi_1
+004aec51     
+004aec5c     if (sub_689666(var_5c, ecx_46) != 0)
+004aec6f         result = 1
+004aec5c     else
+004aec61         void* var_58_22 = 0x20
+004aec63         var_5c = u"cbbdcaaca74088039b03d81ad7766ef3"
+004aec68         sub_41a940(arg1, var_5c, var_58_22)
+004aec68 
+004aec79 var_8_1.b = 1
+004aec82 int32_t ecx_48 = esi_1[-1]
+004aec82 esi_1[-1] -= 1
+004aec82 
+004aec89 if (ecx_48 - 1 s<= 0)
+004aec90     (*(*esi_1[-4] + 4))(&esi_1[-4])
+004aec90 
+004aec98 var_8_1.b = 0
+004aec9f int32_t ecx_51 = *(eax_47 - 4)
+004aec9f *(eax_47 - 4) -= 1
+004aec9f 
+004aeca6 if (ecx_51 - 1 s<= 0)
+004aecad     (*(**(eax_47 - 0x10) + 4))(eax_47 - 0x10)
+004aecad 
+004aecb0 int32_t var_8_2 = 0xffffffff
+004aecba int32_t edi = ebx_2[3]
+004aecba ebx_2[3] -= 1
+004aecba 
+004aecc1 if (edi - 1 s<= 0)
+004aecc8     (*(**ebx_2 + 4))(ebx_2)
+004aecc8 
+004aecd1 fsbase->NtTib.ExceptionList = ExceptionList
+004aecdf return result

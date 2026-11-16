@@ -1,0 +1,39 @@
+004af7b0 push    ebp
+004af7b1 mov     ebp, esp
+004af7b3 push    ecx
+004af7b4 push    esi
+004af7b5 push    0x0
+004af7b7 mov     dword [ebp-0x4], 0x0
+004af7be lea     esi, [ecx+0x10]
+004af7c1 call    0x6898a4
+004af7c6 add     esp, 0x4
+004af7c9 push    edx
+004af7ca push    eax
+004af7cb push    0x773e30
+004af7d0 push    esi
+004af7d1 call    0x414410
+004af7d6 push    dword [esi]
+004af7d8 call    0x6895f0
+004af7dd add     esp, 0x14
+004af7e0 mov     esi, eax
+004af7e2 lea     eax, [ebp-0x4]
+004af7e5 push    eax
+004af7e6 call    0x4af6b0
+004af7eb cmp     eax, 0x3
+004af7ee je      0x4af7f5
+004af7f5 lea     eax, [esi-0x1]
+004af7f8 push    eax
+004af7f9 mov     dword [ebp-0x4], eax
+004af7fc call    0x4af750
+004af801 cmp     eax, 0x1
+004af804 jne     0x4af811
+004af7f0 cmp     eax, 0x4
+004af7f3 jne     0x4af806
+004af811 pop     esi
+004af812 mov     esp, ebp
+004af814 pop     ebp
+004af815 retn    
+004af806 cmp     dword [ebp-0x4], esi
+004af809 sbb     eax, eax
+004af80b and     eax, 0xfffffff9
+004af80e add     eax, 0x7

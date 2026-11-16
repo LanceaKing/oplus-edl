@@ -1,0 +1,54 @@
+00418e56 __security_cookie
+00418e6e char var_18 = 0
+00418e72 int64_t var_17 = 0
+00418e77 char var_f = 0
+00418e77 
+00418e82 if (*(arg1 + 0x1e4) != 0)
+00418e99     return sub_53b554(arg2)
+00418e99 
+00418e9c int32_t* esi_1 = arg2 + 0x30
+00418ea3 int32_t* eax_4
+00418ea3 
+00418ea3 if (esi_1[5] u< 0x10)
+00418ea9     eax_4 = esi_1
+00418ea3 else
+00418ea5     eax_4 = *esi_1
+00418ea5 
+00418eb1 int32_t eax_5 = std::_Deallocate<64,0>(eax_4, 0x5a1624)
+00418eb1 
+00418ebd if (eax_5 != 0)
+00418f46     if (___vswprintf_l(&var_18, 8, 1, eax_5) == 0)
+00418fc3         return sub_53b554(arg2)
+00418fc3     
+00418f4d     sub_53e61c(eax_5, 0, 0)
+00418f4d     
+00418f60     if (*(arg2 + 0x5f) == 0)
+00418f69         sub_41a2b0(eax_5, arg2)
+00418f60     else
+00418f62         sub_419830(eax_5, arg2)
+00418f62     
+00418f71     _fclose(eax_5, eax_5)
+00418f93     SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 4, 0)
+00418fab     return sub_53b554(arg2)
+00418fab 
+00418ebf enum WIN32_ERROR eax_6 = GetLastError()
+00418ecb void* const var_34
+00418ecb 
+00418ecb if (*(arg1 + 0x1b) == eax_5.b)
+00418ee2     if (esi_1[5] u>= 0x10)
+00418ee4         esi_1 = *esi_1
+00418ee4     
+00418ee6     enum WIN32_ERROR var_2c_1 = eax_6
+00418ee7     int32_t* var_30_2 = esi_1
+00418ee8     var_34 = "Open %s  Failed, Errno: %d"
+00418ecb else
+00418ed1     if (esi_1[5] u>= 0x10)
+00418ed3         esi_1 = *esi_1
+00418ed3     
+00418ed5     enum WIN32_ERROR var_2c = eax_6
+00418ed6     int32_t* var_30_1 = esi_1
+00418ed7     var_34 = &data_5a2570
+00418ed7 
+00418ef4 sub_410900(arg1 + 0x164, var_34)
+00418f17 SendMessageA(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, arg1 + 0x164)
+00418f30 return sub_53b554(eax_6)

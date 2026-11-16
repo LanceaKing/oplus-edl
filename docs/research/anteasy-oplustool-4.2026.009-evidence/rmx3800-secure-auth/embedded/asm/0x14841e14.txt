@@ -1,0 +1,31 @@
+14841e14 stp     fp, lr, [sp, #-0x10]!
+14841e18 mov     fp, sp
+14841e1c bl      0x148319d8
+14841e20 cmp     w0, #0x21
+14841e24 b.eq    0x14841e54
+14841e54 adrp    x8, 0x148c1000
+14841e58 adrp    x0, 0x148ae000
+14841e5c mov     w1, #0x3af
+14841e60 add     x0, x0, #0xe8d
+14841e64 mov     w2, #0x3
+14841e68 b       0x14841e80
+14841e28 cmp     w0, #0x25
+14841e2c b.eq    0x14841e6c
+14841e80 ldr     x3, [x8, #0xde8]
+14841e84 ldp     fp, lr, [sp], #0x10
+14841e88 br      x3
+14841e6c adrp    x8, 0x148c1000
+14841e70 adrp    x0, 0x148ae000
+14841e74 mov     w1, #0x3b6
+14841e78 add     x0, x0, #0xe8d
+14841e7c mov     w2, #0x4
+14841e30 mov     w8, #0x7fff
+14841e34 cmp     w0, w8
+14841e38 b.eq    0x14841e8c
+14841e8c bl      0x14841dcc
+14841e3c adrp    x8, 0x148c1000
+14841e40 adrp    x0, 0x148ae000
+14841e44 mov     w1, #0x3bd
+14841e48 mov     w2, #0x5
+14841e4c add     x0, x0, #0xe8d
+14841e50 b       0x14841e80

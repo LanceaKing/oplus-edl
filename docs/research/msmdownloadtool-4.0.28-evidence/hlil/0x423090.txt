@@ -1,0 +1,34 @@
+00423098 void* var_1c = arg1
+0042309c int32_t var_c = 0
+004230a3 void* var_8
+004230a3 int32_t* var_20 = &var_8
+004230a9 sub_422e00(arg1, arg2)
+004230ae void* ecx = var_8
+004230b4 int32_t eax_1
+004230b4 int32_t edx
+004230b4 edx:eax_1 = sx.q(*(ecx + 0x64))
+004230b4 
+004230cd if (sub_42b730(*(arg1 + 0x28), ecx, divu.dp.d(0:0x4000, *(ecx + 0x7c)), eax_1, edx) != 0)
+004230d9     int32_t* eax_5 = _fopen("C:/ToolLog.txt", "a+")
+004230d9     
+004230e5     if (eax_5 != 0)
+004230ed         _fprintf(eax_5, "[Firehose] Failed to send read command\n")
+004230f3         _fclose(eax_5)
+004230f3 
+0042311c if (sub_4266a0(**(arg1 + 0x28), arg1 + 0x390, 0x4000, &var_c, 0xbb8) != NO_ERROR)
+00423128     int32_t* eax_8 = _fopen("C:/ToolLog.txt", "a+")
+00423128     
+00423134     if (eax_8 != 0)
+0042313c         _fprintf(eax_8, "[Firehose] Failed to read data\n")
+00423142         _fclose(eax_8)
+00423142 
+0042314f enum WIN32_ERROR result = sub_42ab30(*(arg1 + 0x28), 0x64)
+0042314f 
+00423158 if (result != NO_ERROR)
+00423164     int32_t* eax_9 = _fopen("C:/ToolLog.txt", "a+")
+00423164     
+00423170     if (eax_9 != 0)
+00423178         _fprintf(eax_9, "[Firehose] Failed to check response\n")
+0042317e         _fclose(eax_9)
+0042317e 
+0042318d return result

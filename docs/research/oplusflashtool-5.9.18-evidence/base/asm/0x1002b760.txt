@@ -1,0 +1,124 @@
+1002b760 push    ebx
+1002b761 push    esi
+1002b762 push    edi
+1002b763 push    0x1020195c
+1002b768 push    0x0
+1002b76a mov     edi, ecx
+1002b76c call    0x100fba20
+1002b771 lea     edx, [edi+0x104]
+1002b777 mov     ebx, eax
+1002b779 push    edx
+1002b77a lea     ecx, [edi+0x4]
+1002b77d push    ecx
+1002b77e lea     esi, [edi+0x6978]
+1002b784 push    0x101fea28
+1002b789 push    esi
+1002b78a call    0x1000c8f0
+1002b78f push    esi
+1002b790 push    0x2712
+1002b795 push    dword [edi]
+1002b797 call    0x100fb8e0
+1002b79c add     esp, 0x24
+1002b79f mov     esi, eax
+1002b7a1 push    0x1e
+1002b7a3 push    0xd
+1002b7a5 push    dword [edi]
+1002b7a7 call    0x100fb8e0
+1002b7ac add     esp, 0xc
+1002b7af or      esi, eax
+1002b7b1 push    0x1
+1002b7b3 push    0x2f
+1002b7b5 push    dword [edi]
+1002b7b7 call    0x100fb8e0
+1002b7bc add     esp, 0xc
+1002b7bf or      esi, eax
+1002b7c1 push    0x1
+1002b7c3 push    0x2a
+1002b7c5 push    dword [edi]
+1002b7c7 call    0x100fb8e0
+1002b7cc add     esp, 0xc
+1002b7cf or      esi, eax
+1002b7d1 push    ebx
+1002b7d2 push    0x2727
+1002b7d7 push    dword [edi]
+1002b7d9 call    0x100fb8e0
+1002b7de add     esp, 0xc
+1002b7e1 or      esi, eax
+1002b7e3 push    0x1
+1002b7e5 push    0x35
+1002b7e7 push    dword [edi]
+1002b7e9 call    0x100fb8e0
+1002b7ee add     esp, 0xc
+1002b7f1 or      esi, eax
+1002b7f3 lea     eax, [edi+0x2564]
+1002b7f9 push    eax
+1002b7fa push    0x271f
+1002b7ff push    dword [edi]
+1002b801 call    0x100fb8e0
+1002b806 add     esp, 0xc
+1002b809 or      esi, eax
+1002b80b push    edi
+1002b80c push    0x2711
+1002b811 push    dword [edi]
+1002b813 call    0x100fb8e0
+1002b818 add     esp, 0xc
+1002b81b or      esi, eax
+1002b81d push    0x1002b060
+1002b822 push    0x4e2b
+1002b827 push    dword [edi]
+1002b829 call    0x100fb8e0
+1002b82e add     esp, 0xc
+1002b831 or      esi, eax
+1002b833 push    0x0
+1002b835 push    0x40
+1002b837 push    dword [edi]
+1002b839 call    0x100fb8e0
+1002b83e add     esp, 0xc
+1002b841 or      esi, eax
+1002b843 push    0x0
+1002b845 push    0x51
+1002b847 push    dword [edi]
+1002b849 call    0x100fb8e0
+1002b84e add     esp, 0xc
+1002b851 or      esi, eax
+1002b853 je      0x1002b88e
+1002b88e mov     eax, dword [edi+0x3564]
+1002b894 push    dword [eax+0x4]
+1002b897 push    0x0
+1002b899 push    dword [eax]
+1002b89b call    0x10149f30
+1002b8a0 mov     ecx, dword [edi]
+1002b8a2 add     esp, 0xc
+1002b8a5 call    0x1001e150
+1002b8aa mov     esi, eax
+1002b8ac test    esi, esi
+1002b8ae je      0x1002b8b7
+1002b855 push    esi
+1002b856 push    0x1020198c
+1002b85b push    0xfb
+1002b860 push    0x102019bc
+1002b865 call    0x10022900
+1002b86a mov     eax, dword [edi+0x3564]
+1002b870 push    dword [eax+0x4]
+1002b873 push    0x0
+1002b875 push    dword [eax]
+1002b877 call    0x10149f30
+1002b87c add     esp, 0x1c
+1002b87f push    ebx
+1002b880 call    0x100fba60
+1002b885 mov     eax, esi
+1002b887 add     esp, 0x4
+1002b88a pop     edi
+1002b88b pop     esi
+1002b88c pop     ebx
+1002b88d retn    
+1002b8b7 push    ebx
+1002b8b8 call    0x100fba60
+1002b8bd add     esp, 0x4
+1002b8c0 mov     eax, esi
+1002b8c2 pop     edi
+1002b8c3 pop     esi
+1002b8c4 pop     ebx
+1002b8c5 retn    
+1002b8b0 mov     ecx, esi
+1002b8b2 call    0x1000c830

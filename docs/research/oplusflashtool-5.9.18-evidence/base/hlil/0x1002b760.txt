@@ -1,0 +1,42 @@
+1002b76c int32_t* eax = sub_100fba20(nullptr, "Content-Type: application/x-www-form-urlencoded")
+1002b779 void* var_18 = &arg1[0x41]
+1002b77d void* var_1c = &arg1[1]
+1002b78a _sprintf(&arg1[0x1a5e], "%s%s")
+1002b78f int32_t* var_28 = &arg1[0x1a5e]
+1002b7a1 int32_t var_10 = 0x1e
+1002b7b1 int32_t var_10_1 = 1
+1002b7c1 int32_t var_10_2 = 1
+1002b7d1 int32_t* var_10_3 = eax
+1002b7e3 int32_t var_10_4 = 1
+1002b7f1 int32_t esi_6 = sub_100fb8e0(*arg1, 0x2712) | sub_100fb8e0(*arg1, 0xd) | sub_100fb8e0(*arg1, 0x2f)
+1002b7f1     | sub_100fb8e0(*arg1, 0x2a) | sub_100fb8e0(*arg1, 0x2727) | sub_100fb8e0(*arg1, 0x35)
+1002b7f9 void* var_10_5 = &arg1[0x959]
+1002b80b int32_t* var_10_6 = arg1
+1002b81d int32_t (* var_10_7)(char* arg1, int32_t arg2, void* arg3) = sub_1002b060
+1002b833 int32_t var_10_8 = 0
+1002b843 int32_t var_10_9 = 0
+1002b851 int32_t esi_11 = esi_6 | sub_100fb8e0(*arg1, 0x271f) | sub_100fb8e0(*arg1, 0x2711)
+1002b851     | sub_100fb8e0(*arg1, 0x4e2b) | sub_100fb8e0(*arg1, 0x40) | sub_100fb8e0(*arg1, 0x51)
+1002b851 
+1002b853 if (esi_11 == 0)
+1002b88e     int32_t* eax_15 = arg1[0xd59]
+1002b89b     _memset(*eax_15, 0, eax_15[1])
+1002b8a5     void* eax_16
+1002b8a5     int32_t edx_1
+1002b8a5     eax_16, edx_1 = sub_1001e150(*arg1)
+1002b8a5     
+1002b8ae     if (eax_16 != 0)
+1002b8b2         sub_1000c830(eax_16, edx_1, eax_16, arg1)
+1002b8b2     
+1002b8b8     sub_100fba60(eax)
+1002b8c5     return eax_16
+1002b8c5 
+1002b855 int32_t var_10_10 = esi_11
+1002b856 char const* const var_14 = "[INFO][RCSM] rcsm_op_do_https reply data: %d"
+1002b85b int32_t var_18_11 = 0xfb
+1002b860 char const* const var_1c_1 = "rcsm_op_do_https"
+1002b865 opdbg_log()
+1002b86a int32_t* eax_13 = arg1[0xd59]
+1002b877 _memset(*eax_13, 0, eax_13[1])
+1002b880 sub_100fba60(eax)
+1002b88d return esi_11

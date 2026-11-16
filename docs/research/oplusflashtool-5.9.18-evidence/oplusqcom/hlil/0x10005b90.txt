@@ -1,0 +1,48 @@
+10005b90 int32_t* var_4 = arg1
+10005ba0 memset(&arg1[4], 0, 0x400)
+10005bb1 __builtin_strcpy(&arg1[4], 
+10005bb1     "<?xml version=\"1.0\" encoding=\"UTF-8\" ?>\n<data>\n<getsigndata value=\"ping\" />\n</data>")
+10005bef int32_t var_1c
+10005bef char const* const var_18_1
+10005bef int32_t var_14
+10005bef int32_t var_10
+10005bef 
+10005bef if (sub_10004ca0(arg1) == 0)
+10005c20     char const* const var_10_1 = "<response"
+10005c25     int32_t var_14_1 = 1
+10005c2c     int32_t eax_4
+10005c2c     int32_t* edi_1
+10005c2c     eax_4, edi_1 = sub_10004a50(&arg1[4], arg1.b, arg1, 0, 0)
+10005c2c     
+10005c36     if (eax_4 == 0)
+10005c5b         if (edi_1[0x2244] != 0)
+10005c97             if (strstr(&edi_1[0x104], "cannot get oplusreserve1") != 0)
+10005c99                 int32_t ecx_6 = *edi_1
+10005cb8                 opdbg_log("QCFirehose::execGetSignData", 0x30c, 
+10005cb8                     "[%s] [%s] ERROR: cannot get oplusreserve1/opporeserve1 partition information.", 
+10005cb8                     ecx_6 + 0x9e4, ecx_6 + 0x444)
+10005cc1                 *(edi_1 + 0x895e) = 0
+10005cc1             
+10005ccd             return 0
+10005ccd         
+10005c5f         sub_100042a0(edi_1)
+10005c64         int32_t ecx_5 = *edi_1
+10005c6c         var_10 = ecx_5 + 0x444
+10005c73         var_14 = ecx_5 + 0x9e4
+10005c74         var_18_1 = "[%s] [%s] ERROR: not recive ack flag."
+10005c79         var_1c = 0x307
+10005c36     else
+10005c38         int32_t ecx_3 = *edi_1
+10005c40         var_10 = ecx_3 + 0x444
+10005c47         var_14 = ecx_3 + 0x9e4
+10005c48         var_18_1 = "[%s] [%s] ERROR: recive resp is fail."
+10005c4d         var_1c = 0x301
+10005bef else
+10005bf1     int32_t ecx_1 = *arg1
+10005bf9     var_10 = ecx_1 + 0x444
+10005c00     var_14 = ecx_1 + 0x9e4
+10005c01     var_18_1 = "[%s] [%s] ERROR: send cmd is fail."
+10005c06     var_1c = 0x2fc
+10005c06 
+10005c10 opdbg_log("QCFirehose::execGetSignData", var_1c, var_18_1, var_14, var_10)
+10005c1f return 0xffffffff

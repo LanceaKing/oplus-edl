@@ -1,0 +1,246 @@
+1004f9f3 int32_t var_8 = 0xffffffff
+1004f9f5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = __ehhandler$?_Iput@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@ABA?AV?$ostreambuf_iterator@DU?$char_traits@D@std@@@2@V32@AAVios_base@2@DPADI@Z
+1004fa00 TEB* fsbase
+1004fa00 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+1004fa0c int32_t __saved_ebp
+1004fa0c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+1004fa18 fsbase->NtTib.ExceptionList = &ExceptionList
+1004fa2a int32_t var_8_1 = 0
+1004fa32 void** arg_4
+1004fa32 class PackageFileLoaderBase* eax_4 = PackageFileLoaderFactory::CreatePackageFileLoader(&arg_4)
+1004fa45 uint32_t result
+1004fa45 
+1004fa45 if (eax_4 != 0)
+1004fa56     char* eax_7
+1004fa56     int32_t edx_1
+1004fa56     eax_7, edx_1 = (*(*eax_4 + 0xc))(eax_2)
+1004fa5f     void* var_d0_1 = &eax_7[1]
+1004fa60     char* eax_8 = sub_1005f6bf()
+1004fa74     class PackageFileLoaderBase* edi_2 = eax_4
+1004fa7d     (*(*eax_4 + 0x2c))(eax_7, edx_1, eax_8, eax_7, edx_1)
+1004fa86     result = 0
+1004fa8b     *(eax_7 + eax_8) = 0
+1004fa96     struct TiXmlNode::TiXmlDocument::VTable* const var_a4
+1004fa96     memset(&var_a4, 0, 0x48)
+1004faa4     sub_1005ac90(&var_a4)
+1004fab7     var_8_1.b = 1
+1004fabb     sub_1005d120(&var_a4, eax_8, nullptr, nullptr)
+1004fac4     char var_78
+1004fac4     
+1004fac4     if (var_78 == 0)
+1004fae0         int32_t* ebx_2 = sub_1005b9d0(sub_1005b9d0(&var_a4))
+1004fae0         
+1004fae4         if (ebx_2 != 0)
+1004faf4             while (true)
+1004faf4                 if (ebx_2[5] != 2)
+1004fb00                     int32_t* eax_12 = sub_1005f651(0x38)
+1004fb0a                     int32_t* var_bc_1 = eax_12
+1004fb10                     eax_12[4] = 0
+1004fb17                     eax_12[5] = 0
+1004fb1e                     eax_12[5] = 0xf
+1004fb25                     bool cond:0_1 = eax_12[5] u< 0x10
+1004fb29                     eax_12[4] = 0
+1004fb30                     char* eax_13
+1004fb30                     
+1004fb30                     if (cond:0_1)
+1004fb36                         eax_13 = eax_12
+1004fb30                     else
+1004fb32                         eax_13 = *eax_12
+1004fb32                     
+1004fb38                     *eax_13 = 0
+1004fb3b                     void** eax_14 = &eax_12[6]
+1004fb3e                     eax_14[5] = 0xf
+1004fb45                     eax_14[4] = 0
+1004fb50                     void** var_b4_1 = eax_14
+1004fb50                     
+1004fb56                     if (eax_14[5] u>= 0x10)
+1004fb58                         eax_14 = *eax_14
+1004fb58                     
+1004fb5a                     *eax_14 = nullptr
+1004fb5d                     var_8_1.b = 4
+1004fb64                     int32_t* var_b0 = &eax_12[0xc]
+1004fb6a                     eax_12[0xc] = 0
+1004fb70                     eax_12[0xd] = 0
+1004fb7c                     var_8_1.b = 1
+1004fb80                     eax_12[0xc] = sub_1000b4b0()
+1004fb85                     char* edx_3 = ebx_2[8] + 8
+1004fb88                     int32_t var_48_1 = 0xf
+1004fb8f                     int32_t var_4c_1 = 0
+1004fb96                     char var_5c = 0
+1004fb9a                     var_b0 = eax_12
+1004fba3                     void* ecx_8
+1004fba3                     
+1004fba3                     if (*edx_3 != 0)
+1004fba9                         char* ecx_9 = edx_3
+1004fbb5                         int32_t* eax_15
+1004fbb5                         
+1004fbb5                         do
+1004fbb0                             eax_15.b = *ecx_9
+1004fbb2                             ecx_9 = &ecx_9[1]
+1004fbb5                         while (eax_15.b != 0)
+1004fbb7                         ecx_8 = ecx_9 - &ecx_9[1]
+1004fba3                     else
+1004fba5                         ecx_8 = nullptr
+1004fba5                     
+1004fbbe                     int32_t* eax_16 = sub_10001ad0(&var_5c, edx_3, ecx_8)
+1004fbc3                     var_8_1.b = 5
+1004fbc7                     int32_t* ecx_11 = &var_5c
+1004fbc7                     
+1004fbd1                     if (var_48_1 u>= 0x10)
+1004fbd1                         ecx_11 = var_5c.d
+1004fbd1                     
+1004fbe6                     if (sub_10007cc0(eax_16, var_4c_1, ecx_11, "program", 7) == 0)
+1004fbff                         char* edx_5 = sub_1005b260((*(*ebx_2 + 0x14))("project"))
+1004fc01                         int32_t var_18_1 = 0xf
+1004fc08                         int32_t var_1c_1 = 0
+1004fc0f                         char var_2c = 0
+1004fc16                         uint32_t ecx_14
+1004fc16                         
+1004fc16                         if (*edx_5 != 0)
+1004fc1c                             char* ecx_15 = edx_5
+1004fc26                             char* eax_20
+1004fc26                             
+1004fc26                             do
+1004fc21                                 eax_20.b = *ecx_15
+1004fc23                                 ecx_15 = &ecx_15[1]
+1004fc26                             while (eax_20.b != 0)
+1004fc28                             ecx_14 = ecx_15 - &ecx_15[1]
+1004fc16                         else
+1004fc18                             ecx_14 = 0
+1004fc18                         
+1004fc2f                         sub_10001ad0(&var_2c, edx_5, ecx_14)
+1004fc34                         var_8_1.b = 6
+1004fc34                         
+1004fc3c                         if (var_1c_1 == 0)
+1004fe80                             void** eax_42 = &arg_4
+1004fe80                             
+1004fe83                             if (arg1 u>= 0x10)
+1004fe83                                 eax_42 = arg_4
+1004fe83                             
+1004fe94                             opdbg_log("QComProjectCfgParser::parse", 0x27, 
+1004fe94                                 "[ERROR][Package]Failed to find project node. fileName = %s", 
+1004fe94                                 eax_42)
+1004fe9f                             sub_10043950(eax_12)
+1004fea4                             int32_t var_d0_19 = 0x38
+1004fea7                             operator new(eax_12)
+1004feaf                             result = 0xffffffff
+1004fe43                         label_1004fe43:
+1004fe43                             
+1004fe43                             if (var_18_1 u>= 0x10)
+1004fe4a                                 sub_10001d60(var_2c.d, var_18_1 + 1)
+1004fe4a                             
+1004fe52                             int32_t var_18_2 = 0xf
+1004fe59                             int32_t var_1c_2 = 0
+1004fe60                             var_2c = 0
+1004fe60                             
+1004fe67                             if (var_48_1 u>= 0x10)
+1004fe72                                 sub_10001d60(var_5c.d, var_48_1 + 1)
+1004fe72                             
+1004fe67                             break
+1004fe67                         
+1004fc47                         if (eax_12 != &var_2c)
+1004fc50                             sub_10001bd0(eax_12, &var_2c, 0, 0xffffffff)
+1004fc50                         
+1004fc68                         char* edx_6 = sub_1005b260((*(*ebx_2 + 0x14))("emmcsize"))
+1004fc6a                         int32_t var_30_1 = 0xf
+1004fc71                         int32_t var_34_1 = 0
+1004fc78                         char var_44 = 0
+1004fc7f                         uint32_t ecx_20
+1004fc7f                         
+1004fc7f                         if (*edx_6 != 0)
+1004fc85                             char* ecx_21 = edx_6
+1004fc95                             char* eax_23
+1004fc95                             
+1004fc95                             do
+1004fc90                                 eax_23.b = *ecx_21
+1004fc92                                 ecx_21 = &ecx_21[1]
+1004fc95                             while (eax_23.b != 0)
+1004fc97                             ecx_20 = ecx_21 - &ecx_21[1]
+1004fc7f                         else
+1004fc81                             ecx_20 = 0
+1004fc81                         
+1004fc9e                         sub_10001ad0(&var_44, edx_6, ecx_20)
+1004fca3                         var_8_1.b = 7
+1004fca3                         
+1004fcab                         if (var_34_1 == 0)
+1004fde7                             void** eax_35 = &arg_4
+1004fde7                             
+1004fdea                             if (arg1 u>= 0x10)
+1004fdea                                 eax_35 = arg_4
+1004fdea                             
+1004fdfb                             opdbg_log("QComProjectCfgParser::parse", 0x30, 
+1004fdfb                                 "[ERROR][Package]Failed to find emmcSize node. fileName = %s", 
+1004fdfb                                 eax_35)
+1004fe06                             sub_10043950(eax_12)
+1004fe0b                             int32_t var_d0_14 = 0x38
+1004fe0e                             operator new(eax_12)
+1004fe19                             result = 0xffffffff
+1004fe19                             
+1004fe1f                             if (var_30_1 u>= 0x10)
+1004fe26                                 sub_10001d60(var_44.d, var_30_1 + 1)
+1004fe26                             
+1004fe2b                             int32_t var_30_3 = 0xf
+1004fe32                             int32_t var_34_3 = 0
+1004fe39                             var_44 = 0
+1004fe1f                             goto label_1004fe43
+1004fe1f                         
+1004fcbc                         if (var_b4_1 != &var_44)
+1004fcc3                             sub_10001bd0(var_b4_1, &var_44, 0, 0xffffffff)
+1004fcc3                         
+1004fcce                         if (var_30_1 u>= 0x10)
+1004fcd5                             sub_10001d60(var_44.d, var_30_1 + 1)
+1004fcd5                         
+1004fcda                         var_8_1.b = 5
+1004fce1                         int32_t var_30_2 = 0xf
+1004fce8                         int32_t var_34_2 = 0
+1004fcef                         var_44 = 0
+1004fcef                         
+1004fcf6                         if (var_18_1 u>= 0x10)
+1004fcfd                             sub_10001d60(var_2c.d, var_18_1 + 1)
+1004fcfd                     
+1004fd0f                     int32_t* esi_6 = *(arg2 + 0xe4)
+1004fd19                     int32_t* eax_28 = sub_1002e8f0(esi_6, esi_6[1], &var_b0)
+1004fd25                     int32_t eax_29 = *(arg2 + 0xe8)
+1004fd25                     
+1004fd30                     if (0x15555554 - eax_29 u< 1)
+1004feb9                         std::_Xlength_error("list<T> too long")
+1004feb9                         noreturn
+1004feb9                     
+1004fd39                     *(arg2 + 0xe8) = eax_29 + 1
+1004fd3f                     esi_6[1] = eax_28
+1004fd45                     *eax_28[1] = eax_28
+1004fd47                     ebx_2 = ebx_2[0xa]
+1004fd4a                     var_8_1.b = 1
+1004fd4a                     
+1004fd54                     if (var_48_1 u>= 0x10)
+1004fd5b                         sub_10001d60(var_5c.d, var_48_1 + 1)
+1004faf4                 else
+1004faf6                     ebx_2 = ebx_2[0xa]
+1004faf6                 
+1004fd62                 if (ebx_2 == 0)
+1004fd68                     result = 0
+1004fd68                     break
+1004fd68             
+1004fd6a             edi_2 = eax_4
+1004fac4     else
+1004fac6         result = 0xffffffff
+1004fac6     
+1004fd70     var_8_1.b = 0
+1004fd77     var_a4 = &TiXmlDocument::`vftable'{for `TiXmlNode'}
+1004fd86     int32_t var_70
+1004fd86     
+1004fd86     if (var_70 != &data_10084798)
+1004fd89         sub_1005f6ba(var_70)
+1004fd89     
+1004fd97     sub_1005aef0(&var_a4)
+1004fda2     sub_1005f6ba(eax_8)
+1004fda8     PackageFileLoaderFactory::DeletePackageFileLoader(edi_2)
+1004fa45 else
+1004fa47     result = 0xffffffff
+1004fa47 
+1004fdb7 if (arg1 u>= 0x10)
+1004fdbe     sub_10001d60(arg_4, arg1 + 1)
+1004fdbe 
+1004fdc8 fsbase->NtTib.ExceptionList = ExceptionList
+1004fdd8 CookieCheckFunction(result)
+1004fde0 return result

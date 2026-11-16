@@ -1,0 +1,269 @@
+1003f580 push    ebx
+1003f581 push    esi
+1003f582 push    edi
+1003f583 mov     edi, dword [esp+0x14]
+1003f587 lea     esi, [edi+0x28]
+1003f58a mov     ebx, dword [edi+0x68]
+1003f58d mov     byte [ebx+esi], 0x80
+1003f591 inc     ebx
+1003f592 cmp     ebx, 0x38
+1003f595 jbe     0x1003f5b8
+1003f5b8 mov     eax, 0x38
+1003f5bd sub     eax, ebx
+1003f5bf push    eax
+1003f5c0 lea     eax, [ebx+esi]
+1003f5c3 push    0x0
+1003f5c5 push    eax
+1003f5c6 call    0x10149f30
+1003f5cb movzx   eax, byte [edi+0x27]
+1003f5cf mov     byte [esi+0x38], al
+1003f5d2 movzx   eax, byte [edi+0x26]
+1003f5d6 mov     byte [esi+0x39], al
+1003f5d9 movzx   eax, byte [edi+0x25]
+1003f5dd mov     byte [esi+0x3a], al
+1003f5e0 movzx   eax, byte [edi+0x24]
+1003f5e4 mov     byte [esi+0x3b], al
+1003f5e7 movzx   eax, byte [edi+0x23]
+1003f5eb mov     byte [esi+0x3c], al
+1003f5ee movzx   eax, byte [edi+0x22]
+1003f5f2 mov     byte [esi+0x3d], al
+1003f5f5 movzx   eax, byte [edi+0x21]
+1003f5f9 push    0x1
+1003f5fb mov     byte [esi+0x3e], al
+1003f5fe movzx   eax, byte [edi+0x20]
+1003f602 push    esi
+1003f603 push    edi
+1003f604 mov     byte [esi+0x3f], al
+1003f607 call    0x1003f9a0
+1003f60c push    0x40
+1003f60e push    esi
+1003f60f mov     dword [edi+0x68], 0x0
+1003f616 call    0x1004c1b0
+1003f61b mov     eax, dword [edi+0x6c]
+1003f61e add     esp, 0x20
+1003f621 cmp     eax, 0x1c
+1003f624 je      0x1003f778
+1003f597 mov     eax, 0x40
+1003f59c sub     eax, ebx
+1003f59e push    eax
+1003f59f lea     eax, [ebx+esi]
+1003f5a2 push    0x0
+1003f5a4 push    eax
+1003f5a5 call    0x10149f30
+1003f5aa push    0x1
+1003f5ac push    esi
+1003f5ad push    edi
+1003f5ae xor     ebx, ebx
+1003f5b0 call    0x1003f9a0
+1003f5b5 add     esp, 0x18
+1003f778 mov     ecx, dword [edi]
+1003f77a mov     eax, ecx
+1003f77c mov     edx, dword [esp+0x10]
+1003f780 shr     eax, 0x18
+1003f783 mov     byte [edx], al
+1003f785 mov     eax, ecx
+1003f787 shr     eax, 0x10
+1003f78a mov     byte [edx+0x1], al
+1003f78d mov     eax, ecx
+1003f78f shr     eax, 0x8
+1003f792 mov     byte [edx+0x2], al
+1003f795 mov     byte [edx+0x3], cl
+1003f798 mov     ecx, dword [edi+0x4]
+1003f79b mov     eax, ecx
+1003f79d shr     eax, 0x18
+1003f7a0 mov     byte [edx+0x4], al
+1003f7a3 mov     eax, ecx
+1003f7a5 shr     eax, 0x10
+1003f7a8 mov     byte [edx+0x5], al
+1003f7ab mov     eax, ecx
+1003f7ad shr     eax, 0x8
+1003f7b0 mov     byte [edx+0x6], al
+1003f7b3 mov     byte [edx+0x7], cl
+1003f7b6 mov     ecx, dword [edi+0x8]
+1003f7b9 mov     eax, ecx
+1003f7bb shr     eax, 0x18
+1003f7be mov     byte [edx+0x8], al
+1003f7c1 mov     eax, ecx
+1003f7c3 shr     eax, 0x10
+1003f7c6 mov     byte [edx+0x9], al
+1003f7c9 mov     eax, ecx
+1003f7cb shr     eax, 0x8
+1003f7ce mov     byte [edx+0xa], al
+1003f7d1 mov     byte [edx+0xb], cl
+1003f7d4 mov     ecx, dword [edi+0xc]
+1003f7d7 mov     eax, ecx
+1003f7d9 shr     eax, 0x18
+1003f7dc mov     byte [edx+0xc], al
+1003f7df mov     eax, ecx
+1003f7e1 shr     eax, 0x10
+1003f7e4 mov     byte [edx+0xd], al
+1003f7e7 mov     eax, ecx
+1003f7e9 shr     eax, 0x8
+1003f7ec mov     byte [edx+0xe], al
+1003f7ef mov     byte [edx+0xf], cl
+1003f7f2 mov     ecx, dword [edi+0x10]
+1003f7f5 mov     eax, ecx
+1003f7f7 shr     eax, 0x18
+1003f7fa mov     byte [edx+0x10], al
+1003f7fd mov     eax, ecx
+1003f7ff shr     eax, 0x10
+1003f802 mov     byte [edx+0x11], al
+1003f805 mov     eax, ecx
+1003f807 shr     eax, 0x8
+1003f80a mov     byte [edx+0x12], al
+1003f80d mov     byte [edx+0x13], cl
+1003f810 mov     ecx, dword [edi+0x14]
+1003f813 mov     eax, ecx
+1003f815 shr     eax, 0x18
+1003f818 mov     byte [edx+0x14], al
+1003f81b mov     eax, ecx
+1003f81d shr     eax, 0x10
+1003f820 mov     byte [edx+0x15], al
+1003f823 mov     eax, ecx
+1003f825 shr     eax, 0x8
+1003f828 mov     byte [edx+0x16], al
+1003f82b mov     byte [edx+0x17], cl
+1003f82e mov     ecx, dword [edi+0x18]
+1003f831 mov     eax, ecx
+1003f833 shr     eax, 0x18
+1003f836 mov     byte [edx+0x18], al
+1003f839 mov     eax, ecx
+1003f83b shr     eax, 0x10
+1003f83e mov     byte [edx+0x19], al
+1003f841 mov     eax, ecx
+1003f843 shr     eax, 0x8
+1003f846 mov     byte [edx+0x1a], al
+1003f849 mov     byte [edx+0x1b], cl
+1003f62a cmp     eax, 0x20
+1003f62d je      0x1003f67d
+1003f67d mov     ecx, dword [edi]
+1003f67f mov     eax, ecx
+1003f681 mov     edx, dword [esp+0x10]
+1003f685 shr     eax, 0x18
+1003f688 mov     byte [edx], al
+1003f68a mov     eax, ecx
+1003f68c shr     eax, 0x10
+1003f68f mov     byte [edx+0x1], al
+1003f692 mov     eax, ecx
+1003f694 shr     eax, 0x8
+1003f697 mov     byte [edx+0x2], al
+1003f69a mov     byte [edx+0x3], cl
+1003f69d mov     ecx, dword [edi+0x4]
+1003f6a0 mov     eax, ecx
+1003f6a2 shr     eax, 0x18
+1003f6a5 mov     byte [edx+0x4], al
+1003f6a8 mov     eax, ecx
+1003f6aa shr     eax, 0x10
+1003f6ad mov     byte [edx+0x5], al
+1003f6b0 mov     eax, ecx
+1003f6b2 shr     eax, 0x8
+1003f6b5 mov     byte [edx+0x6], al
+1003f6b8 mov     byte [edx+0x7], cl
+1003f6bb mov     ecx, dword [edi+0x8]
+1003f6be mov     eax, ecx
+1003f6c0 shr     eax, 0x18
+1003f6c3 mov     byte [edx+0x8], al
+1003f6c6 mov     eax, ecx
+1003f6c8 shr     eax, 0x10
+1003f6cb mov     byte [edx+0x9], al
+1003f6ce mov     eax, ecx
+1003f6d0 shr     eax, 0x8
+1003f6d3 mov     byte [edx+0xa], al
+1003f6d6 mov     byte [edx+0xb], cl
+1003f6d9 mov     ecx, dword [edi+0xc]
+1003f6dc mov     eax, ecx
+1003f6de shr     eax, 0x18
+1003f6e1 mov     byte [edx+0xc], al
+1003f6e4 mov     eax, ecx
+1003f6e6 shr     eax, 0x10
+1003f6e9 mov     byte [edx+0xd], al
+1003f6ec mov     eax, ecx
+1003f6ee shr     eax, 0x8
+1003f6f1 mov     byte [edx+0xe], al
+1003f6f4 mov     byte [edx+0xf], cl
+1003f6f7 mov     ecx, dword [edi+0x10]
+1003f6fa mov     eax, ecx
+1003f6fc shr     eax, 0x18
+1003f6ff mov     byte [edx+0x10], al
+1003f702 mov     eax, ecx
+1003f704 shr     eax, 0x10
+1003f707 mov     byte [edx+0x11], al
+1003f70a mov     eax, ecx
+1003f70c shr     eax, 0x8
+1003f70f mov     byte [edx+0x12], al
+1003f712 mov     byte [edx+0x13], cl
+1003f715 mov     ecx, dword [edi+0x14]
+1003f718 mov     eax, ecx
+1003f71a shr     eax, 0x18
+1003f71d mov     byte [edx+0x14], al
+1003f720 mov     eax, ecx
+1003f722 shr     eax, 0x10
+1003f725 mov     byte [edx+0x15], al
+1003f728 mov     eax, ecx
+1003f72a shr     eax, 0x8
+1003f72d mov     byte [edx+0x16], al
+1003f730 mov     byte [edx+0x17], cl
+1003f733 mov     ecx, dword [edi+0x18]
+1003f736 mov     eax, ecx
+1003f738 shr     eax, 0x18
+1003f73b mov     byte [edx+0x18], al
+1003f73e mov     eax, ecx
+1003f740 shr     eax, 0x10
+1003f743 mov     byte [edx+0x19], al
+1003f746 mov     eax, ecx
+1003f748 shr     eax, 0x8
+1003f74b mov     byte [edx+0x1a], al
+1003f74e mov     byte [edx+0x1b], cl
+1003f751 mov     ecx, dword [edi+0x1c]
+1003f754 mov     eax, ecx
+1003f756 shr     eax, 0x18
+1003f759 mov     byte [edx+0x1c], al
+1003f75c mov     eax, ecx
+1003f75e shr     eax, 0x10
+1003f761 mov     byte [edx+0x1d], al
+1003f764 mov     eax, ecx
+1003f766 pop     edi
+1003f767 shr     eax, 0x8
+1003f76a mov     byte [edx+0x1e], al
+1003f76d mov     eax, 0x1
+1003f772 pop     esi
+1003f773 mov     byte [edx+0x1f], cl
+1003f776 pop     ebx
+1003f777 retn    
+1003f62f jbe     0x1003f637
+1003f637 xor     esi, esi
+1003f639 test    eax, 0xfffffffc
+1003f63e jbe     0x1003f84c
+1003f631 pop     edi
+1003f632 pop     esi
+1003f633 xor     eax, eax
+1003f635 pop     ebx
+1003f636 retn    
+1003f84c pop     edi
+1003f84d pop     esi
+1003f84e mov     eax, 0x1
+1003f853 pop     ebx
+1003f854 retn    
+1003f644 mov     eax, dword [esp+0x10]
+1003f648 mov     edx, dword [edi+esi*4]
+1003f64b lea     eax, [eax+0x4]
+1003f64e mov     ecx, edx
+1003f650 inc     esi
+1003f651 shr     ecx, 0x18
+1003f654 mov     byte [eax-0x4], cl
+1003f657 mov     ecx, edx
+1003f659 shr     ecx, 0x10
+1003f65c mov     byte [eax-0x3], cl
+1003f65f mov     ecx, edx
+1003f661 shr     ecx, 0x8
+1003f664 mov     byte [eax-0x2], cl
+1003f667 mov     byte [eax-0x1], dl
+1003f66a mov     ecx, dword [edi+0x6c]
+1003f66d shr     ecx, 0x2
+1003f670 cmp     esi, ecx
+1003f672 jb      0x1003f648
+1003f674 pop     edi
+1003f675 pop     esi
+1003f676 mov     eax, 0x1
+1003f67b pop     ebx
+1003f67c retn    

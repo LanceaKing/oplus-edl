@@ -1,0 +1,109 @@
+180004ab6 void var_c8
+180004ab6 int64_t rax_1 = __security_cookie ^ &var_c8
+180004acd int32_t* var_90 = arg1
+180004aea int32_t result
+180004aea 
+180004aea if (arg1 == 0 || arg2 == 0 || arg4 == 0)
+180004d0f     result = 1
+180004aea else
+180004af0     *arg4 = 0
+180004af3     result = sub_180003820(arg4)
+180004af3     
+180004afa     if (result == 0)
+180004b03         int128_t var_88 = zx.o(0)
+180004b09         int128_t var_58
+180004b09         __builtin_memset(&var_58, 0, 0x18)
+180004b16         int64_t var_40_1 = 0xf
+180004b22         var_58.b = result.b
+180004b3e         int32_t result_1
+180004b3e         int16_t* rdx_1
+180004b3e         int64_t r8_1
+180004b3e         uint64_t r9_1
+180004b3e         result_1, rdx_1, r8_1, r9_1 =
+180004b3e             common_assert_to_message_box_build_string<wchar_t>(arg1, arg2, arg3, &var_88, &var_58)
+180004b3e         
+180004b47         if (result_1 == 0)
+180004c34             int64_t* rax_8 = sub_1800d1b80(0x10, rdx_1, r8_1, r9_1)
+180004c39             int64_t* rbx_2 = rax_8
+180004c39             
+180004c3f             if (rax_8 == 0)
+180004c4a                 rbx_2 = nullptr
+180004c3f             else
+180004c41                 *rax_8 = 0
+180004c44                 rax_8[1] = 0
+180004c44             
+180004c55             sub_180003000(rbx_2, &var_88)
+180004c5a             *arg4 = rbx_2
+180004c5a             
+180004c69             if (var_40_1 u> 0xf)
+180004c6e                 void* rcx_8 = var_58.q
+180004c6e                 
+180004c7a                 if (var_40_1 + 1 u>= 0x1000)
+180004c7c                     void* rax_9 = *(rcx_8 - 8)
+180004c7c                     
+180004c8b                     if (rcx_8 - rax_9 - 8 u> 0x1f)
+180004d06                         trap(0xd)
+180004d06                     
+180004c91                     rcx_8 = rax_9
+180004c91                 
+180004c94                 j_sub_18012c540(rcx_8)
+180004c94             
+180004c99             int64_t var_48_3 = 0
+180004ca1             int64_t var_40_4 = 0xf
+180004cad             var_58.b = 0
+180004cb2             int64_t* rdi_2 = var_88:8.q
+180004cb2             
+180004cba             if (rdi_2 != 0)
+180004cc3                 rdi_2[1].d -= 1
+180004cc3                 
+180004ccb                 if (rdi_2[1].d == 1)
+180004cd6                     (**rdi_2)(rdi_2)
+180004cdc                     int32_t rbx_3 = *(rdi_2 + 0xc)
+180004cdc                     *(rdi_2 + 0xc) -= 1
+180004cdc                     
+180004ce4                     if (rbx_3 == 1)
+180004cf0                         (*(*rdi_2 + 8))(rdi_2)
+180004cf0             
+180004cf6             result = 0
+180004b47         else
+180004b52             int128_t var_78 = var_58
+180004b5f             int64_t var_48
+180004b5f             int128_t var_68_1 = var_48.o
+180004b64             int64_t var_48_1 = 0
+180004b6c             int64_t var_40_2 = 0xf
+180004b78             var_58.b = 0
+180004b85             sub_1800039b0(arg1, &var_78)
+180004b85             
+180004b97             if (var_40_2 u> 0xf)
+180004b9c                 void* rcx_2 = var_58.q
+180004b9c                 
+180004ba8                 if (var_40_2 + 1 u>= 0x1000)
+180004baa                     void* rax_2 = *(rcx_2 - 8)
+180004baa                     
+180004bb9                     if (rcx_2 - rax_2 - 8 u> 0x1f)
+180004d06                         trap(0xd)
+180004d06                     
+180004bc3                     rcx_2 = rax_2
+180004bc3                 
+180004bc6                 j_sub_18012c540(rcx_2)
+180004bc6             
+180004bcb             int64_t var_48_2 = 0
+180004bd3             int64_t var_40_3 = 0xf
+180004bdf             var_58.b = 0
+180004be4             int64_t* rdi_1 = var_88:8.q
+180004be4             
+180004bec             if (rdi_1 != 0)
+180004bf5                 rdi_1[1].d -= 1
+180004bf5                 
+180004bfd                 if (rdi_1[1].d == 1)
+180004c08                     (**rdi_1)(rdi_1)
+180004c0e                     int32_t rbx_1 = *(rdi_1 + 0xc)
+180004c0e                     *(rdi_1 + 0xc) -= 1
+180004c0e                     
+180004c16                     if (rbx_1 == 1)
+180004c22                         (*(*rdi_1 + 8))(rdi_1)
+180004c22             
+180004c28             result = result_1
+180004c28 
+180004d1f __security_check_cookie(rax_1 ^ &var_c8)
+180004d32 return result

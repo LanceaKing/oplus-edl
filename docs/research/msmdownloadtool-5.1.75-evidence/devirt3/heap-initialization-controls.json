@@ -1,0 +1,46 @@
+{
+  "vectors": [
+    {
+      "kind": "pipeline",
+      "baseline_trace": "main-0x4d4e00-native-peb19041-rc0x1370-rh0x212833e0-imports-clock1700000000-crt-heap-fixture101d4772-chain0x4d4e80_0x4d44d0-business.json",
+      "trace": "main-0x4d4e00-native-peb19041-rc0x1370-rh0x212833e0-imports-clock1700000000-crt-poison0xa5-heap-fixture101d4772-chain0x4d4e80_0x4d44d0-business.json",
+      "trace_sha256": "29ad0d4a62366efdfba9d025737022df8448b9b20f67de58517c8283d419b3d8",
+      "heap_fill": 165,
+      "rule": "HeapAlloc without HEAP_ZERO_MEMORY fills allocated bytes with A5; zero-memory flag retains zeros.",
+      "checks": {
+        "returned": true,
+        "plaintext_unchanged": true,
+        "token_unchanged": true
+      },
+      "pass": true
+    },
+    {
+      "kind": "demacia",
+      "baseline_trace": "main-0x4d4830-native-peb19041-rc0x1370-rh0x212833e0-imports-clock1700000000-crt-heap-fixturea0e6dd6c-business.json",
+      "trace": "main-0x4d4830-native-peb19041-rc0x1370-rh0x212833e0-imports-clock1700000000-crt-poison0xa5-heap-fixturea0e6dd6c-business.json",
+      "trace_sha256": "4503548346a61a558e45a7b804b9fa5824034366f9af7f2950eecfe912512230",
+      "heap_fill": 165,
+      "rule": "HeapAlloc without HEAP_ZERO_MEMORY fills allocated bytes with A5; zero-memory flag retains zeros.",
+      "checks": {
+        "returned": true,
+        "plaintext_unchanged": true,
+        "token_unchanged": true
+      },
+      "pass": true
+    },
+    {
+      "kind": "setswprojmodel",
+      "baseline_trace": "main-0x4d4e00-native-peb19041-rc0x1370-rh0x212833e0-imports-clock1700000000-crt-heap-fixturebb5adb87-chain0x4d5340_0x4d4680-business.json",
+      "trace": "main-0x4d4e00-native-peb19041-rc0x1370-rh0x212833e0-imports-clock1700000000-crt-poison0xa5-heap-fixturebb5adb87-chain0x4d5340_0x4d4680-business.json",
+      "trace_sha256": "dea68a1542ff794426cba13cf12e1f53b0ce01fe53c81d3acee8a839f469cac1",
+      "heap_fill": 165,
+      "rule": "HeapAlloc without HEAP_ZERO_MEMORY fills allocated bytes with A5; zero-memory flag retains zeros.",
+      "checks": {
+        "returned": true,
+        "plaintext_unchanged": true,
+        "token_unchanged": true
+      },
+      "pass": true
+    }
+  ]
+}

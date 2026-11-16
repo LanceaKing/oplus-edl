@@ -1,0 +1,25 @@
+00406bcc EnterCriticalSection(arg1 + 0x1b0)
+00406bde int32_t esi = *(arg1 + 0x19c)
+00406be4 void* result = (*(*(arg1 + 0x1a8) + 0x14))()
+00406be4 
+00406be9 if (esi != 0)
+00406bfe     ResetEvent(*(*(arg1 + 0x190) + 4))
+00406c09     ResetEvent(*(*(arg1 + 0x194) + 4))
+00406c14     SetEvent(*(*(arg1 + 0x198) + 4))
+00406c30     LPARAM lParam
+00406c30     
+00406c30     if (data_5ea5ac == 0)
+00406c39         lParam = u"Stopping Download ..."
+00406c30     else
+00406c32         lParam = "ck(W\Pbk"
+00406c32     
+00406c4d     SendMessageW(*(*(arg1 + 0x1ec) + 0x20), 0x178c, zx.d((*(arg1 + 0x1e8)).b) << 0x10, lParam)
+00406c5a     EnterCriticalSection(arg1 + 0x1b0)
+00406c60     int32_t eax_10 = *(arg1 + 0x1a8)
+00406c6c     *(arg1 + 0x1a0) = 1
+00406c76     (*(eax_10 + 0x14))()
+00406c79     result = *(arg1 + 0x147c)
+00406c7f     *(arg1 + 0x1017e8) = 1
+00406c86     *(result + 0xc) = 1
+00406c86 
+00406c8d return result

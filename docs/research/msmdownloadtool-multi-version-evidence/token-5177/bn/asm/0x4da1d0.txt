@@ -1,0 +1,88 @@
+004da1d0 push    ebp
+004da1d1 mov     ebp, dword [esp+0xc]
+004da1d5 push    edi
+004da1d6 mov     edi, dword [esp+0x14]
+004da1da test    edi, edi
+004da1dc je      0x4da29d
+004da29d pop     edi
+004da29e mov     eax, 0x1
+004da2a3 pop     ebp
+004da2a4 retn    
+004da1e2 push    ebx
+004da1e3 mov     ebx, dword [esp+0x10]
+004da1e7 mov     eax, dword [ebx+0x20]
+004da1ea lea     ecx, [eax+edi*8]
+004da1ed cmp     ecx, eax
+004da1ef jae     0x4da1f4
+004da1f4 mov     eax, edi
+004da1f6 mov     dword [ebx+0x20], ecx
+004da1f9 mov     ecx, dword [ebx+0x68]
+004da1fc shr     eax, 0x1d
+004da1ff add     dword [ebx+0x24], eax
+004da202 push    esi
+004da203 test    ecx, ecx
+004da205 je      0x4da26b
+004da1f1 inc     dword [ebx+0x24]
+004da26b mov     esi, edi
+004da26d shr     esi, 0x6
+004da270 test    esi, esi
+004da272 je      0x4da286
+004da207 lea     edx, [ebx+0x28]
+004da20a cmp     edi, 0x40
+004da20d jae     0x4da232
+004da286 test    edi, edi
+004da288 je      0x4da29b
+004da274 push    esi
+004da275 push    ebp
+004da276 push    ebx
+004da277 call    0x4da2b0
+004da27c shl     esi, 0x6
+004da27f add     esp, 0xc
+004da282 add     ebp, esi
+004da284 sub     edi, esi
+004da232 mov     esi, 0x40
+004da237 lea     eax, [edx+ecx]
+004da23a sub     esi, ecx
+004da23c push    esi
+004da23d push    ebp
+004da23e push    eax
+004da23f call    0x692dc0
+004da244 push    0x1
+004da246 lea     eax, [ebx+0x28]
+004da249 push    eax
+004da24a push    ebx
+004da24b call    0x4da2b0
+004da250 push    0x40
+004da252 lea     eax, [ebx+0x28]
+004da255 mov     dword [ebx+0x68], 0x0
+004da25c push    0x0
+004da25e push    eax
+004da25f add     ebp, esi
+004da261 sub     edi, esi
+004da263 call    0x693410
+004da268 add     esp, 0x24
+004da20f lea     eax, [ecx+edi]
+004da212 cmp     eax, 0x40
+004da215 jae     0x4da232
+004da29b pop     esi
+004da29c pop     ebx
+004da28a push    edi
+004da28b lea     eax, [ebx+0x28]
+004da28e mov     dword [ebx+0x68], edi
+004da291 push    ebp
+004da292 push    eax
+004da293 call    0x692dc0
+004da298 add     esp, 0xc
+004da217 push    edi
+004da218 lea     eax, [edx+ecx]
+004da21b push    ebp
+004da21c push    eax
+004da21d call    0x692dc0
+004da222 add     esp, 0xc
+004da225 mov     eax, 0x1
+004da22a add     dword [ebx+0x68], edi
+004da22d pop     esi
+004da22e pop     ebx
+004da22f pop     edi
+004da230 pop     ebp
+004da231 retn    

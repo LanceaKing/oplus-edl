@@ -1,0 +1,5505 @@
+[
+  {
+    "path": "/Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/sample/MsmDownloadTool V4.0.exe",
+    "sha256": "0ac4005251f060cc759b251fcbb52a07d146c54bd8e4f4eb62092c70f28dc0b6",
+    "size": 13504512,
+    "machine": "0x14c",
+    "imagebase": "0x400000",
+    "entry": "0x1bbed88",
+    "pe_timestamp_utc": "2020-12-07T17:08:22+00:00",
+    "subsystem": 2,
+    "dll_characteristics": "0x8140",
+    "security_directory": {
+      "offset": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "va": "0x401000",
+        "virtual_size": 3077598,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0x60000020"
+      },
+      {
+        "name": ".rdata",
+        "va": "0x6f1000",
+        "virtual_size": 825206,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".data",
+        "va": "0x7bb000",
+        "virtual_size": 176172,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0xc0000040"
+      },
+      {
+        "name": ".vmp0",
+        "va": "0x7e7000",
+        "virtual_size": 10026170,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0x60000060"
+      },
+      {
+        "name": ".vmp1",
+        "va": "0x1177000",
+        "virtual_size": 13416080,
+        "raw_offset": 1024,
+        "raw_size": 13416448,
+        "entropy": 7.988811124461627,
+        "characteristics": "0x60000060"
+      },
+      {
+        "name": ".reloc",
+        "va": "0x1e43000",
+        "virtual_size": 1524,
+        "raw_offset": 13417472,
+        "raw_size": 1536,
+        "entropy": 4.592903764749894,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".rsrc",
+        "va": "0x1e44000",
+        "virtual_size": 85435,
+        "raw_offset": 13419008,
+        "raw_size": 85504,
+        "entropy": 5.133548679132175,
+        "characteristics": "0x40000040"
+      }
+    ],
+    "imports": [
+      {
+        "dll": "VERSION.dll",
+        "functions": [
+          {
+            "name": "GetFileVersionInfoW",
+            "iat": "0x1a84000"
+          }
+        ]
+      },
+      {
+        "dll": "SHELL32.dll",
+        "functions": [
+          {
+            "name": "SHGetPathFromIDListW",
+            "iat": "0x1a84008"
+          }
+        ]
+      },
+      {
+        "dll": "IPHLPAPI.DLL",
+        "functions": [
+          {
+            "name": "GetAdaptersInfo",
+            "iat": "0x1a84010"
+          }
+        ]
+      },
+      {
+        "dll": "CRYPT32.dll",
+        "functions": [
+          {
+            "name": "CryptUnprotectMemory",
+            "iat": "0x1a84018"
+          }
+        ]
+      },
+      {
+        "dll": "WINHTTP.dll",
+        "functions": [
+          {
+            "name": "WinHttpOpen",
+            "iat": "0x1a84020"
+          }
+        ]
+      },
+      {
+        "dll": "bcrypt.dll",
+        "functions": [
+          {
+            "name": "BCryptCloseAlgorithmProvider",
+            "iat": "0x1a84028"
+          }
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "GetVersionExW",
+            "iat": "0x1a84030"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "GetUpdateRect",
+            "iat": "0x1a84038"
+          }
+        ]
+      },
+      {
+        "dll": "GDI32.dll",
+        "functions": [
+          {
+            "name": "CreateRectRgn",
+            "iat": "0x1a84040"
+          }
+        ]
+      },
+      {
+        "dll": "MSIMG32.dll",
+        "functions": [
+          {
+            "name": "AlphaBlend",
+            "iat": "0x1a84048"
+          }
+        ]
+      },
+      {
+        "dll": "WINSPOOL.DRV",
+        "functions": [
+          {
+            "name": "OpenPrinterW",
+            "iat": "0x1a84050"
+          }
+        ]
+      },
+      {
+        "dll": "ADVAPI32.dll",
+        "functions": [
+          {
+            "name": "CryptGenRandom",
+            "iat": "0x1a84058"
+          }
+        ]
+      },
+      {
+        "dll": "COMCTL32.dll",
+        "functions": [
+          {
+            "name": "ImageList_GetImageCount",
+            "iat": "0x1a84060"
+          }
+        ]
+      },
+      {
+        "dll": "SHLWAPI.dll",
+        "functions": [
+          {
+            "name": "PathRemoveFileSpecW",
+            "iat": "0x1a84068"
+          }
+        ]
+      },
+      {
+        "dll": "UxTheme.dll",
+        "functions": [
+          {
+            "name": "DrawThemeBackground",
+            "iat": "0x1a84070"
+          }
+        ]
+      },
+      {
+        "dll": "ole32.dll",
+        "functions": [
+          {
+            "name": "CoUninitialize",
+            "iat": "0x1a84078"
+          }
+        ]
+      },
+      {
+        "dll": "OLEAUT32.dll",
+        "functions": [
+          {
+            "name": "VarBstrFromDate",
+            "iat": "0x1a84080"
+          }
+        ]
+      },
+      {
+        "dll": "gdiplus.dll",
+        "functions": [
+          {
+            "name": "GdipDrawImageI",
+            "iat": "0x1a84088"
+          }
+        ]
+      },
+      {
+        "dll": "WINMM.dll",
+        "functions": [
+          {
+            "name": "PlaySoundW",
+            "iat": "0x1a84090"
+          }
+        ]
+      },
+      {
+        "dll": "WS2_32.dll",
+        "functions": [
+          {
+            "name": "closesocket",
+            "iat": "0x1a84098"
+          }
+        ]
+      },
+      {
+        "dll": "MSWSOCK.dll",
+        "functions": [
+          {
+            "name": "WSARecvEx",
+            "iat": "0x1a840a0"
+          }
+        ]
+      },
+      {
+        "dll": "dbghelp.dll",
+        "functions": [
+          {
+            "name": "MakeSureDirectoryPathExists",
+            "iat": "0x1a840a8"
+          }
+        ]
+      },
+      {
+        "dll": "OLEACC.dll",
+        "functions": [
+          {
+            "name": "LresultFromObject",
+            "iat": "0x1a840b0"
+          }
+        ]
+      },
+      {
+        "dll": "IMM32.dll",
+        "functions": [
+          {
+            "name": "ImmReleaseContext",
+            "iat": "0x1a840b8"
+          }
+        ]
+      },
+      {
+        "dll": "SETUPAPI.dll",
+        "functions": [
+          {
+            "name": "SetupDiGetDeviceRegistryPropertyW",
+            "iat": "0x1a840c0"
+          }
+        ]
+      },
+      {
+        "dll": "WTSAPI32.dll",
+        "functions": [
+          {
+            "name": "WTSSendMessageW",
+            "iat": "0x1a840c8"
+          }
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "VirtualQuery",
+            "iat": "0x1a840d0"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "GetProcessWindowStation",
+            "iat": "0x1a840d8"
+          }
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "LocalAlloc",
+            "iat": "0x1a840e0"
+          },
+          {
+            "name": "LocalFree",
+            "iat": "0x1a840e4"
+          },
+          {
+            "name": "GetModuleFileNameW",
+            "iat": "0x1a840e8"
+          },
+          {
+            "name": "GetProcessAffinityMask",
+            "iat": "0x1a840ec"
+          },
+          {
+            "name": "SetProcessAffinityMask",
+            "iat": "0x1a840f0"
+          },
+          {
+            "name": "SetThreadAffinityMask",
+            "iat": "0x1a840f4"
+          },
+          {
+            "name": "Sleep",
+            "iat": "0x1a840f8"
+          },
+          {
+            "name": "ExitProcess",
+            "iat": "0x1a840fc"
+          },
+          {
+            "name": "FreeLibrary",
+            "iat": "0x1a84100"
+          },
+          {
+            "name": "LoadLibraryA",
+            "iat": "0x1a84104"
+          },
+          {
+            "name": "GetModuleHandleA",
+            "iat": "0x1a84108"
+          },
+          {
+            "name": "GetProcAddress",
+            "iat": "0x1a8410c"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "GetProcessWindowStation",
+            "iat": "0x1a84114"
+          },
+          {
+            "name": "GetUserObjectInformationW",
+            "iat": "0x1a84118"
+          }
+        ]
+      }
+    ],
+    "exports": [],
+    "versions": [
+      {
+        "CompanyName": "OnePlus",
+        "FileDescription": "Qualcomm Smart Phone Download Tool",
+        "FileVersion": "5.1.75.0",
+        "InternalName": "MsmDownloadTool.exe",
+        "LegalCopyright": "Copyright(C) Shenzhen OnePlus Technology Co.,Ltd.  All rights reserved.",
+        "OriginalFilename": "MsmDownloadTool.exe",
+        "ProductName": "MsmDownloadTool",
+        "ProductVersion": "5.1.75.0"
+      }
+    ],
+    "resources": [
+      {
+        "type": 3,
+        "id": 1,
+        "lang": 2052,
+        "va": "0x1e44160",
+        "size": 15730,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 3,
+        "id": 2,
+        "lang": 2052,
+        "va": "0x1e47ed4",
+        "size": 67624,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 14,
+        "id": 128,
+        "lang": 2052,
+        "va": "0x1e586fc",
+        "size": 34,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 16,
+        "id": 1,
+        "lang": 1033,
+        "va": "0x1e58720",
+        "size": 884,
+        "strings_utf16": [
+          "VS_VERSION_INFO",
+          "StringFileInfo",
+          "040904b0",
+          "CompanyName",
+          "OnePlus",
+          "FileDescription",
+          "Qualcomm Smart Phone Download Tool",
+          "FileVersion",
+          "5.1.75.0",
+          "InternalName",
+          "MsmDownloadTool.exe",
+          "LegalCopyright",
+          "Copyright(C) Shenzhen OnePlus Technology Co.,Ltd.  All rights reserved.",
+          "OriginalFilename",
+          "MsmDownloadTool.exe",
+          "ProductName",
+          "MsmDownloadTool",
+          "ProductVersion",
+          "5.1.75.0",
+          "VarFileInfo",
+          "Translation"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 24,
+        "id": 1,
+        "lang": 1033,
+        "va": "0x1e58a94",
+        "size": 807,
+        "strings_utf16": [],
+        "strings_ascii": [
+          "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+          "<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\"><dependency><dependentAssembly><assemblyIdentity type=\"win32\" name=\"Microsoft.Windows.Common-Controls\" version=\"6.0.0.0\" processorArchitecture=\"x86\" publicKeyToken=\"6595b64144ccf1df\" language=\"*\"></assemblyIdentity></dependentAssembly></dependency><trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\"><security><requestedPrivileges><requestedExecutionLevel level=\"requireAdministrator\" uiAccess=\"false\"></requestedExecutionLevel></requestedPrivileges></security></trustInfo><application xmlns=\"urn:schemas-microsoft-com:asm.v3\"><windowsSettings><dpiAware xmlns=\"http://schemas.microsoft.com/SMI/2005/WindowsSettings\">true</dpiAware></windowsSettings></application></assembly>"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/sample/MsmDownloadTool V4.0_Win7.exe",
+    "sha256": "b9c803c0a14d4b5806d5b9d394fccd9688d0f4bbcbf86694f07636a09f4efc05",
+    "size": 13479424,
+    "machine": "0x14c",
+    "imagebase": "0x400000",
+    "entry": "0x1475872",
+    "pe_timestamp_utc": "2020-12-07T17:17:42+00:00",
+    "subsystem": 2,
+    "dll_characteristics": "0x8140",
+    "security_directory": {
+      "offset": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "va": "0x401000",
+        "virtual_size": 3080286,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0x60000020"
+      },
+      {
+        "name": ".rdata",
+        "va": "0x6f2000",
+        "virtual_size": 825746,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".data",
+        "va": "0x7bc000",
+        "virtual_size": 176172,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0xc0000040"
+      },
+      {
+        "name": ".vmp0",
+        "va": "0x7e8000",
+        "virtual_size": 10013015,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0x60000060"
+      },
+      {
+        "name": ".vmp1",
+        "va": "0x1175000",
+        "virtual_size": 13391216,
+        "raw_offset": 1024,
+        "raw_size": 13391360,
+        "entropy": 7.988684647446747,
+        "characteristics": "0x60000060"
+      },
+      {
+        "name": ".reloc",
+        "va": "0x1e3b000",
+        "virtual_size": 1508,
+        "raw_offset": 13392384,
+        "raw_size": 1536,
+        "entropy": 4.388773709813969,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".rsrc",
+        "va": "0x1e3c000",
+        "virtual_size": 85435,
+        "raw_offset": 13393920,
+        "raw_size": 85504,
+        "entropy": 5.133554274225639,
+        "characteristics": "0x40000040"
+      }
+    ],
+    "imports": [
+      {
+        "dll": "VERSION.dll",
+        "functions": [
+          {
+            "name": "GetFileVersionInfoW",
+            "iat": "0x127c000"
+          }
+        ]
+      },
+      {
+        "dll": "SHELL32.dll",
+        "functions": [
+          {
+            "name": "SHGetPathFromIDListW",
+            "iat": "0x127c008"
+          }
+        ]
+      },
+      {
+        "dll": "IPHLPAPI.DLL",
+        "functions": [
+          {
+            "name": "GetAdaptersInfo",
+            "iat": "0x127c010"
+          }
+        ]
+      },
+      {
+        "dll": "CRYPT32.dll",
+        "functions": [
+          {
+            "name": "CryptUnprotectMemory",
+            "iat": "0x127c018"
+          }
+        ]
+      },
+      {
+        "dll": "WINHTTP.dll",
+        "functions": [
+          {
+            "name": "WinHttpOpen",
+            "iat": "0x127c020"
+          }
+        ]
+      },
+      {
+        "dll": "bcrypt.dll",
+        "functions": [
+          {
+            "name": "BCryptCloseAlgorithmProvider",
+            "iat": "0x127c028"
+          }
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "GetVersionExW",
+            "iat": "0x127c030"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "GetUpdateRect",
+            "iat": "0x127c038"
+          }
+        ]
+      },
+      {
+        "dll": "GDI32.dll",
+        "functions": [
+          {
+            "name": "CreateRectRgn",
+            "iat": "0x127c040"
+          }
+        ]
+      },
+      {
+        "dll": "MSIMG32.dll",
+        "functions": [
+          {
+            "name": "AlphaBlend",
+            "iat": "0x127c048"
+          }
+        ]
+      },
+      {
+        "dll": "WINSPOOL.DRV",
+        "functions": [
+          {
+            "name": "OpenPrinterW",
+            "iat": "0x127c050"
+          }
+        ]
+      },
+      {
+        "dll": "ADVAPI32.dll",
+        "functions": [
+          {
+            "name": "CryptGenRandom",
+            "iat": "0x127c058"
+          }
+        ]
+      },
+      {
+        "dll": "COMCTL32.dll",
+        "functions": [
+          {
+            "name": "ImageList_GetImageCount",
+            "iat": "0x127c060"
+          }
+        ]
+      },
+      {
+        "dll": "SHLWAPI.dll",
+        "functions": [
+          {
+            "name": "PathRemoveFileSpecW",
+            "iat": "0x127c068"
+          }
+        ]
+      },
+      {
+        "dll": "UxTheme.dll",
+        "functions": [
+          {
+            "name": "DrawThemeBackground",
+            "iat": "0x127c070"
+          }
+        ]
+      },
+      {
+        "dll": "ole32.dll",
+        "functions": [
+          {
+            "name": "CoUninitialize",
+            "iat": "0x127c078"
+          }
+        ]
+      },
+      {
+        "dll": "OLEAUT32.dll",
+        "functions": [
+          {
+            "name": "VarBstrFromDate",
+            "iat": "0x127c080"
+          }
+        ]
+      },
+      {
+        "dll": "gdiplus.dll",
+        "functions": [
+          {
+            "name": "GdipDrawImageI",
+            "iat": "0x127c088"
+          }
+        ]
+      },
+      {
+        "dll": "WINMM.dll",
+        "functions": [
+          {
+            "name": "PlaySoundW",
+            "iat": "0x127c090"
+          }
+        ]
+      },
+      {
+        "dll": "WS2_32.dll",
+        "functions": [
+          {
+            "name": "closesocket",
+            "iat": "0x127c098"
+          }
+        ]
+      },
+      {
+        "dll": "MSWSOCK.dll",
+        "functions": [
+          {
+            "name": "WSARecvEx",
+            "iat": "0x127c0a0"
+          }
+        ]
+      },
+      {
+        "dll": "dbghelp.dll",
+        "functions": [
+          {
+            "name": "MakeSureDirectoryPathExists",
+            "iat": "0x127c0a8"
+          }
+        ]
+      },
+      {
+        "dll": "OLEACC.dll",
+        "functions": [
+          {
+            "name": "LresultFromObject",
+            "iat": "0x127c0b0"
+          }
+        ]
+      },
+      {
+        "dll": "IMM32.dll",
+        "functions": [
+          {
+            "name": "ImmReleaseContext",
+            "iat": "0x127c0b8"
+          }
+        ]
+      },
+      {
+        "dll": "SETUPAPI.dll",
+        "functions": [
+          {
+            "name": "SetupDiGetDeviceRegistryPropertyW",
+            "iat": "0x127c0c0"
+          }
+        ]
+      },
+      {
+        "dll": "WTSAPI32.dll",
+        "functions": [
+          {
+            "name": "WTSSendMessageW",
+            "iat": "0x127c0c8"
+          }
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "VirtualQuery",
+            "iat": "0x127c0d0"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "GetProcessWindowStation",
+            "iat": "0x127c0d8"
+          }
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "LocalAlloc",
+            "iat": "0x127c0e0"
+          },
+          {
+            "name": "LocalFree",
+            "iat": "0x127c0e4"
+          },
+          {
+            "name": "GetModuleFileNameW",
+            "iat": "0x127c0e8"
+          },
+          {
+            "name": "GetProcessAffinityMask",
+            "iat": "0x127c0ec"
+          },
+          {
+            "name": "SetProcessAffinityMask",
+            "iat": "0x127c0f0"
+          },
+          {
+            "name": "SetThreadAffinityMask",
+            "iat": "0x127c0f4"
+          },
+          {
+            "name": "Sleep",
+            "iat": "0x127c0f8"
+          },
+          {
+            "name": "ExitProcess",
+            "iat": "0x127c0fc"
+          },
+          {
+            "name": "FreeLibrary",
+            "iat": "0x127c100"
+          },
+          {
+            "name": "LoadLibraryA",
+            "iat": "0x127c104"
+          },
+          {
+            "name": "GetModuleHandleA",
+            "iat": "0x127c108"
+          },
+          {
+            "name": "GetProcAddress",
+            "iat": "0x127c10c"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "GetProcessWindowStation",
+            "iat": "0x127c114"
+          },
+          {
+            "name": "GetUserObjectInformationW",
+            "iat": "0x127c118"
+          }
+        ]
+      }
+    ],
+    "exports": [],
+    "versions": [
+      {
+        "CompanyName": "OnePlus",
+        "FileDescription": "Qualcomm Smart Phone Download Tool",
+        "FileVersion": "5.1.75.0",
+        "InternalName": "MsmDownloadTool.exe",
+        "LegalCopyright": "Copyright(C) Shenzhen OnePlus Technology Co.,Ltd.  All rights reserved.",
+        "OriginalFilename": "MsmDownloadTool.exe",
+        "ProductName": "MsmDownloadTool",
+        "ProductVersion": "5.1.75.0"
+      }
+    ],
+    "resources": [
+      {
+        "type": 3,
+        "id": 1,
+        "lang": 2052,
+        "va": "0x1e3c160",
+        "size": 15730,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 3,
+        "id": 2,
+        "lang": 2052,
+        "va": "0x1e3fed4",
+        "size": 67624,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 14,
+        "id": 128,
+        "lang": 2052,
+        "va": "0x1e506fc",
+        "size": 34,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 16,
+        "id": 1,
+        "lang": 1033,
+        "va": "0x1e50720",
+        "size": 884,
+        "strings_utf16": [
+          "VS_VERSION_INFO",
+          "StringFileInfo",
+          "040904b0",
+          "CompanyName",
+          "OnePlus",
+          "FileDescription",
+          "Qualcomm Smart Phone Download Tool",
+          "FileVersion",
+          "5.1.75.0",
+          "InternalName",
+          "MsmDownloadTool.exe",
+          "LegalCopyright",
+          "Copyright(C) Shenzhen OnePlus Technology Co.,Ltd.  All rights reserved.",
+          "OriginalFilename",
+          "MsmDownloadTool.exe",
+          "ProductName",
+          "MsmDownloadTool",
+          "ProductVersion",
+          "5.1.75.0",
+          "VarFileInfo",
+          "Translation"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 24,
+        "id": 1,
+        "lang": 1033,
+        "va": "0x1e50a94",
+        "size": 807,
+        "strings_utf16": [],
+        "strings_ascii": [
+          "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+          "<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\"><dependency><dependentAssembly><assemblyIdentity type=\"win32\" name=\"Microsoft.Windows.Common-Controls\" version=\"6.0.0.0\" processorArchitecture=\"x86\" publicKeyToken=\"6595b64144ccf1df\" language=\"*\"></assemblyIdentity></dependentAssembly></dependency><trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\"><security><requestedPrivileges><requestedExecutionLevel level=\"requireAdministrator\" uiAccess=\"false\"></requestedExecutionLevel></requestedPrivileges></security></trustInfo><application xmlns=\"urn:schemas-microsoft-com:asm.v3\"><windowsSettings><dpiAware xmlns=\"http://schemas.microsoft.com/SMI/2005/WindowsSettings\">true</dpiAware></windowsSettings></application></assembly>"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/sample/MsmDownloadTool V4.0_factory.exe",
+    "sha256": "9709c7d1ac7918de97d02c7f26e5cc9501fa133b7fcf7ad4a8f958a0d822ba8d",
+    "size": 13186048,
+    "machine": "0x14c",
+    "imagebase": "0x400000",
+    "entry": "0x13cff63",
+    "pe_timestamp_utc": "2020-12-07T17:07:41+00:00",
+    "subsystem": 2,
+    "dll_characteristics": "0x8140",
+    "security_directory": {
+      "offset": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "va": "0x401000",
+        "virtual_size": 3046430,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0x60000020"
+      },
+      {
+        "name": ".rdata",
+        "va": "0x6e9000",
+        "virtual_size": 818678,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".data",
+        "va": "0x7b1000",
+        "virtual_size": 176140,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0xc0000040"
+      },
+      {
+        "name": ".vmp0",
+        "va": "0x7dd000",
+        "virtual_size": 9730708,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0x60000060"
+      },
+      {
+        "name": ".vmp1",
+        "va": "0x1125000",
+        "virtual_size": 13097168,
+        "raw_offset": 1024,
+        "raw_size": 13097472,
+        "entropy": 7.988341420024931,
+        "characteristics": "0x60000060"
+      },
+      {
+        "name": ".reloc",
+        "va": "0x1da3000",
+        "virtual_size": 1580,
+        "raw_offset": 13098496,
+        "raw_size": 2048,
+        "entropy": 3.6428236458234493,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".rsrc",
+        "va": "0x1da4000",
+        "virtual_size": 85435,
+        "raw_offset": 13100544,
+        "raw_size": 85504,
+        "entropy": 5.1335454641535785,
+        "characteristics": "0x40000040"
+      }
+    ],
+    "imports": [
+      {
+        "dll": "VERSION.dll",
+        "functions": [
+          {
+            "name": "GetFileVersionInfoW",
+            "iat": "0x1c9b000"
+          }
+        ]
+      },
+      {
+        "dll": "SHELL32.dll",
+        "functions": [
+          {
+            "name": "SHBrowseForFolderW",
+            "iat": "0x1c9b008"
+          }
+        ]
+      },
+      {
+        "dll": "IPHLPAPI.DLL",
+        "functions": [
+          {
+            "name": "GetAdaptersInfo",
+            "iat": "0x1c9b010"
+          }
+        ]
+      },
+      {
+        "dll": "CRYPT32.dll",
+        "functions": [
+          {
+            "name": "CryptUnprotectMemory",
+            "iat": "0x1c9b018"
+          }
+        ]
+      },
+      {
+        "dll": "WINHTTP.dll",
+        "functions": [
+          {
+            "name": "WinHttpOpen",
+            "iat": "0x1c9b020"
+          }
+        ]
+      },
+      {
+        "dll": "bcrypt.dll",
+        "functions": [
+          {
+            "name": "BCryptCloseAlgorithmProvider",
+            "iat": "0x1c9b028"
+          }
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "GetVersionExW",
+            "iat": "0x1c9b030"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "GetUpdateRect",
+            "iat": "0x1c9b038"
+          }
+        ]
+      },
+      {
+        "dll": "GDI32.dll",
+        "functions": [
+          {
+            "name": "CreatePatternBrush",
+            "iat": "0x1c9b040"
+          }
+        ]
+      },
+      {
+        "dll": "MSIMG32.dll",
+        "functions": [
+          {
+            "name": "AlphaBlend",
+            "iat": "0x1c9b048"
+          }
+        ]
+      },
+      {
+        "dll": "WINSPOOL.DRV",
+        "functions": [
+          {
+            "name": "OpenPrinterW",
+            "iat": "0x1c9b050"
+          }
+        ]
+      },
+      {
+        "dll": "ADVAPI32.dll",
+        "functions": [
+          {
+            "name": "CryptGenRandom",
+            "iat": "0x1c9b058"
+          }
+        ]
+      },
+      {
+        "dll": "COMCTL32.dll",
+        "functions": [
+          {
+            "name": "ImageList_GetImageCount",
+            "iat": "0x1c9b060"
+          }
+        ]
+      },
+      {
+        "dll": "SHLWAPI.dll",
+        "functions": [
+          {
+            "name": "PathRemoveFileSpecW",
+            "iat": "0x1c9b068"
+          }
+        ]
+      },
+      {
+        "dll": "UxTheme.dll",
+        "functions": [
+          {
+            "name": "DrawThemeBackground",
+            "iat": "0x1c9b070"
+          }
+        ]
+      },
+      {
+        "dll": "ole32.dll",
+        "functions": [
+          {
+            "name": "CoUninitialize",
+            "iat": "0x1c9b078"
+          }
+        ]
+      },
+      {
+        "dll": "OLEAUT32.dll",
+        "functions": [
+          {
+            "name": "VarBstrFromDate",
+            "iat": "0x1c9b080"
+          }
+        ]
+      },
+      {
+        "dll": "gdiplus.dll",
+        "functions": [
+          {
+            "name": "GdipDrawImageI",
+            "iat": "0x1c9b088"
+          }
+        ]
+      },
+      {
+        "dll": "WINMM.dll",
+        "functions": [
+          {
+            "name": "PlaySoundW",
+            "iat": "0x1c9b090"
+          }
+        ]
+      },
+      {
+        "dll": "WS2_32.dll",
+        "functions": [
+          {
+            "name": "closesocket",
+            "iat": "0x1c9b098"
+          }
+        ]
+      },
+      {
+        "dll": "MSWSOCK.dll",
+        "functions": [
+          {
+            "name": "WSARecvEx",
+            "iat": "0x1c9b0a0"
+          }
+        ]
+      },
+      {
+        "dll": "dbghelp.dll",
+        "functions": [
+          {
+            "name": "MakeSureDirectoryPathExists",
+            "iat": "0x1c9b0a8"
+          }
+        ]
+      },
+      {
+        "dll": "OLEACC.dll",
+        "functions": [
+          {
+            "name": "LresultFromObject",
+            "iat": "0x1c9b0b0"
+          }
+        ]
+      },
+      {
+        "dll": "IMM32.dll",
+        "functions": [
+          {
+            "name": "ImmReleaseContext",
+            "iat": "0x1c9b0b8"
+          }
+        ]
+      },
+      {
+        "dll": "SETUPAPI.dll",
+        "functions": [
+          {
+            "name": "SetupDiGetDeviceRegistryPropertyW",
+            "iat": "0x1c9b0c0"
+          }
+        ]
+      },
+      {
+        "dll": "WTSAPI32.dll",
+        "functions": [
+          {
+            "name": "WTSSendMessageW",
+            "iat": "0x1c9b0c8"
+          }
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "VirtualQuery",
+            "iat": "0x1c9b0d0"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "GetProcessWindowStation",
+            "iat": "0x1c9b0d8"
+          }
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "LocalAlloc",
+            "iat": "0x1c9b0e0"
+          },
+          {
+            "name": "LocalFree",
+            "iat": "0x1c9b0e4"
+          },
+          {
+            "name": "GetModuleFileNameW",
+            "iat": "0x1c9b0e8"
+          },
+          {
+            "name": "GetProcessAffinityMask",
+            "iat": "0x1c9b0ec"
+          },
+          {
+            "name": "SetProcessAffinityMask",
+            "iat": "0x1c9b0f0"
+          },
+          {
+            "name": "SetThreadAffinityMask",
+            "iat": "0x1c9b0f4"
+          },
+          {
+            "name": "Sleep",
+            "iat": "0x1c9b0f8"
+          },
+          {
+            "name": "ExitProcess",
+            "iat": "0x1c9b0fc"
+          },
+          {
+            "name": "FreeLibrary",
+            "iat": "0x1c9b100"
+          },
+          {
+            "name": "LoadLibraryA",
+            "iat": "0x1c9b104"
+          },
+          {
+            "name": "GetModuleHandleA",
+            "iat": "0x1c9b108"
+          },
+          {
+            "name": "GetProcAddress",
+            "iat": "0x1c9b10c"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "GetProcessWindowStation",
+            "iat": "0x1c9b114"
+          },
+          {
+            "name": "GetUserObjectInformationW",
+            "iat": "0x1c9b118"
+          }
+        ]
+      }
+    ],
+    "exports": [],
+    "versions": [
+      {
+        "CompanyName": "OnePlus",
+        "FileDescription": "Qualcomm Smart Phone Download Tool",
+        "FileVersion": "5.1.75.0",
+        "InternalName": "MsmDownloadTool.exe",
+        "LegalCopyright": "Copyright(C) Shenzhen OnePlus Technology Co.,Ltd.  All rights reserved.",
+        "OriginalFilename": "MsmDownloadTool.exe",
+        "ProductName": "MsmDownloadTool",
+        "ProductVersion": "5.1.75.0"
+      }
+    ],
+    "resources": [
+      {
+        "type": 3,
+        "id": 1,
+        "lang": 2052,
+        "va": "0x1da4160",
+        "size": 15730,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 3,
+        "id": 2,
+        "lang": 2052,
+        "va": "0x1da7ed4",
+        "size": 67624,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 14,
+        "id": 128,
+        "lang": 2052,
+        "va": "0x1db86fc",
+        "size": 34,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 16,
+        "id": 1,
+        "lang": 1033,
+        "va": "0x1db8720",
+        "size": 884,
+        "strings_utf16": [
+          "VS_VERSION_INFO",
+          "StringFileInfo",
+          "040904b0",
+          "CompanyName",
+          "OnePlus",
+          "FileDescription",
+          "Qualcomm Smart Phone Download Tool",
+          "FileVersion",
+          "5.1.75.0",
+          "InternalName",
+          "MsmDownloadTool.exe",
+          "LegalCopyright",
+          "Copyright(C) Shenzhen OnePlus Technology Co.,Ltd.  All rights reserved.",
+          "OriginalFilename",
+          "MsmDownloadTool.exe",
+          "ProductName",
+          "MsmDownloadTool",
+          "ProductVersion",
+          "5.1.75.0",
+          "VarFileInfo",
+          "Translation"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 24,
+        "id": 1,
+        "lang": 1033,
+        "va": "0x1db8a94",
+        "size": 807,
+        "strings_utf16": [],
+        "strings_ascii": [
+          "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+          "<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\"><dependency><dependentAssembly><assemblyIdentity type=\"win32\" name=\"Microsoft.Windows.Common-Controls\" version=\"6.0.0.0\" processorArchitecture=\"x86\" publicKeyToken=\"6595b64144ccf1df\" language=\"*\"></assemblyIdentity></dependentAssembly></dependency><trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\"><security><requestedPrivileges><requestedExecutionLevel level=\"requireAdministrator\" uiAccess=\"false\"></requestedExecutionLevel></requestedPrivileges></security></trustInfo><application xmlns=\"urn:schemas-microsoft-com:asm.v3\"><windowsSettings><dpiAware xmlns=\"http://schemas.microsoft.com/SMI/2005/WindowsSettings\">true</dpiAware></windowsSettings></application></assembly>"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/sample/libMESAPI.dll",
+    "sha256": "1cc1b9f381065074defd6dc56d6a4dbf87e6c1971f32f84a420ffc0fbab6161c",
+    "size": 12792832,
+    "machine": "0x14c",
+    "imagebase": "0x10000000",
+    "entry": "0x10d6304d",
+    "pe_timestamp_utc": "2020-08-24T12:10:39+00:00",
+    "subsystem": 2,
+    "dll_characteristics": "0x140",
+    "security_directory": {
+      "offset": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "va": "0x10001000",
+        "virtual_size": 1870924,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0x60000020"
+      },
+      {
+        "name": ".rdata",
+        "va": "0x101ca000",
+        "virtual_size": 505592,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".data",
+        "va": "0x10246000",
+        "virtual_size": 69064,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0xc0000040"
+      },
+      {
+        "name": ".vmp0",
+        "va": "0x10257000",
+        "virtual_size": 9336385,
+        "raw_offset": 0,
+        "raw_size": 0,
+        "entropy": 0.0,
+        "characteristics": "0x60000060"
+      },
+      {
+        "name": ".vmp1",
+        "va": "0x10b3f000",
+        "virtual_size": 12787776,
+        "raw_offset": 1024,
+        "raw_size": 12788224,
+        "entropy": 7.987807852661675,
+        "characteristics": "0x60000060"
+      },
+      {
+        "name": ".reloc",
+        "va": "0x11772000",
+        "virtual_size": 1560,
+        "raw_offset": 12789248,
+        "raw_size": 2048,
+        "entropy": 3.5376449381990573,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".rsrc",
+        "va": "0x11773000",
+        "virtual_size": 1532,
+        "raw_offset": 12791296,
+        "raw_size": 1536,
+        "entropy": 4.40178451249291,
+        "characteristics": "0x40000040"
+      }
+    ],
+    "imports": [
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "GetVersion",
+            "iat": "0x10e8c000"
+          },
+          {
+            "name": "GetVersionExW",
+            "iat": "0x10e8c004"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "HideCaret",
+            "iat": "0x10e8c00c"
+          }
+        ]
+      },
+      {
+        "dll": "GDI32.dll",
+        "functions": [
+          {
+            "name": "GetObjectType",
+            "iat": "0x10e8c014"
+          }
+        ]
+      },
+      {
+        "dll": "MSIMG32.dll",
+        "functions": [
+          {
+            "name": "AlphaBlend",
+            "iat": "0x10e8c01c"
+          }
+        ]
+      },
+      {
+        "dll": "WINSPOOL.DRV",
+        "functions": [
+          {
+            "name": "ClosePrinter",
+            "iat": "0x10e8c024"
+          }
+        ]
+      },
+      {
+        "dll": "ADVAPI32.dll",
+        "functions": [
+          {
+            "name": "RegisterEventSourceA",
+            "iat": "0x10e8c02c"
+          }
+        ]
+      },
+      {
+        "dll": "SHELL32.dll",
+        "functions": [
+          {
+            "name": "DragFinish",
+            "iat": "0x10e8c034"
+          }
+        ]
+      },
+      {
+        "dll": "SHLWAPI.dll",
+        "functions": [
+          {
+            "name": "PathRemoveFileSpecW",
+            "iat": "0x10e8c03c"
+          }
+        ]
+      },
+      {
+        "dll": "UxTheme.dll",
+        "functions": [
+          {
+            "name": "DrawThemeText",
+            "iat": "0x10e8c044"
+          }
+        ]
+      },
+      {
+        "dll": "ole32.dll",
+        "functions": [
+          {
+            "name": "OleCreateMenuDescriptor",
+            "iat": "0x10e8c04c"
+          }
+        ]
+      },
+      {
+        "dll": "OLEAUT32.dll",
+        "functions": [
+          {
+            "name": "SysAllocStringLen",
+            "iat": "0x10e8c054"
+          }
+        ]
+      },
+      {
+        "dll": "WININET.dll",
+        "functions": [
+          {
+            "name": "InternetSetCookieW",
+            "iat": "0x10e8c05c"
+          }
+        ]
+      },
+      {
+        "dll": "OLEACC.dll",
+        "functions": [
+          {
+            "name": "AccessibleObjectFromWindow",
+            "iat": "0x10e8c064"
+          }
+        ]
+      },
+      {
+        "dll": "gdiplus.dll",
+        "functions": [
+          {
+            "name": "GdipSetInterpolationMode",
+            "iat": "0x10e8c06c"
+          }
+        ]
+      },
+      {
+        "dll": "IMM32.dll",
+        "functions": [
+          {
+            "name": "ImmGetContext",
+            "iat": "0x10e8c074"
+          }
+        ]
+      },
+      {
+        "dll": "WINMM.dll",
+        "functions": [
+          {
+            "name": "PlaySoundW",
+            "iat": "0x10e8c07c"
+          }
+        ]
+      },
+      {
+        "dll": "WTSAPI32.dll",
+        "functions": [
+          {
+            "name": "WTSSendMessageW",
+            "iat": "0x10e8c084"
+          }
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "VirtualQuery",
+            "iat": "0x10e8c08c"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "GetProcessWindowStation",
+            "iat": "0x10e8c094"
+          }
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "LocalAlloc",
+            "iat": "0x10e8c09c"
+          },
+          {
+            "name": "LocalFree",
+            "iat": "0x10e8c0a0"
+          },
+          {
+            "name": "GetModuleFileNameW",
+            "iat": "0x10e8c0a4"
+          },
+          {
+            "name": "GetProcessAffinityMask",
+            "iat": "0x10e8c0a8"
+          },
+          {
+            "name": "SetProcessAffinityMask",
+            "iat": "0x10e8c0ac"
+          },
+          {
+            "name": "SetThreadAffinityMask",
+            "iat": "0x10e8c0b0"
+          },
+          {
+            "name": "Sleep",
+            "iat": "0x10e8c0b4"
+          },
+          {
+            "name": "ExitProcess",
+            "iat": "0x10e8c0b8"
+          },
+          {
+            "name": "FreeLibrary",
+            "iat": "0x10e8c0bc"
+          },
+          {
+            "name": "LoadLibraryA",
+            "iat": "0x10e8c0c0"
+          },
+          {
+            "name": "GetModuleHandleA",
+            "iat": "0x10e8c0c4"
+          },
+          {
+            "name": "GetProcAddress",
+            "iat": "0x10e8c0c8"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "GetProcessWindowStation",
+            "iat": "0x10e8c0d0"
+          },
+          {
+            "name": "GetUserObjectInformationW",
+            "iat": "0x10e8c0d4"
+          }
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "name": "??0CMESAPI@@QAE@XZ",
+        "va": "0x10071c60",
+        "ordinal": 1
+      },
+      {
+        "name": "??1CMESAPI@@QAE@XZ",
+        "va": "0x10065660",
+        "ordinal": 2
+      },
+      {
+        "name": "??4CMESAPI@@QAEAAV0@ABV0@@Z",
+        "va": "0x10071c50",
+        "ordinal": 3
+      },
+      {
+        "name": "?Base64Decode@@YAHPADH0H@Z",
+        "va": "0x10077f70",
+        "ordinal": 4
+      },
+      {
+        "name": "?Base64Encode@@YAHPADH0H@Z",
+        "va": "0x10077e90",
+        "ordinal": 5
+      },
+      {
+        "name": "?CateEndLot@CMESAPI@@SAHU_MES_Product_Info@@V?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@11AAV34@@Z",
+        "va": "0x10074720",
+        "ordinal": 6
+      },
+      {
+        "name": "?CateInputTestResult@CMESAPI@@SAHU_MES_Product_Info@@V?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@11AAV34@@Z",
+        "va": "0x10075ba0",
+        "ordinal": 7
+      },
+      {
+        "name": "?CateMappingSnAndSoftware@CMESAPI@@SAHU_MES_Product_Info@@V?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@AAV34@@Z",
+        "va": "0x100760b0",
+        "ordinal": 8
+      },
+      {
+        "name": "?CatePreLot@CMESAPI@@SAHU_MES_Product_Info@@V?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@1AAV34@@Z",
+        "va": "0x10075330",
+        "ordinal": 9
+      },
+      {
+        "name": "?Decode@@YA?AV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@PBDH@Z",
+        "va": "0x10077b10",
+        "ordinal": 10
+      },
+      {
+        "name": "?Encode@@YA?AV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@PADH@Z",
+        "va": "0x100776a0",
+        "ordinal": 11
+      },
+      {
+        "name": "?GetDbSystemTime@CMESAPI@@SAHV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@000AAV23@1@Z",
+        "va": "0x10072950",
+        "ordinal": 12
+      },
+      {
+        "name": "?GetMESStrlist@CMESAPI@@SA?AV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@W4EM_MES_LIST_INDEX@@H@Z",
+        "va": "0x10071f70",
+        "ordinal": 13
+      },
+      {
+        "name": "?GetMESStrlistSize@CMESAPI@@SAHW4EM_MES_LIST_INDEX@@@Z",
+        "va": "0x10071f30",
+        "ordinal": 14
+      },
+      {
+        "name": "?GetMd5@@YAXPADH0H@Z",
+        "va": "0x100781d0",
+        "ordinal": 15
+      },
+      {
+        "name": "?GetMfpInfo@CMESAPI@@SAHU_MES_Product_Info@@AAV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@1@Z",
+        "va": "0x10073f50",
+        "ordinal": 16
+      },
+      {
+        "name": "?GetRandPlainText@@YAXPADI@Z",
+        "va": "0x10077d10",
+        "ordinal": 17
+      },
+      {
+        "name": "?GetRelateInfo@CMESAPI@@SAHU_MES_Product_Info@@AAV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@@Z",
+        "va": "0x10073130",
+        "ordinal": 18
+      },
+      {
+        "name": "?GetRelateInfo_2@CMESAPI@@SAHU_MES_Product_Info@@V?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@AAV34@@Z",
+        "va": "0x10073a70",
+        "ordinal": 19
+      },
+      {
+        "name": "?GetStandardInfo@CMESAPI@@SAHV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@000AAV23@@Z",
+        "va": "0x10072cc0",
+        "ordinal": 20
+      },
+      {
+        "name": "?Login_MES@CMESAPI@@SAHV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@000AAV23@@Z",
+        "va": "0x10072650",
+        "ordinal": 21
+      },
+      {
+        "name": "?MES_SetIP@@YAXV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@@Z",
+        "va": "0x100782f0",
+        "ordinal": 22
+      },
+      {
+        "name": "?MES_SetMAC@@YAXV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@@Z",
+        "va": "0x100783c0",
+        "ordinal": 23
+      },
+      {
+        "name": "?MESlibInit@CMESAPI@@SAXXZ",
+        "va": "0x10071c70",
+        "ordinal": 24
+      },
+      {
+        "name": "?MESlibUnInit@CMESAPI@@SAXXZ",
+        "va": "0x10071d10",
+        "ordinal": 25
+      },
+      {
+        "name": "?RsaEncodeForMes@@YAHPADH0H@Z",
+        "va": "0x10077d80",
+        "ordinal": 26
+      },
+      {
+        "name": "?SetApiName@CMESAPI@@SAXW4EM_API_NAME@@V?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@@Z",
+        "va": "0x10072050",
+        "ordinal": 27
+      },
+      {
+        "name": "?SetServiceConfig@CMESAPI@@SAXW4EM_SERVICE_CONFIGS@@V?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@@Z",
+        "va": "0x10072510",
+        "ordinal": 28
+      },
+      {
+        "name": "?StartUploadAppFile@CMESAPI@@SAHV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@0000AAV23@@Z",
+        "va": "0x10076590",
+        "ordinal": 29
+      },
+      {
+        "name": "?StartUploadDownloadFile@CMESAPI@@SAHV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@00000000AAV23@@Z",
+        "va": "0x10076900",
+        "ordinal": 30
+      },
+      {
+        "name": "?VerifyPcbaUpgrade@CMESAPI@@SAHV?$CStringT@_WV?$StrTraitMFC@_WV?$ChTraitsCRT@_W@ATL@@@@@ATL@@00000AAV23@@Z",
+        "va": "0x10076d50",
+        "ordinal": 31
+      }
+    ],
+    "versions": [
+      {
+        "CompanyName": "TODO: <Company name>",
+        "FileDescription": "TODO: <File description>",
+        "FileVersion": "1.0.0.1",
+        "InternalName": "libMESAPI.dll",
+        "LegalCopyright": "TODO: (c) <Company name>.  All rights reserved.",
+        "OriginalFilename": "libMESAPI.dll",
+        "ProductName": "TODO: <Product name>",
+        "ProductVersion": "1.0.0.1"
+      }
+    ],
+    "resources": [
+      {
+        "type": 16,
+        "id": 1,
+        "lang": 1033,
+        "va": "0x117730a0",
+        "size": 824,
+        "strings_utf16": [
+          "VS_VERSION_INFO",
+          "StringFileInfo",
+          "040904B0",
+          "CompanyName",
+          "TODO: <Company name>",
+          "FileDescription",
+          "TODO: <File description>",
+          "FileVersion",
+          "1.0.0.1",
+          "InternalName",
+          "libMESAPI.dll",
+          "LegalCopyright",
+          "TODO: (c) <Company name>.  All rights reserved.",
+          "OriginalFilename",
+          "libMESAPI.dll",
+          "ProductName",
+          "TODO: <Product name>",
+          "ProductVersion",
+          "1.0.0.1",
+          "VarFileInfo",
+          "Translation"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 24,
+        "id": 2,
+        "lang": 1033,
+        "va": "0x117733d8",
+        "size": 548,
+        "strings_utf16": [],
+        "strings_ascii": [
+          "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+          "<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\"><trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\"><security><requestedPrivileges><requestedExecutionLevel level=\"asInvoker\" uiAccess=\"false\"></requestedExecutionLevel></requestedPrivileges></security></trustInfo><application xmlns=\"urn:schemas-microsoft-com:asm.v3\"><windowsSettings><dpiAware xmlns=\"http://schemas.microsoft.com/SMI/2005/WindowsSettings\">true</dpiAware></windowsSettings></application></assembly>"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "/Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/op6/sample/MsmDownloadTool V4.0.exe",
+    "sha256": "ea4f8ae38e2feb09def08ff5be35c563376b1773cfc64b95b1128e994e0387c8",
+    "size": 2322432,
+    "machine": "0x14c",
+    "imagebase": "0x400000",
+    "entry": "0x54a569",
+    "pe_timestamp_utc": "2018-05-08T12:36:17+00:00",
+    "subsystem": 2,
+    "dll_characteristics": "0x8140",
+    "security_directory": {
+      "offset": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "va": "0x401000",
+        "virtual_size": 1573294,
+        "raw_offset": 1024,
+        "raw_size": 1573376,
+        "entropy": 6.545241254868245,
+        "characteristics": "0x60000020"
+      },
+      {
+        "name": ".rdata",
+        "va": "0x582000",
+        "virtual_size": 370530,
+        "raw_offset": 1574400,
+        "raw_size": 370688,
+        "entropy": 5.011524084580804,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".data",
+        "va": "0x5dd000",
+        "virtual_size": 60236,
+        "raw_offset": 1945088,
+        "raw_size": 27136,
+        "entropy": 4.752122496088173,
+        "characteristics": "0xc0000040"
+      },
+      {
+        "name": ".rsrc",
+        "va": "0x5ec000",
+        "virtual_size": 219200,
+        "raw_offset": 1972224,
+        "raw_size": 219648,
+        "entropy": 3.4304513209436083,
+        "characteristics": "0x40000040"
+      },
+      {
+        "name": ".reloc",
+        "va": "0x622000",
+        "virtual_size": 130092,
+        "raw_offset": 2191872,
+        "raw_size": 130560,
+        "entropy": 6.489560131841491,
+        "characteristics": "0x42000040"
+      }
+    ],
+    "imports": [
+      {
+        "dll": "KERNEL32.dll",
+        "functions": [
+          {
+            "name": "ExitThread",
+            "iat": "0x5821d4"
+          },
+          {
+            "name": "GetSystemInfo",
+            "iat": "0x5821d8"
+          },
+          {
+            "name": "VirtualAlloc",
+            "iat": "0x5821dc"
+          },
+          {
+            "name": "VirtualQuery",
+            "iat": "0x5821e0"
+          },
+          {
+            "name": "HeapQueryInformation",
+            "iat": "0x5821e4"
+          },
+          {
+            "name": "SetStdHandle",
+            "iat": "0x5821e8"
+          },
+          {
+            "name": "GetFileType",
+            "iat": "0x5821ec"
+          },
+          {
+            "name": "GetStdHandle",
+            "iat": "0x5821f0"
+          },
+          {
+            "name": "GetStartupInfoW",
+            "iat": "0x5821f4"
+          },
+          {
+            "name": "QueryPerformanceCounter",
+            "iat": "0x5821f8"
+          },
+          {
+            "name": "GetEnvironmentStringsW",
+            "iat": "0x5821fc"
+          },
+          {
+            "name": "FreeEnvironmentStringsW",
+            "iat": "0x582200"
+          },
+          {
+            "name": "UnhandledExceptionFilter",
+            "iat": "0x582204"
+          },
+          {
+            "name": "SetUnhandledExceptionFilter",
+            "iat": "0x582208"
+          },
+          {
+            "name": "TerminateProcess",
+            "iat": "0x58220c"
+          },
+          {
+            "name": "IsValidCodePage",
+            "iat": "0x582210"
+          },
+          {
+            "name": "GetACP",
+            "iat": "0x582214"
+          },
+          {
+            "name": "GetOEMCP",
+            "iat": "0x582218"
+          },
+          {
+            "name": "GetCPInfo",
+            "iat": "0x58221c"
+          },
+          {
+            "name": "CreateThread",
+            "iat": "0x582220"
+          },
+          {
+            "name": "GetConsoleMode",
+            "iat": "0x582224"
+          },
+          {
+            "name": "ReadConsoleW",
+            "iat": "0x582228"
+          },
+          {
+            "name": "GetConsoleCP",
+            "iat": "0x58222c"
+          },
+          {
+            "name": "GetTimeZoneInformation",
+            "iat": "0x582230"
+          },
+          {
+            "name": "GetStringTypeW",
+            "iat": "0x582234"
+          },
+          {
+            "name": "OutputDebugStringW",
+            "iat": "0x582238"
+          },
+          {
+            "name": "GetDateFormatW",
+            "iat": "0x58223c"
+          },
+          {
+            "name": "GetTimeFormatW",
+            "iat": "0x582240"
+          },
+          {
+            "name": "LCMapStringW",
+            "iat": "0x582244"
+          },
+          {
+            "name": "IsValidLocale",
+            "iat": "0x582248"
+          },
+          {
+            "name": "EnumSystemLocalesW",
+            "iat": "0x58224c"
+          },
+          {
+            "name": "WriteConsoleW",
+            "iat": "0x582250"
+          },
+          {
+            "name": "GetDriveTypeW",
+            "iat": "0x582254"
+          },
+          {
+            "name": "SetEnvironmentVariableA",
+            "iat": "0x582258"
+          },
+          {
+            "name": "IsProcessorFeaturePresent",
+            "iat": "0x58225c"
+          },
+          {
+            "name": "IsDebuggerPresent",
+            "iat": "0x582260"
+          },
+          {
+            "name": "lstrlenA",
+            "iat": "0x582264"
+          },
+          {
+            "name": "RtlUnwind",
+            "iat": "0x582268"
+          },
+          {
+            "name": "GetSystemTimeAsFileTime",
+            "iat": "0x58226c"
+          },
+          {
+            "name": "FindFirstFileExW",
+            "iat": "0x582270"
+          },
+          {
+            "name": "SystemTimeToTzSpecificLocalTime",
+            "iat": "0x582274"
+          },
+          {
+            "name": "Sleep",
+            "iat": "0x582278"
+          },
+          {
+            "name": "AreFileApisANSI",
+            "iat": "0x58227c"
+          },
+          {
+            "name": "GetModuleHandleExW",
+            "iat": "0x582280"
+          },
+          {
+            "name": "ExitProcess",
+            "iat": "0x582284"
+          },
+          {
+            "name": "GetUserDefaultLCID",
+            "iat": "0x582288"
+          },
+          {
+            "name": "VirtualProtect",
+            "iat": "0x58228c"
+          },
+          {
+            "name": "GetProfileIntW",
+            "iat": "0x582290"
+          },
+          {
+            "name": "SearchPathW",
+            "iat": "0x582294"
+          },
+          {
+            "name": "GetTempPathW",
+            "iat": "0x582298"
+          },
+          {
+            "name": "GetTempFileNameW",
+            "iat": "0x58229c"
+          },
+          {
+            "name": "GetWindowsDirectoryW",
+            "iat": "0x5822a0"
+          },
+          {
+            "name": "GetCurrentDirectoryW",
+            "iat": "0x5822a4"
+          },
+          {
+            "name": "VerifyVersionInfoW",
+            "iat": "0x5822a8"
+          },
+          {
+            "name": "VerSetConditionMask",
+            "iat": "0x5822ac"
+          },
+          {
+            "name": "SetErrorMode",
+            "iat": "0x5822b0"
+          },
+          {
+            "name": "GetFileTime",
+            "iat": "0x5822b4"
+          },
+          {
+            "name": "GetFileSizeEx",
+            "iat": "0x5822b8"
+          },
+          {
+            "name": "GetFileAttributesExW",
+            "iat": "0x5822bc"
+          },
+          {
+            "name": "GetUserDefaultUILanguage",
+            "iat": "0x5822c0"
+          },
+          {
+            "name": "GetSystemDefaultUILanguage",
+            "iat": "0x5822c4"
+          },
+          {
+            "name": "GetLocaleInfoW",
+            "iat": "0x5822c8"
+          },
+          {
+            "name": "CompareStringW",
+            "iat": "0x5822cc"
+          },
+          {
+            "name": "LocalReAlloc",
+            "iat": "0x5822d0"
+          },
+          {
+            "name": "GlobalHandle",
+            "iat": "0x5822d4"
+          },
+          {
+            "name": "GlobalReAlloc",
+            "iat": "0x5822d8"
+          },
+          {
+            "name": "TlsFree",
+            "iat": "0x5822dc"
+          },
+          {
+            "name": "TlsSetValue",
+            "iat": "0x5822e0"
+          },
+          {
+            "name": "TlsGetValue",
+            "iat": "0x5822e4"
+          },
+          {
+            "name": "TlsAlloc",
+            "iat": "0x5822e8"
+          },
+          {
+            "name": "GlobalGetAtomNameW",
+            "iat": "0x5822ec"
+          },
+          {
+            "name": "GlobalFlags",
+            "iat": "0x5822f0"
+          },
+          {
+            "name": "FileTimeToSystemTime",
+            "iat": "0x5822f4"
+          },
+          {
+            "name": "FindNextFileW",
+            "iat": "0x5822f8"
+          },
+          {
+            "name": "FileTimeToLocalFileTime",
+            "iat": "0x5822fc"
+          },
+          {
+            "name": "GetPrivateProfileIntW",
+            "iat": "0x582300"
+          },
+          {
+            "name": "lstrcpyW",
+            "iat": "0x582304"
+          },
+          {
+            "name": "GetCurrentThread",
+            "iat": "0x582308"
+          },
+          {
+            "name": "CreateMutexW",
+            "iat": "0x58230c"
+          },
+          {
+            "name": "ReleaseMutex",
+            "iat": "0x582310"
+          },
+          {
+            "name": "lstrcmpA",
+            "iat": "0x582314"
+          },
+          {
+            "name": "ResumeThread",
+            "iat": "0x582318"
+          },
+          {
+            "name": "SuspendThread",
+            "iat": "0x58231c"
+          },
+          {
+            "name": "SetThreadPriority",
+            "iat": "0x582320"
+          },
+          {
+            "name": "CreateEventW",
+            "iat": "0x582324"
+          },
+          {
+            "name": "WaitForSingleObject",
+            "iat": "0x582328"
+          },
+          {
+            "name": "GetCurrentProcessId",
+            "iat": "0x58232c"
+          },
+          {
+            "name": "lstrcmpiW",
+            "iat": "0x582330"
+          },
+          {
+            "name": "GetCurrentProcess",
+            "iat": "0x582334"
+          },
+          {
+            "name": "DuplicateHandle",
+            "iat": "0x582338"
+          },
+          {
+            "name": "UnlockFile",
+            "iat": "0x58233c"
+          },
+          {
+            "name": "SetEndOfFile",
+            "iat": "0x582340"
+          },
+          {
+            "name": "LockFile",
+            "iat": "0x582344"
+          },
+          {
+            "name": "GetVolumeInformationW",
+            "iat": "0x582348"
+          },
+          {
+            "name": "GetFullPathNameW",
+            "iat": "0x58234c"
+          },
+          {
+            "name": "FlushFileBuffers",
+            "iat": "0x582350"
+          },
+          {
+            "name": "FindFirstFileW",
+            "iat": "0x582354"
+          },
+          {
+            "name": "FindClose",
+            "iat": "0x582358"
+          },
+          {
+            "name": "DeleteFileW",
+            "iat": "0x58235c"
+          },
+          {
+            "name": "GlobalFindAtomW",
+            "iat": "0x582360"
+          },
+          {
+            "name": "GlobalAddAtomW",
+            "iat": "0x582364"
+          },
+          {
+            "name": "LoadLibraryA",
+            "iat": "0x582368"
+          },
+          {
+            "name": "lstrcmpW",
+            "iat": "0x58236c"
+          },
+          {
+            "name": "GlobalDeleteAtom",
+            "iat": "0x582370"
+          },
+          {
+            "name": "LoadLibraryExW",
+            "iat": "0x582374"
+          },
+          {
+            "name": "GetSystemDirectoryW",
+            "iat": "0x582378"
+          },
+          {
+            "name": "GetCurrentThreadId",
+            "iat": "0x58237c"
+          },
+          {
+            "name": "EncodePointer",
+            "iat": "0x582380"
+          },
+          {
+            "name": "CopyFileW",
+            "iat": "0x582384"
+          },
+          {
+            "name": "MulDiv",
+            "iat": "0x582388"
+          },
+          {
+            "name": "GlobalSize",
+            "iat": "0x58238c"
+          },
+          {
+            "name": "GlobalUnlock",
+            "iat": "0x582390"
+          },
+          {
+            "name": "GlobalLock",
+            "iat": "0x582394"
+          },
+          {
+            "name": "GetModuleHandleW",
+            "iat": "0x582398"
+          },
+          {
+            "name": "GetModuleHandleA",
+            "iat": "0x58239c"
+          },
+          {
+            "name": "FreeResource",
+            "iat": "0x5823a0"
+          },
+          {
+            "name": "SetLastError",
+            "iat": "0x5823a4"
+          },
+          {
+            "name": "OutputDebugStringA",
+            "iat": "0x5823a8"
+          },
+          {
+            "name": "WriteFile",
+            "iat": "0x5823ac"
+          },
+          {
+            "name": "ClearCommError",
+            "iat": "0x5823b0"
+          },
+          {
+            "name": "CancelIo",
+            "iat": "0x5823b4"
+          },
+          {
+            "name": "PurgeComm",
+            "iat": "0x5823b8"
+          },
+          {
+            "name": "SetCommTimeouts",
+            "iat": "0x5823bc"
+          },
+          {
+            "name": "SetCommState",
+            "iat": "0x5823c0"
+          },
+          {
+            "name": "GetCommState",
+            "iat": "0x5823c4"
+          },
+          {
+            "name": "GetVersionExW",
+            "iat": "0x5823c8"
+          },
+          {
+            "name": "InitializeCriticalSection",
+            "iat": "0x5823cc"
+          },
+          {
+            "name": "FindResourceExW",
+            "iat": "0x5823d0"
+          },
+          {
+            "name": "GlobalFree",
+            "iat": "0x5823d4"
+          },
+          {
+            "name": "DeviceIoControl",
+            "iat": "0x5823d8"
+          },
+          {
+            "name": "GlobalAlloc",
+            "iat": "0x5823dc"
+          },
+          {
+            "name": "LocalAlloc",
+            "iat": "0x5823e0"
+          },
+          {
+            "name": "lstrlenW",
+            "iat": "0x5823e4"
+          },
+          {
+            "name": "FormatMessageW",
+            "iat": "0x5823e8"
+          },
+          {
+            "name": "LocalFree",
+            "iat": "0x5823ec"
+          },
+          {
+            "name": "DecodePointer",
+            "iat": "0x5823f0"
+          },
+          {
+            "name": "HeapSize",
+            "iat": "0x5823f4"
+          },
+          {
+            "name": "RaiseException",
+            "iat": "0x5823f8"
+          },
+          {
+            "name": "HeapDestroy",
+            "iat": "0x5823fc"
+          },
+          {
+            "name": "GetProcessHeap",
+            "iat": "0x582400"
+          },
+          {
+            "name": "HeapFree",
+            "iat": "0x582404"
+          },
+          {
+            "name": "HeapAlloc",
+            "iat": "0x582408"
+          },
+          {
+            "name": "HeapReAlloc",
+            "iat": "0x58240c"
+          },
+          {
+            "name": "ReadFile",
+            "iat": "0x582410"
+          },
+          {
+            "name": "CloseHandle",
+            "iat": "0x582414"
+          },
+          {
+            "name": "GetFileSize",
+            "iat": "0x582418"
+          },
+          {
+            "name": "CreateFileW",
+            "iat": "0x58241c"
+          },
+          {
+            "name": "SetFilePointer",
+            "iat": "0x582420"
+          },
+          {
+            "name": "GetTickCount",
+            "iat": "0x582424"
+          },
+          {
+            "name": "WideCharToMultiByte",
+            "iat": "0x582428"
+          },
+          {
+            "name": "WinExec",
+            "iat": "0x58242c"
+          },
+          {
+            "name": "GetModuleFileNameW",
+            "iat": "0x582430"
+          },
+          {
+            "name": "InterlockedDecrement",
+            "iat": "0x582434"
+          },
+          {
+            "name": "GetCurrentDirectoryA",
+            "iat": "0x582438"
+          },
+          {
+            "name": "FreeLibrary",
+            "iat": "0x58243c"
+          },
+          {
+            "name": "GetProcAddress",
+            "iat": "0x582440"
+          },
+          {
+            "name": "LoadLibraryW",
+            "iat": "0x582444"
+          },
+          {
+            "name": "FreeConsole",
+            "iat": "0x582448"
+          },
+          {
+            "name": "AttachConsole",
+            "iat": "0x58244c"
+          },
+          {
+            "name": "FindResourceW",
+            "iat": "0x582450"
+          },
+          {
+            "name": "LoadResource",
+            "iat": "0x582454"
+          },
+          {
+            "name": "LockResource",
+            "iat": "0x582458"
+          },
+          {
+            "name": "SizeofResource",
+            "iat": "0x58245c"
+          },
+          {
+            "name": "GetCommandLineW",
+            "iat": "0x582460"
+          },
+          {
+            "name": "CreateDirectoryW",
+            "iat": "0x582464"
+          },
+          {
+            "name": "GetFileAttributesW",
+            "iat": "0x582468"
+          },
+          {
+            "name": "CreateSemaphoreW",
+            "iat": "0x58246c"
+          },
+          {
+            "name": "GetSystemDefaultLCID",
+            "iat": "0x582470"
+          },
+          {
+            "name": "WaitForMultipleObjects",
+            "iat": "0x582474"
+          },
+          {
+            "name": "ResetEvent",
+            "iat": "0x582478"
+          },
+          {
+            "name": "SetEvent",
+            "iat": "0x58247c"
+          },
+          {
+            "name": "MultiByteToWideChar",
+            "iat": "0x582480"
+          },
+          {
+            "name": "EnterCriticalSection",
+            "iat": "0x582484"
+          },
+          {
+            "name": "LeaveCriticalSection",
+            "iat": "0x582488"
+          },
+          {
+            "name": "InitializeCriticalSectionAndSpinCount",
+            "iat": "0x58248c"
+          },
+          {
+            "name": "GetLastError",
+            "iat": "0x582490"
+          },
+          {
+            "name": "DeleteCriticalSection",
+            "iat": "0x582494"
+          },
+          {
+            "name": "WritePrivateProfileStringW",
+            "iat": "0x582498"
+          },
+          {
+            "name": "GetPrivateProfileStringW",
+            "iat": "0x58249c"
+          },
+          {
+            "name": "SetFilePointerEx",
+            "iat": "0x5824a0"
+          }
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "functions": [
+          {
+            "name": "SetClipboardData",
+            "iat": "0x582568"
+          },
+          {
+            "name": "CloseClipboard",
+            "iat": "0x58256c"
+          },
+          {
+            "name": "OpenClipboard",
+            "iat": "0x582570"
+          },
+          {
+            "name": "SetClassLongW",
+            "iat": "0x582574"
+          },
+          {
+            "name": "LockWindowUpdate",
+            "iat": "0x582578"
+          },
+          {
+            "name": "BringWindowToTop",
+            "iat": "0x58257c"
+          },
+          {
+            "name": "SetParent",
+            "iat": "0x582580"
+          },
+          {
+            "name": "SetRect",
+            "iat": "0x582584"
+          },
+          {
+            "name": "SetCursorPos",
+            "iat": "0x582588"
+          },
+          {
+            "name": "CopyAcceleratorTableW",
+            "iat": "0x58258c"
+          },
+          {
+            "name": "DestroyAcceleratorTable",
+            "iat": "0x582590"
+          },
+          {
+            "name": "CreateAcceleratorTableW",
+            "iat": "0x582594"
+          },
+          {
+            "name": "GetKeyboardState",
+            "iat": "0x582598"
+          },
+          {
+            "name": "GetKeyboardLayout",
+            "iat": "0x58259c"
+          },
+          {
+            "name": "ToUnicodeEx",
+            "iat": "0x5825a0"
+          },
+          {
+            "name": "DrawFrameControl",
+            "iat": "0x5825a4"
+          },
+          {
+            "name": "DrawEdge",
+            "iat": "0x5825a8"
+          },
+          {
+            "name": "InvertRect",
+            "iat": "0x5825ac"
+          },
+          {
+            "name": "HideCaret",
+            "iat": "0x5825b0"
+          },
+          {
+            "name": "GetIconInfo",
+            "iat": "0x5825b4"
+          },
+          {
+            "name": "DrawIconEx",
+            "iat": "0x5825b8"
+          },
+          {
+            "name": "LoadImageW",
+            "iat": "0x5825bc"
+          },
+          {
+            "name": "DrawFocusRect",
+            "iat": "0x5825c0"
+          },
+          {
+            "name": "GetNextDlgGroupItem",
+            "iat": "0x5825c4"
+          },
+          {
+            "name": "DestroyIcon",
+            "iat": "0x5825c8"
+          },
+          {
+            "name": "WaitMessage",
+            "iat": "0x5825cc"
+          },
+          {
+            "name": "MonitorFromPoint",
+            "iat": "0x5825d0"
+          },
+          {
+            "name": "UnionRect",
+            "iat": "0x5825d4"
+          },
+          {
+            "name": "EnableScrollBar",
+            "iat": "0x5825d8"
+          },
+          {
+            "name": "UpdateLayeredWindow",
+            "iat": "0x5825dc"
+          },
+          {
+            "name": "IsMenu",
+            "iat": "0x5825e0"
+          },
+          {
+            "name": "IsRectEmpty",
+            "iat": "0x5825e4"
+          },
+          {
+            "name": "SetMenuDefaultItem",
+            "iat": "0x5825e8"
+          },
+          {
+            "name": "GetMenuDefaultItem",
+            "iat": "0x5825ec"
+          },
+          {
+            "name": "CreatePopupMenu",
+            "iat": "0x5825f0"
+          },
+          {
+            "name": "NotifyWinEvent",
+            "iat": "0x5825f4"
+          },
+          {
+            "name": "OffsetRect",
+            "iat": "0x5825f8"
+          },
+          {
+            "name": "WindowFromPoint",
+            "iat": "0x5825fc"
+          },
+          {
+            "name": "MessageBeep",
+            "iat": "0x582600"
+          },
+          {
+            "name": "SetWindowRgn",
+            "iat": "0x582604"
+          },
+          {
+            "name": "DeleteMenu",
+            "iat": "0x582608"
+          },
+          {
+            "name": "ReleaseCapture",
+            "iat": "0x58260c"
+          },
+          {
+            "name": "SetCapture",
+            "iat": "0x582610"
+          },
+          {
+            "name": "IsZoomed",
+            "iat": "0x582614"
+          },
+          {
+            "name": "TrackMouseEvent",
+            "iat": "0x582618"
+          },
+          {
+            "name": "IntersectRect",
+            "iat": "0x58261c"
+          },
+          {
+            "name": "EnumDisplayMonitors",
+            "iat": "0x582620"
+          },
+          {
+            "name": "SetRectEmpty",
+            "iat": "0x582624"
+          },
+          {
+            "name": "SetLayeredWindowAttributes",
+            "iat": "0x582628"
+          },
+          {
+            "name": "CopyImage",
+            "iat": "0x58262c"
+          },
+          {
+            "name": "LoadCursorW",
+            "iat": "0x582630"
+          },
+          {
+            "name": "RealChildWindowFromPoint",
+            "iat": "0x582634"
+          },
+          {
+            "name": "SetCursor",
+            "iat": "0x582638"
+          },
+          {
+            "name": "ShowOwnedPopups",
+            "iat": "0x58263c"
+          },
+          {
+            "name": "SystemParametersInfoW",
+            "iat": "0x582640"
+          },
+          {
+            "name": "InflateRect",
+            "iat": "0x582644"
+          },
+          {
+            "name": "GetMenuItemInfoW",
+            "iat": "0x582648"
+          },
+          {
+            "name": "DestroyMenu",
+            "iat": "0x58264c"
+          },
+          {
+            "name": "PostQuitMessage",
+            "iat": "0x582650"
+          },
+          {
+            "name": "TranslateMessage",
+            "iat": "0x582654"
+          },
+          {
+            "name": "GetCursorPos",
+            "iat": "0x582658"
+          },
+          {
+            "name": "ClientToScreen",
+            "iat": "0x58265c"
+          },
+          {
+            "name": "EndPaint",
+            "iat": "0x582660"
+          },
+          {
+            "name": "BeginPaint",
+            "iat": "0x582664"
+          },
+          {
+            "name": "GetWindowDC",
+            "iat": "0x582668"
+          },
+          {
+            "name": "TabbedTextOutW",
+            "iat": "0x58266c"
+          },
+          {
+            "name": "GrayStringW",
+            "iat": "0x582670"
+          },
+          {
+            "name": "DrawTextExW",
+            "iat": "0x582674"
+          },
+          {
+            "name": "DrawTextW",
+            "iat": "0x582678"
+          },
+          {
+            "name": "GetWindowThreadProcessId",
+            "iat": "0x58267c"
+          },
+          {
+            "name": "ReleaseDC",
+            "iat": "0x582680"
+          },
+          {
+            "name": "GetDC",
+            "iat": "0x582684"
+          },
+          {
+            "name": "MapVirtualKeyW",
+            "iat": "0x582688"
+          },
+          {
+            "name": "GetKeyNameTextW",
+            "iat": "0x58268c"
+          },
+          {
+            "name": "FillRect",
+            "iat": "0x582690"
+          },
+          {
+            "name": "InvalidateRect",
+            "iat": "0x582694"
+          },
+          {
+            "name": "DrawStateW",
+            "iat": "0x582698"
+          },
+          {
+            "name": "SendDlgItemMessageA",
+            "iat": "0x58269c"
+          },
+          {
+            "name": "SetMenuItemInfoW",
+            "iat": "0x5826a0"
+          },
+          {
+            "name": "GetMenuCheckMarkDimensions",
+            "iat": "0x5826a4"
+          },
+          {
+            "name": "SetMenuItemBitmaps",
+            "iat": "0x5826a8"
+          },
+          {
+            "name": "CheckMenuItem",
+            "iat": "0x5826ac"
+          },
+          {
+            "name": "IsDialogMessageW",
+            "iat": "0x5826b0"
+          },
+          {
+            "name": "SetWindowTextW",
+            "iat": "0x5826b4"
+          },
+          {
+            "name": "EmptyClipboard",
+            "iat": "0x5826b8"
+          },
+          {
+            "name": "IsDlgButtonChecked",
+            "iat": "0x5826bc"
+          },
+          {
+            "name": "CheckDlgButton",
+            "iat": "0x5826c0"
+          },
+          {
+            "name": "MoveWindow",
+            "iat": "0x5826c4"
+          },
+          {
+            "name": "ShowWindow",
+            "iat": "0x5826c8"
+          },
+          {
+            "name": "GetMonitorInfoW",
+            "iat": "0x5826cc"
+          },
+          {
+            "name": "MonitorFromWindow",
+            "iat": "0x5826d0"
+          },
+          {
+            "name": "WinHelpW",
+            "iat": "0x5826d4"
+          },
+          {
+            "name": "GetScrollInfo",
+            "iat": "0x5826d8"
+          },
+          {
+            "name": "SetScrollInfo",
+            "iat": "0x5826dc"
+          },
+          {
+            "name": "CallNextHookEx",
+            "iat": "0x5826e0"
+          },
+          {
+            "name": "UnhookWindowsHookEx",
+            "iat": "0x5826e4"
+          },
+          {
+            "name": "SetWindowsHookExW",
+            "iat": "0x5826e8"
+          },
+          {
+            "name": "GetWindow",
+            "iat": "0x5826ec"
+          },
+          {
+            "name": "GetLastActivePopup",
+            "iat": "0x5826f0"
+          },
+          {
+            "name": "GetTopWindow",
+            "iat": "0x5826f4"
+          },
+          {
+            "name": "GetClassNameW",
+            "iat": "0x5826f8"
+          },
+          {
+            "name": "GetClassLongW",
+            "iat": "0x5826fc"
+          },
+          {
+            "name": "PtInRect",
+            "iat": "0x582700"
+          },
+          {
+            "name": "EqualRect",
+            "iat": "0x582704"
+          },
+          {
+            "name": "CopyRect",
+            "iat": "0x582708"
+          },
+          {
+            "name": "GetSysColor",
+            "iat": "0x58270c"
+          },
+          {
+            "name": "MapWindowPoints",
+            "iat": "0x582710"
+          },
+          {
+            "name": "ScreenToClient",
+            "iat": "0x582714"
+          },
+          {
+            "name": "MessageBoxW",
+            "iat": "0x582718"
+          },
+          {
+            "name": "AdjustWindowRectEx",
+            "iat": "0x58271c"
+          },
+          {
+            "name": "GetWindowRect",
+            "iat": "0x582720"
+          },
+          {
+            "name": "GetWindowTextLengthW",
+            "iat": "0x582724"
+          },
+          {
+            "name": "GetWindowTextW",
+            "iat": "0x582728"
+          },
+          {
+            "name": "RemovePropW",
+            "iat": "0x58272c"
+          },
+          {
+            "name": "GetPropW",
+            "iat": "0x582730"
+          },
+          {
+            "name": "SetPropW",
+            "iat": "0x582734"
+          },
+          {
+            "name": "ShowScrollBar",
+            "iat": "0x582738"
+          },
+          {
+            "name": "GetScrollRange",
+            "iat": "0x58273c"
+          },
+          {
+            "name": "SetScrollRange",
+            "iat": "0x582740"
+          },
+          {
+            "name": "GetScrollPos",
+            "iat": "0x582744"
+          },
+          {
+            "name": "SetScrollPos",
+            "iat": "0x582748"
+          },
+          {
+            "name": "ScrollWindow",
+            "iat": "0x58274c"
+          },
+          {
+            "name": "RedrawWindow",
+            "iat": "0x582750"
+          },
+          {
+            "name": "ValidateRect",
+            "iat": "0x582754"
+          },
+          {
+            "name": "SetForegroundWindow",
+            "iat": "0x582758"
+          },
+          {
+            "name": "TrackPopupMenu",
+            "iat": "0x58275c"
+          },
+          {
+            "name": "SetMenu",
+            "iat": "0x582760"
+          },
+          {
+            "name": "GetMenu",
+            "iat": "0x582764"
+          },
+          {
+            "name": "GetCapture",
+            "iat": "0x582768"
+          },
+          {
+            "name": "EnableWindow",
+            "iat": "0x58276c"
+          },
+          {
+            "name": "LoadBitmapW",
+            "iat": "0x582770"
+          },
+          {
+            "name": "SendMessageW",
+            "iat": "0x582774"
+          },
+          {
+            "name": "GetWindowRgn",
+            "iat": "0x582778"
+          },
+          {
+            "name": "GetKeyState",
+            "iat": "0x58277c"
+          },
+          {
+            "name": "GetFocus",
+            "iat": "0x582780"
+          },
+          {
+            "name": "SetFocus",
+            "iat": "0x582784"
+          },
+          {
+            "name": "GetDlgCtrlID",
+            "iat": "0x582788"
+          },
+          {
+            "name": "IsWindowVisible",
+            "iat": "0x58278c"
+          },
+          {
+            "name": "EndDeferWindowPos",
+            "iat": "0x582790"
+          },
+          {
+            "name": "DeferWindowPos",
+            "iat": "0x582794"
+          },
+          {
+            "name": "BeginDeferWindowPos",
+            "iat": "0x582798"
+          },
+          {
+            "name": "SetWindowPlacement",
+            "iat": "0x58279c"
+          },
+          {
+            "name": "GetWindowPlacement",
+            "iat": "0x5827a0"
+          },
+          {
+            "name": "SetWindowPos",
+            "iat": "0x5827a4"
+          },
+          {
+            "name": "IsChild",
+            "iat": "0x5827a8"
+          },
+          {
+            "name": "CreateWindowExW",
+            "iat": "0x5827ac"
+          },
+          {
+            "name": "GetClassInfoExW",
+            "iat": "0x5827b0"
+          },
+          {
+            "name": "GetClassInfoW",
+            "iat": "0x5827b4"
+          },
+          {
+            "name": "MapDialogRect",
+            "iat": "0x5827b8"
+          },
+          {
+            "name": "DestroyCursor",
+            "iat": "0x5827bc"
+          },
+          {
+            "name": "CreateMenu",
+            "iat": "0x5827c0"
+          },
+          {
+            "name": "SubtractRect",
+            "iat": "0x5827c4"
+          },
+          {
+            "name": "GetUpdateRect",
+            "iat": "0x5827c8"
+          },
+          {
+            "name": "IsClipboardFormatAvailable",
+            "iat": "0x5827cc"
+          },
+          {
+            "name": "TranslateMDISysAccel",
+            "iat": "0x5827d0"
+          },
+          {
+            "name": "DefMDIChildProcW",
+            "iat": "0x5827d4"
+          },
+          {
+            "name": "DefFrameProcW",
+            "iat": "0x5827d8"
+          },
+          {
+            "name": "DrawMenuBar",
+            "iat": "0x5827dc"
+          },
+          {
+            "name": "GetDoubleClickTime",
+            "iat": "0x5827e0"
+          },
+          {
+            "name": "UnpackDDElParam",
+            "iat": "0x5827e4"
+          },
+          {
+            "name": "MapVirtualKeyExW",
+            "iat": "0x5827e8"
+          },
+          {
+            "name": "RegisterClassW",
+            "iat": "0x5827ec"
+          },
+          {
+            "name": "CallWindowProcW",
+            "iat": "0x5827f0"
+          },
+          {
+            "name": "CharUpperBuffW",
+            "iat": "0x5827f4"
+          },
+          {
+            "name": "ModifyMenuW",
+            "iat": "0x5827f8"
+          },
+          {
+            "name": "InsertMenuItemW",
+            "iat": "0x5827fc"
+          },
+          {
+            "name": "IsCharLowerW",
+            "iat": "0x582800"
+          },
+          {
+            "name": "GetComboBoxInfo",
+            "iat": "0x582804"
+          },
+          {
+            "name": "FrameRect",
+            "iat": "0x582808"
+          },
+          {
+            "name": "CopyIcon",
+            "iat": "0x58280c"
+          },
+          {
+            "name": "ReuseDDElParam",
+            "iat": "0x582810"
+          },
+          {
+            "name": "CharUpperW",
+            "iat": "0x582814"
+          },
+          {
+            "name": "PostMessageW",
+            "iat": "0x582818"
+          },
+          {
+            "name": "GetParent",
+            "iat": "0x58281c"
+          },
+          {
+            "name": "UpdateWindow",
+            "iat": "0x582820"
+          },
+          {
+            "name": "GetAsyncKeyState",
+            "iat": "0x582824"
+          },
+          {
+            "name": "SetWindowLongW",
+            "iat": "0x582828"
+          },
+          {
+            "name": "GetWindowLongW",
+            "iat": "0x58282c"
+          },
+          {
+            "name": "LoadIconW",
+            "iat": "0x582830"
+          },
+          {
+            "name": "LoadAcceleratorsW",
+            "iat": "0x582834"
+          },
+          {
+            "name": "GetSystemMenu",
+            "iat": "0x582838"
+          },
+          {
+            "name": "AppendMenuW",
+            "iat": "0x58283c"
+          },
+          {
+            "name": "GetSysColorBrush",
+            "iat": "0x582840"
+          },
+          {
+            "name": "SetTimer",
+            "iat": "0x582844"
+          },
+          {
+            "name": "IsIconic",
+            "iat": "0x582848"
+          },
+          {
+            "name": "GetSystemMetrics",
+            "iat": "0x58284c"
+          },
+          {
+            "name": "GetClientRect",
+            "iat": "0x582850"
+          },
+          {
+            "name": "DrawIcon",
+            "iat": "0x582854"
+          },
+          {
+            "name": "PeekMessageW",
+            "iat": "0x582858"
+          },
+          {
+            "name": "GetMessageW",
+            "iat": "0x58285c"
+          },
+          {
+            "name": "PostThreadMessageW",
+            "iat": "0x582860"
+          },
+          {
+            "name": "GetForegroundWindow",
+            "iat": "0x582864"
+          },
+          {
+            "name": "FlashWindowEx",
+            "iat": "0x582868"
+          },
+          {
+            "name": "SetActiveWindow",
+            "iat": "0x58286c"
+          },
+          {
+            "name": "KillTimer",
+            "iat": "0x582870"
+          },
+          {
+            "name": "TranslateAcceleratorW",
+            "iat": "0x582874"
+          },
+          {
+            "name": "LoadMenuW",
+            "iat": "0x582878"
+          },
+          {
+            "name": "EnableMenuItem",
+            "iat": "0x58287c"
+          },
+          {
+            "name": "UnregisterClassW",
+            "iat": "0x582880"
+          },
+          {
+            "name": "RegisterDeviceNotificationW",
+            "iat": "0x582884"
+          },
+          {
+            "name": "UnregisterDeviceNotification",
+            "iat": "0x582888"
+          },
+          {
+            "name": "IsWindow",
+            "iat": "0x58288c"
+          },
+          {
+            "name": "DestroyWindow",
+            "iat": "0x582890"
+          },
+          {
+            "name": "CreateDialogIndirectParamW",
+            "iat": "0x582894"
+          },
+          {
+            "name": "EndDialog",
+            "iat": "0x582898"
+          },
+          {
+            "name": "GetDlgItem",
+            "iat": "0x58289c"
+          },
+          {
+            "name": "GetNextDlgTabItem",
+            "iat": "0x5828a0"
+          },
+          {
+            "name": "GetActiveWindow",
+            "iat": "0x5828a4"
+          },
+          {
+            "name": "IsWindowEnabled",
+            "iat": "0x5828a8"
+          },
+          {
+            "name": "GetDesktopWindow",
+            "iat": "0x5828ac"
+          },
+          {
+            "name": "GetMenuStringW",
+            "iat": "0x5828b0"
+          },
+          {
+            "name": "GetMenuState",
+            "iat": "0x5828b4"
+          },
+          {
+            "name": "GetSubMenu",
+            "iat": "0x5828b8"
+          },
+          {
+            "name": "GetMenuItemID",
+            "iat": "0x5828bc"
+          },
+          {
+            "name": "GetMenuItemCount",
+            "iat": "0x5828c0"
+          },
+          {
+            "name": "InsertMenuW",
+            "iat": "0x5828c4"
+          },
+          {
+            "name": "RemoveMenu",
+            "iat": "0x5828c8"
+          },
+          {
+            "name": "RegisterWindowMessageW",
+            "iat": "0x5828cc"
+          },
+          {
+            "name": "DispatchMessageW",
+            "iat": "0x5828d0"
+          },
+          {
+            "name": "GetMessagePos",
+            "iat": "0x5828d4"
+          },
+          {
+            "name": "GetMessageTime",
+            "iat": "0x5828d8"
+          },
+          {
+            "name": "DefWindowProcW",
+            "iat": "0x5828dc"
+          },
+          {
+            "name": "RegisterClipboardFormatW",
+            "iat": "0x5828e0"
+          }
+        ]
+      },
+      {
+        "dll": "GDI32.dll",
+        "functions": [
+          {
+            "name": "SetViewportExtEx",
+            "iat": "0x582038"
+          },
+          {
+            "name": "SetViewportOrgEx",
+            "iat": "0x58203c"
+          },
+          {
+            "name": "SetWindowExtEx",
+            "iat": "0x582040"
+          },
+          {
+            "name": "SetWindowOrgEx",
+            "iat": "0x582044"
+          },
+          {
+            "name": "OffsetViewportOrgEx",
+            "iat": "0x582048"
+          },
+          {
+            "name": "OffsetWindowOrgEx",
+            "iat": "0x58204c"
+          },
+          {
+            "name": "ScaleViewportExtEx",
+            "iat": "0x582050"
+          },
+          {
+            "name": "ScaleWindowExtEx",
+            "iat": "0x582054"
+          },
+          {
+            "name": "CreateFontIndirectW",
+            "iat": "0x582058"
+          },
+          {
+            "name": "GetTextExtentPoint32W",
+            "iat": "0x58205c"
+          },
+          {
+            "name": "GetTextMetricsW",
+            "iat": "0x582060"
+          },
+          {
+            "name": "CreateCompatibleBitmap",
+            "iat": "0x582064"
+          },
+          {
+            "name": "CreateDIBitmap",
+            "iat": "0x582068"
+          },
+          {
+            "name": "EnumFontFamiliesW",
+            "iat": "0x58206c"
+          },
+          {
+            "name": "GetTextCharsetInfo",
+            "iat": "0x582070"
+          },
+          {
+            "name": "CombineRgn",
+            "iat": "0x582074"
+          },
+          {
+            "name": "SetRectRgn",
+            "iat": "0x582078"
+          },
+          {
+            "name": "DPtoLP",
+            "iat": "0x58207c"
+          },
+          {
+            "name": "CreateRoundRectRgn",
+            "iat": "0x582080"
+          },
+          {
+            "name": "CreateDIBSection",
+            "iat": "0x582084"
+          },
+          {
+            "name": "CreatePalette",
+            "iat": "0x582088"
+          },
+          {
+            "name": "GetNearestPaletteIndex",
+            "iat": "0x58208c"
+          },
+          {
+            "name": "GetPaletteEntries",
+            "iat": "0x582090"
+          },
+          {
+            "name": "GetSystemPaletteEntries",
+            "iat": "0x582094"
+          },
+          {
+            "name": "RealizePalette",
+            "iat": "0x582098"
+          },
+          {
+            "name": "GetBkColor",
+            "iat": "0x58209c"
+          },
+          {
+            "name": "CreateEllipticRgn",
+            "iat": "0x5820a0"
+          },
+          {
+            "name": "Ellipse",
+            "iat": "0x5820a4"
+          },
+          {
+            "name": "GetTextColor",
+            "iat": "0x5820a8"
+          },
+          {
+            "name": "CreatePolygonRgn",
+            "iat": "0x5820ac"
+          },
+          {
+            "name": "Polygon",
+            "iat": "0x5820b0"
+          },
+          {
+            "name": "Polyline",
+            "iat": "0x5820b4"
+          },
+          {
+            "name": "ExtTextOutW",
+            "iat": "0x5820b8"
+          },
+          {
+            "name": "StretchBlt",
+            "iat": "0x5820bc"
+          },
+          {
+            "name": "SetDIBColorTable",
+            "iat": "0x5820c0"
+          },
+          {
+            "name": "GetRgnBox",
+            "iat": "0x5820c4"
+          },
+          {
+            "name": "OffsetRgn",
+            "iat": "0x5820c8"
+          },
+          {
+            "name": "Rectangle",
+            "iat": "0x5820cc"
+          },
+          {
+            "name": "EnumFontFamiliesExW",
+            "iat": "0x5820d0"
+          },
+          {
+            "name": "RoundRect",
+            "iat": "0x5820d4"
+          },
+          {
+            "name": "ExtFloodFill",
+            "iat": "0x5820d8"
+          },
+          {
+            "name": "SetPaletteEntries",
+            "iat": "0x5820dc"
+          },
+          {
+            "name": "FillRgn",
+            "iat": "0x5820e0"
+          },
+          {
+            "name": "FrameRgn",
+            "iat": "0x5820e4"
+          },
+          {
+            "name": "GetBoundsRect",
+            "iat": "0x5820e8"
+          },
+          {
+            "name": "PtInRegion",
+            "iat": "0x5820ec"
+          },
+          {
+            "name": "GetWindowOrgEx",
+            "iat": "0x5820f0"
+          },
+          {
+            "name": "LPtoDP",
+            "iat": "0x5820f4"
+          },
+          {
+            "name": "GetViewportOrgEx",
+            "iat": "0x5820f8"
+          },
+          {
+            "name": "SetPixelV",
+            "iat": "0x5820fc"
+          },
+          {
+            "name": "GetTextFaceW",
+            "iat": "0x582100"
+          },
+          {
+            "name": "SetROP2",
+            "iat": "0x582104"
+          },
+          {
+            "name": "SetPolyFillMode",
+            "iat": "0x582108"
+          },
+          {
+            "name": "TextOutW",
+            "iat": "0x58210c"
+          },
+          {
+            "name": "MoveToEx",
+            "iat": "0x582110"
+          },
+          {
+            "name": "SetTextAlign",
+            "iat": "0x582114"
+          },
+          {
+            "name": "SetPixel",
+            "iat": "0x582118"
+          },
+          {
+            "name": "CreateFontW",
+            "iat": "0x58211c"
+          },
+          {
+            "name": "GetLayout",
+            "iat": "0x582120"
+          },
+          {
+            "name": "SetLayout",
+            "iat": "0x582124"
+          },
+          {
+            "name": "SetMapMode",
+            "iat": "0x582128"
+          },
+          {
+            "name": "SetBkMode",
+            "iat": "0x58212c"
+          },
+          {
+            "name": "SelectPalette",
+            "iat": "0x582130"
+          },
+          {
+            "name": "SelectObject",
+            "iat": "0x582134"
+          },
+          {
+            "name": "ExtSelectClipRgn",
+            "iat": "0x582138"
+          },
+          {
+            "name": "SelectClipRgn",
+            "iat": "0x58213c"
+          },
+          {
+            "name": "SaveDC",
+            "iat": "0x582140"
+          },
+          {
+            "name": "RestoreDC",
+            "iat": "0x582144"
+          },
+          {
+            "name": "RectVisible",
+            "iat": "0x582148"
+          },
+          {
+            "name": "PtVisible",
+            "iat": "0x58214c"
+          },
+          {
+            "name": "LineTo",
+            "iat": "0x582150"
+          },
+          {
+            "name": "IntersectClipRect",
+            "iat": "0x582154"
+          },
+          {
+            "name": "GetWindowExtEx",
+            "iat": "0x582158"
+          },
+          {
+            "name": "GetViewportExtEx",
+            "iat": "0x58215c"
+          },
+          {
+            "name": "GetPixel",
+            "iat": "0x582160"
+          },
+          {
+            "name": "GetObjectType",
+            "iat": "0x582164"
+          },
+          {
+            "name": "GetClipBox",
+            "iat": "0x582168"
+          },
+          {
+            "name": "ExcludeClipRect",
+            "iat": "0x58216c"
+          },
+          {
+            "name": "Escape",
+            "iat": "0x582170"
+          },
+          {
+            "name": "CreateRectRgn",
+            "iat": "0x582174"
+          },
+          {
+            "name": "CreatePatternBrush",
+            "iat": "0x582178"
+          },
+          {
+            "name": "CreatePen",
+            "iat": "0x58217c"
+          },
+          {
+            "name": "CreateHatchBrush",
+            "iat": "0x582180"
+          },
+          {
+            "name": "CreateCompatibleDC",
+            "iat": "0x582184"
+          },
+          {
+            "name": "BitBlt",
+            "iat": "0x582188"
+          },
+          {
+            "name": "PatBlt",
+            "iat": "0x58218c"
+          },
+          {
+            "name": "CreateRectRgnIndirect",
+            "iat": "0x582190"
+          },
+          {
+            "name": "GetStockObject",
+            "iat": "0x582194"
+          },
+          {
+            "name": "DeleteObject",
+            "iat": "0x582198"
+          },
+          {
+            "name": "CreateBitmap",
+            "iat": "0x58219c"
+          },
+          {
+            "name": "GetObjectW",
+            "iat": "0x5821a0"
+          },
+          {
+            "name": "SetTextColor",
+            "iat": "0x5821a4"
+          },
+          {
+            "name": "SetBkColor",
+            "iat": "0x5821a8"
+          },
+          {
+            "name": "GetDeviceCaps",
+            "iat": "0x5821ac"
+          },
+          {
+            "name": "CreateDCW",
+            "iat": "0x5821b0"
+          },
+          {
+            "name": "CopyMetaFileW",
+            "iat": "0x5821b4"
+          },
+          {
+            "name": "DeleteDC",
+            "iat": "0x5821b8"
+          },
+          {
+            "name": "CreateSolidBrush",
+            "iat": "0x5821bc"
+          }
+        ]
+      },
+      {
+        "dll": "MSIMG32.dll",
+        "functions": [
+          {
+            "name": "TransparentBlt",
+            "iat": "0x5824a8"
+          },
+          {
+            "name": "AlphaBlend",
+            "iat": "0x5824ac"
+          }
+        ]
+      },
+      {
+        "dll": "WINSPOOL.DRV",
+        "functions": [
+          {
+            "name": "DocumentPropertiesW",
+            "iat": "0x582924"
+          },
+          {
+            "name": "OpenPrinterW",
+            "iat": "0x582928"
+          },
+          {
+            "name": "ClosePrinter",
+            "iat": "0x58292c"
+          }
+        ]
+      },
+      {
+        "dll": "ADVAPI32.dll",
+        "functions": [
+          {
+            "name": "RegDeleteValueW",
+            "iat": "0x582000"
+          },
+          {
+            "name": "RegEnumValueW",
+            "iat": "0x582004"
+          },
+          {
+            "name": "RegQueryValueW",
+            "iat": "0x582008"
+          },
+          {
+            "name": "RegEnumKeyW",
+            "iat": "0x58200c"
+          },
+          {
+            "name": "RegSetValueExW",
+            "iat": "0x582010"
+          },
+          {
+            "name": "RegOpenKeyExW",
+            "iat": "0x582014"
+          },
+          {
+            "name": "RegDeleteKeyW",
+            "iat": "0x582018"
+          },
+          {
+            "name": "RegCreateKeyExW",
+            "iat": "0x58201c"
+          },
+          {
+            "name": "RegQueryValueExW",
+            "iat": "0x582020"
+          },
+          {
+            "name": "RegEnumKeyExW",
+            "iat": "0x582024"
+          },
+          {
+            "name": "RegCloseKey",
+            "iat": "0x582028"
+          }
+        ]
+      },
+      {
+        "dll": "SHELL32.dll",
+        "functions": [
+          {
+            "name": "DragQueryFileW",
+            "iat": "0x58251c"
+          },
+          {
+            "name": "SHAppBarMessage",
+            "iat": "0x582520"
+          },
+          {
+            "name": "ShellExecuteW",
+            "iat": "0x582524"
+          },
+          {
+            "name": "DragFinish",
+            "iat": "0x582528"
+          },
+          {
+            "name": "SHGetDesktopFolder",
+            "iat": "0x58252c"
+          },
+          {
+            "name": "SHBrowseForFolderW",
+            "iat": "0x582530"
+          },
+          {
+            "name": "SHGetSpecialFolderLocation",
+            "iat": "0x582534"
+          },
+          {
+            "name": "SHGetPathFromIDListW",
+            "iat": "0x582538"
+          },
+          {
+            "name": "SHGetMalloc",
+            "iat": "0x58253c"
+          },
+          {
+            "name": "SHGetFileInfoW",
+            "iat": "0x582540"
+          },
+          {
+            "name": "CommandLineToArgvW",
+            "iat": "0x582544"
+          }
+        ]
+      },
+      {
+        "dll": "COMCTL32.dll",
+        "functions": [
+          {
+            "name": "InitCommonControlsEx",
+            "iat": "0x582030"
+          }
+        ]
+      },
+      {
+        "dll": "SHLWAPI.dll",
+        "functions": [
+          {
+            "name": "PathRemoveFileSpecW",
+            "iat": "0x58254c"
+          },
+          {
+            "name": "PathFindFileNameW",
+            "iat": "0x582550"
+          },
+          {
+            "name": "PathFindExtensionW",
+            "iat": "0x582554"
+          },
+          {
+            "name": "PathStripToRootW",
+            "iat": "0x582558"
+          },
+          {
+            "name": "PathIsUNCW",
+            "iat": "0x58255c"
+          },
+          {
+            "name": "StrFormatKBSizeW",
+            "iat": "0x582560"
+          }
+        ]
+      },
+      {
+        "dll": "UxTheme.dll",
+        "functions": [
+          {
+            "name": "GetThemePartSize",
+            "iat": "0x5828e8"
+          },
+          {
+            "name": "IsThemeBackgroundPartiallyTransparent",
+            "iat": "0x5828ec"
+          },
+          {
+            "name": "IsAppThemed",
+            "iat": "0x5828f0"
+          },
+          {
+            "name": "DrawThemeText",
+            "iat": "0x5828f4"
+          },
+          {
+            "name": "DrawThemeParentBackground",
+            "iat": "0x5828f8"
+          },
+          {
+            "name": "OpenThemeData",
+            "iat": "0x5828fc"
+          },
+          {
+            "name": "CloseThemeData",
+            "iat": "0x582900"
+          },
+          {
+            "name": "DrawThemeBackground",
+            "iat": "0x582904"
+          },
+          {
+            "name": "GetWindowTheme",
+            "iat": "0x582908"
+          },
+          {
+            "name": "GetThemeColor",
+            "iat": "0x58290c"
+          },
+          {
+            "name": "GetCurrentThemeName",
+            "iat": "0x582910"
+          },
+          {
+            "name": "GetThemeSysColor",
+            "iat": "0x582914"
+          }
+        ]
+      },
+      {
+        "dll": "ole32.dll",
+        "functions": [
+          {
+            "name": "CoDisconnectObject",
+            "iat": "0x5829ac"
+          },
+          {
+            "name": "CoInitializeEx",
+            "iat": "0x5829b0"
+          },
+          {
+            "name": "CoInitialize",
+            "iat": "0x5829b4"
+          },
+          {
+            "name": "CoCreateInstance",
+            "iat": "0x5829b8"
+          },
+          {
+            "name": "CoCreateGuid",
+            "iat": "0x5829bc"
+          },
+          {
+            "name": "CoUninitialize",
+            "iat": "0x5829c0"
+          },
+          {
+            "name": "ReleaseStgMedium",
+            "iat": "0x5829c4"
+          },
+          {
+            "name": "OleDuplicateData",
+            "iat": "0x5829c8"
+          },
+          {
+            "name": "CoTaskMemFree",
+            "iat": "0x5829cc"
+          },
+          {
+            "name": "CoTaskMemAlloc",
+            "iat": "0x5829d0"
+          },
+          {
+            "name": "DoDragDrop",
+            "iat": "0x5829d4"
+          },
+          {
+            "name": "CreateStreamOnHGlobal",
+            "iat": "0x5829d8"
+          },
+          {
+            "name": "OleLockRunning",
+            "iat": "0x5829dc"
+          },
+          {
+            "name": "OleCreateMenuDescriptor",
+            "iat": "0x5829e0"
+          },
+          {
+            "name": "OleDestroyMenuDescriptor",
+            "iat": "0x5829e4"
+          },
+          {
+            "name": "OleTranslateAccelerator",
+            "iat": "0x5829e8"
+          },
+          {
+            "name": "IsAccelerator",
+            "iat": "0x5829ec"
+          },
+          {
+            "name": "OleGetClipboard",
+            "iat": "0x5829f0"
+          },
+          {
+            "name": "CoLockObjectExternal",
+            "iat": "0x5829f4"
+          },
+          {
+            "name": "RegisterDragDrop",
+            "iat": "0x5829f8"
+          },
+          {
+            "name": "RevokeDragDrop",
+            "iat": "0x5829fc"
+          }
+        ]
+      },
+      {
+        "dll": "OLEAUT32.dll",
+        "functions": [
+          {
+            "name": "SysAllocStringLen",
+            "iat": "0x5824c4"
+          },
+          {
+            "name": "VariantInit",
+            "iat": "0x5824c8"
+          },
+          {
+            "name": "VariantClear",
+            "iat": "0x5824cc"
+          },
+          {
+            "name": "VariantChangeType",
+            "iat": "0x5824d0"
+          },
+          {
+            "name": "VariantCopy",
+            "iat": "0x5824d4"
+          },
+          {
+            "name": "SystemTimeToVariantTime",
+            "iat": "0x5824d8"
+          },
+          {
+            "name": "VariantTimeToSystemTime",
+            "iat": "0x5824dc"
+          },
+          {
+            "name": "SysAllocString",
+            "iat": "0x5824e0"
+          },
+          {
+            "name": "VarBstrFromDate",
+            "iat": "0x5824e4"
+          },
+          {
+            "name": "LoadTypeLib",
+            "iat": "0x5824e8"
+          },
+          {
+            "name": "SysStringLen",
+            "iat": "0x5824ec"
+          },
+          {
+            "name": "SysAllocStringByteLen",
+            "iat": "0x5824f0"
+          },
+          {
+            "name": "SysFreeString",
+            "iat": "0x5824f4"
+          }
+        ]
+      },
+      {
+        "dll": "gdiplus.dll",
+        "functions": [
+          {
+            "name": "GdipBitmapUnlockBits",
+            "iat": "0x582950"
+          },
+          {
+            "name": "GdipBitmapLockBits",
+            "iat": "0x582954"
+          },
+          {
+            "name": "GdipCreateBitmapFromScan0",
+            "iat": "0x582958"
+          },
+          {
+            "name": "GdipCreateBitmapFromStream",
+            "iat": "0x58295c"
+          },
+          {
+            "name": "GdipGetImagePaletteSize",
+            "iat": "0x582960"
+          },
+          {
+            "name": "GdipGetImagePalette",
+            "iat": "0x582964"
+          },
+          {
+            "name": "GdipGetImagePixelFormat",
+            "iat": "0x582968"
+          },
+          {
+            "name": "GdipGetImageHeight",
+            "iat": "0x58296c"
+          },
+          {
+            "name": "GdipGetImageWidth",
+            "iat": "0x582970"
+          },
+          {
+            "name": "GdipGetImageGraphicsContext",
+            "iat": "0x582974"
+          },
+          {
+            "name": "GdipDrawImageRectI",
+            "iat": "0x582978"
+          },
+          {
+            "name": "GdipSetInterpolationMode",
+            "iat": "0x58297c"
+          },
+          {
+            "name": "GdipDeleteGraphics",
+            "iat": "0x582980"
+          },
+          {
+            "name": "GdipCreateFromHDC",
+            "iat": "0x582984"
+          },
+          {
+            "name": "GdipCreateBitmapFromHBITMAP",
+            "iat": "0x582988"
+          },
+          {
+            "name": "GdipDisposeImage",
+            "iat": "0x58298c"
+          },
+          {
+            "name": "GdipCloneImage",
+            "iat": "0x582990"
+          },
+          {
+            "name": "GdiplusStartup",
+            "iat": "0x582994"
+          },
+          {
+            "name": "GdipFree",
+            "iat": "0x582998"
+          },
+          {
+            "name": "GdipAlloc",
+            "iat": "0x58299c"
+          },
+          {
+            "name": "GdiplusShutdown",
+            "iat": "0x5829a0"
+          },
+          {
+            "name": "GdipDrawImageI",
+            "iat": "0x5829a4"
+          }
+        ]
+      },
+      {
+        "dll": "WS2_32.dll",
+        "functions": [
+          {
+            "name": "sendto",
+            "iat": "0x582934"
+          },
+          {
+            "name": "closesocket",
+            "iat": "0x582938"
+          },
+          {
+            "name": "gethostbyname",
+            "iat": "0x58293c"
+          },
+          {
+            "name": "socket",
+            "iat": "0x582940"
+          },
+          {
+            "name": "WSAStartup",
+            "iat": "0x582944"
+          },
+          {
+            "name": "select",
+            "iat": "0x582948"
+          }
+        ]
+      },
+      {
+        "dll": "OLEACC.dll",
+        "functions": [
+          {
+            "name": "CreateStdAccessibleObject",
+            "iat": "0x5824b4"
+          },
+          {
+            "name": "AccessibleObjectFromWindow",
+            "iat": "0x5824b8"
+          },
+          {
+            "name": "LresultFromObject",
+            "iat": "0x5824bc"
+          }
+        ]
+      },
+      {
+        "dll": "IMM32.dll",
+        "functions": [
+          {
+            "name": "ImmGetContext",
+            "iat": "0x5821c4"
+          },
+          {
+            "name": "ImmGetOpenStatus",
+            "iat": "0x5821c8"
+          },
+          {
+            "name": "ImmReleaseContext",
+            "iat": "0x5821cc"
+          }
+        ]
+      },
+      {
+        "dll": "WINMM.dll",
+        "functions": [
+          {
+            "name": "PlaySoundW",
+            "iat": "0x58291c"
+          }
+        ]
+      },
+      {
+        "dll": "SETUPAPI.dll",
+        "functions": [
+          {
+            "name": "SetupDiGetDeviceRegistryPropertyW",
+            "iat": "0x5824fc"
+          },
+          {
+            "name": "CM_Get_Parent",
+            "iat": "0x582500"
+          },
+          {
+            "name": "CM_Get_Device_IDW",
+            "iat": "0x582504"
+          },
+          {
+            "name": "SetupDiGetClassDevsW",
+            "iat": "0x582508"
+          },
+          {
+            "name": "SetupDiEnumDeviceInterfaces",
+            "iat": "0x58250c"
+          },
+          {
+            "name": "SetupDiGetDeviceInterfaceDetailW",
+            "iat": "0x582510"
+          },
+          {
+            "name": "SetupDiDestroyDeviceInfoList",
+            "iat": "0x582514"
+          }
+        ]
+      }
+    ],
+    "exports": [],
+    "versions": [
+      {
+        "CompanyName": "OnePlus",
+        "FileDescription": "Qualcomm Smart Phone Download Tool",
+        "FileVersion": "4.0.28.0",
+        "InternalName": "MsmDownloadTool.exe",
+        "LegalCopyright": "Copyright(C) Shenzhen OnePlus Technology Co.,Ltd.  All rights reserved.",
+        "OriginalFilename": "MsmDownloadTool.exe",
+        "ProductName": "MsmDownloadTool",
+        "ProductVersion": "4.0.28.0"
+      }
+    ],
+    "resources": [
+      {
+        "type": 1,
+        "id": 3,
+        "lang": 1033,
+        "va": "0x61e278",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 4,
+        "lang": 1033,
+        "va": "0x61e3b0",
+        "size": 180,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 5,
+        "lang": 1033,
+        "va": "0x61e490",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 6,
+        "lang": 1033,
+        "va": "0x61e5e0",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 7,
+        "lang": 1033,
+        "va": "0x61e730",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 8,
+        "lang": 1033,
+        "va": "0x61e880",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 9,
+        "lang": 1033,
+        "va": "0x61e9d0",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 10,
+        "lang": 1033,
+        "va": "0x61eb20",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 11,
+        "lang": 1033,
+        "va": "0x61ec70",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 12,
+        "lang": 1033,
+        "va": "0x61edc0",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 13,
+        "lang": 1033,
+        "va": "0x61ef10",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 14,
+        "lang": 1033,
+        "va": "0x61f060",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 15,
+        "lang": 1033,
+        "va": "0x61f1b0",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 16,
+        "lang": 1033,
+        "va": "0x61f300",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 17,
+        "lang": 1033,
+        "va": "0x61f450",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 1,
+        "id": 18,
+        "lang": 1033,
+        "va": "0x61f5a0",
+        "size": 308,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 2,
+        "id": "IDB_BITMAP1",
+        "lang": 2052,
+        "va": "0x602560",
+        "size": 3176,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 2,
+        "id": 139,
+        "lang": 2052,
+        "va": "0x6031c8",
+        "size": 53704,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 2,
+        "id": 140,
+        "lang": 2052,
+        "va": "0x610390",
+        "size": 53704,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 2,
+        "id": 30994,
+        "lang": 1033,
+        "va": "0x61f810",
+        "size": 184,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 2,
+        "id": 30996,
+        "lang": 1033,
+        "va": "0x61f8c8",
+        "size": 324,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 3,
+        "id": 1,
+        "lang": 2052,
+        "va": "0x5ecdf0",
+        "size": 15730,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 3,
+        "id": 2,
+        "lang": 2052,
+        "va": "0x5f0b68",
+        "size": 67624,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 4,
+        "id": 148,
+        "lang": 1033,
+        "va": "0x61e248",
+        "size": 44,
+        "strings_utf16": [
+          "SMT",
+          "COM Setup"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 5,
+        "id": 100,
+        "lang": 1033,
+        "va": "0x61d578",
+        "size": 496,
+        "strings_utf16": [
+          "About Msm Download Tool",
+          "MS Shell Dlg",
+          "Msm Download Tool, Version 4.0.28",
+          "Copyright (C) 2013-2016  Sehnzhen OnePlus Techbology Co.,Ltd.",
+          "Build Time: "
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 5,
+        "id": 102,
+        "lang": 1033,
+        "va": "0x61d768",
+        "size": 1136,
+        "strings_utf16": [
+          "MsmDownloadTool V4.0.28",
+          "MS Shell Dlg",
+          "Exit",
+          "Start",
+          "Stop",
+          "Enum",
+          "SysListView32",
+          "SMT Donwload mode",
+          "^&I",
+          "Upgrade mode",
+          " When updating your system,",
+          " please ensure you have sufficient remaining battery to avoid unintended interruptions.",
+          "Verify",
+          "Read Back",
+          "Auto reboot",
+          "Sha256 check",
+          "Project:"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 5,
+        "id": 103,
+        "lang": 2052,
+        "va": "0x6017a0",
+        "size": 2932,
+        "strings_utf16": [
+          "Image List",
+          "MS Shell Dlg",
+          "Cancel",
+          "SysLink",
+          "<a>Select All</a>",
+          "SysLink",
+          "<a>Unselect All</a>",
+          "SysLink",
+          "<a>Select All, Except Userdata</a>",
+          "SysListView32",
+          "16G",
+          "SysLink",
+          "<a>Select All</a>",
+          "SysLink",
+          "<a>Unselect All</a>",
+          "SysLink",
+          "<a>Select All, Except Userdata</a>",
+          "SysListView32",
+          "32G",
+          "SysLink",
+          "<a>Select All</a>",
+          "SysLink",
+          "<a>Unselect All</a>",
+          "SysLink",
+          "<a>Select All, Except Userdata</a>",
+          "SysListView32",
+          "64G",
+          "128G",
+          "SysListView32",
+          "SysLink",
+          "<a>Select All</a>",
+          "SysLink",
+          "<a>Unselect All</a>",
+          "SysLink",
+          "<a>Select All, Except Userdata</a>",
+          "Use external image",
+          "256G",
+          "SysListView32",
+          "SysLink",
+          "<a>Select All</a>",
+          "SysLink",
+          "<a>Unselect All</a>",
+          "SysLink",
+          "<a>Select All, Except Userdata</a>",
+          "SysLink",
+          "<a>Toggle slot A</a>",
+          "SysLink",
+          "<a>Toggle slot B</a>",
+          "SysLink",
+          "<a>Toggle slot A</a>",
+          "SysLink",
+          "<a>Toggle slot B</a>",
+          "SysLink",
+          "<a>Toggle slot A</a>",
+          "SysLink",
+          "<a>Toggle slot B</a>",
+          "SysLink",
+          "<a>Toggle slot A</a>",
+          "SysLink",
+          "<a>Toggle slot B</a>",
+          "SysLink",
+          "<a>Toggle slot A</a>",
+          "SysLink",
+          "<a>Toggle slot B</a>"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 5,
+        "id": 129,
+        "lang": 2052,
+        "va": "0x6013b8",
+        "size": 752,
+        "strings_utf16": [
+          "Warning: this mode is only for SMT production download, please enter password",
+          "MS Shell Dlg",
+          "16G",
+          "32G",
+          "64G",
+          "128G",
+          "256G",
+          "Cancel",
+          "Password:",
+          "The factory model only allows one type of Memory, no default option."
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 5,
+        "id": 132,
+        "lang": 2052,
+        "va": "0x6016a8",
+        "size": 248,
+        "strings_utf16": [
+          "Verification Result",
+          "MS Shell Dlg",
+          "Cancel"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 5,
+        "id": 133,
+        "lang": 2052,
+        "va": "0x602318",
+        "size": 304,
+        "strings_utf16": [
+          "Please choose the right Phone Model",
+          "MS Shell Dlg",
+          "z?9",
+          "Cancel",
+          "Phone Model:"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 5,
+        "id": 143,
+        "lang": 2052,
+        "va": "0x602448",
+        "size": 276,
+        "strings_utf16": [
+          "Firehose ReadBack",
+          "MS Shell Dlg",
+          "Password:",
+          "SysListView32"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 5,
+        "id": 146,
+        "lang": 1033,
+        "va": "0x61dbd8",
+        "size": 560,
+        "strings_utf16": [
+          "EngineerMode",
+          "MS Shell Dlg",
+          "-{2",
+          "Set",
+          "P80",
+          "Boot Mode",
+          "Intranet Flag",
+          "P*0",
+          "Set",
+          "Select Device",
+          "Reboot",
+          "e{2",
+          "Cancel"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 5,
+        "id": 147,
+        "lang": 1033,
+        "va": "0x61de08",
+        "size": 200,
+        "strings_utf16": [
+          "MS Shell Dlg",
+          "SysListView32"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 5,
+        "id": 30721,
+        "lang": 1033,
+        "va": "0x61f6f0",
+        "size": 232,
+        "strings_utf16": [
+          "New",
+          "MS Shell Dlg",
+          "&New ",
+          "}1d",
+          "Cancel",
+          "&Help"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 5,
+        "id": 30734,
+        "lang": 1033,
+        "va": "0x61f7d8",
+        "size": 52,
+        "strings_utf16": [
+          "MS Shell Dlg"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 7,
+        "lang": 1033,
+        "va": "0x61fa10",
+        "size": 50,
+        "strings_utf16": [
+          "&About..."
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3841,
+        "lang": 1033,
+        "va": "0x61fa48",
+        "size": 130,
+        "strings_utf16": [
+          "Open",
+          "Save As",
+          "All Files (*.*)",
+          "Untitled",
+          "an unnamed file"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3842,
+        "lang": 1033,
+        "va": "0x61fad0",
+        "size": 42,
+        "strings_utf16": [
+          "&Hide"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3843,
+        "lang": 1033,
+        "va": "0x61fb00",
+        "size": 388,
+        "strings_utf16": [
+          "No error message is available.#Attempted an unsupported operation.$A required resource was unavailable.",
+          "Out of memory.",
+          "An unknown error has occurred.!Encountered an improper argument."
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3857,
+        "lang": 1033,
+        "va": "0x61fc88",
+        "size": 1254,
+        "strings_utf16": [
+          "Incorrect filename.",
+          "Failed to open document.",
+          "Failed to save document.",
+          "Save changes to %1? Failed to create empty document.",
+          "The file is too large to open.",
+          "Could not start print job.",
+          "Failed to launch help.",
+          "Internal application error.",
+          "Command failed.)Insufficient memory to perform operation.PSystem registry entries have been removed and the INI file (if any) was deleted.BNot all of the system registry entries (or INI file) were removed.FThis program requires the file %s, which was not found on this system.tThis program is linked to the missing export %s in the file %s. This machine may have an incompatible version of %s."
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3858,
+        "lang": 1033,
+        "va": "0x620500",
+        "size": 612,
+        "strings_utf16": [
+          "Enter an integer.",
+          "Enter a number.#Enter an integer between %1 and %2.!Enter a number between %1 and %2.!Enter no more than %1 characters.",
+          "Select a button.#Enter an integer between 0 and 255.",
+          "Enter a positive integer.",
+          "Enter a date and/or time.",
+          "Enter a currency.",
+          "Enter a GUID.",
+          "Enter a time.",
+          "Enter a date."
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3859,
+        "lang": 1033,
+        "va": "0x620220",
+        "size": 730,
+        "strings_utf16": [
+          "Unexpected file format.O%1",
+          "Cannot find this file.",
+          "Verify that the correct path and file name are given.",
+          "Destination disk drive is full.5Unable to read from %1, it is opened by someone else.AUnable to write to %1, it is read-only or opened by someone else.1Encountered an unexpected error while reading %1.1Encountered an unexpected error while writing %1."
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3860,
+        "lang": 1033,
+        "va": "0x620f48",
+        "size": 138,
+        "strings_utf16": [
+          "%1: %2",
+          "Continue running script?",
+          "Dispatch exception: %1"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3865,
+        "lang": 1033,
+        "va": "0x620170",
+        "size": 172,
+        "strings_utf16": [
+          "#Unable to read write-only property.#Unable to write read-only property."
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3866,
+        "lang": 1033,
+        "va": "0x620e38",
+        "size": 222,
+        "strings_utf16": [
+          "#Unable to load mail system support.",
+          "Mail system DLL is invalid.!Send Mail failed to send message."
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3867,
+        "lang": 1033,
+        "va": "0x620768",
+        "size": 1192,
+        "strings_utf16": [
+          "No error occurred.-An unknown error occurred while accessing %1.",
+          "%1 was not found.",
+          "%1 contains an incorrect path.8Could not open %1 because there are too many open files.",
+          "Access to %1 was denied.0An incorrect file handle was associated with %1.8Could not remove %1 because it is the current directory.2Could not create %1 because the directory is full.",
+          "Seek failed on %14Encountered a hardware I/O error while accessing %1.3Encountered a sharing violation while accessing %1.3Encountered a locking violation while accessing %1.",
+          "Disk full while accessing %1.$Attempted to access %1 past its end."
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3868,
+        "lang": 1033,
+        "va": "0x620c10",
+        "size": 552,
+        "strings_utf16": [
+          "No error occurred.-An unknown error occurred while accessing %1.%Attempted to write to the reading %1.$Attempted to access %1 past its end.&Attempted to read from the writing %1.",
+          "%1 has a bad format.\"%1 contained an unexpected object. %1 contains an incorrect schema."
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3869,
+        "lang": 1033,
+        "va": "0x620f18",
+        "size": 44,
+        "strings_utf16": [
+          "pixels"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 6,
+        "id": 3887,
+        "lang": 1033,
+        "va": "0x620fd8",
+        "size": 1340,
+        "strings_utf16": [
+          "Uncheck",
+          "Check",
+          "Mixed,One or more auto-saved documents were found.",
+          "These are more recently saved than the currently open documents and contain changes that were made before the application closed.2Do you want to recover these auto-saved documents?",
+          "Note that if you choose to recover the auto-saved documents, you must explicitly save them to overwrite the original documents.  If you choose to not recover the auto-saved versions, they will be deleted.fRecover the auto-saved documents",
+          "Open the auto-saved versions instead of the explicitly saved versions^Don't recover the auto-saved documents",
+          "Use the last explicitly saved versions of the documents",
+          "%s [Recovered]"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 9,
+        "id": 136,
+        "lang": 2052,
+        "va": "0x61d558",
+        "size": 32,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 30977,
+        "lang": 1033,
+        "va": "0x61e468",
+        "size": 34,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 30998,
+        "lang": 1033,
+        "va": "0x61ec58",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 30999,
+        "lang": 1033,
+        "va": "0x61e5c8",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 31000,
+        "lang": 1033,
+        "va": "0x61eb08",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 31001,
+        "lang": 1033,
+        "va": "0x61e9b8",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 31002,
+        "lang": 1033,
+        "va": "0x61f2e8",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 31003,
+        "lang": 1033,
+        "va": "0x61e868",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 31004,
+        "lang": 1033,
+        "va": "0x61eef8",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 31005,
+        "lang": 1033,
+        "va": "0x61e718",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 31006,
+        "lang": 1033,
+        "va": "0x61eda8",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 31007,
+        "lang": 1033,
+        "va": "0x61f048",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 31008,
+        "lang": 1033,
+        "va": "0x61f198",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 31009,
+        "lang": 1033,
+        "va": "0x61f438",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 31010,
+        "lang": 1033,
+        "va": "0x61f588",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 12,
+        "id": 31011,
+        "lang": 1033,
+        "va": "0x61f6d8",
+        "size": 20,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 14,
+        "id": 128,
+        "lang": 2052,
+        "va": "0x601390",
+        "size": 34,
+        "strings_utf16": [],
+        "strings_ascii": []
+      },
+      {
+        "type": 16,
+        "id": 1,
+        "lang": 1033,
+        "va": "0x61ded0",
+        "size": 884,
+        "strings_utf16": [
+          "VS_VERSION_INFO",
+          "StringFileInfo",
+          "040904b0",
+          "CompanyName",
+          "OnePlus",
+          "FileDescription",
+          "Qualcomm Smart Phone Download Tool",
+          "FileVersion",
+          "4.0.28.0",
+          "InternalName",
+          "MsmDownloadTool.exe",
+          "LegalCopyright",
+          "Copyright(C) Shenzhen OnePlus Technology Co.,Ltd.  All rights reserved.",
+          "OriginalFilename",
+          "MsmDownloadTool.exe",
+          "ProductName",
+          "MsmDownloadTool",
+          "ProductVersion",
+          "4.0.28.0",
+          "VarFileInfo",
+          "Translation"
+        ],
+        "strings_ascii": []
+      },
+      {
+        "type": 24,
+        "id": 1,
+        "lang": 1033,
+        "va": "0x621518",
+        "size": 807,
+        "strings_utf16": [],
+        "strings_ascii": [
+          "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>",
+          "<assembly xmlns=\"urn:schemas-microsoft-com:asm.v1\" manifestVersion=\"1.0\"><dependency><dependentAssembly><assemblyIdentity type=\"win32\" name=\"Microsoft.Windows.Common-Controls\" version=\"6.0.0.0\" processorArchitecture=\"x86\" publicKeyToken=\"6595b64144ccf1df\" language=\"*\"></assemblyIdentity></dependentAssembly></dependency><trustInfo xmlns=\"urn:schemas-microsoft-com:asm.v3\"><security><requestedPrivileges><requestedExecutionLevel level=\"requireAdministrator\" uiAccess=\"false\"></requestedExecutionLevel></requestedPrivileges></security></trustInfo><application xmlns=\"urn:schemas-microsoft-com:asm.v3\"><windowsSettings><dpiAware xmlns=\"http://schemas.microsoft.com/SMI/2005/WindowsSettings\">true</dpiAware></windowsSettings></application></assembly>"
+        ]
+      }
+    ]
+  }
+]

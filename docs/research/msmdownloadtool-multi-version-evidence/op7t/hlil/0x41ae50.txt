@@ -1,0 +1,230 @@
+0041ae50 void* ebp
+0041ae50 void* var_4 = ebp
+0041ae51 int32_t* ebp_1 = &var_4
+0041ae56 int32_t var_c = 0xffffffff
+0041ae58 int32_t (* var_10)() = sub_64c1a3
+0041ae63 TEB* fsbase
+0041ae63 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0041ae71 void var_524
+0041ae71 int32_t var_1c = __security_cookie ^ &var_524
+0041ae78 int32_t ebx
+0041ae78 int32_t var_528 = ebx
+0041ae79 int32_t esi
+0041ae79 int32_t var_52c = esi
+0041ae7a int32_t edi
+0041ae7a int32_t var_530 = edi
+0041ae8a fsbase->NtTib.ExceptionList = &ExceptionList
+0041ae93 int32_t var_504 = arg1
+0041ae97 int32_t* eax_6 = sub_4f2b78(__security_cookie ^ &var_530)
+0041aea2 int32_t ecx
+0041aea2 ecx.b = eax_6 != 0
+0041aea2 
+0041aea7 if (ecx == 0)
+0041aeae     sub_405ee0(0x80004005)
+0041aeae     noreturn
+0041aeae 
+0041aeba struct _EXCEPTION_REGISTRATION_RECORD*** eax_9 = (*(*eax_6 + 0xc))() + 0x10
+0041aec1 int32_t var_c_2 = 0x104
+0041aecd int32_t arg_520 = 0
+0041aed8 void arg_304
+0041aed8 void* var_10_1 = &arg_304
+0041aed9 ExceptionList = nullptr
+0041aedc sub_726262(&arg_304, ExceptionList, var_10_1, var_c_2)
+0041aeed int16_t arg_2f4[0x8]
+0041aeed sub_405650(&__return_addr, &arg_2f4)
+0041aef2 char arg_510 = 1
+0041af00 int32_t eax_10 = _wcsrchr(__return_addr, 0x5c)
+0041af0a int32_t eax_11
+0041af0a 
+0041af0a eax_11 = eax_10 != 0 ? (eax_10 - __return_addr) s>> 1 : 0xffffffff
+0041af0a 
+0041af2b arg_510 = 2
+0041af33 sub_4057c0(&__return_addr, sub_404610(&__return_addr, &var_4, eax_11))
+0041af38 arg_510 = 1
+0041af40 int32_t ebx_1 = 0xffffffff
+0041af49 int32_t* edx_2 = var_4 - 0x10
+0041af4f int32_t eax_14 = edx_2[3]
+0041af4f edx_2[3] -= 1
+0041af4f 
+0041af56 if (eax_14 - 1 s<= 0)
+0041af5d     (*(**edx_2 + 4))(edx_2)
+0041af5d 
+0041af7c arg_510 = 3
+0041af84 int16_t* arg_8
+0041af84 sub_4057c0(&arg_8, 
+0041af84     class std::unique_ptr<char16_t const[], struct std::default_delete<char16_t const[]>> __cdecl `anonymous namespace'::_Get_icu_string_impl<class `class std::unique_ptr<char16_t const[], struct std::default_delete<char16_t const[]>> __cdecl `anonymous namespace'::_Get_default_timezone(int &, enum __std_tzdb_error &)'::`2'::<lambda_1>>(class `class std::unique_ptr<char16_t const[], struct std::default_delete<char16_t const[]>> __cdecl 0x27667df0::_Get_default_timezone(int &, enum __std_tzdb_error &)'::`2'::<lambda_1>, int, int &, enum __std_tzdb_error &)(
+0041af84         &var_4, &__return_addr, &data_6dcff8))
+0041af89 arg_510 = 1
+0041af97 int32_t* edx_4 = var_4 - 0x10
+0041af9d int32_t ecx_8 = edx_4[3]
+0041af9d edx_4[3] -= 1
+0041af9d 
+0041afa4 if (ecx_8 - 1 s<= 0)
+0041afab     (*(**edx_4 + 4))(edx_4)
+0041afab 
+0041afae int16_t* esi_1 = arg_8
+0041afbb void arg_c4
+0041afbb int32_t eax_20 = sub_6100f5(esi_1, &arg_c4)
+0041afbb 
+0041afca if (eax_20 != 0xffffffff)
+0041b274     int32_t i
+0041b274     
+0041b274     do
+0041afdc         int16_t arg_e8[0x106]
+0041afdc         sub_405650(&var_4, &arg_e8)
+0041afe1         arg_510 = 4
+0041afe9         void* eax_21 = var_4
+0041afed         void* edi_1 = *(eax_21 - 0xc)
+0041aff2         void* eax_22
+0041aff2         
+0041aff2         if (edi_1 s>= 0)
+0041b007             if (((*(eax_21 - 8) - edi_1) | (1 - *(eax_21 - 4))) s< 0)
+0041b00e                 sub_405e30(&var_4, edi_1)
+0041b013                 eax_21 = var_4
+0041b013             
+0041b01c             __atoldbl(eax_21, edi_1 + 1)
+0041b021             eax_22 = var_4
+0041b021         
+0041b02b         if (edi_1 s< 0 || edi_1 s> *(eax_22 - 8))
+0041b2f5             sub_405ee0(0x80070057)
+0041b2f5             noreturn
+0041b2f5         
+0041b031         *(eax_22 - 0xc) = edi_1
+0041b03a         *(var_4 + (edi_1 << 1)) = 0
+0041b03a         
+0041b041         if (edi_1 u> 4)
+0041b052             void* arg_20
+0041b052             void** eax_24 = sub_407980(&var_4, &arg_20, 4)
+0041b059             void* ecx_18 = *eax_24
+0041b05f             int32_t eax_25
+0041b05f             
+0041b05f             if (*(ecx_18 - 0xc) s>= 0)
+0041b06c                 int32_t eax_26 = _wcsstr(ecx_18, u".OPS")
+0041b06c                 
+0041b076                 if (eax_26 != 0)
+0041b07f                     eax_25 = (eax_26 - *eax_24) s>> 1
+0041b076                 else
+0041b078                     eax_25 = 0xffffffff
+0041b05f             else
+0041b061                 eax_25 = 0xffffffff
+0041b061             
+0041b08a             arg1:3.b = eax_25 != 0xffffffff
+0041b08f             int32_t* edx_7 = arg_20 - 0x10
+0041b095             int32_t ecx_20 = edx_7[3]
+0041b095             edx_7[3] += ebx_1
+0041b095             
+0041b09c             if (ecx_20 - 1 s<= 0)
+0041b0a3                 (*(**edx_7 + 4))(edx_7)
+0041b0a3             
+0041b0ab             if (arg1:3.b != 0)
+0041b0cc                 arg_510 = 5
+0041b0e3                 arg_510 = 6
+0041b0ee                 void* arg_c
+0041b0ee                 void* arg_1c
+0041b0ee                 void* ecx_23 = *class std::unique_ptr<char16_t const[], struct std::default_delete<char16_t const[]>> __cdecl `anonymous namespace'::_Get_icu_string_impl<class `class std::unique_ptr<char16_t const[], struct std::default_delete<char16_t const[]>> __cdecl `anonymous namespace'::_Get_default_timezone(int &, enum __std_tzdb_error &)'::`2'::<lambda_1>>(class `class std::unique_ptr<char16_t const[], struct std::default_delete<char16_t const[]>> __cdecl 0x27667df0::_Get_default_timezone(int &, enum __std_tzdb_error &)'::`2'::<lambda_1>, int, int &, enum __std_tzdb_error &)(
+0041b0ee                     &arg_c, 
+0041b0ee                     class std::unique_ptr<char16_t const[], struct std::default_delete<char16_t const[]>> __cdecl `anonymous namespace'::_Get_icu_string_impl<class `class std::unique_ptr<char16_t const[], struct std::default_delete<char16_t const[]>> __cdecl `anonymous namespace'::_Get_default_timezone(int &, enum __std_tzdb_error &)'::`2'::<lambda_1>>(class `class std::unique_ptr<char16_t const[], struct std::default_delete<char16_t const[]>> __cdecl 0x27667df0::_Get_default_timezone(int &, enum __std_tzdb_error &)'::`2'::<lambda_1>, int, int &, enum __std_tzdb_error &)(
+0041b0ee                         &arg_1c, &__return_addr, &data_6dbb38), 
+0041b0ee                     &arg_e8)
+0041b0ee                 
+0041b0f5                 if (ecx_23 - 0x10 != &esi_1[-8])
+0041b104                     if (*(esi_1 - 4) s< 0 || *(ecx_23 - 0x10) != *(esi_1 - 0x10))
+0041b13b                         sub_405a80(&arg_8, ecx_23, *(ecx_23 - 0xc))
+0041b140                         esi_1 = arg_8
+0041b104                     else
+0041b107                         int32_t* eax_33 = sub_405980(ecx_23 - 0x10)
+0041b115                         int32_t ecx_25 = *(esi_1 - 4)
+0041b115                         *(esi_1 - 4) += ebx_1
+0041b115                         
+0041b11c                         if (ecx_25 - 1 s<= 0)
+0041b123                             (*(**(esi_1 - 0x10) + 4))(&esi_1[-8])
+0041b123                         
+0041b12a                         esi_1 = &eax_33[4]
+0041b12d                         arg_8 = esi_1
+0041b12d                 
+0041b144                 arg_510 = 5
+0041b152                 int32_t* edx_11 = arg_c - 0x10
+0041b158                 int32_t ecx_30 = edx_11[3]
+0041b158                 edx_11[3] += ebx_1
+0041b158                 
+0041b15f                 if (ecx_30 - 1 s<= 0)
+0041b166                     (*(**edx_11 + 4))(edx_11)
+0041b166                 
+0041b169                 arg_510 = 4
+0041b177                 int32_t* edx_13 = arg_1c - 0x10
+0041b17d                 int32_t ecx_34 = edx_13[3]
+0041b17d                 edx_13[3] += ebx_1
+0041b17d                 
+0041b184                 if (ecx_34 - 1 s<= 0)
+0041b18b                     (*(**edx_13 + 4))(edx_13)
+0041b18b                 
+0041b18e                 int32_t var_1c_22 = 3
+0041b199                 void arg_40
+0041b199                 char* arg_3c = &arg_40
+0041b19d                 ebx_1, ebp_1 = sub_40cf50(&arg_3c, esi_1, var_1c_22)
+0041b1a2                 arg_510 = 7
+0041b1aa                 char* edx_14 = arg_3c
+0041b1ae                 int32_t arg_38 = 0xf
+0041b1b6                 int32_t arg_34 = 0
+0041b1be                 char arg_24 = 0
+0041b1c6                 void* ecx_38
+0041b1c6                 
+0041b1c6                 if (*edx_14 != 0)
+0041b1cc                     char* ecx_39 = edx_14
+0041b1d6                     char j
+0041b1d6                     
+0041b1d6                     do
+0041b1d1                         j = *ecx_39
+0041b1d3                         ecx_39 = &ecx_39[1]
+0041b1d6                     while (j != 0)
+0041b1d8                     ecx_38 = ecx_39 - &ecx_39[1]
+0041b1c6                 else
+0041b1c8                     ecx_38 = nullptr
+0041b1c8                 
+0041b1e0                 sub_406bd0(&arg_24, edx_14, ecx_38)
+0041b1e5                 arg_510 = 9
+0041b1f1                 char* eax_38 = arg_3c
+0041b1f1                 
+0041b1f7                 if (eax_38 != &arg_40)
+0041b1fa                     sub_60ca29(eax_38)
+0041b1fa                 
+0041b20b                 sub_41da10(eax_9, &arg_24)
+0041b20b                 
+0041b215                 if (arg_38 u>= 0x10)
+0041b21b                     sub_4f0808(arg_24.d)
+0041b21b                 
+0041b223                 arg_38 = 0xf
+0041b22b                 arg_34 = 0
+0041b233                 arg_24 = 0
+0041b233         
+0041b238         arg_510 = 1
+0041b246         int32_t* edx_16 = var_4 - 0x10
+0041b24c         int32_t ecx_43 = edx_16[3]
+0041b24c         edx_16[3] += ebx_1
+0041b24c         
+0041b253         if (ecx_43 - 1 s<= 0)
+0041b25a             (*(**edx_16 + 4))(edx_16)
+0041b25a         
+0041b26a         i = sub_61021c(eax_20, &arg_c4)
+0041b274     while (i == 0)
+0041b27b     sub_610333(eax_20)
+0041b27b 
+0041b283 arg_510 = 0
+0041b291 int32_t* edx_18 = __return_addr - 0x10
+0041b297 int32_t ecx_47 = edx_18[3]
+0041b297 edx_18[3] += ebx_1
+0041b297 
+0041b29e if (ecx_47 - 1 s<= 0)
+0041b2a5     (*(**edx_18 + 4))(edx_18)
+0041b2a5 
+0041b2ab arg_510.d = 0xffffffff
+0041b2b9 int32_t ebx_2 = *(esi_1 - 4)
+0041b2b9 *(esi_1 - 4) += ebx_1
+0041b2b9 
+0041b2c0 if (ebx_2 - 1 s<= 0)
+0041b2c7     (*(**(esi_1 - 0x10) + 4))(&esi_1[-8])
+0041b2c7 
+0041b2d1 fsbase->NtTib.ExceptionList = arg3
+0041b2e5 int32_t result = sub_60bdca()
+0041b2ec *ebp_1
+0041b2ed return result

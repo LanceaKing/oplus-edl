@@ -1,0 +1,93 @@
+10014e9a char* ecx = arg1
+10014ea5 char i
+10014ea5 
+10014ea5 do
+10014ea0     i = *ecx
+10014ea2     ecx = &ecx[1]
+10014ea5 while (i != 0)
+10014ea5 
+10014ea9 if (ecx == &ecx[1])
+10014eb2     return 0xffffffff
+10014eb2 
+10014eb9 int128_t var_28 = zx.o(0)
+10014ebd char* ecx_2 = arg1
+10014ebd 
+10014ecc do
+10014ec1     i = *ecx_2
+10014ec3     ecx_2 = &ecx_2[1]
+10014ec6     *(&var_28 - arg1 + ecx_2 - 1) = i
+10014ecc while (i != 0)
+10014ecc 
+10014ed4 char* eax_1
+10014ed4 int32_t xmm0_1[0x4]
+10014ed4 eax_1, xmm0_1 = _strstr(zx.o(0), arg1, "sm")
+10014ed4 
+10014ede if (eax_1 != 0)
+10014f16 label_10014f16:
+10014f16     char* ecx_3 = arg1
+10014f16     
+10014f25     do
+10014f20         eax_1.b = *ecx_3
+10014f22         ecx_3 = &ecx_3[1]
+10014f25     while (eax_1.b != 0)
+10014f25     
+10014f2c     if (ecx_3 - &ecx_3[1] u> 6)
+10014f35         _strncpy(&var_28, arg1, 6)
+10014f3d         var_28:6.b = 0
+10014ede else
+10014ee6     int32_t xmm0_2[0x4]
+10014ee6     eax_1, xmm0_2 = _strstr(xmm0_1, arg1, "mt")
+10014ee6     
+10014ef0     if (eax_1 != 0)
+10014ef0         goto label_10014f16
+10014ef0     
+10014ef8     int32_t xmm0_3[0x4]
+10014ef8     eax_1, xmm0_3 = _strstr(xmm0_2, arg1, "SM")
+10014ef8     
+10014f02     if (eax_1 != 0)
+10014f02         goto label_10014f16
+10014f02     
+10014f14     if (_strstr(xmm0_3, arg1, "MT") != 0)
+10014f14         goto label_10014f16
+10014f14 
+10014f44 int32_t ecx_5 = 0
+10014f46 int128_t var_18 = zx.o(0)
+10014f46 
+10014f5d do
+10014f50     eax_1.b = *(&var_28 + ecx_5)
+10014f54     ecx_5 += 1
+10014f57     *(&var_28:0xf + ecx_5) = eax_1.b
+10014f5d while (eax_1.b != 0)
+10014f5d 
+10014f63 op_str_make_lower(&var_18)
+10014f68 int128_t* esi_1 = &var_18
+10014f76 char i_1
+10014f76 
+10014f76 do
+10014f71     i_1 = *esi_1
+10014f73     esi_1 += 1
+10014f76 while (i_1 != 0)
+10014f78 int32_t esi_2 = esi_1 - &var_18:1
+10014f78 
+10014f7d if (esi_2 s>= 1)
+10014f88     char* eax_2 = _strstr(zx.o(0), &var_18, "w")
+10014f94     int32_t edx_4
+10014f94     
+10014f94     edx_4 = eax_2 != 0 ? eax_2 - &var_18 : 0xffffffff
+10014f94     
+10014fa7     int32_t ecx_6
+10014fa7     ecx_6.b = esi_2 - 1 == edx_4
+10014fa7     
+10014fac     if (ecx_6 != 0)
+10014fc3         int128_t var_38 = zx.o(0)
+10014fc7         op_str_replace(&var_18, &var_38, "w", &data_101fc2f9)
+10014fc7 
+10014fd7 int32_t result
+10014fd7 int32_t* ebp
+10014fd7 result, ebp = sub_10014d00()
+10014fd7 
+10014fde if (result != 0)
+10014fe5     result, ebp = sub_10014dc0()
+10014fe5 
+10014fed *ebp
+10014fee return result

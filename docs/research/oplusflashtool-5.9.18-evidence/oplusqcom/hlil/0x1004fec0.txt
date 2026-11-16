@@ -1,0 +1,365 @@
+1004fec3 int32_t var_8 = 0xffffffff
+1004fec5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10066a91
+1004fed0 TEB* fsbase
+1004fed0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+1004fedc int32_t __saved_ebp
+1004fedc int32_t eax_2 = __security_cookie ^ &__saved_ebp
+1004fee8 fsbase->NtTib.ExceptionList = &ExceptionList
+1004fefd int32_t var_8_1 = 0
+1004ff11 int32_t var_b8 = 0xf
+1004ff1b int32_t var_bc = 0
+1004ff25 char var_cc = 0
+1004ff2c sub_10001ad0(&var_cc, "IMAGES/Setting.xml", 0x12)
+1004ff37 var_8_1.b = 1
+1004ff49 var_8_1.b = 2
+1004ff4d char* var_130_1 = &var_cc
+1004ff5f var_8_1.b = 3
+1004ff66 char var_ec
+1004ff66 void var_d4
+1004ff66 void** eax_5 = *PackageFileLoaderFactory::CreatePackageFileUrl(&var_d4, sub_10043e80(arg4, &var_ec))
+1004ff6d int32_t var_48 = 0xf
+1004ff74 int32_t var_4c = 0
+1004ff7b char var_5c = 0
+1004ff7f sub_10001bd0(&var_5c, eax_5, 0, 0xffffffff)
+1004ff84 var_8_1.b = 6
+1004ff90 int32_t* var_d0
+1004ff90 
+1004ff90 if (var_d0 != 0)
+1004ff97     bool cond:0_1 = var_d0[1] != 1
+1004ff97     var_d0[1]
+1004ff97     var_d0[1] -= 1
+1004ff97     
+1004ff9c     if (not(cond:0_1))
+1004ffa2         (**var_d0)(eax_2)
+1004ffa4         int32_t edi_1 = var_d0[2]
+1004ffa4         var_d0[2] -= 1
+1004ffa4         
+1004ffaa         if (edi_1 == 1)
+1004ffb0             (*(*var_d0 + 4))()
+1004ffb0 
+1004ffbc int32_t var_d8
+1004ffbc 
+1004ffbc if (var_d8 u>= 0x10)
+1004ffc6     sub_10001d60(var_ec.d, var_d8 + 1)
+1004ffc6 
+1004ffcb int32_t var_d8_1 = 0xf
+1004ffd5 int32_t var_dc = 0
+1004ffdf var_ec = 0
+1004ffe6 var_8_1.b = 8
+1004ffe6 
+1004fff3 if (var_b8 u>= 0x10)
+1004fffd     sub_10001d60(var_cc.d, var_b8 + 1)
+1004fffd 
+10050005 int32_t var_b8_1 = 0xf
+10050010 int32_t var_bc_1 = 0
+1005001a var_cc = 0
+10050021 class PackageFileLoaderBase* eax_13 = PackageFileLoaderFactory::CreatePackageFileLoader(&var_5c)
+10050034 uint32_t result
+10050034 
+10050034 if (eax_13 != 0)
+10050045     char* eax_16
+10050045     int32_t edx_1
+10050045     eax_16, edx_1 = (*(*eax_13 + 0xc))(eax_2)
+1005004e     void* var_130_5 = &eax_16[1]
+1005004f     char* eax_17 = sub_1005f6bf()
+10050063     class PackageFileLoaderBase* edi_4 = eax_13
+1005006c     (*(*eax_13 + 0x2c))(eax_16, edx_1, eax_17, eax_16, edx_1)
+1005006f     char* esi_3 = eax_17
+1005007d     *(eax_16 + esi_3) = 0
+10050081     result = 0
+10050085     struct TiXmlNode::TiXmlDocument::VTable* const var_a4
+10050085     memset(&var_a4, 0, 0x48)
+10050093     sub_1005ac90(&var_a4)
+100500a1     var_8_1.b = 9
+100500a5     sub_1005d120(&var_a4, esi_3, nullptr, nullptr)
+100500ad     char var_78
+100500ad     int32_t var_70
+100500ad     
+100500ad     if (var_78 == 0)
+1005010f         int32_t* esi_4 = *(sub_1005b9d0(&var_a4) + 0x18)
+1005010f         
+10050114         if (esi_4 != 0)
+10050124             while (true)
+10050124                 if (esi_4[5] != 2)
+10050131                     char* edx_3 = esi_4[8] + 8
+10050134                     void* var_18_1 = 0xf
+1005013b                     int32_t var_1c_1 = 0
+10050142                     char var_2c = 0
+10050149                     void* ecx_12
+10050149                     
+10050149                     if (*edx_3 != 0)
+1005014f                         char* ecx_13 = edx_3
+10050159                         void* eax_20
+10050159                         
+10050159                         do
+10050154                             eax_20.b = *ecx_13
+10050156                             ecx_13 = &ecx_13[1]
+10050159                         while (eax_20.b != 0)
+1005015b                         ecx_12 = ecx_13 - &ecx_13[1]
+10050149                     else
+1005014b                         ecx_12 = nullptr
+1005014b                     
+10050162                     int32_t* eax_21 = sub_10001ad0(&var_2c, edx_3, ecx_12)
+10050167                     var_8_1.b = 0xa
+1005016b                     int32_t* ecx_15 = &var_2c
+1005016e                     void* edi_6 = var_18_1
+10050174                     int32_t* ebx_2 = var_2c.d
+10050177                     int32_t edx_4 = var_1c_1
+10050177                     
+1005017a                     if (edi_6 u>= 0x10)
+1005017a                         ecx_15 = ebx_2
+1005017a                     
+10050184                     int32_t eax_22 = sub_10007cc0(eax_21, edx_4, ecx_15, "BasicInfo", 9)
+10050184                     
+1005018e                     if (eax_22 == 0)
+100501ac                         int32_t* var_130_11 = esi_4
+100501b0                         eax_22 = sub_10050a10(arg1, sub_100506d0(arg1, arg4, esi_4))
+100501bd                         edi_6 = var_18_1
+100501c0                         edx_4 = var_1c_1
+100501c3                         ebx_2 = var_2c.d
+100501c3                     
+100501c9                     int32_t* ecx_19 = &var_2c
+100501c9                     
+100501ce                     if (edi_6 u>= 0x10)
+100501ce                         ecx_19 = ebx_2
+100501ce                     
+100501d6                     int32_t* eax_23 = sub_10007cc0(eax_22, edx_4, ecx_19, "SAHARA", 6)
+100501d6                     
+100501e0                     if (eax_23 != 0)
+10050238                     label_10050238:
+10050238                         int32_t* ecx_20 = &var_2c
+10050238                         
+1005023d                         if (edi_6 u>= 0x10)
+1005023d                             ecx_20 = ebx_2
+1005023d                         
+10050245                         int32_t eax_27 = sub_10007cc0(eax_23, edx_4, ecx_20, "UFS_FIRMWARE", 0xc)
+10050245                         
+1005024f                         if (eax_27 != 0)
+1005029b                             int32_t* ecx_21 = &var_2c
+1005029b                             
+100502a0                             if (edi_6 u>= 0x10)
+100502a0                                 ecx_21 = ebx_2
+100502a0                             
+100502b2                             if (sub_10007cc0(eax_27, edx_4, ecx_21, "UFS_PROVISION", 0xd) != 0)
+1005030f                                 char var_44
+1005030f                                 int32_t var_30
+1005030f                                 
+1005030f                                 if (sub_10002930(&var_2c, "Program", nullptr, 7) == 0xffffffff)
+100503f2                                     if (sub_10002930(&var_2c, "Patch", nullptr, 5) != 0xffffffff)
+100503f8                                         int32_t* ecx_30 = esi_4[6]
+100503fd                                         int32_t var_134_25
+100503fd                                         char const* const var_130_31
+100503fd                                         
+100503fd                                         if (ecx_30 == 0)
+100506be                                             var_130_31 = "[ERROR][Package]Parse patch files failed."
+100506c3                                             var_134_25 = 0x7a
+100505ab                                         label_100505ab:
+100505ab                                             opdbg_log("QComSettingParser::parse", var_134_25, 
+100505ab                                                 var_130_31)
+100505b4                                             result = 0xffffffff
+100505ba                                         label_100505ba:
+100505ba                                             
+100505bd                                             if (var_18_1 u< 0x10)
+100505bd                                                 break
+100505bd                                             
+100505c8                                             sub_10001d60(var_2c.d, var_18_1 + 1)
+100505cd                                             break
+100505cd                                         
+1005040f                                         char* eax_47 = sub_1005b260((*(*ecx_30 + 0x14))("Path"))
+1005040f                                         
+10050418                                         if (eax_47 == 0)
+100506af                                             var_130_31 = "[ERROR][Package]Can not find 'path' "
+100506af                                             "attribute in patch node"
+100506b4                                             var_134_25 = 0x80
+100506b9                                             goto label_100505ab
+100506b9                                         
+1005042d                                         char var_11c
+1005042d                                         char* eax_48 = sub_10043e80(arg4, &var_11c)
+10050439                                         var_8_1.b = 0xc
+10050443                                         char var_104
+10050443                                         char* eax_49 =
+10050443                                             sub_1002dbc0(eax_48.b, eax_48, &var_104, "#IMAGES/")
+1005044b                                         var_8_1.b = 0xd
+10050452                                         sub_1002dbc0(eax_49.b, eax_49, &var_44, eax_47)
+10050463                                         int32_t var_f0
+10050463                                         
+10050463                                         if (var_f0 u>= 0x10)
+1005046d                                             sub_10001d60(var_104.d, var_f0 + 1)
+1005046d                                         
+10050472                                         var_f0 = 0xf
+1005047c                                         int32_t var_f4_1 = 0
+10050486                                         var_104 = 0
+1005048d                                         var_8_1.b = 0x10
+1005049a                                         int32_t var_108
+1005049a                                         
+1005049a                                         if (var_108 u>= 0x10)
+100504a4                                             sub_10001d60(var_11c.d, var_108 + 1)
+100504a4                                         
+100504ac                                         var_108 = 0xf
+100504b8                                         int32_t var_10c_1 = 0
+100504c2                                         var_11c = 0
+100504c2                                         
+100504d0                                         if (sub_10054580(arg4, &var_44) != 0)
+1005067a                                             opdbg_log("QComSettingParser::parse", 0x86, 
+1005067a                                                 "[ERROR][Package]Collect patch files failed")
+10050686                                             result = 0xffffffff
+10050686                                             
+1005068c                                             if (var_30 u>= 0x10)
+10050693                                                 sub_10001d60(var_44.d, var_30 + 1)
+10050693                                             
+10050698                                             int32_t var_30_1 = 0xf
+1005069f                                             int32_t var_34_2 = 0
+100506a6                                             var_44 = 0
+100506aa                                             goto label_100505ba
+100506aa                                         
+100504d9                                         sub_100019a0(&var_44)
+1005030f                                 else
+10050315                                     int32_t* ecx_23 = esi_4[6]
+10050315                                     
+1005031a                                     if (ecx_23 == 0)
+10050644                                         opdbg_log("QComSettingParser::parse", 0x68, 
+10050644                                             "[ERROR][Package]Collect program files failed")
+10050650                                         result = 0xffffffff
+10050650                                         
+10050656                                         if (var_18_1 u>= 0x10)
+10050661                                             sub_10001d60(var_2c.d, var_18_1 + 1)
+10050661                                         
+10050656                                         break
+10050656                                     
+10050331                                     char* edx_5 = sub_1005b260((*(*ecx_23 + 0x14))("Path"))
+10050331                                     
+10050335                                     if (edx_5 == 0)
+10050611                                         opdbg_log("QComSettingParser::parse", 0x6e, 
+10050611                                             "[ERROR][Package]Can not find 'path' attribute from in "
+10050611                                         "'program' node")
+1005061d                                         result = 0xffffffff
+1005061d                                         
+10050623                                         if (var_18_1 u>= 0x10)
+1005062e                                             sub_10001d60(var_2c.d, var_18_1 + 1)
+1005062e                                         
+10050623                                         break
+10050623                                     
+1005033b                                     bool cond:6_1 = *edx_5 != 0
+1005033e                                     var_30 = 0xf
+10050345                                     int32_t var_34_1 = 0
+1005034c                                     var_44 = 0
+10050350                                     uint32_t ecx_25
+10050350                                     
+10050350                                     if (cond:6_1)
+10050356                                         char* ecx_26 = edx_5
+10050365                                         char* eax_38
+10050365                                         
+10050365                                         do
+10050360                                             eax_38.b = *ecx_26
+10050362                                             ecx_26 = &ecx_26[1]
+10050365                                         while (eax_38.b != 0)
+10050367                                         ecx_25 = ecx_26 - &ecx_26[1]
+10050350                                     else
+10050352                                         ecx_25 = 0
+10050352                                     
+1005036e                                     sub_10001ad0(&var_44, edx_5, ecx_25)
+10050383                                     var_8_1.b = 0xb
+10050391                                     ebx_2.b = sub_10051d30(arg1, arg4, &var_44) != 0
+10050391                                     
+10050397                                     if (var_30 u>= 0x10)
+1005039e                                         sub_10001d60(var_44.d, var_30 + 1)
+1005039e                                     
+100503a5                                     if (ebx_2.b != 0)
+100503b7                                         opdbg_log("QComSettingParser::parse", 0x73, 
+100503b7                                             "[ERROR][Package]Parse program files failed.")
+100503c3                                         result = ebx_2 | 0xffffffff
+100503c3                                         
+100503c9                                         if (var_18_1 u>= 0x10)
+100503d4                                             sub_10001d60(var_2c.d, var_18_1 + 1)
+100503d4                                         
+100503c9                                         break
+100502b2                             else if (sub_10051210(arg4, esi_4) != 0)
+100502d4                                 opdbg_log("QComSettingParser::parse", 0x61, 
+100502d4                                     "[ERROR][Package]Collect provision files failed")
+100502e0                                 result = 0xffffffff
+100502e0                                 
+100502e6                                 if (var_18_1 u>= 0x10)
+100502f1                                     sub_10001d60(var_2c.d, var_18_1 + 1)
+100502f1                                 
+100502e6                                 break
+1005024f                         else if (sub_10051820(arg4, esi_4) != 0)
+10050271                             opdbg_log("QComSettingParser::parse", 0x5b, 
+10050271                                 "[ERROR][Package]Collect firmware files failed")
+1005027d                             result = 0xffffffff
+1005027d                             
+10050283                             if (var_18_1 u>= 0x10)
+1005028e                                 sub_10001d60(var_2c.d, var_18_1 + 1)
+1005028e                             
+10050283                             break
+100501e0                     else
+100501e2                         eax_23 = arg1
+100501e2                         
+100501eb                         if (*eax_23 != 0)
+100501eb                             goto label_10050238
+100501eb                         
+100501fc                         if (sub_10050c40(arg4, esi_4) != 0)
+1005020e                             opdbg_log("QComSettingParser::parse", 0x55, 
+1005020e                                 "[ERROR][Package]Collect sahara file failed")
+1005021a                             result = 0xffffffff
+1005021a                             
+10050220                             if (var_18_1 u>= 0x10)
+1005022b                                 sub_10001d60(var_2c.d, var_18_1 + 1)
+1005022b                             
+10050220                             break
+10050220                     
+100504de                     esi_4 = esi_4[0xa]
+100504e1                     var_8_1.b = 9
+100504e1                     
+100504eb                     if (var_18_1 u>= 0x10)
+100504f2                         sub_10001d60(var_2c.d, var_18_1 + 1)
+10050124                 else
+10050126                     esi_4 = esi_4[0xa]
+10050126                 
+100504f9                 if (esi_4 == 0)
+100504ff                     result = 0
+100504ff                     break
+100504ff             
+10050501             edi_4 = eax_13
+10050501         
+10050507         var_8_1.b = 8
+1005050e         var_a4 = &TiXmlDocument::`vftable'{for `TiXmlNode'}
+1005050e         
+1005051d         if (var_70 != &data_10084798)
+10050520             sub_1005f6ba(var_70)
+10050520         
+1005052e         sub_1005aef0(&var_a4)
+10050533         esi_3 = eax_17
+100500ad     else
+100500b3         char* eax_18 = &var_5c
+100500b3         
+100500b6         if (var_48 u>= 0x10)
+100500b6             eax_18 = var_5c.d
+100500b6         
+100500c7         opdbg_log("QComSettingParser::parse", 0x39, "[ERROR][Package]Load file failed, file = %s ", 
+100500c7             eax_18)
+100500cd         var_8_1.b = 8
+100500d7         result = 0xffffffff
+100500da         var_a4 = &TiXmlDocument::`vftable'{for `TiXmlNode'}
+100500da         
+100500e9         if (var_70 != &data_10084798)
+100500ec             sub_1005f6ba(var_70)
+100500ec         
+100500fa         sub_1005aef0(&var_a4)
+1005053a     sub_1005f6ba(esi_3)
+10050540     PackageFileLoaderFactory::DeletePackageFileLoader(edi_4)
+10050034 else
+10050036     result = 0xffffffff
+10050036 
+1005054f if (var_48 u>= 0x10)
+10050556     sub_10001d60(var_5c.d, var_48 + 1)
+10050556 
+1005055e int32_t var_48_1 = 0xf
+10050565 int32_t var_4c_1 = 0
+1005056c var_5c = 0
+1005056c 
+10050573 if (arg3 u>= 0x10)
+1005057a     sub_10001d60(arg2, arg3 + 1)
+1005057a 
+10050584 fsbase->NtTib.ExceptionList = ExceptionList
+10050594 CookieCheckFunction(result)
+1005059c return result

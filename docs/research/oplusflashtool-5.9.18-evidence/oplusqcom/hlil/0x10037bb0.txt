@@ -1,0 +1,137 @@
+10037bc0 int32_t var_8 = 0xa
+10037bca int32_t i = 1
+10037bcf int32_t ecx = *arg1
+10037bd1 int32_t var_c = 1
+10037bf1 opdbg_log("QCSahara::getPblInfo", 0x15c, "[%s] [%s] INFO: Max reset sahara state times: %d", 
+10037bf1     ecx + 0x9e4, ecx + 0x444, 0xa)
+10037bf1 
+10037e1c do
+10037bf9     int32_t eax_2 = var_8
+10037bfc     var_8 -= 1
+10037bfc     
+10037c01     if (eax_2 == 0)
+10037c01         break
+10037c01     
+10037c07     int32_t ecx_3 = *arg1
+10037c26     int32_t eax_5
+10037c26     int32_t edx_1
+10037c26     eax_5, edx_1 = opdbg_log("QCSahara::execResetSaharaStateMachie", 0xe4, 
+10037c26         "[%s] [%s] INFO: Reseting sahara state machine", ecx_3 + 0x9e4, ecx_3 + 0x444)
+10037c2b     arg1[1] = 0x13
+10037c34     arg1[2] = 8
+10037c42     int32_t var_30_1
+10037c42     char const* const var_2c_1
+10037c42     int32_t var_28_1
+10037c42     int32_t var_24_3
+10037c42     int32_t var_20_3
+10037c42     
+10037c42     if (sub_10037170(eax_5, edx_1, arg1, arg2) == 0)
+10037c94         while (true)
+10037c94             int32_t i_1
+10037c94             int32_t edx_2
+10037c94             i_1, edx_2 = sub_100371f0(arg1)
+10037c99             i = i_1
+10037c99             
+10037c9d             if (i != 0)
+10037deb                 int32_t ecx_19 = *arg1
+10037df0                 var_20_3 = var_8
+10037df7                 var_24_3 = ecx_19 + 0x444
+10037dfe                 var_28_1 = ecx_19 + 0x9e4
+10037dff                 var_2c_1 = "[%s] [%s] ERROR: Failed to receive sahara handshake packet, retry send "
+10037dff                 "reset sahara state machine, rstSahStTimes is %d."
+10037e04                 var_30_1 = 0x169
+10037e04                 break
+10037e04             
+10037ca3             int32_t ecx_8 = arg1[0xe]
+10037ca9             char const* const var_30_2
+10037ca9             int32_t var_2c_2
+10037ca9             char const* const var_28_2
+10037ca9             int32_t var_24_4
+10037ca9             int32_t var_20_5
+10037ca9             
+10037ca9             if (ecx_8 == 1)
+10037d2f                 int32_t ecx_15 = *arg1
+10037d4e                 int32_t edx_3 = opdbg_log("QCSahara::execHelloResponse", 0xba, 
+10037d4e                     "[%s] [%s] INFO: Responding HELLO message.", ecx_15 + 0x9e4, ecx_15 + 0x444)
+10037d50                 int32_t eax_20 = arg1[0x10]
+10037d56                 arg1[0x25] = eax_20
+10037d5e                 arg1[3] = eax_20
+10037d61                 int32_t eax_21 = arg1[0x11]
+10037d64                 arg1[1] = 2
+10037d6b                 arg1[2] = 0x30
+10037d72                 arg1[4] = eax_21
+10037d75                 arg1[5] = 0
+10037d7c                 arg1[6] = 3
+10037d7c                 
+10037d8a                 if (sub_10037170(eax_21, edx_3, arg1) != 0)
+10037d9d                     int32_t ecx_17 = *arg1
+10037da5                     var_20_5 = ecx_17 + 0x444
+10037dac                     var_24_4 = ecx_17 + 0x9e4
+10037dad                     var_28_2 = "[%s] [%s] ERROR: Failed to send HELLO_RESPONSE packet."
+10037db2                     var_2c_2 = 0xcb
+10037db7                     var_30_2 = "QCSahara::execHelloResponse"
+10037dbc                 label_10037dbc:
+10037dbc                     opdbg_log(var_30_2, var_2c_2, var_28_2, var_24_4, var_20_5)
+10037dc1                     arg1[0x26].b = 1
+10037dc8                     i = 0xffffffff
+10037dcb                 label_10037dcb:
+10037dcb                     int32_t ecx_18 = *arg1
+10037dd0                     var_20_3 = var_8
+10037dd7                     var_24_3 = ecx_18 + 0x444
+10037dde                     var_28_1 = ecx_18 + 0x9e4
+10037ddf                     var_2c_1 = "[%s] [%s] ERROR: Sahara communication is failed, retry send reset "
+10037ddf                     "sahara state machine, rstSahStTimes is %d."
+10037de4                     var_30_1 = 0x17f
+10037de9                     break
+10037de9                 
+10037d8c                 i = 0
+10037ca9             else if (ecx_8 == 0xb)
+10037cd9                 arg1[0x10] = 0
+10037ce0                 bool cond:0_1 = arg1[0x25] s< 3
+10037ce9                 arg1[1] = 0xd
+10037cf0                 int32_t eax_13
+10037cf0                 eax_13.b = cond:0_1
+10037cf3                 arg1[2] = 0xc
+10037cfb                 arg1[3] = eax_13 + 1
+10037cfb                 
+10037d05                 if (sub_10037170(eax_13 + 1, edx_2, arg1) != 0)
+10037d0b                     int32_t ecx_14 = *arg1
+10037d13                     var_20_5 = ecx_14 + 0x444
+10037d1a                     var_24_4 = ecx_14 + 0x9e4
+10037d1b                     var_28_2 = "[%s] [%s] ERROR: Failed to send TARGET_CMD_EXECUTE packet."
+10037d20                     var_2c_2 = 0x87
+10037d25                     var_30_2 = "QCSahara::dumpPblInfo"
+10037d2a                     goto label_10037dbc
+10037d2a                 
+10037d8c                 i = 0
+10037cb2             else if (ecx_8 == 0xe)
+10037cc8                 i = sub_10037310(arg1, i, &var_c)
+10037cc8                 
+10037ccc                 if (i != 0)
+10037ccc                     goto label_10037dcb
+10037ccc             
+10037d92             if (var_c == 0)
+10037d92                 goto label_10037e29
+10037c42     else
+10037c44         int32_t ecx_5 = *arg1
+10037c63         opdbg_log("QCSahara::execResetSaharaStateMachie", 0xe9, 
+10037c63             "[%s] [%s] ERROR: Failed to send RESET_SAHARA_STATE_MACHINE packet.", ecx_5 + 0x9e4, 
+10037c63             ecx_5 + 0x444)
+10037c65         int32_t ecx_6 = *arg1
+10037c6d         arg1[0x26].b = 1
+10037c74         var_20_3 = var_8
+10037c7b         var_24_3 = ecx_6 + 0x444
+10037c82         var_28_1 = ecx_6 + 0x9e4
+10037c83         var_2c_1 = "[%s] [%s] ERROR: Failed to reset sahara state machine, retry send reset sahara "
+10037c83         "state machine, rstSahStTimes is %d."
+10037c88         var_30_1 = 0x160
+10037c88     
+10037e0e     opdbg_log("QCSahara::getPblInfo", var_30_1, var_2c_1, var_28_1, var_24_3, var_20_3)
+10037e13     arg1[0x26].b = 1
+10037e1c while (i != 0)
+10037e1c 
+10037e29 label_10037e29:
+10037e29 *arg3 = *(arg1 + 0x68)
+10037e30 arg3[1] = *(arg1 + 0x78)
+10037e3a arg3[2].d = arg1[0x22]
+10037e45 return i

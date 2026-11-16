@@ -1,0 +1,1126 @@
+10049ac3 int32_t var_8 = 0xffffffff
+10049ac5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_100662a1
+10049ad0 TEB* fsbase
+10049ad0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+10049adc int32_t __saved_ebp
+10049adc int32_t eax_2 = __security_cookie ^ &__saved_ebp
+10049ae8 fsbase->NtTib.ExceptionList = &ExceptionList
+10049afa int32_t var_8_1 = 0
+10049b06 int32_t* var_730
+10049b06 void** arg_4
+10049b06 
+10049b06 if (arg3 + 8 != &arg_4)
+10049b08     uint32_t var_728_1 = 0xffffffff
+10049b0a     int32_t var_72c_1 = 0
+10049b0c     var_730 = &arg_4
+10049b0d     sub_10001bd0(arg3 + 8, var_730, var_72c_1, var_728_1)
+10049b0d 
+10049b12 int32_t isReference = 0
+10049b14 struct { void* const pVFTable; void* spare; char name[0x11]; }* targetVoid =
+10049b14     &class MtkPackData `RTTI Type Descriptor'
+10049b19 var_730 = &class PackData `RTTI Type Descriptor'
+10049b26 char* ebx_1 = __RTDynamicCast(arg3, 0, var_730, targetVoid, isReference)
+10049b2b char* var_658 = ebx_1
+10049b33 uint32_t result
+10049b33 
+10049b33 if (ebx_1 != 0)
+10049b57     int32_t var_72c_3 = 0
+10049b5e     int32_t var_728_3 = 0
+10049b65     int32_t var_728_4 = 0xf
+10049b70     int32_t var_72c_4 = 0
+10049b7f     uint32_t var_740 = 0xffffffff
+10049b81     char* c
+10049b81     c.b = 0
+10049b87     void*** var_744 = nullptr
+10049b8a     sub_10001bd0(&c, &arg_4, var_744, var_740)
+10049b95     char var_10c
+10049b95     var_740 = &var_10c
+10049b96     sub_10047670(var_740, c)
+10049b9e     var_8_1.b = 1
+10049ba4     int32_t var_72c_5 = 0
+10049bab     int32_t var_728_5 = 0
+10049bb2     int32_t var_728_6 = 0xf
+10049bbd     int32_t var_72c_6 = 0
+10049bcc     var_740 = 0xffffffff
+10049bce     c.b = 0
+10049bd7     var_744 = nullptr
+10049bda     sub_10001bd0(&c, &var_10c, var_744, var_740)
+10049bdf     int32_t eax_6
+10049bdf     int32_t edx_1
+10049bdf     eax_6, edx_1 = sub_100481e0()
+10049bdf     
+10049bf5     if (edx_1 s>= 0 && (edx_1 s> 0 || eax_6 != 0))
+10049bfc         int32_t var_72c_7 = 0
+10049c03         int32_t var_728_7 = 0
+10049c0a         int32_t var_728_8 = 0xf
+10049c15         int32_t var_72c_8 = 0
+10049c24         var_740 = 0xffffffff
+10049c26         c.b = 0
+10049c2f         var_744 = nullptr
+10049c32         int32_t* eax_8
+10049c32         int32_t edx_2
+10049c32         eax_8, edx_2 = sub_10001bd0(&c, &var_10c, var_744, var_740)
+10049c32         
+10049c43         if (sub_1004e4e0(eax_8, edx_2, ebx_1) == 0)
+10049c49             void** eax_10 = &arg_4
+10049c49             
+10049c4c             if (arg2 u>= 0x10)
+10049c4c                 eax_10 = arg_4
+10049c4c             
+10049c51             char const* const var_72c_9 =
+10049c51                 "[ERROR][Package]Parse allFilesChecksum.txt failed. PackPath = %s "
+10049c56             var_730 = 0x33
+10049c5d             opdbg_log("MtkSfpParser::parse", var_730, var_72c_9, eax_10, eax_2)
+10049c5d     
+10049c67     int32_t var_72c_10 = 0
+10049c6e     int32_t var_728_10 = 0
+10049c75     int32_t var_728_11 = 0xf
+10049c80     int32_t var_72c_11 = 0
+10049c8f     var_740 = 0xffffffff
+10049c91     c.b = 0
+10049c97     var_744 = nullptr
+10049c9a     sub_10001bd0(&c, &arg_4, var_744, var_740)
+10049ca5     char var_f4
+10049ca5     var_740 = &var_f4
+10049ca6     sub_1004b290(var_740)
+10049cab     var_8_1.b = 2
+10049cb6     int32_t var_e4
+10049cb6     
+10049cb6     if (var_e4 != 0)
+10049cdf         int32_t* eax_13 = sub_1005f651(0x50)
+10049ce6         int32_t* var_650_1 = eax_13
+10049cec         uint32_t count_1 = 0x50
+10049cee         var_730 = nullptr
+10049cf1         var_8_1.b = 3
+10049cf5         memset(eax_13, var_730, count_1)
+10049cfd         int32_t var_728_14 = 5
+10049d04         var_730 = nullptr
+10049d0b         int32_t var_72c_13 = 0
+10049d12         int32_t var_72c_14 = 0xf
+10049d1d         var_730 = nullptr
+10049d2c         var_744 = 0xffffffff
+10049d2e         var_740.b = 0
+10049d3a         sub_10001bd0(&var_740, &var_f4, 0, var_744)
+10049d41         int32_t* eax_15 = sub_100451a0(eax_13, var_740)
+10049d48         var_8_1.b = 2
+10049d48         
+10049d55         if (sub_1005a010(eax_15, ebx_1) == 0)
+10049d94             if (eax_15 != 0)
+10049d98                 sub_100452b0(eax_15)
+10049d9d                 int32_t var_728_18 = 0x50
+10049da0                 operator new(eax_15)
+10049da0             
+10049daf             int64_t var_44
+10049daf             int32_t* var_72c_19 = &var_44
+10049db0             var_44 = 0
+10049db5             int32_t edi_1 = sub_1004b530(var_72c_19, ebx_1)
+10049dba             var_8_1.b = 4
+10049dba             
+10049dc2             if (var_44:4.d != 0)
+10049dec                 int32_t* var_728_21 = nullptr
+10049dee                 int64_t var_3c = 0
+10049df3                 int32_t* var_72c_21 = nullptr
+10049df5                 var_3c.d = 0
+10049dfc                 var_3c:4.d = 0
+10049e03                 int32_t* eax_18 = sub_1002e9d0(var_72c_21, var_728_21)
+10049e08                 int32_t* var_18 = eax_18
+10049e0b                 var_3c.d = eax_18
+10049e0e                 var_8_1.b = 5
+10049e12                 int32_t* eax_19 = var_44.d
+10049e15                 void** esi_2 = *eax_19
+10049e19                 int32_t* var_660
+10049e19                 char var_34
+10049e19                 uint32_t var_24
+10049e19                 
+10049e19                 if (esi_2 != eax_19)
+10049e20                     while (true)
+10049e20                         uint32_t var_728_22 = 0xffffffff
+10049e25                         int32_t var_20_1 = 0xf
+10049e2c                         int32_t var_72c_22 = 0
+10049e2e                         var_730 = &esi_2[2]
+10049e32                         var_24 = 0
+10049e39                         var_34 = 0
+10049e3d                         sub_10001bd0(&var_34, var_730, var_72c_22, var_728_22)
+10049e4b                         var_8_1.b = 6
+10049e4f                         char* var_728_23 = &var_34
+10049e50                         int32_t* eax_22 = *(arg3 + 0x10c)
+10049e56                         var_660 = eax_22
+10049e5c                         int32_t* var_72c_23 = eax_22[1]
+10049e5f                         var_730 = eax_22
+10049e60                         int32_t* eax_23 = sub_1002ebd0(var_730, var_72c_23, var_728_23)
+10049e60                         
+10049e7b                         if (0x7fffffe - *(arg3 + 0x110) u< 1)
+10049f71                         label_10049f71:
+10049f71                             std::_Xlength_error("list<T> too long")
+10049f71                             noreturn
+10049f71                         
+10049e81                         *(arg3 + 0x110) += 1
+10049e8d                         uint32_t var_728_24 = 0x50
+10049e8f                         var_660[1] = eax_23
+10049e95                         *eax_23[1] = eax_23
+10049e97                         int32_t* eax_26 = sub_1005f651(var_728_24)
+10049ea2                         uint32_t count_2 = 0x50
+10049ea4                         var_730 = nullptr
+10049ea7                         var_8_1.b = 7
+10049eab                         memset(eax_26, var_730, count_2)
+10049eb3                         int32_t var_728_25 = 5
+10049eba                         var_730 = nullptr
+10049ec1                         int32_t var_72c_24 = 0
+10049ec8                         int32_t var_72c_25 = 0xf
+10049ed3                         var_730 = nullptr
+10049ee2                         var_744 = 0xffffffff
+10049ee4                         var_740.b = 0
+10049eed                         sub_10001bd0(&var_740, &var_34, 0, var_744)
+10049efd                         var_8_1.b = 6
+10049f01                         var_660 = sub_100451a0(eax_26)
+10049f0d                         int32_t** var_728_26 = &var_660
+10049f0e                         int32_t* eax_29 = var_18
+10049f11                         var_72c_21 = eax_29[1]
+10049f14                         var_730 = eax_29
+10049f15                         int32_t* eax_30 = sub_1002e8f0(var_730, var_72c_21, var_728_26)
+10049f1a                         int32_t edx_4 = var_3c:4.d
+10049f24                         var_660 = eax_30
+10049f24                         
+10049f2d                         if (0x15555554 - edx_4 u< 1)
+10049f2d                             goto label_10049f71
+10049f2d                         
+10049f33                         int32_t* ecx_17 = var_660
+10049f39                         var_3c:4.d = edx_4 + 1
+10049f3c                         var_18[1] = ecx_17
+10049f42                         var_8_1.b = 5
+10049f46                         *ecx_17[1] = ecx_17
+10049f46                         
+10049f4e                         if (var_20_1 u>= 0x10)
+10049f52                             var_72c_21 = var_34.d
+10049f55                             sub_10001d60(var_72c_21, var_20_1 + 1)
+10049f55                         
+10049f5a                         esi_2 = *esi_2
+10049f5a                         
+10049f5f                         if (esi_2 == var_44.d)
+10049f5f                             break
+10049f5f                         
+10049f64                         var_18 = var_3c.d
+10049f64                 
+10049f77                 int32_t var_80_1 = 0xf
+10049f7e                 int32_t var_84_1 = 0
+10049f85                 char var_94 = 0
+10049f92                 void* var_728_29 = arg3
+10049f96                 var_8_1.b = 8
+10049fa0                 sub_1002d080(&var_730, &var_3c)
+10049fab                 sub_1004ce30(&var_94, var_730, var_72c_21)
+10049fde                 int32_t var_72c_27 = 0
+10049fe5                 int32_t var_728_31 = 0
+10049fec                 int32_t var_728_32 = 0xf
+10049ff7                 int32_t var_72c_28 = 0
+1004a006                 var_740 = 0xffffffff
+1004a008                 c.b = 0
+1004a00e                 var_744 = nullptr
+1004a011                 sub_10001bd0(&c, &arg_4, var_744, var_740)
+1004a01c                 char var_dc
+1004a01c                 var_740 = &var_dc
+1004a01d                 sub_1004b3e0(var_740)
+1004a022                 var_8_1.b = 9
+1004a02d                 int32_t var_cc
+1004a02d                 
+1004a02d                 if (var_cc != 0)
+1004a056                     int32_t* eax_40 = sub_1005f651(0x50)
+1004a05d                     int32_t* var_650_3 = eax_40
+1004a063                     uint32_t count_3 = 0x50
+1004a065                     var_730 = nullptr
+1004a068                     var_8_1.b = 0xa
+1004a06c                     memset(eax_40, var_730, count_3)
+1004a074                     int32_t var_728_35 = 5
+1004a07b                     var_730 = nullptr
+1004a082                     int32_t var_72c_30 = 0
+1004a089                     int32_t var_72c_31 = 0xf
+1004a094                     var_730 = nullptr
+1004a0a3                     var_744 = 0xffffffff
+1004a0a5                     var_740.b = 0
+1004a0b1                     sub_10001bd0(&var_740, &var_dc, 0, var_744)
+1004a0bf                     var_8_1.b = 9
+1004a0ca                     void*** eax_44 = &arg_4
+1004a0ca                     
+1004a0cd                     if (sub_10057720(sub_100451a0(eax_40), ebx_1) == 0)
+1004a0f6                         var_740 = &arg_4
+1004a0f7                         sub_10002870(&c, var_740)
+1004a102                         void var_1e4
+1004a102                         var_740 = &var_1e4
+1004a103                         sub_1004bc40(var_740)
+1004a108                         var_8_1.b = 0xb
+1004a113                         int32_t var_1d4
+1004a113                         
+1004a113                         if (var_1d4 != 0)
+1004a13c                             int32_t* eax_46 = sub_1005f651(0x50)
+1004a143                             int32_t* var_650_4 = eax_46
+1004a149                             uint32_t count_4 = 0x50
+1004a14b                             var_730 = nullptr
+1004a14e                             var_8_1.b = 0xc
+1004a152                             memset(eax_46, var_730, count_4)
+1004a160                             int32_t var_728_40 = 5
+1004a167                             var_744 = &var_1e4
+1004a168                             sub_10002870(&var_740, var_744)
+1004a16f                             int32_t* eax_47 = sub_100451a0(eax_46)
+1004a176                             var_8_1.b = 0xb
+1004a17c                             uint32_t eax_48
+1004a17c                             int32_t ecx_26
+1004a17c                             eax_48, ecx_26 = std::num_put<wchar_t,class std::ostreambuf_iterator<wchar_t,struct std::char_traits<wchar_t> > >::do_put(
+1004a17c                                 eax_47, ebx_1)
+1004a17c                             
+1004a183                             if (eax_48 == 0)
+1004a1b8                                 if (eax_47 != 0)
+1004a1ba                                     int32_t var_728_44 = ecx_26
+1004a1bd                                     sub_1001cbc0(eax_47)
+1004a1bd                                 
+1004a1c2                                 int32_t var_1e8_1 = 0xf
+1004a1cc                                 int32_t var_1ec_1 = 0
+1004a1d6                                 char var_1fc_1 = 0
+1004a1dd                                 var_8_1.b = 0xd
+1004a1f2                                 void** eax_51 = *(ebx_1 + 0x14c) + 0x30
+1004a1f6                                 void var_24c
+1004a1f6                                 sub_1002dab0(eax_51, "IMAGES/download_agent/", &var_24c, eax_51)
+1004a201                                 var_8_1.b = 0xe
+1004a205                                 void* var_72c_37 = &var_24c
+1004a209                                 var_730 = &arg_4
+1004a21a                                 var_8_1.b = 0xf
+1004a226                                 void var_66c
+1004a226                                 void var_ac
+1004a226                                 sub_10002870(&var_ac, 
+1004a226                                     *PackageFileLoaderFactory::CreatePackageFileUrl(&var_66c, 
+1004a226                                         var_730))
+1004a231                                 var_8_1.b = 0x11
+1004a235                                 std::_System_error_category::default_error_condition(&var_66c)
+1004a241                                 void var_204
+1004a241                                 int32_t var_9c
+1004a241                                 
+1004a241                                 if (var_9c != 0)
+1004a26f                                     void var_684
+1004a26f                                     
+1004a26f                                     if (*(ebx_1 + 0x148) == 0)
+1004a27c                                         sub_10001a60(&var_684, "scatter.xml")
+1004a289                                         var_8_1.b = 0x12
+1004a28d                                         sub_10001a60(&var_34, "IMAGES/")
+1004a298                                         var_8_1.b = 0x13
+1004a2aa                                         sub_100498e0(&var_684, &var_34, &arg_4, &var_684, &var_ac)
+1004a2b5                                         sub_100019a0(&var_34)
+1004a2c0                                         var_8_1.b = 0x11
+1004a2c4                                         sub_100019a0(&var_684)
+1004a2c4                                     
+1004a2cb                                     int32_t* eax_55 = sub_1005f651(0x50)
+1004a2d2                                     int32_t* var_650_5 = eax_55
+1004a2d8                                     uint32_t count_5 = 0x50
+1004a2da                                     var_730 = nullptr
+1004a2dd                                     var_8_1.b = 0x14
+1004a2e1                                     memset(eax_55, var_730, count_5)
+1004a2ef                                     int32_t var_728_52 = 5
+1004a2f6                                     var_744 = &var_ac
+1004a2f7                                     sub_10002870(&var_740, var_744)
+1004a2fe                                     int32_t* eax_56 = sub_100451a0(eax_55)
+1004a30b                                     var_18 = eax_56
+1004a30e                                     var_8_1.b = 0x11
+1004a317                                     result = sub_10057e50(&var_204, eax_56, ebx_1)
+1004a317                                     
+1004a31b                                     if (result == 0)
+1004a353                                         int32_t* ecx_42 = var_18
+1004a353                                         
+1004a358                                         if (ecx_42 != 0)
+1004a35a                                             int32_t* var_728_56 = ecx_42
+1004a35b                                             sub_1001cbc0(ecx_42)
+1004a35b                                         
+1004a360                                         int32_t var_68_1 = 0xf
+1004a367                                         int32_t var_6c_1 = 0
+1004a36e                                         char var_7c = 0
+1004a37d                                         var_8_1.b = 0x15
+1004a381                                         sub_10001a60(&var_684, "build.prop")
+1004a38c                                         var_8_1.b = 0x16
+1004a396                                         void* var_728_58 = &var_684
+1004a39a                                         void*** var_72c_42 = &arg_4
+1004a3a1                                         var_730 = &var_66c
+1004a3a7                                         var_8_1.b = 0x17
+1004a3b3                                         void** var_124
+1004a3b3                                         sub_10002870(&var_124, 
+1004a3b3                                             *PackageFileLoaderFactory::CreatePackageFileUrl(
+1004a3b3                                                 var_730, var_72c_42))
+1004a3be                                         std::_System_error_category::default_error_condition(
+1004a3be                                             &var_66c)
+1004a3c9                                         var_8_1.b = 0x1a
+1004a3cd                                         sub_100019a0(&var_684)
+1004a3d9                                         int32_t var_114
+1004a3d9                                         
+1004a3d9                                         if (var_114 != 0)
+1004a403                                             int32_t var_728_61 = 1
+1004a408                                             char* var_72c_44 = &var_7c
+1004a415                                             sub_10002870(&var_744, &var_124)
+1004a424                                             ebx_1[0x27c] = sub_10054940(var_744)
+1004a434                                             void var_69c
+1004a434                                             
+1004a434                                             if (sub_1000ba60(&var_7c, &data_1006a03d) != 0)
+1004a441                                                 sub_10002870(&var_34, &arg_4)
+1004a446                                                 var_8_1.b = 0x1b
+1004a452                                                 int32_t var_72c_45 = 0
+1004a45a                                                 var_730 = &var_69c
+1004a464                                                 sub_100027f0(&var_34, 
+1004a464                                                     sub_100025c0(&var_34, var_730, var_72c_45, 
+1004a464                                                         arg1 - 1))
+1004a46f                                                 int32_t ecx_53 = sub_100019a0(&var_69c)
+1004a474                                                 int32_t var_728_65 = 1
+1004a47a                                                 char var_1c = 0x5c
+1004a47e                                                 var_730 = &var_1c
+1004a482                                                 void* eax_66 =
+1004a482                                                     sub_10044650(&var_34, var_730, ecx_53)
+1004a482                                                 
+1004a489                                                 if (eax_66 s> 0)
+1004a499                                                     var_730 = &var_69c
+1004a4a3                                                     sub_100027f0(&var_7c, 
+1004a4a3                                                         sub_100025c0(&var_34, var_730, eax_66 + 1, 
+1004a4a3                                                             var_24))
+1004a4ae                                                     sub_100019a0(&var_69c)
+1004a4ae                                                 
+1004a4b7                                                 char* ecx_58 = &var_7c
+1004a4ba                                                 void** eax_69 = &var_124
+1004a4ba                                                 
+1004a4c0                                                 if (var_68_1 u>= 0x10)
+1004a4c0                                                     ecx_58 = var_7c.d
+1004a4c0                                                 
+1004a4cc                                                 int32_t var_110
+1004a4cc                                                 
+1004a4cc                                                 if (var_110 u>= 0x10)
+1004a4cc                                                     eax_69 = var_124
+1004a4cc                                                 
+1004a4d4                                                 var_730 = "[WARNING][Package] get swVesionName from "
+1004a4d4                                                 "file={%s} is fail, use default filename:%s."
+1004a4e3                                                 edi_1("MtkSfpParser::parse", 0x9b, var_730, eax_69, 
+1004a4e3                                                     ecx_58, eax_2)
+1004a4e8                                                 var_8_1.b = 0x1a
+1004a4ef                                                 sub_100019a0(&var_34)
+1004a4ef                                             
+1004a4fc                                             var_740 = &var_7c
+1004a4fd                                             sub_10002870(&c, var_740)
+1004a508                                             sub_10043dd0(arg3)
+1004a515                                             sub_10001a60(&var_34, "IMAGES\boot.img")
+1004a51d                                             var_8_1.b = 0x1c
+1004a521                                             char* var_728_70 = &var_34
+1004a525                                             void*** var_72c_49 = &arg_4
+1004a52c                                             int32_t var_654
+1004a52c                                             var_730 = &var_654
+1004a532                                             var_8_1.b = 0x1d
+1004a53e                                             int32_t* var_154
+1004a53e                                             sub_10002870(&var_154, 
+1004a53e                                                 *PackageFileLoaderFactory::CreatePackageFileUrl(
+1004a53e                                                     var_730, var_72c_49))
+1004a549                                             std::_System_error_category::default_error_condition(
+1004a549                                                 &var_654)
+1004a551                                             var_8_1.b = 0x20
+1004a555                                             sub_100019a0(&var_34)
+1004a561                                             int32_t var_144
+1004a561                                             
+1004a561                                             if (var_144 != 0)
+1004a592                                                 int32_t* eax_72 = &var_154
+1004a5a1                                                 int32_t var_140
+1004a5a1                                                 
+1004a5a1                                                 if (var_140 u>= 0x10)
+1004a5a1                                                     eax_72 = var_154
+1004a5a1                                                 
+1004a5a9                                                 int64_t var_4c = 0
+1004a5ae                                                 sub_10001a60(&var_684, eax_72)
+1004a5b9                                                 var_8_1.b = 0x21
+1004a5bd                                                 void* var_728_74 = &var_684
+1004a5c2                                                 PackageFileLoaderFactory::CreateSharedPackageFileLoader(
+1004a5c2                                                     &var_4c)
+1004a5d1                                                 var_8_1.b = 0x23
+1004a5d5                                                 sub_100019a0(&var_684)
+1004a5d5                                                 
+1004a5e3                                                 if (var_4c.d != 0)
+1004a5f5                                                     var_654 = 0
+1004a603                                                     int32_t var_650_6 = 0
+1004a60d                                                     ___dyn_tls_init@12(&var_4c, &var_654)
+1004a618                                                     std::_System_error_category::default_error_condition(
+1004a618                                                         &var_654)
+1004a623                                                     int32_t edi_2 = *(ebx_1 + 0xf0)
+1004a623                                                     
+1004a62d                                                     for (void** i = **(ebx_1 + 0xf0); i != edi_2; 
+1004a62d                                                             i = *i)
+1004a63d                                                         void var_184
+1004a63d                                                         sub_1000c800(&var_184, &i[2])
+1004a648                                                         var_8_1.b = 0x24
+1004a658                                                         void var_c4
+1004a658                                                         int32_t var_728_78 =
+1004a658                                                             sub_10002870(&var_c4, &var_184)
+1004a664                                                         var_8_1.b = 0x25
+1004a668                                                         uint8_t* eax_75
+1004a668                                                         int32_t ecx_73
+1004a668                                                         eax_75, ecx_73 = sub_10007bf0(".sig")
+1004a668                                                         
+1004a670                                                         if (eax_75 != 0xffffffff)
+1004a676                                                             int32_t var_728_79 = ecx_73
+1004a682                                                             uint8_t* eax_76 =
+1004a682                                                                 sub_10007bf0("IMAGES/")
+1004a68f                                                             int32_t* eax_77 = sub_1005f651(0x38)
+1004a699                                                             eax_77[4] = 0
+1004a6a0                                                             eax_77[5] = 0
+1004a6a7                                                             eax_77[5] = 0xf
+1004a6ae                                                             bool cond:26_1 = eax_77[5] u< 0x10
+1004a6b2                                                             eax_77[4] = 0
+1004a6b9                                                             int32_t* eax_78
+1004a6b9                                                             
+1004a6b9                                                             if (cond:26_1)
+1004a6bf                                                                 eax_78 = eax_77
+1004a6b9                                                             else
+1004a6bb                                                                 eax_78 = *eax_77
+1004a6bb                                                             
+1004a6c1                                                             *eax_78 = 0
+1004a6c4                                                             void** eax_79 = &eax_77[8]
+1004a6c7                                                             eax_77[6] = 0
+1004a6ce                                                             eax_77[7] = 0
+1004a6d5                                                             eax_79[4] = 0
+1004a6dc                                                             eax_79[5] = 0
+1004a6e3                                                             eax_79[5] = 0xf
+1004a6ea                                                             bool cond:28_1 = eax_79[5] u< 0x10
+1004a6ee                                                             eax_79[4] = 0
+1004a6ee                                                             
+1004a6f5                                                             if (not(cond:28_1))
+1004a6f7                                                                 eax_79 = *eax_79
+1004a6f7                                                             
+1004a6f9                                                             *eax_79 = nullptr
+1004a708                                                             uint32_t var_728_81 = 0xffffffff
+1004a70d                                                             var_660 = eax_77
+1004a71a                                                             var_730 = &var_69c
+1004a724                                                             sub_100027f0(&eax_77[8], 
+1004a724                                                                 sub_100025c0(&var_c4, var_730, 
+1004a724                                                                     &eax_76[7], var_728_81))
+1004a72f                                                             sub_100019a0(&var_69c)
+1004a72f                                                             
+1004a73c                                                             if (eax_77 != &var_c4)
+1004a73e                                                                 uint32_t var_728_83 = 0xffffffff
+1004a740                                                                 int32_t var_72c_55 = 0
+1004a742                                                                 var_730 = &var_c4
+1004a745                                                                 sub_10001bd0(eax_77, var_730, 
+1004a745                                                                     var_72c_55, var_728_83)
+1004a745                                                             
+1004a755                                                             var_740 = &var_c4
+1004a756                                                             sub_10002870(&c, var_740)
+1004a75b                                                             int32_t eax_83
+1004a75b                                                             int32_t edx_7
+1004a75b                                                             eax_83, edx_7 = sub_100481e0()
+1004a760                                                             eax_77[6] = eax_83
+1004a769                                                             eax_77[7] = edx_7
+1004a76f                                                             ebx_1 = var_658
+1004a775                                                             int32_t** var_728_84 = &var_660
+1004a776                                                             int32_t* eax_84 = *(ebx_1 + 0x114)
+1004a782                                                             int32_t* var_72c_56 = eax_84[1]
+1004a785                                                             var_730 = eax_84
+1004a786                                                             int32_t* eax_85 = sub_1002e8f0(var_730, 
+1004a786                                                                 var_72c_56, var_728_84)
+1004a786                                                             
+1004a79b                                                             if (0x15555554 - *(ebx_1 + 0x118) u< 1)
+1004a79b                                                                 goto label_10049f71
+1004a79b                                                             
+1004a7a7                                                             *(ebx_1 + 0x118) += 1
+1004a7ad                                                             eax_84[1] = eax_85
+1004a7b3                                                             *eax_85[1] = eax_85
+1004a7b3                                                         
+1004a7bb                                                         sub_100019a0(&var_c4)
+1004a7c6                                                         var_8_1.b = 0x23
+1004a7ca                                                         sub_1000c0a0(&var_184)
+1004a7ca                                                     
+1004a7e1                                                     sub_10001a60(&var_34, 
+1004a7e1                                                         "IMAGES\Projectconfig.xml")
+1004a7e9                                                     var_8_1.b = 0x26
+1004a7f3                                                     char* var_728_86 = &var_34
+1004a7f7                                                     void*** var_72c_57 = &arg_4
+1004a7fe                                                     var_730 = &var_66c
+1004a804                                                     var_8_1.b = 0x27
+1004a810                                                     void var_1cc
+1004a810                                                     sub_10002870(&var_1cc, 
+1004a810                                                         *PackageFileLoaderFactory::CreatePackageFileUrl(
+1004a810                                                             var_730, var_72c_57))
+1004a81b                                                     std::_System_error_category::default_error_condition(
+1004a81b                                                         &var_66c)
+1004a823                                                     var_8_1.b = 0x2a
+1004a827                                                     sub_100019a0(&var_34)
+1004a833                                                     int32_t var_1bc
+1004a833                                                     
+1004a833                                                     if (var_1bc != 0)
+1004a863                                                         char* var_728_89 = &data_1006a03d
+1004a86e                                                         var_18 = nullptr
+1004a875                                                         void var_1b4
+1004a875                                                         sub_10001a60(&var_1b4, var_728_89)
+1004a880                                                         var_8_1.b = 0x2b
+1004a884                                                         void* var_728_90 = &var_1b4
+1004a888                                                         int32_t** var_72c_59 = &var_18
+1004a895                                                         sub_10002870(&var_744, &var_1cc)
+1004a89a                                                         sub_10057420()
+1004a8a9                                                         ebx_1[0x27d] = var_18 == 0
+1004a8b7                                                         var_740 = &var_1b4
+1004a8b8                                                         sub_10002870(&c, var_740)
+1004a8bf                                                         sub_100464f0(ebx_1)
+1004a8cf                                                         sub_10001a60(&var_684, 
+1004a8cf                                                             "IMAGES\fwupdateConfig.xml")
+1004a8da                                                         var_8_1.b = 0x2c
+1004a8de                                                         void* var_728_92 = &var_684
+1004a8e2                                                         class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >
+1004a8e2                                                             * var_72c_60 = &arg_4
+1004a8e9                                                         var_730 = &var_66c
+1004a8ef                                                         var_8_1.b = 0x2d
+1004a8fb                                                         void** var_13c
+1004a8fb                                                         sub_10002870(&var_13c, 
+1004a8fb                                                             *PackageFileLoaderFactory::CreatePackageFileUrl(
+1004a8fb                                                                 var_730, var_72c_60))
+1004a906                                                         std::_System_error_category::default_error_condition(
+1004a906                                                             &var_66c)
+1004a911                                                         var_8_1.b = 0x30
+1004a915                                                         sub_100019a0(&var_684)
+1004a925                                                         var_740 = &var_13c
+1004a926                                                         sub_10002870(&c, var_740)
+1004a92b                                                         int32_t eax_92
+1004a92b                                                         int32_t edx_9
+1004a92b                                                         eax_92, edx_9 = sub_100481e0()
+1004a92b                                                         
+1004a93f                                                         if (edx_9 s< 0
+1004a93f                                                             || (edx_9 s<= 0 && eax_92 == 0))
+1004aa42                                                         label_1004aa42:
+1004aa42                                                             var_740 = &var_ac
+1004aa43                                                             sub_10002870(&c, var_740)
+1004aa4a                                                             sub_10046480(ebx_1)
+1004aa5d                                                             void var_754
+1004aa5d                                                             sub_10002870(&var_754, &arg_4)
+1004aa63                                                             sub_1004bd90(&c)
+1004aa6a                                                             sub_10046640(ebx_1)
+1004aa7d                                                             sub_10002870(&var_754, &arg_4)
+1004aa83                                                             sub_1004bc40(&c, var_754)
+1004aa8a                                                             sub_10046410(ebx_1)
+1004aa9d                                                             sub_10002870(&var_754, &arg_4)
+1004aaa3                                                             sub_1004bd90(&c)
+1004aaaa                                                             sub_10046560(ebx_1)
+1004aabb                                                             void** eax_98 = *(ebx_1 + 0x14c) + 0x18
+1004aac9                                                             int32_t* var_72c_64 = sub_1002dab0(
+1004aac9                                                                 eax_98, "IMAGES/download_agent/", 
+1004aac9                                                                 &var_69c, eax_98)
+1004aacd                                                             var_8_1.b = 0x32
+1004aad7                                                             var_730 = &arg_4
+1004aae4                                                             var_8_1.b = 0x33
+1004aaf0                                                             void var_234
+1004aaf0                                                             sub_10002870(&var_234, 
+1004aaf0                                                                 *PackageFileLoaderFactory::CreatePackageFileUrl(
+1004aaf0                                                                     &var_654, var_730))
+1004aafb                                                             std::_System_error_category::default_error_condition(
+1004aafb                                                                 &var_654)
+1004ab06                                                             var_8_1.b = 0x36
+1004ab0a                                                             sub_100019a0(&var_69c)
+1004ab1a                                                             var_740 = &var_234
+1004ab1b                                                             sub_10002870(&c, var_740)
+1004ab22                                                             sub_10046330(ebx_1)
+1004ab32                                                             void** eax_102 = *(ebx_1 + 0x150) + 0x20
+1004ab35                                                             *(ebx_1 + 0xa0) = 5
+1004ab4b                                                             void var_16c
+1004ab4b                                                             int32_t* var_72c_65 = sub_1002dab0(
+1004ab4b                                                                 eax_102, "IMAGES/", &var_16c, eax_102)
+1004ab4f                                                             var_8_1.b = 0x37
+1004ab53                                                             var_730 = &arg_4
+1004ab60                                                             var_8_1.b = 0x38
+1004ab6c                                                             void var_21c
+1004ab6c                                                             sub_10002870(&var_21c, 
+1004ab6c                                                                 *PackageFileLoaderFactory::CreatePackageFileUrl(
+1004ab6c                                                                     &var_66c, var_730))
+1004ab77                                                             std::_System_error_category::default_error_condition(
+1004ab77                                                                 &var_66c)
+1004ab82                                                             var_8_1.b = 0x3b
+1004ab86                                                             sub_100019a0(&var_16c)
+1004ab96                                                             var_740 = &var_21c
+1004ab97                                                             sub_10002870(&c, var_740)
+1004ab9e                                                             sub_100465d0(ebx_1)
+1004ab9e                                                             
+1004abaa                                                             if (*(ebx_1 + 0x148) == 0)
+1004abbb                                                                 void var_6b4
+1004abbb                                                                 sub_10001a60(&var_6b4, "scatter.txt")
+1004abcb                                                                 var_8_1.b = 0x3c
+1004abcf                                                                 sub_10001a60(&var_684, "IMAGES/")
+1004abda                                                                 var_8_1.b = 0x3d
+1004abef                                                                 sub_100498e0(&var_6b4, &var_684, 
+1004abef                                                                     &arg_4, &var_6b4, &var_ac)
+1004abfd                                                                 sub_100019a0(&var_684)
+1004ac08                                                                 var_8_1.b = 0x3b
+1004ac0c                                                                 sub_100019a0(&var_6b4)
+1004ac1c                                                                 var_740 = &var_ac
+1004ac1d                                                                 sub_10002870(&c, var_740)
+1004ac22                                                                 int32_t eax_106
+1004ac22                                                                 int32_t edx_12
+1004ac22                                                                 eax_106, edx_12 = sub_100481e0()
+1004ac27                                                                 *(ebx_1 + 0x274) = eax_106
+1004ac35                                                                 int32_t var_658_2 = edx_12
+1004ac3b                                                                 var_740 = &var_ac
+1004ac3c                                                                 sub_10002870(&c, var_740)
+1004ac43                                                                 sub_10046480(ebx_1)
+1004ac48                                                                 int32_t var_20_2 = 0xf
+1004ac4f                                                                 int32_t var_24_1 = 0
+1004ac56                                                                 var_34 = 0
+1004ac65                                                                 var_8_1.b = 0x3e
+1004ac69                                                                 void var_6cc
+1004ac69                                                                 sub_10001a60(&var_6cc, "auth_sv5.auth")
+1004ac79                                                                 var_8_1.b = 0x3f
+1004ac7d                                                                 sub_10001a60(&var_6b4, "IMAGES/")
+1004ac85                                                                 var_8_1.b = 0x40
+1004ac9a                                                                 sub_100498e0(&var_6cc, &var_6b4, 
+1004ac9a                                                                     &arg_4, &var_6cc, &var_34)
+1004aca8                                                                 sub_100019a0(&var_6b4)
+1004acb3                                                                 var_8_1.b = 0x3e
+1004acb7                                                                 sub_100019a0(&var_6cc)
+1004acc4                                                                 var_740 = &var_34
+1004acc5                                                                 sub_10002870(&c, var_740)
+1004accc                                                                 sub_100465d0(ebx_1)
+1004acdc                                                                 void var_6e4
+1004acdc                                                                 sub_10001a60(&var_6e4, "Efuse.ini")
+1004acec                                                                 var_8_1.b = 0x41
+1004acf0                                                                 sub_10001a60(&var_6cc, "IMAGES/")
+1004acf8                                                                 var_8_1.b = 0x42
+1004ad0d                                                                 sub_100498e0(&var_6e4, &var_6cc, 
+1004ad0d                                                                     &arg_4, &var_6e4, &var_34)
+1004ad1b                                                                 sub_100019a0(&var_6cc)
+1004ad26                                                                 var_8_1.b = 0x3e
+1004ad2a                                                                 sub_100019a0(&var_6e4)
+1004ad37                                                                 var_740 = &var_34
+1004ad38                                                                 sub_10002870(&c, var_740)
+1004ad3f                                                                 sub_100466b0(ebx_1)
+1004ad4f                                                                 void var_6fc
+1004ad4f                                                                 sub_10001a60(&var_6fc, 
+1004ad4f                                                                     "Projectconfig.xml")
+1004ad5f                                                                 var_8_1.b = 0x43
+1004ad63                                                                 sub_10001a60(&var_6e4, "IMAGES/")
+1004ad6b                                                                 var_8_1.b = 0x44
+1004ad80                                                                 sub_100498e0(&var_6fc, &var_6e4, 
+1004ad80                                                                     &arg_4, &var_6fc, &var_34)
+1004ad8e                                                                 sub_100019a0(&var_6e4)
+1004ad99                                                                 var_8_1.b = 0x3e
+1004ad9d                                                                 sub_100019a0(&var_6fc)
+1004adaa                                                                 var_740 = &var_34
+1004adab                                                                 sub_10002870(&c, var_740)
+1004adb2                                                                 sub_10046720(ebx_1)
+1004adc2                                                                 void var_714
+1004adc2                                                                 sub_10001a60(&var_714, 
+1004adc2                                                                     "all-in-one-signature.bin")
+1004add2                                                                 var_8_1.b = 0x45
+1004add6                                                                 sub_10001a60(&var_6fc, "IMAGES/")
+1004adde                                                                 var_8_1.b = 0x46
+1004adf3                                                                 sub_100498e0(&var_714, &var_6fc, 
+1004adf3                                                                     &arg_4, &var_714, &var_34)
+1004ae01                                                                 sub_100019a0(&var_6fc)
+1004ae0c                                                                 var_8_1.b = 0x3e
+1004ae10                                                                 sub_100019a0(&var_714)
+1004ae1d                                                                 var_740 = &var_34
+1004ae1e                                                                 sub_10002870(&c, var_740)
+1004ae23                                                                 int32_t eax_111
+1004ae23                                                                 int32_t edx_17
+1004ae23                                                                 eax_111, edx_17 = sub_100481e0()
+1004ae28                                                                 int32_t var_658_3 = edx_17
+1004ae2e                                                                 *(ebx_1 + 0x278) = eax_111
+1004ae39                                                                 var_740 = &var_34
+1004ae3a                                                                 sub_10002870(&c, var_740)
+1004ae41                                                                 sub_10046640(ebx_1)
+1004ae56                                                                 var_8_1.b = 0x47
+1004ae70                                                                 int32_t* eax_113 = sub_1002dc10(
+1004ae70                                                                     sub_10001a60(&var_69c, "IMAGES/"), 
+1004ae70                                                                     *(**(ebx_1 + 0xe4) + 8), &var_714, 
+1004ae70                                                                     ".bin")
+1004ae78                                                                 var_8_1.b = 0x48
+1004ae7c                                                                 int32_t* var_72c_71 = &var_34
+1004ae7d                                                                 var_730 = eax_113
+1004ae87                                                                 sub_100498e0(eax_113, &var_69c, &arg_4, 
+1004ae87                                                                     var_730, var_72c_71)
+1004ae95                                                                 sub_100019a0(&var_714)
+1004aea0                                                                 var_8_1.b = 0x3e
+1004aea4                                                                 sub_100019a0(&var_69c)
+1004aeb1                                                                 var_740 = &var_34
+1004aeb2                                                                 sub_10002870(&c, var_740)
+1004aeb9                                                                 sub_10046560(ebx_1)
+1004aec1                                                                 var_8_1.b = 0x3b
+1004aec5                                                                 sub_100019a0(&var_34)
+1004aec5                                                             
+1004aeca                                                             char* var_728_121 = ebx_1
+1004aed3                                                             var_744 = &arg_4
+1004aed4                                                             sub_10002870(&var_740, var_744)
+1004aedf                                                             void var_19c
+1004aedf                                                             var_744 = &var_19c
+1004aee0                                                             sub_1004bdd0(var_744)
+1004aee8                                                             var_8_1.b = 0x49
+1004aef4                                                             var_740 = &var_19c
+1004aef5                                                             sub_10002870(&c, var_740)
+1004aefa                                                             int32_t eax_114
+1004aefa                                                             int32_t edx_22
+1004aefa                                                             eax_114, edx_22 = sub_100481e0()
+1004aefa                                                             
+1004af0a                                                             if (edx_22 s< 0
+1004af0a                                                                     || (edx_22 s<= 0 && eax_114 == 0))
+1004af60                                                                 void** eax_118 = &arg_4
+1004af60                                                                 
+1004af63                                                                 if (arg2 u>= 0x10)
+1004af63                                                                     eax_118 = arg_4
+1004af63                                                                 
+1004af67                                                                 void** var_728_124 = eax_118
+1004af68                                                                 char const* const var_72c_74 = "
+1004af68                                                                 "[OPLUS][Package]find "
+1004af68                                                                 "all_files_hash_checksum.txt failed, "
+1004af68                                                                 "PackPath = %s "
+1004af6d                                                                 var_730 = 0x104
+1004af0a                                                             else
+1004af17                                                                 var_740 = &var_19c
+1004af18                                                                 char* eax_115
+1004af18                                                                 int32_t edx_23
+1004af18                                                                 eax_115, edx_23 =
+1004af18                                                                     sub_10002870(&c, var_740)
+1004af2d                                                                 void** eax_117 = &arg_4
+1004af2d                                                                 
+1004af30                                                                 if (sub_1004e9c0(eax_115, edx_23, 
+1004af30                                                                         &ebx_1[0x124]) != 0)
+1004af4b                                                                     if (arg2 u>= 0x10)
+1004af4b                                                                         eax_117 = arg_4
+1004af4b                                                                     
+1004af4f                                                                     void** var_728_123 = eax_117
+1004af50                                                                     char const* const var_72c_73 = "
+1004af50                                                                     "[OPLUS][Package]Parse "
+1004af50                                                                     "all_files_hash_checksum.txt ok, "
+1004af50                                                                     "PackPath = %s "
+1004af55                                                                     var_730 = 0x101
+1004af30                                                                 else
+1004af36                                                                     if (arg2 u>= 0x10)
+1004af36                                                                         eax_117 = arg_4
+1004af36                                                                     
+1004af3a                                                                     void** var_728_122 = eax_117
+1004af3b                                                                     char const* const var_72c_72 = "
+1004af3b                                                                     "[ERROR][Package]Parse "
+1004af3b                                                                     "all_files_hash_checksum.txt failed. "
+1004af3b                                                                     "PackPath = %s "
+1004af40                                                                     var_730 = 0xff
+1004af40                                                             
+1004af77                                                             opdbg_log("MtkSfpParser::parse")
+1004af7c                                                             int32_t var_50_1 = 0xf
+1004af83                                                             int32_t var_54_1 = 0
+1004af8a                                                             char var_64 = 0
+1004af94                                                             var_8_1.b = 0x4a
+1004afa3                                                             var_8_1.b = 0x4b
+1004afa9                                                             sub_1004c8d0(
+1004afa9                                                                 sub_100462f0(ebx_1, &var_16c), &var_64)
+1004afb4                                                             var_8_1.b = 0x4a
+1004afb8                                                             sub_100019a0(&var_16c)
+1004afb8                                                             
+1004afc1                                                             if (var_54_1 == 0)
+1004afcb                                                                 sub_10001960("00")
+1004afcb                                                             
+1004afdf                                                             int32_t* eax_121 = sub_1002dab0(
+1004afdf                                                                 &var_64, "0x", &var_16c, &var_64)
+1004afed                                                             var_8_1.b = 0x4c
+1004afed                                                             
+1004aff3                                                             if (&ebx_1[0x304] != eax_121)
+1004aff5                                                                 uint32_t var_728_129 = 0xffffffff
+1004aff7                                                                 int32_t var_72c_76 = 0
+1004aff9                                                                 var_730 = eax_121
+1004affa                                                                 sub_10001bd0(&ebx_1[0x304], var_730, 
+1004affa                                                                     var_72c_76, var_728_129)
+1004affa                                                             
+1004b005                                                             var_8_1.b = 0x4a
+1004b009                                                             sub_100019a0(&var_16c)
+1004b016                                                             sub_10001960(&data_1006a03d)
+1004b02c                                                             var_8_1.b = 0x4d
+1004b032                                                             sub_1004cab0(
+1004b032                                                                 sub_10046790(ebx_1, &var_69c), &var_64)
+1004b03d                                                             var_8_1.b = 0x4a
+1004b041                                                             sub_100019a0(&var_69c)
+1004b041                                                             
+1004b04a                                                             if (var_54_1 == 0)
+1004b054                                                                 sub_10001960("00")
+1004b054                                                             
+1004b068                                                             int32_t* eax_124 = sub_1002dab0(
+1004b068                                                                 &var_64, "0x", &var_16c, &var_64)
+1004b076                                                             var_8_1.b = 0x4e
+1004b076                                                             
+1004b07c                                                             if (&ebx_1[0x2ec] != eax_124)
+1004b07e                                                                 uint32_t var_728_135 = 0xffffffff
+1004b080                                                                 int32_t var_72c_78 = 0
+1004b082                                                                 var_730 = eax_124
+1004b083                                                                 sub_10001bd0(&ebx_1[0x2ec], var_730, 
+1004b083                                                                     var_72c_78, var_728_135)
+1004b083                                                             
+1004b08e                                                             sub_100019a0(&var_16c)
+1004b096                                                             result = 0
+1004b098                                                             sub_100019a0(&var_64)
+1004b0a3                                                             sub_100019a0(&var_19c)
+1004b0ae                                                             sub_100019a0(&var_21c)
+1004b0b9                                                             sub_100019a0(&var_234)
+1004a93f                                                         else
+1004a94b                                                             char const* const var_728_94 = "[INFO][Package] Parse fwupdateConfig.xml"
+1004a950                                                             int32_t var_72c_61 = 0xc9
+1004a955                                                             var_730 = "MtkSfpParser::parse"
+1004a95a                                                             opdbg_log(var_730, var_72c_61, 
+1004a95a                                                                 var_728_94, eax_2)
+1004a95e                                                             uint32_t eax_93 = sub_1005f651(0x50)
+1004a965                                                             uint32_t var_658_1 = eax_93
+1004a96b                                                             uint32_t count = 0x50
+1004a96d                                                             c = nullptr
+1004a96f                                                             var_740 = eax_93
+1004a970                                                             var_8_1.b = 0x31
+1004a974                                                             memset(var_740, c, count)
+1004a982                                                             int32_t var_728_95 = 5
+1004a989                                                             var_744 = &var_13c
+1004a98a                                                             sub_10002870(&var_740, var_744)
+1004a991                                                             int32_t* eax_94 = sub_100451a0(eax_93)
+1004a999                                                             var_8_1.b = 0x30
+1004a9a4                                                             var_740 = "IMAGES/"
+1004a9a9                                                             sub_1002dc10(eax_94, &arg_4, &c, 
+1004a9a9                                                                 var_740)
+1004a9b3                                                             sub_100453a0(eax_94)
+1004a9b8                                                             uint32_t count_6 = 0x400
+1004a9c3                                                             int32_t c_1 = 0
+1004a9c5                                                             void var_64c
+1004a9c5                                                             var_730 = &var_64c
+1004a9c6                                                             memset(var_730, c_1, count_6)
+1004a9d6                                                             uint32_t eax_95
+1004a9d6                                                             int32_t ecx_99
+1004a9d6                                                             eax_95, ecx_99 =
+1004a9d6                                                                 sub_10054d70(eax_94, ebx_1)
+1004a9d6                                                             
+1004a9dd                                                             if (eax_95 == 0)
+1004aa1e                                                                 if (eax_94 != 0)
+1004aa20                                                                     int32_t var_728_99 = ecx_99
+1004aa23                                                                     sub_1001cbc0(eax_94)
+1004aa23                                                                 
+1004aa28                                                                 ebx_1[0x298] = 1
+1004aa2f                                                                 goto label_1004aa42
+1004aa2f                                                             
+1004a9e6                                                             void** eax_96 = &var_13c
+1004a9ec                                                             int32_t var_128
+1004a9ec                                                             
+1004a9ec                                                             if (var_128 u>= 0x10)
+1004a9ec                                                                 eax_96 = var_13c
+1004a9ec                                                             
+1004a9f4                                                             char const* const var_72c_63 = "
+1004a9f4                                                             "[ERROR][Package]Failed to parse file = "
+1004a9f4                                                             " ."
+1004a9f9                                                             var_730 = 0xce
+1004aa03                                                             int32_t ecx_100 = opdbg_log(
+1004aa03                                                                 "MtkSfpParser::parse", var_730, 
+1004aa03                                                                 var_72c_63, eax_96)
+1004aa03                                                             
+1004aa0a                                                             if (eax_94 != 0)
+1004aa0c                                                                 int32_t var_728_98 = ecx_100
+1004aa0f                                                                 sub_1001cbc0(eax_94)
+1004aa0f                                                             
+1004aa14                                                             result = 0xffffffff
+1004aa14                                                         
+1004b0c4                                                         sub_100019a0(&var_13c)
+1004b0cf                                                         sub_100019a0(&var_1b4)
+1004a833                                                     else
+1004a839                                                         void*** eax_89 = &arg_4
+1004a839                                                         
+1004a842                                                         if (arg2 u>= 0x10)
+1004a842                                                             eax_89 = arg_4
+1004a842                                                         
+1004a847                                                         char const* const var_72c_58 = "
+1004a847                                                         "[ERROR][Package]Get ProjectConfigXML file "
+1004a847                                                         "failed. PackPath = %s "
+1004a84c                                                         var_730 = 0xbc
+1004a856                                                         opdbg_log("MtkSfpParser::parse", var_730, 
+1004a856                                                             var_72c_58, eax_89, eax_2)
+1004a85b                                                         result = 0xffffffff
+1004a85b                                                     
+1004b0da                                                     sub_100019a0(&var_1cc)
+1004a5e3                                                 else
+1004a5e5                                                     result = 0x4e21
+1004a5e5                                                 
+1004b0e2                                                 std::_System_error_category::default_error_condition(
+1004b0e2                                                     &var_4c)
+1004a561                                             else
+1004a567                                                 void*** eax_71 = &arg_4
+1004a567                                                 
+1004a56a                                                 if (arg2 u>= 0x10)
+1004a56a                                                     eax_71 = arg_4
+1004a56a                                                 
+1004a56f                                                 char const* const var_72c_50 = "[ERROR][Package]Get "
+1004a56f                                                 "Boot.img file failed. PackPath = %s "
+1004a574                                                 var_730 = 0xa3
+1004a57e                                                 edi_1("MtkSfpParser::parse", var_730, var_72c_50, 
+1004a57e                                                     eax_71, eax_2)
+1004a583                                                 result = 0xffffffff
+1004a583                                             
+1004b0ed                                             sub_100019a0(&var_154)
+1004a3d9                                         else
+1004a3df                                             void*** eax_60 = &arg_4
+1004a3df                                             
+1004a3e2                                             if (arg2 u>= 0x10)
+1004a3e2                                                 eax_60 = arg_4
+1004a3e2                                             
+1004a3e7                                             char const* const var_72c_43 = "[ERROR][Package]Get "
+1004a3e7                                             "build.prop file failed. PackPath = %s "
+1004a3ec                                             var_730 = 0x8e
+1004a3f6                                             edi_1("MtkSfpParser::parse", var_730, var_72c_43, 
+1004a3f6                                                 eax_60, eax_2)
+1004a3fb                                             result = 0xffffffff
+1004a3fb                                         
+1004b0f8                                         sub_100019a0(&var_124)
+1004b100                                         sub_100019a0(&var_7c)
+1004a31b                                     else
+1004a321                                         void*** eax_58 = &arg_4
+1004a321                                         
+1004a324                                         if (arg2 u>= 0x10)
+1004a324                                             eax_58 = arg_4
+1004a324                                         
+1004a329                                         char const* const var_72c_41 = "[ERROR][Package]Parse scatter file failed. PackPath = %s "
+1004a32e                                         var_730 = 0x84
+1004a338                                         edi_1("MtkSfpParser::parse", var_730, var_72c_41, eax_58, 
+1004a338                                             eax_2)
+1004a33a                                         int32_t* ecx_41 = var_18
+1004a33a                                         
+1004a342                                         if (ecx_41 != 0)
+1004a348                                             int32_t* var_728_55 = ecx_41
+1004a349                                             sub_1001cbc0(ecx_41)
+1004a241                                 else
+1004a247                                     void*** eax_53 = &arg_4
+1004a247                                     
+1004a24a                                     if (arg2 u>= 0x10)
+1004a24a                                         eax_53 = arg_4
+1004a24a                                     
+1004a24f                                     char const* const var_72c_38 =
+1004a24f                                         "[ERROR][Package]Get scatter file failed. PackPath = %s "
+1004a254                                     var_730 = 0x7a
+1004a25b                                     edi_1("MtkSfpParser::parse", var_730, var_72c_38, eax_53, eax_2)
+1004a260                                     result = 0xffffffff
+1004a260                                 
+1004b10b                                 sub_100019a0(&var_ac)
+1004b116                                 sub_100019a0(&var_24c)
+1004b121                                 sub_1004b250(&var_204)
+1004a183                             else
+1004a189                                 void*** eax_49 = &arg_4
+1004a189                                 
+1004a18c                                 if (arg2 u>= 0x10)
+1004a18c                                     eax_49 = arg_4
+1004a18c                                 
+1004a191                                 char const* const var_72c_36 =
+1004a191                                     "[ERROR][Package]Parse flash.xml failed. PackPath = %s "
+1004a196                                 var_730 = 0x6f
+1004a19d                                 int32_t ecx_27 =
+1004a19d                                     edi_1("MtkSfpParser::parse", var_730, var_72c_36, eax_49, eax_2)
+1004a19d                                 
+1004a1a4                                 if (eax_47 != 0)
+1004a1a6                                     int32_t var_728_43 = ecx_27
+1004a1a9                                     sub_1001cbc0(eax_47)
+1004a1a9                                 
+1004a1ae                                 result = 0xffffffff
+1004a113                         else
+1004a119                             void*** eax_45 = &arg_4
+1004a119                             
+1004a11c                             if (arg2 u>= 0x10)
+1004a11c                                 eax_45 = arg_4
+1004a11c                             
+1004a121                             char const* const var_72c_34 =
+1004a121                                 "[ERROR][Package]Get flash.xml failed. PackPath = %s "
+1004a126                             var_730 = 0x69
+1004a12d                             edi_1("MtkSfpParser::parse", var_730, var_72c_34, eax_45, eax_2)
+1004a132                             result = 0xffffffff
+1004a132                         
+1004b12c                         sub_100019a0(&var_1e4)
+1004a0cd                     else
+1004a0d3                         if (arg2 u>= 0x10)
+1004a0d3                             eax_44 = arg_4
+1004a0d3                         
+1004a0d8                         char const* const var_72c_33 =
+1004a0d8                             "[ERROR][Package]Parse efuseIni file failed. PackPath = %s "
+1004a0dd                         var_730 = 0x63
+1004a0e4                         edi_1("MtkSfpParser::parse", var_730, var_72c_33, eax_44, eax_2)
+1004a0e9                         result = 0xffffffff
+1004a02d                 else
+1004a033                     void*** eax_39 = &arg_4
+1004a033                     
+1004a036                     if (arg2 u>= 0x10)
+1004a036                         eax_39 = arg_4
+1004a036                     
+1004a03b                     char const* const var_72c_29 =
+1004a03b                         "[ERROR][Package]Get efuseIni failed. PackPath = %s "
+1004a040                     var_730 = 0x5d
+1004a047                     edi_1("MtkSfpParser::parse", var_730, var_72c_29, eax_39, eax_2)
+1004a04c                     result = 0xffffffff
+1004a04c                 
+1004b13a                 int32_t var_c8
+1004b13a                 
+1004b13a                 if (var_c8 u>= 0x10)
+1004b144                     sub_10001d60(var_dc.d, var_c8 + 1)
+1004b144                 
+1004b149                 int32_t var_c8_1 = 0xf
+1004b153                 int32_t var_cc_1 = 0
+1004b15d                 var_dc = 0
+1004b15d                 
+1004b16a                 if (var_80_1 u>= 0x10)
+1004b174                     sub_10001d60(var_94.d, var_80_1 + 1)
+1004b174                 
+1004b17c                 int32_t var_80_2 = 0xf
+1004b183                 int32_t var_84_2 = 0
+1004b18a                 var_94 = 0
+1004b191                 sub_1002d040(&var_3c)
+10049dc2             else
+10049dc8                 void*** eax_17 = &arg_4
+10049dc8                 
+10049dcb                 if (arg2 u>= 0x10)
+10049dcb                     eax_17 = arg_4
+10049dcb                 
+10049dd0                 char const* const var_72c_20 =
+10049dd0                     "[ERROR][Package]Get super file failed. PackPath = %s "
+10049dd5                 var_730 = 0x4a
+10049ddc                 edi_1("MtkSfpParser::parse", var_730, var_72c_20, eax_17, eax_2)
+10049de1                 result = 0xffffffff
+10049de1             
+1004b199             sub_1002d7b0(&var_44)
+1004b1a1             sub_1005f684(var_44.d)
+10049d55         else
+10049d5b             void*** ecx_8 = &arg_4
+10049d5b             
+10049d5e             if (arg2 u>= 0x10)
+10049d5e                 ecx_8 = arg_4
+10049d5e             
+10049d63             char const* const var_72c_16 =
+10049d63                 "[ERROR][Package]Parse projectConfig.xml failed. PackPath = %s "
+10049d68             var_730 = 0x41
+10049d6f             opdbg_log("MtkSfpParser::parse", var_730, var_72c_16, ecx_8, eax_2)
+10049d6f             
+10049d76             if (eax_15 != 0)
+10049d7a                 sub_100452b0(eax_15)
+10049d7f                 int32_t var_728_17 = 0x50
+10049d82                 operator new(eax_15)
+10049d82             
+10049d8a             result = 0xffffffff
+10049cb6     else
+10049cbc         void*** eax_12 = &arg_4
+10049cbc         
+10049cbf         if (arg2 u>= 0x10)
+10049cbf             eax_12 = arg_4
+10049cbf         
+10049cc4         char const* const var_72c_12 =
+10049cc4             "[ERROR][Package]Get projectConfig.xml failed. PackPath = %s "
+10049cc9         var_730 = 0x3a
+10049cd0         opdbg_log("MtkSfpParser::parse", var_730, var_72c_12, eax_12, eax_2)
+10049cd5         result = 0xffffffff
+10049cd5     
+1004b1b2     int32_t var_e0
+1004b1b2     
+1004b1b2     if (var_e0 u>= 0x10)
+1004b1bc         sub_10001d60(var_f4.d, var_e0 + 1)
+1004b1bc     
+1004b1c7     int32_t var_e0_1 = 0xf
+1004b1d1     int32_t var_e4_1 = 0
+1004b1db     var_f4 = 0
+1004b1e5     int32_t var_f8
+1004b1e5     
+1004b1e5     if (var_f8 u>= 0x10)
+1004b1ef         sub_10001d60(var_10c.d, var_f8 + 1)
+1004b1ef     
+1004b1f4     int32_t var_f8_1 = 0xf
+1004b1fe     int32_t var_fc_1 = 0
+1004b208     var_10c = 0
+10049b33 else
+10049b35     char const* const var_728_2 = "[ERROR] mtkPackData is nullptr."
+10049b3a     int32_t var_72c_2 = 0x2b
+10049b3c     var_730 = "MtkSfpParser::parse"
+10049b41     opdbg_log(var_730, var_72c_2, var_728_2, eax_2)
+10049b4a     result = 0xffffffff
+10049b4a 
+1004b215 if (arg2 u>= 0x10)
+1004b21c     sub_10001d60(arg_4, arg2 + 1)
+1004b21c 
+1004b226 fsbase->NtTib.ExceptionList = ExceptionList
+1004b236 CookieCheckFunction(result)
+1004b23e return result

@@ -1,0 +1,11 @@
+0042e773 int32_t distanceToMoveHigh = arg5
+0042e77f uint32_t numberOfBytesRead = 0
+0042e786 int32_t var_18 = arg4
+0042e789 uint32_t eax_1 = SetFilePointer(arg3, arg4, &distanceToMoveHigh, FILE_BEGIN)
+0042e789 
+0042e7af if (((eax_1 == 0xffffffff && GetLastError() != NO_ERROR) || eax_1 != 0xffffffff
+0042e7af         || distanceToMoveHigh != 0) && ReadFile(arg3, arg2, arg6, &numberOfBytesRead, nullptr) != 0
+0042e7af         && numberOfBytesRead == arg6)
+0042e7d6     return 0
+0042e7d6 
+0042e7df return GetLastError()

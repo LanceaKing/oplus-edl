@@ -1,0 +1,2018 @@
+10038a23 int32_t var_8 = 0xffffffff
+10038a25 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10064102
+10038a30 TEB* fsbase
+10038a30 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+10038a3c int32_t __saved_ebp
+10038a3c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+10038a48 fsbase->NtTib.ExceptionList = &ExceptionList
+10038a56 int32_t ebx = 0
+10038a58 int32_t var_3e8 = 0
+10038a5e int32_t var_288 = 0xf
+10038a68 int32_t var_28c = 0
+10038a6e char var_29c = 0
+10038a74 int32_t var_8_1 = 0
+10038a7a int64_t var_2e8 = 0
+10038a85 int32_t* var_5d0 = arg1
+10038a92 sub_1000b700(&var_2e8, arg1[1] + 0x168)
+10038a97 var_8_1.b = 1
+10038aa8 int32_t var_4cc = 0xf
+10038ab2 int32_t var_4d0 = 0
+10038ab8 char var_4e0 = 0
+10038abe sub_10001ad0(&var_4e0, "SupportDDRType", 0xe)
+10038ac9 var_8_1.b = 2
+10038adb void** var_3e0
+10038adb sub_1000bba0(&var_2e8, &var_3e0, &var_4e0)
+10038adb 
+10038af1 if (&var_29c != &var_3e0[0xa])
+10038af7     sub_10001bd0(&var_29c, &var_3e0[0xa], 0, 0xffffffff)
+10038af7 
+10038afc var_8_1.b = 1
+10038afc 
+10038b09 if (var_4cc u>= 0x10)
+10038b13     sub_10001d60(var_4e0.d, var_4cc + 1)
+10038b13 
+10038b1f int32_t var_4cc_1 = 0xf
+10038b29 int32_t var_4d0_1 = 0
+10038b33 var_4e0 = 0
+10038b3a uint8_t var_284
+10038b3a char* ecx_3
+10038b3a 
+10038b3a if (var_28c == 0)
+10038b62     ecx_3.b = 0
+10038b3a else
+10038b3c     int32_t var_5d0_5 = 1
+10038b3e     uint8_t* var_5d4_5 = nullptr
+10038b46     var_284 = 0x2c
+10038b54     uint8_t* eax_10
+10038b54     eax_10, ecx_3 = sub_10002930(&var_29c, &var_284, var_5d4_5, var_5d0_5)
+10038b54     
+10038b5c     if (eax_10 == 0xffffffff)
+10038b62         ecx_3.b = 0
+10038b5c     else
+10038b5e         ecx_3.b = 1
+10038b5e 
+10038b64 char const* const esi = "true"
+10038b69 char var_3e2 = ecx_3.b
+10038b76 char const* const eax_11 = "true"
+10038b76 
+10038b78 if (ecx_3.b == 0)
+10038b78     eax_11 = "false"
+10038b78 
+10038b88 opdbg_log("QCSolution::makeSFP", 0x7e, "[INFO][QCSolution] makeSFP, multiDDR: %s", eax_11, eax_2)
+10038b91 int32_t var_46c = 0xf
+10038ba1 int32_t var_470 = 0
+10038bab char var_480 = 0
+10038bb9 sub_10001ad0(&var_480, "SupportFwConfigV2", 0x11)
+10038bc4 var_8_1.b = 3
+10038bd6 sub_1000bba0(&var_2e8, &var_3e0, &var_480)
+10038bd6 
+10038bec if (&var_29c != &var_3e0[0xa])
+10038bf3     sub_10001bd0(&var_29c, &var_3e0[0xa], 0, 0xffffffff)
+10038bf3 
+10038bf8 var_8_1.b = 1
+10038bfc int32_t eax_14 = var_46c
+10038bfc 
+10038c05 if (eax_14 u>= 0x10)
+10038c0f     eax_14 = sub_10001d60(var_480.d, eax_14 + 1)
+10038c0f 
+10038c1a int32_t var_46c_1 = 0xf
+10038c24 int32_t var_470_1 = 0
+10038c2e var_480 = 0
+10038c37 char var_3d2
+10038c37 
+10038c37 if (var_28c == 0)
+10038c8e     var_3d2 = 0
+10038c37 else
+10038c3f     char* ecx_8 = &var_29c
+10038c3f     
+10038c4a     if (var_288 u>= 0x10)
+10038c4a         ecx_8 = var_29c.d
+10038c4a     
+10038c56     int32_t eax_16 = sub_10007cc0(eax_14, var_28c, ecx_8, "true", 4)
+10038c60     int32_t eax_17
+10038c60     
+10038c60     if (eax_16 != 0)
+10038c65         int32_t* ecx_9 = &var_29c
+10038c65         
+10038c6d         if (var_288 u>= 0x10)
+10038c6d             ecx_9 = var_29c.d
+10038c6d         
+10038c79         eax_17 = sub_10007cc0(eax_16, var_28c, ecx_9, &data_1006dd28, 1)
+10038c79     
+10038c83     var_3d2 = eax_16 != 0 && eax_17 != 0 ? 0 : 1
+10038c83 
+10038c95 uint32_t var_5d0_13 = 0x11
+10038c97 char const* const var_5d4_13 = "UserCheckFwUpdate"
+10038ca2 int32_t var_484 = 0xf
+10038cac int32_t var_488 = 0
+10038cb6 char var_498 = 0
+10038cbd sub_10001ad0(&var_498, var_5d4_13, var_5d0_13)
+10038cc8 var_8_1.b = 4
+10038cda sub_1000bba0(&var_2e8, &var_3e0, &var_498)
+10038cda 
+10038cf0 if (&var_29c != &var_3e0[0xa])
+10038cf7     sub_10001bd0(&var_29c, &var_3e0[0xa], 0, 0xffffffff)
+10038cf7 
+10038cfc var_8_1.b = 1
+10038d00 int32_t eax_20 = var_484
+10038d09 char* ecx_12
+10038d09 
+10038d09 if (eax_20 u>= 0x10)
+10038d13     eax_20, ecx_12 = sub_10001d60(var_498.d, eax_20 + 1)
+10038d13 
+10038d1f int32_t var_484_1 = 0xf
+10038d29 int32_t var_488_1 = 0
+10038d33 var_498 = 0
+10038d33 
+10038d44 if (var_3d2 == 0 || var_28c == 0)
+10038d96     ecx_12.b = 0
+10038d44 else
+10038d4c     char* ecx_13 = &var_29c
+10038d4c     
+10038d57     if (var_288 u>= 0x10)
+10038d57         ecx_13 = var_29c.d
+10038d57     
+10038d63     int32_t eax_22
+10038d63     eax_22, ecx_12 = sub_10007cc0(eax_20, var_28c, ecx_13, "true", 4)
+10038d6d     int32_t eax_23
+10038d6d     
+10038d6d     if (eax_22 != 0)
+10038d72         int32_t* ecx_14 = &var_29c
+10038d72         
+10038d7a         if (var_288 u>= 0x10)
+10038d7a             ecx_14 = var_29c.d
+10038d7a         
+10038d86         eax_23, ecx_12 = sub_10007cc0(eax_22, var_28c, ecx_14, &data_1006dd28, 1)
+10038d86     
+10038d90     if (eax_22 != 0 && eax_23 != 0)
+10038d96         ecx_12.b = 0
+10038d90     else
+10038d92         ecx_12.b = 1
+10038d92 
+10038d9a char var_3d1 = ecx_12.b
+10038da5 char const* const eax_24 = "true"
+10038da5 
+10038da7 if (ecx_12.b == 0)
+10038da7     eax_24 = "false"
+10038da7 
+10038dba opdbg_log("QCSolution::makeSFP", 0x84, "[INFO][QCSolution] makeSFP, smart_fw_updateV2: %s", eax_24)
+10038dc3 int32_t var_49c = 0xf
+10038dd3 int32_t var_4a0 = 0
+10038ddd char var_4b0 = 0
+10038deb sub_10001ad0(&var_4b0, "IsOcdtVer", 9)
+10038df6 var_8_1.b = 5
+10038e08 sub_1000bba0(&var_2e8, &var_3e0, &var_4b0)
+10038e08 
+10038e1e if (&var_29c != &var_3e0[0xa])
+10038e25     sub_10001bd0(&var_29c, &var_3e0[0xa], 0, 0xffffffff)
+10038e25 
+10038e2a var_8_1.b = 1
+10038e2e int32_t eax_27 = var_49c
+10038e37 char* ecx_17
+10038e37 
+10038e37 if (eax_27 u>= 0x10)
+10038e41     eax_27, ecx_17 = sub_10001d60(var_4b0.d, eax_27 + 1)
+10038e41 
+10038e4c int32_t var_49c_1 = 0xf
+10038e56 int32_t var_4a0_1 = 0
+10038e60 var_4b0 = 0
+10038e60 
+10038e69 if (var_28c == 0)
+10038ebb     ecx_17.b = 0
+10038e69 else
+10038e71     char* ecx_18 = &var_29c
+10038e71     
+10038e7c     if (var_288 u>= 0x10)
+10038e7c         ecx_18 = var_29c.d
+10038e7c     
+10038e88     int32_t eax_29
+10038e88     eax_29, ecx_17 = sub_10007cc0(eax_27, var_28c, ecx_18, "true", 4)
+10038e92     int32_t eax_30
+10038e92     
+10038e92     if (eax_29 != 0)
+10038e97         int32_t* ecx_19 = &var_29c
+10038e97         
+10038e9f         if (var_288 u>= 0x10)
+10038e9f             ecx_19 = var_29c.d
+10038e9f         
+10038eab         eax_30, ecx_17 = sub_10007cc0(eax_29, var_28c, ecx_19, &data_1006dd28, 1)
+10038eab     
+10038eb5     if (eax_29 != 0 && eax_30 != 0)
+10038ebb         ecx_17.b = 0
+10038eb5     else
+10038eb7         ecx_17.b = 1
+10038eb7 
+10038ebf char var_3d2_1 = ecx_17.b
+10038eca char const* const eax_31 = "true"
+10038eca 
+10038ecc if (ecx_17.b == 0)
+10038ecc     eax_31 = "false"
+10038ecc 
+10038edf opdbg_log("QCSolution::makeSFP", 0x88, "[INFO][QCSolution] makeSFP, ocdtVer: %s", eax_31)
+10038eee int64_t var_2e0 = 0
+10038f07 sub_1000b700(&var_2e0, *arg1 + 0x170)
+10038f0c var_8_1.b = 6
+10038f16 uint32_t var_5d0_27 = 0xa
+10038f18 char const* const var_5d4_28 = "UpdateOCDT"
+10038f1d int32_t var_4b4 = 0xf
+10038f27 int32_t var_4b8 = 0
+10038f31 char var_4c8 = 0
+10038f38 sub_10001ad0(&var_4c8, var_5d4_28, var_5d0_27)
+10038f43 var_8_1.b = 7
+10038f55 sub_1000bba0(&var_2e0, &var_3e0, &var_4c8)
+10038f55 
+10038f6b if (&var_29c != &var_3e0[0xa])
+10038f72     sub_10001bd0(&var_29c, &var_3e0[0xa], 0, 0xffffffff)
+10038f72 
+10038f77 var_8_1.b = 6
+10038f7b int32_t eax_36 = var_4b4
+10038f84 char* ecx_24
+10038f84 
+10038f84 if (eax_36 u>= 0x10)
+10038f8e     eax_36, ecx_24 = sub_10001d60(var_4c8.d, eax_36 + 1)
+10038f8e 
+10038f99 int32_t var_4b4_1 = 0xf
+10038fa3 int32_t var_4b8_1 = 0
+10038fad var_4c8 = 0
+10038fad 
+10038fb6 if (var_28c == 0)
+10039008     ecx_24.b = 0
+10038fb6 else
+10038fbe     char* ecx_25 = &var_29c
+10038fbe     
+10038fc9     if (var_288 u>= 0x10)
+10038fc9         ecx_25 = var_29c.d
+10038fc9     
+10038fd5     int32_t eax_38
+10038fd5     eax_38, ecx_24 = sub_10007cc0(eax_36, var_28c, ecx_25, "true", 4)
+10038fdf     int32_t eax_39
+10038fdf     
+10038fdf     if (eax_38 != 0)
+10038fe4         int32_t* ecx_26 = &var_29c
+10038fe4         
+10038fec         if (var_288 u>= 0x10)
+10038fec             ecx_26 = var_29c.d
+10038fec         
+10038ff8         eax_39, ecx_24 = sub_10007cc0(eax_38, var_28c, ecx_26, &data_1006dd28, 1)
+10038ff8     
+10039002     if (eax_38 != 0 && eax_39 != 0)
+10039008         ecx_24.b = 0
+10039002     else
+10039004         ecx_24.b = 1
+10039004 
+1003900c char var_3e1 = ecx_24.b
+10039017 char const* const eax_40 = "true"
+10039017 
+10039019 if (ecx_24.b == 0)
+10039019     eax_40 = "false"
+10039019 
+1003902c opdbg_log("QCSolution::makeSFP", 0x8d, "[INFO][QCSolution] makeSFP, forceUpdateCdt: %s", eax_40)
+10039035 int32_t var_454 = 0xf
+10039045 int32_t var_458 = 0
+1003904f char var_468 = 0
+1003905d sub_10001ad0(&var_468, "reboot", 6)
+10039068 var_8_1.b = 8
+1003907a sub_1000bba0(&var_2e0, &var_3e0, &var_468)
+1003907a 
+10039090 if (&var_29c != &var_3e0[0xa])
+10039097     sub_10001bd0(&var_29c, &var_3e0[0xa], 0, 0xffffffff)
+10039097 
+1003909c var_8_1.b = 6
+100390a0 int32_t eax_43 = var_454
+100390a9 char* ecx_29
+100390a9 
+100390a9 if (eax_43 u>= 0x10)
+100390b3     eax_43, ecx_29 = sub_10001d60(var_468.d, eax_43 + 1)
+100390b3 
+100390be int32_t var_454_1 = 0xf
+100390c8 int32_t var_458_1 = 0
+100390d2 var_468 = 0
+100390d2 
+100390db if (var_28c == 0)
+1003912d     ecx_29.b = 0
+100390db else
+100390e3     char* ecx_30 = &var_29c
+100390e3     
+100390ee     if (var_288 u>= 0x10)
+100390ee         ecx_30 = var_29c.d
+100390ee     
+100390fa     int32_t eax_45
+100390fa     eax_45, ecx_29 = sub_10007cc0(eax_43, var_28c, ecx_30, "true", 4)
+10039104     int32_t eax_46
+10039104     
+10039104     if (eax_45 != 0)
+10039109         int32_t* ecx_31 = &var_29c
+10039109         
+10039111         if (var_288 u>= 0x10)
+10039111             ecx_31 = var_29c.d
+10039111         
+1003911d         eax_46, ecx_29 = sub_10007cc0(eax_45, var_28c, ecx_31, &data_1006dd28, 1)
+1003911d     
+10039127     if (eax_45 != 0 && eax_46 != 0)
+1003912d         ecx_29.b = 0
+10039127     else
+10039129         ecx_29.b = 1
+10039129 
+10039131 var_284 = ecx_29.b
+1003913c char const* const eax_47 = "true"
+1003913c 
+1003913e if (ecx_29.b == 0)
+1003913e     eax_47 = "false"
+1003913e 
+10039151 opdbg_log("QCSolution::makeSFP", 0x91, "[INFO][QCSolution] makeSFP, reboot: %s", eax_47)
+1003915a int32_t var_4e4 = 0xf
+1003916a int32_t var_4e8 = 0
+10039174 char var_4f8 = 0
+10039182 sub_10001ad0(&var_4f8, "userdata", 8)
+1003918d var_8_1.b = 9
+1003919f sub_1000bba0(&var_2e0, &var_3e0, &var_4f8)
+1003919f 
+100391b5 if (&var_29c != &var_3e0[0xa])
+100391bc     sub_10001bd0(&var_29c, &var_3e0[0xa], 0, 0xffffffff)
+100391bc 
+100391c1 var_8_1.b = 6
+100391c5 int32_t eax_50 = var_4e4
+100391ce char* ecx_34
+100391ce 
+100391ce if (eax_50 u>= 0x10)
+100391d8     eax_50, ecx_34 = sub_10001d60(var_4f8.d, eax_50 + 1)
+100391d8 
+100391e3 int32_t var_4e4_1 = 0xf
+100391ed int32_t var_4e8_1 = 0
+100391f7 var_4f8 = 0
+100391f7 
+10039200 if (var_28c == 0)
+10039252     ecx_34.b = 0
+10039200 else
+10039208     char* ecx_35 = &var_29c
+10039208     
+10039213     if (var_288 u>= 0x10)
+10039213         ecx_35 = var_29c.d
+10039213     
+1003921f     int32_t eax_52
+1003921f     eax_52, ecx_34 = sub_10007cc0(eax_50, var_28c, ecx_35, "true", 4)
+10039229     int32_t eax_53
+10039229     
+10039229     if (eax_52 != 0)
+1003922e         int32_t* ecx_36 = &var_29c
+1003922e         
+10039236         if (var_288 u>= 0x10)
+10039236             ecx_36 = var_29c.d
+10039236         
+10039242         eax_53, ecx_34 = sub_10007cc0(eax_52, var_28c, ecx_36, &data_1006dd28, 1)
+10039242     
+1003924c     if (eax_52 != 0 && eax_53 != 0)
+10039252         ecx_34.b = 0
+1003924c     else
+1003924e         ecx_34.b = 1
+1003924e 
+10039256 char var_3d3 = ecx_34.b
+10039261 char const* const eax_54 = "true"
+10039261 
+10039263 if (ecx_34.b == 0)
+10039263     eax_54 = "false"
+10039263 
+10039276 opdbg_log("QCSolution::makeSFP", 0x95, "[INFO][QCSolution] makeSFP, userdata: %s", eax_54)
+1003927f int32_t var_40c = 0xf
+1003928f int32_t var_410 = 0
+10039299 char var_420 = 0
+100392a7 sub_10001ad0(&var_420, "enableUARTLog", 0xd)
+100392b2 var_8_1.b = 0xa
+100392c4 sub_1000bba0(&var_2e0, &var_3e0, &var_420)
+100392c4 
+100392da if (&var_29c != &var_3e0[0xa])
+100392e1     sub_10001bd0(&var_29c, &var_3e0[0xa], 0, 0xffffffff)
+100392e1 
+100392e6 var_8_1.b = 6
+100392ea int32_t eax_57 = var_40c
+100392f3 char* ecx_39
+100392f3 
+100392f3 if (eax_57 u>= 0x10)
+100392fd     eax_57, ecx_39 = sub_10001d60(var_420.d, eax_57 + 1)
+100392fd 
+10039308 int32_t var_40c_1 = 0xf
+10039312 int32_t var_410_1 = 0
+1003931c var_420 = 0
+1003931c 
+10039325 if (var_28c == 0)
+10039377     ecx_39.b = 0
+10039325 else
+1003932d     char* ecx_40 = &var_29c
+1003932d     
+10039338     if (var_288 u>= 0x10)
+10039338         ecx_40 = var_29c.d
+10039338     
+10039344     int32_t eax_59
+10039344     eax_59, ecx_39 = sub_10007cc0(eax_57, var_28c, ecx_40, "true", 4)
+1003934e     int32_t eax_60
+1003934e     
+1003934e     if (eax_59 != 0)
+10039353         int32_t* ecx_41 = &var_29c
+10039353         
+1003935b         if (var_288 u>= 0x10)
+1003935b             ecx_41 = var_29c.d
+1003935b         
+10039367         eax_60, ecx_39 = sub_10007cc0(eax_59, var_28c, ecx_41, &data_1006dd28, 1)
+10039367     
+10039371     if (eax_59 != 0 && eax_60 != 0)
+10039377         ecx_39.b = 0
+10039371     else
+10039373         ecx_39.b = 1
+10039373 
+1003937b char var_3e9 = ecx_39.b
+10039386 char const* const eax_61 = "true"
+10039386 
+10039388 if (ecx_39.b == 0)
+10039388     eax_61 = "false"
+10039388 
+1003939b opdbg_log("QCSolution::makeSFP", 0x99, "[INFO][QCSolution] makeSFP, enableUARTLog: %s", eax_61)
+100393b0 char const* const lpFileName = ".\reboot_timeout.ini"
+100393b5 uint32_t nSize = 0x104
+100393ba uint8_t var_280
+100393ba uint8_t* lpReturnedString = &var_280
+100393bb PSTR lpDefault = &data_100762f4
+100393c0 PSTR lpKeyName = "timeout_in_sec_flashing"
+100393c5 PSTR lpAppName = "transfercfg"
+100393ca GetPrivateProfileStringA(lpAppName, lpKeyName, lpDefault, lpReturnedString, nSize, lpFileName)
+100393cc bool cond:24 = var_280 != 0
+100393d3 int32_t var_3ac = 0xf
+100393dd int32_t var_3b0 = 0
+100393e7 char var_3c0 = 0
+100393ee void var_27f
+100393ee uint32_t ecx_42
+100393ee 
+100393ee if (cond:24)
+100393f4     uint8_t* ecx_43 = &var_280
+10039405     uint8_t i
+10039405     
+10039405     do
+10039400         i = *ecx_43
+10039402         ecx_43 = &ecx_43[1]
+10039405     while (i != 0)
+10039407     ecx_42 = ecx_43 - &var_27f
+100393ee else
+100393f0     ecx_42 = 0
+100393f0 
+10039417 sub_10001ad0(&var_3c0, &var_280, ecx_42)
+1003941c char const* const lpFileName_1 = ".\reboot_timeout.ini"
+10039421 uint32_t nSize_1 = 0x104
+1003942c var_8_1.b = 0xb
+10039430 uint8_t* lpReturnedString_1 = &var_280
+10039431 PSTR lpDefault_1 = &data_1007631c
+10039436 PSTR lpKeyName_1 = "timeout_in_sec_done"
+1003943b lpAppName = "transfercfg"
+10039440 GetPrivateProfileStringA(lpAppName, lpKeyName_1, lpDefault_1, lpReturnedString_1, nSize_1, 
+10039440     lpFileName_1)
+10039442 bool cond:22 = var_280 != 0
+10039449 int32_t var_394 = 0xf
+10039453 int32_t var_398 = 0
+1003945d char var_3a8 = 0
+10039464 uint32_t ecx_45
+10039464 
+10039464 if (cond:22)
+1003946a     uint8_t* ecx_46 = &var_280
+10039478     uint8_t i_1
+10039478     
+10039478     do
+10039473         i_1 = *ecx_46
+10039475         ecx_46 = &ecx_46[1]
+10039478     while (i_1 != 0)
+1003947a     ecx_45 = ecx_46 - &var_27f
+10039464 else
+10039466     ecx_45 = 0
+10039466 
+1003948a sub_10001ad0(&var_3a8, &var_280, ecx_45)
+1003948f var_8_1.b = 0xc
+10039499 uint32_t var_5d0_57 = 7
+1003949b char const* const var_5d4_58 = "storage"
+100394a0 int32_t var_424 = 0xf
+100394aa int32_t var_428 = 0
+100394b4 char var_438 = 0
+100394bb sub_10001ad0(&var_438, var_5d4_58, var_5d0_57)
+100394cd var_8_1.b = 0xd
+100394e0 sub_1000bba0(*arg1 + 0x170, &var_3e0, &var_438)
+100394f1 uint32_t var_5d0_59 = 0xffffffff
+100394f6 int32_t var_34c = 0xf
+10039500 int32_t var_5d4_60 = 0
+10039503 int32_t var_350 = 0
+1003950d char var_360 = 0
+10039514 sub_10001bd0(&var_360, &var_3e0[0xa], var_5d4_60, var_5d0_59)
+10039519 var_8_1.b = 0xf
+10039519 
+10039526 if (var_424 u>= 0x10)
+10039530     sub_10001d60(var_438.d, var_424 + 1)
+10039530 
+1003953b int32_t var_424_1 = 0xf
+10039545 int32_t var_428_1 = 0
+1003954f var_438 = 0
+1003955a int32_t** eax_66 = sub_10043a80(arg1[1], &var_360)
+10039569 uint32_t result
+10039569 
+10039569 if (eax_66 != 0)
+10039573     uint32_t var_5d0_62 = 8
+10039575     char const* const var_5d4_62 = "reserve1"
+10039580     int32_t var_43c_1 = 0xf
+1003958a     int32_t var_440_1 = 0
+10039594     char var_450 = 0
+100395a6     char* var_5d0_63 = &var_450
+100395aa     int32_t eax_67 = sub_10044a80(eax_66, sub_10001ad0(&var_450, var_5d4_62, var_5d0_62))
+100395aa     
+100395ba     if (var_43c_1 u>= 0x10)
+100395c4         sub_10001d60(var_450.d, var_43c_1 + 1)
+100395c4     
+100395c9     int32_t eax_68 = 0
+100395cb     int32_t var_43c_2 = 0xf
+100395d7     int32_t var_440_2 = 0
+100395e6     var_450 = 0
+100395e6     
+100395ed     if (eax_67 != 0)
+100395ed         eax_68 = 1
+100395ed     
+100395fd     if (eax_68 == 0)
+100395fd         esi = "false"
+100395fd     
+10039610     opdbg_log("QCSolution::makeSFP", 0xab, "[INFO][QCSolution] makeSFP, hasReserve1: %s", esi)
+1003961b     PSTR* var_3c4_1 = &lpAppName
+10039621     int32_t var_5d0_66 = 0
+10039628     int32_t var_5d0_67 = 0xf
+1003962f     int32_t var_5d4_66 = 0
+10039649     lpAppName.b = 0
+1003964c     sub_10001ad0(&lpAppName, &data_1006a03d, 0)
+10039654     var_8_1.b = 0x10
+1003965a     char* var_5fc
+1003965a     int32_t* var_3c8_1 = &var_5fc
+10039660     int32_t var_5e8_2 = 0
+10039667     int32_t var_5e8_3 = 0xf
+1003966e     int32_t var_5ec_2 = 0
+10039688     var_5fc.b = 0
+1003968b     sub_10001ad0(&var_5fc, &data_1006a03d, 0)
+10039693     var_8_1.b = 0x11
+10039699     char* var_614
+10039699     int32_t* var_3cc_1 = &var_614
+1003969f     int32_t var_600_2 = 0
+100396a6     int32_t var_600_3 = 0xf
+100396ad     int32_t var_604_2 = 0
+100396c7     var_614.b = 0
+100396ca     sub_10001ad0(&var_614, &data_1006dd28, 1)
+100396d2     var_8_1.b = 0x12
+100396d8     int32_t var_618_2 = 0
+100396df     int32_t var_618_3 = 0xf
+100396e6     int32_t var_61c_2 = 0
+10039700     char* var_62c
+10039700     var_62c.b = 0
+10039703     sub_10001ad0(&var_62c, "allow_report", 0xc)
+1003970e     var_8_1.b = 0xf
+10039717     sub_10003290(&arg1[4])
+10039721     PSTR* var_3c4_2 = &lpAppName
+10039727     int32_t var_5d0_68 = 0
+1003972e     int32_t var_5d0_69 = 0xf
+10039735     int32_t var_5d4_67 = 0
+1003974f     lpAppName.b = 0
+10039752     sub_10001ad0(&lpAppName, &data_1006a03d, 0)
+1003975a     var_8_1.b = 0x13
+10039760     char** var_3c8_2 = &var_5fc
+10039766     int32_t var_5e8_5 = 0
+1003976d     int32_t var_5e8_6 = 0xf
+10039774     int32_t var_5ec_4 = 0
+1003978e     var_5fc.b = 0
+10039791     sub_10001ad0(&var_5fc, &data_1006a03d, 0)
+10039799     var_8_1.b = 0x14
+1003979f     char** var_3cc_2 = &var_614
+100397a5     int32_t var_600_5 = 0
+100397ac     int32_t var_600_6 = 0xf
+100397b3     int32_t var_604_4 = 0
+100397cd     var_614.b = 0
+100397d0     sub_10001ad0(&var_614, &data_1006a03d, 0)
+100397d8     var_8_1.b = 0x15
+100397de     int32_t var_618_5 = 0
+100397e5     int32_t var_618_6 = 0xf
+100397ec     int32_t var_61c_4 = 0
+10039806     var_62c.b = 0
+10039809     sub_10001ad0(&var_62c, "get_platform", 0xc)
+10039810     var_8_1.b = 0xf
+10039814     sub_10003290(&arg1[4])
+1003981e     PSTR* var_3c4_3 = &lpAppName
+10039829     sub_10001a60(&lpAppName, &data_1006a03d)
+10039829     
+10039835     if (var_3e2 == 0)
+10039ad7         var_8_1.b = 0x2b
+10039add         char** var_3c8_10 = &var_5fc
+10039ae8         sub_10001a60(&var_5fc, "1")
+10039af0         var_8_1.b = 0x2c
+10039af6         char** var_3cc_10 = &var_614
+10039b01         sub_10001a60(&var_614, "ddr")
+10039b09         var_8_1.b = 0x2d
+10039b14         sub_10001a60(&var_62c, "download_programmer")
+10039b1b         var_8_1.b = 0xf
+10039b1f         sub_10003290(&arg1[4])
+10039b29         PSTR* var_3c4_10 = &lpAppName
+10039b34         sub_10001a60(&lpAppName, &data_1006a03d)
+10039b3c         var_8_1.b = 0x2e
+10039b42         char** var_3c8_11 = &var_5fc
+10039b4d         sub_10001a60(&var_5fc, &data_1006a03d)
+10039b55         var_8_1.b = 0x2f
+10039b5b         char** var_3cc_11 = &var_614
+10039b66         sub_10001a60(&var_614, &data_1006a03d)
+10039b6e         var_8_1.b = 0x30
+10039b79         sub_10001a60(&var_62c, "run_programmer")
+10039b80         var_8_1.b = 0xf
+10039b84         sub_10003290(&arg1[4])
+10039b8e         PSTR* var_3c4_11 = &lpAppName
+10039b99         sub_10001a60(&lpAppName, &data_1006a03d)
+10039ba1         var_8_1.b = 0x31
+10039ba7         char** var_3c8_12 = &var_5fc
+10039bb2         sub_10001a60(&var_5fc, "1")
+10039bba         var_8_1.b = 0x32
+10039bc0         char** var_3cc_12 = &var_614
+10039bcb         sub_10001a60(&var_614, "{platform}")
+10039bd0         var_8_1.b = 0x33
+10039835     else
+1003983e         var_8_1.b = 0x16
+10039844         char** var_3c8_3 = &var_5fc
+1003984f         sub_10001a60(&var_5fc, &data_1006a03d)
+10039857         var_8_1.b = 0x17
+1003985d         char** var_3cc_3 = &var_614
+10039868         sub_10001a60(&var_614, "lite")
+10039870         var_8_1.b = 0x18
+1003987b         sub_10001a60(&var_62c, "download_programmer")
+10039882         var_8_1.b = 0xf
+10039886         sub_10003290(&arg1[4])
+10039890         PSTR* var_3c4_4 = &lpAppName
+1003989b         sub_10001a60(&lpAppName, &data_1006a03d)
+100398a3         var_8_1.b = 0x19
+100398a9         char** var_3c8_4 = &var_5fc
+100398b4         sub_10001a60(&var_5fc, &data_1006a03d)
+100398bc         var_8_1.b = 0x1a
+100398c2         char** var_3cc_4 = &var_614
+100398cd         sub_10001a60(&var_614, &data_1006a03d)
+100398d5         var_8_1.b = 0x1b
+100398e0         sub_10001a60(&var_62c, "run_programmer")
+100398e7         var_8_1.b = 0xf
+100398eb         sub_10003290(&arg1[4])
+100398f5         PSTR* var_3c4_5 = &lpAppName
+10039900         sub_10001a60(&lpAppName, &data_1006a03d)
+10039908         var_8_1.b = 0x1c
+1003990e         char** var_3c8_5 = &var_5fc
+10039919         sub_10001a60(&var_5fc, &data_1006a03d)
+10039921         var_8_1.b = 0x1d
+10039927         char** var_3cc_5 = &var_614
+10039932         sub_10001a60(&var_614, &data_1006a03d)
+1003993a         var_8_1.b = 0x1e
+10039945         sub_10001a60(&var_62c, "check_ddr_type")
+1003994c         var_8_1.b = 0xf
+10039950         sub_10003290(&arg1[4])
+1003995a         PSTR* var_3c4_6 = &lpAppName
+10039965         sub_10001a60(&lpAppName, &data_1006a03d)
+1003996d         var_8_1.b = 0x1f
+10039973         char** var_3c8_6 = &var_5fc
+1003997e         sub_10001a60(&var_5fc, &data_1006a03d)
+10039986         var_8_1.b = 0x20
+1003998c         char** var_3cc_6 = &var_614
+10039997         sub_10001a60(&var_614, "reset_to_edl")
+1003999f         var_8_1.b = 0x21
+100399aa         sub_10001a60(&var_62c, "reboot")
+100399b1         var_8_1.b = 0xf
+100399b5         sub_10003290(&arg1[4])
+100399bf         PSTR* var_3c4_7 = &lpAppName
+100399ca         sub_10001a60(&lpAppName, &data_1006a03d)
+100399d2         var_8_1.b = 0x22
+100399d8         char** var_3c8_7 = &var_5fc
+100399e3         sub_10001a60(&var_5fc, "1")
+100399eb         var_8_1.b = 0x23
+100399f1         char** var_3cc_7 = &var_614
+100399fc         sub_10001a60(&var_614, "{memory}")
+10039a04         var_8_1.b = 0x24
+10039a0f         sub_10001a60(&var_62c, "download_programmer")
+10039a16         var_8_1.b = 0xf
+10039a1a         sub_10003290(&arg1[4])
+10039a24         PSTR* var_3c4_8 = &lpAppName
+10039a2f         sub_10001a60(&lpAppName, &data_1006a03d)
+10039a37         var_8_1.b = 0x25
+10039a3d         char** var_3c8_8 = &var_5fc
+10039a48         sub_10001a60(&var_5fc, &data_1006a03d)
+10039a50         var_8_1.b = 0x26
+10039a56         char** var_3cc_8 = &var_614
+10039a61         sub_10001a60(&var_614, &data_1006a03d)
+10039a69         var_8_1.b = 0x27
+10039a74         sub_10001a60(&var_62c, "run_programmer")
+10039a79         var_8_1.b = 0xf
+10039a7f         sub_10003290(&arg1[4])
+10039a89         PSTR* var_3c4_9 = &lpAppName
+10039a94         sub_10001a60(&lpAppName, &data_1006a03d)
+10039a9c         var_8_1.b = 0x28
+10039aa2         char** var_3c8_9 = &var_5fc
+10039aad         sub_10001a60(&var_5fc, "1")
+10039ab5         var_8_1.b = 0x29
+10039abb         char** var_3cc_9 = &var_614
+10039ac6         sub_10001a60(&var_614, "{platform}")
+10039acb         var_8_1.b = 0x2a
+10039acb     
+10039bde     sub_10001a60(&var_62c, "download_digest")
+10039be5     var_8_1.b = 0xf
+10039be9     sub_10003290(&arg1[4])
+10039bf3     PSTR* var_3c4_12 = &lpAppName
+10039bf9     int32_t var_5d0_70 = 0
+10039c00     int32_t var_5d0_71 = 0xf
+10039c07     int32_t var_5d4_68 = 0
+10039c21     lpAppName.b = 0
+10039c24     sub_10001ad0(&lpAppName, &data_1006a03d, 0)
+10039c2c     var_8_1.b = 0x34
+10039c32     char** var_3c8_13 = &var_5fc
+10039c38     int32_t var_5e8_17 = 0
+10039c3f     int32_t var_5e8_18 = 0xf
+10039c46     int32_t var_5ec_6 = 0
+10039c60     var_5fc.b = 0
+10039c63     sub_10001ad0(&var_5fc, &data_1006d0e0, 1)
+10039c6b     var_8_1.b = 0x35
+10039c71     char** var_3cc_13 = &var_614
+10039c77     int32_t var_600_18 = 0
+10039c7e     int32_t var_600_19 = 0xf
+10039c85     int32_t var_604_6 = 0
+10039c9a     var_614.b = 0
+10039ca6     sub_10001bd0(&var_614, &var_3c0, 0, 0xffffffff)
+10039cae     var_8_1.b = 0x36
+10039cb4     int32_t var_618_18 = 0
+10039cbb     int32_t var_618_19 = 0xf
+10039cc2     int32_t var_61c_6 = 0
+10039cdc     var_62c.b = 0
+10039cdf     sub_10001ad0(&var_62c, "reboot_off", 0xa)
+10039ce6     var_8_1.b = 0xf
+10039cea     sub_10003290(&arg1[4])
+10039cf4     PSTR* var_3c4_13 = &lpAppName
+10039cfa     int32_t var_5d0_72 = 0
+10039d01     int32_t var_5d0_73 = 0xf
+10039d08     int32_t var_5d4_69 = 0
+10039d22     lpAppName.b = 0
+10039d25     sub_10001ad0(&lpAppName, &data_1006dd28, 1)
+10039d2d     var_8_1.b = 0x37
+10039d33     char** var_3c8_14 = &var_5fc
+10039d3b     int32_t var_5ec_8 = 0
+10039d42     int32_t var_5e8_20 = 0
+10039d49     int32_t var_5e8_21 = 0xf
+10039d50     sub_10001e60(&var_5fc, 0)
+10039d5a     sub_10001960(&data_1006d0e0)
+10039d62     var_8_1.b = 0x38
+10039d68     char** var_3cc_14 = &var_614
+10039d73     sub_10001a60(&var_614, "1048576")
+10039d7b     var_8_1.b = 0x39
+10039d86     sub_10001a60(&var_62c, "configure")
+10039d8d     var_8_1.b = 0xf
+10039d91     sub_10003290(&arg1[4])
+10039d9b     PSTR* var_3c4_14 = &lpAppName
+10039da6     sub_10001a60(&lpAppName, &data_1006a03d)
+10039dae     var_8_1.b = 0x3a
+10039db4     char** var_3c8_15 = &var_5fc
+10039dbf     sub_10001a60(&var_5fc, &data_1006a03d)
+10039dc7     var_8_1.b = 0x3b
+10039dcd     char** var_3cc_15 = &var_614
+10039dd8     sub_10001a60(&var_614, &data_1006a03d)
+10039de0     var_8_1.b = 0x3c
+10039deb     sub_10001a60(&var_62c, "get_sign_data")
+10039df2     var_8_1.b = 0xf
+10039df6     sub_10003290(&arg1[4])
+10039e00     PSTR* var_3c4_15 = &lpAppName
+10039e0b     sub_10001a60(&lpAppName, &data_1006a03d)
+10039e13     var_8_1.b = 0x3d
+10039e19     char** var_3c8_16 = &var_5fc
+10039e24     sub_10001a60(&var_5fc, &data_1006a03d)
+10039e2c     var_8_1.b = 0x3e
+10039e32     char** var_3cc_16 = &var_614
+10039e3d     sub_10001a60(&var_614, "4096")
+10039e42     var_8_1.b = 0x3f
+10039e50     sub_10001a60(&var_62c, "verify")
+10039e57     var_8_1.b = 0xf
+10039e5b     sub_10003290(&arg1[4])
+10039e65     PSTR* var_3c4_16 = &lpAppName
+10039e70     sub_10001a60(&lpAppName, &data_1006a03d)
+10039e78     var_8_1.b = 0x40
+10039e7e     char** var_3c8_17 = &var_5fc
+10039e89     sub_10001a60(&var_5fc, &data_1006a03d)
+10039e91     var_8_1.b = 0x41
+10039e97     char** var_3cc_17 = &var_614
+10039ea2     sub_10001a60(&var_614, &data_1006a03d)
+10039eaa     var_8_1.b = 0x42
+10039eb5     sub_10001a60(&var_62c, "check_nv_id")
+10039ebc     var_8_1.b = 0xf
+10039ec0     sub_10003290(&arg1[4])
+10039eca     PSTR* var_3c4_17 = &lpAppName
+10039ed5     sub_10001a60(&lpAppName, &data_1006a03d)
+10039edd     var_8_1.b = 0x43
+10039ee3     char** var_3c8_18 = &var_5fc
+10039eee     sub_10001a60(&var_5fc, &data_1006a03d)
+10039ef6     var_8_1.b = 0x44
+10039efc     char** var_3cc_18 = &var_614
+10039f07     sub_10001a60(&var_614, &data_1006a03d)
+10039f0f     var_8_1.b = 0x45
+10039f1a     sub_10001a60(&var_62c, "get_logic_partitions_info")
+10039f21     var_8_1.b = 0xf
+10039f25     sub_10003290(&arg1[4])
+10039f2f     PSTR* var_3c4_18 = &lpAppName
+10039f3a     sub_10001a60(&lpAppName, &data_1006a03d)
+10039f42     var_8_1.b = 0x46
+10039f48     char** var_3c8_19 = &var_5fc
+10039f53     sub_10001a60(&var_5fc, &data_1006a03d)
+10039f5b     var_8_1.b = 0x47
+10039f61     char** var_3cc_19 = &var_614
+10039f6c     sub_10001a60(&var_614, &data_1006a03d)
+10039f74     var_8_1.b = 0x48
+10039f7f     sub_10001a60(&var_62c, "get_reserve_paritions_info")
+10039f86     var_8_1.b = 0xf
+10039f8a     sub_10003290(&arg1[4])
+10039f91     uint32_t eax_82 = sub_10041560(arg1)
+10039f91     
+10039f9a     if (eax_82 != 0)
+10039fa5         PSTR* var_3c4_19 = &lpAppName
+10039fb0         sub_10001a60(&lpAppName, &data_1006a03d)
+10039fb8         var_8_1.b = 0x49
+10039fbe         char** var_3c8_20 = &var_5fc
+10039fc9         sub_10001a60(&var_5fc, &data_1006a03d)
+10039fd1         var_8_1.b = 0x4a
+10039fd7         char** var_3cc_20 = &var_614
+10039fe2         sub_10001a60(&var_614, &data_1006a03d)
+10039fea         var_8_1.b = 0x4b
+10039ff5         sub_10001a60(&var_62c, "reset_digest")
+10039ffc         var_8_1.b = 0xf
+1003a000         sub_10003290(&arg1[4])
+1003a00a         PSTR* var_3c4_20 = &lpAppName
+1003a015         sub_10001a60(&lpAppName, &data_1006a03d)
+1003a01d         var_8_1.b = 0x4c
+1003a023         char** var_3c8_21 = &var_5fc
+1003a02e         sub_10001a60(&var_5fc, "1")
+1003a036         var_8_1.b = 0x4d
+1003a03c         char** var_3cc_21 = &var_614
+1003a047         sub_10001a60(&var_614, "{platform}")
+1003a04f         var_8_1.b = 0x4e
+1003a05a         sub_10001a60(&var_62c, "download_digest_nv")
+1003a061         var_8_1.b = 0xf
+1003a065         sub_10003290(&arg1[4])
+1003a06f         PSTR* var_3c4_21 = &lpAppName
+1003a07a         sub_10001a60(&lpAppName, "1")
+1003a082         var_8_1.b = 0x4f
+1003a088         char** var_3c8_22 = &var_5fc
+1003a093         sub_10001a60(&var_5fc, &data_1006d0e0)
+1003a09b         var_8_1.b = 0x50
+1003a0a1         char** var_3cc_22 = &var_614
+1003a0ac         sub_10001a60(&var_614, "1048576")
+1003a0b4         var_8_1.b = 0x51
+1003a0bf         sub_10001a60(&var_62c, "configure")
+1003a0c6         var_8_1.b = 0xf
+1003a0ca         sub_10003290(&arg1[4])
+1003a0ca     
+1003a0d5     char const* const edx_7 = "eMMC"
+1003a0da     int32_t* eax_83 =
+1003a0da         std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::c_str(
+1003a0da         &var_360)
+1003a0e0     int32_t eax_85
+1003a0e0     
+1003a0e0     while (true)
+1003a0e0         char* ecx_166
+1003a0e0         ecx_166.b = *eax_83
+1003a0e2         char const temp0_1 = *edx_7
+1003a0e2         bool c_1 = ecx_166.b u< temp0_1
+1003a0e2         
+1003a0e4         if (ecx_166.b == temp0_1)
+1003a0e8             if (ecx_166.b == 0)
+1003a0fc                 eax_85 = 0
+1003a0fe                 break
+1003a0fe             
+1003a0ea             ecx_166.b = *(eax_83 + 1)
+1003a0ed             char temp1_1 = edx_7[1]
+1003a0ed             c_1 = ecx_166.b u< temp1_1
+1003a0ed             
+1003a0f0             if (ecx_166.b == temp1_1)
+1003a0f2                 eax_83 += 2
+1003a0f5                 edx_7 = &edx_7[2]
+1003a0f5                 
+1003a0fa                 if (ecx_166.b != 0)
+1003a0fa                     continue
+1003a0fa                 
+1003a0fc                 eax_85 = 0
+1003a0fe                 break
+1003a0fe         
+1003a102         eax_85 = sbb.d(eax_83, eax_83, c_1) | 1
+1003a102         break
+1003a102     
+1003a108     PSTR* var_3c4_22 = &lpAppName
+1003a10e     PSTR* ecx_167 = &lpAppName
+1003a110     char* var_5e8_30 = &data_1006a03d
+1003a117     char* var_630_1
+1003a117     char** ecx_170
+1003a117     
+1003a117     if (eax_85 != 0)
+1003a160         sub_10001a60(ecx_167, var_5e8_30)
+1003a168         var_8_1.b = 0x55
+1003a16e         char** var_3c8_24 = &var_5fc
+1003a179         sub_10001a60(&var_5fc, &data_1006a03d)
+1003a181         var_8_1.b = 0x56
+1003a187         char** var_3cc_24 = &var_614
+1003a192         sub_10001a60(&var_614, &data_1006a03d)
+1003a19a         var_8_1.b = 0x57
+1003a19e         ecx_170 = &var_62c
+1003a1a0         var_630_1 = "check_storage_info"
+1003a117     else
+1003a119         sub_10001a60(ecx_167, var_5e8_30)
+1003a121         var_8_1.b = 0x52
+1003a127         char** var_3c8_23 = &var_5fc
+1003a132         sub_10001a60(&var_5fc, &data_1006a03d)
+1003a13a         var_8_1.b = 0x53
+1003a140         char** var_3cc_23 = &var_614
+1003a14b         sub_10001a60(&var_614, &data_1006a03d)
+1003a153         var_8_1.b = 0x54
+1003a157         ecx_170 = &var_62c
+1003a159         var_630_1 = "check_emmc_size"
+1003a159     
+1003a1a5     sub_10001a60(ecx_170, var_630_1)
+1003a1ac     var_8_1.b = 0xf
+1003a1b0     sub_10003290(&arg1[4])
+1003a1b0     
+1003a1bc     if (var_3e1 == 0)
+1003a1c3         PSTR* var_3c4_23 = &lpAppName
+1003a1ce         sub_10001a60(&lpAppName, &data_1006a03d)
+1003a1d6         var_8_1.b = 0x58
+1003a1dc         char** var_3c8_25 = &var_5fc
+1003a1e7         sub_10001a60(&var_5fc, &data_1006a03d)
+1003a1ef         var_8_1.b = 0x59
+1003a1f5         char** var_3cc_25 = &var_614
+1003a200         sub_10001a60(&var_614, &data_1006a03d)
+1003a211         char const* const eax_86 = "validate_project_by_ocdt"
+1003a216         var_8_1.b = 0x5a
+1003a216         
+1003a21a         if (var_3d2_1 == 0)
+1003a21a             eax_86 = "validate_project_by_cdt"
+1003a21a         
+1003a223         sub_10001a60(&var_62c, eax_86)
+1003a22a         var_8_1.b = 0xf
+1003a22e         sub_10003290(&arg1[4])
+1003a22e     
+1003a235     if (eax_82 == 0)
+1003a240         PSTR* var_3c4_24 = &lpAppName
+1003a24b         sub_10001a60(&lpAppName, &data_1006a03d)
+1003a253         var_8_1.b = 0x5b
+1003a259         char** var_3c8_26 = &var_5fc
+1003a264         sub_10001a60(&var_5fc, &data_1006a03d)
+1003a26c         var_8_1.b = 0x5c
+1003a272         char** var_3cc_26 = &var_614
+1003a27d         sub_10001a60(&var_614, &data_1006a03d)
+1003a285         var_8_1.b = 0x5d
+1003a290         sub_10001a60(&var_62c, "read_gpt")
+1003a297         var_8_1.b = 0xf
+1003a29b         sub_10003290(&arg1[4])
+1003a2a5         PSTR* var_3c4_25 = &lpAppName
+1003a2b0         sub_10001a60(&lpAppName, &data_1006a03d)
+1003a2b8         var_8_1.b = 0x5e
+1003a2be         char** var_3c8_27 = &var_5fc
+1003a2c9         sub_10001a60(&var_5fc, &data_1006a03d)
+1003a2d1         var_8_1.b = 0x5f
+1003a2d7         char** var_3cc_27 = &var_614
+1003a2e2         sub_10001a60(&var_614, &data_1006a03d)
+1003a2ea         var_8_1.b = 0x60
+1003a2f5         sub_10001a60(&var_62c, "verify_gpt_partitions")
+1003a2fc         var_8_1.b = 0xf
+1003a300         sub_10003290(&arg1[4])
+1003a300     
+1003a30a     PSTR* var_3c4_26 = &lpAppName
+1003a315     sub_10001a60(&lpAppName, &data_1006a03d)
+1003a31d     var_8_1.b = 0x61
+1003a323     char** var_3c8_28 = &var_5fc
+1003a32e     sub_10001a60(&var_5fc, &data_1006a03d)
+1003a336     var_8_1.b = 0x62
+1003a33c     char** var_3cc_28 = &var_614
+1003a347     sub_10001a60(&var_614, "start")
+1003a34f     var_8_1.b = 0x63
+1003a35a     sub_10001a60(&var_62c, "write_download_info")
+1003a361     var_8_1.b = 0xf
+1003a365     int32_t ecx_194 = sub_10003290(&arg1[4])
+1003a365     
+1003a371     if (var_3e1 != 0)
+1003a378         PSTR* var_3c4_27 = &lpAppName
+1003a383         sub_10001a60(&lpAppName, &data_1006a03d)
+1003a38b         var_8_1.b = 0x64
+1003a391         char** var_3c8_29 = &var_5fc
+1003a39c         sub_10001a60(&var_5fc, &data_1006a03d)
+1003a3a4         var_8_1.b = 0x65
+1003a3aa         char** var_3cc_29 = &var_614
+1003a3b5         sub_10001a60(&var_614, &data_1006a03d)
+1003a3c6         char const* const eax_87 = "write_ocdt_data"
+1003a3cb         var_8_1.b = 0x66
+1003a3cb         
+1003a3cf         if (var_3d2_1 == 0)
+1003a3cf             eax_87 = "write_cdt_data"
+1003a3cf         
+1003a3d8         sub_10001a60(&var_62c, eax_87)
+1003a3df         var_8_1.b = 0xf
+1003a3e3         ecx_194 = sub_10003290(&arg1[4])
+1003a3e3     
+1003a3e8     int32_t var_5d0_74 = ecx_194
+1003a3e9     int32_t* var_2c8
+1003a3e9     int32_t* ecx_200 = &var_2c8
+1003a3ef     sub_1000f740(ecx_200)
+1003a3fe     sub_1002d080(ecx_200, &eax_66[6])
+1003a40a     var_8_1.b = 0x67
+1003a40e     void var_17c
+1003a40e     
+1003a40e     if (var_3d1 != 0)
+1003a414         int32_t* eax_90 = var_2c8
+1003a41a         void** esi_3 = *eax_90
+1003a41c         int32_t* var_3f4_1 = eax_90
+1003a41c         
+1003a424         if (esi_3 != eax_90)
+1003a5a8             int32_t* eax_101
+1003a5a8             
+1003a5a8             do
+1003a43e                 var_8_1.b = 0x68
+1003a445                 void var_340
+1003a445                 int32_t var_5d0_77 = sub_10002870(&var_340, esi_3[2])
+1003a446                 void var_2f0
+1003a446                 int32_t* ecx_203 = &var_2f0
+1003a44c                 int32_t eax_92 = *(esi_3[2] + 0x18)
+1003a455                 sub_1000f740(ecx_203)
+1003a466                 int32_t var_5d0_79 = sub_1002d080(ecx_203, esi_3[2] + 0x58)
+1003a472                 var_8_1.b = 0x69
+1003a476                 uint8_t* eax_95
+1003a476                 int32_t ecx_205
+1003a476                 eax_95, ecx_205 = sub_10007bf0("xbl")
+1003a476                 
+1003a47e                 if (eax_95 != 0xffffffff)
+1003a4f2                 label_1003a4f2:
+1003a4f2                     int32_t var_5d0_85 = eax_92
+1003a504                     sub_10002230(&var_17c, "%d")
+1003a513                     int32_t var_2ec
+1003a513                     
+1003a513                     if (var_2ec != 0)
+1003a51a                         PSTR* var_3c4_28 = &lpAppName
+1003a525                         sub_10001a60(&lpAppName, &data_1006a03d)
+1003a52d                         var_8_1.b = 0x6a
+1003a537                         char** var_3c8_30 = &var_5fc
+1003a540                         sub_10002870(&var_5fc, &var_340)
+1003a548                         var_8_1.b = 0x6b
+1003a552                         char** var_3cc_30 = &var_614
+1003a55b                         sub_10001a60(&var_614, &var_17c)
+1003a563                         var_8_1.b = 0x6c
+1003a56e                         sub_10001a60(&var_62c, "erase_partition")
+1003a575                         var_8_1.b = 0x69
+1003a579                         sub_10003290(&arg1[4])
+1003a47e                 else
+1003a480                     int32_t var_5d0_80 = ecx_205
+1003a48c                     uint8_t* eax_96
+1003a48c                     int32_t ecx_206
+1003a48c                     eax_96, ecx_206 = sub_10007bf0("xbl_a")
+1003a48c                     
+1003a494                     if (eax_96 != 0xffffffff)
+1003a494                         goto label_1003a4f2
+1003a494                     
+1003a496                     int32_t var_5d0_81 = ecx_206
+1003a4a2                     uint8_t* eax_97
+1003a4a2                     int32_t ecx_207
+1003a4a2                     eax_97, ecx_207 = sub_10007bf0("xbl_b")
+1003a4a2                     
+1003a4aa                     if (eax_97 != 0xffffffff)
+1003a4aa                         goto label_1003a4f2
+1003a4aa                     
+1003a4ac                     int32_t var_5d0_82 = ecx_207
+1003a4b8                     uint8_t* eax_98
+1003a4b8                     int32_t ecx_208
+1003a4b8                     eax_98, ecx_208 = sub_10007bf0("xbl_config")
+1003a4b8                     
+1003a4c0                     if (eax_98 != 0xffffffff)
+1003a4c0                         goto label_1003a4f2
+1003a4c0                     
+1003a4c2                     int32_t var_5d0_83 = ecx_208
+1003a4ce                     uint8_t* eax_99
+1003a4ce                     int32_t ecx_209
+1003a4ce                     eax_99, ecx_209 = sub_10007bf0("xbl_config_a")
+1003a4ce                     
+1003a4d6                     if (eax_99 != 0xffffffff)
+1003a4d6                         goto label_1003a4f2
+1003a4d6                     
+1003a4d8                     int32_t var_5d0_84 = ecx_209
+1003a4d8                     
+1003a4ec                     if (sub_10007bf0("xbl_config_b") != 0xffffffff)
+1003a4ec                         goto label_1003a4f2
+1003a4ec                 
+1003a584                 sub_1002d040(&var_2f0)
+1003a58f                 var_8_1.b = 0x67
+1003a593                 sub_100019a0(&var_340)
+1003a598                 esi_3 = *esi_3
+1003a59a                 eax_101 = var_2c8
+1003a5a0                 int32_t* var_3f4_2 = eax_101
+1003a5a8             while (esi_3 != eax_101)
+1003a5a8         
+1003a5b3         PSTR* var_3c4_29 = &lpAppName
+1003a5be         sub_10001a60(&lpAppName, &data_1006a03d)
+1003a5c6         var_8_1.b = 0x6d
+1003a5cc         char** var_3c8_31 = &var_5fc
+1003a5d7         sub_10001a60(&var_5fc, &data_1006a03d)
+1003a5e8         char* eax_102 = &data_1006dd28
+1003a5ed         var_8_1.b = 0x6e
+1003a5ed         
+1003a5f1         if (var_3e2 == 0)
+1003a5f1             eax_102 = &data_1006d0e0
+1003a5f1         
+1003a5f9         char** var_3cc_31 = &var_614
+1003a600         sub_10001a60(&var_614, eax_102)
+1003a608         var_8_1.b = 0x6f
+1003a613         sub_10001a60(&var_62c, "firmware_update_smartV2")
+1003a61a         var_8_1.b = 0x67
+1003a61e         sub_10003290(&arg1[4])
+1003a61e     
+1003a623     int32_t* edx_8 = var_2c8
+1003a629     int32_t* var_4fc_1 = edx_8
+1003a62f     int32_t* var_2a8 = edx_8
+1003a635     int32_t eax_103 = *edx_8
+1003a637     int32_t var_3f8_1 = eax_103
+1003a63d     int32_t var_3fc_1 = eax_103
+1003a63d     
+1003a645     if (edx_8 != eax_103)
+1003a64b         ebx.b = var_3d3
+1003a8f3         int32_t eax_114
+1003a8f3         int32_t* ecx_249
+1003a8f3         
+1003a8f3         do
+1003a664             void var_390
+1003a664             sub_10002870(&var_390, *sub_10041740(&var_2a8))
+1003a66f             var_8_1.b = 0x70
+1003a678             int32_t** var_5d0_87 = &var_2a8
+1003a681             int32_t esi_4 = *(*sub_10041740(&var_2a8) + 0x18)
+1003a684             void var_348
+1003a684             sub_1000f740(&var_348)
+1003a6a0             sub_1002d080(&var_348, *sub_10041740(&var_2a8) + 0x58)
+1003a6b0             var_8_1.b = 0x71
+1003a6c0             char* var_630_4
+1003a6c0             char** ecx_236
+1003a6c0             
+1003a6c0             if (sub_10007bb0(&var_390, "PrimaryGPT") != 0 || esi_4 == 3)
+1003a73f                 if (sub_10007bb0(&var_390, "BackupGPT") == 0 && esi_4 != 3)
+1003a741                     int32_t var_5d0_92 = esi_4
+1003a74e                     sub_10002230(&var_17c, "%d")
+1003a758                     PSTR* var_3c4_31 = &lpAppName
+1003a763                     sub_10001a60(&lpAppName, &data_1006a03d)
+1003a76b                     var_8_1.b = 0x75
+1003a771                     char** var_3c8_33 = &var_5fc
+1003a77c                     sub_10001a60(&var_5fc, &data_1006a03d)
+1003a784                     var_8_1.b = 0x76
+1003a78e                     char** var_3cc_33 = &var_614
+1003a797                     sub_10001a60(&var_614, &var_17c)
+1003a79f                     var_8_1.b = 0x77
+1003a7a3                     ecx_236 = &var_62c
+1003a7a5                     var_630_4 = "erase_backup_gpt"
+1003a7aa                     goto label_1003a8a4
+1003a7aa                 
+1003a7c5                 if (sub_10007bb0(&var_390, "userdata") == 0 && ebx.b != 0)
+1003a7cc                     PSTR* var_3c4_32 = &lpAppName
+1003a7d7                     sub_10001a60(&lpAppName, &data_1006a03d)
+1003a7df                     var_8_1.b = 0x78
+1003a7e5                     char** var_3c8_34 = &var_5fc
+1003a7f0                     sub_10001a60(&var_5fc, &data_1006a03d)
+1003a7f8                     var_8_1.b = 0x79
+1003a7fe                     char** var_3cc_34 = &var_614
+1003a809                     sub_10001a60(&var_614, &data_1006a03d)
+1003a811                     var_8_1.b = 0x7a
+1003a815                     ecx_236 = &var_62c
+1003a817                     var_630_4 = "erase_user_data"
+1003a81c                     goto label_1003a8a4
+1003a81c                 
+1003a837                 if (sub_10007bb0(&var_390, "metadata") == 0 && ebx.b != 0)
+1003a839                     int32_t var_5d0_95 = esi_4
+1003a846                     sub_10002230(&var_17c, "%d")
+1003a850                     PSTR* var_3c4_33 = &lpAppName
+1003a85b                     sub_10001a60(&lpAppName, &data_1006a03d)
+1003a863                     var_8_1.b = 0x7b
+1003a86d                     char** var_3c8_35 = &var_5fc
+1003a876                     sub_10002870(&var_5fc, &var_390)
+1003a87e                     var_8_1.b = 0x7c
+1003a888                     char** var_3cc_35 = &var_614
+1003a891                     sub_10001a60(&var_614, &var_17c)
+1003a896                     var_8_1.b = 0x7d
+1003a896                     goto label_1003a89d
+1003a6c0             else
+1003a6c2                 int32_t var_5d0_90 = esi_4
+1003a6cf                 sub_10002230(&var_17c, "%d")
+1003a6d9                 PSTR* var_3c4_30 = &lpAppName
+1003a6e4                 sub_10001a60(&lpAppName, &data_1006a03d)
+1003a6ec                 var_8_1.b = 0x72
+1003a6f6                 char** var_3c8_32 = &var_5fc
+1003a6ff                 sub_10002870(&var_5fc, &var_390)
+1003a707                 var_8_1.b = 0x73
+1003a711                 char** var_3cc_32 = &var_614
+1003a71a                 sub_10001a60(&var_614, &var_17c)
+1003a71f                 var_8_1.b = 0x74
+1003a89d             label_1003a89d:
+1003a89d                 ecx_236 = &var_62c
+1003a89f                 var_630_4 = "erase_partition"
+1003a8a4             label_1003a8a4:
+1003a8a4                 sub_10001a60(ecx_236, var_630_4)
+1003a8ab                 var_8_1.b = 0x71
+1003a8af                 sub_10003290(&arg1[4])
+1003a8ba             sub_1002d040(&var_348)
+1003a8c5             var_8_1.b = 0x67
+1003a8c9             sub_100019a0(&var_390)
+1003a8d4             edx_8 = var_2c8
+1003a8da             ecx_249 = var_2a8[1]
+1003a8dd             var_2a8 = ecx_249
+1003a8e3             eax_114 = *edx_8
+1003a8e5             int32_t var_3f8_2 = eax_114
+1003a8eb             int32_t var_3fc_2 = eax_114
+1003a8f3         while (ecx_249 != eax_114)
+1003a8f9         ebx = var_3e8
+1003a8f9     
+1003a8ff     void** esi_5 = *edx_8
+1003a901     int32_t* var_400_1 = edx_8
+1003a901     
+1003a909     if (esi_5 != edx_8)
+1003a90f         ebx.b = var_3d3
+1003aac6         int32_t* eax_127
+1003aac6         
+1003aac6         do
+1003a92e             var_8_1.b = 0x7e
+1003a935             void var_308
+1003a935             int32_t var_5d0_97 = sub_10002870(&var_308, esi_5[2])
+1003a936             void var_2d0
+1003a936             int32_t* ecx_252 = &var_2d0
+1003a93c             int32_t eax_116 = *(esi_5[2] + 0x18)
+1003a945             sub_1000f740(ecx_252)
+1003a951             int32_t ecx_253 = sub_1002d080(ecx_252, esi_5[2] + 0x58)
+1003a956             var_8_1.b = 0x7f
+1003a95d             void* eax_119
+1003a95d             eax_119.b = *(esi_5[2] + 0x3c)
+1003a97c             int32_t var_2cc
+1003a97c             
+1003a97c             if (eax_119.b != 0 && eax_116 == 3 && var_2cc != 0)
+1003a982                 int32_t var_5d0_99 = ecx_253
+1003a98e                 uint8_t* eax_120
+1003a98e                 int32_t ecx_254
+1003a98e                 eax_120, ecx_254 = sub_10007bf0("DDR")
+1003a98e                 
+1003a995                 if (eax_120 == 0)
+1003a9da                 label_1003a9da:
+1003a9da                     
+1003a9dc                     if (ebx.b != 0)
+1003aa10                     label_1003aa10:
+1003aa10                         int32_t var_5d0_105 = 3
+1003aa1e                         sub_10002230(&var_17c, "%d")
+1003aa28                         PSTR* var_3c4_34 = &lpAppName
+1003aa33                         sub_10001a60(&lpAppName, &data_1006a03d)
+1003aa3b                         var_8_1.b = 0x80
+1003aa45                         char** var_3c8_36 = &var_5fc
+1003aa4e                         sub_10002870(&var_5fc, &var_308)
+1003aa56                         var_8_1.b = 0x81
+1003aa60                         char** var_3cc_36 = &var_614
+1003aa69                         sub_10001a60(&var_614, &var_17c)
+1003aa6e                         var_8_1.b = 0x82
+1003aa7e                         char const* const eax_126 = "erase_partition"
+1003aa7e                         
+1003aa83                         if (var_2cc != 0)
+1003aa83                             eax_126 = "program_partition"
+1003aa83                         
+1003aa8c                         sub_10001a60(&var_62c, eax_126)
+1003aa93                         var_8_1.b = 0x7f
+1003aa97                         sub_10003290(&arg1[4])
+1003a9dc                     else
+1003a9de                         int32_t var_5d0_103 = ecx_254
+1003a9ea                         uint8_t* eax_124
+1003a9ea                         int32_t ecx_255
+1003a9ea                         eax_124, ecx_255 = sub_10007bf0("userdata")
+1003a9ea                         
+1003a9f1                         if (eax_124 != 0)
+1003a9f7                             int32_t var_5d0_104 = ecx_255
+1003a9f7                             
+1003aa0a                             if (sub_10007bf0("metadata") != 0)
+1003aa0a                                 goto label_1003aa10
+1003a995                 else
+1003a997                     int32_t var_5d0_100 = ecx_254
+1003a9a3                     uint8_t* eax_121
+1003a9a3                     eax_121, ecx_254 = sub_10007bf0("ddr")
+1003a9a3                     
+1003a9aa                     if (eax_121 == 0)
+1003a9aa                         goto label_1003a9da
+1003a9aa                     
+1003a9ac                     int32_t var_5d0_101 = ecx_254
+1003a9b8                     uint8_t* eax_122
+1003a9b8                     eax_122, ecx_254 = sub_10007bf0("cdt_engineering")
+1003a9b8                     
+1003a9bf                     if (eax_122 == 0)
+1003a9bf                         goto label_1003a9da
+1003a9bf                     
+1003a9c1                     int32_t var_5d0_102 = ecx_254
+1003a9cd                     uint8_t* eax_123
+1003a9cd                     eax_123, ecx_254 = sub_10007bf0("engineering_cdt")
+1003a9cd                     
+1003a9d4                     if (eax_123 == 0)
+1003a9d4                         goto label_1003a9da
+1003a9d4             
+1003aaa2             sub_1002d040(&var_2d0)
+1003aaad             var_8_1.b = 0x67
+1003aab1             sub_100019a0(&var_308)
+1003aab6             esi_5 = *esi_5
+1003aab8             eax_127 = var_2c8
+1003aabe             int32_t* var_400_2 = eax_127
+1003aac6         while (esi_5 != eax_127)
+1003aacc         ebx = var_3e8
+1003aacc     
+1003aad7     PSTR* var_3c4_35 = &lpAppName
+1003aae2     sub_10001a60(&lpAppName, &data_1006a03d)
+1003aaea     var_8_1.b = 0x83
+1003aaf0     char** var_3c8_37 = &var_5fc
+1003aafb     sub_10001a60(&var_5fc, &data_1006a03d)
+1003ab03     var_8_1.b = 0x84
+1003ab09     char** var_3cc_37 = &var_614
+1003ab14     sub_10001a60(&var_614, &data_1006a03d)
+1003ab1c     var_8_1.b = 0x85
+1003ab27     sub_10001a60(&var_62c, "backup_download_flags")
+1003ab2e     var_8_1.b = 0x67
+1003ab32     int32_t ecx_268 = sub_10003290(&arg1[4])
+1003ab37     int32_t* eax_128 = var_2c8
+1003ab3d     void** esi_6 = *eax_128
+1003ab3f     int32_t* var_408_1 = eax_128
+1003ab3f     
+1003ab47     if (esi_6 != eax_128)
+1003ab50         while (true)
+1003ab50             void* eax_129 = esi_6[2]
+1003ab56             ecx_268.b = *(eax_129 + 0x3c)
+1003ab59             int32_t eax_130 = *(eax_129 + 0x18)
+1003ab5c             char var_3d1_1 = ecx_268.b
+1003ab73             void var_2c0
+1003ab73             int32_t var_5d0_107 = sub_10002870(&var_2c0, esi_6[2])
+1003ab74             void var_2a4
+1003ab74             int32_t* ecx_271 = &var_2a4
+1003ab7a             var_8_1.b = 0x86
+1003ab7e             sub_1000f740(ecx_271)
+1003ab8a             sub_1002d080(ecx_271, esi_6[2] + 0x58)
+1003ab8f             var_8_1.b = 0x87
+1003ab9a             void var_5a4
+1003ab9a             void var_514
+1003ab9a             int32_t var_2a0
+1003ab9a             char* eax_133
+1003ab9a             
+1003ab9a             if (var_2a0 != 0)
+1003abc5                 eax_133 = sub_10045410(*sub_10045020(esi_6[2] + 0x58), &var_5a4)
+1003abca                 ebx |= 2
+1003ab9a             else
+1003aba7                 eax_133 = sub_10001a60(&var_514, "NULL")
+1003abac                 ebx |= 1
+1003abac             
+1003abd4             int32_t var_3e8_1 = ebx
+1003abda             void var_378
+1003abda             sub_100019e0(&var_378, eax_133)
+1003abdf             var_8_1 = 0x89
+1003abdf             
+1003abe9             if ((ebx.b & 2) != 0)
+1003abeb                 ebx &= 0xfffffffd
+1003abf4                 int32_t var_3e8_2 = ebx
+1003abfa                 sub_100019a0(&var_5a4)
+1003abfa             
+1003abff             var_8_1.b = 0x8a
+1003abff             
+1003ac06             if ((ebx.b & 1) != 0)
+1003ac08                 ebx &= 0xfffffffe
+1003ac11                 int32_t var_3e8_3 = ebx
+1003ac17                 sub_100019a0(&var_514)
+1003ac17             
+1003ac22             char const* const edx_9 = "eMMC"
+1003ac27             int32_t* eax_135 = std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::c_str(
+1003ac27                 &var_360)
+1003ac30             int32_t eax_137
+1003ac30             char* ecx_279
+1003ac30             
+1003ac30             while (true)
+1003ac30                 ecx_279.b = *eax_135
+1003ac32                 char const temp4_1 = *edx_9
+1003ac32                 bool c_2 = ecx_279.b u< temp4_1
+1003ac32                 
+1003ac34                 if (ecx_279.b == temp4_1)
+1003ac38                     if (ecx_279.b == 0)
+1003ac4c                         eax_137 = 0
+1003ac4e                         break
+1003ac4e                     
+1003ac3a                     ecx_279.b = *(eax_135 + 1)
+1003ac3d                     char temp5_1 = edx_9[1]
+1003ac3d                     c_2 = ecx_279.b u< temp5_1
+1003ac3d                     
+1003ac40                     if (ecx_279.b == temp5_1)
+1003ac42                         eax_135 += 2
+1003ac45                         edx_9 = &edx_9[2]
+1003ac45                         
+1003ac4a                         if (ecx_279.b != 0)
+1003ac4a                             continue
+1003ac4a                         
+1003ac4c                         eax_137 = 0
+1003ac4e                         break
+1003ac4e                 
+1003ac52                 eax_137 = sbb.d(eax_135, eax_135, c_2) | 1
+1003ac52                 break
+1003ac52             
+1003ac5d             if (eax_137 != 0)
+1003ac7e                 if (eax_130 != 1 && eax_130 != 3)
+1003ac84                 label_1003ac84:
+1003ac84                     char* var_5d0_112 = ecx_279
+1003ac90                     uint8_t* eax_139
+1003ac90                     int32_t ecx_280
+1003ac90                     eax_139, ecx_280 = sub_10007bf0("modemst")
+1003ac90                     
+1003ac97                     if (eax_139 != 0)
+1003ac99                         int32_t var_5d0_113 = ecx_280
+1003aca5                         uint8_t* eax_140
+1003aca5                         eax_140, ecx_280 = sub_10007bf0("nonmodemst")
+1003aca5                         
+1003acb5                         if (eax_140 != 0 || var_2a0 != 0)
+1003acbb                         label_1003acbb:
+1003acbb                             
+1003acc2                             if (var_3d1_1 != 0)
+1003acf2                             label_1003acf2:
+1003acf2                                 
+1003acf9                                 if (var_3d3 != 0)
+1003ad4f                                 label_1003ad4f:
+1003ad4f                                     void var_5bc
+1003ad4f                                     int32_t eax_147 = *(sub_10001a60(&var_5bc, "reserve1") + 0x10)
+1003ad58                                     sub_100019a0(&var_5bc)
+1003ad73                                     void var_52c
+1003ad73                                     int32_t eax_149 = *(sub_10001a60(&var_52c, "reserve2") + 0x10)
+1003ad7c                                     sub_100019a0(&var_52c)
+1003ad97                                     void var_544
+1003ad97                                     int32_t eax_151 = *(sub_10001a60(&var_544, "reserve3") + 0x10)
+1003ada5                                     int32_t var_5d0_121 = sub_100019a0(&var_544)
+1003adb1                                     uint8_t* eax_152
+1003adb1                                     int32_t ecx_289
+1003adb1                                     eax_152, ecx_289 = sub_10007bf0("persist")
+1003adb9                                     void var_58c
+1003adb9                                     void var_574
+1003adb9                                     void var_55c
+1003adb9                                     char var_3d1_2
+1003adb9                                     
+1003adb9                                     if (eax_152 != 0xffffffff)
+1003afc4                                         var_3d1_2 = 1
+1003adb9                                     else
+1003adbf                                         int32_t var_5d0_122 = ecx_289
+1003adcb                                         uint8_t* eax_153
+1003adcb                                         int32_t ecx_290
+1003adcb                                         eax_153, ecx_290 = sub_10007bf0("dycnvbk")
+1003adcb                                         
+1003add3                                         if (eax_153 != 0xffffffff)
+1003afc4                                             var_3d1_2 = 1
+1003add3                                         else
+1003add9                                             int32_t var_5d0_123 = ecx_290
+1003ade5                                             uint8_t* eax_154
+1003ade5                                             int32_t ecx_291
+1003ade5                                             eax_154, ecx_291 = sub_10007bf0("ssd")
+1003ade5                                             
+1003adec                                             if (eax_154 == 0)
+1003afc4                                                 var_3d1_2 = 1
+1003adec                                             else
+1003adf2                                                 int32_t var_5d0_124 = ecx_291
+1003adfe                                                 uint8_t* eax_155
+1003adfe                                                 int32_t ecx_292
+1003adfe                                                 eax_155, ecx_292 = sub_10007bf0("sec")
+1003adfe                                                 
+1003ae05                                                 if (eax_155 == 0)
+1003afc4                                                     var_3d1_2 = 1
+1003ae05                                                 else
+1003ae0b                                                     int32_t var_5d0_125 = ecx_292
+1003ae17                                                     uint8_t* eax_156
+1003ae17                                                     int32_t ecx_293
+1003ae17                                                     eax_156, ecx_293 = sub_10007bf0("reserve4")
+1003ae17                                                     
+1003ae1e                                                     if (eax_156 == 0)
+1003afc4                                                         var_3d1_2 = 1
+1003ae1e                                                     else
+1003ae24                                                         int32_t var_5d0_126 = ecx_293
+1003ae30                                                         uint8_t* eax_157
+1003ae30                                                         int32_t ecx_294
+1003ae30                                                         eax_157, ecx_294 =
+1003ae30                                                             sub_10007bf0("mdm1m9kefs")
+1003ae30                                                         
+1003ae37                                                         if (eax_157 == 0)
+1003afc4                                                             var_3d1_2 = 1
+1003ae37                                                         else
+1003ae3d                                                             int32_t var_5d0_127 = ecx_294
+1003ae49                                                             uint8_t* eax_158
+1003ae49                                                             int32_t ecx_295
+1003ae49                                                             eax_158, ecx_295 = sub_10007bf0("fsg")
+1003ae49                                                             
+1003ae50                                                             if (eax_158 == 0)
+1003afc4                                                                 var_3d1_2 = 1
+1003ae50                                                             else
+1003ae56                                                                 int32_t var_5d0_128 = ecx_295
+1003ae62                                                                 uint8_t* eax_159
+1003ae62                                                                 int32_t ecx_296
+1003ae62                                                                 eax_159, ecx_296 = sub_10007bf0("fsc")
+1003ae62                                                                 
+1003ae69                                                                 if (eax_159 == 0)
+1003afc4                                                                     var_3d1_2 = 1
+1003ae69                                                                 else
+1003ae6f                                                                     int32_t var_5d0_129 = ecx_296
+1003ae7b                                                                     uint8_t* eax_160
+1003ae7b                                                                     int32_t ecx_297
+1003ae7b                                                                     eax_160, ecx_297 =
+1003ae7b                                                                         sub_10007bf0("ALIGN_TO_128K_1")
+1003ae7b                                                                     
+1003ae82                                                                     if (eax_160 == 0)
+1003afc4                                                                         var_3d1_2 = 1
+1003ae82                                                                     else
+1003ae88                                                                         int32_t var_5d0_130 = ecx_297
+1003ae94                                                                         uint8_t* eax_161
+1003ae94                                                                         int32_t ecx_298
+1003ae94                                                                         eax_161, ecx_298 =
+1003ae94                                                                             sub_10007bf0("last_parti")
+1003ae94                                                                         
+1003ae9b                                                                         if (eax_161 == 0)
+1003afc4                                                                             var_3d1_2 = 1
+1003ae9b                                                                         else
+1003aea1                                                                             int32_t var_5d0_131 = ecx_298
+1003aead                                                                             uint8_t* eax_162
+1003aead                                                                             int32_t ecx_299
+1003aead                                                                             eax_162, ecx_299 =
+1003aead                                                                                 sub_10007bf0("last_grow")
+1003aead                                                                             
+1003aeb4                                                                             if (eax_162 == 0)
+1003afc4                                                                                 var_3d1_2 = 1
+1003aeb4                                                                             else
+1003aeba                                                                                 int32_t var_5d0_132 = ecx_299
+1003aec6                                                                                 uint8_t* eax_163
+1003aec6                                                                                 int32_t ecx_300
+1003aec6                                                                                 eax_163, ecx_300 = sub_10007bf0("param")
+1003aec6                                                                                 
+1003aecd                                                                                 if (eax_163 == 0)
+1003afc4                                                                                     var_3d1_2 = 1
+1003aecd                                                                                 else
+1003aed3                                                                                     int32_t var_5d0_133 = ecx_300
+1003aed3                                                                                     
+1003aee6                                                                                     if (sub_10007bf0("super") == 0)
+1003afc4                                                                                         var_3d1_2 = 1
+1003aee6                                                                                     else
+1003aeec                                                                                         int32_t var_2b0
+1003aeec                                                                                         int32_t eax_165 = var_2b0
+1003aeec                                                                                         
+1003aefa                                                                                         if (eax_165 u< eax_147)
+1003aefa                                                                                             goto label_1003af40
+1003aefa                                                                                         
+1003af13                                                                                         var_8_1.b = 0x8b
+1003af17                                                                                         ebx |= 4
+1003af21                                                                                         int32_t var_3e8_4 = ebx
+1003af21                                                                                         
+1003af2e                                                                                         if (sub_10007bb0(
+1003af2e                                                                                                 sub_100025c0(&var_2c0, &var_58c, 
+1003af2e                                                                                                     eax_165 - eax_147, 0xffffffff), 
+1003af2e                                                                                                 "reserve1") == 0)
+1003afc4                                                                                             var_3d1_2 = 1
+1003af2e                                                                                         else
+1003af34                                                                                             eax_165 = var_2b0
+1003af40                                                                                         label_1003af40:
+1003af40                                                                                             
+1003af42                                                                                             if (eax_165 u< eax_149)
+1003af42                                                                                                 goto label_1003af89
+1003af42                                                                                             
+1003af5b                                                                                             int32_t var_8_2 = 0x8c
+1003af62                                                                                             ebx |= 8
+1003af6c                                                                                             int32_t var_3e8_5 = ebx
+1003af6c                                                                                             
+1003af79                                                                                             if (sub_10007bb0(
+1003af79                                                                                                     sub_100025c0(&var_2c0, &var_574, 
+1003af79                                                                                                         eax_165 - eax_149, 0xffffffff), 
+1003af79                                                                                                     "reserve2") == 0)
+1003afc4                                                                                                 var_3d1_2 = 1
+1003af79                                                                                             else
+1003af7b                                                                                                 eax_165 = var_2b0
+1003af89                                                                                             label_1003af89:
+1003af89                                                                                                 int32_t eax_174
+1003af89                                                                                                 
+1003af89                                                                                                 if (eax_165 u>= eax_151)
+1003afa2                                                                                                     ebx |= 0x10
+1003afac                                                                                                     int32_t var_3e8_6 = ebx
+1003afb2                                                                                                     eax_174 = sub_10007bb0(
+1003afb2                                                                                                         sub_100025c0(&var_2c0, &var_55c, 
+1003afb2                                                                                                             eax_165 - eax_151, 0xffffffff), 
+1003afb2                                                                                                         "reserve3")
+1003afb2                                                                                                 
+1003afb9                                                                                                 var_3d1_2 =
+1003afb9                                                                                                     eax_165 u>= eax_151 && eax_174 == 0 ? 1
+1003afb9                                                                                                     : 0
+1003afb9                                     
+1003afce                                     if ((ebx.b & 0x10) != 0)
+1003afd0                                         ebx &= 0xffffffef
+1003afd9                                         int32_t var_3e8_7 = ebx
+1003afdf                                         sub_100019a0(&var_55c)
+1003afdf                                     
+1003afe7                                     if ((ebx.b & 8) != 0)
+1003afe9                                         ebx &= 0xfffffff7
+1003aff2                                         int32_t var_3e8_8 = ebx
+1003aff8                                         sub_100019a0(&var_574)
+1003aff8                                     
+1003affd                                     var_8_1 = 0x8a
+1003affd                                     
+1003b007                                     if ((ebx.b & 4) != 0)
+1003b009                                         ebx &= 0xfffffffb
+1003b012                                         int32_t var_3e8_9 = ebx
+1003b018                                         sub_100019a0(&var_58c)
+1003b018                                     
+1003b024                                     if (var_3d1_2 == 0)
+1003b030                                         int32_t var_5d0_140 = eax_130
+1003b03d                                         sub_10002230(&var_17c, "%d")
+1003b047                                         PSTR* var_3c4_37 = &lpAppName
+1003b052                                         sub_10001a60(&lpAppName, &data_1006a03d)
+1003b05a                                         var_8_1.b = 0x8d
+1003b064                                         char** var_3c8_39 = &var_5fc
+1003b06d                                         sub_10002870(&var_5fc, &var_2c0)
+1003b075                                         var_8_1.b = 0x8e
+1003b07f                                         char** var_3cc_39 = &var_614
+1003b088                                         sub_10001a60(&var_614, &var_17c)
+1003b08d                                         var_8_1.b = 0x8f
+1003b09d                                         char const* const eax_176 = "erase_partition"
+1003b09d                                         
+1003b0a2                                         if (var_2a0 != 0)
+1003b0a2                                             eax_176 = "program_partition"
+1003b0a2                                         
+1003b0ab                                         sub_10001a60(&var_62c, eax_176)
+1003b0b2                                         var_8_1.b = 0x8a
+1003b0b6                                         sub_10003290(&arg1[4])
+1003b0b6                                         
+1003b0cd                                         if (sub_1002dd20("BackupGPT", &var_2c0) != 0)
+1003b0d4                                             PSTR* var_3c4_38 = &lpAppName
+1003b0df                                             sub_10001a60(&lpAppName, &data_1006a03d)
+1003b0e7                                             var_8_1.b = 0x90
+1003b0f1                                             char** var_3c8_40 = &var_5fc
+1003b0fa                                             sub_10001a60(&var_5fc, &var_17c)
+1003b102                                             var_8_1.b = 0x91
+1003b108                                             char** var_3cc_40 = &var_614
+1003b113                                             sub_10001a60(&var_614, "1")
+1003b11b                                             var_8_1.b = 0x92
+1003b126                                             sub_10001a60(&var_62c, "apply_patches")
+1003b12d                                             var_8_1.b = 0x8a
+1003b131                                             sub_10003290(&arg1[4])
+1003acf9                                 else
+1003acfb                                     int32_t var_5d0_116 = ecx_280
+1003ad07                                     uint8_t* eax_143
+1003ad07                                     int32_t ecx_281
+1003ad07                                     eax_143, ecx_281 = sub_10007bf0("userdata")
+1003ad07                                     
+1003ad0e                                     if (eax_143 != 0)
+1003ad14                                         int32_t var_5d0_117 = ecx_281
+1003ad14                                         
+1003ad27                                         if (sub_10007bf0("metadata") != 0)
+1003ad27                                             goto label_1003ad4f
+1003acc2                             else
+1003acc4                                 int32_t var_5d0_114 = ecx_280
+1003acd0                                 uint8_t* eax_141
+1003acd0                                 eax_141, ecx_280 = sub_10007bf0("PrimaryGPT")
+1003acd0                                 
+1003acd7                                 if (eax_141 == 0)
+1003acd7                                     goto label_1003acf2
+1003acd7                                 
+1003acd9                                 int32_t var_5d0_115 = ecx_280
+1003ace5                                 uint8_t* eax_142
+1003ace5                                 eax_142, ecx_280 = sub_10007bf0("BackupGPT")
+1003ace5                                 
+1003acec                                 if (eax_142 == 0)
+1003acec                                     goto label_1003acf2
+1003ac97                     else if (var_2a0 != 0)
+1003acb5                         goto label_1003acbb
+1003ac5d             else if (eax_130 != 1 && eax_130 != 2)
+1003ac6b                 goto label_1003ac84
+1003ac6b             
+1003b13c             sub_100019a0(&var_378)
+1003b147             sub_1002d040(&var_2a4)
+1003b152             var_8_1.b = 0x67
+1003b156             ecx_268 = sub_100019a0(&var_2c0)
+1003b15b             esi_6 = *esi_6
+1003b15d             eax_128 = var_2c8
+1003b163             int32_t* var_408_2 = eax_128
+1003b163             
+1003b16b             if (esi_6 == eax_128)
+1003b16b                 break
+1003b16b     
+1003b171     void** esi_7 = *eax_128
+1003b173     int32_t* var_404_1 = eax_128
+1003b173     
+1003b17b     if (esi_7 != eax_128)
+1003b364         int32_t* eax_187
+1003b364         
+1003b364         do
+1003b181             void* eax_178 = esi_7[2]
+1003b18d             ebx.b = *(eax_178 + 0x3c)
+1003b190             int32_t eax_179 = *(eax_178 + 0x18)
+1003b19e             void var_328
+1003b19e             int32_t var_5d0_142 = sub_10002870(&var_328, esi_7[2])
+1003b19f             void var_2d8
+1003b19f             int32_t* ecx_328 = &var_2d8
+1003b1a5             var_8_1.b = 0x93
+1003b1a9             sub_1000f740(ecx_328)
+1003b1b5             int32_t ecx_329 = sub_1002d080(ecx_328, esi_7[2] + 0x58)
+1003b1ba             var_8_1.b = 0x94
+1003b1ba             
+1003b1c0             if (ebx.b == 0)
+1003b1dd                 opdbg_log("QCSolution::makeSFP", 0x16a, "partitionName %s not download.", 
+1003b1dd                     std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::c_str(
+1003b1dd                         &var_328))
+1003b1c0             else if (eax_179 == 1)
+1003b1ff                 if (var_3d3 != 0)
+1003b233                 label_1003b233:
+1003b233                     int32_t var_5d0_147 = 1
+1003b241                     sub_10002230(&var_17c, "%d")
+1003b24b                     PSTR* var_3c4_40 = &lpAppName
+1003b256                     sub_10001a60(&lpAppName, &data_1006a03d)
+1003b25e                     var_8_1.b = 0x95
+1003b268                     char** var_3c8_41 = &var_5fc
+1003b271                     sub_10002870(&var_5fc, &var_328)
+1003b279                     var_8_1.b = 0x96
+1003b283                     char** var_3cc_41 = &var_614
+1003b28c                     sub_10001a60(&var_614, &var_17c)
+1003b291                     var_8_1.b = 0x97
+1003b2a1                     char const* const eax_185 = "erase_partition"
+1003b2a6                     int32_t var_2d4
+1003b2a6                     
+1003b2a6                     if (var_2d4 != 0)
+1003b2a6                         eax_185 = "program_partition"
+1003b2a6                     
+1003b2af                     sub_10001a60(&var_62c, eax_185)
+1003b2b6                     var_8_1.b = 0x94
+1003b2ba                     sub_10003290(&arg1[4])
+1003b2ba                     
+1003b2d1                     if (sub_1002dd20("BackupGPT", &var_328) != 0)
+1003b2d8                         PSTR* var_3c4_41 = &lpAppName
+1003b2e3                         sub_10001a60(&lpAppName, &data_1006a03d)
+1003b2eb                         var_8_1.b = 0x98
+1003b2f5                         char** var_3c8_42 = &var_5fc
+1003b2fe                         sub_10001a60(&var_5fc, &var_17c)
+1003b306                         var_8_1.b = 0x99
+1003b30c                         char** var_3cc_42 = &var_614
+1003b317                         sub_10001a60(&var_614, "1")
+1003b31f                         var_8_1.b = 0x9a
+1003b32a                         sub_10001a60(&var_62c, "apply_patches")
+1003b331                         var_8_1.b = 0x94
+1003b335                         sub_10003290(&arg1[4])
+1003b1ff                 else
+1003b201                     int32_t var_5d0_145 = ecx_329
+1003b20d                     uint8_t* eax_183
+1003b20d                     int32_t ecx_331
+1003b20d                     eax_183, ecx_331 = sub_10007bf0("userdata")
+1003b20d                     
+1003b214                     if (eax_183 != 0)
+1003b21a                         int32_t var_5d0_146 = ecx_331
+1003b21a                         
+1003b22d                         if (sub_10007bf0("metadata") != 0)
+1003b22d                             goto label_1003b233
+1003b22d             
+1003b340             sub_1002d040(&var_2d8)
+1003b34b             var_8_1.b = 0x67
+1003b34f             ecx_268 = sub_100019a0(&var_328)
+1003b354             esi_7 = *esi_7
+1003b356             eax_187 = var_2c8
+1003b35c             int32_t* var_404_2 = eax_187
+1003b364         while (esi_7 != eax_187)
+1003b364     
+1003b36a     int32_t var_5d0_148 = ecx_268
+1003b371     void var_310
+1003b371     sub_1000f740(&var_310)
+1003b382     sub_10043cf0(arg1[1], &var_310)
+1003b387     var_8_1.b = 0x9b
+1003b392     int32_t var_30c
+1003b392     
+1003b392     if (var_30c != 0)
+1003b399         PSTR* var_3c4_42 = &lpAppName
+1003b3a4         sub_10001a60(&lpAppName, &data_1006a03d)
+1003b3ac         var_8_1.b = 0x9c
+1003b3b2         char** var_3c8_43 = &var_5fc
+1003b3bd         sub_10001a60(&var_5fc, &data_1006a03d)
+1003b3c5         var_8_1.b = 0x9d
+1003b3cb         char** var_3cc_43 = &var_614
+1003b3d6         sub_10001a60(&var_614, &data_1006a03d)
+1003b3de         var_8_1.b = 0x9e
+1003b3e9         sub_10001a60(&var_62c, "write_dynamic_partition")
+1003b3f0         var_8_1.b = 0x9b
+1003b3f4         sub_10003290(&arg1[4])
+1003b3f4     
+1003b400     if (eax_68 != 0)
+1003b40b         PSTR* var_3dc_2 = &lpAppName
+1003b416         sub_10001a60(&lpAppName, &data_1006a03d)
+1003b41e         var_8_1.b = 0x9f
+1003b424         char** var_3c4_43 = &var_5fc
+1003b42f         sub_10001a60(&var_5fc, &data_1006a03d)
+1003b437         var_8_1.b = 0xa0
+1003b43d         char** var_3c8_44 = &var_614
+1003b448         sub_10001a60(&var_614, &data_1006a03d)
+1003b450         var_8_1.b = 0xa1
+1003b45b         sub_10001a60(&var_62c, "write_download_flag")
+1003b462         var_8_1.b = 0x9b
+1003b466         sub_10003290(&arg1[4])
+1003b470         PSTR* var_3dc_3 = &lpAppName
+1003b47b         sub_10001a60(&lpAppName, &data_1006a03d)
+1003b483         var_8_1.b = 0xa2
+1003b489         char** var_3c4_44 = &var_5fc
+1003b494         sub_10001a60(&var_5fc, &data_1006a03d)
+1003b49c         var_8_1.b = 0xa3
+1003b4a2         char** var_3c8_45 = &var_614
+1003b4ad         sub_10001a60(&var_614, &data_1006a03d)
+1003b4b5         var_8_1.b = 0xa4
+1003b4c0         sub_10001a60(&var_62c, "write_download_flag_signed")
+1003b4c7         var_8_1.b = 0x9b
+1003b4cb         sub_10003290(&arg1[4])
+1003b4d5         PSTR* var_3dc_4 = &lpAppName
+1003b4e0         sub_10001a60(&lpAppName, &data_1006a03d)
+1003b4e8         var_8_1.b = 0xa5
+1003b4ee         char** var_3c4_45 = &var_5fc
+1003b4f9         sub_10001a60(&var_5fc, &data_1006a03d)
+1003b501         var_8_1.b = 0xa6
+1003b507         char** var_3c8_46 = &var_614
+1003b512         sub_10001a60(&var_614, &data_1006a03d)
+1003b51a         var_8_1.b = 0xa7
+1003b525         sub_10001a60(&var_62c, "write_skip_first_user_guid")
+1003b52c         var_8_1.b = 0x9b
+1003b530         sub_10003290(&arg1[4])
+1003b53a         PSTR* var_3dc_5 = &lpAppName
+1003b545         sub_10001a60(&lpAppName, &data_1006a03d)
+1003b54d         var_8_1.b = 0xa8
+1003b553         char** var_3c4_46 = &var_5fc
+1003b55e         sub_10001a60(&var_5fc, &data_1006a03d)
+1003b566         var_8_1.b = 0xa9
+1003b56c         char** var_3c8_47 = &var_614
+1003b577         sub_10001a60(&var_614, &data_1006a03d)
+1003b57f         var_8_1.b = 0xaa
+1003b58a         sub_10001a60(&var_62c, "write_partition_states")
+1003b591         var_8_1.b = 0x9b
+1003b595         sub_10003290(&arg1[4])
+1003b59f         PSTR* var_3dc_6 = &lpAppName
+1003b5aa         sub_10001a60(&lpAppName, &data_1006a03d)
+1003b5b2         var_8_1.b = 0xab
+1003b5b8         char** var_3c4_47 = &var_5fc
+1003b5c3         sub_10001a60(&var_5fc, &data_1006a03d)
+1003b5cb         var_8_1.b = 0xac
+1003b5d1         char** var_3c8_48 = &var_614
+1003b5dc         sub_10001a60(&var_614, &data_1006a03d)
+1003b5e4         var_8_1.b = 0xad
+1003b5ef         sub_10001a60(&var_62c, "write_net_info")
+1003b5f6         var_8_1.b = 0x9b
+1003b5fa         sub_10003290(&arg1[4])
+1003b604         PSTR* var_3dc_7 = &lpAppName
+1003b60f         sub_10001a60(&lpAppName, &data_1006a03d)
+1003b617         var_8_1.b = 0xae
+1003b61d         char** var_3c4_48 = &var_5fc
+1003b628         sub_10001a60(&var_5fc, &data_1006a03d)
+1003b639         char* eax_188 = &data_1006dd28
+1003b63e         var_8_1.b = 0xaf
+1003b63e         
+1003b642         if (var_3e9 == 0)
+1003b642             eax_188 = &data_1006d0e0
+1003b642         
+1003b64a         char** var_3c8_49 = &var_614
+1003b651         sub_10001a60(&var_614, eax_188)
+1003b659         var_8_1.b = 0xb0
+1003b664         sub_10001a60(&var_62c, "write_enable_uart_log_flag")
+1003b66b         var_8_1.b = 0x9b
+1003b66f         sub_10003290(&arg1[4])
+1003b66f     
+1003b67a     char const* const edx_12 = "eMMC"
+1003b67f     int32_t* eax_189 =
+1003b67f         std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >::c_str(
+1003b67f         &var_360)
+1003b684     int32_t eax_191
+1003b684     
+1003b684     while (true)
+1003b684         char* ecx_382
+1003b684         ecx_382.b = *eax_189
+1003b686         char const temp2_1 = *edx_12
+1003b686         bool c_3 = ecx_382.b u< temp2_1
+1003b686         
+1003b688         if (ecx_382.b == temp2_1)
+1003b68c             if (ecx_382.b == 0)
+1003b6a0                 eax_191 = 0
+1003b6a2                 break
+1003b6a2             
+1003b68e             ecx_382.b = *(eax_189 + 1)
+1003b691             char temp3_1 = edx_12[1]
+1003b691             c_3 = ecx_382.b u< temp3_1
+1003b691             
+1003b694             if (ecx_382.b == temp3_1)
+1003b696                 eax_189 += 2
+1003b699                 edx_12 = &edx_12[2]
+1003b699                 
+1003b69e                 if (ecx_382.b != 0)
+1003b69e                     continue
+1003b69e                 
+1003b6a0                 eax_191 = 0
+1003b6a2                 break
+1003b6a2         
+1003b6a6         eax_191 = sbb.d(eax_189, eax_189, c_3) | 1
+1003b6a6         break
+1003b6a6     
+1003b6ac     PSTR* var_3dc_8 = &lpAppName
+1003b6b2     PSTR* ecx_383 = &lpAppName
+1003b6b4     char* var_5e8_55 = &data_1006a03d
+1003b6bb     char* var_630_8
+1003b6bb     char** ecx_391
+1003b6bb     
+1003b6bb     if (eax_191 != 0)
+1003b770         sub_10001a60(ecx_383, var_5e8_55)
+1003b778         var_8_1.b = 0xb7
+1003b77e         char** var_3c4_51 = &var_5fc
+1003b789         sub_10001a60(&var_5fc, &data_1006a03d)
+1003b791         var_8_1.b = 0xb8
+1003b797         char** var_3c8_52 = &var_614
+1003b7a2         sub_10001a60(&var_614, "1")
+1003b7aa         var_8_1.b = 0xb9
+1003b7b5         sub_10001a60(&var_62c, "set_bootable_storage_drive")
+1003b7bc         var_8_1.b = 0x9b
+1003b7c0         sub_10003290(&arg1[4])
+1003b7ca         PSTR* var_3dc_10 = &lpAppName
+1003b7d5         sub_10001a60(&lpAppName, &data_1006a03d)
+1003b7dd         var_8_1.b = 0xba
+1003b7e3         char** var_3c4_52 = &var_5fc
+1003b7ee         sub_10001a60(&var_5fc, &data_1006a03d)
+1003b7f6         var_8_1.b = 0xbb
+1003b7fc         char** var_3c8_53 = &var_614
+1003b807         sub_10001a60(&var_614, &data_1006a03d)
+1003b80f         var_8_1.b = 0xbc
+1003b813         ecx_391 = &var_62c
+1003b815         var_630_8 = "check_storage_info"
+1003b6bb     else
+1003b6c1         sub_10001a60(ecx_383, var_5e8_55)
+1003b6c9         var_8_1.b = 0xb1
+1003b6cf         char** var_3c4_49 = &var_5fc
+1003b6da         sub_10001a60(&var_5fc, &data_1006a03d)
+1003b6e2         var_8_1.b = 0xb2
+1003b6e8         char** var_3c8_50 = &var_614
+1003b6f3         sub_10001a60(&var_614, &data_1006d0e0)
+1003b6fb         var_8_1.b = 0xb3
+1003b706         sub_10001a60(&var_62c, "set_bootable_storage_drive")
+1003b70d         var_8_1.b = 0x9b
+1003b711         sub_10003290(&arg1[4])
+1003b71b         PSTR* var_3dc_9 = &lpAppName
+1003b726         sub_10001a60(&lpAppName, &data_1006a03d)
+1003b72e         var_8_1.b = 0xb4
+1003b734         char** var_3c4_50 = &var_5fc
+1003b73f         sub_10001a60(&var_5fc, &data_1006a03d)
+1003b747         var_8_1.b = 0xb5
+1003b74d         char** var_3c8_51 = &var_614
+1003b758         sub_10001a60(&var_614, &data_1006a03d)
+1003b760         var_8_1.b = 0xb6
+1003b764         ecx_391 = &var_62c
+1003b766         var_630_8 = "check_emmc_size"
+1003b766     
+1003b81a     sub_10001a60(ecx_391, var_630_8)
+1003b821     var_8_1.b = 0x9b
+1003b825     sub_10003290(&arg1[4])
+1003b82f     PSTR* var_3dc_11 = &lpAppName
+1003b83a     sub_10001a60(&lpAppName, &data_1006a03d)
+1003b842     var_8_1.b = 0xbd
+1003b848     char** var_3c4_53 = &var_5fc
+1003b853     sub_10001a60(&var_5fc, &data_1006a03d)
+1003b85b     var_8_1.b = 0xbe
+1003b861     char** var_3c8_54 = &var_614
+1003b86c     sub_10001a60(&var_614, &data_1006a03d)
+1003b874     var_8_1.b = 0xbf
+1003b87f     sub_10001a60(&var_62c, "write_firmware_info")
+1003b886     var_8_1.b = 0x9b
+1003b88a     sub_10003290(&arg1[4])
+1003b894     PSTR* var_3dc_12 = &lpAppName
+1003b89f     sub_10001a60(&lpAppName, &data_1006a03d)
+1003b8a7     var_8_1.b = 0xc0
+1003b8ad     char** var_3c4_54 = &var_5fc
+1003b8b8     sub_10001a60(&var_5fc, &data_1006a03d)
+1003b8c0     var_8_1.b = 0xc1
+1003b8c6     char** var_3c8_55 = &var_614
+1003b8d1     sub_10001a60(&var_614, "end")
+1003b8d9     var_8_1.b = 0xc2
+1003b8e4     sub_10001a60(&var_62c, "write_download_info")
+1003b8eb     var_8_1.b = 0x9b
+1003b8ef     sub_10003290(&arg1[4])
+1003b8f9     PSTR* var_3dc_13 = &lpAppName
+1003b904     sub_10001a60(&lpAppName, &data_1006a03d)
+1003b910     char* var_630_9
+1003b910     char** ecx_413
+1003b910     
+1003b910     if (var_284 == 0)
+1003b957         var_8_1.b = 0xc6
+1003b95d         char** var_3c4_56 = &var_5fc
+1003b968         sub_10001a60(&var_5fc, "1")
+1003b970         var_8_1.b = 0xc7
+1003b97a         char** var_3c8_57 = &var_614
+1003b983         sub_10002870(&var_614, &var_3a8)
+1003b98b         var_8_1.b = 0xc8
+1003b98f         ecx_413 = &var_62c
+1003b991         var_630_9 = "reboot_off"
+1003b910     else
+1003b915         var_8_1.b = 0xc3
+1003b91b         char** var_3c4_55 = &var_5fc
+1003b926         sub_10001a60(&var_5fc, &data_1006d0e0)
+1003b92e         var_8_1.b = 0xc4
+1003b934         char** var_3c8_56 = &var_614
+1003b93f         sub_10001a60(&var_614, "reset")
+1003b947         var_8_1.b = 0xc5
+1003b94b         ecx_413 = &var_62c
+1003b94d         var_630_9 = "reboot"
+1003b94d     
+1003b996     sub_10001a60(ecx_413, var_630_9)
+1003b99d     var_8_1.b = 0x9b
+1003b9a1     sub_10003290(&arg1[4])
+1003b9ac     result = 0
+1003b9ae     sub_1002d130(&var_310)
+1003b9b9     sub_1002d040(&var_2c8)
+10039569 else
+1003956b     result = 0xffffffff
+1003956b 
+1003b9c4 sub_100019a0(&var_360)
+1003b9cf sub_100019a0(&var_3a8)
+1003b9da sub_100019a0(&var_3c0)
+1003b9e5 sub_10008c70(&var_2e0)
+1003b9f0 sub_10008c70(&var_2e8)
+1003b9fb sub_100019a0(&var_29c)
+1003ba05 fsbase->NtTib.ExceptionList = ExceptionList
+1003ba15 CookieCheckFunction(result)
+1003ba1d return result

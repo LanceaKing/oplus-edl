@@ -1,0 +1,86 @@
+00446340 int32_t __saved_ebp_1
+00446340 int32_t __saved_ebp = __saved_ebp_1
+00446346 int32_t edx = arg3
+00446349 int32_t eax = 1
+0044634e int32_t ebx
+0044634e int32_t var_14 = ebx
+0044634f int32_t esi
+0044634f int32_t var_18 = esi
+00446352 int32_t var_c = 1
+00446355 int32_t ecx = arg4
+00446358 int32_t var_8 = ecx
+0044635b int32_t edi
+0044635b int32_t var_1c = edi
+0044635b int32_t* esp_1 = &var_1c
+0044635c int32_t edi_1 = edx
+0044635c 
+0044636a if (ecx s>= 0 && (ecx s> 0 || edx != 0))
+00446377     while (*(arg1 + 0x1004e5) == 0)
+00446380         int32_t esi_2 = arg5 << 0xa
+00446380         
+00446385         if (ecx s< 0)
+0044638d             esi_2 = edi_1
+00446385         else if (ecx s<= 0 && edi_1 u<= esi_2)
+0044638d             esi_2 = edi_1
+0044638d         
+0044638f         int32_t* ecx_1 = *(arg1 + 0x2c)
+00446395         *(esp_1 - 4) = &var_c
+00446398         var_c = 0
+004463a4         int32_t ecx_2 = *ecx_1
+004463a6         *(esp_1 - 8) = esi_2
+004463a7         *(esp_1 - 0xc) = edx - edi_1 + arg2
+004463a8         int32_t eax_4 = sub_44e3b0(ecx_2)
+004463ad         var_c = eax_4
+004463ad         
+004463b2         if (eax_4 != 0)
+00446402             bool cond:2_1 = *(arg1 + 0x20) == 0
+0044640c             *(esp_1 - 4) = eax_4
+0044640d             void* esp_12
+0044640d             
+0044640d             if (cond:2_1)
+00446416                 *(esp_1 - 8) = u"FirehoseWriteData Failed, Errno: %d"
+00446416                 esp_12 = esp_1 - 8
+0044640d             else
+0044640f                 *(esp_1 - 8) = u"FirehoseWriteData"
+0044640f                 esp_12 = esp_1 - 8
+0044640f             
+0044641b             *(esp_12 - 4) = arg1 + 0x2b8
+0044641c             sub_44d900()
+00446432             int32_t eax_9 = (zx.d((*(arg1 + 0x30)).b) | 0x100) << 0x10
+00446435             *(esp_12 + 4) = arg1 + 0x2b8
+00446436             *esp_12 = eax_9
+00446437             *(esp_12 - 4) = 0x178c
+0044643c             *(esp_12 - 8) = *(arg1 + 0x34)
+0044643c             esp_1 = esp_12 - 8
+0044643f             0x3095d0()
+0044643f             break
+0044643f         
+004463b7         int32_t temp3_1 = edi_1
+004463b7         edi_1 -= esi_2
+004463bc         int32_t esi_4 = sbb.d(var_8, eax_4, temp3_1 u< esi_2)
+004463c0         *(esp_1 - 4) = arg3 - edi_1
+004463cb         var_8 = esi_4
+004463d4         *(esp_1 - 8) = zx.d((*(arg1 + 0x30)).b) << 0x10 | 3
+004463d5         *(esp_1 - 0xc) = 0x178c
+004463da         *(esp_1 - 0x10) = *(arg1 + 0x34)
+004463da         esp_1 -= 0x10
+004463dd         0x3095d0()
+004463e3         edx = arg3
+004463e6         ecx = esi_4
+004463e6         
+004463ea         if (esi_4 s<= 0)
+004463ec             if (esi_4 s< 0)
+004463ec                 break
+004463ec             
+004463f0             if (edi_1 == 0)
+004463f9                 *esp_1
+004463f9                 esp_1[1]
+004463fa                 esp_1[2]
+004463ff                 return var_c
+004463ff     
+00446445     eax = var_c
+00446445 
+00446448 *esp_1
+00446448 esp_1[1]
+00446449 esp_1[2]
+0044644e return eax

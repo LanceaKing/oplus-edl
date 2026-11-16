@@ -1,0 +1,112 @@
+180003ab0 void var_98
+180003ab0 int64_t rax_1 = __security_cookie ^ &var_98
+180003abd int64_t* r15 = arg1 + 0x98
+180003acc int32_t* rdx
+180003acc 
+180003acc if (*(arg1 + 0xb0) u<= 0xf)
+180003ad3     rdx = r15
+180003acc else
+180003ace     rdx = *r15
+180003ace 
+180003ad9 int128_t var_50 = zx.o(0)
+180003add void* var_40 = nullptr
+180003ae1 int64_t var_38 = 0
+180003af0 sub_180004790(&var_50, rdx, *(arg1 + 0xa8))
+180003af5 int128_t* r14 = &var_50
+180003af9 int128_t* rcx_1 = var_50.q
+180003afd int64_t rdx_1 = var_38
+180003afd 
+180003b05 if (rdx_1 u> 0xf)
+180003b05     r14 = rcx_1
+180003b05 
+180003b09 int128_t* rbx = &var_50
+180003b09 
+180003b0d if (rdx_1 u> 0xf)
+180003b0d     rbx = rcx_1
+180003b0d 
+180003b11 void* r8_1 = var_40
+180003b15 void* rbx_1 = rbx + r8_1
+180003b18 int128_t* rdi = &var_50
+180003b18 
+180003b20 if (rdx_1 u> 0xf)
+180003b20     rdi = rcx_1
+180003b20 
+180003b27 if (rdi != rbx_1)
+180003b45     do
+180003b38         *r14 = tolower(zx.d(*rdi))
+180003b3b         r14 += 1
+180003b3f         rdi += 1
+180003b45     while (rdi != rbx_1)
+180003b45     
+180003b47     rdx_1 = var_38
+180003b4b     r8_1 = var_40
+180003b4f     rcx_1 = var_50.q
+180003b4f 
+180003b53 int128_t* rdi_1 = &var_50
+180003b53 
+180003b5b if (rdx_1 u> 0xf)
+180003b5b     rdi_1 = rcx_1
+180003b5b 
+180003b63 int32_t rax_9
+180003b63 int32_t rbx_3
+180003b63 
+180003b63 if (r8_1 u< 0xb)
+180003c59     rbx_3 = 6
+180003c5e     rax_9 = 6
+180003b63 else
+180003b69     uint8_t (* rbx_2)[0x20] = r8_1 + rdi_1
+180003b80     uint8_t (* rax_3)[0x20] = j_sub_180075f90(rdi_1, rbx_2, "value="ack"", 0xb)
+180003b80     
+180003b95     if (rax_3 == rbx_2 || rax_3 - rdi_1 == -1)
+180003c51         rdx_1 = var_38
+180003c55         rcx_1 = var_50.q
+180003c59         rbx_3 = 6
+180003c5e         rax_9 = 6
+180003b95     else
+180003b9b         int64_t* rax_5 = r15
+180003b9b         
+180003ba6         if (*(arg1 + 0xb0) u> 0xf)
+180003ba8             rax_5 = *r15
+180003ba8         
+180003bb2         int64_t* var_78 = "model_check"
+180003bb6         int64_t var_70_1 = 0xb
+180003bbe         int64_t* var_68 = rax_5
+180003bc9         int64_t var_60_1 = *(arg1 + 0xa8)
+180003bdc         sub_180003cd0("model_check", &var_68, &var_78, arg1 + 0xbc)
+180003be1         int64_t* rax_7 = r15
+180003be1         
+180003bec         if (*(arg1 + 0xb0) u> 0xf)
+180003bee             rax_7 = *r15
+180003bee         
+180003bf8         var_68 = "auth_token_verify"
+180003bfc         int64_t var_60_2 = 0x11
+180003c04         var_78 = rax_7
+180003c0f         int64_t var_70_2 = *(arg1 + 0xa8)
+180003c22         sub_180003cd0("auth_token_verify", &var_78, &var_68, arg1 + 0xc0)
+180003c27         *(arg1 + 0xa8) = 0
+180003c27         
+180003c36         if (*(arg1 + 0xb0) u> 0xf)
+180003c38             r15 = *r15
+180003c38         
+180003c3b         *r15 = 0
+180003c3f         rbx_3 = 0
+180003c42         rax_9 = 5
+180003c47         rdx_1 = var_38
+180003c4b         rcx_1 = var_50.q
+180003c4b 
+180003c60 *(arg1 + 0x50) = rax_9
+180003c63 *(arg1 + 0x54) = rbx_3
+180003c63 
+180003c6a if (rdx_1 u> 0xf)
+180003c76     if (rdx_1 + 1 u>= 0x1000)
+180003c78         int128_t* rax_10 = *(rcx_1 - 8)
+180003c78         
+180003c87         if (rcx_1 - rax_10 - 8 u> 0x1f)
+180003cc1             trap(0xd)
+180003cc1         
+180003c8d         rcx_1 = rax_10
+180003c8d     
+180003c90     j_sub_1800899c0(rcx_1)
+180003c90 
+180003c9e __security_check_cookie(rax_1 ^ &var_98)
+180003cbb return zx.q(rbx_3)

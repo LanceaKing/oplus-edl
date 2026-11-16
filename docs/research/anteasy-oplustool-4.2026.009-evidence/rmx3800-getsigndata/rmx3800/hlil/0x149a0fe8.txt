@@ -1,0 +1,28 @@
+149a1028 int32_t x0_1
+149a1028 uint64_t x1_1
+149a1028 int64_t* entry_x3
+149a1028 
+149a1028 if (zx.d(*arg1) != 0x4f || zx.d(arg1[1]) != 0x53 || zx.d(arg1[2]) != 0x49 || zx.d(arg1[3]) != 0x47)
+149a1080     x1_1 = "format error%c"
+149a1084     x0_1 = 3
+149a1028 else
+149a1044     arg2 = sub_1499c404(0x8025b41d, 0, 0x200)
+149a104c     int64_t var_18
+149a104c     entry_x3 = &var_18
+149a1058     var_18 = 0x200
+149a105c     int64_t result = sub_149ba1e8(arg1, 0x160, 0x8025b41d, entry_x3)
+149a105c     
+149a1060     if (result == 0)
+149a109c         return result
+149a109c     
+149a106c     x1_1 = "base64 failed%c"
+149a1070     x0_1 = 2
+149a1070 
+149a1088 int64_t entry_x4
+149a1088 int64_t entry_x5
+149a1088 int64_t entry_x6
+149a1088 int64_t entry_x7
+149a1088 uint64_t x24
+149a1088 sub_149a5c34(x0_1, x1_1, 0x2e, entry_x3, entry_x4, entry_x5, entry_x6, entry_x7, arg2, arg3, arg4, 
+149a1088     arg5, arg6, arg7, arg8, arg9, x24)
+149a108c return 0xffffffff

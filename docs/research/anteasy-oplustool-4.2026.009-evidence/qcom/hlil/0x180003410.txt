@@ -1,0 +1,86 @@
+180003429 void var_298
+180003429 int64_t rax_1 = __security_cookie ^ &var_298
+180003447 void var_218
+180003447 sub_18009a050(&var_218, 0, 0x200)
+18000344c void* var_260 = nullptr
+18000345a int128_t* rcx_1
+18000345a 
+18000345a if (*(arg1 + 0x38) u<= 0xf)
+180003462     rcx_1 = arg1 + 0x20
+18000345a else
+18000345c     rcx_1 = *(arg1 + 0x20)
+18000345c 
+180003480 char result = sub_180002a10(rcx_1, *(arg1 + 0x30), *(arg1 + 0x40), &var_218, &var_260)
+180003480 
+180003487 if (result != 0)
+18000349b     char r9_1 = sub_180004440(arg1 + 0x58, 
+18000349b         "<?xml version="1.0" encoding="UTF-8" ?>\n<data>\n<demacia token="")
+1800034b0     sub_180004a60(arg1 + 0x58, &var_218, var_260, r9_1)
+1800034c5     void* var_238
+1800034c5     void** rax_2 = sub_180004150(&var_238, "" pk="", arg1 + 0x20)
+1800034ca     void** rdi_1 = rax_2
+1800034cd     int64_t rcx_5 = rax_2[2]
+1800034d1     int64_t rdx_2 = rax_2[3]
+1800034df     char var_268
+1800034df     
+1800034df     if (rdx_2 - rcx_5 u< 0xc)
+180003539         rdi_1 = sub_180004b60(rdi_1, 0xc, zx.q(var_268), "" />\n</data>", 0xc)
+1800034df     else
+1800034e5         rdi_1[2] = rcx_5 + 0xc
+1800034ed         void** rax_6
+1800034ed         
+1800034ed         if (rdx_2 u<= 0xf)
+1800034f4             rax_6 = rdi_1
+1800034ed         else
+1800034ef             rax_6 = *rdi_1
+1800034ef         
+1800034f7         int128_t* rbx_1 = rax_6 + rcx_5
+18000350b         memcpy(rbx_1, "" />\n</data>", 0xc)
+180003510         *(rbx_1 + 0xc) = 0
+18000353c     int128_t zmm0_1 = *rdi_1
+18000353f     int128_t var_258 = zmm0_1
+180003544     uint128_t zmm1_1 = *(rdi_1 + 0x10)
+18000354d     rdi_1[2] = 0
+180003555     rdi_1[3] = 0xf
+18000355d     *rdi_1 = nullptr
+180003565     int32_t* rdx_3 = &var_258
+18000356a     int32_t* r9_2 = zmm0_1.q
+18000356a     
+18000357d     if (_mm_bsrli_si128(zmm1_1, 8).q u> 0xf)
+18000357d         rdx_3 = r9_2
+18000357d     
+180003584     sub_180004a60(arg1 + 0x58, rdx_3, zmm1_1.q, r9_2.b)
+18000358a     int64_t rdx_4 = zmm1_1:8.q
+18000358a     
+180003593     if (rdx_4 u> 0xf)
+180003598         void* rcx_9 = var_258.q
+180003598         
+1800035a4         if (rdx_4 + 1 u>= 0x1000)
+1800035a6             void* rax_9 = *(rcx_9 - 8)
+1800035a6             
+1800035b5             if (rcx_9 - rax_9 - 8 u> 0x1f)
+180003629                 trap(0xd)
+180003629             
+1800035bb             rcx_9 = rax_9
+1800035bb         
+1800035be         j_sub_1800899c0(rcx_9)
+1800035be     
+1800035cd     int64_t var_220
+1800035cd     
+1800035cd     if (var_220 u> 0xf)
+1800035d2         void* rcx_12 = var_238
+1800035d2         
+1800035de         if (var_220 + 1 u>= 0x1000)
+1800035e0             void* rax_10 = *(rcx_12 - 8)
+1800035e0             
+1800035ef             if (rcx_12 - rax_10 - 8 u> 0x1f)
+180003630                 trap(0xd)
+180003630             
+1800035f5             rcx_12 = rax_10
+1800035f5         
+1800035f8         j_sub_1800899c0(rcx_12)
+1800035f8     
+1800035fd     result = 1
+1800035fd 
+18000360a __security_check_cookie(rax_1 ^ &var_298)
+180003623 return result

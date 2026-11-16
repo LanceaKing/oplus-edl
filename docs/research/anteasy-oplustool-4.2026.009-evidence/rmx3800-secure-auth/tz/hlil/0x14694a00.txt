@@ -1,0 +1,16 @@
+14694a00 _WriteMSR(tpidrro_el0, arg1)
+14694a04 _WriteMSR(tpidr_el3, arg5)
+14694a0c int64_t x4_1 = _ReadMSR(esr_el3) u>> 0x1a & 0x3f
+14694a14 uint64_t x0
+14694a14 
+14694a14 if (x4_1 != 0x3f)
+14694a34     x0 = 0x10
+14694a34     
+14694a3c     if (x4_1 == 0x1c)
+14694a40         x0 = 0x58
+14694a14 else
+14694a1c     sub_146937d8()
+14694a28     x0 = 0x10
+14694a2c     _ReadMSR(tpidr_el3)
+14694a2c 
+14694a44 return sub_146935b8(x0, arg2, arg3) __tailcall

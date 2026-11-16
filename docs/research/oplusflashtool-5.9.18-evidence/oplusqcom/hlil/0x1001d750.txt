@@ -1,0 +1,58 @@
+1001d75c __security_cookie
+1001d77e void var_410
+1001d77e memset(&var_410, 0, 0x400)
+1001d79b op_device_read(*(arg1 + 0x1c), &var_410, 0x400, 0x3e8)
+1001d7a7 sub_10006060(*(arg1 + 0x28))
+1001d7b9 int32_t edi = *(*(arg1 + 0x1764) + 0xa0)
+1001d7c4 int32_t var_538
+1001d7c4 memset(&var_538, 0, 0x128)
+1001d7cc char* ecx_1 = arg1 + 0x18cc
+1001d7d2 int128_t xmm0 = data_10078b10
+1001d7dc bool cond:0 = *(ecx_1 + 0x14) u< 0x10
+1001d7e0 uint32_t ebx = zx.d(arg4)
+1001d7e4 int32_t var_534 = arg2
+1001d7eb var_538 = 1
+1001d7f3 int128_t var_530 = xmm0
+1001d7f8 int32_t var_520 = 0
+1001d800 int32_t var_41c = arg3
+1001d807 uint32_t var_418 = ebx
+1001d80e int32_t var_414 = 1
+1001d80e 
+1001d819 if (not(cond:0))
+1001d81b     ecx_1 = *ecx_1
+1001d81b 
+1001d81d void var_51c
+1001d81d char* edx = &var_51c
+1001d82d int32_t eax_4
+1001d82d 
+1001d82d do
+1001d821     eax_4.b = *ecx_1
+1001d823     ecx_1 = &ecx_1[1]
+1001d826     *edx = eax_4.b
+1001d828     edx = &edx[1]
+1001d82d while (eax_4.b != 0)
+1001d845 opdbg_log("QCFlashWorker::doActionConfigure", 0x1104, "[INFO] doActionConfigure enable_vip = %d ", 
+1001d845     ebx)
+1001d852 uint32_t eax_5
+1001d852 
+1001d852 if (edi == 2 || edi == 3)
+1001d879     eax_5 = sub_10005230(*(arg1 + 0x28), &var_538)
+1001d852 else
+1001d858     int32_t* var_54c_1 = &var_538
+1001d858     
+1001d85c     if (edi != 1)
+1001d86a         eax_5 = sub_10005090(*(arg1 + 0x28), var_54c_1)
+1001d85c     else
+1001d860         eax_5 = sub_1002cc40(arg1, var_54c_1)
+1001d860 
+1001d880 if (eax_5 == 0)
+1001d8df     CookieCheckFunction(0)
+1001d8e7     return 0
+1001d8e7 
+1001d882 int32_t ecx_5 = *(arg1 + 0x1c)
+1001d8a2 opdbg_log("QCFlashWorker::doActionConfigure", 0x110f, 
+1001d8a2     "[%s] [%s] ERROR: Failed to execute firehose command 'configure'.", ecx_5 + 0x9e4, 
+1001d8a2     ecx_5 + 0x444)
+1001d8ad sub_10024880(arg1, "firehouse_exec_command_error(configure)")
+1001d8c6 CookieCheckFunction(0x791b)
+1001d8ce return 0x791b

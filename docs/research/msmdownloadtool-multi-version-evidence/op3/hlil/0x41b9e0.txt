@@ -1,0 +1,300 @@
+0041b9e0 int32_t ebp
+0041b9e0 int32_t var_4 = ebp
+0041b9e1 int32_t* ebp_1 = &var_4
+0041b9e3 int32_t var_8 = 0xffffffff
+0041b9e5 int32_t (* var_c)() = __ehhandler$___std_fs_get_stats@16
+0041b9f0 TEB* fsbase
+0041b9f0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0041b9fc int32_t eax_2 = __security_cookie ^ &var_4
+0041b9fe int32_t var_18 = eax_2
+0041ba01 int32_t ebx
+0041ba01 int32_t var_c4 = ebx
+0041ba02 int32_t esi
+0041ba02 int32_t var_c8 = esi
+0041ba03 int32_t edi
+0041ba03 int32_t var_cc = edi
+0041ba08 fsbase->NtTib.ExceptionList = &ExceptionList
+0041ba15 int32_t var_c0 = 0
+0041ba1f int32_t var_d4 = 0xb
+0041ba21 void* const var_d8 = "MemoryName="
+0041ba2c int32_t var_a0 = 0xf
+0041ba36 int32_t ebx_1 = 0xa
+0041ba39 int32_t var_a4 = 0
+0041ba43 char var_b4 = 0
+0041ba4a sub_402440(&var_b4, "MemoryName=", 0xb)
+0041ba4f int32_t var_8_1 = 0
+0041ba59 int32_t var_d4_1 = 0x1e
+0041ba5b void* const var_d8_1 = "MaxPayloadSizeToTargetInBytes="
+0041ba60 int32_t var_70 = 0xf
+0041ba67 int32_t var_74 = 0
+0041ba6e char var_84 = 0
+0041ba72 sub_402440(&var_84, "MaxPayloadSizeToTargetInBytes=", 0x1e)
+0041ba77 int32_t var_40 = 0xf
+0041ba7e int32_t var_44 = 0
+0041ba85 char var_54 = 0
+0041ba8d var_8_1.b = 2
+0041ba97 int32_t* var_d8_2
+0041ba97 
+0041ba97 if (arg2 == 0 || arg3 == 0)
+0041baa2     int32_t var_d4_3 = 0x72
+0041baa4     var_d8_2 = "  <configure ZlpAwareHost="1" SkipStorageInit="0" TargetName="8974" SkipWrite="0" "
+0041baa4     "AckRawDataEveryNumPackets="100" "
+0041ba97 else
+0041ba99     int32_t var_d4_2 = 0x72
+0041ba9b     var_d8_2 = "  <configure ZlpAwareHost="1" SkipStorageInit="1" TargetName="8974" SkipWrite="0" "
+0041ba9b     "AckRawDataEveryNumPackets="100" "
+0041ba9b 
+0041baac sub_402440(&var_54, var_d8_2, 0x72)
+0041bab1 int32_t var_d4_4 = 0x11
+0041bab3 void* const var_d8_3 = "TargetName="8974""
+0041babb int32_t var_58 = 0xf
+0041bac2 int32_t var_5c = 0
+0041bac9 char var_6c = 0
+0041bacd sub_402440(&var_6c, "TargetName="8974"", 0x11)
+0041bad2 int32_t var_d4_5 = 0x8000
+0041bad7 var_8_1.b = 3
+0041bae1 char var_24 = 0
+0041bae5 void* const var_d8_4 = &data_59f074
+0041baeb int64_t var_23 = 0
+0041baf0 char var_1b = 0
+0041baf4 sub_4207e0(&var_24, &data_59f074, 0x8000, eax_2)
+0041bafe struct _EXCEPTION_REGISTRATION_RECORD** var_b8 = &ExceptionList
+0041bb04 int32_t arg_4 = 0xf
+0041bb0b __return_addr = nullptr
+0041bb12 ExceptionList.b = 0
+0041bb19 void* ecx_4
+0041bb19 
+0041bb19 if (var_24 != 0)
+0041bb1f     char* ecx_5 = &var_24
+0041bb35     char i
+0041bb35     
+0041bb35     do
+0041bb30         i = *ecx_5
+0041bb32         ecx_5 = &ecx_5[1]
+0041bb35     while (i != 0)
+0041bb37     ecx_4 = ecx_5 - &var_23
+0041bb19 else
+0041bb1b     ecx_4 = nullptr
+0041bb1b 
+0041bb44 sub_402440(&ExceptionList, &var_24, ecx_4)
+0041bb4c var_8_1.b = 4
+0041bb55 void* var_2c = 0xffffffff
+0041bb57 int32_t var_30 = 0
+0041bb59 int32_t var_14_1 = 0xf
+0041bb60 int32_t var_18_2 = 0
+0041bb67 void** var_34 = &var_84
+0041bb68 char var_28 = 0
+0041bb6b sub_402300(&var_28, var_34, var_30, var_2c)
+0041bb73 var_8_1.b = 3
+0041bb7d int32_t var_14_2 = 0xffffffff
+0041bb7f int32_t var_18_3 = 0
+0041bb81 int32_t var_3c
+0041bb81 var_23:7.d = Concurrency::details::UMSThreadProxy::ScopedCriticalRegion::~ScopedCriticalRegion(
+0041bb81     &var_3c, var_28)
+0041bb85 var_8_1.b = 5
+0041bb89 sub_404d00(&var_54)
+0041bb8e var_8_1.b = 3
+0041bb8e 
+0041bb96 if (var_28.d u>= 0x10)
+0041bb9b     sub_4208bb(var_3c)
+0041bb9b 
+0041bbaa char* ecx_9 = &var_28
+0041bbac char* var_b8_1 = &var_28
+0041bbb2 int32_t var_14_4 = 0xf
+0041bbb9 int32_t var_18_4 = 0
+0041bbc0 var_28 = 0
+0041bbc3 void** eax_4
+0041bbc3 
+0041bbc3 if (arg2 == 0)
+0041bc15     sub_402440(ecx_9, "emmc", 4)
+0041bc1d     var_8_1.b = 8
+0041bc2d     int32_t var_2c_5 = 0xf
+0041bc34     int32_t var_30_4 = 0
+0041bc3c     var_40.b = 0
+0041bc3f     sub_402300(&var_40, &var_b4, 0, 0xffffffff)
+0041bc47     var_8_1.b = 3
+0041bc4c     eax_4 = Concurrency::details::UMSThreadProxy::ScopedCriticalRegion::~ScopedCriticalRegion(
+0041bc4c         &var_3c, var_40)
+0041bc51     var_8_1.b = 9
+0041bbc3 else
+0041bbcc     sub_402440(ecx_9, &data_5a1c44, 3)
+0041bbd4     var_8_1.b = 6
+0041bbe4     int32_t var_2c_3 = 0xf
+0041bbeb     int32_t var_30_2 = 0
+0041bbf3     var_40.b = 0
+0041bbf6     sub_402300(&var_40, &var_b4, 0, 0xffffffff)
+0041bbfe     var_8_1.b = 3
+0041bc03     eax_4 = Concurrency::details::UMSThreadProxy::ScopedCriticalRegion::~ScopedCriticalRegion(
+0041bc03         &var_3c, var_40)
+0041bc08     var_8_1.b = 7
+0041bc08 
+0041bc5d sub_404d00(&var_54, eax_4, nullptr, 0xffffffff)
+0041bc62 var_8_1.b = 3
+0041bc62 
+0041bc6a if (var_28.d u>= 0x10)
+0041bc6f     sub_4208bb(var_3c)
+0041bc6f 
+0041bc81 sub_404dc0(&var_54, &data_5a291c, 2)
+0041bc92 int32_t var_2c_9 = 0xf
+0041bc99 int32_t var_30_7 = 0
+0041bca1 var_40.b = 0
+0041bca4 sub_402300(&var_40, &var_54, 0, 0xffffffff)
+0041bcb0 int32_t* var_9c
+0041bcb0 sub_4205a0(&var_9c, var_40)
+0041bcb5 var_8_1.b = 0xa
+0041bcb9 int32_t eax_5 = arg1[2]
+0041bcb9 
+0041bcbe if (eax_5 != 0)
+0041bcc1     sub_4208bb(eax_5, var_14_4)
+0041bcc9     arg1[2] = 0
+0041bcc9 
+0041bcd5 int32_t eax_6 = sub_4208b2(0x1000, var_14_4)
+0041bcdd arg1[2] = eax_6
+0041bcdd 
+0041bce2 if (eax_6 != 0)
+0041bce4     int32_t eax_7 = arg1[3]
+0041bce4     
+0041bce9     if (eax_7 != 0)
+0041bcec         sub_4208bb(eax_7)
+0041bcf4         arg1[3] = 0
+0041bcf4     
+0041bd00     int32_t eax_8 = sub_4208b2(0x1000)
+0041bd08     arg1[3] = eax_8
+0041bd08     
+0041bd0d     if (eax_8 != 0)
+0041bdf5         int32_t var_18_15 = 0x1000
+0041bdfa         var_23:7.d = 0
+0041bdfc         var_23:3.d = arg1[2]
+0041bdff         _memset()
+0041be07         int32_t var_18_16 = 0x1000
+0041be0c         var_23:7.d = 0
+0041be0e         var_23:3.d = arg1[3]
+0041be11         _memset()
+0041be16         char* edx_1 = arg1[3]
+0041be19         int32_t* ecx_18 = &var_9c
+0041be29         int32_t var_88
+0041be29         
+0041be29         if (var_88 u>= 0x10)
+0041be29             ecx_18 = var_9c
+0041be29         
+0041be3c         char i_1
+0041be3c         
+0041be3c         do
+0041be30             i_1 = *ecx_18
+0041be32             ecx_18 += 1
+0041be35             *edx_1 = i_1
+0041be37             edx_1 = &edx_1[1]
+0041be3c         while (i_1 != 0)
+0041be3c         
+0041be40         while (true)
+0041be40             int32_t eax_10 = ebx_1
+0041be42             ebx_1 -= 1
+0041be42             
+0041be45             if (eax_10 s<= 0)
+0041be45                 break
+0041be45             
+0041be4b             char* edx_2 = arg1[3]
+0041be4e             char* ecx_19 = edx_2
+0041be4e             
+0041be58             do
+0041be53                 eax_10.b = *ecx_19
+0041be55                 ecx_19 = &ecx_19[1]
+0041be58             while (eax_10.b != 0)
+0041be58             
+0041be62             void* var_18_17 = &ebp_1[-0x2d]
+0041be63             var_23:7.d = ecx_19 - &ecx_19[1]
+0041be66             var_23:3.d = edx_2
+0041be67             int32_t eax_12
+0041be67             eax_12, ebp_1 = sub_41ad40(*arg1)
+0041be67             
+0041be70             if (eax_12 != 0)
+0041be70                 break
+0041be70             
+0041be84             Sleep((0xf - ebx_1) * 0xc8)
+0041be92             int32_t var_18_19 = 0xbb8
+0041be97             var_23:7.d = &ebp_1[-0x2f]
+0041be98             var_23:3.d = 0x1000
+0041be9d             var_24.d = arg1[2]
+0041bea0             int32_t eax_16 = sub_41af00(*arg1, var_24)
+0041bea0             
+0041bea9             if (eax_16 != 0)
+0041bf03                 if (eax_16 != 0x102)
+0041bf03                     break
+0041bea9             else
+0041beab                 int32_t var_18_20 = ebp_1[-0x2f]
+0041beb4                 ebp_1[-9] = 0xf
+0041bebb                 var_23:7.d = arg1[2]
+0041bebe                 ebp_1[-0xa] = eax_16
+0041bec1                 ebp_1[-0xe].b = eax_16.b
+0041bec4                 sub_402440(&ebp_1[-0xe])
+0041bec9                 int32_t var_18_21 = 0x14
+0041becb                 var_23:7.d = eax_16
+0041becc                 var_23:3.d = "response value="NCK""
+0041becc                 
+0041bedc                 if (sub_40fa20(&ebp_1[-0xe]) == 0xffffffff)
+0041bf0e                     int32_t var_18_23 = ebp_1[-0x16]
+0041bf15                     void* eax_18 = &ebp_1[-0x1a]
+0041bf18                     var_23:7.d = 0
+0041bf18                     
+0041bf1a                     if (ebp_1[-0x15] u>= 0x10)
+0041bf1a                         eax_18 = ebp_1[-0x1a]
+0041bf1a                     
+0041bf21                     var_23:3.d = eax_18
+0041bf2a                     int32_t ecx_26 = 0x5e
+0041bf2a                     
+0041bf34                     if (sub_40fa20(&ebp_1[-0xe]) != 0xffffffff)
+0041bf34                         ecx_26 = 0x5b
+0041bf34                     
+0041bf37                     bool cond:8_1 = ebp_1[-9] u< 0x10
+0041bf3b                     arg1[1] = ecx_26
+0041bf3b                     
+0041bf3e                     if (not(cond:8_1))
+0041bf47                         sub_4208bb(ebp_1[-0xe])
+0041bf47                     
+0041bf34                     break
+0041bf34                 
+0041bee7                 if (ebp_1[-9] u>= 0x10)
+0041bef0                     sub_4208bb(ebp_1[-0xe])
+0041bd0d     else
+0041bd16         sub_4208bb(arg1[2])
+0041bd16 
+0041bd2a if (ebp_1[-0x21] u>= 0x10)
+0041bd32     sub_4208bb(ebp_1[-0x26])
+0041bd32 
+0041bd3a bool cond:2 = ebp_1[-0x15] u< 0x10
+0041bd3e ebp_1[-0x21] = 0xf
+0041bd48 ebp_1[-0x22] = 0
+0041bd52 ebp_1[-0x26].b = 0
+0041bd52 
+0041bd59 if (not(cond:2))
+0041bd5e     sub_4208bb(ebp_1[-0x1a])
+0041bd5e 
+0041bd66 bool cond:3 = ebp_1[-0xf] u< 0x10
+0041bd6a ebp_1[-0x15] = 0xf
+0041bd71 ebp_1[-0x16] = 0
+0041bd78 ebp_1[-0x1a].b = 0
+0041bd78 
+0041bd7c if (not(cond:3))
+0041bd81     sub_4208bb(ebp_1[-0x14])
+0041bd81 
+0041bd89 bool cond:4 = ebp_1[-0x1b] u< 0x10
+0041bd8d ebp_1[-0xf] = 0xf
+0041bd94 ebp_1[-0x10] = 0
+0041bd9b ebp_1[-0x14].b = 0
+0041bd9b 
+0041bd9f if (not(cond:4))
+0041bda4     sub_4208bb(ebp_1[-0x20])
+0041bda4 
+0041bdac bool cond:5 = ebp_1[-0x27] u< 0x10
+0041bdb3 ebp_1[-0x1b] = 0xf
+0041bdba ebp_1[-0x1c] = 0
+0041bdc1 ebp_1[-0x20].b = 0
+0041bdc1 
+0041bdc5 if (not(cond:5))
+0041bdcd     sub_4208bb(ebp_1[-0x2c])
+0041bdcd 
+0041bdda fsbase->NtTib.ExceptionList = ebp_1[-3]
+0041bde5 ebp_1[-5]
+0041bdea int32_t result = sub_53b554()
+0041bdf1 *ebp_1
+0041bdf2 return result

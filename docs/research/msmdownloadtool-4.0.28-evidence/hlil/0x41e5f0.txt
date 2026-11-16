@@ -1,0 +1,96 @@
+0041e5fb char* ebx = arg2
+0041e5fe int32_t i = arg4
+0041e601 char* edx = arg3
+0041e603 char* var_10 = ebx
+0041e606 char* esi_1 = *arg6
+0041e608 char* var_8 = edx
+0041e60b int32_t i_3 = i
+0041e60b 
+0041e610 if (esi_1 != 0)
+0041e612     int32_t* eax = arg5
+0041e612     
+0041e617     while (i != 0)
+0041e619         eax.b = *(esi_1 + eax)
+0041e61c         i -= 1
+0041e61d         arg3.b = *edx
+0041e61f         edx = &edx[1]
+0041e620         eax.b ^= arg3.b
+0041e622         var_8 = edx
+0041e625         *ebx = eax.b
+0041e627         ebx = &ebx[1]
+0041e628         eax = arg5
+0041e62b         var_10 = ebx
+0041e62e         i_3 = i
+0041e631         *(esi_1 + eax) = arg3.b
+0041e635         esi_1 = &esi_1[1] & 0xf
+0041e635         
+0041e638         if (esi_1 == 0)
+0041e638             break
+0041e638 
+0041e63d if (i u>= 0x10)
+0041e643     int32_t* ecx = arg5
+0041e64a     void* var_14_1 = ebx - ecx
+0041e652     uint32_t var_18_1 = i u>> 4
+0041e652     
+0041e661     while (true)
+0041e661         sub_41e210(ecx, ecx, 0x5df6a0)
+0041e661         
+0041e66c         if (esi_1 u< 0x10)
+0041e674             void* ecx_2 = var_8 - ebx
+0041e680             void* var_1c_1 = ecx_2
+0041e686             void* eax_6 = arg5 + esi_1
+0041e688             int32_t i_4 = ((0xf - esi_1) u>> 2) + 1
+0041e6a7             int32_t i_1
+0041e6a7             
+0041e6a7             do
+0041e690                 int32_t* edx_1 = var_14_1 + eax_6
+0041e693                 int32_t esi_3 = *(edx_1 + ecx_2)
+0041e696                 eax_6 += 4
+0041e69e                 *edx_1 = *(eax_6 - 4) ^ esi_3
+0041e6a0                 ecx_2 = var_1c_1
+0041e6a3                 *(eax_6 - 4) = esi_3
+0041e6a6                 i_1 = i_4
+0041e6a6                 i_4 -= 1
+0041e6a7             while (i_1 != 1)
+0041e6a9             i = i_3
+0041e6ac             ebx = var_10
+0041e6ac         
+0041e6af         var_14_1 += 0x10
+0041e6b3         i -= 0x10
+0041e6b6         var_8 = &var_8[0x10]
+0041e6ba         ebx = &ebx[0x10]
+0041e6bd         esi_1 = nullptr
+0041e6bf         i_3 = i
+0041e6c2         uint32_t temp1_1 = var_18_1
+0041e6c2         var_18_1 -= 1
+0041e6c5         var_10 = ebx
+0041e6c5         
+0041e6c8         if (temp1_1 == 1)
+0041e6c8             break
+0041e6c8         
+0041e657         ecx = arg5
+0041e657 
+0041e6cc if (i != 0)
+0041e6d8     sub_41e210(arg5, arg5, 0x5df6a0)
+0041e6ec     int32_t eax_10 = var_8 - ebx
+0041e6f0     char* esi_4 = &esi_1[i]
+0041e6f2     int32_t var_8_1 = eax_10
+0041e6f8     void* esi_5 = esi_1 + arg5
+0041e717     int32_t i_2
+0041e717     
+0041e717     do
+0041e700         char* ecx_6 = esi_5 + ebx - arg5
+0041e703         char edx_2 = ecx_6[eax_10]
+0041e706         esi_5 += 1
+0041e709         eax_10.b = *(esi_5 - 1)
+0041e70c         eax_10.b ^= edx_2
+0041e70e         *ecx_6 = eax_10.b
+0041e710         eax_10 = var_8_1
+0041e713         *(esi_5 - 1) = edx_2
+0041e716         i_2 = i
+0041e716         i -= 1
+0041e717     while (i_2 != 1)
+0041e719     esi_1 = esi_4
+0041e719 
+0041e720 *arg6 = esi_1
+0041e727 return arg6

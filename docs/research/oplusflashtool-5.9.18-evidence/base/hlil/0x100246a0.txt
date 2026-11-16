@@ -1,0 +1,311 @@
+100246a0 int32_t ebp
+100246a0 int32_t var_4 = ebp
+100246a1 int32_t* ebp_1 = &var_4
+100246b1 int32_t ebx = arg3
+100246b6 char* edi = arg2
+100246b9 int32_t var_18c = ebx
+100246ba char* var_190 = edi
+100246c1 void var_170
+100246c1 _sprintf(&var_170, "SYSTEM\CurrentControlSet\Enum\USB\VID_%s&PID_%s")
+100246c1 
+100246dd if (sub_10030d20(arg1, *(arg1 + 0x458)) == 0)
+10024705     int32_t* eax_2 = *(arg1 + 0x458)
+1002470b     int32_t ecx_1 = 0
+1002470d     int32_t var_174_1 = 0
+1002470d     
+10024713     if (*eax_2 s<= 0)
+10024a1f     label_10024a1f:
+10024a1f         *ebp_1
+10024a20         return 0
+10024a20     
+10024722     while (true)
+10024722         char* eax_3 = op_array_at(eax_2, ecx_1)
+1002472f         void* eax_4
+1002472f         int32_t* ecx_2
+1002472f         int32_t edx_1
+1002472f         eax_4, ecx_2, edx_1 = op_str_reverse_find(eax_3, &data_101fc680)
+10024739         int32_t var_17c_1
+10024739         
+10024739         if (eax_4 s< 0)
+10024751             var_17c_1 = 0xffffffff
+10024739         else
+1002473e             void* eax_6 = eax_4 + 1 + eax_3
+1002474b             var_17c_1 = _strtol(eax_6, edx_1, ecx_2, eax_6, nullptr, 0xa)
+1002474b         
+10024759         char* var_18c_3 = eax_3
+1002475a         int32_t var_190_3 = ebx
+1002475b         char* var_194_3 = edi
+10024766         int32_t xmm0_1[0x4] =
+10024766             _sprintf(&var_170, "SYSTEM\CurrentControlSet\Enum\USB\VID_%s&PID_%s\%s")
+1002476b         void* edi_1 = ebp_1[2]
+10024775         int32_t var_18c_4 = *(edi_1 + 0x45c)
+1002477b         int32_t eax_8
+1002477b         eax_8, ebp_1 = sub_10030e30()
+1002477b         
+10024785         if (eax_8 != 0)
+10024a3f             void* var_18c_15 = &var_170
+10024a40             char const* const var_190_10 = "ERROR: get regedit usb info is fail, key:{%s}."
+10024a45             int32_t var_194_11 = 0x331
+10024a4a             break
+10024a4a         
+10024791         int32_t esi_2 = 0
+10024793         int32_t* edi_2 = **(edi_1 + 0x45c)
+10024793         
+10024795         while (true)
+10024795             int32_t ecx_3 = 0
+10024795             
+10024799             if (edi_2 != 0)
+1002479b                 void* i = *edi_2
+1002479b                 
+1002479f                 while (i != 0)
+100247a1                     i = *(i + 8)
+100247a4                     ecx_3 += 1
+100247a4             
+100247ab             if (esi_2 s< ecx_3)
+100247b3                 char* edx_2
+100247b3                 
+100247b3                 if (edi_2 == 0)
+100247d4                 label_100247d4:
+100247d4                     edx_2 = nullptr
+100247b3                 else
+100247b5                     int32_t* eax_10 = *edi_2
+100247b7                     ecx_3 = 0
+100247b7                     
+100247bb                     if (eax_10 == 0)
+100247d4                     label_100247d4_1:
+100247d4                         edx_2 = nullptr
+100247bb                     else
+100247c2                         while (ecx_3 != esi_2)
+100247c4                             eax_10 = eax_10[2]
+100247c7                             ecx_3 += 1
+100247c7                             
+100247ca                             if (eax_10 == 0)
+100247ca                                 goto label_100247d4_2
+100247ca                         
+100247ce                         edx_2 = *eax_10
+100247ce                         
+100247d2                         if (edx_2 == 0)
+100247d4                         label_100247d4_2:
+100247d4                             edx_2 = nullptr
+100247d4                 
+100247d8                 char* ebx_1
+100247d8                 
+100247d8                 if (edi_2 == 0)
+100247ee                 label_100247ee:
+100247ee                     ebx_1 = nullptr
+100247d8                 else
+100247da                     int32_t* eax_11 = *edi_2
+100247dc                     ecx_3 = 0
+100247dc                     
+100247e0                     if (eax_11 == 0)
+100247ee                     label_100247ee_1:
+100247ee                         ebx_1 = nullptr
+100247e0                     else
+100247e4                         while (ecx_3 != esi_2)
+100247e6                             eax_11 = eax_11[2]
+100247e9                             ecx_3 += 1
+100247e9                             
+100247ec                             if (eax_11 == 0)
+100247ec                                 goto label_100247ee_2
+100247ec                         
+10024820                         void* eax_13 = *eax_11
+10024820                         
+10024824                         if (eax_13 == 0)
+100247ee                         label_100247ee_2:
+100247ee                             ebx_1 = nullptr
+10024824                         else
+10024826                             ebx_1 = *(eax_13 + 0x200)
+10024826                 
+100247f4                 char const* const eax_12 = "FriendlyName"
+10024800                 int32_t eax_15
+10024800                 
+10024800                 while (true)
+10024800                     ecx_3.b = *edx_2
+10024802                     char const temp0_1 = *eax_12
+10024802                     bool c_1 = ecx_3.b u< temp0_1
+10024802                     
+10024804                     if (ecx_3.b == temp0_1)
+10024808                         if (ecx_3.b == 0)
+1002481c                             eax_15 = 0
+1002481e                             break
+1002481e                         
+1002480a                         ecx_3.b = edx_2[1]
+1002480d                         char temp1_1 = eax_12[1]
+1002480d                         c_1 = ecx_3.b u< temp1_1
+1002480d                         
+10024810                         if (ecx_3.b == temp1_1)
+10024812                             edx_2 = &edx_2[2]
+10024815                             eax_12 = &eax_12[2]
+10024815                             
+1002481a                             if (ecx_3.b != 0)
+1002481a                                 continue
+1002481a                             
+1002481c                             eax_15 = 0
+1002481e                             break
+1002481e                     
+10024830                     eax_15 = sbb.d(eax_12, eax_12, c_1) | 1
+10024830                     break
+10024830                 
+10024835                 if (eax_15 == 0)
+1002483d                     edi = ebp_1[3]
+10024840                     char const* const ecx_4 = "22D9"
+10024845                     char* eax_16 = edi
+10024847                     int32_t eax_18
+10024847                     
+10024847                     while (true)
+10024847                         edx_2.b = *eax_16
+10024849                         char const temp2_1 = *ecx_4
+10024849                         bool c_2 = edx_2.b u< temp2_1
+10024849                         
+1002484b                         if (edx_2.b == temp2_1)
+1002484f                             if (edx_2.b == 0)
+10024863                                 eax_18 = 0
+10024865                                 break
+10024865                             
+10024851                             edx_2.b = eax_16[1]
+10024854                             char temp3_1 = ecx_4[1]
+10024854                             c_2 = edx_2.b u< temp3_1
+10024854                             
+10024857                             if (edx_2.b == temp3_1)
+10024859                                 eax_16 = &eax_16[2]
+1002485c                                 ecx_4 = &ecx_4[2]
+1002485c                                 
+10024861                                 if (edx_2.b != 0)
+10024861                                     continue
+10024861                                 
+10024863                                 eax_18 = 0
+10024865                                 break
+10024865                         
+10024869                         eax_18 = sbb.d(eax_16, eax_16, c_2) | 1
+10024869                         break
+10024869                     
+1002486e                     int32_t eax_21
+1002486e                     
+1002486e                     if (eax_18 == 0)
+10024870                         char* eax_19 = ebp_1[4]
+10024873                         char const* const ecx_5 = "0006"
+10024873                         
+10024878                         while (true)
+10024878                             edx_2.b = *eax_19
+1002487a                             char const temp4_1 = *ecx_5
+1002487a                             bool c_3 = edx_2.b u< temp4_1
+1002487a                             
+1002487c                             if (edx_2.b == temp4_1)
+10024880                                 if (edx_2.b == 0)
+10024894                                     eax_21 = 0
+10024896                                     break
+10024896                                 
+10024882                                 edx_2.b = eax_19[1]
+10024885                                 char temp5_1 = ecx_5[1]
+10024885                                 c_3 = edx_2.b u< temp5_1
+10024885                                 
+10024888                                 if (edx_2.b == temp5_1)
+1002488a                                     eax_19 = &eax_19[2]
+1002488d                                     ecx_5 = &ecx_5[2]
+1002488d                                     
+10024892                                     if (edx_2.b != 0)
+10024892                                         continue
+10024892                                     
+10024894                                     eax_21 = 0
+10024896                                     break
+10024896                             
+1002489a                             eax_21 = sbb.d(eax_19, eax_19, c_3) | 1
+1002489a                             break
+1002489a                     
+1002489f                     char* var_190_5
+1002489f                     
+1002489f                     if (eax_18 != 0 || eax_21 != 0)
+100248c2                         void* const var_18c_6 = &data_101ff5a0
+100248c7                         var_190_5 = ebx_1
+1002489f                     else
+100248a7                         char* eax_22
+100248a7                         eax_22, xmm0_1 = _strstr(xmm0_1, ebx_1, "COM")
+100248a7                         
+100248b1                         if (eax_22 == 0)
+100248b1                             break
+100248b1                         
+100248b7                         void* const var_18c_5 = &data_101ff5a0
+100248bf                         var_190_5 = &eax_22[3]
+100248bf                     
+100248c8                     char* eax_24
+100248c8                     int32_t* ecx_6
+100248c8                     int32_t edx_3
+100248c8                     eax_24, ecx_6, edx_3 = _strstr(xmm0_1, var_190_5, "COM")
+100248c8                     
+100248d2                     if (eax_24 == 0)
+100248d2                         break
+100248d2                     
+100248e0                     int32_t eax_26 = _strtol(&eax_24[3], edx_3, ecx_6, &eax_24[3], nullptr, 0xa)
+100248e0                     
+100248f0                     if (eax_26 s>= 0x100)
+100248f2                         int32_t var_18c_7 = 0x100
+100248f7                         int32_t var_190_6 = eax_26
+100248f8                         char const* const var_194_5 =
+100248f8                             "ERROR: get regedit usb info is fail, port=%d more than max port=%d."
+100248fd                         int32_t var_198_3 = 0x352
+10024902                         char const* const var_19c_2 = "op_device_manager_query_device"
+10024907                         ebp_1 = opdbg_log()
+1002490f                         break
+1002490f                     
+10024914                     int32_t esi_3 = ebp_1[2]
+10024917                     uint32_t (* edi_3)[0x4] = *(esi_3 + (eax_26 << 2) + 0x40)
+10024917                     
+1002491d                     if (edi_3 != 0)
+1002491d                         goto label_1002496f
+1002491d                     
+1002491f                     int32_t var_18c_8 = 0xe38
+10024929                     edi_3 = sub_101512d2()
+10024929                     
+10024930                     if (edi_3 == 0)
+10024a21                         int32_t var_18c_14 = esi_3
+10024a22                         char const* const var_190_9 = "
+10024a22                             [opdevice][%s] ERROR: Cannot create new device object: memory overflow."
+10024a27                         int32_t var_194_10 = 0x35a
+10024a2c                         char const* const var_198_5 = "op_device_manager_query_device"
+10024a31                         ebp_1 = opdbg_log()
+10024930                     else
+1002493e                         _memset(edi_3, 0, 0xe38)
+10024943                         (*edi_3)[0x38b] = 0
+10024950                         (*edi_3)[1] = 1
+10024957                         edi_3[0xe2][0] = 0
+10024961                         (*edi_3)[0x389] = 0
+1002496b                         *(esi_3 + (eax_26 << 2) + 0x40) = edi_3
+1002496f                     label_1002496f:
+1002496f                         int32_t var_18c_9 = ebp_1[3]
+10024976                         (*edi_3)[2] = var_17c_1
+10024982                         *edi_3 = esi_3
+10024984                         _sprintf(&(*edi_3)[3], &data_101fccd0)
+10024992                         int32_t var_18c_10 = ebp_1[4]
+1002499b                         _sprintf(&(*edi_3)[0x5d], &data_101fccd0)
+100249a9                         char* var_18c_11 = ebx_1
+100249b3                         _sprintf(&(*edi_3)[0xb7], &data_101fccd0)
+100249c1                         int32_t var_18c_12 = eax_26
+100249c2                         void* const var_190_7 = &data_101ff5a0
+100249cd                         _sprintf(&(*edi_3)[0x111], "%s%d")
+100249d2                         uint32_t* var_19c_3 = &(*edi_3)[0x111]
+100249df                         _sprintf(&(*edi_3)[0x16b], "\\.\%s")
+100249ec                         int32_t var_18c_13 = 0
+100249ee                         int32_t var_190_8 = 0
+100249f0                         sub_10022cd0(ebp_1[2])
+10024835                 else
+10024837                     esi_2 += 1
+10024838                     continue
+10024838             
+100249f8             edi = ebp_1[3]
+100249f8             break
+100249f8         
+10024a02         ebx = ebp_1[4]
+10024a05         ecx_1 = var_174_1 + 1
+10024a06         var_174_1 = ecx_1
+10024a0a         eax_2 = *(ebp_1[2] + 0x458)
+10024a0a         
+10024a12         if (ecx_1 s>= *eax_2)
+10024a12             goto label_10024a1f
+100246dd else
+100246e3     void* var_18c_1 = &var_170
+100246e4     char const* const var_190_1 = "ERROR: get regedit usb info is fail, key:{%s}."
+100246e9     int32_t var_194_1 = 0x320
+100246e9 
+100246ee char const* const var_198_1 = "op_device_manager_query_device"
+10024703 *opdbg_log()
+10024704 return 0xffffffff

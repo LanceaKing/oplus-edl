@@ -1,0 +1,32 @@
+004af553 int32_t ecx
+004af553 int32_t var_8 = ecx
+004af563 int32_t result = 1
+004af568 int32_t var_18 = 0xf
+004af56f int32_t var_1c = 0
+004af576 char var_2c = 0
+004af58d int32_t var_28
+004af58d char* eax_1 = sub_4aece0(
+004af58d     sub_412e10(&var_2c, 
+004af58d         "2d2d2d2d2d424547494e205055424c4943204b45592d2d2d2d2d0a4d494942496a414e42676b71686b6947397730424151454641414f43415138414d49494243674b43415145416e65747970575132792f4679524830496a", 
+004af58d         0x386), 
+004af58d     var_2c, var_28)
+004af597 char* eax_2 = sub_4eac40()
+004af5a2 sub_4ea970(eax_2, 6, eax_1)
+004af5aa char* eax_3 = sub_4d8390()
+004af5aa 
+004af5c7 if (sub_5064e0(eax_3, nullptr, &data_6f23b4, nullptr, eax_2) s> 0
+004af5c7         && sub_4d8200(eax_3, arg1, arg2) s> 0)
+004af5e3     int32_t eax_6 = sub_5063b0(eax_3, arg3, arg4)
+004af5e3     
+004af5ed     if (eax_6 == 1)
+004af5f2         result = 0
+004af5f4         *arg5 = 1
+004af5ed     else if (eax_6 != 0)
+004af60c         *arg5 = 0
+004af5fe     else
+004af603         result = 0
+004af605         *arg5 = 0
+004af605 
+004af615 sub_503dc0(eax_1)
+004af61b sub_4eaae0(eax_2)
+004af62b return result

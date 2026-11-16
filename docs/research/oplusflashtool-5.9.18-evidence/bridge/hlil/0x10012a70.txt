@@ -1,0 +1,306 @@
+10012a73 OpFlashEvent* this_1 = this
+10012a79 int32_t* ebx = *(this + 8)
+10012a7f int32_t* var_8 = ebx
+10012a90 int32_t eax
+10012a90 
+10012a90 if (*(this + 0x3c) == *ebx && *(this + 0x40) == ebx[2])
+10012a96     int32_t* edx_1 = &ebx[3]
+10012a99     void* __offset(OpFlashEvent, 0xc)* edi_1 = this + 0xc
+10012a9c     void* ecx
+10012a9c     
+10012a9c     if (ebx[3].b != 0)
+10012aa2         char* ecx_1 = edx_1
+10012aa2         
+10012aac         do
+10012aa7             eax.b = *ecx_1
+10012aa9             ecx_1 = &ecx_1[1]
+10012aac         while (eax.b != 0)
+10012aac         
+10012aae         ecx = ecx_1 - &ecx_1[1]
+10012ab0         ebx = var_8
+10012a9c     else
+10012a9e         ecx = nullptr
+10012a9e     
+10012ab7     int32_t eax_1 = &edi_1[4]
+10012ab7     
+10012aba     if (edi_1[5] u>= 0x10)
+10012abc         edi_1 = *edi_1
+10012abc     
+10012ace     if (sub_10003240(eax_1, *eax_1, edi_1, edx_1, ecx) != 0)
+10012ace         goto label_10012b11
+10012ace     
+10012ae0     if (sub_100131f0(&ebx[0x5d], this + 0x24).b == 0)
+10012ae0         goto label_10012b11
+10012ae0     
+10012af2     if (sub_100131f0(&ebx[0x9e], this + 0x50).b == 0)
+10012af2         goto label_10012b11
+10012af2     
+10012b04     if (sub_100131f0(&ebx[0xde], this + 0x68).b == 0)
+10012b04         goto label_10012b11
+10012b04     
+10012b04     return 
+10012b04 
+10012b11 label_10012b11:
+10012b11 uint32_t ecx_6
+10012b11 
+10012b11 if (ebx[3].b != 0)
+10012b17     char* ecx_7 = &ebx[3]
+10012b17     
+10012b25     do
+10012b20         eax.b = *ecx_7
+10012b22         ecx_7 = &ecx_7[1]
+10012b25     while (eax.b != 0)
+10012b25     
+10012b27     ecx_6 = ecx_7 - &ecx_7[1]
+10012b11 else
+10012b13     ecx_6 = 0
+10012b13 
+10012b2e sub_10003300(this + 0xc, &ebx[3], ecx_6)
+10012b3b *(this + 0x3c) = *ebx
+10012b41 void* ecx_9
+10012b41 
+10012b41 if (ebx[0x5d].b != 0)
+10012b47     char* ecx_10 = &ebx[0x5d]
+10012b55     int32_t eax_2
+10012b55     
+10012b55     do
+10012b50         eax_2.b = *ecx_10
+10012b52         ecx_10 = &ecx_10[1]
+10012b55     while (eax_2.b != 0)
+10012b57     ecx_9 = ecx_10 - &ecx_10[1]
+10012b41 else
+10012b43     ecx_9 = nullptr
+10012b43 
+10012b5e sub_10003300(this + 0x24, &ebx[0x5d], ecx_9)
+10012b66 char* edi_4 = &ebx[0x9e]
+10012b6c *(this + 0x40) = ebx[2]
+10012b72 uint32_t ecx_12
+10012b72 
+10012b72 if (*edi_4 != 0)
+10012b78     char* ecx_13 = edi_4
+10012b85     int32_t eax_3
+10012b85     
+10012b85     do
+10012b80         eax_3.b = *ecx_13
+10012b82         ecx_13 = &ecx_13[1]
+10012b85     while (eax_3.b != 0)
+10012b87     ecx_12 = ecx_13 - &ecx_13[1]
+10012b72 else
+10012b74     ecx_12 = 0
+10012b74 
+10012b8e sub_10003300(this + 0x50, edi_4, ecx_12)
+10012b96 char const* const ecx_15 = "init"
+10012b9b *(this + 0x48) = ebx[1]
+10012b9e char* eax_5 = edi_4
+10012ba0 uint32_t eax_7
+10012ba0 char edx_9
+10012ba0 
+10012ba0 while (true)
+10012ba0     edx_9 = *eax_5
+10012ba2     char const temp0_1 = *ecx_15
+10012ba2     bool c_1 = edx_9 u< temp0_1
+10012ba2     
+10012ba4     if (edx_9 == temp0_1)
+10012ba8         if (edx_9 == 0)
+10012bbc             eax_7 = 0
+10012bbe             break
+10012bbe         
+10012baa         edx_9 = eax_5[1]
+10012bad         char temp1_1 = ecx_15[1]
+10012bad         c_1 = edx_9 u< temp1_1
+10012bad         
+10012bb0         if (edx_9 == temp1_1)
+10012bb2             eax_5 = &eax_5[2]
+10012bb5             ecx_15 = &ecx_15[2]
+10012bb5             
+10012bba             if (edx_9 != 0)
+10012bba                 continue
+10012bba             
+10012bbc             eax_7 = 0
+10012bbe             break
+10012bbe     
+10012bc2     eax_7 = sbb.d(eax_5, eax_5, c_1) | 1
+10012bc2     break
+10012bc2 
+10012bc7 int32_t* eax_8
+10012bc7 
+10012bc7 if (eax_7 != 0)
+10012be2     char const* const ecx_17 = "run_action"
+10012be7     char* eax_9 = edi_4
+10012bf0     int32_t eax_11
+10012bf0     
+10012bf0     while (true)
+10012bf0         edx_9 = *eax_9
+10012bf2         char const temp2_1 = *ecx_17
+10012bf2         bool c_2 = edx_9 u< temp2_1
+10012bf2         
+10012bf4         if (edx_9 == temp2_1)
+10012bf8             if (edx_9 == 0)
+10012c0c                 eax_11 = 0
+10012c0e                 break
+10012c0e             
+10012bfa             edx_9 = eax_9[1]
+10012bfd             char temp3_1 = ecx_17[1]
+10012bfd             c_2 = edx_9 u< temp3_1
+10012bfd             
+10012c00             if (edx_9 == temp3_1)
+10012c02                 eax_9 = &eax_9[2]
+10012c05                 ecx_17 = &ecx_17[2]
+10012c05                 
+10012c0a                 if (edx_9 != 0)
+10012c0a                     continue
+10012c0a                 
+10012c0c                 eax_11 = 0
+10012c0e                 break
+10012c0e         
+10012c12         eax_11 = sbb.d(eax_9, eax_9, c_2) | 1
+10012c12         break
+10012c12     
+10012c17     if (eax_11 != 0)
+10012caf         char const* const ecx_22 = "flash_end"
+10012cb4         char* eax_14 = edi_4
+10012cb6         uint32_t eax_16
+10012cb6         
+10012cb6         while (true)
+10012cb6             edx_9 = *eax_14
+10012cb8             char const temp4_1 = *ecx_22
+10012cb8             bool c_3 = edx_9 u< temp4_1
+10012cb8             
+10012cba             if (edx_9 == temp4_1)
+10012cbe                 if (edx_9 == 0)
+10012cd2                     eax_16 = 0
+10012cd4                     break
+10012cd4                 
+10012cc0                 edx_9 = eax_14[1]
+10012cc3                 char temp5_1 = ecx_22[1]
+10012cc3                 c_3 = edx_9 u< temp5_1
+10012cc3                 
+10012cc6                 if (edx_9 == temp5_1)
+10012cc8                     eax_14 = &eax_14[2]
+10012ccb                     ecx_22 = &ecx_22[2]
+10012ccb                     
+10012cd0                     if (edx_9 != 0)
+10012cd0                         continue
+10012cd0                     
+10012cd2                     eax_16 = 0
+10012cd4                     break
+10012cd4             
+10012cd8             eax_16 = sbb.d(eax_14, eax_14, c_3) | 1
+10012cd8             break
+10012cd8         
+10012cdd         if (eax_16 != 0)
+10012cf6             char const* const ecx_24 = "report"
+10012cfb             char* eax_17 = edi_4
+10012d00             int32_t eax_19
+10012d00             
+10012d00             while (true)
+10012d00                 edx_9 = *eax_17
+10012d02                 char const temp6_1 = *ecx_24
+10012d02                 bool c_4 = edx_9 u< temp6_1
+10012d02                 
+10012d04                 if (edx_9 == temp6_1)
+10012d08                     if (edx_9 == 0)
+10012d1c                         eax_19 = 0
+10012d1e                         break
+10012d1e                     
+10012d0a                     edx_9 = eax_17[1]
+10012d0d                     char temp7_1 = ecx_24[1]
+10012d0d                     c_4 = edx_9 u< temp7_1
+10012d0d                     
+10012d10                     if (edx_9 == temp7_1)
+10012d12                         eax_17 = &eax_17[2]
+10012d15                         ecx_24 = &ecx_24[2]
+10012d15                         
+10012d1a                         if (edx_9 != 0)
+10012d1a                             continue
+10012d1a                         
+10012d1c                         eax_19 = 0
+10012d1e                         break
+10012d1e                 
+10012d22                 eax_19 = sbb.d(eax_17, eax_17, c_4) | 1
+10012d22                 break
+10012d22             
+10012d27             if (eax_19 != 0)
+10012d30                 char const* const eax_20 = "report_record"
+10012d30                 
+10012d35                 while (true)
+10012d35                     ecx_24.b = *edi_4
+10012d37                     char const temp8_1 = *eax_20
+10012d37                     bool c_5 = ecx_24.b u< temp8_1
+10012d37                     
+10012d39                     if (ecx_24.b == temp8_1)
+10012d3d                         if (ecx_24.b == 0)
+10012d51                             eax_8 = nullptr
+10012d53                             break
+10012d53                         
+10012d3f                         ecx_24.b = edi_4[1]
+10012d42                         char temp9_1 = eax_20[1]
+10012d42                         c_5 = ecx_24.b u< temp9_1
+10012d42                         
+10012d45                         if (ecx_24.b == temp9_1)
+10012d47                             edi_4 = &edi_4[2]
+10012d4a                             eax_20 = &eax_20[2]
+10012d4a                             
+10012d4f                             if (ecx_24.b != 0)
+10012d4f                                 continue
+10012d4f                             
+10012d51                             eax_8 = nullptr
+10012d53                             break
+10012d53                     
+10012d57                     eax_8 = sbb.d(eax_20, eax_20, c_5) | 1
+10012d57                     break
+10012d57                 
+10012d5c                 if (eax_8 == 0)
+10012d68                     sub_10003020(&ebx[0xde])
+10012d27             else
+10012d68                 sub_10003020(&data_10046add)
+10012cdd         else
+10012ce8             *(this + 0x4c) = 4
+10012cef             sub_10003300(this + 0x68, &data_10046add, eax_16)
+10012c17     else
+10012c1d         int32_t eax_12 = *(this + 0x4c)
+10012c1d         
+10012c22         if (eax_12 == 0)
+10012c24             *(this + 0x4c) = 1
+10012c22         else if (eax_12 != 2)
+10012c54             if (strstr(&ebx[0xde], "verify") != 0)
+10012c56                 *(this + 0x4c) = 2
+10012c56             
+10012c65             ebx = var_8
+10012c65             
+10012c6d             if (strstr(&ebx[0xde], "phase_advance") != 0)
+10012c6f                 *(this + 0x44) += 1
+10012c30         else
+10012c32             *(this + 0x4c) = 3
+10012c32         
+10012c7f         if (ebx[0xde].b != 0)
+10012c92             char* ecx_19 = &ebx[0xde]
+10012c92             
+10012c9c             do
+10012c97                 eax_12.b = *ecx_19
+10012c99                 ecx_19 = &ecx_19[1]
+10012c9c             while (eax_12.b != 0)
+10012c9c             
+10012ca5             sub_10003300(this + 0x68, &ebx[0xde], ecx_19 - &ecx_19[1])
+10012c7f         else
+10012c88             sub_10003300(this + 0x68, &ebx[0xde], 0)
+10012bc7 else
+10012bd2     *(this + 0x4c) = eax_7
+10012bd5     *(this + 0x44) = eax_7
+10012bd8     sub_10003300(this + 0x68, &data_10046add, eax_7)
+10012bd8 
+10012d71 if (*(this + 0x3c) != 4)
+10012d71     return 
+10012d71 
+10012d80 if (ebx[0xde].b == 0)
+10012d89     sub_10003300(this + 0x68, &ebx[0xde], 0)
+10012d94     return 
+10012d94 
+10012d95 char* ecx_27 = &ebx[0xde]
+10012d95 
+10012da5 do
+10012da0     eax_8.b = *ecx_27
+10012da2     ecx_27 = &ecx_27[1]
+10012da5 while (eax_8.b != 0)
+10012da5 
+10012dae sub_10003300(this + 0x68, &ebx[0xde], ecx_27 - &ecx_27[1])

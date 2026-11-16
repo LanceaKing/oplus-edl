@@ -988,3 +988,150 @@ fn mutation_stop_before_verification_still_marks_confirmed_overwrites_superseded
         assert_no_reset(&t);
     }
 }
+
+#[test]
+fn explicit_wrong_read_ack_mode_stops_following_mutations() {
+    for mode in [Verify::BestEffort, Verify::Required] {
+        for initial in [true, false] {
+            for restore in [true, false] {
+                let dir = tempfile::tempdir().unwrap();
+                let w = if restore {
+                    restoring(dir.path())
+                } else {
+                    Writes::flash(
+                        vec![program(dir.path(), "a", "64", &[1; 512])],
+                        512,
+                        Some(0),
+                        true,
+                    )
+                    .unwrap()
+                };
+                let mut input = vec![bytes(ACK), bytes(ACK)];
+                if initial {
+                    input.push(bytes(
+                        b"<data><response value=\"ACK\" rawmode=\"false\"/></data>",
+                    ));
+                } else {
+                    let mut data = vec![1; 512];
+                    if restore {
+                        data[511] = 0;
+                    }
+                    input.extend([
+                        bytes(b"<data><response value=\"ACK\" rawmode=\"true\"/></data>"),
+                        bytes(&data),
+                        bytes(b"<data><response value=\"ACK\" rawmode=\"true\"/></data>"),
+                    ]);
+                }
+                let (r, t) = run(w, mode, input);
+                assert_eq!(r.status, Status::VerificationIncomplete);
+                assert_eq!(r.items[0].verification, "incomplete");
+                assert_eq!(commands(&t, "program"), 1);
+                assert_no_reset(&t);
+                assert!(r.items[1..].iter().all(|i| i.execution == "not_attempted"));
+            }
+        }
+    }
+}
+
+#[test]
+fn wrong_xml_mutation_ack_mode_stops_patch_boot_and_reset_sequence() {
+    for stage in 0..3 {
+        let dir = tempfile::tempdir().unwrap();
+        let w = Writes::flash(
+            vec![program(dir.path(), "a", "64", &[1; 512]), patch("64")],
+            512,
+            Some(0),
+            true,
+        )
+        .unwrap();
+        let mut input = vec![bytes(ACK), bytes(ACK)];
+        input.extend((0..stage).map(|_| bytes(ACK)));
+        input.push(bytes(
+            b"<data><response value=\"ACK\" rawmode=\"true\"/></data>",
+        ));
+        let (r, t) = run(w, Verify::None, input);
+        assert_eq!(r.status, Status::UnknownWrite);
+        assert_eq!(r.items[stage + 1].write, "unknown");
+        assert!(
+            r.items[stage + 2..]
+                .iter()
+                .all(|i| i.execution == "not_attempted")
+        );
+        assert_eq!(commands(&t, "patch"), 1);
+        assert_eq!(
+            commands(&t, "setbootablestoragedrive"),
+            usize::from(stage >= 1)
+        );
+        assert_eq!(commands(&t, "power"), usize::from(stage >= 2));
+    }
+}
+
+#[test]
+fn usb_error_with_unavailable_completion_length_reports_unknown_byte_count() {
+    use qdl::types::QdlBackend;
+    for completed_blocks in [0, 1] {
+        let dir = tempfile::tempdir().unwrap();
+        let w = Writes::flash(
+            vec![program(dir.path(), "a", "64", &[1; 8192])],
+            512,
+            Some(0),
+            true,
+        )
+        .unwrap();
+        let (mut dev, t) = storage_device([bytes(ACK)], 512);
+        dev.fh_cfg.backend = QdlBackend::Usb;
+        dev.rw.output.push_back(Output::Accept(usize::MAX)); // XML
+        for _ in 0..completed_blocks {
+            dev.rw.output.push_back(Output::Accept(4096));
+        }
+        // This is the adapter's public result for a successful short USB
+        // completion; actual_len is no longer available to CountChannel.
+        dev.rw.output.push_back(Output::Error(ErrorKind::WriteZero));
+        let mut report = Report::new(Some("flash"), Some("none"));
+        w.execute(&mut dev, Verify::None, &mut report);
+        assert_eq!(report.status, Status::UnknownWrite);
+        assert_eq!(report.items[0].transferred_bytes, None);
+        assert!(
+            report.items[1..]
+                .iter()
+                .all(|i| i.execution == "not_attempted")
+        );
+        assert_eq!(t.lock().unwrap().writes.len(), completed_blocks + 2);
+        assert_no_reset(&t);
+    }
+}
+
+#[test]
+fn preview_write_verification_uses_the_selected_wire_mode() {
+    let dir = tempfile::tempdir().unwrap();
+    let mut writes = Writes::flash(
+        vec![program(dir.path(), "a", "64", &[1; 512])],
+        512,
+        None,
+        false,
+    )
+    .unwrap();
+    writes.set_wire_mode(oplus_edl::firehose::WireMode::PreviewBackupGpt);
+    let (report, trace) = run(
+        writes,
+        Verify::Required,
+        vec![
+            bytes(ACK),
+            bytes(ACK),
+            bytes(ACK),
+            bytes(&[1; 512]),
+            bytes(ACK),
+        ],
+    );
+    assert_eq!(report.status, Status::Success);
+    let trace = trace.lock().unwrap();
+    let read = trace
+        .writes
+        .iter()
+        .filter_map(|w| xmltree::Element::parse(w.as_slice()).ok())
+        .find_map(|xml| xml.get_child("read").cloned())
+        .unwrap();
+    assert_eq!(read.attributes["special_rw_mode"], "oplus_gptbackup");
+    assert_eq!(read.attributes["filename"], "gpt_backup0.bin");
+    assert_eq!(read.attributes["start_sector"], "64");
+}

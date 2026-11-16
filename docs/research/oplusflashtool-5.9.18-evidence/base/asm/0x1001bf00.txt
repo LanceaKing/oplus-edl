@@ -1,0 +1,55 @@
+1001bf00 push    ebp
+1001bf01 mov     ebp, esp
+1001bf03 push    esi
+1001bf04 mov     esi, dword [ebp+0xc]
+1001bf07 mov     eax, dword [esi]
+1001bf09 mov     dword [0x102177ec], eax
+1001bf0e lea     ecx, [eax-0x1]
+1001bf11 cmp     ecx, 0x5
+1001bf14 ja      0x1001bf82
+1001bf82 push    eax
+1001bf83 push    0x101fe230
+1001bf88 push    0x8e6
+1001bf8d push    0x101fe254
+1001bf92 call    0x10022900
+1001bf97 add     esp, 0x10
+1001bf9a or      eax, 0xffffffff
+1001bf9d pop     esi
+1001bf9e pop     ebp
+1001bf9f retn    
+1001bf16 jmp     dword [ecx*4+0x1001bfa0]
+1001bf1d mov     ecx, dword [ebp+0x8]
+1001bf20 mov     edx, esi
+1001bf22 call    0x100153f0
+1001bf27 jmp     0x1001bf57
+1001bf29 mov     ecx, dword [ebp+0x8]
+1001bf2c mov     edx, esi
+1001bf2e call    0x10016f90
+1001bf33 jmp     0x1001bf57
+1001bf35 mov     ecx, dword [ebp+0x8]
+1001bf38 mov     edx, esi
+1001bf3a call    0x10018790
+1001bf3f jmp     0x1001bf57
+1001bf41 mov     ecx, dword [ebp+0x8]
+1001bf44 mov     edx, esi
+1001bf46 call    0x1001ee90
+1001bf4b jmp     0x1001bf57
+1001bf4d mov     ecx, dword [ebp+0x8]
+1001bf50 mov     edx, esi
+1001bf52 call    0x10018cb0
+1001bf57 mov     edx, eax
+1001bf59 test    edx, edx
+1001bf5b jne     0x1001bf7d
+1001bf7d mov     eax, edx
+1001bf7f pop     esi
+1001bf80 pop     ebp
+1001bf81 retn    
+1001bf5d lea     ecx, [esi+0x404]
+1001bf63 mov     esi, 0x1021c2c0
+1001bf68 sub     esi, ecx
+1001bf6a nop     word [eax+eax]
+1001bf70 mov     al, byte [ecx]
+1001bf72 lea     ecx, [ecx+0x1]
+1001bf75 mov     byte [esi+ecx-0x1], al
+1001bf79 test    al, al
+1001bf7b jne     0x1001bf70

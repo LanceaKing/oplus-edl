@@ -1,0 +1,572 @@
+{
+  "cases": [
+    {
+      "execution": {
+        "entry": "0x149a8998",
+        "instructions": 1090,
+        "returned": true,
+        "logger_skips": 2,
+        "pc": "0x3100f000",
+        "return_x0": "0x1",
+        "code_region_unchanged": true
+      },
+      "fields": {
+        "id": "",
+        "rand": "",
+        "digest_write": "",
+        "digest_read": "",
+        "nv": "",
+        "prepared": 0,
+        "auth_pass": 0,
+        "auth_mode": 0,
+        "transfer_buffers_in_use": "0000"
+      },
+      "ack_argument": null,
+      "mmio": [],
+      "source_words_consumed": 0,
+      "rand_requests": [],
+      "smc_inputs": [],
+      "storage": [
+        {
+          "op": "open",
+          "type": 1,
+          "slot": 0,
+          "unit": 0,
+          "handle": "0x31008000"
+        },
+        {
+          "op": "read",
+          "type": 1,
+          "unit": 0,
+          "sector_size": 512,
+          "lba": "0x0",
+          "count": 32,
+          "destination": "0x80000000",
+          "result": 0,
+          "bytes_sha256": "acf19401473e432fd469bccafa4b0d55e6b773397858bf560d8b926ca7c1fd76"
+        },
+        {
+          "op": "close",
+          "handle": "0x31008000"
+        }
+      ],
+      "rsa": [],
+      "log_calls": [
+        {
+          "format": "wlen: %zu",
+          "args": [
+            "0x1a",
+            "0x300fefb0",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        },
+        {
+          "format": "find %s",
+          "args": [
+            "0x300fefb8",
+            "0x300fefb0",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        }
+      ],
+      "label": "found",
+      "storage_type": 1,
+      "initial_stack_pair": [
+        0,
+        0
+      ],
+      "descriptor": [
+        1,
+        0,
+        0
+      ],
+      "selected_lba": "0x3344",
+      "selected_count": 1,
+      "expected_lba": "0x3344",
+      "passed": true
+    },
+    {
+      "execution": {
+        "entry": "0x149a8998",
+        "instructions": 847,
+        "returned": true,
+        "logger_skips": 3,
+        "pc": "0x3100f000",
+        "return_x0": "0x1",
+        "code_region_unchanged": true
+      },
+      "fields": {
+        "id": "",
+        "rand": "",
+        "digest_write": "",
+        "digest_read": "",
+        "nv": "",
+        "prepared": 0,
+        "auth_pass": 0,
+        "auth_mode": 0,
+        "transfer_buffers_in_use": "0000"
+      },
+      "ack_argument": null,
+      "mmio": [],
+      "source_words_consumed": 0,
+      "rand_requests": [],
+      "smc_inputs": [],
+      "storage": [
+        {
+          "op": "open",
+          "type": 1,
+          "slot": 0,
+          "unit": 0,
+          "handle": "0x31008000"
+        },
+        {
+          "op": "read",
+          "type": 1,
+          "unit": 0,
+          "sector_size": 512,
+          "lba": "0x0",
+          "count": 32,
+          "destination": "0x80000000",
+          "result": 0,
+          "bytes_sha256": "4cb6388784110a43c76cbd76dbc00dc88498e56560cea444a888811a490c1c5c"
+        },
+        {
+          "op": "close",
+          "handle": "0x31008000"
+        }
+      ],
+      "rsa": [],
+      "log_calls": [
+        {
+          "format": "wlen: %zu",
+          "args": [
+            "0xa",
+            "0x300fefb0",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        },
+        {
+          "format": "not find %s",
+          "args": [
+            "0x300fefb8",
+            "0x300fefb0",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        },
+        {
+          "format": "use default op1 offset:ufs(%d) emmc(%d)",
+          "args": [
+            "0x20",
+            "0x1",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        }
+      ],
+      "label": "missing_zero_stack",
+      "storage_type": 1,
+      "initial_stack_pair": [
+        0,
+        0
+      ],
+      "descriptor": [
+        1,
+        0,
+        0
+      ],
+      "selected_lba": "0x2345",
+      "selected_count": 1,
+      "expected_lba": "0x2345",
+      "passed": true
+    },
+    {
+      "execution": {
+        "entry": "0x149a8998",
+        "instructions": 845,
+        "returned": true,
+        "logger_skips": 2,
+        "pc": "0x3100f000",
+        "return_x0": "0x1",
+        "code_region_unchanged": true
+      },
+      "fields": {
+        "id": "",
+        "rand": "",
+        "digest_write": "",
+        "digest_read": "",
+        "nv": "",
+        "prepared": 0,
+        "auth_pass": 0,
+        "auth_mode": 0,
+        "transfer_buffers_in_use": "0000"
+      },
+      "ack_argument": null,
+      "mmio": [],
+      "source_words_consumed": 0,
+      "rand_requests": [],
+      "smc_inputs": [],
+      "storage": [
+        {
+          "op": "open",
+          "type": 1,
+          "slot": 0,
+          "unit": 0,
+          "handle": "0x31008000"
+        },
+        {
+          "op": "read",
+          "type": 1,
+          "unit": 0,
+          "sector_size": 512,
+          "lba": "0x0",
+          "count": 32,
+          "destination": "0x80000000",
+          "result": 0,
+          "bytes_sha256": "4cb6388784110a43c76cbd76dbc00dc88498e56560cea444a888811a490c1c5c"
+        },
+        {
+          "op": "close",
+          "handle": "0x31008000"
+        }
+      ],
+      "rsa": [],
+      "log_calls": [
+        {
+          "format": "wlen: %zu",
+          "args": [
+            "0xa",
+            "0x300fefb0",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        },
+        {
+          "format": "not find %s",
+          "args": [
+            "0x300fefb8",
+            "0x300fefb0",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        }
+      ],
+      "label": "missing_nonzero_stack",
+      "storage_type": 1,
+      "initial_stack_pair": [
+        20481,
+        4660
+      ],
+      "descriptor": [
+        1,
+        0,
+        0
+      ],
+      "selected_lba": "0x3578",
+      "selected_count": 1,
+      "expected_lba": "0x3578",
+      "passed": true
+    },
+    {
+      "execution": {
+        "entry": "0x149a8998",
+        "instructions": 1090,
+        "returned": true,
+        "logger_skips": 2,
+        "pc": "0x3100f000",
+        "return_x0": "0x3",
+        "code_region_unchanged": true
+      },
+      "fields": {
+        "id": "",
+        "rand": "",
+        "digest_write": "",
+        "digest_read": "",
+        "nv": "",
+        "prepared": 0,
+        "auth_pass": 0,
+        "auth_mode": 0,
+        "transfer_buffers_in_use": "0000"
+      },
+      "ack_argument": null,
+      "mmio": [],
+      "source_words_consumed": 0,
+      "rand_requests": [],
+      "smc_inputs": [],
+      "storage": [
+        {
+          "op": "open",
+          "type": 3,
+          "slot": 0,
+          "unit": 5,
+          "handle": "0x31008140"
+        },
+        {
+          "op": "read",
+          "type": 3,
+          "unit": 5,
+          "sector_size": 4096,
+          "lba": "0x0",
+          "count": 6,
+          "destination": "0x80000000",
+          "result": 0,
+          "bytes_sha256": "c125ce90c56356e671f30fc8eada7c1d292c360f1f1cdb4765638a81890cee17"
+        },
+        {
+          "op": "close",
+          "handle": "0x31008140"
+        }
+      ],
+      "rsa": [],
+      "log_calls": [
+        {
+          "format": "wlen: %zu",
+          "args": [
+            "0x1a",
+            "0x300fefb0",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        },
+        {
+          "format": "find %s",
+          "args": [
+            "0x300fefb8",
+            "0x300fefb0",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        }
+      ],
+      "label": "found",
+      "storage_type": 3,
+      "initial_stack_pair": [
+        0,
+        0
+      ],
+      "descriptor": [
+        3,
+        0,
+        5
+      ],
+      "selected_lba": "0x148d",
+      "selected_count": 1,
+      "expected_lba": "0x148d",
+      "passed": true
+    },
+    {
+      "execution": {
+        "entry": "0x149a8998",
+        "instructions": 847,
+        "returned": true,
+        "logger_skips": 3,
+        "pc": "0x3100f000",
+        "return_x0": "0x3",
+        "code_region_unchanged": true
+      },
+      "fields": {
+        "id": "",
+        "rand": "",
+        "digest_write": "",
+        "digest_read": "",
+        "nv": "",
+        "prepared": 0,
+        "auth_pass": 0,
+        "auth_mode": 0,
+        "transfer_buffers_in_use": "0000"
+      },
+      "ack_argument": null,
+      "mmio": [],
+      "source_words_consumed": 0,
+      "rand_requests": [],
+      "smc_inputs": [],
+      "storage": [
+        {
+          "op": "open",
+          "type": 3,
+          "slot": 0,
+          "unit": 5,
+          "handle": "0x31008140"
+        },
+        {
+          "op": "read",
+          "type": 3,
+          "unit": 5,
+          "sector_size": 4096,
+          "lba": "0x0",
+          "count": 6,
+          "destination": "0x80000000",
+          "result": 0,
+          "bytes_sha256": "22534ab637da11584ae1825d59298258231e8acf5aef174496479b40d124545d"
+        },
+        {
+          "op": "close",
+          "handle": "0x31008140"
+        }
+      ],
+      "rsa": [],
+      "log_calls": [
+        {
+          "format": "wlen: %zu",
+          "args": [
+            "0xa",
+            "0x300fefb0",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        },
+        {
+          "format": "not find %s",
+          "args": [
+            "0x300fefb8",
+            "0x300fefb0",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        },
+        {
+          "format": "use default op1 offset:ufs(%d) emmc(%d)",
+          "args": [
+            "0x20",
+            "0x1",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        }
+      ],
+      "label": "missing_zero_stack",
+      "storage_type": 3,
+      "initial_stack_pair": [
+        0,
+        0
+      ],
+      "descriptor": [
+        3,
+        0,
+        5
+      ],
+      "selected_lba": "0x4ad",
+      "selected_count": 1,
+      "expected_lba": "0x4ad",
+      "passed": true
+    },
+    {
+      "execution": {
+        "entry": "0x149a8998",
+        "instructions": 845,
+        "returned": true,
+        "logger_skips": 2,
+        "pc": "0x3100f000",
+        "return_x0": "0x3",
+        "code_region_unchanged": true
+      },
+      "fields": {
+        "id": "",
+        "rand": "",
+        "digest_write": "",
+        "digest_read": "",
+        "nv": "",
+        "prepared": 0,
+        "auth_pass": 0,
+        "auth_mode": 0,
+        "transfer_buffers_in_use": "0000"
+      },
+      "ack_argument": null,
+      "mmio": [],
+      "source_words_consumed": 0,
+      "rand_requests": [],
+      "smc_inputs": [],
+      "storage": [
+        {
+          "op": "open",
+          "type": 3,
+          "slot": 0,
+          "unit": 5,
+          "handle": "0x31008140"
+        },
+        {
+          "op": "read",
+          "type": 3,
+          "unit": 5,
+          "sector_size": 4096,
+          "lba": "0x0",
+          "count": 6,
+          "destination": "0x80000000",
+          "result": 0,
+          "bytes_sha256": "22534ab637da11584ae1825d59298258231e8acf5aef174496479b40d124545d"
+        },
+        {
+          "op": "close",
+          "handle": "0x31008140"
+        }
+      ],
+      "rsa": [],
+      "log_calls": [
+        {
+          "format": "wlen: %zu",
+          "args": [
+            "0xa",
+            "0x300fefb0",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        },
+        {
+          "format": "not find %s",
+          "args": [
+            "0x300fefb8",
+            "0x300fefb0",
+            "0x300fefa8",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        }
+      ],
+      "label": "missing_nonzero_stack",
+      "storage_type": 3,
+      "initial_stack_pair": [
+        20481,
+        4660
+      ],
+      "descriptor": [
+        3,
+        0,
+        5
+      ],
+      "selected_lba": "0x16c1",
+      "selected_count": 1,
+      "expected_lba": "0x16c1",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+1405b6590 *(arg1 + 0x68) = 0
+1405b6594 *(arg1 + 0x5a) = 0
+1405b6594 
+1405b65a2 if (*(arg1 + 0x5c) == 0 && *(arg1 + 0x5d) == 0)
+1405b65a4     *(arg1 + 0x54) = arg2
+1405b65a4 
+1405b65a7 uint32_t rdi = zx.d(arg4)
+1405b65a7 
+1405b65ad if (rdi != 0)
+1405b65af     void* rbp_1 = *(arg1 + 8)
+1405b65b3     int64_t rax_1 = sub_1406f80f0()
+1405b65bf     (*(rbp_1 + 0x20))(*(rbp_1 + 8), rax_1)
+1405b65c5     arg5 = sub_1405b6940(arg1, arg5)
+1405b65c5 
+1405b65ca void* rbp_2 = *(arg1 + 8)
+1405b65ce int64_t rax_2 = sub_1406f8130()
+1405b65da (*(rbp_2 + 0x20))(*(rbp_2 + 8), rax_2)
+1405b65e0 void* rax_3
+1405b65e0 int512_t zmm0
+1405b65e0 rax_3, zmm0 = sub_1408f8960(*(arg1 + 0x54), arg5)
+1405b65ef void* rax_4
+1405b65ef int512_t zmm0_1
+1405b65ef rax_4, zmm0_1 = sub_1408d1980(&data_1434c1c00, rax_3, zmm0)
+1405b6600 int32_t rax_5
+1405b6600 int512_t zmm0_2
+1405b6600 rax_5, zmm0_2 = sub_1405b6690(arg1, rax_4, arg3, rdi.b, zmm0_1)
+1405b6600 
+1405b6608 if (rax_5 == 1)
+1405b667b     sub_1405b7000(arg1, 0x57c)
+1405b6608 else
+1405b660c     if (rax_5 == 0)
+1405b660e         void* rsi_1 = *(arg1 + 8)
+1405b6612         int64_t rax_6 = sub_1406f6e10()
+1405b661e         (*(rsi_1 + 0x20))(*(rsi_1 + 8), rax_6)
+1405b661e         
+1405b6623         if (rdi == 0)
+1405b6628             sub_1405b6940(arg1, zmm0_2)
+1405b6628         
+1405b662d         void* rbx_1 = *(arg1 + 8)
+1405b6631         int64_t rax_7 = sub_1406f82f0()
+1405b663d         (*(rbx_1 + 0x20))(*(rbx_1 + 8), rax_7)
+1405b664d         return 1
+1405b664d     
+1405b6652     if (*(arg1 + 0x5a) == 0 && sub_1405b6df0(arg1, zmm0_2) == 0 && *(arg1 + 0x68) == 0)
+1405b6666         *(arg1 + 0x68) = 1
+1405b666a         *(arg1 + 0x6c) = 0x771
+1405b666a 
+1405b668a return 0

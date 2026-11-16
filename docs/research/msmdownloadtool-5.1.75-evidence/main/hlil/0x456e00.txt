@@ -1,0 +1,92 @@
+00456e00 int32_t ebp
+00456e00 int32_t var_4 = ebp
+00456e01 int32_t* ebp_1 = &var_4
+00456e06 int32_t var_c = 0xffffffff
+00456e08 int32_t (* var_10)(void* arg1) = sub_6d2b70
+00456e13 TEB* fsbase
+00456e13 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00456e1e void var_74
+00456e1e int32_t var_1c = __security_cookie ^ &var_74
+00456e22 int32_t ebx
+00456e22 int32_t var_78 = ebx
+00456e23 int32_t esi
+00456e23 int32_t var_7c = esi
+00456e24 int32_t edi
+00456e24 int32_t var_80 = edi
+00456e2c int32_t var_84 = __security_cookie ^ &var_80
+00456e31 fsbase->NtTib.ExceptionList = &ExceptionList
+00456e41 int16_t var_34
+00456e41 sub_496060(arg4, &var_34)
+00456e48 int32_t var_c_1 = 0
+00456e54 int32_t var_64
+00456e54 sub_49b150(&var_64)
+00456e59 var_c_1.b = 2
+00456e63 int32_t var_20
+00456e63 
+00456e63 if (var_20 u>= 8)
+00456e69     ebp_1 = j_sub_688543(var_34.d)
+00456e69 
+00456e7b int32_t var_20_1 = 7
+00456e83 void* const var_88_2 = 0x10
+00456e85 int32_t* var_8c = u"application/json"
+00456e8a int32_t var_24 = 0
+00456e92 var_34 = 0
+00456e97 int32_t var_38 = 7
+00456e9f int32_t var_3c = 0
+00456ea3 int16_t var_4c = 0
+00456ea8 int32_t edx_1 = sub_45c850(&var_4c, var_8c, var_88_2)
+00456eb0 var_c_1.b = 3
+00456eba int32_t var_88_3 = 0xf
+00456ec1 int32_t var_8c_1 = 0
+00456ec8 char var_9c = 0
+00456ed0 void* var_54
+00456ed0 int32_t var_50
+00456ed0 
+00456ed0 if (var_50 u>= 0x10)
+00456eee     var_9c.d = var_64
+00456ef0     var_64 = 0
+00456ed0 else if (var_54 != 0xffffffff)
+00456ee0     edx_1 = _memcpy(&var_9c, &var_64, var_54 + 1)
+00456ee0 
+00456f00 void* var_8c_2 = var_54
+00456f07 int32_t var_88_4 = var_50
+00456f0a int32_t var_50_1 = 0xf
+00456f12 int32_t var_54_1 = 0
+00456f1a var_64.b = 0
+00456f1f void var_6c
+00456f1f int32_t* eax_11 = sub_45da10(var_50, edx_1, &var_6c)
+00456f29 char arg_60 = 4
+00456f2e void* edi_2 = *arg3
+00456f30 int32_t var_1c_1 = 0
+00456f32 void* var_20_2 = var_54
+00456f36 sub_480f80(edi_2 + 0x14)
+00456f43 void* arg_20
+00456f43 sub_483ad0(edi_2, eax_11, &arg_20)
+00456f4e int32_t* result = sub_484280(edi_2 + 0x20, var_54, 0)
+00456f53 arg_60 = 3
+00456f53 
+00456f5e if (arg4 != 0)
+00456f68     bool cond:0_1 = arg4[1] != 1
+00456f68     result = arg4[1]
+00456f68     arg4[1] -= 1
+00456f68     
+00456f6c     if (not(cond:0_1))
+00456f72         (**arg4)()
+00456f74         result = &arg4[2]
+00456f77         int32_t edi_3 = *result
+00456f77         *result -= 1
+00456f77         
+00456f7c         if (edi_3 == 1)
+00456f82             result = (*(*arg4 + 4))()
+00456f82 
+00456f8a if (arg7 u>= 8)
+00456f90     result, ebp_1 = j_sub_688543(arg_20)
+00456f90 
+00456f9d if (arg6 u>= 0x10)
+00456fa3     result, ebp_1 = j_sub_688543(arg5)
+00456fa3 
+00456faf fsbase->NtTib.ExceptionList = arg9
+00456fc0 void var_8
+00456fc0 sub_687de2(arg8 ^ &var_8)
+00456fc7 *ebp_1
+00456fc8 return result

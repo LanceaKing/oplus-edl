@@ -1,0 +1,35 @@
+00436e2b int16_t* eax = **(arg1 + 0x4d8)
+00436e2d wchar16 const* const ecx = u"cbbdcaaca74088039b03d81ad7766ef3"
+00436e30 int32_t eax_2
+00436e30 
+00436e30 while (true)
+00436e30     int16_t edx = *eax
+00436e33     wchar16 const temp0_1 = *ecx
+00436e33     bool c_1 = edx u< temp0_1
+00436e33     
+00436e36     if (edx == temp0_1)
+00436e3b         if (edx == 0)
+00436e52             eax_2 = 0
+00436e54             break
+00436e54         
+00436e3d         edx = eax[1]
+00436e41         int16_t temp1_1 = ecx[1]
+00436e41         c_1 = edx u< temp1_1
+00436e41         
+00436e45         if (edx == temp1_1)
+00436e47             eax = &eax[2]
+00436e4a             ecx = &ecx[2]
+00436e4a             
+00436e50             if (edx != 0)
+00436e50                 continue
+00436e50             
+00436e52             eax_2 = 0
+00436e54             break
+00436e54     
+00436e58     eax_2 = sbb.d(eax, eax, c_1) | 1
+00436e58     break
+00436e58 
+00436e66 if (eax_2 == 0 && data_7e0308 == 1)
+00436e6d     return 1
+00436e6d 
+00436e70 return 0

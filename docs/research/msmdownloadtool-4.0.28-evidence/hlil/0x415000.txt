@@ -1,0 +1,111 @@
+00415003 int32_t var_8 = 0xffffffff
+00415005 int32_t (* var_c)(void* arg1) = __ehhandler$?_Fput@?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@ABA?AV?$ostreambuf_iterator@DU?$char_traits@D@std@@@2@V32@AAVios_base@2@DPBDI@Z
+00415010 TEB* fsbase
+00415010 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0041501c int32_t __saved_ebp
+0041501c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00415028 fsbase->NtTib.ExceptionList = &ExceptionList
+0041503b char var_c9 = 0
+00415045 uint32_t fileSizeHigh = 0
+0041504f uint32_t numberOfBytesRead = 0
+00415059 int32_t buffer
+00415059 _memset(&buffer, 0, 0xac)
+00415087 HANDLE hObject = (*(data_5dd008 + 0xc))(eax_2) + 0x10
+0041508d void** eax_6 = &arg1[0x88]
+00415093 int32_t var_8_1 = 0
+00415093 
+0041509e if (eax_6[5] u>= 0x10)
+004150a0     eax_6 = *eax_6
+004150a0 
+004150a9 sub_4061e0(&hObject, eax_6)
+004150ae PWSTR lpFileName = hObject
+004150c7 HANDLE hObject_1 = CreateFileW(lpFileName, 0x80000000, FILE_SHARE_READ, nullptr, OPEN_EXISTING, 
+004150c7     FILE_ATTRIBUTE_NORMAL, nullptr)
+004150cf hObject = hObject_1
+004150d8 char* ebx
+004150d8 
+004150d8 if (hObject_1 != 0xffffffff)
+00415118     char* var_f4_2
+00415118     char* edi_2
+00415118     
+00415118     if ((GetFileSize(hObject_1, &fileSizeHigh) | fileSizeHigh) != 0)
+00415139         int32_t var_d4_1 = 0xfffffe00
+0041514a         int32_t distanceToMoveHigh = 0xffffffff
+00415154         uint32_t distanceToMoveHigh_1 =
+00415154             SetFilePointer(hObject_1, 0xfffffe00, &distanceToMoveHigh, FILE_END)
+00415154         
+00415177         if (distanceToMoveHigh_1 != 0xffffffff || GetLastError() == NO_ERROR)
+0041524f             if (distanceToMoveHigh_1 != 0xffffffff || distanceToMoveHigh != 0)
+00415242                 goto label_41519f
+00415242             
+0041525a             edi_2 = &arg1[0x1f0]
+00415262             enum WIN32_ERROR var_f0_7 = GetLastError()
+00415263             var_f4_2 = "Seek to metadata failed. Error=%d\n\n"
+00415268             goto label_415297
+00415268         
+0041517d         uint32_t distanceToMoveHigh_2 = distanceToMoveHigh_1
+00415183         distanceToMoveHigh = distanceToMoveHigh_1
+0041519f     label_41519f:
+0041519f         
+004151b4         if (ReadFile(hObject_1, &buffer, 0xac, &numberOfBytesRead, nullptr) == 0
+004151b4                 || numberOfBytesRead == 0)
+00415288             edi_2 = &arg1[0x1f0]
+00415290             enum WIN32_ERROR var_f0_9 = GetLastError()
+00415291             var_f4_2 = "Read metadata failed. Error=%d\n\n"
+00415291             goto label_415297
+00415291         
+004151c4         int32_t* hObject_2 = _fopen("C:/ToolLog.txt", "a+")
+004151ce         hObject = hObject_2
+004151d6         int32_t var_c0
+004151d6         int16_t var_b4
+004151d6         
+004151d6         if (hObject_2 != 0)
+004151d8             int32_t var_ac
+004151d8             int32_t var_f0_4 = var_ac
+004151e5             int32_t var_b0
+004151e5             int32_t var_f4_5 = var_b0
+004151eb             int32_t var_f8_2 = var_c0
+004151f1             int32_t buffer_1 = buffer
+004151f7             uint32_t var_100_2 = zx.d(var_b4)
+004151fe             _fprintf(hObject_2, 
+004151fe                 "MagicNumber=%d,MetadataVersion=%d,CryptVersion=%d,ProfileFirstSector=%d,profilesize=%d,"
+004151fe             "
+0041520c             _fclose(hObject)
+0041520c         
+00415232         if (0x7cef != var_b4 || buffer != 2 || var_c0 != 1)
+0041526a             *arg1 = 1
+0041526d             *(arg1 + 4) = "The magic number of metadata does not match.\n"
+00415274             ebx.b = var_c9
+0041527b             CloseHandle(hObject_1)
+00415232         else
+00415235             ebx.b = 1
+00415237             CloseHandle(hObject_1)
+00415118     else
+0041511a         edi_2 = &arg1[0x1f0]
+00415126         enum WIN32_ERROR var_f0_3 = GetLastError()
+00415127         var_f4_2 = "Get file size failed. Error=%d\n"
+00415297     label_415297:
+00415297         sub_54bd64(edi_2, var_f4_2)
+0041529f         *arg1 = 1
+004152a2         *(arg1 + 4) = edi_2
+004152ab         CloseHandle(hObject)
+004152b1         ebx.b = 0
+004150d8 else
+004150e6     enum WIN32_ERROR var_f0_1 = GetLastError()
+004150ed     sub_54bd64(&arg1[0x1f0], "Can't open image file. Error=%d\n")
+004150f5     *arg1 = 1
+004150f8     *(arg1 + 4) = &arg1[0x1f0]
+004152b1     ebx.b = 0
+004152b1 
+004152b6 int32_t var_8_2 = 0xffffffff
+004152c3 int32_t ecx_4 = *(lpFileName - 4)
+004152c3 *(lpFileName - 4) -= 1
+004152c3 
+004152ca if (ecx_4 - 1 s<= 0)
+004152d1     (*(**(lpFileName - 0x10) + 4))(&lpFileName[-8])
+004152d1 
+004152d4 int32_t* result
+004152d4 result.b = ebx.b
+004152d9 fsbase->NtTib.ExceptionList = ExceptionList
+004152e9 sub_54a573(eax_2 ^ &__saved_ebp)
+004152f1 return result

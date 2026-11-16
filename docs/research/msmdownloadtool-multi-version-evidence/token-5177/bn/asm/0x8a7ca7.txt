@@ -1,0 +1,15 @@
+008a7ca7 mov     eax, dword [ebp]
+008a7cab mov     ecx, dword [eax]
+008a7cad or      eax, eax
+008a7caf clc     
+008a7cb0 bt      eax, edx
+008a7cb3 mov     dword [ebp], ecx
+008a7cb7 test    si, bx
+008a7cba ror     ah, cl
+008a7cbc mov     eax, dword [esi]
+008a7cbe test    cl, 0x25
+008a7cc1 cmc     
+008a7cc2 test    esi, esp
+008a7cc4 lea     esi, [esi+0x4]
+008a7cca xor     eax, ebx
+008a7ccc jmp     0x10f5a74

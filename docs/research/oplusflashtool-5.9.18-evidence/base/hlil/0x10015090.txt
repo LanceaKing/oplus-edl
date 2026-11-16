@@ -1,0 +1,119 @@
+10015096 int32_t ecx
+10015096 int32_t var_c = ecx
+10015098 int32_t var_14 = 0xa48
+1001509d uint32_t (* result)[0x4] = sub_101512d2()
+1001509d 
+100150a9 if (result == 0)
+100150ab     char const* const var_14_1 = "[ERROR]: Failed to allocate memory for authorization manager"
+100150b0     int32_t var_18 = 0x13a
+100150b5     char const* const var_1c = "auth_manager_create"
+100150c7     *opdbg_log()
+100150c8     return 0
+100150c8 
+100150d1 _memset(result, 0, 0xa48)
+100150d9 uint32_t (* eax_1)[0x4] = sub_100272d0()
+100150de (*result)[0x14a] = eax_1
+100150de 
+100150e6 if (eax_1 != 0)
+1001510f     char const* const ecx_1 = "-----BEGIN PUBLIC KEY-----\n"
+1001510f     "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAs/dVRo1yPTqwZ840V/+Pe2RziBve4z0N\n"
+1001510f     "XOFZMms3UO8SmALjcZdmXyGT4DkGHI9bpfauytfrnMt5F5RKMOZ7PGbXjdiG+uccgtOGWgGjnuR0\n
+1001510f         8/eArgvTDT3Kf5r/k6AeofSnSbEDBgGN2LXgkJTiI7lDNj90JPx+/aYOvH8zcwbWawo"
+1001511a     int32_t edx_2 = eax_1 - 0x101fa080
+1001511a     
+1001512b     do
+10015120         eax_1.b = *ecx_1
+10015122         ecx_1 = &ecx_1[1]
+10015125         ecx_1[edx_2 - 1] = eax_1.b
+1001512b     while (eax_1.b != 0)
+1001512b     
+1001512d     uint32_t (* eax_3)[0x4] = sub_1002c5a0()
+10015132     (*result)[0x14b] = eax_3
+10015132     
+1001513a     if (eax_3 != 0)
+10015148         char* ecx_2 = "-----BEGIN PUBLIC KEY-----\n"
+10015148         "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA4vHhfcwcT8m8zkdk9chu\n"
+10015148         "cZEGpbN0VCkNcDKCl3xfuLKnlLvudaXdnD8kPboByLgVKLCzcJY+ih1kZomX6gx6\nAvL"
+10015153         int32_t edx_4 = eax_3 - "ected"
+10015153         
+10015160         do
+10015155             eax_3.b = *ecx_2
+10015157             ecx_2 = &ecx_2[1]
+1001515a             ecx_2[edx_4 - 1] = eax_3.b
+10015160         while (eax_3.b != 0)
+10015160         
+10015162         uint32_t (* eax_4)[0x4] = sub_1002ac10()
+10015167         result[0x53][0] = eax_4
+10015167         
+1001516f         if (eax_4 != 0)
+10015180             uint32_t (* eax_5)[0x4] = sub_10030790()
+10015185             (*result)[0x14d] = eax_5
+10015185             
+1001518d             if (eax_5 != 0)
+1001519e                 uint32_t (* eax_6)[0x4] = sub_1002ba40()
+100151a3                 (*result)[0x14e] = eax_6
+100151a3                 
+100151ab                 if (eax_6 == 0)
+100151ad                     char const* const var_14_7 = "[Auth] ERROR: Failed to create RCSM helper."
+100151b2                     void* const var_18_5 = &data_101fccd0
+100151b7                     int32_t var_1c_3 = 0x15f
+100151bc                     char const* const var_20 = "auth_manager_create"
+100151c1                     int32_t* ebp_4 = opdbg_log()
+100151c7                     auth_manager_destroy(result)
+100151d4                     *ebp_4
+100151d5                     return 0
+100151d5                 
+100151d6                 uint32_t (* eax_8)[0x4] = sub_1001e2a0()
+100151db                 (*result)[0x14f] = eax_8
+100151db                 
+100151e3                 if (eax_8 != 0)
+100151f4                     int32_t var_14_9 = 4
+100151f6                     uint32_t eax_9 = sub_101512d2()
+100151fe                     result[0xa4][0] = eax_9
+100151fe                     
+10015206                     if (eax_9 != 0)
+10015224                         if (sub_10141720(eax_9, nullptr) == 0)
+10015235                             int32_t* eax_11 = op_buf_create()
+1001523a                             (*result)[0x291] = eax_11
+1001523a                             
+10015242                             if (eax_11 != 0)
+10015259                                 uint32_t* var_14_13 = &result[0x54]
+10015259                                 
+10015264                                 if (op_get_system_info() == 0)
+1001527b                                     return result
+1001527b                                 
+10015266                                 char const* const var_14_14 =
+10015266                                     "[ERROR]: Error occurred when getting system information"
+1001526b                                 int32_t var_18_11 = 0x17f
+10015242                             else
+10015244                                 char const* const var_14_12 = "[ERROR]: Failed to create parameter buffer for authorization manager"
+10015249                                 int32_t var_18_10 = 0x179
+10015224                         else
+10015226                             char const* const var_14_11 =
+10015226                                 "[ERROR]: Failed to create mutex for authorization manager"
+1001522b                             int32_t var_18_9 = 0x172
+10015206                     else
+10015208                         char const* const var_14_10 =
+10015208                             "[ERROR]: Failed to create mutex for authorization manager"
+1001520d                         int32_t var_18_7 = 0x16d
+100151e3                 else
+100151e5                     char const* const var_14_8 = "[ERROR]: Failed to create TOOLS HUB helper"
+100151ea                     int32_t var_18_6 = 0x166
+1001518d             else
+1001518f                 char const* const var_14_6 = "[ERROR]: Failed to create WCSM helper"
+10015194                 int32_t var_18_4 = 0x159
+1001516f         else
+10015171             char const* const var_14_5 = "[ERROR]: Failed to create OCSM helper"
+10015176             int32_t var_18_3 = 0x152
+1001513a     else
+1001513c         char const* const var_14_4 = "[ERROR]: Failed to create Root helper"
+10015141         int32_t var_18_2 = 0x14a
+100150e6 else
+100150e8     char const* const var_14_2 = "[ERROR]: Failed to create MES helper"
+100150ed     int32_t var_18_1 = 0x142
+100150ed 
+100150f2 char const* const var_1c_2 = "auth_manager_create"
+100150f7 int32_t* ebp_2 = opdbg_log()
+10015100 auth_manager_destroy(result)
+1001510d *ebp_2
+1001510e return 0

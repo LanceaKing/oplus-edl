@@ -1,0 +1,115 @@
+100153f0 int32_t ebp
+100153f0 int32_t var_4 = ebp
+10015413 _memset(0x1021b300, 0, 0x168)
+1001541e char* esi = arg2 + 4
+10015428 char i
+10015428 
+10015428 do
+10015423     i = *esi
+10015425     esi = &esi[1]
+10015428 while (i != 0)
+10015428 
+10015432 void* ecx_1
+10015432 
+10015432 if (esi - &esi[1] u<= 0x167)
+1001543b     char* ecx_2 = arg2 + 4
+1001543b     
+10015445     do
+10015440         i = *ecx_2
+10015442         ecx_2 = &ecx_2[1]
+10015445     while (i != 0)
+10015445     
+10015447     ecx_1 = ecx_2 - &ecx_2[1]
+10015432 else
+10015434     ecx_1 = 0x167
+10015434 
+10015450 _strncpy(0x1021b300, arg2 + 4, ecx_1)
+1001545e void* var_41c_1 = arg2 + 0x284
+10015465 void* var_420_1 = arg2 + 0x304
+1001546c void* var_424 = arg2 + 0x204
+10015477 void var_408
+10015477 _sprintf(&var_408, "%s@%s:%s")
+1001547c char* ecx_3 = &var_408
+1001548b char i_1
+1001548b 
+1001548b do
+10015486     i_1 = *ecx_3
+10015488     ecx_3 = &ecx_3[1]
+1001548b while (i_1 != 0)
+10015491 void var_407
+10015491 int32_t* ecx_4 = ecx_3 - &var_407
+10015496 op_base64_encode(&var_408, &var_407, ecx_4, &var_408, ecx_4, &var_408)
+100154ae sub_10027440(&var_408, 0x1021b300, *(arg1 + 0x528), &var_408)
+100154bf *(*(arg1 + 0x528) + 4) = 1
+100154d5 __builtin_strncpy(*(arg1 + 0x528) + 0x108, "/asymes/service/AateAsyApiCheckAuthenForUpgrade.json", 
+100154d5     0x35)
+10015517 _srand(common_time<int64_t>(nullptr))
+10015517 
+1001553a for (char* i_2 = nullptr; i_2 s< 0x10; i_2 = &i_2[1])
+10015533     *(i_2 + arg1 + 8) = (*"0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ")[modu.dp
+10015533         .d(0:(_rand()), 0x3e)]
+10015533 
+10015540 *(arg1 + 0x18) = 0
+1001555a op_str_map_put(*(*(arg1 + 0x528) + 0x2b14), "version_of_struct", "0")
+1001557a op_str_map_put(*(*(arg1 + 0x528) + 0x2b14), &data_101fce1c, arg1 + 0x640)
+1001559a op_str_map_put(*(*(arg1 + 0x528) + 0x2b14), &data_101fce20, arg1 + 0x540)
+100155b4 op_str_map_put(*(*(arg1 + 0x528) + 0x2b14), "random_number", arg1 + 8)
+100155b4 
+100155c9 if (sub_100275a0(*(arg1 + 0x528)) == 0)
+100155ed     char* ecx_8 = op_str_map_get(*(*(arg1 + 0x528) + 0x2b18), "/msgcode")
+100155ed     
+100155f4     if (ecx_8 != 0)
+10015638         void* edx_5 = arg1 + 0x48 - ecx_8
+1001564b         char* eax_18
+1001564b         
+1001564b         do
+10015640             eax_18.b = *ecx_8
+10015642             ecx_8 = &ecx_8[1]
+10015645             *(edx_5 + ecx_8 - 1) = eax_18.b
+1001564b         while (eax_18.b != 0)
+1001564b         
+1001566b         if (sub_100274f0(eax_18, "/msg", *(arg1 + 0x528), arg1 + 0x88, 0) == 0)
+1001566f             int32_t* ebp_3
+1001566f             char* esi_4
+1001566f             int32_t xmm0[0x4]
+1001566f             ebp_3, esi_4, xmm0 = sub_10015320()
+1001566f             
+10015684             if (_strstr(xmm0, esi_4, "CMN-0000") == 0)
+10015686                 char* var_41c_11 = esi_4
+10015687                 char const* const var_420_9 = "[ERROR]: Server returns error code %s"
+1001568c                 int32_t var_424_8 = 0x1d4
+10015691                 char const* const var_428_2 = "auth_mes_login"
+1001569b                 void* var_42c_1 = arg1 + 0x88
+1001569c                 char* var_430 = esi_4
+1001569d                 int32_t var_434 = 2
+1001569f                 char const* const var_438 = "E0503018"
+100156a9                 return j_sub_1059ca96(opdbg_log())
+100156a9             
+100156b7             data_102177ec = 1
+100156c1             void* ecx_11 = nullptr
+100156d2             char* eax_21
+100156d2             
+100156d2             do
+100156c3                 eax_21.b = *(&var_408 + ecx_11)
+100156c7                 ecx_11 += 1
+100156ca                 *(ecx_11 + 0x1021ad7f) = eax_21.b
+100156d2             while (eax_21.b != 0)
+100156da             __builtin_strcpy(&data_1021b880, "invalid")
+100156ef             *ebp_3
+100156f0             return 0
+100155f4     else
+100155f6         char const* const var_41c_9 = "/msgcode"
+100155fb         char const* const var_420_5 = "[ERROR]: failed to get param, key=%s. value is null"
+10015600         int32_t var_424_6 = 0x1d3
+10015605         char const* const var_428_1 = "mes_helper_get_param_out"
+1001560a         opdbg_log()
+1001560a     
+10015612     char const* const var_41c_10 = "[ERROR]: Cannot get return message from result"
+10015617     int32_t var_420_6 = 0x1cc
+100155c9 else
+100155cb     char const* const var_41c_8 = "[ERROR]: Error occurred when performing MES request"
+100155d0     int32_t var_420_3 = 0x1c6
+100155d0 
+1001561c char const* const var_424_7 = "auth_mes_login"
+10015631 *opdbg_log()
+10015632 return 0xffffffff

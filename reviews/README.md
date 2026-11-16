@@ -1,21 +1,21 @@
 # Oplus EDL 评审报告
 
-最新代码结论见 [welcome 独立复审](2026-11-13-welcome-code/consolidated_review_report.md)：未确认需要修复的 P0–P3 问题；请求范围内的原始数据完整保留，ACK 条件未放松，81 个工作区测试重跑通过。一个最初报告的 P1 经字节边界对照后撤回，原证据和裁定均保留。
+这里保存各轮评审结论、受审源码快照和复现证据。当前实施进度见[实施索引](../docs/implementation/README.md)。每份报告只适用于其受审版本；历史报告中的“未提交”“未操作设备”和测试数量不代表当前工作区状态。
 
-实施状态：已复审提交 `bd136c4` 和 `7e0a31a` 已按用户要求推送至 [fork 的新分支 `oplus-edl-phase1`](https://github.com/LanceaKing/qdlrs/tree/oplus-edl-phase1)。远端提交已核验，[固定依赖记录](../docs/dependencies/qdlrs.md)已更新。qdlrs 工作区干净，未操作设备。[推送记录](../docs/implementation/phase-1-publish/README.md)与下述历史评审版本分开保存。
+| 范围 | 初审 | 修复后复审或后续记录 |
+| --- | --- | --- |
+| 设计 | [首轮汇总](2026-11-13-initial/consolidated_review_report.md) | [独立复审](2026-11-13-rereview/consolidated_review_report.md) |
+| 第一阶段协议 | [代码复审](2026-11-13-phase1-code/consolidated_review_report.md) | [修复复审](2026-11-13-phase1-repair/consolidated_review_report.md) |
+| 第一阶段 welcome 衔接 | [独立复审汇总](2026-11-13-welcome-code/consolidated_review_report.md) | [实施记录](../docs/implementation/phase-1-welcome/README.md) |
+| 第二阶段修复 | [复审报告](2026-11-14-phase2-repair/goldfish_review_report.md) | [修复记录](../docs/implementation/phase-2-repair.md) |
+| 第三阶段 | [代码复审](2026-11-14-phase3-code/goldfish_review_report.md) | [修复复审](2026-11-14-phase3-repair/goldfish_review_report.md) |
+| 第四阶段修复 | [复审报告](2026-11-14-phase4-repair-rereview/goldfish_review_report.md) | [实施记录](../docs/implementation/phase-4.md) |
+| 第五阶段 | [第一轮](2026-11-14-phase5-review/goldfish_review_report.md) | [第二轮](2026-11-14-phase5-review/round-2/goldfish_review_report.md) |
+| 云端刷写与整包安全修复 | [第一轮报告及修复结果](2026-11-16-cloud-flash-repair/goldfish_review_report.md) | 7 项已修复；第二轮尚未启动，新增路径未做实机重测 |
 
-第一阶段修复后的最新结论见[独立复审汇总](2026-11-13-phase1-repair/consolidated_review_report.md)：前次 3 个 P2 已闭合，76 个测试及四项检查通过，未发现新的修复问题或范围扩张。报告单列一个上游既有的 welcome 衔接边界。未提交、未推送、未操作设备。
+设计复审闭合了首轮五项主要问题。第一阶段修复复审闭合了三个 P2，第三阶段修复复审闭合了五个 P2。具体边界以各报告为准，不能将评审通过等同于实机验收。
 
-前次代码复审见[2026-11-13 汇总](2026-11-13-phase1-code/consolidated_review_report.md)：当时确认 3 个 P2，原报告与快照保留。下述通过结论仅指设计文档。
-
-最新结论见[独立复审汇总](2026-11-13-rereview/consolidated_review_report.md)：首轮五项主要问题在设计层面均已闭合，未发现新矛盾或首版范围扩张。该结论不代表生产实现、构建或硬件验证已经通过。
-
-两轮均采用 EGM 完整连续模式，各包含五个阶段和九次独立上下文评审。
-
-| 轮次 | 汇总报告 | 结论 | 审阅版本 |
-| --- | --- | --- | --- |
-| 2026-11-13 首轮 | [首轮汇总](2026-11-13-initial/consolidated_review_report.md) | 架构符合范围，实施前需解决 5 项主要问题，另有 10 项次要意见 | [237 行快照](2026-11-13-initial/design_snapshot.md) |
-| 2026-11-13 复审 | [复审汇总](2026-11-13-rereview/consolidated_review_report.md) | 文档复审通过，阻断、主要、次要发现均为 0 | [375 行快照](2026-11-13-rereview/design_snapshot.md) |
+下表的阶段编号是设计评审流程编号，与产品实施的六个阶段不同。
 
 ## 阶段报告
 
@@ -37,3 +37,5 @@
 `review_scope.json` 的路径和 `baseline_files` 哈希保留评审时的值，不随归档重写。快照也保留原始内容和当时的引用路径。部分历史路径已迁移，查阅现有报告时使用本索引。
 
 [当前设计文档](../docs/designs/oplus-edl.md)的评审状态和引用入口已同步更新。技术方案正文未因本次归档改变。
+
+清理时仅删除未纳入 Git 的 `target/` 编译缓存。报告、日志、补丁、源码快照和探测用例保留原路径；需要复现时重新构建。

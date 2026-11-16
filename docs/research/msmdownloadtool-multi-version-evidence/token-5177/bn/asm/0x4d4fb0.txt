@@ -1,0 +1,43 @@
+004d4fb0 lea     eax, [ecx+0x8]
+004d4fb3 mov     dword [ecx+0x98], 0x0
+004d4fbd mov     dword [ecx+0xa0], 0x0
+004d4fc7 mov     dword [ecx+0x9c], 0x0
+004d4fd1 cmp     dword [eax+0x14], 0x10
+004d4fd5 mov     dword [eax+0x10], 0x0
+004d4fdc jb      0x4d4fe0
+004d4fe0 mov     byte [eax], 0x0
+004d4fe3 lea     eax, [ecx+0x50]
+004d4fe6 cmp     dword [eax+0x14], 0x10
+004d4fea mov     dword [eax+0x10], 0x0
+004d4ff1 jb      0x4d4ff5
+004d4fde mov     eax, dword [eax]
+004d4ff5 mov     byte [eax], 0x0
+004d4ff8 lea     eax, [ecx+0x80]
+004d4ffe cmp     dword [eax+0x14], 0x10
+004d5002 mov     dword [eax+0x10], 0x0
+004d5009 jb      0x4d500d
+004d4ff3 mov     eax, dword [eax]
+004d500d mov     byte [eax], 0x0
+004d5010 lea     eax, [ecx+0x38]
+004d5013 cmp     dword [eax+0x14], 0x10
+004d5017 mov     dword [eax+0x10], 0x0
+004d501e jb      0x4d5022
+004d500b mov     eax, dword [eax]
+004d5022 mov     byte [eax], 0x0
+004d5025 lea     eax, [ecx+0x20]
+004d5028 cmp     dword [eax+0x14], 0x10
+004d502c mov     dword [eax+0x10], 0x0
+004d5033 jb      0x4d5037
+004d5020 mov     eax, dword [eax]
+004d5037 mov     byte [eax], 0x0
+004d503a lea     eax, [ecx+0x68]
+004d503d cmp     dword [eax+0x14], 0x10
+004d5041 mov     dword [eax+0x10], 0x0
+004d5048 jb      0x4d504c
+004d5035 mov     eax, dword [eax]
+004d504c xorps   xmm0, xmm0
+004d504f mov     byte [eax], 0x0
+004d5052 movdqu  xmmword [ecx+0x174], xmm0
+004d505a movdqu  xmmword [ecx+0x184], xmm0
+004d5062 retn    
+004d504a mov     eax, dword [eax]

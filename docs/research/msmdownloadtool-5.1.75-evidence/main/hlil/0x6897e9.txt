@@ -1,0 +1,40 @@
+006897e9 int32_t __saved_ebp_2 = 0xc
+006897eb int32_t var_8 = 0x7b3868
+00698600 int32_t (* var_10)(int32_t* arg1, void* arg2, int32_t arg3) = sub_6986c0
+00698605 TEB* fsbase
+00698605 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0069861d uint32_t __security_cookie_1 = __security_cookie
+00698622 int32_t var_8_3 = 0x7b3868 ^ __security_cookie_1
+00698627 int32_t __saved_ebp
+00698627 int32_t var_30 = __security_cookie_1 ^ &__saved_ebp
+00698628 int32_t* var_1c = &var_30
+0069862b void* const var_34_1 = &data_6897f5
+00698631 int32_t var_8_4 = 0xfffffffe
+00698638 int32_t var_c = var_8_3
+0069863e fsbase->NtTib.ExceptionList = &ExceptionList
+006897f7 int32_t var_20 = 0
+006897ff int32_t eax
+006897ff eax.b = arg1 != 0
+00689804 int32_t result
+00689804 
+00689804 if (eax != 0)
+00689826     void* ecx
+00689826     int32_t edx
+00689826     __lock_file2(&data_7c07d0, edx, ecx, 1, &data_7c07d0)
+0068982d     int32_t var_8_1 = 0
+00689839     int32_t eax_2 = __stbuf(&data_7c07d0)
+00689852     void arg_8
+00689852     int32_t result_1 = sub_6a03e1(&data_7c07d0, arg1, nullptr, &arg_8)
+00689859     int32_t result_2 = result_1
+00689866     __ftbuf(eax_2, &data_7c07d0)
+0068986e     int32_t var_8_2 = 0xfffffffe
+00689875     $LN8()
+0068987a     result = result_1
+00689804 else
+0068980b     *__errno() = 0x16
+00689811     sub_68e4cf()
+00689816     result = 0xffffffff
+00689816 
+00698648 fsbase->NtTib.ExceptionList = ExceptionList
+00698657 void* const __saved_ebp_1 = &data_689881
+00689881 return result

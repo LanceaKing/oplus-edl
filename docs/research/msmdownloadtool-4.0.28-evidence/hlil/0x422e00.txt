@@ -1,0 +1,136 @@
+00422e03 int32_t var_8 = 0xffffffff
+00422e05 int32_t (* var_c)(void* arg1) = sub_571a40
+00422e10 TEB* fsbase
+00422e10 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00422e1c int32_t __saved_ebp
+00422e1c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00422e22 fsbase->NtTib.ExceptionList = &ExceptionList
+00422e34 int32_t* var_1c
+00422e34 void* arg_4
+00422e34 sub_422c30(arg1, arg_4, &var_1c)
+00422e39 int32_t* esi = var_1c
+00422e39 
+00422e3e if (esi == 0)
+00422e4a     wchar16 const* const var_38_1
+00422e4a     
+00422e4a     if (*(arg1 + 0x1b) == 0)
+00422e53         var_38_1 = u"No suitable software available for download"
+00422e4a     else
+00422e4c         var_38_1 = &data_5bba14
+00422e4c     
+00422e59     sub_426230(arg1 + 0x290, var_38_1)
+00422e7c     SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 0x1000001, arg1 + 0x290)
+00422e8a     fsbase->NtTib.ExceptionList = ExceptionList
+00422e98     return 1
+00422e98 
+00422ea5 int32_t eax_8
+00422ea5 int32_t edx
+00422ea5 edx:eax_8 = muls.dp.d(0x66666667, esi[1] - *esi)
+00422ea7 int32_t var_14 = 0
+00422eae int32_t edx_1 = edx s>> 6
+00422eb3 uint32_t eax_10 = edx_1 u>> 0x1f
+00422eb3 
+00422ebb if (eax_10 != neg.d(edx_1))
+00422ec1     int32_t ecx_4 = 0
+00422ec3     int32_t var_18_1 = 0
+00422ec3     
+00422ec8     while (true)
+00422ec8         int32_t* edi_2 = *esi + ecx_4
+00422ece         int32_t* ebx_1 = &edi_2[6]
+00422ece         
+00422ed1         if (edi_2[0xb] u>= 0x10)
+00422ed3             ebx_1 = *ebx_1
+00422ed3         
+00422ed5         sub_41a930()
+00422ef0         void* esi_2 = (*(data_5ea194 + 0xc))(eax_2) + 0x10
+00422ef3         arg_4 = esi_2
+00422ef6         int32_t var_8_1 = 0
+00422f07         HMODULE eax_13
+00422f07         
+00422f07         if (ebx_1 == 0 || (ebx_1 & 0xffff0000) != 0)
+00422f27             sub_4061e0(&arg_4, ebx_1)
+00422f2c             esi_2 = arg_4
+00422f07         else
+00422f09             uint32_t ebx_2 = zx.d(ebx_1.w)
+00422f0e             eax_13 = sub_4208e0(ebx_2)
+00422f0e             
+00422f15             if (eax_13 != 0)
+00422f1c                 sub_40bb60(&arg_4, eax_13, ebx_2)
+00422f2c                 esi_2 = arg_4
+00422f2c         
+00422f32         eax_13.b = *(arg1 + 0x100390)
+00422f3a         int32_t result
+00422f3a         
+00422f3a         if (eax_13.b != 0)
+00423041             result = 0x4c7
+00422f3a         else if (edi_2 == 0)
+00423009             void* var_38_8 = esi_2
+0042300a             char const* const var_3c_4
+0042300a             
+0042300a             if (*(arg1 + 0x1b) == 0)
+00423013                 var_3c_4 = u"Cannot find file %s"
+0042300a             else
+0042300c                 var_3c_4 = "~b\rN0R"
+0042300c             
+00423019             sub_426230(arg1 + 0x290, var_3c_4)
+00423034             SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, arg1 + 0x290)
+0042303a             result = 1
+00422f42         else
+00422f4c             int32_t ebx_4 = edi_2[4]
+00422f4f             int32_t* ecx_9
+00422f4f             
+00422f4f             if (edi_2[5] u< 0x10)
+00422f55                 ecx_9 = edi_2
+00422f4f             else
+00422f51                 ecx_9 = *edi_2
+00422f51             
+00422f57             int32_t eax_14 = 5
+00422f57             
+00422f63             if (ebx_4 u< 5)
+00422f63                 eax_14 = ebx_4
+00422f63             
+00422f76             if (sub_407560(eax_14, "param", ecx_9, eax_14) == 0 && ebx_4 u>= 5)
+00422f7b                 int32_t eax_15
+00422f7b                 eax_15.b = ebx_4 != 5
+00422f7b                 
+00422f80                 if (eax_15 == 0)
+00422fc9                     int32_t var_8_3 = 0xffffffff
+00422fd3                     *arg2 = edi_2
+00422fd8                     int32_t ecx_14 = *(esi_2 - 4)
+00422fd8                     *(esi_2 - 4) -= 1
+00422fd8                     
+00422fdf                     if (ecx_14 - 1 s<= 0)
+00422fe6                         (*(**(esi_2 - 0x10) + 4))(esi_2 - 0x10)
+00422fe6                     
+00422fdf                     break
+00422fdf             
+00422f85             int32_t var_8_2 = 0xffffffff
+00422f92             int32_t ecx_10 = *(esi_2 - 4)
+00422f92             *(esi_2 - 4) -= 1
+00422f92             
+00422f99             if (ecx_10 - 1 s<= 0)
+00422fa0                 (*(**(esi_2 - 0x10) + 4))(esi_2 - 0x10)
+00422fa0             
+00422fa9             int32_t eax_19 = var_14 + 1
+00422faa             ecx_4 = var_18_1 + 0xa0
+00422fb0             var_14 = eax_19
+00422fb3             var_18_1 = ecx_4
+00422fb3             
+00422fb9             if (eax_19 u>= eax_10 + edx_1)
+00422fb9                 break
+00422fb9             
+00422fbb             esi = var_1c
+00422fbe             continue
+00422fbe         
+00423049         int32_t var_8_4 = 0xffffffff
+00423056         int32_t ecx_19 = *(esi_2 - 4)
+00423056         *(esi_2 - 4) -= 1
+00423056         
+0042305d         if (ecx_19 - 1 s<= 0)
+00423064             (*(**(esi_2 - 0x10) + 4))(esi_2 - 0x10)
+00423064         
+0042306c         fsbase->NtTib.ExceptionList = ExceptionList
+0042307a         return result
+0042307a 
+00422fee fsbase->NtTib.ExceptionList = ExceptionList
+00422ffc return 0

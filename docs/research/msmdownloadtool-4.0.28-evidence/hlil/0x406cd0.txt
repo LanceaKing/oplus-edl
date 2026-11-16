@@ -1,0 +1,144 @@
+00406cd3 int32_t var_8 = 0xffffffff
+00406cd5 int32_t (* var_c)(void* arg1) = sub_570228
+00406ce0 TEB* fsbase
+00406ce0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00406ce9 int32_t __saved_ebp
+00406ce9 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00406cf1 int32_t var_54 = eax_2
+00406cf5 fsbase->NtTib.ExceptionList = &ExceptionList
+00406cfb int32_t* var_14 = &var_54
+00406d00 void* var_2c = arg1
+00406d26 void* esi = (*(data_5dd008 + 0xc))() + 0x10
+00406d29 void* var_40 = esi
+00406d2c int32_t var_8_1 = 0
+00406d39 void* ecx_1 = *(arg1 + 0x1ec)
+00406d48 HANDLE handles = *(*(arg1 + 0x198) + 4)
+00406d54 int32_t var_20 = *(*(arg1 + 0x190) + 4)
+00406d60 int32_t var_1c = *(*(arg1 + 0x194) + 4)
+00406d6c uint32_t wParam = zx.d((*(arg1 + 0x1e8)).b) << 0x10
+00406d76 LPARAM lParam
+00406d76 
+00406d76 if (data_5ea5ac == 0)
+00406d9d     SendMessageW(*(ecx_1 + 0x20), 0x178c, wParam, u"Waiting for device")
+00406d9f     lParam = u"Waiting for device"
+00406d76 else
+00406d86     SendMessageW(*(ecx_1 + 0x20), 0x178c, wParam, 0x5b7db8)
+00406d88     lParam = 0x5b7db8
+00406d88 
+00406dc2 SendMessageW(*(*(arg1 + 0x1ec) + 0x20), 0x178c, zx.d((*(arg1 + 0x1e8)).b) << 0x10 | 1, lParam)
+00406dc2 
+00406dcb if (*(arg1 + 0x1a0) != 0)
+00406dd0     int32_t var_8_2 = 0xffffffff
+00406dda     int32_t* result = esi - 4
+00406ddd     int32_t ecx_3 = *result
+00406ddd     *result -= 1
+00406ddd     
+00406de4     if (ecx_3 - 1 s<= 0)
+00406deb         result = (*(**(esi - 0x10) + 4))(esi - 0x10)
+00406deb     
+00406df1     fsbase->NtTib.ExceptionList = ExceptionList
+00406e01     sub_54a573(eax_2 ^ &__saved_ebp)
+00406e09     return result
+00406e09 
+00406e0a int32_t eax_18 = data_5ea394
+00406e0a 
+00406e22 while (true)
+00406e22     enum WAIT_EVENT eax_19 = WaitForMultipleObjects(3, &handles, 0, 0xffffffff)
+00406e22     
+00406e2b     if (eax_19 == WAIT_OBJECT_0)
+00406e2b         break
+00406e2b     
+00406e32     if (eax_19 == 1)
+004070b2         EnterCriticalSection(arg1 + 0x1d0)
+004070b4         int32_t eax_54 = *(arg1 + 0x1c8)
+004070c0         *(arg1 + 0x1448) = 0
+004070ca         (*(eax_54 + 0x14))()
+004070e0         sub_43989a(*(arg1 + 0x1ec), *(arg1 + 0x1e8), 2, 0x5b6b2c)
+00406e32     else if (eax_19 == 2)
+00406e42         if (data_5ea570 == 1)
+00406e48             var_8_1.b = 1
+00406e51             int32_t edx_1 = data_5ea564
+00406e59             int32_t ecx_9 = *(arg1 + 0x1e8)
+00406e59             
+00406e64             if ((data_5ea568 - edx_1) s>> 3 u<= ecx_9)
+00406e6f                 sub_56f06d("invalid vector<T> subscript")
+00406e6f                 noreturn
+00406e6f             
+00406ef7             int32_t eax_26 = *(edx_1 + (ecx_9 << 3) + 4)
+00406efe             int32_t var_38_1 = eax_26
+00406efe             
+00406f01             if (*(edx_1 + (ecx_9 << 3)) != 1)
+00406f21                 SendMessageW(*(*(arg1 + 0x1ec) + 0x20), 0x178c, zx.d(ecx_9.b) << 0x10, 
+00406f21                     u"This COM Port is disable by user")
+00406f46                 SendMessageW(*(*(arg1 + 0x1ec) + 0x20), 0x178c, 
+00406f46                     zx.d((*(arg1 + 0x1e8)).b) << 0x10 | 1, u"This COM Port is disable by user")
+00406f52                 int32_t* eax_33 = _fopen("C:/ToolLog.txt", "a+")
+00406f52                 
+00406f5f                 if (eax_33 != 0)
+00406f61                     int32_t var_58_1 = eax_26
+00406f64                     int32_t var_5c_5 = *(arg1 + 0x1e8)
+00406f70                     _fprintf(eax_33, "[%d][COM%d] Port is diable\n")
+00406f78                     _fclose(eax_33)
+00406f78                 
+00406f80                 var_8_1.b = 0
+00406f84                 continue
+00406f84         
+00406f89         var_8_1 = 0
+00406fb3         SendMessageW(*(*(arg1 + 0x1ec) + 0x20), 0x178c, zx.d((*(arg1 + 0x1e8)).b) << 0x10 | 7, 0)
+00406fc1         *(arg1 + (*(arg1 + 0x1e8) << 2)) = 1
+00406fc8         sub_407210(arg1, arg1, eax_18)
+00406fcf         sub_4072b0(arg1)
+00406fdc         *(arg1 + 0x14b0) = 0
+00406fdc         
+00406fe7         if (sub_420d40(arg1 + 0x1458) == 0)
+0040702b             *(arg1 + (*(arg1 + 0x1e8) << 2)) = 0xffffffff
+00406fe7         else
+00406feb             *(arg1 + 0x14b1) = 0
+00406fef             int32_t ecx_16 = sub_420e90(arg1 + 0x1458)
+00406fef             
+00406ffb             if (*(*(arg1 + 0x14b8) + 0x6f) == 0)
+0040702b                 *(arg1 + (*(arg1 + 0x1e8) << 2)) = 0xffffffff
+00406ffb             else
+00407001                 int32_t var_58_3 = ecx_16
+00407004                 enum WIN32_ERROR eax_42
+00407004                 
+00407004                 if (*(arg1 + 0x1472) == 0)
+0040700d                     eax_42 = sub_420f10(arg1 + 0x1458)
+00407004                 else
+00407006                     eax_42 = sub_421860(arg1 + 0x1458)
+00407006                 
+00407014                 if (eax_42 != NO_ERROR)
+0040702b                     *(arg1 + (*(arg1 + 0x1e8) << 2)) = 0xffffffff
+00407014                 else
+0040701c                     *(arg1 + (*(arg1 + 0x1e8) << 2)) = 0
+0040701c         
+0040703b         ResetEvent(*(*(arg1 + 0x194) + 4))
+0040704e         EnterCriticalSection(arg1 + 0x1d0)
+00407050         int32_t eax_47 = *(arg1 + 0x1c8)
+0040705c         *(arg1 + 0x1448) = 0
+00407066         (*(eax_47 + 0x14))()
+0040707c         sub_43989a(*(arg1 + 0x1ec), *(arg1 + 0x1e8), 2, 0x5b6b2c)
+004070a4         SendMessageW(*(*(arg1 + 0x1ec) + 0x20), 0x178c, zx.d((*(arg1 + 0x1e8)).b) << 0x10 | 8, 0)
+004070a4 
+004070f6 *(arg1 + (*(arg1 + 0x1e8) << 2)) = 0
+00407104 EnterCriticalSection(arg1 + 0x1d0)
+00407106 int32_t eax_57 = *(arg1 + 0x1c8)
+00407112 *(arg1 + 0x1448) = 0
+0040711c (*(eax_57 + 0x14))()
+00407132 sub_43989a(*(arg1 + 0x1ec), *(arg1 + 0x1e8), 2, 0x5b6b2c)
+00407152 LPARAM lParam_1
+00407152 
+00407152 if (data_5ea5ac == 0)
+0040715b     lParam_1 = u"Download Stopped!"
+00407152 else
+00407154     lParam_1 = 0x5b7df0
+00407154 
+0040716f SendMessageW(*(*(arg1 + 0x1ec) + 0x20), 0x178c, (zx.d((*(arg1 + 0x1e8)).b) | 0x300) << 0x10, 
+0040716f     lParam_1)
+00407194 SendMessageW(*(*(arg1 + 0x1ec) + 0x20), 0x178c, zx.d((*(arg1 + 0x1e8)).b) << 0x10 | 8, 0)
+0040719d EnterCriticalSection(arg1 + 0x1b0)
+0040719f int32_t eax_69 = *(arg1 + 0x1a8)
+004071ab *(arg1 + 0x19c) = 0
+004071b5 (*(eax_69 + 0x14))()
+004071bc sub_43bba4(0xffffffff, 1)
+004071bc noreturn

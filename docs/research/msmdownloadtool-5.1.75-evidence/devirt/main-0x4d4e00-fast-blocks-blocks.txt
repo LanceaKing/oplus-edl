@@ -1,0 +1,160 @@
+00ae1df9 57c3                           push edi; ret 
+00bc4d12 0fb6542500d2cc8dad0100000032d3f6dafeca66d3d90fc80fbaf975f6dad3f0c0c964c0d96280f28d0f9cc0e97c555200 movzx edx, byte ptr [ebp]; ror ah, cl; lea ebp, [ebp + 1]; xor dl, bl; neg dl; dec dl; rcr cx, cl; bswap eax; btc ecx, 0x75; neg dl; sal eax, cl; ror cl, 0x64; rcr cl, 0x62; xor dl, 0x8d; setl al; jmp 0x10ea2bf
+010ea2bf d0c2660fbecc13c114c832da8b04140fbdcb8db6fcffffff0facc1f5660fc1c989060fabf9f6c62e8b4c2500e98be891ff rol dl, 1; movsx cx, ah; adc eax, ecx; adc al, 0xc8; xor bl, dl; mov eax, dword ptr [esp + edx]; bsr ecx, ebx; lea esi, [esi - 4]; shrd ecx, eax, 0xf5; xadd cx, cx; mov dword ptr [esi], eax; bts ecx, edi; test dh, 0x2e; mov ecx, dword ptr [ebp]; jmp 0xa08b7b
+00a08b7b 81c504000000e9963c1900         add ebp, 4; jmp 0xb9c81c
+00b9c81c 33cbf7c31468942df7d9e976c35200 xor ecx, ebx; test ebx, 0x2d946814; neg ecx; jmp 0x10c8ba1
+010c8ba1 c1c10380fbd88d8962ff26abe9cb61a9ff rol ecx, 3; cmp bl, 0xd8; lea ecx, [ecx - 0x54d9009e]; jmp 0xb5ed7d
+00b5ed7d f7d9f581e93c2b3e17c1c903f833d903f9e94220f6ff neg ecx; cmc ; sub ecx, 0x173e2b3c; ror ecx, 3; clc ; xor ebx, ecx; add edi, ecx; jmp 0xac0dd5
+00ac0dd5 e90be91000                     jmp 0xbcf6e5
+00bcf6e5 8d5424606681fd66243be33bf2e9adbdfeff lea edx, [esp + 0x60]; cmp bp, 0x2466; cmp esp, ebx; cmp esi, edx; jmp 0xbbb4a4
+00bbb4a4 0f87bcb2e9ff                   ja 0xa56766
+00a56766 57c3                           push edi; ret 
+00b452b6 8b542500d3d8f6d8f88dad04000000f533d3d2c0d2e40fca669866b8af1d668bc181ea8a498d3ec1ca020fc83bfb6685fff7dab8e62ef26242c1e09a66d3e00fbaf88133da0fbfc0f9988db6fcffffff0fbdc6c0c873891680cc90e9510699ff mov edx, dword ptr [ebp]; rcr eax, cl; neg al; clc ; lea ebp, [ebp + 4]; cmc ; xor edx, ebx; rol al, cl; shl ah, cl; bswap edx; cbw ; mov ax, 0x1daf; mov ax, cx; sub edx, 0x3e8d498a; ror edx, 2; bswap eax; cmp edi, ebx; test di, di; neg edx; mov eax, 0x62f22ee6; inc edx; shl eax, 0x9a; shl ax, cl; btc eax, 0x81; xor ebx, edx; movsx eax, ax; stc ; cwde ; lea esi, [esi - 4]; bsr eax, esi; ror al, 0x73; mov dword ptr [esi], edx; or ah, 0x90; jmp 0x4d5967
+004d5967 8b442500f5663bf78dad040000003bcc84e8f833c3e9d01cc200 mov eax, dword ptr [ebp]; cmc ; cmp si, di; lea ebp, [ebp + 4]; cmp ecx, esp; test al, ch; clc ; xor eax, ebx; jmp 0x10f7651
+010f7651 48e985a79eff                   dec eax; jmp 0xae1ddc
+00ae1ddc f7d0e989346200                 not eax; jmp 0x110526c
+0110526c 48e930ada4ff                   dec eax; jmp 0xb4ffa2
+00b4ffa2 f7d0f8d1c86681fb6b713be08d80df1d262a33d803f8e928f70700 not eax; clc ; ror eax, 1; cmp bx, 0x716b; cmp esp, eax; lea eax, [eax + 0x2a261ddf]; xor ebx, eax; add edi, eax; jmp 0xbcf6e5
+00bcf6e5 8d5424606681fd66243be33bf2e9adbdfeff lea edx, [esp + 0x60]; cmp bp, 0x2466; cmp esp, ebx; cmp esi, edx; jmp 0xbbb4a4
+00bbb4a4 0f87bcb2e9ff                   ja 0xa56766
+00a56766 57c3                           push edi; ret 
+00bb60aa 8b542500660fabf881c5040000006635d3210fb3d8d3f033d30fca661bc7c0e43666c1c0bc81ea8a498d3e660fa3c80fbfc2c0dc93c1ca02d3c866d3e0660fb6c5f7da4233da6623c4c0d4888db6fcffffff89168b44250081c504000000f6c70ff833c348f7d0e9ac32f8ff mov edx, dword ptr [ebp]; bts ax, di; add ebp, 4; xor ax, 0x21d3; btr eax, ebx; sal eax, cl; xor edx, ebx; bswap edx; sbb ax, di; shl ah, 0x36; rol ax, 0xbc; sub edx, 0x3e8d498a; bt ax, cx; movsx eax, dx; rcr ah, 0x93; ror edx, 2; ror eax, cl; shl ax, cl; movzx ax, ch; neg edx; inc edx; xor ebx, edx; and ax, sp; rcl ah, 0x88; lea esi, [esi - 4]; mov dword ptr [esi], edx; mov eax, dword ptr [ebp]; add ebp, 4; test bh, 0xf; clc ; xor eax, ebx; dec eax; not eax; jmp 0xb393c2
+00b393c2 48f7d0e976cf0300               dec eax; not eax; jmp 0xb76340
+00b76340 d1c8f88d80df1d262a33d8f86685d503f8e97b4af0ff ror eax, 1; clc ; lea eax, [eax + 0x2a261ddf]; xor ebx, eax; clc ; test bp, dx; add edi, eax; jmp 0xa7add1
+00a7add1 e90f491500                     jmp 0xbcf6e5
+00bcf6e5 8d5424606681fd66243be33bf2e9adbdfeff lea edx, [esp + 0x60]; cmp bp, 0x2466; cmp esp, ebx; cmp esi, edx; jmp 0xbbb4a4
+00bbb4a4 0f87bcb2e9ff                   ja 0xa56766
+00a56766 57c3                           push edi; ret 
+007f64d0 0fb654250066d3d90fc8f881c5010000000fa4e06932d30aebf6da9ffeca660fbbf0f6da660f4bcc80f28d980fb3e8e989dd2300 movzx edx, byte ptr [ebp]; rcr cx, cl; bswap eax; clc ; add ebp, 1; shld eax, esp, 0x69; xor dl, bl; or ch, bl; neg dl; lahf ; dec dl; btc ax, si; neg dl; cmovnp cx, sp; xor dl, 0x8d; cwde ; btr eax, ebp; jmp 0xa3428d
+00a3428d d0c232da8b0414660fc9f6d181ee04000000660fbae1f1660fbaf90e66d3f189068b4c250081c50400000033cbf96685c6f7d9e99cb31700 rol dl, 1; xor bl, dl; mov eax, dword ptr [esp + edx]; bswap cx; not cl; sub esi, 4; bt cx, 0xf1; btc cx, 0xe; sal cx, cl; mov dword ptr [esi], eax; mov ecx, dword ptr [ebp]; add ebp, 4; xor ecx, ebx; stc ; test si, ax; neg ecx; jmp 0xbaf661
+00baf661 c1c103f96681fdd737f58d8962ff26abf7d9f7c73e4c4e0281e93c2b3e17e95e43f1ff rol ecx, 3; stc ; cmp bp, 0x37d7; cmc ; lea ecx, [ecx - 0x54d9009e]; neg ecx; test edi, 0x24e4c3e; sub ecx, 0x173e2b3c; jmp 0xac39e2
+00ac39e2 c1c90333d903f9e985690a00       ror ecx, 3; xor ebx, ecx; add edi, ecx; jmp 0xb6a373
+00b6a373 e96d530600                     jmp 0xbcf6e5
+00bcf6e5 8d5424606681fd66243be33bf2e9adbdfeff lea edx, [esp + 0x60]; cmp bp, 0x2466; cmp esp, ebx; cmp esi, edx; jmp 0xbbb4a4
+00bbb4a4 0f87bcb2e9ff                   ja 0xa56766
+00a56766 57c3                           push edi; ret 
+00ae20c4 8b169f66d3f8660fc88b460403d0e972b20e00 mov edx, dword ptr [esi]; lahf ; sar ax, cl; bswap ax; mov eax, dword ptr [esi + 4]; add edx, eax; jmp 0xbcd349
+00bcd349 895604e9af8ae2ff               mov dword ptr [esi + 4], edx; jmp 0x9f5e00
+009f5e00 9c22f7998f068bd48b542500e9b4311e00 pushfd ; and dh, bh; cdq ; pop dword ptr [esi]; mov edx, esp; mov edx, dword ptr [ebp]; jmp 0xbd8fc5
+00bd8fc5 81c50400000033d3e95555e8ff     add ebp, 4; xor edx, ebx; jmp 0xa5e527
+00a5e527 4af5e99c93fbff                 dec edx; cmc ; jmp 0xa178ca
+00a178ca c1c20385ee81c251135433f8d1ca66a99c0833da03fae95d991300 rol edx, 3; test esi, ebp; add edx, 0x33541351; clc ; ror edx, 1; test ax, 0x89c; xor ebx, edx; add edi, edx; jmp 0xb51242
+00b51242 ffe7                           jmp edi
+00baab8c 8b160facd94b81c6040000006681c9d25486e53bfa0fb64c2500660fbaf872f981c50100000080dc0a660fc8c0e8f032cbc1c83c86e0660fa3e0d0c1c0ec4b669880dc3bf6d9c0f883f96615a50bf6d1660fbec080e9470fbcc266d3f8f6d980e91e0c390fbbe8669832d99f89140c8b442500e9c94ee5ff mov edx, dword ptr [esi]; shrd ecx, ebx, 0x4b; add esi, 4; or cx, 0x54d2; xchg ch, ah; cmp edi, edx; movzx ecx, byte ptr [ebp]; btc ax, 0x72; stc ; add ebp, 1; sbb ah, 0xa; bswap ax; shr al, 0xf0; xor cl, bl; ror eax, 0x3c; xchg al, ah; bt ax, sp; rol cl, 1; shr ah, 0x4b; cbw ; sbb ah, 0x3b; neg cl; sar al, 0x83; stc ; adc ax, 0xba5; not cl; movsx ax, al; sub cl, 0x47; bsf eax, edx; sar ax, cl; neg cl; sub cl, 0x1e; or al, 0x39; btc eax, ebp; cbw ; xor bl, cl; lahf ; mov dword ptr [esp + ecx], edx; mov eax, dword ptr [ebp]; jmp 0x9ffacd
+009ffacd 81c504000000f533c36681ff643cf7d035014df74ce941860c00 add ebp, 4; cmc ; xor eax, ebx; cmp di, 0x3c64; not eax; xor eax, 0x4cf74d01; jmp 0xac8128
+00ac8128 40f866f7c48c52f5f7d8e9c226fbff inc eax; clc ; test sp, 0x528c; cmc ; neg eax; jmp 0xa7a7f9
+00a7a7f9 40f833d885e96681fc525e03f8e9abbf6800 inc eax; clc ; xor ebx, eax; test ecx, ebp; cmp sp, 0x5e52; add edi, eax; jmp 0x11067b6
+011067b6 ffe7                           jmp edi
+0112e078 8b168b026687d2660fbbd289068b54250081c50400000033d366f7c1fa35f980fa48f7daf7c40529da336685dc81c2e77c5679f8f7d281f21f2fd00833da03fae9b24a93ff mov edx, dword ptr [esi]; mov eax, dword ptr [edx]; xchg dx, dx; btc dx, dx; mov dword ptr [esi], eax; mov edx, dword ptr [ebp]; add ebp, 4; xor edx, ebx; test cx, 0x35fa; stc ; cmp dl, 0x48; neg edx; test esp, 0x33da2905; test sp, bx; add edx, 0x79567ce7; clc ; not edx; xor edx, 0x8d02f1f; xor ebx, edx; add edi, edx; jmp 0xa62b6f
+00a62b6f ffe7                           jmp edi
+01112468 8b1666f7d88b4604f5f803d08956049c81fcf45e80488f068b542500f5663bf681c504000000f96685fce9c508aeff mov edx, dword ptr [esi]; neg ax; mov eax, dword ptr [esi + 4]; cmc ; clc ; add edx, eax; mov dword ptr [esi + 4], edx; pushfd ; cmp esp, 0x48805ef4; pop dword ptr [esi]; mov edx, dword ptr [ebp]; cmc ; cmp si, si; add ebp, 4; stc ; test sp, di; jmp 0xbf2d5c
+00bf2d5c 33d3e9a999e8ff                 xor edx, ebx; jmp 0xa7c70c
+00a7c70c 4ac1c203f881ffd3160f6281c251135433d1ca33da663bdf03fae97b2ff9ff dec edx; rol edx, 3; clc ; cmp edi, 0x620f16d3; add edx, 0x33541351; ror edx, 1; xor ebx, edx; cmp bx, di; add edi, edx; jmp 0xa0f6a6
+00a0f6a6 ffe7                           jmp edi
+010d2bca 8b163bc0660fbdc081c6040000000fb64c2500d2c881c5010000000fbae01e32cbc1d80bd0c11ded4873448ac6f6d9f6d180e9478bc60f92c413c1f6d966c1f0906613c680e91e32d9660fb3f80f90c466d3c889140c8b44250081c50400000033c36681fd560af8f7d035014df74ce9170fb1ff mov edx, dword ptr [esi]; cmp eax, eax; bsr ax, ax; add esi, 4; movzx ecx, byte ptr [ebp]; ror al, cl; add ebp, 1; bt eax, 0x1e; xor cl, bl; rcr eax, 0xb; rol cl, 1; sbb eax, 0x447348ed; mov al, dh; neg cl; not cl; sub cl, 0x47; mov eax, esi; setb ah; adc eax, ecx; neg cl; sal ax, 0x90; adc ax, si; sub cl, 0x1e; xor bl, cl; btr ax, di; seto ah; ror ax, cl; mov dword ptr [esp + ecx], edx; mov eax, dword ptr [ebp]; add ebp, 4; xor eax, ebx; cmp bp, 0xa56; clc ; not eax; xor eax, 0x4cf74d01; jmp 0xbe3b55
+00be3b55 40e9c45afeff                   inc eax; jmp 0xbc961f
+00bc961f f7d8e9307fe4ff                 neg eax; jmp 0xa11556
+00a11556 4085d233d881fef81de516f5e95f8a6d00 inc eax; test edx, edx; xor ebx, eax; cmp esi, 0x16e51df8; cmc ; jmp 0x10e9fc6
+010e9fc6 03f8e91315a7ff                 add edi, eax; jmp 0xb5b4e0
+00b5b4e0 57c3                           push edi; ret 
+00b0e81a 8b168b460403d0e987a9ceff       mov edx, dword ptr [esi]; mov eax, dword ptr [esi + 4]; add edx, eax; jmp 0x7f91ad
+007f91ad 8956046687d2999cf90fbbca660bd48f0680d6b28b542500f98dad04000000f56685fb33d34ac1c203f9f7c55f48515384e681c251135433d1ca33da03fae98abc2a00 mov dword ptr [esi + 4], edx; xchg dx, dx; cdq ; pushfd ; stc ; btc edx, ecx; or dx, sp; pop dword ptr [esi]; adc dh, 0xb2; mov edx, dword ptr [ebp]; stc ; lea ebp, [ebp + 4]; cmc ; test bx, di; xor edx, ebx; dec edx; rol edx, 3; stc ; test ebp, 0x5351485f; test dh, ah; add edx, 0x33541351; ror edx, 1; xor ebx, edx; add edi, edx; jmp 0xaa4e7a
+00aa4e7a ffe7                           jmp edi
+00ad312f 8b163af423c481c604000000d3d10fb64c250066d3f081c5010000000fbae038660bc70fbfc632cbc0c88f0f4ac6d0c16685fcc0c880c0fc8ff6d932e380fb79f6d1660fb3c00fc880e9471bc1f6d980e91ec0cc05d2e066f7d032d989140cd2f00fa3d82d521c072a8b4425006685f9f6c37381c504000000f833c3663beaf9f7d081fe0721383935014df74c4066f7c24f6180fe08f7d8e9b61d0200 mov edx, dword ptr [esi]; cmp dh, ah; and eax, esp; add esi, 4; rcl ecx, cl; movzx ecx, byte ptr [ebp]; sal ax, cl; add ebp, 1; bt eax, 0x38; or ax, di; movsx eax, si; xor cl, bl; ror al, 0x8f; cmovp eax, esi; rol cl, 1; test sp, di; ror al, 0x80; sar ah, 0x8f; neg cl; xor ah, bl; cmp bl, 0x79; not cl; btr ax, ax; bswap eax; sub cl, 0x47; sbb eax, ecx; neg cl; sub cl, 0x1e; ror ah, 5; shl al, cl; not ax; xor bl, cl; mov dword ptr [esp + ecx], edx; sal al, cl; bt eax, ebx; sub eax, 0x2a071c52; mov eax, dword ptr [ebp]; test cx, di; test bl, 0x73; add ebp, 4; clc ; xor eax, ebx; cmp bp, dx; stc ; not eax; cmp esi, 0x39382107; xor eax, 0x4cf74d01; inc eax; test dx, 0x614f; cmp dh, 8; neg eax; jmp 0xaf4f82
+00af4f82 4033d86685d703f8e94d6cf2ff     inc eax; xor ebx, eax; test di, dx; add edi, eax; jmp 0xa1bbdc
+00a1bbdc 57c3                           push edi; ret 
+00b3311c 8b16c0fc63f566c1d04f8b02660fa4f22d0fb7d33beb8906f6d266c1c24b8b5425008dad0400000033d3f7daf9f7c5744e974881fcd125515f8d92e77c5679e94210fcff mov edx, dword ptr [esi]; sar ah, 0x63; cmc ; rcl ax, 0x4f; mov eax, dword ptr [edx]; shld dx, si, 0x2d; movzx edx, bx; cmp ebp, ebx; mov dword ptr [esi], eax; not dl; rol dx, 0x4b; mov edx, dword ptr [ebp]; lea ebp, [ebp + 4]; xor edx, ebx; neg edx; stc ; test ebp, 0x48974e74; cmp esp, 0x5f5125d1; lea edx, [edx + 0x79567ce7]; jmp 0xaf41a2
+00af41a2 f7d281f21f2fd008e996ecf3ff     not edx; xor edx, 0x8d02f1f; jmp 0xa32e45
+00a32e45 33daf7c6137d4f603bd603fae9cec41700 xor ebx, edx; test esi, 0x604f7d13; cmp edx, esi; add edi, edx; jmp 0xbaf324
+00baf324 57c3                           push edi; ret 
+00b13900 8b1666d3d886e4c0c8648b4604f9f803d08956049c8f068b54250081c50400000033d3e9d40b5e00 mov edx, dword ptr [esi]; rcr ax, cl; xchg ah, ah; ror al, 0x64; mov eax, dword ptr [esi + 4]; stc ; clc ; add edx, eax; mov dword ptr [esi + 4], edx; pushfd ; pop dword ptr [esi]; mov edx, dword ptr [ebp]; add ebp, 4; xor edx, ebx; jmp 0x10f44fc
+010f44fc 4af8c1c20381c251135433f5d1caf933dae916e4a2ff dec edx; clc ; rol edx, 3; add edx, 0x33541351; cmc ; ror edx, 1; stc ; xor ebx, edx; jmp 0xb22928
+00b22928 03fae98c68f5ff                 add edi, edx; jmp 0xa791bb
+00a791bb 57c3                           push edi; ret 
+00ba9e16 8b16f9660fb3c90fc981c604000000c1d0e00fb64c2500660fc881c501000000662db5090f92c032cb660fbbf0d2d0d0c1f7d80cbdf6d9660fb6c512c16633c7f6d180e947f6d980e91e660fbdc323c70fbbd032d980f947a95944221d89140c98660fa4c068663544798b4425006685cf8dad04000000f5f833c3f7d035014df74ce972b8ebff mov edx, dword ptr [esi]; stc ; btr cx, cx; bswap ecx; add esi, 4; rcl eax, 0xe0; movzx ecx, byte ptr [ebp]; bswap ax; add ebp, 1; sub ax, 0x9b5; setb al; xor cl, bl; btc ax, si; rcl al, cl; rol cl, 1; neg eax; or al, 0xbd; neg cl; movzx ax, ch; adc al, cl; xor ax, di; not cl; sub cl, 0x47; neg cl; sub cl, 0x1e; bsr ax, bx; and eax, edi; btc eax, edx; xor bl, cl; cmp cl, 0x47; test eax, 0x1d224459; mov dword ptr [esp + ecx], edx; cwde ; shld ax, ax, 0x68; xor ax, 0x7944; mov eax, dword ptr [ebp]; test di, cx; lea ebp, [ebp + 4]; cmc ; clc ; xor eax, ebx; not eax; xor eax, 0x4cf74d01; jmp 0xa6570f
+00a6570f 40f8f5f7d84033d8e9af90ffff     inc eax; clc ; cmc ; neg eax; inc eax; xor ebx, eax; jmp 0xa5e7cb
+00a5e7cb 03f8e9d1e60800                 add edi, eax; jmp 0xaecea3
+00aecea3 57c3                           push edi; ret 
+010d8ccd 8b160fc8660fbbe06603c68b460403d0e92cd20300 mov edx, dword ptr [esi]; bswap eax; btc ax, sp; add ax, si; mov eax, dword ptr [esi + 4]; add edx, eax; jmp 0x1115f0e
+01115f0e 8956049c8f066681fef7218b542500f9f881c504000000f5663bec33d3e9062693ff mov dword ptr [esi + 4], edx; pushfd ; pop dword ptr [esi]; cmp si, 0x21f7; mov edx, dword ptr [ebp]; stc ; clc ; add ebp, 4; cmc ; cmp bp, sp; xor edx, ebx; jmp 0xa48536
+00a48536 4ac1c20381c251135433f9d1caf9663bc685e733da85efe9d12c1500 dec edx; rol edx, 3; add edx, 0x33541351; stc ; ror edx, 1; stc ; cmp ax, si; test edi, esp; xor ebx, edx; test edi, ebp; jmp 0xb9b223
+00b9b223 03fae9a93a5700                 add edi, edx; jmp 0x110ecd3
+0110ecd3 57c3                           push edi; ret 
+00a7b30c 8b1633ced2d881c6040000000fb64c250081c5010000000f90c4660fabe032cbd0c10fc1c066d3d833c6f6d9f6d180e947f6d90fbaf03980e91ef6d432d989140c8b442500f8f58dad040000003ce2e9013b6b00 mov edx, dword ptr [esi]; xor ecx, esi; rcr al, cl; add esi, 4; movzx ecx, byte ptr [ebp]; add ebp, 1; seto ah; bts ax, sp; xor cl, bl; rol cl, 1; xadd eax, eax; rcr ax, cl; xor eax, esi; neg cl; not cl; sub cl, 0x47; neg cl; btr eax, 0x39; sub cl, 0x1e; not ah; xor bl, cl; mov dword ptr [esp + ecx], edx; mov eax, dword ptr [ebp]; clc ; cmc ; lea ebp, [ebp + 4]; cmp al, 0xe2; jmp 0x112ee61
+0112ee61 33c366f7c3ec6af7d03ae8f7c44343803335014df74ce9860f96ff xor eax, ebx; test bx, 0x6aec; not eax; cmp ch, al; test esp, 0x33804343; xor eax, 0x4cf74d01; jmp 0xa8fe02
+00a8fe02 40f83acdf7d8e9eff10100         inc eax; clc ; cmp cl, ch; neg eax; jmp 0xaaeffc
+00aaeffc 40f9f833d885fb663bdbe91e1dfdff inc eax; stc ; clc ; xor ebx, eax; test ebx, edi; cmp bx, bx; jmp 0xa80d29
+00a80d29 03f8e916e7ffff                 add edi, eax; jmp 0xa7f446
+00a7f446 ffe7                           jmp edi
+00a86213 0fb6542500660fbcca81c50100000066f7c6ad19f5f7d832d30fb7c9f6da9f8ac5feca660fbae055660fbaf10c0face05ff6da660fbaf12a80f28d660fb3d1d0c29880ed9332da85e9c0d918c1f95b8b0414f881ee04000000660fb3f189060facf1de8b4c2500e9586b0300 movzx edx, byte ptr [ebp]; bsf cx, dx; add ebp, 1; test si, 0x19ad; cmc ; neg eax; xor dl, bl; movzx ecx, cx; neg dl; lahf ; mov al, ch; dec dl; bt ax, 0x55; btr cx, 0xc; shrd eax, esp, 0x5f; neg dl; btr cx, 0x2a; xor dl, 0x8d; btr cx, dx; rol dl, 1; cwde ; sub ch, 0x93; xor bl, dl; test ecx, ebp; rcr cl, 0x18; sar ecx, 0x5b; mov eax, dword ptr [esp + edx]; clc ; sub esi, 4; btr cx, si; mov dword ptr [esi], eax; shrd ecx, esi, 0xde; mov ecx, dword ptr [ebp]; jmp 0xabcdd7
+00abcdd7 8dad040000006681fc2a05f885ee33cbe9471e6200 lea ebp, [ebp + 4]; cmp sp, 0x52a; clc ; test esi, ebp; xor ecx, ebx; jmp 0x10dec33
+010dec33 f7d9f8c1c1038d8962ff26abf581ff236c667ff7d9e9a2500000 neg ecx; clc ; rol ecx, 3; lea ecx, [ecx - 0x54d9009e]; cmc ; cmp edi, 0x7f666c23; neg ecx; jmp 0x10e3cef
+010e3cef 81e93c2b3e17f9f8c1c903e90135ffff sub ecx, 0x173e2b3c; stc ; clc ; ror ecx, 3; jmp 0x10d7200
+010d7200 33d9f903f9e99cf295ff           xor ebx, ecx; stc ; add edi, ecx; jmp 0xa364a6
+00a364a6 e93a921900                     jmp 0xbcf6e5
+00bcf6e5 8d5424606681fd66243be33bf2e9adbdfeff lea edx, [esp + 0x60]; cmp bp, 0x2466; cmp esp, ebx; cmp esi, edx; jmp 0xbbb4a4
+00bbb4a4 0f87bcb2e9ff                   ja 0xa56766
+00a56766 57c3                           push edi; ret 
+010e92ef 0fb6542500660fa4d129f6d081c501000000d2f0c0f06532d3660fc98ac980d5f9f6da0fbfc3fecaf6da80f28d0f43c4d0c232da0f95c58b0414c0c5e00fb7cc80d9478db6fcfffffffec18906e9c35d93ff movzx edx, byte ptr [ebp]; shld cx, dx, 0x29; not al; add ebp, 1; sal al, cl; sal al, 0x65; xor dl, bl; bswap cx; mov cl, cl; adc ch, 0xf9; neg dl; movsx eax, bx; dec dl; neg dl; xor dl, 0x8d; cmovae eax, esp; rol dl, 1; xor bl, dl; setne ch; mov eax, dword ptr [esp + edx]; rol ch, 0xe0; movzx ecx, sp; sbb cl, 0x47; lea esi, [esi - 4]; inc cl; mov dword ptr [esi], eax; jmp 0xa1f104
+00a1f104 8b4c250080fb718dad0400000033cbf86685e4f7d9e94a6c6c00 mov ecx, dword ptr [ebp]; cmp bl, 0x71; lea ebp, [ebp + 4]; xor ecx, ebx; clc ; test sp, sp; neg ecx; jmp 0x10e5d68
+010e5d68 c1c1036685f9f98d8962ff26ab80fd47f9f8f7d9e9fad39dff rol ecx, 3; test cx, di; stc ; lea ecx, [ecx - 0x54d9009e]; cmp ch, 0x47; stc ; clc ; neg ecx; jmp 0xac317b
+00ac317b 81e93c2b3e17c1c903e9d01bf8ff   sub ecx, 0x173e2b3c; ror ecx, 3; jmp 0xa44d59
+00a44d59 33d9f7c58f0ea33de9610d6b00     xor ebx, ecx; test ebp, 0x3da30e8f; jmp 0x10f5ac7
+010f5ac7 03f9e927bc91ff                 add edi, ecx; jmp 0xa116f5
+00a116f5 e9ebdf1b00                     jmp 0xbcf6e5
+00bcf6e5 8d5424606681fd66243be33bf2e9adbdfeff lea edx, [esp + 0x60]; cmp bp, 0x2466; cmp esp, ebx; cmp esi, edx; jmp 0xbbb4a4
+00bbb4a4 0f87bcb2e9ff                   ja 0xa56766
+00a56766 57c3                           push edi; ret 
+00ad2d72 0fb6542500c1d0230fa3e985ed8dad01000000f9c1e89932d3f6dafeca9880c10af6da0aea80f28d66c1d985b0ec0f49cdd0c2c0d0c98aef32dac0e435f6dc8b041481ee0400000022e98906c0e90c66d3d18b4c2500e9428a6500 movzx edx, byte ptr [ebp]; rcl eax, 0x23; bt ecx, ebp; test ebp, ebp; lea ebp, [ebp + 1]; stc ; shr eax, 0x99; xor dl, bl; neg dl; dec dl; cwde ; add cl, 0xa; neg dl; or ch, dl; xor dl, 0x8d; rcr cx, 0x85; mov al, 0xec; cmovns ecx, ebp; rol dl, 1; rcl al, 0xc9; mov ch, bh; xor bl, dl; shl ah, 0x35; neg ah; mov eax, dword ptr [esp + edx]; sub esi, 4; and ch, cl; mov dword ptr [esi], eax; shr cl, 0xc; rcl cx, cl; mov ecx, dword ptr [ebp]; jmp 0x112b80f
+0112b80f 81c50400000033cbf96685f981fe9b1bbb13f7d9c1c103f7c68946494d6681fcab2581e99e00d954e92e7ffaff add ebp, 4; xor ecx, ebx; stc ; test cx, di; cmp esi, 0x13bb1b9b; neg ecx; rol ecx, 3; test esi, 0x4d494689; cmp sp, 0x25ab; sub ecx, 0x54d9009e; jmp 0x10d376a
+010d376a f7d9f581e93c2b3e17c1c903e961969aff neg ecx; cmc ; sub ecx, 0x173e2b3c; ror ecx, 3; jmp 0xa7cddc
+00a7cddc 33d903f9e97b616900             xor ebx, ecx; add edi, ecx; jmp 0x1112f60
+01112f60 e980c7abff                     jmp 0xbcf6e5
+00bcf6e5 8d5424606681fd66243be33bf2e9adbdfeff lea edx, [esp + 0x60]; cmp bp, 0x2466; cmp esp, ebx; cmp esi, edx; jmp 0xbbb4a4
+00bbb4a4 0f87bcb2e9ff                   ja 0xa56766
+00a56766 57c3                           push edi; ret 
+004449f4 0fb6542500d2f8e981186000       movzx edx, byte ptr [ebp]; sar al, cl; jmp 0xa46281
+00a46281 81c501000000c1e8b0c0c5bcc0d48132d30fbdcb0f9bc1f6da0fb7c666ffc8fec5fecaf6da80f28d0fc866d3c8d2d5d0c2257a364c54e970101100 add ebp, 1; shr eax, 0xb0; rol ch, 0xbc; rcl ah, 0x81; xor dl, bl; bsr ecx, ebx; setnp cl; neg dl; movzx eax, si; dec ax; inc ch; dec dl; neg dl; xor dl, 0x8d; bswap eax; ror ax, cl; rcl ch, cl; rol dl, 1; and eax, 0x544c367a; jmp 0xb5732c
+00b5732c 32da8b0414fec9660fc980d5fb8db6fcffffff1ae8e982d30200 xor bl, dl; mov eax, dword ptr [esp + edx]; dec cl; bswap cx; adc ch, 0xfb; lea esi, [esi - 4]; sbb ch, al; jmp 0xb846c8
+00b846c8 89060bcf80d9b78b4c25006681fb007e81c50400000033cb6685faf7d9e97915ebff mov dword ptr [esi], eax; or ecx, edi; sbb cl, 0xb7; mov ecx, dword ptr [ebp]; cmp bx, 0x7e00; add ebp, 4; xor ecx, ebx; test dx, di; neg ecx; jmp 0xa35c63
+00a35c63 c1c103e951426c00               rol ecx, 3; jmp 0x10f9ebc
+010f9ebc 81e99e00d954f966f7c79712e9dd480100 sub ecx, 0x54d9009e; stc ; test di, 0x1297; jmp 0x110e7aa
+0110e7aa f7d981e93c2b3e17f9f5c1c903e93d9b98ff neg ecx; sub ecx, 0x173e2b3c; stc ; cmc ; ror ecx, 3; jmp 0xa982f9
+00a982f9 33d9f8e98f6f0000               xor ebx, ecx; clc ; jmp 0xa9f290
+00a9f290 03f9e90c6c6400                 add edi, ecx; jmp 0x10e5ea3
+010e5ea3 e93d98aeff                     jmp 0xbcf6e5
+00bcf6e5 8d5424606681fd66243be33bf2e9adbdfeff lea edx, [esp + 0x60]; cmp bp, 0x2466; cmp esp, ebx; cmp esi, edx; jmp 0xbbb4a4
+00bbb4a4 0f87bcb2e9ff                   ja 0xa56766
+00a56766 57c3                           push edi; ret 
+010dccd6 0fb654250081c5010000006681f1ec54c6c5e4f7d132d3f6da0fc9fecaf6da85c5f96681f1b77280f28df8d0c26623c63c016681d10e0432da66f7d0988b04148db6fcffffff89068b4c2500f9e9651aa1ff movzx edx, byte ptr [ebp]; add ebp, 1; xor cx, 0x54ec; mov ch, 0xe4; not ecx; xor dl, bl; neg dl; bswap ecx; dec dl; neg dl; test ebp, eax; stc ; xor cx, 0x72b7; xor dl, 0x8d; clc ; rol dl, 1; and ax, si; cmp al, 1; adc cx, 0x40e; xor bl, dl; not ax; cwde ; mov eax, dword ptr [esp + edx]; lea esi, [esi - 4]; mov dword ptr [esi], eax; mov ecx, dword ptr [ebp]; stc ; jmp 0xaee78d
+00aee78d 8dad0400000033cbe9c4346400     lea ebp, [ebp + 4]; xor ecx, ebx; jmp 0x1131c5e
+01131c5e f7d9f8f5c1c1036685ece9edaf6bff neg ecx; clc ; cmc ; rol ecx, 3; test sp, bp; jmp 0x7ecc5a
+007ecc5a 8d8962ff26ab81fa48469d4bf7d981e93c2b3e17f9e9a4662900 lea ecx, [ecx - 0x54d9009e]; cmp edx, 0x4b9d4648; neg ecx; sub ecx, 0x173e2b3c; stc ; jmp 0xa83318
+00a83318 c1c90333d9e949120c00           ror ecx, 3; xor ebx, ecx; jmp 0xb4456b
+00b4456b 03f9e9a49dfdff                 add edi, ecx; jmp 0xb1e316
+00b1e316 e9ca130b00                     jmp 0xbcf6e5
+00bcf6e5 8d5424606681fd66243be33bf2e9adbdfeff lea edx, [esp + 0x60]; cmp bp, 0x2466; cmp esp, ebx; cmp esi, edx; jmp 0xbbb4a4
+00bbb4a4 0f87bcb2e9ff                   ja 0xa56766
+00a56766 57c3                           push edi; ret 
+00a4222d 0fb6542500d3d1c0f00d80e9f281c50100000032d366c1c1e9d3c81ac5f6da0f9fc166ffc1feca0fc0e9f6da660fc1c9d0e980f28df966c1c8bed2d1d0c285fec1d9ae663be832da0fb7c766c1c1568b04148db6fcffffffb1cf8906660fb3d985e58b4c2500f88dad04000000f533cbf7d9f9f8c1c103663bd06681fa1b608d8962ff26abf8f5f7d981e93c2b3e17c1c903f7c78752191ff933d9f5f984db03f9e912d41800 movzx edx, byte ptr [ebp]; rcl ecx, cl; sal al, 0xd; sub cl, 0xf2; add ebp, 1; xor dl, bl; rol cx, 0xe9; ror eax, cl; sbb al, ch; neg dl; setg cl; inc cx; dec dl; xadd cl, ch; neg dl; xadd cx, cx; shr cl, 1; xor dl, 0x8d; stc ; ror ax, 0xbe; rcl cl, cl; rol dl, 1; test esi, edi; rcr ecx, 0xae; cmp bp, ax; xor bl, dl; movzx eax, di; rol cx, 0x56; mov eax, dword ptr [esp + edx]; lea esi, [esi - 4]; mov cl, 0xcf; mov dword ptr [esi], eax; btr cx, bx; test ebp, esp; mov ecx, dword ptr [ebp]; clc ; lea ebp, [ebp + 4]; cmc ; xor ecx, ebx; neg ecx; stc ; clc ; rol ecx, 3; cmp dx, ax; cmp dx, 0x601b; lea ecx, [ecx - 0x54d9009e]; clc ; cmc ; neg ecx; sub ecx, 0x173e2b3c; ror ecx, 3; test edi, 0x1f195287; stc ; xor ebx, ecx; cmc ; stc ; test bl, bl; add edi, ecx; jmp 0xbcf6e5
+00bcf6e5 8d5424606681fd66243be33bf2e9adbdfeff lea edx, [esp + 0x60]; cmp bp, 0x2466; cmp esp, ebx; cmp esi, edx; jmp 0xbbb4a4
+00bbb4a4 0f87bcb2e9ff                   ja 0xa56766
+00a56766 57c3                           push edi; ret 
+00b7f694 0fb654250013ca8dad010000009f32d303c10fa4c8ead2c9f6da660f4ec1feca0fb7c9f6da80f28dd0c266d3d132da8b0414c1f914fecd8db6fcfffffff841661bcf89068b4c25008dad04000000f93bf033cbf8f7d9c1c1038d8962ff26abe94873f2ff movzx edx, byte ptr [ebp]; adc ecx, edx; lea ebp, [ebp + 1]; lahf ; xor dl, bl; add eax, ecx; shld eax, ecx, 0xea; ror cl, cl; neg dl; cmovle ax, cx; dec dl; movzx ecx, cx; neg dl; xor dl, 0x8d; rol dl, 1; rcl cx, cl; xor bl, dl; mov eax, dword ptr [esp + edx]; sar ecx, 0x14; dec ch; lea esi, [esi - 4]; clc ; inc ecx; sbb cx, di; mov dword ptr [esi], eax; mov ecx, dword ptr [ebp]; lea ebp, [ebp + 4]; stc ; cmp esi, eax; xor ecx, ebx; clc ; neg ecx; rol ecx, 3; lea ecx, [ecx - 0x54d9009e]; jmp 0xaa6a40
+00aa6a40 f7d981e93c2b3e17c1c903e92e230b00 neg ecx; sub ecx, 0x173e2b3c; ror ecx, 3; jmp 0xb58d7e
+00b58d7e 33d903f9e9f52bfaff             xor ebx, ecx; add edi, ecx; jmp 0xafb97c
+00afb97c e9643d0d00                     jmp 0xbcf6e5
+00bcf6e5 8d5424606681fd66243be33bf2e9adbdfeff lea edx, [esp + 0x60]; cmp bp, 0x2466; cmp esp, ebx; cmp esi, edx; jmp 0xbbb4a4
+00bbb4a4 0f87bcb2e9ff                   ja 0xa56766
+00a56766 57c3                           push edi; ret 
+01107981 0fb6542500d3c10fbdc68dad010000000fbfca0fb3f932d366d3d980e9f9f6da6698c6c5cf660fc9feca0fb7ce6685fdf6da80f28dd0c266c1d8ca32da6625fd1e8b04148db6fcffffff660fbdce8906f98b4c2500f7c62a67e36b8dad0400000066f7c5a839f533cbf7d9f8e9ee98feff movzx edx, byte ptr [ebp]; rol ecx, cl; bsr eax, esi; lea ebp, [ebp + 1]; movsx ecx, dx; btr ecx, edi; xor dl, bl; rcr cx, cl; sub cl, 0xf9; neg dl; cbw ; mov ch, 0xcf; bswap cx; dec dl; movzx ecx, si; test bp, di; neg dl; xor dl, 0x8d; rol dl, 1; rcr ax, 0xca; xor bl, dl; and ax, 0x1efd; mov eax, dword ptr [esp + edx]; lea esi, [esi - 4]; bsr cx, si; mov dword ptr [esi], eax; stc ; mov ecx, dword ptr [ebp]; test esi, 0x6be3672a; lea ebp, [ebp + 4]; test bp, 0x39a8; cmc ; xor ecx, ebx; neg ecx; clc ; jmp 0x10f12e0
+010f12e0 c1c1038d8962ff26abf53be4f7d9f7c5942d5d1a81ff1b1b7b6985e181e93c2b3e17f9f5c1c903f933d9f6c39ef8e9bd27a2ff rol ecx, 3; lea ecx, [ecx - 0x54d9009e]; cmc ; cmp esp, esp; neg ecx; test ebp, 0x1a5d2d94; cmp edi, 0x697b1b1b; test ecx, esp; sub ecx, 0x173e2b3c; stc ; cmc ; ror ecx, 3; stc ; xor ebx, ecx; test bl, 0x9e; clc ; jmp 0xb13ad0
+00b13ad0 03f9e9ab0d5d00                 add edi, ecx; jmp 0x10e4882
+010e4882 e95eaeaeff                     jmp 0xbcf6e5
+00bcf6e5 8d5424606681fd66243be33bf2e9adbdfeff lea edx, [esp + 0x60]; cmp bp, 0x2466; cmp esp, ebx; cmp esi, edx; jmp 0xbbb4a4
+00bbb4a4 0f87bcb2e9ff                   ja 0xa56766
+00a56766 57c3                           push edi; ret 
+00b6116e 8be6c0c8a5660fbcec663bef580fbcee81dd2c789f6566ffc55bf7d5f6d95e9d mov esp, esi; ror al, 0xa5; bsf bp, sp; cmp bp, di; pop eax; bsf ebp, esi; sbb ebp, 0x659f782c; inc bp; pop ebx; not ebp; neg cl; pop esi; popfd 
+00b6118e 5d0fca5a0fc95f87c9660fb6ce59e91d54a3ff pop ebp; bswap edx; pop edx; bswap ecx; pop edi; xchg ecx, ecx; movzx cx, dh; pop ecx; jmp 0x5965be
+005965be c3                             ret 
+00000000 ffff                           

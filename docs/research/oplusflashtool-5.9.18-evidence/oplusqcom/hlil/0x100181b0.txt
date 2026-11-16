@@ -1,0 +1,339 @@
+100181b3 int32_t var_8 = 0xffffffff
+100181b5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10061cc8
+100181c0 TEB* fsbase
+100181c0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+100181cc int32_t __saved_ebp
+100181cc int32_t eax_2 = __security_cookie ^ &__saved_ebp
+100181d2 fsbase->NtTib.ExceptionList = &ExceptionList
+100181da int32_t ebx = 2
+100181df char eax_3 = sub_100294a0(arg1)
+100181e9 uint32_t eax_4 = sub_10028130(arg1)
+100181f5 int32_t* edi = &arg1[0x63f]
+10018200 int32_t* var_1c
+10018200 
+10018200 if (arg1[0x644] u< 0x10)
+10018209     var_1c = edi
+10018200 else
+10018204     var_1c = *edi
+10018204 
+1001820c int32_t ecx_1 = arg1[7]
+1001823c opdbg_log("QCFlashWorker::doActionCheckNVID", 0xba0, 
+1001823c     "[%s] [%s] INFO: check NVID form phone and mes, scene = %d, isProductVersion = %d, m_nv = %s, sign "
+1001823c "nv %s.", 
+1001823c     ecx_1 + 0x9e4, ecx_1 + 0x444, eax_4, zx.d(eax_3), var_1c, &arg1[0x2cf], eax_2)
+10018242 uint32_t eax_10 = eax_4
+10018242 
+10018250 if (arg1[0xc18c3].b != 0)
+10018250     eax_10 = 0
+10018250 
+1001825f int32_t var_6c_1
+1001825f char const* const var_68_1
+1001825f int32_t var_64_3
+1001825f int32_t var_60_6
+1001825f char var_34
+1001825f char edx_1
+1001825f 
+1001825f if (sub_10028320(arg1) != 0)
+1001826b     char* ecx_3 = &data_1006a03d
+10018270     char* eax_12 = &arg1[0x2cf]
+10018272     int32_t eax_14
+10018272     
+10018272     while (true)
+10018272         edx_1 = *eax_12
+10018274         char temp0_1 = *ecx_3
+10018274         bool c_1 = edx_1 u< temp0_1
+10018274         
+10018276         if (edx_1 == temp0_1)
+1001827a             if (edx_1 == 0)
+1001828e                 eax_14 = 0
+10018290                 break
+10018290             
+1001827c             edx_1 = eax_12[1]
+1001827f             char temp2_1 = ecx_3[1]
+1001827f             c_1 = edx_1 u< temp2_1
+1001827f             
+10018282             if (edx_1 == temp2_1)
+10018284                 eax_12 = &eax_12[2]
+10018287                 ecx_3 = &ecx_3[2]
+10018287                 
+1001828c                 if (edx_1 != 0)
+1001828c                     continue
+1001828c                 
+1001828e                 eax_14 = 0
+10018290                 break
+10018290         
+10018294         eax_14 = sbb.d(eax_12, eax_12, c_1) | 1
+10018294         break
+10018294     
+10018299     if (eax_14 != 0)
+100182a7         sub_10001a60(&var_34, &arg1[0x2cf])
+100182af         int32_t var_8_1 = 0
+100182bd         void* eax_15 = sub_100439e0(arg1[0x5d9], &var_34)
+100182c2         int32_t var_8_2 = 0xffffffff
+100182cc         void* var_1c_1 = eax_15
+100182d2         int32_t var_20
+100182d2         
+100182d2         if (var_20 u>= 0x10)
+100182d9             sub_10001d60(var_34.d, var_20 + 1)
+100182de             eax_15 = var_1c_1
+100182de         
+100182e1         int32_t var_20_1 = 0xf
+100182e8         int32_t var_24_1 = 0
+100182ef         var_34 = 0
+100182ef         
+100182f5         if (eax_15 == 0)
+10018342             ebx = 3
+10018347             goto label_1001865a
+10018347         
+100182fa         uint32_t ecx_8
+100182fa         
+100182fa         if (arg1[0x2cf].b != 0)
+10018300             char* ecx_9 = &arg1[0x2cf]
+10018300             
+1001830a             do
+10018305                 eax_15.b = *ecx_9
+10018307                 ecx_9 = &ecx_9[1]
+1001830a             while (eax_15.b != 0)
+1001830a             
+1001830c             ecx_8 = ecx_9 - &ecx_9[1]
+100182fa         else
+100182fc             ecx_8 = 0
+100182fc         
+10018317         int32_t var_60_5 = sub_10001ad0(edi, &arg1[0x2cf], ecx_8)
+1001831b         ebx = 0
+1001831d         sub_1000f750(var_1c_1)
+10018322         int32_t ecx_13 = arg1[7]
+1001832b         var_60_6 = ecx_13 + 0x444
+10018332         var_64_3 = ecx_13 + 0x9e4
+10018333         var_68_1 = "[%s] [%s] INFO: use phone nv."
+10018338         var_6c_1 = 0xbb0
+1001833d         goto label_10018652
+1001833d     
+1001829b     ebx = eax_14 + 2
+1001829e     goto label_1001865a
+1001829e 
+10018351 if (eax_10 == 0)
+10018353     int32_t ecx_14 = arg1[7]
+1001835c     var_60_6 = ecx_14 + 0x444
+10018363     var_64_3 = ecx_14 + 0x9e4
+10018364     var_68_1 = "[%s] [%s] INFO: use user config nv."
+10018369     var_6c_1 = 0xbb7
+10018652 label_10018652:
+10018652     opdbg_log("QCFlashWorker::doActionCheckNVID", var_6c_1, var_68_1, var_64_3, var_60_6)
+1001865a label_1001865a:
+1001865a     
+1001865a     if (ebx == 0)
+100186c2         int32_t* ecx_51
+100186c2         
+100186c2         if (edi[5] u< 0x10)
+100186c8             ecx_51 = edi
+100186c2         else
+100186c4             ecx_51 = *edi
+100186c4         
+100186d9         write_flash_event_country_code_proc("use phone nv", ecx_51, arg1[7] + 0xb4c)
+1001865a     else
+1001865f         char const* const var_68_5
+1001865f         int32_t* var_64_7
+1001865f         int32_t var_60_17
+1001865f         
+1001865f         if (ebx == 2)
+10018696             if (edi[5] u< 0x10)
+100186b5                 var_60_17 = arg1[7] + 0xb4c
+100186b6                 var_64_7 = edi
+100186b7                 var_68_5 = "use user config nv"
+10018696             else
+100186a2                 var_60_17 = arg1[7] + 0xb4c
+100186a3                 var_64_7 = *edi
+100186a4                 var_68_5 = "use user config nv"
+100186a4             
+100186d9             write_flash_event_country_code_proc(var_68_5, var_64_7, var_60_17)
+1001865f         else if (ebx == 3)
+1001866a             if (edi[5] u< 0x10)
+10018689                 var_60_17 = arg1[7] + 0xb4c
+1001868a                 var_64_7 = edi
+1001868b                 var_68_5 = "use_default_nv"
+1001866a             else
+10018676                 var_60_17 = arg1[7] + 0xb4c
+10018677                 var_64_7 = *edi
+10018678                 var_68_5 = "use_default_nv"
+10018678             
+100186d9             write_flash_event_country_code_proc(var_68_5, var_64_7, var_60_17)
+100186d9     
+100186e6     if (edi[5] u>= 0x10)
+100186e8         edi = *edi
+100186e8     
+100186ea     int32_t ecx_52 = arg1[7]
+1001870b     opdbg_log("QCFlashWorker::doActionCheckNVID", 0xbff, "[%s] [%s] INFO: get nv is %s.", 
+1001870b         ecx_52 + 0x9e4, ecx_52 + 0x444, edi)
+10018719     fsbase->NtTib.ExceptionList = ExceptionList
+10018727     return 0
+10018727 
+10018376 if (eax_10 != 1)
+1001851d     if (eax_10 != 2)
+1001851d         goto label_1001865a
+1001851d     
+10018523     char* ecx_31 = &data_1006a03d
+10018528     char* eax_37 = &arg1[0x2cf]
+10018530     int32_t eax_39
+10018530     
+10018530     while (true)
+10018530         edx_1 = *eax_37
+10018532         char temp4_1 = *ecx_31
+10018532         bool c_3 = edx_1 u< temp4_1
+10018532         
+10018534         if (edx_1 == temp4_1)
+10018538             if (edx_1 == 0)
+1001854b                 eax_39 = 0
+1001854d                 break
+1001854d             
+1001853a             edx_1 = eax_37[1]
+1001853d             char temp7_1 = ecx_31[1]
+1001853d             c_3 = edx_1 u< temp7_1
+1001853d             
+10018540             if (edx_1 == temp7_1)
+10018542                 eax_37 = &eax_37[2]
+10018545                 ecx_31 = &ecx_31[2]
+10018545                 
+10018549                 if (edx_1 != 0)
+10018549                     continue
+10018549                 
+1001854b                 eax_39 = 0
+1001854d                 break
+1001854d         
+10018551         eax_39 = sbb.d(eax_37, eax_37, c_3) | 1
+10018551         break
+10018551     
+10018556     int32_t var_6c_2
+10018556     int32_t var_64_6
+10018556     int32_t var_60_12
+10018556     uint32_t result
+10018556     
+10018556     if (eax_39 != 0)
+100185b3         void var_4c
+100185b3         sub_10001a60(&var_4c, &arg1[0x2cf])
+100185bb         int32_t var_8_5 = 2
+100185c9         void* eax_42 = sub_100439e0(arg1[0x5d9], &var_4c)
+100185d4         int32_t var_8_6 = 0xffffffff
+100185db         sub_100019a0(&var_4c)
+100185db         
+100185e4         if (eax_42 != 0)
+10018622             int32_t var_60_16 = sub_10001960(&arg1[0x2cf])
+10018626             ebx = 0
+10018628             sub_1000f750(eax_42)
+1001862d             int32_t ecx_46 = arg1[7]
+10018636             var_60_6 = ecx_46 + 0x444
+1001863d             var_64_3 = ecx_46 + 0x9e4
+1001863e             var_68_1 = "[%s] [%s] INFO: use phone nv."
+10018643             var_6c_1 = 0xbec
+10018643             goto label_10018652
+10018643         
+100185e8         uint32_t result_2 = sub_10029620(arg1)
+100185ed         result = result_2
+100185ed         
+100185f2         if (result_2 == 0)
+100185f2             goto label_1001865a
+100185f2         
+100185f4         int32_t edx_4 = arg1[7]
+100185fd         var_60_12 = edx_4 + 0x444
+10018604         var_64_6 = edx_4 + 0x9e4
+10018605         char const* const var_68_4 = "[%s] [%s] ERROR: get nv info fail from server."
+1001860a         var_6c_2 = 0xbe3
+10018556     else
+1001855a         uint32_t result_1 = sub_10029620(arg1)
+1001855f         result = result_1
+1001855f         
+10018564         if (result_1 == 0)
+10018564             goto label_1001865a
+10018564         
+1001856a         int32_t edx_3 = arg1[7]
+10018573         var_60_12 = edx_3 + 0x444
+1001857a         var_64_6 = edx_3 + 0x9e4
+1001857b         char const* const var_68_3 = "[%s] [%s] ERROR: get nv info fail from server."
+10018580         var_6c_2 = 0xbdb
+10018580     
+1001858f     opdbg_log("QCFlashWorker::doActionCheckNVID", var_6c_2, 
+1001858f         "[%s] [%s] ERROR: get nv info fail from server.", var_64_6, var_60_12)
+1001859a     fsbase->NtTib.ExceptionList = ExceptionList
+100185a8     return result
+100185a8 
+10018383 if (arg1[0xc18aa].b != 0)
+10018385     int32_t ecx_15 = arg1[7]
+10018388     ebx = eax_10 + 2
+10018391     var_60_6 = ecx_15 + 0x444
+10018398     var_64_3 = ecx_15 + 0x9e4
+10018399     var_68_1 = "[%s] [%s] INFO: use user config nv."
+1001839e     var_6c_1 = 0xbbb
+10018383 else if (eax_3 == 0)
+100183d9     char* ecx_17 = &data_1006a03d
+100183de     char* eax_25 = &arg1[0x2cf]
+100183e0     int32_t eax_27
+100183e0     
+100183e0     while (true)
+100183e0         edx_1 = *eax_25
+100183e2         char temp6_1 = *ecx_17
+100183e2         bool c_2 = edx_1 u< temp6_1
+100183e2         
+100183e4         if (edx_1 == temp6_1)
+100183e8             if (edx_1 == 0)
+100183fc                 eax_27 = 0
+100183fe                 break
+100183fe             
+100183ea             edx_1 = eax_25[1]
+100183ed             char temp8_1 = ecx_17[1]
+100183ed             c_2 = edx_1 u< temp8_1
+100183ed             
+100183f0             if (edx_1 == temp8_1)
+100183f2                 eax_25 = &eax_25[2]
+100183f5                 ecx_17 = &ecx_17[2]
+100183f5                 
+100183fa                 if (edx_1 != 0)
+100183fa                     continue
+100183fa                 
+100183fc                 eax_27 = 0
+100183fe                 break
+100183fe         
+10018402         eax_27 = sbb.d(eax_25, eax_25, c_2) | 1
+10018402         break
+10018402     
+10018407     if (eax_27 == 0)
+10018409         int32_t ecx_18 = arg1[7]
+1001842e         opdbg_log("QCFlashWorker::doActionCheckNVID", 0xbc2, 
+1001842e             "[%s] [%s] ERROR: get nv info fail from phone.", ecx_18 + 0x9e4, ecx_18 + 0x444)
+10018436         sub_10024880(arg1, "nv_not_in_phone()")
+10018446         fsbase->NtTib.ExceptionList = ExceptionList
+10018454         return 0x754a
+10018454     
+10018459     sub_10001a60(&var_34, &arg1[0x2cf])
+10018461     int32_t var_8_3 = 1
+1001846f     void* eax_31 = sub_100439e0(arg1[0x5d9], &var_34)
+1001847a     int32_t var_8_4 = 0xffffffff
+10018481     sub_100019a0(&var_34)
+10018481     
+1001848b     if (eax_31 == 0)
+100184bf         int32_t ecx_28 = arg1[7]
+100184e4         opdbg_log("QCFlashWorker::doActionCheckNVID", 0xbcf, 
+100184e4             "[%s] [%s] ERROR: not found nv info in package, nv=%s.", ecx_28 + 0x9e4, 
+100184e4             ecx_28 + 0x444, &arg1[0x2cf])
+100184e6         char* var_78_1 = &arg1[0x2cf]
+100184ed         sub_10024880(arg1, "nv_not_in_package(%s)")
+100184fa         reportIssue("E0101018", 1, &arg1[0x2cf])
+1001850b         fsbase->NtTib.ExceptionList = ExceptionList
+10018519         return 0x753a
+10018519     
+10018494     int32_t var_60_11 = sub_10001960(&arg1[0x2cf])
+10018498     ebx = 0
+1001849a     sub_1000f750(eax_31)
+1001849f     int32_t ecx_27 = arg1[7]
+100184a8     var_60_6 = ecx_27 + 0x444
+100184af     var_64_3 = ecx_27 + 0x9e4
+100184b0     var_68_1 = "[%s] [%s] INFO: use phone nv."
+100184b5     var_6c_1 = 0xbcd
+100183ac else
+100183ae     int32_t ecx_16 = arg1[7]
+100183b1     ebx = 3
+100183bc     var_60_6 = ecx_16 + 0x444
+100183c3     var_64_3 = ecx_16 + 0x9e4
+100183c4     var_68_1 = "[%s] [%s] INFO: use user config nv."
+100183c9     var_6c_1 = 0xbbf
+100183c9 
+10018383 goto label_10018652

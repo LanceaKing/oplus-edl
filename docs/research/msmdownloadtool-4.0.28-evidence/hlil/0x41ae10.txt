@@ -1,0 +1,16 @@
+0041ae1e int32_t __saved_ebp
+0041ae1e int32_t eax_1 = __security_cookie ^ &__saved_ebp
+0041ae30 int32_t result = 0
+0041ae46 void PropertyBuffer
+0041ae46 
+0041ae46 if (SetupDiGetDeviceRegistryPropertyW(arg1, arg2, 0xc, nullptr, &PropertyBuffer, 0x208, nullptr)
+0041ae46         != 0)
+0041ae60     if (_wcsncmp(&PropertyBuffer, u"Qualcomm HS-USB QDLoader 9008", 0x1d) == 0)
+0041ae6b         sub_54a573(eax_1 ^ &__saved_ebp)
+0041ae73         return 1
+0041ae73     
+0041ae91     if (_wcsncmp(&PropertyBuffer, u"Forge HS-USB QDLoader 9008", 0x1a) == 0)
+0041ae91         result = 1
+0041ae91 
+0041ae9c sub_54a573(eax_1 ^ &__saved_ebp)
+0041aea4 return result

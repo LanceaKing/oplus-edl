@@ -1,0 +1,158 @@
+004123a9 __security_cookie
+004123c0 int32_t* eax_2 = sub_420885(0xc)
+004123c0 
+004123ca if (eax_2 == 0)
+004123e2     eax_2 = nullptr
+004123ca else
+004123cc     *eax_2 = 0
+004123d2     eax_2[1] = 0
+004123d9     eax_2[2] = 0
+004123d9 
+004123ea GUID* i = &data_5c4570
+004123ef void* ecx = nullptr
+004123f1 *arg1 = eax_2
+004123f3 GUID* i_1 = &data_5c4570
+004123f9 void* var_160 = nullptr
+0041273d int32_t* DeviceInterfaceDetailData_2
+0041273d HDEVINFO DeviceInfoSet_1
+0041273d uint32_t MemberIndex
+0041273d int32_t eax_3
+0041273d int32_t eax_4
+0041273d int32_t eax_5
+0041273d 
+0041273d do
+00412400     eax_3 = *(ecx + 0x59f2c4)
+00412410     eax_4 = *(ecx + &data_59f2b8)
+0041241e     eax_5 = *(ecx + 0x59f2b0)
+0041242b     struct SP_DEVINFO_DATA DeviceInfoData
+0041242b     DeviceInfoData.cbSize = 0x1c
+00412435     struct SP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+00412435     DeviceInterfaceData.cbSize = 0x1c
+0041243f     uint32_t var_148 = 0
+0041244f     HDEVINFO DeviceInfoSet = SetupDiGetClassDevsA(i, nullptr, nullptr, 0x12)
+00412453     MemberIndex = 0
+00412466     DeviceInfoSet_1 = DeviceInfoSet
+00412466     
+00412470     if (SetupDiEnumDeviceInterfaces(DeviceInfoSet, nullptr, i, 0, &DeviceInterfaceData) != 0)
+00412712         BOOL j
+00412712         
+00412712         do
+0041249b             SetupDiGetDeviceInterfaceDetailA(DeviceInfoSet, &DeviceInterfaceData, nullptr, 0, 
+0041249b                 &var_148, nullptr)
+004124a3             int32_t* DeviceInterfaceDetailData = sub_4208b2(var_148)
+004124b3             DeviceInterfaceDetailData_2 = DeviceInterfaceDetailData
+004124c0             *DeviceInterfaceDetailData = 5
+004124d6             SetupDiGetDeviceInterfaceDetailA(DeviceInfoSet, &DeviceInterfaceData, 
+004124d6                 DeviceInterfaceDetailData, var_148, &var_148, &DeviceInfoData)
+004124e1             uint32_t MemberIndex_1 = MemberIndex + 1
+004124e9             MemberIndex = MemberIndex_1
+004124ef             sub_53c55b("\n[index:%d]\n  dev_path=%s\n", MemberIndex_1, 
+004124ef                 &DeviceInterfaceDetailData[1])
+004124ff             sub_53c55b("  Handle=%d\n", DeviceInfoData.DevInst)
+0041250f             int32_t eax_10
+0041250f             
+0041250f             if (eax_4 != 0)
+0041251a                 eax_10 = eax_4(&DeviceInterfaceDetailData[1], DeviceInfoSet, &DeviceInfoData)
+0041251a             
+00412521             int32_t* DeviceInterfaceDetailData_1
+00412521             
+00412521             if (eax_4 == 0 || eax_10 != 0)
+0041252e                 int32_t* eax_11 = sub_420885(0x314)
+0041253d                 int32_t* var_150 = eax_11
+00412543                 _memset(eax_11, 0, 0x314)
+00412565                 uint8_t PropertyBuffer[0x104]
+00412565                 BOOL eax_12 = SetupDiGetDeviceRegistryPropertyA(DeviceInfoSet, &DeviceInfoData, 
+00412565                     0xc, nullptr, &PropertyBuffer, 0x104, nullptr)
+00412565                 
+0041256d                 if (eax_12 != 0)
+0041257f                     eax_12 = _strcpy_s(&eax_11[1], 0x104, &PropertyBuffer)
+0041257f                 
+004125a3                 if (sub_411f10(eax_12, &eax_11[0x83], &DeviceInfoData, eax_5) == 0)
+004126da                     sub_4208bb(eax_11)
+004125a3                 else
+004125b6                     _strcpy_s(&eax_11[0x42], 0x104, &DeviceInterfaceDetailData[1])
+004125c4                     *eax_11 = eax_3
+004125cc                     int32_t* esi_1 = *arg1
+004125d4                     int32_t ecx_2 = esi_1[1]
+004125d9                     int32_t ebx_1
+004125d9                     
+004125d9                     if (&var_150 u< ecx_2)
+004125df                         ebx_1 = *esi_1
+004125df                     
+004125e3                     if (&var_150 u>= ecx_2 || ebx_1 u> &var_150)
+00412664                         int32_t edx_6 = esi_1[2]
+00412664                         
+00412675                         if (ecx_2 == edx_6 && (edx_6 - ecx_2) s>> 2 u< 1)
+00412677                             int32_t ebx_2 = *esi_1
+00412680                             int32_t ecx_11 = (ecx_2 - ebx_2) s>> 2
+00412680                             
+00412688                             if (0x3fffffff - ecx_11 u< 1)
+00412759                                 sub_55c338("vector<T> too long")
+00412759                                 noreturn
+00412759                             
+00412691                             int32_t edx_8 = (edx_6 - ebx_2) s>> 2
+004126a1                             uint32_t ecx_14 = edx_8 u>> 1
+004126a7                             int32_t edx_9
+004126a7                             
+004126a7                             edx_9 = 0x3fffffff - ecx_14 u>= edx_8 ? edx_8 + ecx_14 : 0
+004126a7                             
+004126b7                             if (edx_9 u< ecx_11 + 1)
+004126b7                                 edx_9 = ecx_11 + 1
+004126b7                             
+004126bf                             sub_403520(esi_1, edx_9)
+004126bf                         
+004126c4                         void** eax_30 = esi_1[1]
+004126c4                         
+004126c9                         if (eax_30 != 0)
+004126cb                             *eax_30 = eax_11
+004126cb                         
+004126cd                         esi_1[1] += 4
+004126d1                         DeviceInfoSet = DeviceInfoSet_1
+004125e3                     else
+004125e5                         int32_t edx_2 = esi_1[2]
+004125e5                         
+004125fd                         if (ecx_2 == edx_2 && (edx_2 - ecx_2) s>> 2 u< 1)
+00412606                             int32_t ecx_4 = (ecx_2 - ebx_1) s>> 2
+00412606                             
+0041260e                             if (0x3fffffff - ecx_4 u< 1)
+00412759                                 sub_55c338("vector<T> too long")
+00412759                                 noreturn
+00412759                             
+00412617                             int32_t edx_4 = (edx_2 - ebx_1) s>> 2
+00412627                             uint32_t ecx_7 = edx_4 u>> 1
+0041262d                             int32_t edx_5
+0041262d                             
+0041262d                             edx_5 = 0x3fffffff - ecx_7 u>= edx_4 ? edx_4 + ecx_7 : 0
+0041262d                             
+0041263d                             if (edx_5 u< ecx_4 + 1)
+0041263d                                 edx_5 = ecx_4 + 1
+0041263d                             
+00412645                             sub_403520(esi_1, edx_5)
+00412645                         
+0041264a                         int32_t* ecx_9 = esi_1[1]
+0041264a                         
+0041264f                         if (ecx_9 != 0)
+00412656                             *ecx_9 = *(*esi_1 + ((&var_150 - ebx_1) s>> 2 << 2))
+00412656                         
+00412658                         esi_1[1] += 4
+0041265c                         DeviceInfoSet = DeviceInfoSet_1
+0041265c                 
+004126e2                 DeviceInterfaceDetailData_1 = DeviceInterfaceDetailData_2
+00412521             else
+00412523                 DeviceInterfaceDetailData_1 = DeviceInterfaceDetailData
+00412523             
+004126e8             sub_4208bb(DeviceInterfaceDetailData_1)
+004126ed             i = i_1
+0041270e             j = SetupDiEnumDeviceInterfaces(DeviceInfoSet, nullptr, i, MemberIndex, 
+0041270e                 &DeviceInterfaceData)
+00412712         while (j != 0)
+00412712     
+00412719     SetupDiDestroyDeviceInfoList(DeviceInfoSet)
+00412725     i = &i[1]
+00412728     ecx = var_160 + 4
+0041272b     i_1 = i
+00412731     var_160 = ecx
+0041273d while (i s< &data_5c4590)
+0041273d 
+00412753 return sub_53b554(eax_4, DeviceInterfaceDetailData_2, arg1, eax_3, eax_5, var_160, DeviceInfoSet_1, 
+00412753     i_1, MemberIndex)

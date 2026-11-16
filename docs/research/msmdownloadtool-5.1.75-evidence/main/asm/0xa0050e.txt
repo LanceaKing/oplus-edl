@@ -1,0 +1,47 @@
+00a0050e push    eax
+00a0050f setpo   al
+00a00512 mov     ah, 0x6d
+00a00515 push    edi
+00a00516 cbw     
+00a00518 mov     eax, esp
+00a0051a push    ecx
+00a0051b mov     edi, ebp
+00a0051d cbw     
+00a0051f push    edx
+00a00520 not     eax
+00a00522 push    ebp
+00a00523 mov     edi, 0xaa82ba8
+00a00528 push    ebx
+00a00529 pushfd  
+00a0052a jmp     0xb9a649
+00b9a649 push    esi
+00b9a64a mov     ebp, esi
+00b9a64c mov     eax, 0x0
+00b9a651 mov     edi, ecx
+00b9a653 push    eax
+00b9a654 movzx   esi, bx
+00b9a657 bswap   ebx
+00b9a659 mov     edi, dword [esp+0x28]
+00b9a65d mov     ebp, esp
+00b9a65f inc     edi
+00b9a660 rcl     bx, 0xdf
+00b9a664 seto    bl
+00b9a667 jmp     0xb0ae19
+00b0ae19 rol     edi, 0x3
+00b0ae1c adc     ebp, 0x2b691266
+00b0ae22 sub     edi, 0x78f91926
+00b0ae28 bswap   si
+00b0ae2b not     edi
+00b0ae2d stc     
+00b0ae2e lea     edi, [edi+0x10f4423]
+00b0ae34 btr     bx, 0x98
+00b0ae39 movsx   esi, bx
+00b0ae3c lea     edi, [edi+eax]
+00b0ae3f bts     bp, cx
+00b0ae43 sbb     esi, 0xde85951
+00b0ae49 shrd    bx, dx, 0x3e
+00b0ae4e mov     ebp, esp
+00b0ae50 btr     esi, ecx
+00b0ae53 shr     si, 0xd3
+00b0ae57 sub     esp, 0xc0
+00b0ae5d xchg    si, ax

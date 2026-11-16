@@ -1,0 +1,283 @@
+00459213 int32_t var_8 = 0xffffffff
+00459215 int32_t (* var_c)() = sub_6d33d6
+00459220 TEB* fsbase
+00459220 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0045922c int32_t __saved_ebp
+0045922c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00459231 int32_t ebx
+00459231 int32_t var_294 = ebx
+00459232 int32_t esi
+00459232 int32_t var_298 = esi
+00459233 int32_t edi
+00459233 int32_t var_29c = edi
+00459238 fsbase->NtTib.ExceptionList = &ExceptionList
+00459240 int32_t* var_22c = arg1
+00459258 int32_t var_274 = arg2
+0045925e int32_t var_250 = 0
+00459268 void var_27c
+00459268 sub_45d950(&var_27c)
+00459273 int32_t var_8_1 = 1
+0045927a void var_228
+0045927a sub_4571e0(&var_228)
+00459281 var_8_1.b = 2
+00459285 void* var_2a4 = 0xffffffff
+00459287 int32_t* var_2a8 = nullptr
+00459293 int32_t var_254 = 7
+0045929d int32_t var_258 = 0
+004592a7 int16_t var_268 = 0
+004592ae sub_45c160(&var_268, 0x7c32e0, var_2a8, var_2a4)
+004592b9 var_8_1.b = 3
+004592c3 void* var_244
+004592c3 sub_45dd10(&var_244, &var_268)
+004592c3 
+004592cf if (var_254 u>= 8)
+004592d7     sub_56c751(var_268.d, eax_2)
+004592d7 
+004592e1 int32_t var_254_1 = 7
+004592eb int32_t var_258_1 = 0
+004592f5 var_268 = 0
+004592fc var_8_1.b = 4
+00459300 int32_t* eax_4 = sub_575e46(eax_2)
+0045930b int32_t eax_5
+0045930b eax_5.b = eax_4 != 0
+0045930b 
+00459310 if (eax_5 == 0)
+00459317     sub_414340(0x80004005)
+00459317     noreturn
+00459317 
+00459324 void* var_24c = (*(*eax_4 + 0xc))() + 0x10
+0045932a var_8_1.b = 5
+00459339 int32_t var_110 = 0xe4e1c0
+00459343 int32_t var_10c = 0
+0045934d std::num_put<wchar_t,class std::ostreambuf_iterator<wchar_t,struct std::char_traits<wchar_t> > >::do_put(
+0045934d     u"https://csdt.1plus.io/downloadTool/login")
+00459358 var_8_1.b = 6
+0045936a int16_t var_e0
+0045936a sub_47b940(&var_e0, &var_228)
+00459375 var_8_1.b = 8
+00459379 void var_c8
+00459379 sub_456710(&var_c8)
+00459385 int32_t var_cc
+00459385 
+00459385 if (var_cc u>= 8)
+0045938d     sub_56c751(var_e0.d)
+0045938d 
+00459397 int32_t var_cc_1 = 7
+004593a1 int32_t var_d0 = 0
+004593ab var_e0 = 0
+004593b2 int32_t* eax_9 = sub_575e46()
+004593bd int32_t eax_10
+004593bd eax_10.b = eax_9 != 0
+004593bd 
+004593c2 if (eax_10 == 0)
+004593c9     sub_414340(0x80004005)
+004593c9     noreturn
+004593c9 
+004593d6 void* var_234 = (*(*eax_9 + 0xc))() + 0x10
+004593dc var_8_1.b = 9
+004593e6 int32_t var_294_4 = arg1[0x15]
+004593e9 int32_t var_298_2 = arg1[0x14]
+004593ec int32_t var_29c_1 = arg1[0x13]
+004593ef wchar16 const* const var_2a0_1 = u"DLTool"
+004593f4 wchar16 const* const var_2a4_4 = u"%s/V%d.%d.%d"
+004593f9 var_2a8 = &var_24c
+004593fa sub_414410(var_2a8, var_2a4_4)
+0045940a int32_t var_294_5 = 7
+00459411 int32_t var_298_3 = 0
+00459418 var_2a8.w = 0
+0045941b sub_45c9b0(&var_2a8, u"application/json", 0x10)
+00459429 Concurrency::ordered_message_processor<enum Concurrency::agent_status>::~ordered_message_processor<enum Concurrency::agent_status>(
+00459429     var_2a8)
+0045942e void* esi_1 = var_24c
+00459437 void* const var_294_6 = 0xa
+0045943b void* var_230 = esi_1
+00459441 int32_t* var_298_4 = u"User-Agent"
+00459446 int32_t var_1c = 7
+0045944d int32_t var_20 = 0
+00459454 int16_t var_30 = 0
+00459458 sub_45c9b0(&var_30, var_298_4, var_294_6)
+0045945d var_8_1.b = 0xa
+00459475 sub_45dde0(var_244 + 0x14, &var_30, &var_230)
+0045947a var_8_1.b = 9
+0045947a 
+00459482 if (var_1c u>= 8)
+00459487     sub_56c751(var_30.d)
+00459487 
+00459496 sub_456f60(&var_244, arg3)
+004594a1 void** eax_14 = sub_4961c0(&var_30)
+004594a6 var_8_1.b = 0xb
+004594a6 
+004594ae if (eax_14[5] u>= 8)
+004594b0     eax_14 = *eax_14
+004594b0 
+004594b2 void** var_294_11 = eax_14
+004594b3 void* var_298_6 = esi_1
+004594c0 sub_414410(&var_234, u"%s: %s")
+004594c8 var_8_1.b = 9
+004594c8 
+004594d0 if (var_1c u>= 8)
+004594d5     sub_56c751(var_30.d)
+004594d5 
+004594dd void* eax_15 = var_234
+004594e3 void* ebx_2 = *(eax_15 - 0xc)
+004594e3 
+004594eb if (ebx_2 + 1 s>= 0)
+00459506     if (((*(eax_15 - 8) - (ebx_2 + 1)) | (1 - *(eax_15 - 4))) s< 0)
+0045950f         sub_414290(&var_234, ebx_2 + 1)
+00459514         eax_15 = var_234
+00459514     
+0045951f     *(eax_15 + (ebx_2 << 1)) = 0xa
+0045951f     
+00459526     if (ebx_2 + 1 s<= *(eax_15 - 8))
+00459528         *(eax_15 - 0xc) = ebx_2 + 1
+0045952d         *(eax_15 + ((ebx_2 + 1) << 1)) = 0
+0045953b         int32_t* eax_17
+0045953b         int32_t ecx_19
+0045953b         eax_17, ecx_19 = sub_41a8a0(eax_15 - 0x10)
+00459546         void* var_238 = &eax_17[4]
+0045954c         var_8_1.b = 0xc
+0045954c         
+00459559         if (*var_22c != 0)
+0045955b             int32_t var_294_16 = ecx_19
+00459579             (***var_22c)(&sub_41a8a0(eax_17)[4])
+00459579         
+0045957e         var_8_1.b = 9
+0045958a         int32_t eax_24 = eax_17[3]
+0045958a         eax_17[3] -= 1
+0045958a         
+00459591         if (eax_24 - 1 s<= 0)
+00459598             (*(**eax_17 + 4))(eax_17)
+00459598         
+004595a4         int32_t* var_294_19 = &var_230
+004595ab         var_230 = arg4
+004595b1         var_238 = arg4
+004595bd         void** var_29c_3 = &var_238
+004595c4         void var_28c
+004595c4         void* var_2a0_3 = &var_28c
+004595d1         var_2a8 = nullptr
+004595d7         int32_t var_2a4_5 = 0
+004595de         sub_45e1c0(&var_2a8, &var_244)
+004595f5         var_8_1.b = 0xd
+00459600         void var_284
+00459600         x88656e78::_Boost_call<class <lambda_67fb1a84fc044481ddf2f1ce985e4505> >::operator[]::_Boost_call<class <lambda_67fb1a84fc044481ddf2f1ce985e4505> >(
+00459600             &var_284, 
+00459600             COMRefPtr<class IDebugSSubSection>::COMRefPtr<class IDebugSSubSection>(&var_22c), 
+00459600             var_2a8, var_2a4_5, var_2a0_3, var_29c_3, arg2, var_294_19)
+00459607         var_8_1.b = 0xe
+0045960b         sub_45e060()
+00459612         var_8_1.b = 0xf
+00459616         sub_45e110()
+0045961b         var_8_1.b = 0xe
+00459625         int32_t var_250_1 = 1
+00459631         int32_t* var_288
+00459631         
+00459631         if (var_288 != 0)
+00459638             bool cond:0_1 = var_288[1] != 1
+00459633             var_288[1]
+00459638             var_288[1] -= 1
+00459638             
+0045963c             if (not(cond:0_1))
+00459642                 (**var_288)()
+00459649                 bool cond:2_1 = var_288[2] != 1
+00459644                 var_288[2]
+00459649                 var_288[2] -= 1
+00459649                 
+0045964d                 if (not(cond:2_1))
+00459653                     (*(*var_288 + 4))()
+00459653         
+00459656         var_8_1.b = 0xd
+00459662         int32_t* var_280
+00459662         
+00459662         if (var_280 != 0)
+00459669             bool cond:1_1 = var_280[1] != 1
+00459664             var_280[1]
+00459669             var_280[1] -= 1
+00459669             
+0045966d             if (not(cond:1_1))
+00459673                 (**var_280)()
+0045967a                 bool cond:3_1 = var_280[2] != 1
+00459675                 var_280[2]
+0045967a                 var_280[2] -= 1
+0045967a                 
+0045967e                 if (not(cond:3_1))
+00459684                     (*(*var_280 + 4))()
+00459684         
+00459687         var_8_1.b = 9
+0045968b         int32_t* ecx_33 = var_22c
+0045968b         
+00459693         if (ecx_33 != 0)
+0045969a             int32_t edx_5 = ecx_33[1]
+0045969a             ecx_33[1] -= 1
+0045969a             
+0045969f             if (edx_5 == 1)
+004596a3                 (*(*ecx_33 + 4))()
+004596a3         
+004596ae         var_22c = nullptr
+004596b8         var_8_1.b = 8
+004596bf         int32_t ecx_34 = *(eax_15 - 4)
+004596bf         *(eax_15 - 4) -= 1
+004596bf         
+004596c6         if (ecx_34 - 1 s<= 0)
+004596cd             (*(**(eax_15 - 0x10) + 4))(eax_15 - 0x10)
+004596cd         
+004596d0         var_8_1.b = 5
+004596dc         int32_t* var_26c
+004596dc         
+004596dc         if (var_26c != 0)
+004596e3             bool cond:4_1 = var_26c[1] != 1
+004596de             var_26c[1]
+004596e3             var_26c[1] -= 1
+004596e3             
+004596e7             if (not(cond:4_1))
+004596ed                 (**var_26c)()
+004596f4                 bool cond:5_1 = var_26c[2] != 1
+004596f4                 var_26c[2] -= 1
+004596f4                 
+004596f8                 if (not(cond:5_1))
+004596fe                     (*(*var_26c + 4))()
+004596fe         
+00459704         var_8_1.b = 4
+0045970d         int32_t ecx_40 = *(esi_1 - 4)
+0045970d         *(esi_1 - 4) -= 1
+0045970d         
+00459714         if (ecx_40 - 1 s<= 0)
+0045971b             (*(**(esi_1 - 0x10) + 4))(esi_1 - 0x10)
+0045971b         
+0045971e         var_8_1.b = 2
+0045972a         int32_t* var_240
+0045972a         
+0045972a         if (var_240 != 0)
+00459731             bool cond:6_1 = var_240[1] != 1
+0045972c             var_240[1]
+00459731             var_240[1] -= 1
+00459731             
+00459735             if (not(cond:6_1))
+0045973b                 (**var_240)()
+00459742                 bool cond:8_1 = var_240[2] != 1
+00459742                 var_240[2] -= 1
+00459742                 
+00459746                 if (not(cond:8_1))
+0045974c                     (*(*var_240 + 4))()
+0045974c         
+00459755         sub_459120(&var_228)
+0045975a         var_8_1.b = 0
+00459766         int32_t* var_278
+00459766         
+00459766         if (var_278 != 0)
+0045976d             bool cond:7_1 = var_278[1] != 1
+00459768             var_278[1]
+0045976d             var_278[1] -= 1
+0045976d             
+00459771             if (not(cond:7_1))
+00459777                 (**var_278)()
+0045977c                 int32_t edi_3 = var_278[2]
+0045977c                 var_278[2] -= 1
+0045977c                 
+00459781                 if (edi_3 == 1)
+00459787                     (*(*var_278 + 4))()
+00459787         
+00459793         fsbase->NtTib.ExceptionList = ExceptionList
+004597ab         return sub_68804f()
+004597ab 
+004594f2 sub_414340(0x80070057)
+004594f2 noreturn

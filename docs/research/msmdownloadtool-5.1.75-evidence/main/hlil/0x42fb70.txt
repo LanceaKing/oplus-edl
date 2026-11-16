@@ -1,0 +1,33 @@
+0042fb70 int32_t ebp
+0042fb70 int32_t var_4 = ebp
+0042fb73 int32_t var_8 = 0xffffffff
+0042fb75 int32_t (* var_c)(void* arg1) = sub_6ce4b8
+0042fb80 TEB* fsbase
+0042fb80 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0042fb81 void* const var_14 = arg1
+0042fb8f fsbase->NtTib.ExceptionList = &ExceptionList
+0042fb9f int32_t edx
+0042fb9f sub_4ae010(&ExceptionList, edx, **(arg1 + 0xc8), __security_cookie ^ &var_4, arg3, arg2)
+0042fba4 int32_t* ecx_2 = *(arg1 + 0xc8)
+0042fbad ExceptionList = &var_14
+0042fbb3 ExceptionList = sub_4ad2d0(ecx_2, ExceptionList)
+0042fbba int32_t var_8_1 = 0
+0042fbc1 sub_41a720(arg1 + 0xbc, ExceptionList)
+0042fbc6 int32_t var_8_2 = 0xffffffff
+0042fbd3 int32_t* ExceptionList_1 = var_14 - 0x10
+0042fbd9 int32_t ecx_4 = ExceptionList_1[3]
+0042fbd9 ExceptionList_1[3] -= 1
+0042fbd9 
+0042fbe0 if (ecx_4 - 1 s<= 0)
+0042fbe2     int32_t* ecx_6 = *ExceptionList_1
+0042fbe4     ExceptionList = ExceptionList_1
+0042fbe7     (*(*ecx_6 + 4))(ExceptionList)
+0042fbe7 
+0042fbea ExceptionList = *(arg1 + 0xbc)
+0042fbf2 var_14 = 0x42d
+0042fbfe int32_t result
+0042fbfe int32_t* ebp_1
+0042fbfe result, ebp_1 = sub_57390c(sub_5735d5(arg1, var_14))
+0042fc06 fsbase->NtTib.ExceptionList = ebp_1[-3]
+0042fc12 *ebp_1
+0042fc13 return result

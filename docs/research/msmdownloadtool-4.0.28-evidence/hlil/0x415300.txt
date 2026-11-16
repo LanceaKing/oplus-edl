@@ -1,0 +1,140 @@
+00415303 int32_t var_8 = 0xffffffff
+00415305 int32_t (* var_c)(void* arg1) = sub_571139
+00415310 TEB* fsbase
+00415310 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0041531c int32_t __saved_ebp
+0041531c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00415324 int32_t var_164 = eax_2
+00415328 fsbase->NtTib.ExceptionList = &ExceptionList
+0041532e int32_t* var_14 = &var_164
+00415333 char* var_13c = arg1
+00415339 uint32_t fileSizeHigh = 0
+00415343 uint32_t numberOfBytesRead = 0
+00415375 PWSTR lpFileName_1 = (*(data_5dd008 + 0xc))() + 0x10
+0041537b void** eax_7 = &arg1[0x88]
+00415381 int32_t var_8_1 = 0
+00415381 
+0041538c if (eax_7[5] u>= 0x10)
+0041538e     eax_7 = *eax_7
+0041538e 
+00415397 sub_4061e0(&lpFileName_1, eax_7)
+004153aa void buffer
+004153aa _memset(&buffer, 0, 0xac)
+004153af PWSTR lpFileName = lpFileName_1
+004153bb int32_t var_2c
+004153bb __builtin_memset(&var_2c, 0, 0x14)
+004153da HANDLE eax_8 = CreateFileW(lpFileName, 0x80000000, FILE_SHARE_READ, nullptr, OPEN_EXISTING, 
+004153da     FILE_ATTRIBUTE_NORMAL, nullptr)
+004153da 
+004153e9 if (eax_8 != 0xffffffff)
+0041542f     char const* const var_16c_2
+0041542f     
+0041542f     if ((GetFileSize(eax_8, &fileSizeHigh) | fileSizeHigh) == 0)
+00415437         enum WIN32_ERROR var_168_3 = GetLastError()
+00415438         var_16c_2 = "Get file size failed. Error=%d\n"
+00415a8b     label_415a8b:
+00415a8b         sub_54bd64(&arg1[0x1f0], var_16c_2)
+00415a93         *arg1 = 1
+00415a9c         *(arg1 + 4) = &arg1[0x1f0]
+00415aa5         CloseHandle(eax_8)
+00415aa5         goto label_415ab1
+00415aa5     
+0041544a     int32_t var_fc_1 = 0xfffffe00
+00415460     int32_t distanceToMoveHigh = 0xffffffff
+0041546a     uint32_t distanceToMoveHigh_1 = SetFilePointer(eax_8, 0xfffffe00, &distanceToMoveHigh, FILE_END)
+0041546a     
+00415489     if (distanceToMoveHigh_1 == 0xffffffff && GetLastError() != NO_ERROR)
+0041548b         uint32_t distanceToMoveHigh_4 = distanceToMoveHigh_1
+00415491         distanceToMoveHigh = distanceToMoveHigh_1
+00415489     else if (distanceToMoveHigh_1 == 0xffffffff && distanceToMoveHigh == 0)
+00415516         enum WIN32_ERROR var_168_5 = GetLastError()
+00415517         var_16c_2 = "Seek to metadata failed. Error=%d\n\n"
+0041551c         goto label_415a8b
+0041551c     
+004154c7     if (ReadFile(eax_8, &buffer, 0xac, &numberOfBytesRead, nullptr) == 0 || numberOfBytesRead == 0)
+00415a7e         enum WIN32_ERROR var_168_13 = GetLastError()
+00415a7f         var_16c_2 = "Read metadata failed. Error=%d\n\n"
+00415a7f         goto label_415a8b
+00415a7f     
+004154d9     int16_t var_cc
+004154d9     
+004154d9     if (0x7cef == var_cc)
+0041552f         int32_t var_c8
+0041552f         int32_t eax_18
+0041552f         int32_t edx_3
+0041552f         edx_3:eax_18 = sx.q(var_c8)
+00415535         int32_t eax_19 = eax_18 << 9
+0041553b         uint32_t eax_20
+0041553b         int32_t edx_5
+0041553b         eax_20, edx_5 =
+0041553b             sub_414de0(eax_19, FILE_BEGIN, eax_8, eax_19, edx_3 << 9 | eax_18 u>> 0xffffffe9)
+0041553b         
+0041554a         if (eax_20 != 0xffffffff || edx_5 != 0)
+00415570             uint32_t nNumberOfBytesToRead
+00415570             uint32_t nNumberOfBytesToRead_1 = nNumberOfBytesToRead
+00415576             uint8_t* lpBuffer = sub_42e817()
+00415584             uint32_t nNumberOfBytesToRead_2 = nNumberOfBytesToRead
+0041558a             int32_t* eax_22 = sub_42e817()
+0041558a             
+004155c3             if (ReadFile(eax_8, lpBuffer, nNumberOfBytesToRead, &numberOfBytesRead, nullptr) != 0
+004155c3                     && numberOfBytesRead != 0)
+004155ca                 CloseHandle(eax_8)
+004155e3                 sub_552500(eax_22, lpBuffer, numberOfBytesRead)
+004155f9                 sub_41e730(numberOfBytesRead)
+00415603                 sub_412110(arg1)
+0041560a                 int32_t distanceToMoveHigh_2 = sub_42e7e5(0x48)
+00415612                 distanceToMoveHigh = distanceToMoveHigh_2
+00415618                 var_8_1.b = 1
+0041561e                 struct TiXmlNode::TiXmlDocument::VTable** distanceToMoveHigh_3
+0041561e                 
+0041561e                 if (distanceToMoveHigh_2 == 0)
+00415631                     distanceToMoveHigh_3 = nullptr
+00415633                     int32_t var_e4_1 = 0
+0041561e                 else
+00415622                     struct TiXmlNode::TiXmlDocument::VTable** distanceToMoveHigh_5 =
+00415622                         sub_41d310(distanceToMoveHigh_2)
+00415627                     distanceToMoveHigh_3 = distanceToMoveHigh_5
+00415629                     struct TiXmlNode::TiXmlDocument::VTable** distanceToMoveHigh_6 =
+00415629                         distanceToMoveHigh_5
+00415629                 
+00415639                 var_8_1.b = 2
+0041564b                 void (* const vFunc_2)() __noreturn = (*distanceToMoveHigh_3)->vFunc_2
+0041564e                 distanceToMoveHigh = distanceToMoveHigh_3
+00415654                 vFunc_2(lpBuffer, 0, 0)
+00415654                 noreturn
+00415654             
+00415a41             enum WIN32_ERROR var_168_10 = GetLastError()
+00415a48             sub_54bd64(&arg1[0x1f0], "Read profile failed. Error=%d\n\n")
+00415a50             *arg1 = 1
+00415a53             *(arg1 + 4) = &arg1[0x1f0]
+00415a5c             j__free(lpBuffer)
+00415a6a             j__free(eax_22)
+0041554a         else
+00415559             enum WIN32_ERROR var_168_7 = GetLastError()
+00415560             sub_54bd64(&arg1[0x1f0], "Seek to profile failed. Error=%d\n\n")
+00415568             *(arg1 + 4) = &arg1[0x1f0]
+004154e2             *arg1 = 1
+004154d9     else
+004154db         *(arg1 + 4) = "The magic number of metadata does not match.\n"
+004154e2         *arg1 = 1
+004154e2     
+004154eb     CloseHandle(eax_8)
+004154f7     sub_402b80(&lpFileName_1)
+004153e9 else
+004153f1     enum WIN32_ERROR var_168_1 = GetLastError()
+004153fe     sub_54bd64(&arg1[0x1f0], "Can't open image file. Error=%d\n")
+00415409     *arg1 = 1
+0041540f     *(arg1 + 4) = &arg1[0x1f0]
+00415ab1 label_415ab1:
+00415ab1     int32_t var_8_2 = 0xffffffff
+00415ab7     int32_t ecx_9 = *(lpFileName - 4)
+00415ab7     *(lpFileName - 4) -= 1
+00415ab7     
+00415abe     if (ecx_9 - 1 s<= 0)
+00415ac5         (*(**(lpFileName - 0x10) + 4))(&lpFileName[-8])
+00415ac5 
+00415ac8 int32_t* result
+00415ac8 result.b = 0
+00415acd fsbase->NtTib.ExceptionList = ExceptionList
+00415add sub_54a573(eax_2 ^ &__saved_ebp)
+00415ae5 return result

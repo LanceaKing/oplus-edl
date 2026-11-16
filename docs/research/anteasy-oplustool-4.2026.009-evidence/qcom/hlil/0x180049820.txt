@@ -1,0 +1,429 @@
+180049820 int64_t rbp
+180049820 int64_t var_8 = rbp
+180049822 int64_t rbx
+180049822 int64_t var_10 = rbx
+180049823 int64_t rsi
+180049823 int64_t var_18 = rsi
+180049824 int64_t rdi
+180049824 int64_t var_20 = rdi
+180049825 int64_t r12
+180049825 int64_t var_28 = r12
+180049827 int64_t r14
+180049827 int64_t var_30 = r14
+180049829 int64_t r15
+180049829 int64_t var_38 = r15
+180049833 void var_258
+180049833 int128_t* rsp = &var_258
+180049841 int64_t rax_1 = __security_cookie ^ &var_258
+180049861 int128_t var_208
+180049861 __builtin_memset(&var_208, 0, 0x60)
+18004988b int128_t var_1a8[0x5]
+18004988b sub_18009a050(&var_1a8, 0, 0x140)
+180049893 int128_t var_68
+180049893 __builtin_memset(&var_68, 0, 0x19)
+1800498b5 int32_t rax_2
+1800498b5 int64_t rdx
+1800498b5 rax_2, rdx = sub_180064f00(4, 0, &var_208)
+1800498bc int64_t result
+1800498bc int64_t var_58
+1800498bc 
+1800498bc if (rax_2 == 0)
+180049908 label_180049908:
+18004990b     int64_t* rdi_2
+18004990b     
+18004990b     if (arg6 != 0)
+180049a6c         *arg6 = 0x20
+180049a6c         
+180049a84         if (arg4 == 0 || arg5 u< 0x20)
+180049e90             int64_t* rdi_17 = var_68.q
+180049e90             
+180049e9a             if (rdi_17 == 0)
+180049f48                 result = 2
+180049e9a             else
+180049ea0                 int64_t rbx_9 = var_68:8.q
+180049ea0                 
+180049eaa                 if (rdi_17 != rbx_9)
+180049f02                     do
+180049eb0                         int64_t rcx_29 = rdi_17[3]
+180049eb0                         
+180049eb8                         if (rcx_29 u> 0xf)
+180049eba                             void* rax_29 = *rdi_17
+180049ec8                             void* r8_10
+180049ec8                             
+180049ec8                             if (rcx_29 + 1 u< 0x1000)
+180049ee1                                 r8_10 = rax_29
+180049ec8                             else
+180049eca                                 r8_10 = *(rax_29 - 8)
+180049eca                                 
+180049ed9                                 if (rax_29 - r8_10 - 8 u> 0x1f)
+180049ed9                                     goto label_180049f3e_2
+180049ed9                             
+180049ee7                             j_sub_1800899c0(r8_10)
+180049ee7                         
+180049eec                         rdi_17[2] = 0
+180049ef0                         rdi_17[3] = 0xf
+180049ef8                         *rdi_17 = 0
+180049efb                         rdi_17 = &rdi_17[8]
+180049f02                     while (rdi_17 != rbx_9)
+180049f02                     
+180049f04                     rdi_17 = var_68.q
+180049f04                 
+180049f20                 if (((var_58 - rdi_17) & 0xffffffffffffffc0) u< 0x1000)
+180049f43                     j_sub_1800899c0(rdi_17)
+180049f48                     result = 2
+180049f20                 else
+180049f22                     int64_t* rcx_31 = rdi_17[-1]
+180049f22                     
+180049f31                     if (rdi_17 - rcx_31 - 8 u> 0x1f)
+180049f3e                     labelid_2:
+180049f3e                         trap(0xd)
+180049f3e                     
+180049f43                     j_sub_1800899c0(rcx_31)
+180049f48                     result = 2
+180049a84         else if (arg1 - 1 u> 4)
+180049a93             rdi_2 = var_68.q
+180049a93             
+180049a9d             if (rdi_2 == 0)
+180049e86                 result = 1
+180049a9d             else
+180049aa3                 int64_t rbx_4 = var_68:8.q
+180049aa3                 
+180049aad                 if (rdi_2 == rbx_4)
+180049aad                     goto label_180049e4d
+180049aad                 
+180049b09                 do
+180049ab3                     int64_t rcx_10 = rdi_2[3]
+180049ab3                     
+180049abb                     if (rcx_10 u> 0xf)
+180049abd                         void* rax_13 = *rdi_2
+180049acb                         void* r8_4
+180049acb                         
+180049acb                         if (rcx_10 + 1 u< 0x1000)
+180049ae8                             r8_4 = rax_13
+180049acb                         else
+180049acd                             r8_4 = *(rax_13 - 8)
+180049acd                             
+180049adc                             if (rax_13 - r8_4 - 8 u> 0x1f)
+180049adc                                 goto label_180049f3e_2
+180049adc                         
+180049aee                         j_sub_1800899c0(r8_4)
+180049aee                     
+180049af3                     rdi_2[2] = 0
+180049af7                     rdi_2[3] = 0xf
+180049aff                     *rdi_2 = 0
+180049b02                     rdi_2 = &rdi_2[8]
+180049b09                 while (rdi_2 != rbx_4)
+180049b09                 
+180049e38             label_180049e38:
+180049e38                 rdi_2 = var_68.q
+180049e4d             label_180049e4d:
+180049e4d                 
+180049e54                 if (((var_58 - rdi_2) & 0xffffffffffffffc0) u< 0x1000)
+180049e81                     j_sub_1800899c0(rdi_2)
+180049e86                     result = 1
+180049e54                 else
+180049e56                     int64_t rcx_27 = rdi_2[-1]
+180049e56                     
+180049e65                     if (rdi_2 - rcx_27 - 8 u> 0x1f)
+180049f3e                     labelid_2:
+180049f3e                         trap(0xd)
+180049f3e                     
+180049e6f                     j_sub_1800899c0(rcx_27)
+180049e74                     result = 1
+180049a91         else
+180049b13             int64_t* rdi_8
+180049b13             
+180049b13             if (arg2 == 0)
+180049b1c                 if (arg3 != 0)
+180049b1c                     goto label_180049dbd
+180049b1c                 
+180049b25                 *(rsp + 0x28) = *arg4
+180049b2e                 *(rsp + 0x38) = arg4[1]
+180049b3b                 sub_18000ef80(arg1, rsp + 0x28)
+180049b4c                 __builtin_memset(rsp + 0x28, 0, 0x20)
+180049b54                 __builtin_memset(arg4, 0, *arg6)
+180049b56                 rdi_8 = var_68.q
+180049b56                 
+180049b60                 if (rdi_8 != 0)
+180049b66                     int64_t rbx_5 = var_68:8.q
+180049b66                     
+180049b70                     if (rdi_8 == rbx_5)
+180049b70                         goto label_180049bdf
+180049b70                     
+180049bc8                     do
+180049b72                         int64_t rcx_14 = rdi_8[3]
+180049b72                         
+180049b7a                         if (rcx_14 u> 0xf)
+180049b7c                             void* rax_16 = *rdi_8
+180049b8a                             void* r8_5
+180049b8a                             
+180049b8a                             if (rcx_14 + 1 u< 0x1000)
+180049ba7                                 r8_5 = rax_16
+180049b8a                             else
+180049b8c                                 r8_5 = *(rax_16 - 8)
+180049b8c                                 
+180049b9b                                 if (rax_16 - r8_5 - 8 u> 0x1f)
+180049b9b                                     goto label_180049f3e_2
+180049b9b                             
+180049bad                             j_sub_1800899c0(r8_5)
+180049bad                         
+180049bb2                         rdi_8[2] = 0
+180049bb6                         rdi_8[3] = 0xf
+180049bbe                         *rdi_8 = 0
+180049bc1                         rdi_8 = &rdi_8[8]
+180049bc8                     while (rdi_8 != rbx_5)
+180049bc8                     
+180049bc8                     goto label_180049bca
+180049bc8                 
+180049c15                 result = 0
+180049b13             else if (arg3 == 0)
+180049dbd             label_180049dbd:
+180049dbd                 rdi_2 = var_68.q
+180049dbd                 
+180049dc7                 if (rdi_2 != 0)
+180049dcd                     int64_t rbx_8 = var_68:8.q
+180049dcd                     
+180049dd7                     if (rdi_2 == rbx_8)
+180049dd7                         goto label_180049e4d
+180049dd7                     
+180049e36                     do
+180049de0                         int64_t rcx_25 = rdi_2[3]
+180049de0                         
+180049de8                         if (rcx_25 u> 0xf)
+180049dea                             void* rax_26 = *rdi_2
+180049df8                             void* r8_9
+180049df8                             
+180049df8                             if (rcx_25 + 1 u< 0x1000)
+180049e15                                 r8_9 = rax_26
+180049df8                             else
+180049dfa                                 r8_9 = *(rax_26 - 8)
+180049dfa                                 
+180049e09                                 if (rax_26 - r8_9 - 8 u> 0x1f)
+180049e09                                     goto label_180049f3e_2
+180049e09                             
+180049e1b                             j_sub_1800899c0(r8_9)
+180049e1b                         
+180049e20                         rdi_2[2] = 0
+180049e24                         rdi_2[3] = 0xf
+180049e2c                         *rdi_2 = 0
+180049e2f                         rdi_2 = &rdi_2[8]
+180049e36                     while (rdi_2 != rbx_8)
+180049e36                     
+180049e36                     goto label_180049e38
+180049e36                 
+180049e86                 result = 1
+180049c1f             else
+180049c28                 __builtin_memset(rsp + 0x28, 0, 0x20)
+180049c28                 
+180049c47                 if (sub_18000e990(arg1, arg2, arg3, rsp + 0x28) != 0)
+180049d25                     *arg4 = *(rsp + 0x28)
+180049d2d                     arg4[1] = *(rsp + 0x38)
+180049d3d                     __builtin_memset(rsp + 0x28, 0, 0x20)
+180049d3f                     rdi_8 = var_68.q
+180049d3f                     
+180049d49                     if (rdi_8 == 0)
+180049c15                         result = 0
+180049d49                     else
+180049d4f                         int64_t rbx_7 = var_68:8.q
+180049d4f                         
+180049d59                         if (rdi_8 == rbx_7)
+180049d59                             goto label_180049bdf
+180049d59                         
+180049db6                         do
+180049d60                             int64_t rcx_23 = rdi_8[3]
+180049d60                             
+180049d68                             if (rcx_23 u> 0xf)
+180049d6a                                 void* rax_23 = *rdi_8
+180049d78                                 void* r8_8
+180049d78                                 
+180049d78                                 if (rcx_23 + 1 u< 0x1000)
+180049d95                                     r8_8 = rax_23
+180049d78                                 else
+180049d7a                                     r8_8 = *(rax_23 - 8)
+180049d7a                                     
+180049d89                                     if (rax_23 - r8_8 - 8 u> 0x1f)
+180049d89                                         goto label_180049f3e_2
+180049d89                                 
+180049d9b                                 j_sub_1800899c0(r8_8)
+180049d9b                             
+180049da0                             rdi_8[2] = 0
+180049da4                             rdi_8[3] = 0xf
+180049dac                             *rdi_8 = 0
+180049daf                             rdi_8 = &rdi_8[8]
+180049db6                         while (rdi_8 != rbx_7)
+180049db6                         
+180049bca                     label_180049bca:
+180049bca                         rdi_8 = var_68.q
+180049bdf                     label_180049bdf:
+180049bdf                         
+180049be6                         if (((var_58 - rdi_8) & 0xffffffffffffffc0) u< 0x1000)
+180049c10                             j_sub_1800899c0(rdi_8)
+180049c15                             result = 0
+180049be6                         else
+180049be8                             int64_t rcx_16 = rdi_8[-1]
+180049be8                             
+180049bf7                             if (rdi_8 - rcx_16 - 8 u> 0x1f)
+180049f3e                             label_180049f3e:
+180049f3e                                 trap(0xd)
+180049f3e                             
+180049c01                             j_sub_1800899c0(rcx_16)
+180049c06                             result = 0
+180049c47                 else
+180049c4d                     int64_t* rdi_11 = var_68.q
+180049c4d                     
+180049c57                     if (rdi_11 == 0)
+180049d16                         result = 6
+180049c57                     else
+180049c5d                         int64_t rbx_6 = var_68:8.q
+180049c5d                         
+180049c67                         if (rdi_11 != rbx_6)
+180049cc6                             do
+180049c70                                 int64_t rcx_19 = rdi_11[3]
+180049c70                                 
+180049c78                                 if (rcx_19 u> 0xf)
+180049c7a                                     void* rax_20 = *rdi_11
+180049c88                                     void* r8_7
+180049c88                                     
+180049c88                                     if (rcx_19 + 1 u< 0x1000)
+180049ca5                                         r8_7 = rax_20
+180049c88                                     else
+180049c8a                                         r8_7 = *(rax_20 - 8)
+180049c8a                                         
+180049c99                                         if (rax_20 - r8_7 - 8 u> 0x1f)
+180049c99                                             goto label_180049f3e_2
+180049c99                                     
+180049cab                                     j_sub_1800899c0(r8_7)
+180049cab                                 
+180049cb0                                 rdi_11[2] = 0
+180049cb4                                 rdi_11[3] = 0xf
+180049cbc                                 *rdi_11 = 0
+180049cbf                                 rdi_11 = &rdi_11[8]
+180049cc6                             while (rdi_11 != rbx_6)
+180049cc6                             
+180049cc8                             rdi_11 = var_68.q
+180049cc8                         
+180049ce4                         if (((var_58 - rdi_11) & 0xffffffffffffffc0) u< 0x1000)
+180049d11                             j_sub_1800899c0(rdi_11)
+180049d16                             result = 6
+180049ce4                         else
+180049ce6                             int64_t rcx_21 = rdi_11[-1]
+180049ce6                             
+180049cf5                             if (rdi_11 - rcx_21 - 8 u> 0x1f)
+180049f3e                             label_180049f3e_1:
+180049f3e                                 trap(0xd)
+180049f3e                             
+180049cff                             j_sub_1800899c0(rcx_21)
+180049d04                             result = 6
+18004990b     else
+180049911         rdi_2 = var_68.q
+180049911         
+18004991b         if (rdi_2 != 0)
+180049921             int64_t rbx_2 = var_68:8.q
+180049921             
+18004992b             if (rdi_2 == rbx_2)
+18004992b                 goto label_180049e4d
+18004992b             
+180049a61             do
+180049931                 int64_t rcx_4 = rdi_2[3]
+180049931                 
+180049939                 if (rcx_4 u> 0xf)
+18004993f                     void* rax_6 = *rdi_2
+18004994d                     void* r8_2
+18004994d                     
+18004994d                     if (rcx_4 + 1 u< 0x1000)
+180049a40                         r8_2 = rax_6
+18004994d                     else
+180049953                         r8_2 = *(rax_6 - 8)
+180049953                         
+180049962                         if (rax_6 - r8_2 - 8 u> 0x1f)
+180049962                             goto label_180049f3e_2
+180049962                     
+180049a46                     j_sub_1800899c0(r8_2)
+180049a46                 
+180049a4b                 rdi_2[2] = 0
+180049a4f                 rdi_2[3] = 0xf
+180049a57                 *rdi_2 = 0
+180049a5a                 rdi_2 = &rdi_2[8]
+180049a61             while (rdi_2 != rbx_2)
+180049a61             
+180049a61             goto label_180049e38
+180049a61         
+180049e86         result = 1
+1800498bc else
+1800498c6     char* rax_3
+1800498c6     int64_t r8_1
+1800498c6     int64_t r9
+1800498c6     rax_3, r8_1, r9 = sub_180676665(u"MySwm.dll", rdx, arg4, arg3, 0)
+1800498c6     
+1800498ce     if (rax_3 != 0)
+1800498df         void var_158
+1800498df         int64_t rax_4 = sub_1807cc157(rax_3, "oplus_swm_get_host_integrity_policy_v1", r8_1, r9, 
+1800498df             &var_158, 0, arg1)
+1800498df         int128_t var_1c8
+1800498df         rsp = &var_1c8
+1800498df         
+1800498e7         if (rax_4 == 0)
+1800498e7             goto label_180049971
+1800498e7         
+1800498ed         __builtin_memset(&var_1a8, 0, 4)
+1800498ed         
+180049906         if (rax_4(&var_1a8) != 0 || var_1a8[0].d != 2)
+1800498ff             goto label_180049971
+1800498ff         
+1800498ff         goto label_180049908
+1800498ff     
+180049971 label_180049971:
+180049971     int64_t* rdi_3 = var_68.q
+180049971     
+18004997b     if (rdi_3 == 0)
+180049a36         result = 0x2c
+18004997b     else
+180049981         int64_t rbx_3 = var_68:8.q
+180049981         
+18004998b         if (rdi_3 != rbx_3)
+1800499e6             do
+180049990                 int64_t rcx_5 = rdi_3[3]
+180049990                 
+180049998                 if (rcx_5 u> 0xf)
+18004999a                     void* rax_9 = *rdi_3
+1800499a8                     void* r8_3
+1800499a8                     
+1800499a8                     if (rcx_5 + 1 u< 0x1000)
+1800499c5                         r8_3 = rax_9
+1800499a8                     else
+1800499aa                         r8_3 = *(rax_9 - 8)
+1800499aa                         
+1800499b9                         if (rax_9 - r8_3 - 8 u> 0x1f)
+1800499b9                             goto label_180049f3e_2
+1800499b9                     
+1800499cb                     j_sub_1800899c0(r8_3)
+1800499cb                 
+1800499d0                 rdi_3[2] = 0
+1800499d4                 rdi_3[3] = 0xf
+1800499dc                 *rdi_3 = 0
+1800499df                 rdi_3 = &rdi_3[8]
+1800499e6             while (rdi_3 != rbx_3)
+1800499e6             
+1800499e8             rdi_3 = var_68.q
+1800499e8         
+180049a04         if (((var_58 - rdi_3) & 0xffffffffffffffc0) u< 0x1000)
+180049a31             j_sub_1800899c0(rdi_3)
+180049a36             result = 0x2c
+180049a04         else
+180049a06             int64_t rcx_7 = rdi_3[-1]
+180049a06             
+180049a15             if (rdi_3 - rcx_7 - 8 u> 0x1f)
+180049f3e             label_180049f3e_2:
+180049f3e                 trap(0xd)
+180049f3e             
+180049a1f             j_sub_1800899c0(rcx_7)
+180049a24             result = 0x2c
+180049f57 __security_check_cookie(rax_1 ^ rsp)
+180049f63 rsp[0x22].q
+180049f65 *(rsp + 0x228)
+180049f67 rsp[0x23].q
+180049f69 *(rsp + 0x238)
+180049f6a rsp[0x24].q
+180049f6b *(rsp + 0x248)
+180049f6c rsp[0x25].q
+180049f6d return result

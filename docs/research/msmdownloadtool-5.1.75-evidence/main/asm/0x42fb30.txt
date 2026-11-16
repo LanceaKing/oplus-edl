@@ -1,0 +1,23 @@
+0042fb30 push    ebp
+0042fb31 mov     ebp, esp
+0042fb33 push    ebx
+0042fb34 push    edi
+0042fb35 push    dword [ebp+0x10]
+0042fb38 mov     edi, dword [ebp+0x8]
+0042fb3b push    dword [ebp+0xc]
+0042fb3e push    edi
+0042fb3f call    0x56f5d9
+0042fb44 mov     ecx, dword [ebp+0xc]
+0042fb47 mov     ebx, eax
+0042fb49 call    0x5735ba
+0042fb4e cmp     eax, 0x420
+0042fb53 jne     0x42fb61
+0042fb61 pop     edi
+0042fb62 mov     eax, ebx
+0042fb64 pop     ebx
+0042fb65 pop     ebp
+0042fb66 retn    0xc
+0042fb55 mov     edx, dword [edi]
+0042fb57 mov     ecx, edi
+0042fb59 push    0xff
+0042fb5e call    dword [edx+0x30]

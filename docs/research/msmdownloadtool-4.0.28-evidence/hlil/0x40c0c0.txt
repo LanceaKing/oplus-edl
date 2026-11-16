@@ -1,0 +1,49 @@
+0040c0c3 int32_t var_8 = 0xffffffff
+0040c0c5 int32_t (* var_c)(void* arg1) = sub_5707ac
+0040c0d0 TEB* fsbase
+0040c0d0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040c0de int32_t __saved_ebp
+0040c0de int32_t var_28 = __security_cookie ^ &__saved_ebp
+0040c0e2 fsbase->NtTib.ExceptionList = &ExceptionList
+0040c0ea struct CCmdTarget::CWnd::VTable** var_14 = arg1
+0040c0f1 sub_438a09(arg1, 0x66, 0)
+0040c0fc int32_t var_8_1 = 0
+0040c105 *arg1 = &CMsmDownloadToolDlg::`vftable'{for `CDialogEx'}
+0040c10b sub_404a80(&arg1[0x33])
+0040c11c var_8_1.b = 1
+0040c120 sub_43d779(&arg1[0x60], 0, nullptr, nullptr)
+0040c125 arg1[0x164] = &CMenu::`vftable'{for `CObject'}
+0040c12f arg1[0x165] = 0
+0040c140 var_8_1.b = 3
+0040c144 sub_403bf0(&arg1[0x166], &arg1[0x33])
+0040c14f var_8_1.b = 4
+0040c153 sub_430698(&arg1[0x177])
+0040c158 arg1[0x177] = &CComboBox::`vftable'{for `CWnd'}
+0040c168 var_8_1.b = 5
+0040c16c sub_430698(&arg1[0x194])
+0040c171 arg1[0x194] = &CComboBox::`vftable'{for `CWnd'}
+0040c17b arg1[0x1b2] = 0
+0040c185 arg1[0x1b1] = &CBrush::`vftable'{for `CGdiObject'}
+0040c18f arg1[0x1b4] = 0
+0040c199 arg1[0x1b3] = &CBrush::`vftable'{for `CGdiObject'}
+0040c1a9 var_8_1.b = 8
+0040c1ad sub_430698(&arg1[0x1b5])
+0040c1b2 arg1[0x1b5] = &CEdit::`vftable'{for `CWnd'}
+0040c1c2 var_8_1.b = 9
+0040c1cf struct CDialogEx::ComportSetting::VTable** var_18 = &arg1[0x1d2]
+0040c1d2 sub_438a09(&arg1[0x1d2], 0x93, 0)
+0040c1d7 var_8_1.b = 0xa
+0040c1e1 arg1[0x1d2] = &ComportSetting::`vftable'{for `CDialogEx'}
+0040c1e7 sub_430698(&arg1[0x201])
+0040c1ec arg1[0x201] = &CListCtrl::`vftable'{for `CWnd'}
+0040c1f6 arg1[0x21e] = 0
+0040c200 arg1[0x21f] = 0
+0040c20a arg1[0x220] = 0
+0040c214 var_8_1.b = 0xb
+0040c218 arg1[0x2f] = 0
+0040c222 arg1[0x5f] = 0
+0040c22c arg1[0x62] = 0
+0040c236 sub_438917()
+0040c24f arg1[0x221] = LoadIconW(*(sub_438917() + 0xc), 0x80)
+0040c25a fsbase->NtTib.ExceptionList = ExceptionList
+0040c268 return arg1

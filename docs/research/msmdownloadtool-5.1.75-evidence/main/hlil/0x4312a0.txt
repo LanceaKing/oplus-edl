@@ -1,0 +1,586 @@
+004312a0 int32_t ebp
+004312a0 int32_t var_4 = ebp
+004312a6 int32_t var_c = 0xffffffff
+004312a8 int32_t (* var_10)(void* arg1) = sub_6ce994
+004312b3 TEB* fsbase
+004312b3 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004312bf void var_10c
+004312bf int32_t eax_2 = __security_cookie ^ &var_10c
+004312c8 int32_t __saved_ebx_1
+004312c8 int32_t __saved_ebx = __saved_ebx_1
+004312c9 int32_t __saved_esi_1
+004312c9 int32_t __saved_esi = __saved_esi_1
+004312ca void* edi
+004312ca void* var_118 = edi
+004312da fsbase->NtTib.ExceptionList = &ExceptionList
+00431308 void* var_fc = (*(data_7bfb90 + 0xc))(__security_cookie ^ &var_118) + 0x10
+0043130c int32_t var_c_1 = 0
+0043133d void* var_f4 = (*(data_7bfb90 + 0xc))() + 0x10
+00431341 var_c_1.b = 1
+0043136f void* var_f0 = (*(data_7bfb90 + 0xc))() + 0x10
+00431373 var_c_1.b = 2
+004313a1 void* var_ec = (*(data_7bfb90 + 0xc))() + 0x10
+004313a5 var_c_1.b = 3
+004313d3 void* var_e8 = (*(data_7bfb90 + 0xc))() + 0x10
+004313d7 var_c_1.b = 4
+004313df int32_t eax_20 = *(arg1 + 0x130)
+004313e8 int32_t* var_128
+004313e8 int32_t* var_124
+004313e8 int32_t* var_120
+004313e8 void* const var_108
+004313e8 
+004313e8 if (eax_20 == 0)
+00431512     int32_t* edx_3 = data_7c23f4
+0043151a     int32_t* ecx_16
+0043151a     
+0043151a     if (edx_3 != 0)
+00431520         int32_t* ecx_17 = edx_3
+00431522         void* esi_2 = ecx_17 + 2
+0043152e         int32_t eax_21
+0043152e         
+0043152e         do
+00431525             eax_21.w = *ecx_17
+00431528             ecx_17 += 2
+0043152e         while (eax_21.w != 0)
+00431532         ecx_16 = (ecx_17 - esi_2) s>> 1
+0043151a     else
+0043151c         ecx_16 = nullptr
+0043151c     
+00431534     var_120 = ecx_16
+00431535     var_124 = edx_3
+0043153a     sub_41a940(&var_fc, var_124, var_120)
+0043153f     int32_t* edx_4 = data_7c23fc
+00431547     int32_t* ecx_20
+00431547     
+00431547     if (edx_4 != 0)
+0043154d         int32_t* ecx_21 = edx_4
+0043154f         void* esi_3 = ecx_21 + 2
+0043155b         int16_t i
+0043155b         
+0043155b         do
+00431552             i = *ecx_21
+00431555             ecx_21 += 2
+0043155b         while (i != 0)
+0043155f         ecx_20 = (ecx_21 - esi_3) s>> 1
+00431547     else
+00431549         ecx_20 = nullptr
+00431549     
+00431561     var_120 = ecx_20
+00431562     var_124 = edx_4
+00431567     sub_41a940(&var_f0, var_124, var_120)
+0043156c     var_120 = data_7c23f8
+00431576     var_124 = u"/%s/service/"
+0043157b     var_128 = &var_f4
+0043157c     sub_414410(var_128, var_124)
+00431586     var_108 = data_7c2404
+004313e8 else if (eax_20 == 1)
+00431474     int32_t* edx_1 = *(*(arg1 + 0x134) * 0x14 + &data_7c23e0)
+0043147d     int32_t* ecx_8
+0043147d     
+0043147d     if (edx_1 != 0)
+00431483         int32_t* ecx_9 = edx_1
+00431485         void* esi = ecx_9 + 2
+00431499         int32_t eax_25
+00431499         
+00431499         do
+00431490             eax_25.w = *ecx_9
+00431493             ecx_9 += 2
+00431499         while (eax_25.w != 0)
+0043149d         ecx_8 = (ecx_9 - esi) s>> 1
+0043147d     else
+0043147f         ecx_8 = nullptr
+0043147f     
+0043149f     var_120 = ecx_8
+004314a0     var_124 = edx_1
+004314a5     sub_41a940(&var_fc, var_124, var_120)
+004314b3     int32_t* edx_2 = *(*(arg1 + 0x134) * 0x14 + &data_7c23e8)
+004314bc     int32_t* ecx_12
+004314bc     
+004314bc     if (edx_2 != 0)
+004314c2         int32_t* ecx_13 = edx_2
+004314c4         void* esi_1 = ecx_13 + 2
+004314d0         int32_t eax_27
+004314d0         
+004314d0         do
+004314c7             eax_27.w = *ecx_13
+004314ca             ecx_13 += 2
+004314d0         while (eax_27.w != 0)
+004314d4         ecx_12 = (ecx_13 - esi_1) s>> 1
+004314bc     else
+004314be         ecx_12 = nullptr
+004314be     
+004314d6     var_120 = ecx_12
+004314d7     var_124 = edx_2
+004314dc     sub_41a940(&var_f0, var_124, var_120)
+004314ea     var_120 = *(*(arg1 + 0x134) * 0x14 + &data_7c23e4)
+004314f5     var_124 = u"/%s/service/"
+004314fa     var_128 = &var_f4
+004314fb     sub_414410(var_128, var_124)
+00431586     var_108 = *(*(arg1 + 0x134) * 0x14 + &data_7c23f0)
+004313ef else
+004313f7     var_120 = &var_fc
+004313f8     var_124 = 0x42a
+004313fd     sub_56eccf(arg1, var_124, var_120)
+00431402     var_120 = 0x444
+00431409     void* eax_23 = sub_573723(arg1, edi, var_120)
+0043140e     int32_t* ecx_7 = &var_f0
+00431412     var_120 = 7
+00431412     
+00431417     if (eax_23 != 1)
+00431440         var_124 = u"CAASY01"
+00431445         var_108 = nullptr
+0043144d         sub_41a940(ecx_7, var_124, var_120)
+00431452         var_120 = u"asymes"
+0043145b         var_124 = u"/%s/service/"
+00431460         var_128 = &var_f4
+00431461         sub_414410(var_128, var_124)
+00431417     else
+00431419         var_124 = u"CASMT01"
+0043141e         var_108 = eax_23
+00431422         sub_41a940(ecx_7, var_124, var_120)
+00431427         var_120 = u"mesplus"
+00431430         var_124 = u"/%s/service/"
+00431435         var_128 = &var_f4
+00431436         sub_414410(var_128, var_124)
+00431436 
+00431591 int32_t* eax_34 = var_f4 - 0x10
+00431598 var_120 = eax_34
+0043159e void* eax_36 = &sub_41a8a0(var_120)[4]
+004315a1 void* var_f8 = eax_36
+004315a8 var_c_1.b = 5
+004315b2 int32_t* var_100 = eax_36 - 0x10
+004315b6 var_124 = eax_36 - 0x10
+004315c2 var_120 = &sub_41a8a0(var_124)[4]
+004315c4 var_124 = nullptr
+004315c6 CMESAPI::SetServiceConfig(var_124, var_120)
+004315cf var_c_1.b = 4
+004315df int32_t eax_39 = *(eax_36 - 4)
+004315df *(eax_36 - 4) -= 1
+004315df 
+004315e6 if (eax_39 - 1 s<= 0)
+004315e8     int32_t* edx_5 = var_100
+004315ec     var_120 = edx_5
+004315f1     (*(**edx_5 + 4))(var_120)
+004315f1 
+004315fa var_120 = &var_ec
+004315fb var_124 = 0x42c
+00431600 sub_56eccf(arg1, var_124, var_120)
+0043160b var_120 = &var_e8
+0043160c var_124 = 0x42d
+00431611 int32_t* ecx_28 = sub_56eccf(arg1, var_124, var_120)
+00431616 void* eax_42 = var_e8
+0043161a var_120 = ecx_28
+0043161e var_100 = &var_120
+00431624 var_124 = eax_42 - 0x10
+0043162d var_120 = &sub_41a8a0(var_124)[4]
+0043162f var_c_1.b = 6
+00431640 int32_t** var_dc = &var_124
+00431644 var_128 = var_ec - 0x10
+0043164d var_124 = &sub_41a8a0(var_128)[4]
+0043164f var_c_1.b = 7
+0043165d int32_t* eax_51 = var_f0 - 0x10
+00431660 int32_t** var_e0 = &var_128
+00431671 var_128 = &sub_41a8a0(eax_51)[4]
+00431673 var_c_1.b = 8
+00431685 int32_t* eax_56
+00431685 void* ecx_29
+00431685 eax_56, ecx_29 = sub_41a8a0(var_fc - 0x10)
+00431690 void* var_12c_1 = &eax_56[4]
+00431692 var_c_1.b = 4
+0043169a int32_t eax_58
+0043169a int32_t* ecx_30
+0043169a eax_58, ecx_30 = sub_433110(ecx_29)
+004316a4 void* eax_59 = data_7dfdb4
+004316a9 var_120 = ecx_30
+004316ac char var_d8
+004316ac int32_t var_c4
+004316ac char var_c0
+004316ac int32_t var_ac
+004316ac char var_a8
+004316ac int32_t var_94
+004316ac char var_90
+004316ac int32_t var_80
+004316ac int32_t var_7c
+004316ac char var_78
+004316ac int32_t var_64
+004316ac 
+004316ac if (eax_58 == 0)
+00431f99     var_124 = eax_59 - 0x10
+00431fb1     var_120 = &sub_41a8a0(var_124)[4]
+00431fb3     void** eax_126
+00431fb3     int32_t* ecx_59
+00431fb3     eax_126, ecx_59 = PSGSI1::Close(var_120)
+00431fbb     var_c_1.b = 0x18
+00431fbb     
+00431fc7     if (eax_126[5] u>= 0x10)
+00431fc9         eax_126 = *eax_126
+00431fc9     
+00431fcf     var_120 = eax_126
+00431fd0     var_124 = ecx_59
+00431fd3     var_128 = eax_51
+00431feb     var_124 = &sub_41a8a0(var_128)[4]
+00431fed     void** eax_129
+00431fed     int32_t* ecx_60
+00431fed     eax_129, ecx_60 = PSGSI1::Close(var_124)
+00431ff5     var_c_1.b = 0x19
+00431ff5     
+00432001     if (eax_129[5] u>= 0x10)
+00432003         eax_129 = *eax_129
+00432003     
+00432005     var_124 = eax_129
+00432006     void* eax_130 = var_fc
+0043200a     var_128 = ecx_60
+00432025     var_128 = &sub_41a8a0(eax_130 - 0x10)[4]
+00432027     void** eax_134
+00432027     int32_t ecx_61
+00432027     eax_134, ecx_61 = PSGSI1::Close(var_128)
+0043202f     var_c_1.b = 0x1a
+0043202f     
+0043203b     if (eax_134[5] u>= 0x10)
+0043203d         eax_134 = *eax_134
+0043203d     
+0043203f     var_128 = eax_134
+00432045     int32_t var_12c_9 = ecx_61
+00432065     void** eax_139
+00432065     int32_t ecx_62
+00432065     eax_139, ecx_62 = PSGSI1::Close(&sub_41a8a0(data_7dfdc8 - 0x10)[4])
+0043206d     var_c_1.b = 0x1b
+0043206d     
+00432079     if (eax_139[5] u>= 0x10)
+0043207b         eax_139 = *eax_139
+0043207b     
+0043207d     void** var_12c_11 = eax_139
+00432083     int32_t var_130_8 = ecx_62
+004320a0     void** eax_144 = PSGSI1::Close(&sub_41a8a0(data_7dfdc4 - 0x10)[4])
+004320a8     var_c_1.b = 0x1c
+004320a8     
+004320b4     if (eax_144[5] u>= 0x10)
+004320b6         eax_144 = *eax_144
+004320b6     
+004320b8     void** var_130_10 = eax_144
+004320b9     char const* const var_134_5 =
+004320b9         "[Login_Mes] MES_Login failed:\n IP(%s)\n MAC(%s)\n URL(%s)\n FACTORY(%s)\n MESSAGE(%s)\n"
+004320be     int32_t var_138_3 = 4
+004320c5     int32_t* ebp_3 = sub_4d6270(&data_7e09e8)
+004320c5     
+004320d2     if (var_ac u>= 0x10)
+004320d4         var_120 = var_c0.d
+004320d8         ebp_3 = j_sub_688543(var_120)
+004320d8     
+004320e8     int32_t var_ac_2 = 0xf
+004320f0     int32_t var_b0_1 = 0
+004320f8     char var_c0_2 = 0
+004320f8     
+004320fd     if (var_94 u>= 0x10)
+004320ff         var_120 = var_a8.d
+00432103         ebp_3 = j_sub_688543(var_120)
+00432103     
+00432110     int32_t var_94_2 = 0xf
+0043211b     int32_t var_98_1 = 0
+00432126     char var_a8_2 = 0
+00432126     
+0043212b     if (var_c4 u>= 0x10)
+0043212d         var_120 = var_d8.d
+00432131         ebp_3 = j_sub_688543(var_120)
+00432131     
+00432141     int32_t var_c4_2 = 0xf
+00432149     int32_t var_c8_1 = 0
+00432151     char var_d8_2 = 0
+00432151     
+00432156     if (var_64 u>= 0x10)
+00432158         var_120 = var_78.d
+0043215f         ebp_3 = j_sub_688543(var_120)
+0043215f     
+00432167     var_c_1.b = 4
+00432177     int32_t var_64_2 = 0xf
+00432182     int32_t var_68_1 = 0
+0043218d     char var_78_2 = 0
+0043218d     
+00432195     if (var_7c u>= 0x10)
+00432197         var_120 = var_90.d
+0043219e         ebp_3 = j_sub_688543(var_120)
+0043219e     
+004321a6     int32_t var_7c_1 = 0xf
+004321b1     var_80 = 0
+004321bc     char var_90_1 = 0
+004321ea     var_100 = (*(data_7bfb90 + 0xc))() + 0x10
+004321ee     var_c_1.b = 0x1d
+004321fa     var_120 = data_7dfdb4
+00432200     var_124 = u"MES login failed, please check MES setting,user name and password!: %s\n"
+00432205     var_128 = &var_100
+00432206     sub_414410(var_128, var_124)
+0043220b     int32_t* esi_10 = var_100
+00432212     var_120 = nullptr
+00432214     var_124 = nullptr
+00432216     var_128 = esi_10
+00432217     sub_574c2e(var_128, var_124, var_120)
+0043221f     var_c_1.b = 4
+0043222c     int32_t ecx_64 = esi_10[-1]
+0043222c     esi_10[-1] -= 1
+0043222c     
+00432233     if (ecx_64 - 1 s<= 0)
+00432239         int32_t* ecx_66 = esi_10[-4]
+0043223b         var_120 = &esi_10[-4]
+0043223e         (*(*ecx_66 + 4))(var_120)
+0043223e     
+00431ec2     var_c_1.b = 3
+00431ed0     int32_t* edx_14 = var_e8 - 0x10
+00431ed6     int32_t ecx_43 = edx_14[3]
+00431ed6     edx_14[3] -= 1
+00431ed6     
+00431edd     if (ecx_43 - 1 s<= 0)
+00431edf         int32_t* ecx_45 = *edx_14
+00431ee1         var_120 = edx_14
+00431ee4         (*(*ecx_45 + 4))(var_120)
+00431ee4     
+00431ee7     var_c_1.b = 2
+00431ef5     int32_t* edx_16 = var_ec - 0x10
+00431efb     int32_t ecx_46 = edx_16[3]
+00431efb     edx_16[3] -= 1
+00431efb     
+00431f02     if (ecx_46 - 1 s<= 0)
+00431f04         int32_t* ecx_48 = *edx_16
+00431f06         var_120 = edx_16
+00431f09         (*(*ecx_48 + 4))(var_120)
+00431f09     
+00431f0c     var_c_1.b = 1
+00431f19     int32_t ecx_49 = eax_51[3]
+00431f19     eax_51[3] -= 1
+00431f19     
+00431f20     if (ecx_49 - 1 s<= 0)
+00431f22         int32_t* ecx_51 = *eax_51
+00431f24         var_120 = eax_51
+00431f27         (*(*ecx_51 + 4))(var_120)
+00431f27     
+00431f30     var_c_1.b = 0
+00431f3b     int32_t ecx_52 = eax_34[3]
+00431f3b     eax_34[3] -= 1
+00431f3b     
+00431f42     if (ecx_52 - 1 s<= 0)
+00431f44         int32_t* ecx_54 = *eax_34
+00431f46         var_120 = eax_34
+00431f49         (*(*ecx_54 + 4))(var_120)
+00431f49     
+00431f4c     int32_t var_c_2 = 0xffffffff
+00431f5b     int32_t* edx_19 = var_fc - 0x10
+00431f5e     int32_t* result = &edx_19[3]
+00431f61     int32_t edi_3 = *result
+00431f61     *result -= 1
+00431f61     
+00431f68     if (edi_3 - 1 s<= 0)
+00431f6a         int32_t* ecx_55 = *edx_19
+00431f6c         var_120 = edx_19
+00431f6f         result = (*(*ecx_55 + 4))(var_120)
+00431f6f     
+00431f79     fsbase->NtTib.ExceptionList = ExceptionList
+00431f8d     sub_687de2(eax_2 ^ &var_10c)
+00431f94     *ebp_3
+00431f95     return result
+00431f95 
+004316b5 var_124 = eax_59 - 0x10
+004316cd var_120 = &sub_41a8a0(var_124)[4]
+004316cf void** eax_63
+004316cf int32_t* ecx_31
+004316cf eax_63, ecx_31 = PSGSI1::Close(var_120)
+004316d7 var_c_1.b = 9
+004316d7 
+004316e3 if (eax_63[5] u>= 0x10)
+004316e5     eax_63 = *eax_63
+004316e5 
+004316e7 var_120 = eax_63
+004316e8 void* eax_64 = data_7dfdb8
+004316ed var_124 = ecx_31
+004316f3 var_128 = eax_64 - 0x10
+00431708 var_124 = &sub_41a8a0(var_128)[4]
+0043170a void** eax_68
+0043170a int32_t* ecx_32
+0043170a eax_68, ecx_32 = PSGSI1::Close(var_124)
+00431712 var_c_1.b = 0xa
+00431712 
+0043171e if (eax_68[5] u>= 0x10)
+00431720     eax_68 = *eax_68
+00431720 
+00431722 var_124 = eax_68
+00431723 void* eax_69 = data_7dfdb0
+00431728 var_128 = ecx_32
+00431746 var_128 = &sub_41a8a0(eax_69 - 0x10)[4]
+00431748 void** eax_73
+00431748 int32_t ecx_33
+00431748 eax_73, ecx_33 = PSGSI1::Close(var_128)
+00431750 var_c_1.b = 0xb
+00431750 
+0043175c if (eax_73[5] u>= 0x10)
+0043175e     eax_73 = *eax_73
+0043175e 
+00431760 var_128 = eax_73
+00431766 int32_t var_12c_3 = ecx_33
+00431783 void** eax_78
+00431783 int32_t ecx_34
+00431783 eax_78, ecx_34 = PSGSI1::Close(&sub_41a8a0(data_7dfdc8 - 0x10)[4])
+0043178b var_c_1.b = 0xc
+0043178b 
+00431797 if (eax_78[5] u>= 0x10)
+00431799     eax_78 = *eax_78
+00431799 
+0043179b void** var_12c_5 = eax_78
+004317a1 int32_t var_130_2 = ecx_34
+004317c1 void** eax_83 = PSGSI1::Close(&sub_41a8a0(data_7dfdc4 - 0x10)[4])
+004317c9 var_c_1.b = 0xd
+004317c9 
+004317d5 if (eax_83[5] u>= 0x10)
+004317d7     eax_83 = *eax_83
+004317d7 
+004317d9 void** var_130_4 = eax_83
+004317da char const* const var_134_1 =
+004317da     "[Login_Mes] MES_Login success:\n IP(%s)\n MAC(%s)\n URL(%s)\n FACTORY(%s)\n MESSAGE(%s)\n"
+004317df int32_t var_138 = 4
+004317e6 int16_t ebp_1 = sub_4d6270(&data_7e09e8)
+004317e6 
+004317f6 if (var_64 u>= 0x10)
+004317f8     var_120 = var_78.d
+004317ff     ebp_1 = j_sub_688543(var_120)
+004317ff 
+0043180c int32_t var_64_1 = 0xf
+00431817 int32_t var_68 = 0
+00431822 char var_78_1 = 0
+00431822 
+0043182a if (var_c4 u>= 0x10)
+0043182c     var_120 = var_d8.d
+00431830     ebp_1 = j_sub_688543(var_120)
+00431830 
+00431840 int32_t var_c4_1 = 0xf
+00431848 int32_t var_c8 = 0
+00431850 char var_d8_1 = 0
+00431850 
+00431855 if (var_94 u>= 0x10)
+00431857     var_120 = var_a8.d
+0043185b     ebp_1 = j_sub_688543(var_120)
+0043185b 
+00431868 int32_t var_94_1 = 0xf
+00431873 int32_t var_98 = 0
+0043187e char var_a8_1 = 0
+0043187e 
+00431883 if (var_ac u>= 0x10)
+00431885     var_120 = var_c0.d
+00431889     ebp_1 = j_sub_688543(var_120)
+00431889 
+00431891 var_c_1.b = 4
+004318a1 int32_t var_ac_1 = 0xf
+004318a9 int32_t var_b0 = 0
+004318b1 char var_c0_1 = 0
+004318b1 
+004318b6 if (var_7c u>= 0x10)
+004318b8     var_120 = var_90.d
+004318bf     ebp_1 = j_sub_688543(var_120)
+004318bf 
+004318c7 var_120 = *(arg1 + 0x130)
+004318d1 var_124 = &data_76c130
+004318d6 data_7df7c4 = var_108
+004318e2 var_128 = 0x20
+004318e5 void var_60
+004318e5 sub_41efb0(&var_60, var_128, var_124)
+004318fa var_120 = u"c:\temp\MsmDownloadTool\MES_SETTING_SAVE.ini"
+004318ff var_124 = &var_60
+00431900 var_128 = u"CONFIG_MODE"
+00431905 wchar16 const* const var_12c_7 = u"Factory_Setting"
+0043190a 0x3b786a(var_12c_7, var_128, var_124, var_120)
+0043190c int32_t var_130_5 = *(arg1 + 0x134)
+00431921 void var_70
+00431921 sub_41efb0(&var_70, 0x20, &data_76c130)
+00431940 0x3b786a(u"Factory_Setting", u"FACTORY_LIST_IDX", &var_70, 
+00431940     u"c:\temp\MsmDownloadTool\MES_SETTING_SAVE.ini")
+00431942 int32_t var_140 = *(arg1 + 0x138)
+0043194f void* const var_144 = &data_76c130
+00431954 int32_t var_148 = 0x20
+00431956 char* var_14c = &var_80
+00431957 sub_41efb0(var_14c, var_148, var_144)
+00431966 wchar16 const* const var_140_1 = u"c:\temp\MsmDownloadTool\MES_SETTING_SAVE.ini"
+0043196b int32_t* var_144_1 = &var_80
+0043196c wchar16 const* const var_148_1 = u"MES_STATION_IDX"
+00431971 var_14c = u"Factory_Setting"
+00431971 char** esp_1 = &var_14c
+00431976 0x3b786a(var_14c, var_148_1, var_144_1, var_140_1)
+00431976 
+0043197f if (*(arg1 + 0x130) == 2)
+00431981     wchar16 const* const var_150_1 = u"c:\temp\MsmDownloadTool\MES_SETTING_SAVE.ini"
+0043198a     wchar16 const* const var_158_1 = u"CUSTOMIZED_SERVER"
+0043198f     wchar16 const* const var_15c = u"Factory_Setting"
+0043198f     esp_1 = &var_15c
+00431994     0x3b786a(var_15c, var_158_1, var_12c_7, var_150_1)
+00431994 
+004319b6 int32_t eax_86
+004319b6 int32_t ecx_36
+004319b6 eax_86, ecx_36 = (*(data_7bfb90 + 0xc))()
+004319bc esp_1[7] = eax_86 + 0x10
+004319c0 esp_1[0x44].b = 0xe
+004319cc int32_t eax_88 = esp_1[0xd]
+004319d0 *(esp_1 - 4) = ecx_36
+004319d4 esp_1[6] = esp_1 - 4
+004319da *(esp_1 - 8) = eax_88 - 0x10
+004319e3 *(esp_1 - 4) = sub_41a8a0() + 0x10
+004319e5 esp_1[0x44].b = 0xf
+004319f6 esp_1[0xf] = esp_1 - 8
+004319fa *(esp_1 - 0xc) = &esp_1[0xc][0xfffffff0]
+00431a03 *(esp_1 - 8) = sub_41a8a0() + 0x10
+00431a05 esp_1[0x44].b = 0x10
+00431a0f esp_1[0x10] = esp_1 - 0xc
+00431a13 *(esp_1 - 0x10) = esp_1[9]
+00431a1f *(esp_1 - 0xc) = sub_41a8a0() + 0x10
+00431a21 esp_1[0x44].b = 0x11
+00431a32 *(esp_1 - 0x14) = &esp_1[8][0xfffffff0]
+00431a33 int32_t eax_100
+00431a33 int32_t edx_11
+00431a33 eax_100, edx_11 = sub_41a8a0()
+00431a3e *(esp_1 - 0x10) = eax_100 + 0x10
+00431a42 esp_1[0x44].b = 0xe
+00431a4a int32_t eax_102
+00431a4a int32_t ecx_38
+00431a4a eax_102, ecx_38 = sub_4334f0(eax_100 + 0x10, edx_11, &esp_1[7])
+00431a4f void* esp_8 = esp_1
+00431a4f 
+00431a54 if (eax_102 == 0)
+00431a56     int32_t eax_103 = *(esp_8 + 0x1c)
+00431a5a     *(esp_8 - 4) = ecx_38
+00431a60     *(esp_8 - 8) = eax_103 - 0x10
+00431a75     *(esp_8 - 4) = sub_41a8a0() + 0x10
+00431a77     void** eax_107 = PSGSI1::Close()
+00431a7f     *(esp_8 + 0x110) = 0x12
+00431a7f     
+00431a8b     if (eax_107[5] u>= 0x10)
+00431a8d         eax_107 = *eax_107
+00431a8d     
+00431a8f     *(esp_8 - 4) = eax_107
+00431a90     *(esp_8 - 8) = "[GetStandardInfo] MESSAGE(%s)\n"
+00431a95     *(esp_8 - 0xc) = 4
+00431a97     *(esp_8 - 0x10) = &data_7e09e8
+00431a9c     ebp_1 = sub_4d6270()
+00431aa4     *(esp_8 + 0x110) = 0xe
+00431aa4     
+00431ab4     if (*(esp_8 + 0xa0) u>= 0x10)
+00431ab6         *(esp_8 - 4) = *(esp_8 + 0x8c)
+00431abd         ebp_1 = j_sub_688543()
+00431abd 
+00431ae8 void* esi_9 = (*(data_7bfb90 + 0xc))() + 0x10
+00431aeb *(esp_8 + 0x14) = esi_9
+00431aef *(esp_8 + 0x110) = 0x13
+00431b01 int32_t ecx_41 = 1 - *(esi_9 - 4)
+00431b01 
+00431b0b if (((*(esi_9 - 8) - 0x100) | ecx_41) s< 0)
+00431b0d     *(esp_8 - 4) = 0x100
+00431b16     ecx_41 = sub_414290(esp_8 + 0x14)
+00431b1b     esi_9 = *(esp_8 + 0x14)
+00431b1b 
+00431b26 if (*(esi_9 - 8) s< 0x100)
+00431b28     *(esp_8 - 4) = 0x80070057
+00431b2d     sub_414340()
+00431b2d     noreturn
+00431b2d 
+00431b32 *(esp_8 - 4) = u"c:\temp\MsmDownloadTool\MES_SETTING_SAVE.ini"
+00431b37 *(esp_8 - 8) = 0x100
+00431b3c *(esp_8 - 0xc) = esi_9
+00431b3d *(esp_8 - 0x10) = &data_76a09c
+00431b42 *(esp_8 - 0x14) = u"Testline"
+00431b49 *(esi_9 - 0xc) = 0x100
+00431b50 *(esp_8 - 0x18) = u"Site_Setting"
+00431b55 *(esi_9 + 0x200) = 0
+00431b61 return sub_b334ab(ecx_41, ebp_1)

@@ -1,0 +1,140 @@
+004188d6 int32_t* ebx_7 = *(arg2 + 0x48)
+004188e8 arg1[2] = ebx_7
+004188ed uint32_t wParam_1
+004188ed LPARAM lParam_1
+004188ed 
+004188ed if (ebx_7 == 0)
+00418b4a     lParam_1 = arg2 + 0x164
+00418b50     char const* const var_4_12
+00418b50     
+00418b50     if (*(arg2 + 0x1b) == 0)
+00418b59         var_4_12 = "No suitable setting available for read back"
+00418b50     else
+00418b52         var_4_12 = &data_5a238c
+00418b52     
+00418b5f     sub_410900(lParam_1, var_4_12)
+00418b73     wParam_1 = zx.d((*(arg2 + 0x2c)).b) << 0x10 | 0x1000001
+004188ed else
+004188fb     int32_t ecx_2 = ebx_7[1] - *ebx_7
+004188fd     int32_t eax
+004188fd     int32_t edx_1
+004188fd     edx_1:eax = muls.dp.d(0x8d3dcb09, ecx_2)
+00418901     int32_t ecx_3 = 0
+00418906     int32_t edx_3 = (edx_1 + ecx_2) s>> 6
+0041890b     arg1[-2] = 0
+00418919     arg1[-1] = ecx_2 s/ 0x74
+00418919     
+0041891c     if (edx_3 u>> 0x1f == neg.d(edx_3))
+00418a14     label_418a14:
+00418a14         int32_t wParam = (zx.d((*(arg2 + 0x2c)).b) | 0x200) << 0x10
+00418a1b         LPARAM lParam
+00418a1b         
+00418a1b         if (*(arg2 + 0x1b) == 0)
+00418b14             SendMessageA(*(arg2 + 0x30), 0x178c, wParam, "ReadBack Complete")
+00418b16             lParam = "ReadBack Complete"
+00418a1b         else
+00418a2f             SendMessageA(*(arg2 + 0x30), 0x178c, wParam, 0x5a2444)
+00418a31             lParam = 0x5a2444
+00418a31         
+00418b35         SendMessageA(*(arg2 + 0x30), 0x178c, zx.d((*(arg2 + 0x2c)).b) << 0x10 | 0x2000001, lParam)
+00418b42         *arg1
+00418b43         return arg3
+00418b43     
+00418922     int32_t edx_4 = arg1[-1]
+00418925     int32_t eax_4 = 0
+00418927     arg1[-3] = 0
+0041892a     int32_t* ebx = ebx_7
+0041892a     
+00418932     while (true)
+00418932         void* edi_1 = *ebx + eax_4
+00418932         
+0041893b         if (*(arg2 + 0x1e4) != 0)
+00418b02             *arg1
+00418b03             return 0x4c7
+00418b03         
+00418943         if (edi_1 == 0)
+00418aa1             void* const var_8_7
+00418aa1             
+00418aa1             if (*(arg2 + 0x1b) == 0)
+00418ac9                 int32_t eax_24 = 0x18
+00418ac9                 
+00418ace                 if (*0x2c u>= 0x10)
+00418ad0                     eax_24 = *0x18
+00418ad0                 
+00418ad2                 int32_t var_4_11 = eax_24
+00418ad3                 var_8_7 = "Cannot find partition %s"
+00418aa1             else if (*0x14 u< 0x10)
+00418aba                 int32_t var_4_10 = 0
+00418abb                 var_8_7 = &data_5a23d0
+00418aac             else
+00418ab0                 int32_t var_4_9 = *nullptr
+00418ab1                 var_8_7 = &data_5a23d0
+00418ab1             
+00418ad8             lParam_1 = arg2 + 0x164
+00418adf             sub_410900(lParam_1, var_8_7)
+00418af0             wParam_1 = zx.d((*(arg2 + 0x2c)).b) << 0x10
+00418af3             break
+00418af3         
+00418957         if (*(edi_1 + 0x48) != 0 && *(edi_1 + 0x62) != 0)
+00418961             void** eax_5 = edi_1 + 0x18
+00418964             void* const var_8_1
+00418964             
+00418964             if (*(arg2 + 0x1b) == 0)
+0041897a                 if (eax_5[5] u>= 0x10)
+0041897c                     eax_5 = *eax_5
+0041897c                 
+0041897e                 void** var_4_2 = eax_5
+0041897f                 var_8_1 = "Reading Back %s"
+00418964             else
+0041896a                 if (eax_5[5] u>= 0x10)
+0041896c                     eax_5 = *eax_5
+0041896c                 
+0041896e                 void** var_4_1 = eax_5
+0041896f                 var_8_1 = &data_5a23fc
+0041896f             
+0041898b             sub_410900(arg2 + 0x164, var_8_1)
+004189a9             SendMessageA(*(arg2 + 0x30), 0x178c, zx.d((*(arg2 + 0x2c)).b) << 0x10, arg2 + 0x164)
+004189c8             SendMessageA(*(arg2 + 0x30), 0x178c, zx.d((*(arg2 + 0x2c)).b) << 0x10 | 1, arg2 + 0x164)
+004189d1             int32_t eax_13 = sub_418fd0(edi_1)
+004189d8             arg1[-4] = eax_13
+004189d8             
+004189dd             if (eax_13 != 0)
+00418a3f                 void** eax_17 = edi_1 + 0x18
+00418a42                 void* const var_8_5
+00418a42                 
+00418a42                 if (*(arg2 + 0x1b) == 0)
+00418a58                     if (eax_17[5] u>= 0x10)
+00418a5a                         eax_17 = *eax_17
+00418a5a                     
+00418a5c                     void** var_4_7 = eax_17
+00418a5d                     var_8_5 = "ReadBack %s Failed"
+00418a42                 else
+00418a48                     if (eax_17[5] u>= 0x10)
+00418a4a                         eax_17 = *eax_17
+00418a4a                     
+00418a4c                     void** var_4_6 = eax_17
+00418a4d                     var_8_5 = &data_5a241c
+00418a4d                 
+00418a69                 sub_410900(arg2 + 0x164, var_8_5)
+00418a8c                 SendMessageA(*(arg2 + 0x30), 0x178c, zx.d((*(arg2 + 0x2c)).b) << 0x10 | 0x1000001, 
+00418a8c                     arg2 + 0x164)
+00418a99                 *arg1
+00418a9a                 return eax_13
+00418a9a             
+004189df             eax_4 = arg1[-3]
+004189e2             ecx_3 = arg1[-2]
+004189e5             ebx = arg1[2]
+004189e8             edx_4 = arg1[-1]
+004189e8         
+004189eb         ecx_3 += 1
+004189ec         eax_4 += 0x74
+004189ef         arg1[-2] = ecx_3
+004189f2         arg1[-3] = eax_4
+004189f2         
+004189f7         if (ecx_3 u>= edx_4)
+004189fd             arg3 = arg1[-4]
+00418a00             goto label_418a14
+00418a00 
+00418b82 SendMessageA(*(arg2 + 0x30), 0x178c, wParam_1, lParam_1)
+00418b92 *arg1
+00418b93 return 1

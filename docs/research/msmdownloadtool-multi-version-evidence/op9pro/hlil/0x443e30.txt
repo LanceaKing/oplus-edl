@@ -1,0 +1,211 @@
+00443e30 int32_t ebp
+00443e30 int32_t var_4 = ebp
+00443e31 int32_t* ebp_1 = &var_4
+00443e33 int32_t var_8 = 0xffffffff
+00443e35 int32_t (* var_c)() = sub_6d0b69
+00443e40 TEB* fsbase
+00443e40 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00443e4c int32_t eax_2 = __security_cookie ^ &var_4
+00443e4e int32_t var_1c = eax_2
+00443e51 int32_t ebx
+00443e51 int32_t var_164 = ebx
+00443e52 int32_t esi
+00443e52 int32_t var_168 = esi
+00443e53 int32_t edi
+00443e53 int32_t var_16c = edi
+00443e54 int32_t var_170 = eax_2
+00443e58 fsbase->NtTib.ExceptionList = &ExceptionList
+00443e5e int32_t* var_14 = &var_170
+00443e69 char* var_174 = arg1
+00443e70 char* var_98 = arg1
+00443e76 void var_160
+00443e76 sub_44b460(&var_160)
+00443e7d int32_t var_8_1 = 0
+00443e84 sub_443c30(arg1)
+00443e8b int32_t eax_3
+00443e8b struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList_1
+00443e8b eax_3, ExceptionList_1 = sub_56c71b(0x48, var_170)
+00443e93 int32_t var_90 = eax_3
+00443e99 var_8_1.b = 1
+00443e9f int32_t* esi_1
+00443e9f 
+00443e9f if (eax_3 == 0)
+00443eb7     esi_1 = nullptr
+00443eb9     int32_t var_94_1 = 0
+00443e9f else
+00443ea1     ExceptionList = "Setting.xml"
+00443ea8     int32_t* eax_4
+00443ea8     eax_4, ExceptionList_1 = sub_4b4a70(ExceptionList)
+00443ead     esi_1 = eax_4
+00443eaf     int32_t* var_94 = eax_4
+00443eaf 
+00443ebf var_8_1.b = 2
+00443ec3 int32_t eax_5 = esi_1[8]
+00443ec6 ExceptionList = ExceptionList_1
+00443eca int32_t* var_90_1 = esi_1
+00443eca 
+00443eda if (sub_4b4b70(eax_5 + 8, ExceptionList, var_c, var_8_1) != 0)
+00443f28     int32_t* esi_2 = esi_1[6]
+00443f28     
+00443f32     while (true)
+00443f32         if (esi_2 == 0)
+00443f57             int32_t var_8c_2 = 0
+00443f57             break
+00443f57         
+00443f3d         if ((*(*esi_2 + 0x18))() != 0)
+00443f48             int32_t var_8c_1 = (*(*esi_2 + 0x18))()
+00443f4e             break
+00443f4e         
+00443f50         esi_2 = esi_2[0xa]
+00443f50     
+00443f64     int32_t eax_15 = sub_4431c0("BasicInfo")
+00443f77     char const* const var_18_5 = "UFS_PROVISION"
+00443f7e     int32_t var_84_1 = sub_4431c0("SAHARA")
+00443f81     sub_4431c0(var_18_5)
+00443f8f     sub_4431c0("SupportMultiTarget")
+00443f9f     int32_t esi_5
+00443f9f     int32_t edi_2
+00443f9f     ebp_1, esi_5, edi_2 = sub_444440(eax_15)
+00443fa9     sub_447b30(arg1, ebp_1[-0x20])
+00443fb3     sub_445280(arg1, edi_2)
+00443fbb     sub_4450e0(arg1, esi_5)
+00443fc0     int32_t ebx_4 = 0
+00443fc0     
+00443fc2     while (true)
+00443fc2         ebp_1[-0x20] = ebx_4
+00443fc2         
+00443fc8         if (ebx_4 s>= 6)
+0044419d             int32_t* ecx_30 = ebp_1[-0x24]
+004441a5             ebp_1[-1] = 0
+004441a5             
+004441da             if (ecx_30 != 0)
+004441e0                 (**ecx_30)(1)
+004441e0             
+004441e8             ebp_1[-1] = 0xffffffff
+004441ef             sub_44b580(&ebp_1[-0x39])
+004441fa             ebp_1[-0x39] = &std::ios_base::`vftable'
+00444205             std::ios_base::_Ios_base_dtor(&ebp_1[-0x39])
+0044420d             int32_t eax_36
+0044420d             eax_36.b = 1
+0044420d             goto label_444212
+0044420d         
+00443fd3         int32_t eax_19 = sub_443b70(&ebp_1[-0x1e], ebx_4)
+00443fde         ebp_1[-1].b = 3
+00443fe5         sub_4426f0(eax_19.b, "Program", &ebp_1[-0xc], eax_19)
+00443fed         ebp_1[-1].b = 5
+00443fed         
+00443ff5         if (ebp_1[-0x19] u>= 0x10)
+00443ffa             sub_56c751(ebp_1[-0x1e])
+00443ffa         
+00444006         void* edi_4 = &ebp_1[-0xc]
+00444009         ebp_1[-0x22]
+00444009         
+0044400f         if (ebp_1[-7] u>= 0x10)
+0044400f             edi_4 = ebp_1[-0xc]
+0044400f         
+00444014         ebp_1[-0x19] = 0xf
+0044401b         ebp_1[-0x1a] = 0
+00444022         ebp_1[-0x1e].b = 0
+00444026         int32_t* eax_20 = sub_4b40a0(edi_4)
+0044402f         int32_t* eax_23
+0044402f         
+0044402f         while (true)
+0044402f             if (eax_20 == 0)
+0044404d                 eax_23 = nullptr
+0044404d                 break
+0044404d             
+0044403c             if ((*(*eax_20 + 0x18))() != 0)
+00444040                 eax_23 = (*(*eax_20 + 0x18))()
+00444043                 break
+00444043             
+00444046             eax_20 = sub_4b4100(edi_4)
+00444046         
+0044404f         ebp_1[-0x21]
+0044404f         
+0044405d         if (std::num_get<uint16_t,class std::istreambuf_iterator<uint16_t,struct std::char_traits<uint16_t> > >::do_get(
+0044405d                 eax_23) != 0)
+00444068             int32_t eax_25 = sub_443b70(&ebp_1[-0x18], ebx_4)
+00444073             ebp_1[-1].b = 6
+0044407a             sub_4426f0(eax_25.b, "Patch", &ebp_1[-0x12], eax_25)
+00444082             ebp_1[-1].b = 8
+00444082             
+0044408a             if (ebp_1[-0x13] u>= 0x10)
+0044408f                 sub_56c751(ebp_1[-0x18])
+0044408f             
+0044409b             void* edi_5 = &ebp_1[-0x12]
+0044409e             ebp_1[-0x22]
+0044409e             
+004440a4             if (ebp_1[-0xd] u>= 0x10)
+004440a4                 edi_5 = ebp_1[-0x12]
+004440a4             
+004440a9             ebp_1[-0x13] = 0xf
+004440b0             ebp_1[-0x14] = 0
+004440b7             ebp_1[-0x18].b = 0
+004440bb             int32_t* eax_26 = sub_4b40a0(edi_5)
+004440c4             int32_t eax_29
+004440c4             
+004440c4             while (true)
+004440c4                 if (eax_26 == 0)
+004440e2                     eax_29 = 0
+004440e2                     break
+004440e2                 
+004440d1                 if ((*(*eax_26 + 0x18))() != 0)
+004440d5                     eax_29 = (*(*eax_26 + 0x18))()
+004440d8                     break
+004440d8                 
+004440db                 eax_26 = sub_4b4100(edi_5)
+004440db             
+004440e4             char* edi_6 = ebp_1[-0x21]
+004440e4             
+004440f4             if (sub_448860(edi_6, eax_29) != 0)
+0044414e                 uint32_t var_18_23 = zx.d(data_7e8b10)
+0044415a                 sub_44d090(&edi_6[0x218], &ebp_1[-0x27], &ebp_1[-0x20])
+0044415a                 
+00444163                 if (ebp_1[-0xd] u>= 0x10)
+00444168                     sub_56c751(ebp_1[-0x12])
+00444168                 
+00444170                 ebp_1[-1].b = 2
+00444174                 bool cond:2_1 = ebp_1[-7] u< 0x10
+00444178                 ebp_1[-0xd] = 0xf
+0044417f                 ebp_1[-0xe] = 0
+00444186                 ebp_1[-0x12].b = 0
+00444186                 
+0044418a                 if (not(cond:2_1))
+0044418f                     sub_56c751(ebp_1[-0xc])
+0044418f                 
+00444197                 ebx_4 += 1
+00444198                 continue
+004440f4             else
+004440fa                 if (ebp_1[-0xd] u>= 0x10)
+004440ff                     sub_56c751(ebp_1[-0x12])
+004440ff                 
+00444107                 ebp_1[-0xd] = 0xf
+0044410e                 ebp_1[-0xe] = 0
+00444115                 ebp_1[-0x12].b = 0
+00444115         
+0044411d         if (ebp_1[-7] u>= 0x10)
+00444122             sub_56c751(ebp_1[-0xc])
+00444122         
+0044412a         ebp_1[-7] = 0xf
+00444131         ebp_1[-8] = 0
+00444138         ebp_1[-0xc].b = 0
+0044413c         break
+00443eda else
+00443edc     void* var_18 = 0x1d
+00443ede     int32_t* var_1c_1 = "Load setting xml file failed."
+00443ee6     *arg1 = 1
+00443ee9     sub_412e10(&arg1[4], var_1c_1, var_18)
+00443ef4     (**esi_1)(1)
+00443ef4 
+00443efc ebp_1[-1] = 0xffffffff
+00443f03 sub_44b580(&ebp_1[-0x39])
+00443f0e ebp_1[-0x39] = &std::ios_base::`vftable'
+00443f19 std::ios_base::_Ios_base_dtor(&ebp_1[-0x39])
+00443f21 int32_t eax_10
+00443f21 eax_10.b = 0
+00444212 label_444212:
+00444212 fsbase->NtTib.ExceptionList = ebp_1[-3]
+0044421d ebp_1[-6]
+00444222 int32_t result = sub_68804f()
+00444229 *ebp_1
+0044422a return result

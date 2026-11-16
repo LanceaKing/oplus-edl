@@ -1,0 +1,116 @@
+00445580 int32_t ebx
+00445580 int32_t var_4 = ebx
+00445581 int32_t esi
+00445581 int32_t var_8 = esi
+00445582 int32_t edi
+00445582 int32_t var_c = edi
+00445582 int32_t* esp_1 = &var_c
+00445585 int32_t eax = sub_445870(arg1)
+00445585 
+00445590 if (*(arg1 + 0x1c) != 2)
+00445592     void* eax_1 = *(arg1 + 0x88)
+00445592     
+004455a3     if (*(eax_1 + 0xac) != 1 || eax != 0)
+0044559f         goto label_445602
+0044559f     
+004455a5     bool cond:1_1 = *(eax_1 + 0x60) s< 1
+004455ac     int32_t* var_10 = arg1 + 0x50
+004455ac     esp_1 = &var_10
+004455af     int32_t eax_2
+004455af     
+004455af     if (cond:1_1)
+004455b8         eax_2 = sub_448500()
+004455af     else
+004455b1         eax_2 = sub_4485a0()
+004455b1     
+004455bf     if (eax_2 == 0)
+004455c1         void* const var_14_1 = &data_6d9770
+004455c6         char const* const var_18_1 = "C:/ToolLog.txt"
+004455cb         int32_t eax_3 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+004455d2         esp_1 = &var_10
+004455d2         
+004455d7         if (eax_3 != 0)
+004455de             char const* const var_18_2 = "[%d] GetParamCustFlag Failed.\n"
+004455e4             _fprintf(eax_3, "[%d] GetParamCustFlag Failed.\n", *(arg1 + 0x30) + 1)
+004455ed             _fclose(eax_3)
+004455f2             esp_1 = &var_10
+004455f2         
+004455d7         goto label_445602
+004455d7     
+00445612     if (*(arg1 + 0x50) != 5)
+00445612         goto label_445602
+00445612     
+00445614     void* const var_14_4 = &data_6d9770
+00445619     char const* const var_18_3 = "C:/ToolLog.txt"
+0044561e     int32_t eax_8 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00445625     esp_1 = &var_10
+00445625     
+0044562a     if (eax_8 != 0)
+00445631         char const* const var_18_4 = "[%d] Skip checking by custflag\n"
+00445637         _fprintf(eax_8, "[%d] Skip checking by custflag\n", *(arg1 + 0x30) + 1)
+00445640         _fclose(eax_8)
+00445645         esp_1 = &var_10
+00445645     
+0044562a     goto label_44564a
+0044562a 
+00445602 label_445602:
+00445602 int32_t edi_3
+00445602 
+00445602 if (*(*(arg1 + 0x88) + 0xa5) == 0)
+0044564e     edi_3 = 1
+00445602 else
+0044560b     edi_3 = sub_445720(arg1)
+0044560b 
+00445660 int32_t ebx_2
+00445660 
+00445660 if (*(*(arg1 + 0x88) + 0xa8) == 0)
+0044566d     ebx_2 = 1
+00445660 else
+00445669     ebx_2 = sub_445800(arg1)
+00445669 
+0044567f int32_t eax_15
+0044567f 
+0044567f if (*(*(arg1 + 0x88) + 0xaa) != 0)
+00445683     eax_15 = sub_445790(arg1)
+00445683 
+00445694 if ((*(*(arg1 + 0x88) + 0xaa) == 0 || eax_15 == 1) && ebx_2 == 1 && edi_3 == ebx_2)
+0044564a label_44564a:
+0044564a     *esp_1
+0044564a     esp_1[1]
+0044564b     esp_1[2]
+0044564d     return 0
+0044564d 
+004456a0 void* esp_4
+004456a0 
+004456a0 if (*(arg1 + 0x20) == 0)
+004456a9     *(esp_1 - 4) = u"Images do not match with the phone!"
+004456a9     esp_4 = esp_1 - 4
+004456a0 else
+004456a2     *(esp_1 - 4) = 0x6e1504
+004456a2     esp_4 = esp_1 - 4
+004456a2 
+004456ae *(esp_4 - 4) = arg1 + 0x2b8
+004456af sub_44d900()
+004456c3 int32_t eax_19 = zx.d((*(arg1 + 0x30)).b) << 0x10 | 0x1000001
+004456c8 *esp_4 = arg1 + 0x2b8
+004456c9 *(esp_4 - 4) = eax_19
+004456ca *(esp_4 - 8) = 0x178c
+004456cf *(esp_4 - 0xc) = *(arg1 + 0x34)
+004456d2 0x3095d0()
+004456d8 *(esp_4 - 0x10) = &data_6d9770
+004456dd *(esp_4 - 0x14) = "C:/ToolLog.txt"
+004456e2 int32_t eax_20 = std::_Deallocate<64,0>()
+004456e9 int32_t* esp_13 = esp_4 - 0xc
+004456e9 
+004456ee if (eax_20 != 0)
+004456f4     *(esp_13 - 4) = *(arg1 + 0x30) + 1
+004456f5     *(esp_13 - 8) = "[%d] Images do not match with the phone!\n"
+004456fa     *(esp_13 - 0xc) = eax_20
+004456fb     _fprintf()
+00445703     *(esp_13 - 4) = eax_20
+00445704     _fclose()
+00445704 
+0044570c *esp_13
+0044570c esp_13[1]
+0044570d esp_13[2]
+00445714 return 1

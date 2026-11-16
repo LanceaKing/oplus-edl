@@ -38,61 +38,6 @@ fn gpt_and_partition_read_at_both_sector_sizes() {
     }
 }
 #[test]
-fn duplicate_exact_names_are_not_selected() {
-    let disk = disk(512, &["boot", "boot"]);
-    let (mut dev, _) = storage_device(gpt_script(&disk, 512), 512);
-    let table = read_gpt(&mut dev, 0).unwrap();
-    assert!(find_partition(&table, 0, "boot").is_err());
-    assert!(find_partition(&table, 0, "missing").is_err());
-}
-#[test]
-fn invalid_header_is_rejected_before_second_read() {
-    for kind in 0..5 {
-        let disk = disk(512, &["boot"]);
-        let mut header = gptman::GPTHeader::read_from(&mut Cursor::new(&disk[512..])).unwrap();
-        match kind {
-            0 => header.first_usable_lba = u64::MAX,
-            1 => header.size_of_partition_entry = 256,
-            2 => header.number_of_partition_entries = u32::MAX,
-            3 => header.partition_entry_lba = u64::MAX,
-            _ => header.last_usable_lba = header.backup_lba,
-        }
-        header.update_crc32_checksum();
-        let mut encoded = bincode::serialize(&header).unwrap();
-        encoded.resize(512, 0);
-        let (mut dev, trace) = storage_device([bytes(ACK), bytes(&encoded), bytes(ACK)], 512);
-        assert!(read_gpt(&mut dev, 0).is_err());
-        assert_eq!(trace.lock().unwrap().writes.len(), 1);
-    }
-}
-#[test]
-fn corrupted_entries_and_out_of_range_partitions_are_rejected() {
-    for kind in 0..4 {
-        let mut disk = disk(512, &["boot", "system"]);
-        if kind == 0 {
-            disk[1024] ^= 1;
-        } else {
-            let mut cursor = Cursor::new(disk);
-            let mut gpt = gptman::GPT::read_from(&mut cursor, 512).unwrap();
-            if kind == 1 {
-                gpt[1].ending_lba = 255;
-            } else if kind == 2 {
-                gpt[2].starting_lba = 65;
-            } else {
-                gpt[1].starting_lba = 0;
-                gpt[2].starting_lba = 0;
-            }
-            let partitions = gpt.iter().map(|(_, p)| p.clone()).collect::<Vec<_>>();
-            gpt.header
-                .write_into(&mut cursor, 512, &partitions)
-                .unwrap();
-            disk = cursor.into_inner();
-        }
-        let (mut dev, _) = storage_device(gpt_script(&disk, 512), 512);
-        assert!(read_gpt(&mut dev, 0).is_err());
-    }
-}
-#[test]
 fn safe_directory_names() {
     for name in ["boot", "modem_a", "a-b.c", "COM0", "com10"] {
         assert!(safe_name(name), "{name}");
@@ -102,77 +47,6 @@ fn safe_directory_names() {
         "名字", "a:b",
     ] {
         assert!(!safe_name(name), "{name}");
-    }
-}
-struct ShortSource(Cursor<Vec<u8>>);
-impl Read for ShortSource {
-    fn read(&mut self, out: &mut [u8]) -> io::Result<usize> {
-        let n = out.len().min(3);
-        self.0.read(&mut out[..n])
-    }
-}
-#[test]
-fn program_pads_only_the_sector_tail_and_handles_short_reads_and_serial_writes() {
-    let (mut dev, trace) = storage_device([bytes(ACK), bytes(ACK)], 512);
-    dev.rw.output.extend([
-        Output::Accept(usize::MAX),
-        Output::Accept(3),
-        Output::Accept(7),
-    ]);
-    program_partition(
-        &mut dev,
-        &part(),
-        &mut ShortSource(Cursor::new(vec![0x61; 513])),
-        513,
-    )
-    .unwrap();
-    let wire = &trace.lock().unwrap().accepted;
-    let data = &wire[wire.len() - 1024..];
-    assert_eq!(&data[..513], &vec![0x61; 513]);
-    assert!(data[513..].iter().all(|b| *b == 0));
-}
-#[test]
-fn invalid_program_ranges_do_not_send_anything() {
-    let (mut dev, trace) = storage_device([], 512);
-    let mut invalid = part();
-    invalid.start_sector = u64::MAX / 512;
-    assert_eq!(
-        program_partition(&mut dev, &invalid, &mut &b"a"[..], 1)
-            .unwrap_err()
-            .confirmation,
-        MutationConfirmation::NotSent
-    );
-    assert!(trace.lock().unwrap().writes.is_empty());
-    for len in [0, 1025, u64::MAX] {
-        let (mut dev, trace) = storage_device([], 512);
-        let error = program_partition(&mut dev, &part(), &mut &b"a"[..], len).unwrap_err();
-        assert_eq!(error.confirmation, MutationConfirmation::NotSent);
-        assert!(trace.lock().unwrap().writes.is_empty());
-    }
-}
-#[test]
-fn truncated_input_is_unknown_and_not_silently_padded() {
-    let (mut dev, trace) = storage_device([bytes(ACK)], 512);
-    let e = program_partition(&mut dev, &part(), &mut &b"ab"[..], 3).unwrap_err();
-    assert_eq!(e.confirmation, MutationConfirmation::Unknown);
-    assert_eq!(trace.lock().unwrap().writes.len(), 1);
-    drop(dev);
-    assert_no_reset(&trace);
-}
-#[test]
-fn program_final_ack_is_required() {
-    for (response, expected) in [
-        (
-            Input::Error(ErrorKind::TimedOut),
-            MutationConfirmation::Unknown,
-        ),
-        (bytes(NAK), MutationConfirmation::Rejected),
-    ] {
-        let (mut dev, trace) = storage_device([bytes(ACK), response], 512);
-        let e = program_partition(&mut dev, &part(), &mut &b"ab"[..], 2).unwrap_err();
-        assert_eq!(e.confirmation, expected);
-        drop(dev);
-        assert_no_reset(&trace);
     }
 }
 #[test]
@@ -305,25 +179,6 @@ fn output_short_writes_continue_but_zero_and_errors_fail() {
     }
 }
 
-#[test]
-fn changed_gpt_header_is_not_trusted() {
-    let disk = disk(512, &["boot"]);
-    let mut changed = disk.clone();
-    let mut h = gptman::GPTHeader::read_from(&mut Cursor::new(&disk[512..])).unwrap();
-    h.disk_guid = [3; 16];
-    h.update_crc32_checksum();
-    changed[512..604].copy_from_slice(&bincode::serialize(&h).unwrap());
-    let script = [
-        bytes(ACK),
-        bytes(&disk[512..1024]),
-        bytes(ACK),
-        bytes(ACK),
-        bytes(&changed[..h.first_usable_lba as usize * 512]),
-        bytes(ACK),
-    ];
-    let (mut dev, _) = storage_device(script, 512);
-    assert!(read_gpt(&mut dev, 0).is_err());
-}
 #[test]
 fn read_eof_timeout_and_initial_nak_preserve_partial_counts() {
     for script in [

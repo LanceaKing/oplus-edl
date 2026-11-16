@@ -1,0 +1,281 @@
+10016a53 int32_t var_8 = 0xffffffff
+10016a55 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10061c43
+10016a60 TEB* fsbase
+10016a60 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+10016a6c int32_t __saved_ebp
+10016a6c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+10016a77 fsbase->NtTib.ExceptionList = &ExceptionList
+10016a93 char _Destination[0x168]
+10016a93 memset(&_Destination, 0, 0x168)
+10016a9a char var_198 = 0
+10016aa4 int16_t var_197 = 0
+10016aab char var_195 = 0
+10016abd int32_t var_1c4 = 0xf
+10016ace void* edi = *(*(arg1 + 0x1768) + 0xc)
+10016ad7 int32_t var_1c8 = 0
+10016ae1 char var_1d8 = 0
+10016ae8 sub_10001ad0(&var_1d8, "ocdt", 4)
+10016b03 int32_t** _Source_1 = sub_10044710(edi, 0xffffffff, &var_1d8)
+10016b03 
+10016b08 if (var_1c4 u>= 0x10)
+10016b12     sub_10001d60(var_1d8.d, var_1c4 + 1)
+10016b12 
+10016b17 int32_t var_1c4_1 = 0xf
+10016b21 int32_t var_1c8_1 = 0
+10016b2b var_1d8 = 0
+10016b34 uint32_t result
+10016b34 
+10016b34 if (_Source_1 != 0)
+10016bee label_10016bee:
+10016bee     bool cond:0_1 = *(arg1 + 0x18e0) u< 0x10
+10016bf5     void** ecx_7 = arg1 + 0x18cc
+10016bfb     int32_t eax_10 = *(arg1 + 0x17d8)
+10016c04     int32_t var_194 = eax_10
+10016c04     
+10016c0a     if (not(cond:0_1))
+10016c0c         ecx_7 = *ecx_7
+10016c0c     
+10016c17     int32_t eax_11 = sub_10007cc0(eax_10, ecx_7[4], ecx_7, "eMMC", 4)
+10016c1f     int32_t eax_12 = neg.d(eax_11)
+10016c26     int32_t var_190_1 = sbb.d(eax_12, eax_12, eax_11 != 0) + 2
+10016c2f     int32_t var_18c_1 = _Source_1[6]
+10016c38     int32_t var_188_1 = _Source_1[7]
+10016c42     int32_t* _Source
+10016c42     
+10016c42     if (_Source_1[5] u< 0x10)
+10016c48         _Source = _Source_1
+10016c42     else
+10016c44         _Source = *_Source_1
+10016c44     
+10016c57     strcpy_s(&_Destination, 0x168, _Source)
+10016c7c     int32_t eax_17
+10016c7c     OpReadBackAgentQCOM* ecx_9
+10016c7c     eax_17, ecx_9 = sub_100066f0(*(arg1 + 0x28), &var_194, arg1 + 0x1980, 0x1000)
+10016c7c     
+10016c83     if (eax_17 == 0)
+10016cd1         OpReadBackAgentQCOM::opOcdtCustomDecrypt(ecx_9, arg1 + 0x1980)
+10016ce4         uint32_t ecx_13 = zx.d(*(arg1 + 0x1989)) << 8 | zx.d(*(arg1 + 0x1988))
+10016cf8         var_197.b = (arg1 + 0x1980)[ecx_13 + 1]
+10016cfe         int32_t eax_23 = (arg1 + 0x1980)[ecx_13].d
+10016d0e         int64_t var_1c = 0
+10016d13         sub_1002d080(&var_1c, &_Source_1[0x16])
+10016d18         int32_t var_8_1 = 0
+10016d1f         int32_t* edi_1 = var_1c.d
+10016d22         void** esi_2 = *edi_1
+10016d26         uint32_t result_1
+10016d26         
+10016d26         if (esi_2 == edi_1)
+10016da9         label_10016da9:
+10016da9             int32_t* edi_2 = arg1 + 0x18b4
+10016daf             int32_t* eax_30
+10016daf             
+10016daf             if (*(arg1 + 0x18c8) u< 0x10)
+100170ec                 eax_30 = edi_2
+10016daf             else
+10016db5                 eax_30 = *edi_2
+10016db5             
+100170ee             int32_t ecx_36 = *(arg1 + 0x1c)
+1001710f             opdbg_log("QCFlashWorker::doActionValidateProjectByOCDT", 0xa84, 
+1001710f                 "[%s] [%s] ERROR: Cannot find proper OCDT file for project: %s ", ecx_36 + 0x9e4, 
+1001710f                 ecx_36 + 0x444, eax_30, eax_2)
+1001710f             
+1001711c             if (edi_2[5] u>= 0x10)
+1001711e                 edi_2 = *edi_2
+1001711e             
+10017120             int32_t* var_220_32 = edi_2
+10017127             sub_10024880(arg1, "no_proper_cdt_file(%s)")
+1001712f             result_1 = 0x753e
+10016d26         else
+10016d4a             void* var_1bc
+10016d4a             int32_t var_1a8
+10016d4a             
+10016d4a             while (true)
+10016d4a                 char* eax_25 = sub_10045410(esi_2[2], &var_1bc)
+10016d51                 void** eax_26 = arg1 + 0x18b4
+10016d5b                 int32_t edx_4 = eax_26[4]
+10016d5b                 
+10016d5e                 if (eax_26[5] u>= 0x10)
+10016d60                     eax_26 = *eax_26
+10016d60                 
+10016d6b                 bool cond:2_1 = sub_10002930(eax_25, eax_26, nullptr, edx_4) != 0xffffffff
+10016d6b                 
+10016d7e                 if (var_1a8 u>= 0x10)
+10016d88                     sub_10001d60(var_1bc, var_1a8 + 1)
+10016d88                 
+10016d94                 if (cond:2_1 != 0)
+10016d94                     break
+10016d94                 
+10016d96                 esi_2 = *esi_2
+10016d96                 
+10016d9a                 if (esi_2 == edi_1)
+10016d9a                     goto label_10016da9
+10016d9a             
+10016dbc             void* edi_3 = esi_2[2]
+10016dbc             
+10016dc1             if (edi_3 == 0)
+10016dc1                 goto label_10016da9
+10016dc1             
+10016dc9             int32_t* eax_31 = *(arg1 + 0x20)
+10016dd2             int32_t* ecx_19 = *eax_31
+10016dd2             
+10016dd6             if (ecx_19 != 0)
+10016ddc                 (**ecx_19)(1)
+10016ddc             
+10016de0             struct AbsFileReader::SynFileReader::VTable** eax_33 = sub_1005f651(0x20)
+10016df3             struct AbsFileReader::SynFileReader::VTable** var_1f4_1 = eax_33
+10016df9             __builtin_memset(eax_33, 0, 0x20)
+10016e01             *eax_33 = &SynFileReader::`vftable'{for `AbsFileReader'}
+10016e07             __builtin_memset(&eax_33[1], 0, 0x18)
+10016e31             *eax_31 = eax_33
+10016e31             
+10016e3c             if ((*eax_33)->vFunc_1(eax_33, edi_3) == 0)
+10016efe                 if ((*(***(arg1 + 0x20) + 0xc))(arg1 + 0x1980, 0x1000, *(edi_3 + 0x40)) == 0)
+10016fba                     uint32_t ecx_30 = zx.d(*(arg1 + 0x1989)) << 8 | zx.d(*(arg1 + 0x1988))
+10016fd2                     int32_t ecx_31 = *(arg1 + 0x1c)
+10016fd5                     var_197.b = *(arg1 + ecx_30 + 0x1981)
+10016fdb                     int32_t esi_5 = (*(arg1 + ecx_30 + 0x1980)).d
+10017000                     opdbg_log("QCFlashWorker::doActionValidateProjectByOCDT", 0xa9c, 
+10017000                         "[%s] [%s] INFO: check project matching info: Phone: %d, Selected from pack: %d", 
+10017000                         ecx_31 + 0x9e4, ecx_31 + 0x444, eax_23, esi_5, eax_2)
+10017000                     
+1001700b                     if (eax_23 == esi_5)
+100170e8                         result_1 = 0
+1001700b                     else
+10017019                         int32_t ecx_33 = *(arg1 + 0x1c)
+10017039                         opdbg_log("QCFlashWorker::doActionValidateProjectByOCDT", 0xa9f, 
+10017039                             "[%s] [%s] ERROR: Project check failed. Phone: %d , Selected from pack: %d ", 
+10017039                             ecx_33 + 0x9e4, ecx_33 + 0x444, eax_23, esi_5)
+1001703f                         int32_t var_23c_2 = esi_5
+10017040                         int32_t var_240_1 = eax_23
+1001704c                         sub_10024880(arg1, "project_mismatch(%d, %d)")
+10017061                         void* var_210
+10017061                         char* esi_6 = sub_1000c9a0(&var_210)
+10017065                         var_8_1.b = 1
+1001706f                         char* eax_66 = sub_1000c9a0(&var_1bc)
+1001706f                         
+10017078                         if (*(esi_6 + 0x14) u>= 0x10)
+1001707a                             esi_6 = *esi_6
+1001707a                         
+10017080                         if (*(eax_66 + 0x14) u>= 0x10)
+10017082                             eax_66 = *eax_66
+10017082                         
+1001708d                         reportIssue("E0102001", 2, eax_66, esi_6)
+1001708d                         
+1001709f                         if (var_1a8 u>= 0x10)
+100170a9                             sub_10001d60(var_1bc, var_1a8 + 1)
+100170a9                         
+100170b4                         int32_t var_1a8_1 = 0xf
+100170be                         int32_t var_1ac_1 = 0
+100170c8                         var_1bc.b = 0
+100170d2                         int32_t var_1fc
+100170d2                         
+100170d2                         if (var_1fc u>= 0x10)
+100170dc                             sub_10001d60(var_210, var_1fc + 1)
+100170dc                         
+100170e1                         result_1 = 0x753f
+10016efe                 else
+10016f0d                     char* eax_50 = sub_10045450(edi_3, &var_1bc)
+10016f0d                     
+10016f16                     if (*(eax_50 + 0x14) u>= 0x10)
+10016f18                         eax_50 = *eax_50
+10016f18                     
+10016f1a                     int32_t ecx_26 = *(arg1 + 0x1c)
+10016f3b                     opdbg_log("QCFlashWorker::doActionValidateProjectByOCDT", 0xa90, 
+10016f3b                         "[%s] [%s] ERROR: Failed to read data from file: %s", ecx_26 + 0x9e4, 
+10016f3b                         ecx_26 + 0x444, eax_50, eax_2)
+10016f3b                     
+10016f4d                     if (var_1a8 u>= 0x10)
+10016f57                         sub_10001d60(var_1bc, var_1a8 + 1)
+10016f57                     
+10016f65                     char* eax_55 = sub_10045410(edi_3, &var_1bc)
+10016f65                     
+10016f6e                     if (*(eax_55 + 0x14) u>= 0x10)
+10016f70                         eax_55 = *eax_55
+10016f70                     
+10016f72                     char* var_220_24 = eax_55
+10016f79                     sub_10024880(arg1, "read_file_error(%)")
+10016f79                     
+10016f8a                     if (var_1a8 u>= 0x10)
+10016f94                         sub_10001d60(var_1bc, var_1a8 + 1)
+10016f94                     
+10016f99                     result_1 = 0x7d02
+10016e3c             else
+10016e4b                 char* eax_38 = sub_10045450(edi_3, &var_1bc)
+10016e4b                 
+10016e54                 if (*(eax_38 + 0x14) u>= 0x10)
+10016e56                     eax_38 = *eax_38
+10016e56                 
+10016e58                 int32_t ecx_22 = *(arg1 + 0x1c)
+10016e79                 opdbg_log("QCFlashWorker::doActionValidateProjectByOCDT", 0xa8a, 
+10016e79                     "[%s] [%s] ERROR: Failed to open file: %s ", ecx_22 + 0x9e4, ecx_22 + 0x444, 
+10016e79                     eax_38, eax_2)
+10016e79                 
+10016e8b                 if (var_1a8 u>= 0x10)
+10016e95                     sub_10001d60(var_1bc, var_1a8 + 1)
+10016e95                 
+10016ea3                 char* eax_43 = sub_10045410(edi_3, &var_1bc)
+10016ea3                 
+10016eac                 if (*(eax_43 + 0x14) u>= 0x10)
+10016eae                     eax_43 = *eax_43
+10016eae                 
+10016eb0                 char* var_220_17 = eax_43
+10016eb7                 sub_10024880(arg1, "open_file_error(%)")
+10016eb7                 
+10016ec8                 if (var_1a8 u>= 0x10)
+10016ed2                     sub_10001d60(var_1bc, var_1a8 + 1)
+10016ed2                 
+10016ed7                 result_1 = 0x7d03
+10016ed7         
+10017134         int32_t* eax_73 = var_1c.d
+10017137         int32_t* ecx_37 = *eax_73
+10017139         *eax_73 = eax_73
+1001713b         void* eax_74 = var_1c.d
+1001713e         *(eax_74 + 4) = eax_74
+10017141         int32_t eax_75 = var_1c.d
+10017144         var_1c:4.d = 0
+10017144         
+1001714d         if (ecx_37 != eax_75)
+10017162             int32_t* esi_7
+10017162             
+10017162             do
+10017150                 esi_7 = *ecx_37
+10017153                 sub_1005f684(ecx_37)
+10017158                 eax_75 = var_1c.d
+1001715e                 ecx_37 = esi_7
+10017162             while (esi_7 != eax_75)
+10017162         
+10017165         sub_1005f684(eax_75)
+1001716d         result = result_1
+10016c83     else
+10016c85         int32_t ecx_10 = *(arg1 + 0x1c)
+10016cac         opdbg_log("QCFlashWorker::doActionValidateProjectByOCDT", 0xa61, 
+10016cac             "[%s] [%s] ERROR: Failed to execute firehose command 'read %s'.", ecx_10 + 0x9e4, 
+10016cac             ecx_10 + 0x444, &_Destination, eax_2)
+10016cb8         sub_10024880(arg1, "firehouse_exec_command_error(read)")
+10016cc0         result = 0x791b
+10016b34 else
+10016b47     int32_t var_1dc_1 = 0xf
+10016b51     int32_t** _Source_2 = _Source_1
+10016b57     char var_1f0 = 0
+10016b5e     sub_10001ad0(&var_1f0, "OCDT", 4)
+10016b77     _Source_1 = sub_10044710(edi, 0xffffffff, &var_1f0)
+10016b77     
+10016b82     if (var_1dc_1 u>= 0x10)
+10016b8c         sub_10001d60(var_1f0.d, var_1dc_1 + 1)
+10016b8c     
+10016b91     int32_t var_1dc_2 = 0xf
+10016b9b     int32_t var_1e0_1 = 0
+10016ba5     var_1f0 = 0
+10016ba5     
+10016bae     if (_Source_1 != 0)
+10016bae         goto label_10016bee
+10016bae     
+10016bb0     int32_t ecx_6 = *(arg1 + 0x1c)
+10016bd0     opdbg_log("QCFlashWorker::doActionValidateProjectByOCDT", 0xa4e, 
+10016bd0         "[%s] [%s] ERROR: Partition not found: 'ocdt'.", ecx_6 + 0x9e4, ecx_6 + 0x444, eax_2)
+10016bdc     sub_10024880(arg1, "partition_not_found(ocdt)")
+10016be4     result = 0x753b
+10016be4 
+10017172 fsbase->NtTib.ExceptionList = ExceptionList
+10017181 CookieCheckFunction(result)
+10017189 return result

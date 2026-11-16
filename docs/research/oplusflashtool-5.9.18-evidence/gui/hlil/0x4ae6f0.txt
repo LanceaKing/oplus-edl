@@ -1,0 +1,310 @@
+004ae6f3 int32_t var_8 = 0xffffffff
+004ae6f5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_4e8350
+004ae700 TEB* fsbase
+004ae700 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004ae704 int32_t ebx
+004ae704 int32_t var_4c = ebx
+004ae705 int32_t esi
+004ae705 int32_t var_50 = esi
+004ae70e int32_t __saved_ebp
+004ae70e uint32_t var_58 = __security_cookie ^ &__saved_ebp
+004ae712 fsbase->NtTib.ExceptionList = &ExceptionList
+004ae718 int32_t* var_14 = &var_58
+004ae71d QWidget* var_18 = arg1
+004ae722 QWidget::setAcceptDrops(arg1, false)
+004ae728 sub_41cbc0()
+004ae743 int32_t var_1c = OpFlashPack::getProjectCount(OpFlashProfile::getFlashPack(data_58c2f0))
+004ae746 sub_41cbc0()
+004ae755 int32_t eax_6
+004ae755 QWidget* ecx_4
+004ae755 eax_6, ecx_4 = OpFlashPack::getPartitionTableCount(OpFlashProfile::getFlashPack(data_58c2f0))
+004ae75b bool cond:0 = *(arg1 + 0x38) != 0
+004ae75f int32_t var_20 = eax_6
+004ae762 QWidget* var_28
+004ae762 
+004ae762 if (not(cond:0))
+004ae768     var_58 = 0x48
+004ae76a     int32_t var_8_1 = 0
+004ae771     QWidget* eax_7 = sub_4cd774(var_58)
+004ae779     var_28 = eax_7
+004ae77c     var_58 = 0
+004ae78a     var_8_1.b = 1
+004ae78e     struct QWidget::MyComboBox::VTable** eax_8
+004ae78e     eax_8, ecx_4 = sub_48b920(eax_7, nullptr, arg1, 0xb0, 0x20)
+004ae793     *(arg1 + 0x38) = eax_8
+004ae83c     int32_t var_8_2 = 0xffffffff
+004ae83c 
+004ae847 if (*(arg1 + 0x3c) == 0)
+004ae84d     var_58 = 0x48
+004ae84f     int32_t var_8_3 = 4
+004ae856     QWidget* eax_9 = sub_4cd774(var_58)
+004ae85e     var_28 = eax_9
+004ae861     var_58 = 0
+004ae86f     var_8_3.b = 5
+004ae873     struct QWidget::MyComboBox::VTable** eax_10
+004ae873     eax_10, ecx_4 = sub_48b920(eax_9, nullptr, arg1, 0xb0, 0x20)
+004ae878     *(arg1 + 0x3c) = eax_10
+004ae921     int32_t var_8_4 = 0xffffffff
+004ae921 
+004ae928 uint32_t esi_1 = 0
+004ae92d uint32_t* var_24
+004ae92d 
+004ae92d if (var_1c s> 0)
+004ae93f     ecx_4 = *(fsbase->ThreadLocalStoragePointer + (data_58d99c << 2))
+004ae942     var_28 = ecx_4
+004ae942     
+004ae9fe     do
+004ae95b         if (data_58c818 s> *(ecx_4 + 4))
+004ae95d             var_58 = &data_58c818
+004ae962             __Init_thread_header(var_58)
+004ae962             
+004ae971             if (data_58c818 == 0xffffffff)
+004ae978                 int32_t var_8_5 = 8
+004ae97f                 sub_43c920(&data_58a018)
+004ae984                 var_58 = sub_4eba00
+004ae989                 _atexit(var_58)
+004ae993                 int32_t var_8_6 = 0xffffffff
+004ae99a                 sub_4ce058(&data_58c818)
+004ae99a         
+004ae9a2         OpFlashProfile* ecx_8 = data_58c2f0
+004ae9a8         var_58 = esi_1
+004ae9b5         char* eax_15
+004ae9b5         uint32_t ecx_11
+004ae9b5         eax_15, ecx_11 = OpFlashProject::getProjectNumber(OpFlashPack::getProject(
+004ae9b5             OpFlashProfile::getFlashPack(ecx_8), arg2))
+004ae9bd         var_58 = ecx_11
+004ae9be         uint32_t* var_18_1 = &var_58
+004ae9c3         void* ecx_13
+004ae9c3         
+004ae9c3         if (eax_15 == 0)
+004ae9dc             ecx_13 = 0xffffffff
+004ae9c3         else
+004ae9c5             char* ecx_12 = eax_15
+004ae9ca             var_24 = &ecx_12[1]
+004ae9d5             uint32_t* eax_16
+004ae9d5             
+004ae9d5             do
+004ae9d0                 eax_16.b = *ecx_12
+004ae9d2                 ecx_12 = &ecx_12[1]
+004ae9d5             while (eax_16.b != 0)
+004ae9d7             ecx_13 = ecx_12 - var_24
+004ae9d7         
+004ae9ed         *var_18_1 = QString::fromAscii_helper(eax_15, ecx_13)
+004ae9f2         sub_48c8f0(*(arg1 + 0x38))
+004ae9f7         ecx_4 = var_28
+004ae9fa         esi_1 += 1
+004ae9fe     while (esi_1 s< var_1c)
+004ae9fe 
+004aea04 int32_t eax_25 = var_20
+004aea07 uint32_t esi_2 = 0
+004aea07 
+004aea0b if (eax_25 s> 0)
+004aea1d     ecx_4 = *(fsbase->ThreadLocalStoragePointer + (data_58d99c << 2))
+004aea20     QWidget* var_18_2 = ecx_4
+004aea20     
+004aead0     do
+004aea2e         if (data_58c818 s> *(ecx_4 + 4))
+004aea30             var_58 = &data_58c818
+004aea35             __Init_thread_header(var_58)
+004aea35             
+004aea44             if (data_58c818 == 0xffffffff)
+004aea4b                 int32_t var_8_7 = 9
+004aea52                 sub_43c920(&data_58a018)
+004aea57                 var_58 = sub_4eba00
+004aea5c                 _atexit(var_58)
+004aea66                 int32_t var_8_8 = 0xffffffff
+004aea6d                 sub_4ce058(&data_58c818)
+004aea6d         
+004aea75         OpFlashProfile* ecx_17 = data_58c2f0
+004aea7b         var_58 = esi_2
+004aea88         char* eax_22
+004aea88         uint32_t ecx_20
+004aea88         eax_22, ecx_20 = OpFlashPartitionTable::getStorage(OpFlashPack::getPartitionTable(
+004aea88             OpFlashProfile::getFlashPack(ecx_17), arg2))
+004aea90         var_58 = ecx_20
+004aea91         var_24 = &var_58
+004aea96         void* ecx_22
+004aea96         
+004aea96         if (eax_22 == 0)
+004aeaac             ecx_22 = 0xffffffff
+004aea96         else
+004aea98             char* ecx_21 = eax_22
+004aea9d             var_28 = &ecx_21[1]
+004aeaa5             QWidget* eax_23
+004aeaa5             
+004aeaa5             do
+004aeaa0                 eax_23.b = *ecx_21
+004aeaa2                 ecx_21 = &ecx_21[1]
+004aeaa5             while (eax_23.b != 0)
+004aeaa7             ecx_22 = ecx_21 - var_28
+004aeaa7         
+004aeabd         *var_24 = QString::fromAscii_helper(eax_22, ecx_22)
+004aeac2         sub_48c8f0(*(arg1 + 0x3c))
+004aeac7         eax_25 = var_20
+004aeaca         esi_2 += 1
+004aeacb         ecx_4 = var_18_2
+004aead0     while (esi_2 s< eax_25)
+004aead0 
+004aead6 int32_t esi_3 = var_1c
+004aead6 
+004aeae0 if (esi_3 == 1 && eax_25 == esi_3)
+004aeae2     *(arg1 + 0x7d) = 0
+004aeae6     eax_25.b = 1
+004aeaeb     fsbase->NtTib.ExceptionList = ExceptionList
+004aeaf9     return eax_25
+004aeaf9 
+004aeafd var_58 = &var_28
+004aeb0f QDebug* eax_27 = QMessageLogger::info(QMessageLogger::QMessageLogger(ecx_4, nullptr, 0, nullptr))
+004aeb15 int32_t var_68 = var_20
+004aeb1a int32_t var_8_9 = 0xa
+004aeb21 char const* const var_6c = "   getPartitionTableCount:"
+004aeb26 int32_t var_70 = esi_3
+004aeb27 char const* const var_74 = "getProjectCount:"
+004aeb2c void* const var_78 = &data_4f2998
+004aeb31 int32_t var_7c = 0x154
+004aeb36 void* const var_80 = &data_4f2994
+004aeb3b char const* const var_84 = "StartFlashing::CheckProjectNoIsSingle"
+004aeb8e int32_t var_8_10 = 0xffffffff
+004aeb95 QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+004aeb95     QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+004aeb95     eax_27, "[FTGuiSales]["))))))))))
+004aeb9b void* ecx_38 = *(arg1 + 0x34)
+004aeba4 *(arg1 + 0x7d) = 1
+004aebab QWidget::show(*(ecx_38 + 0x58))
+004aebb3 QWidget::show(*(*(arg1 + 0x34) + 0x64))
+004aebc1 QWidget::hide(*(*(arg1 + 0x34) + 0x28))
+004aebc9 QWidget::hide(*(*(arg1 + 0x34) + 0x34))
+004aebd1 QWidget::hide(*(*(arg1 + 0x34) + 0x48))
+004aebd9 QWidget::hide(*(*(arg1 + 0x34) + 0x20))
+004aebe1 QWidget::hide(*(*(arg1 + 0x34) + 0x2c))
+004aebf5 var_20 = QString::fromAscii_helper("0/0", 3)
+004aebff int32_t var_8_11 = 0xb
+004aec12 int32_t var_8_12 = 0xffffffff
+004aec19 QString::~QString(QLabel::setText(*(*(arg1 + 0x34) + 0x3c), &var_20))
+004aec19 
+004aec39 if (data_58c818 s> *(*(fsbase->ThreadLocalStoragePointer + (data_58d99c << 2)) + 4))
+004aec40     __Init_thread_header(&data_58c818)
+004aec40     
+004aec4f     if (data_58c818 == 0xffffffff)
+004aec56         int32_t var_8_13 = 0xc
+004aec5d         sub_43c920(&data_58a018)
+004aec67         _atexit(sub_4eba00)
+004aec71         int32_t var_8_14 = 0xffffffff
+004aec78         sub_4ce058(&data_58c818)
+004aec78 
+004aec88 int32_t var_90 = 0
+004aec8d int32_t var_94 = *(arg1 + 0x34) + 0x3c
+004aec8e sub_4271d0()
+004aec99 QWidget::show(*(*(arg1 + 0x34) + 0x68))
+004aecb6 int32_t var_8_15 = 0xd
+004aecc8 var_8_15.b = 0xe
+004aecdb var_8_15.b = 0xf
+004aece0 QString* eax_44 = sub_41b290(&var_28, 
+004aece0     sub_41b220(&var_24, 
+004aece0         sub_41b290(&var_20, sub_429b80(&var_1c, "<a href='", arg1 + 0x48), 
+004aece0             "'><span style=' text-decoration: none; color: #999999;'> "), 
+004aece0         arg1 + 0x48), 
+004aece0     "</span></a></p></body></html>")
+004aecec var_8_15.b = 0x10
+004aed17 int32_t var_8_16 = 0xffffffff
+004aed1e QString::~QString(QString::~QString(QString::~QString(QString::~QString(QLabel::setText(
+004aed1e     *(*(arg1 + 0x34) + 0x68), eax_44)))))
+004aed31 char* eax_45 = sub_4ba340(&var_28, "click copy", 0, 0xffffffff)
+004aed43 int32_t var_8_17 = 0x11
+004aed52 int32_t var_8_18 = 0xffffffff
+004aed59 QString::~QString(QWidget::setToolTip(*(*(arg1 + 0x34) + 0x68), eax_45))
+004aed62 QWidget::hide(*(arg1 + 0x70))
+004aed75 char* eax_46 = sub_4ba340(&var_28, "stopped", 0, 0xffffffff)
+004aed7d int32_t var_8_19 = 0x12
+004aed94 int32_t var_8_20 = 0xffffffff
+004aed9b QString::~QString(QLabel::setText(*(*(arg1 + 0x34) + 0x1c), eax_46))
+004aeda7 QWidget** var_9c = &var_28
+004aedab class QString* eax_47 = QLabel::text(*(*(arg1 + 0x34) + 0x1c))
+004aedb5 int32_t var_8_21 = 0x13
+004aedc4 int32_t var_8_22 = 0xffffffff
+004aedcb QString::~QString(QWidget::setToolTip(*(*(arg1 + 0x34) + 0x1c), eax_47))
+004aede3 void* esi_6 = *(fsbase->ThreadLocalStoragePointer + (data_58d99c << 2))
+004aede3 
+004aedec if (data_58c818 s> *(esi_6 + 4))
+004aedf3     __Init_thread_header(&data_58c818)
+004aedf3     
+004aee02     if (data_58c818 == 0xffffffff)
+004aee09         int32_t var_8_23 = 0x14
+004aee10         sub_43c920(&data_58a018)
+004aee1a         _atexit(sub_4eba00)
+004aee24         int32_t var_8_24 = 0xffffffff
+004aee2b         sub_4ce058(&data_58c818)
+004aee2b 
+004aee3d bool eax_49
+004aee3d QFont* ecx_78
+004aee3d eax_49, ecx_78 = QString::operator==(&data_58a054, "Turkish")
+004aee45 class QFont var_2c
+004aee45 
+004aee45 if (eax_49 != 0)
+004aee62     int32_t var_8_25 = 0x15
+004aee69     QFont::setPointSize(QFont::QFont(ecx_78, *(*(*(arg1 + 0x34) + 0x1c) + 0x14) + 0x28), 0xe)
+004aee82     int32_t var_8_26 = 0xffffffff
+004aee89     QFont::~QFont(QWidget::setFont(*(*(arg1 + 0x34) + 0x1c), &var_2c))
+004aee89 
+004aee9b var_20 = QString::fromAscii_helper("0/0", 3)
+004aeea5 int32_t var_8_27 = 0x16
+004aeeb8 int32_t var_8_28 = 0xffffffff
+004aeebf QString::~QString(QLabel::setText(*(*(arg1 + 0x34) + 0x3c), &var_20))
+004aeebf 
+004aeed0 if (data_58c818 s> *(esi_6 + 4))
+004aeed7     __Init_thread_header(&data_58c818)
+004aeed7     
+004aeee6     if (data_58c818 == 0xffffffff)
+004aeeed         int32_t var_8_29 = 0x17
+004aeef4         sub_43c920(&data_58a018)
+004aeefe         _atexit(sub_4eba00)
+004aef08         int32_t var_8_30 = 0xffffffff
+004aef0f         sub_4ce058(&data_58c818)
+004aef0f 
+004aef1f int32_t var_ac_1 = 0
+004aef24 int32_t var_b0_1 = *(arg1 + 0x34) + 0x3c
+004aef25 sub_4271d0()
+004aef32 QWidget::setEnabled(*(*(arg1 + 0x34) + 0x54), true)
+004aef45 char* eax_58 = sub_4ba340(&var_28, "startFlash", 0, 0xffffffff)
+004aef51 int32_t var_8_31 = 0x18
+004aef64 int32_t var_8_32 = 0xffffffff
+004aef6b QString::~QString(QAbstractButton::setText(*(*(arg1 + 0x34) + 0x54), eax_58))
+004aef6b 
+004aef7c if (data_58c818 s> *(esi_6 + 4))
+004aef83     __Init_thread_header(&data_58c818)
+004aef83     
+004aef92     if (data_58c818 == 0xffffffff)
+004aef99         int32_t var_8_33 = 0x19
+004aefa0         sub_43c920(&data_58a018)
+004aefaa         _atexit(sub_4eba00)
+004aefb4         int32_t var_8_34 = 0xffffffff
+004aefbb         sub_4ce058(&data_58c818)
+004aefbb 
+004aefcb int32_t var_b4 = 0x14
+004aefd0 int32_t var_b8_1 = *(arg1 + 0x34) + 0x54
+004aefd1 sub_4273f0()
+004aefd1 
+004aefe1 if (data_58c818 s> *(esi_6 + 4))
+004aefe8     __Init_thread_header(&data_58c818)
+004aefe8     
+004aeff7     if (data_58c818 == 0xffffffff)
+004aeffe         int32_t var_8_35 = 0x1a
+004af005         sub_43c920(&data_58a018)
+004af00f         _atexit(sub_4eba00)
+004af019         int32_t var_8_36 = 0xffffffff
+004af020         sub_4ce058(&data_58c818)
+004af020 
+004af031 data_58a0e8 = 0
+004af03b class QFont* var_b4_1 = &var_2c
+004af03f class QPoint* eax_63 = QWidget::pos(*(*(arg1 + 0x34) + 0x5c))
+004af04b QWidget::move(*(arg1 + 0x38), eax_63)
+004af053 void var_34
+004af053 void* var_bc_2 = &var_34
+004af057 class QPoint* eax_64 = QWidget::pos(*(*(arg1 + 0x34) + 0x60))
+004af05d QWidget::move(*(arg1 + 0x3c), eax_64)
+004af068 QWidget::show(*(arg1 + 0x38))
+004af06d QWidget::show(*(arg1 + 0x3c))
+004af06f int32_t eax_65
+004af06f eax_65.b = 0
+004af074 fsbase->NtTib.ExceptionList = ExceptionList
+004af082 return eax_65

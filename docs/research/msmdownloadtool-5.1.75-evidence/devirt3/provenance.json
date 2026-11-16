@@ -1,0 +1,40 @@
+{
+  "source_image_sha256": "cf526788045211590d6fc3d5a1688b87d6377db05532516f5a4f570bd860e68f",
+  "native_windows_process_execution": false,
+  "device_operations": 0,
+  "authentication_requests": 0,
+  "runtime_model": "Synthetic PEB, recovered runtime cache encoding, CRT thread/heap state. Source executable bytes on disk stay unchanged. Emulated IAT/data initialization is explicit.",
+  "api_models": [
+    "GetSystemTimeAsFileTime",
+    "GetLastError",
+    "SetLastError",
+    "FlsGetValue",
+    "HeapAlloc",
+    "HeapFree"
+  ],
+  "target_crypto_and_prng_replaced": false,
+  "vm_guard_branch_patched": false,
+  "cpu_and_rdtsc_in_successful_token_cases": "Unicorn defaults; no overrides",
+  "raw_trace_note": "R/devirt3 retains full raw JSON and the 1.14 GB baseline dispatch stream. This directory keeps selected evidence and original hashes. Earlier baseline object-read values were not captured; only new token runs use the corrected memory observer.",
+  "reference_note": "A VMProtect 3.5.1 source mirror suggested inspecting a runtime CPU cache. It is not provenance or equivalence proof for this binary.",
+  "reference_url": "https://gitea.interbiznw.com/qwqdanchun/vmprotect-3.5.1/src/branch/master/runtime/common.h",
+  "scripts": {
+    "run_vm_native.py": "c703ee170d954a9fa222aae10eb5afb258276fdaba6b795ee4566dbd1803793d",
+    "vm_observer.c": "c88a66553b88b04bc7d2ab711a11e9ff38f9158dd91de6e901702e05434d6df2",
+    "check_vm_guard.py": "116dab23474761d1424ee80739d022d68874b9382449d67bf8336e3bb55c056b",
+    "check_crc_aligned.py": "58d82714eab8e07523ec04ef3df54c6230ec3c6b7e56a675cbaf167831b08c0b",
+    "check_device_token.py": "88994864344876891e5e47ba8d709db7772aeb7372bf3f5fe85bf883e44b20e0",
+    "check_other_tokens.py": "9cf5278bb3b45e85d4c7143c8d995ed27be09af14a7d1bdb6e87e203f068ab70",
+    "check_heap_initialization.py": "63735ac642acd21baab6b90d1b3b8d858b86c98a5432c9dc0d2dafbf5f310dd2",
+    "curate_devirt3.py": "7812fef59f544464d3d07b159544e059ba3e695f3e3d534ea401d8312610a2cb",
+    "validate_devirt3.py": "c73a13ab2a1b3955af69aa7a655ba0ecdb8ea105c9be9dcda9d16ca4a2964b03"
+  },
+  "vector_counts": {
+    "device-token-vectors.json": 14,
+    "other-token-vectors.json": 6,
+    "vm-guard-vectors.json": 6,
+    "crc-table-aligned.json": 0,
+    "baseline-cache-loop.json": 0,
+    "heap-initialization-controls.json": 3
+  }
+}

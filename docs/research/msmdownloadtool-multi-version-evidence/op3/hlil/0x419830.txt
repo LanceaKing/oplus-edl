@@ -1,0 +1,563 @@
+00419839 __security_cookie
+00419849 int32_t ebx
+00419849 int32_t var_9c = ebx
+00419856 int32_t esi
+00419856 int32_t var_a0 = esi
+0041985b void* eax_4
+0041985b void* edx
+0041985b edx:eax_4 = sx.q(*(arg3 + 0x4c))
+0041985c void* edi = eax_4
+00419861 void** eax_5 = arg3 + 0x30
+00419867 void* esi_1 = edx
+00419869 void* var_44 = 1
+00419870 int64_t var_7c = 0
+00419875 int64_t var_54 = 0
+0041987a int64_t var_8c = 0
+00419882 void** var_74 = nullptr
+00419889 void* var_70 = edi
+0041988c void* var_4c = esi_1
+0041988c 
+0041988f if (*(arg3 + 0x44) u>= 0x10)
+00419891     eax_5 = *eax_5
+00419891 
+00419899 int32_t eax_6 = *(arg3 + 0x64)
+004198a4 void* eax_7 = sub_4208b2(0x8000000)
+004198a4 
+004198b1 if (eax_7 == 0)
+004198c8     return sub_53b554()
+004198c8 
+004198e5 int128_t var_30
+004198e5 __builtin_memset(&var_30, 0, 0x28)
+00419901 LPARAM lParam
+00419901 
+00419901 if (___vswprintf_l(&var_30, 0x1c, 1, arg2) == 1)
+00419962     if (var_30.d != 0xed26ff3a)
+00419967         void** ecx_6 = arg3 + 0x30
+0041996e         void* const var_ac_3
+0041996e         
+0041996e         if (*(arg1 + 0x1b) == 0)
+00419984             if (ecx_6[5] u>= 0x10)
+00419986                 ecx_6 = *ecx_6
+00419986             
+00419988             void** var_a8_4 = ecx_6
+00419989             var_ac_3 = "%s: Bad magic, is probably not a sparse image"
+0041996e         else
+00419974             if (ecx_6[5] u>= 0x10)
+00419976                 ecx_6 = *ecx_6
+00419976             
+00419978             void** var_a8_3 = ecx_6
+00419979             var_ac_3 = &data_5a2624
+00419979         
+00419995         sub_410900(arg1 + 0x164, var_ac_3)
+004199b8         SendMessageA(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, 
+004199b8             arg1 + 0x164)
+004199c1         sub_4208bb(eax_7)
+004199dc         return sub_53b554()
+004199dc     
+004199e4     if (var_30:4.w == 1)
+00419a61         int32_t eax_10
+00419a61         eax_10.w = var_30:8.w
+00419a61         
+00419a69         if (eax_10.w u> 0x1c)
+00419a77             sub_53e61c(arg2, zx.d(eax_10.w) - 0x1c, 0)
+00419a77         
+00419a9a         int64_t var_20
+00419a9a         SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 2, var_20:4.d)
+00419aa4         void** ebx_5 = var_7c.d
+00419aa7         LPARAM var_80 = 0
+00419aae         void* const var_b0_20
+00419aae         void** var_ac_31
+00419aae         void* var_a8_31
+00419aae         void* var_94
+00419aae         int32_t var_48
+00419aae         void* var_40
+00419aae         void* ecx_46
+00419aae         void* edx_1
+00419aae         
+00419aae         if (var_20:4.d u<= 0)
+0041a21b             ecx_46 = var_7c:4.d
+0041a21e             var_48 = var_54:4.d
+0041a224             var_40 = var_54.d
+0041a227         label_41a227:
+0041a227             edx_1 = arg1
+0041a22a         label_41a22a:
+0041a22a             void* eax_131 = var_20.d
+0041a22a             
+0041a230             if (eax_131 != var_74)
+0041a232                 var_a8_31 = eax_131
+0041a233                 var_ac_31 = var_74
+0041a236                 var_b0_20 = "Wrote %d blocks, expected to write %d blocks \n"
+0041a23b             label_41a23b:
+0041a23b                 sub_53c55b(var_b0_20, var_ac_31, var_a8_31)
+0041a246             label_41a246:
+0041a246                 sub_4208bb(eax_7)
+0041a261                 return sub_53b554(var_94, eax_5, var_8c)
+0041a261             
+0041a268             void* ebx_14
+0041a268             
+0041a268             if ((ebx_5 | ecx_46) == 0)
+0041a28a                 ebx_14 = eax_7
+0041a268             else
+0041a270                 if ((var_40 | var_48) != 0)
+0041a272                     ebx_5 -= var_40
+0041a272                 
+0041a278                 ebx_14 = eax_7
+0041a281                 sub_4191f0(edx_1, arg3, ebx_14, ebx_5, edi, esi_1)
+0041a281             
+0041a291             sub_4208bb(ebx_14)
+0041a2ab             return sub_53b554(var_94, eax_5, var_8c)
+0041a2ab         
+00419ab7         void* var_34_1 = var_7c:4.d
+00419abd         var_48 = var_54:4.d
+00419ac3         var_40 = var_54.d
+00419acc         void** var_38_1 = ebx_5
+00419acf         int32_t var_5c_1 = 0
+00419acf         
+00419add         while (true)
+00419add             int64_t var_14
+00419add             int32_t eax_33 = ___vswprintf_l(&var_14, 0xc, 1, arg2)
+00419add             
+00419ae8             if (eax_33 == 1)
+00419aee                 int16_t ecx_13 = var_30:0xa.w
+00419aee                 
+00419af6                 if (ecx_13 u> 0xc)
+00419b03                     sub_53e61c(arg2, zx.d(ecx_13) - 0xc, eax_33)
+00419b08                     ecx_13 = var_30:0xa.w
+00419b08                 
+00419b0f                 edx_1 = arg1
+00419b0f                 
+00419b19                 if (*(edx_1 + 0x1e4) != 0)
+0041a20b                     ecx_46 = var_34_1
+0041a213                     var_44 = 0x4c7
+0041a216                     goto label_41a22a
+0041a216                 
+00419b1f                 edx_1.w = var_14.w
+00419b23                 uint32_t eax_36 = zx.d(edx_1.w)
+00419b2b                 int32_t var_c
+00419b2b                 void* eax_76
+00419b2b                 
+00419b2b                 if (eax_36 == 0xcac1)
+00419eea                     int32_t eax_89 = var_30:0xc.d
+00419eea                     
+00419efb                     if (var_c != eax_89 * var_14:4.d + zx.d(ecx_13))
+0041a1e2                         sub_53c55b("Bogus chunk size for chunk %d, type RAW \n", var_80)
+0041a1ed                         sub_4208bb(eax_7)
+0041a208                         return sub_53b554(var_94, eax_5, var_8c)
+0041a208                     
+00419f01                     void** eax_90
+00419f01                     void* edx_23
+00419f01                     edx_23:eax_90 = mulu.dp.d(eax_89, var_14:4.d)
+00419f13                     int32_t eax_91
+00419f13                     int32_t edx_24
+00419f13                     eax_91, edx_24 = __allrem(eax_90, edx_23, eax_6, 0)
+00419f13                     
+00419f1a                     if ((eax_91 | edx_24) != 0)
+0041a1cc                         var_a8_31 = edx_23
+0041a1d2                         var_ac_31 = eax_90
+0041a1d3                         var_b0_20 = "File chunk size %d is not a sector-multiple \n"
+0041a1d8                         break
+0041a1d8                     
+00419f27                     if ((ebx_5 | var_34_1) == 0)
+00419f3e                         if (edx_23 s< 0 || (edx_23 s<= 0 && eax_90 u<= 0x4000000))
+00419f87                             ebx_5 = eax_90
+00419f96                             void* eax_98 = sub_4194d0(arg2, eax_7, nullptr, 0, ebx_5, edx_23)
+00419f9d                             var_44 = eax_98
+00419f9d                             
+00419fa2                             if (eax_98 != 0)
+00419fa2                                 goto label_41a246
+00419fa2                             
+00419fa8                             eax_76 = edx_23
+00419fa2                             goto label_41a092
+00419fa2                         
+00419f47                         void* eax_96
+00419f47                         int32_t edx_25
+00419f47                         eax_96, edx_25 = __alldiv(eax_90, edx_23, eax_6, 0)
+00419f4e                         var_54:4.d = eax_96
+00419f51                         int32_t var_a8_25 = edx_25
+00419f58                         var_7c:4.d = edx_25
+00419f61                         void* eax_97 = sub_4195b0(arg1, arg2, arg3, edi, esi_1, eax_96)
+00419f68                         var_44 = eax_97
+00419f68                         
+00419f6d                         if (eax_97 != 0)
+00419f6d                             goto label_41a246
+00419f6d                         
+00419f73                         void* temp18_1 = edi
+00419f73                         edi += var_54:4.d
+00419f76                         eax_76 = var_34_1
+00419f79                         esi_1 = adc.d(esi_1, var_7c:4.d, temp18_1 + var_54:4.d u< temp18_1)
+00419f7c                         var_70 = edi
+00419f7f                         var_4c = esi_1
+00419f6d                         goto label_41a098
+00419f6d                     
+00419fb0                     struct DOS_Header* eax_99 = eax_90
+00419fb5                     void** edx_27 = ebx_5 + eax_99
+00419fb5                     bool c_17 = ebx_5 + eax_99 u< ebx_5
+00419fc0                     void* var_5c_5 = adc.d(var_34_1, edx_23, c_17)
+00419fc0                     bool s_2 = adc.d(var_34_1, edx_23, c_17) s< 0
+00419fc0                     bool o_2 = unimplemented  {adc dword [ebp-0x58], edx}
+00419fc0                     
+00419fd2                     if (s_2 || ((adc.d(var_34_1, edx_23, c_17) == 0 || s_2 != o_2)
+00419fd2                             && edx_27 u<= 0x8000000))
+0041a07c                         void* eax_110 = sub_4194d0(arg2, eax_7, ebx_5, var_34_1, eax_99, edx_23)
+0041a081                         var_44 = eax_110
+0041a081                         
+0041a086                         if (eax_110 != 0)
+0041a086                             goto label_41a246
+0041a086                         
+0041a08c                         ebx_5 = edx_27
+0041a08f                         eax_76 = var_5c_5
+0041a092                     label_41a092:
+0041a092                         var_38_1 = ebx_5
+0041a095                         var_34_1 = eax_76
+0041a098                     label_41a098:
+0041a098                         var_8c:4.d = eax_76
+0041a0a7                         var_54 = 0
+0041a0ac                         var_74 += var_14:4.d
+0041a0b2                         var_48 = 0
+0041a0b8                         var_40 = nullptr
+0041a0bb                         var_5c_1 = ebx_5
+0041a0ce                     label_41a0ce:
+0041a0ce                         sub_417200(arg1, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 3, var_80, 0)
+0041a0d9                         LPARAM eax_115 = var_80 + 1
+0041a0da                         var_80 = eax_115
+0041a0da                         
+0041a0e0                         if (eax_115 u>= var_20:4.d)
+0041a0e6                             ecx_46 = var_34_1
+0041a0e9                             goto label_41a227
+0041a0e9                         
+0041a0e0                         continue
+0041a0e0                     
+00419fe0                     if ((var_40 | var_48) != 0)
+00419fe2                         void** temp16_1 = ebx_5
+00419fe2                         ebx_5 -= var_40
+00419fe7                         var_34_1 = sbb.d(var_34_1, var_48, temp16_1 u< var_40)
+00419fe7                     
+00419ff6                     void* eax_102 = sub_4191f0(arg1, arg3, eax_7, ebx_5, edi, esi_1)
+00419ffb                     var_54:4.d = eax_102
+00419ffb                     
+0041a000                     if (eax_102 != 0)
+0041a177                     label_41a177:
+0041a177                         sub_4208bb(eax_7)
+0041a2ab                         return sub_53b554(var_94, eax_5, var_8c)
+0041a2ab                     
+0041a019                     int32_t eax_105
+0041a019                     int32_t edx_30
+0041a019                     eax_105, edx_30 = __alldiv(var_40 + ebx_5, 
+0041a019                         adc.d(var_48, var_34_1, var_40 + ebx_5 u< var_40), eax_6, 0)
+0041a024                     void* edi_10 = edi + eax_105
+0041a02d                     int32_t esi_8 = adc.d(esi_1, edx_30, edi + eax_105 u< edi)
+0041a02f                     var_7c = 0
+0041a034                     void* eax_107
+0041a034                     int32_t edx_31
+0041a034                     eax_107, edx_31 = __alldiv(eax_90, edx_23, eax_6, 0)
+0041a040                     int32_t var_a8_28 = edx_31
+0041a047                     var_54:4.d = edx_31
+0041a04d                     void* eax_109 = sub_4195b0(arg1, arg2, arg3, edi_10, esi_8, eax_107)
+0041a054                     var_44 = eax_109
+0041a054                     
+0041a059                     if (eax_109 != 0)
+0041a059                         goto label_41a246
+0041a059                     
+0041a05f                     eax_76 = var_7c:4.d
+0041a062                     edi = edi_10 + eax_107
+0041a064                     ebx_5 = var_7c.d
+0041a067                     esi_1 = adc.d(esi_8, var_54:4.d, edi_10 + eax_107 u< edi_10)
+0041a06a                     var_70 = edi
+0041a06d                     var_4c = esi_1
+0041a059                     goto label_41a092
+00419b2b                 else
+00419b32                     if (eax_36 != 0xcac2)
+00419b39                         if (eax_36 != 0xcac3)
+0041a14b                             sub_53c55b("Unkown chunk type 0x%x \n", zx.d(edx_1.w))
+0041a156                             sub_4208bb(eax_7)
+0041a171                             return sub_53b554(var_94, eax_5, var_8c)
+0041a171                         
+00419b45                         if (var_c != zx.d(ecx_13))
+0041a119                             sub_53c55b("Bogus chunk size for chunk %d, type Dont Care \n", var_80)
+0041a124                             sub_4208bb(eax_7)
+0041a13f                             return sub_53b554(var_94, eax_5, var_8c)
+0041a13f                         
+00419b4e                         int32_t eax_42
+00419b4e                         int32_t edx_2
+00419b4e                         edx_2:eax_42 = mulu.dp.d(var_30:0xc.d, var_14:4.d)
+00419b58                         var_8c:4.d = eax_42
+00419b60                         var_7c:4.d = edx_2
+00419b63                         int32_t eax_43
+00419b63                         int32_t ecx_15
+00419b63                         int32_t edx_3
+00419b63                         eax_43, ecx_15, edx_3 = __alldvrm(eax_42, edx_2, eax_6, 0)
+00419b6d                         var_54:4.d = edx_3
+00419b6d                         
+00419b70                         if ((ecx_15 | ebx_5) != 0)
+0041a0fe                             var_a8_31 = var_7c:4.d
+0041a101                             var_ac_31 = var_8c:4.d
+0041a107                             var_b0_20 = "Number of bytes skipped %d is not a sector-multiple \n"
+0041a10c                             break
+0041a10c                         
+00419b76                         ebx_5 = var_38_1
+00419b76                         
+00419b7e                         if ((ebx_5 | var_34_1) != 0)
+00419bb6                             void* eax_48
+00419bb6                             int32_t edx_4
+00419bb6                             eax_48, edx_4 = __allmul(eax_6, 0, eax_43, edx_3)
+00419bbd                             var_8c:4.d = eax_48
+00419bc3                             void** eax_49 = eax_48 + ebx_5
+00419bc5                             var_7c:4.d = edx_4
+00419bcb                             void* edx_5 = adc.d(edx_4, var_34_1, eax_48 + ebx_5 u< eax_48)
+00419bd0                             var_94 = edx_5
+00419bd8                             void* edx_6
+00419bd8                             
+00419bd8                             if (edx_5 s> 0)
+00419c3a                             label_419c3a:
+00419c3a                                 edx_6 = var_40
+00419c42                             label_419c42:
+00419c42                                 
+00419c42                                 if ((edx_6 | var_48) != 0)
+00419c44                                     void** temp30_1 = ebx_5
+00419c44                                     ebx_5 -= edx_6
+00419c49                                     var_34_1 = sbb.d(var_34_1, var_48, temp30_1 u< edx_6)
+00419c49                                 
+00419c5a                                 void* eax_61 = sub_4191f0(arg1, arg3, eax_7, var_5c_1, edi, esi_1)
+00419c5f                                 var_44 = eax_61
+00419c5f                                 
+00419c64                                 if (eax_61 != 0)
+0041a0f1                                     sub_4208bb(eax_7)
+0041a2ab                                     return sub_53b554(var_94, eax_5, var_8c)
+0041a2ab                                 
+00419c7b                                 int32_t eax_62
+00419c7b                                 int32_t edx_9
+00419c7b                                 eax_62, edx_9 = __alldiv(var_40 + ebx_5, 
+00419c7b                                     adc.d(var_48, var_34_1, var_40 + ebx_5 u< var_40), eax_6, 
+00419c7b                                     eax_61)
+00419c80                                 void* edi_3 = edi + eax_62
+00419c85                                 var_7c = 0
+00419c8d                                 int32_t esi_6 = adc.d(esi_1, edx_9, edi + eax_62 u< edi)
+00419c8f                                 edi = edi_3 + eax_43
+00419c92                                 ebx_5 = nullptr
+00419c95                                 esi_1 = adc.d(esi_6, var_54:4.d, edi_3 + eax_43 u< edi_3)
+00419c98                                 var_34_1 = nullptr
+00419c9b                                 var_8c = 0
+00419ca9                                 var_5c_1 = 0
+00419cb2                                 var_38_1 = nullptr
+00419cb5                                 var_4c = esi_1
+00419cb8                                 var_70 = edi
+00419cbb                                 var_74 += var_14:4.d
+00419bd8                             else
+00419bda                                 if (edx_5 s< 0)
+00419be7                                     if (var_48 s> 0)
+00419be7                                         goto label_419c3a
+00419bda                                 else if (eax_49 u> 0x8000000 || var_48 s> 0)
+00419be1                                     goto label_419c3a
+00419be1                                 
+00419be9                                 if (var_48 s>= 0)
+00419beb                                     edx_6 = var_40
+00419beb                                 
+00419bf4                                 if (var_48 s>= 0 && edx_6 u> 0x2000000)
+00419bf4                                     goto label_419c42
+00419bf4                                 
+00419c06                                 _memset(eax_7 + ebx_5, 0, eax_43 * eax_6)
+00419c14                                 ebx_5 = eax_49
+00419c17                                 var_34_1 = var_94
+00419c1a                                 int32_t eax_55 = var_8c:4.d
+00419c20                                 void* temp38_1 = var_40
+00419c20                                 var_40 += eax_55
+00419c26                                 var_48 = adc.d(var_48, var_7c:4.d, temp38_1 + eax_55 u< temp38_1)
+00419c2f                                 var_38_1 = ebx_5
+00419c32                                 var_74 += var_14:4.d
+00419b7e                         else
+00419b80                             void* temp14_1 = edi
+00419b80                             edi += eax_43
+00419b86                             var_54 = 0
+00419b8e                             esi_1 = adc.d(esi_1, edx_3, temp14_1 + eax_43 u< temp14_1)
+00419b90                             var_48 = 0
+00419b96                             var_40 = nullptr
+00419b9f                             var_4c = esi_1
+00419ba2                             var_70 = edi
+00419ba5                             var_74 += var_14:4.d
+00419ba5                         
+00419b39                         goto label_41a0ce
+00419b39                     
+00419ccc                     if (var_c != zx.d(ecx_13) + 4)
+0041a1a3                         sub_53c55b("Bogus chunk size for chunk %d, type Fill \n", var_80)
+0041a1ae                         sub_4208bb(eax_7)
+0041a1c9                         return sub_53b554(var_94, eax_5, var_8c)
+0041a1c9                     
+00419ce8                     int32_t var_84
+00419ce8                     
+00419ce8                     if (___vswprintf_l(&var_84, 4, 1, arg2) == 1)
+00419cf1                         void** eax_69
+00419cf1                         void* edx_10
+00419cf1                         edx_10:eax_69 = mulu.dp.d(var_30:0xc.d, var_14:4.d)
+00419cf4                         int32_t ecx_23 = var_38_1
+00419cf7                         void** esi_7 = eax_69
+00419cf9                         void* ebx_6 = edx_10
+00419cf9                         
+00419d02                         if ((ecx_23 | var_34_1) == 0)
+00419d14                             if (ebx_6 s< 0 || (ebx_6 s<= 0 && esi_7 u<= 0x4000000))
+00419d7c                             label_419d7c:
+00419d7c                                 void* var_a8_20 = ebx_6
+00419d88                                 sub_419480(var_84, eax_7, 0, 0, esi_7)
+00419d8f                                 var_44 = nullptr
+00419d9a                                 eax_76 = ebx_6
+00419d9c                                 var_38_1 = esi_7
+00419d9f                                 ebx_5 = esi_7
+00419da1                                 var_34_1 = eax_76
+00419da4                                 esi_1 = var_4c
+00419da7                                 goto label_41a098
+00419da7                             
+00419d2b                             while (true)
+00419d30                                 int32_t ecx_24
+00419d30                                 int32_t edi_5
+00419d30                                 edi_5, ecx_24 = __memfill_u32(eax_7, var_84, 0x1000000)
+00419d42                                 void* eax_73 =
+00419d42                                     sub_4191f0(arg1, arg3, eax_7, 0x4000000, var_70, var_4c)
+00419d47                                 var_54:4.d = eax_73
+00419d47                                 
+00419d4c                                 if (eax_73 != 0)
+00419d4c                                     break
+00419d4c                                 
+00419d59                                 uint32_t temp0_1 = divu.dp.d(0:0x4000000, eax_6)
+00419d5c                                 edi = var_70 + temp0_1
+00419d5c                                 bool c_8 = var_70 + temp0_1 u< var_70
+00419d5e                                 var_70 = edi
+00419d61                                 var_4c = adc.d(var_4c, 0, c_8)
+00419d65                                 void** temp32_1 = esi_7
+00419d65                                 esi_7 = &esi_7[-0x1000000]
+00419d6b                                 ebx_6 = adc.d(ebx_6, 0xffffffff, temp32_1 u>= 0x4000000)
+00419d6b                                 
+00419d70                                 if (ebx_6 s<= 0)
+00419d72                                     if (ebx_6 s< 0)
+00419d72                                         goto label_419d7c
+00419d72                                     
+00419d7a                                     if (esi_7 u<= 0x4000000)
+00419d7a                                         goto label_419d7c
+00419d7a                             
+00419d4c                             goto label_41a177
+00419d4c                         
+00419db1                         void* eax_78 = ecx_23 + esi_7
+00419db1                         bool c_10 = ecx_23 + esi_7 u< ecx_23
+00419db3                         var_54:4.d = eax_78
+00419db6                         void* var_5c_3 = adc.d(var_34_1, ebx_6, c_10)
+00419db6                         bool s_1 = adc.d(var_34_1, ebx_6, c_10) s< 0
+00419db6                         bool o_1 = unimplemented  {adc dword [ebp-0x58], ebx}
+00419db6                         
+00419dc6                         if (s_1 || ((adc.d(var_34_1, ebx_6, c_10) == 0 || s_1 != o_1)
+00419dc6                                 && eax_78 u<= 0x8000000))
+00419ebc                             void* var_a8_24 = ebx_6
+00419ec6                             sub_419480(var_84, eax_7, ecx_23, var_34_1, esi_7)
+00419ecb                             var_44 = nullptr
+00419ed6                             ebx_5 = var_54:4.d
+00419ed9                             eax_76 = var_5c_3
+00419edc                             esi_1 = var_4c
+00419edf                             var_38_1 = ebx_5
+00419ee2                             var_34_1 = eax_76
+00419ee5                             goto label_41a098
+00419ee5                         
+00419dd2                         if ((var_40 | var_48) != 0)
+00419dd4                             int32_t temp22_1 = ecx_23
+00419dd4                             ecx_23 -= var_40
+00419dd7                             var_38_1 = ecx_23
+00419ddd                             var_34_1 = sbb.d(var_34_1, var_48, temp22_1 u< var_40)
+00419ddd                         
+00419dee                         void* eax_81 = sub_4191f0(arg1, arg3, eax_7, ecx_23, edi, var_4c)
+00419df3                         var_54:4.d = eax_81
+00419df3                         
+00419df8                         if (eax_81 != 0)
+00419df8                             goto label_41a177
+00419df8                         
+00419e11                         int32_t eax_84
+00419e11                         int32_t edx_16
+00419e11                         eax_84, edx_16 = __alldiv(var_40 + var_38_1, 
+00419e11                             adc.d(var_48, var_34_1, var_40 + var_38_1 u< var_40), eax_6, 0)
+00419e16                         void* temp28_1 = edi
+00419e16                         edi += eax_84
+00419e18                         var_70 = edi
+00419e1b                         var_4c = adc.d(var_4c, edx_16, temp28_1 + eax_84 u< temp28_1)
+00419e1b                         
+00419e2a                         if (ebx_6 s>= 0 && (ebx_6 s> 0 || esi_7 u> 0x4000000))
+00419e3b                             while (true)
+00419e40                                 int32_t ecx_29
+00419e40                                 int32_t edi_8
+00419e40                                 edi_8, ecx_29 = __memfill_u32(eax_7, var_84, 0x1000000)
+00419e52                                 void* eax_86 =
+00419e52                                     sub_4191f0(arg1, arg3, eax_7, 0x4000000, var_70, var_4c)
+00419e57                                 var_54:4.d = eax_86
+00419e57                                 
+00419e5c                                 if (eax_86 != 0)
+00419e5c                                     goto label_41a177
+00419e5c                                 
+00419e69                                 uint32_t temp0_2 = divu.dp.d(0:0x4000000, eax_6)
+00419e6c                                 edi = var_70 + temp0_2
+00419e6c                                 bool c_14 = var_70 + temp0_2 u< var_70
+00419e6e                                 var_70 = edi
+00419e71                                 var_4c = adc.d(var_4c, 0, c_14)
+00419e75                                 void** temp40_1 = esi_7
+00419e75                                 esi_7 = &esi_7[-0x1000000]
+00419e7b                                 ebx_6 = adc.d(ebx_6, 0xffffffff, temp40_1 u>= 0x4000000)
+00419e7b                                 
+00419e80                                 if (ebx_6 s<= 0)
+00419e82                                     if (ebx_6 s< 0)
+00419e82                                         break
+00419e82                                     
+00419e8a                                     if (esi_7 u<= 0x4000000)
+00419e8a                                         break
+00419e8a                         
+00419e8c                         void* var_a8_23 = ebx_6
+00419e98                         sub_419480(var_84, eax_7, 0, 0, esi_7)
+00419e9f                         var_44 = nullptr
+00419eaa                         eax_76 = ebx_6
+00419eac                         var_34_1 = ebx_6
+00419eaf                         var_38_1 = esi_7
+00419eb2                         ebx_5 = esi_7
+00419eb4                         esi_1 = var_4c
+00419ea4                         goto label_41a098
+00419ea4             
+0041a189             var_a8_31 = *__errno()
+0041a18b             var_ac_31 = eax_5
+0041a191             var_b0_20 = "read file %s failed, errno=%d\n"
+0041a196             break
+0041a196         
+0041a196         goto label_41a23b
+0041a196     
+004199e9     void** ecx_10 = arg3 + 0x30
+004199f0     void* const var_ac_5
+004199f0     
+004199f0     if (*(arg1 + 0x1b) == 0)
+00419a06         if (ecx_10[5] u>= 0x10)
+00419a08             ecx_10 = *ecx_10
+00419a08         
+00419a0a         void** var_a8_8 = ecx_10
+00419a0b         var_ac_5 = "%s: Unknown header major version number"
+004199f0     else
+004199f6         if (ecx_10[5] u>= 0x10)
+004199f8             ecx_10 = *ecx_10
+004199f8         
+004199fa         void** var_a8_7 = ecx_10
+004199fb         var_ac_5 = &data_5a2668
+004199fb     
+00419a10     lParam = arg1 + 0x164
+00419a17     sub_410900(lParam, var_ac_5)
+00419901 else
+00419903     enum WIN32_ERROR eax_11 = GetLastError()
+0041990c     void** ecx_4 = arg3 + 0x30
+0041990c     
+00419913     if (*(arg1 + 0x1b) == 0)
+0041993c         if (ecx_4[5] u>= 0x10)
+0041993e             ecx_4 = *ecx_4
+0041993e         
+00419940         enum WIN32_ERROR var_a8_2 = eax_11
+00419941         void** var_ac_2 = ecx_4
+00419947         lParam = arg1 + 0x164
+0041994e         sub_410900(lParam, "Read %s  Failed, Errno: %d")
+00419913     else
+00419919         if (ecx_4[5] u>= 0x10)
+0041991b             ecx_4 = *ecx_4
+0041991b         
+0041991d         enum WIN32_ERROR var_a8_1 = eax_11
+0041991e         void** var_ac_1 = ecx_4
+00419924         lParam = arg1 + 0x164
+0041992b         sub_410900(lParam, 0x5a25ec)
+0041992b 
+00419a3a SendMessageA(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, lParam)
+00419a43 sub_4208bb(eax_7)
+00419a5e return sub_53b554()

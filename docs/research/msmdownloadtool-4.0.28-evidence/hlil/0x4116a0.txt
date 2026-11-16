@@ -1,0 +1,30 @@
+004116a3 int32_t ecx
+004116a3 int32_t var_8 = ecx
+004116a4 int32_t eax = data_5df864
+004116b1 data_5ea624 = eax.w
+004116b8 data_5df864 = eax + 1
+004116bd int32_t eax_2 = data_5df860
+004116c2 data_5ea626 = eax_2.w
+004116c9 data_5df860 = eax_2 + 1
+004116d4 data_5ea620 = 8
+004116de __builtin_strcpy(&data_5ea62d, "HelloWorld!")
+004116f1 data_5ea629 = GetTickCount()
+004116f6 int32_t edx = 0
+004116f8 int32_t* eax_5 = &data_5ea620
+004116fd int32_t flags = 0x206
+0041170b int32_t i
+0041170b 
+0041170b do
+00411702     uint32_t ecx_1 = zx.d(*eax_5)
+00411705     eax_5 += 2
+00411708     edx += ecx_1
+0041170a     i = flags
+0041170a     flags -= 1
+0041170b while (i != 1)
+0041170d eax_5.b = *eax_5
+0041170f int16_t var_8_1 = flags.w
+00411712 var_8_1.b = eax_5.b
+00411719 int32_t edx_1 = edx + zx.d(var_8_1)
+00411728 int32_t ecx_4 = (edx_1 s>> 0x10) + zx.d(edx_1.w)
+00411741 data_5ea620:2.w = (not.d((ecx_4 s>> 0x10) + ecx_4)).w
+00411751 return sendto(arg1, &data_5ea620, 0x40d, flags, arg2, 0x10)

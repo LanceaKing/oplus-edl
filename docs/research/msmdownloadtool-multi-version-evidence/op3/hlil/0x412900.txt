@@ -1,0 +1,91 @@
+00412909 __security_cookie
+0041292b int128_t var_11c = arg5
+00412933 _memset(arg4, 0, 0x314)
+0041293b int32_t* edi = &data_5c4570
+00412940 int32_t ebx = 0
+00412940 
+00412942 while (true)
+00412942     int32_t* edx = edi
+00412944     int128_t* eax_2 = &var_11c
+0041294a     int32_t esi_1 = 0xc
+0041294a     
+00412954     while (true)
+00412954         if (*edx != *eax_2)
+00412963             edi = &edi[4]
+00412966             ebx += 1
+00412966             
+0041296d             if (edi s< &data_5c4590)
+0041296d                 break
+00412954         else
+00412956             edx = &edx[1]
+00412959             eax_2 += 4
+0041295c             int32_t temp0_1 = esi_1
+0041295c             esi_1 -= 4
+0041295c             
+0041295f             if (temp0_1 u>= 4)
+0041295f                 continue
+0041295f         
+00412972         int32_t var_160
+00412972         int32_t var_15c
+00412972         GUID* InterfaceClassGuid
+00412972         int32_t var_150
+00412972         uint32_t MemberIndex
+00412972         
+00412972         if (ebx != 2)
+00412985             var_15c = *((ebx << 2) + &data_59f2c4)
+0041299b             var_150 = (&data_59f2b8)[ebx]
+004129ab             InterfaceClassGuid = (ebx << 4) + &data_5c4570
+004129b1             var_160 = *((ebx << 2) + &data_59f2b0)
+004129b7             int32_t DeviceInfoData = 0x1c
+004129c1             struct SP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+004129c1             DeviceInterfaceData.cbSize = 0x1c
+004129cb             uint32_t var_148 = 0
+004129d5             HDEVINFO DeviceInfoSet =
+004129d5                 SetupDiGetClassDevsA((ebx << 4) + &data_5c4570, nullptr, nullptr, 0x12)
+004129df             MemberIndex = 0
+004129df             
+004129fa             if (SetupDiEnumDeviceInterfaces(DeviceInfoSet, nullptr, (ebx << 4) + &data_5c4570, 0, 
+004129fa                     &DeviceInterfaceData) != 0)
+00412abf                 BOOL i
+00412abf                 
+00412abf                 do
+00412a1b                     SetupDiGetDeviceInterfaceDetailA(DeviceInfoSet, &DeviceInterfaceData, nullptr, 
+00412a1b                         0, &var_148, nullptr)
+00412a23                     int32_t* DeviceInterfaceDetailData = sub_4208b2(var_148)
+00412a3a                     *DeviceInterfaceDetailData = 5
+00412a50                     SetupDiGetDeviceInterfaceDetailA(DeviceInfoSet, &DeviceInterfaceData, 
+00412a50                         DeviceInterfaceDetailData, var_148, &var_148, &DeviceInfoData)
+00412a5b                     uint32_t MemberIndex_1 = MemberIndex + 1
+00412a63                     MemberIndex = MemberIndex_1
+00412a69                     sub_53c55b("\n[index:%d]\n  dev_path=%s\n", MemberIndex_1, 
+00412a69                         &DeviceInterfaceDetailData[1])
+00412a79                     sub_53c55b("  Handle=%d\n", var_11c:8.d)
+00412a79                     
+00412a8f                     if (sub_53c286(arg3, &DeviceInterfaceDetailData[1]) == 0)
+00412ad2                         if (var_150 == 0)
+00412b03                         label_412b03:
+00412b03                             uint8_t PropertyBuffer[0x104]
+00412b03                             BOOL eax_12 = SetupDiGetDeviceRegistryPropertyA(DeviceInfoSet, 
+00412b03                                 &DeviceInfoData, 0xc, nullptr, &PropertyBuffer, 0x104, nullptr)
+00412b03                             
+00412b0e                             if (eax_12 != 0)
+00412b20                                 eax_12 = _strcpy_s(&arg4[1], 0x104, &PropertyBuffer)
+00412b20                             
+00412b44                             if (sub_411f10(eax_12, &arg4[0x83], &DeviceInfoData, var_160) != 0)
+00412b56                                 _strcpy_s(&arg4[0x42], 0x104, &DeviceInterfaceDetailData[1])
+00412b64                                 *arg4 = var_15c
+00412ad2                         else if (var_150(&DeviceInterfaceDetailData[1], DeviceInfoSet, 
+00412ad2                                 &DeviceInfoData) != 0)
+00412ae7                             goto label_412b03
+00412ae7                         
+00412b67                         sub_4208bb(DeviceInterfaceDetailData)
+00412b6c                         break
+00412b6c                     
+00412a92                     sub_4208bb(DeviceInterfaceDetailData)
+00412ab1                     i = SetupDiEnumDeviceInterfaces(DeviceInfoSet, nullptr, InterfaceClassGuid, 
+00412ab1                         MemberIndex, &DeviceInterfaceData)
+00412abf                 while (i != 0)
+00412abf             
+00412b70             SetupDiDestroyDeviceInfoList(DeviceInfoSet)
+00412b70         
+00412b89         return sub_53b554(var_160, var_15c, arg3, InterfaceClassGuid, var_150, MemberIndex)

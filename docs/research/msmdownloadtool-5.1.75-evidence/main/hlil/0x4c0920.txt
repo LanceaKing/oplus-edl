@@ -1,0 +1,83 @@
+004c0923 void* var_8 = arg1
+004c092d int32_t __saved_edi
+004c092d int32_t* esp = &__saved_edi
+004c092e void* eax = *(arg1 + 0x90)
+004c093a void* i
+004c093a 
+004c093a if (*(eax + 0x13c) != 1)
+004c099f     void** edi_1 = *(arg1 + 0x94)
+004c09af     int32_t eax_5
+004c09af     int32_t edx_1
+004c09af     edx_1:eax_5 = muls.dp.d(0x4ec4ec4f, edi_1[1] - *edi_1)
+004c09b1     int32_t edx_2 = edx_1 s>> 5
+004c09b1     
+004c09bb     if (edx_2 u>> 0x1f != neg.d(edx_2))
+004c09c4         for (i = *edi_1; i != edi_1[1]; i += 0x68)
+004c09c6             void* ecx_6
+004c09c6             ecx_6.b = *(i + 0x62)
+004c09c6             
+004c09cb             if (ecx_6.b != 0)
+004c09d6             label_4c09d6:
+004c09d6                 
+004c09d9                 if (*(arg1 + 0x55) == 1)
+004c09d9                     goto label_4c0993
+004c09cb             else
+004c09d0                 if (*(arg1 + 0x55) == ecx_6.b)
+004c09d0                     goto label_4c0993
+004c09d0                 
+004c09d4                 if (ecx_6.b != 0)
+004c09d4                     goto label_4c09d6
+004c09d4     
+004c09e2 label_4c09e2:
+004c09e2     int32_t var_18_1 = 1
+004c09f0     sub_68abcf(arg1 + 0x2c0, u"Failed to get DP. (%d)")
+004c09fc     char* var_18_2 = arg1 + 0x2c0
+004c09fd     int32_t var_1c_2 = *(arg1 + 0x38) + 1
+004c09fe     char const* const var_20_2 = "[%d] %s\n"
+004c0a03     int32_t var_24 = 4
+004c0a0a     sub_4d6270(&data_7e09e8)
+004c0a17     int32_t var_1c_3
+004c0a17     
+004c0a17     if (*(arg1 + 0x24) == 0)
+004c0a2f         var_1c_3 = zx.d(*(arg1 + 0x38)) | 0x1000000
+004c0a17     else
+004c0a22         var_1c_3 = zx.d(*(arg1 + 0x38)) | 0x1000000
+004c0a22     
+004c0a30     int32_t var_20_3 = 0x178c
+004c0a35     var_24 = *(arg1 + 0x3c)
+004c0a35     esp = &var_24
+004c0a38     0x3b8730(var_24, var_20_3, var_1c_3, arg1 + 0x2c0)
+004c093a else
+004c093c     int32_t edx = arg3
+004c093c     
+004c0942     if (edx != 0xffffffff)
+004c0942         goto label_4c096e
+004c0942     
+004c0951     if (*(arg1 + 0x55) != 0 || *(eax + 0x138) == 0)
+004c096c         edx = 0
+004c096e     label_4c096e:
+004c096e         int32_t* ecx = *(arg1 + 0x94)
+004c096e         
+004c097b         for (i = *ecx; i != ecx[1]; i += 0x68)
+004c0983             if (*(i + 0x64) == edx)
+004c0993             label_4c0993:
+004c0993                 *arg2 = i
+004c099c                 return 0
+004c099c         
+004c097b         goto label_4c09e2
+004c097b     
+004c0953     int32_t eax_1 = *(arg1 + 0x5d4)
+004c0953     
+004c095a     if (eax_1 == 1)
+004c0968         edx = 1
+004c096a         goto label_4c096e
+004c096a     
+004c095d     if (eax_1 == 2)
+004c0963         edx = 2
+004c0966         goto label_4c096e
+004c0a3e *esp
+004c0a3e esp[1]
+004c0a3f esp[2]
+004c0a42 esp[3]
+004c0a43 esp[4]
+004c0a45 return 1

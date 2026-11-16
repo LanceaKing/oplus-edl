@@ -1,0 +1,29 @@
+14831a0c stp     x20, x21, [sp, #-0x10]!
+14831a10 ldr     x20, 0x14831a90
+14831a14 ldr     x21, 0x14831a98
+14831a18 str     x21, [x20], #0x8
+14831a1c stp     x0, x1, [x20], #0x10
+14831a20 mov     x0, x20
+14831a24 ldp     x20, x21, [sp], #0x10
+14831a28 stp     x2, x3, [x0], #0x10
+14831a2c stp     x4, x5, [x0], #0x10
+14831a30 stp     x6, x7, [x0], #0x10
+14831a34 stp     x8, x9, [x0], #0x10
+14831a38 stp     x10, x11, [x0], #0x10
+14831a3c stp     x12, x13, [x0], #0x10
+14831a40 stp     x14, x15, [x0], #0x10
+14831a44 stp     x16, x17, [x0], #0x10
+14831a48 stp     x18, x19, [x0], #0x10
+14831a4c stp     x20, x21, [x0], #0x10
+14831a50 stp     x22, x23, [x0], #0x10
+14831a54 stp     x24, x25, [x0], #0x10
+14831a58 stp     x26, x27, [x0], #0x10
+14831a5c stp     x28, fp, [x0], #0x10
+14831a60 mrs     x20, elr_el3
+14831a64 mov     fp, lr
+14831a68 mov     lr, x14
+14831a6c stp     lr, x20, [x0], #0x10
+14831a70 mov     lr, fp
+14831a74 mrs     x20, esr_el3
+14831a78 str     x20, [x0], #0x8
+14831a7c ret     

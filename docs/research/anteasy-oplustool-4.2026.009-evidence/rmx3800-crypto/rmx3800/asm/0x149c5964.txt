@@ -1,0 +1,10 @@
+149c5964 orr     w8, w2, w1
+149c5968 cbz     w8, 0x149c5978
+149c5978 ldr     w8, [x0, #0xe0]
+149c597c cbz     w8, 0x149c5988
+149c596c cbnz    x3, 0x149c5978
+149c5988 b       0x149c5720
+149c5980 mov     w0, #0xffffbf00
+149c5984 ret     
+149c5970 mov     w0, #0xffffbf80
+149c5974 ret     

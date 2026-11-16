@@ -1,0 +1,20 @@
+149add50 int32_t* x0 = sub_149ac0b4(arg1)
+149add50 
+149add74 if (x0 == 0 || *x0 != 0x48415348 || *(x0 + 8) == 0)
+149add94     return 6
+149add94 
+149add80 if (arg2 == 0 || arg3 == 0)
+149adda0     return 2
+149adda0 
+149add88 if (arg2 + arg3 u< arg2)
+149add8c     return 0xb
+149add8c 
+149addac if (*(x0 + 0x18) u> arg3)
+149addb0     return 9
+149addb0 
+149addb8 int64_t x3_1 = *(x0 + 0x58)
+149addb8 
+149addbc if (x3_1 == 0)
+149addd4     return 5
+149addd4 
+149addd0 jump(x3_1)

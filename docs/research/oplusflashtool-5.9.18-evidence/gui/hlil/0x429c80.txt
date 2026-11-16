@@ -1,0 +1,1491 @@
+00429c80 int32_t __saved_ebp_2
+00429c80 int32_t __saved_ebp_1 = __saved_ebp_2
+00429c83 int32_t var_8 = 0xffffffff
+00429c85 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_4d396e
+00429c90 TEB* fsbase
+00429c90 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00429ca1 int32_t ebx
+00429ca1 int32_t var_140 = ebx
+00429ca2 int32_t esi
+00429ca2 int32_t var_144 = esi
+00429ca3 int32_t edi
+00429ca3 int32_t var_148 = edi
+00429ca4 int32_t __saved_ebp
+00429ca4 int32_t var_14c = __security_cookie ^ &__saved_ebp
+00429ca8 fsbase->NtTib.ExceptionList = &ExceptionList
+00429cae class QObject* edi_1 = arg1
+00429cb0 class QObject* var_3c = edi_1
+00429cb6 int32_t var_34
+00429cb6 int32_t* var_150 = &var_34
+00429ccb QDebug* eax_4 = QMessageLogger::info(QMessageLogger::QMessageLogger(arg1, nullptr, 0, nullptr))
+00429cd1 char const* const var_150_1 = "Login::LoginService start.Start to log in."
+00429cd6 void* const var_154_1 = &data_4f2998
+00429cdb int32_t var_158_1 = 0x1e
+00429cdd void* const var_15c_1 = &data_4f2994
+00429ce2 char const* const var_160 = "Login::LoginService"
+00429ce7 char const* const var_164 = "[FTGuiSales]["
+00429cee int32_t var_8_1 = 0
+00429d2c int32_t var_8_2 = 0xffffffff
+00429d33 QMessageLogger* ecx_8 = QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+00429d33     QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(eax_4, var_164)))))))
+00429d38 int32_t eax_11 = *(edi_1 + 8) - 1
+00429d3c char var_38
+00429d3c char const* const* esp_1
+00429d3c 
+00429d3c if (eax_11 u> 4)
+00429dfe     ebx.b = 0
+00429e00     int32_t* var_168_5 = &var_34
+00429e01     char* var_16c_5 = nullptr
+00429e03     int32_t var_170_5 = 0
+00429e05     char* var_174_5 = nullptr
+00429e0d     var_38 = 0
+00429e18     QDebug* eax_40 =
+00429e18         QMessageLogger::info(QMessageLogger::QMessageLogger(ecx_8, var_174_5, var_170_5, var_16c_5))
+00429e1e     int32_t var_168_6 = *(edi_1 + 8)
+00429e23     int32_t var_8_3 = 1
+00429e2a     char const* const var_16c_6 = "Login::LoginService: unknow mLoginType "
+00429e2f     void* const var_170_6 = &data_4f2998
+00429e34     int32_t var_174_6 = 0x32
+00429e36     void* const var_178_2 = &data_4f2994
+00429e3b     char const* const var_17c_2 = "Login::LoginService"
+00429e40     char const* const var_180 = "[FTGuiSales]["
+00429e40     esp_1 = &var_180
+00429e7e     int32_t var_8_4 = 0xffffffff
+00429e85     QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+00429e85         QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(eax_40, var_180))))))))
+00429d3c else
+00429d42     switch (eax_11)
+00429d90         case 0
+00429d90             void* __offset(QObject, 0x18) var_168_2 = edi_1 + 0x18
+00429d94             void* __offset(QObject, 0x10) var_16c_2 = edi_1 + 0x10
+00429da0             esp_1 = &var_164
+00429da5             ebx.b = sub_420270(edi_1 + 0x1c, edi_1 + 0xc)
+00429da7             var_38 = ebx.b
+00429db2         case 1
+00429db2             void* __offset(QObject, 0x18) var_168_3 = edi_1 + 0x18
+00429db6             void* __offset(QObject, 0x10) var_16c_3 = edi_1 + 0x10
+00429dc2             esp_1 = &var_164
+00429dc7             ebx.b = sub_420600(edi_1 + 0x1c, edi_1 + 0xc)
+00429dc9             var_38 = ebx.b
+00429d6e         case 2
+00429d6e             void* __offset(QObject, 0x18) var_168_1 = edi_1 + 0x18
+00429d72             void* __offset(QObject, 0x10) var_16c_1 = edi_1 + 0x10
+00429d7e             esp_1 = &var_164
+00429d83             ebx.b = sub_421410(edi_1 + 0x1c, edi_1 + 0xc)
+00429d85             var_38 = ebx.b
+00429d4c         case 3
+00429d4c             void* __offset(QObject, 0x18) var_168 = edi_1 + 0x18
+00429d50             void* __offset(QObject, 0x10) var_16c = edi_1 + 0x10
+00429d5c             esp_1 = &var_164
+00429d61             ebx.b = sub_420940(edi_1 + 0x1c, edi_1 + 0xc)
+00429d63             var_38 = ebx.b
+00429dd4         case 4
+00429dd4             void* var_168_4 = edi_1 + 0x24
+00429dd8             void* var_16c_4 = edi_1 + 0x20
+00429dec             esp_1 = &var_164
+00429df1             ebx.b = sub_421000(edi_1 + 0x1c, edi_1 + 0xc, edi_1 + 0x10, edi_1 + 0x18)
+00429df3             var_38 = ebx.b
+00429df3 
+00429e8a *(esp_1 - 4) = &var_34
+00429e8b *(esp_1 - 8) = 0
+00429e8d *(esp_1 - 0xc) = 0
+00429e8f *(esp_1 - 0x10) = 0
+00429e9f QMessageLogger::info(QMessageLogger::QMessageLogger())
+00429ea5 *(esp_1 - 4) = var_38.d
+00429eaa int32_t var_8_5 = 2
+00429eb1 *(esp_1 - 8) = "Login::LoginService login complete.login result:"
+00429eb6 *(esp_1 - 0xc) = &data_4f2998
+00429ebb *(esp_1 - 0x10) = 0x36
+00429ebd *(esp_1 - 0x14) = &data_4f2994
+00429ec2 *(esp_1 - 0x18) = "Login::LoginService"
+00429ec7 *(esp_1 - 0x1c) = "[FTGuiSales]["
+00429ecc QDebug::operator<<()
+00429ed4 QDebug::operator<<()
+00429edc QDebug::operator<<()
+00429ee4 QDebug::operator<<()
+00429eec QDebug::operator<<()
+00429ef4 QDebug::operator<<()
+00429f05 int32_t var_8_6 = 0xffffffff
+00429f0c QDebug::~QDebug(QDebug::operator<<())
+00429f10 uint32_t result
+00429f10 void* esp_76
+00429f10 
+00429f10 if (ebx.b != 0)
+00429f19     sub_41cbc0()
+00429f1e     void* ebx_1 = &data_58a020
+00429f21     int32_t eax_55 = data_58a048
+00429f24     void* var_98_1 = &data_58a020
+00429f36     void var_c4
+00429f36     void var_b4
+00429f36     int32_t var_b0
+00429f36     void var_ac
+00429f36     void var_a8
+00429f36     void var_9c
+00429f36     int32_t* var_94
+00429f36     void var_7c
+00429f36     int32_t var_78
+00429f36     void* var_74
+00429f36     void* var_70
+00429f36     void var_6c
+00429f36     int32_t var_68
+00429f36     void* var_64
+00429f36     int32_t* var_60
+00429f36     void* var_5c
+00429f36     int32_t var_58
+00429f36     void var_54
+00429f36     int32_t* var_50
+00429f36     void* var_4c
+00429f36     int32_t var_48
+00429f36     void* var_44
+00429f36     void var_40
+00429f36     void* var_30
+00429f36     QString* ecx_218
+00429f36     void* esp_336
+00429f36     
+00429f36     if (eax_55 == 4 || eax_55 == 3)
+0042af54         *(esp_1 - 4) = &var_30
+0042af55         *(esp_1 - 8) = 0
+0042af57         *(esp_1 - 0xc) = 0
+0042af59         *(esp_1 - 0x10) = 0
+0042af69         QMessageLogger::info(QMessageLogger::QMessageLogger())
+0042af6f         *(esp_1 - 4) = "Login::LoginService get user type"
+0042af74         *(esp_1 - 8) = &data_4f2998
+0042af79         *(esp_1 - 0xc) = 0x3e
+0042af7b         *(esp_1 - 0x10) = &data_4f2994
+0042af80         *(esp_1 - 0x14) = "Login::LoginService"
+0042af85         void* esp_372
+0042af85         *(esp_372 - 8) = "[FTGuiSales]["
+0042af8c         int32_t var_8_11 = 3
+0042af93         QDebug::operator<<()
+0042af9b         QDebug::operator<<()
+0042afa3         QDebug::operator<<()
+0042afab         QDebug::operator<<()
+0042afb3         QDebug::operator<<()
+0042afc4         int32_t var_8_12 = 0xffffffff
+0042afcb         QDebug::~QDebug(QDebug::operator<<())
+0042afd0         *(esp_372 - 0xc) = &var_44
+0042afd4         int32_t esi_6
+0042afd4         esi_6, edi_1 = sub_41fc80(edi_1)
+0042afd9         *(esp_372 - 0xc) = &data_4f1ea9
+0042afe1         int32_t var_8_13 = 4
+0042afee         bool cond:0_1 = QString::operator==() == 0
+0042aff9         *(esp_372 - 0xc) = &var_30
+0042affa         *(esp_372 - 0x10) = 0
+0042affc         *(esp_372 - 0x14) = 0
+0042affe         *(esp_372 - 0x18) = 0
+0042affe         
+0042b000         if (cond:0_1)
+0042b087             QMessageLogger::info(QMessageLogger::QMessageLogger())
+0042b090             var_8_13.b = 6
+0042b094             *(esp_372 - 0xc) = &var_44
+0042b095             *(esp_372 - 0x10) = "Login::LoginService get user type success:"
+0042b09a             *(esp_372 - 0x14) = &data_4f2998
+0042b09f             *(esp_372 - 0x18) = 0x45
+0042b0a1             *(esp_372 - 0x1c) = &data_4f2994
+0042b0a6             *(esp_372 - 0x20) = "Login::LoginService"
+0042b0ab             *(esp_372 - 0x24) = "[FTGuiSales]["
+0042b0b2             QDebug::operator<<()
+0042b0ba             QDebug::operator<<()
+0042b0c2             QDebug::operator<<()
+0042b0ca             QDebug::operator<<()
+0042b0d2             QDebug::operator<<()
+0042b0da             QDebug::operator<<()
+0042b0e2             QDebug::operator<<()
+0042b0eb             var_8_13.b = 4
+0042b0ef             esi_6()
+0042b0fa             *(esp_372 - 0xc) = 0xa
+0042b0fc             *(esp_372 - 0x10) = 0
+0042b0fe             int32_t eax_238 = QString::toInt()
+0042b100             *(esp_372 - 0xc) = 0xa
+0042b102             *(esp_372 - 0x10) = 0
+0042b107             data_58a058 = eax_238
+0042b10a             int32_t eax_239
+0042b10a             eax_239, ecx_218 = QString::toInt()
+0042b10a             esp_336 = esp_372 - 8
+0042b10a             
+0042b10f             if (eax_239 == 1)
+0042b111                 data_58a058 = 4
+0042b111             
+0042b118             int32_t eax_240 = data_58a058
+0042b118             
+0042b127             if (eax_240 == 4 || eax_240 == 1)
+0042b11e                 goto label_42baf8
+0042b11e             
+0042b130             *(esp_336 - 4) = &var_4c
+0042b134             sub_41e2f0(edi_1)
+0042b13c             var_8_13.b = 7
+0042b140             *(esp_336 - 4) = &var_30
+0042b141             *(esp_336 - 8) = 0
+0042b143             *(esp_336 - 0xc) = 0
+0042b145             *(esp_336 - 0x10) = 0
+0042b155             QMessageLogger::info(QMessageLogger::QMessageLogger())
+0042b15e             var_8_13.b = 8
+0042b162             *(esp_336 - 4) = &var_4c
+0042b163             *(esp_336 - 8) = "Login::LoginService get country type code is "
+0042b168             *(esp_336 - 0xc) = &data_4f2998
+0042b16d             *(esp_336 - 0x10) = 0x4d
+0042b16f             *(esp_336 - 0x14) = &data_4f2994
+0042b174             *(esp_336 - 0x18) = "Login::LoginService"
+0042b179             *(esp_336 - 0x1c) = "[FTGuiSales]["
+0042b180             QDebug::operator<<()
+0042b188             QDebug::operator<<()
+0042b190             QDebug::operator<<()
+0042b198             QDebug::operator<<()
+0042b1a0             QDebug::operator<<()
+0042b1a8             QDebug::operator<<()
+0042b1bf             var_8_13.b = 7
+0042b1c3             QDebug::~QDebug(QDebug::operator<<())
+0042b1c5             *(esp_336 - 0x20) = &data_4f1ea9
+0042b1cd             char eax_249
+0042b1cd             QString* ecx_274
+0042b1cd             eax_249, ecx_274 = QString::operator==()
+0042b1d8             *(esp_336 - 0x20) = &var_30
+0042b1d8             
+0042b1d9             if (eax_249 == 0)
+0042b294                 int32_t eax_258 = QString::toUtf8(ecx_274)
+0042b2a0                 var_8_13.b = 0xb
+0042b2a4                 *(esp_336 - 8) = &var_b4
+0042b2a5                 *(esp_336 - 0xc) = eax_258
+0042b2a9                 *(esp_336 - 0x10) = &var_40
+0042b2b6                 var_8_13.b = 0xd
+0042b2ba                 QJsonParseError* ecx_288 = QByteArray::~QByteArray(QJsonDocument::fromJson())
+0042b2c7                 void* esp_449
+0042b2c7                 void* esp_474
+0042b2c7                 
+0042b2c7                 if (var_b0 == 0)
+0042b3bd                     bool eax_272
+0042b3bd                     QJsonDocument* ecx_303
+0042b3bd                     eax_272, ecx_303 = QJsonDocument::isNull(ecx_288)
+0042b3c5                     bool eax_273
+0042b3c5                     QJsonDocument* ecx_304
+0042b3c5                     
+0042b3c5                     if (eax_272 == 0)
+0042b3ce                         eax_273, ecx_304 = QJsonDocument::isEmpty(ecx_303)
+0042b3ce                     
+0042b3d6                     if (eax_272 != 0 || eax_273 != 0)
+0042bc27                         *(esp_336 - 8) = &var_6c
+0042bc28                         *(esp_336 - 0xc) = 0
+0042bc2a                         *(esp_336 - 0x10) = 0
+0042bc2c                         *(esp_336 - 0x14) = 0
+0042bc3c                         QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042bc42                         *(esp_336 - 8) =
+0042bc42                             "Login::LoginService getCountryTypeCode:parse json null or empty"
+0042bc47                         *(esp_336 - 0xc) = &data_4f2998
+0042bc4c                         *(esp_336 - 0x10) = 0x5f
+0042bc4e                         *(esp_336 - 0x14) = &data_4f2994
+0042bc53                         *(esp_449 - 8) = "Login::LoginService"
+0042bc58                         *(esp_449 - 0xc) = "[FTGuiSales]["
+0042bc5f                         var_8_13.b = 0x11
+0042bc63                         QDebug::operator<<()
+0042bc6b                         QDebug::operator<<()
+0042bc73                         QDebug::operator<<()
+0042bc7b                         QDebug::operator<<()
+0042bc83                         QDebug::operator<<()
+0042bc94                         var_8_13.b = 0xd
+0042bc98                         int32_t ecx_427 = QDebug::~QDebug(QDebug::operator<<())
+0042bc9a                         *(esp_449 - 0x10) = 1
+0042bc9c                         *(esp_449 - 0x14) = ecx_427
+0042bc9f                         var_70 = esp_449 - 0x14
+0042bca2                         *(esp_449 - 0x18) = 0xffffffff
+0042bca4                         *(esp_449 - 0x1c) = 0
+0042bca6                         *(esp_449 - 0x20) = "getCountryTypeCode fail"
+0042bcab                         *(esp_449 - 0x24) = esp_449 - 0x14
+0042bcac                         sub_42c240()
+0042bcb1                         esp_474 = esp_449 - 0x14
+0042bcb4                         var_8_13.b = 0x12
+0042bcb4                         goto label_42bcb8
+0042bcb4                     
+0042b3e2                     void var_dc
+0042b3e2                     *(esp_336 - 8) = &var_dc
+0042b3e6                     QVariant* eax_274 = QJsonDocument::toVariant(ecx_304)
+0042b3ef                     var_8_13.b = 0x13
+0042b3f3                     *(esp_336 - 8) = &var_54
+0042b402                     var_8_13.b = 0x15
+0042b415                     bool cond:2_1 =
+0042b415                         QListData::size(QVariant::~QVariant(QVariant::toList(eax_274))) s<= 0
+0042b420                     *(esp_336 - 8) = &var_30
+0042b421                     *(esp_336 - 0xc) = 0
+0042b423                     *(esp_336 - 0x10) = 0
+0042b425                     *(esp_336 - 0x14) = 0
+0042b427                     void* esp_486
+0042b427                     
+0042b427                     if (cond:2_1)
+0042b451                         QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042b457                         *(esp_336 - 8) = "Login::LoginService get country type code fail"
+0042b45c                         *(esp_336 - 0xc) = &data_4f2998
+0042b461                         var_8_13.b = 0x17
+0042b465                         *(esp_336 - 0x10) = 0x68
+0042b465                         esp_486 = esp_336 - 0x10
+0042b427                     else
+0042b431                         QMessageLogger::info(QMessageLogger::QMessageLogger())
+0042b437                         *(esp_336 - 8) = "Login::LoginService get country type code success"
+0042b43c                         *(esp_336 - 0xc) = &data_4f2998
+0042b441                         var_8_13.b = 0x16
+0042b445                         *(esp_336 - 0x10) = 0x66
+0042b445                         esp_486 = esp_336 - 0x10
+0042b445                     
+0042b467                     *(esp_486 - 4) = &data_4f2994
+0042b46c                     *(esp_486 - 8) = "Login::LoginService"
+0042b471                     *(esp_486 - 0xc) = "[FTGuiSales]["
+0042b478                     QDebug::operator<<()
+0042b480                     QDebug::operator<<()
+0042b488                     QDebug::operator<<()
+0042b490                     QDebug::operator<<()
+0042b498                     QDebug::operator<<()
+0042b4a9                     var_8_13.b = 0x15
+0042b4ad                     QDebug::~QDebug(QDebug::operator<<())
+0042b4b2                     *(esp_486 - 0x10) = &data_4f1ea9
+0042b4b9                     var_60 = &data_58a03c
+0042b4bc                     QString::operator=()
+0042b4c2                     *(esp_486 - 0x10) = 0
+0042b4c4                     *(esp_486 - 0x14) = &data_4f1ea9
+0042b4cf                     var_74 = QString::fromAscii_helper()
+0042b4d2                     *(esp_486 - 0x18) = 0
+0042b4d4                     *(esp_486 - 0x1c) = &data_4f1ea9
+0042b4d9                     var_8_13.b = 0x18
+0042b4e3                     var_58 = QString::fromAscii_helper()
+0042b4e9                     var_8_13.b = 0x19
+0042b4ed                     *(esp_486 - 0x20) = &var_30
+0042b4f9                     *(esp_486 - 0x10) = sub_41fab0()
+0042b503                     QString::~QString(QString::operator=())
+0042b50c                     *(esp_486 - 0x10) = &data_4f1ea9
+0042b513                     var_5c = &data_58a050
+0042b516                     char eax_287
+0042b516                     QListData* ecx_320
+0042b516                     eax_287, ecx_320 = QString::operator==()
+0042b516                     void* esp_504 = esp_486 - 0xc
+0042b516                     
+0042b51e                     if (eax_287 != 0)
+0042b523                         *(esp_504 - 4) = &var_58
+0042b527                         ecx_320 = QString::operator=()
+0042b527                     
+0042b530                     int32_t eax_288
+0042b530                     QString* ecx_365
+0042b530                     eax_288, ecx_365 = QListData::size(ecx_320)
+0042b530                     
+0042b538                     if (eax_288 s> 0)
+0042b544                         var_94 = &data_58a044
+0042b54a                         int32_t edi_3 = 0
+0042b861                         int32_t eax_313
+0042b861                         
+0042b861                         do
+0042b553                             *(esp_504 - 4) = &var_38
+0042b554                             *(esp_504 - 8) = edi_3
+0042b55f                             QVariant::toMap(sub_429a90(&var_54))
+0042b565                             *(esp_504 - 4) = 7
+0042b567                             *(esp_504 - 8) = "en_name"
+0042b56c                             var_8_13.b = 0x1a
+0042b570                             int32_t eax_290
+0042b570                             QVariant* ecx_324
+0042b570                             eax_290, ecx_324 = QString::fromAscii_helper()
+0042b579                             var_48 = eax_290
+0042b588                             *(esp_504 - 4) = QVariant::QVariant(ecx_324)
+0042b58c                             var_8_13.b = 0x1c
+0042b590                             *(esp_504 - 8) = &var_48
+0042b597                             *(esp_504 - 0xc) = &var_dc
+0042b59b                             QVariant* eax_292 = sub_42c270(&var_38)
+0042b5a3                             var_8_13.b = 0x1d
+0042b5a7                             *(esp_504 - 4) = &var_64
+0042b5c9                             var_8_13.b = 0x21
+0042b5cd                             QString::~QString(QVariant::~QVariant(QVariant::~QVariant(
+0042b5cd                                 QVariant::toString(eax_292))))
+0042b5d3                             *(esp_504 - 4) = 7
+0042b5d5                             *(esp_504 - 8) = "cn_name"
+0042b5da                             int32_t eax_293
+0042b5da                             QVariant* ecx_330
+0042b5da                             eax_293, ecx_330 = QString::fromAscii_helper()
+0042b5e3                             var_68 = eax_293
+0042b5f2                             *(esp_504 - 4) = QVariant::QVariant(ecx_330)
+0042b5f6                             var_8_13.b = 0x23
+0042b5fa                             *(esp_504 - 8) = &var_68
+0042b601                             void var_11c
+0042b601                             *(esp_504 - 0xc) = &var_11c
+0042b605                             QVariant* eax_295 = sub_42c270(&var_38)
+0042b60d                             var_8_13.b = 0x24
+0042b611                             *(esp_504 - 4) = &var_7c
+0042b61a                             *(esp_504 - 4) = QVariant::toString(eax_295)
+0042b61e                             var_8_13.b = 0x25
+0042b622                             *(esp_504 - 8) = &data_4f5778
+0042b627                             *(esp_504 - 0xc) = &var_6c
+0042b628                             int32_t eax_297 = sub_429b80()
+0042b62d                             *(esp_504 - 0x10) = &data_4f576c
+0042b632                             void* esp_524
+0042b632                             *(esp_524 - 8) = eax_297
+0042b636                             var_8_13.b = 0x26
+0042b63a                             *(esp_524 - 0xc) = &var_30
+0042b643                             *(esp_524 + 8) = sub_41b290()
+0042b647                             var_8_13.b = 0x27
+0042b67f                             var_8_13.b = 0x21
+0042b683                             QString::~QString(QVariant::~QVariant(QVariant::~QVariant(
+0042b683                                 QString::~QString(QString::~QString(QString::~QString(
+0042b683                                 QString::append()))))))
+0042b689                             *(esp_524 + 8) = 7
+0042b68b                             *(esp_524 + 4) = "cn_name"
+0042b690                             int32_t eax_299
+0042b690                             QVariant* ecx_339
+0042b690                             eax_299, ecx_339 = QString::fromAscii_helper()
+0042b699                             var_78 = eax_299
+0042b6a8                             *(esp_524 + 8) = QVariant::QVariant(ecx_339)
+0042b6ac                             var_8_13.b = 0x29
+0042b6b0                             *(esp_524 + 4) = &var_78
+0042b6b7                             void var_fc
+0042b6b7                             *esp_524 = &var_fc
+0042b6bb                             QVariant* eax_301 = sub_42c270(&var_38)
+0042b6c6                             var_8_13.b = 0x2a
+0042b6ca                             *(esp_524 + 8) = &var_a8
+0042b6cd                             int32_t eax_302 = QVariant::toString(eax_301)
+0042b6d3                             int32_t* ecx_342 = var_94
+0042b6d9                             *(esp_524 + 8) = eax_302
+0042b6dd                             var_8_13.b = 0x2b
+0042b6e1                             *(esp_524 + 4) = &var_64
+0042b6e5                             *esp_524 = &var_70
+0042b70a                             var_8_13.b = 0x21
+0042b70e                             QString::~QString(QVariant::~QVariant(QVariant::~QVariant(
+0042b70e                                 QString::~QString(sub_42bfa0(ecx_342)))))
+0042b714                             *(esp_524 + 8) = 7
+0042b716                             *(esp_524 + 4) = "cn_name"
+0042b71b                             int32_t* eax_303
+0042b71b                             QVariant* ecx_347
+0042b71b                             eax_303, ecx_347 = QString::fromAscii_helper()
+0042b724                             var_50 = eax_303
+0042b733                             *(esp_524 + 8) = QVariant::QVariant(ecx_347)
+0042b737                             var_8_13.b = 0x2d
+0042b73b                             *(esp_524 + 4) = &var_50
+0042b742                             *esp_524 = &var_c4
+0042b746                             QVariant* eax_305 = sub_42c270(&var_38)
+0042b751                             var_8_13.b = 0x2e
+0042b755                             *(esp_524 + 8) = &var_9c
+0042b758                             int32_t eax_306 = QVariant::toString(eax_305)
+0042b75e                             *(esp_524 + 8) = var_60
+0042b761                             *(esp_524 + 4) = eax_306
+0042b762                             char eax_307
+0042b762                             QString* ecx_350
+0042b762                             eax_307, ecx_350 = operator==()
+0042b768                             void* esp_561 = esp_524 + 0xc
+0042b794                             var_8_13.b = 0x21
+0042b798                             QString::~QString(QVariant::~QVariant(QVariant::~QVariant(
+0042b798                                 QString::~QString(ecx_350))))
+0042b798                             
+0042b7a0                             if (eax_307 != 0)
+0042b7a7                                 *(esp_561 - 4) = &var_64
+0042b7a8                                 QString::operator=()
+0042b7a8                             
+0042b7ae                             *(esp_561 - 4) = 7
+0042b7b0                             *(esp_561 - 8) = "cn_name"
+0042b7b5                             int32_t eax_308
+0042b7b5                             QVariant* ecx_355
+0042b7b5                             eax_308, ecx_355 = QString::fromAscii_helper()
+0042b7be                             var_34 = eax_308
+0042b7cd                             *(esp_561 - 4) = QVariant::QVariant(ecx_355)
+0042b7d1                             var_8_13.b = 0x30
+0042b7d5                             *(esp_561 - 8) = &var_34
+0042b7d9                             void var_24
+0042b7d9                             *(esp_561 - 0xc) = &var_24
+0042b7dd                             QVariant* eax_310 = sub_42c270(&var_38)
+0042b7e8                             var_8_13.b = 0x31
+0042b7ec                             *(esp_561 - 4) = &var_ac
+0042b7ef                             int32_t eax_311 = QVariant::toString(eax_310)
+0042b7f8                             *(esp_561 - 4) = &var_58
+0042b7f9                             *(esp_561 - 8) = eax_311
+0042b7fa                             char eax_312
+0042b7fa                             QString* ecx_358
+0042b7fa                             eax_312, ecx_358 = operator==()
+0042b800                             esp_504 = esp_561
+0042b829                             QString* ecx_362 = QString::~QString(QVariant::~QVariant(
+0042b829                                 QVariant::~QVariant(QString::~QString(ecx_358))))
+0042b829                             
+0042b831                             if (eax_312 != 0)
+0042b836                                 *(esp_504 - 4) = &var_64
+0042b83a                                 ecx_362 = QString::operator=()
+0042b83a                             
+0042b843                             QString::~QString(ecx_362)
+0042b84c                             var_8_13.b = 0x19
+0042b858                             edi_3 += 1
+0042b859                             eax_313, ecx_365 = QListData::size(sub_429a10(&var_38))
+0042b861                         while (edi_3 s< eax_313)
+0042b867                         edi_1 = var_3c
+0042b86a                         ebx_1 = var_98_1
+0042b86a                     
+0042b87f                     *(esp_504 - 4) = QString::QString(ecx_365)
+0042b883                     *(esp_504 - 8) = ebx_1 + 0x30
+0042b88a                     *(esp_504 - 0xc) = &var_30
+0042b88b                     var_50 = ebx_1 + 0x24
+0042b89c                     *(esp_504 - 4) = sub_429890(ebx_1 + 0x24)
+0042b89d                     void* esp_580 = esp_504
+0042b8ab                     QString::~QString(QString::~QString(QString::operator=()))
+0042b8b6                     int32_t edx_1 = *(*var_60 + 4)
+0042b8bb                     void* esi_9
+0042b8bb                     
+0042b8bb                     if (edx_1 != 0)
+0042b9c9                         esi_9 = var_5c
+0042b8bb                     else if (*(var_74 + 4) != edx_1)
+0042b8c9                         esi_9 = var_5c
+0042b8cf                         *(esp_580 - 4) = &var_74
+0042b8d2                         QString::operator=()
+0042b8da                         *(esp_580 - 4) = &var_58
+0042b8db                         QString::operator=()
+0042b8c7                     else if (edx_1 != 0)
+0042b9c9                         esi_9 = var_5c
+0042b8e4                     else
+0042b8ea                         int32_t* ecx_373 = var_50
+0042b8ea                         
+0042b8f2                         if (*(*ecx_373 + 4) != edx_1)
+0042b8f7                             *(esp_580 - 4) = &var_30
+0042b8f8                             sub_42c060(ecx_373)
+0042b8fd                             *(esp_580 - 4) = 0
+0042b901                             int32_t eax_321 = QListData::at()
+0042b907                             esi_9 = var_5c
+0042b90c                             *(esp_580 - 4) = eax_321
+0042b90d                             QString::operator=()
+0042b912                             sub_4251b0(&var_30)
+0042b917                             int32_t* ecx_377 = var_50
+0042b91a                             *(esp_580 - 4) = esi_9
+0042b923                             *(esp_580 - 4) = sub_429ac0(ecx_377)
+0042b924                             QString::operator=()
+0042b8f2                         else if (edx_1 != 0)
+0042b9c9                             esi_9 = var_5c
+0042b92d                         else
+0042b936                             *(esp_580 - 4) = &var_30
+0042b937                             *(esp_580 - 8) = edx_1
+0042b938                             *(esp_580 - 0xc) = edx_1
+0042b939                             *(esp_580 - 0x10) = edx_1
+0042b948                             QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042b94e                             *(esp_580 - 4) = "server return country list is null"
+0042b953                             *(esp_580 - 8) = &data_4f2998
+0042b958                             *(esp_580 - 0xc) = 0x8a
+0042b95d                             *(esp_580 - 0x10) = &data_4f2994
+0042b962                             *(esp_580 - 0x14) = "Login::LoginService"
+0042b967                             *(esp_580 - 0x18) = "[FTGuiSales]["
+0042b96e                             var_8_13.b = 0x32
+0042b972                             QDebug::operator<<()
+0042b97a                             QDebug::operator<<()
+0042b982                             QDebug::operator<<()
+0042b98a                             QDebug::operator<<()
+0042b992                             QDebug::operator<<()
+0042b9a3                             var_8_13.b = 0x19
+0042b9a7                             QDebug::~QDebug(QDebug::operator<<())
+0042b9a9                             esi_9 = var_5c
+0042b9ae                             *(esp_580 - 0x1c) = "China(CN)"
+0042b9b3                             QString::operator=()
+0042b9bc                             *(esp_580 - 0x1c) = &data_4f57ac
+0042b9c1                             QString::operator=()
+0042b9c1                             esp_580 -= 0x18
+0042b9c1                     
+0042b9db                     if (*(*var_50 + 4) == 0)
+0042b9dd                         *(esp_580 - 4) = 2
+0042b9df                         *(esp_580 - 8) = &data_4f57ac
+0042b9e6                         var_34 = QString::fromAscii_helper()
+0042b9e9                         *(esp_580 - 0xc) = 9
+0042b9eb                         *(esp_580 - 0x10) = "China(CN)"
+0042b9f0                         var_8_13.b = 0x33
+0042b9f9                         var_3c = QString::fromAscii_helper()
+0042b9fc                         int32_t* ecx_389 = var_50
+0042ba02                         *(esp_580 - 4) = &var_34
+0042ba06                         var_8_13.b = 0x34
+0042ba0a                         *(esp_580 - 8) = &var_3c
+0042ba0e                         *(esp_580 - 0xc) = &var_70
+0042ba20                         var_8_13.b = 0x19
+0042ba24                         QString::~QString(QString::~QString(sub_42bfa0(ecx_389)))
+0042ba24                     
+0042ba2d                     *(esp_580 - 4) = &var_30
+0042ba2e                     sub_41cbc0()
+0042ba35                     int32_t eax_334 = sub_441e30()
+0042ba3a                     *(esp_580 - 4) = 0
+0042ba3c                     *(esp_580 - 8) = 1
+0042ba3e                     *(esp_580 - 0xc) = eax_334
+0042ba45                     var_8_13.b = 0x35
+0042ba52                     var_8_13.b = 0x37
+0042ba56                     QString::~QString(QSettings::QSettings())
+0042ba5c                     *(esp_580 - 4) = "utf-8"
+0042ba67                     QSettings::setIniCodec()
+0042ba6d                     *(esp_580 - 4) = esi_9
+0042ba74                     QVariant::QVariant()
+0042ba7a                     *(esp_580 - 4) = 0x1b
+0042ba7c                     *(esp_580 - 8) = "/CountryAndLanguage/country"
+0042ba81                     var_8_13.b = 0x38
+0042ba8a                     var_3c = QString::fromAscii_helper()
+0042ba93                     var_8_13.b = 0x39
+0042ba97                     *(esp_580 - 4) = &var_c4
+0042ba9b                     *(esp_580 - 8) = &var_3c
+0042baa2                     esp_336 = esp_580
+0042bad5                     QString::~QString(QString::~QString(QSettings::~QSettings(QVariant::~QVariant(
+0042bad5                         QString::~QString(QSettings::setValue())))))
+0042baef                     ecx_218 = QString::~QString(QJsonDocument::~QJsonDocument(sub_4299b0(&var_54)))
+0042b51e                     goto label_42baf8
+0042b51e                 
+0042b2d0                 *(esp_336 - 8) = &var_7c
+0042b2d7                 int32_t eax_259 = QJsonParseError::errorString(ecx_288)
+0042b2e2                 var_8_13.b = 0xe
+0042b2e6                 *(esp_336 - 8) = &var_6c
+0042b2e7                 *(esp_336 - 0xc) = 0
+0042b2e9                 *(esp_336 - 0x10) = 0
+0042b2eb                 *(esp_336 - 0x14) = 0
+0042b2fb                 QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042b304                 var_8_13.b = 0xf
+0042b308                 *(esp_336 - 8) = &var_4c
+0042b309                 *(esp_336 - 0xc) = "getCountryTypeCode parse:"
+0042b30e                 *(esp_336 - 0x10) = endl
+0042b316                 *(esp_336 - 0x14) = eax_259
+0042b317                 *(esp_449 - 8) = "Login::LoginService getCountryTypeCode parse json error"
+0042b31c                 *(esp_449 - 0xc) = &data_4f2998
+0042b321                 *(esp_449 - 0x10) = 0x58
+0042b323                 *(esp_449 - 0x14) = &data_4f2994
+0042b328                 *(esp_449 - 0x18) = "Login::LoginService"
+0042b32d                 *(esp_449 - 0x1c) = "[FTGuiSales]["
+0042b332                 QDebug::operator<<()
+0042b33a                 QDebug::operator<<()
+0042b342                 QDebug::operator<<()
+0042b34a                 QDebug::operator<<()
+0042b352                 QDebug::operator<<()
+0042b35a                 QDebug::operator<<()
+0042b362                 QDebug::operator<<()
+0042b36a                 QDebug::operator<<()
+0042b372                 QDebug::operator<<()
+0042b38d                 var_8_13.b = 0xd
+0042b391                 int32_t ecx_302 = QString::~QString(QDebug::~QDebug(QDebug::operator<<()))
+0042b397                 *(esp_449 - 0x20) = 1
+0042b399                 *(esp_449 - 0x24) = ecx_302
+0042b39c                 var_70 = esp_449 - 0x24
+0042b39f                 *(esp_449 - 0x28) = 0xffffffff
+0042b3a1                 *(esp_449 - 0x2c) = 0
+0042b3a3                 *(esp_449 - 0x30) = "getCountryTypeCode fail"
+0042b3a8                 *(esp_449 - 0x34) = esp_449 - 0x24
+0042b3a9                 sub_42c240()
+0042b3ae                 esp_474 = esp_449 - 0x24
+0042b3b1                 var_8_13.b = 0x10
+0042bcb8             label_42bcb8:
+0042bcb8                 sub_41cbc0()
+0042bcbd                 var_8_13.b = 0xd
+0042bcc7                 sub_4304c0(data_58a0a8)
+0042bccc                 *(esp_474 + 4) = 0
+0042bcd0                 esp_76 = esp_474 + 8
+0042bcea                 result = QString::~QString(QString::~QString(QJsonDocument::~QJsonDocument(
+0042bcea                     sub_4bf610(edi_1))))
+0042b1d9             else
+0042b1df                 *(esp_336 - 0x24) = 0
+0042b1e1                 *(esp_336 - 0x28) = 0
+0042b1e3                 *(esp_336 - 0x2c) = 0
+0042b1f3                 QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042b1f9                 *(esp_336 - 0x20) = "Login::LoginService getCountryTypeCode is null"
+0042b1fe                 *(esp_336 - 0x24) = &data_4f2998
+0042b203                 *(esp_336 - 0x28) = 0x50
+0042b205                 *(esp_336 - 0x2c) = &data_4f2994
+0042b20a                 *(esp_336 - 0x30) = "Login::LoginService"
+0042b20f                 void* esp_429
+0042b20f                 *(esp_429 - 8) = "[FTGuiSales]["
+0042b216                 var_8_13.b = 9
+0042b21a                 QDebug::operator<<()
+0042b222                 QDebug::operator<<()
+0042b22a                 QDebug::operator<<()
+0042b232                 QDebug::operator<<()
+0042b23a                 QDebug::operator<<()
+0042b24b                 var_8_13.b = 7
+0042b24f                 int32_t ecx_283 = QDebug::~QDebug(QDebug::operator<<())
+0042b251                 *(esp_429 - 0xc) = 1
+0042b253                 *(esp_429 - 0x10) = ecx_283
+0042b256                 var_70 = esp_429 - 0x10
+0042b259                 *(esp_429 - 0x14) = 0xffffffff
+0042b25b                 *(esp_429 - 0x18) = 0
+0042b25d                 *(esp_429 - 0x1c) = "getCountryTypeCode fail"
+0042b262                 *(esp_429 - 0x20) = esp_429 - 0x10
+0042b263                 sub_42c240()
+0042b26b                 var_8_13.b = 0xa
+0042b26f                 sub_41cbc0()
+0042b274                 var_8_13.b = 7
+0042b27e                 sub_4304c0(data_58a0a8)
+0042b283                 *(esp_429 - 0xc) = 0
+0042b287                 esp_76 = esp_429 - 8
+0042bcea                 result = QString::~QString(QString::~QString(sub_4bf610(edi_1)))
+0042b000         else
+0042b00a             QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042b010             *(esp_372 - 0xc) = "Login::LoginService get user type fail!"
+0042b015             *(esp_372 - 0x10) = &data_4f2998
+0042b01a             *(esp_372 - 0x14) = 0x41
+0042b01c             *(esp_372 - 0x18) = &data_4f2994
+0042b021             *(esp_372 - 0x1c) = "Login::LoginService"
+0042b026             *(esp_372 - 0x20) = "[FTGuiSales]["
+0042b02d             var_8_13.b = 5
+0042b031             QDebug::operator<<()
+0042b039             QDebug::operator<<()
+0042b041             QDebug::operator<<()
+0042b049             QDebug::operator<<()
+0042b051             QDebug::operator<<()
+0042b059             QDebug::operator<<()
+0042b062             var_8_13.b = 4
+0042b066             esi_6()
+0042b068             *(esp_372 - 0x24) = 0
+0042b06c             esp_76 = esp_372 - 0x20
+0042b074             result = QString::~QString(sub_4bf610(edi_1))
+00429f36     else if (eax_55 != 5)
+0042aedd         *(esp_1 - 4) = &data_4f57ac
+0042aee5         data_58a058 = 2
+0042aeec         QString::operator=()
+0042aef2         *(esp_1 - 4) = "China(CN)"
+0042aefa         QString::operator=()
+0042af06         void* esp_359
+0042af06         *esp_359 = 2
+0042af08         *(esp_1 - 8) = &data_4f57ac
+0042af0f         var_68 = QString::fromAscii_helper()
+0042af12         *(esp_359 - 8) = 9
+0042af14         *(esp_359 - 0xc) = "China(CN)"
+0042af19         int32_t var_8_10 = 0x71
+0042af25         var_48 = QString::fromAscii_helper()
+0042af2b         var_8_10.b = 0x72
+0042af2f         *esp_359 = &var_68
+0042af33         *(esp_359 - 4) = &var_48
+0042af37         *(esp_359 - 8) = &var_70
+0042af3b         esp_336 = esp_359 + 4
+0042af43         ecx_218 = QString::~QString(sub_42bfa0(&data_58a044))
+0042baf8     label_42baf8:
+0042baf8         int32_t var_8_14 = 0xffffffff
+0042baff         QString::~QString(ecx_218)
+0042bb08         *(esp_336 - 4) = &var_30
+0042bb09         *(esp_336 - 8) = 0
+0042bb0b         *(esp_336 - 0xc) = 0
+0042bb0d         *(esp_336 - 0x10) = 0
+0042bb1d         QMessageLogger::info(QMessageLogger::QMessageLogger())
+0042bb23         *(esp_336 - 4) = "Login::LoginService end."
+0042bb28         *(esp_336 - 8) = &data_4f2998
+0042bb2d         *(esp_336 - 0xc) = 0x11a
+0042bb32         *(esp_336 - 0x10) = &data_4f2994
+0042bb37         *(esp_336 - 0x14) = "Login::LoginService"
+0042bb3c         *(esp_336 - 0x18) = "[FTGuiSales]["
+0042bb43         int32_t var_8_15 = 0x73
+0042bb4a         QDebug::operator<<()
+0042bb52         QDebug::operator<<()
+0042bb5a         QDebug::operator<<()
+0042bb62         QDebug::operator<<()
+0042bb6a         QDebug::operator<<()
+0042bb80         int32_t var_8_16 = 0xffffffff
+0042bb87         QDebug::~QDebug(QDebug::operator<<())
+0042bb8c         *(esp_336 - 0x1c) = &var_6c
+0042bb98         int32_t var_8_17 = 0x74
+0042bba5         *(esp_336 - 4) = QByteArray::data(QString::toUtf8(edi_1 + 0xc))
+0042bba9         char var_2c
+0042bba9         sub_40aea0(&var_2c)
+0042bbb1         var_8_17.b = 0x75
+0042bbb5         *(esp_336 - 4) = &var_2c
+0042bbb6         sub_41cbc0()
+0042bbc1         QByteArray* ecx_414 = sub_481e30(data_58c2f4)
+0042bbcc         int32_t var_18
+0042bbcc         
+0042bbcc         if (var_18 u>= 0x10)
+0042bbcf             *(esp_336 - 4) = 1
+0042bbd1             *(esp_336 - 8) = var_18 + 1
+0042bbd2             *(esp_336 - 0xc) = var_2c.d
+0042bbd5             ecx_414 = sub_40e560()
+0042bbd5         
+0042bbe0         int32_t var_18_1 = 0xf
+0042bbe7         int32_t var_1c_1 = 0
+0042bbee         var_2c = 0
+0042bbf2         int32_t var_8_18 = 0xffffffff
+0042bbf9         QByteArray::~QByteArray(ecx_414)
+0042bbff         *(esp_336 - 4) = 1
+0042bc03         result = sub_4bf610(edi_1)
+0042bc03         esp_76 = esp_336
+00429f3f     else
+00429f48         *(esp_1 - 4) = &var_34
+00429f49         *(esp_1 - 8) = 0
+00429f4b         *(esp_1 - 0xc) = 0
+00429f4d         *(esp_1 - 0x10) = 0
+00429f5d         QMessageLogger::info(QMessageLogger::QMessageLogger())
+00429f63         *(esp_1 - 4) = "Login::LoginService get user type"
+00429f68         *(esp_1 - 8) = &data_4f2998
+00429f6d         *(esp_1 - 0xc) = 0x98
+00429f72         *(esp_1 - 0x10) = &data_4f2994
+00429f77         *(esp_1 - 0x14) = "Login::LoginService"
+00429f7c         void* esp_19
+00429f7c         *(esp_19 - 8) = "[FTGuiSales]["
+00429f83         int32_t var_8_7 = 0x3a
+00429f8a         QDebug::operator<<()
+00429f92         QDebug::operator<<()
+00429f9a         QDebug::operator<<()
+00429fa2         QDebug::operator<<()
+00429faa         QDebug::operator<<()
+00429fbb         int32_t var_8_8 = 0xffffffff
+00429fc2         QDebug::~QDebug(QDebug::operator<<())
+00429fc7         *(esp_19 - 0xc) = &var_40
+00429fcb         void (__thiscall* const esi_1)(QDebug* this)
+00429fcb         esi_1, edi_1 = sub_41fc80(edi_1)
+00429fd0         *(esp_19 - 0xc) = &data_4f1ea9
+00429fd8         int32_t var_8_9 = 0x3b
+00429fe7         void* esp_38
+00429fe7         
+00429fe7         if (QString::operator==() == 0)
+0042a01f             *(esp_19 - 0xc) = "call_centre"
+0042a027             void* esp_40 = esp_19 - 8
+0042a027             
+0042a02f             if (QString::operator==() == 0)
+0042a03d                 *(esp_40 - 4) = "out_work"
+0042a03d                 
+0042a04d                 if (QString::operator==() == 0)
+0042a05b                     *(esp_40 - 4) = "after_sale"
+0042a05b                     
+0042a06b                     if (QString::operator==() == 0)
+0042a079                         *(esp_40 - 4) = "official_store"
+0042a079                         
+0042a089                         if (QString::operator==() == 0)
+0042a097                             *(esp_40 - 4) = "third_party"
+0042a097                             
+0042a0a7                             if (QString::operator==() == 0)
+0042a0b2                                 *(esp_40 - 4) = "cus_enterprise"
+0042a0b2                                 
+0042a0c2                                 if (QString::operator==() == 0)
+0042a0cd                                     *(esp_40 - 4) = "after_sale_test"
+0042a0cd                                     
+0042a0dd                                     if (QString::operator==() == 0)
+0042a0e8                                         *(esp_40 - 4) = "temp_account"
+0042a0e8                                         
+0042a0f8                                         if (QString::operator==() == 0)
+0042a103                                             *(esp_40 - 4) = "su_third_party"
+0042a103                                             
+0042a113                                             if (QString::operator==() != 0)
+0042a115                                                 data_58a058 = 9
+0042a0f8                                         else
+0042a0fa                                             data_58a058 = 8
+0042a0dd                                     else
+0042a0df                                         data_58a058 = 6
+0042a0c2                                 else
+0042a0c4                                     data_58a058 = 5
+0042a0a7                             else
+0042a0a9                                 data_58a058 = 4
+0042a089                         else
+0042a08b                             data_58a058 = 3
+0042a06b                     else
+0042a06d                         data_58a058 = 2
+0042a04d                 else
+0042a04f                     data_58a058 = 1
+0042a02f             else
+0042a031                 data_58a058 = 7
+0042a031             
+0042a11f             *(esp_40 - 4) = &var_34
+0042a120             *(esp_40 - 8) = 0
+0042a122             *(esp_40 - 0xc) = 0
+0042a124             *(esp_40 - 0x10) = 0
+0042a134             QMessageLogger::info(QMessageLogger::QMessageLogger())
+0042a13a             *(esp_40 - 4) = data_58a058
+0042a140             var_8_9.b = 0x3d
+0042a144             *(esp_40 - 8) = ", userInfo.userType is "
+0042a149             *(esp_40 - 0xc) = &var_40
+0042a14a             *(esp_40 - 0x10) = "Login::LoginService: server return userType is "
+0042a14f             *(esp_40 - 0x14) = &data_4f2998
+0042a154             *(esp_40 - 0x18) = 0xb4
+0042a159             *(esp_40 - 0x1c) = &data_4f2994
+0042a15e             *(esp_40 - 0x20) = "Login::LoginService"
+0042a163             *(esp_40 - 0x24) = "[FTGuiSales]["
+0042a16a             QDebug::operator<<()
+0042a172             QDebug::operator<<()
+0042a17a             QDebug::operator<<()
+0042a182             QDebug::operator<<()
+0042a18a             QDebug::operator<<()
+0042a192             QDebug::operator<<()
+0042a19a             QDebug::operator<<()
+0042a1a2             QDebug::operator<<()
+0042a1aa             QDebug::operator<<()
+0042a1b3             var_8_9.b = 0x3b
+0042a1b7             esi_1()
+0042a1b9             sub_41cbc0()
+0042a1b9             
+0042a1c7             if (sub_43e830(&data_58a018) == 0)
+0042a1d0                 *(esp_40 - 4) = &var_3c
+0042a1d1                 *(esp_40 - 8) = 0
+0042a1d3                 *(esp_40 - 0xc) = 0
+0042a1d5                 *(esp_40 - 0x10) = 0
+0042a1e5                 QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042a1eb                 *(esp_40 - 4) = "cur user type can't use flash tool"
+0042a1f0                 *(esp_40 - 8) = &data_4f2998
+0042a1f5                 var_8_9.b = 0x3e
+0042a1f9                 *(esp_40 - 0xc) = 0xb6
+0042a1f9                 esp_38 = esp_40 - 0xc
+0042a1f9                 goto label_42a1fe
+0042a1f9             
+0042a27b             QString::QString(QString::QString(QString::QString(QString::QString(&data_58a018))))
+0042a284             var_8_9.b = 0x42
+0042a288             *(esp_40 - 4) = &var_34
+0042a291             void* esp_77
+0042a291             *esp_77 = sub_41f840()
+0042a29e             QString::~QString(QString::operator=())
+0042a2a4             *esp_77 = &data_4f1ea9
+0042a2a4             
+0042a2b4             if (QString::operator==() == 0)
+0042a376                 *esp_77 = &var_50
+0042a37a                 sub_41f5d0()
+0042a37f                 *esp_77 = &data_4f1ea9
+0042a387                 var_8_9.b = 0x45
+0042a387                 
+0042a399                 if (QString::operator==() == 0)
+0042a455                     *esp_77 = &var_34
+0042a456                     *(esp_77 - 4) = 0
+0042a458                     *(esp_77 - 8) = 0
+0042a45a                     *(esp_77 - 0xc) = 0
+0042a464                     QMessageLogger::info(QMessageLogger::QMessageLogger())
+0042a46d                     var_8_9.b = 0x48
+0042a471                     *esp_77 = &var_50
+0042a472                     *(esp_77 - 4) = ", city is "
+0042a47a                     *(esp_77 - 8) = &var_38
+0042a47b                     *(esp_77 - 0xc) = "server return login area info: region is "
+0042a480                     *(esp_77 - 0x10) = &data_4f2998
+0042a485                     *(esp_77 - 0x14) = 0xce
+0042a48a                     *(esp_77 - 0x18) = &data_4f2994
+0042a48f                     *(esp_77 - 0x1c) = "Login::LoginService"
+0042a494                     *(esp_77 - 0x20) = "[FTGuiSales]["
+0042a49b                     QDebug::operator<<()
+0042a4a3                     QDebug::operator<<()
+0042a4ab                     QDebug::operator<<()
+0042a4b3                     QDebug::operator<<()
+0042a4bb                     QDebug::operator<<()
+0042a4c3                     QDebug::operator<<()
+0042a4cb                     QDebug::operator<<()
+0042a4d3                     QDebug::operator<<()
+0042a4db                     QDebug::operator<<()
+0042a4e4                     var_8_9.b = 0x45
+0042a4e8                     esi_1()
+0042a4ed                     *esp_77 = &var_60
+0042a4f1                     sub_41e2f0(edi_1)
+0042a4f6                     *esp_77 = &data_4f1ea9
+0042a4fe                     var_8_9.b = 0x49
+0042a502                     char eax_121
+0042a502                     QString* ecx_100
+0042a502                     eax_121, ecx_100 = QString::operator==()
+0042a50a                     QString* ecx_111
+0042a50a                     
+0042a50a                     if (eax_121 == 0)
+0042a5cc                         *esp_77 = &var_34
+0042a5d0                         int32_t eax_130 = QString::toUtf8(ecx_100)
+0042a5dc                         var_8_9.b = 0x4c
+0042a5e0                         *(esp_77 + 0x18) = &var_b4
+0042a5e1                         *(esp_77 + 0x14) = eax_130
+0042a5e5                         *(esp_77 + 0x10) = &var_5c
+0042a5f2                         var_8_9.b = 0x4e
+0042a5f6                         QJsonParseError* ecx_113 =
+0042a5f6                             QByteArray::~QByteArray(QJsonDocument::fromJson())
+0042a603                         void* esp_198
+0042a603                         
+0042a603                         if (var_b0 == 0)
+0042a6fc                             bool eax_144
+0042a6fc                             QJsonDocument* ecx_128
+0042a6fc                             eax_144, ecx_128 = QJsonDocument::isNull(ecx_113)
+0042a704                             bool eax_145
+0042a704                             QJsonDocument* ecx_129
+0042a704                             
+0042a704                             if (eax_144 == 0)
+0042a70d                                 eax_145, ecx_129 = QJsonDocument::isEmpty(ecx_128)
+0042a70d                             
+0042a715                             if (eax_144 != 0 || eax_145 != 0)
+0042addf                                 *(esp_77 + 0x18) = &var_30
+0042ade0                                 *(esp_77 + 0x14) = 0
+0042ade2                                 *(esp_77 + 0x10) = 0
+0042ade4                                 *(esp_77 + 0xc) = 0
+0042adf4                                 QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042adfa                                 *(esp_77 + 0x18) = "
+0042adfa                                     Login::LoginService getCountryTypeCode:parse json null or empty"
+0042adff                                 *(esp_77 + 0x14) = &data_4f2998
+0042ae04                                 *(esp_77 + 0x10) = 0xe1
+0042ae09                                 *(esp_77 + 0xc) = &data_4f2994
+0042ae0e                                 *(esp_77 + 8) = "Login::LoginService"
+0042ae13                                 *(esp_77 + 4) = "[FTGuiSales]["
+0042ae1a                                 var_8_9.b = 0x52
+0042ae1e                                 QDebug::operator<<()
+0042ae26                                 QDebug::operator<<()
+0042ae2e                                 QDebug::operator<<()
+0042ae36                                 QDebug::operator<<()
+0042ae3e                                 QDebug::operator<<()
+0042ae46                                 QDebug::operator<<()
+0042ae4f                                 var_8_9.b = 0x4e
+0042ae53                                 int32_t ecx_226 = esi_1()
+0042ae55                                 *(esp_77 + 0x18) = 1
+0042ae57                                 *(esp_77 + 0x14) = ecx_226
+0042ae5a                                 var_70 = esp_77 + 0x14
+0042ae5d                                 *(esp_77 + 0x10) = 0xffffffff
+0042ae5f                                 *(esp_77 + 0xc) = 0
+0042ae61                                 *(esp_77 + 8) = "getCountryTypeCode fail"
+0042ae66                                 *(esp_77 + 4) = esp_77 + 0x14
+0042ae67                                 sub_42c240()
+0042ae6c                                 esp_198 = esp_77 + 0x14
+0042ae6f                                 var_8_9.b = 0x53
+0042ae6f                                 goto label_42ae73
+0042ae6f                             
+0042a721                             *(esp_77 + 0x18) = &var_c4
+0042a725                             QVariant* eax_146 = QJsonDocument::toVariant(ecx_129)
+0042a72e                             var_8_9.b = 0x54
+0042a732                             *(esp_77 + 0x18) = &var_58
+0042a741                             var_8_9.b = 0x56
+0042a754                             bool cond:3_1 =
+0042a754                                 QListData::size(QVariant::~QVariant(QVariant::toList(eax_146)))
+0042a754                                 s<= 0
+0042a75f                             *(esp_77 + 0x18) = &var_34
+0042a760                             *(esp_77 + 0x14) = 0
+0042a762                             *(esp_77 + 0x10) = 0
+0042a764                             *(esp_77 + 0xc) = 0
+0042a766                             void* esp_210
+0042a766                             
+0042a766                             if (cond:3_1)
+0042a793                                 QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042a799                                 *(esp_77 + 0x18) = "Login::LoginService get country type code fail"
+0042a79e                                 *(esp_77 + 0x14) = &data_4f2998
+0042a7a3                                 var_8_9.b = 0x58
+0042a7a7                                 *(esp_77 + 0x10) = 0xea
+0042a7a7                                 esp_210 = esp_77 + 0x10
+0042a766                             else
+0042a770                                 QMessageLogger::info(QMessageLogger::QMessageLogger())
+0042a776                                 *(esp_77 + 0x18) =
+0042a776                                     "Login::LoginService get country type code success"
+0042a77b                                 *(esp_77 + 0x14) = &data_4f2998
+0042a780                                 var_8_9.b = 0x57
+0042a784                                 *(esp_77 + 0x10) = 0xe8
+0042a784                                 esp_210 = esp_77 + 0x10
+0042a784                             
+0042a7ac                             *(esp_210 - 4) = &data_4f2994
+0042a7b1                             *(esp_210 - 8) = "Login::LoginService"
+0042a7b6                             *(esp_210 - 0xc) = "[FTGuiSales]["
+0042a7bd                             QDebug::operator<<()
+0042a7c5                             QDebug::operator<<()
+0042a7cd                             QDebug::operator<<()
+0042a7d5                             QDebug::operator<<()
+0042a7dd                             QDebug::operator<<()
+0042a7e5                             QDebug::operator<<()
+0042a7ee                             var_8_9.b = 0x56
+0042a7f2                             QListData* ecx_141 = esi_1()
+0042a7f2                             void* esp_217 = esp_210
+0042a7f7                             var_48 = 0
+0042a7f7                             
+0042a806                             if (QListData::size(ecx_141) s> 0)
+0042a812                                 int32_t esi_3 = 0
+0042ab46                                 int32_t eax_184
+0042ab46                                 
+0042ab46                                 do
+0042a823                                     *(esp_217 - 4) = &var_54
+0042a824                                     *(esp_217 - 8) = esi_3
+0042a82f                                     QVariant::toMap(sub_429a90(&var_58))
+0042a835                                     *(esp_217 - 4) = 0xb
+0042a837                                     *(esp_217 - 8) = "countryCode"
+0042a83c                                     var_8_9.b = 0x59
+0042a840                                     void* eax_158
+0042a840                                     QVariant* ecx_144
+0042a840                                     eax_158, ecx_144 = QString::fromAscii_helper()
+0042a849                                     var_74 = eax_158
+0042a858                                     *(esp_217 - 4) = QVariant::QVariant(ecx_144)
+0042a85c                                     var_8_9.b = 0x5b
+0042a860                                     *(esp_217 - 8) = &var_74
+0042a867                                     void var_ec
+0042a867                                     *(esp_217 - 0xc) = &var_ec
+0042a86b                                     QVariant* eax_160 = sub_42c270(&var_54)
+0042a876                                     var_8_9.b = 0x5c
+0042a87a                                     void var_cc
+0042a87a                                     *(esp_217 - 4) = &var_cc
+0042a87d                                     QString* eax_161 = QVariant::toString(eax_160)
+0042a886                                     var_8_9.b = 0x5d
+0042a88a                                     *(esp_217 - 4) = &var_34
+0042a893                                     *(esp_217 - 4) = QString::toUpper(eax_161)
+0042a8c5                                     var_8_9.b = 0x59
+0042a8c9                                     QString::~QString(QVariant::~QVariant(QVariant::~QVariant(
+0042a8c9                                         QString::~QString(QString::~QString(
+0042a8c9                                         QString::operator=())))))
+0042a8cf                                     void* esp_233
+0042a8cf                                     *esp_233 = 6
+0042a8d1                                     *(esp_217 - 8) = "cnName"
+0042a8d6                                     int32_t eax_163
+0042a8d6                                     QVariant* ecx_153
+0042a8d6                                     eax_163, ecx_153 = QString::fromAscii_helper()
+0042a8df                                     var_78 = eax_163
+0042a8ee                                     *(esp_217 - 4) = QVariant::QVariant(ecx_153)
+0042a8f2                                     var_8_9.b = 0x5f
+0042a8f6                                     *(esp_217 - 8) = &var_78
+0042a8fd                                     void var_10c
+0042a8fd                                     *(esp_233 - 8) = &var_10c
+0042a901                                     QVariant* eax_165 = sub_42c270(&var_54)
+0042a90c                                     var_8_9.b = 0x60
+0042a910                                     *esp_233 = &var_ac
+0042a913                                     QString* eax_166 = QVariant::toString(eax_165)
+0042a91f                                     var_8_9.b = 0x61
+0042a923                                     void var_c8
+0042a923                                     *esp_233 = &var_c8
+0042a92c                                     *esp_233 = QString::toUpper(eax_166)
+0042a930                                     void* esp_247 = esp_233 + 4
+0042a961                                     var_8_9.b = 0x59
+0042a965                                     QString::~QString(QVariant::~QVariant(QVariant::~QVariant(
+0042a965                                         QString::~QString(QString::~QString(
+0042a965                                         QString::operator=())))))
+0042a965                                     
+0042a972                                     if (*(var_44 + 4) == 0)
+0042a98a                                     label_42a98a:
+0042a98a                                         *(esp_247 - 4) = 6
+0042a98c                                         *(esp_247 - 8) = "enName"
+0042a991                                         int32_t eax_170
+0042a991                                         QVariant* ecx_162
+0042a991                                         eax_170, ecx_162 = QString::fromAscii_helper()
+0042a99a                                         var_68 = eax_170
+0042a9a9                                         *(esp_247 - 4) = QVariant::QVariant(ecx_162)
+0042a9ad                                         var_8_9.b = 0x63
+0042a9b1                                         *(esp_247 - 8) = &var_68
+0042a9b8                                         void var_12c
+0042a9b8                                         *(esp_247 - 0xc) = &var_12c
+0042a9bc                                         QVariant* eax_172 = sub_42c270(&var_54)
+0042a9c7                                         var_8_9.b = 0x64
+0042a9cb                                         *(esp_247 - 4) = &var_a8
+0042a9ce                                         QString* eax_173 = QVariant::toString(eax_172)
+0042a9da                                         var_8_9.b = 0x65
+0042a9de                                         *(esp_247 - 4) = &var_9c
+0042a9e7                                         *(esp_247 - 4) = QString::toUpper(eax_173)
+0042aa1c                                         var_8_9.b = 0x59
+0042aa20                                         QString::~QString(QVariant::~QVariant(QVariant::~QVariant(
+0042aa20                                             QString::~QString(QString::~QString(
+0042aa20                                             QString::operator=())))))
+0042a972                                     else
+0042a974                                         *(esp_247 - 4) = "null"
+0042a974                                         
+0042a984                                         if (QString::operator==() != 0)
+0042a984                                             goto label_42a98a
+0042a984                                     
+0042aa29                                     *(esp_247 - 4) = &var_4c
+0042aa2d                                     *(esp_247 - 8) = &data_4f5778
+0042aa32                                     *(esp_247 - 0xc) = &var_7c
+0042aa33                                     int32_t eax_175 = sub_429b80()
+0042aa38                                     *(esp_247 - 0x10) = &data_4f576c
+0042aa3d                                     *(esp_247 - 0x14) = eax_175
+0042aa44                                     var_8_9.b = 0x66
+0042aa48                                     *(esp_247 - 0x18) = &var_94
+0042aa51                                     *(esp_247 - 4) = sub_41b290()
+0042aa55                                     var_8_9.b = 0x67
+0042aa59                                     esp_217 = esp_247
+0042aa6e                                     var_8_9.b = 0x59
+0042aa72                                     QString::~QString(QString::~QString(QString::append()))
+0042aa8c                                     QListData* ecx_180
+0042aa8c                                     
+0042aa8c                                     if (*(var_44 + 4) == 0 || *(var_4c + 4) == 0)
+0042ab2e                                         var_8_9.b = 0x56
+0042ab32                                         ecx_180 = sub_429a10(&var_54)
+0042aa8c                                     else
+0042aa95                                         *(esp_217 - 4) = &var_4c
+0042aa99                                         *(esp_217 - 8) = &var_44
+0042aa9d                                         *(esp_217 - 0xc) = &var_70
+0042aaa1                                         QString* ecx_174 = sub_42bfa0(var_98_1 + 0x24)
+0042aaa9                                         *(esp_217 - 4) = &var_30
+0042aaad                                         int32_t eax_179
+0042aaad                                         QString* ecx_175
+0042aaad                                         eax_179, ecx_175 = QString::toUpper(ecx_174)
+0042aab8                                         var_8_9.b = 0x68
+0042aabc                                         *(esp_217 - 4) = &var_6c
+0042aac0                                         int32_t eax_180 = QString::toUpper(ecx_175)
+0042aac6                                         *(esp_217 - 4) = eax_179
+0042aacd                                         *(esp_217 - 8) = eax_180
+0042aace                                         char eax_181
+0042aace                                         QString* ecx_176
+0042aace                                         eax_181, ecx_176 = operator==()
+0042aad6                                         void (__thiscall* const ebx_2)(QVariant* this)
+0042aad6                                         ebx_2.b = eax_181
+0042aae1                                         QString::~QString(QString::~QString(ecx_176))
+0042aae1                                         
+0042aaef                                         if (QVariant::~QVariant != 0)
+0042aaf4                                             *(esp_217 - 4) = &var_44
+0042aaf8                                             QString::operator=()
+0042aaf8                                         
+0042aafd                                         *(esp_217 - 4) = &var_44
+0042ab01                                         *(esp_217 - 8) = var_98_1 + 0x30
+0042ab04                                         esp_217 = esp_217
+0042ab04                                         
+0042ab09                                         if (operator==() != 0)
+0042ab0e                                             *(esp_217 - 4) = &var_4c
+0042ab12                                             QString::operator=()
+0042ab12                                         
+0042ab17                                         var_8_9.b = 0x56
+0042ab1b                                         ecx_180 = sub_429a10(&var_54)
+0042ab26                                         esi_3 = var_48
+0042ab26                                     
+0042ab37                                     esi_3 += 1
+0042ab3b                                     var_48 = esi_3
+0042ab3e                                     eax_184 = QListData::size(ecx_180)
+0042ab46                                 while (esi_3 s< eax_184)
+0042ab4c                                 edi_1 = var_3c
+0042ab4f                                 ebx_1 = var_98_1
+0042ab55                                 esi_1 = QDebug::~QDebug
+0042ab55                             
+0042ab5e                             int32_t ecx_182 = *(*(ebx_1 + 0x1c) + 4)
+0042ab5e                             
+0042ab63                             if (ecx_182 == 0)
+0042ab6f                                 if (*(var_64 + 4) != ecx_182)
+0042ab74                                     *(esp_217 - 4) = &var_64
+0042ab78                                     QString* ecx_184 = QString::operator=()
+0042ab81                                     *(esp_217 - 4) = &var_30
+0042ab8b                                     *(esp_217 - 4) = QString::toUpper(ecx_184)
+0042ab98                                     QString::~QString(QString::operator=())
+0042ab6f                                 else if (ecx_182 == 0)
+0042abb1                                     if (*(*(ebx_1 + 0x24) + 4) != ecx_182)
+0042abb6                                         *(esp_217 - 4) = &var_30
+0042abba                                         sub_42c060(ebx_1 + 0x24)
+0042abbf                                         *(esp_217 - 4) = 0
+0042abcc                                         *(esp_217 - 4) = QListData::at()
+0042abcf                                         QString::operator=()
+0042abd8                                         sub_4251b0(&var_30)
+0042abdd                                         *(esp_217 - 4) = ebx_1 + 0x30
+0042abe6                                         *(esp_217 - 4) = sub_429ac0(ebx_1 + 0x24)
+0042abea                                         QString::operator=()
+0042abb1                                     else if (ecx_182 == 0)
+0042ac00                                         *(esp_217 - 4) = &var_30
+0042ac01                                         *(esp_217 - 8) = ecx_182
+0042ac02                                         *(esp_217 - 0xc) = ecx_182
+0042ac03                                         *(esp_217 - 0x10) = ecx_182
+0042ac12                                         QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042ac18                                         *(esp_217 - 4) = "server return country list is null"
+0042ac1d                                         *(esp_217 - 8) = &data_4f2998
+0042ac22                                         *(esp_217 - 0xc) = 0x109
+0042ac27                                         *(esp_217 - 0x10) = &data_4f2994
+0042ac2c                                         *(esp_217 - 0x14) = "Login::LoginService"
+0042ac31                                         *(esp_217 - 0x18) = "[FTGuiSales]["
+0042ac38                                         var_8_9.b = 0x69
+0042ac3c                                         QDebug::operator<<()
+0042ac44                                         QDebug::operator<<()
+0042ac4c                                         QDebug::operator<<()
+0042ac54                                         QDebug::operator<<()
+0042ac5c                                         QDebug::operator<<()
+0042ac64                                         QDebug::operator<<()
+0042ac6d                                         var_8_9.b = 0x56
+0042ac71                                         esi_1()
+0042ac73                                         *(esp_217 - 4) = "China(CN)"
+0042ac7b                                         QString::operator=()
+0042ac81                                         *(esp_217 - 4) = &data_4f57ac
+0042ac89                                         QString::operator=()
+0042ac89                             
+0042ac9c                             if (*(*(ebx_1 + 0x24) + 4) == 0)
+0042ac9e                                 *(esp_217 - 4) = 2
+0042aca0                                 *(esp_217 - 8) = &data_4f57ac
+0042aca7                                 var_68 = QString::fromAscii_helper()
+0042acaa                                 *(esp_217 - 0xc) = 9
+0042acac                                 *(esp_217 - 0x10) = "China(CN)"
+0042acb1                                 var_8_9.b = 0x6a
+0042acba                                 var_48 = QString::fromAscii_helper()
+0042acc0                                 var_8_9.b = 0x6b
+0042acc4                                 *(esp_217 - 4) = &var_68
+0042acc8                                 *(esp_217 - 8) = &var_48
+0042accc                                 *(esp_217 - 0xc) = &var_70
+0042ace1                                 var_8_9.b = 0x56
+0042ace5                                 QString::~QString(QString::~QString(sub_42bfa0(ebx_1 + 0x24)))
+0042ace5                             
+0042acee                             *(esp_217 - 4) = &var_30
+0042acef                             sub_41cbc0()
+0042acf6                             int32_t eax_202 = sub_441e30()
+0042acfb                             *(esp_217 - 4) = 0
+0042acfd                             *(esp_217 - 8) = 1
+0042acff                             *(esp_217 - 0xc) = eax_202
+0042ad06                             var_8_9.b = 0x6c
+0042ad13                             var_8_9.b = 0x6e
+0042ad17                             QString::~QString(QSettings::QSettings())
+0042ad1d                             *(esp_217 - 4) = "utf-8"
+0042ad28                             QSettings::setIniCodec()
+0042ad31                             *(esp_217 - 4) = ebx_1 + 0x30
+0042ad38                             QVariant::QVariant()
+0042ad3e                             *(esp_217 - 4) = 0x1b
+0042ad40                             *(esp_217 - 8) = "/CountryAndLanguage/country"
+0042ad45                             var_8_9.b = 0x6f
+0042ad4e                             var_48 = QString::fromAscii_helper()
+0042ad57                             var_8_9.b = 0x70
+0042ad5b                             *(esp_217 - 4) = &var_c4
+0042ad5f                             *(esp_217 - 8) = &var_48
+0042ad66                             esp_336 = esp_217
+0042ad87                             QSettings::~QSettings(QVariant::~QVariant(QString::~QString(
+0042ad87                                 QSettings::setValue())))
+0042adce                             ecx_218 = QString::~QString(QString::~QString(QString::~QString(
+0042adce                                 QString::~QString(QString::~QString(QString::~QString(
+0042adce                                 QJsonDocument::~QJsonDocument(sub_4299b0(&var_58))))))))
+0042a806                             goto label_42baf8
+0042a806                         
+0042a60c                         *(esp_77 + 0x18) = &var_48
+0042a613                         int32_t eax_131 = QJsonParseError::errorString(ecx_113)
+0042a61e                         var_8_9.b = 0x4f
+0042a622                         *(esp_77 + 0x18) = &var_3c
+0042a623                         *(esp_77 + 0x14) = 0
+0042a625                         *(esp_77 + 0x10) = 0
+0042a627                         *(esp_77 + 0xc) = 0
+0042a637                         QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042a640                         var_8_9.b = 0x50
+0042a644                         *(esp_77 + 0x18) = &var_60
+0042a645                         *(esp_77 + 0x14) = "getCountryTypeCode parse:"
+0042a64a                         *(esp_77 + 0x10) = endl
+0042a652                         *(esp_77 + 0xc) = eax_131
+0042a653                         *(esp_77 + 8) = "Login::LoginService getCountryTypeCode parse json error"
+0042a658                         void* esp_180
+0042a658                         *(esp_180 - 8) = &data_4f2998
+0042a65d                         *(esp_180 - 0xc) = 0xda
+0042a662                         *(esp_180 - 0x10) = &data_4f2994
+0042a667                         *(esp_180 - 0x14) = "Login::LoginService"
+0042a66c                         *(esp_180 - 0x18) = "[FTGuiSales]["
+0042a671                         QDebug::operator<<()
+0042a679                         QDebug::operator<<()
+0042a681                         QDebug::operator<<()
+0042a689                         QDebug::operator<<()
+0042a691                         QDebug::operator<<()
+0042a699                         QDebug::operator<<()
+0042a6a1                         QDebug::operator<<()
+0042a6a9                         QDebug::operator<<()
+0042a6b1                         QDebug::operator<<()
+0042a6cc                         var_8_9.b = 0x4e
+0042a6d0                         int32_t ecx_127 = QString::~QString(QDebug::~QDebug(QDebug::operator<<()))
+0042a6d6                         *(esp_180 - 0x1c) = 1
+0042a6d8                         *(esp_180 - 0x20) = ecx_127
+0042a6db                         var_30 = esp_180 - 0x20
+0042a6de                         *(esp_180 - 0x24) = 0xffffffff
+0042a6e0                         *(esp_180 - 0x28) = 0
+0042a6e2                         *(esp_180 - 0x2c) = "getCountryTypeCode fail"
+0042a6e7                         *(esp_180 - 0x30) = esp_180 - 0x20
+0042a6e8                         sub_42c240()
+0042a6ed                         esp_198 = esp_180 - 0x20
+0042a6f0                         var_8_9.b = 0x51
+0042ae73                     label_42ae73:
+0042ae73                         sub_41cbc0()
+0042ae78                         var_8_9.b = 0x4e
+0042ae82                         sub_4304c0(data_58a0a8)
+0042ae87                         *(esp_198 + 4) = 0
+0042ae8b                         esp_76 = esp_198 + 8
+0042ae93                         ecx_111 = QJsonDocument::~QJsonDocument(sub_4bf610(edi_1))
+0042a50a                     else
+0042a513                         *esp_77 = &var_3c
+0042a514                         *(esp_77 - 4) = 0
+0042a516                         *(esp_77 - 8) = 0
+0042a518                         *(esp_77 - 0xc) = 0
+0042a528                         QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042a52e                         *esp_77 = "Login::LoginService getCountryTypeCode is null"
+0042a533                         *(esp_77 - 4) = &data_4f2998
+0042a538                         *(esp_77 - 8) = 0xd2
+0042a53d                         *(esp_77 - 0xc) = &data_4f2994
+0042a542                         *(esp_77 - 0x10) = "Login::LoginService"
+0042a547                         *(esp_77 - 0x14) = "[FTGuiSales]["
+0042a54e                         var_8_9.b = 0x4a
+0042a552                         QDebug::operator<<()
+0042a55a                         QDebug::operator<<()
+0042a562                         QDebug::operator<<()
+0042a56a                         QDebug::operator<<()
+0042a572                         QDebug::operator<<()
+0042a57a                         QDebug::operator<<()
+0042a583                         var_8_9.b = 0x49
+0042a587                         int32_t ecx_108 = esi_1()
+0042a589                         *esp_77 = 1
+0042a58b                         *(esp_77 - 4) = ecx_108
+0042a58e                         var_30 = esp_77 - 4
+0042a591                         *(esp_77 - 8) = 0xffffffff
+0042a593                         *(esp_77 - 0xc) = 0
+0042a595                         *(esp_77 - 0x10) = "getCountryTypeCode fail"
+0042a59a                         *(esp_77 - 0x14) = esp_77 - 4
+0042a59b                         sub_42c240()
+0042a5a3                         var_8_9.b = 0x4b
+0042a5a7                         sub_41cbc0()
+0042a5ac                         var_8_9.b = 0x49
+0042a5b6                         sub_4304c0(data_58a0a8)
+0042a5bb                         *esp_77 = 0
+0042a5bf                         ecx_111 = sub_4bf610(edi_1)
+0042a5bf                         esp_76 = esp_77 + 4
+0042a5bf                     
+0042aed2                     result = QString::~QString(QString::~QString(QString::~QString(
+0042aed2                         QString::~QString(QString::~QString(QString::~QString(QString::~QString(
+0042aed2                         ecx_111)))))))
+0042a399                 else
+0042a3a2                     *esp_77 = &var_3c
+0042a3a3                     *(esp_77 - 4) = 0
+0042a3a5                     *(esp_77 - 8) = 0
+0042a3a7                     *(esp_77 - 0xc) = 0
+0042a3b1                     QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042a3b7                     *esp_77 = "Login::LoginService getCountryTypeCode is null"
+0042a3bc                     *(esp_77 - 4) = &data_4f2998
+0042a3c1                     *(esp_77 - 8) = 0xc9
+0042a3c6                     *(esp_77 - 0xc) = &data_4f2994
+0042a3cb                     *(esp_77 - 0x10) = "Login::LoginService"
+0042a3d0                     *(esp_77 - 0x14) = "[FTGuiSales]["
+0042a3d7                     var_8_9.b = 0x46
+0042a3db                     QDebug::operator<<()
+0042a3e3                     QDebug::operator<<()
+0042a3eb                     QDebug::operator<<()
+0042a3f3                     QDebug::operator<<()
+0042a3fb                     QDebug::operator<<()
+0042a403                     QDebug::operator<<()
+0042a40c                     var_8_9.b = 0x45
+0042a410                     int32_t ecx_85 = esi_1()
+0042a412                     *esp_77 = 1
+0042a414                     *(esp_77 - 4) = ecx_85
+0042a417                     var_30 = esp_77 - 4
+0042a41a                     *(esp_77 - 8) = 0xffffffff
+0042a41c                     *(esp_77 - 0xc) = 0
+0042a41e                     *(esp_77 - 0x10) = "getCountryTypeCode fail"
+0042a423                     *(esp_77 - 0x14) = esp_77 - 4
+0042a424                     sub_42c240()
+0042a42c                     var_8_9.b = 0x47
+0042a430                     sub_41cbc0()
+0042a435                     var_8_9.b = 0x45
+0042a43f                     sub_4304c0(data_58a0a8)
+0042a444                     *esp_77 = 0
+0042a448                     esp_76 = esp_77 + 4
+0042aed2                     result = QString::~QString(QString::~QString(QString::~QString(
+0042aed2                         QString::~QString(QString::~QString(QString::~QString(sub_4bf610(
+0042aed2                         edi_1)))))))
+0042a2b4             else
+0042a2bd                 *esp_77 = &var_3c
+0042a2be                 *(esp_77 - 4) = 0
+0042a2c0                 *(esp_77 - 8) = 0
+0042a2c2                 *(esp_77 - 0xc) = 0
+0042a2d2                 QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042a2d8                 *esp_77 = "Login::LoginService getCountryTypeCode is null"
+0042a2dd                 *(esp_77 - 4) = &data_4f2998
+0042a2e2                 *(esp_77 - 8) = 0xc2
+0042a2e7                 *(esp_77 - 0xc) = &data_4f2994
+0042a2ec                 *(esp_77 - 0x10) = "Login::LoginService"
+0042a2f1                 *(esp_77 - 0x14) = "[FTGuiSales]["
+0042a2f8                 var_8_9.b = 0x43
+0042a2fc                 QDebug::operator<<()
+0042a304                 QDebug::operator<<()
+0042a30c                 QDebug::operator<<()
+0042a314                 QDebug::operator<<()
+0042a31c                 QDebug::operator<<()
+0042a324                 QDebug::operator<<()
+0042a32d                 var_8_9.b = 0x42
+0042a331                 int32_t ecx_73 = esi_1()
+0042a333                 *esp_77 = 1
+0042a335                 *(esp_77 - 4) = ecx_73
+0042a338                 var_30 = esp_77 - 4
+0042a33b                 *(esp_77 - 8) = 0xffffffff
+0042a33d                 *(esp_77 - 0xc) = 0
+0042a33f                 *(esp_77 - 0x10) = "getCountryTypeCode fail"
+0042a344                 *(esp_77 - 0x14) = esp_77 - 4
+0042a345                 sub_42c240()
+0042a34d                 var_8_9.b = 0x44
+0042a351                 sub_41cbc0()
+0042a356                 var_8_9.b = 0x42
+0042a360                 sub_4304c0(data_58a0a8)
+0042a365                 *esp_77 = 0
+0042a369                 esp_76 = esp_77 + 4
+0042aed2                 result = QString::~QString(QString::~QString(QString::~QString(QString::~QString(
+0042aed2                     QString::~QString(sub_4bf610(edi_1))))))
+00429fe7         else
+00429fec             *(esp_19 - 0xc) = &var_3c
+00429fed             *(esp_19 - 0x10) = 0
+00429fef             *(esp_19 - 0x14) = 0
+00429ff1             *(esp_19 - 0x18) = 0
+0042a001             QMessageLogger::warning(QMessageLogger::QMessageLogger())
+0042a007             *(esp_19 - 0xc) = "Login::LoginService get user type fail!"
+0042a00c             *(esp_19 - 0x10) = &data_4f2998
+0042a011             var_8_9.b = 0x3c
+0042a015             *(esp_19 - 0x14) = 0x9b
+0042a015             esp_38 = esp_19 - 0x14
+0042a1fe         label_42a1fe:
+0042a1fe             *(esp_38 - 4) = &data_4f2994
+0042a203             *(esp_38 - 8) = "Login::LoginService"
+0042a208             *(esp_38 - 0xc) = "[FTGuiSales]["
+0042a20f             QDebug::operator<<()
+0042a217             QDebug::operator<<()
+0042a21f             QDebug::operator<<()
+0042a227             QDebug::operator<<()
+0042a22f             QDebug::operator<<()
+0042a237             QDebug::operator<<()
+0042a240             var_8_9.b = 0x3b
+0042a244             esi_1()
+0042a246             *(esp_38 - 4) = 0
+0042a24a             esp_76 = esp_38
+0042a252             result = QString::~QString(sub_4bf610(edi_1))
+00429f10 else
+00429f12     *(esp_1 - 4) = 0
+0042bc03     result = sub_4bf610(edi_1)
+0042bc03     esp_76 = esp_1
+0042bc03 
+0042bc0b fsbase->NtTib.ExceptionList = ExceptionList
+0042bc13 *(esp_76 + 4)
+0042bc14 *(esp_76 + 8)
+0042bc15 *(esp_76 + 0xc)
+0042bc1b CookieCheckFunction(result)
+0042bc23 return result

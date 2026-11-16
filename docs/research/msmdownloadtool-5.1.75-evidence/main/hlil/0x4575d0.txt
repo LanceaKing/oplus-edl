@@ -1,0 +1,558 @@
+004575d0 int32_t ebp
+004575d0 int32_t var_4 = ebp
+004575d1 int32_t* ebp_1 = &var_4
+004575d3 int32_t var_8 = 0xffffffff
+004575d5 int32_t (* var_c)(void* arg1) = sub_6d2d40
+004575e0 TEB* fsbase
+004575e0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004575e9 int32_t eax_2 = __security_cookie ^ &var_4
+004575eb int32_t var_18 = eax_2
+004575ee int32_t ebx
+004575ee int32_t var_70 = ebx
+004575ef int32_t esi
+004575ef int32_t var_74 = esi
+004575f0 int32_t edi
+004575f0 int32_t var_78 = edi
+004575f1 int32_t var_7c = eax_2
+004575f5 fsbase->NtTib.ExceptionList = &ExceptionList
+004575fb int32_t* var_14 = &var_7c
+00457606 void* var_58 = arg1
+0045760c int32_t var_4c = 1
+00457613 int32_t* var_54
+00457613 int32_t* eax_4 = sub_4996e0(&var_54)
+00457618 struct web::json::details::_Value::web::json::details::_Object::VTable** edi_1 = *eax_4
+0045761a *eax_4 = 0
+00457620 struct web::json::details::_Value::web::json::details::_Object::VTable** var_40 = edi_1
+00457623 int32_t var_8_1 = 0
+0045762a int32_t* ecx_1 = var_54
+0045762a 
+0045762f if (ecx_1 != 0)
+00457635     (*(*ecx_1 + 0x60))(1)
+00457635 
+00457638 int32_t var_8_2 = 1
+00457665 int32_t var_44 = (*(data_7bfb90 + 0xc))() + 0x10
+00457668 var_8_2.b = 2
+00457692 int32_t var_50 = (*(data_7bfb90 + 0xc))() + 0x10
+00457698 var_8_2.b = 3
+0045769c int32_t* var_34
+0045769c struct web::json::details::_Value::web::json::details::_Object::VTable*** eax_12 =
+0045769c     sub_495fa0(&var_34)
+0045769c 
+004576a8 if (&var_40 != eax_12)
+004576ac     var_40 = *eax_12
+004576af     *eax_12 = edi_1
+004576af 
+004576b1 int32_t* ecx_6 = var_34
+004576b1 
+004576b6 if (ecx_6 != 0)
+004576bc     (*(*ecx_6 + 0x60))(1)
+004576bc 
+004576cc var_8_2.b = 4
+004576d0 sub_41a720(&var_44, sub_458880(&var_34))
+004576d5 var_8_2.b = 3
+004576e1 int32_t* edx_1 = &var_34[-4]
+004576e7 int32_t eax_16 = edx_1[3]
+004576e7 edx_1[3] -= 1
+004576e7 
+004576ee if (eax_16 - 1 s<= 0)
+004576f5     (*(**edx_1 + 4))(edx_1)
+004576f5 
+004576f8 void* var_80_8 = 2
+004576fc int32_t var_1c = 7
+00457703 int32_t* var_84 = &data_773d38
+0045770b int32_t var_20 = 0
+00457712 int16_t var_30 = 0
+00457716 sub_45c850(&var_30, var_84, var_80_8)
+00457721 var_8_2.b = 5
+00457727 int16_t* edi_2 = *(arg2 + 8)
+0045772c int32_t var_80_9 = 7
+00457733 int32_t var_84_1 = 0
+0045773a int16_t var_94 = 0
+00457740 int32_t ecx_11
+00457740 
+00457740 if (*edi_2 != 0)
+00457746     int16_t* ecx_12 = edi_2
+0045774b     var_34 = &ecx_12[1]
+00457759     int32_t* eax_20
+00457759     
+00457759     do
+00457750         eax_20.w = *ecx_12
+00457753         ecx_12 = &ecx_12[1]
+00457759     while (eax_20.w != 0)
+0045775e     ecx_11 = (ecx_12 - var_34) s>> 1
+00457740 else
+00457742     ecx_11 = 0
+00457742 
+00457760 int32_t var_98 = ecx_11
+00457761 int32_t* var_9c = edi_2
+00457764 int32_t* eax_21
+00457764 int32_t edx_2
+00457764 eax_21, edx_2 = sub_45c850(&var_94, var_9c, var_98)
+0045776c struct web::json::details::_Value::web::json::details::_String::VTable** var_38
+0045776c struct web::json::details::_Value::web::json::details::_String::VTable*** eax_22 =
+0045776c     sub_495f20(eax_21, edx_2, &var_38, var_94)
+00457779 var_8_2.b = 6
+0045777d int16_t* var_80_10 = &var_30
+00457781 struct web::json::details::_Value::web::json::details::_String::VTable*** eax_23 =
+00457781     sub_4960f0(&var_40)
+00457781 
+0045778a if (eax_23 != eax_22)
+0045778c     struct web::json::details::_Value::web::json::details::_String::VTable** ecx_17 = *eax_23
+00457790     *eax_23 = *eax_22
+00457792     *eax_22 = ecx_17
+00457792 
+00457794 var_8_2.b = 5
+00457798 struct web::json::details::_Value::web::json::details::_String::VTable** ecx_18 = var_38
+00457798 
+0045779d if (ecx_18 != 0)
+004577a3     (*ecx_18)->vFunc_24(1)
+004577a3 
+004577a6 var_8_2.b = 3
+004577a6 
+004577ae if (var_1c u>= 8)
+004577b3     ebp_1 = j_sub_688543(var_30.d)
+004577b3 
+004577bb void* var_84_4 = 2
+004577bf ebp_1[-6] = 7
+004577c6 int32_t* var_88 = &data_773d30
+004577ce ebp_1[-7] = 0
+004577d5 ebp_1[-0xb].w = 0
+004577d9 sub_45c850(&ebp_1[-0xb], var_88, var_84_4)
+004577e4 ebp_1[-1].b = 7
+004577ea int16_t* edi_4 = *(ebp_1[-0x11] + 0xc)
+004577ef int32_t var_84_5 = 7
+004577f6 int32_t var_88_1 = 0
+004577fd var_98.w = 0
+00457803 int32_t* ecx_20
+00457803 
+00457803 if (*edi_4 != 0)
+00457809     int16_t* ecx_21 = edi_4
+0045780e     ebp_1[-0xd] = &ecx_21[1]
+0045781a     void* eax_27
+0045781a     
+0045781a     do
+00457811         eax_27.w = *ecx_21
+00457814         ecx_21 = &ecx_21[1]
+0045781a     while (eax_27.w != 0)
+0045781f     ecx_20 = (ecx_21 - ebp_1[-0xd]) s>> 1
+00457803 else
+00457805     ecx_20 = nullptr
+00457805 
+00457821 var_9c = ecx_20
+00457822 int16_t* var_a0 = edi_4
+00457825 int32_t* eax_28
+00457825 int32_t edx_4
+00457825 eax_28, edx_4 = sub_45c850(&var_98, var_a0, var_9c)
+0045782d struct web::json::details::_Value::web::json::details::_String::VTable*** eax_29 =
+0045782d     sub_495f20(eax_28, edx_4, &ebp_1[-0xc], var_98)
+0045783a ebp_1[-1].b = 8
+0045783e void* var_84_6 = &ebp_1[-0xb]
+00457842 struct web::json::details::_Value::web::json::details::_String::VTable*** eax_31 =
+00457842     sub_4960f0(&ebp_1[-0xf])
+00457842 
+0045784b if (eax_31 != eax_29)
+0045784d     struct web::json::details::_Value::web::json::details::_String::VTable** ecx_26 = *eax_31
+00457851     *eax_31 = *eax_29
+00457853     *eax_29 = ecx_26
+00457853 
+00457855 ebp_1[-1].b = 7
+00457859 int32_t* ecx_27 = ebp_1[-0xc]
+00457859 
+0045785e if (ecx_27 != 0)
+00457864     (*(*ecx_27 + 0x60))(1)
+00457864 
+00457867 ebp_1[-1].b = 3
+00457867 
+0045786f if (ebp_1[-6] u>= 8)
+00457874     ebp_1 = j_sub_688543(ebp_1[-0xb])
+00457874 
+0045787c void* var_88_4 = 2
+00457880 ebp_1[-6] = 7
+00457887 int32_t* var_8c = &data_773d50
+0045788f ebp_1[-7] = 0
+00457896 ebp_1[-0xb].w = 0
+0045789a sub_45c850(&ebp_1[-0xb], var_8c, var_88_4)
+004578a5 ebp_1[-1].b = 9
+004578ab int16_t* edi_6 = *(ebp_1[-0x11] + 0x10)
+004578b0 int32_t var_88_5 = 7
+004578b7 int32_t var_8c_1 = 0
+004578be var_9c.w = 0
+004578c4 int16_t* ecx_29
+004578c4 
+004578c4 if (*edi_6 != 0)
+004578ca     int16_t* ecx_30 = edi_6
+004578cf     ebp_1[-0xd] = &ecx_30[1]
+004578db     void* eax_35
+004578db     
+004578db     do
+004578d2         eax_35.w = *ecx_30
+004578d5         ecx_30 = &ecx_30[1]
+004578db     while (eax_35.w != 0)
+004578e0     ecx_29 = (ecx_30 - ebp_1[-0xd]) s>> 1
+004578c4 else
+004578c6     ecx_29 = nullptr
+004578c6 
+004578e2 var_a0 = ecx_29
+004578e3 int16_t* var_a4 = edi_6
+004578e6 int32_t* eax_36
+004578e6 int32_t edx_6
+004578e6 eax_36, edx_6 = sub_45c850(&var_9c, var_a4, var_a0)
+004578ee struct web::json::details::_Value::web::json::details::_String::VTable*** eax_37 =
+004578ee     sub_495f20(eax_36, edx_6, &ebp_1[-0xc], var_9c)
+004578fb ebp_1[-1].b = 0xa
+004578ff void* var_88_6 = &ebp_1[-0xb]
+00457903 struct web::json::details::_Value::web::json::details::_String::VTable*** eax_39 =
+00457903     sub_4960f0(&ebp_1[-0xf])
+00457903 
+0045790c if (eax_39 != eax_37)
+0045790e     struct web::json::details::_Value::web::json::details::_String::VTable** ecx_35 = *eax_39
+00457912     *eax_39 = *eax_37
+00457914     *eax_37 = ecx_35
+00457914 
+00457916 ebp_1[-1].b = 9
+0045791a int32_t* ecx_36 = ebp_1[-0xc]
+0045791a 
+0045791f if (ecx_36 != 0)
+00457925     (*(*ecx_36 + 0x60))(1)
+00457925 
+00457928 ebp_1[-1].b = 3
+00457928 
+00457930 if (ebp_1[-6] u>= 8)
+00457935     ebp_1 = j_sub_688543(ebp_1[-0xb])
+00457935 
+0045793d void* var_8c_4 = 7
+00457941 ebp_1[-6] = 7
+00457948 wchar16 const* const var_90 = u"account"
+00457950 ebp_1[-7] = 0
+00457957 ebp_1[-0xb].w = 0
+0045795b sub_45c850(&ebp_1[-0xb], var_90, var_8c_4)
+00457966 ebp_1[-1].b = 0xb
+0045796c int16_t* edi_8 = *ebp_1[-0x11]
+00457970 int32_t var_8c_5 = 7
+00457977 int32_t var_90_1 = 0
+0045797e var_a0.w = 0
+00457984 int16_t* ecx_38
+00457984 
+00457984 if (*edi_8 != 0)
+0045798a     int16_t* ecx_39 = edi_8
+0045798f     ebp_1[-0xd] = &ecx_39[1]
+0045799b     void* eax_43
+0045799b     
+0045799b     do
+00457992         eax_43.w = *ecx_39
+00457995         ecx_39 = &ecx_39[1]
+0045799b     while (eax_43.w != 0)
+004579a0     ecx_38 = (ecx_39 - ebp_1[-0xd]) s>> 1
+00457984 else
+00457986     ecx_38 = nullptr
+00457986 
+004579a2 var_a4 = ecx_38
+004579a3 int16_t* var_a8 = edi_8
+004579a6 int32_t* eax_44
+004579a6 int32_t edx_8
+004579a6 eax_44, edx_8 = sub_45c850(&var_a0, var_a8, var_a4)
+004579ae struct web::json::details::_Value::web::json::details::_String::VTable*** eax_45 =
+004579ae     sub_495f20(eax_44, edx_8, &ebp_1[-0xc], var_a0)
+004579bb ebp_1[-1].b = 0xc
+004579bf void* var_8c_6 = &ebp_1[-0xb]
+004579c3 struct web::json::details::_Value::web::json::details::_String::VTable*** eax_47 =
+004579c3     sub_4960f0(&ebp_1[-0xf])
+004579c3 
+004579cc if (eax_47 != eax_45)
+004579ce     struct web::json::details::_Value::web::json::details::_String::VTable** ecx_44 = *eax_47
+004579d2     *eax_47 = *eax_45
+004579d4     *eax_45 = ecx_44
+004579d4 
+004579d6 ebp_1[-1].b = 0xb
+004579da int32_t* ecx_45 = ebp_1[-0xc]
+004579da 
+004579df if (ecx_45 != 0)
+004579e5     (*(*ecx_45 + 0x60))(1)
+004579e5 
+004579e8 ebp_1[-1].b = 3
+004579e8 
+004579f0 if (ebp_1[-6] u>= 8)
+004579f5     ebp_1 = j_sub_688543(ebp_1[-0xb])
+004579f5 
+004579fd void* var_90_4 = 8
+00457a01 ebp_1[-6] = 7
+00457a08 var_94.d = u"password"
+00457a10 ebp_1[-7] = 0
+00457a17 ebp_1[-0xb].w = 0
+00457a1b sub_45c850(&ebp_1[-0xb], var_94, var_90_4)
+00457a26 ebp_1[-1].b = 0xd
+00457a2c int16_t* edi_10 = *(ebp_1[-0x11] + 4)
+00457a31 int32_t var_90_5 = 7
+00457a38 var_94.d = 0
+00457a3f var_a4.w = 0
+00457a45 int16_t* ecx_47
+00457a45 
+00457a45 if (*edi_10 != 0)
+00457a4b     int16_t* ecx_48 = edi_10
+00457a50     ebp_1[-0xd] = &ecx_48[1]
+00457a5c     void* eax_51
+00457a5c     
+00457a5c     do
+00457a53         eax_51.w = *ecx_48
+00457a56         ecx_48 = &ecx_48[1]
+00457a5c     while (eax_51.w != 0)
+00457a61     ecx_47 = (ecx_48 - ebp_1[-0xd]) s>> 1
+00457a45 else
+00457a47     ecx_47 = nullptr
+00457a47 
+00457a63 var_a8 = ecx_47
+00457a67 int32_t* eax_52
+00457a67 int32_t edx_10
+00457a67 eax_52, edx_10 = sub_45c850(&var_a4, edi_10, var_a8)
+00457a6f struct web::json::details::_Value::web::json::details::_String::VTable*** eax_53 =
+00457a6f     sub_495f20(eax_52, edx_10, &ebp_1[-0xc], var_a4)
+00457a7c ebp_1[-1].b = 0xe
+00457a80 void* var_90_6 = &ebp_1[-0xb]
+00457a84 struct web::json::details::_Value::web::json::details::_String::VTable*** eax_55 =
+00457a84     sub_4960f0(&ebp_1[-0xf])
+00457a84 
+00457a8d if (eax_55 != eax_53)
+00457a8f     struct web::json::details::_Value::web::json::details::_String::VTable** ecx_53 = *eax_55
+00457a93     *eax_55 = *eax_53
+00457a95     *eax_53 = ecx_53
+00457a95 
+00457a97 ebp_1[-1].b = 0xd
+00457a9b int32_t* ecx_54 = ebp_1[-0xc]
+00457a9b 
+00457aa0 if (ecx_54 != 0)
+00457aa4     var_94.d = 1
+00457aa6     (*(*ecx_54 + 0x60))(var_94)
+00457aa6 
+00457aa9 ebp_1[-1].b = 3
+00457aa9 
+00457ab1 if (ebp_1[-6] u>= 8)
+00457ab3     var_94.d = ebp_1[-0xb]
+00457ab6     ebp_1 = j_sub_688543(var_94)
+00457ab6 
+00457abe var_94.d = 2
+00457ac2 ebp_1[-6] = 7
+00457ac9 var_98 = &data_773d58
+00457ad1 ebp_1[-7] = 0
+00457ad8 ebp_1[-0xb].w = 0
+00457adc sub_45c850(&ebp_1[-0xb], var_98, var_94)
+00457ae4 ebp_1[-1].b = 0xf
+00457aec var_94.d = 7
+00457af3 var_98 = 0
+00457afa var_a8.w = 0
+00457b04 int32_t ecx_56
+00457b04 
+00457b04 if (*ebp_1[-0x10] != 0)
+00457b0a     int16_t* ecx_57 = ebp_1[-0x10]
+00457b19     int16_t* eax_58
+00457b19     
+00457b19     do
+00457b10         eax_58.w = *ecx_57
+00457b13         ecx_57 = &ecx_57[1]
+00457b19     while (eax_58.w != 0)
+00457b1d     ecx_56 = (ecx_57 - &ecx_57[1]) s>> 1
+00457b04 else
+00457b06     ecx_56 = 0
+00457b06 
+00457b25 int32_t* eax_59
+00457b25 int32_t edx_12
+00457b25 eax_59, edx_12 = sub_45c850(&var_a8, ebp_1[-0x10], ecx_56)
+00457b2d struct web::json::details::_Value::web::json::details::_String::VTable*** eax_60 =
+00457b2d     sub_495f20(eax_59, edx_12, &ebp_1[-0xd], var_a8)
+00457b3a ebp_1[-1].b = 0x10
+00457b3e var_94.d = &ebp_1[-0xb]
+00457b42 struct web::json::details::_Value::web::json::details::_String::VTable*** eax_62 =
+00457b42     sub_4960f0(&ebp_1[-0xf])
+00457b42 
+00457b4b if (eax_62 != eax_60)
+00457b4d     struct web::json::details::_Value::web::json::details::_String::VTable** ecx_62 = *eax_62
+00457b51     *eax_62 = *eax_60
+00457b53     *eax_60 = ecx_62
+00457b53 
+00457b55 ebp_1[-1].b = 0xf
+00457b59 int32_t* ecx_63 = ebp_1[-0xd]
+00457b59 
+00457b5e if (ecx_63 != 0)
+00457b60     int32_t eax_64 = *ecx_63
+00457b62     var_98 = 1
+00457b64     (*(eax_64 + 0x60))(var_98)
+00457b64 
+00457b6b if (ebp_1[-6] u>= 8)
+00457b6d     var_98 = ebp_1[-0xb]
+00457b70     ebp_1 = j_sub_688543(var_98)
+00457b70 
+00457b7b ebp_1[-1].b = 0x11
+00457b7f var_98 = arg1 + 8
+00457b85 var_9c = &ebp_1[-0xf]
+00457b89 var_a0 = &ebp_1[-0xe]
+00457b8a int32_t* eax_68 = sub_4590b0(arg1, var_a0, var_9c)
+00457b8a int16_t* esp_1 = &var_94
+00457b8f ebp_1[-1].b = 0x12
+00457b93 void* ecx_65 = *eax_68
+00457b93 
+00457b97 if (ecx_65 == 0)
+00457b99     var_98 = "wait() cannot be called on a default constructed task."
+00457ba1     sub_68efe0(&ebp_1[-0x19])
+00457ba6     var_98 = &data_7b5894
+00457bae     var_9c = &ebp_1[-0x19]
+00457bae     esp_1 = &var_9c
+00457baf     ecx_65, ebp_1 = sub_69858f(var_9c, var_98)
+00457baf 
+00457bb4 int32_t ecx_67 = sub_455740(ecx_65)
+00457bb9 ebp_1[-1].b = 0x11
+00457bbd int32_t* edi_14 = ebp_1[-0xd]
+00457bbd 
+00457bc2 if (edi_14 != 0)
+00457bc9     bool cond:0_1 = edi_14[1] != 1
+00457bc9     ecx_67 = edi_14[1]
+00457bc9     edi_14[1] -= 1
+00457bc9     
+00457bcd     if (not(cond:0_1))
+00457bd3         ecx_67 = (**edi_14)()
+00457bda         bool cond:1_1 = edi_14[2] != 1
+00457bd5         edi_14[2]
+00457bda         edi_14[2] -= 1
+00457bda         
+00457bde         if (not(cond:1_1))
+00457be4             ecx_67 = (*(*edi_14 + 4))()
+00457be4 
+00457bf0 void* esp_14
+00457bf0 
+00457bf0 if (0xc8 != *(arg1 + 8))
+00457d76     *(esp_1 - 4) = ecx_67
+00457d79     *(esp_1 - 8) = u"Request Failed!"
+00457d7e     sub_41a5b0(esp_1 - 4)
+00457d85     sub_458920(arg1)
+00457d85     esp_14 = esp_1
+00457d8a     *(arg1 + 0x10) = 1
+00457dce     sub_4583b0(arg1)
+00457bf0 else
+00457c1c     ebp_1[-0xc] = (*(data_7bfb90 + 0xc))() + 0x10
+00457c22     ebp_1[-1].b = 0x13
+00457c26     *(esp_1 - 4) = &ebp_1[-0xb]
+00457c2a     void** eax_77 = sub_496060(arg1 + 0xc)
+00457c2f     ebp_1[-1].b = 0x14
+00457c2f     
+00457c37     if (eax_77[5] u>= 8)
+00457c39         eax_77 = *eax_77
+00457c39     
+00457c3b     *(esp_1 - 4) = eax_77
+00457c3f     *(esp_1 - 8) = u"Request Success!\nResp: %s\n"
+00457c44     *(esp_1 - 0xc) = &ebp_1[-0xc]
+00457c45     int32_t ecx_73 = sub_414410()
+00457c4a     void* esp_7 = esp_1
+00457c4d     ebp_1[-1].b = 0x13
+00457c4d     
+00457c55     if (ebp_1[-6] u>= 8)
+00457c57         *(esp_7 - 4) = ebp_1[-0xb]
+00457c5a         ecx_73, ebp_1 = j_sub_688543()
+00457c5a     
+00457c62     void* edi_15 = ebp_1[-0xc]
+00457c65     *(esp_7 - 4) = ecx_73
+00457c69     ebp_1[-0xd] = esp_7 - 4
+00457c6c     *(esp_7 - 8) = edi_15 - 0x10
+00457c7b     *ebp_1[-0xd] = sub_41a8a0() + 0x10
+00457c7f     sub_458920(arg1)
+00457c89     *(esp_7 - 4) = arg1 + 0xc
+00457c8a     esp_14 = esp_7
+00457c8f     bool cond:2_1 = sub_458680(arg1) == 0
+00457c91     ebp_1[-1].b = 0x11
+00457c91     
+00457c9a     if (cond:2_1)
+00457cbd         int32_t ecx_80 = *(edi_15 - 4)
+00457cbd         *(edi_15 - 4) -= 1
+00457cbd         
+00457cc4         if (ecx_80 - 1 s<= 0)
+00457cc6             int32_t* ecx_82 = *(edi_15 - 0x10)
+00457cc8             *(esp_14 - 4) = edi_15 - 0x10
+00457ccb             (*(*ecx_82 + 4))()
+00457ccb         
+00457cce         int32_t edi_17 = ebp_1[-0x11]
+00457cd4         *(esp_14 - 4) = &ebp_1[-0x13]
+00457cd8         ebp_1[-1] = 3
+00457cdf         *(esp_14 - 8) = &ebp_1[-0x10]
+00457ce0         *(esp_14 - 0xc) = edi_17
+00457ce1         int32_t eax_88 = sub_458070()
+00457ce6         ebp_1[-0x12] = eax_88
+00457ce6         
+00457ceb         if (eax_88 != 0)
+00457dce             sub_4583b0(arg1)
+00457ceb         else
+00457cf1             int32_t edx_15 = *(arg1 + 0x2c)
+00457cf8             int32_t ecx_83
+00457cf8             ecx_83.b = edx_15 != 0
+00457cf8             
+00457cfd             if (ecx_83 == 0)
+00457cff                 *(esp_14 - 4) = 0x80004005
+00457d04                 sub_414340()
+00457d04                 noreturn
+00457d04             
+00457d09             *(esp_14 - 4) = edx_15
+00457d0a             *(esp_14 - 8) = ebp_1[-0x13]
+00457d0a             
+00457d17             if (sub_689666() == 0)
+00457d28                 *(esp_14 - 4) = &ebp_1[-0x10]
+00457d29                 sub_41a720(arg1 + 0x28)
+00457d34                 *(esp_14 - 4) = edi_17 + 0x10
+00457d35                 sub_41a720(arg1 + 0x24)
+00457d40                 *(esp_14 - 4) = edi_17 + 8
+00457d41                 sub_41a720(arg1 + 0x1c)
+00457d49                 *(esp_14 - 4) = edi_17
+00457d4a                 sub_41a720(arg1 + 0x14)
+00457d55                 *(esp_14 - 4) = edi_17 + 4
+00457d56                 sub_41a720(arg1 + 0x18)
+00457d61                 *(esp_14 - 4) = edi_17 + 0xc
+00457d62                 sub_41a720(arg1 + 0x20)
+00457d67                 ebp_1[-0x12] = 0
+00457d17             else
+00457d19                 *(arg1 + 0x10) = 9
+00457d19             
+00457d72             if (*(arg1 + 0x10) != 0)
+00457dce                 sub_4583b0(arg1)
+00457c9a     else
+00457c9c         *(arg1 + 0x10) = 0xb
+00457ca3         int32_t ecx_77 = *(edi_15 - 4)
+00457ca3         *(edi_15 - 4) -= 1
+00457ca3         
+00457caa         if (ecx_77 - 1 s<= 0)
+00457cb0             int32_t* ecx_79 = *(edi_15 - 0x10)
+00457cb2             *(esp_14 - 4) = edi_15 - 0x10
+00457cb5             (*(*ecx_79 + 4))()
+00457cb5         
+00457dce         sub_4583b0(arg1)
+00457dce 
+00457dd3 ebp_1[-1].b = 2
+00457ddc int32_t* edx_17 = ebp_1[-0x13] - 0x10
+00457de2 int32_t ecx_93 = edx_17[3]
+00457de2 edx_17[3] -= 1
+00457de2 
+00457de9 if (ecx_93 - 1 s<= 0)
+00457deb     int32_t* ecx_95 = *edx_17
+00457ded     *(esp_14 - 4) = edx_17
+00457df0     (*(*ecx_95 + 4))()
+00457df0 
+00457df3 ebp_1[-1].b = 1
+00457dfa int32_t* edx_19 = ebp_1[-0x10] - 0x10
+00457e00 int32_t ebx_1 = edx_19[3]
+00457e00 edx_19[3] -= 1
+00457e00 
+00457e07 if (ebx_1 - 1 s<= 0)
+00457e09     int32_t* ecx_96 = *edx_19
+00457e0b     *(esp_14 - 4) = edx_19
+00457e0e     (*(*ecx_96 + 4))()
+00457e0e 
+00457e11 ebp_1[-1] = 0xffffffff
+00457e18 int32_t* ecx_97 = ebp_1[-0xf]
+00457e18 
+00457e1d if (ecx_97 != 0)
+00457e1f     int32_t eax_99 = *ecx_97
+00457e21     *(esp_14 - 4) = 1
+00457e23     (*(eax_99 + 0x60))()
+00457e23 
+00457e26 int32_t result = ebp_1[-0x12]
+00457e2c fsbase->NtTib.ExceptionList = ebp_1[-3]
+00457e34 *(esp_14 + 4)
+00457e35 *(esp_14 + 8)
+00457e36 *(esp_14 + 0xc)
+00457e3c sub_687de2(ebp_1[-5] ^ ebp_1)
+00457e43 *ebp_1
+00457e44 return result

@@ -1,0 +1,53 @@
+004d4fb0 void** eax = arg1 + 8
+004d4fb3 *(arg1 + 0x98) = 0
+004d4fbd *(arg1 + 0xa0) = 0
+004d4fc7 *(arg1 + 0x9c) = 0
+004d4fd1 bool cond:0 = eax[5] u< 0x10
+004d4fd5 eax[4] = 0
+004d4fd5 
+004d4fdc if (not(cond:0))
+004d4fde     eax = *eax
+004d4fde 
+004d4fe0 *eax = nullptr
+004d4fe3 void** eax_1 = arg1 + 0x50
+004d4fe6 bool cond:1 = eax_1[5] u< 0x10
+004d4fea eax_1[4] = 0
+004d4fea 
+004d4ff1 if (not(cond:1))
+004d4ff3     eax_1 = *eax_1
+004d4ff3 
+004d4ff5 *eax_1 = nullptr
+004d4ff8 void** eax_2 = arg1 + 0x80
+004d4ffe bool cond:2 = eax_2[5] u< 0x10
+004d5002 eax_2[4] = 0
+004d5002 
+004d5009 if (not(cond:2))
+004d500b     eax_2 = *eax_2
+004d500b 
+004d500d *eax_2 = nullptr
+004d5010 void** eax_3 = arg1 + 0x38
+004d5013 bool cond:3 = eax_3[5] u< 0x10
+004d5017 eax_3[4] = 0
+004d5017 
+004d501e if (not(cond:3))
+004d5020     eax_3 = *eax_3
+004d5020 
+004d5022 *eax_3 = nullptr
+004d5025 void** eax_4 = arg1 + 0x20
+004d5028 bool cond:4 = eax_4[5] u< 0x10
+004d502c eax_4[4] = 0
+004d502c 
+004d5033 if (not(cond:4))
+004d5035     eax_4 = *eax_4
+004d5035 
+004d5037 *eax_4 = nullptr
+004d503a void** result = arg1 + 0x68
+004d503d bool cond:5 = result[5] u< 0x10
+004d5041 result[4] = 0
+004d5041 
+004d5048 if (not(cond:5))
+004d504a     result = *result
+004d504a 
+004d504f *result = nullptr
+004d5052 __builtin_memset(arg1 + 0x174, 0, 0x20)
+004d5062 return result

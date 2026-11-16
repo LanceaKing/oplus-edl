@@ -1,0 +1,204 @@
+004c3fd0 int32_t __saved_ebp_2
+004c3fd0 int32_t __saved_ebp_1 = __saved_ebp_2
+004c3fd9 __security_cookie
+004c3fe3 int32_t ebx
+004c3fe3 int32_t var_144 = ebx
+004c3fe4 int32_t esi
+004c3fe4 int32_t var_148 = esi
+004c3fea int32_t edi
+004c3fea int32_t var_14c = edi
+004c3feb int32_t var_150 = 0x1000
+004c3ffc int32_t* eax_2 = sub_56c748(0x1000)
+004c4008 int32_t var_13c
+004c4008 
+004c4008 if (eax_2 == 0)
+004c400a     void* const var_150_1 = &data_7782e4
+004c400f     char const* const var_154 = "D:/ToolLog.txt"
+004c4019     int32_t esi_2 = std::_Deallocate<64,0>("D:/ToolLog.txt", &data_7782e4)
+004c4020     int32_t* esp_1
+004c4020     
+004c4020     if (esi_2 != 0)
+004c403a     label_4c403a:
+004c403a         char const* const var_150_3 = "Failed to allocate buffer\n"
+004c4040         _fprintf(esi_2, "Failed to allocate buffer\n")
+004c4046         _fclose(esi_2)
+004c404b         esp_1 = &var_13c
+004c4020     else
+004c4022         void* const var_150_2 = &data_7782e4
+004c4027         char const* const var_154_1 = "C:/ToolLog.txt"
+004c4031         esi_2 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_7782e4)
+004c4033         esp_1 = &var_14c
+004c4033         
+004c4038         if (esi_2 != 0)
+004c4038             goto label_4c403a
+004c4038     
+004c4050     *esp_1
+004c4050     esp_1[1]
+004c4051     esp_1[2]
+004c4060     return sub_68804f()
+004c4060 
+004c4063 int32_t var_150_4 = 0x1000
+004c406a sub_692dc0(eax_2, arg3, 0x1000)
+004c407c int32_t var_154_4 = 0xb80
+004c4082 int128_t var_18
+004c4082 sub_4d7480(&eax_2[0x120], 0xb80, &var_18)
+004c4087 uint32_t eax_8 = zx.d(*(eax_2 + 5))
+004c4099 *(eax_2 + 0x400) = var_18
+004c409d *(arg1 + 0x100028)
+004c40a8 sub_4d3f00(&var_18, eax_8)
+004c40b1 int32_t var_154_6 = 0x7e49dc
+004c40b6 int128_t var_28
+004c40b6 sub_4d3e80(0x7e49dc, &var_28)
+004c40c7 int128_t var_38 = var_18
+004c40d4 int32_t var_154_7 = 0x80
+004c40da var_18 = var_28
+004c40df void var_134
+004c40df sub_52f790(&var_38, 0x80, &var_134)
+004c40ef var_18 = var_28
+004c40f4 int32_t (* var_150_9)() = sub_52efc0
+004c4101 int32_t var_15c = 0xc00
+004c4108 sub_52ff80(&eax_2[0x100], &eax_2[0x100], 0xc00, &var_134, &var_18, sub_52efc0)
+004c4111 sub_4c3100(eax_2)
+004c4117 sub_4c4570(eax_2)
+004c4121 int32_t edx_1 = arg2 << 0xa
+004c4124 var_13c = 1
+004c4131 int32_t eax_10
+004c4131 
+004c4131 if (edx_1 != 0xffffffff)
+004c413d     int32_t var_150_12 = 0
+004c413f     int32_t var_154_9 = 0x1000
+004c4147     int32_t var_15c_1 = 0
+004c414d     char const* const var_164_1 = "param"
+004c4152     eax_10 = (***(arg1 + 0x100000))("param", edx_1 u>> 0xc, 0, eax_2, 0x1000, 0)
+004c4154     var_13c = eax_10
+004c4154 
+004c415c int32_t* esp_4
+004c415c 
+004c415c if (edx_1 == 0xffffffff || eax_10 != 0)
+004c432b     void* const var_150_28 = &data_7782e4
+004c4330     char const* const var_154_24 = "D:/ToolLog.txt"
+004c433a     int32_t ebx_5 = std::_Deallocate<64,0>("D:/ToolLog.txt", &data_7782e4)
+004c433a     
+004c4341     if (ebx_5 != 0)
+004c4362     label_4c4362:
+004c4362         void* const var_158_11 = "Failed to write primary region of sid %d (%d)\n"
+004c4368         _fprintf(ebx_5, "Failed to write primary region of sid %d (%d)\n", arg2, var_13c)
+004c436e         _fclose(ebx_5)
+004c4373         esp_4 = &var_13c
+004c4341     else
+004c4343         void* const var_150_29 = &data_7782e4
+004c4348         char const* const var_154_25 = "C:/ToolLog.txt"
+004c4352         ebx_5 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_7782e4)
+004c4354         esp_4 = &var_14c
+004c4354         
+004c4359         if (ebx_5 != 0)
+004c4359             goto label_4c4362
+004c415c else if (sub_4c3dc0(arg1, arg2, eax_2, arg3, eax_10) != 0)
+004c41dc     int32_t ebx_4 = 1
+004c41e1     int32_t edx_4 = (arg2 + 0x200) << 0xa
+004c41e1     
+004c41e7     if (edx_4 != 0xffffffff)
+004c41f3         int32_t var_150_17 = 0
+004c41f5         int32_t var_154_14 = 0x1000
+004c4201         int32_t var_15c_3 = 0
+004c4209         char const* const var_164_2 = "param"
+004c4210         ebx_4 = (***(arg1 + 0x100000))("param", edx_4 u>> 0xc, 0, eax_2, 0x1000, 0)
+004c4210     
+004c4214     if (edx_4 == 0xffffffff || ebx_4 != 0)
+004c42de         void* const var_150_24 = &data_7782e4
+004c42e3         char const* const var_154_21 = "D:/ToolLog.txt"
+004c42e8         int32_t eax_18 = std::_Deallocate<64,0>("D:/ToolLog.txt", &data_7782e4)
+004c42f0         int32_t var_138_3 = eax_18
+004c42f0         
+004c42f8         if (eax_18 != 0)
+004c4318         label_4c4318:
+004c4318             void* const var_158_10 = "Failed to write backup region of sid %d (%d)\n"
+004c431e             _fprintf(eax_18, "Failed to write backup region of sid %d (%d)\n", arg2, ebx_4)
+004c436e             _fclose(var_138_3)
+004c4373             esp_4 = &var_13c
+004c42f8         else
+004c42fa             void* const var_150_25 = &data_7782e4
+004c42ff             char const* const var_154_22 = "C:/ToolLog.txt"
+004c4304             eax_18 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_7782e4)
+004c4309             esp_4 = &var_14c
+004c430c             var_138_3 = eax_18
+004c430c             
+004c4314             if (eax_18 != 0)
+004c4314                 goto label_4c4318
+004c4214     else
+004c4220         int32_t var_150_18 = 1
+004c422f         void* const var_150_19 = &data_7782e4
+004c4234         char const* const var_154_16 = "D:/ToolLog.txt"
+004c4239         int32_t ebx_3 = sub_4c3dc0(arg1, arg2, eax_2, arg3, 1)
+004c423b         int32_t eax_16 = std::_Deallocate<64,0>("D:/ToolLog.txt", &data_7782e4)
+004c423b         
+004c4245         if (ebx_3 != 0)
+004c4293             int32_t esi_6 = eax_16
+004c4297             int32_t* esp_5
+004c4297             
+004c4297             if (esi_6 != 0)
+004c42b1             label_4c42b1:
+004c42b1                 void* const var_150_23 = "Verified Pass. Update content in mem\n"
+004c42b7                 _fprintf(esi_6, "Verified Pass. Update content in mem\n")
+004c42bd                 _fclose(esi_6)
+004c42c2                 esp_5 = &var_13c
+004c4297             else
+004c4299                 void* const var_150_22 = &data_7782e4
+004c429e                 char const* const var_154_19 = "C:/ToolLog.txt"
+004c42a8                 esi_6 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_7782e4)
+004c42aa                 esp_5 = &var_14c
+004c42aa                 
+004c42af                 if (esi_6 != 0)
+004c42af                     goto label_4c42b1
+004c42af             
+004c42c5             *(esp_5 - 4) = 0x1000
+004c42ca             *(esp_5 - 8) = eax_2
+004c42cb             *(esp_5 - 0xc) = arg3
+004c42d1             sub_692dc0()
+004c42d6             esp_4 = esp_5
+004c4245         else
+004c4247             int32_t var_138_2 = eax_16
+004c4247             
+004c424f             if (eax_16 != 0)
+004c4272             label_4c4272:
+004c4272                 void* const var_154_18 = "Verify backup encrypted content of sid %d failed.\n"
+004c4278                 _fprintf(eax_16, "Verify backup encrypted content of sid %d failed.\n", arg2)
+004c4286                 _fclose(var_138_2)
+004c428b                 esp_4 = &var_13c
+004c424f             else
+004c4251                 void* const var_150_20 = &data_7782e4
+004c4256                 char const* const var_154_17 = "C:/ToolLog.txt"
+004c425b                 eax_16 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_7782e4)
+004c4260                 esp_4 = &var_14c
+004c4263                 var_138_2 = eax_16
+004c4263                 
+004c426b                 if (eax_16 != 0)
+004c426b                     goto label_4c4272
+004c4176 else
+004c4178     void* const var_150_14 = &data_7782e4
+004c417d     char const* const var_154_11 = "D:/ToolLog.txt"
+004c4182     int32_t eax_12 = std::_Deallocate<64,0>("D:/ToolLog.txt", &data_7782e4)
+004c418a     int32_t var_138_1 = eax_12
+004c418a     
+004c4192     if (eax_12 != 0)
+004c41b5     label_4c41b5:
+004c41b5         void* const var_154_13 = "Verify primary encrypted content of sid %d failed.\n"
+004c41bb         _fprintf(eax_12, "Verify primary encrypted content of sid %d failed.\n", arg2)
+004c41c9         _fclose(var_138_1)
+004c41ce         esp_4 = &var_13c
+004c4192     else
+004c4194         void* const var_150_15 = &data_7782e4
+004c4199         char const* const var_154_12 = "C:/ToolLog.txt"
+004c419e         eax_12 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_7782e4)
+004c41a3         esp_4 = &var_14c
+004c41a6         var_138_1 = eax_12
+004c41a6         
+004c41ae         if (eax_12 != 0)
+004c41ae             goto label_4c41b5
+004c41ae 
+004c4378 *(esp_4 - 4) = eax_2
+004c4379 sub_56c751()
+004c4388 *esp_4
+004c4388 esp_4[1]
+004c4389 esp_4[2]
+004c4393 return sub_68804f()

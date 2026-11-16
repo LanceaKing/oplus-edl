@@ -1,0 +1,110 @@
+00434f23 int32_t var_8 = 0xffffffff
+00434f25 int32_t (* var_c)() = sub_6cf131
+00434f30 TEB* fsbase
+00434f30 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00434f3c int32_t __saved_ebp
+00434f3c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00434f48 fsbase->NtTib.ExceptionList = &ExceptionList
+00434f56 int32_t var_8_1 = 0
+00434f5d char var_228[0x1f8]
+00434f5d sub_4270a0(&var_228)
+00434f68 var_8_1.b = 1
+00434f6c char* ecx_2 = sub_433cb0(&var_228)
+00434f78 wchar16 const* const var_250
+00434f78 char* var_24c
+00434f78 char var_30
+00434f78 
+00434f78 if (*(arg4 - 0xc) == 0)
+00434f7a     var_24c = 0xb
+00434f7c     var_250 = u"SN is empty"
+00434f83     char* ecx_4 = sub_41a940(arg3, var_250, var_24c, eax_2)
+00434f88     int32_t eax_4 = *arg3
+00434f8a     var_24c = ecx_4
+00434f90     var_250 = eax_4 - 0x10
+00434f9c     char* eax_7 = &sub_41a8a0(var_250)[4]
+00434fa1     var_24c = eax_7
+00434fa3     char* eax_8 = xcf5fba64::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >::operator[]::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >(
+00434fa3         eax_7, 0, &var_30, var_24c)
+00434fab     var_8_1.b = 2
+00434fab     
+00434fb3     if (*(eax_8 + 0x14) u>= 0x10)
+00434fb5         eax_8 = *eax_8
+00434fb5     
+00434fb7     var_24c = eax_8
+00434fb8     var_250 = "[MesPreCateLot] : Msg(%s)\n"
+00434fc4     sub_4d6500(&data_7e4a58, 4, var_250, var_24c)
+00434fcc     goto label_435093
+00434fcc 
+00434fd1 var_24c = ecx_2
+00434fd4 char** var_230_1 = &var_24c
+00434fda var_250 = &data_76a09c
+00434fe4 var_8_1.b = 3
+00434feb var_250 = sub_41a5b0(&var_24c, var_250)
+00434fef wchar16 const* const* var_234_1 = &var_250
+00435000 var_250 = &sub_41a8a0(&arg4[-8])[4]
+00435008 var_8_1.b = 4
+00435015 void var_444
+00435015 char* eax_13
+00435015 int32_t edx
+00435015 eax_13, edx = sub_4337f0(&var_444, &var_228)
+0043501c var_8_1.b = 1
+00435020 int32_t eax_14 = xcf5fba64::_Boost_call<class <lambda_9534ad163726183daa7a3452a304c6f4> >::operator[]::_Boost_call<class <lambda_9534ad163726183daa7a3452a304c6f4> >(
+00435020     eax_13, edx, arg3)
+0043502f var_24c = 0x15
+00435031 var_250 = u" [MES_CatePreLot]SN: "
+00435036 sub_41a100(arg3, var_250, var_24c)
+00435040 var_24c = *(arg4 - 0xc)
+00435043 var_250 = arg4
+00435044 sub_41a100(arg3, var_250, var_24c)
+00435049 int32_t eax_16 = *arg3
+0043504b var_24c = nullptr
+00435051 var_250 = eax_16 - 0x10
+0043505d char* eax_19 = &sub_41a8a0(var_250)[4]
+00435062 var_24c = eax_19
+00435064 char* eax_20 = xcf5fba64::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >::operator[]::_Boost_call<class <lambda_f877309c40d931af1e4e2e3caff43307> >(
+00435064     eax_19, 0, &var_30, var_24c)
+0043506e int32_t var_1c
+0043506e 
+0043506e if (eax_14 != 0)
+004350a8     var_8_1.b = 6
+004350a8     
+004350b0     if (*(eax_20 + 0x14) u>= 0x10)
+004350b2         eax_20 = *eax_20
+004350b2     
+004350b4     var_24c = eax_20
+004350b5     var_250 = eax_14
+004350c2     sub_4d6500(&data_7e4a58, 4, "[MES_CatePreLot] : SUCCESS(%d) Msg(%s)\n", var_250, var_24c, eax_2)
+004350c2     
+004350ce     if (var_1c u>= 0x10)
+004350d0         var_24c = var_30.d
+004350d3         sub_56c751(var_24c)
+004350d3     
+004350db     int32_t var_1c_1 = 0xf
+004350e7     int32_t var_20_1 = 0
+004350ee     var_30 = 0
+0043506e else
+00435070     var_8_1.b = 5
+00435070     
+00435078     if (*(eax_20 + 0x14) u>= 0x10)
+0043507a         eax_20 = *eax_20
+0043507a     
+0043507c     var_24c = eax_20
+0043507d     var_250 = nullptr
+0043508b     sub_4d6500(&data_7e4a58, 4, "[MES_CatePreLot] : SUCCESS(%d) Msg(%s)\n", var_250, var_24c, eax_2)
+00435093 label_435093:
+00435093     
+00435097     if (var_1c u>= 0x10)
+00435099         var_24c = var_30.d
+0043509c         sub_56c751(var_24c, eax_2)
+004350f8 sub_4272a0(&var_228)
+004350fd int32_t var_8_2 = 0xffffffff
+00435110 int32_t ecx_14 = *(arg4 - 4)
+00435110 *(arg4 - 4) -= 1
+00435110 
+00435117 if (ecx_14 - 1 s<= 0)
+00435119     int32_t* ecx_16 = *(arg4 - 0x10)
+0043511b     var_24c = &arg4[-8]
+0043511e     (*(*ecx_16 + 4))(var_24c)
+0043511e 
+00435126 fsbase->NtTib.ExceptionList = ExceptionList
+0043513e return sub_68804f()

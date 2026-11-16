@@ -1,0 +1,51 @@
+{
+  "tool": "Binary Ninja 5.2.8614 Personal",
+  "python": "3.11.16 (main, Aug 12 2026, 23:03:19) [Clang 21.0.0 (clang-2100.1.1.101)]",
+  "unicorn": "2.1.4",
+  "images": {
+    "5175": {
+      "path": "runs/msmdownloadtool-analysis/op8-unpack/msm-5.1.75-restored.exe",
+      "sha256": "cf526788045211590d6fc3d5a1688b87d6377db05532516f5a4f570bd860e68f"
+    },
+    "5177": {
+      "path": "runs/msmdownloadtool-analysis/multi-version/op9pro/restored/MsmDownloadTool V4.0.exe",
+      "sha256": "0717b3160c05e5bbb5991dabc134b2948c750c0011ea2628da56cdbc621d9649"
+    }
+  },
+  "native_windows_process_execution": false,
+  "device_operations": 0,
+  "authentication_requests": 0,
+  "target_crypto_or_prng_replaced": false,
+  "vm_guard_branch_patched": false,
+  "runtime_model": "Synthetic PEB and independently recovered per-version runtime table, CRT thread state, heap, 807 import slots and 2 dynamic caches.",
+  "api_models": [
+    "GetSystemTimeAsFileTime",
+    "GetLastError",
+    "SetLastError",
+    "FlsGetValue",
+    "HeapAlloc",
+    "HeapFree"
+  ],
+  "successful_token_cpu_and_rdtsc": "Unicorn defaults; no result overrides",
+  "scripts": {
+    "runs/msmdownloadtool-analysis/multi-version/token-5177/check_boundaries.py": "543bbb67861a094171d4b19d94ca1092fcd673f953678b291746f64b0d674c1e",
+    "runs/msmdownloadtool-analysis/multi-version/token-5177/check_guard.py": "19db33092a6ec9fef681e5bde13117a9a3e4ca33da77de4b2b05eeb671254d5b",
+    "runs/msmdownloadtool-analysis/multi-version/token-5177/check_input_mapping.py": "cae5650f2eaed39eb5ca36ba57cf2d017d30a254bfbbf18c39234729ac5e6472",
+    "runs/msmdownloadtool-analysis/multi-version/token-5177/check_token_diff.py": "a3a22f7558fb28a4d0af2d4285a39a05433472caeaea8590ec7f42cf61340370",
+    "runs/msmdownloadtool-analysis/multi-version/token-5177/curate_evidence.py": "e80b451d25150945496e2abb38f55651cbac7dee3cf6fd9441816902b409086f",
+    "runs/msmdownloadtool-analysis/multi-version/token-5177/probe_old_cache_runner.py": "64ea04dd53ad427c060dea1953ed8aeca7244d03d81574f7ecc77d35ae8e8413",
+    "runs/msmdownloadtool-analysis/multi-version/token-5177/recover_imports.py": "7333b60e513b00df502ca74c0d351a6bc254b7fe5d9f423c1e8e8dbd37c38904",
+    "runs/msmdownloadtool-analysis/multi-version/token-5177/run_vm_5175.py": "f063dfab14db1e18dd0c258f3a0e290b4f11e8cb980fa75fff575c5fb444e6e4",
+    "runs/msmdownloadtool-analysis/multi-version/token-5177/run_vm_5177.py": "46116c9f94e789f175768cb1ba760c74b74578ce80ab426ccbd9370e61bbfffc",
+    "runs/msmdownloadtool-analysis/multi-version/token-5177/validate_evidence.py": "800c03d153490d5682fec420f7f4aefb64f820a6f3dfed67fa538686a75350cd",
+    "runs/msmdownloadtool-analysis/op8-unpack/vm_observer.c": "c88a66553b88b04bc7d2ab711a11e9ff38f9158dd91de6e901702e05434d6df2",
+    "runs/msmdownloadtool-analysis/op8-unpack/vm_observer.dylib": "343258420789935ad1a19b3bdf05da644bcc5a7de2b7b5273ec358372305546d",
+    "runs/msmdownloadtool-analysis/op8-unpack/references/vmp-lazy-unpack/unpack/discover.py": "d9591cb0a739d4907732b3caa38feaaa0005dee0a07eeaac6332d9f7c61d6527",
+    "runs/msmdownloadtool-analysis/op8-unpack/references/vmp-lazy-unpack/unpack/decode_imports_xor.py": "cfeeddebc85e448eb290ed49734b281526e8e8ec4cb3a2f1c125e98aa70d85ed"
+  },
+  "paired_token_cases": 39,
+  "native_token_executions": 78,
+  "input_copy_cases": 6,
+  "runtime_controls": 6,
+  "raw_trace_retention": "Full files under token-5177; this directory contains bounded excerpts."
+}

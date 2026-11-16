@@ -1,0 +1,43 @@
+1001f879 __security_cookie
+1001f888 int32_t var_b8
+1001f888 __builtin_memset(&var_b8, 0, 0x24)
+1001f898 int32_t var_f = 0
+1001f89e int16_t var_b = 0
+1001f8a4 char var_9 = 0
+1001f8de char _Source = 0
+1001f8e2 void _Destination
+1001f8e2 memset(&_Destination, 0, 0x80)
+1001f8e2 
+1001f8fb if (sub_10037bb0(*(arg1 + 0x24), arg1, &var_b8) != 0)
+1001f8fd     int32_t ecx_1 = *(arg1 + 0x1c)
+1001f91d     opdbg_log("QCFlashWorker::doActionGetPlatform", 0x12f7, 
+1001f91d         "[%s] [%s] ERROR: Failed to get PBL information for target.", ecx_1 + 0x9e4, ecx_1 + 0x444)
+1001f92c     sub_10024880(arg1, "sahara_dump_pbl()")
+1001f941     CookieCheckFunction(0x791a)
+1001f949     return 0x791a
+1001f949 
+1001f984 for (int32_t i = 0; i u< 0x20; i += 1)
+1001f95a     char var_b4
+1001f95a     uint32_t var_c8_2 = zx.d((&var_b4)[i])
+1001f966     sub_1000c8d0(&_Source, 8, "%02x")
+1001f97b     strcat_s(&_Destination, 0x80, &_Source)
+1001f97b 
+1001f986 int32_t ecx_4 = *(arg1 + 0x1c)
+1001f98f int32_t esi = var_b8
+1001f9ba opdbg_log("QCFlashWorker::doActionGetPlatform", 0x1301, 
+1001f9ba     "[%s] [%s] INFO: The MSM ID is %0x, hash is %s.", ecx_4 + 0x9e4, ecx_4 + 0x444, esi, 
+1001f9ba     &_Destination)
+1001f9c7 int32_t var_c8_4 = esi
+1001f9ce sub_1002dd90(*(arg1 + 0x1c) + 0xcb4, "%0x")
+1001f9ce 
+1001f9ef if (sub_1002ff80(arg1 + 0x17e0, &_Destination, esi, arg1 + 0x17e0) == 0)
+1001fa43     CookieCheckFunction(0)
+1001fa4b     return 0
+1001fa4b 
+1001f9f1 int32_t ecx_6 = *(arg1 + 0x1c)
+1001fa12 opdbg_log("QCFlashWorker::doActionGetPlatform", 0x1304, 
+1001fa12     "[%s] [%s] ERROR: The MSM ID: %d is not supported.", ecx_6 + 0x9e4, ecx_6 + 0x444, esi)
+1001fa14 int32_t var_e0_2 = esi
+1001fa1b sub_10024880(arg1, "qcom_unsupport_platform(%d)")
+1001fa30 CookieCheckFunction(0x7535)
+1001fa38 return 0x7535

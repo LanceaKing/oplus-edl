@@ -1,0 +1,16 @@
+1499c8a0 int64_t result
+1499c8a0 int64_t i
+1499c8a0 void* x10
+1499c8a0 result, i, x10 = sub_1499caf0(&data_80202000)
+1499c8a0 
+1499c8a8 for (; i != 0x480; i += 0x80)
+1499c8ac     char* x19_1 = x10 + i
+1499c8ac     
+1499c8b8     if (*(x19_1 + 0x78) == arg1)
+1499c8c8         sub_149ab66c(x19_1)
+1499c8cc         sub_1499cadc(x19_1)
+1499c8d0         result = 0
+1499c8d4         *(x19_1 + 0x78) = 0
+1499c8d4         break
+1499c8d4 
+1499c8e0 return result

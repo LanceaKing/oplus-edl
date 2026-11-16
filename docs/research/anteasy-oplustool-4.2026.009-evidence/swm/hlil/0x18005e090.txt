@@ -1,0 +1,288 @@
+18005e0a8 void var_2b8
+18005e0a8 int64_t rax_1 = __security_cookie ^ &var_2b8
+18005e0bf int32_t* var_250 = arg1
+18005e0d9 uint64_t result
+18005e0d9 
+18005e0d9 if (arg1 == 0 || arg2 == 0 || arg4 == 0)
+18005e8f8     result = 1
+18005e0d9 else
+18005e0e2     int128_t var_228 = zx.o(0)
+18005e0ec     int32_t* var_218_1 = nullptr
+18005e0f4     int64_t var_210_1 = 0xf
+18005e100     var_228.b = 0
+18005e108     int128_t var_248 = zx.o(0)
+18005e10d     int64_t var_238_1 = 0
+18005e115     int64_t var_230_1 = 0xf
+18005e121     var_248.b = 0
+18005e129     int32_t result_1 = sub_180069720(arg1, arg2[1])
+18005e129     
+18005e132     if (result_1 == 0)
+18005e1fa         int128_t var_208
+18005e1fa         __builtin_memset(&var_208, 0, 0x60)
+18005e23d         int128_t var_1a8[0x14]
+18005e23d         sub_1801a5ef0(&var_1a8, 0, 0x140)
+18005e245         int128_t var_68
+18005e245         __builtin_memset(&var_68, 0, 0x19)
+18005e25e         int32_t* var_278_1 = arg1
+18005e266         int32_t rax_4
+18005e266         int64_t r9
+18005e266         rax_4, r9 = sub_1800b9180(arg1)
+18005e266         
+18005e26d         if (rax_4 != 0)
+18005e923             std::_Throw_Cpp_error(5)
+18005e923             noreturn
+18005e923         
+18005e273         int32_t rax_5 = arg1[0x13]
+18005e273         
+18005e27b         if (rax_5 == 0x7fffffff)
+18005e92a             arg1[0x13] = rax_5 - 1
+18005e932             std::_Throw_Cpp_error(6)
+18005e932             noreturn
+18005e932         
+18005e288         var_208 = *(arg1 + 0x110)
+18005e297         int128_t var_1f8_1 = *(arg1 + 0x120)
+18005e2a6         int128_t var_1e8_1 = *(arg1 + 0x130)
+18005e2b5         int128_t var_1d8_1 = *(arg1 + 0x140)
+18005e2c4         int128_t var_1c8_1 = *(arg1 + 0x150)
+18005e2d3         int128_t var_1b8_1 = *(arg1 + 0x160)
+18005e2db         int128_t* rax_6 = &arg1[0x5c]
+18005e2e2         int128_t (* rcx_8)[0x14] = &var_1a8
+18005e2ea         int64_t i_1 = 2
+18005e340         int64_t i
+18005e340         
+18005e340         do
+18005e2f3             *rcx_8 = *rax_6
+18005e2fa             (*rcx_8)[1] = rax_6[1]
+18005e302             (*rcx_8)[2] = rax_6[2]
+18005e30a             (*rcx_8)[3] = rax_6[3]
+18005e312             (*rcx_8)[4] = rax_6[4]
+18005e31a             (*rcx_8)[5] = rax_6[5]
+18005e322             (*rcx_8)[6] = rax_6[6]
+18005e32a             (*rcx_8)[7] = rax_6[7]
+18005e32e             rcx_8 = &(*rcx_8)[8]
+18005e335             rax_6 = &rax_6[8]
+18005e33c             i = i_1
+18005e33c             i_1 -= 1
+18005e340         while (i != 1)
+18005e345         *rcx_8 = *rax_6
+18005e34c         (*rcx_8)[1] = rax_6[1]
+18005e354         (*rcx_8)[2] = rax_6[2]
+18005e35c         (*rcx_8)[3] = rax_6[3]
+18005e35c         
+18005e372         if (&var_68 != &arg1[0xac])
+18005e374             int32_t** rdx_8 = *(arg1 + 0x2b0)
+18005e38d             sub_18003ae00(&var_68, rdx_8, (*(arg1 + 0x2b8) - rdx_8) s>> 6, r9)
+18005e38d         
+18005e399         char var_50_1 = arg1[0xb2].b
+18005e3a0         char rbx_2 = *(arg1 + 0x2d2)
+18005e3aa         sub_1800b92c0(arg1)
+18005e3d0         char rax_8 = sub_180004d90(arg2, &var_208, rbx_2, &var_228, &var_248)
+18005e3da         int64_t var_58
+18005e3da         
+18005e3da         if (rax_8 != 0)
+18005e5b2             int32_t* r8_5 = &var_228
+18005e5b2             
+18005e5c3             if (var_210_1 u> 0xf)
+18005e5c3                 r8_5 = var_228.q
+18005e5c3             
+18005e5e5             int32_t result_2 = GSI1::updateDataAddr(arg1, 7, r8_5, var_218_1, arg3, arg4, 1)
+18005e5f5             sub_1800abb50(&var_228)
+18005e5fb             int64_t* rbx_6 = var_68.q
+18005e5fb             
+18005e606             if (rbx_6 != 0)
+18005e60c                 int64_t rsi_2 = var_68:8.q
+18005e60c                 
+18005e617                 if (rbx_6 != rsi_2)
+18005e676                     do
+18005e620                         int64_t rcx_23 = rbx_6[3]
+18005e620                         
+18005e628                         if (rcx_23 u> 0xf)
+18005e62a                             void* rax_15 = *rbx_6
+18005e638                             void* r8_6
+18005e638                             
+18005e638                             if (rcx_23 + 1 u< 0x1000)
+18005e655                                 r8_6 = rax_15
+18005e638                             else
+18005e63a                                 r8_6 = *(rax_15 - 8)
+18005e63a                                 
+18005e649                                 if (rax_15 - r8_6 - 8 u> 0x1f)
+18005e649                                     goto label_18005e83d_1
+18005e649                             
+18005e65b                             j_sub_180182fc0(r8_6)
+18005e65b                         
+18005e660                         rbx_6[2] = 0
+18005e664                         rbx_6[3] = 0xf
+18005e66c                         *rbx_6 = 0
+18005e66f                         rbx_6 = &rbx_6[8]
+18005e676                     while (rbx_6 != rsi_2)
+18005e676                     
+18005e678                     rbx_6 = var_68.q
+18005e678                 
+18005e696                 if (((var_58 - rbx_6) & 0xffffffffffffffc0) u>= 0x1000)
+18005e698                     int64_t* rax_18 = rbx_6[-1]
+18005e698                     
+18005e6a7                     if (rbx_6 - rax_18 - 8 u> 0x1f)
+18005e83d                     label_18005e83d:
+18005e83d                         trap(0xd)
+18005e83d                     
+18005e6b1                     rbx_6 = rax_18
+18005e6b1                 
+18005e6b7                 j_sub_180182fc0(rbx_6)
+18005e6bf                 __builtin_memset(&var_68, 0, 0x18)
+18005e6bf             
+18005e6dc             if (var_230_1 u> 0xf)
+18005e6e1                 void* rcx_26 = var_248.q
+18005e6e1                 
+18005e6ed                 if (var_230_1 + 1 u>= 0x1000)
+18005e6ef                     void* rax_19 = *(rcx_26 - 8)
+18005e6ef                     
+18005e6fe                     if (rcx_26 - rax_19 - 8 u> 0x1f)
+18005e844                         trap(0xd)
+18005e844                     
+18005e708                     rcx_26 = rax_19
+18005e708                 
+18005e70b                 j_sub_180182fc0(rcx_26)
+18005e70b             
+18005e710             int64_t var_238_5 = 0
+18005e718             int64_t var_230_5 = 0xf
+18005e724             var_248.b = 0
+18005e724             
+18005e735             if (var_210_1 u> 0xf)
+18005e73a                 void* rcx_29 = var_228.q
+18005e73a                 
+18005e749                 if (var_210_1 + 1 u>= 0x1000)
+18005e74b                     void* rax_20 = *(rcx_29 - 8)
+18005e74b                     
+18005e75a                     if (rcx_29 - rax_20 - 8 u> 0x1f)
+18005e84b                         trap(0xd)
+18005e84b                     
+18005e764                     rcx_29 = rax_20
+18005e764                 
+18005e767                 j_sub_180182fc0(rcx_29)
+18005e767             
+18005e76c             int64_t var_218_4 = 0
+18005e774             int64_t var_210_4 = 0xf
+18005e780             var_228.b = 0
+18005e788             result = zx.q(result_2)
+18005e3da         else
+18005e3e5             int128_t var_270 = var_248
+18005e3f2             int128_t var_260_1 = var_238_1.o
+18005e3f7             int64_t var_238_3 = 0
+18005e3ff             int64_t var_230_3 = 0xf
+18005e40b             var_248.b = rax_8
+18005e414             sub_18005d180(arg1, &var_270)
+18005e41a             int64_t* rbx_3 = var_68.q
+18005e41a             
+18005e425             if (rbx_3 != 0)
+18005e42b                 int64_t rsi_1 = var_68:8.q
+18005e42b                 
+18005e436                 if (rbx_3 != rsi_1)
+18005e496                     do
+18005e440                         int64_t rcx_13 = rbx_3[3]
+18005e440                         
+18005e448                         if (rcx_13 u> 0xf)
+18005e44a                             void* rax_9 = *rbx_3
+18005e458                             void* r8_4
+18005e458                             
+18005e458                             if (rcx_13 + 1 u< 0x1000)
+18005e475                                 r8_4 = rax_9
+18005e458                             else
+18005e45a                                 r8_4 = *(rax_9 - 8)
+18005e45a                                 
+18005e469                                 if (rax_9 - r8_4 - 8 u> 0x1f)
+18005e469                                     goto label_18005e83d_1
+18005e469                             
+18005e47b                             j_sub_180182fc0(r8_4)
+18005e47b                         
+18005e480                         rbx_3[2] = 0
+18005e484                         rbx_3[3] = 0xf
+18005e48c                         *rbx_3 = 0
+18005e48f                         rbx_3 = &rbx_3[8]
+18005e496                     while (rbx_3 != rsi_1)
+18005e496                     
+18005e498                     rbx_3 = var_68.q
+18005e498                 
+18005e4b6                 if (((var_58 - rbx_3) & 0xffffffffffffffc0) u>= 0x1000)
+18005e4b8                     int64_t* rax_12 = rbx_3[-1]
+18005e4b8                     
+18005e4c7                     if (rbx_3 - rax_12 - 8 u> 0x1f)
+18005e83d                     label_18005e83d_1:
+18005e83d                         trap(0xd)
+18005e83d                     
+18005e4d1                     rbx_3 = rax_12
+18005e4d1                 
+18005e4d7                 j_sub_180182fc0(rbx_3)
+18005e4df                 __builtin_memset(&var_68, 0, 0x18)
+18005e4df             
+18005e4fc             if (var_230_3 u> 0xf)
+18005e501                 void* rcx_16 = var_248.q
+18005e501                 
+18005e50d                 if (var_230_3 + 1 u>= 0x1000)
+18005e50f                     void* rax_13 = *(rcx_16 - 8)
+18005e50f                     
+18005e51e                     if (rcx_16 - rax_13 - 8 u> 0x1f)
+18005e844                         trap(0xd)
+18005e844                     
+18005e528                     rcx_16 = rax_13
+18005e528                 
+18005e52b                 j_sub_180182fc0(rcx_16)
+18005e52b             
+18005e530             int64_t var_238_4 = 0
+18005e538             int64_t var_230_4 = 0xf
+18005e544             var_248.b = 0
+18005e544             
+18005e555             if (var_210_1 u> 0xf)
+18005e55a                 void* rcx_19 = var_228.q
+18005e55a                 
+18005e569                 if (var_210_1 + 1 u>= 0x1000)
+18005e56b                     void* rax_14 = *(rcx_19 - 8)
+18005e56b                     
+18005e57a                     if (rcx_19 - rax_14 - 8 u> 0x1f)
+18005e84b                         trap(0xd)
+18005e84b                     
+18005e584                     rcx_19 = rax_14
+18005e584                 
+18005e587                 j_sub_180182fc0(rcx_19)
+18005e587             
+18005e58c             int64_t var_218_3 = 0
+18005e594             int64_t var_210_3 = 0xf
+18005e5a0             var_228.b = 0
+18005e5a8             result = 1
+18005e132     else
+18005e144         if (var_230_1 u> 0xf)
+18005e149             void* rcx = var_248.q
+18005e149             
+18005e155             if (var_230_1 + 1 u>= 0x1000)
+18005e157                 void* rax_2 = *(rcx - 8)
+18005e157                 
+18005e166                 if (rcx - rax_2 - 8 u> 0x1f)
+18005e844                     trap(0xd)
+18005e844                 
+18005e170                 rcx = rax_2
+18005e170             
+18005e173             j_sub_180182fc0(rcx)
+18005e173         
+18005e178         int64_t var_238_2 = 0
+18005e180         int64_t var_230_2 = 0xf
+18005e18c         var_248.b = 0
+18005e18c         
+18005e19d         if (var_210_1 u> 0xf)
+18005e1a2             void* rcx_3 = var_228.q
+18005e1a2             
+18005e1b1             if (var_210_1 + 1 u>= 0x1000)
+18005e1b3                 void* rax_3 = *(rcx_3 - 8)
+18005e1b3                 
+18005e1c2                 if (rcx_3 - rax_3 - 8 u> 0x1f)
+18005e84b                     trap(0xd)
+18005e84b                 
+18005e1cc                 rcx_3 = rax_3
+18005e1cc             
+18005e1cf             j_sub_180182fc0(rcx_3)
+18005e1cf         
+18005e1d4         int64_t var_218_2 = 0
+18005e1dc         int64_t var_210_2 = 0xf
+18005e1e8         var_228.b = 0
+18005e1f0         result = zx.q(result_1)
+18005e1f0 
+18005e908 __security_check_cookie(rax_1 ^ &var_2b8)
+18005e91d return result

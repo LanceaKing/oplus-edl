@@ -1,0 +1,31 @@
+149ace84 if (arg1 == 0)
+149aceac     return 2
+149aceac 
+149ace90 void* x0 = *(arg1 + 8)
+149ace90 
+149ace98 if (*(arg1 + 0x38) != 0x6c)
+149aceb8     int64_t x0_2 = sub_149ac0d4(x0, 0x6c)
+149acebc     *(arg1 + 0x30) = x0_2
+149acebc     
+149acec0     if (x0_2 == 0)
+149acf20         return 7
+149acf20     
+149acec8     *(arg1 + 0x38) = 0x6c
+149ace98 else
+149acea4     sub_149ac2e0(x0, *(arg1 + 0x30), 0x6c)
+149acea4 
+149acef0 int64_t x9_1
+149acef0 
+149acef0 if (*(arg1 + 0x10) == 2)
+149acef0     x9_1 = 0x20
+149acef0 else
+149acef0     x9_1 = 0x1c
+149acef0 
+149acef4 *(arg1 + 0x50) = sub_149acf30
+149acef4 *(arg1 + 0x58) = sub_149ad05c
+149acf04 *(arg1 + 0x18) = x9_1
+149acf04 *(arg1 + 0x20) = 0x40
+149acf10 *(arg1 + 0x60) = sub_149ad1ac
+149acf10 *(arg1 + 0x68) = sub_149ad204
+149acf14 sub_149ad204(arg1)
+149acf18 return 0

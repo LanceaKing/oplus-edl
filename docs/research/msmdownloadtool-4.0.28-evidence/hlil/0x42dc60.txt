@@ -1,0 +1,173 @@
+0042dc63 int32_t var_8 = 0xffffffff
+0042dc65 int32_t (* var_c)(void* arg1) = sub_5724c2
+0042dc70 TEB* fsbase
+0042dc70 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0042dc76 void** ecx = __chkstk(0x10c0)
+0042dc80 int32_t __saved_ebp
+0042dc80 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+0042dc82 int32_t var_18 = eax_2
+0042dc88 int32_t var_20 = eax_2
+0042dc8c fsbase->NtTib.ExceptionList = &ExceptionList
+0042dca8 int32_t var_1094 = 0xf
+0042dcb2 int32_t var_1098 = 0
+0042dcbc char var_10a8 = 0
+0042dcc3 sub_402470(&var_10a8, "<sha256final ", 0xd)
+0042dcc8 int32_t var_8_1 = 0
+0042dccf int32_t var_104c = 0xf
+0042dcd9 int32_t var_1050 = 0
+0042dce3 char var_1060 = 0
+0042dcf5 var_8_1.b = 1
+0042dcfc uint8_t var_1018 = 0
+0042dd03 char var_1017[0xfd3]
+0042dd03 _memset(&var_1017, 0, 0xfff)
+0042dd0b int32_t var_101c = 0xf
+0042dd1b int32_t var_1020 = 0
+0042dd25 char var_1030 = 0
+0042dd33 sub_402470(&var_1030, &data_5b7a80, nullptr)
+0042dd42 var_8_1.b = 2
+0042dd4d int32_t var_10cc = 0
+0042dd57 sub_402330(&var_1060, &var_10a8, 0, 0xffffffff)
+0042dd69 sub_406070(&var_1060, &data_5bcab0, 2)
+0042dd79 int32_t i = 0
+0042dd7e int32_t var_24_5 = 0xf
+0042dd85 int32_t var_28_5 = 0
+0042dd89 char var_38 = 0
+0042dd8c sub_402330(&var_38, &var_1060, 0, 0xffffffff)
+0042dd98 int32_t* var_1078
+0042dd98 sub_42e500(&var_1078, var_38)
+0042dd9d var_8_1.b = 3
+0042ddf0 int32_t var_1064
+0042ddf0 enum WIN32_ERROR result
+0042ddf0 
+0042ddf0 do
+0042dda1     i += 1
+0042dda2     int32_t* edx_1 = &var_1078
+0042dda2     
+0042ddaf     if (var_1064 u>= 0x10)
+0042ddaf         edx_1 = var_1078
+0042ddaf     
+0042ddb6     int32_t* ecx_6 = edx_1
+0042ddb8     void* edi_1 = ecx_6 + 1
+0042ddc5     char j
+0042ddc5     
+0042ddc5     do
+0042ddc0         j = *ecx_6
+0042ddc2         ecx_6 += 1
+0042ddc5     while (j != 0)
+0042dddf     void var_10c8
+0042dddf     result = sub_426500(*ecx, edx_1, ecx_6 - edi_1, &var_10c8)
+0042dddf     
+0042dde3     if (result == NO_ERROR)
+0042dfcd         for (int32_t j_1 = 0; j_1 s< 0x14; )
+0042de02             j_1 += 1
+0042de03             Sleep(5)
+0042de17             _memset(&var_1018, 0, 0x1000)
+0042de3f             enum WIN32_ERROR result_1 = sub_4266a0(*ecx, &var_1018, 0x1000, &var_10cc, 0x3e8)
+0042de44             result = result_1
+0042de44             
+0042de48             if (result != NO_ERROR)
+0042dfc7                 if (result != 0x102)
+0042dfc7                     break
+0042dfc7                 
+0042dfc9                 j_1 -= 1
+0042de48             else if (var_1018 != result_1.b)
+0042de5a                 char* ecx_10 = &var_1018
+0042de5a                 
+0042de68                 do
+0042de63                     result_1.b = *ecx_10
+0042de65                     ecx_10 = &ecx_10[1]
+0042de68                 while (result_1.b != 0)
+0042de68                 
+0042de7a                 sub_406070(&var_1030, &var_1018, ecx_10 - &var_1017)
+0042de7a                 
+0042de96                 if (sub_4172e0(&var_1030, "response value="NCK"", nullptr, 0x14) != 0xffffffff)
+0042e02e                     result = ERROR_INVALID_FUNCTION
+0042e02e                     break
+0042e02e                 
+0042deb3                 if (sub_4172e0(&var_1030, "response value="ACK"", nullptr, 0x14) != 0xffffffff)
+0042deb9                     int32_t var_107c_1 = 0xf
+0042dec3                     int32_t var_1080_1 = 0
+0042decd                     char var_1090 = 0
+0042ded4                     var_8_1.b = 4
+0042dede                     void* var_24_14 = 7
+0042dee0                     int32_t* var_28_12 = "Digest "
+0042dee5                     int32_t var_1034_1 = 0xf
+0042deef                     int32_t var_1038_1 = 0
+0042def9                     char var_1048 = 0
+0042df00                     sub_402470(&var_1048, var_28_12, var_24_14)
+0042df05                     var_8_1.b = 5
+0042df09                     char* eax_8 = &var_1048
+0042df09                     
+0042df24                     if (var_1034_1 u>= 0x10)
+0042df24                         eax_8 = var_1048.d
+0042df24                     
+0042df2c                     char* eax_9 = sub_4172e0(&var_1030, eax_8, nullptr, var_1038_1)
+0042df2c                     
+0042df34                     if (eax_9 == 0xffffffff)
+0042dfde                         sub_402470(arg2, "ERROR", 5)
+0042df34                     else
+0042df3a                         void* eax_10 = &eax_9[var_1038_1]
+0042df3a                         
+0042df49                         if (var_1020 u> eax_10 + 0x40)
+0042df5e                             sub_402330(&var_1090, &var_1030, eax_10, eax_10 + 0x40)
+0042df74                             int32_t var_10c0
+0042df74                             char* eax_11 = sub_4160f0(&var_1090, &var_10c0, 0, 0x40)
+0042df74                             
+0042df7d                             if (arg2 != eax_11)
+0042df83                                 if (arg2[5] u>= 0x10)
+0042df87                                     j__free(*arg2)
+0042df87                                 
+0042df8f                                 arg2[5] = 0xf
+0042df98                                 arg2[4] = 0
+0042dfa0                                 *arg2 = 0
+0042dfa3                                 sub_405f50(arg2, eax_11)
+0042dfa3                             
+0042dfaf                             int32_t var_10ac
+0042dfaf                             
+0042dfaf                             if (var_10ac u>= 0x10)
+0042dfb7                                 j__free(var_10c0)
+0042dfb7                     
+0042dfea                     if (var_1034_1 u>= 0x10)
+0042dff2                         j__free(var_1048.d)
+0042dff2                     
+0042e001                     int32_t var_1034_2 = 0xf
+0042e00b                     int32_t var_1038_2 = 0
+0042e015                     var_1048 = 0
+0042e015                     
+0042e01c                     if (var_107c_1 u>= 0x10)
+0042e024                         j__free(var_1090.d)
+0042e024                     
+0042df34                     break
+0042df34         
+0042dfcd         break
+0042dfcd     
+0042dde7     Sleep(5)
+0042ddf0 while (i s< 5)
+0042ddf0 
+0042e03a if (var_1064 u>= 0x10)
+0042e042     j__free(var_1078)
+0042e042 
+0042e051 int32_t var_1064_1 = 0xf
+0042e05b int32_t var_1068 = 0
+0042e065 var_1078.b = 0
+0042e065 
+0042e06c if (var_101c u>= 0x10)
+0042e074     j__free(var_1030.d)
+0042e074 
+0042e083 int32_t var_101c_1 = 0xf
+0042e08d int32_t var_1020_1 = 0
+0042e097 var_1030 = 0
+0042e097 
+0042e09e if (var_104c u>= 0x10)
+0042e0a6     j__free(var_1060.d)
+0042e0a6 
+0042e0b5 int32_t var_104c_1 = 0xf
+0042e0bf int32_t var_1050_1 = 0
+0042e0c9 var_1060 = 0
+0042e0c9 
+0042e0d0 if (var_1094 u>= 0x10)
+0042e0d8     j__free(var_10a8.d)
+0042e0d8 
+0042e0e5 fsbase->NtTib.ExceptionList = ExceptionList
+0042e0f5 sub_54a573(arg1 ^ &__saved_ebp)
+0042e0fd return result

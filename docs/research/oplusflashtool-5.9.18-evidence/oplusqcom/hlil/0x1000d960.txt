@@ -1,0 +1,1009 @@
+1000d963 int32_t var_8 = 0xffffffff
+1000d965 int32_t (* var_c)(struct EHRegistrationNode* arg1) = __ehhandler$??$raise_error@Vrounding_error@math@boost@@O@detail@policies@math@boost@@YAXPBD0ABO@Z
+1000d970 TEB* fsbase
+1000d970 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+1000d988 fsbase->NtTib.ExceptionList = &ExceptionList
+1000d990 void* ecx = *(arg1 + 0x1c)
+1000d9a0 void* var_a8 = ecx + 0x444
+1000d9a9 int32_t __saved_ebp
+1000d9a9 OtestRetryHelper::setThreadID(OtestRetryHelper::GetInstance(), ecx + 0x9e4, 
+1000d9a9     __security_cookie ^ &__saved_ebp)
+1000d9af uint32_t result = 0
+1000d9b1 void** eax_6 = &arg1[0x3062f4]
+1000d9b7 *(arg1 + 0x3062f0) = 0
+1000d9bd bool cond:0 = eax_6[5] u< 0x10
+1000d9c1 eax_6[4] = 0
+1000d9c1 
+1000d9c4 if (not(cond:0))
+1000d9c6     eax_6 = *eax_6
+1000d9c6 
+1000d9c8 *eax_6 = nullptr
+1000d9d6 int32_t* eax_8 = *(arg1 + 0x1768) + 0x10
+1000d9d9 int64_t var_50 = 0
+1000d9df int32_t var_48 = 0
+1000d9e2 sub_1002cf50(&var_50, eax_8)
+1000d9e7 int32_t var_8_1 = 0
+1000d9ee int32_t ecx_3 = *(arg1 + 0x1c)
+1000d9f1 int32_t var_a4_2 = *(arg1 + 0x304da0)
+1000da05 char const* const var_b0 = "[%s] [%s] [runActions]  m_cancel = %d "
+1000da0a int32_t var_b4 = 0x15e
+1000da0f char const* const var_b8 = "QCFlashWorker::runActions"
+1000da14 opdbg_log(var_b8, var_b4, var_b0, ecx_3 + 0x9e4, ecx_3 + 0x444, var_a4_2)
+1000da14 
+1000da23 for (int32_t* i = var_50.d; i != var_50:4.d; i = &i[0x1e])
+1000da37     if (*(arg1 + 0x304da0) != 0)
+1000ee6d         result = 0x1869f
+1000ee72         goto label_1000ec9e
+1000ee72     
+1000da41     int32_t* eax_11 = &i[0x18]
+1000da44     void** var_90_1 = eax_11
+1000da44     
+1000da4a     if (i[0x1d] u>= 0x10)
+1000da4c         eax_11 = *eax_11
+1000da4c     
+1000da51     uint32_t var_70 = eax_11
+1000da56     char const* const* var_74_1 = &var_b8
+1000da59     int32_t var_a8_2 = 0
+1000da60     int32_t var_a4_3 = 0
+1000da67     int32_t var_a4_4 = 0xf
+1000da72     int32_t var_a8_3 = 0
+1000da81     var_b8.b = 0
+1000da87     void** var_6c
+1000da87     uint32_t _Radix_3
+1000da87     
+1000da87     if (*eax_11 != 0)
+1000da8d         char* ecx_5 = eax_11
+1000da92         var_6c = &ecx_5[1]
+1000da9a         void** eax_12
+1000da9a         
+1000da9a         do
+1000da95             eax_12.b = *ecx_5
+1000da97             ecx_5 = &ecx_5[1]
+1000da9a         while (eax_12.b != 0)
+1000da9c         _Radix_3 = ecx_5 - var_6c
+1000da9f         eax_11 = var_70
+1000da87     else
+1000da89         _Radix_3 = 0
+1000da89     
+1000daa2     uint32_t _Radix = _Radix_3
+1000daa6     sub_10001ad0(&var_b8, eax_11, _Radix)
+1000daae     var_8_1.b = 1
+1000dab4     int32_t var_c0_2 = 0
+1000dabb     _Radix = 0
+1000dac2     _Radix = 0xf
+1000dacd     int32_t var_c0_3 = 0
+1000dad4     char* var_d0
+1000dad4     char* eax_13
+1000dad4     
+1000dad4     eax_13 = _Radix u< 0x10 ? &var_d0 : var_d0
+1000dad4     
+1000dae3     *eax_13 = 0
+1000dae6     sub_10001ad0(&var_d0, "run_action", 0xa)
+1000daef     var_8_1.b = 0
+1000daf3     sub_10024c50(arg1, 1)
+1000daf8     void** edx_1 = var_90_1
+1000daf8     
+1000db02     if (edx_1[5] u>= 0x10)
+1000db04         edx_1 = *edx_1
+1000db04     
+1000db0d     if (i[0x17] u< 0x10)
+1000db16         var_70 = &i[0x12]
+1000db0d     else
+1000db11         var_70 = i[0x12]
+1000db11     
+1000db20     int32_t* var_90_2
+1000db20     
+1000db20     if (i[0x11] u< 0x10)
+1000db2c         var_90_2 = &i[0xc]
+1000db20     else
+1000db24         var_90_2 = i[0xc]
+1000db24     
+1000db36     void** eax_16 = &i[6]
+1000db36     
+1000db39     if (i[0xb] u>= 0x10)
+1000db3b         eax_16 = *eax_16
+1000db3b     
+1000db3d     bool cond:6_1 = i[5] u< 0x10
+1000db41     var_6c = eax_16
+1000db44     int32_t* i_1
+1000db44     
+1000db44     if (cond:6_1)
+1000db4a         i_1 = i
+1000db44     else
+1000db46         i_1 = *i
+1000db46     
+1000db4c     void* ecx_11 = *(arg1 + 0x1c)
+1000db50     uint32_t var_a8_4 = var_70
+1000db59     void** var_b0_1 = var_6c
+1000db63     var_b8 = ecx_11 + 0x444
+1000db6a     _Radix = ecx_11 + 0x9e4
+1000db7a     opdbg_log("QCFlashWorker::runActions", 0x166, 
+1000db7a         "[%s] [%s] Next action:%s, param1:%s, param2:%s, param3:%s, description:%s.", _Radix, 
+1000db7a         var_b8, i_1, var_b0_1, var_90_2, var_a8_4, edx_1)
+1000db86     *(*(arg1 + 0x24) + 0x98) = 0
+1000db90     *(*(arg1 + 0x28) + 0x895d) = 0
+1000db97     reportIssueCancel()
+1000db9d     uint32_t var_a4_6 = 0xffffffff
+1000db9f     int32_t var_a8_5 = 0
+1000dba5     int32_t var_18_1 = 0xf
+1000dbac     int32_t var_1c_1 = 0
+1000dbb3     char var_2c = 0
+1000dbb7     int32_t* eax_21 = sub_10001bd0(&var_2c, i, var_a8_5, var_a4_6)
+1000dbbc     var_8_1.b = 2
+1000dbc0     int32_t* ecx_13 = &var_2c
+1000dbc0     
+1000dbca     if (var_18_1 u>= 0x10)
+1000dbca         ecx_13 = var_2c.d
+1000dbca     
+1000dbd5     int32_t eax_22 = sub_10007cc0(eax_21, var_1c_1, ecx_13, "allow_report", 0xc)
+1000dbdf     char var_44
+1000dbdf     int32_t var_30
+1000dbdf     
+1000dbdf     if (eax_22 != 0)
+1000dc3b         int32_t* ecx_17 = &var_2c
+1000dc3b         
+1000dc40         if (var_18_1 u>= 0x10)
+1000dc40             ecx_17 = var_2c.d
+1000dc40         
+1000dc49         int32_t eax_25 = sub_10007cc0(eax_22, var_1c_1, ecx_17, "get_platform", 0xc)
+1000dc49         
+1000dc53         if (eax_25 != 0)
+1000dc65             int32_t* ecx_19 = &var_2c
+1000dc65             
+1000dc6a             if (var_18_1 u>= 0x10)
+1000dc6a                 ecx_19 = var_2c.d
+1000dc6a             
+1000dc73             int32_t eax_27 = sub_10007cc0(eax_25, var_1c_1, ecx_19, "download_programmer", 0x13)
+1000dc73             
+1000dc7d             if (eax_27 != 0)
+1000dd2f                 int32_t* ecx_23 = &var_2c
+1000dd2f                 
+1000dd34                 if (var_18_1 u>= 0x10)
+1000dd34                     ecx_23 = var_2c.d
+1000dd34                 
+1000dd3d                 int32_t eax_33 = sub_10007cc0(eax_27, var_1c_1, ecx_23, "download_digest", 0xf)
+1000dd3d                 
+1000dd47                 if (eax_33 != 0)
+1000ddf6                     int32_t* ecx_29 = &var_2c
+1000ddf6                     
+1000ddfb                     if (var_18_1 u>= 0x10)
+1000ddfb                         ecx_29 = var_2c.d
+1000ddfb                     
+1000de0e                     if (sub_10007cc0(eax_33, var_1c_1, ecx_29, "run_programmer", 0xe) != 0)
+1000de2b                         int32_t* _String_23
+1000de2b                         int32_t var_78
+1000de2b                         void** _String_24
+1000de2b                         int32_t var_54
+1000de2b                         
+1000de2b                         if (sub_10007bb0(&var_2c, "configure") != 0)
+1000df49                             if (sub_10007bb0(&var_2c, "get_sign_data") != 0)
+1000df66                                 if (sub_10007bb0(&var_2c, "reset_digest") != 0)
+1000df83                                     if (sub_10007bb0(&var_2c, "download_digest_nv") != 0)
+1000dffd                                         if (sub_10007bb0(&var_2c, "check_ddr_type") != 0)
+1000e01a                                             if (sub_10007bb0(&var_2c, "verify") != 0)
+1000e085                                                 if (sub_10007bb0(&var_2c, 
+1000e085                                                         "get_logic_partitions_info") != 0)
+1000e0a2                                                     if (sub_10007bb0(&var_2c, 
+1000e0a2                                                             "get_reserve_paritions_info") != 0)
+1000e0bf                                                         if (sub_10007bb0(&var_2c, 
+1000e0bf                                                                 "read_partition_table_from_phone") != 0)
+1000e0dc                                                             if (sub_10007bb0(&var_2c, "read_gpt")
+1000e0dc                                                                     != 0)
+1000e0f9                                                                 if (
+1000e0f9                                                                         sub_10007bb0(&var_2c, "backup_partions")
+1000e0f9                                                                         != 0)
+1000e124                                                                     if (sub_10007bb0(&var_2c, 
+1000e124                                                                             "verify_gpt_partitions") != 0)
+1000e141                                                                         if (sub_10007bb0(&var_2c, 
+1000e141                                                                                 "read_super_meta_data") != 0)
+1000e15e                                                                             if (sub_10007bb0(&var_2c, 
+1000e15e                                                                                     "write_super_meta_data") != 0)
+1000e17b                                                                                 if (sub_10007bb0(&var_2c, 
+1000e17b                                                                                         "write_dynamic_partition") != 0)
+1000e198                                                                                     if (sub_10007bb0(&var_2c, 
+1000e198                                                                                             "write_super_logic_partition") != 0)
+1000e1dc                                                                                         if (sub_10007bb0(&var_2c, 
+1000e1dc                                                                                                 "firmware_update_normal") != 0)
+1000e1f9                                                                                             if (sub_10007bb0(&var_2c, 
+1000e1f9                                                                                                     "firmware_update_smart") != 0)
+1000e216                                                                                                 if (sub_10007bb0(&var_2c, 
+1000e216                                                                                                         "firmware_update_smartV2") != 0)
+1000e27f                                                                                                     if (sub_10007bb0(&var_2c, 
+1000e27f                                                                                                             "check_storage_info") != 0)
+1000e29c                                                                                                         if (sub_10007bb0(&var_2c, "check_imei")
+1000e29c                                                                                                                 != 0)
+1000e2b9                                                                                                             if (
+1000e2b9                                                                                                                     sub_10007bb0(&var_2c, "ufs_provision")
+1000e2b9                                                                                                                     != 0)
+1000e2d6                                                                                                                 if (
+1000e2d6                                                                                                                         sub_10007bb0(&var_2c, "check_emmc_size")
+1000e2d6                                                                                                                         != 0)
+1000e335                                                                                                                     if (
+1000e335                                                                                                                             sub_10007bb0(&var_2c, "write_cdt_data")
+1000e335                                                                                                                             != 0)
+1000e352                                                                                                                         if (sub_10007bb0(&var_2c, 
+1000e352                                                                                                                                 "validate_project_by_cdt") != 0)
+1000e36f                                                                                                                             if (
+1000e36f                                                                                                                                     sub_10007bb0(&var_2c, "write_ocdt_data")
+1000e36f                                                                                                                                     != 0)
+1000e38c                                                                                                                                 if (sub_10007bb0(&var_2c, 
+1000e38c                                                                                                                                         "validate_project_by_ocdt") != 0)
+1000e3a9                                                                                                                                     if (sub_10007bb0(&var_2c, 
+1000e3a9                                                                                                                                             "erase_emmc_user_partition") != 0)
+1000e473                                                                                                                                         if (sub_10007bb0(&var_2c, 
+1000e473                                                                                                                                                 "erase_logical_unit") != 0)
+1000e4dc                                                                                                                                             if (sub_10007bb0(&var_2c, 
+1000e4dc                                                                                                                                                     "erase_backup_gpt") != 0)
+1000e545                                                                                                                                                 if (
+1000e545                                                                                                                                                         sub_10007bb0(&var_2c, "erase_user_data")
+1000e545                                                                                                                                                         != 0)
+1000e562                                                                                                                                                     if (
+1000e562                                                                                                                                                             sub_10007bb0(&var_2c, "erase_partition")
+1000e562                                                                                                                                                             != 0)
+1000e5e4                                                                                                                                                         if (sub_10007bb0(&var_2c, 
+1000e5e4                                                                                                                                                                 "program_partition") != 0)
+1000e67f                                                                                                                                                             if (sub_10007bb0(&var_2c, "check_nv_id")
+1000e67f                                                                                                                                                                     != 0)
+1000e695                                                                                                                                                                 int32_t eax_107 =
+1000e695                                                                                                                                                                     sub_10007bb0(&var_2c, "phase_advance")
+1000e695                                                                                                                                                                 
+1000e69c                                                                                                                                                                 if (eax_107 != 0)
+1000e738                                                                                                                                                                     if (sub_10007bb0(&var_2c, 
+1000e738                                                                                                                                                                             "write_backup_partitions") != 0)
+1000e755                                                                                                                                                                         if (sub_10007bb0(&var_2c, "apply_nv")
+1000e755                                                                                                                                                                                 != 0)
+1000e772                                                                                                                                                                             if (sub_10007bb0(&var_2c, 
+1000e772                                                                                                                                                                                     "backup_download_flags") != 0)
+1000e78f                                                                                                                                                                                 if (sub_10007bb0(&var_2c, 
+1000e78f                                                                                                                                                                                         "backup_download_flags_extra") != 0)
+1000e7ac                                                                                                                                                                                     if (sub_10007bb0(&var_2c, 
+1000e7ac                                                                                                                                                                                             "write_download_flag") != 0)
+1000e7c9                                                                                                                                                                                         if (sub_10007bb0(&var_2c, 
+1000e7c9                                                                                                                                                                                                 "write_download_flag_signed") != 0)
+1000e7e6                                                                                                                                                                                             if (sub_10007bb0(&var_2c, 
+1000e7e6                                                                                                                                                                                                     "write_skip_first_user_guid") != 0)
+1000e803                                                                                                                                                                                                 if (sub_10007bb0(&var_2c, 
+1000e803                                                                                                                                                                                                         "clear_root_config") != 0)
+1000e820                                                                                                                                                                                                     if (sub_10007bb0(&var_2c, 
+1000e820                                                                                                                                                                                                             "write_root_config") != 0)
+1000e83d                                                                                                                                                                                                         if (sub_10007bb0(&var_2c, 
+1000e83d                                                                                                                                                                                                                 "write_partition_states") != 0)
+1000e85a                                                                                                                                                                                                             if (
+1000e85a                                                                                                                                                                                                                     sub_10007bb0(&var_2c, "write_net_info")
+1000e85a                                                                                                                                                                                                                     != 0)
+1000e877                                                                                                                                                                                                                 if (sub_10007bb0(&var_2c, 
+1000e877                                                                                                                                                                                                                         "write_download_info") != 0)
+1000e898                                                                                                                                                                                                                     if (sub_10007bb0(&var_2c, 
+1000e898                                                                                                                                                                                                                             "write_cloud_flag") != 0)
+1000e8b5                                                                                                                                                                                                                         if (sub_10007bb0(&var_2c, 
+1000e8b5                                                                                                                                                                                                                                 "write_enable_uart_log_flag") != 0)
+1000e91e                                                                                                                                                                                                                             if (sub_10007bb0(&var_2c, 
+1000e91e                                                                                                                                                                                                                                     "set_bootable_storage_drive") != 0)
+1000e9d3                                                                                                                                                                                                                                 if (
+1000e9d3                                                                                                                                                                                                                                         sub_10007bb0(&var_2c, "apply_patches")
+1000e9d3                                                                                                                                                                                                                                         != 0)
+1000ea9d                                                                                                                                                                                                                                     if (sub_10007bb0(&var_2c, "reboot")
+1000ea9d                                                                                                                                                                                                                                             != 0)
+1000eb1f                                                                                                                                                                                                                                         if (sub_10007bb0(&var_2c, "reboot_none")
+1000eb1f                                                                                                                                                                                                                                                 != 0)
+1000eb3c                                                                                                                                                                                                                                             if (sub_10007bb0(&var_2c, "reboot_off")
+1000eb3c                                                                                                                                                                                                                                                     != 0)
+1000ec03                                                                                                                                                                                                                                                 if (sub_10007bb0(&var_2c, 
+1000ec03                                                                                                                                                                                                                                                         "write_firmware_info") != 0)
+1000ec1d                                                                                                                                                                                                                                                     if (
+1000ec1d                                                                                                                                                                                                                                                             sub_10007bb0(&var_2c, "chargeregcfg")
+1000ec1d                                                                                                                                                                                                                                                             == 0)
+1000ec26                                                                                                                                                                                                                                                         sub_10002870(&_String_24, &i[6])
+1000ec2f                                                                                                                                                                                                                                                         void** _String_22 = &_String_24
+1000ec2f                                                                                                                                                                                                                                                         
+1000ec34                                                                                                                                                                                                                                                         if (var_54 u>= 0x10)
+1000ec34                                                                                                                                                                                                                                                             _String_22 = _String_24
+1000ec34                                                                                                                                                                                                                                                         
+1000ec3b                                                                                                                                                                                                                                                         int32_t eax_150 =
+1000ec3b                                                                                                                                                                                                                                                             strtol(_String_22, nullptr, 0xa)
+1000ec3b                                                                                                                                                                                                                                                         
+1000ec4c                                                                                                                                                                                                                                                         if (var_54 u>= 0x10)
+1000ec53                                                                                                                                                                                                                                                             sub_10001d60(_String_24, var_54 + 1)
+1000ec53                                                                                                                                                                                                                                                         
+1000ec5b                                                                                                                                                                                                                                                         var_54 = 0xf
+1000ec62                                                                                                                                                                                                                                                         int32_t var_58_15 = 0
+1000ec69                                                                                                                                                                                                                                                         _String_24.b = 0
+1000ec72                                                                                                                                                                                                                                                         result = sub_1002cd10(arg1, eax_150)
+1000ec03                                                                                                                                                                                                                                                 else
+1000ec72                                                                                                                                                                                                                                                     result = sub_1002aab0(i, arg1)
+1000eb3c                                                                                                                                                                                                                                             else
+1000eb49                                                                                                                                                                                                                                                 sub_10002870(&_String_24, &i[0xc])
+1000eb52                                                                                                                                                                                                                                                 void** _String_20 = &_String_24
+1000eb52                                                                                                                                                                                                                                                 
+1000eb5b                                                                                                                                                                                                                                                 if (var_54 u>= 0x10)
+1000eb5b                                                                                                                                                                                                                                                     _String_20 = _String_24
+1000eb5b                                                                                                                                                                                                                                                 
+1000eb64                                                                                                                                                                                                                                                 void** eax_144 =
+1000eb64                                                                                                                                                                                                                                                     strtol(_String_20, nullptr, 0xa)
+1000eb6c                                                                                                                                                                                                                                                 var_6c = eax_144
+1000eb6c                                                                                                                                                                                                                                                 
+1000eb72                                                                                                                                                                                                                                                 if (var_54 u>= 0x10)
+1000eb79                                                                                                                                                                                                                                                     sub_10001d60(_String_24, var_54 + 1)
+1000eb7e                                                                                                                                                                                                                                                     eax_144 = var_6c
+1000eb7e                                                                                                                                                                                                                                                 
+1000eb85                                                                                                                                                                                                                                                 var_54 = 0xf
+1000eb93                                                                                                                                                                                                                                                 int32_t var_58_14 = 0
+1000eb9a                                                                                                                                                                                                                                                 _String_24.b = 0
+1000eb9e                                                                                                                                                                                                                                                 sub_10002870(&_String_23, &i[6])
+1000eba7                                                                                                                                                                                                                                                 int32_t* _String_21 = &_String_23
+1000eba7                                                                                                                                                                                                                                                 
+1000ebaf                                                                                                                                                                                                                                                 if (var_78 u>= 0x10)
+1000ebaf                                                                                                                                                                                                                                                     _String_21 = _String_23
+1000ebaf                                                                                                                                                                                                                                                 
+1000ebb9                                                                                                                                                                                                                                                 int32_t eax_146 =
+1000ebb9                                                                                                                                                                                                                                                     strtol(_String_21, nullptr, 0xa)
+1000ebb9                                                                                                                                                                                                                                                 
+1000ebc6                                                                                                                                                                                                                                                 if (var_78 u>= 0x10)
+1000ebd0                                                                                                                                                                                                                                                     sub_10001d60(_String_23, var_78 + 1)
+1000ebd0                                                                                                                                                                                                                                                 
+1000ebd8                                                                                                                                                                                                                                                 var_78 = 0xf
+1000ebdf                                                                                                                                                                                                                                                 int32_t var_7c_4 = 0
+1000ebe6                                                                                                                                                                                                                                                 _String_23.b = 0
+1000ec72                                                                                                                                                                                                                                                 result =
+1000ec72                                                                                                                                                                                                                                                     sub_10026ee0(arg1, eax_146, eax_144)
+1000eb1f                                                                                                                                                                                                                                         else
+1000ec72                                                                                                                                                                                                                                             result = sub_10026e00(arg1)
+1000ea9d                                                                                                                                                                                                                                     else
+1000eaa7                                                                                                                                                                                                                                         char const* const* var_74_7 = &var_b8
+1000eaaa                                                                                                                                                                                                                                         _Radix = &i[6]
+1000eaab                                                                                                                                                                                                                                         sub_10002870(&var_b8, _Radix)
+1000eab3                                                                                                                                                                                                                                         var_8_1.b = 9
+1000eab7                                                                                                                                                                                                                                         _Radix = &i[0xc]
+1000eabb                                                                                                                                                                                                                                         sub_10002870(&_String_24, _Radix)
+1000eac4                                                                                                                                                                                                                                         void** _String_19 = &_String_24
+1000eac7                                                                                                                                                                                                                                         _Radix = 0xa
+1000eac7                                                                                                                                                                                                                                         
+1000eac9                                                                                                                                                                                                                                         if (var_54 u>= 0x10)
+1000eac9                                                                                                                                                                                                                                             _String_19 = _String_24
+1000eac9                                                                                                                                                                                                                                         
+1000ead0                                                                                                                                                                                                                                         int32_t _Radix_2 =
+1000ead0                                                                                                                                                                                                                                             strtol(_String_19, nullptr, _Radix)
+1000ead0                                                                                                                                                                                                                                         
+1000eae1                                                                                                                                                                                                                                         if (var_54 u>= 0x10)
+1000eae4                                                                                                                                                                                                                                             _Radix = var_54 + 1
+1000eae8                                                                                                                                                                                                                                             sub_10001d60(_String_24, _Radix)
+1000eae8                                                                                                                                                                                                                                         
+1000eaed                                                                                                                                                                                                                                         _Radix = _Radix_2
+1000eaf0                                                                                                                                                                                                                                         var_54 = 0xf
+1000eaf7                                                                                                                                                                                                                                         int32_t var_58_13 = 0
+1000eafe                                                                                                                                                                                                                                         _String_24.b = 0
+1000eb02                                                                                                                                                                                                                                         var_8_1.b = 2
+1000ec72                                                                                                                                                                                                                                         result =
+1000ec72                                                                                                                                                                                                                                             sub_1000f7b0(arg1, _Radix, var_b8)
+1000e9d3                                                                                                                                                                                                                                 else
+1000e9e0                                                                                                                                                                                                                                     sub_10002870(&_String_24, &i[0xc])
+1000e9e9                                                                                                                                                                                                                                     void** _String_17 = &_String_24
+1000e9e9                                                                                                                                                                                                                                     
+1000e9f2                                                                                                                                                                                                                                     if (var_54 u>= 0x10)
+1000e9f2                                                                                                                                                                                                                                         _String_17 = _String_24
+1000e9f2                                                                                                                                                                                                                                     
+1000e9fb                                                                                                                                                                                                                                     int32_t eax_135 =
+1000e9fb                                                                                                                                                                                                                                         strtol(_String_17, nullptr, 0xa)
+1000ea03                                                                                                                                                                                                                                     var_6c = eax_135
+1000ea03                                                                                                                                                                                                                                     
+1000ea09                                                                                                                                                                                                                                     if (var_54 u>= 0x10)
+1000ea10                                                                                                                                                                                                                                         sub_10001d60(_String_24, var_54 + 1)
+1000ea15                                                                                                                                                                                                                                         eax_135 = var_6c
+1000ea15                                                                                                                                                                                                                                     
+1000ea1c                                                                                                                                                                                                                                     var_54 = 0xf
+1000ea2a                                                                                                                                                                                                                                     int32_t var_58_12 = 0
+1000ea31                                                                                                                                                                                                                                     _String_24.b = 0
+1000ea35                                                                                                                                                                                                                                     sub_10002870(&_String_23, &i[6])
+1000ea3e                                                                                                                                                                                                                                     int32_t* _String_18 = &_String_23
+1000ea3e                                                                                                                                                                                                                                     
+1000ea46                                                                                                                                                                                                                                     if (var_78 u>= 0x10)
+1000ea46                                                                                                                                                                                                                                         _String_18 = _String_23
+1000ea46                                                                                                                                                                                                                                     
+1000ea50                                                                                                                                                                                                                                     int32_t eax_137 =
+1000ea50                                                                                                                                                                                                                                         strtol(_String_18, nullptr, 0xa)
+1000ea50                                                                                                                                                                                                                                     
+1000ea5d                                                                                                                                                                                                                                     if (var_78 u>= 0x10)
+1000ea67                                                                                                                                                                                                                                         sub_10001d60(_String_23, var_78 + 1)
+1000ea67                                                                                                                                                                                                                                     
+1000ea6f                                                                                                                                                                                                                                     var_78 = 0xf
+1000ea76                                                                                                                                                                                                                                     int32_t var_7c_3 = 0
+1000ea7d                                                                                                                                                                                                                                     _String_23.b = 0
+1000ec72                                                                                                                                                                                                                                     result =
+1000ec72                                                                                                                                                                                                                                         sub_1000fa40(arg1, eax_137, eax_135)
+1000e91e                                                                                                                                                                                                                             else
+1000e92b                                                                                                                                                                                                                                 sub_10002870(&_String_24, &i[6])
+1000e934                                                                                                                                                                                                                                 void*** _String_16 = &_String_24
+1000e934                                                                                                                                                                                                                                 
+1000e939                                                                                                                                                                                                                                 if (var_54 u>= 0x10)
+1000e939                                                                                                                                                                                                                                     _String_16 = _String_24
+1000e939                                                                                                                                                                                                                                 
+1000e940                                                                                                                                                                                                                                 int32_t eax_129 =
+1000e940                                                                                                                                                                                                                                     strtol(_String_16, nullptr, 0xa)
+1000e940                                                                                                                                                                                                                                 
+1000e951                                                                                                                                                                                                                                 if (var_54 u>= 0x10)
+1000e958                                                                                                                                                                                                                                     sub_10001d60(_String_24, var_54 + 1)
+1000e958                                                                                                                                                                                                                                 
+1000e95d                                                                                                                                                                                                                                 int32_t* ecx_182 = *(arg1 + 0x28)
+1000e963                                                                                                                                                                                                                                 void*** var_a4_107 = &var_6c
+1000e964                                                                                                                                                                                                                                 var_54 = 0xf
+1000e96b                                                                                                                                                                                                                                 int32_t var_58_11 = 0
+1000e972                                                                                                                                                                                                                                 _String_24.b = 0
+1000e976                                                                                                                                                                                                                                 var_6c = eax_129
+1000e976                                                                                                                                                                                                                                 
+1000e980                                                                                                                                                                                                                                 if (sub_100069f0(ecx_182, var_a4_107)
+1000e980                                                                                                                                                                                                                                         == 0)
+1000e722                                                                                                                                                                                                                                     result = 0
+1000e980                                                                                                                                                                                                                                 else
+1000e986                                                                                                                                                                                                                                     int32_t ecx_183 = *(arg1 + 0x1c)
+1000e9a6                                                                                                                                                                                                                                     opdbg_log(
+1000e9a6                                                                                                                                                                                                                                         "QCFlashWorker::"
+1000e9a6                                                                                                                                                                                                                                     "doActionSetBootableStorageDrive", 
+1000e9a6                                                                                                                                                                                                                                         0x31d, 
+1000e9a6                                                                                                                                                                                                                                         "[%s] [%s] ERROR: Failed to execute "
+1000e9a6                                                                                                                                                                                                                                     "firehose command "
+1000e9a6                                                                                                                                                                                                                                     "'setbootablestoragedrive'.", 
+1000e9a6                                                                                                                                                                                                                                         ecx_183 + 0x9e4, ecx_183 + 0x444)
+1000e9ac                                                                                                                                                                                                                                     var_b8 = "firehouse_exec_command_error(setbootablestoragedrive)"
+1000e9b1                                                                                                                                                                                                                                     _Radix = arg1
+1000e9b2                                                                                                                                                                                                                                     sub_10024880(_Radix, var_b8)
+1000e9ba                                                                                                                                                                                                                                     result = 0x791b
+1000e8b5                                                                                                                                                                                                                         else
+1000e8be                                                                                                                                                                                                                             sub_10002870(&_String_24, &i[6])
+1000e8c7                                                                                                                                                                                                                             void*** _String_15 = &_String_24
+1000e8c7                                                                                                                                                                                                                             
+1000e8cc                                                                                                                                                                                                                             if (var_54 u>= 0x10)
+1000e8cc                                                                                                                                                                                                                                 _String_15 = _String_24
+1000e8cc                                                                                                                                                                                                                             
+1000e8d3                                                                                                                                                                                                                             int32_t eax_126 =
+1000e8d3                                                                                                                                                                                                                                 strtol(_String_15, nullptr, 0xa)
+1000e8d3                                                                                                                                                                                                                             
+1000e8e4                                                                                                                                                                                                                             if (var_54 u>= 0x10)
+1000e8eb                                                                                                                                                                                                                                 sub_10001d60(_String_24, var_54 + 1)
+1000e8eb                                                                                                                                                                                                                             
+1000e8f3                                                                                                                                                                                                                             var_54 = 0xf
+1000e8fa                                                                                                                                                                                                                             int32_t var_58_10 = 0
+1000e901                                                                                                                                                                                                                             _String_24.b = 0
+1000ec72                                                                                                                                                                                                                             result = sub_1000fc50(arg1, eax_126)
+1000e898                                                                                                                                                                                                                     else
+1000ec72                                                                                                                                                                                                                         result = sub_1000fe60(arg1)
+1000e877                                                                                                                                                                                                                 else
+1000ec72                                                                                                                                                                                                                     result = sub_10010080(&i[6])
+1000e85a                                                                                                                                                                                                             else
+1000ec72                                                                                                                                                                                                                 result = sub_10010d40(arg1)
+1000e83d                                                                                                                                                                                                         else
+1000ec72                                                                                                                                                                                                             result = sub_10010fe0(arg1)
+1000e820                                                                                                                                                                                                     else
+1000ec72                                                                                                                                                                                                         result = sub_10011270(arg1)
+1000e803                                                                                                                                                                                                 else
+1000ec72                                                                                                                                                                                                     result = sub_10011680(arg1)
+1000e7e6                                                                                                                                                                                             else
+1000ec72                                                                                                                                                                                                 result = sub_10011c40(arg1)
+1000e7c9                                                                                                                                                                                         else
+1000ec72                                                                                                                                                                                             result = sub_10011870()
+1000e7ac                                                                                                                                                                                     else
+1000ec72                                                                                                                                                                                         result = sub_10011f50()
+1000e78f                                                                                                                                                                                 else
+1000ec72                                                                                                                                                                                     result = sub_10012260()
+1000e772                                                                                                                                                                             else
+1000ec72                                                                                                                                                                                 result = sub_100124b0()
+1000e755                                                                                                                                                                         else
+1000ec72                                                                                                                                                                             result = sub_10012bd0(arg1)
+1000e738                                                                                                                                                                     else
+1000ec72                                                                                                                                                                         result = sub_1002c0b0(arg1)
+1000e69c                                                                                                                                                                 else
+1000e6a7                                                                                                                                                                     char const* const* var_74_6 = &var_b8
+1000e6aa                                                                                                                                                                     int32_t var_a8_46 = eax_107
+1000e6ad                                                                                                                                                                     int32_t var_a4_82 = eax_107
+1000e6b0                                                                                                                                                                     int32_t var_a4_83 = 0xf
+1000e6bb                                                                                                                                                                     int32_t var_a8_47 = eax_107
+1000e6c6                                                                                                                                                                     _Radix = 0
+1000e6cd                                                                                                                                                                     var_b8.b = 0
+1000e6d0                                                                                                                                                                     sub_10001ad0(&var_b8, &data_1006a03d, 
+1000e6d0                                                                                                                                                                         _Radix)
+1000e6d8                                                                                                                                                                     var_8_1.b = 8
+1000e6de                                                                                                                                                                     int32_t var_c0_14 = 0
+1000e6e5                                                                                                                                                                     _Radix = 0
+1000e6ec                                                                                                                                                                     _Radix = 0xf
+1000e6f7                                                                                                                                                                     int32_t var_c0_15 = 0
+1000e6fe                                                                                                                                                                     char* eax_109
+1000e6fe                                                                                                                                                                     
+1000e6fe                                                                                                                                                                     eax_109 =
+1000e6fe                                                                                                                                                                         _Radix u< 0x10 ? &var_d0 : var_d0
+1000e6fe                                                                                                                                                                     
+1000e70d                                                                                                                                                                     *eax_109 = 0
+1000e710                                                                                                                                                                     sub_10001ad0(&var_d0, "phase_advance", 
+1000e710                                                                                                                                                                         0xd)
+1000e719                                                                                                                                                                     var_8_1.b = 2
+1000e71d                                                                                                                                                                     sub_10024c50(arg1, 1)
+1000e722                                                                                                                                                                     result = 0
+1000e67f                                                                                                                                                             else
+1000ec72                                                                                                                                                                 result = public: struct `protected: int __thiscall GSI1::readHash(unsigned short, long, long)'::`2'::FileSymbolInfo * __thiscall std::vector<struct `protected: int __thiscall GSI1::readHash(unsigned short, long, long)'::`2'::FileSymbolInfo, class std::allocator<struct `protected: int __thiscall GSI1::readHash(unsigned short, long, long)'::`2'::FileSymbolInfo>>::_Emplace_reallocate<struct `protected: int __thiscall GSI1::readHash(unsigned short, long, long)'::`2'::FileSymbolInfo>(struct `protected: int __thiscall GSI1::readHash(unsigned short, long, long)'::`2'::FileSymbolInfo *const, struct `protected: int __thiscall GSI1::readHash(unsigned short, long, long)'::`2'::FileSymbolInfo &&)(
+1000ec72                                                                                                                                                                     arg1)
+1000e5e4                                                                                                                                                         else
+1000e5f2                                                                                                                                                             char const* const* var_74_5 = &var_b8
+1000e5f5                                                                                                                                                             _Radix = &i[0x12]
+1000e5f6                                                                                                                                                             sub_10002870(&var_b8, _Radix)
+1000e5fe                                                                                                                                                             var_8_1.b = 6
+1000e605                                                                                                                                                             var_6c = &var_d0
+1000e60b                                                                                                                                                             sub_10002870(&var_d0, &i[0xc])
+1000e613                                                                                                                                                             var_8_1.b = 7
+1000e61b                                                                                                                                                             sub_10002870(&_String_24, &i[6])
+1000e624                                                                                                                                                             void*** _String_14 = &_String_24
+1000e624                                                                                                                                                             
+1000e629                                                                                                                                                             if (var_54 u>= 0x10)
+1000e629                                                                                                                                                                 _String_14 = _String_24
+1000e629                                                                                                                                                             
+1000e630                                                                                                                                                             int32_t eax_105 =
+1000e630                                                                                                                                                                 strtol(_String_14, nullptr, 0xa)
+1000e630                                                                                                                                                             
+1000e641                                                                                                                                                             if (var_54 u>= 0x10)
+1000e648                                                                                                                                                                 sub_10001d60(_String_24, var_54 + 1)
+1000e648                                                                                                                                                             
+1000e650                                                                                                                                                             var_54 = 0xf
+1000e657                                                                                                                                                             int32_t var_58_9 = 0
+1000e65e                                                                                                                                                             _String_24.b = 0
+1000e662                                                                                                                                                             var_8_1.b = 2
+1000ec72                                                                                                                                                             result = sub_10013720(arg1, eax_105)
+1000e562                                                                                                                                                     else
+1000e56c                                                                                                                                                         char const* const* var_74_4 = &var_b8
+1000e56f                                                                                                                                                         _Radix = &i[0xc]
+1000e570                                                                                                                                                         sub_10002870(&var_b8, _Radix)
+1000e578                                                                                                                                                         var_8_1.b = 5
+1000e57c                                                                                                                                                         _Radix = &i[6]
+1000e580                                                                                                                                                         sub_10002870(&_String_24, _Radix)
+1000e589                                                                                                                                                         void*** _String_13 = &_String_24
+1000e58c                                                                                                                                                         _Radix = 0xa
+1000e58c                                                                                                                                                         
+1000e58e                                                                                                                                                         if (var_54 u>= 0x10)
+1000e58e                                                                                                                                                             _String_13 = _String_24
+1000e58e                                                                                                                                                         
+1000e595                                                                                                                                                         int32_t _Radix_1 =
+1000e595                                                                                                                                                             strtol(_String_13, nullptr, _Radix)
+1000e595                                                                                                                                                         
+1000e5a6                                                                                                                                                         if (var_54 u>= 0x10)
+1000e5a9                                                                                                                                                             _Radix = var_54 + 1
+1000e5ad                                                                                                                                                             sub_10001d60(_String_24, _Radix)
+1000e5ad                                                                                                                                                         
+1000e5b2                                                                                                                                                         _Radix = _Radix_1
+1000e5b5                                                                                                                                                         var_54 = 0xf
+1000e5bc                                                                                                                                                         int32_t var_58_8 = 0
+1000e5c3                                                                                                                                                         _String_24.b = 0
+1000e5c7                                                                                                                                                         var_8_1.b = 2
+1000ec72                                                                                                                                                         result =
+1000ec72                                                                                                                                                             sub_10015ee0(arg1, _Radix, var_b8)
+1000e545                                                                                                                                                 else
+1000ec72                                                                                                                                                     result = sub_10016370(arg1)
+1000e4dc                                                                                                                                             else
+1000e4e5                                                                                                                                                 sub_10002870(&_String_24, &i[6])
+1000e4ee                                                                                                                                                 void*** _String_12 = &_String_24
+1000e4ee                                                                                                                                                 
+1000e4f3                                                                                                                                                 if (var_54 u>= 0x10)
+1000e4f3                                                                                                                                                     _String_12 = _String_24
+1000e4f3                                                                                                                                                 
+1000e4fa                                                                                                                                                 int32_t eax_96 =
+1000e4fa                                                                                                                                                     strtol(_String_12, nullptr, 0xa)
+1000e4fa                                                                                                                                                 
+1000e50b                                                                                                                                                 if (var_54 u>= 0x10)
+1000e512                                                                                                                                                     sub_10001d60(_String_24, var_54 + 1)
+1000e512                                                                                                                                                 
+1000e51a                                                                                                                                                 var_54 = 0xf
+1000e521                                                                                                                                                 int32_t var_58_7 = 0
+1000e528                                                                                                                                                 _String_24.b = 0
+1000ec72                                                                                                                                                 result =
+1000ec72                                                                                                                                                     Concurrency::agent::wait_for_one(arg1, 
+1000ec72                                                                                                                                                     eax_96)
+1000e473                                                                                                                                         else
+1000e47c                                                                                                                                             sub_10002870(&_String_24, &i[6])
+1000e485                                                                                                                                             void*** _String_11 = &_String_24
+1000e485                                                                                                                                             
+1000e48a                                                                                                                                             if (var_54 u>= 0x10)
+1000e48a                                                                                                                                                 _String_11 = _String_24
+1000e48a                                                                                                                                             
+1000e491                                                                                                                                             int32_t eax_93 =
+1000e491                                                                                                                                                 strtol(_String_11, nullptr, 0xa)
+1000e491                                                                                                                                             
+1000e4a2                                                                                                                                             if (var_54 u>= 0x10)
+1000e4a9                                                                                                                                                 sub_10001d60(_String_24, var_54 + 1)
+1000e4a9                                                                                                                                             
+1000e4b1                                                                                                                                             var_54 = 0xf
+1000e4b8                                                                                                                                             int32_t var_58_6 = 0
+1000e4bf                                                                                                                                             _String_24.b = 0
+1000ec72                                                                                                                                             result = sub_10016890(arg1, eax_93)
+1000e3a9                                                                                                                                     else
+1000e3b6                                                                                                                                         sub_10002870(&_String_24, &i[0xc])
+1000e3bf                                                                                                                                         void*** _String_9 = &_String_24
+1000e3bf                                                                                                                                         
+1000e3c8                                                                                                                                         if (var_54 u>= 0x10)
+1000e3c8                                                                                                                                             _String_9 = _String_24
+1000e3c8                                                                                                                                         
+1000e3d1                                                                                                                                         int32_t eax_88 =
+1000e3d1                                                                                                                                             strtol(_String_9, nullptr, 0xa)
+1000e3d9                                                                                                                                         var_6c = eax_88
+1000e3d9                                                                                                                                         
+1000e3df                                                                                                                                         if (var_54 u>= 0x10)
+1000e3e6                                                                                                                                             sub_10001d60(_String_24, var_54 + 1)
+1000e3eb                                                                                                                                             eax_88 = var_6c
+1000e3eb                                                                                                                                         
+1000e3f2                                                                                                                                         var_54 = 0xf
+1000e400                                                                                                                                         int32_t var_58_5 = 0
+1000e407                                                                                                                                         _String_24.b = 0
+1000e40b                                                                                                                                         sub_10002870(&_String_23, &i[6])
+1000e414                                                                                                                                         int32_t* _String_10 = &_String_23
+1000e414                                                                                                                                         
+1000e41c                                                                                                                                         if (var_78 u>= 0x10)
+1000e41c                                                                                                                                             _String_10 = _String_23
+1000e41c                                                                                                                                         
+1000e426                                                                                                                                         int32_t eax_90 =
+1000e426                                                                                                                                             strtol(_String_10, nullptr, 0xa)
+1000e426                                                                                                                                         
+1000e433                                                                                                                                         if (var_78 u>= 0x10)
+1000e43d                                                                                                                                             sub_10001d60(_String_23, var_78 + 1)
+1000e43d                                                                                                                                         
+1000e445                                                                                                                                         var_78 = 0xf
+1000e44c                                                                                                                                         int32_t var_7c_2 = 0
+1000e453                                                                                                                                         _String_23.b = 0
+1000ec72                                                                                                                                         result =
+1000ec72                                                                                                                                             sub_100164b0(arg1, eax_90, eax_88)
+1000e38c                                                                                                                                 else
+1000ec72                                                                                                                                     result = sub_10016a50(arg1)
+1000e36f                                                                                                                             else
+1000ec72                                                                                                                                 result = sub_10017230(arg1)
+1000e352                                                                                                                         else
+1000ec72                                                                                                                             result = sub_100174d0(arg1)
+1000e335                                                                                                                     else
+1000ec72                                                                                                                         result = sub_10017f30(arg1)
+1000e2d6                                                                                                                 else if (sub_10007310(*(arg1 + 0x28))
+1000e2d6                                                                                                                         == 0)
+1000e722                                                                                                                     result = 0
+1000e2e2                                                                                                                 else
+1000e2e8                                                                                                                     int32_t ecx_99 = *(arg1 + 0x1c)
+1000e308                                                                                                                     opdbg_log(
+1000e308                                                                                                                         "QCFlashWorker::doActionCheckEMMCSize", 
+1000e308                                                                                                                         0xc22, 
+1000e308                                                                                                                         "[%s] [%s] ERROR: Failed to check emmc "
+1000e308                                                                                                                     "size.", 
+1000e308                                                                                                                         ecx_99 + 0x9e4, ecx_99 + 0x444)
+1000e30e                                                                                                                     var_b8 = "emmc_size_not_found()"
+1000e313                                                                                                                     _Radix = arg1
+1000e314                                                                                                                     sub_10024880(_Radix, var_b8)
+1000e31c                                                                                                                     result = 0x753d
+1000e2b9                                                                                                             else
+1000ec72                                                                                                                 result = sub_10018920(arg1)
+1000e29c                                                                                                         else
+1000ec72                                                                                                             result = sub_10018730()
+1000e27f                                                                                                     else
+1000ec72                                                                                                         result = sub_100191e0(arg1)
+1000e216                                                                                                 else
+1000e21f                                                                                                     sub_10002870(&_String_24, &i[6])
+1000e228                                                                                                     void*** _String_8 = &_String_24
+1000e228                                                                                                     
+1000e22d                                                                                                     if (var_54 u>= 0x10)
+1000e22d                                                                                                         _String_8 = _String_24
+1000e22d                                                                                                     
+1000e234                                                                                                     int32_t eax_74 =
+1000e234                                                                                                         strtol(_String_8, nullptr, 0xa)
+1000e234                                                                                                     
+1000e245                                                                                                     if (var_54 u>= 0x10)
+1000e24c                                                                                                         sub_10001d60(_String_24, var_54 + 1)
+1000e24c                                                                                                     
+1000e254                                                                                                     var_54 = 0xf
+1000e25b                                                                                                     int32_t var_58_4 = 0
+1000e262                                                                                                     _String_24.b = 0
+1000ec72                                                                                                     result = sub_10019fe0(arg1, eax_74)
+1000e1f9                                                                                             else
+1000ec72                                                                                                 result = sub_100198b0(arg1)
+1000e1dc                                                                                         else
+1000ec72                                                                                             result = sub_10019460(arg1)
+1000e198                                                                                     else
+1000e1a2                                                                                         char const* const* var_74_3 = &var_b8
+1000e1a5                                                                                         _Radix = &i[0xc]
+1000e1a6                                                                                         sub_10002870(&var_b8, _Radix)
+1000e1ae                                                                                         var_8_1.b = 4
+1000e1b8                                                                                         sub_10002870(&var_d0, &i[6])
+1000e1bf                                                                                         var_8_1.b = 2
+1000ec72                                                                                         result = sub_1001b700(arg1)
+1000e17b                                                                                 else
+1000ec72                                                                                     result = sub_10025310(arg1)
+1000e15e                                                                             else
+1000ec72                                                                                 result = sub_1001ae30(arg1)
+1000e141                                                                         else
+1000ec72                                                                             result = sub_1001a9f0(arg1)
+1000e124                                                                     else
+1000ec72                                                                         result = sub_1002c5f0(arg1)
+1000e0f9                                                                 else
+1000e103                                                                     _Radix = &i[6]
+1000e104                                                                     sub_10002870(&var_b8, _Radix)
+1000ec72                                                                     result = sub_1002c310(arg1, var_b8)
+1000e0dc                                                             else
+1000ec72                                                                 result = sub_1001a7e0(arg1)
+1000e0bf                                                         else
+1000ec72                                                             result = sub_1001a2a0(arg1)
+1000e0a2                                                     else
+1000ec72                                                         result =
+1000ec72                                                             ___std_fs_change_permissions@12(arg1)
+1000e085                                                 else
+1000ec72                                                     result = sub_10020450()
+1000e01a                                             else
+1000e01c                                                 int32_t var_a4_35 = 1
+1000e025                                                 sub_10002870(&_String_24, &i[6])
+1000e02e                                                 void*** _String_7 = &_String_24
+1000e02e                                                 
+1000e033                                                 if (var_54 u>= 0x10)
+1000e033                                                     _String_7 = _String_24
+1000e033                                                 
+1000e03a                                                 int32_t eax_56 = strtol(_String_7, nullptr, 0xa)
+1000e03a                                                 
+1000e04b                                                 if (var_54 u>= 0x10)
+1000e052                                                     sub_10001d60(_String_24, var_54 + 1)
+1000e052                                                 
+1000e05a                                                 var_54 = 0xf
+1000e061                                                 int32_t var_58_3 = 0
+1000e068                                                 _String_24.b = 0
+1000ec72                                                 result = sub_1001cc50(arg1, eax_56, var_a4_35)
+1000dffd                                         else
+1000ec72                                             result = sub_1001d0e0()
+1000df83                                     else
+1000df8c                                         sub_10002870(&_String_24, &i[0xc])
+1000df95                                         void*** _String_6 = &_String_24
+1000df95                                         
+1000df9a                                         if (var_54 u>= 0x10)
+1000df9a                                             _String_6 = _String_24
+1000df9a                                         
+1000dfa1                                         int32_t eax_51 = strtol(_String_6, nullptr, 0xa)
+1000dfa1                                         
+1000dfb2                                         if (var_54 u>= 0x10)
+1000dfb9                                             sub_10001d60(_String_24, var_54 + 1)
+1000dfb9                                         
+1000dfbe                                         int32_t var_a4_32 = eax_51
+1000dfc2                                         var_54 = 0xf
+1000dfcf                                         int32_t var_58_2 = 0
+1000dfd8                                         _String_24.b = 0
+1000dfdd                                         sub_10002870(&_Radix, &arg1[0x18fc])
+1000ec72                                         result = sub_10025b70(arg1, _Radix, var_b8)
+1000df66                                 else
+1000ec72                                     result = sub_100259d0(arg1)
+1000df49                             else
+1000ec72                                 result = sub_10025940(arg1)
+1000de2b                         else
+1000de38                             sub_10002870(&var_44, &i[0x12])
+1000de41                             char* _String_3 = &var_44
+1000de41                             
+1000de4a                             if (var_30 u>= 0x10)
+1000de4a                                 _String_3 = var_44.d
+1000de4a                             
+1000de53                             int32_t eax_41 = strtol(_String_3, nullptr, 0xa)
+1000de5b                             var_6c = eax_41
+1000de5b                             
+1000de61                             if (var_30 u>= 0x10)
+1000de68                                 sub_10001d60(var_44.d, var_30 + 1)
+1000de6d                                 eax_41 = var_6c
+1000de6d                             
+1000de72                             var_30 = 0xf
+1000de7f                             int32_t var_34_6 = 0
+1000de86                             eax_41.b = eax_41 != 0
+1000de89                             var_44 = 0
+1000de95                             sub_10002870(&_String_23, &i[0xc])
+1000de9e                             int32_t* _String_4 = &_String_23
+1000de9e                             
+1000dea6                             if (var_78 u>= 0x10)
+1000dea6                                 _String_4 = _String_23
+1000dea6                             
+1000deb0                             int32_t eax_44 = strtol(_String_4, nullptr, 0xa)
+1000deb8                             var_6c = eax_44
+1000deb8                             
+1000debe                             if (var_78 u>= 0x10)
+1000dec8                                 sub_10001d60(_String_23, var_78 + 1)
+1000decd                                 eax_44 = var_6c
+1000decd                             
+1000ded4                             var_78 = 0xf
+1000dedf                             int32_t var_7c_1 = 0
+1000dee6                             _String_23.b = 0
+1000deed                             sub_10002870(&_String_24, &i[6])
+1000def6                             void** _String_5 = &_String_24
+1000def6                             
+1000defb                             if (var_54 u>= 0x10)
+1000defb                                 _String_5 = _String_24
+1000defb                             
+1000df02                             int32_t eax_46 = strtol(_String_5, nullptr, 0xa)
+1000df02                             
+1000df0f                             if (var_54 u>= 0x10)
+1000df16                                 sub_10001d60(_String_24, var_54 + 1)
+1000df16                             
+1000df1e                             var_54 = 0xf
+1000df25                             int32_t var_58_1 = 0
+1000df2c                             _String_24.b = 0
+1000ec72                             result = sub_1001d750(arg1, eax_46, eax_44, eax_41.b)
+1000de0e                     else
+1000ec72                         result = sub_1001d8f0(arg1)
+1000dd47                 else
+1000dd4d                     uint32_t var_a4_16 = 0xffffffff
+1000dd50                     int32_t var_34_4 = eax_33
+1000dd56                     var_44 = eax_33.b
+1000dd5d                     int32_t var_30_2 = 0xf
+1000dd64                     sub_10001bd0(&var_44, &i[0xc], eax_33, var_a4_16)
+1000dd6d                     char* _String_2 = &var_44
+1000dd6d                     
+1000dd72                     if (var_30_2 u>= 0x10)
+1000dd72                         _String_2 = var_44.d
+1000dd72                     
+1000dd79                     int32_t eax_35 = strtol(_String_2, nullptr, 0xa)
+1000dd79                     
+1000dd8a                     if (var_30_2 u>= 0x10)
+1000dd91                         sub_10001d60(var_44.d, var_30_2 + 1)
+1000dd91                     
+1000dd96                     int32_t var_a4_19 = eax_35
+1000dd9a                     var_30 = 0xf
+1000dda3                     int32_t var_34_5 = 0
+1000ddaa                     var_44 = 0
+1000ddae                     int32_t var_ac_7 = 0
+1000ddb5                     int32_t var_a8_18 = 0
+1000ddbc                     int32_t var_a8_19 = 0xf
+1000ddc7                     int32_t var_ac_8 = 0
+1000ddd8                     _Radix.b = 0
+1000dde1                     sub_10001bd0(&_Radix, &i[6], 0, 0xffffffff)
+1000ec72                     result = sub_1001d9d0(arg1, _Radix, var_b8)
+1000dc7d             else
+1000dc88                 char const* const* var_74_2 = &var_b8
+1000dc8b                 int32_t var_a8_12 = eax_27
+1000dc8e                 int32_t var_a4_13 = eax_27
+1000dc91                 int32_t var_a4_14 = 0xf
+1000dc9c                 int32_t var_a8_13 = eax_27
+1000dca7                 _Radix = 0xffffffff
+1000dca9                 var_b8.b = 0
+1000dcb2                 sub_10001bd0(&var_b8, &i[6], 0, _Radix)
+1000dcb7                 _Radix = 0xffffffff
+1000dcb9                 var_8_1.b = 3
+1000dcc0                 int32_t var_c0_6 = 0
+1000dcc6                 int32_t var_30_1 = 0xf
+1000dccd                 int32_t var_34_2 = 0
+1000dcd4                 var_44 = 0
+1000dcd8                 sub_10001bd0(&var_44, &i[0xc], var_c0_6, _Radix)
+1000dce1                 char* _String_1 = &var_44
+1000dce4                 _Radix = 0xa
+1000dce4                 
+1000dce6                 if (var_30_1 u>= 0x10)
+1000dce6                     _String_1 = var_44.d
+1000dce6                 
+1000dced                 uint32_t _Radix_4 = strtol(_String_1, nullptr, _Radix)
+1000dced                 
+1000dcfc                 if (var_30_1 u>= 0x10)
+1000dcff                     _Radix = var_30_1 + 1
+1000dd03                     _Radix_4 = sub_10001d60(var_44.d, _Radix)
+1000dd03                 
+1000dd08                 _Radix = _Radix_4
+1000dd0b                 var_30 = 0xf
+1000dd12                 int32_t var_34_3 = 0
+1000dd19                 var_44 = 0
+1000dd1d                 var_8_1.b = 2
+1000ec72                 result = sub_1001eda0(arg1, _Radix)
+1000dc53         else
+1000ec72             result = sub_1001f870(arg1)
+1000dbdf     else
+1000dbe1         uint32_t var_a4_8 = 0xffffffff
+1000dbe4         int32_t var_34_1 = eax_22
+1000dbea         var_44 = eax_22.b
+1000dbf1         var_30 = 0xf
+1000dbf8         sub_10001bd0(&var_44, &i[6], eax_22, var_a4_8)
+1000dc01         char* _String = &var_44
+1000dc01         
+1000dc06         if (var_30 u>= 0x10)
+1000dc06             _String = var_44.d
+1000dc06         
+1000dc0d         int32_t eax_24 = strtol(_String, nullptr, 0xa)
+1000dc0d         
+1000dc1e         if (var_30 u>= 0x10)
+1000dc25             sub_10001d60(var_44.d, var_30 + 1)
+1000dc25         
+1000dc2a         *(arg1 + 0x304da4) = eax_24
+1000dc30         result = 0
+1000dc30     
+1000ec76     if (result != 0)
+1000ecc1         void* ecx_219 = *(arg1 + 0x1c)
+1000ecc1         
+1000eccb         if (*(ecx_219 + 0xe28) != 0)
+1000ecee             void* eax_154
+1000ecee             eax_154.b = *(*(arg1 + 0x24) + 0x98)
+1000ecee             
+1000ecf6             if (eax_154.b == 0)
+1000ed15                 void* eax_157
+1000ed15                 eax_157.b = *(*(arg1 + 0x28) + 0x895d)
+1000ed15                 
+1000ed1d                 if (eax_157.b != 0)
+1000ed3c                     opdbg_log("QCFlashWorker::runActions", 0x1f3, 
+1000ed3c                         "[%s] [%s] USBDisconnect firehose error", ecx_219 + 0x9e4, ecx_219 + 0x444)
+1000ecf6             else
+1000ed3c                 opdbg_log("QCFlashWorker::runActions", 0x1f1, 
+1000ed3c                     "[%s] [%s] USBDisconnect sahara error", ecx_219 + 0x9e4, ecx_219 + 0x444)
+1000ed3c             
+1000ed4a             var_70 = GetLastError()
+1000ed50             sub_1000c9d0(&var_44, &var_70)
+1000ed55             var_8_1.b = 0xa
+1000ed60             bool eax_164
+1000ed60             
+1000ed60             if (*(arg1 + 0x3062a4) != 0)
+1000ed6a                 int32_t var_a4_130 = *(arg1 + 0x1c) + 0x9e4
+1000ed73                 eax_164 = OtestRetryHelper::isNeedRetry(OtestRetryHelper::GetInstance())
+1000ed73             
+1000ed7b             if (*(arg1 + 0x3062a4) == 0 || eax_164 == 0)
+1000edb6                 uint32_t edx_5 = var_70
+1000edbb                 char* eax_168
+1000edbb                 
+1000edbb                 if (edx_5 == 0)
+1000edca                     eax_168 = &data_1006a03d
+1000edbb                 else
+1000edc1                     eax_168 = &var_44
+1000edc1                     
+1000edc4                     if (var_30 u>= 0x10)
+1000edc4                         eax_168 = var_44.d
+1000edc4                 
+1000edcf                 int32_t ecx_223 = *(arg1 + 0x1c)
+1000edd2                 char* var_a4_132 = eax_168
+1000edd3                 uint32_t var_a8_71 = edx_5
+1000edd4                 uint32_t result_2 = result
+1000eddb                 int32_t var_b0_13 = ecx_223 + 0x444
+1000ede2                 int32_t var_b4_7 = ecx_223 + 0x9e4
+1000ede3                 var_b8 =
+1000ede3                     "[%s] [%s] ERROR: Download failed, Ret=%d, GetLastError()=%d, ErrorDesc=%s."
+1000ede8                 _Radix = 0x1fd
+1000ed7b             else
+1000ed7d                 uint32_t edx_4 = var_70
+1000ed82                 char* eax_165
+1000ed82                 
+1000ed82                 if (edx_4 == 0)
+1000ed91                     eax_165 = &data_1006a03d
+1000ed82                 else
+1000ed88                     eax_165 = &var_44
+1000ed88                     
+1000ed8b                     if (var_30 u>= 0x10)
+1000ed8b                         eax_165 = var_44.d
+1000ed8b                 
+1000ed96                 int32_t ecx_222 = *(arg1 + 0x1c)
+1000ed99                 char* var_a4_131 = eax_165
+1000ed9a                 uint32_t var_a8_70 = edx_4
+1000ed9b                 uint32_t result_1 = result
+1000eda2                 int32_t var_b0_12 = ecx_222 + 0x444
+1000eda9                 int32_t var_b4_6 = ecx_222 + 0x9e4
+1000edaa                 var_b8 =
+1000edaa                     "[%s] [%s] ERROR: Download--failed, Ret=%d, GetLastError()=%d, ErrorDesc=%s."
+1000edaf                 _Radix = 0x1fa
+1000edaf             
+1000edf2             opdbg_log("QCFlashWorker::runActions")
+1000edf2             
+1000edfa             if (result == 0xffffffff)
+1000ee16                 char* eax_171 = &var_2c
+1000ee16                 
+1000ee19                 if (var_18_1 u>= 0x10)
+1000ee19                     eax_171 = var_2c.d
+1000ee19                 
+1000ee1d                 char* var_a4_134 = eax_171
+1000ee26                 sub_100248b0(arg1, 0xffffffff, "run action %s failed.")
+1000edfa             else if (result != 0x1869f)
+1000ee04                 int32_t var_a4_133 = *(arg1 + 0x3062c8)
+1000ee26                 sub_100248b0(arg1, result, "%s")
+1000ee26             
+1000ee34             if (var_30 u>= 0x10)
+1000ee3b                 sub_10001d60(var_44.d, var_30 + 1)
+1000ee3b             
+1000ee40             int32_t var_30_3 = 0xf
+1000ee47             int32_t var_34_7 = 0
+1000ee4e             var_44 = 0
+1000eccb         else
+1000ecd4             reportIssue("E0201001", 0)
+1000ecdd             result = 0xffffffff
+1000ecdd         
+1000ee58         if (var_18_1 u>= 0x10)
+1000ee63             sub_10001d60(var_2c.d, var_18_1 + 1)
+1000ee63         
+1000ee58         goto label_1000ec9e
+1000ee58     
+1000ec78     var_8_1.b = result.b
+1000ec78     
+1000ec81     if (var_18_1 u>= 0x10)
+1000ec88         sub_10001d60(var_2c.d, var_18_1 + 1)
+1000ec88 
+1000ec99 result = 0
+1000ec9e label_1000ec9e:
+1000ec9e sub_10003730(&var_50)
+1000eca8 fsbase->NtTib.ExceptionList = ExceptionList
+1000ecb8 CookieCheckFunction(result)
+1000ecc0 return result

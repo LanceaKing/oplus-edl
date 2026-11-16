@@ -1,0 +1,392 @@
+{
+  "unmapped_id_register": {
+    "entry": "0x149a19b8",
+    "instructions": 13,
+    "returned": false,
+    "invalid_memory": {
+      "access": 19,
+      "address": "0x221c8610",
+      "size": 4,
+      "pc": "0x149aaf7c"
+    },
+    "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+    "pc": "0x149aaf7c",
+    "return_x0": "0x300fefec",
+    "code_region_unchanged": true
+  },
+  "serial_cases": [
+    {
+      "execution": {
+        "entry": "0x149a19b8",
+        "instructions": 1173,
+        "returned": false,
+        "logger_skips": 1,
+        "stopped_after_id_before_rand": true,
+        "pc": "0x149a0d3c",
+        "return_x0": "0x1",
+        "code_region_unchanged": true
+      },
+      "fields": {
+        "id": "1",
+        "rand": "",
+        "digest_write": "",
+        "digest_read": "",
+        "nv": "",
+        "prepared": 0,
+        "auth_pass": 0,
+        "auth_mode": 0,
+        "transfer_buffers_in_use": "0000"
+      },
+      "ack_argument": null,
+      "mmio": [],
+      "source_words_consumed": 0,
+      "rand_requests": [],
+      "smc_inputs": [],
+      "storage": [],
+      "rsa": [],
+      "log_calls": [
+        {
+          "format": "SM8650 oplus_get_soc_serial_number 0x%x",
+          "args": [
+            "0x1",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        }
+      ],
+      "input_serial": "0x1",
+      "observed_register_reads": [
+        {
+          "pc": "0x149aaf7c",
+          "address": "0x221c8610",
+          "size": 4,
+          "value": "0x1"
+        }
+      ],
+      "expected_id": "1",
+      "passed": true
+    },
+    {
+      "execution": {
+        "entry": "0x149a19b8",
+        "instructions": 1234,
+        "returned": false,
+        "logger_skips": 1,
+        "stopped_after_id_before_rand": true,
+        "pc": "0x149a0d3c",
+        "return_x0": "0x6",
+        "code_region_unchanged": true
+      },
+      "fields": {
+        "id": "abcdef",
+        "rand": "",
+        "digest_write": "",
+        "digest_read": "",
+        "nv": "",
+        "prepared": 0,
+        "auth_pass": 0,
+        "auth_mode": 0,
+        "transfer_buffers_in_use": "0000"
+      },
+      "ack_argument": null,
+      "mmio": [],
+      "source_words_consumed": 0,
+      "rand_requests": [],
+      "smc_inputs": [],
+      "storage": [],
+      "rsa": [],
+      "log_calls": [
+        {
+          "format": "SM8650 oplus_get_soc_serial_number 0x%x",
+          "args": [
+            "0xabcdef",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        }
+      ],
+      "input_serial": "0xabcdef",
+      "observed_register_reads": [
+        {
+          "pc": "0x149aaf7c",
+          "address": "0x221c8610",
+          "size": 4,
+          "value": "0xabcdef"
+        }
+      ],
+      "expected_id": "abcdef",
+      "passed": true
+    },
+    {
+      "execution": {
+        "entry": "0x149a19b8",
+        "instructions": 1235,
+        "returned": false,
+        "logger_skips": 1,
+        "stopped_after_id_before_rand": true,
+        "pc": "0x149a0d3c",
+        "return_x0": "0x8",
+        "code_region_unchanged": true
+      },
+      "fields": {
+        "id": "80000000",
+        "rand": "",
+        "digest_write": "",
+        "digest_read": "",
+        "nv": "",
+        "prepared": 0,
+        "auth_pass": 0,
+        "auth_mode": 0,
+        "transfer_buffers_in_use": "0000"
+      },
+      "ack_argument": null,
+      "mmio": [],
+      "source_words_consumed": 0,
+      "rand_requests": [],
+      "smc_inputs": [],
+      "storage": [],
+      "rsa": [],
+      "log_calls": [
+        {
+          "format": "SM8650 oplus_get_soc_serial_number 0x%x",
+          "args": [
+            "0x80000000",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        }
+      ],
+      "input_serial": "0x80000000",
+      "observed_register_reads": [
+        {
+          "pc": "0x149aaf7c",
+          "address": "0x221c8610",
+          "size": 4,
+          "value": "0x80000000"
+        }
+      ],
+      "expected_id": "80000000",
+      "passed": true
+    },
+    {
+      "execution": {
+        "entry": "0x149a19b8",
+        "instructions": 1235,
+        "returned": false,
+        "logger_skips": 1,
+        "stopped_after_id_before_rand": true,
+        "pc": "0x149a0d3c",
+        "return_x0": "0x8",
+        "code_region_unchanged": true
+      },
+      "fields": {
+        "id": "fffffffe",
+        "rand": "",
+        "digest_write": "",
+        "digest_read": "",
+        "nv": "",
+        "prepared": 0,
+        "auth_pass": 0,
+        "auth_mode": 0,
+        "transfer_buffers_in_use": "0000"
+      },
+      "ack_argument": null,
+      "mmio": [],
+      "source_words_consumed": 0,
+      "rand_requests": [],
+      "smc_inputs": [],
+      "storage": [],
+      "rsa": [],
+      "log_calls": [
+        {
+          "format": "SM8650 oplus_get_soc_serial_number 0x%x",
+          "args": [
+            "0xfffffffe",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0",
+            "0x0"
+          ]
+        }
+      ],
+      "input_serial": "0xfffffffe",
+      "observed_register_reads": [
+        {
+          "pc": "0x149aaf7c",
+          "address": "0x221c8610",
+          "size": 4,
+          "value": "0xfffffffe"
+        }
+      ],
+      "expected_id": "fffffffe",
+      "passed": true
+    }
+  ],
+  "without_storage_adapter": {
+    "execution": {
+      "entry": "0x149a19b8",
+      "instructions": 3273,
+      "returned": false,
+      "logger_skips": 1,
+      "invalid_memory": {
+        "access": 19,
+        "address": "0x1fc8004",
+        "size": 4,
+        "pc": "0x149ca1c8"
+      },
+      "error": "Invalid memory read (UC_ERR_READ_UNMAPPED)",
+      "pc": "0x149ca1c8",
+      "return_x0": "0xffffffae",
+      "code_region_unchanged": true
+    },
+    "fields": {
+      "id": "1234abcd",
+      "rand": "bb3333bb95511559",
+      "digest_write": "",
+      "digest_read": "",
+      "nv": "",
+      "prepared": 0,
+      "auth_pass": 0,
+      "auth_mode": 0,
+      "transfer_buffers_in_use": "0100"
+    },
+    "ack_argument": null,
+    "mmio": [
+      {
+        "pc": "0x149ad690",
+        "access": 16,
+        "address": "0x10c3004",
+        "value": "0x1"
+      },
+      {
+        "pc": "0x149ad6a0",
+        "access": 16,
+        "address": "0x10c3000",
+        "value": "0x12345678"
+      },
+      {
+        "pc": "0x149ad6b4",
+        "access": 16,
+        "address": "0x10c3004",
+        "value": "0x1"
+      },
+      {
+        "pc": "0x149ad6c4",
+        "access": 16,
+        "address": "0x10c3000",
+        "value": "0x87654321"
+      },
+      {
+        "pc": "0x149ad690",
+        "access": 16,
+        "address": "0x10c3004",
+        "value": "0x1"
+      },
+      {
+        "pc": "0x149ad6a0",
+        "access": 16,
+        "address": "0x10c3000",
+        "value": "0x23456789"
+      },
+      {
+        "pc": "0x149ad6b4",
+        "access": 16,
+        "address": "0x10c3004",
+        "value": "0x1"
+      },
+      {
+        "pc": "0x149ad6c4",
+        "access": 16,
+        "address": "0x10c3000",
+        "value": "0x98765432"
+      },
+      {
+        "pc": "0x149ad690",
+        "access": 16,
+        "address": "0x10c3004",
+        "value": "0x1"
+      },
+      {
+        "pc": "0x149ad6a0",
+        "access": 16,
+        "address": "0x10c3000",
+        "value": "0x3456789a"
+      },
+      {
+        "pc": "0x149ad6b4",
+        "access": 16,
+        "address": "0x10c3004",
+        "value": "0x1"
+      },
+      {
+        "pc": "0x149ad6c4",
+        "access": 16,
+        "address": "0x10c3000",
+        "value": "0xa9876543"
+      },
+      {
+        "pc": "0x149ad690",
+        "access": 16,
+        "address": "0x10c3004",
+        "value": "0x1"
+      },
+      {
+        "pc": "0x149ad6a0",
+        "access": 16,
+        "address": "0x10c3000",
+        "value": "0x456789ab"
+      },
+      {
+        "pc": "0x149ad6b4",
+        "access": 16,
+        "address": "0x10c3004",
+        "value": "0x1"
+      },
+      {
+        "pc": "0x149ad6c4",
+        "access": 16,
+        "address": "0x10c3000",
+        "value": "0xba987654"
+      }
+    ],
+    "source_words_consumed": 8,
+    "rand_requests": [
+      {
+        "destination": "0x300fefd8",
+        "length": 16
+      }
+    ],
+    "smc_inputs": [
+      {
+        "function": "0x2000102",
+        "status": 0,
+        "secure_input": 1
+      }
+    ],
+    "storage": [],
+    "rsa": [],
+    "log_calls": [
+      {
+        "format": "SM8650 oplus_get_soc_serial_number 0x%x",
+        "args": [
+          "0x1234abcd",
+          "0x300feedc",
+          "0x4",
+          "0x0",
+          "0x0",
+          "0x0"
+        ]
+      }
+    ]
+  }
+}

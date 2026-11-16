@@ -1,0 +1,48 @@
+004c0f50 void* var_4 = arg1
+004c0f52 void* esi = arg1
+004c0f52 
+004c0f62 if (*(*(esi + 0x90) + 0xc3) == 0)
+004c0f82 label_4c0f82:
+004c0f82     
+004c0f89     if (*(*(esi + 0x90) + 0xc6) == 0)
+004c0fab     label_4c0fab:
+004c0fab         
+004c0fb2         if (*(*(esi + 0x90) + 0xc8) == 0)
+004c1001             return 0
+004c1001         
+004c0fb6         int32_t eax_5
+004c0fb6         eax_5, esi = sub_4c0770(esi)
+004c0fb6         
+004c0fbf         if (eax_5 == 0)
+004c1001             return 0
+004c1001         
+004c0fc4         int32_t var_10_2 = eax_5
+004c0fc6         int32_t var_14_2 = *(esi + 0x38) + 1
+004c0fc7         char const* const var_18_2 = "[%d] FH_GetProjVersion Failed. (%d)\n"
+004c0f89     else
+004c0f8d         int32_t eax_3
+004c0f8d         eax_3, esi = sub_4c0710(esi)
+004c0f8d         
+004c0f96         if (eax_3 == 0)
+004c0f96             goto label_4c0fab
+004c0f96         
+004c0f9b         int32_t var_10_1 = eax_3
+004c0f9d         int32_t var_14_1 = *(esi + 0x38) + 1
+004c0f9e         char const* const var_18_1 = "[%d] FH_GetRFVersion Failed. (%d)\n"
+004c0f62 else
+004c0f64     int32_t eax_1
+004c0f64     eax_1, esi = sub_4c06b0(arg1)
+004c0f64     
+004c0f6d     if (eax_1 == 0)
+004c0f6d         goto label_4c0f82
+004c0f6d     
+004c0f72     int32_t var_10 = eax_1
+004c0f74     int32_t var_14 = *(esi + 0x38) + 1
+004c0f75     char const* const var_18 = "[%d] FH_GetHWVersion Failed. (%d)\n"
+004c0f75 
+004c0fcc int32_t var_1c = 4
+004c0fd3 sub_4d6270(&data_7e09e8)
+004c0fd8 void* eax_6 = *(esi + 0x2c)
+004c0fde *(eax_6 + 4) = 4
+004c0fe5 int32_t var_10_3 = *(eax_6 + 8)
+004c0fed return j_sub_ccffb9()

@@ -1,0 +1,133 @@
+0040ecf6 int32_t var_c = 0xffffffff
+0040ecf8 int32_t (* var_10)(void* arg1) = sub_570a37
+0040ed03 TEB* fsbase
+0040ed03 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040ed0f int32_t* var_3c4
+0040ed0f int32_t eax_2 = __security_cookie ^ &var_3c4
+0040ed20 int32_t __saved_edi
+0040ed20 int32_t eax_4 = __security_cookie ^ &__saved_edi
+0040ed2a fsbase->NtTib.ExceptionList = &ExceptionList
+0040ed2a 
+0040ed39 if (data_5ea578 == 0)
+0040ed52     WinExec("del log.txt", 1)
+0040ed5b     WinExec(".\checkMd5.bat", 0)
+0040ed62     Sleep(0x7d0)
+0040ed70     int16_t filename = 0
+0040ed80     char var_22e[0x212]
+0040ed80     _memset(&var_22e, 0, 0x208)
+0040ed97     GetModuleFileNameW(nullptr, &filename, 0x104)
+0040edb1     _wcsrchr(&filename, 0x5c)[1] = 0
+0040edd5     void* eax_7
+0040edd5     int16_t* ecx_1
+0040edd5     eax_7, ecx_1 = (*(data_5dd008 + 0xc))(eax_4)
+0040edd8     int32_t* eax_8 = eax_7 + 0x10
+0040eddb     var_3c4 = eax_8
+0040eddf     int32_t ebx_1 = 0
+0040ede1     int32_t var_c_1 = 0
+0040ede1     
+0040edf4     if (filename != 0)
+0040edfa         ecx_1 = &filename
+0040edfa         
+0040ee82         do
+0040ee01             uint32_t ecx_2 = zx.d(*ecx_1)
+0040ee01             
+0040ee07             if (ecx_2 == 0x5c)
+0040ee69                 sub_410d60(&var_3c4, 0x5b9984, 2)
+0040ee6e                 eax_8 = var_3c4
+0040ee07             else
+0040ee09                 int16_t var_3c0_1 = ecx_2.w
+0040ee0d                 void* ecx_3 = eax_8[-3]
+0040ee0d                 
+0040ee19                 if (ecx_3 + 1 s>= 0)
+0040ee2e                     if (((eax_8[-2] - (ecx_3 + 1)) | (1 - eax_8[-1])) s< 0)
+0040ee35                         sub_402950(&var_3c4, ecx_3 + 1)
+0040ee3a                         eax_8 = var_3c4
+0040ee3a                     
+0040ee46                     *(eax_8 + (ecx_3 << 1)) = var_3c0_1
+0040ee46                 
+0040ee4d                 if (ecx_3 + 1 s< 0 || ecx_3 + 1 s> eax_8[-2])
+0040ef04                     sub_402ba0(0x80070057)
+0040ef04                     noreturn
+0040ef04                 
+0040ee55                 eax_8[-3] = ecx_3 + 1
+0040ee58                 *(eax_8 + ((ecx_3 + 1) << 1)) = 0
+0040ee58             
+0040ee72             ebx_1 += 1
+0040ee7f             ecx_1 = &(&filename)[ebx_1]
+0040ee82         while ((&filename)[ebx_1] != 0)
+0040ee82     
+0040ee88     int16_t* var_3d8_2 = ecx_1
+0040ee8d     struct CDialog::CChkSumResult::VTable* const var_3b8
+0040ee8d     Concurrency::details::_Micro_queue::_Pop_finalizer::~_Pop_finalizer(&var_3b8)
+0040ee9d     var_c_1.b = 1
+0040eea5     sub_410d60(&var_3c4, u"log.txt", 7)
+0040eeaa     int32_t* eax_9 = var_3c4
+0040eeb5     void* var_320
+0040eeb5     int32_t* ebx_3 = var_320 - 0x10
+0040eeb5     
+0040eebd     if (&eax_9[-4] != ebx_3)
+0040eec9         if (ebx_3[3] s< 0 || eax_9[-4] != *ebx_3)
+0040ef14             sub_4037b0(&var_320, eax_9, eax_9[-3])
+0040eec9         else
+0040eecc             int32_t* eax_10 = sub_403870(&eax_9[-4])
+0040eede             int32_t ecx_13 = ebx_3[3]
+0040eede             ebx_3[3] -= 1
+0040eede             
+0040eee5             if (ecx_13 - 1 s<= 0)
+0040eeec                 (*(**ebx_3 + 4))(ebx_3)
+0040eeec             
+0040eef6             var_320 = &eax_10[4]
+0040eef6     
+0040ef1d     sub_42ed81(&var_3b8)
+0040ef25     var_3b8 = &CChkSumResult::`vftable'{for `CDialog'}
+0040ef35     char var_234
+0040ef35     *(arg1 + 0xc8) = zx.d(var_234)
+0040ef42     var_c_1.b = 4
+0040ef4a     struct CWnd::CStatic::VTable* var_2a8
+0040ef4a     sub_43751d(&var_2a8)
+0040ef56     var_c_1.b = 3
+0040ef5e     struct CWnd::CEdit::VTable* var_31c
+0040ef5e     sub_43748a(&var_31c)
+0040ef63     var_c_1.b = 2
+0040ef77     int32_t* edx_6 = var_320 - 0x10
+0040ef7d     int32_t ecx_20 = edx_6[3]
+0040ef7d     edx_6[3] -= 1
+0040ef7d     
+0040ef84     if (ecx_20 - 1 s<= 0)
+0040ef8b         (*(**edx_6 + 4))(edx_6)
+0040ef8b     
+0040ef92     var_c_1.b = 0
+0040ef9a     sub_42e882(&var_3b8)
+0040ef9f     int32_t var_c_2 = 0xffffffff
+0040efad     int32_t ebx_4 = eax_9[-1]
+0040efad     eax_9[-1] -= 1
+0040efad     
+0040efb4     if (ebx_4 - 1 s<= 0)
+0040efbb         (*(*eax_9[-4] + 4))(&eax_9[-4])
+0040ed39 else
+0040ed3b     sub_40fd60(arg1)
+0040ed3b 
+0040efc7 BOOL result
+0040efc7 
+0040efc7 if (*(arg1 + 0xc8) == 0)
+0040f04d     result = sub_4369b1(sub_4369fd(arg1, 0x3ef), 0)
+0040efc7 else
+0040efc9     sub_40e570(arg1)
+0040efd5     EnterCriticalSection(arg1 + 0x5a4)
+0040efe7     int32_t esi_3 = *(arg1 + 0x598)
+0040efed     (*(*(arg1 + 0x59c) + 0x14))(eax_4)
+0040efed     
+0040eff3     if (esi_3 == 0)
+0040f036         if (data_5ea570 == 0)
+0040f008             EnableMenuItem(*(arg1 + 0x594), 0, 0x401)
+0040f036         else
+0040f008             EnableMenuItem(*(arg1 + 0x594), 0, MF_BYPOSITION)
+0040eff3     else if (esi_3 == 1 || esi_3 == 2)
+0040f008         EnableMenuItem(*(arg1 + 0x594), 0, 0x401)
+0040f008     
+0040f01e     result = sub_4369b1(sub_4369fd(arg1, 0x3ef), 1)
+0040f023     *(arg1 + 0x18c) = 1
+0040f023 
+0040f059 fsbase->NtTib.ExceptionList = ExceptionList
+0040f06d sub_54a573(eax_2 ^ &var_3c4)
+0040f075 return result

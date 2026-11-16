@@ -1,0 +1,207 @@
+00425a13 int32_t var_8 = 0xffffffff
+00425a15 int32_t (* var_c)(void* arg1) = sub_571b98
+00425a20 TEB* fsbase
+00425a20 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00425a2e int32_t __saved_ebp
+00425a2e int32_t var_3c = __security_cookie ^ &__saved_ebp
+00425a32 fsbase->NtTib.ExceptionList = &ExceptionList
+00425a3a int32_t* esi = arg3
+00425a41 int32_t* eax_3 = &esi[6]
+00425a41 
+00425a44 if (esi[0xb] u>= 0x10)
+00425a46     eax_3 = *eax_3
+00425a46 
+00425a4c void* var_24
+00425a4c sub_426050(&var_24, eax_3)
+00425a51 int32_t var_8_1 = 0
+00425a60 char* result
+00425a60 
+00425a60 if (*(arg1 + 0x100390) == 0)
+00425a6c     int32_t ebx_1 = esi[0x1f]
+00425a74     int32_t eax_6
+00425a74     int32_t edx_1
+00425a74     edx_1:eax_6 = sx.q(esi[0x18])
+00425a7b     LRESULT eax_7
+00425a7b     uint32_t edx_2
+00425a7b     eax_7, edx_2 = __allmul(eax_6, edx_1, ebx_1, 0)
+00425a7b     
+00425a8c     if (ebx_1 != 0x200)
+00425a9b         if (ebx_1 == 0x1000)
+00425aa1             struct DOS_Header* const var_40_3 = &__dos_header
+00425aa1             goto label_425aa6
+00425aa1         
+00425cbe         result = 1
+00425a8c     else
+00425a8e         int32_t var_40_2 = 0x80000
+00425aa6     label_425aa6:
+00425aa6         uint8_t* eax_8 = sub_42e817()
+00425aa6         
+00425ab2         if (eax_8 != 0)
+00425ac3             int32_t eax_9 = sub_4094a0(esi, "BackupGPT")
+00425aca             char* result_4
+00425aca             
+00425aca             if (eax_9 != 0)
+00425afb                 int32_t eax_11
+00425afb                 int32_t edx_3
+00425afb                 edx_3:eax_11 = sx.q(esi[0x19])
+00425b02                 result_4 = sub_42b730(*(arg1 + 0x28), esi, esi[0x18], eax_11, edx_3)
+00425aca             else
+00425ad4                 char* var_58_1
+00425ad4                 
+00425ad4                 if (*(arg1 + 0x1c) == eax_9.b)
+00425aee                     var_58_1 = "NUM_DISK_SECTORS-33."
+00425ad4                 else
+00425ad6                     var_58_1 = "NUM_DISK_SECTORS-5."
+00425ad6                 
+00425adb                 void var_54
+00425adb                 sub_4022a0(&var_54, var_58_1)
+00425ae7                 result_4 = sub_42beb0(*(arg1 + 0x28), esi, esi[0x18], var_54)
+00425ae7             
+00425b07             result = result_4
+00425b07             
+00425b0b             if (result == 0)
+00425b71                 uint32_t esi_1 = zx.d((*(arg1 + 0x2c)).b)
+00425b77                 uint32_t lParam = __alldiv(eax_7, edx_2, 0x200, 0)
+00425b8e                 SendMessageW(*(arg1 + 0x30), 0x178c, esi_1 << 0x10 | 2, lParam)
+00425b97                 uint32_t edx_4 = edx_2
+00425b9c                 int32_t ecx_6 = eax_7
+00425b9e                 int32_t var_14_1 = ecx_6
+00425ba1                 arg3 = edx_4
+00425ba6                 LRESULT eax_22
+00425ba6                 
+00425ba6                 if (edx_2 s< 0)
+00425d43                 label_425d43:
+00425d43                     eax_22.b = *(arg1 + 0x100390)
+00425d43                     
+00425d4b                     if (eax_22.b == 0)
+00425d67                         result = sub_42ab30(*(arg1 + 0x28), 0x32)
+00425d67                         
+00425d6b                         if (result != 0)
+00425d77                             char* result_3 = result
+00425d78                             wchar16 const* const var_44_16
+00425d78                             
+00425d78                             if (*(arg1 + 0x1b) == 0)
+00425d81                                 var_44_16 = u"FirehoseCheckRSP Failed, Errno: %d"
+00425d78                             else
+00425d7a                                 var_44_16 = u"FirehoseCheckRS"
+00425d7a                             
+00425d87                             sub_426230(arg1 + 0x290, var_44_16)
+00425da0                             sub_420d10(arg1 + 0x290, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+00425da0                                 arg1 + 0x290, 1)
+00425da0                         
+00425da9                         j__free(eax_8)
+00425d4b                     else
+00425d4e                         j__free(eax_8)
+00425d56                         result = nullptr
+00425ba6                 else
+00425bac                     bool cond:8_1
+00425bac                     
+00425bac                     if (edx_2 s<= 0)
+00425bae                         cond:8_1 = eax_7 == 0
+00425bae                         goto label_425bb0
+00425bae                     
+00425bc0                     while (true)
+00425bc0                         eax_22.b = *(arg1 + 0x100390)
+00425bc0                         
+00425bc8                         if (eax_22.b != 0)
+00425bc8                             goto label_425d43
+00425bc8                         
+00425bd1                         int32_t eax_24 = ebx_1 << 0xa
+00425bd1                         
+00425bd6                         if (edx_4 s< 0)
+00425bde                             eax_24 = ecx_6
+00425bd6                         else if (edx_4 s<= 0 && ecx_6 u<= eax_24)
+00425bde                             eax_24 = ecx_6
+00425bde                         
+00425be6                         int32_t var_40_10 = 0xbb8
+00425beb                         int32_t var_18
+00425beb                         int32_t* var_44_7 = &var_18
+00425bed                         void* ecx_8 = **(arg1 + 0x28)
+00425bf0                         var_18 = eax_24
+00425bf8                         result = sub_4266a0(ecx_8, eax_8, eax_24, var_44_7, var_40_10)
+00425bf8                         
+00425bfc                         if (result != 0)
+00425d07                             char* result_2 = result
+00425d08                             wchar16 const* const var_44_14
+00425d08                             
+00425d08                             if (*(arg1 + 0x1b) == 0)
+00425d11                                 var_44_14 = u"FirehoseReadData Failed, Errno: %d"
+00425d08                             else
+00425d0a                                 var_44_14 = u"FirehoseReadDat"
+00425d0a                             
+00425d17                             sub_426230(arg1 + 0x290, var_44_14)
+00425d30                             sub_420d10(arg1 + 0x290, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+00425d30                                 arg1 + 0x290, 1)
+00425d39                             j__free(eax_8)
+00425d41                             goto label_425cc3
+00425d41                         
+00425c05                         int32_t esi_3 = var_18
+00425c05                         
+00425c17                         if (sub_54df52(eax_8, esi_3, 1, arg2) != 1)
+00425c81                             wchar16 const* const var_48_11
+00425c81                             
+00425c81                             if (*(arg1 + 0x1b) == 0)
+00425c8f                                 int32_t var_40_15 = 0
+00425c91                                 void* var_44_12 = var_24
+00425c94                                 var_48_11 = u"Write %s Failed, Errno: %d"
+00425c81                             else
+00425c83                                 int32_t var_40_14 = 1
+00425c85                                 void* var_44_11 = var_24
+00425c88                                 var_48_11 = &data_5bc8f8
+00425c88                             
+00425cad                             sub_420d10(sub_426230(arg1 + 0x290, var_48_11), (*(arg1 + 0x2c)).b, 
+00425cad                                 *(arg1 + 0x30), 0, arg1 + 0x290, 0)
+00425cb6                             j__free(eax_8)
+00425cbb                             break
+00425cbb                         
+00425c1f                         int32_t edx_6 = var_14_1 - esi_3
+00425c24                         arg3 = sbb.d(arg3, 0, var_14_1 u< esi_3)
+00425c2a                         uint32_t esi_4 = zx.d((*(arg1 + 0x2c)).b)
+00425c3c                         var_14_1 = edx_6
+00425c3f                         uint32_t lParam_1 =
+00425c3f                             __alldiv(eax_7 - edx_6, sbb.d(edx_2, arg3, eax_7 u< edx_6), 0x200, 0)
+00425c56                         SendMessageW(*(arg1 + 0x30), 0x178c, esi_4 << 0x10 | 3, lParam_1)
+00425c5c                         edx_4 = arg3
+00425c5c                         
+00425c61                         if (edx_4 s< 0)
+00425c61                             goto label_425d43
+00425c61                         
+00425c67                         ecx_6 = var_14_1
+00425c67                         
+00425c6a                         if (edx_4 s<= 0)
+00425c70                             cond:8_1 = ecx_6 == 0
+00425bb0                         label_425bb0:
+00425bb0                             
+00425bb0                             if (cond:8_1)
+00425bb0                                 goto label_425d43
+00425bb0                     
+00425cbe                     result = 1
+00425b0b             else
+00425b17                 char* result_1 = result
+00425b18                 wchar16 const* const var_44_3
+00425b18                 
+00425b18                 if (*(arg1 + 0x1b) == 0)
+00425b21                     var_44_3 = u"SendReadCommand Failed, Errno: %d"
+00425b18                 else
+00425b1a                     var_44_3 = u"SendReadComman"
+00425b1a                 
+00425b27                 sub_426230(arg1 + 0x290, var_44_3)
+00425b50                 SendMessageW(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, 
+00425b50                     arg1 + 0x290)
+00425b57                 j__free(eax_8)
+00425ab2         else
+00425ab4             result = &eax_8[8]
+00425a60 else
+00425a62     result = 0x4c7
+00425a62 
+00425cc3 label_425cc3:
+00425cc3 int32_t var_8_2 = 0xffffffff
+00425cd0 int32_t* edi_2 = var_24 - 0x10
+00425cd6 int32_t ecx_12 = edi_2[3]
+00425cd6 edi_2[3] -= 1
+00425cd6 
+00425cdd if (ecx_12 - 1 s<= 0)
+00425ce4     (*(**edi_2 + 4))(edi_2)
+00425ce4 
+00425cec fsbase->NtTib.ExceptionList = ExceptionList
+00425cfa return result

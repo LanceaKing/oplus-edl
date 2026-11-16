@@ -1,0 +1,47 @@
+004d7200 mov     eax, 0x60
+004d7205 call    0x692a80
+004d720a mov     eax, dword [0x7c0bb0]
+004d720f xor     eax, esp
+004d7211 mov     dword [esp+0x5c], eax
+004d7215 mov     eax, dword [esp+0x6c]
+004d7219 test    eax, eax
+004d721b push    esi
+004d721c mov     esi, 0x7d4980
+004d7221 cmovne  esi, eax
+004d7224 lea     eax, [esp+0x4]
+004d7228 push    edi
+004d7229 mov     edi, dword [esp+0x6c]
+004d722d push    eax
+004d722e call    0x537920
+004d7233 add     esp, 0x4
+004d7236 test    eax, eax
+004d7238 jne     0x4d724b
+004d724b push    dword [esp+0x70]
+004d724f lea     eax, [esp+0xc]
+004d7253 push    edi
+004d7254 push    eax
+004d7255 call    0x4dc050
+004d725a lea     eax, [esp+0x14]
+004d725e push    eax
+004d725f push    esi
+004d7260 call    0x4dbf30
+004d7265 lea     eax, [esp+0x1c]
+004d7269 push    0x5c
+004d726b push    eax
+004d726c call    0x4d7560
+004d7271 mov     ecx, dword [esp+0x80]
+004d7278 add     esp, 0x1c
+004d727b mov     eax, esi
+004d727d pop     edi
+004d727e pop     esi
+004d727f xor     ecx, esp
+004d7281 call    0x687de2
+004d7286 add     esp, 0x60
+004d7289 retn    
+004d723a pop     edi
+004d723b pop     esi
+004d723c mov     ecx, dword [esp+0x5c]
+004d7240 xor     ecx, esp
+004d7242 call    0x687de2
+004d7247 add     esp, 0x60
+004d724a retn    

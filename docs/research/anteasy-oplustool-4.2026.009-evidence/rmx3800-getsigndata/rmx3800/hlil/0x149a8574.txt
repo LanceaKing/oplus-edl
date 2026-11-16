@@ -1,0 +1,39 @@
+149a8588 uint64_t x24
+149a8588 
+149a8588 if (arg4 == 0)
+149a8608     sub_149a5c34(2, "Caller MUST provide an valid error pointer to return error %d", 0, arg4, arg5, 
+149a8608         arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, x24)
+149a8588 else
+149a859c     *arg4 = 0
+149a85a0     int32_t* result
+149a85a0     int64_t* x3
+149a85a0     int64_t x4
+149a85a0     int64_t x5
+149a85a0     int64_t x6
+149a85a0     int64_t x7
+149a85a0     int128_t v0
+149a85a0     int128_t v1
+149a85a0     int128_t v2
+149a85a0     int128_t v3
+149a85a0     int128_t v4
+149a85a0     int128_t v5
+149a85a0     int128_t v6
+149a85a0     int128_t v7
+149a85a0     result, x3, x4, x5, x6, x7, v0, v1, v2, v3, v4, v5, v6, v7 = sub_149a617c(arg1, arg2, arg3, 
+149a85a0         arg4, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16)
+149a85a0     
+149a85a4     if (result != 0)
+149a8620         return result
+149a8620     
+149a85a8     int32_t x23_1 = *arg4
+149a85a8     
+149a85ac     if (x23_1 == 0)
+149a85c0         x6, x7, v0, v1, v2, v3, v4, v5, v6, v7 = sub_149a5c34(2, 
+149a85c0             "OPEN handle NULL and no error, weird %d", arg4, x3, x4, x5, x6, x7, v0, v1, v2, v3, 
+149a85c0             v4, v5, v6, v7, x24)
+149a85c4         x23_1 = 3
+149a85c8         *arg4 = 3
+149a85c8     
+149a85f0     sub_149a5c34(2, "Failed to open device, type:%s, slot:%d, lun:%d error:%d", sub_149a845c(arg1), 
+149a85f0         zx.q(arg2), zx.q(arg3), zx.q(x23_1), x6, x7, v0, v1, v2, v3, v4, v5, v6, v7, x24)
+149a860c return nullptr

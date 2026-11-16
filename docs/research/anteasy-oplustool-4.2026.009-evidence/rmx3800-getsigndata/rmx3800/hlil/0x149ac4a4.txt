@@ -1,0 +1,24 @@
+149ac4bc int32_t x20_1
+149ac4bc 
+149ac4bc if (*(arg1 + 0x10) == 0)
+149ac51c     x20_1 = 0
+149ac4bc else
+149ac4c0     int64_t x8_1 = *(arg1 + 8)
+149ac4c0     
+149ac4c8     if (x8_1 == 0)
+149ac524         x20_1 = 5
+149ac4c8     else
+149ac4d4         x20_1 = 0x100001
+149ac4d4         
+149ac4d8         if (*(arg1 + 0x130) != 0)
+149ac4ec             int64_t x0 = x8_1(1)
+149ac4f0             int32_t x0_2
+149ac4f0             
+149ac4f0             if (x0 == 0)
+149ac504                 x0_2 = (*(arg1 + 0x10))(zx.q(arg2), zx.q(arg3), zx.q(arg4))
+149ac504             
+149ac508             if (x0 != 0 || x0_2 == 0)
+149ac518                 (*(arg1 + 8))(4, zx.q(arg2))
+149ac51c                 x20_1 = 0
+149ac51c 
+149ac53c return zx.q(x20_1)

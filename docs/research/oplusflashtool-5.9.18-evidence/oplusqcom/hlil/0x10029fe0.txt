@@ -1,0 +1,50 @@
+10029fed SHFILEOPSTRUCTA fileOp
+10029fed int32_t __saved_ebp
+10029fed fileOp.__offset(0x20).d = __security_cookie ^ &__saved_ebp
+10029ff4 char* ecx = arg1
+1002a005 int32_t eax_1
+1002a005 
+1002a005 do
+1002a000     eax_1.b = *ecx
+1002a002     ecx = &ecx[1]
+1002a005 while (eax_1.b != 0)
+1002a00c void* var_34 = ecx - &ecx[1] + 2
+1002a00d char* _Destination = sub_1005f6bf()
+1002a017 char* eax_3 = arg1
+1002a025 char i
+1002a025 
+1002a025 do
+1002a020     i = *eax_3
+1002a022     eax_3 = &eax_3[1]
+1002a025 while (i != 0)
+1002a030 memset(_Destination, 0, eax_3 - &eax_3[1] + 2)
+1002a035 char* ecx_2 = arg1
+1002a045 char i_1
+1002a045 
+1002a045 do
+1002a040     i_1 = *ecx_2
+1002a042     ecx_2 = &ecx_2[1]
+1002a045 while (i_1 != 0)
+1002a04f strcpy_s(_Destination, ecx_2 - &ecx_2[1] + 1, arg1)
+1002a058 fileOp.lpszProgressTitle.w = 0
+1002a05e fileOp.wFunc = 0
+1002a05e fileOp.pFrom = 0
+1002a05e fileOp.pTo = 0
+1002a05e fileOp.fFlags = 0
+1002a06a fileOp.fAnyOperationsAborted = 0
+1002a06a fileOp.hNameMappings = 0
+1002a06f fileOp.fFlags = 0x10
+1002a076 fileOp.fAnyOperationsAborted:2.w = 0
+1002a076 fileOp.hNameMappings.w = 0
+1002a07e fileOp.hwnd = 0
+1002a085 fileOp.hNameMappings:2.w = 0
+1002a085 fileOp.lpszProgressTitle.w = 0
+1002a08c fileOp.pFrom = _Destination
+1002a08f fileOp.pTo = 0
+1002a096 fileOp.wFunc = 3
+1002a09d int32_t eax_7 = SHFileOperationA(&fileOp)
+1002a0a6 sub_1005f6ba(_Destination)
+1002a0b5 uint32_t result
+1002a0b5 result.b = eax_7 == 0
+1002a0bc CookieCheckFunction(result)
+1002a0c4 return result

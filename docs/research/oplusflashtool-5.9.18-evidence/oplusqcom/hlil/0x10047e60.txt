@@ -1,0 +1,190 @@
+10047e63 int32_t var_8 = 0xffffffff
+10047e65 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10065caa
+10047e70 TEB* fsbase
+10047e70 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+10047e7c int32_t __saved_ebp
+10047e7c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+10047e88 fsbase->NtTib.ExceptionList = &ExceptionList
+10047ea1 int64_t var_34 = 0
+10047eab char var_98
+10047eab char* var_ac_1 = sub_10045410(arg1, &var_98)
+10047eaf int32_t var_8_1 = 0
+10047eb7 PackageFileLoaderFactory::CreateSharedPackageFileLoader(&var_34)
+10047ec0 var_8_1.b = 2
+10047eca int32_t var_84
+10047eca 
+10047eca if (var_84 u>= 0x10)
+10047ed4     sub_10001d60(var_98.d, var_84 + 1)
+10047ed4 
+10047ed9 PackageFileLoaderBase* ecx_1 = var_34.d
+10047ede int32_t var_84_1 = 0xf
+10047ee5 int32_t eax_4
+10047ee5 eax_4.b = ecx_1 == 0
+10047ee8 int32_t var_88 = 0
+10047ef2 var_98 = 0
+10047efb uint32_t result
+10047efb 
+10047efb if (eax_4.b == 0)
+10047f16     if (PackageFileLoaderBase::ReadAll(ecx_1) != 0)
+10047f28         struct TiXmlNode::TiXmlDocument::VTable* const var_7c
+10047f28         memset(&var_7c, 0, 0x48)
+10047f33         sub_1005ac90(&var_7c)
+10047f3a         var_8_1.b = 3
+10047f4d         sub_1005d120(&var_7c, PackageFileLoaderBase::GetAllFileData(var_34.d), nullptr, nullptr)
+10047f56         char var_50
+10047f56         
+10047f56         if (var_50 == 0)
+10047f6a             int32_t* i_1 = sub_1005b9d0(sub_1005b9d0(&var_7c))
+10047f6f             int32_t* ebx_1 = *(arg2 + 0x14c)
+10047f75             int32_t* i = i_1
+10047f75             
+10047f79             while (i != 0)
+10047f83                 char* edx_2 = i[8] + 8
+10047f86                 int32_t var_18_1 = 0xf
+10047f8d                 int32_t var_1c_1 = 0
+10047f94                 char var_2c = 0
+10047f9b                 uint32_t ecx_7
+10047f9b                 
+10047f9b                 if (*edx_2 != 0)
+10047fa1                     char* ecx_8 = edx_2
+10047fa1                     
+10047fab                     do
+10047fa6                         i_1.b = *ecx_8
+10047fa8                         ecx_8 = &ecx_8[1]
+10047fab                     while (i_1.b != 0)
+10047fab                     
+10047fad                     ecx_7 = ecx_8 - &ecx_8[1]
+10047f9b                 else
+10047f9d                     ecx_7 = 0
+10047f9d                 
+10047fb4                 int32_t* eax_9 = sub_10001ad0(&var_2c, edx_2, ecx_7)
+10047fb9                 var_8_1.b = 4
+10047fbd                 int32_t* ecx_10 = &var_2c
+10047fc0                 int32_t esi_2 = var_18_1
+10047fc0                 
+10047fc9                 if (esi_2 u>= 0x10)
+10047fc9                     ecx_10 = var_2c.d
+10047fc9                 
+10047fd4                 int32_t eax_10 = sub_10007cc0(eax_9, var_1c_1, ecx_10, "project", 7)
+10047fd4                 
+10047fde                 if (eax_10 != 0)
+1004802a                     int32_t* ecx_17 = &var_2c
+1004802a                     
+1004802f                     if (esi_2 u>= 0x10)
+1004802f                         ecx_17 = var_2c.d
+1004802f                     
+10048038                     int32_t eax_14 = sub_10007cc0(eax_10, var_1c_1, ecx_17, "dagent", 6)
+10048038                     
+10048042                     if (eax_14 != 0)
+1004808b                         int32_t* ecx_24 = &var_2c
+1004808b                         
+10048090                         if (esi_2 u>= 0x10)
+10048090                             ecx_24 = var_2c.d
+10048090                         
+10048099                         int32_t eax_18 = sub_10007cc0(eax_14, var_1c_1, ecx_24, "scatter", 7)
+10048099                         
+100480a3                         if (eax_18 != 0)
+100480e8                             int32_t* ecx_31 = &var_2c
+100480e8                             
+100480ed                             if (esi_2 u>= 0x10)
+100480ed                                 ecx_31 = var_2c.d
+100480ed                             
+10048100                             if (sub_10007cc0(eax_18, var_1c_1, ecx_31, "build_version", 0xd) != 0)
+10048124                                 if (sub_1000ba60(&var_2c, "version").b != 0)
+10048138                                     sub_10001960(sub_1005ba30((*(*i + 0x14))(eax_2)))
+1004813d                                     esi_2 = var_18_1
+10048100                             else
+10048138                                 sub_10001960(sub_1005ba30((*(*i + 0x14))(eax_2)))
+1004813d                                 esi_2 = var_18_1
+100480a3                         else
+100480b3                             char* edx_6 = sub_1005ba30((*(*i + 0x14))(eax_2))
+100480b3                             
+100480b8                             if (*edx_6 != 0)
+100480c8                                 char* ecx_28 = edx_6
+100480d5                                 char* eax_21
+100480d5                                 
+100480d5                                 do
+100480d0                                     eax_21.b = *ecx_28
+100480d2                                     ecx_28 = &ecx_28[1]
+100480d5                                 while (eax_21.b != 0)
+100480de                                 sub_10001ad0(&ebx_1[0xc], edx_6, ecx_28 - &ecx_28[1])
+100480b8                             else
+100480c1                                 sub_10001ad0(&ebx_1[0xc], edx_6, 0)
+100480c1                             
+1004813d                             esi_2 = var_18_1
+10048042                     else
+10048052                         char* edx_5 = sub_1005ba30((*(*i + 0x14))(eax_2))
+10048052                         
+10048057                         if (*edx_5 != 0)
+1004806a                             char* ecx_21 = edx_5
+10048075                             char* eax_17
+10048075                             
+10048075                             do
+10048070                                 eax_17.b = *ecx_21
+10048072                                 ecx_21 = &ecx_21[1]
+10048075                             while (eax_17.b != 0)
+1004807e                             sub_10001ad0(&ebx_1[6], edx_5, ecx_21 - &ecx_21[1])
+10048057                         else
+10048060                             sub_10001ad0(&ebx_1[6], edx_5, 0)
+10048060                         
+1004813d                         esi_2 = var_18_1
+10047fde                 else
+10047fee                     char* edx_4 = sub_1005ba30((*(*i + 0x14))(eax_2))
+10047fee                     
+10047ff3                     if (*edx_4 != 0)
+10048005                         char* ecx_14 = edx_4
+10048015                         char* eax_13
+10048015                         
+10048015                         do
+10048010                             eax_13.b = *ecx_14
+10048012                             ecx_14 = &ecx_14[1]
+10048015                         while (eax_13.b != 0)
+1004801d                         sub_10001ad0(ebx_1, edx_4, ecx_14 - &ecx_14[1])
+10047ff3                     else
+10047ffb                         sub_10001ad0(ebx_1, edx_4, 0)
+10047ffb                     
+1004813d                     esi_2 = var_18_1
+1004813d                 
+10048140                 i = i[0xa]
+10048143                 var_8_1.b = 3
+10048143                 
+1004814a                 if (esi_2 u>= 0x10)
+10048153                     sub_10001d60(var_2c.d, esi_2 + 1)
+10048153             
+10048163             result = 0
+10048165             *(arg2 + 0x148) = 1
+10047f56         else
+10047f58             result = 0xffffffff
+10047f58         
+10048172         var_7c = &TiXmlDocument::`vftable'{for `TiXmlNode'}
+1004817e         int32_t var_48
+1004817e         
+1004817e         if (var_48 != &data_10084798)
+10048181             sub_1005f6ba(var_48)
+10048181         
+1004818c         sub_1005aef0(&var_7c)
+10047f16     else
+10047f18         result = 0xffffffff
+10047efb else
+10047efd     *(arg2 + 0x148) = 0
+10047f07     result = 0
+10047f07 
+10048191 int32_t var_8_2 = 5
+10048198 int32_t* edi_1 = var_34:4.d
+10048198 
+1004819d if (edi_1 != 0)
+100481a4     bool cond:1_1 = edi_1[1] != 1
+100481a4     edi_1[1]
+100481a4     edi_1[1] -= 1
+100481a4     
+100481a9     if (not(cond:1_1))
+100481af         (**edi_1)(eax_2)
+100481b1         int32_t ebx_2 = edi_1[2]
+100481b1         edi_1[2] -= 1
+100481b1         
+100481b7         if (ebx_2 == 1)
+100481bd             (*(*edi_1 + 4))()
+100481bd 
+100481c5 fsbase->NtTib.ExceptionList = ExceptionList
+100481d5 CookieCheckFunction(result)
+100481dd return result

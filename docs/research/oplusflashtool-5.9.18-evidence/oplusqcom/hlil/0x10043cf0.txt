@@ -1,0 +1,33 @@
+10043cf3 int32_t var_8 = 0xffffffff
+10043cf5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10065539
+10043d00 TEB* fsbase
+10043d00 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+10043d0e int32_t __saved_ebp
+10043d0e int32_t var_2c = __security_cookie ^ &__saved_ebp
+10043d12 fsbase->NtTib.ExceptionList = &ExceptionList
+10043d20 int32_t var_8_1 = 0
+10043d27 int32_t var_14 = 0
+10043d30 *arg2 = 0
+10043d36 int64_t* var_1c = arg2
+10043d39 *arg2 = 0
+10043d3f *(arg2 + 4) = 0
+10043d4b *arg2 = sub_1002ea00(nullptr, nullptr)
+10043d4d int32_t var_8_2 = 0
+10043d54 int32_t* edi_1 = *(arg1 + 0xdc)
+10043d5a int32_t var_14_1 = 1
+10043d5a 
+10043d65 for (void** i = *edi_1; i != edi_1; i = *i)
+10043d67     int32_t* ecx = *arg2
+10043d77     int32_t* eax_6 = sub_1002ebd0(ecx, ecx[1], i[2] + 0x50)
+10043d7c     int32_t edx_1 = *(arg2 + 4)
+10043d7c     
+10043d8b     if (0x7fffffe - edx_1 u< 1)
+10043dbf         std::_Xlength_error("list<T> too long")
+10043dbf         noreturn
+10043dbf     
+10043d90     *(arg2 + 4) = edx_1 + 1
+10043d96     ecx[1] = eax_6
+10043d9c     *eax_6[1] = eax_6
+10043d9c 
+10043da9 fsbase->NtTib.ExceptionList = ExceptionList
+10043db7 return arg2

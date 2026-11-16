@@ -1,0 +1,248 @@
+1001942e void var_c28
+1001942e int32_t eax
+1001942e int32_t edx
+1001942e eax, edx = auth_get_platform_infomation(&arg2[0x200], &var_c28)
+1001942e 
+10019438 if (eax != 0)
+1001943a     char* var_c3c_1 = &arg2[0x200]
+1001943b     char const* const var_c40_1 = "[ERROR]: Platform is not supported: %s"
+10019440     int32_t var_c44 = 0x5be
+10019445     char const* const var_c48 = "auth_rcsm_flash_sign"
+1001945c     *opdbg_log()
+1001945d     return 0x7535
+1001945d 
+10019477 char* eax_2 = _strstr(sub_1002bb30(eax.b, edx, *(arg3 + 0x538), 0x1021b480), &arg2[0x200], "W")
+10019485 char* ecx_2 = *(arg3 + 0x538) + 0x684
+10019485 
+1001948d if (eax_2 != 0)
+100194a5     void var_a08
+100194a5     char* edx_2 = &var_a08
+100194a5     
+100194bc     do
+100194b0         eax_2.b = *edx_2
+100194b2         edx_2 = &edx_2[1]
+100194b5         *ecx_2 = eax_2.b
+100194b7         ecx_2 = &ecx_2[1]
+100194bc     while (eax_2.b != 0)
+1001948d else
+1001948f     void var_c08
+1001948f     char* edx_1 = &var_c08
+1001948f     
+100194a1     do
+10019495         eax_2.b = *edx_1
+10019497         edx_1 = &edx_1[1]
+1001949a         *ecx_2 = eax_2.b
+1001949c         ecx_2 = &ecx_2[1]
+100194a1     while (eax_2.b != 0)
+100194a1 
+100194c4 char* edx_3 = &arg2[0x900]
+100194d1 __builtin_strcpy(*(arg3 + 0x538) + 0x104, "/api/tools/sign")
+100194de void* ecx_4 = *(arg3 + 0x538) + 0xa84
+100194ef int32_t eax_3
+100194ef 
+100194ef do
+100194e4     eax_3.b = *edx_3
+100194e6     ecx_4 += 1
+100194e9     edx_3 = &edx_3[1]
+100194ea     *(ecx_4 - 1) = eax_3.b
+100194ef while (eax_3.b != 0)
+10019509 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "chip_sn", &arg2[0x900])
+10019529 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "disk_id", arg3 + 0x940)
+10019549 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "ext_ip", arg3 + 0x540)
+10019569 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), &data_101fce1c, arg3 + 0x640)
+10019589 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "main_platform", &arg2[0x100])
+100195a3 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "meta_ver", arg2)
+100195c3 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "new_project_no", &arg2[0x500])
+100195e3 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "new_sw_name_sign", &arg2[0x700])
+10019603 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "old_project_no", &arg2[0x600])
+10019623 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "old_sw_name_sign", &arg2[0x800])
+10019643 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "random_num", &arg2[0x400])
+10019661 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "read_write_mode", "W")
+1001967b op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "sub_platform", &arg2[0x200])
+10019699 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "token", 0x1021b480)
+100196b3 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "version", arg2)
+100196d1 op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "lock_ver", "1")
+100196ef op_str_map_put(*(*(arg3 + 0x538) + 0x3570), "login_type", "1")
+100196ef 
+10019704 if (sub_1002bde0(*(arg3 + 0x538)) != 0)
+10019706     char const* const var_c3c_15 = "[ERROR]: Error occurred when performing RCSM request"
+1001970b     int32_t var_c40_3 = 0x5e1
+10019710     char const* const var_c44_18 = "auth_rcsm_flash_sign"
+10019727     *opdbg_log()
+10019728     return 0x490
+10019728 
+10019737 int32_t* ebx_1 = *(*(arg3 + 0x538) + 0x3574)
+1001973e char* eax_34
+1001973e void* edx_4
+1001973e eax_34, edx_4 = op_str_map_get(ebx_1, "/Data/response")
+10019743 char* ecx_6 = eax_34
+10019743 
+1001974a if (ecx_6 != 0)
+1001974e     if (arg3 != 0xffffffb8)
+10019752         edx_4 = arg3 + 0x48 - ecx_6
+10019752         
+1001975f         do
+10019754             eax_34.b = *ecx_6
+10019756             ecx_6 = &ecx_6[1]
+10019759             *(edx_4 + ecx_6 - 1) = eax_34.b
+1001975f         while (eax_34.b != 0)
+1001975f     
+1001974e     goto label_100197bd
+1001974e 
+10019769 char* eax_35
+10019769 eax_35, edx_4 = op_str_map_get(ebx_1, "/Data/response/message")
+1001976e char* ecx_7 = eax_35
+1001976e 
+10019775 if (ecx_7 != 0)
+10019779     if (arg3 != 0xffffffb8)
+1001977d         edx_4 = arg3 + 0x48 - ecx_7
+1001977d         
+1001978b         do
+10019780             eax_35.b = *ecx_7
+10019782             ecx_7 = &ecx_7[1]
+10019785             *(edx_4 + ecx_7 - 1) = eax_35.b
+1001978b         while (eax_35.b != 0)
+1001978b     
+10019779     goto label_100197bd
+10019779 
+10019795 char* eax_36
+10019795 eax_36, edx_4 = op_str_map_get(ebx_1, "/Data/message")
+1001979a char* ecx_8 = eax_36
+1001979a 
+100197a1 if (ecx_8 == 0)
+100198c9     char const* const var_c3c_19 = "[ERROR]: Cannot get 'message' attribute from result"
+100198ce     int32_t var_c40_11 = 0x5e9
+100197a1 else
+100197a9     if (arg3 != 0xffffffb8)
+100197ad         edx_4 = arg3 + 0x48 - ecx_8
+100197ad         
+100197bb         do
+100197b0             eax_36.b = *ecx_8
+100197b2             ecx_8 = &ecx_8[1]
+100197b5             *(edx_4 + ecx_8 - 1) = eax_36.b
+100197bb         while (eax_36.b != 0)
+100197bb     
+100197bd label_100197bd:
+100197bd     char* ecx_9 = &data_101fc2f9
+100197c2     char* eax_37 = arg3 + 0x48
+100197c4     int32_t eax_39
+100197c4     
+100197c4     while (true)
+100197c4         edx_4.b = *eax_37
+100197c6         char temp0_1 = *ecx_9
+100197c6         bool c_1 = edx_4.b u< temp0_1
+100197c6         
+100197c8         if (edx_4.b == temp0_1)
+100197cc             if (edx_4.b == 0)
+100197e0                 eax_39 = 0
+100197e2                 break
+100197e2             
+100197ce             edx_4.b = eax_37[1]
+100197d1             char temp1_1 = ecx_9[1]
+100197d1             c_1 = edx_4.b u< temp1_1
+100197d1             
+100197d4             if (edx_4.b == temp1_1)
+100197d6                 eax_37 = &eax_37[2]
+100197d9                 ecx_9 = &ecx_9[2]
+100197d9                 
+100197de                 if (edx_4.b != 0)
+100197de                     continue
+100197de                 
+100197e0                 eax_39 = 0
+100197e2                 break
+100197e2         
+100197e6         eax_39 = sbb.d(eax_37, eax_37, c_1) | 1
+100197e6         break
+100197e6     
+100197eb     if (eax_39 != 0)
+100197f1         char* ecx_10 = &data_101fce04
+100197f6         char* eax_40 = arg3 + 0x48
+100197f8         int32_t eax_42
+100197f8         
+100197f8         while (true)
+100197f8             edx_4.b = *eax_40
+100197fa             char temp2_1 = *ecx_10
+100197fa             bool c_2 = edx_4.b u< temp2_1
+100197fa             
+100197fc             if (edx_4.b == temp2_1)
+10019800                 if (edx_4.b == 0)
+10019814                     eax_42 = 0
+10019816                     break
+10019816                 
+10019802                 edx_4.b = eax_40[1]
+10019805                 char temp3_1 = ecx_10[1]
+10019805                 c_2 = edx_4.b u< temp3_1
+10019805                 
+10019808                 if (edx_4.b == temp3_1)
+1001980a                     eax_40 = &eax_40[2]
+1001980d                     ecx_10 = &ecx_10[2]
+1001980d                     
+10019812                     if (edx_4.b != 0)
+10019812                         continue
+10019812                     
+10019814                     eax_42 = 0
+10019816                     break
+10019816             
+1001981a             eax_42 = sbb.d(eax_40, eax_40, c_2) | 1
+1001981a             break
+1001981a         
+1001981f         int32_t eax_45
+1001981f         
+1001981f         if (eax_42 == 0)
+10019821             char const* const ecx_11 = "0000"
+10019826             char* eax_43 = arg3 + 0x48
+10019826             
+10019828             while (true)
+10019828                 edx_4.b = *eax_43
+1001982a                 char const temp4_1 = *ecx_11
+1001982a                 bool c_3 = edx_4.b u< temp4_1
+1001982a                 
+1001982c                 if (edx_4.b == temp4_1)
+10019830                     if (edx_4.b == 0)
+10019844                         eax_45 = 0
+10019846                         break
+10019846                     
+10019832                     edx_4.b = eax_43[1]
+10019835                     char temp5_1 = ecx_11[1]
+10019835                     c_3 = edx_4.b u< temp5_1
+10019835                     
+10019838                     if (edx_4.b == temp5_1)
+1001983a                         eax_43 = &eax_43[2]
+1001983d                         ecx_11 = &ecx_11[2]
+1001983d                         
+10019842                         if (edx_4.b != 0)
+10019842                             continue
+10019842                         
+10019844                         eax_45 = 0
+10019846                         break
+10019846                 
+1001984a                 eax_45 = sbb.d(eax_43, eax_43, c_3) | 1
+1001984a                 break
+1001984a         
+1001984f         if (eax_42 != 0 || eax_45 != 0)
+10019851             char* var_c3c_16 = arg3 + 0x48
+10019852             char const* const var_c40_7 = "[ERROR]: Server returns error code %s"
+10019857             int32_t var_c44_19 = 0x5f1
+1001985c             char const* const var_c48_1 = "auth_rcsm_flash_sign"
+10019873             *opdbg_log()
+10019874             return 0x7d0b
+10019874     
+1001988b     char* edx_8 = op_str_map_get(*(*(arg3 + 0x538) + 0x3574), "/Data/response/encrypt")
+1001988b     
+10019899     if (edx_8 != 0 && arg4 != 0)
+1001989b         char* ecx_12 = edx_8
+100198a5         char* eax_48
+100198a5         
+100198a5         do
+100198a0             eax_48.b = *ecx_12
+100198a2             ecx_12 = &ecx_12[1]
+100198a5         while (eax_48.b != 0)
+100198ac         op_base64_decode(edx_8, ecx_12 - &ecx_12[1], arg4)
+100198bc         return 0
+100198bc     
+100198bd     char const* const var_c3c_18 = "[ERROR]: Cannot get 'encrypt' attribute from result"
+100198c2     int32_t var_c40_10 = 0x5f8
+100198c2 
+100198d3 char const* const var_c44_21 = "auth_rcsm_flash_sign"
+100198ea *opdbg_log()
+100198eb return 0x7d0b

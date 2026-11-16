@@ -1,0 +1,70 @@
+149aa6e8 bool cond:1 = arg1 != 3
+149aa6f4 uint64_t x24
+149aa6f4 
+149aa6f4 x24 = arg1 == 3 ? 0x1000 : 0x200
+149aa6f4 
+149aa6f8 int64_t* x20 = arg5
+149aa700 uint64_t x23 = arg3 + x24
+149aa708 int64_t* x21 = arg4
+149aa710 char* x19 = arg2
+149aa714 int64_t var_68 = data_149da3f0
+149aa71c int32_t* result
+149aa71c 
+149aa71c if (sub_149a7f9c(x23) == 0)
+149aa740     int32_t x25_1 = *(x23 + 0x50)
+149aa744     int64_t x26_1 = 0
+149aa754     uint64_t x27_1
+149aa754     
+149aa754     x27_1 = x25_1 s> 0 ? zx.q(x25_1) : 0
+149aa754     
+149aa758     char* x22_1 = arg3 + sx.q(x24.d * *(x23 + 0x48))
+149aa758     
+149aa760     while (x27_1 != x26_1)
+149aa770         void var_e8
+149aa770         int128_t v0
+149aa770         int128_t v1
+149aa770         int128_t v2
+149aa770         v0, v1, v2 = sub_1499bf38(&var_e8, x22_1, 0x80)
+149aa778         void var_b0
+149aa778         void* x0_4
+149aa778         int64_t x5
+149aa778         int64_t x6
+149aa778         int64_t x7
+149aa778         x0_4, arg2, arg3, arg4, arg5, x5, x6, x7, arg9, arg10, arg11, arg12, arg13, arg14, arg15, 
+149aa778             arg16 = sub_149aa5f8(&var_b0, v0, v1, v2, arg12, arg13, arg14, arg15, arg16)
+149aa778         
+149aa77c         if (x19 != 0)
+149aa780             uint64_t x24_1 = x0_4
+149aa798             int32_t x0_8
+149aa798             x0_8, arg2, arg3 = sub_149ba56c(x24_1, x19, sub_1499bc40(x19))
+149aa798             
+149aa79c             if (x0_8 == 0)
+149aa7c4                 int64_t var_c8
+149aa7c4                 *x21 = var_c8
+149aa7cc                 int64_t var_c0
+149aa7cc                 *x20 = var_c0 - var_c8 + 1
+149aa7d0                 arg2, arg3, arg4, arg5, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16 =
+149aa7d0                     sub_149a5c34(4, "find %s", x19, arg4, arg5, x5, x6, x7, arg9, arg10, arg11, 
+149aa7d0                     arg12, arg13, arg14, arg15, arg16, x24_1)
+149aa7d4                 x27_1 = zx.q(x26_1.d)
+149aa7d4                 break
+149aa7d4         
+149aa7a0         x26_1 += 1
+149aa7a4         x22_1 = &x22_1[0x80]
+149aa7a4     
+149aa7d8     cond:1 = x25_1 != x27_1.d
+149aa7d8     
+149aa7dc     if (x25_1 == x27_1.d)
+149aa7ec         arg2, arg3, arg4, arg5 = sub_149aac50(4, "not find %s", arg9, arg10, arg11, arg12, arg13, 
+149aa7ec             arg14, arg15, arg16, x19)
+149aa7ec     
+149aa7f0     result = nullptr
+149aa71c else
+149aa72c     arg2, arg3, arg4, arg5 = sub_149a5c34(4, "checkGptHeaderValid error", arg3, arg4, arg5, arg6, 
+149aa72c         arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, x24)
+149aa730     result = 0xffffffff
+149aa730 
+149aa7f8 if (cond:1)
+149aa81c     return sub_149aa820(result, arg2, arg3, arg4, arg5) __tailcall
+149aa81c 
+149aa818 return result

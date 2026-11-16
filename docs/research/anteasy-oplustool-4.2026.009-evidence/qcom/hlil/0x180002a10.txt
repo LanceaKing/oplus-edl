@@ -1,0 +1,79 @@
+180002a35 void var_318
+180002a35 uint64_t var_38 = __security_cookie ^ &var_318
+180002a4c *arg5 = 0
+180002a60 uint64_t i
+180002a60 
+180002a60 if (arg1 == 0 || arg2 != 0x10)
+180002ca7     i.b = 0
+180002a60 else
+180002a77     int128_t var_298 = zx.o(0)
+180002a7b     int128_t var_288
+180002a7b     __builtin_memset(&var_288, 0, 0x30)
+180002a87     memcpy(&var_298, "2e7006834dafe8ad", arg2)
+180002a91     void* var_2c8 = 0x10
+180002a91     
+180002ab9     if (sub_180002530(zx.q(arg3), 0xa, &var_298, 0x40, &var_2c8).b == 0)
+180002ca7         i.b = 0
+180002ab9     else
+180002abf         void* rdi_1 = var_2c8
+180002abf         
+180002acb         if (0x40 - rdi_1 u< 0x10)
+180002ca7             i.b = 0
+180002acb         else
+180002ae5             memcpy(&var_298 + rdi_1, "a6674c6b039707ff", 0x10)
+180002afa             int128_t var_2c0
+180002afa             __builtin_memset(&var_2c0, 0, 0x20)
+180002afa             
+180002b0b             if (sub_1800016d0(&var_298, rdi_1 + 0x10, &var_2c0).b == 0)
+180002ca7                 i.b = 0
+180002b0b             else
+180002b20                 int128_t var_138
+180002b20                 sub_18009a050(&var_138, 0, 0x100)
+180002b39                 memcpy(&var_138, "907heavyworkload", 0x10)
+180002b5c                 int128_t var_128_1 = var_2c0
+180002b63                 __builtin_memset(&var_2c0, 0, 0x20)
+180002b69                 int128_t var_2b0
+180002b69                 int128_t var_118_1 = var_2b0
+180002b70                 void var_238
+180002b70                 sub_18009a050(&var_238, 0, 0x100)
+180002b7d                 int32_t var_2e8_1 = 0xd1a06301
+180002b85                 int32_t var_2e4_1 = 0x1167e2fd
+180002b94                 int128_t var_2e0 = *arg1
+180002b99                 int32_t var_2d0_1 = 0x8c22748
+180002baa                 int32_t var_2cc_1 = 0xf0e6b0fb
+180002bb9                 int128_t zmm1_1 = var_2e0:8.o
+180002bc3                 void* var_2f8_2 = &var_238
+180002bc8                 int128_t var_258 = var_2e8_1.o
+180002bcc                 int128_t var_248_1 = zmm1_1
+180002bd0                 char rax_1 = sub_180001d00(&var_138, 0x100, &var_258, &data_1800aed28, var_2f8_2)
+180002bdf                 i = 0
+180002be6                 __builtin_memset(&var_138, 0, 0x100)
+180002be6                 
+180002bea                 if (rax_1 == 0)
+180002ca7                     i.b = 0
+180002bea                 else
+180002c89                     do
+180002c00                         uint32_t rdx_2 = zx.d(*(&var_238 + i))
+180002c05                         char var_235[0x1d]
+180002c05                         uint32_t rdi_2 = zx.d(var_235[i])
+180002c18                         *(arg4 + (i << 1)) = (*"0123456789ABCDEF")[zx.q(rdx_2) u>> 4]
+180002c20                         void var_237
+180002c20                         uint32_t rdx_4 = zx.d(*(&var_237 + i))
+180002c25                         *(arg4 + (i << 1) + 1) = *("0123456789ABCDEF" + (zx.q(rdx_2) & 0xf))
+180002c37                         *(arg4 + (i << 1) + 2) = (*"0123456789ABCDEF")[zx.q(rdx_4) u>> 4]
+180002c40                         void var_236
+180002c40                         uint32_t rdx_6 = zx.d(*(&var_236 + i))
+180002c45                         *(arg4 + (i << 1) + 3) = *("0123456789ABCDEF" + (zx.q(rdx_4) & 0xf))
+180002c57                         *(arg4 + (i << 1) + 4) = (*"0123456789ABCDEF")[zx.q(rdx_6) u>> 4]
+180002c69                         *(arg4 + (i << 1) + 5) = *("0123456789ABCDEF" + (zx.q(rdx_6) & 0xf))
+180002c72                         *(arg4 + (i << 1) + 6) = (*"0123456789ABCDEF")[zx.q(rdi_2) u>> 4]
+180002c7b                         *(arg4 + (i << 1) + 7) = *("0123456789ABCDEF" + (zx.q(rdi_2) & 0xf))
+180002c7f                         i += 4
+180002c89                     while (i u< 0x100)
+180002c89                     
+180002c91                     *arg5 = 0x200
+180002ca1                     __builtin_memset(&var_238, 0, 0x100)
+180002ca3                     i.b = 1
+180002ca3 
+180002cb3 __security_check_cookie(var_38 ^ &var_318)
+180002cce return i

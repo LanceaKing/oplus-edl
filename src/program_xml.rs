@@ -87,7 +87,13 @@ pub fn expression(text: &str, crc: bool) -> Result<()> {
     }
     bail!("unsupported protocol expression: {text}")
 }
-fn parse_file(path: &Path, patch: bool, sector: u64, result: &mut Vec<Candidate>) -> Result<()> {
+fn parse_file(
+    path: &Path,
+    patch: bool,
+    sector: u64,
+    raw_size: crate::cli::RawSize,
+    result: &mut Vec<Candidate>,
+) -> Result<()> {
     let nodes = Element::parse_all(crate::input::open_regular(path)?)?;
     let roots: Vec<_> = nodes.iter().filter_map(XMLNode::as_element).collect();
     if roots.len() != 1 {
@@ -209,8 +215,26 @@ fn parse_file(path: &Path, patch: bool, sector: u64, result: &mut Vec<Candidate>
                     let available = source_bytes
                         .checked_sub(offset)
                         .context("source offset beyond file")?;
+                    // Preview QCOM 0x180053da0, XML mode with force=false:
+                    // cap the rounded source size at the XML sector count.
+                    // This writes a prefix, not zeroes over the partition tail.
+                    let span = if raw_size == crate::cli::RawSize::File {
+                        available
+                            .div_ceil(sector)
+                            .checked_mul(sector)
+                            .context("rounded source size overflow")?
+                            .min(span)
+                    } else {
+                        span
+                    };
                     if available == 0 || span.saturating_sub(available) >= sector {
-                        bail!("source range exceeds file beyond final-sector padding");
+                        bail!(
+                            "program node {index}, LUN {lun}, label {:?}, source {}: \
+                             requested {span} bytes at offset {offset}, but only {available} bytes remain; \
+                             source range exceeds file beyond final-sector padding",
+                            e.attributes.get("label"),
+                            source.display()
+                        );
                     }
                     Operation::Program {
                         source,
@@ -252,6 +276,22 @@ pub fn parse(
     sector: u64,
     requires_local_transform: bool,
 ) -> Result<Vec<Candidate>> {
+    parse_with_raw_size(
+        programs,
+        patches,
+        sector,
+        requires_local_transform,
+        crate::cli::RawSize::Declared,
+    )
+}
+
+pub fn parse_with_raw_size(
+    programs: &[PathBuf],
+    patches: &[PathBuf],
+    sector: u64,
+    requires_local_transform: bool,
+    raw_size: crate::cli::RawSize,
+) -> Result<Vec<Candidate>> {
     if requires_local_transform {
         return Err(
             Unsupported("package requires unsupported local image transformations".into()).into(),
@@ -259,10 +299,12 @@ pub fn parse(
     }
     let mut result = Vec::new();
     for path in programs {
-        parse_file(path, false, sector, &mut result)?;
+        parse_file(path, false, sector, raw_size, &mut result)
+            .with_context(|| format!("program XML {}", path.display()))?;
     }
     for path in patches {
-        parse_file(path, true, sector, &mut result)?;
+        parse_file(path, true, sector, raw_size, &mut result)
+            .with_context(|| format!("patch XML {}", path.display()))?;
     }
     Ok(result)
 }

@@ -1,0 +1,64 @@
+100506d3 int32_t var_8 = 0xffffffff
+100506d5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_10066ad0
+100506e0 TEB* fsbase
+100506e0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+100506e9 int32_t __saved_ebp
+100506e9 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+100506f5 fsbase->NtTib.ExceptionList = &ExceptionList
+10050709 int32_t var_18 = 0xf
+10050710 int32_t var_1c = 0
+10050717 char var_2c = 0
+1005071b int32_t var_8_1 = 0
+10050724 void* eax_5 = (*(*arg3 + 0x14))(eax_2)
+10050727 void* i = *(eax_5 + 0x4c)
+10050739 void** var_38
+10050739 
+10050739 if (i != eax_5 + 0x2c && i != 0)
+100507a3     do
+10050749         int32_t ecx_2 = *(i + 0x18) + 8
+1005074c         var_38 = *(i + 0x14) + 8
+10050752         int32_t var_34_1 = ecx_2
+1005075c         int32_t* eax_9
+1005075c         int32_t** ecx_4
+1005075c         eax_9, ecx_4 = sub_100547e0(&var_38)
+10050761         int32_t* var_70_2 = eax_9
+10050771         void* var_5c
+10050771         sub_1000c5c0(arg2 + 0x168, &var_5c, ecx_4, &eax_9[4])
+10050793         opdbg_log("QComSettingParser::collectBasicInfo", 0x9e, 
+10050793             "[INFO][Package]Basic Info: %s  = %s", *(i + 0x14) + 8, *(i + 0x18) + 8)
+1005079f         i = sub_1005bac0(i)
+100507a3     while (i != 0)
+100507a3 
+100507b2 int32_t var_40 = 0xf
+100507b9 int32_t var_44 = 0
+100507c0 char var_54 = 0
+100507c4 sub_10001ad0(&var_54, "Brand", 5)
+100507d3 var_8_1.b = 1
+100507de sub_1000bba0(arg2 + 0x168, &var_38, &var_54)
+100507de 
+100507ee if (&var_2c != &var_38[0xa])
+100507f5     sub_10001bd0(&var_2c, &var_38[0xa], 0, 0xffffffff)
+100507f5 
+100507fa var_8_1.b = 0
+100507fa 
+10050804 if (var_40 u>= 0x10)
+1005080b     sub_10001d60(var_54.d, var_40 + 1)
+1005080b 
+10050814 int32_t* esi = arg1 + 4
+10050814 
+10050817 if (var_1c == 0)
+10050837     sub_10001ad0(esi, "oppo", 4)
+10050817 else if (esi != &var_2c)
+10050827     sub_10001bd0(esi, &var_2c, 0, 0xffffffff)
+10050827 
+10050840 if (esi[5] u>= 0x10)
+10050842     esi = *esi
+10050842 
+10050854 opdbg_log("QComSettingParser::collectBasicInfo", 0xa9, "[INFO][Package]Brand is : %s", esi)
+10050854 
+1005085f if (var_18 u>= 0x10)
+10050866     sub_10001d60(var_2c.d, var_18 + 1)
+10050866 
+10050870 fsbase->NtTib.ExceptionList = ExceptionList
+10050880 CookieCheckFunction(0)
+10050888 return 0

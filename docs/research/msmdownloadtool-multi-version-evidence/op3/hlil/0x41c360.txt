@@ -1,0 +1,169 @@
+0041c360 int32_t ebp
+0041c360 int32_t var_4 = ebp
+0041c361 int32_t* ebp_1 = &var_4
+0041c363 int32_t var_8 = 0xffffffff
+0041c370 TEB* fsbase
+0041c370 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0041c379 int32_t eax_2 = __security_cookie ^ &var_4
+0041c37e int32_t ebx
+0041c37e int32_t var_90 = ebx
+0041c37f int32_t esi
+0041c37f int32_t var_94 = esi
+0041c380 int32_t edi
+0041c380 int32_t var_98 = edi
+0041c381 int32_t var_9c = eax_2
+0041c385 fsbase->NtTib.ExceptionList = &ExceptionList
+0041c398 int32_t var_78 = arg2
+0041c3a5 int32_t var_80 = arg3
+0041c3a8 int32_t ebx_1 = 5
+0041c3ab int32_t var_84 = 0
+0041c3b2 int32_t var_60 = 0xf
+0041c3b9 int32_t var_64 = 0
+0041c3c0 char var_74 = 0
+0041c3c4 sub_402440(&var_74, "  <getstorageinfo />", 0x14)
+0041c3cc int32_t var_8_1 = 0
+0041c3dc int32_t var_a0_1 = 0xf
+0041c3e3 int32_t var_a4_1 = 0
+0041c3eb char var_b4 = 0
+0041c3ee sub_402300(&var_b4, &var_74, 0, 0xffffffff)
+0041c3f7 int32_t* var_5c
+0041c3f7 sub_4205a0(&var_5c, var_b4)
+0041c401 var_8_1.b = 1
+0041c40a _memset(arg1[2], 0, 0x1000, eax_2, ExceptionList, 
+0041c40a     __ehhandler$?do_get@?$num_get@DV?$istreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@MBE?AV?$istreambuf_iterator@DU?$char_traits@D@std@@@2@V32@0AAVios_base@2@AAHAA_N@Z, 
+0041c40a     var_8_1)
+0041c41c _memset(arg1[3], 0, 0x1000)
+0041c421 char* edx = arg1[3]
+0041c424 int32_t* ecx_2 = &var_5c
+0041c42e int32_t var_48
+0041c42e 
+0041c42e if (var_48 u>= 0x10)
+0041c42e     ecx_2 = var_5c
+0041c42e 
+0041c43e char i
+0041c43e 
+0041c43e do
+0041c432     i = *ecx_2
+0041c434     ecx_2 += 1
+0041c437     *edx = i
+0041c439     edx = &edx[1]
+0041c43e while (i != 0)
+0041c43e 
+0041c440 while (true)
+0041c440     int32_t eax_5 = ebx_1
+0041c442     ebx_1 -= 1
+0041c442     
+0041c445     if (eax_5 s<= 0)
+0041c445         break
+0041c445     
+0041c44b     char* edx_1 = arg1[3]
+0041c44e     char* eax_6 = edx_1
+0041c44e     
+0041c458     do
+0041c453         ecx_2.b = *eax_6
+0041c455         eax_6 = &eax_6[1]
+0041c458     while (ecx_2.b != 0)
+0041c458     
+0041c467     void* eax_8
+0041c467     eax_8, ebp_1 = sub_41ad40(*arg1, edx_1, eax_6 - &eax_6[1], &ebp_1[-0x21])
+0041c467     
+0041c470     if (eax_8 != 0)
+0041c470         break
+0041c470     
+0041c47b     Sleep(0x1f4)
+0041c494     void* eax_10
+0041c494     eax_10, ecx_2 = sub_41af00(*arg1, arg1[2], 0x1000, &ebp_1[-0x20], 0xbb8)
+0041c494     
+0041c49d     if (eax_10 != 0)
+0041c4fc         if (eax_10 != 0x102)
+0041c4fc             break
+0041c49d     else
+0041c49f         void* var_18_5 = ebp_1[-0x20]
+0041c4a5         ebp_1[-5] = 0xf
+0041c4ac         int32_t* var_1c_4 = arg1[2]
+0041c4af         ebp_1[-6] = eax_10
+0041c4b2         ebp_1[-0xa].b = eax_10.b
+0041c4b5         sub_402440(&ebp_1[-0xa], var_1c_4, var_18_5)
+0041c4c5         ebp_1[-1].b = 2
+0041c4c9         void* eax_11
+0041c4c9         eax_11, ecx_2 = sub_40fa20(&ebp_1[-0xa], "response value="ACK"", eax_10, 0x14)
+0041c4c9         
+0041c4d1         if (eax_11 != 0xffffffff)
+0041c513             void* eax_12 = sub_40fa20(&ebp_1[-0xa], ""UFS Inquiry Command Output:", nullptr, 0x1c)
+0041c528             void* eax_13 = sub_40fa20(&ebp_1[-0xa], """, eax_12 + 1, 1)
+0041c52f             int32_t ebx_2
+0041c52f             
+0041c52f             if (eax_12 u>= eax_13)
+0041c5da                 ebx_2 = ebp_1[-0x1d]
+0041c52f             else
+0041c540                 sub_40e830(&ebp_1[-0xa], &ebp_1[-0x10], eax_12, eax_13 - eax_12)
+0041c540                 
+0041c559                 if (sub_40fa20(&ebp_1[-0x10], "HYNIX", nullptr, 5) == 0xffffffff)
+0041c587                     if (sub_40fa20(&ebp_1[-0x10], "SAMSUNG", nullptr, 7) == 0xffffffff)
+0041c5ab                         void* eax_18 = sub_40fa20(&ebp_1[-0x10], "TOSHIBA", nullptr, 7)
+0041c5b0                         ebx_2 = ebp_1[-0x1d]
+0041c5b0                         
+0041c5b6                         if (eax_18 != 0xffffffff)
+0041c5bd                             __builtin_strcpy(ebx_2, "toshiba")
+0041c587                     else
+0041c589                         int32_t ecx_15 = ebp_1[-0x1d]
+0041c58c                         ebx_2 = ecx_15
+0041c593                         __builtin_strcpy(ecx_15, "samsung")
+0041c559                 else
+0041c55b                     int32_t ecx_13 = ebp_1[-0x1d]
+0041c55e                     ebx_2 = ecx_13
+0041c565                     __builtin_strcpy(ecx_13, "hynix")
+0041c565                 
+0041c5cb                 if (ebp_1[-0xb] u>= 0x10)
+0041c5d0                     sub_4208bb(ebp_1[-0x10])
+0041c5d0             
+0041c5e9             void* eax_19 = sub_40fa20(&ebp_1[-0xa], ""UFS Raw Device Capacity: =", nullptr, 0x1b)
+0041c5fe             void* eax_20 = sub_40fa20(&ebp_1[-0xa], """, eax_19 + 1, 1)
+0041c5fe             
+0041c605             if (eax_19 u< eax_20)
+0041c618                 sub_40e830(&ebp_1[-0xa], &ebp_1[-0x10], eax_19 + 0x1c, eax_20 - eax_19 - 0x1c)
+0041c621                 char* ecx_21 = &ebp_1[-0x10]
+0041c621                 
+0041c627                 if (ebp_1[-0xb] u>= 0x10)
+0041c627                     ecx_21 = ebp_1[-0x10]
+0041c627                 
+0041c62b                 int32_t eax_25 = sub_41c280(ecx_21, ebp_1 - 0x75)
+0041c630                 bool cond:2_1 = ebp_1[-0xb] u< 0x10
+0041c637                 *ebp_1[-0x1f] = eax_25
+0041c637                 
+0041c639                 if (not(cond:2_1))
+0041c63e                     sub_4208bb(ebp_1[-0x10])
+0041c63e             
+0041c650             int32_t eax_26 = std::_Deallocate<64,0>("ToolLog.txt", &data_5a02f4)
+0041c650             
+0041c65c             if (eax_26 != 0)
+0041c66a                 _fprintf(eax_26, "UFS info Vendor = %s, TotalLogicalBlocks = %d\n", ebx_2, 
+0041c66a                     *ebp_1[-0x1f])
+0041c670                 _fclose(eax_26)
+0041c670             
+0041c67c             if (ebp_1[-5] u>= 0x10)
+0041c681                 sub_4208bb(ebp_1[-0xa])
+0041c681             
+0041c605             break
+0041c605         
+0041c4d3         ebp_1[-1].b = 1
+0041c4d3         
+0041c4e0         if (ebp_1[-5] u>= 0x10)
+0041c4e9             sub_4208bb(ebp_1[-0xa])
+0041c4e9 
+0041c68d if (ebp_1[-0x11] u>= 0x10)
+0041c692     sub_4208bb(ebp_1[-0x16])
+0041c692 
+0041c69a bool cond:0 = ebp_1[-0x17] u< 0x10
+0041c69e ebp_1[-0x11] = 0xf
+0041c6a5 ebp_1[-0x12] = 0
+0041c6ac ebp_1[-0x16].b = 0
+0041c6ac 
+0041c6b0 if (not(cond:0))
+0041c6b5     sub_4208bb(ebp_1[-0x1c])
+0041c6b5 
+0041c6c2 fsbase->NtTib.ExceptionList = ebp_1[-3]
+0041c6cd ebp_1[-4]
+0041c6d2 int32_t result = sub_53b554()
+0041c6d9 *ebp_1
+0041c6da return result

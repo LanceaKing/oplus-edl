@@ -1,0 +1,53 @@
+0042fb70 push    ebp
+0042fb71 mov     ebp, esp
+0042fb73 push    0xffffffff
+0042fb75 push    0x6ce4b8
+0042fb7a mov     eax, dword [fs:0x0]
+0042fb80 push    eax
+0042fb81 push    ecx
+0042fb82 push    esi
+0042fb83 push    edi
+0042fb84 mov     eax, dword [0x7c0bb0]
+0042fb89 xor     eax, ebp
+0042fb8b push    eax
+0042fb8c lea     eax, [ebp-0xc]
+0042fb8f mov     dword [fs:0x0], eax
+0042fb95 mov     esi, ecx
+0042fb97 mov     ecx, dword [esi+0xc8]
+0042fb9d mov     ecx, dword [ecx]
+0042fb9f call    0x4ae010
+0042fba4 mov     ecx, dword [esi+0xc8]
+0042fbaa lea     eax, [ebp-0x10]
+0042fbad push    eax
+0042fbae call    0x4ad2d0
+0042fbb3 push    eax
+0042fbb4 lea     ecx, [esi+0xbc]
+0042fbba mov     dword [ebp-0x4], 0x0
+0042fbc1 call    0x41a720
+0042fbc6 mov     dword [ebp-0x4], 0xffffffff
+0042fbcd or      ecx, 0xffffffff
+0042fbd0 mov     edx, dword [ebp-0x10]
+0042fbd3 add     edx, 0xfffffff0
+0042fbd6 lea     eax, [edx+0xc]
+0042fbd9 lock xadd dword [eax], ecx
+0042fbdd dec     ecx
+0042fbde test    ecx, ecx
+0042fbe0 jg      0x42fbea
+0042fbea push    dword [esi+0xbc]
+0042fbf0 mov     ecx, esi
+0042fbf2 push    0x42d
+0042fbf7 call    0x5735d5
+0042fbfc mov     ecx, eax
+0042fbfe call    0x57390c
+0042fc03 mov     ecx, dword [ebp-0xc]
+0042fc06 mov     dword [fs:0x0], ecx
+0042fc0d pop     ecx
+0042fc0e pop     edi
+0042fc0f pop     esi
+0042fc10 mov     esp, ebp
+0042fc12 pop     ebp
+0042fc13 retn    
+0042fbe2 mov     ecx, dword [edx]
+0042fbe4 push    edx
+0042fbe5 mov     eax, dword [ecx]
+0042fbe7 call    dword [eax+0x4]

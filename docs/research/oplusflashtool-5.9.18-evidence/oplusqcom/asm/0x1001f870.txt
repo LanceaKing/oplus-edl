@@ -1,0 +1,143 @@
+1001f870 push    ebp
+1001f871 mov     ebp, esp
+1001f873 sub     esp, 0xb4
+1001f879 mov     eax, dword [0x10084090]
+1001f87e xor     eax, ebp
+1001f880 mov     dword [ebp-0x4], eax
+1001f883 push    ebx
+1001f884 push    esi
+1001f885 push    edi
+1001f886 xor     eax, eax
+1001f888 mov     dword [ebp-0xb4], 0x0
+1001f892 push    0x80
+1001f897 push    eax
+1001f898 mov     dword [ebp-0xb], eax
+1001f89b xorps   xmm0, xmm0
+1001f89e mov     word [ebp-0x7], ax
+1001f8a2 mov     edi, ecx
+1001f8a4 mov     byte [ebp-0x5], al
+1001f8a7 lea     eax, [ebp-0x90]
+1001f8ad push    eax
+1001f8ae mov     byte [ebp-0xb0], 0x0
+1001f8b5 movups  xmmword [ebp-0xaf], xmm0
+1001f8bc mov     dword [ebp-0x97], 0x0
+1001f8c6 movq    qword [ebp-0x9f], xmm0
+1001f8ce mov     word [ebp-0x93], 0x0
+1001f8d7 mov     byte [ebp-0x91], 0x0
+1001f8de mov     byte [ebp-0xc], 0x0
+1001f8e2 call    0x10060730
+1001f8e7 mov     ecx, dword [edi+0x24]
+1001f8ea lea     eax, [ebp-0xb4]
+1001f8f0 add     esp, 0x8
+1001f8f3 push    eax
+1001f8f4 call    0x10037bb0
+1001f8f9 test    eax, eax
+1001f8fb je      0x1001f94a
+1001f94a mov     ebx, dword [0x10069424]
+1001f950 xor     esi, esi
+1001f8fd mov     ecx, dword [edi+0x1c]
+1001f900 lea     eax, [ecx+0x444]
+1001f906 push    eax
+1001f907 lea     eax, [ecx+0x9e4]
+1001f90d push    eax
+1001f90e push    0x10071a64
+1001f913 push    0x12f7
+1001f918 push    0x10071aa0
+1001f91d call    dword [0x10069000]
+1001f923 add     esp, 0x14
+1001f926 push    0x10071ac4
+1001f92b push    edi
+1001f92c call    0x10024880
+1001f931 add     esp, 0x8
+1001f934 mov     eax, 0x791a
+1001f939 pop     edi
+1001f93a pop     esi
+1001f93b pop     ebx
+1001f93c mov     ecx, dword [ebp-0x4]
+1001f93f xor     ecx, ebp
+1001f941 call    0x1005f640
+1001f946 mov     esp, ebp
+1001f948 pop     ebp
+1001f949 retn    
+1001f952 movzx   eax, byte [ebp+esi-0xb0]
+1001f95a push    eax
+1001f95b push    0x1006a070
+1001f960 lea     eax, [ebp-0xc]
+1001f963 push    0x8
+1001f965 push    eax
+1001f966 call    0x1000c8d0
+1001f96b lea     eax, [ebp-0xc]
+1001f96e push    eax
+1001f96f lea     eax, [ebp-0x90]
+1001f975 push    0x80
+1001f97a push    eax
+1001f97b call    ebx
+1001f97d inc     esi
+1001f97e add     esp, 0x1c
+1001f981 cmp     esi, 0x20
+1001f984 jb      0x1001f952
+1001f986 mov     ecx, dword [edi+0x1c]
+1001f989 lea     eax, [ebp-0x90]
+1001f98f mov     esi, dword [ebp-0xb4]
+1001f995 mov     ebx, dword [0x10069000]
+1001f99b push    eax
+1001f99c push    esi
+1001f99d lea     eax, [ecx+0x444]
+1001f9a3 push    eax
+1001f9a4 lea     eax, [ecx+0x9e4]
+1001f9aa push    eax
+1001f9ab push    0x10071ad8
+1001f9b0 push    0x1301
+1001f9b5 push    0x10071aa0
+1001f9ba call    ebx
+1001f9bc mov     eax, dword [edi+0x1c]
+1001f9bf add     esp, 0x1c
+1001f9c2 add     eax, 0xcb4
+1001f9c7 push    esi
+1001f9c8 push    0x10071b08
+1001f9cd push    eax
+1001f9ce call    0x1002dd90
+1001f9d3 add     esp, 0xc
+1001f9d6 lea     eax, [edi+0x17e0]
+1001f9dc lea     edx, [ebp-0x90]
+1001f9e2 mov     ecx, esi
+1001f9e4 push    eax
+1001f9e5 call    0x1002ff80
+1001f9ea add     esp, 0x4
+1001f9ed test    eax, eax
+1001f9ef je      0x1001fa39
+1001fa39 mov     ecx, dword [ebp-0x4]
+1001fa3c xor     eax, eax
+1001fa3e pop     edi
+1001fa3f pop     esi
+1001fa40 xor     ecx, ebp
+1001fa42 pop     ebx
+1001fa43 call    0x1005f640
+1001fa48 mov     esp, ebp
+1001fa4a pop     ebp
+1001fa4b retn    
+1001f9f1 mov     ecx, dword [edi+0x1c]
+1001f9f4 push    esi
+1001f9f5 lea     eax, [ecx+0x444]
+1001f9fb push    eax
+1001f9fc lea     eax, [ecx+0x9e4]
+1001fa02 push    eax
+1001fa03 push    0x10071b0c
+1001fa08 push    0x1304
+1001fa0d push    0x10071aa0
+1001fa12 call    ebx
+1001fa14 push    esi
+1001fa15 push    0x10071b40
+1001fa1a push    edi
+1001fa1b call    0x10024880
+1001fa20 add     esp, 0x24
+1001fa23 mov     eax, 0x7535
+1001fa28 pop     edi
+1001fa29 pop     esi
+1001fa2a pop     ebx
+1001fa2b mov     ecx, dword [ebp-0x4]
+1001fa2e xor     ecx, ebp
+1001fa30 call    0x1005f640
+1001fa35 mov     esp, ebp
+1001fa37 pop     ebp
+1001fa38 retn    

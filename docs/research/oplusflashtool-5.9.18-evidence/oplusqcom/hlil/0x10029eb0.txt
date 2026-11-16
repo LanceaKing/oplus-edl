@@ -1,0 +1,63 @@
+10029eb7 char* _FileName = arg2
+10029eb7 
+10029ebf if (_FileName == 0)
+10029ec8     return 0
+10029ec8 
+10029ecc char* _FileName_1 = _FileName
+10029ed6 char i
+10029ed6 
+10029ed6 do
+10029ed1     i = *_FileName_1
+10029ed3     _FileName_1 = &_FileName_1[1]
+10029ed6 while (i != 0)
+10029ed6 
+10029ed8 void* edi = _FileName_1 - &_FileName_1[1]
+10029ed8 
+10029edc if (edi s<= 0)
+10029ee4     return i
+10029ee4 
+10029ef5 if (_access(_FileName, 0) == 0)
+10029ef7     int32_t ecx_1 = *(arg1 + 0x1c)
+10029f18     opdbg_log("QCFlashWorker::createDirectoryRecursive", 0x1d38, 
+10029f18         "[%s] [%s] INFO: path %s is exists.", ecx_1 + 0x9e4, ecx_1 + 0x444, _FileName)
+10029f21     int32_t eax_3
+10029f21     eax_3.b = 1
+10029f29     return eax_3
+10029f29 
+10029f2f rsize_t var_1c_1 = edi + 1
+10029f30 char* eax_4 = sub_1005f6bf()
+10029f3c strcpy_s(eax_4, edi + 1, arg2)
+10029f45 *(eax_4 + edi) = 0
+10029f52 char* i_1 = nullptr
+10029f54 char var_5 = 1
+10029f54 
+10029f5d if (edi - 1 s> 0)
+10029fa2     do
+10029f60         PSTR eax_5
+10029f60         eax_5.b = *(i_1 + eax_4)
+10029f60         
+10029f69         if (eax_5.b == 0x5c || eax_5.b == 0x2f)
+10029f6e             *(i_1 + eax_4 + 1) = 0
+10029f6e             
+10029f7a             if (_access(eax_4, 0) != 0)
+10029f7d                 BOOL lpSecurityAttributes = PathIsDirectoryA(eax_4)
+10029f7d                 
+10029f85                 if (lpSecurityAttributes == 0 && CreateDirectoryA(eax_4, lpSecurityAttributes) == 0)
+10029fa6                     var_5 = 0
+10029fa6                     break
+10029fa6             
+10029f96             eax_5.b = *(i_1 + arg2 + 1)
+10029f9a             *(i_1 + eax_4 + 1) = eax_5.b
+10029f9a         
+10029f9e         i_1 = &i_1[1]
+10029fa2     while (i_1 s< edi - 1)
+10029fa2 
+10029fb7 if (_access(arg2, 0) != 0)
+10029fbc     BOOL eax_9 = CreateDirectoryA(arg2, nullptr)
+10029fc2     char eax_10 = (neg.d(eax_9)).b
+10029fc6     var_5 &= sbb.b(eax_10, eax_10, eax_9 != 0)
+10029fc6 
+10029fca sub_1005f6ba(eax_4)
+10029fcf int32_t eax_11
+10029fcf eax_11.b = var_5
+10029fdb return eax_11

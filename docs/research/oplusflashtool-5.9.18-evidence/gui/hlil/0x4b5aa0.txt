@@ -1,0 +1,70 @@
+004b5aa3 int32_t var_8 = 0xffffffff
+004b5aa5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_4e95d9
+004b5ab0 TEB* fsbase
+004b5ab0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004b5aba int32_t __saved_ebp
+004b5aba char* eax_2 = __security_cookie ^ &__saved_ebp
+004b5ac0 fsbase->NtTib.ExceptionList = &ExceptionList
+004b5ac8 sub_41cbc0()
+004b5ad6 data_58a0e8 = 1
+004b5ae1 char var_14
+004b5ae1 char* eax_3 = sub_4ba340(&var_14, "stopFlash", 0, 0xffffffff)
+004b5aed int32_t var_8_1 = 0
+004b5b00 int32_t var_8_2 = 0xffffffff
+004b5b07 QString::~QString(QAbstractButton::setText(*(*(arg1 + 0x34) + 0x54), eax_3))
+004b5b13 int32_t var_3c_1 = 0x14
+004b5b15 int32_t var_40 = *(arg1 + 0x34) + 0x54
+004b5b16 sub_41cbc0()
+004b5b1d sub_4273f0()
+004b5b2f char* eax_6 = sub_4ba340(&var_14, "Flashing", 0, 0xffffffff)
+004b5b3b int32_t var_8_3 = 1
+004b5b4e int32_t var_8_4 = 0xffffffff
+004b5b55 QString::~QString(QLabel::setText(*(*(arg1 + 0x34) + 0x1c), eax_6))
+004b5b61 char* var_3c_3 = &var_14
+004b5b65 class QString* eax_7 = QLabel::text(*(*(arg1 + 0x34) + 0x1c))
+004b5b6f int32_t var_8_5 = 2
+004b5b82 int32_t var_8_6 = 0xffffffff
+004b5b89 QString::~QString(QWidget::setToolTip(*(*(arg1 + 0x34) + 0x1c), eax_7))
+004b5b89 
+004b5ba9 if (data_58c818 s> *(*(fsbase->ThreadLocalStoragePointer + (data_58d99c << 2)) + 4))
+004b5bb0     __Init_thread_header(&data_58c818)
+004b5bb0     
+004b5bbf     if (data_58c818 == 0xffffffff)
+004b5bc6         int32_t var_8_7 = 3
+004b5bcd         sub_43c920(&data_58a018)
+004b5bd7         _atexit(sub_4eba00)
+004b5be1         int32_t var_8_8 = 0xffffffff
+004b5be8         sub_4ce058(&data_58c818)
+004b5be8 
+004b5bfa bool eax_10
+004b5bfa QFont* ecx_14
+004b5bfa eax_10, ecx_14 = QString::operator==(&data_58a054, "Turkish")
+004b5bfa 
+004b5c02 if (eax_10 != 0)
+004b5c1f     int32_t var_8_9 = 4
+004b5c26     QFont::setPointSize(QFont::QFont(ecx_14, *(*(*(arg1 + 0x34) + 0x1c) + 0x14) + 0x28), 0xe)
+004b5c3f     int32_t var_8_10 = 0xffffffff
+004b5c46     class QFont var_18
+004b5c46     ecx_14 = QFont::~QFont(QWidget::setFont(*(*(arg1 + 0x34) + 0x1c), &var_18))
+004b5c46 
+004b5c4f void var_1c
+004b5c4f void* var_3c_7 = &var_1c
+004b5c67 char const* const var_3c_8 = "start flash success"
+004b5c6c void* const var_40_1 = &data_4f2998
+004b5c71 int32_t var_44 = 0x395
+004b5c76 void* const var_48_2 = &data_4f2994
+004b5c7b char const* const var_4c = "StartFlashing::StartFlashTask"
+004b5c87 int32_t var_8_11 = 5
+004b5cbf int32_t var_8_12 = 0xffffffff
+004b5cc6 int32_t result = QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(
+004b5cc6     QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+004b5cc6         QMessageLogger::info(QMessageLogger::QMessageLogger(ecx_14, nullptr, 0, nullptr)), 
+004b5cc6         "[FTGuiSales][")))), 
+004b5cc6     eax_2)))
+004b5cc6 
+004b5cd0 if (*(arg1 + 0x7c) == 0)
+004b5cd2     int32_t var_3c_9 = 0
+004b5cd6     result = sub_4b41c0(arg1)
+004b5cd6 
+004b5cde fsbase->NtTib.ExceptionList = ExceptionList
+004b5cea return result

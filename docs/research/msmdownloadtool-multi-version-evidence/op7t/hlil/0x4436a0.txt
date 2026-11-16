@@ -1,0 +1,768 @@
+004436a0 int32_t __saved_ebp_2
+004436a0 int32_t __saved_ebp_1 = __saved_ebp_2
+004436a6 __security_cookie
+004436b0 int32_t ebx
+004436b0 int32_t var_48 = ebx
+004436b1 int32_t esi
+004436b1 int32_t var_4c = esi
+004436b4 int32_t var_2c = 0
+004436bb int32_t edi
+004436bb int32_t var_50 = edi
+004436bc int32_t* ebx_1 = nullptr
+004436be int32_t* var_28 = nullptr
+004436ca void* esi_1 = arg1
+004436cc char var_14 = 0
+004436d5 int32_t var_13 = 0
+004436d8 int16_t var_f = 0
+004436dc char var_d = 0
+004436df int32_t var_38 = 0
+004436e2 int32_t* var_1c = nullptr
+004436e5 char var_15 = 0
+004436e8 int32_t eax_2 = sub_4f080d(0x1000)
+004436ed int32_t* esp_1 = &var_50
+004436ed 
+004436f5 if (eax_2 != 0)
+004436fb     bool cond:0_1 = *(esi_1 + 0x1c) == 2
+00443702     *(esi_1 + 0x44) = 0xffffffff
+0044370b     __builtin_memset(esi_1 + 0x1004b8, 0, 0x1c)
+00443713     char eax_3 = 0
+00443713     
+0044371e     if (cond:0_1)
+0044371e         eax_3 = 1
+0044371e     
+00443727     *(esi_1 + 0x1004d5) = 0
+0044372f     *(esi_1 + 0x1004dd) = 0
+00443735     *(esi_1 + 0x1004e1) = 0
+0044373c     char var_34_1 = eax_3
+0044373f     char var_3c_1 = eax_3
+00443748     *(esi_1 + 0x1004e3) = 0
+0044374e     void* const var_54_1 = &data_6d86e0
+00443754     *(esi_1 + 0x5c) = 0xffffffff
+0044375b     *(esi_1 + 0x60) = 0xffffffff
+00443762     *(esi_1 + 0x64) = 0xffffffff
+00443769     sub_44d900(esi_1 + 0x2b8, var_54_1)
+00443784     int32_t eax_9 = zx.d((*(esi_1 + 0x30)).b) << 0x10 | 9
+00443788     int32_t var_5c_1 = 0x178c
+0044378d     int32_t var_60 = *(esi_1 + 0x34)
+0044378d     int32_t* esp_2 = &var_60
+00443790     0x3095d0(var_60, var_5c_1, eax_9, esi_1 + 0x2b8)
+00443796     int32_t eax_10 = 2
+00443796     
+004437ad     while (true)
+004437ad         uint32_t eax_14 = zx.d((*(esi_1 + 0x30)).b) << 0x10
+004437b4         void* esp_3
+004437b4         
+004437b4         if (*(esi_1 + 0x20) == 0)
+004437bd             *(esp_2 - 4) = u"Open Serial device"
+004437bd             esp_3 = esp_2 - 4
+004437b4         else
+004437b6             *(esp_2 - 4) = &data_6e04ec
+004437b6             esp_3 = esp_2 - 4
+004437b6         
+004437c2         *(esp_3 - 4) = eax_14
+004437c8         *(esp_3 - 8) = 0x178c
+004437cd         *(esp_3 - 0xc) = *(esi_1 + 0x34)
+004437d0         0x3095d0()
+004437d2         *(esi_1 + 0x24)
+004437d5         sub_44e390()
+004437e3         *(esi_1 + 0x24)
+004437eb         *(esp_3 - 0x20) = *(esi_1 + 0x84) + 0x414
+004437eb         
+004437f3         if (sub_44e290() != 0)
+00443ec1             int32_t eax_80 = (zx.d((*(esi_1 + 0x30)).b) | 0x100) << 0x10
+00443ec8             void* esp_164
+00443ec8             
+00443ec8             if (*(esi_1 + 0x20) == 0)
+00443ed1                 *esp_3 = u"Open Serial Device Failed"
+00443ed1                 esp_164 = esp_3
+00443ec8             else
+00443eca                 *esp_3 = &data_6e04a4
+00443eca                 esp_164 = esp_3
+00443eca             
+00443ed6             *(esp_164 - 4) = eax_80
+00443ed7             *(esp_164 - 8) = 0x178c
+00443edc             *(esp_164 - 0xc) = *(esi_1 + 0x34)
+00443edc             esp_2 = esp_164 - 0xc
+00443edf             0x3095d0()
+00443ee5             eax_10 -= 1
+00443ee5             
+00443eea             if (eax_10 s> 0)
+00443eea                 goto label_443ef0
+004437f3         else
+004437fe             *(*(esi_1 + 0x24) + 4) = 3
+00443808             *esp_3 = &var_2c
+00443809             sub_44cc80()
+0044380e             *esp_3 = 0xc8
+00443813             0x3086d4()
+00443819             *(esp_3 - 4) = var_2c
+0044381e             int32_t eax_19
+0044381e             int32_t ecx_4
+0044381e             eax_19, ecx_4 = sub_444450(esi_1)
+0044381e             void* esp_14 = esp_3
+0044381e             
+00443827             if (eax_19 != 0)
+004440c7             label_4440c7:
+004440c7                 void* eax_91 = *(esi_1 + 0x24)
+004440ca                 *(esp_14 - 4) = *(eax_91 + 8)
+004440cd                 *(eax_91 + 4) = 4
+004440d4                 *(esp_14 - 8) = ecx_4
+004440d5                 sub_d31ad1()
+004440d5                 esp_2 = esp_14
+004440da                 *(esi_1 + 0x24)
+004440dd                 sub_44e390()
+00443827             else
+0044382d                 *(esp_14 - 4) = 0xc8
+00443832                 0x3086d4()
+00443841                 uint32_t eax_22 = zx.d((*(esi_1 + 0x30)).b) << 0x10
+00443848                 void* esp_16
+00443848                 
+00443848                 if (*(esi_1 + 0x20) == 0)
+00443851                     *(esp_14 - 8) = u"Try Firehose Communication Handshake"
+00443851                     esp_16 = esp_14 - 8
+00443848                 else
+0044384a                     *(esp_14 - 8) = 0x6e0598
+0044384a                     esp_16 = esp_14 - 8
+0044384a                 
+00443856                 *(esp_16 - 4) = eax_22
+00443857                 *(esp_16 - 8) = 0x178c
+0044385c                 *(esp_16 - 0xc) = *(esi_1 + 0x34)
+0044385f                 0x3095d0()
+00443865                 *(esi_1 + 0x2c)
+00443865                 
+00443871                 if (sub_451160() != 0)
+004440a3                     int32_t eax_90 = (zx.d((*(esi_1 + 0x30)).b) | 0x100) << 0x10
+004440aa                     void* esp_221
+004440aa                     
+004440aa                     if (*(esi_1 + 0x20) == 0)
+004440b3                         *(esp_16 + 4) = u"Firehose Communication Handshake Failed"
+004440b3                         esp_221 = esp_16 + 4
+004440aa                     else
+004440ac                         *(esp_16 + 4) = 0x6e0524
+004440ac                         esp_221 = esp_16 + 4
+004440ac                     
+004440b8                     *(esp_221 - 4) = eax_90
+004440b9                     *(esp_221 - 8) = 0x178c
+004440be                     *(esp_221 - 0xc) = *(esi_1 + 0x34)
+004440be                     esp_14 = esp_221 - 0xc
+004440c1                     ecx_4 = 0x3095d0()
+004440c1                     goto label_4440c7
+004440c1                 
+00443877                 *(esp_16 + 4) = 0x3e8
+0044387c                 0x3086d4()
+0044388b                 uint32_t eax_26 = zx.d((*(esi_1 + 0x30)).b) << 0x10
+00443892                 void* esp_22
+00443892                 
+00443892                 if (*(esi_1 + 0x20) == 0)
+0044389b                     *esp_16 = u"Setting Firehose Communication data transmission"
+0044389b                     esp_22 = esp_16
+00443892                 else
+00443894                     *esp_16 = "ck(WM"
+00443894                     esp_22 = esp_16
+00443894                 
+004438a0                 *(esp_22 - 4) = eax_26
+004438a1                 *(esp_22 - 8) = 0x178c
+004438a6                 *(esp_22 - 0xc) = *(esi_1 + 0x34)
+004438a9                 0x3095d0()
+004438b3                 *(esi_1 + 0x2c)
+004438b6                 void* esp_27
+004438b6                 
+004438b6                 if (*(esi_1 + 0x21) == 0)
+004438bf                     *(esp_22 - 0x10) = 0
+004438c1                     *(esp_22 - 0x14) = 0
+004438c1                     esp_27 = esp_22 - 0x14
+004438b6                 else
+004438b8                     *(esp_22 - 0x10) = var_3c_1.d
+004438bb                     *(esp_22 - 0x14) = 1
+004438bb                     esp_27 = esp_22 - 0x14
+004438bb                 
+004438c3                 *(esp_27 - 4) = 0x80000
+004438c8                 int32_t eax_27
+004438c8                 eax_27, ecx_4 = std::num_put<uint16_t,class std::ostreambuf_iterator<uint16_t,struct std::char_traits<uint16_t> > >::_Iput()
+004438c8                 esp_14 = esp_27 + 0x1c
+004438c8                 
+004438d1                 if (eax_27 != 0)
+004438d1                     goto label_4440c7
+004438d1                 
+004438da                 int32_t i_1
+004438da                 
+004438da                 if (*(esi_1 + 0x21) != eax_27.b)
+004438e0                     *(esp_14 - 4) = 0xc8
+004438e5                     0x3086d4()
+004438eb                     bool cond:2_1 = *(esi_1 + 0x20) == 0
+004438ef                     *(esp_14 - 8) = eax_27
+004438f0                     void* esp_32
+004438f0                     
+004438f0                     if (cond:2_1)
+004438f9                         *(esp_14 - 0xc) = u"Firehose GetUfsInfo"
+004438f9                         esp_32 = esp_14 - 0xc
+004438f0                     else
+004438f2                         *(esp_14 - 0xc) = 0x6e060c
+004438f2                         esp_32 = esp_14 - 0xc
+004438f2                     
+004438fe                     *(esp_32 - 4) = 0
+00443900                     *(esp_32 - 8) = *(esi_1 + 0x30)
+00443903                     *(esp_32 - 0xc) = *(esi_1 + 0x34)
+00443906                     sub_443400()
+0044390b                     *(esi_1 + 0x2c)
+00443911                     *(esp_32 - 0xc) = &var_38
+00443915                     *(esp_32 - 0x10) = &var_14
+00443916                     esp_14 = esp_32 + 0xc
+0044391b                     i_1 = sub_452140()
+0044391b                     
+0044391f                     if (i_1 != 0)
+00443f15                         bool cond:3_1 = *(esi_1 + 0x20) == 0
+00443f19                         *(esp_14 - 4) = 1
+00443f1b                         void* esp_170
+00443f1b                         
+00443f1b                         if (cond:3_1)
+00443f24                             *(esp_14 - 8) = u"Firehose GetUfsInfo Failed"
+00443f24                             esp_170 = esp_14 - 8
+00443f1b                         else
+00443f1d                             *(esp_14 - 8) = 0x6e0708
+00443f1d                             esp_170 = esp_14 - 8
+00443f1d                         
+00443f29                         *(esp_170 - 4) = 0
+00443f2b                         *(esp_170 - 8) = *(esi_1 + 0x30)
+00443f2e                         *(esp_170 - 0xc) = *(esi_1 + 0x34)
+00443f31                         sub_443400()
+00443f31                         esp_1 = esp_170 - 8
+00443f38                         sub_443580(esi_1)
+00443f3d                         break
+00443f3d                     
+00443925                     int32_t* eax_29 = *(esi_1 + 0x90)
+0044392b                     int32_t i = i_1
+00443937                     int32_t eax_30
+00443937                     int32_t edx_1
+00443937                     edx_1:eax_30 = muls.dp.d(0x51eb851f, eax_29[1] - *eax_29)
+00443939                     int32_t edx_2 = edx_1 s>> 5
+0044393e                     uint32_t eax_32 = edx_2 u>> 0x1f
+0044393e                     
+00443946                     if (eax_32 != neg.d(edx_2))
+00443998                         do
+00443950                             int32_t* eax_34 = *(esi_1 + 0x90)
+00443956                             *(esp_14 - 4) = "samsung"
+0044395d                             int32_t* eax_36 = *eax_34 + i_1
+00443961                             var_1c = eax_36
+00443969                             int32_t* edx_3 = var_28
+00443969                             
+00443971                             if (sub_40f960(eax_36) == 0)
+00443971                                 edx_3 = var_1c
+00443971                             
+0044397b                             var_28 = edx_3
+0044397b                             
+0044397e                             if (*(esi_1 + 0x1004e5) != 0)
+00443f02                                 *esp_14
+00443f03                                 *(esp_14 + 4)
+00443f04                                 *(esp_14 + 8)
+00443f12                                 return sub_60bdca()
+00443f12                             
+00443987                             *(esp_14 - 4) = &var_14
+00443987                             
+0044398f                             if (sub_40f960(var_1c) == 0)
+004439e6                                 var_15 = 1
+004439e6                                 goto label_4439ea
+004439e6                             
+00443991                             i += 1
+00443992                             i_1 += 0x64
+00443998                         while (i u< eax_32 + edx_2)
+00443998                     
+004439a5                     if (var_15 != 0 || var_28 == 0)
+004439ea                     label_4439ea:
+004439ea                         ebx_1 = var_1c
+004439a5                     else
+004439a7                         ebx_1 = var_28
+004439a9                         var_15 = 1
+004439ad                         *(esp_14 - 4) = &data_6d9770
+004439b2                         *(esp_14 - 8) = "C:/ToolLog.txt"
+004439b7                         var_1c = ebx_1
+004439ba                         int32_t eax_40 = std::_Deallocate<64,0>()
+004439ba                         
+004439c6                         if (eax_40 != 0)
+004439cc                             *(esp_14 - 4) = *(esi_1 + 0x30) + 1
+004439cd                             *(esp_14 - 8) = "[%d] Use default provision file.\n"
+004439d2                             *(esp_14 - 0xc) = eax_40
+004439d3                             _fprintf()
+004439db                             *(esp_14 - 4) = eax_40
+004439dc                             _fclose()
+004439dc                 
+004439ed                 *(esp_14 - 4) = var_38
+004439f2                 int32_t eax_41
+004439f2                 eax_41, ecx_4 = sub_445070(esi_1)
+004439f2                 
+004439fb                 if (eax_41 != 0)
+004439fb                     goto label_4440c7
+004439fb                 
+00443a20                 if (*(esi_1 + 0x21) == eax_41.b || *(esi_1 + 0x1c) != 2 || var_15 == eax_41.b
+00443a20                     || var_34_1 == eax_41.b)
+00443b24                 label_443b24:
+00443b24                     int32_t eax_52
+00443b24                     eax_52, ecx_4 = sub_44cee0()
+00443b24                     
+00443b2d                     if (eax_52 != 0)
+00443b2d                         goto label_4440c7
+00443b2d                     
+00443b33                     *(esp_14 - 4) = eax_52
+00443b36                     int32_t eax_53 = sub_447ed0()
+00443b36                     esp_2 = esp_14
+00443b36                     
+00443b3f                     if (eax_53 != 0)
+0044402f                         sub_443580(esi_1)
+00443b3f                     else
+00443b49                         if (*(esi_1 + 0x1c) != 2)
+00443b55                             *(esp_2 - 4) = esi_1 + 0x50
+00443b55                             
+00443b5d                             if (sub_4484d0() == 0)
+00443b5f                                 *(esp_2 - 4) = &data_6d9770
+00443b64                                 *(esp_2 - 8) = "C:/ToolLog.txt"
+00443b69                                 int32_t eax_56 = std::_Deallocate<64,0>()
+00443b69                                 
+00443b75                                 if (eax_56 != 0)
+00443b7b                                     *(esp_2 - 4) = *(esi_1 + 0x30) + 1
+00443b7c                                     *(esp_2 - 8) = "[%d] Failed to get cf. Use default value \n"
+00443b81                                     *(esp_2 - 0xc) = eax_56
+00443b82                                     _fprintf()
+00443b8a                                     *(esp_2 - 4) = eax_56
+00443b8b                                     _fclose()
+00443b49                         else
+00443b4b                             *(esi_1 + 0x50) = eax_53
+00443b4b                         
+00443b97                         if (*(esi_1 + 0x40) != 1)
+00443baa                             *(esp_2 - 4) = &data_6d9770
+00443baf                             *(esp_2 - 8) = "C:/ToolLog.txt"
+00443bb4                             int32_t eax_58 = std::_Deallocate<64,0>()
+00443bb4                             
+00443bc0                             if (eax_58 != 0)
+00443bc6                                 *(esp_2 - 4) = *(esi_1 + 0x30) + 1
+00443bc7                                 *(esp_2 - 8) = "[%d] The image has single image only.\n"
+00443bcc                                 *(esp_2 - 0xc) = eax_58
+00443bcd                                 _fprintf()
+00443bd5                                 *(esp_2 - 4) = eax_58
+00443bd6                                 _fclose()
+00443bd6                             
+00443bde                             *(esi_1 + 0x3c) = 0
+00443bde                             goto label_443beb
+00443bde                         
+00443ba2                         if (___std_tzdb_get_leap_seconds@8() == 0)
+0044402f                             sub_443580(esi_1)
+00443ba2                         else
+00443beb                         label_443beb:
+00443bf2                             int32_t ebx_7
+00443bf2                             void* esp_183
+00443bf2                             
+00443bf2                             if (*(*(esi_1 + 0x88) + 0xb0) s<= 0)
+00443c1d                             label_443c1d:
+00443c1d                                 
+00443c21                                 if (sub_445580(esi_1) != 0)
+0044402f                                     sub_443580(esi_1)
+00443c21                                 else if (*(esi_1 + 0x1c) != 2)
+00443c5d                                 label_443c5d:
+00443c5d                                     *(esp_2 - 4) = 1
+00443c5d                                     
+00443c6c                                     if (sub_447ed0() != 0)
+0044402f                                         sub_443580(esi_1)
+00443c6c                                     else
+00443c72                                         int32_t eax_65 =
+00443c72                                             DBI1::QueryImodFromAddrHelper<struct SC>(esi_1)
+00443c72                                         
+00443c7b                                         if (eax_65 != 0)
+0044402f                                             sub_443580(esi_1)
+00443c7b                                         else
+00443c84                                             void* esp_102
+00443c84                                             
+00443c84                                             if (*(esi_1 + 0x4b) != eax_65.b)
+00443c86                                                 *(esp_2 - 4) = &data_6d9770
+00443c8b                                                 *(esp_2 - 8) = "C:/ToolLog.txt"
+00443c90                                                 int32_t eax_66 = std::_Deallocate<64,0>()
+00443c97                                                 esp_102 = esp_2
+00443c97                                                 
+00443c9c                                                 if (eax_66 != 0)
+00443ca2                                                     *(esp_102 - 4) = *(esi_1 + 0x30) + 1
+00443ca3                                                     *(esp_102 - 8) = "[%d] Skip Patching\n"
+00443ca8                                                     *(esp_102 - 0xc) = eax_66
+00443ca9                                                     _fprintf()
+00443cb1                                                     *(esp_102 - 4) = eax_66
+00443cb2                                                     _fclose()
+00443cb2                                                 
+00443c9c                                                 goto label_443cc0
+00443c9c                                             
+00443cfa                                             bool cond:8_1 = *(esi_1 + 0x20) == 0
+00443cfe                                             *(esp_2 - 4) = 0
+00443d00                                             void* esp_113
+00443d00                                             
+00443d00                                             if (cond:8_1)
+00443d09                                                 *(esp_2 - 8) = u"Write patch to DISK"
+00443d09                                                 esp_113 = esp_2 - 8
+00443d00                                             else
+00443d02                                                 *(esp_2 - 8) = 0x6e0874
+00443d02                                                 esp_113 = esp_2 - 8
+00443d02                                             
+00443d0e                                             *(esp_113 - 4) = 0
+00443d10                                             *(esp_113 - 8) = *(esi_1 + 0x30)
+00443d13                                             *(esp_113 - 0xc) = *(esi_1 + 0x34)
+00443d16                                             sub_443400()
+00443d22                                             i_1 = sub_44bf30()
+00443d22                                             
+00443d26                                             if (i_1 != 0)
+00444039                                                 bool cond:9_1 = *(esi_1 + 0x20) == 0
+0044403d                                                 *(esp_113 + 4) = 1
+0044403f                                                 void* esp_209
+0044403f                                                 
+0044403f                                                 if (cond:9_1)
+00444048                                                     *esp_113 = u"Write patch to DISK Failed"
+00444048                                                     esp_209 = esp_113
+0044403f                                                 else
+00444041                                                     *esp_113 = 0x6e095c
+00444041                                                     esp_209 = esp_113
+00444041                                                 
+0044404d                                                 *(esp_209 - 4) = 0
+0044404f                                                 *(esp_209 - 8) = *(esi_1 + 0x30)
+00444052                                                 *(esp_209 - 0xc) = *(esi_1 + 0x34)
+00444055                                                 sub_443400()
+0044405c                                                 void* esi_3 = sub_443580(esi_1)
+00444061                                                 *(esp_209 - 0xc) = &data_6d9770
+00444066                                                 *(esp_209 - 0x10) = "C:/ToolLog.txt"
+0044406b                                                 int32_t eax_86 = std::_Deallocate<64,0>()
+00444072                                                 esp_2 = esp_209 - 8
+00444072                                                 
+00444077                                                 if (eax_86 != 0)
+00444079                                                     int32_t ecx_59 = *(esi_3 + 0x30)
+0044407c                                                     *(esp_2 - 4) = i_1
+0044407e                                                     *(esp_2 - 8) = ecx_59 + 1
+0044407f                                                     *(esp_2 - 0xc) =
+0044407f                                                         "[%d] Write Patches Failed! (%d)\n"
+00444084                                                     *(esp_2 - 0x10) = eax_86
+00444085                                                     _fprintf()
+0044408a                                                     *(esp_2 - 0x14) = eax_86
+0044408b                                                     _fclose()
+00443d26                                             else
+00443d2c                                                 *(esp_113 + 4) = &data_6d9770
+00443d31                                                 *esp_113 = "C:/ToolLog.txt"
+00443d36                                                 int32_t eax_70 = std::_Deallocate<64,0>()
+00443d3d                                                 void* esp_121 = esp_113 + 8
+00443d3d                                                 
+00443d42                                                 if (eax_70 != 0)
+00443d48                                                     *(esp_121 - 4) = *(esi_1 + 0x30) + 1
+00443d49                                                     *(esp_121 - 8) = "[%d] Write Patches success!\n"
+00443d4e                                                     *(esp_121 - 0xc) = eax_70
+00443d4f                                                     _fprintf()
+00443d57                                                     *(esp_121 - 4) = eax_70
+00443d58                                                     _fclose()
+00443d58                                                 
+00443d66                                                 *(esp_121 - 4) = 0x3e8
+00443d66                                                 esp_102 = esp_121 - 4
+00443d6b                                                 0x3086d4()
+00443cc0                                             label_443cc0:
+00443cc0                                                 *(esp_102 - 4) = 2
+00443cc9                                                 i_1 = sub_447ed0()
+00443cc9                                                 
+00443ccd                                                 if (i_1 != 0)
+00443fda                                                     bool cond:10_1 = *(esi_1 + 0x20) == 0
+00443fde                                                     *(esp_102 - 4) = 1
+00443fe0                                                     void* esp_197
+00443fe0                                                     
+00443fe0                                                     if (cond:10_1)
+00443fe9                                                         *(esp_102 - 8) =
+00443fe9                                                             u"Post Process param failed"
+00443fe9                                                         esp_197 = esp_102 - 8
+00443fe0                                                     else
+00443fe2                                                         *(esp_102 - 8) = u"para"
+00443fe2                                                         esp_197 = esp_102 - 8
+00443fe2                                                     
+00443fee                                                     *(esp_197 - 4) = 0
+00443ff0                                                     *(esp_197 - 8) = *(esi_1 + 0x30)
+00443ff3                                                     *(esp_197 - 0xc) = *(esi_1 + 0x34)
+00443ff6                                                     sub_443400()
+00443ffb                                                     *(esp_197 - 0xc) = &data_6d9770
+00444000                                                     *(esp_197 - 0x10) = "C:/ToolLog.txt"
+0044400a                                                     ebx_7 = std::_Deallocate<64,0>()
+0044400c                                                     esp_2 = esp_197 - 8
+0044400c                                                     
+00444011                                                     if (ebx_7 != 0)
+00444013                                                         int32_t ecx_56 = *(esi_1 + 0x30)
+00444016                                                         *(esp_2 - 4) = i_1
+00444018                                                         *(esp_2 - 8) = ecx_56 + 1
+00444019                                                         *(esp_2 - 0xc) =
+00444019                                                             "[%d] Post Process param failed!(%d)\n"
+00444019                                                         esp_183 = esp_2 - 0xc
+00444019                                                         goto label_44401e
+00444019                                                     
+0044402f                                                     sub_443580(esi_1)
+00443ccd                                                 else
+00443cd3                                                     *(esp_102 - 4) = 0xbb8
+00443cd8                                                     0x3086d4()
+00443cdc                                                     int32_t ebx_3 = 2
+00443cdc                                                     
+00443ce5                                                     if (*(esi_1 + 0x4f) == 1)
+00443ce5                                                         ebx_3 = 0
+00443ce5                                                     
+00443cf1                                                     void* esp_111
+00443cf1                                                     
+00443cf1                                                     if (*(esi_1 + 0x20) == 0)
+00443d72                                                         *(esp_102 - 8) = u"Download Complete"
+00443d72                                                         esp_111 = esp_102 - 8
+00443cf1                                                     else
+00443cf3                                                         *(esp_102 - 8) = 0x6e0a64
+00443cf3                                                         esp_111 = esp_102 - 8
+00443cf3                                                     
+00443d77                                                     *(esp_111 - 4) = esi_1 + 0x2b8
+00443d78                                                     sub_60f73f()
+00443d86                                                     *esp_111 = ebx_3
+00443d87                                                     *(esp_111 - 4) = esi_1 + 0x2b8
+00443d88                                                     *(esp_111 - 8) = 0
+00443d8a                                                     *(esp_111 - 0xc) = *(esi_1 + 0x30)
+00443d8d                                                     *(esp_111 - 0x10) = *(esi_1 + 0x34)
+00443d90                                                     sub_443400()
+00443d95                                                     *(esp_111 - 0x10) = ebx_3
+00443d9c                                                     *(esp_111 - 0x14) = esi_1 + 0x2b8
+00443d9d                                                     *(esp_111 - 0x18) = 1
+00443d9f                                                     *(esp_111 - 0x1c) = *(esi_1 + 0x30)
+00443da2                                                     *(esp_111 - 0x20) = *(esi_1 + 0x34)
+00443da5                                                     sub_443400()
+00443daa                                                     *(esp_111 - 0x20) = &data_6d9770
+00443daf                                                     *(esp_111 - 0x24) = "C:/ToolLog.txt"
+00443db4                                                     int32_t eax_73 = std::_Deallocate<64,0>()
+00443dbb                                                     esp_2 = esp_111 - 0x1c
+00443dbb                                                     
+00443dc0                                                     if (eax_73 != 0)
+00443dc6                                                         *(esp_2 - 4) = *(esi_1 + 0x30) + 1
+00443dc7                                                         *(esp_2 - 8) = "[%d] Download Complete.\n"
+00443dcc                                                         *(esp_2 - 0xc) = eax_73
+00443dcd                                                         _fprintf()
+00443dd5                                                         *(esp_2 - 4) = eax_73
+00443dd6                                                         _fclose()
+00443dd6                                                     
+00443de2                                                     if (*(esi_1 + 0x1c) != 2)
+00443e41                                                     label_443e41:
+00443e41                                                         *(esi_1 + 0x2c)
+00443e44                                                         void* esp_157
+00443e44                                                         
+00443e44                                                         if (*(esi_1 + 0x1004e6) == 0)
+00443e4d                                                             *(esp_2 - 4) = &data_6e0a98
+00443e4d                                                             esp_157 = esp_2 - 4
+00443e44                                                         else
+00443e46                                                             *(esp_2 - 4) = "reset"
+00443e46                                                             esp_157 = esp_2 - 4
+00443e46                                                         
+00443e52                                                         esp_2 = esp_157 + 4
+00443e57                                                         i_1 = sub_453560()
+00443e57                                                         goto label_443e5b
+00443e57                                                     
+00443df4                                                     if (*(esi_1 + 0x23) != 1 || *(esi_1 + 0x4c) != 1
+00443df4                                                             || *(esi_1 + 0x4e) != 1)
+00443de8                                                         goto label_443e34
+00443de8                                                     
+00443df6                                                     *(esp_2 - 4) = u"Start Checking Param content"
+00443e01                                                     *(esp_2 - 8) = esi_1 + 0x2b8
+00443e02                                                     sub_60f73f()
+00443e0a                                                     *(esp_2 - 4) = 0
+00443e0c                                                     *(esp_2 - 8) = esi_1 + 0x2b8
+00443e0d                                                     *(esp_2 - 0xc) = 0
+00443e0f                                                     *(esp_2 - 0x10) = *(esi_1 + 0x30)
+00443e12                                                     *(esp_2 - 0x14) = *(esi_1 + 0x34)
+00443e15                                                     sub_443400()
+00443e15                                                     
+00443e25                                                     if (sub_448410() != 0)
+00443fb7                                                         *(esp_2 - 4) = u"FAILED to ReadParamRegion"
+00443fbc                                                         *(esp_2 - 8) = esi_1 + 0x2b8
+00443fbd                                                         sub_60f73f()
+00443fc5                                                         *(esp_2 - 4) = 1
+00443fc7                                                         *(esp_2 - 8) = esi_1 + 0x2b8
+00443fc8                                                         *(esp_2 - 0xc) = 0
+00443fca                                                         *(esp_2 - 0x10) = *(esi_1 + 0x30)
+00443fcd                                                         *(esp_2 - 0x14) = *(esi_1 + 0x34)
+00443fd0                                                         sub_443400()
+00443fd0                                                         esp_2 -= 0x10
+00443e25                                                     else
+00443e32                                                         i_1 = sub_44c1c0()
+00443e34                                                     label_443e34:
+00443e34                                                         
+00443e38                                                         if (*(esi_1 + 0x1c) != 2)
+00443e38                                                             goto label_443e41
+00443e38                                                         
+00443e5b                                                     label_443e5b:
+00443e5b                                                         esi_1 = sub_443580(esi_1)
+00443e5b                                                         
+00443e79                                                         if (i_1 != 0 && eax_10 != 1
+00443e79                                                                 && *(esi_1 + 0x1004e5) == 0)
+00443e7f                                                             bool cond:13_1 = *(esi_1 + 0x20) == 0
+00443e83                                                             *(esp_2 - 4) = 1
+00443e85                                                             void* esp_159
+00443e85                                                             
+00443e85                                                             if (cond:13_1)
+00443e8e                                                                 *(esp_2 - 8) = u"Serial Download Failed, "
+00443e8e                                                                 "Ready to try again"
+00443e8e                                                                 esp_159 = esp_2 - 8
+00443e85                                                             else
+00443e87                                                                 *(esp_2 - 8) = 0x6e0a9c
+00443e87                                                                 esp_159 = esp_2 - 8
+00443e87                                                             
+00443e93                                                             *(esp_159 - 4) = 0
+00443e95                                                             *(esp_159 - 8) = *(esi_1 + 0x30)
+00443e98                                                             *(esp_159 - 0xc) = *(esi_1 + 0x34)
+00443e9b                                                             sub_443400()
+00443ea0                                                             *(esp_159 - 0xc) = 0x3e8
+00443ea0                                                             esp_2 = esp_159 - 0xc
+00443ea5                                                             0x3086d4()
+00443eab                                                             ebx_1 = var_1c
+00443eae                                                             eax_10 -= 1
+00443eb1                                                             goto label_443ef0
+00443c2b                                 else
+00443c3d                                     if (*(esi_1 + 0x23) == 1 && *(esi_1 + 0x4c) == 1
+00443c3d                                             && *(esi_1 + 0x4e) == 1)
+00443c41                                         sub_444ee0(esi_1)
+00443c41                                     
+00443c4a                                     if (*(esi_1 + 0x1c) != 2)
+00443c4a                                         goto label_443c5d
+00443c4a                                     
+00443c57                                     if (sub_444a80(esi_1) == 0)
+00443c57                                         goto label_443c5d
+00443c57                                     
+0044402f                                     sub_443580(esi_1)
+00443bf2                             else
+00443bfb                                 i_1 = sub_44c5d0()
+00443bfb                                 
+00443bff                                 if (i_1 != 0)
+00443f8e                                     *(esp_2 - 4) = &data_6d9770
+00443f93                                     *(esp_2 - 8) = "C:/ToolLog.txt"
+00443f9d                                     ebx_7 = std::_Deallocate<64,0>()
+00443f9d                                     
+00443fa4                                     if (ebx_7 == 0)
+0044402f                                         sub_443580(esi_1)
+00443fa4                                     else
+00443faa                                         int32_t ecx_54 = *(esi_1 + 0x30)
+00443fad                                         *(esp_2 - 4) = i_1
+00443faf                                         *(esp_2 - 8) = ecx_54 + 1
+00443fb0                                         *(esp_2 - 0xc) = "[%d] [FH] Send UC Failed. (%d)\n"
+00443fb0                                         esp_183 = esp_2 - 0xc
+0044401e                                     label_44401e:
+0044401e                                         *(esp_183 - 4) = ebx_7
+0044401f                                         _fprintf()
+00444024                                         *(esp_183 - 8) = ebx_7
+00444025                                         _fclose()
+0044402a                                         esp_2 = esp_183 + 0xc
+0044402f                                         sub_443580(esi_1)
+00443bff                                 else
+00443c07                                     int32_t eax_61
+00443c07                                     eax_61, esi_1 = sub_44c6f0(esi_1)
+00443c07                                     
+00443c10                                     if (eax_61 == 0)
+00443c10                                         goto label_443c1d
+00443c10                                     
+00443f62                                     *(esp_2 - 4) = &data_6d9770
+00443f67                                     *(esp_2 - 8) = "C:/ToolLog.txt"
+00443f71                                     ebx_7 = std::_Deallocate<64,0>()
+00443f71                                     
+00443f78                                     if (ebx_7 != 0)
+00443f7e                                         int32_t ecx_52 = *(esi_1 + 0x30)
+00443f81                                         *(esp_2 - 4) = eax_61
+00443f83                                         *(esp_2 - 8) = ecx_52 + 1
+00443f84                                         *(esp_2 - 0xc) = "[%d] [FH] Send PJ Model Failed. (%d)\n"
+00443f84                                         esp_183 = esp_2 - 0xc
+00443f89                                         goto label_44401e
+00443f89                                     
+0044402f                                     sub_443580(esi_1)
+00443a20                 else
+00443a26                     *(esp_14 - 4) = &data_6d9770
+00443a2b                     *(esp_14 - 8) = "C:/ToolLog.txt"
+00443a30                     int32_t eax_42 = std::_Deallocate<64,0>()
+00443a30                     
+00443a3c                     if (eax_42 != 0)
+00443a42                         int32_t* eax_43
+00443a42                         
+00443a42                         if (ebx_1[5] u< 0x10)
+00443a48                             eax_43 = ebx_1
+00443a42                         else
+00443a44                             eax_43 = *ebx_1
+00443a44                         
+00443a4a                         *(esp_14 - 4) = eax_43
+00443a4f                         *(esp_14 - 8) = *(esi_1 + 0x30) + 1
+00443a50                         *(esp_14 - 0xc) = "[%d] provision file: %s\n"
+00443a55                         *(esp_14 - 0x10) = eax_42
+00443a56                         _fprintf()
+00443a5b                         *(esp_14 - 0x14) = eax_42
+00443a5c                         _fclose()
+00443a5c                     
+00443a64                     *(esp_14 - 4) = 0
+00443a66                     *(esp_14 - 8) = u"Provisioning UFS"
+00443a6b                     *(esp_14 - 0xc) = 0
+00443a6d                     *(esp_14 - 0x10) = *(esi_1 + 0x30)
+00443a70                     *(esp_14 - 0x14) = *(esi_1 + 0x34)
+00443a73                     sub_443400()
+00443a78                     *(esp_14 - 0x14) = 0xc8
+00443a7d                     int32_t ecx_15 = 0x3086d4()
+00443a87                     int32_t eax_46
+00443a87                     void* esp_73
+00443a87                     
+00443a87                     if (*(esi_1 + 0x48) == 0)
+00443ab8                         *(esp_14 - 0x18) = *ebx_1[0xd] + 0x10
+00443ab9                         *(esp_14 - 0x1c) = ecx_15
+00443aba                         *(esi_1 + 0x2c)
+00443abd                         eax_46 = sub_451d40()
+00443abd                         esp_73 = esp_14 - 0x14
+00443a87                     else
+00443a8c                         *(esp_14 - 0x18) = 0x1000
+00443a91                         *(esp_14 - 0x1c) = 0
+00443a93                         *(esp_14 - 0x20) = eax_2
+00443a94                         _memset()
+00443a9e                         *(esp_14 - 0x18) = ebx_1
+00443a9f                         *(esp_14 - 0x1c) = eax_2
+00443aa0                         sub_44c0c0()
+00443aa5                         *(esi_1 + 0x2c)
+00443aa8                         *(esp_14 - 0x18) = eax_2
+00443aa9                         eax_46 = sub_451ac0()
+00443aa9                         esp_73 = esp_14 - 0x14
+00443aa9                     
+00443ac6                     if (eax_46 != 0)
+00443f42                         *(esp_73 - 4) = 1
+00443f44                         *(esp_73 - 8) = u"Provisioning UFS failed"
+00443f49                         *(esp_73 - 0xc) = 0
+00443f4b                         *(esp_73 - 0x10) = *(esi_1 + 0x30)
+00443f4e                         *(esp_73 - 0x14) = *(esi_1 + 0x34)
+00443f51                         sub_443400()
+00443f51                         esp_2 = esp_73 - 0x10
+00443f58                         sub_443580(esi_1)
+00443ac6                     else
+00443acc                         *(esi_1 + 0x2c)
+00443acf                         *(esp_73 - 4) = "reset_to_edl"
+00443ad4                         int32_t eax_50 = sub_453560()
+00443ad9                         bool cond:7_1 = *(esi_1 + 0x20) == 0
+00443adf                         *(esp_73 - 4) = 0
+00443ae1                         void* esp_79
+00443ae1                         
+00443ae1                         if (cond:7_1)
+00443aea                             *(esp_73 - 8) = u"reset_to_edl"
+00443aea                             esp_79 = esp_73 - 8
+00443ae1                         else
+00443ae3                             *(esp_73 - 8) = 0x6e082c
+00443ae3                             esp_79 = esp_73 - 8
+00443ae3                         
+00443aef                         *(esp_79 - 4) = 0
+00443af1                         *(esp_79 - 8) = *(esi_1 + 0x30)
+00443af4                         *(esp_79 - 0xc) = *(esi_1 + 0x34)
+00443af7                         sub_443400()
+00443af7                         esp_14 = esp_79 - 8
+00443afe                         esi_1 = sub_443580(esi_1)
+00443afe                         
+00443b05                         if (eax_50 != 0)
+00443b05                             goto label_443b24
+00443b05                         
+00443b07                         *(esp_14 - 4) = 0x1388
+00443b07                         esp_2 = esp_14 - 4
+00443b0c                         0x3086d4()
+00443b14                         var_34_1 = 0
+00443b17                         var_3c_1 = 0
+00443b1a                         eax_10 -= 1
+00443ef0                     label_443ef0:
+00443ef0                         
+00443ef2                         if (eax_10 != 0)
+00443ef2                             continue
+00443ef2         
+004440e5         *(esp_2 - 4) = eax_2
+004440e6         sub_4f0808()
+004440eb         esp_1 = esp_2
+004440eb         break
+004440eb 
+004440f3 *esp_1
+004440f3 esp_1[1]
+004440f4 esp_1[2]
+00444100 return sub_60bdca()

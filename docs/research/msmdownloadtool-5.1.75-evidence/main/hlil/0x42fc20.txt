@@ -1,0 +1,52 @@
+0042fc20 int32_t ebp
+0042fc20 int32_t var_4 = ebp
+0042fc21 int32_t* ebp_1 = &var_4
+0042fc23 int32_t var_8 = 0xffffffff
+0042fc25 int32_t (* var_c)(void* arg1) = sub_6cbb68
+0042fc30 TEB* fsbase
+0042fc30 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0042fc31 void* var_14 = arg1
+0042fc32 int32_t ebx
+0042fc32 int32_t var_18 = ebx
+0042fc33 int32_t esi
+0042fc33 int32_t var_1c = esi
+0042fc34 int32_t edi
+0042fc34 int32_t var_20 = edi
+0042fc3c int32_t var_24 = __security_cookie ^ &var_4
+0042fc40 fsbase->NtTib.ExceptionList = &ExceptionList
+0042fc46 void* esi_1 = arg1
+0042fc48 int32_t var_28 = 0
+0042fc4a int32_t var_2c = 0x80
+0042fc4f int32_t var_30 = 2
+0042fc51 int32_t var_34 = 0
+0042fc53 int32_t var_38 = 2
+0042fc55 int32_t var_3c = 0x40000000
+0042fc5a int32_t var_8_1 = 0
+0042fc61 void* arg_4
+0042fc61 void* var_40 = arg_4
+0042fc65 sub_ee3f43(arg2)
+0042fc65 
+0042fc6f if (&ExceptionList == 0xffffffff)
+0042fc71     void* ecx = arg_4
+0042fc71     
+0042fc78     if (*(ecx - 4) s> 1)
+0042fc80         esi_1 = sub_4141c0(&arg_4, *(ecx - 0xc))
+0042fc85         ecx = arg_4
+0042fc85     
+0042fc88     void* var_48_2 = ecx
+0042fc89     char const* const var_4c_1 = "Failed to save token to %s\n"
+0042fc8e     int32_t var_50_1 = 4
+0042fc95     ebp_1 = sub_4d6270(&data_7e09e8)
+0042fc95 
+0042fc9d void* eax_3 = *(esi_1 + 0xbc)
+0042fca7 void* ebx_1 = *(eax_3 - 0xc)
+0042fca7 
+0042fcaa if (*(eax_3 - 4) s> 1)
+0042fcb3     ebx_1, esi_1 = sub_4141c0(esi_1 + 0xbc, ebx_1)
+0042fcb3 
+0042fcb8 int32_t var_48_4 = 0
+0042fcbd void* var_4c_2 = &ebp_1[-4]
+0042fcc1 int32_t var_50_2 = ebx_1 * 2
+0042fcc2 int32_t var_54 = *(esi_1 + 0xbc)
+0042fcc8 struct _EXCEPTION_REGISTRATION_RECORD** var_58 = &ExceptionList
+0042fcce return j_sub_b3383c()

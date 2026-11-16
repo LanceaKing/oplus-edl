@@ -1,0 +1,83 @@
+00430280 int32_t* i_3
+00430280 int32_t* i_1 = i_3
+00430283 int32_t var_8 = 0xffffffff
+00430285 int32_t (* var_c)(void* arg1) = sub_6ce5c0
+00430290 TEB* fsbase
+00430290 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00430299 int32_t eax_2 = __security_cookie ^ &i_1
+0043029b int32_t var_14 = eax_2
+0043029e int32_t ebx
+0043029e int32_t var_68 = ebx
+0043029f int32_t esi
+0043029f int32_t var_6c = esi
+004302a0 int32_t edi
+004302a0 int32_t var_70 = edi
+004302a1 int32_t var_74 = eax_2
+004302a5 fsbase->NtTib.ExceptionList = &ExceptionList
+004302ad int32_t var_58 = 0
+004302b4 int32_t var_5c = 0
+004302bb int32_t eax_3
+004302bb void* ebp
+004302bb eax_3, ebp = sub_430480(arg3, arg2)
+004302bb 
+004302cc if (eax_3 != 5 && eax_3 != 6)
+004302d2     int32_t* i_4 = i_1
+004302d3     j_sub_ce4698()
+004302db     i_1 = ebp - 0x54
+004302de     i_4(0, i_1)
+004302e0     int32_t var_c_1 = *(ebp - 0x54)
+004302e3     ExceptionList = 0x40
+004302ea     return j_sub_d72fdb()
+004302ea 
+00430386 int32_t* i_5 = i_1
+00430387 j_sub_bb22b0()
+0043038f i_1 = ebp - 0x58
+00430390 int32_t var_8_2 = 0
+00430392 int32_t var_c_2 = 0
+00430394 ExceptionList = nullptr
+00430398 i_5(0, ExceptionList, var_c_2, var_8_2, i_1)
+0043039a i_1 = *(ebp - 0x58)
+004303a5 int32_t* i = _malloc(i_1)
+004303aa i_1 = ebp - 0x58
+004303ac int32_t var_c_3 = 0
+004303ae ExceptionList = 2
+004303b2 int32_t eax_9 = i_5(2, ExceptionList, var_c_3, i, i_1)
+004303b2 
+004303b6 if (eax_9 != 0)
+00430427     i_1 = nullptr
+00430429     int32_t var_8_4 = 0
+0043042e     void* var_c_4 = ebp - 0x5c
+0043042f     ExceptionList = 0x400
+00430434     int32_t var_14_1 = eax_9
+00430435     int32_t var_18 = 0
+00430437     int32_t var_1c = 0x1300
+00430441     return j_sub_fae5ca(eax_9, i_5.w)
+00430441 
+004303ba for (; i != 0; i = i[2])
+004303c3     int32_t eax_10 = sub_430880(i[3])
+004303c3     
+004303ca     if (eax_10 != 0)
+004303d5         i_1 = i[0xd]
+004303de         sub_430af0(eax_10, ebp - 0x50, &i[0xb], i_1)
+004303ec         i_1 = ebp - 0x50
+004303f2         i_1 = Concurrency::details::_Micro_queue::_Pop_finalizer::~_Pop_finalizer(ebp - 0x5c, i_1)
+004303f5         *(ebp - 4) = 0
+004303fc         sub_41a720(arg3, i_1)
+00430401         *(ebp - 4) = 0xffffffff
+0043040e         int32_t* i_2 = *(ebp - 0x5c) - 0x10
+00430414         int32_t ecx_4 = i_2[3]
+00430414         i_2[3] -= 1
+00430414         
+0043041b         if (ecx_4 - 1 s<= 0)
+0043041d             int32_t* ecx_6 = *i_2
+0043041f             i_1 = i_2
+00430422             (*(*ecx_6 + 4))(i_1)
+00430422         
+0043041b         break
+0043041b 
+0043044b i_1 = i
+0043044c int32_t* ebp_1 = sub_688543(i_1)
+00430459 fsbase->NtTib.ExceptionList = ebp_1[-3]
+00430469 sub_687de2(ebp_1[-4] ^ ebp_1)
+00430470 *ebp_1
+00430471 return 0

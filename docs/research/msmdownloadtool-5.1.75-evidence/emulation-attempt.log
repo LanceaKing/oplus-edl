@@ -1,0 +1,18 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/op8-unpack/references/vmp-lazy-unpack/unpack/__main__.py", line 3, in <module>
+    main()
+  File "/Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/op8-unpack/references/vmp-lazy-unpack/unpack/tracer.py", line 1149, in main
+    run(input_path, final_path, output_dir, progress, diagnostics, arch)
+  File "/Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/op8-unpack/references/vmp-lazy-unpack/unpack/tracer.py", line 1209, in run
+    module_bases, synthetic_import_targets, export_lookup = map_emu_windows_modules(uc, import_slots, arch)
+                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/op8-unpack/references/vmp-lazy-unpack/unpack/tracer.py", line 264, in map_emu_windows_modules
+    load_system_export_catalog(module_name)
+  File "/Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/op8-unpack/references/vmp-lazy-unpack/unpack/tracer.py", line 135, in load_system_export_catalog
+    for record in require_catalog().exports(module_name):
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/Apple/Documents/oplus-edl/runs/msmdownloadtool-analysis/op8-unpack/references/vmp-lazy-unpack/unpack/catalog.py", line 218, in exports
+    raise ValueError(f"module missing from catalog {name}")
+ValueError: module missing from catalog winspool.drv

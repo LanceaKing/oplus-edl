@@ -1,0 +1,499 @@
+1405ba2b3 int64_t __saved_rbp
+1405ba2b3 int64_t* rbp = &__saved_rbp
+1405ba2be int128_t var_118 = zx.o(0)
+1405ba2c5 int64_t i_1 = -0xc0
+1405ba2e2 int64_t i
+1405ba2e2 
+1405ba2e2 do
+1405ba2cf     void var_48
+1405ba2cf     __builtin_memset(&var_48 + i_1, 0, 0x30)
+1405ba2de     i = i_1
+1405ba2de     i_1 += 0x30
+1405ba2e2 while (i != -0x30)
+1405ba2e8 int64_t* rdx = arg1
+1405ba2eb int32_t rax = rdx[6].d
+1405ba2f1 void* rbx = rdx[1]
+1405ba2f5 void* var_108 = rbx
+1405ba2f5 
+1405ba300 if (rax u<= 3)
+1405ba35f label_1405ba35f:
+1405ba363     int128_t var_a8
+1405ba363     int64_t rdi_1
+1405ba363     int128_t var_98
+1405ba363     
+1405ba363     if (rax u> 3)
+1405ba65c         void* rsi_7 = *(rbx + 8)
+1405ba660         int64_t rax_22 = sub_1406f58d0()
+1405ba66c         (*(rsi_7 + 0x20))(*(rsi_7 + 8), rax_22)
+1405ba66f         int64_t rsi_8 = *(rbx + 0x30)
+1405ba66f         
+1405ba676         if (rsi_8 == 0)
+1405bae46             void** rax_55
+1405bae46             int512_t zmm0_17
+1405bae46             rax_55, zmm0_17 = sub_141194310(&data_142a99d68)
+1405bae58             sub_1408f5f30(rax_55, &data_143583588)
+1405bae60             uint64_t ssp
+1405bae60             sub_1411948d0(rax_55, ssp, zmm0_17)
+1405bae60             noreturn
+1405bae60         
+1405ba683         void** rax_23 = sub_141194310(&data_142cf6b80)
+1405ba691         sub_141176190(rax_23, rbx)
+1405ba69d         void** rax_24 = sub_141194310(&data_142cd2ca8)
+1405ba6ab         sub_14117619c(rax_24, rbx)
+1405ba6b7         void** rax_25
+1405ba6b7         int512_t zmm0_4
+1405ba6b7         rax_25, zmm0_4 = sub_141194310(&data_142a5a658)
+1405ba6bf         char var_e0 = 0
+1405ba6c9         int64_t var_d8_1 = 0
+1405ba6d5         char var_f0 = 0
+1405ba6dc         int64_t var_e8_1 = 0
+1405ba6ff         sub_140541840(rax_25, rsi_8, rax_23, &var_e0, rax_24, &var_f0)
+1405ba707         void** rax_26
+1405ba707         int512_t zmm0_5
+1405ba707         rax_26, zmm0_5 = sub_1405418e0(rax_25, zmm0_4)
+1405ba717         sub_1411945e0(&arg1[2], rax_26)
+1405ba728         int512_t zmm0_6 = sub_140541740(arg1[2], *(rbx + 8), zmm0_5)
+1405ba735         void** r8_8 = *(arg1[2] + 8)
+1405ba735         
+1405ba743         if (r8_8 == 0)
+1405ba743             r8_8 = &data_14369bde0
+1405ba743         
+1405ba74b         int32_t r8_9 = r8_8[1].d
+1405ba74f         void* var_100 = &r8_8[2]
+1405ba756         int32_t var_f8_1 = r8_9
+1405ba774         void* var_60
+1405ba774         arg3, arg2 = sub_14077f8f0(&var_60, &var_100, *(arg1[2] + 0x14), zmm0_6)
+1405ba779         void* rax_27 = var_60
+1405ba786         void* var_58
+1405ba786         
+1405ba786         if ((rax_27 == 0 || *(rax_27 + 8) == 0) && var_58 != 0)
+1405ba795             *(var_58 + 8)
+1405ba795         
+1405ba79c         if ((rax_27 != 0 && *(rax_27 + 8) != 0) || (var_58 != 0 && *(var_58 + 8) != 0))
+1405ba7a2             void* rdi_3 = *(rbx + 8)
+1405ba7a6             int64_t rax_29 = sub_1406f6470()
+1405ba7b2             (*(rdi_3 + 0x20))(*(rdi_3 + 8), rax_29)
+1405ba7b5             void* rdi_4 = *(rbx + 0x10)
+1405ba7b5             
+1405ba7bc             if (rdi_4 != 0)
+1405ba7d4                 int128_t var_d0
+1405ba7d4                 sub_14097ca50(&var_d0, 0x31, 3, arg3)
+1405ba7d9                 int512_t zmm0_7
+1405ba7d9                 zmm0_7.o = var_d0
+1405ba7e0                 int128_t var_88 = zmm0_7.o
+1405ba7e4                 int128_t var_c0
+1405ba7e4                 zmm0_7.o = var_c0
+1405ba7eb                 int128_t var_78_1 = zmm0_7.o
+1405ba7fa                 int32_t rcx_40 = var_78_1.d
+1405ba800                 int32_t var_b0
+1405ba800                 
+1405ba800                 if (rcx_40 u> var_b0)
+1405bae66                     sub_140900340()
+1405bae66                     noreturn
+1405bae66                 
+1405ba818                 int512_t zmm0_8
+1405ba818                 
+1405ba818                 if (var_b0 - rcx_40 u>= 0x22)
+1405ba840                     zmm0_8 = sub_1408feae0(var_78_1:8.q + (zx.q(rcx_40) << 1), 
+1405ba840                         u"[Qualcomm Loader] MatchKey sha256=", 0x44)
+1405ba84b                     var_78_1.d += 0x22
+1405ba818                 else
+1405ba825                     zmm0_8 = sub_14097cef0(&var_88, &data_1436022c8, zmm0_7)
+1405ba825                 
+1405ba84e                 void* rdx_37 = var_60
+1405ba855                 uint32_t rcx_44
+1405ba855                 
+1405ba855                 if (rdx_37 != 0)
+1405ba865                     rcx_44 = *(rdx_37 + 8) == 0
+1405ba855                 else
+1405ba857                     rcx_44 = 1
+1405ba857                 
+1405ba86a                 rdx_37.b = rcx_44 == 0
+1405ba874                 int512_t zmm0_9 = sub_14102ae30(&var_88, rdx_37.b, zmm0_8)
+1405ba879                 int32_t rcx_46 = var_78_1.d
+1405ba879                 
+1405ba87f                 if (rcx_46 u> var_b0)
+1405bae66                     sub_140900340()
+1405bae66                     noreturn
+1405bae66                 
+1405ba897                 if (var_b0 - rcx_46 u>= 2)
+1405ba8ab                     *(var_78_1:8.q + (zx.q(rcx_46) << 1)) = 0x20002c
+1405ba8b8                     var_78_1.d += 2
+1405ba897                 else
+1405ba8a4                     zmm0_9 = sub_14097cef0(&var_88, &data_143491e10, zmm0_9)
+1405ba8a4                 
+1405ba8bb                 int32_t rcx_51 = var_78_1.d
+1405ba8bb                 
+1405ba8c1                 if (rcx_51 u> var_b0)
+1405bae66                     sub_140900340()
+1405bae66                     noreturn
+1405bae66                 
+1405ba8cd                 int64_t* r14_4 = var_78_1:8.q + (zx.q(rcx_51) << 1)
+1405ba8cd                 
+1405ba8d9                 if (var_b0 - rcx_51 u>= 7)
+1405ba8f7                     *r14_4 = 0x33006100680073
+1405ba8fa                     r14_4[1].d = 0x340038
+1405ba902                     *(r14_4 + 0xc) = 0x3d
+1405ba90f                     var_78_1.d += 7
+1405ba8d9                 else
+1405ba8e6                     rcx_51, zmm0_9 = sub_14097cef0(&var_88, &data_1436326b8, zmm0_9)
+1405ba8e6                 
+1405ba919                 uint32_t rcx_52
+1405ba919                 
+1405ba919                 if (var_58 != 0)
+1405ba926                     rcx_51.b = *(var_58 + 8) == 0
+1405ba929                     rcx_52 = zx.d(rcx_51.b)
+1405ba919                 else
+1405ba91b                     rcx_52 = 1
+1405ba91b                 
+1405ba92e                 void* rdx_47
+1405ba92e                 rdx_47.b = rcx_52 == 0
+1405ba938                 int512_t zmm0_10 = sub_14102ae30(&var_88, rdx_47.b, zmm0_9)
+1405ba93d                 int32_t rcx_54 = var_78_1.d
+1405ba93d                 
+1405ba943                 if (rcx_54 u> var_b0)
+1405bae66                     sub_140900340()
+1405bae66                     noreturn
+1405bae66                 
+1405ba94f                 int64_t* r14_5 = var_78_1:8.q + (zx.q(rcx_54) << 1)
+1405ba94f                 
+1405ba95b                 if (var_b0 - rcx_54 u>= 6)
+1405ba979                     *r14_5 = 0x73006d0020002c
+1405ba97c                     r14_5[1].d = 0x3d006d
+1405ba98a                     var_78_1.d += 6
+1405ba95b                 else
+1405ba968                     zmm0_10 = sub_14097cef0(&var_88, &data_14349b6a0, zmm0_10)
+1405ba968                 
+1405ba99a                 void* var_50
+1405ba99a                 int64_t* rax_37
+1405ba99a                 
+1405ba99a                 if (var_78_1:4.b != 0 || var_50 == 0)
+1405ba9c4                 label_1405ba9c4:
+1405ba9ec                     rax_37, arg2 = sub_14097cbe0(&var_88, sub_14097cd50(&var_88, var_50, zmm0_10))
+1405ba9f8                     (*(rdi_4 + 0x20))(*(rdi_4 + 8), rax_37)
+1405ba99a                 else
+1405ba99c                     int32_t rcx_58 = var_78_1.d
+1405ba99c                     
+1405ba9a2                     if (rcx_58 u> var_b0)
+1405bae66                         sub_140900340()
+1405bae66                         noreturn
+1405bae66                     
+1405ba9bb                     if (*(var_50 + 8) u> var_b0 - rcx_58)
+1405ba9bb                         goto label_1405ba9c4
+1405ba9bb                     
+1405ba9d9                     int512_t zmm0_11 = sub_1408feae0(var_78_1:8.q + (zx.q(rcx_58) << 1), 
+1405ba9d9                         var_50 + 0xc, zx.q(*(var_50 + 8)) * 2)
+1405ba9e5                     var_78_1.d += *(var_50 + 8)
+1405ba9ec                     rax_37, arg2 = sub_14097cbe0(&var_88, zmm0_11)
+1405ba9f8                     (*(rdi_4 + 0x20))(*(rdi_4 + 8), rax_37)
+1405ba9f8             
+1405ba9fb             int64_t rcx_65 = *arg1
+1405ba9fe             arg1[9]
+1405baa0d             *rcx_65
+1405baa0f             void** rax_38
+1405baa0f             rax_38, arg3, arg2 = sub_1407826d0(rcx_65, &data_14362e1e0, &var_60, arg2)
+1405baa14             *rax_38
+1405baa16             var_98.q = rax_38
+1405baa1f             var_98:8.d = 0
+1405baa1f             
+1405baa3c             if ((var_98:8.b & 4) == 0 && (*(var_98.q + 0x34) & 0x1600000) != 0)
+1405baa2c                 goto label_1405ba5fb
+1405baa2c             
+1405baa44             int32_t var_44_6 = 0
+1405baa4b             arg1[6].d = 0
+1405baa59             sub_1411945e0(&arg1[0xa], var_98.q)
+1405baa65             arg1[0xb].d = var_98:8.d
+1405baa77             int64_t* rax_39
+1405baa77             int512_t zmm0_12
+1405baa77             rax_39, zmm0_12 = sub_140fe3be0(&data_1428f7030, arg1, &arg1[8], arg3)
+1405baa8d             sub_141092bc0(zmm0_12, &var_98, rax_39)
+1405baecb             return sub_1405bb0d8(rbp)
+1405baecb         
+1405bae19         sub_1405b7000(rbx, 0x401)
+1405bae1e         void* rdi_8 = *(rbx + 8)
+1405bae22         int64_t rax_54 = sub_1406f6b10()
+1405bae2e         (*(rdi_8 + 0x20))(*(rdi_8 + 8), rax_54)
+1405bae33         var_118:8.q = 0
+1405baed5         sub_1405bb0d8(rbp)
+1405ba363     else
+1405ba363         switch (rax)
+1405ba5d8             case 0
+1405ba5d8                 arg3.o = *(rdx + 0x50)
+1405ba5dc                 var_98 = arg3.o
+1405ba5e5                 rdx[0xa] = 0
+1405ba5e9                 rdx[0xb] = 0
+1405ba5ed                 int32_t var_44_5 = 0xffffffff
+1405ba5f4                 rdx[6].d = 0xffffffff
+1405ba5fb             label_1405ba5fb:
+1405ba5fb                 int64_t* rcx_22 = var_98.q
+1405ba5fb                 
+1405ba60f                 if ((*(rcx_22 + 0x34) & 0x11000000) != 0x1000000)
+1405ba613                     arg3 = sub_14097d4c0(rcx_22, 0, arg3, arg2)
+1405ba613                 
+1405ba61f                 int64_t* rsi_5 = *(var_98.q + 0x38)
+1405ba627                 int64_t rcx_24 = *arg1
+1405ba627                 
+1405ba635                 if (zx.d(*(rcx_24 + 0x34)) == 0)
+1405baaa6                     if (data_14370b340(rsi_5) == 0)
+1405bade5                         void* rsi_15 = *(rbx + 8)
+1405badf4                         int64_t* rax_53
+1405badf4                         rax_53, arg3, arg2 = sub_1406f68b0(*(arg1[2] + 0x14), arg3)
+1405bae00                         (*(rsi_15 + 0x20))(*(rsi_15 + 8), rax_53)
+1405bae05                         var_118:8.q = 0
+1405baebd                         sub_1405bb0d8(rbp)
+1405baaa6                     else
+1405baabc                         if (data_14370b340(rsi_5) s<= 1)
+1405baadc                             sub_1411945e0(&arg1[3], data_14370b360(rsi_5, 0))
+1405baae5                             void* rcx_74 = *(arg1[3] + 0x28)
+1405baaf3                             char rdx_62
+1405baaf3                             
+1405baaf3                             if (rcx_74 == &data_1434e4a00)
+1405bab39                                 rdx_62 = 1
+1405baaf3                             else if (rcx_74 == 0 || *(rcx_74 + 8) != 6)
+1405bab00                                 rdx_62 = 0
+1405baafe                             else
+1405bab31                                 int64_t rdx_64
+1405bab31                                 rdx_64.b = (((zx.q(*(rcx_74 + 0x14)) | 0x200020) ^ 0x740073)
+1405bab31                                     | ((0x20002000200020 | *(rcx_74 + 0xc)) ^ 0x65006700690064)) == 0
+1405bab34                                 rdx_62 = rdx_64.b
+1405bab34                             
+1405bab3e                             arg1[7].b = rdx_62
+1405bab41                             void* rdi_5 = *(rbx + 8)
+1405bab45                             void* rdx_65 = arg1[3]
+1405bab51                             int64_t* rax_43
+1405bab51                             int512_t zmm0_13
+1405bab51                             int512_t zmm1
+1405bab51                             rax_43, zmm0_13, zmm1 =
+1405bab51                                 sub_1406f64b0(*(rdx_65 + 0x20), *(rdx_65 + 0x28), arg3)
+1405bab5d                             (*(rdi_5 + 0x20))(*(rdi_5 + 8), rax_43)
+1405bab70                             void* r8_18 = arg1[3]
+1405bab7c                             int64_t rcx_81 = *arg1
+1405bab86                             *rcx_81
+1405bab88                             void** rax_44
+1405bab88                             rax_44, arg3, arg2 = sub_140783b10(rcx_81, *(r8_18 + 8), 
+1405bab88                                 *(r8_18 + 0x30), &data_1436205f8, zmm0_13, zmm1, 0, arg1[9])
+1405bab8d                             *rax_44
+1405bab8f                             var_a8.q = rax_44
+1405bab98                             var_a8:8.d = 0
+1405bab98                             
+1405babb5                             if ((var_a8:8.b & 4) == 0 && (*(var_a8.q + 0x34) & 0x1600000) != 0)
+1405baba5                                 goto label_1405ba581
+1405baba5                             
+1405babbb                             int32_t var_44_7 = 1
+1405babc6                             arg1[6].d = 1
+1405babd8                             sub_1411945e0(&arg1[0xc], var_a8.q)
+1405babe4                             arg1[0xd].d = var_a8:8.d
+1405babf6                             int64_t* rax_45
+1405babf6                             int512_t zmm0_14
+1405babf6                             rax_45, zmm0_14 = sub_140fe3be0(&data_1428f7030, arg1, &arg1[8], arg3)
+1405bac0c                             sub_141092bc0(zmm0_14, &var_a8, rax_45)
+1405baeac                             return sub_1405bb0d8(rbp)
+1405baeac                         
+1405bad5a                         sub_1405b7000(rbx, 0x400)
+1405bad5f                         void* rdi_6 = *(rbx + 8)
+1405bad6a                         void** r8_28 = *(data_1436cc3b8 + 0x10)
+1405bad6a                         
+1405bad71                         if (r8_28 == 0)
+1405bad7a                             void** rax_49
+1405bad7a                             rax_49, arg3 = sub_141194310(&data_142c8b880)
+1405bad8c                             sub_1411761d8(rax_49, &data_1436b0410)
+1405bad9f                             sub_141194570(data_1436cc3b8 + 0x10, rax_49)
+1405bada4                             r8_28 = rax_49
+1405bada4                         
+1405badb1                         void** rax_50
+1405badb1                         int512_t zmm0_16
+1405badb1                         rax_50, zmm0_16 = sub_1410eec70(&data_142903178, rsi_5, r8_28, arg3)
+1405badc0                         int64_t* rax_51
+1405badc0                         rax_51, arg3, arg2 = sub_1408d27e0(&data_143491e10, rax_50, zmm0_16)
+1405badc8                         int64_t rax_52 = sub_1406f6b50()
+1405badd4                         (*(rdi_6 + 0x20))(*(rdi_6 + 8), rax_52)
+1405badd9                         var_118:8.q = 0
+1405baeb6                         sub_1405bb0d8(rbp)
+1405ba635                 else
+1405ba63b                     void* rsi_6 = *(rbx + 8)
+1405ba63f                     int64_t* rax_21
+1405ba63f                     rax_21, arg3, arg2 = sub_140786b80(*(rcx_24 + 0x38), arg3)
+1405ba64b                     (*(rsi_6 + 0x20))(*(rsi_6 + 8), rax_21)
+1405ba650                     var_118:8.q = 0
+1405baec4                     sub_1405bb0d8(rbp)
+1405ba55c             case 1
+1405ba55c                 arg3.o = *(rdx + 0x60)
+1405ba55f                 var_a8 = arg3.o
+1405ba568                 rdx[0xc] = 0
+1405ba56b                 rdx[0xd] = 0
+1405ba56f                 int32_t var_44_4 = 0xffffffff
+1405ba576                 rdx[6].d = 0xffffffff
+1405ba581             label_1405ba581:
+1405ba581                 int64_t* rcx_18 = var_a8.q
+1405ba581                 
+1405ba595                 if ((*(rcx_18 + 0x34) & 0x11000000) != 0x1000000)
+1405ba599                     arg3, arg2 = sub_14097d4c0(rcx_18, 0, arg3, arg2)
+1405ba599                 
+1405ba5b1                 sub_1411945e0(&arg1[4], *(var_a8.q + 0x38))
+1405ba5b1                 
+1405ba5bb                 if (arg1[4] != 0)
+1405bac18                     arg1[5] = 0
+1405bac1c                     rdi_1 = 0
+1405bac1c                     
+1405bac22                     if (arg1[7].b == 0)
+1405bac22                         goto label_1405bace2
+1405bac22                     
+1405bac38                     void* r8_23 = arg1[3]
+1405bac44                     int64_t rcx_85 = *arg1
+1405bac4e                     *rcx_85
+1405bac50                     void** rax_46
+1405bac50                     rax_46, arg3, arg2 = sub_140783b10(rcx_85, *(r8_23 + 8), *(r8_23 + 0x38), 
+1405bac50                         &data_1436153f0, arg3, arg2, 0, arg1[9])
+1405bac55                     *rax_46
+1405bac57                     var_a8.q = rax_46
+1405bac60                     var_a8:8.d = 0
+1405bac60                     
+1405bac7d                     if ((var_a8:8.b & 4) == 0 && (*(var_a8.q + 0x34) & 0x1600000) != 0)
+1405bac7d                         goto label_1405ba46d
+1405bac7d                     
+1405bac83                     int32_t var_44_8 = 2
+1405bac8e                     arg1[6].d = 2
+1405baca0                     sub_1411945e0(&arg1[0xc], var_a8.q)
+1405bacac                     arg1[0xd].d = var_a8:8.d
+1405bacbe                     int64_t* rax_47
+1405bacbe                     int512_t zmm0_15
+1405bacbe                     rax_47, zmm0_15 = sub_140fe3be0(&data_1428f7030, arg1, &arg1[8], arg3)
+1405bacd4                     sub_141092bc0(zmm0_15, &var_a8, rax_47)
+1405bae9b                     return sub_1405bb0d8(rbp)
+1405bae9b                 
+1405ba5c7                 arg3, arg2 = sub_1405b64d0(rbx, *arg1, arg3)
+1405ba5cc                 var_118:8.q = 0
+1405baea5                 sub_1405bb0d8(rbp)
+1405ba448             case 2
+1405ba448                 arg3.o = *(rdx + 0x60)
+1405ba44b                 var_a8 = arg3.o
+1405ba454                 rdx[0xc] = 0
+1405ba457                 rdx[0xd] = 0
+1405ba45b                 int32_t var_44_2 = 0xffffffff
+1405ba462                 rdx[6].d = 0xffffffff
+1405ba46d             label_1405ba46d:
+1405ba46d                 int64_t* rcx_11 = var_a8.q
+1405ba46d                 
+1405ba481                 if ((*(rcx_11 + 0x34) & 0x11000000) != 0x1000000)
+1405ba485                     arg3, arg2 = sub_14097d4c0(rcx_11, 0, arg3, arg2)
+1405ba485                 
+1405ba49d                 sub_1411945e0(&arg1[5], *(var_a8.q + 0x38))
+1405ba4b2                 void* r8_1 = arg1[3]
+1405ba4be                 int64_t rcx_14 = *arg1
+1405ba4c8                 *rcx_14
+1405ba4ca                 void** rax_14
+1405ba4ca                 rax_14, arg3, arg2 = sub_140783b10(rcx_14, *(r8_1 + 8), *(r8_1 + 0x40), 
+1405ba4ca                     &data_143632970, arg3, arg2, 0, arg1[9])
+1405ba4cf                 *rax_14
+1405ba4d1                 var_a8.q = rax_14
+1405ba4da                 var_a8:8.d = 0
+1405ba4da                 
+1405ba4f7                 if ((var_a8:8.b & 4) == 0 && (*(var_a8.q + 0x34) & 0x1600000) != 0)
+1405ba4e7                     goto label_1405ba3a7
+1405ba4e7                 
+1405ba4fd                 int32_t var_44_3 = 3
+1405ba508                 arg1[6].d = 3
+1405ba51a                 sub_1411945e0(&arg1[0xc], var_a8.q)
+1405ba526                 arg1[0xd].d = var_a8:8.d
+1405ba538                 int64_t* rax_15
+1405ba538                 int512_t zmm0_3
+1405ba538                 rax_15, zmm0_3 = sub_140fe3be0(&data_1428f7030, arg1, &arg1[8], arg3)
+1405ba54e                 sub_141092bc0(zmm0_3, &var_a8, rax_15)
+1405bae91                 return sub_1405bb0d8(rbp)
+1405ba386             case 3
+1405ba386                 arg3.o = *(rdx + 0x60)
+1405ba389                 var_a8 = arg3.o
+1405ba392                 rdx[0xc] = 0
+1405ba395                 rdx[0xd] = 0
+1405ba399                 int32_t var_44_1 = 0xffffffff
+1405ba3a0                 rdx[6].d = 0xffffffff
+1405ba3a7             label_1405ba3a7:
+1405ba3a7                 int64_t* rdx_4 = arg1
+1405ba3ab                 int64_t* rcx_4 = var_a8.q
+1405ba3ab                 
+1405ba3bf                 if ((*(rcx_4 + 0x34) & 0x11000000) != 0x1000000)
+1405ba3c3                     arg3 = sub_14097d4c0(rcx_4, 0, arg3, arg2)
+1405ba3c8                     rdx_4 = arg1
+1405ba3c8                 
+1405ba3d3                 rdi_1 = *(var_a8.q + 0x38)
+1405ba3d3                 
+1405ba3e1                 if (rdx_4[5] == 0 || rdi_1 == 0)
+1405ba3f3                     int64_t* rax_10 = sub_1411944a0(&data_14300eb08, 3, arg3)
+1405ba407                     sub_141194570(&rax_10[2], arg1[4])
+1405ba414                     sub_141194570(&rax_10[3], arg1[5])
+1405ba420                     sub_141194570(&rax_10[4], rdi_1)
+1405ba428                     int512_t zmm0_2 = sub_1405b6520(rax_10)
+1405ba433                     arg3, arg2 = sub_1405b64d0(rbx, *arg1, zmm0_2)
+1405ba438                     var_118:8.q = 0
+1405bae8a                     sub_1405bb0d8(rbp)
+1405ba3e1                 else
+1405bace2                 label_1405bace2:
+1405bace2                     int64_t r14_7 = arg1[4]
+1405bace6                     int64_t r15_2 = arg1[5]
+1405bacea                     char r13_1 = arg1[7].b
+1405bacef                     void* r12_1 = arg1[3]
+1405bacfa                     void** rax_48
+1405bacfa                     rax_48, arg3, arg2 = sub_141194310(&data_142a5f708)
+1405bad06                     int64_t r12_2 = *(r12_1 + 0x20)
+1405bad12                     sub_141194570(&rax_48[1], r14_7)
+1405bad25                     sub_141194570(&rax_48[2], r15_2)
+1405bad31                     sub_141194570(&rax_48[3], rdi_1)
+1405bad36                     rax_48[5].b = r13_1
+1405bad41                     sub_141194570(&rax_48[4], r12_2)
+1405bad46                     var_118:8.q = rax_48
+1405bae75                     sub_1405bb0d8(rbp)
+1405ba300 else
+1405ba306     if (*rdx == 0)
+1405baee3         sub_1408deb20(&data_143611cd8)
+1405baee3         noreturn
+1405baee3     
+1405ba30f     *(rbx + 0x54) = *(rdx + 0x34)
+1405ba312     *(rbx + 0x5b) = 0
+1405ba316     *(rbx + 0x5a) = 0
+1405ba31a     int64_t rax_2
+1405ba31a     int512_t zmm0
+1405ba31a     rax_2, zmm0 = sub_1408e5820(arg3)
+1405ba31f     *(rbx + 0x70) = rax_2
+1405ba323     *(rbx + 0x58) = 0
+1405ba32e     void* rax_3
+1405ba32e     int512_t zmm0_1
+1405ba32e     rax_3, zmm0_1 = sub_1408f8960(*(arg1 + 0x34), zmm0)
+1405ba34e     int32_t rax_5
+1405ba34e     rax_5, arg3, arg2 = sub_1405b8600(rbx, sub_1408d1980(&data_1434c1c00, rax_3, zmm0_1), 0x3e8)
+1405ba355     rdx = arg1
+1405ba355     
+1405ba359     if (rax_5 != 0)
+1405ba359         goto label_1405ba35f
+1405ba359     
+1405bae81     var_118:8.q = 0
+1405bae81 
+1405baf07 arg1[6].d = 0xfffffffe
+1405baf16 uint64_t result
+1405baf16 
+1405baf16 if (arg1[8] == 0)
+1405baf37     uint64_t result_1
+1405baf37     
+1405baf37     if (var_118:8.q == 0)
+1405baf61         result = &data_1436bf668
+1405baf61         
+1405baf6d         if (data_1436bf660 != 0)
+1405baf9a             result = sub_14116cb0c(arg3)
+1405baf9a         
+1405baf76         result_1 = *(data_1436cfd30 + 8)
+1405baf37     else
+1405baf40         result = sub_141194310(&data_142c10608)
+1405baf45         result_1 = result
+1405baf48         *(result_1 + 0x34) = 0x1000000
+1405baf5a         sub_141194570(result_1 + 0x38, var_118:8.q)
+1405baf5a     
+1405baf80     sub_1411945e0(&arg1[8], result_1)
+1405baf16 else
+1405baf18     int64_t* rcx_107 = arg1[8]
+1405baf22     *rcx_107
+1405baf24     result = sub_140e81890(rcx_107, var_118:8.q, arg3, arg2)
+1405baf24     
+1405baf2b     if (result.d == 0)
+1405bafa6         sub_1409009d0(0x18)
+1405bafa6         noreturn
+1405bafa6 
+1405baf99 return result

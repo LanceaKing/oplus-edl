@@ -1,0 +1,87 @@
+00447929 __security_cookie
+00447934 int32_t esi
+00447934 int32_t var_148 = esi
+00447938 int32_t edi
+00447938 int32_t var_14c = edi
+00447946 int32_t* eax_2 = sub_4f080d(0x1000)
+00447946 
+00447952 if (eax_2 == 0)
+0044795e     int32_t eax_3 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+0044795e     
+0044796a     if (eax_3 != 0)
+00447977         _fprintf(eax_3, "[%d] Failed to allocate buffer\n", arg1[0xc] + 1)
+00447980         _fclose(eax_3)
+00447980     
+0044799a     return sub_60bdca()
+0044799a 
+004479a4 sub_6132f0(eax_2, arg3, 0x1000)
+004479bc int128_t var_18
+004479bc sub_45d840(&eax_2[0x120], 0xb80, &var_18)
+004479d7 *(eax_2 + 0x400) = var_18
+004479db sub_459800()
+004479e8 sub_459800()
+004479f9 int128_t var_38 = var_18
+00447a0c int128_t var_28
+00447a0c var_18 = var_28
+00447a11 void var_134
+00447a11 sub_45eb20(&var_38, 0x80, &var_134)
+00447a21 var_18 = var_28
+00447a3a sub_473ea0(&eax_2[0x100], &eax_2[0x100], 0xc00, &var_134, &var_18, sub_45e350)
+00447a45 sub_447e20(eax_2)
+00447a4d int32_t eax_7
+00447a4d int32_t ecx_8
+00447a4d eax_7, ecx_8 = sub_447890(arg1, eax_2)
+00447a4d 
+00447a56 if (eax_7 != 0)
+00447a64     int32_t eax_10
+00447a64     int32_t edx_1
+00447a64     edx_1:eax_10 = sx.q(arg2 << 0xa)
+00447a65     int32_t var_154_3 = 0
+00447a78     int32_t eax_13
+00447a78     int32_t edx_3
+00447a78     edx_3:eax_13 = sx.q((eax_10 + (edx_1 & 0xfff)) s>> 0xc)
+00447a7e     int32_t eax_14 = sub_446690(arg1, ecx_8, eax_13, edx_3, eax_2, 0x1000)
+00447a7e     
+00447a8b     if (eax_14 == 0)
+00447aef         if (sub_447300(arg1, arg2, eax_2, arg3) != 0)
+00447b4a             int32_t eax_19 = sub_448430(arg2 + 0x200, eax_2)
+00447b4a             
+00447b57             if (eax_19 == 0)
+00447bc2                 int32_t esi_5 = sub_447300(arg1, arg2 + 0x200, eax_2, arg3)
+00447bc4                 int32_t eax_22 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00447bc4                 
+00447bd4                 if (esi_5 != 0)
+00447bff                     if (eax_22 != 0)
+00447c0c                         _fprintf(eax_22, "[%d] Verified Pass. Update content in mem\n", 
+00447c0c                             arg1[0xc] + 1)
+00447c1a                         _fclose(eax_22)
+00447c1a                     
+00447c2e                     sub_6132f0(arg3, eax_2, 0x1000)
+00447bd4                 else if (eax_22 != 0)
+00447be8                     _fprintf(eax_22, "[%d] Verify backup encrypted content of SID %d failed.\n", 
+00447be8                         arg1[0xc] + 1, arg2)
+00447bf3                     _fclose(eax_22)
+00447b57             else
+00447b63                 int32_t eax_20 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00447b63                 
+00447b73                 if (eax_20 != 0)
+00447b87                     _fprintf(eax_20, "[%d] Failed to write backup region of SID %d (%d)\n", 
+00447b87                         arg1[0xc] + 1, arg2, eax_19)
+00447b95                     _fclose(eax_20)
+00447aef         else
+00447afb             int32_t eax_17 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00447afb             
+00447b0b             if (eax_17 != 0)
+00447b1f                 _fprintf(eax_17, "[%d] Verify primary encrypted content of SID %d failed.\n", 
+00447b1f                     arg1[0xc] + 1, arg2)
+00447b2a                 _fclose(eax_17)
+00447a8b     else
+00447a97         int32_t eax_15 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00447a97         
+00447aa7         if (eax_15 != 0)
+00447abf             _fprintf(eax_15, "[%d] Failed to write primary region of SID %d (%d)\n", arg1[0xc] + 1, 
+00447abf                 arg2, eax_14)
+00447acd             _fclose(eax_15)
+00447acd 
+00447c37 sub_4f0808(eax_2)
+00447c51 return sub_60bdca()

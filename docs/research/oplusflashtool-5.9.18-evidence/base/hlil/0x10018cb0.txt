@@ -1,0 +1,191 @@
+10018cb0 int32_t ebp
+10018cb0 int32_t var_4 = ebp
+10018cb1 int32_t* ebp_1 = &var_4
+10018cb6 void* var_c = arg1
+10018cc3 char* esi = arg2 + 4
+10018cc6 void* ecx = &data_1021a780 - esi
+10018cdb char i
+10018cdb 
+10018cdb do
+10018cd0     i = *esi
+10018cd2     esi = &esi[1]
+10018cd5     *(ecx + esi - 1) = i
+10018cdb while (i != 0)
+10018cdb 
+10018ce8 sub_1002bb30(i, arg2, *(arg1 + 0x538), &data_101fc2f9)
+10018cfd __builtin_strncpy(*(arg1 + 0x538) + 0x104, "/api/tools/login", 0x11)
+10018d27 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), "board_id", arg1 + 0x840)
+10018d47 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), "cpu_id", arg1 + 0x740)
+10018d67 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), "disk_id", arg1 + 0x940)
+10018d87 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), &data_101fce20, arg1 + 0x540)
+10018da5 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), "login_type", "1")
+10018dc5 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), &data_101fce1c, arg1 + 0x640)
+10018de5 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), "password", arg2 + 0x284)
+10018e05 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), "user_id", arg2 + 0x204)
+10018e23 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), "version", "0")
+10018e43 op_str_map_put(*(*(arg1 + 0x538) + 0x3570), "verification_code", arg2 + 0x384)
+10018e43 
+10018e58 if (sub_1002bde0(*(arg1 + 0x538)) == 0)
+10018e7c     int32_t* ebx_1 = *(*(arg1 + 0x538) + 0x3574)
+10018e83     char* eax_20
+10018e83     void* edx
+10018e83     eax_20, edx = op_str_map_get(ebx_1, "/Data/response")
+10018e88     char* ecx_4 = eax_20
+10018e88     
+10018e8f     if (ecx_4 != 0)
+10018e93         if (arg1 != 0xffffffb8)
+10018e97             edx = arg1 + 0x48 - ecx_4
+10018e97             
+10018eab             do
+10018ea0                 eax_20.b = *ecx_4
+10018ea2                 ecx_4 = &ecx_4[1]
+10018ea5                 *(edx + ecx_4 - 1) = eax_20.b
+10018eab             while (eax_20.b != 0)
+10018eab         
+10018e93         goto label_10018f0d
+10018e93     
+10018eb5     char* eax_21
+10018eb5     eax_21, edx = op_str_map_get(ebx_1, "/Data/response/message")
+10018eba     char* ecx_5 = eax_21
+10018eba     
+10018ec1     if (ecx_5 != 0)
+10018ec5         if (arg1 != 0xffffffb8)
+10018ec9             edx = arg1 + 0x48 - ecx_5
+10018ec9             
+10018edb             do
+10018ed0                 eax_21.b = *ecx_5
+10018ed2                 ecx_5 = &ecx_5[1]
+10018ed5                 *(edx + ecx_5 - 1) = eax_21.b
+10018edb             while (eax_21.b != 0)
+10018edb         
+10018ec5         goto label_10018f0d
+10018ec5     
+10018ee5     char* eax_22
+10018ee5     eax_22, edx = op_str_map_get(ebx_1, "/Data/message")
+10018eea     char* ecx_6 = eax_22
+10018eea     
+10018ef1     if (ecx_6 == 0)
+10019064         char const* const var_1c_13 = "[Auth] ERROR: Cannot get 'message' attribute from result."
+10019069         void* const var_20_11 = &data_101fccd0
+1001906e         int32_t var_24_15 = 0x556
+10018ef1     else
+10018ef9         if (arg1 != 0xffffffb8)
+10018efd             edx = arg1 + 0x48 - ecx_6
+10018efd             
+10018f0b             do
+10018f00                 eax_22.b = *ecx_6
+10018f02                 ecx_6 = &ecx_6[1]
+10018f05                 *(edx + ecx_6 - 1) = eax_22.b
+10018f0b             while (eax_22.b != 0)
+10018f0b         
+10018f0d     label_10018f0d:
+10018f0d         char const* const ecx_7 = "0000"
+10018f12         char* eax_23 = arg1 + 0x48
+10018f14         int32_t eax_25
+10018f14         
+10018f14         while (true)
+10018f14             edx.b = *eax_23
+10018f16             char const temp0_1 = *ecx_7
+10018f16             bool c_1 = edx.b u< temp0_1
+10018f16             
+10018f18             if (edx.b == temp0_1)
+10018f1c                 if (edx.b == 0)
+10018f30                     eax_25 = 0
+10018f32                     break
+10018f32                 
+10018f1e                 edx.b = eax_23[1]
+10018f21                 char temp1_1 = ecx_7[1]
+10018f21                 c_1 = edx.b u< temp1_1
+10018f21                 
+10018f24                 if (edx.b == temp1_1)
+10018f26                     eax_23 = &eax_23[2]
+10018f29                     ecx_7 = &ecx_7[2]
+10018f29                     
+10018f2e                     if (edx.b != 0)
+10018f2e                         continue
+10018f2e                     
+10018f30                     eax_25 = 0
+10018f32                     break
+10018f32             
+10018f36             eax_25 = sbb.d(eax_23, eax_23, c_1) | 1
+10018f36             break
+10018f36         
+10018f3b         if (eax_25 == 0)
+10018f53             char* esi_2 = arg1 + 0x488
+10018f69             char* ecx_8 = op_str_map_get(*(*(arg1 + 0x538) + 0x3574), "/Data/response/countryname")
+10018f69             
+10018f70             if (ecx_8 == 0)
+10019053                 char const* const var_1c_12 =
+10019053                     "[Auth] ERROR: Cannot get 'countryname' attribute from result."
+10019058                 void* const var_20_10 = &data_101fccd0
+1001905d                 int32_t var_24_14 = 0x562
+10018f70             else
+10018f78                 if (esi_2 != 0)
+10018f7c                     void* edx_5 = esi_2 - ecx_8
+10018f8b                     char* eax_27
+10018f8b                     
+10018f8b                     do
+10018f80                         eax_27.b = *ecx_8
+10018f82                         ecx_8 = &ecx_8[1]
+10018f85                         *(edx_5 + ecx_8 - 1) = eax_27.b
+10018f8b                     while (eax_27.b != 0)
+10018f8b                 
+10018fa3                 char* ecx_9 = op_str_map_get(*(*(arg1 + 0x538) + 0x3574), "/Data/response/token")
+10018fa3                 
+10018faa                 if (ecx_9 != 0)
+10018fb5                     void* edx_6 = 0x1021b480 - ecx_9
+10018fc2                     char* eax_29
+10018fc2                     
+10018fc2                     do
+10018fb7                         eax_29.b = *ecx_9
+10018fb9                         ecx_9 = &ecx_9[1]
+10018fbc                         *(edx_6 + ecx_9 - 1) = eax_29.b
+10018fc2                     while (eax_29.b != 0)
+10018fc4                     void* eax_30 = *(arg1 + 0x538)
+10018fe0                     char* ecx_10 = op_str_map_get(*(eax_30 + 0x3574), "/Data/response/usertype")
+10018fe7                     char* eax_31
+10018fe7                     
+10018fe7                     if (ecx_10 == 0)
+10018fff                         char const* const var_1c_10 =
+10018fff                             "[Auth] ERROR: Cannot get 'usertype' attribute from result."
+10019004                         void* const var_20_8 = &data_101fccd0
+10019009                         int32_t var_24_12 = 0x56e
+1001900e                         char const* const var_28_1 = "auth_rcsm_login"
+10019013                         eax_31, ebp_1 = opdbg_log()
+10018fe7                     else if (eax_30 != 0xfffff37c)
+10018fed                         void* edi_2 = eax_30 + 0xc84 - ecx_10
+10018fed                         
+10018ffb                         do
+10018ff0                             eax_31.b = *ecx_10
+10018ff2                             ecx_10 = &ecx_10[1]
+10018ff5                             *(edi_2 + ecx_10 - 1) = eax_31.b
+10018ffb                         while (eax_31.b != 0)
+10018ffb                     
+10019020                     int32_t ecx_11 = &data_1021a900 - esi_2
+10019020                     
+1001902d                     do
+10019022                         eax_31.b = *esi_2
+10019024                         esi_2 = &esi_2[1]
+10019027                         esi_2[ecx_11 - 1] = eax_31.b
+1001902d                     while (eax_31.b != 0)
+1001902d                     
+1001902f                     data_102177ec = 4
+10019040                     *ebp_1
+10019041                     return 0
+10019041                 
+10019042                 char const* const var_1c_11 =
+10019042                     "[Auth] ERROR: Cannot get 'token' attribute from result."
+10019047                 void* const var_20_9 = &data_101fccd0
+1001904c                 int32_t var_24_13 = 0x568
+10018f3b         else
+10018f3d             char* var_1c_9 = arg1 + 0x48
+10018f3e             char const* const var_20_4 = "[Auth] ERROR: Server returns error code %s"
+10018f43             int32_t var_24_11 = 0x55c
+10018e58 else
+10018e5a     char const* const var_1c_8 = "[Auth] ERROR: Error occurred when performing RCSM request."
+10018e5f     void* const var_20 = &data_101fccd0
+10018e64     int32_t var_24_10 = 0x54e
+10018e64 
+10019073 char const* const var_28_2 = "auth_rcsm_login"
+10019088 *opdbg_log()
+10019089 return 0xffffffff

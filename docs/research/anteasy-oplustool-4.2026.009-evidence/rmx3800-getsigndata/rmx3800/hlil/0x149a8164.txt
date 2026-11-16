@@ -1,0 +1,41 @@
+149a8188 if ((1 | (0x7fffffffffffffff & arg2) << 1) u<= arg4)
+149a81a0     int32_t x8_1 = 0
+149a81a4     uint64_t x24_1 = 0
+149a81a4     
+149a81ac     while (true)
+149a81ac         uint64_t x25_1 = zx.q(x8_1)
+149a81ac         
+149a81b4         if (x25_1 u>= arg2)
+149a822c             arg3[x24_1] = 0
+149a8224             return 0
+149a8224         
+149a81b8         *(arg1 + x25_1)
+149a81bc         int32_t x26_1 = arg4.d - x24_1.d
+149a81cc         int32_t x0_1
+149a81cc         int64_t* x3_1
+149a81cc         int64_t x4_1
+149a81cc         int64_t x5_1
+149a81cc         int64_t x6_1
+149a81cc         int64_t x7_1
+149a81cc         x0_1, x3_1, x4_1, x5_1, x6_1, x7_1, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12 =
+149a81cc             sub_1499aeac(&arg3[x24_1], sx.q(x26_1), "%02X", arg5, arg6, arg7, arg8, arg9, arg10, 
+149a81cc             arg11, arg12)
+149a81d0         uint64_t x2 = zx.q(x0_1)
+149a81d0         
+149a81d4         if ((x0_1 & 0x80000000) == 0)
+149a81dc             x24_1 += zx.q(x2.d)
+149a81e0             bool c_1
+149a81e0             
+149a81e0             c_1 = x2.d s<= x26_1 ? x24_1 u>= arg4 : true
+149a81e0             
+149a81e4             x8_1 = x25_1.d + 1
+149a81e4             
+149a81e8             if (not(c_1))
+149a81e8                 continue
+149a81e8         
+149a81f8         sub_149a5c34(2, "Error while converting array to ascii %d", x2, x3_1, x4_1, x5_1, x6_1, 
+149a81f8             x7_1, arg5, arg6, arg7, arg8, arg9, arg10, arg11, arg12, x24_1)
+149a8208         sub_1499c404(arg3, 0, arg4)
+149a8208         break
+149a8208 
+149a820c return 0xffffffff

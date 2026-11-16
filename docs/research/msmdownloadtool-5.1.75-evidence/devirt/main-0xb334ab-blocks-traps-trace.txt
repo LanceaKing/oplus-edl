@@ -1,0 +1,45 @@
+FIRST
+00b334ab 90                             nop 
+00b334ac 51                             push ecx
+00b334ad 660f4ccd                       cmovl cx, bp
+00b334b1 86cd                           xchg ch, cl
+00b334b3 0fb7ca                         movzx ecx, dx
+00b334b6 8b4c2404                       mov ecx, dword ptr [esp + 4]
+00b334ba e953374c00                     jmp 0xff6c12
+00ff6c12 8d4901                         lea ecx, [ecx + 1]
+00ff6c15 894c2404                       mov dword ptr [esp + 4], ecx
+00ff6c19 0fc9                           bswap ecx
+00ff6c1b f6d1                           not cl
+00ff6c1d e95b63d7ff                     jmp 0xd6cf7d
+00d6cf7d b94d2f6d00                     mov ecx, 0x6d2f4d
+00d6cf82 e98528fcff                     jmp 0xd2f80c
+00d2f80c 8b89f7c85900                   mov ecx, dword ptr [ecx + 0x59c8f7]
+00d2f812 e9415f0000                     jmp 0xd35758
+00d35758 8d89ec39a50f                   lea ecx, [ecx + 0xfa539ec]
+00d3575e e9cdf72200                     jmp 0xf64f30
+00f64f30 870c24                         xchg dword ptr [esp], ecx
+00f64f33 e9186268ff                     jmp 0x5eb150
+005eb150 c3                             ret 
+
+LAST
+00b334ab 90                             nop 
+00b334ac 51                             push ecx
+00b334ad 660f4ccd                       cmovl cx, bp
+00b334b1 86cd                           xchg ch, cl
+00b334b3 0fb7ca                         movzx ecx, dx
+00b334b6 8b4c2404                       mov ecx, dword ptr [esp + 4]
+00b334ba e953374c00                     jmp 0xff6c12
+00ff6c12 8d4901                         lea ecx, [ecx + 1]
+00ff6c15 894c2404                       mov dword ptr [esp + 4], ecx
+00ff6c19 0fc9                           bswap ecx
+00ff6c1b f6d1                           not cl
+00ff6c1d e95b63d7ff                     jmp 0xd6cf7d
+00d6cf7d b94d2f6d00                     mov ecx, 0x6d2f4d
+00d6cf82 e98528fcff                     jmp 0xd2f80c
+00d2f80c 8b89f7c85900                   mov ecx, dword ptr [ecx + 0x59c8f7]
+00d2f812 e9415f0000                     jmp 0xd35758
+00d35758 8d89ec39a50f                   lea ecx, [ecx + 0xfa539ec]
+00d3575e e9cdf72200                     jmp 0xf64f30
+00f64f30 870c24                         xchg dword ptr [esp], ecx
+00f64f33 e9186268ff                     jmp 0x5eb150
+005eb150 c3                             ret 

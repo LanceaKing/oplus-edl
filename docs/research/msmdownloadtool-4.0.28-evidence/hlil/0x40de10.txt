@@ -1,0 +1,64 @@
+0040de17 int32_t* ecx = &arg1[6]
+0040de1b int32_t edi = ecx[4]
+0040de1b 
+0040de1e if (arg1[0xb] u>= 0x10)
+0040de20     ecx = *ecx
+0040de20 
+0040de22 int32_t eax = 0x10
+0040de22 
+0040de2e if (edi u< 0x10)
+0040de2e     eax = edi
+0040de2e 
+0040de41 if (sub_407560(eax, "dynamic_nvbk.bin", ecx, eax) != 0 || edi u< 0x10)
+0040de55 label_40de55:
+0040de55     int32_t edi_1 = arg1[4]
+0040de58     int32_t* ecx_1
+0040de58     
+0040de58     if (arg1[5] u< 0x10)
+0040de5e         ecx_1 = arg1
+0040de58     else
+0040de5a         ecx_1 = *arg1
+0040de5a     
+0040de60     int32_t eax_2 = 0xb
+0040de60     
+0040de6c     if (edi_1 u< 0xb)
+0040de6c         eax_2 = edi_1
+0040de6c     
+0040de7f     if (sub_407560(eax_2, "oem_dycnvbk", ecx_1, eax_2) != 0 || edi_1 u< 0xb)
+0040de96     label_40de96:
+0040de96         
+0040de9d         if (sub_4094a0(arg1, "reserve1") != 0 && sub_4094a0(arg1, "reserve3") != 0
+0040de9d                 && sub_4094a0(arg1, "reserve4") != 0 && sub_4094a0(arg1, "fsg") != 0
+0040de9d                 && sub_4094a0(arg1, "fsc") != 0)
+0040defa             int32_t eax_9 = sub_4094a0(arg1, "DDR")
+0040defa             
+0040df06             if (eax_9 != 0 || arg1[0xa] != eax_9)
+0040df13                 int32_t eax_10 = sub_4094a0(arg1, "ddr")
+0040df13                 
+0040df1f                 if (eax_10 != 0 || arg1[0xa] != eax_10)
+0040df28                     int32_t eax_11 = sub_4094a0(arg1, "devinfo")
+0040df28                     
+0040df34                     if ((eax_11 != 0 || arg1[0xa] != eax_11) && sub_4094a0(arg1, "param") != 0
+0040df34                             && sub_4094a0(arg1, "op1") != 0)
+0040df5d                         int32_t eax_14 = sub_4094a0(arg1, "modemst1")
+0040df5d                         
+0040df69                         if (eax_14 != 0 || arg1[0xa] != eax_14)
+0040df72                             int32_t eax_15 = sub_4094a0(arg1, "modemst2")
+0040df72                             
+0040df7e                             if ((eax_15 != 0 || arg1[0xa] != eax_15)
+0040df7e                                     && sub_4094a0(arg1, "persist") != 0)
+0040df94                                 return 0
+0040de7f     else
+0040de84         int32_t eax_3
+0040de84         eax_3.b = edi_1 != 0xb
+0040de84         
+0040de89         if (eax_3 != 0)
+0040de89             goto label_40de96
+0040de41 else
+0040de46     int32_t eax_1
+0040de46     eax_1.b = edi != 0x10
+0040de46     
+0040de4b     if (eax_1 != 0)
+0040de4b         goto label_40de55
+0040de4b 
+0040df9c return 1

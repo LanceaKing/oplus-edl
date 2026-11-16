@@ -1,0 +1,155 @@
+{
+  "scope": "Native short-string copies only; zero API models.",
+  "cases": [
+    {
+      "version": "5175",
+      "mode": 1,
+      "image_sha256": "cf526788045211590d6fc3d5a1688b87d6377db05532516f5a4f570bd860e68f",
+      "entry": "0x4c03f0",
+      "stop": "0x4d4e00",
+      "error": null,
+      "actual": {
+        "0x8": "project-first",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "expected": {
+        "0x8": "project-first",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "pass": true
+    },
+    {
+      "version": "5175",
+      "mode": 2,
+      "image_sha256": "cf526788045211590d6fc3d5a1688b87d6377db05532516f5a4f570bd860e68f",
+      "entry": "0x4c03f0",
+      "stop": "0x4d4e00",
+      "error": null,
+      "actual": {
+        "0x8": "project-second",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "expected": {
+        "0x8": "project-second",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "pass": true
+    },
+    {
+      "version": "5175",
+      "mode": 3,
+      "image_sha256": "cf526788045211590d6fc3d5a1688b87d6377db05532516f5a4f570bd860e68f",
+      "entry": "0x4c03f0",
+      "stop": "0x4d4e00",
+      "error": null,
+      "actual": {
+        "0x8": "keep-value",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "expected": {
+        "0x8": "keep-value",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "pass": true
+    },
+    {
+      "version": "5177",
+      "mode": 1,
+      "image_sha256": "0717b3160c05e5bbb5991dabc134b2948c750c0011ea2628da56cdbc621d9649",
+      "entry": "0x4c0590",
+      "stop": "0x4d5070",
+      "error": null,
+      "actual": {
+        "0x8": "project-first",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "expected": {
+        "0x8": "project-first",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "pass": true
+    },
+    {
+      "version": "5177",
+      "mode": 2,
+      "image_sha256": "0717b3160c05e5bbb5991dabc134b2948c750c0011ea2628da56cdbc621d9649",
+      "entry": "0x4c0590",
+      "stop": "0x4d5070",
+      "error": null,
+      "actual": {
+        "0x8": "project-second",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "expected": {
+        "0x8": "project-second",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "pass": true
+    },
+    {
+      "version": "5177",
+      "mode": 3,
+      "image_sha256": "0717b3160c05e5bbb5991dabc134b2948c750c0011ea2628da56cdbc621d9649",
+      "entry": "0x4c0590",
+      "stop": "0x4d5070",
+      "error": null,
+      "actual": {
+        "0x8": "keep-value",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "expected": {
+        "0x8": "keep-value",
+        "0x20": "model-tag",
+        "0x38": "cust-tag",
+        "0x80": "sw-tag",
+        "0x98": "0x11223344",
+        "0x9c": "0x55667788"
+      },
+      "pass": true
+    }
+  ]
+}

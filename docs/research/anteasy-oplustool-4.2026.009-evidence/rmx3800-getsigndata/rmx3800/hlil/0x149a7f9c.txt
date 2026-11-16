@@ -1,0 +1,13 @@
+149a7fa4 int64_t x9 = 0
+149a7fc8 uint32_t x11_1
+149a7fc8 uint32_t x12_1
+149a7fc8 
+149a7fc8 do
+149a7fb4     if (x9 == 8)
+149a7fd4         return 0
+149a7fd4     
+149a7fb8     x11_1 = zx.d(*(arg1 + x9))
+149a7fbc     x12_1 = zx.d((*"EFI PART")[x9])
+149a7fc0     x9 += 1
+149a7fc8 while (x11_1 == x12_1)
+149a7fcc return 0xffffffff

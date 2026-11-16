@@ -1,0 +1,700 @@
+18003ba33 void var_4c8
+18003ba33 int64_t rax_1 = __security_cookie ^ &var_4c8
+18003ba4f int64_t* var_368 = arg3
+18003ba53 int64_t* var_360 = arg4
+18003ba62 int64_t* var_358 = arg5
+18003ba71 int64_t* var_350 = arg6
+18003ba80 int64_t* var_348 = arg7
+18003ba92 int64_t* var_340 = arg8
+18003baa9 int64_t* rax_3
+18003baa9 
+18003baa9 if (arg8[3] u<= 0xf)
+18003bab0     rax_3 = arg8
+18003baa9 else
+18003baab     rax_3 = *arg8
+18003baab 
+18003bab3 int64_t* var_438 = rax_3
+18003babb int64_t var_430 = arg8[2]
+18003bacf int128_t var_98
+18003bacf var_438 = sub_180058e90(&var_98, &var_438)
+18003bad8 int64_t* rcx_2
+18003bad8 
+18003bad8 if (arg7[3] u<= 0xf)
+18003badf     rcx_2 = arg7
+18003bad8 else
+18003bada     rcx_2 = *arg7
+18003bada 
+18003bae2 int64_t* var_448 = rcx_2
+18003baea int64_t var_440 = arg7[2]
+18003bafe int128_t var_b8
+18003bafe var_448 = sub_180058e90(&var_b8, &var_448)
+18003bb07 int64_t* rcx_4
+18003bb07 
+18003bb07 if (arg6[3] u<= 0xf)
+18003bb0e     rcx_4 = arg6
+18003bb07 else
+18003bb09     rcx_4 = *arg6
+18003bb09 
+18003bb11 int64_t* var_1f8 = rcx_4
+18003bb1c int64_t var_1f0 = arg6[2]
+18003bb36 int128_t var_d8
+18003bb36 var_1f8 = sub_180058e90(&var_d8, &var_1f8)
+18003bb42 int64_t* rcx_6
+18003bb42 
+18003bb42 if (arg5[3] u<= 0xf)
+18003bb49     rcx_6 = arg5
+18003bb42 else
+18003bb44     rcx_6 = *arg5
+18003bb44 
+18003bb4c int64_t* var_218 = rcx_6
+18003bb57 int64_t var_210 = arg5[2]
+18003bb71 int128_t var_f8
+18003bb71 var_218 = sub_180058e90(&var_f8, &var_218)
+18003bb7e int64_t* rcx_8
+18003bb7e 
+18003bb7e if (arg4[3] u<= 0xf)
+18003bb86     rcx_8 = arg4
+18003bb7e else
+18003bb80     rcx_8 = *arg4
+18003bb80 
+18003bb89 int128_t* var_238 = rcx_8
+18003bb95 int64_t var_230 = arg4[2]
+18003bbaf int128_t var_118
+18003bbaf var_238 = sub_180058e90(&var_118, &var_238)
+18003bbbb int64_t* rcx_10
+18003bbbb 
+18003bbbb if (arg3[3] u<= 0xf)
+18003bbc2     rcx_10 = arg3
+18003bbbb else
+18003bbbd     rcx_10 = *arg3
+18003bbbd 
+18003bbc5 int64_t* var_278 = rcx_10
+18003bbd0 int64_t var_270 = arg3[2]
+18003bbe5 int128_t var_138
+18003bbe5 int128_t* rax_15 = sub_180058e90(&var_138, &var_278)
+18003bbea int128_t* rsi_1 = rax_15
+18003bbed void* r8 = rax_15[1].q
+18003bbf1 int64_t rcx_12 = *(rax_15 + 0x18)
+18003bbff char var_488
+18003bbff char r9
+18003bbff 
+18003bbff if (rcx_12 - r8 u< 0xd)
+18003bcac     int64_t* rax_20
+18003bcac     rax_20, r9 = sub_180038d40(rsi_1, 0xd, zx.q(var_488), 0, "{"platform":"", 0xd)
+18003bcb1     rsi_1 = rax_20
+18003bbff else
+18003bc09     rsi_1[1].q = r8 + 0xd
+18003bc11     int128_t* rbx_1
+18003bc11     
+18003bc11     if (rcx_12 u<= 0xf)
+18003bc18         rbx_1 = rsi_1
+18003bc11     else
+18003bc13         rbx_1 = *rsi_1
+18003bc13     
+18003bc3b     void* rdi_1
+18003bc3b     
+18003bc3b     if (&data_1801584d8[0xd] u<= rbx_1 || "{"platform":"" u> rbx_1 + r8)
+18003bc4e         rdi_1 = 0xd
+18003bc3b     else if (rbx_1 u> "{"platform":"")
+18003bc49         rdi_1 = rbx_1 - "{"platform":""
+18003bc40     else
+18003bc42         rdi_1 = nullptr
+18003bc42     
+18003bc5b     memcpy(rbx_1 + 0xd, rbx_1, r8 + 1)
+18003bc69     memcpy(rbx_1, "{"platform":"", rdi_1)
+18003bc7f     r9 = memcpy(rdi_1 + rbx_1, &data_1801584d8[0xd] + rdi_1, 0xd - rdi_1)
+18003bc7f 
+18003bcb7 int128_t var_258
+18003bcb7 __builtin_memset(&var_258, 0, 0x20)
+18003bcd2 var_258 = *rsi_1
+18003bcdd int64_t var_248
+18003bcdd var_248.o = rsi_1[1]
+18003bce4 rsi_1[1].q = 0
+18003bce8 *(rsi_1 + 0x18) = 0xf
+18003bcf0 *rsi_1 = 0
+18003bd07 int64_t* rax_21 = sub_1800386b0(&var_258, "","device_code":"", 0x11, r9)
+18003bd0f int128_t var_78 = *rax_21
+18003bd16 int128_t zmm1_1 = *(rax_21 + 0x10)
+18003bd21 rax_21[2] = 0
+18003bd25 rax_21[3] = 0xf
+18003bd2d *rax_21 = 0
+18003bd64 char var_158
+18003bd64 int64_t* rax_22 = sub_1800386b0(&var_158, "","scheme":"", 0xc, 
+18003bd64     sub_1800397b0(&var_158, zx.q(var_488), &var_78, var_238))
+18003bd6c var_238.o = *rax_22
+18003bd73 int128_t zmm1_2 = *(rax_22 + 0x10)
+18003bd7e rax_22[2] = 0
+18003bd82 rax_22[3] = 0xf
+18003bd8a *rax_22 = 0
+18003bdc1 char var_178
+18003bdc1 int64_t* rax_23 = sub_1800386b0(&var_178, "","pk_hash_sha256":"", 0x14, 
+18003bdc1     sub_1800397b0(&var_178, zx.q(var_488), &var_238, var_218))
+18003bdc9 var_218.o = *rax_23
+18003bdd0 int128_t zmm1_3 = *(rax_23 + 0x10)
+18003bddb rax_23[2] = 0
+18003bddf rax_23[3] = 0xf
+18003bde7 *rax_23 = 0
+18003be1e char var_198
+18003be1e int64_t* rax_24 = sub_1800386b0(&var_198, "","pk_hash_sha384":"", 0x14, 
+18003be1e     sub_1800397b0(&var_198, zx.q(var_488), &var_218, var_1f8))
+18003be26 var_1f8.o = *rax_24
+18003be2d int128_t zmm1_4 = *(rax_24 + 0x10)
+18003be38 rax_24[2] = 0
+18003be3c rax_24[3] = 0xf
+18003be44 *rax_24 = 0
+18003be78 char var_1b8
+18003be78 int64_t* rax_25 = sub_1800386b0(&var_1b8, "","msm_id":"", 0xc, 
+18003be78     sub_1800397b0(&var_1b8, zx.q(var_488), &var_1f8, var_448))
+18003be80 var_278.o = *rax_25
+18003be87 int128_t zmm1_5 = *(rax_25 + 0x10)
+18003be92 rax_25[2] = 0
+18003be96 rax_25[3] = 0xf
+18003be9e *rax_25 = 0
+18003bed2 char var_1d8
+18003bed2 int64_t* rax_26
+18003bed2 uint64_t r9_11
+18003bed2 rax_26, r9_11 = sub_1800386b0(&var_1d8, &data_18015846c, 2, 
+18003bed2     sub_1800397b0(&var_1d8, zx.q(var_488), &var_278, var_438))
+18003beda int128_t var_2e8
+18003beda __builtin_memset(&var_2e8, 0, 0x20)
+18003bef2 var_2e8 = *rax_26
+18003befd void* var_2d8
+18003befd var_2d8.o = *(rax_26 + 0x10)
+18003bf04 rax_26[2] = 0
+18003bf08 rax_26[3] = 0xf
+18003bf10 *rax_26 = 0
+18003bf1e int64_t var_1c0
+18003bf1e 
+18003bf1e if (var_1c0 u> 0xf)
+18003bf23     void* rcx_28 = var_1d8.q
+18003bf23     
+18003bf31     if (var_1c0 + 1 u>= 0x1000)
+18003bf33         void* rax_27 = *(rcx_28 - 8)
+18003bf33         
+18003bf42         if (rcx_28 - rax_27 - 8 u> 0x1f)
+18003c533             trap(0xd)
+18003c533         
+18003bf4c         rcx_28 = rax_27
+18003bf4c     
+18003bf4f     r9_11 = j_sub_18012c540(rcx_28)
+18003bf4f 
+18003bf54 int64_t var_1c8 = 0
+18003bf5b int64_t var_1c0_1 = 0xf
+18003bf66 var_1d8 = 0
+18003bf6d int64_t rdx_16 = zmm1_5:8.q
+18003bf6d 
+18003bf78 if (rdx_16 u> 0xf)
+18003bf7d     int64_t* rcx_31 = var_278
+18003bf7d     
+18003bf8b     if (rdx_16 + 1 u>= 0x1000)
+18003bf8d         int64_t* rax_28 = rcx_31[-1]
+18003bf8d         
+18003bf9c         if (rcx_31 - rax_28 - 8 u> 0x1f)
+18003c53a             trap(0xd)
+18003c53a         
+18003bfa6         rcx_31 = rax_28
+18003bfa6     
+18003bfa9     r9_11 = j_sub_18012c540(rcx_31)
+18003bfa9 
+18003bfba int64_t var_1a0
+18003bfba 
+18003bfba if (var_1a0 u> 0xf)
+18003bfbf     void* rcx_34 = var_1b8.q
+18003bfbf     
+18003bfcd     if (var_1a0 + 1 u>= 0x1000)
+18003bfcf         void* rax_29 = *(rcx_34 - 8)
+18003bfcf         
+18003bfde         if (rcx_34 - rax_29 - 8 u> 0x1f)
+18003c541             trap(0xd)
+18003c541         
+18003bfe8         rcx_34 = rax_29
+18003bfe8     
+18003bfeb     r9_11 = j_sub_18012c540(rcx_34)
+18003bfeb 
+18003bff0 int64_t var_1a8 = 0
+18003bff7 int64_t var_1a0_1 = 0xf
+18003c002 var_1b8 = 0
+18003c009 int64_t rdx_22 = zmm1_4:8.q
+18003c009 
+18003c014 if (rdx_22 u> 0xf)
+18003c019     int64_t* rcx_37 = var_1f8
+18003c019     
+18003c027     if (rdx_22 + 1 u>= 0x1000)
+18003c029         int64_t* rax_30 = rcx_37[-1]
+18003c029         
+18003c038         if (rcx_37 - rax_30 - 8 u> 0x1f)
+18003c548             trap(0xd)
+18003c548         
+18003c042         rcx_37 = rax_30
+18003c042     
+18003c045     r9_11 = j_sub_18012c540(rcx_37)
+18003c045 
+18003c056 int64_t var_180
+18003c056 
+18003c056 if (var_180 u> 0xf)
+18003c05b     void* rcx_40 = var_198.q
+18003c05b     
+18003c069     if (var_180 + 1 u>= 0x1000)
+18003c06b         void* rax_31 = *(rcx_40 - 8)
+18003c06b         
+18003c07a         if (rcx_40 - rax_31 - 8 u> 0x1f)
+18003c54f             trap(0xd)
+18003c54f         
+18003c084         rcx_40 = rax_31
+18003c084     
+18003c087     r9_11 = j_sub_18012c540(rcx_40)
+18003c087 
+18003c08c int64_t var_188 = 0
+18003c093 int64_t var_180_1 = 0xf
+18003c09e var_198 = 0
+18003c0a5 int64_t rdx_28 = zmm1_3:8.q
+18003c0a5 
+18003c0b0 if (rdx_28 u> 0xf)
+18003c0b5     int64_t* rcx_43 = var_218
+18003c0b5     
+18003c0c3     if (rdx_28 + 1 u>= 0x1000)
+18003c0c5         int64_t* rax_32 = rcx_43[-1]
+18003c0c5         
+18003c0d4         if (rcx_43 - rax_32 - 8 u> 0x1f)
+18003c556             trap(0xd)
+18003c556         
+18003c0de         rcx_43 = rax_32
+18003c0de     
+18003c0e1     r9_11 = j_sub_18012c540(rcx_43)
+18003c0e1 
+18003c0f2 int64_t var_160
+18003c0f2 
+18003c0f2 if (var_160 u> 0xf)
+18003c0f7     void* rcx_46 = var_178.q
+18003c0f7     
+18003c105     if (var_160 + 1 u>= 0x1000)
+18003c107         void* rax_33 = *(rcx_46 - 8)
+18003c107         
+18003c116         if (rcx_46 - rax_33 - 8 u> 0x1f)
+18003c55d             trap(0xd)
+18003c55d         
+18003c120         rcx_46 = rax_33
+18003c120     
+18003c123     r9_11 = j_sub_18012c540(rcx_46)
+18003c123 
+18003c128 int64_t var_168 = 0
+18003c12f int64_t var_160_1 = 0xf
+18003c13a var_178 = 0
+18003c141 int64_t rdx_34 = zmm1_2:8.q
+18003c141 
+18003c14c if (rdx_34 u> 0xf)
+18003c151     int128_t* rcx_49 = var_238
+18003c151     
+18003c15f     if (rdx_34 + 1 u>= 0x1000)
+18003c161         int128_t* rax_34 = *(rcx_49 - 8)
+18003c161         
+18003c170         if (rcx_49 - rax_34 - 8 u> 0x1f)
+18003c564             trap(0xd)
+18003c564         
+18003c17a         rcx_49 = rax_34
+18003c17a     
+18003c17d     r9_11 = j_sub_18012c540(rcx_49)
+18003c17d 
+18003c18e int64_t var_140
+18003c18e 
+18003c18e if (var_140 u> 0xf)
+18003c193     void* rcx_52 = var_158.q
+18003c193     
+18003c1a1     if (var_140 + 1 u>= 0x1000)
+18003c1a3         void* rax_35 = *(rcx_52 - 8)
+18003c1a3         
+18003c1b2         if (rcx_52 - rax_35 - 8 u> 0x1f)
+18003c56b             trap(0xd)
+18003c56b         
+18003c1bc         rcx_52 = rax_35
+18003c1bc     
+18003c1bf     r9_11 = j_sub_18012c540(rcx_52)
+18003c1bf 
+18003c1c4 int64_t var_148 = 0
+18003c1cb int64_t var_140_1 = 0xf
+18003c1d6 var_158 = 0
+18003c1dd int64_t rdx_40 = zmm1_1:8.q
+18003c1dd 
+18003c1e8 if (rdx_40 u> 0xf)
+18003c1ed     void* rcx_55 = var_78.q
+18003c1ed     
+18003c1fb     if (rdx_40 + 1 u>= 0x1000)
+18003c1fd         void* rax_36 = *(rcx_55 - 8)
+18003c1fd         
+18003c20c         if (rcx_55 - rax_36 - 8 u> 0x1f)
+18003c572             trap(0xd)
+18003c572         
+18003c216         rcx_55 = rax_36
+18003c216     
+18003c219     r9_11 = j_sub_18012c540(rcx_55)
+18003c219 
+18003c22a int64_t var_240
+18003c22a 
+18003c22a if (var_240 u> 0xf)
+18003c22f     void* rcx_58 = var_258.q
+18003c22f     
+18003c23d     if (var_240 + 1 u>= 0x1000)
+18003c23f         void* rax_37 = *(rcx_58 - 8)
+18003c23f         
+18003c24e         if (rcx_58 - rax_37 - 8 u> 0x1f)
+18003c579             trap(0xd)
+18003c579         
+18003c258         rcx_58 = rax_37
+18003c258     
+18003c25b     r9_11 = j_sub_18012c540(rcx_58)
+18003c25b 
+18003c260 int64_t var_248_1 = 0
+18003c267 int64_t var_240_1 = 0xf
+18003c272 var_258.b = 0
+18003c284 int64_t var_120
+18003c284 
+18003c284 if (var_120 u> 0xf)
+18003c289     void* rcx_61 = var_138.q
+18003c289     
+18003c297     if (var_120 + 1 u>= 0x1000)
+18003c299         void* rax_38 = *(rcx_61 - 8)
+18003c299         
+18003c2a8         if (rcx_61 - rax_38 - 8 u> 0x1f)
+18003c580             trap(0xd)
+18003c580         
+18003c2b2         rcx_61 = rax_38
+18003c2b2     
+18003c2b5     r9_11 = j_sub_18012c540(rcx_61)
+18003c2b5 
+18003c2ba int64_t var_128 = 0
+18003c2c1 int64_t var_120_1 = 0xf
+18003c2cc var_138.b = 0
+18003c2de int64_t var_100
+18003c2de 
+18003c2de if (var_100 u> 0xf)
+18003c2e3     void* rcx_64 = var_118.q
+18003c2e3     
+18003c2f1     if (var_100 + 1 u>= 0x1000)
+18003c2f3         void* rax_39 = *(rcx_64 - 8)
+18003c2f3         
+18003c302         if (rcx_64 - rax_39 - 8 u> 0x1f)
+18003c587             trap(0xd)
+18003c587         
+18003c30c         rcx_64 = rax_39
+18003c30c     
+18003c30f     r9_11 = j_sub_18012c540(rcx_64)
+18003c30f 
+18003c314 int64_t var_108 = 0
+18003c31b int64_t var_100_1 = 0xf
+18003c326 var_118.b = 0
+18003c338 int64_t var_e0
+18003c338 
+18003c338 if (var_e0 u> 0xf)
+18003c33d     void* rcx_67 = var_f8.q
+18003c33d     
+18003c34b     if (var_e0 + 1 u>= 0x1000)
+18003c34d         void* rax_40 = *(rcx_67 - 8)
+18003c34d         
+18003c35c         if (rcx_67 - rax_40 - 8 u> 0x1f)
+18003c58e             trap(0xd)
+18003c58e         
+18003c366         rcx_67 = rax_40
+18003c366     
+18003c369     r9_11 = j_sub_18012c540(rcx_67)
+18003c369 
+18003c36e int64_t var_e8 = 0
+18003c375 int64_t var_e0_1 = 0xf
+18003c380 var_f8.b = 0
+18003c392 int64_t var_c0
+18003c392 
+18003c392 if (var_c0 u> 0xf)
+18003c397     void* rcx_70 = var_d8.q
+18003c397     
+18003c3a5     if (var_c0 + 1 u>= 0x1000)
+18003c3a7         void* rax_41 = *(rcx_70 - 8)
+18003c3a7         
+18003c3b6         if (rcx_70 - rax_41 - 8 u> 0x1f)
+18003c595             trap(0xd)
+18003c595         
+18003c3c0         rcx_70 = rax_41
+18003c3c0     
+18003c3c3     r9_11 = j_sub_18012c540(rcx_70)
+18003c3c3 
+18003c3c8 int64_t var_c8 = 0
+18003c3cf int64_t var_c0_1 = 0xf
+18003c3da var_d8.b = 0
+18003c3ec int64_t var_a0
+18003c3ec 
+18003c3ec if (var_a0 u> 0xf)
+18003c3f1     void* rcx_73 = var_b8.q
+18003c3f1     
+18003c3ff     if (var_a0 + 1 u>= 0x1000)
+18003c401         void* rax_42 = *(rcx_73 - 8)
+18003c401         
+18003c410         if (rcx_73 - rax_42 - 8 u> 0x1f)
+18003c59c             trap(0xd)
+18003c59c         
+18003c41a         rcx_73 = rax_42
+18003c41a     
+18003c41d     r9_11 = j_sub_18012c540(rcx_73)
+18003c41d 
+18003c422 int64_t var_a8 = 0
+18003c429 int64_t var_a0_1 = 0xf
+18003c434 var_b8.b = 0
+18003c446 int64_t var_80
+18003c446 
+18003c446 if (var_80 u<= 0xf)
+18003c446     goto label_18003c47c
+18003c446 
+18003c44b void* rcx_76 = var_98.q
+18003c44b 
+18003c459 if (var_80 + 1 u< 0x1000)
+18003c459     goto label_18003c477
+18003c459 
+18003c45b void* rax_43 = *(rcx_76 - 8)
+18003c45b 
+18003c46a if (rcx_76 - rax_43 - 8 u<= 0x1f)
+18003c474     rcx_76 = rax_43
+18003c477 label_18003c477:
+18003c477     r9_11 = j_sub_18012c540(rcx_76)
+18003c47c label_18003c47c:
+18003c47c     int64_t var_88_1 = 0
+18003c483     int64_t var_80_1 = 0xf
+18003c48e     var_98.b = 0
+18003c495     int128_t* rdx_64 = &var_2e8
+18003c49c     int128_t* r8_10 = var_2e8.q
+18003c4ae     int64_t var_2d0
+18003c4ae     
+18003c4ae     if (var_2d0 u> 0xf)
+18003c4ae         rdx_64 = r8_10
+18003c4ae     
+18003c4b9     void* rdi_4 = var_2d8 + rdx_64
+18003c4bc     int128_t* rsi_2 = &var_2e8
+18003c4bc     
+18003c4c7     if (var_2d0 u> 0xf)
+18003c4c7         rsi_2 = r8_10
+18003c4c7     
+18003c4ce     int128_t var_480
+18003c4ce     __builtin_memset(&var_480, 0, 0x18)
+18003c4d9     void* rdi_5 = rdi_4 - rsi_2
+18003c4d9     
+18003c4dc     if (rdi_4 == rsi_2)
+18003c4dc         goto label_18003c5cc
+18003c4dc     
+18003c4ef     if (rdi_5 u> 0x7fffffffffffffff)
+18003cb5f         sub_18001a550()
+18003cb5f         noreturn
+18003cb5f     
+18003c4fc     int128_t* rax_46
+18003c4fc     
+18003c4fc     if (rdi_5 u< 0x1000)
+18003c5a1         rax_46 = sub_1800d1b80(rdi_5, rdx_64, r8_10, r9_11)
+18003c5a6     label_18003c5a6:
+18003c5a6         var_480.q = rax_46
+18003c5ab         var_480:8.q = rax_46
+18003c5b0         int64_t rbx_2 = rax_46 + rdi_5
+18003c5b4         int64_t var_470_1 = rbx_2
+18003c5c2         memcpy(rax_46, rsi_2, rdi_5)
+18003c5c7         var_480:8.q = rbx_2
+18003c5cc     label_18003c5cc:
+18003c5cc         int32_t var_428 = 0
+18003c5d0         int64_t var_420
+18003c5d0         __builtin_memset(&var_420, 0, 0x31)
+18003c5ec         int32_t var_3ec_1 = 0
+18003c5f0         int64_t var_338
+18003c5f0         __builtin_memset(&var_338, 0, 0x11)
+18003c5fe         int128_t var_328_1 = zx.o(0)
+18003c605         int64_t var_318_1 = 0
+18003c60c         int64_t var_310_1 = 0xf
+18003c61e         int128_t var_308_1 = zx.o(0)
+18003c625         int64_t var_2f8_1 = 0
+18003c62c         int64_t var_2f0_1 = 0xf
+18003c637         var_308_1.b = 0
+18003c677         int32_t var_2c8
+18003c677         int128_t var_298
+18003c677         
+18003c677         if (sub_180040ed0(arg1, arg2, arg9, "/api/v1/cloud-loader/list", &var_480, &var_428, 
+18003c677                 &var_338) == 0)
+18003c683             var_2c8 = var_338.d
+18003c68f             int32_t var_2c4_1 = var_338:4.d
+18003c69b             int32_t var_2c0_1
+18003c69b             __builtin_memset(&var_2c0_1, 0, 0x20)
+18003c6be             int128_t var_2b8
+18003c6be             var_2b8.q = var_328_1.q
+18003c6e8             int64_t var_2a0_1 = var_310_1
+18003c6ef             int64_t var_318_2 = 0
+18003c6f6             var_310_1 = 0xf
+18003c701             var_328_1.b = 0
+18003c708             var_298 = zx.o(0)
+18003c716             var_298.q = var_308_1.q
+18003c724             var_298:8.q = var_308_1:8.q
+18003c732             int64_t var_288_1 = var_2f8_1
+18003c740             int64_t var_280_1 = var_2f0_1
+18003c747             int64_t var_2f8_2 = 0
+18003c74e             var_2f0_1 = 0xf
+18003c759             var_308_1.b = 0
+18003c76a             sub_180035e60(arg2, &var_2c8)
+18003c677         else
+18003c87a             void var_3b8
+18003c87a             
+18003c87a             if (var_428 - 0xc8 u> 0x63)
+18003c76a                 sub_180035e60(arg2, sub_18003f260(&var_3b8, &var_428, "loader list request failed"))
+18003c87a             else
+18003c883                 int128_t var_460
+18003c883                 __builtin_memset(&var_460, 0, 0x18)
+18003c897                 char rax_63
+18003c897                 uint64_t r9_12
+18003c897                 rax_63, r9_12 = sub_180050080(&var_420, &var_460)
+18003c89e                 int64_t var_450
+18003c89e                 
+18003c89e                 if (rax_63 != 0)
+18003ca17                     int64_t rcx_122 = var_460:8.q
+18003ca21                     int64_t* rax_71 = var_460.q
+18003ca26                     __builtin_memset(&var_460, 0, 0x18)
+18003ca2b                     var_278 = rax_71
+18003ca32                     int64_t var_270_1 = rcx_122
+18003ca39                     int128_t var_268
+18003ca39                     var_268.q = var_450
+18003ca4a                     sub_1800359f0(arg2, &var_278)
+18003c89e                 else
+18003c8a4                     var_2c8 = 8
+18003c8b1                     int32_t var_2c4_2 = var_428
+18003c8b7                     int32_t var_2c0_2 = 0
+18003c8be                     int32_t var_2bc_1 = 0x5de
+18003c8cb                     int64_t var_2b8_1 = (zx.o(0)).q
+18003c8d2                     int64_t var_2a8_1 = 0
+18003c8d9                     int64_t var_2a0_2 = 0xf
+18003c8e4                     var_2b8_1.b = 0
+18003c8eb                     var_298 = zx.o(0)
+18003c8f2                     int64_t var_288_2 = 0
+18003c8f9                     int64_t var_280_2 = 0
+18003c914                     sub_1800017c0(&var_298, "loader list response is invalid", 0x1f, r9_12)
+18003c930                     sub_180035e60(arg2, sub_180034800(&var_3b8, &var_2c8))
+18003c930                     
+18003c941                     if (var_280_2 u> 0xf)
+18003c946                         void* rcx_114 = var_298.q
+18003c946                         
+18003c954                         if (var_280_2 + 1 u>= 0x1000)
+18003c956                             void* rax_66 = *(rcx_114 - 8)
+18003c956                             
+18003c965                             if (rcx_114 - rax_66 - 8 u> 0x1f)
+18003c9f0                                 trap(0xd)
+18003c9f0                             
+18003c96f                             rcx_114 = rax_66
+18003c96f                         
+18003c972                         j_sub_18012c540(rcx_114)
+18003c972                     
+18003c982                     if (var_2a0_2 u> 0xf)
+18003c987                         int64_t rcx_117 = var_2b8_1
+18003c987                         
+18003c995                         if (var_2a0_2 + 1 u>= 0x1000)
+18003c997                             int64_t rax_67 = *(rcx_117 - 8)
+18003c997                             
+18003c9a6                             if (rcx_117 - rax_67 - 8 u> 0x1f)
+18003c9f0                                 trap(0xd)
+18003c9f0                             
+18003c9ac                             rcx_117 = rax_67
+18003c9ac                         
+18003c9af                         j_sub_18012c540(rcx_117)
+18003c9af                 
+18003c9b5                 void* rax_68 = var_460.q
+18003c9b5                 
+18003c9bd                 if (rax_68 != 0)
+18003c9d2                     void* rcx_120
+18003c9d2                     
+18003c9d2                     if (var_450 - rax_68 u< 0x1000)
+18003c9f2                         rcx_120 = rax_68
+18003c9d2                     else
+18003c9d4                         rcx_120 = *(rax_68 - 8)
+18003c9d4                         
+18003c9e3                         if (rax_68 - rcx_120 - 8 u> 0x1f)
+18003ca59                             trap(0xd)
+18003ca59                     
+18003c9f5                     j_sub_18012c540(rcx_120)
+18003c9fd                     __builtin_memset(&var_460, 0, 0x18)
+18003c9fd         
+18003c77b         if (var_2f0_1 u> 0xf)
+18003c787             void* rcx_102 = var_308_1.q
+18003c787             
+18003c78e             if (var_2f0_1 + 1 u>= 0x1000)
+18003c790                 void* rax_56 = *(rcx_102 - 8)
+18003c790                 
+18003c79f                 if (rcx_102 - rax_56 - 8 u> 0x1f)
+18003ca7c                     trap(0xd)
+18003ca7c                 
+18003c7a9                 rcx_102 = rax_56
+18003c7a9             
+18003c7ac             j_sub_18012c540(rcx_102)
+18003c7ac         
+18003c7b8         int64_t var_2f8_3 = 0
+18003c7bf         int64_t var_2f0_2 = 0xf
+18003c7ca         var_308_1.b = 0
+18003c7ca         
+18003c7d5         if (var_310_1 u> 0xf)
+18003c7da             void* rcx_105 = var_328_1.q
+18003c7da             
+18003c7e8             if (var_310_1 + 1 u>= 0x1000)
+18003c7ea                 void* rax_57 = *(rcx_105 - 8)
+18003c7ea                 
+18003c7f9                 if (rcx_105 - rax_57 - 8 u> 0x1f)
+18003ca7c                     trap(0xd)
+18003ca7c                 
+18003c7ff                 rcx_105 = rax_57
+18003c7ff             
+18003c806             j_sub_18012c540(rcx_105)
+18003c806         
+18003c80b         int64_t var_318_3 = 0
+18003c812         int64_t var_310_2 = 0xf
+18003c81d         var_328_1.b = 0
+18003c828         sub_180059a30(&var_428)
+18003c82e         void* rax_58 = var_480.q
+18003c82e         
+18003c836         if (rax_58 == 0)
+18003c836             goto label_18003caa6
+18003c836         
+18003c84b         void* rcx_109
+18003c84b         
+18003c84b         if (var_470_1 - rax_58 u< 0x1000)
+18003ca85             rcx_109 = rax_58
+18003ca88         label_18003ca88:
+18003ca88             j_sub_18012c540(rcx_109)
+18003ca90             __builtin_memset(&var_480, 0, 0x18)
+18003caa6         label_18003caa6:
+18003caa6             
+18003caa6             if (var_2d0 u> 0xf)
+18003caab                 void* rcx_128 = var_2e8.q
+18003caab                 
+18003cab9                 if (var_2d0 + 1 u>= 0x1000)
+18003cabb                     void* rax_73 = *(rcx_128 - 8)
+18003cabb                     
+18003caca                     if (rcx_128 - rax_73 - 8 u> 0x1f)
+18003cb57                         trap(0xd)
+18003cb57                     
+18003cad4                     rcx_128 = rax_73
+18003cad4                 
+18003cad7                 j_sub_18012c540(rcx_128)
+18003cad7             
+18003cadc             int64_t var_2d8_1 = 0
+18003cae3             int64_t var_2d0_1 = 0xf
+18003caee             var_2e8.b = 0
+18003caf9             sub_180002b10(arg3)
+18003cb02             sub_180002b10(arg4)
+18003cb0c             sub_180002b10(arg5)
+18003cb16             sub_180002b10(arg6)
+18003cb20             sub_180002b10(arg7)
+18003cb2a             int64_t result = sub_180002b10(arg8)
+18003cb39             __security_check_cookie(rax_1 ^ &var_4c8)
+18003cb51             return result
+18003cb51         
+18003c851         rcx_109 = *(rax_58 - 8)
+18003c851         
+18003c860         if (rax_58 - rcx_109 - 8 u<= 0x1f)
+18003c860             goto label_18003ca88
+18003c4fc     else
+18003c509         if (rdi_5 + 0x27 u<= rdi_5)
+18003cb59             stdext::threads::_Throw_lock_error()
+18003cb59             noreturn
+18003cb59         
+18003c50f         int64_t rax_44 = sub_1800d1b80(rdi_5 + 0x27, rdx_64, r8_10, r9_11)
+18003c50f         
+18003c51a         if (rax_44 != 0)
+18003c524             rax_46 = (rax_44 + 0x27) & 0xffffffffffffffe0
+18003c528             *(rax_46 - 8) = rax_44
+18003c52c             goto label_18003c5a6
+18003c52c 
+18003ca83 trap(0xd)

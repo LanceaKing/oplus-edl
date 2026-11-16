@@ -1,0 +1,377 @@
+{
+  "scope": "Offline synthetic runtime-table tests. CPU contribution 0x30ec4 applies to the observed default Unicorn leaf-1 results; no general CPU-hash formula is claimed.",
+  "vectors": [
+    {
+      "name": "matched",
+      "build": 19041,
+      "global_pointer": "0x21000000",
+      "count": 1,
+      "encoded_count": "0x1370",
+      "environment_value": "0x21283f44",
+      "encoded_hash": "0x212833e0",
+      "one_bit_flip": 0,
+      "reached_time_api": true,
+      "expected": true,
+      "trace": "main-0x4d4e00-native-peb19041-rc0x1370-rh0x212833e0-imports.json",
+      "trace_sha256": "ece7d3a9f68eed875dd886b2a9efda8fb8bf8ad7832fade7a99369f9cc4039b9",
+      "counts": {
+        "dispatch": 1701,
+        "blocks": 9359,
+        "image_reads_dword": 1942,
+        "stack_writes": 3323,
+        "zero_reads": 0,
+        "object_reads": 0
+      },
+      "final": {
+        "eax": "0x300effd0",
+        "ebx": "0x0",
+        "ecx": "0x31000000",
+        "edx": "0x0",
+        "esi": "0x31000000",
+        "edi": "0x0",
+        "ebp": "0x300effd8",
+        "esp": "0x300effc8",
+        "eip": "0x33000870",
+        "eflags": "0x86"
+      },
+      "environment_reads": [
+        {
+          "pc": "0xba1fa5",
+          "address": "0x30",
+          "size": 4,
+          "value": "00000020"
+        },
+        {
+          "pc": "0xfdf7c9",
+          "address": "0x200000ac",
+          "size": 2,
+          "value": "614a"
+        },
+        {
+          "pc": "0x10a8078",
+          "address": "0x210000ac",
+          "size": 4,
+          "value": "70130000"
+        },
+        {
+          "pc": "0xa77117",
+          "address": "0x2100001c",
+          "size": 4,
+          "value": "e0332821"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "one_bit_wrong",
+      "build": 19041,
+      "global_pointer": "0x21000000",
+      "count": 1,
+      "encoded_count": "0x1370",
+      "environment_value": "0x21283f44",
+      "encoded_hash": "0x212833e1",
+      "one_bit_flip": 1,
+      "reached_time_api": false,
+      "expected": false,
+      "trace": "main-0x4d4e00-native-peb19041-rc0x1370-rh0x212833e1-imports.json",
+      "trace_sha256": "5b387762aed0c99296fcb4937e79d6f40d3bb36442facc3fc662209f98763f6d",
+      "counts": {
+        "dispatch": 2080,
+        "blocks": 11588,
+        "image_reads_dword": 2404,
+        "stack_writes": 3994,
+        "zero_reads": 0,
+        "object_reads": 0
+      },
+      "final": {
+        "eax": "0xdeadc0de",
+        "ebx": "0x0",
+        "ecx": "0x31000000",
+        "edx": "0x0",
+        "esi": "0x31000000",
+        "edi": "0x0",
+        "ebp": "0x300efffc",
+        "esp": "0x300effe0",
+        "eip": "0x0",
+        "eflags": "0x86"
+      },
+      "environment_reads": [
+        {
+          "pc": "0xba1fa5",
+          "address": "0x30",
+          "size": 4,
+          "value": "00000020"
+        },
+        {
+          "pc": "0xfdf7c9",
+          "address": "0x200000ac",
+          "size": 2,
+          "value": "614a"
+        },
+        {
+          "pc": "0x10a8078",
+          "address": "0x210000ac",
+          "size": 4,
+          "value": "70130000"
+        },
+        {
+          "pc": "0xa77117",
+          "address": "0x2100001c",
+          "size": 4,
+          "value": "e1332821"
+        },
+        {
+          "pc": "0xb6c863",
+          "address": "0x0",
+          "size": 1,
+          "value": "ff"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "zero_count_first_match",
+      "build": 19041,
+      "global_pointer": "0x21000000",
+      "count": 0,
+      "encoded_count": "0x1371",
+      "environment_value": "0x21283f44",
+      "encoded_hash": "0x212833e0",
+      "one_bit_flip": 0,
+      "reached_time_api": true,
+      "expected": true,
+      "trace": "main-0x4d4e00-native-peb19041-rc0x1371-rh0x212833e0-imports.json",
+      "trace_sha256": "b77228adf9933c9f0dabbf80b4b5193436a6f63f69088b7a6ab7e7282a0bb6f6",
+      "counts": {
+        "dispatch": 1701,
+        "blocks": 9544,
+        "image_reads_dword": 1979,
+        "stack_writes": 3323,
+        "zero_reads": 0,
+        "object_reads": 0
+      },
+      "final": {
+        "eax": "0x300effd0",
+        "ebx": "0x0",
+        "ecx": "0x31000000",
+        "edx": "0x0",
+        "esi": "0x31000000",
+        "edi": "0x0",
+        "ebp": "0x300effd8",
+        "esp": "0x300effc8",
+        "eip": "0x33000870",
+        "eflags": "0x86"
+      },
+      "environment_reads": [
+        {
+          "pc": "0xba1fa5",
+          "address": "0x30",
+          "size": 4,
+          "value": "00000020"
+        },
+        {
+          "pc": "0xfdf7c9",
+          "address": "0x200000ac",
+          "size": 2,
+          "value": "614a"
+        },
+        {
+          "pc": "0x10a8078",
+          "address": "0x210000ac",
+          "size": 4,
+          "value": "71130000"
+        },
+        {
+          "pc": "0xa77117",
+          "address": "0x2100001c",
+          "size": 4,
+          "value": "e0332821"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "build_zero",
+      "build": 0,
+      "global_pointer": "0x21000000",
+      "count": 1,
+      "encoded_count": "0x1370",
+      "environment_value": "0x21030ec4",
+      "encoded_hash": "0x21030260",
+      "one_bit_flip": 0,
+      "reached_time_api": true,
+      "expected": true,
+      "trace": "main-0x4d4e00-native-peb0-rc0x1370-rh0x21030260-imports.json",
+      "trace_sha256": "6a27f473a5079fda265b81c2d19916ced2611c84eeafae67f3088a8a4f8af061",
+      "counts": {
+        "dispatch": 1701,
+        "blocks": 9384,
+        "image_reads_dword": 1947,
+        "stack_writes": 3323,
+        "zero_reads": 0,
+        "object_reads": 0
+      },
+      "final": {
+        "eax": "0x300effd0",
+        "ebx": "0x0",
+        "ecx": "0x31000000",
+        "edx": "0x0",
+        "esi": "0x31000000",
+        "edi": "0x0",
+        "ebp": "0x300effd8",
+        "esp": "0x300effc8",
+        "eip": "0x33000870",
+        "eflags": "0x86"
+      },
+      "environment_reads": [
+        {
+          "pc": "0xba1fa5",
+          "address": "0x30",
+          "size": 4,
+          "value": "00000020"
+        },
+        {
+          "pc": "0xfdf7c9",
+          "address": "0x200000ac",
+          "size": 2,
+          "value": "0000"
+        },
+        {
+          "pc": "0x10a8078",
+          "address": "0x210000ac",
+          "size": 4,
+          "value": "70130000"
+        },
+        {
+          "pc": "0xa77117",
+          "address": "0x2100001c",
+          "size": 4,
+          "value": "60020321"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "overlapping_pointer_bits",
+      "build": 0,
+      "global_pointer": "0x21030ec4",
+      "count": 1,
+      "encoded_count": "0x1370",
+      "environment_value": "0x21000000",
+      "encoded_hash": "0x21000ca4",
+      "one_bit_flip": 0,
+      "reached_time_api": true,
+      "expected": true,
+      "trace": "main-0x4d4e00-native-peb0-rc0x1370-rh0x21000ca4-imports-rb0x21030ec4.json",
+      "trace_sha256": "08b1ff78766b191385b0f0f70ae5e8c0abac8146ab348bbd7e6df7403af84139",
+      "counts": {
+        "dispatch": 1701,
+        "blocks": 21649,
+        "image_reads_dword": 4400,
+        "stack_writes": 3323,
+        "zero_reads": 0,
+        "object_reads": 0
+      },
+      "final": {
+        "eax": "0x300effd0",
+        "ebx": "0x0",
+        "ecx": "0x31000000",
+        "edx": "0x0",
+        "esi": "0x31000000",
+        "edi": "0x0",
+        "ebp": "0x300effd8",
+        "esp": "0x300effc8",
+        "eip": "0x33000870",
+        "eflags": "0x86"
+      },
+      "environment_reads": [
+        {
+          "pc": "0xba1fa5",
+          "address": "0x30",
+          "size": 4,
+          "value": "00000020"
+        },
+        {
+          "pc": "0xfdf7c9",
+          "address": "0x200000ac",
+          "size": 2,
+          "value": "0000"
+        },
+        {
+          "pc": "0x10a8078",
+          "address": "0x21030f70",
+          "size": 4,
+          "value": "70130000"
+        },
+        {
+          "pc": "0xa77117",
+          "address": "0x21030ee0",
+          "size": 4,
+          "value": "a40c0021"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "build_plus_one",
+      "build": 19042,
+      "global_pointer": "0x21000000",
+      "count": 1,
+      "encoded_count": "0x1370",
+      "environment_value": "0x21283fc4",
+      "encoded_hash": "0x21283360",
+      "one_bit_flip": 0,
+      "reached_time_api": true,
+      "expected": true,
+      "trace": "main-0x4d4e00-native-peb19042-rc0x1370-rh0x21283360-imports.json",
+      "trace_sha256": "1e1e994729a56b23abfc7c4cecdab5a2cf779e5db04d69838e1a7a6abc1ba9a5",
+      "counts": {
+        "dispatch": 1701,
+        "blocks": 13064,
+        "image_reads_dword": 2683,
+        "stack_writes": 3323,
+        "zero_reads": 0,
+        "object_reads": 0
+      },
+      "final": {
+        "eax": "0x300effd0",
+        "ebx": "0x0",
+        "ecx": "0x31000000",
+        "edx": "0x0",
+        "esi": "0x31000000",
+        "edi": "0x0",
+        "ebp": "0x300effd8",
+        "esp": "0x300effc8",
+        "eip": "0x33000870",
+        "eflags": "0x86"
+      },
+      "environment_reads": [
+        {
+          "pc": "0xba1fa5",
+          "address": "0x30",
+          "size": 4,
+          "value": "00000020"
+        },
+        {
+          "pc": "0xfdf7c9",
+          "address": "0x200000ac",
+          "size": 2,
+          "value": "624a"
+        },
+        {
+          "pc": "0x10a8078",
+          "address": "0x210000ac",
+          "size": 4,
+          "value": "70130000"
+        },
+        {
+          "pc": "0xa77117",
+          "address": "0x2100001c",
+          "size": 4,
+          "value": "60332821"
+        }
+      ],
+      "pass": true
+    }
+  ]
+}

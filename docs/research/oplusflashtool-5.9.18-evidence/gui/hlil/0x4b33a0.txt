@@ -1,0 +1,212 @@
+004b33a0 int32_t __saved_ebp_2
+004b33a0 int32_t __saved_ebp_1 = __saved_ebp_2
+004b33a3 int32_t var_8 = 0xffffffff
+004b33a5 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_4e911d
+004b33b0 TEB* fsbase
+004b33b0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004b33b4 int32_t ebx
+004b33b4 int32_t var_48 = ebx
+004b33b6 int32_t __saved_edi_16
+004b33b6 int32_t __saved_edi_1 = __saved_edi_16
+004b33be int32_t __saved_ebp
+004b33be int32_t var_54 = __security_cookie ^ &__saved_ebp
+004b33c2 fsbase->NtTib.ExceptionList = &ExceptionList
+004b33cd char* ecx_1 = QWidget::hide(arg1 + 0x18)
+004b33d3 char arg_4
+004b33d3 bool cond:0 = arg_4 != 0
+004b33d7 int32_t var_58 = 1
+004b33d9 int32_t* esp_1
+004b33d9 char* var_5c
+004b33d9 
+004b33d9 if (cond:0)
+004b342b     QWidget::setEnabled(*(*(arg1 + 0x34) + 0x54), var_58.b)
+004b3431     sub_41cbc0()
+004b3446     enum _opFlashPlatform eax_5
+004b3446     int32_t ecx_9
+004b3446     eax_5, ecx_9 = OpFlashPack::getPlatform(OpFlashProfile::getFlashPack(data_58c2f0))
+004b3446     
+004b3452     if (eax_5 == 1)
+004b3454         var_58 = ecx_9
+004b3457         var_5c = 0xffffffff
+004b3461         sub_4ba340(&var_58, "Automatic matching", 0, var_5c)
+004b3471         var_58 = sub_48c8f0(*(arg1 + 0x38))
+004b3474         var_5c = 0xffffffff
+004b347e         sub_4ba340(&var_58, "Automatic matching", 0, var_5c)
+004b3489         sub_48c8f0(*(arg1 + 0x3c))
+004b348e         void* ecx_13 = *(arg1 + 0x38)
+004b3491         var_58 = 0
+004b3493         sub_48c7a0(ecx_13, var_58.b)
+004b3498         void* ecx_14 = *(arg1 + 0x3c)
+004b349b         var_58 = 0
+004b349d         int32_t eax_6 = sub_48c7a0(ecx_14, var_58.b)
+004b34a5         fsbase->NtTib.ExceptionList = ExceptionList
+004b34b3         return eax_6
+004b34b3     
+004b34b9     sub_48c160(*(arg1 + 0x3c))
+004b34c1     sub_48c160(*(arg1 + 0x38))
+004b34c6     void* ecx_19 = *(arg1 + 0x38)
+004b34c9     var_58 = 1
+004b34cb     sub_48c7a0(ecx_19, var_58.b)
+004b34d0     void* ecx_20 = *(arg1 + 0x3c)
+004b34d3     var_58 = 1
+004b34d5     sub_48c7a0(ecx_20, var_58.b)
+004b34da     sub_41cbc0()
+004b34ef     int32_t __saved_edi_14 = OpFlashPack::getProjectCount(OpFlashProfile::getFlashPack(data_58c2f0))
+004b34f1     int32_t __saved_edi_17 = __saved_edi_14
+004b34f4     sub_41cbc0()
+004b3503     int32_t __saved_edi_11
+004b3503     QMessageLogger* ecx_25
+004b3503     __saved_edi_11, ecx_25 =
+004b3503         OpFlashPack::getPartitionTableCount(OpFlashProfile::getFlashPack(data_58c2f0))
+004b350b     arg_4.d = __saved_edi_11
+004b3511     int32_t var_70
+004b3511     
+004b3511     if (__saved_edi_14 s>= 1)
+004b35c9         int32_t* var_14
+004b35c9         
+004b35c9         if (__saved_edi_11 s>= 1)
+004b367e             int32_t __saved_edi_15 = 0
+004b3682             int32_t __saved_edi
+004b3682             
+004b3682             if (__saved_edi_14 s> 0)
+004b36e1                 do
+004b3684                     int32_t __saved_edi_6 = __saved_edi_15
+004b3685                     sub_41cbc0()
+004b36a0                     char* eax_28
+004b36a0                     int32_t __saved_edi_12
+004b36a0                     eax_28, __saved_edi_12 = OpFlashProject::getProjectNumber(
+004b36a0                         OpFlashPack::getProject(OpFlashProfile::getFlashPack(data_58c2f0), arg2))
+004b36a6                     char* edx_1 = eax_28
+004b36a8                     int32_t __saved_edi_7 = __saved_edi_12
+004b36a9                     var_14 = &__saved_edi
+004b36ae                     int32_t ecx_50
+004b36ae                     
+004b36ae                     if (edx_1 == 0)
+004b36c3                         ecx_50 = 0xffffffff
+004b36ae                     else
+004b36b0                         char* ecx_49 = edx_1
+004b36b0                         
+004b36ba                         do
+004b36b5                             eax_28.b = *ecx_49
+004b36b7                             ecx_49 = &ecx_49[1]
+004b36ba                         while (eax_28.b != 0)
+004b36ba                         
+004b36bc                         ecx_50 = ecx_49 - &ecx_49[1]
+004b36be                         __saved_edi_14 = __saved_edi_17
+004b36be                     
+004b36c7                     var_58 = edx_1
+004b36d4                     *var_14 = QString::fromAscii_helper(var_58, ecx_50)
+004b36d9                     sub_48c8f0(*(arg1 + 0x38))
+004b36de                     __saved_edi_15 += 1
+004b36e1                 while (__saved_edi_15 s< __saved_edi_14)
+004b36e1             
+004b36e3             int32_t i = 0
+004b36e3             
+004b36e8             if (arg_4.d s> 0)
+004b374b                 do
+004b36f0                     int32_t __saved_edi_8 = i
+004b36f1                     sub_41cbc0()
+004b370c                     char* eax_32
+004b370c                     int32_t __saved_edi_13
+004b370c                     eax_32, __saved_edi_13 = OpFlashPartitionTable::getStorage(
+004b370c                         OpFlashPack::getPartitionTable(OpFlashProfile::getFlashPack(data_58c2f0), 
+004b370c                         arg2))
+004b3712                     char* edx_2 = eax_32
+004b3714                     int32_t __saved_edi_9 = __saved_edi_13
+004b3715                     int32_t* var_18_1 = &__saved_edi
+004b371a                     int32_t ecx_57
+004b371a                     
+004b371a                     if (edx_2 == 0)
+004b372c                         ecx_57 = 0xffffffff
+004b371a                     else
+004b371c                         char* ecx_56 = edx_2
+004b371c                         
+004b3726                         do
+004b3721                             eax_32.b = *ecx_56
+004b3723                             ecx_56 = &ecx_56[1]
+004b3726                         while (eax_32.b != 0)
+004b3726                         
+004b3728                         ecx_57 = ecx_56 - &ecx_56[1]
+004b3728                     
+004b3730                     var_58 = edx_2
+004b373d                     *var_18_1 = QString::fromAscii_helper(var_58, ecx_57)
+004b3742                     sub_48c8f0(*(arg1 + 0x3c))
+004b3747                     i += 1
+004b374b                 while (i s< arg_4.d)
+004b374b             
+004b3751             char const* const __saved_edi_10
+004b3751             
+004b3751             __saved_edi_10 = eax_5 != 0 ? "######" : "Qualcomm"
+004b3751             
+004b375f             sub_41cbc0()
+004b3772             int32_t eax_35 = OpFlashDeviceManager::setPackType(
+004b3772                 OpFlashManager::getDeviceManager(&data_58a0f0), __saved_edi_10)
+004b377b             fsbase->NtTib.ExceptionList = ExceptionList
+004b3789             return eax_35
+004b3789         
+004b35d2         int32_t* __saved_edi_4 = &var_14
+004b35d3         char* var_54_3 = nullptr
+004b35d5         var_58 = 0
+004b35d7         var_5c = nullptr
+004b35e4         QDebug* eax_19 = QMessageLogger::warning(QMessageLogger::QMessageLogger(ecx_25, var_5c, 
+004b35e4             var_58, var_54_3))
+004b35ea         int32_t __saved_edi_5 = __saved_edi_11
+004b35eb         char const* const var_54_4 = "get partition table fail:"
+004b35f0         var_58 = &data_4f2998
+004b35f5         var_5c = 0x31c
+004b35fa         void* const var_60_4 = &data_4f2994
+004b35ff         char const* const var_64_4 = "StartFlashing::OnLoadFlashPackFinished"
+004b360b         int32_t var_8_6 = 3
+004b364b         int32_t var_8_7 = 0xffffffff
+004b3658         int32_t var_6c_2 = 1
+004b365a         var_70 = QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+004b365a             QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(eax_19, 
+004b365a             "[FTGuiSales]["))))))))
+004b365d         arg_4.d = &var_70
+004b3660         int32_t var_74_2 = 0xffffffff
+004b3662         int32_t var_78_2 = 0
+004b3664         char const* const var_7c_2 = "get partition table fail"
+004b366a         sub_4ba340(&var_70, "get partition table fail", 0, 0xffffffff)
+004b366f         esp_1 = &var_70
+004b3672         int32_t var_8_8 = 4
+004b3511     else
+004b351a         char* __saved_edi_2 = &arg_4
+004b351b         char* var_54_1 = nullptr
+004b351d         var_58 = 0
+004b351f         var_5c = nullptr
+004b352c         QDebug* eax_11 = QMessageLogger::warning(QMessageLogger::QMessageLogger(ecx_25, var_5c, 
+004b352c             var_58, var_54_1))
+004b3532         int32_t __saved_edi_3 = __saved_edi_14
+004b3533         char const* const var_54_2 = "get project number fail:"
+004b3538         var_58 = &data_4f2998
+004b353d         var_5c = 0x317
+004b3542         void* const var_60_3 = &data_4f2994
+004b3547         char const* const var_64_3 = "StartFlashing::OnLoadFlashPackFinished"
+004b3553         int32_t var_8_3 = 1
+004b3593         int32_t var_8_4 = 0xffffffff
+004b35a0         int32_t var_6c_1 = 1
+004b35a2         var_70 = QDebug::~QDebug(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+004b35a2             QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(eax_11, 
+004b35a2             "[FTGuiSales]["))))))))
+004b35a5         arg_4.d = &var_70
+004b35a8         int32_t var_74_1 = 0xffffffff
+004b35aa         int32_t var_78_1 = 0
+004b35ac         char const* const var_7c_1 = "get project number fail"
+004b35b2         sub_4ba340(&var_70, "get project number fail", 0, 0xffffffff)
+004b35b7         esp_1 = &var_70
+004b35ba         int32_t var_8_5 = 2
+004b33d9 else
+004b33db     var_5c = ecx_1
+004b33de     arg_4.d = &var_5c
+004b33eb     sub_4ba340(&var_5c, "load flash pack fail", 0, 0xffffffff)
+004b33f0     esp_1 = &var_5c
+004b33f3     int32_t var_8_1 = 0
+004b33fa sub_41cbc0()
+004b33ff int32_t var_8_2 = 0xffffffff
+004b340c int32_t eax_3 = sub_4304c0(data_58a0a8)
+004b3414 fsbase->NtTib.ExceptionList = ExceptionList
+004b340c esp_1[2]
+004b341b esp_1[3]
+004b341c esp_1[4]
+004b341d esp_1[5]
+004b3422 return eax_3

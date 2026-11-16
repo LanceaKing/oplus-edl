@@ -1,0 +1,40 @@
+00423ad0 int32_t ebp
+00423ad0 int32_t var_4 = ebp
+00423ad1 int32_t* ebp_1 = &var_4
+00423add int32_t var_c = __security_cookie ^ &var_4
+00423ae6 int32_t ebx
+00423ae6 int32_t var_20 = ebx
+00423ae7 int32_t esi
+00423ae7 int32_t var_24 = esi
+00423ae8 int32_t edi
+00423ae8 int32_t var_28 = edi
+00423af7 int128_t var_1c = zx.o(0)
+00423af7 
+00423b03 if (sub_577d64(arg1, 0x50001000, &var_1c, arg2, 0) == 0)
+00423b05     char const* const var_2c_1 = "init status bar failed\n"
+00423b0a     int32_t var_30_1 = 4
+00423b11     ebp_1 = sub_4d6270(&data_7e09e8)
+00423b11 
+00423b2e int32_t result = 0x3b8730(arg1[8], 0x404, 5, 0x7c1e70)
+00423b2e 
+00423b34 if (result == 0)
+00423b36     char const* const var_3c_1 = "partitioning status bar failed\n"
+00423b3b     int32_t var_40_1 = 4
+00423b42     ebp_1 = sub_4d6270(&data_7e09e8)
+00423b42 
+00423b4a int32_t eax_4 = data_7e0308
+00423b50 wchar16 const* const var_3c_2
+00423b50 
+00423b50 if (eax_4 == 1)
+00423b63     var_3c_2 = u"Intranet"
+00423b50 else if (eax_4 == 2)
+00423b5c     var_3c_2 = u"Factory"
+00423b53 else
+00423b55     var_3c_2 = u"Unknown"
+00423b55 
+00423b72 0x3b8730(arg1[8], 0x40b, 4, var_3c_2)
+00423b76 sub_423bc0(arg1)
+00423b8a 0x3b8a42(arg1[8], 0x10001, 0x3e8, 0)
+00423b9a sub_687de2(ebp_1[-2] ^ ebp_1)
+00423ba1 *ebp_1
+00423ba2 return result

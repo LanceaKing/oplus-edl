@@ -1,0 +1,23 @@
+0040e70c EnterCriticalSection(&arg1[0x169])
+0040e71e int32_t esi = arg1[0x166]
+0040e724 (*(arg1[0x167] + 0x14))()
+0040e724 
+0040e729 if (esi == 0)
+0040e730     return sub_432083(arg1) __tailcall
+0040e730 
+0040e740 PWSTR var_18
+0040e740 
+0040e740 if (data_5ea5ac == 0)
+0040e777     var_18 = u"Download in progress.\nDo you want to exit this program and cancel the downloa"
+0040e740 else
+0040e742     var_18 = 0x5b9870
+0040e742 
+0040e747 enum MESSAGEBOX_RESULT result = sub_439ba7(var_18, MB_YESNO, 0)
+0040e747 
+0040e74f if (result != IDYES)
+0040e781     return result
+0040e781 
+0040e757 arg1[0x2f] = 1
+0040e761 sub_404450(&arg1[0x166])
+0040e768 sub_40e570(arg1)
+0040e772 return sub_410090(arg1) __tailcall

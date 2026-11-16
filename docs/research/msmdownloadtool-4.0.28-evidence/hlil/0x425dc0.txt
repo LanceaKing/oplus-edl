@@ -1,0 +1,130 @@
+00425dd1 int32_t* eax = *(arg1 + 0x80)
+00425dd7 char* result = 1
+00425de2 char* result_1 = 1
+00425def int32_t eax_1
+00425def int32_t edx_2
+00425def edx_2:eax_1 = muls.dp.d(0x2e8ba2e9, eax[1] - *eax)
+00425df1 int32_t edx_3 = edx_2 s>> 4
+00425df9 int32_t eax_4 = (edx_3 u>> 0x1f) + edx_3
+00425e07 uint32_t wParam = zx.d((*(arg1 + 0x2c)).b) << 0x10
+00425e0e char const* const lParam
+00425e0e 
+00425e0e if (*(arg1 + 0x1b) == 0)
+00425e35     SendMessageW(*(arg1 + 0x30), 0x178c, wParam, u"Writing patch to DISK")
+00425e37     lParam = u"Writing patch to DISK"
+00425e0e else
+00425e1e     SendMessageW(*(arg1 + 0x30), 0x178c, wParam, "ck(W")
+00425e20     lParam = "ck(W"
+00425e20 
+00425e54 SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 1, lParam)
+00425e56 int32_t eax_11 = 0
+00425e58 int32_t var_8 = 0
+00425e58 
+00425e5e if (eax_4 u> 0)
+00425e64     int32_t ecx = 0
+00425e66     int32_t var_10_1 = 0
+00425e66     
+00425f34     do
+00425e75         int32_t* edi_1 = *eax + ecx
+00425e7b         int32_t ebx_1 = edi_1[4]
+00425e7e         int32_t* edx_5
+00425e7e         
+00425e7e         if (edi_1[5] u< 0x10)
+00425e84             edx_5 = edi_1
+00425e7e         else
+00425e80             edx_5 = *edi_1
+00425e80         
+00425e86         int32_t ecx_1 = 4
+00425e86         
+00425e8d         if (ebx_1 u< 4)
+00425e8d             ecx_1 = ebx_1
+00425e8d         
+00425e92         if (ecx_1 == 0)
+00425e92             goto label_425ef3
+00425e92         
+00425e94         char const* const esi_1 = "DISK"
+00425e99         int32_t i_1 = ecx_1 - 4
+00425e99         
+00425e9c         if (ecx_1 u>= 4)
+00425eaf             int32_t i
+00425eaf             
+00425eaf             do
+00425ea4                 if (*edx_5 != *esi_1)
+00425ea4                     goto label_425eb6
+00425ea4                 
+00425ea6                 edx_5 = &edx_5[1]
+00425ea9                 esi_1 = &esi_1[4]
+00425eac                 i = i_1
+00425eac                 i_1 -= 4
+00425eaf             while (i u>= 4)
+00425eaf         
+00425eb4         int32_t eax_13
+00425eb4         
+00425eb4         if (i_1 == 0xfffffffc)
+00425eea             eax_13 = 0
+00425eb4         else
+00425eb6         label_425eb6:
+00425eb6             eax_11.b = *edx_5
+00425eb8             char const temp1_1 = *esi_1
+00425eb8             
+00425eba             if (eax_11.b != temp1_1)
+00425ee5                 eax_13 = sbb.d(eax_11, eax_11, eax_11.b u< temp1_1) | 1
+00425eba             else if (i_1 == 0xfffffffd)
+00425eea                 eax_13 = 0
+00425ebf             else
+00425ec1                 eax_11.b = *(edx_5 + 1)
+00425ec4                 char temp3_1 = esi_1[1]
+00425ec4                 
+00425ec7                 if (eax_11.b != temp3_1)
+00425ee5                     eax_13 = sbb.d(eax_11, eax_11, eax_11.b u< temp3_1) | 1
+00425ec7                 else if (i_1 == 0xfffffffe)
+00425eea                     eax_13 = 0
+00425ecc                 else
+00425ece                     eax_11.b = *(edx_5 + 2)
+00425ed1                     char temp4_1 = esi_1[2]
+00425ed1                     
+00425ed4                     if (eax_11.b != temp4_1)
+00425ee5                         eax_13 = sbb.d(eax_11, eax_11, eax_11.b u< temp4_1) | 1
+00425ed4                     else if (i_1 == 0xffffffff)
+00425eea                         eax_13 = 0
+00425ed9                     else
+00425edb                         eax_11.b = *(edx_5 + 3)
+00425ede                         char temp5_1 = esi_1[3]
+00425ede                         
+00425ee1                         if (eax_11.b == temp5_1)
+00425eea                             eax_13 = 0
+00425ee1                         else
+00425ee5                             eax_13 = sbb.d(eax_11, eax_11, eax_11.b u< temp5_1) | 1
+00425ee5         
+00425eee         if (eax_13 != 0)
+00425f1e             eax_11 = var_8
+00425f21             result = result_1
+00425eee         else
+00425ef0             eax_11 = var_8
+00425ef3         label_425ef3:
+00425ef3             
+00425ef6             if (ebx_1 u< 4)
+00425f21                 result = result_1
+00425ef6             else
+00425efd                 int32_t eax_14
+00425efd                 eax_14.b = ebx_1 != 4
+00425efd                 
+00425f02                 if (eax_14 != 0)
+00425f1e                     eax_11 = var_8
+00425f21                     result = result_1
+00425f02                 else
+00425f10                     result = sub_42a020(*(arg1 + 0x28), edi_1)
+00425f12                     result_1 = result
+00425f12                     
+00425f17                     if (result != 0)
+00425f17                         break
+00425f17                     
+00425f19                     eax_11 = var_8
+00425f19         
+00425f27         eax_11 += 1
+00425f28         ecx = var_10_1 + 0x58
+00425f2b         var_8 = eax_11
+00425f2e         var_10_1 = ecx
+00425f34     while (eax_11 u< eax_4)
+00425f34 
+00425f42 return result

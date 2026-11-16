@@ -1,0 +1,16 @@
+00440146 int32_t var_c = 0xffffffff
+00440148 int32_t (* var_10)(void* arg1) = sub_6d01f8
+00440153 TEB* fsbase
+00440153 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0044015e void var_80
+0044015e int32_t var_1c = __security_cookie ^ &var_80
+00440163 int32_t edi
+00440163 int32_t var_88 = edi
+0044016b int32_t var_8c = __security_cookie ^ &var_88
+00440170 fsbase->NtTib.ExceptionList = &ExceptionList
+00440178 int32_t var_68 = 0xf
+00440180 int32_t var_6c = 0
+00440188 char var_7c = 0
+0044018d int32_t var_90 = 0x77120c
+00440192 int32_t var_c_1 = 0
+0044019d return sub_addc4c() __tailcall

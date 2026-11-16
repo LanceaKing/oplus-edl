@@ -1,0 +1,122 @@
+004d9e9a char* ebx = arg2[0x1a]
+004d9e9d *(ebx + &arg2[0xa]) = 0x80
+004d9ea1 void* ebx_1 = &ebx[1]
+004d9ea1 
+004d9ea5 if (ebx_1 u> 0x38)
+004d9eb5     _memset(ebx_1 + &arg2[0xa], 0, 0x40 - ebx_1)
+004d9ebe     ebx_1 = nullptr
+004d9ec0     sub_4da2b0(arg2, &arg2[0xa], 1)
+004d9ec0 
+004d9ed6 _memset(ebx_1 + &arg2[0xa], 0, 0x38 - ebx_1)
+004d9edf arg2[0x18].b = *(arg2 + 0x27)
+004d9ee6 *(arg2 + 0x61) = *(arg2 + 0x26)
+004d9eed *(arg2 + 0x62) = *(arg2 + 0x25)
+004d9ef4 *(arg2 + 0x63) = arg2[9].b
+004d9efb arg2[0x19].b = *(arg2 + 0x23)
+004d9f02 *(arg2 + 0x65) = *(arg2 + 0x22)
+004d9f0b *(arg2 + 0x66) = *(arg2 + 0x21)
+004d9f14 *(arg2 + 0x67) = arg2[8].b
+004d9f17 sub_4da2b0(arg2, &arg2[0xa], 1)
+004d9f1f arg2[0x1a] = 0
+004d9f26 sub_4d77e0(&arg2[0xa], 0x40)
+004d9f2b int32_t eax_13 = arg2[0x1b]
+004d9f2b 
+004d9f34 if (eax_13 == 0x1c)
+004da088     int32_t ecx_17 = *arg2
+004da093     *arg1 = (ecx_17 u>> 0x18).b
+004da09a     arg1[1] = (ecx_17 u>> 0x10).b
+004da0a2     arg1[2] = (ecx_17 u>> 8).b
+004da0a5     arg1[3] = ecx_17.b
+004da0a8     int32_t ecx_18 = arg2[1]
+004da0b0     arg1[4] = (ecx_18 u>> 0x18).b
+004da0b8     arg1[5] = (ecx_18 u>> 0x10).b
+004da0c0     arg1[6] = (ecx_18 u>> 8).b
+004da0c3     arg1[7] = ecx_18.b
+004da0c6     int32_t ecx_19 = arg2[2]
+004da0ce     arg1[8] = (ecx_19 u>> 0x18).b
+004da0d6     arg1[9] = (ecx_19 u>> 0x10).b
+004da0de     arg1[0xa] = (ecx_19 u>> 8).b
+004da0e1     arg1[0xb] = ecx_19.b
+004da0e4     int32_t ecx_20 = arg2[3]
+004da0ec     arg1[0xc] = (ecx_20 u>> 0x18).b
+004da0f4     arg1[0xd] = (ecx_20 u>> 0x10).b
+004da0fc     arg1[0xe] = (ecx_20 u>> 8).b
+004da0ff     arg1[0xf] = ecx_20.b
+004da102     int32_t ecx_21 = arg2[4]
+004da10a     arg1[0x10] = (ecx_21 u>> 0x18).b
+004da112     arg1[0x11] = (ecx_21 u>> 0x10).b
+004da11a     arg1[0x12] = (ecx_21 u>> 8).b
+004da11d     arg1[0x13] = ecx_21.b
+004da120     int32_t ecx_22 = arg2[5]
+004da128     arg1[0x14] = (ecx_22 u>> 0x18).b
+004da130     arg1[0x15] = (ecx_22 u>> 0x10).b
+004da138     arg1[0x16] = (ecx_22 u>> 8).b
+004da13b     arg1[0x17] = ecx_22.b
+004da13e     int32_t ecx_23 = arg2[6]
+004da146     arg1[0x18] = (ecx_23 u>> 0x18).b
+004da14e     arg1[0x19] = (ecx_23 u>> 0x10).b
+004da156     arg1[0x1a] = (ecx_23 u>> 8).b
+004da159     arg1[0x1b] = ecx_23.b
+004d9f34 else
+004d9f3d     if (eax_13 == 0x20)
+004d9f8d         int32_t ecx_9 = *arg2
+004d9f98         *arg1 = (ecx_9 u>> 0x18).b
+004d9f9f         arg1[1] = (ecx_9 u>> 0x10).b
+004d9fa7         arg1[2] = (ecx_9 u>> 8).b
+004d9faa         arg1[3] = ecx_9.b
+004d9fad         int32_t ecx_10 = arg2[1]
+004d9fb5         arg1[4] = (ecx_10 u>> 0x18).b
+004d9fbd         arg1[5] = (ecx_10 u>> 0x10).b
+004d9fc5         arg1[6] = (ecx_10 u>> 8).b
+004d9fc8         arg1[7] = ecx_10.b
+004d9fcb         int32_t ecx_11 = arg2[2]
+004d9fd3         arg1[8] = (ecx_11 u>> 0x18).b
+004d9fdb         arg1[9] = (ecx_11 u>> 0x10).b
+004d9fe3         arg1[0xa] = (ecx_11 u>> 8).b
+004d9fe6         arg1[0xb] = ecx_11.b
+004d9fe9         int32_t ecx_12 = arg2[3]
+004d9ff1         arg1[0xc] = (ecx_12 u>> 0x18).b
+004d9ff9         arg1[0xd] = (ecx_12 u>> 0x10).b
+004da001         arg1[0xe] = (ecx_12 u>> 8).b
+004da004         arg1[0xf] = ecx_12.b
+004da007         int32_t ecx_13 = arg2[4]
+004da00f         arg1[0x10] = (ecx_13 u>> 0x18).b
+004da017         arg1[0x11] = (ecx_13 u>> 0x10).b
+004da01f         arg1[0x12] = (ecx_13 u>> 8).b
+004da022         arg1[0x13] = ecx_13.b
+004da025         int32_t ecx_14 = arg2[5]
+004da02d         arg1[0x14] = (ecx_14 u>> 0x18).b
+004da035         arg1[0x15] = (ecx_14 u>> 0x10).b
+004da03d         arg1[0x16] = (ecx_14 u>> 8).b
+004da040         arg1[0x17] = ecx_14.b
+004da043         int32_t ecx_15 = arg2[6]
+004da04b         arg1[0x18] = (ecx_15 u>> 0x18).b
+004da053         arg1[0x19] = (ecx_15 u>> 0x10).b
+004da05b         arg1[0x1a] = (ecx_15 u>> 8).b
+004da05e         arg1[0x1b] = ecx_15.b
+004da061         int32_t ecx_16 = arg2[7]
+004da069         arg1[0x1c] = (ecx_16 u>> 0x18).b
+004da071         arg1[0x1d] = (ecx_16 u>> 0x10).b
+004da07a         arg1[0x1e] = (ecx_16 u>> 8).b
+004da083         arg1[0x1f] = ecx_16.b
+004da087         return 1
+004da087     
+004d9f3f     if (eax_13 u> 0x20)
+004d9f46         return 0
+004d9f46     
+004d9f47     int32_t i = 0
+004d9f47     
+004d9f4e     if ((eax_13 & 0xfffffffc) u> 0)
+004d9f54         uint8_t* eax_15 = arg1
+004d9f54         
+004d9f82         do
+004d9f58             int32_t edx_1 = arg2[i]
+004d9f5b             eax_15 = &eax_15[4]
+004d9f60             i += 1
+004d9f64             eax_15[0xfffffffc] = (edx_1 u>> 0x18).b
+004d9f6c             eax_15[0xfffffffd] = (edx_1 u>> 0x10).b
+004d9f74             eax_15[0xfffffffe] = (edx_1 u>> 8).b
+004d9f77             eax_15[0xffffffff] = edx_1.b
+004d9f82         while (i u< arg2[0x1b] u>> 2)
+004d9f82 
+004da164 return 1

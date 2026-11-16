@@ -1,0 +1,139 @@
+1800016f6 int128_t var_50
+1800016f6 __builtin_memset(&var_50, 0, 0x29)
+18000170e int64_t var_60 = 0
+180001724 int32_t rax = sub_18013a233(&var_60, u"SHA256", 0, 0)
+180001729 int64_t rcx_1 = var_60
+180001729 
+18000172f if (rax s< 0)
+18000172f     goto label_1800017e3
+18000172f 
+180001735 int32_t var_68 = 0
+180001739 int32_t arg_20 = 0
+18000173d int32_t var_80_1 = 0
+180001746 int32_t* var_88_1 = &arg_20
+18000175d int32_t rax_1
+18000175d int64_t r8_1
+18000175d rax_1, r8_1 = sub_18064d711(&var_60:1, arg3, arg2, rcx_1, u"ObjectLength", &var_68, 4)
+18000176a int128_t var_40
+18000176a int64_t rcx_7
+18000176a int64_t rbx
+18000176a 
+18000176a if (rax_1 s< 0 || arg_20 != 4)
+1800017df label_1800017df:
+1800017df     rcx_1 = var_60
+1800017e3 label_1800017e3:
+1800017e3     
+1800017e6     if (rcx_1 == 0)
+1800017f1         rcx_7 = var_50:8.q
+1800017f5         rbx.b = 0
+1800017e6     else
+1800017eb         sub_180719e1e(rcx_1, nullptr)
+1800017f1         rcx_7 = var_50:8.q
+1800017f5         rbx.b = 0
+18000176a else
+180001773     sub_180002010(&var_40, zx.q(var_68), r8_1)
+180001778     int64_t var_58 = 0
+18000177c     int32_t r8_2 = (var_40.q).d
+180001791     int64_t var_88_2 = 0
+1800017a6     long double x87_r0
+1800017a6     long double x87_r1
+1800017a6     
+1800017a6     if (sub_18078da94(var_60, &var_58, r8_2, arg2, x87_r0, x87_r1, zx.q(var_40:8.d - r8_2)) s< 0)
+1800017ac         int64_t rdi_1 = var_40.q
+1800017ac         
+1800017b3         if (rdi_1 != 0)
+1800017b5             int64_t rcx_4 = var_40:8.q
+1800017b5             
+1800017bc             if (rcx_4 != rdi_1)
+1800017c0                 __builtin_memset(rdi_1, 0, rcx_4 - rdi_1)
+1800017c0         
+1800017c2         int64_t rax_3 = var_40.q
+1800017c2         
+1800017ca         if (rax_3 != var_40:8.q)
+1800017cc             var_40:8.q = rax_3
+1800017cc         
+1800017d0         int64_t rcx_6 = var_58
+1800017d0         
+1800017d7         if (rcx_6 != 0)
+1800017da             sub_18013b591(rcx_6)
+1800017da         
+1800017ca         goto label_1800017df
+1800017ca     
+180001882     var_50.q = var_60
+180001886     rcx_7 = var_58
+18000188a     var_50:8.q = rcx_7
+180001890     char var_28_2 = 0
+180001890     
+180001896     if (rcx_7 == 0)
+1800017f5         rbx.b = 0
+180001896     else if (arg1 != 0)
+1800018b3         if (arg2 u> 0xffffffff)
+1800017f5             rbx.b = 0
+1800018b3         else if (arg2 == 0)
+1800018ec             if (rcx_7 != 0)
+1800018ec                 goto label_1800018f2
+1800018ec             
+1800017f5             rbx.b = 0
+1800018bc         else if ((sub_1807a7818(rcx_7, arg1, arg3, arg2, x87_r0, zx.q(arg2.d), 0) u>> 0x1f).b == 1)
+1800017f1             rcx_7 = var_50:8.q
+1800017f5             rbx.b = 0
+1800018d5         else
+1800018db             rcx_7 = var_50:8.q
+1800018db             
+1800018e3             if (var_28_2 == 0 && rcx_7 != 0)
+1800018e3                 goto label_1800018f2
+1800018e3             
+1800017f5             rbx.b = 0
+18000189f     else if (arg2 == 0 && rcx_7 != 0)
+1800018f2     label_1800018f2:
+1800018f2         char var_28_3 = 1
+1800018f2         
+180001910         if ((sub_1801525b3(rcx_7, arg3, 0x20, 0, arg1, 0, 0) u>> 0x1f).b == 1)
+1800017f1             rcx_7 = var_50:8.q
+1800017f5             rbx.b = 0
+180001910         else
+180001916             rbx.b = 1
+180001918             rcx_7 = var_50:8.q
+1800018ec     else
+1800017f5         rbx.b = 0
+1800017f5 
+1800017fa if (rcx_7 != 0)
+1800017fd     sub_18069a0b0(arg3, 0, rcx_7)
+180001802     var_50:8.q = 0
+180001802 
+180001806 int64_t rcx_8 = var_50.q
+180001806 
+18000180d if (rcx_8 != 0)
+180001812     sub_18014b0b0(rcx_8, 0)
+180001817     var_50.q = 0
+180001817 
+18000181b int64_t rdi_2 = var_40.q
+18000181b 
+180001822 if (rdi_2 != 0)
+180001824     int64_t rcx_9 = var_40:8.q
+180001824     
+18000182b     if (rcx_9 != rdi_2)
+18000182f         __builtin_memset(rdi_2, 0, rcx_9 - rdi_2)
+18000182f 
+180001831 void* rax_4 = var_40.q
+180001831 
+180001839 if (rax_4 != var_40:8.q)
+18000183b     var_40:8.q = rax_4
+18000183b 
+18000183f char var_28_1 = 0
+18000183f 
+180001846 if (rax_4 != 0)
+18000185a     int64_t var_30
+18000185a     void* rcx_11
+18000185a     
+18000185a     if (var_30 - rax_4 u< 0x1000)
+180001928         rcx_11 = rax_4
+18000185a     else
+180001860         rcx_11 = *(rax_4 - 8)
+180001860         
+18000186f         if (rax_4 - rcx_11 - 8 u> 0x1f)
+180001926             trap(0xd)
+180001926     
+18000192b     j_sub_1800899c0(rcx_11)
+18000192b 
+18000194a return zx.q(rbx.b)

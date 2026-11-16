@@ -1,0 +1,22 @@
+1408d0f49 if (arg1 != 0)
+1408d0f4b     int32_t i_1 = *(arg1 + 8)
+1408d0f4b     
+1408d0f50     if (i_1 s> 0)
+1408d0f52         int16_t* rsi_1 = arg1 + 0xc
+1408d0f88         int32_t i
+1408d0f88         
+1408d0f88         do
+1408d0f56             uint32_t rcx = zx.d(*rsi_1)
+1408d0f56             
+1408d0f5f             if (rcx s>= 0x100)
+1408d0f68                 if (sub_1409113a0(rcx.w) == 0)
+1408d0f72                     return 0
+1408d0f5f             else if ((*(&data_1429d01f0 + zx.q(rcx)) & 0x80) == 0)
+1408d0f72                 return 0
+1408d0f72             
+1408d0f82             rsi_1 = &rsi_1[1]
+1408d0f86             i = i_1
+1408d0f86             i_1 -= 1
+1408d0f88         while (i != 1)
+1408d0f88 
+1408d0f95 return 1

@@ -1,0 +1,65 @@
+18004c6ac if (arg1 == 0 || arg5 == 0 || arg2 u> 6)
+18004c796     return 1
+18004c796 
+18004c6b5 int32_t rax_2
+18004c6b5 int32_t rax_4
+18004c6b5 int64_t* rcx
+18004c6b5 void* const rdx
+18004c6b5 int64_t* r8
+18004c6b5 
+18004c6b5 if (arg2 == 1)
+18004c6bc     char rax_1
+18004c6bc     
+18004c6bc     if (arg1[0xd] == 0)
+18004c6be         rax_1 = sub_180003410(arg1)
+18004c6be     
+18004c6c5     if (arg1[0xd] != 0 || rax_1 != 0)
+18004c6d6         rax_4 = 2
+18004c6db         rdx = 0x58
+18004c6e0         rcx = 0x68
+18004c6e5         r8 = 0x70
+18004c71a     label_18004c71a:
+18004c71a         int64_t* rdx_1 = rdx + arg1
+18004c71d         arg1[0xa].d = rax_4
+18004c71d         
+18004c720         if (rdx == neg.q(arg1))
+18004c772             *arg5 = 0
+18004c775             rax_2 = 3
+18004c720         else
+18004c726             *arg5 = *(rcx + arg1)
+18004c72c             void* rcx_1
+18004c72c             
+18004c72c             if (arg3 != 0)
+18004c72e                 rcx_1 = *(rcx + arg1)
+18004c72e             
+18004c735             if (arg3 == 0 || arg4 u< rcx_1)
+18004c769                 rax_2 = 2
+18004c735             else if (*(r8 + arg1) u<= 0xf)
+18004c760                 memcpy(arg3, rdx_1, rcx_1)
+18004c765                 rax_2 = 0
+18004c73c             else
+18004c744                 int32_t* rdx_2 = *rdx_1
+18004c74d                 memcpy(arg3, rdx_2, *rdx_1 + rcx_1 - rdx_2)
+18004c752                 rax_2 = 0
+18004c6c5     else
+18004c6c9         *arg5 = 0
+18004c6cc         rax_2 = 1
+18004c6b5 else if (arg2 != 3)
+18004c772     *arg5 = 0
+18004c775     rax_2 = 3
+18004c6f0 else
+18004c6fa     char rax_3
+18004c6fa     
+18004c6fa     if (arg1[0x11] == 0)
+18004c6fc         rax_3 = MRE::FDelete(arg1)
+18004c6fc     
+18004c703     if (arg1[0x11] != 0 || rax_3 != 0)
+18004c705         rax_4 = 4
+18004c70a         rdx = 0x78
+18004c70f         rcx = 0x88
+18004c714         r8 = 0x90
+18004c714         goto label_18004c71a
+18004c714     
+18004c6c9     *arg5 = 0
+18004c6cc     rax_2 = 1
+18004c784 return sub_18004bdf0(rax_2) __tailcall

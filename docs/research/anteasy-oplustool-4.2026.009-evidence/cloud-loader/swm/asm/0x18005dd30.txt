@@ -1,0 +1,11 @@
+18005dd30 sub     rsp, 0x48
+18005dd34 mov     rax, qword [rsp+0x70]
+18005dd39 mov     byte [rsp+0x30], 0x0
+18005dd3e mov     qword [rsp+0x28], rax
+18005dd43 mov     qword [rsp+0x20], r9
+18005dd48 mov     r9, r8
+18005dd4b mov     r8, rdx
+18005dd4e mov     dl, 0x6
+18005dd50 call    0x18005c880
+18005dd55 add     rsp, 0x48
+18005dd59 retn    

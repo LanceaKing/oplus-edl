@@ -1,0 +1,70 @@
+0040a07e int32_t __saved_ebp
+0040a07e int32_t eax_1 = __security_cookie ^ &__saved_ebp
+0040a08c int32_t var_98 = 0x400
+0040a094 int32_t var_84 = 0
+0040a09b int32_t var_18 = 0
+0040a0a2 int32_t var_14 = 0
+0040a0a9 int32_t var_10 = 0
+0040a0b0 int32_t var_c = 0
+0040a0b7 int32_t* eax_3 = sub_42e817()
+0040a0c5 int32_t* eax_4 = _fopen(arg2, "rb")
+0040a0d6 sub_54be04(eax_4, nullptr, nullptr, FILE_END)
+0040a0dc void* eax_5
+0040a0dc int32_t edx
+0040a0dc eax_5, edx = sub_54bf3b(eax_4)
+0040a0e8 void* edi = eax_5
+0040a0ea int32_t ebx = edx
+0040a0ec sub_54be04(eax_4, nullptr, nullptr, FILE_BEGIN)
+0040a0f1 int32_t var_c8 = ebx
+0040a0f2 void* var_cc = edi
+0040a0f8 int32_t var_74 = 0
+0040a0ff int32_t var_70 = 0
+0040a106 int32_t var_6c = 0x67452301
+0040a10d int32_t var_68 = 0xefcdab89
+0040a114 int32_t var_64 = 0x98badcfe
+0040a11b int32_t var_60 = 0x10325476
+0040a122 sub_54b82f("remainSize=%lu\n")
+0040a122 
+0040a12e while ((edi | ebx) != 0)
+0040a132     void* esi_2
+0040a132     
+0040a132     if (ebx == 0)
+0040a134         esi_2 = edi
+0040a134     
+0040a13c     if (ebx != 0 || edi u> 0x400)
+0040a13e         esi_2 = 0x400
+0040a13e     
+0040a157     if (_fread(eax_3, esi_2, 1, eax_4) != 1)
+0040a1bc         char* ecx_3 = nullptr
+0040a1be         arg1[5] = 0xf
+0040a1c5         arg1[4] = 0
+0040a1cc         *arg1 = 0
+0040a1cc         
+0040a1d5         if (*nullptr != 0)
+0040a1e5             uint32_t eax_8
+0040a1e5             
+0040a1e5             do
+0040a1e0                 eax_8.b = *ecx_3
+0040a1e2                 ecx_3 = &ecx_3[1]
+0040a1e5             while (eax_8.b != 0)
+0040a1e7             ecx_3 -= 1
+0040a1e7         
+0040a1ee         sub_402470(arg1, nullptr, ecx_3)
+0040a1fd         sub_54a573(eax_1 ^ &__saved_ebp)
+0040a205         return arg1
+0040a205     
+0040a15b     if (esi_2 != 0)
+0040a168         sub_409df0(&var_74, eax_3, esi_2)
+0040a168     
+0040a16d     void* temp1_1 = edi
+0040a16d     edi -= esi_2
+0040a171     ebx = sbb.d(ebx, 0, temp1_1 u< esi_2)
+0040a171 
+0040a183 sub_409eb0(&var_74, &var_18)
+0040a183 
+0040a18d if (eax_3 != 0)
+0040a190     j__free(eax_3)
+0040a190 
+0040a19f sub_409fc0(&var_18, arg1)
+0040a1ae sub_54a573(eax_1 ^ &__saved_ebp)
+0040a1b6 return arg1

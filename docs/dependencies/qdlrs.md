@@ -1,5 +1,7 @@
 # qdlrs 依赖记录
 
+当前依赖：通用存储能力已发布为 [`205c7d4d9f15add22d78c422ba77843ab72c95d4`](https://github.com/LanceaKing/qdlrs/commit/205c7d4d9f15add22d78c422ba77843ab72c95d4)，位于 `LanceaKing/qdlrs` 的 `oplus-edl-phase1` 分支。Cargo.toml 与 Cargo.lock 固定完整 Git revision，临时路径依赖已移除。见[发布与验证记录](../implementation/shared-storage-publish/README.md)。下文阶段一／二／五的状态与 revision 均为历史记录。
+
 **第五阶段补充（2026-11-14）：** 产品代码现已提交并推送至公开仓库，固定 qdlrs revision 未变。Windows、macOS、Linux 的 GitHub Actions 原生检查全部通过，见[第五阶段记录](../implementation/phase-5.md)。下文“产品代码未提交”等描述为依赖发布时的历史状态。
 
 **当前状态（2026-11-14）：** 第二阶段 P1 修复已提交为 `a80cd1e8cd1cd60634b9c5ce9a4c8c96b727c003`，推送至 `LanceaKing/qdlrs` 的 `oplus-edl-phase1` 分支，并从远端重新拉取核验。产品 Cargo.toml 和 Cargo.lock 均固定新提交，本地 override 已移除。产品四项检查和 Windows 交叉编译检查通过，qdlrs 工作区干净。产品代码未提交，未操作设备。见[发布及固定依赖核验](../implementation/phase-2-publish/README.md)。

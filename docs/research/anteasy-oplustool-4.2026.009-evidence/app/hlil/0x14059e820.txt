@@ -1,0 +1,217 @@
+14059e82e int64_t var_60
+14059e82e __builtin_memset(&var_60, 0, 0x15)
+14059e83b int96_t var_48 = (zx.o(0)).12
+14059e854 uint32_t var_38 = 0xffffffff
+14059e854 
+14059e866 if (arg6 != 0 && arg6[1].d != 0)
+14059e877     int32_t rax_1
+14059e877     rax_1, arg5 = sub_140583e30(&data_14360d6a8, arg6, &var_38, arg5)
+14059e87c     uint32_t rdx_1 = -1
+14059e87c     
+14059e883     if (rax_1 != 0)
+14059e883         rdx_1 = var_38
+14059e883     
+14059e888     var_38 = rdx_1
+14059e888 
+14059e88c void* rax_2 = *(arg1 + 8)
+14059e895 void** rdx_5
+14059e895 
+14059e895 if (var_38 u> 4)
+14059e9f6     void* rdx_15 = *(data_1436cc7e8 + 8)
+14059e9f6     
+14059ea18     if (rdx_15 == &data_14363bf38
+14059ea18             || (rdx_15 != 0 && *(rdx_15 + 8) == 2 && *(rdx_15 + 0xc) == 0x68007a))
+14059ea1a         rdx_5 = &data_1436000b8
+14059ea18     else
+14059ea23         rdx_5 = &data_1435ff1f8
+14059e895 else
+14059e8b3     switch (var_38)
+14059e9b9         case 0
+14059e9b9             void* rdx_13 = *(data_1436cc7e8 + 8)
+14059e9b9             
+14059e9db             if (rdx_13 == &data_14363bf38
+14059e9db                     || (rdx_13 != 0 && *(rdx_13 + 8) == 2 && *(rdx_13 + 0xc) == 0x68007a))
+14059e9dd                 rdx_5 = &data_143600078
+14059e9db             else
+14059e9e6                 rdx_5 = &data_1435fd520
+14059e97c         case 1
+14059e97c             void* rdx_11 = *(data_1436cc7e8 + 8)
+14059e97c             
+14059e99e             if (rdx_11 == &data_14363bf38
+14059e99e                     || (rdx_11 != 0 && *(rdx_11 + 8) == 2 && *(rdx_11 + 0xc) == 0x68007a))
+14059e9a0                 rdx_5 = &data_1435ff938
+14059e99e             else
+14059e9a9                 rdx_5 = &data_1435ff2d8
+14059e93c         case 2
+14059e93c             void* rdx_9 = *(data_1436cc7e8 + 8)
+14059e93c             
+14059e95e             if (rdx_9 == &data_14363bf38
+14059e95e                     || (rdx_9 != 0 && *(rdx_9 + 8) == 2 && *(rdx_9 + 0xc) == 0x68007a))
+14059e960                 rdx_5 = &data_1436000f8
+14059e95e             else
+14059e969                 rdx_5 = &data_1435ff190
+14059e8fc         case 3
+14059e8fc             void* rdx_7 = *(data_1436cc7e8 + 8)
+14059e8fc             
+14059e91e             if (rdx_7 == &data_14363bf38
+14059e91e                     || (rdx_7 != 0 && *(rdx_7 + 8) == 2 && *(rdx_7 + 0xc) == 0x68007a))
+14059e920                 rdx_5 = &data_1435fe3b0
+14059e91e             else
+14059e929                 rdx_5 = &data_1435fe368
+14059e8bc         case 4
+14059e8bc             void* rdx_4 = *(data_1436cc7e8 + 8)
+14059e8bc             
+14059e8de             if (rdx_4 == &data_14363bf38
+14059e8de                     || (rdx_4 != 0 && *(rdx_4 + 8) == 2 && *(rdx_4 + 0xc) == 0x68007a))
+14059e8e0                 rdx_5 = &data_1435ff900
+14059e8de             else
+14059e8e9                 rdx_5 = &data_1435ff280
+14059e8e9 
+14059ea2e (*(rax_2 + 0x20))(*(rax_2 + 8), rdx_5)
+14059ea31 void* r15 = *(arg1 + 0x10)
+14059ea45 int512_t zmm0 = sub_14097ca50(&var_60, 0x5e, 5, arg5)
+14059ea4a int104_t var_58
+14059ea4a int32_t rcx_4 = var_58:8.d
+14059ea4a 
+14059ea52 if (rcx_4 u<= var_48:8.d)
+14059ea6c     int512_t zmm0_1
+14059ea6c     
+14059ea6c     if (var_48:8.d - rcx_4 u>= 0x28)
+14059ea95         zmm0_1 = sub_1408feae0(var_48.q + (zx.q(rcx_4) << 1), 
+14059ea95             u"[OnePlus] model check failed: projectId=", 0x50)
+14059eaa1         var_58:8.d += 0x28
+14059ea6c     else
+14059ea7a         zmm0_1 = sub_14097cef0(&var_60, &data_1435ff520, zmm0)
+14059ea7a     
+14059eaa5     void* rbp_1 = *(arg2 + 8)
+14059eab3     int512_t zmm0_2
+14059eab3     
+14059eab3     if (var_58:0xc.b != 0 || rbp_1 == 0)
+14059eae1     label_14059eae1:
+14059eae1         zmm0_2 = sub_14097cd50(&var_60, rbp_1, zmm0_1)
+14059eb06     label_14059eb06:
+14059eb06         int32_t rcx_14 = var_58:8.d
+14059eb06         
+14059eb0e         if (rcx_14 u<= var_48:8.d)
+14059eb28             if (var_48:8.d - rcx_14 u>= 2)
+14059eb3d                 *(var_48.q + (zx.q(rcx_14) << 1)) = 0x20002c
+14059eb4b                 var_58:8.d += 2
+14059eb28             else
+14059eb36                 zmm0_2 = sub_14097cef0(&var_60, &data_143491e10, zmm0_2)
+14059eb36             
+14059eb4f             int32_t rcx_18 = var_58:8.d
+14059eb4f             
+14059eb57             if (rcx_18 u<= var_48:8.d)
+14059eb64                 int64_t* rbp_3 = var_48.q + (zx.q(rcx_18) << 1)
+14059eb64                 
+14059eb71                 if (var_48:8.d - rcx_18 u>= 7)
+14059eb90                     *rbp_3 = 0x69007400630061
+14059eb94                     rbp_3[1].d = 0x6e006f
+14059eb9b                     *(rbp_3 + 0xc) = 0x3d
+14059eba8                     var_58:8.d += 7
+14059eb71                 else
+14059eb7f                     zmm0_2 = sub_14097cef0(&var_60, &data_14360b640, zmm0_2)
+14059eb7f                 
+14059ebb3                 int512_t zmm0_3 = sub_140fdd500(&var_60, arg3, zmm0_2)
+14059ebb8                 int32_t rcx_23 = var_58:8.d
+14059ebb8                 
+14059ebc0                 if (rcx_23 u<= var_48:8.d)
+14059ebda                     if (var_48:8.d - rcx_23 u>= 0x14)
+14059ebf6                         __builtin_memcpy(var_48.q + (zx.q(rcx_23) << 1), u", auth_token_verify=", 
+14059ebf6                             0x28)
+14059ebfa                         zmm0_3.o = (*u", auth_token_vermanualIn, respon")[8].o
+14059ec1a                         var_58:8.d += 0x14
+14059ebda                     else
+14059ebe8                         zmm0_3 = sub_14097cef0(&var_60, &data_14349ad50, zmm0_3)
+14059ebe8                     
+14059ec27                     int512_t zmm0_4 = sub_141080860(&var_60, var_38, zmm0_3)
+14059ec2c                     int32_t rcx_28 = var_58:8.d
+14059ec2c                     
+14059ec34                     if (rcx_28 u<= var_48:8.d)
+14059ec4e                         if (var_48:8.d - rcx_28 u>= 2)
+14059ec63                             *(var_48.q + (zx.q(rcx_28) << 1)) = 0x20002c
+14059ec71                             var_58:8.d += 2
+14059ec4e                         else
+14059ec5c                             zmm0_4 = sub_14097cef0(&var_60, &data_143491e10, zmm0_4)
+14059ec5c                         
+14059ec75                         int32_t rcx_32 = var_58:8.d
+14059ec75                         
+14059ec7d                         if (rcx_32 u<= var_48:8.d)
+14059ec97                             if (var_48:8.d - rcx_32 u>= 0xc)
+14059ecac                                 zmm0_4.o = (*u", auth_token_vermanualIn, respon")[0x10].o
+14059ecb3                                 __builtin_memcpy(var_48.q + (zx.q(rcx_32) << 1), u"manualInput=", 
+14059ecb3                                     0x18)
+14059eccc                                 var_58:8.d += 0xc
+14059ec97                             else
+14059eca5                                 zmm0_4 = sub_14097cef0(&var_60, &data_1436225c8, zmm0_4)
+14059eca5                             
+14059ecd9                             int512_t zmm0_5 = sub_14102ae30(&var_60, arg4, zmm0_4)
+14059ecde                             int32_t rcx_35 = var_58:8.d
+14059ecde                             
+14059ece6                             if (rcx_35 u<= var_48:8.d)
+14059ed00                                 if (var_48:8.d - rcx_35 u>= 0xb)
+14059ed15                                     zmm0_5.o = (*u", auth_token_vermanualIn, respon")[0x18].o
+14059ed1c                                     __builtin_memcpy(var_48.q + (zx.q(rcx_35) << 1), 
+14059ed1c                                         u", response=", 0x16)
+14059ed34                                     var_58:8.d += 0xb
+14059ed00                                 else
+14059ed0e                                     zmm0_5 = sub_14097cef0(&var_60, &data_14349bb58, zmm0_5)
+14059ed0e                                 
+14059ed3b                                 void* rax_13
+14059ed3b                                 int512_t zmm0_6
+14059ed3b                                 rax_13, zmm0_6 = sub_1405a01d0(arg6, zmm0_5)
+14059ed4d                                 int512_t zmm0_7
+14059ed4d                                 
+14059ed4d                                 if (var_58:0xc.b != 0 || rax_13 == 0)
+14059ed7b                                 label_14059ed7b:
+14059ed7b                                     zmm0_7 = sub_14097cd50(&var_60, rax_13, zmm0_6)
+14059eda5                                 label_14059eda5:
+14059eda5                                     int64_t* rax_16
+14059eda5                                     int512_t zmm0_8
+14059eda5                                     rax_16, zmm0_8 = sub_14097cbe0(&var_60, zmm0_7)
+14059edb1                                     (*(r15 + 0x20))(*(r15 + 8), rax_16)
+14059edb1                                     
+14059edbd                                     if (arg4 == 0 || arg3 != 3)
+14059edde                                         return sub_1406b88e0(sub_1405b56a0(0x779, zmm0_8))
+14059edde                                     
+14059eddf                                     void* rax_19 = *(arg1 + 8)
+14059edea                                     void* rdx_54 = *(data_1436cc7e8 + 8)
+14059edf8                                     void** rdx_56
+14059edf8                                     
+14059edf8                                     if (rdx_54 == &data_14363bf38)
+14059ee16                                         rdx_56 = &data_143600668
+14059edf8                                     else if (rdx_54 == 0 || *(rdx_54 + 8) != 2)
+14059ee1f                                         rdx_56 = &data_1435fd168
+14059ee03                                     else
+14059ee0c                                         rdx_54.b = *(rdx_54 + 0xc) == 0x68007a
+14059ee0c                                         
+14059ee14                                         rdx_56 =
+14059ee14                                             zx.d(rdx_54.b) == 0 ? &data_1435fd168 : &data_143600668
+14059ee14                                     
+14059ee2a                                     (*(rax_19 + 0x20))(*(rax_19 + 8), rdx_56)
+14059ee4c                                     return sub_1406b88e0(sub_1405b56a0(0x781, zmm0_8))
+14059ee4c                                 
+14059ed4f                                 int32_t rcx_40 = var_58:8.d
+14059ed4f                                 
+14059ed57                                 if (rcx_40 u<= var_48:8.d)
+14059ed71                                     if (*(rax_13 + 8) u> var_48:8.d - rcx_40)
+14059ed71                                         goto label_14059ed7b
+14059ed71                                     
+14059ed90                                     zmm0_7 = sub_1408feae0(var_48.q + (zx.q(rcx_40) << 1), 
+14059ed90                                         rax_13 + 0xc, zx.q(*(rax_13 + 8)) * 2)
+14059ed9c                                     var_58:8.d += *(rax_13 + 8)
+14059ed9c                                     goto label_14059eda5
+14059eab3     else
+14059eab5         int32_t rcx_9 = var_58:8.d
+14059eab5         
+14059eabd         if (rcx_9 u<= var_48:8.d)
+14059ead7             if (*(rbp_1 + 8) u> var_48:8.d - rcx_9)
+14059ead7                 goto label_14059eae1
+14059ead7             
+14059eaf6             zmm0_2 =
+14059eaf6                 sub_1408feae0(var_48.q + (zx.q(rcx_9) << 1), rbp_1 + 0xc, zx.q(*(rbp_1 + 8)) * 2)
+14059eb02             var_58:8.d += *(rbp_1 + 8)
+14059eb02             goto label_14059eb06
+14059eb02 
+14059ee4d sub_140900340()
+14059ee4d noreturn

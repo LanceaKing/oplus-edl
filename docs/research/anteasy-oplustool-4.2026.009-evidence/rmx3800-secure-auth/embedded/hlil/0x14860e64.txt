@@ -1,0 +1,98 @@
+14860e94 int32_t x28 = 9
+14860e98 data_148c49f8 = 0xffffffff
+14860eb0 __builtin_memset(&data_148f7d44, 0, 0x4c)
+14860eb4 data_148f7d40 = 0
+14860eb4 
+14860ec8 if (arg7 != 0 && arg5 != 0 && arg3 != 0)
+14860ecc     uint64_t x19_1 = zx.q(arg1)
+14860ecc     
+14860ef0     if (arg1 u<= 0x7ffffffe && arg2 != 0 && arg4 != 0 && arg6 != 0)
+14860efc         if (arg6 + arg7 u>= arg6)
+14860f1c             void var_78
+14860f1c             int128_t v0_1
+14860f1c             int128_t v1_1
+14860f1c             int128_t v2_1
+14860f1c             v0_1, v1_1, v2_1 = sub_14828090(&var_78, 0x148b25c0, 0x18)
+14860f20             int64_t x21_1 = arg6 + arg7
+14860f30             int128_t entry_v3
+14860f30             int128_t entry_v4
+14860f30             int128_t entry_v5
+14860f30             int128_t entry_v6
+14860f30             int128_t entry_v7
+14860f30             int32_t x0_2 = sub_14861dfc(arg6, x21_1, &var_78, v0_1, v1_1, v2_1, entry_v3, entry_v4, 
+14860f30                 entry_v5, entry_v6, entry_v7)
+14860f34             x28 = x0_2
+14860f34             
+14860f38             if (x0_2 == 0)
+14860f48                 int64_t var_80 = 0
+14860f4c                 int64_t var_88 = 0
+14860f50                 data_148f7d50 = arg6
+14860f50                 data_148f7d58 = x21_1
+14860f54                 int32_t x0_4 = sub_14860d38(&var_80)
+14860f58                 int32_t x0_6
+14860f58                 
+14860f58                 if (x0_4 == 0)
+14860f60                     x0_6 = sub_14860d44(&var_88)
+14860f60                 
+14860f64                 if (x0_4 == 0 && x0_6 == 0)
+14860f90                     int64_t x8_1 = var_88
+14860f94                     x28 = 4
+14860f98                     int64_t x9_1 = var_80
+14860f98                     
+14860fc4                     if (arg3 + arg5 u>= arg3 && &arg4[arg5] u>= arg4 && &arg2[arg3] u>= arg2
+14860fc4                             && x9_1 + x8_1 u>= x9_1)
+14860fc8                         int64_t x28_1 = arg5 + arg3
+14860fc8                         
+14860fd0                         if (x28_1 u<= x8_1)
+14860fdc                             int64_t x8_2 = x9_1 + x8_1
+14860fe4                             char* x21_2 = x8_2 - x28_1
+14860fe8                             char* x8_3 = x8_2 - arg5
+14861000                             sub_1484eea0(x21_2, arg3, arg2, arg3, x19_1)
+14861018                             sub_1484eea0(x8_3, arg5, arg4, arg5, x19_1)
+14861024                             int128_t v1_2
+14861024                             int128_t v2_2
+14861024                             int128_t v3
+14861024                             int128_t v4
+14861024                             int128_t v5
+14861024                             int128_t v6
+14861024                             int128_t v7
+14861024                             v1_2, v2_2, v3, v4, v5, v6, v7 = sub_148515e0()
+14861054                             int32_t x0_12
+14861054                             int128_t v0_2
+14861054                             x0_12, v0_2 = sub_14889014(x19_1.d, x21_2, arg3.d, 0, x8_3, arg5.d, 
+14861054                                 arg6, arg7.d, arg8, arg9)
+14861060                             int32_t x0_14
+14861060                             
+14861060                             if (x19_1.d == 0x25)
+14861070                                 x0_14, v0_2, v1_2, v2_2, v3, v4, v5, v6, v7 = sub_14861f88(
+14861070                                     data_148f7d50, data_148f7d58, v0_2, v1_2, v2_2, v3, v4, v5, v6, 
+14861070                                     v7)
+14861074                                 x28 = x0_14
+14861074                             
+14861078                             if (x19_1.d != 0x25 || x0_14 == 0)
+1486107c                                 if (x0_12 == 0)
+148610b8                                     data_148c49f0 = x19_1.d
+148610bc                                     int32_t x0_16 = sub_14861e04(x19_1.d, &data_148f7d60, 
+148610bc                                         &data_148f7d44, &data_148f7d40)
+148610c0                                     x28 = x0_16
+148610c0                                     
+148610c4                                     if (x0_16 == 0)
+148610d4                                         x28 = 0x400004
+148610d4                                         
+148610dc                                         if (data_148f7d44 != 0)
+148610ec                                             if (data_148f7d60 == 0)
+148610ec                                                 x28 = 0x400004
+148610ec                                             else
+148610ec                                                 x28 = 0
+1486107c                                 else
+14861088                                     x28 = 0x400001
+1486109c                                     sub_1485fd68(1, "(%x %x)", 0x400001, v0_2, v1_2, v2_2, v3, v4, 
+1486109c                                         v5, v6, v7)
+14860fd0                         else
+14860fd4                             x28 = 0xa
+14860f64                 else
+14860f68                     x28 = 5
+14860efc         else
+14860f00             x28 = 4
+14860f00 
+14860f8c return zx.q(x28)

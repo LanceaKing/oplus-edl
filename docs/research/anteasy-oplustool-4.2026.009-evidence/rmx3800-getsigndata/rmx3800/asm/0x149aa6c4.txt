@@ -1,0 +1,87 @@
+149aa6c4 sub     sp, sp, #0xf0
+149aa6c8 stp     fp, lr, [sp, #0x90]
+149aa6cc str     x27, [sp, #0xa0]
+149aa6d0 stp     x26, x25, [sp, #0xb0]
+149aa6d4 stp     x24, x23, [sp, #0xc0]
+149aa6d8 stp     x22, x21, [sp, #0xd0]
+149aa6dc stp     x20, x19, [sp, #0xe0]
+149aa6e0 add     fp, sp, #0x90
+149aa6e4 adrp    x10, 0x149da000
+149aa6e8 cmp     w0, #0x3
+149aa6ec mov     w8, #0x200
+149aa6f0 mov     w9, #0x1000
+149aa6f4 csel    w24, w9, w8, eq
+149aa6f8 mov     x20, x4
+149aa6fc ldr     x10, [x10, #0x3f0]
+149aa700 add     x23, x2, x24
+149aa704 mov     x0, x23
+149aa708 mov     x21, x3
+149aa70c mov     x22, x2
+149aa710 mov     x19, x1
+149aa714 stur    x10, [fp, #-0x8]
+149aa718 bl      0x149a7f9c
+149aa71c cbz     w0, 0x149aa738
+149aa738 ldr     w8, [x23, #0x48]
+149aa73c add     x9, sp, #0x8
+149aa740 ldr     w25, [x23, #0x50]
+149aa744 mov     x26, xzr
+149aa748 add     x23, x9, #0x38
+149aa74c mul     w8, w24, w8
+149aa750 cmp     w25, #0
+149aa754 csel    w27, w25, wzr, gt
+149aa758 add     x22, x22, w8, sxtw
+149aa720 adrp    x1, 0x149d2000
+149aa724 mov     w0, #0x4
+149aa728 add     x1, x1, #0x240
+149aa72c bl      0x149a5c34
+149aa730 mov     w0, #0xffffffff
+149aa734 b       0x149aa7f4
+149aa7d8 cmp     w25, w27
+149aa7dc b.ne    0x149aa7f0
+149aa764 add     x0, sp, #0x8
+149aa768 mov     x1, x22
+149aa76c mov     w2, #0x80
+149aa770 bl      0x1499bf38
+149aa774 mov     x0, x23
+149aa778 bl      0x149aa5f8
+149aa77c cbz     x19, 0x149aa7a0
+149aa7f4 bl      0x149aac0c
+149aa7f8 b.ne    0x149aa81c
+149aa7f0 mov     w0, wzr
+149aa7e0 adrp    x1, 0x149d2000
+149aa7e4 mov     w0, #0x4
+149aa7e8 add     x1, x1, #0x262
+149aa7ec bl      0x149aac50
+149aa7a0 add     x26, x26, #0x1
+149aa7a4 add     x22, x22, #0x80
+149aa7a8 b       0x149aa75c
+149aa780 mov     x24, x0
+149aa784 mov     x0, x19
+149aa788 bl      0x1499bc40
+149aa78c mov     x2, x0
+149aa790 mov     x0, x24
+149aa794 mov     x1, x19
+149aa798 bl      0x149ba56c
+149aa79c cbz     w0, 0x149aa7ac
+149aa81c bl      0x1499f324
+149aa7fc ldp     x20, x19, [sp, #0xe0]
+149aa800 ldp     x22, x21, [sp, #0xd0]
+149aa804 ldp     x24, x23, [sp, #0xc0]
+149aa808 ldp     x26, x25, [sp, #0xb0]
+149aa80c ldr     x27, [sp, #0xa0]
+149aa810 ldp     fp, lr, [sp, #0x90]
+149aa814 add     sp, sp, #0xf0
+149aa818 ret     
+149aa75c cmp     x27, x26
+149aa760 b.eq    0x149aa7d8
+149aa7ac ldp     x8, x9, [sp, #0x28]
+149aa7b0 adrp    x1, 0x149d2000
+149aa7b4 mov     w0, #0x4
+149aa7b8 add     x1, x1, #0x25a
+149aa7bc mov     x2, x19
+149aa7c0 sub     x9, x9, x8
+149aa7c4 str     x8, [x21]
+149aa7c8 add     x9, x9, #0x1
+149aa7cc str     x9, [x20]
+149aa7d0 bl      0x149a5c34
+149aa7d4 mov     w27, w26

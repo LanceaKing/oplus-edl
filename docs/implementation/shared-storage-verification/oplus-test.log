@@ -1,0 +1,219 @@
+    Blocking waiting for file lock on build directory
+   Compiling oplus-edl v0.1.0 (/Users/Apple/Documents/oplus-edl)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 9.88s
+     Running unittests src/lib.rs (target/debug/deps/oplus_edl-1f98b895c0ff5ba4)
+
+running 14 tests
+test cloud::tests::live_anonymous_list_reports_server_status ... ignored, explicit live read-only cloud transport probe
+test device::wait_tests::explicit_selector_waits_for_that_device_not_another ... ok
+test device::wait_tests::disconnected_device_is_polled_until_connected ... ok
+test cloud::tests::request_signature_matches_independent_python_hmac_vector ... ok
+test swm::tests::identity_special_input_child ... ok
+test device::wait_tests::ambiguity_errors_and_timeout_do_not_retry_or_open ... ok
+test cloud::tests::authenticated_clock_ignores_host_offsets_and_jumps_but_enforces_expiry ... ok
+test cloud::tests::ticket_rejects_cross_binding_expiry_url_and_manifest_tampering ... ok
+test swm::tests::captured_root_signatures_and_nonce_binding ... ok
+test cloud::tests::authenticated_clock_signs_http_requests_with_server_time ... ok
+test cloud::tests::wreq_enroll_list_ticket_use_real_http_and_stop_before_unverified_asset ... ok
+test swm::tests::signed_response_rejects_replay_and_changed_raw_data ... ok
+test swm::tests::identity_rejects_fifo_and_symlink_without_waiting_for_writer ... ok
+test swm::tests::identity_survives_restart_and_dpop_binds_body ... ok
+
+test result: ok. 13 passed; 0 failed; 1 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running unittests src/main.rs (target/debug/deps/oplus_edl-b0f1f248275cb0d1)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/cli.rs (target/debug/deps/cli-6420713a1ca3c3c4)
+
+running 15 tests
+test flash_waits_by_default_and_accepts_a_bounded_wait ... ok
+test clap_contract_and_five_entries ... ok
+test cloud_flash_flags_require_output_and_exclude_local_auth_inputs ... ok
+test media_defaults_are_explicit_and_writes_are_not_skipped ... ok
+test selection_requires_unique_explicit_match_without_opening ... ok
+test result_priority_retains_all_facts_and_decimal_byte_strings ... ok
+test typed_mutation_failures_map_without_error_string_matching ... ok
+test removed_features_are_not_accepted ... ok
+test firmware_length_error_identifies_the_xml_source_and_target_without_hardware ... ok
+test unavailable_workflows_exit_before_hardware_or_loader_access ... ok
+test invalid_signed_digest_is_rejected_before_loader_and_device_access ... ok
+test phase_four_preflight_json_remains_offline_and_reports_unsupported_features ... ok
+test all_skipped_firmware_retains_each_item_in_final_json ... ok
+test sparse_unsupported_features_and_corrupt_payloads_have_distinct_exit_categories ... ok
+test invalid_inputs_and_phase_boundary_do_not_open_hardware ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.85s
+
+     Running tests/device.rs (target/debug/deps/device-b4c186f2cd317072)
+
+running 16 tests
+test empty_digest_fails_before_sahara_and_startup_errors_keep_the_stage ... ok
+test preview_digest_invalid_material_stops_before_device_io ... ok
+test handshake_failure_does_not_configure_or_reset ... ok
+test loader_rejects_unexpected_sahara_workflows_without_any_response ... ok
+test preview_verify_requires_raw_ack_before_sending_signature ... ok
+test preview_boot_preflight_rejects_nonboot_lun_before_mutation ... ok
+test scripted_read_and_bufread_share_position ... ok
+test preview_usb_signature_uses_zero_length_terminator_without_changing_payload ... ok
+test configuration_rejects_nak_conflict_and_malformed_sector_without_reset ... ok
+test initialize_real_protocol_with_fragmented_script_only ... ok
+test signed_digest_failure_stops_before_configuration_or_reset ... ok
+test preview_vip_request_ends_welcome_without_reading_the_signature_ack ... ok
+test preview_digest_profile_preserves_binary_files_and_ack_order ... ok
+test preview_digest_to_program_patch_boot_and_reboot_uses_one_session ... ok
+test preview_digest_rejection_stops_before_the_next_stage ... ok
+test signed_digest_is_sent_unchanged_before_configuration ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/firehose.rs (target/debug/deps/firehose-8fdb174120e7f1a0)
+
+running 6 tests
+test wrong_mode_ack_never_sends_payload ... ok
+test preview_probe_refusal_does_not_send_program ... ok
+test program_sends_escaped_label_and_exact_payload ... ok
+test preview_read_mode_preserves_target_geometry ... ok
+test preview_mode_is_probed_and_preserves_target_range ... ok
+test read_accepts_legacy_modes_and_rejects_explicit_mismatch ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/firmware.rs (target/debug/deps/firmware-12a829a673402e8d)
+
+running 10 tests
+test protocol_expressions_are_limited_not_evaluated ... ok
+test sparse_ranges_retain_gaps_and_fill_pattern_without_expansion ... ok
+test sparse_rejects_truncation_bad_totals_versions_and_unsupported_chunks ... ok
+test zero_chunks_are_noops_only_after_type_and_payload_validation ... ok
+test raw_offsets_allow_only_final_sector_padding ... ok
+test smaller_sparse_blocks_produce_aligned_raw_fill_and_gap_candidates ... ok
+test file_sized_raw_uses_bytes_after_source_offset ... ok
+test file_sized_raw_programs_round_only_the_final_sector_and_keep_xml_cap ... ok
+test xml_preserves_file_node_order_and_explicit_skips ... ok
+test xml_preflight_rejects_missing_invalid_ranges_and_unknown_operations ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/input.rs (target/debug/deps/input-b67f67443c72c043)
+
+running 3 tests
+test unix::special_input_child ... ok
+test ordinary_inputs_still_work_and_directories_are_rejected ... ok
+test unix::fifo_inputs_are_rejected_without_a_writer ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.05s
+
+     Running tests/json_stdout.rs (target/debug/deps/json_stdout-f69756de81825816)
+JSON stdout protocol subprocess: passed
+     Running tests/package.rs (target/debug/deps/package-90bb8b7e5ecac59d)
+
+running 9 tests
+test package_cli_requires_variant_and_does_not_mix_explicit_xml ... ok
+test super_rejects_corrupt_reference_and_wrong_image_size_before_publication ... ok
+test super_preserves_reference_slots_and_relocates_sparse_payloads ... ok
+test arbitrary_excluded_partitions_and_unknown_spans_fail_closed ... ok
+test excluded_numeric_range_allows_provably_disjoint_disk_patch ... ok
+test excluded_gpt_cannot_be_modified_by_disk_patches ... ok
+test package_project_identity_is_required_and_consistent ... ok
+test package_requires_one_executable_super_with_exact_span ... ok
+test package_selection_preserves_lun5_ocdt_and_orders_gpt_and_zero_span_userdata ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.96s
+
+     Running tests/project.rs (target/debug/deps/project-f06c1df4c6b1e72d)
+
+running 6 tests
+test decoder_requires_bounded_consistent_project_copies ... ok
+test matching_project_allows_writes_only_after_readonly_preflight ... ok
+test ocdt_payload_cannot_read_past_partition ... ok
+test extended_ocdt_read_requires_stable_header_and_complete_payload ... ok
+test actual_ocdt_overlap_and_out_of_disk_ranges_fail_before_writes ... ok
+test mismatched_missing_duplicate_and_unreadable_ocdt_never_mutate ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.13s
+
+     Running tests/storage.rs (target/debug/deps/storage-a72d9d9f6f7e64fd)
+
+running 16 tests
+test output_short_writes_continue_but_zero_and_errors_fail ... ok
+test overwrite_requires_explicit_flag_and_replaces_only_after_success ... ok
+test publication_never_replaces_a_concurrently_created_destination ... ok
+test failed_reads_retain_partial_and_never_publish ... ok
+test safe_directory_names ... ok
+test gpt_and_partition_read_at_both_sector_sizes ... ok
+test usb_short_completion_and_input_error_do_not_report_success ... ok
+test publication_rename_error_keeps_completed_partial ... ok
+test invalid_gpt_contents_remain_partial_with_item_error ... ok
+test successful_read_publishes_and_existing_files_are_not_truncated ... ok
+test read_eof_timeout_and_initial_nak_preserve_partial_counts ... ok
+test backup_gpt_failure_stops_before_partition_and_preserves_completed_item ... ok
+test complete_backup_captures_gpt_separately_and_marks_scope_limited ... ok
+test backup_missing_or_duplicate_exact_partition_never_reads_payload ... ok
+test exact_single_selection_ignores_unselected_case_variant ... ok
+test gpt_failures_record_the_actual_read_and_retain_exact_partial ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/workflows.rs (target/debug/deps/workflows-e743a7a306db00cb)
+
+running 10 tests
+test discovery_requires_explicit_consistent_counts ... ok
+test single_image_allows_nonportable_names_but_never_ambiguous_targets ... ok
+test partial_directory_needs_only_selected_images_and_keeps_lun_meaning ... ok
+test restore_preflights_layout_names_lengths_and_unique_targets ... ok
+test all_unsafe_names_are_unattempted_without_payload_reads ... ok
+test unsafe_and_colliding_names_do_not_prevent_other_backups ... ok
+test read_failure_keeps_completed_partition_and_stops_remaining_reads ... ok
+test existing_partition_output_is_unattempted_and_other_partition_continues ... ok
+test selected_case_variant_roundtrips_backup_directory ... ok
+test directory_backup_restore_roundtrip_multiple_luns_and_exclusions ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running tests/writes.rs (target/debug/deps/writes-74e85ea3e6ca19b1)
+
+running 31 tests
+test flash_safe_nak_allows_final_actions_but_required_blocks_them ... ok
+test confirmation_acceptance_and_yes_use_the_same_executor ... ok
+test declined_confirmation_and_eof_never_send_mutations ... ok
+test final_action_failure_stops_reboot_and_preserves_verified_write ... ok
+test mismatch_stops_restore_and_flash_final_actions ... ok
+test mutation_partial_transport_count_is_not_input_prefetch_count ... ok
+test none_has_no_reads_and_final_actions_are_explicit_once ... ok
+test directory_mapping_failure_after_gpt_reads_never_programs ... ok
+test patch_failure_stops_verification_and_final_actions ... ok
+test partial_overlap_verifies_last_writer_and_superseded_has_no_read ... ok
+test mutation_not_sent_stops_entire_execution_without_transport_writes ... ok
+test preview_write_verification_uses_the_selected_wire_mode ... ok
+test patch_masks_only_its_bytes_and_expression_masks_whole_lun ... ok
+test required_rejects_unknown_expectations_before_any_mutation ... ok
+test restore_padding_and_per_image_verification_order ... ok
+test patches_mask_only_the_target_lun ... ok
+test sparse_raw_fill_and_dont_care_preserve_prior_verification ... ok
+test mutation_stop_before_verification_still_marks_confirmed_overwrites_superseded ... ok
+test lost_ack_nak_and_data_failure_stop_all_modes_and_final_actions ... ok
+test stopped_later_verification_does_not_reclassify_superseded_item ... ok
+test refused_read_continues_only_in_best_effort ... ok
+test truncated_source_after_preflight_is_unknown_and_never_padded_as_success ... ok
+test unknown_program_address_is_incomplete_and_skip_is_preserved ... ok
+test stop_before_unvisited_overlap_reports_only_final_effective_ranges ... ok
+test reboot_nak_and_missing_ack_keep_prior_results_and_never_retry ... ok
+test explicit_wrong_read_ack_mode_stops_following_mutations ... ok
+test usb_error_with_unavailable_completion_length_reports_unknown_byte_count ... ok
+test stopped_mutations_do_not_supersede_with_unattempted_or_unconfirmed_writes ... ok
+test wrong_xml_mutation_ack_mode_stops_patch_boot_and_reset_sequence ... ok
+test matching_read_data_without_completion_ack_is_incomplete_and_stops ... ok
+test timeout_truncation_and_unsafe_nak_stop_even_best_effort ... ok
+
+test result: ok. 31 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+   Doc-tests oplus_edl
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

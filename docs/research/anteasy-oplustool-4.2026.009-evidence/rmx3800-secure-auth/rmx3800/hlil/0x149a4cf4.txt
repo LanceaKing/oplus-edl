@@ -1,0 +1,71 @@
+149a4d2c int64_t x6
+149a4d2c int64_t x7
+149a4d2c uint64_t x24
+149a4d2c int128_t v0
+149a4d2c int128_t v1
+149a4d2c int128_t v2
+149a4d2c int128_t v3
+149a4d2c int128_t v4
+149a4d2c int128_t v5
+149a4d2c int128_t v6
+149a4d2c int128_t v7
+149a4d2c x6, x7, v0, v1, v2, v3, v4, v5, v6, v7 = sub_149a5c34(5, 
+149a4d2c     "Requesting VIP img authentication elf_buf = 0x%x, elf_buf_len = %d", arg1, zx.q(arg2), arg5, 
+149a4d2c     arg6, arg7, arg8, arg9, arg10, arg11, arg12, arg13, arg14, arg15, arg16, x24)
+149a4d34 int64_t* x3_1
+149a4d34 int64_t x4_1
+149a4d34 int64_t x5_1
+149a4d34 int64_t x6_1
+149a4d34 int64_t x7_1
+149a4d34 int32_t x22_1
+149a4d34 int128_t v0_1
+149a4d34 int128_t v1_1
+149a4d34 int128_t v2_1
+149a4d34 int128_t v3_1
+149a4d34 int128_t v4_1
+149a4d34 int128_t v5_1
+149a4d34 int128_t v6_1
+149a4d34 int128_t v7_1
+149a4d34 
+149a4d34 if ((arg1 & 0xfff) == 0)
+149a4d6c     int128_t v1_2
+149a4d6c     int128_t v2_2
+149a4d6c     int128_t v3_2
+149a4d6c     int128_t v4_2
+149a4d6c     int128_t v5_2
+149a4d6c     int128_t v6_2
+149a4d6c     int128_t v7_2
+149a4d6c     v1_2, v2_2, v3_2, v4_2, v5_2, v6_2, v7_2 = sub_149b2770()
+149a4d7c     int64_t* var_48
+149a4d7c     int128_t v0_2 = sub_1499c404(&var_48, 0, 0x18)
+149a4d90     int64_t* x7_2 = &var_48
+149a4da4     int32_t x0_2 = sub_149c2988(0x2000201, 0x14, arg1, zx.q(arg2), 0x1a, 0, 0, x7_2)
+149a4da8     int64_t* x3_3 = var_48
+149a4da8     
+149a4db4     if (x0_2 == 0 && x3_3 == 0)
+149a4dc0         int32_t var_38
+149a4dc0         int64_t* x3_4 = zx.q(var_38)
+149a4dcc         uint64_t var_40
+149a4dcc         *arg3 = var_40
+149a4dd0         *arg4 = x3_4.d
+149a4dd8         sub_149a5c34(5, 
+149a4dd8             "Returned from verifying VIP img authentication: data = 0x%x, data_len = %d", *arg3, 
+149a4dd8             x3_4, 0x1a, 0, 0, x7_2, v0_2, v1_2, v2_2, v3_2, v4_2, v5_2, v6_2, v7_2, x24)
+149a4ddc         return 1
+149a4ddc     
+149a4df0     x3_1, x4_1, x5_1, x6_1, x7_1, v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, v6_1, v7_1 = sub_149a5c34(2, 
+149a4df0         "VIP img authentication failed with smc_status = 0x%x, rsp_0 = 0x%x", zx.q(x0_2), x3_3, 
+149a4df0         0x1a, 0, 0, x7_2, v0_2, v1_2, v2_2, v3_2, v4_2, v5_2, v6_2, v7_2, x24)
+149a4df4     x22_1 = 7
+149a4df8     *arg3 = arg1
+149a4dfc     *arg4 = 0
+149a4d34 else
+149a4d54     x22_1 = 2
+149a4d58     x3_1, x4_1, x5_1, x6_1, x7_1, v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, v6_1, v7_1 = sub_149a5c34(2, 
+149a4d58         "Authenticate module requires buffer to be %d (0x%x) aligned, input buffer is not aligned Addr "
+149a4d58     "0x%x size 0x%x", 
+149a4d58         0x1000, 0x1000, arg1, zx.q(arg2), x6, x7, v0, v1, v2, v3, v4, v5, v6, v7, x24)
+149a4d58 
+149a4e10 sub_149a5c34(2, "Verifying signature failed with %d", zx.q(x22_1), x3_1, x4_1, x5_1, x6_1, x7_1, 
+149a4e10     v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, v6_1, v7_1, x24)
+149a4e14 return 0

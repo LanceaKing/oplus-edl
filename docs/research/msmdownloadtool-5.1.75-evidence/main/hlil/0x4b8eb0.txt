@@ -1,0 +1,166 @@
+004b8eb0 int32_t ebp
+004b8eb0 int32_t var_4 = ebp
+004b8eb1 int32_t* ebp_1 = &var_4
+004b8eb3 int32_t var_8 = 0xffffffff
+004b8eb5 int32_t (* var_c)(void* arg1) = sub_6daea7
+004b8ec0 TEB* fsbase
+004b8ec0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004b8ecc int32_t eax_2 = __security_cookie ^ &var_4
+004b8ece int32_t var_14 = eax_2
+004b8ed1 int32_t ebx
+004b8ed1 int32_t var_230 = ebx
+004b8ed2 int32_t esi
+004b8ed2 int32_t var_234 = esi
+004b8ed3 int32_t edi
+004b8ed3 int32_t var_238 = edi
+004b8ed8 fsbase->NtTib.ExceptionList = &ExceptionList
+004b8ee0 *arg1 = &CSerialComDload::`vftable'{for `IParamInterface'}
+004b8ee6 arg1[6] = 0xf
+004b8eed arg1[5] = 0
+004b8ef4 struct IParamInterface::CSerialComDload::VTable** var_228 = arg1
+004b8efa arg1[1].b = 0
+004b8f01 int32_t var_8_1 = 0
+004b8f08 sub_4b8790(&arg1[0xa])
+004b8f0d arg1[0x21] = 0xf
+004b8f17 arg1[0x20] = 0
+004b8f21 arg1[0x1c].b = 0
+004b8f25 var_8_1.b = 2
+004b8f4d arg1[0x140] = (*(data_7bfb90 + 0xc))(eax_2) + 0x10
+004b8f53 int32_t var_8_2 = 0x1a8
+004b8f58 var_8_2.b = 3
+004b8f5c void* eax_6 = sub_56c49b(var_8_2)
+004b8f66 void* const eax_7
+004b8f66 
+004b8f66 if (eax_6 == 0)
+004b8f71     eax_7 = nullptr
+004b8f66 else
+004b8f6a     eax_7, ebp_1 = sub_4d42c0(eax_6)
+004b8f6a 
+004b8f75 arg1[0x168] = eax_7
+004b8f7b sub_4d4d40(eax_7)
+004b8f80 arg1[0x173] = 0xf
+004b8f8a arg1[0x172] = 0
+004b8f94 arg1[0x16e].b = 0
+004b8f9e ebp_1[-1].b = 5
+004b8fa2 int32_t var_8_3 = 0x34
+004b8fa4 arg1[0xe] = ebp_1[2]
+004b8fa7 struct CSerialCommHelper::VTable** eax_9 = sub_56c49b(var_8_3)
+004b8faf ebp_1[-0x87] = eax_9
+004b8fb5 ebp_1[-1].b = 6
+004b8fbb struct CSerialCommHelper::VTable** eax_10
+004b8fbb 
+004b8fbb if (eax_9 == 0)
+004b8fc6     eax_10 = nullptr
+004b8fbb else
+004b8fbf     eax_10, ebp_1 = sub_4b7ed0(eax_9)
+004b8fbf 
+004b8fc8 ebp_1[-1].b = 5
+004b8fcc int32_t var_8_4 = 0x5c
+004b8fce arg1[0xb] = eax_10
+004b8fd1 int32_t* eax_11
+004b8fd1 int32_t ecx_4
+004b8fd1 eax_11, ecx_4 = sub_56c49b(var_8_4)
+004b8fd9 ebp_1[-0x87] = eax_11
+004b8fdf ebp_1[-1].b = 7
+004b8fe5 int32_t* eax_12
+004b8fe5 
+004b8fe5 if (eax_11 == 0)
+004b8ff4     eax_12 = nullptr
+004b8fe5 else
+004b8fe7     int32_t var_8_5 = ecx_4
+004b8fed     eax_12 = sub_4d1490(eax_11, arg1[0xb])
+004b8fed 
+004b8ff6 ebp_1[-1].b = 5
+004b8ffa int32_t var_8_6 = 0x14
+004b8ffc arg1[0xc] = eax_12
+004b8fff int32_t* eax_13 = sub_56c49b(var_8_6)
+004b9007 ebp_1[-0x87] = eax_13
+004b900d ebp_1[-1].b = 8
+004b9013 int32_t* eax_14
+004b9013 
+004b9013 if (eax_13 == 0)
+004b9021     eax_14 = nullptr
+004b9013 else
+004b901a     eax_14 = sub_4c6470(eax_13, arg1[0xb])
+004b901a 
+004b9023 ebp_1[-1].b = 5
+004b9027 void* ecx_7 = arg1[0xb]
+004b902a arg1[0xd] = eax_14
+004b9030 *(ecx_7 + 0x2c) = arg1[0xe]
+004b9039 *(arg1[0xc] + 0xc) = arg1[0xe]
+004b9042 arg1[0xd][2].vFunc_0 = arg1[0xe]
+004b9045 void* esi_1 = arg1[0xa]
+004b904b arg1[0xf] = ebp_1[3]
+004b904e __builtin_memset(&arg1[0x23], 0, 0x28)
+004b90b8 arg1[0x13] = 0xffffffff
+004b90bf arg1[0x141].w = 0x100
+004b90c8 *(arg1 + 0x25) = 0
+004b90cc *(arg1 + 0x55) = 0
+004b90d0 sub_42c110(esi_1 + 0x100004)
+004b90e1 void* var_8_8 = &ebp_1[-0x87]
+004b90e8 ebp_1[-0x87] = *(esi_1 + 0x100004)
+004b90ee struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList_1 = *(esi_1 + 0x10000c)
+004b90f0 int32_t var_c_2 = 0x10
+004b90f2 ExceptionList = ExceptionList_1
+004b90f3 *(esi_1 + 0x100010) = ExceptionList_1
+004b90fd sub_4132f0(esi_1 + 0x10000c, &ebp_1[-0x88], ExceptionList)
+004b9104 *(esi_1 + 0x100018) = 7
+004b910e *(esi_1 + 0x10001c) = 8
+004b9118 int32_t var_8_9 = 0x100
+004b911d char var_c_3 = 0
+004b911e ebp_1[-6].w = 0
+004b9122 *(ebp_1 - 0x16) = 0
+004b912b ExceptionList = &ebp_1[-0x86]
+004b912c *(arg1 + 0x27) = 0
+004b9130 _memset(ExceptionList, var_c_3, var_8_9)
+004b913e int32_t var_8_10 = 0x104
+004b9143 char var_c_4 = 0
+004b9145 ExceptionList = &arg1[0x2e]
+004b9146 _memset(ExceptionList, var_c_4, var_8_10)
+004b914e int32_t var_8_11 = 0x104
+004b9153 int16_t* var_c_5 = &arg1[0x2e]
+004b9154 ExceptionList = nullptr
+004b9157 sub_fb5996(esi_1)
+004b916c sub_6978bf(&arg1[0x2e], &ebp_1[-6], &ebp_1[-0x86], nullptr, nullptr)
+004b917d int16_t* ecx_13 = &ebp_1[-6]
+004b918e int16_t i
+004b918e 
+004b918e do
+004b9180     i = *ecx_13
+004b9183     ecx_13 = &ecx_13[1]
+004b9186     *(ecx_13 + &arg1[0x2e] - &ebp_1[-6] - 2) = i
+004b918e while (i != 0)
+004b918e 
+004b9190 int16_t* edx_3 = &ebp_1[-0x86]
+004b9196 int16_t* esi_2 = edx_3
+004b9196 
+004b91a9 do
+004b91a0     i = *edx_3
+004b91a3     edx_3 = &edx_3[1]
+004b91a9 while (i != 0)
+004b91a9 
+004b91ab void* edx_4 = edx_3 - esi_2
+004b91ad void* edi_2 = arg1 + 0xb6
+004b91ad 
+004b91ba do
+004b91b0     i = *(edi_2 + 2)
+004b91b4     edi_2 += 2
+004b91ba while (i != 0)
+004b91ba 
+004b91c1 int32_t esi_3
+004b91c1 int32_t edi_3
+004b91c1 edi_3, esi_3 = __builtin_memcpy(edi_2, esi_2, edx_4 u>> 2 << 2)
+004b91c8 __builtin_memcpy(edi_3, esi_3, edx_4 & 3)
+004b91cf __builtin_strncpy(&arg1[0x14a], "Unkn", 4)
+004b91da arg1[0x14b] = sub_6e776f
+004b91e8 __builtin_strncpy(&arg1[0x142], "Unkn", 4)
+004b91f4 arg1[0x143] = sub_6e776f
+004b91fa void* ecx_18 = arg1[0xa]
+004b91fd arg1[0x153] = 0
+004b9207 arg1[0x152] = 2
+004b9211 arg1[0x16] = 0
+004b9218 *(ecx_18 + 0x100000) = arg1
+004b9221 fsbase->NtTib.ExceptionList = ebp_1[-3]
+004b9231 sub_687de2(ebp_1[-4] ^ ebp_1)
+004b9238 *ebp_1
+004b9239 return arg1

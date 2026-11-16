@@ -1,0 +1,53 @@
+004d05b0 int32_t ebp
+004d05b0 int32_t var_4 = ebp
+004d05b1 int32_t* ebp_1 = &var_4
+004d05b8 int32_t ecx = __chkstk()
+004d05c4 int32_t __saved_ebx = __security_cookie ^ &var_4
+004d05d8 int32_t edi = 0
+004d05da int32_t var_1010 = ecx
+004d05e7 char var_100c = 0
+004d05ee void var_100b
+004d05ee _memset(&var_100b, 0, 0xfff)
+004d05fe sub_412e10(arg1, &data_76a008, nullptr)
+004d0603 int32_t var_1014 = 0
+004d0603 
+004d0610 while (true)
+004d0610     int32_t eax_3 = edi
+004d0612     edi += 1
+004d0612     
+004d0616     if (eax_3 s< 0x64)
+004d062a         _memset(&ebp_1[-0x402], 0, 0x1000)
+004d064f         int32_t eax_8
+004d064f         int32_t* ebx_1
+004d064f         eax_8, ebx_1, ebp_1 =
+004d064f             sub_4b83d0(*ebp_1[-0x403], &ebp_1[-0x402], 0x1000, &ebp_1[-0x404], 0x32)
+004d064f         
+004d0658         if (eax_8 != 0)
+004d06bc             if (eax_8 == 0x102)
+004d06bc                 continue
+004d0658         else if (ebp_1[-0x402].b == eax_8.b)
+004d0660             continue
+004d0660         else
+004d0662             char* ecx_3 = &ebp_1[-0x402]
+004d0662             
+004d0675             do
+004d0670                 eax_8.b = *ecx_3
+004d0672                 ecx_3 = &ecx_3[1]
+004d0675             while (eax_8.b != 0)
+004d0675             
+004d0683             sub_4235e0(ebx_1, &ebp_1[-0x402], ecx_3 - &ecx_3[1])
+004d0683             
+004d069b             if (sub_4278d0(ebx_1, "response value="ACK" rawmode="false"", 0, 0x24) == 0xffffffff)
+004d069b                 continue
+004d069b             
+004d06a6             ebp_1[-1]
+004d06ab             int32_t eax_12 = sub_68804f()
+004d06b2             *ebp_1
+004d06b3             return eax_12
+004d06b3     
+004d06c2     ebp_1[-1]
+004d06cc     break
+004d06cc 
+004d06d4 int32_t eax_15 = sub_68804f()
+004d06db *ebp_1
+004d06dc return eax_15

@@ -1,0 +1,122 @@
+0040b006 int32_t var_c = 0xffffffff
+0040b008 int32_t (* var_10)() = sub_55d947
+0040b013 TEB* fsbase
+0040b013 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0040b01a __security_cookie
+0040b028 int32_t ebx
+0040b028 int32_t var_2c0 = ebx
+0040b030 int32_t __saved_edi
+0040b030 int32_t eax_4 = __security_cookie ^ &__saved_edi
+0040b03a fsbase->NtTib.ExceptionList = &ExceptionList
+0040b051 WinExec("del log.txt", 1)
+0040b05a WinExec(".\checkMd5.bat", 0)
+0040b061 Sleep(0x7d0)
+0040b073 uint8_t filename = 0
+0040b07e void var_127
+0040b07e _memset(&var_127, 0, 0x104, eax_4)
+0040b095 GetModuleFileNameA(nullptr, &filename, 0x104)
+0040b0ad *(__mbsnlen(&filename, 0x5c) + 1) = 0
+0040b0b1 int32_t* eax_6 = sub_421c0b()
+0040b0bc int32_t ecx
+0040b0bc ecx.b = eax_6 != 0
+0040b0bc 
+0040b0c1 if (ecx == 0)
+0040b0c8     sub_402b80(0x80004005)
+0040b0c8     noreturn
+0040b0c8 
+0040b0d1 void* eax_8
+0040b0d1 char* ecx_2
+0040b0d1 eax_8, ecx_2 = (*(*eax_6 + 0xc))()
+0040b0d4 void* eax_9 = eax_8 + 0x10
+0040b0d7 void* var_2bc = eax_9
+0040b0db int32_t var_c_1 = 0
+0040b0db 
+0040b0ee if (filename != 0)
+0040b0f0     uint8_t* edi_1 = &filename
+0040b0f0     
+0040b160     do
+0040b0f7         ebx.b = *edi_1
+0040b0f7         
+0040b0fc         if (ebx.b == 0x5c)
+0040b153             ecx_2 = sub_40b850(0x5a0658, 2)
+0040b158             eax_9 = var_2bc
+0040b0fc         else
+0040b0fe             char* ecx_3 = *(eax_9 - 0xc)
+0040b0fe             
+0040b10a             if (&ecx_3[1] s>= 0)
+0040b11f                 if (((*(eax_9 - 8) - &ecx_3[1]) | (1 - *(eax_9 - 4))) s< 0)
+0040b126                     sub_402940(&var_2bc, &ecx_3[1])
+0040b12b                     eax_9 = var_2bc
+0040b12b                 
+0040b12f                 ecx_2 = ecx_3
+0040b133                 *(ecx_2 + eax_9) = ebx.b
+0040b133             
+0040b139             if (&ecx_3[1] s< 0 || &ecx_3[1] s> *(eax_9 - 8))
+0040b1e0                 sub_402b80(0x80070057)
+0040b1e0                 noreturn
+0040b1e0             
+0040b13f             *(eax_9 - 0xc) = &ecx_3[1]
+0040b142             *(&ecx_3[1] + eax_9) = 0
+0040b142         
+0040b15c         edi_1 = &edi_1[1]
+0040b160     while (*edi_1 != 0)
+0040b160 
+0040b162 char* var_2d0_2 = ecx_2
+0040b167 struct CDialog::CChkSumResult::VTable* var_2b0
+0040b167 Concurrency::details::_Micro_queue::_Pop_finalizer::~_Pop_finalizer(&var_2b0)
+0040b177 var_c_1.b = 1
+0040b17f sub_40b850("log.txt", 7)
+0040b184 void* eax_10 = var_2bc
+0040b188 int32_t ebx_1 = 0xffffffff
+0040b192 void* var_218
+0040b192 int32_t* edi_3 = var_218 - 0x10
+0040b192 
+0040b19a if (eax_10 - 0x10 != edi_3)
+0040b1a6     if (edi_3[3] s< 0 || *(eax_10 - 0x10) != *edi_3)
+0040b1f0         ebx_1 = sub_405330(&var_218, eax_10, *(eax_10 - 0xc))
+0040b1a6     else
+0040b1a9         int32_t* eax_11 = sub_4051f0(eax_10 - 0x10)
+0040b1ba         int32_t ecx_10 = edi_3[3]
+0040b1ba         edi_3[3] -= 1
+0040b1ba         
+0040b1c1         if (ecx_10 - 1 s<= 0)
+0040b1c8             (*(**edi_3 + 4))(edi_3)
+0040b1c8         
+0040b1d2         var_218 = &eax_11[4]
+0040b1d2 
+0040b1f9 sub_420e24()
+0040b205 char var_12c
+0040b205 uint32_t eax_13 = zx.d(var_12c)
+0040b20f *(arg1 + 0xc8) = eax_13
+0040b20f 
+0040b217 if (eax_13 == 0)
+0040b24d     sub_429193(sub_4291df(arg1, 0x3ef), 0)
+0040b217 else
+0040b219     sub_40aac0(arg1)
+0040b22e     sub_429193(sub_4291df(arg1, 0x3ef), 1)
+0040b233     *(arg1 + 0x18c) = 1
+0040b233 
+0040b252 var_2b0 = &CChkSumResult::`vftable'{for `CDialog'}
+0040b261 var_c_1.b = 4
+0040b269 sub_429cda()
+0040b275 var_c_1.b = 3
+0040b27d Concurrency::concurrent_queue<class Concurrency::message<uint32_t>*,class std::allocator<class Concurrency::message<uint32_t>*> >::~concurrent_queue<class Concurrency::message<uint32_t>*,class std::allocator<class Concurrency::message<uint32_t>*> >()
+0040b282 var_c_1.b = 2
+0040b293 int32_t* edx_5 = var_218 - 0x10
+0040b299 int32_t ecx_19 = edx_5[3]
+0040b299 edx_5[3] += ebx_1
+0040b299 
+0040b2a0 if (ecx_19 - 1 s<= 0)
+0040b2a7     (*(**edx_5 + 4))(edx_5)
+0040b2a7 
+0040b2ae var_c_1.b = 0
+0040b2b6 sub_420922()
+0040b2bb int32_t var_c_2 = 0xffffffff
+0040b2c9 int32_t ebx_2 = *(eax_10 - 4)
+0040b2c9 *(eax_10 - 4) += ebx_1
+0040b2c9 
+0040b2d0 if (ebx_2 - 1 s<= 0)
+0040b2d7     (*(**(eax_10 - 0x10) + 4))(eax_10 - 0x10)
+0040b2d7 
+0040b2e1 fsbase->NtTib.ExceptionList = ExceptionList
+0040b2fd return sub_53b554()

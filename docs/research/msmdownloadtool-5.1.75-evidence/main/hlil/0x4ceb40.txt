@@ -1,0 +1,396 @@
+004ceb40 int32_t ebp
+004ceb40 int32_t var_4 = ebp
+004ceb43 int32_t var_8 = 0xffffffff
+004ceb45 int32_t (* var_c)(void* arg1) = sub_6dc24e
+004ceb50 TEB* fsbase
+004ceb50 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004ceb5c int32_t eax_2 = __security_cookie ^ &var_4
+004ceb5e int32_t var_18 = eax_2
+004ceb61 int32_t esi
+004ceb61 int32_t var_548 = esi
+004ceb62 int32_t edi
+004ceb62 int32_t var_54c = edi
+004ceb63 int32_t var_550 = eax_2
+004ceb67 fsbase->NtTib.ExceptionList = &ExceptionList
+004ceb7c char* var_554 = nullptr
+004ceb89 int32_t result = 1
+004ceb8e int32_t var_44c = 0xf
+004ceb98 int32_t var_450 = 0
+004ceba2 char var_460 = 0
+004ceba9 sub_412e10(&var_460, &data_76a008, var_554)
+004cebae int32_t var_8_1 = 0
+004cebbd char var_2c
+004cebbd __builtin_memset(&var_2c, 0, 0x11)
+004cebc1 var_554 = nullptr
+004cebc5 int32_t var_4f8 = 0
+004cebd5 int32_t var_434 = 0xf
+004cebdf int32_t var_438 = 0
+004cebe5 char var_448 = 0
+004cebec sub_412e10(&var_448, &data_76a008, var_554)
+004cebf1 var_8_1.b = 1
+004cebfb var_554 = nullptr
+004cec01 int32_t var_494 = 0xf
+004cec0b int32_t var_498 = 0
+004cec11 char var_4a8 = 0
+004cec18 sub_412e10(&var_4a8, &data_76a008, var_554)
+004cec1d var_8_1.b = 2
+004cec27 var_554 = nullptr
+004cec2d int32_t var_4ac = 0xf
+004cec37 int32_t var_4b0 = 0
+004cec3d char var_4c0 = 0
+004cec44 sub_412e10(&var_4c0, &data_76a008, var_554)
+004cec49 var_8_1.b = 3
+004cec53 var_554 = nullptr
+004cec59 int32_t var_464 = 0xf
+004cec63 int32_t var_468 = 0
+004cec69 char var_478 = 0
+004cec70 sub_412e10(&var_478, &data_76a008, var_554)
+004cec7b var_8_1.b = 4
+004cec7f struct TiXmlNode::TiXmlDocument::VTable* var_540
+004cec7f sub_4b4830(&var_540)
+004cec84 var_8_1.b = 5
+004cec8e var_554 = nullptr
+004cec94 int32_t var_47c = 0xf
+004cec9e int32_t var_480 = 0
+004ceca4 char var_490 = 0
+004cecab sub_412e10(&var_490, &data_76a008, var_554)
+004cecb0 var_554 = 0x1000
+004cecb5 var_8_1.b = 6
+004cecb9 int32_t var_4ec = 0
+004cecbf int32_t eax_4 = sub_56c4c8()
+004cecc7 int32_t var_4e0 = eax_4
+004ceccf int32_t* esp_1
+004ceccf int32_t* ebp_1
+004ceccf 
+004ceccf if (eax_4 != 0)
+004ced02     *(*arg2 + 0x16c) = 1
+004ced0e     *(*arg2 + 0x168) = 4
+004ced1e     *arg2
+004ced20     var_554 = &var_478
+004ced20     void** esp_2 = &var_554
+004ced21     int32_t result_1
+004ced21     void* ebp_2
+004ced21     int32_t edi_1
+004ced21     result_1, ebp_2, edi_1 = sub_4d44d0()
+004ced26     result = result_1
+004ced26     
+004ced2b     if (result != 1)
+004ced3a         bool cond:0_1 = *(ebp_2 - 0x460) u>= 0x10
+004ced41         void* var_558_7 = ebp_2 - 0x28
+004ced44         int128_t xmm0_1 = *(**(ebp_2 - 0x4e0) + 0x174)
+004ced4c         void* eax_12 = ebp_2 - 0x474
+004ced52         *(ebp_2 - 0x18) = 0
+004ced52         
+004ced56         if (cond:0_1)
+004ced56             eax_12 = *(ebp_2 - 0x474)
+004ced56         
+004ced5d         void* var_55c_2 = eax_12
+004ced5e         char const* const var_560_2 = "<setprojmodel token="%s" pk="%s" />"
+004ced69         int32_t var_564_2 = 0x400
+004ced6f         *(ebp_2 - 0x28) = xmm0_1
+004ced74         __snprintf(ebp_2 - 0x42c, var_564_2, var_560_2)
+004ced83         void* ecx_10
+004ced83         
+004ced83         if (*(ebp_2 - 0x42c) != 0)
+004ced89             char* ecx_11 = ebp_2 - 0x42c
+004ced97             char i
+004ced97             
+004ced97             do
+004ced92                 i = *ecx_11
+004ced94                 ecx_11 = &ecx_11[1]
+004ced97             while (i != 0)
+004ced99             ecx_10 = ecx_11 - &ecx_11[1]
+004ced83         else
+004ced85             ecx_10 = nullptr
+004ced85         
+004ceda9         sub_412e10(ebp_2 - 0x45c, ebp_2 - 0x42c, ecx_10)
+004cedb9         int32_t var_570_1 = 0xffffffff
+004cedbb         int32_t var_574_1 = 0
+004cedbd         int32_t var_558_9 = 0xf
+004cedc4         int32_t var_55c_4 = 0
+004cedcc         char var_56c = 0
+004cedcf         sub_412b40(&var_56c, ebp_2 - 0x45c, 0, 0xffffffff)
+004ceddb         char* eax_17 = sub_4d0890(ebp_2 - 0x4d4)
+004ceddb         esp_2 = &var_554
+004ceddb         
+004cedea         if (ebp_2 - 0x45c != eax_17)
+004cedf3             if (*(ebp_2 - 0x448) u>= 0x10)
+004cedfb                 ebp_2 = j_sub_688543(*(ebp_2 - 0x45c))
+004cedfb             
+004cee0a             *(ebp_2 - 0x448) = 0xf
+004cee14             *(ebp_2 - 0x44c) = 0
+004cee1e             *(ebp_2 - 0x45c) = 0
+004cee25             sub_4234c0(ebp_2 - 0x45c, eax_17)
+004cee25             esp_2 = &var_554
+004cee25         
+004cee31         void* eax_18
+004cee31         
+004cee31         if (*(ebp_2 - 0x4c0) u>= 0x10)
+004cee39             eax_18, ebp_2 = j_sub_688543(*(ebp_2 - 0x4d4))
+004cee3e             esp_2 = &var_554
+004cee3e         
+004cee41         while (true)
+004cee41             edi_1 += 1
+004cee42             char* edx_2 = ebp_2 - 0x45c
+004cee42             
+004cee4f             if (*(ebp_2 - 0x448) u>= 0x10)
+004cee4f                 edx_2 = *(ebp_2 - 0x45c)
+004cee4f             
+004cee56             char* ecx_15 = edx_2
+004cee56             
+004cee65             do
+004cee60                 eax_18.b = *ecx_15
+004cee62                 ecx_15 = &ecx_15[1]
+004cee65             while (eax_18.b != 0)
+004cee65             
+004cee6f             *(esp_2 - 4) = ebp_2 - 0x4d8
+004cee70             int32_t* eax_20 = *(ebp_2 - 0x4e4)
+004cee76             *(esp_2 - 8) = ecx_15 - &ecx_15[1]
+004cee77             *(esp_2 - 0xc) = edx_2
+004cee78             *eax_20
+004cee7f             result = sub_4b81f0()
+004cee7f             
+004cee83             if (result == 0)
+004cee97                 int32_t ecx_18 = 0
+004cee99             label_4cee99:
+004cee99                 char* edi_2 = *(ebp_2 - 0x4dc)
+004cee99                 
+004ceea3                 while (true)
+004ceea3                     *(ebp_2 - 0x4d8) = ecx_18 + 1
+004ceea3                     
+004ceeb9                     if (ecx_18 s< 0x14 && *(ebp_2 - 0x4e8) == 0)
+004ceebf                         *(esp_2 - 4) = 0x1000
+004ceec4                         *(esp_2 - 8) = 0
+004ceec6                         *(esp_2 - 0xc) = edi_2
+004ceec7                         _memset()
+004ceed5                         *(esp_2 - 4) = 0x3e8
+004ceeda                         *(esp_2 - 8) = ebp_2 - 0x4f4
+004ceedb                         int32_t* eax_24 = *(ebp_2 - 0x4e4)
+004ceee1                         *(esp_2 - 0xc) = 0x1000
+004ceee6                         *(esp_2 - 0x10) = edi_2
+004ceee9                         int32_t result_2 = sub_4b8270(*eax_24)
+004ceeee                         ecx_18 = *(ebp_2 - 0x4d8)
+004ceef4                         result = result_2
+004ceef4                         
+004ceef8                         if (result != 0)
+004cf0d5                             if (result != 0x102)
+004cf0d5                                 break
+004cf0d5                             
+004cf0d5                             continue
+004ceef8                         else if (*edi_2 == result_2.b)
+004cef00                             continue
+004cef00                         else
+004cef02                             *(esp_2 - 4) = edi_2
+004cef09                             sub_423480()
+004cef0e                             *(esp_2 - 4) = result
+004cef0f                             *(esp_2 - 8) = "<?xml"
+004cef1a                             int32_t eax_25 = sub_44ace0()
+004cef1f                             ecx_18 = *(ebp_2 - 0x4d8)
+004cef25                             int32_t esi_3 = eax_25
+004cef25                             
+004cef2a                             if (esi_3 == 0xffffffff)
+004cef2a                                 continue
+004cef2a                             else
+004cef36                                 while (true)
+004cef36                                     sub_4b3d60(ebp_2 - 0x53c)
+004cef3b                                     bool cond:6_1 = *(ebp_2 - 0x430) u>= 0x10
+004cef42                                     void* eax_26 = ebp_2 - 0x444
+004cef48                                     *(esp_2 - 4) = 0
+004cef48                                     
+004cef4a                                     if (cond:6_1)
+004cef4a                                         eax_26 = *(ebp_2 - 0x444)
+004cef4a                                     
+004cef57                                     *(esp_2 - 8) = 0
+004cef5b                                     *(esp_2 - 0xc) = eax_26 + esi_3
+004cef5c                                     sub_4b6a00(ebp_2 - 0x53c)
+004cef68                                     ecx_18 = *(ebp_2 - 0x4d8)
+004cef6e                                     edi_2 = *(ebp_2 - 0x4dc)
+004cef6e                                     
+004cef74                                     if (*(ebp_2 - 0x50c) == 3)
+004cef74                                         break
+004cef74                                     
+004cef80                                     void* eax_28 = sub_442fc0(ebp_2 - 0x53c)
+004cef80                                     
+004cef87                                     if (eax_28 != 0)
+004cef91                                         void* eax_29 = sub_442fc0(eax_28)
+004cef91                                         
+004cef9a                                         if (eax_29 != 0)
+004cefa2                                             int32_t eax_30 = *(eax_29 + 0x20)
+004cefa5                                             *(esp_2 - 4) = 3
+004cefaa                                             *(esp_2 - 8) = &data_77f09c
+004cefaf                                             *(esp_2 - 0xc) = eax_30 + 8
+004cefba                                             void* esp_30
+004cefba                                             
+004cefba                                             if (_strncmp() != 0)
+004cefe6                                                 int32_t eax_34 = *(eax_29 + 0x20)
+004cefe9                                                 *(esp_2 - 4) = 8
+004cefee                                                 *(esp_2 - 8) = "response"
+004ceff3                                                 *(esp_2 - 0xc) = eax_34 + 8
+004ceff9                                                 esp_30 = esp_2
+004ceff9                                                 
+004ceffe                                                 if (_strncmp() == 0)
+004cf07c                                                     *(esp_30 - 4) = "value"
+004cf088                                                     *(esp_30 - 4) = sub_4b4250(eax_29)
+004cf08f                                                     sub_412a40()
+004cf09c                                                     *(esp_30 - 4) = ebp_2 - 0x4f0
+004cf09d                                                     *(esp_30 - 8) = "model_check"
+004cf0a2                                                     sub_4b4280(eax_29)
+004cf0af                                                     *(esp_30 - 4) = ebp_2 - 0x4ec
+004cf0b0                                                     *(esp_30 - 8) = "auth_token_verify"
+004cf0b5                                                     sub_4b4280(eax_29)
+004cf0b5                                                     esp_2 = esp_30
+004cf0ba                                                     ecx_18 = *(ebp_2 - 0x4d8)
+004cf0c0                                                     *(ebp_2 - 0x4e8) = 1
+004cf0ca                                                     goto label_4cee99
+004cefba                                             else
+004cefbc                                                 *(esp_2 - 4) = "value"
+004cefc8                                                 *(esp_2 - 4) = sub_4b4250(eax_29)
+004cefcf                                                 sub_423480()
+004cefd4                                                 *(esp_2 - 4) = &data_76bd90
+004cefdf                                                 sub_423480()
+004cefdf                                                 esp_30 = esp_2
+004cefdf                                             
+004cf000                                             *(esp_30 - 4) = esi_3
+004cf001                                             *(esp_30 - 8) = "</data>"
+004cf00c                                             int32_t eax_37 = sub_44ace0()
+004cf00c                                             esp_2 = esp_30
+004cf011                                             ecx_18 = *(ebp_2 - 0x4d8)
+004cf017                                             edi_2 = *(ebp_2 - 0x4dc)
+004cf017                                             
+004cf020                                             if (eax_37 == 0xffffffff)
+004cf020                                                 break
+004cf020                                             
+004cf026                                             *(esp_2 - 4) = 0xffffffff
+004cf031                                             *(esp_2 - 8) = eax_37 + 7
+004cf038                                             *(esp_2 - 0xc) = ebp_2 - 0x4d4
+004cf03e                                             *(esp_2 - 4) = sub_4277b0(ebp_2 - 0x444)
+004cf045                                             sub_427770(ebp_2 - 0x444)
+004cf050                                             sub_412a10(ebp_2 - 0x4d4)
+004cef9a                                         else
+004cef9c                                             esi_3 += 1
+004cef87                                     else
+004cef89                                         esi_3 += 1
+004cef89                                     
+004cf055                                     *(esp_2 - 4) = esi_3
+004cf056                                     *(esp_2 - 8) = "<?xml"
+004cf066                                     esi_3 = sub_44ace0()
+004cf066                                     
+004cf06b                                     if (esi_3 == 0xffffffff)
+004cf071                                         ecx_18 = *(ebp_2 - 0x4d8)
+004cf077                                         goto label_4cee99
+004cf077                                 
+004cef74                                 continue
+004cef74                     
+004cf0dd                     *(esp_2 - 4) = &data_77f098
+004cf0dd                     
+004cf0ef                     if (sub_42b730(ebp_2 - 0x48c) != 0)
+004cf0f5                         int32_t* edx_3 = *(ebp_2 - 0x4e0)
+004cf0fb                         result = 1
+004cf108                         *(*edx_3 + 0x16c) = *(ebp_2 - 0x4f0)
+004cf116                         *(*edx_3 + 0x168) = *(ebp_2 - 0x4ec)
+004cf0ef                     else
+004cf0f1                         result = 0
+004cf0f1                     
+004cf0ef                     break
+004cf0ef                 
+004cf0ef                 break
+004cf0ef             
+004cee85             *(esp_2 - 4) = 5
+004cee85             esp_2 -= 4
+004cee87             0x3b7810()
+004cee87             
+004cee90             if (edi_1 s>= 5)
+004cee90                 break
+004cee90     
+004cf11c     *(esp_2 - 4) = *(ebp_2 - 0x4dc)
+004cf122     ebp_1 = j_sub_688543()
+004cf127     esp_1 = esp_2
+004ceccf else
+004cecd7     var_554 = 0x935
+004cece0     int32_t var_558_6 = *(arg1 + 0x10) + 1
+004cece1     char const* const var_55c_1 = "[%d] [Firehose][%d] Failed to allocate buffer\n"
+004cece6     int32_t var_560_1 = 4
+004ceced     ebp_1 = sub_4d6270(&data_7e09e8)
+004cecf2     esp_1 = &var_550
+004cecf2 
+004cf131 if (ebp_1[-0x11e] u>= 0x10)
+004cf133     *(esp_1 - 4) = ebp_1[-0x123]
+004cf139     ebp_1 = j_sub_688543()
+004cf139 
+004cf141 ebp_1[-0x11e] = 0xf
+004cf14b ebp_1[-0x11f] = 0
+004cf155 ebp_1[-0x123].b = 0
+004cf15c ebp_1[-0x14f] = &TiXmlDocument::`vftable'{for `TiXmlNode'}
+004cf166 ebp_1[-1].b = 7
+004cf16a int32_t eax_48 = ebp_1[-0x142]
+004cf16a 
+004cf175 if (eax_48 != &data_7df808)
+004cf177     *(esp_1 - 4) = eax_48
+004cf178     ebp_1 = j_sub_688543()
+004cf178 
+004cf180 ebp_1[-0x14f] = &TiXmlNode::`vftable'{for `TiXmlBase'}
+004cf18a ebp_1[-1].b = 9
+004cf18e int32_t* i_1 = ebp_1[-0x149]
+004cf18e 
+004cf196 while (i_1 != 0)
+004cf198     int32_t* i_2 = i_1
+004cf19a     i_1 = i_1[0xa]
+004cf19d     *(esp_1 - 4) = 1
+004cf1a1     (**i_2)()
+004cf1a1 
+004cf1a7 ebp_1[-1].b = 8
+004cf1ab int32_t eax_50 = ebp_1[-0x147]
+004cf1ab 
+004cf1b6 if (eax_50 != &data_7df808)
+004cf1b8     *(esp_1 - 4) = eax_50
+004cf1b9     ebp_1 = j_sub_688543()
+004cf1b9 
+004cf1c1 bool cond:1 = ebp_1[-0x118] u< 0x10
+004cf1c8 ebp_1[-0x14f] = &TiXmlBase::`vftable'
+004cf1c8 
+004cf1d2 if (not(cond:1))
+004cf1d4     *(esp_1 - 4) = ebp_1[-0x11d]
+004cf1da     ebp_1 = j_sub_688543()
+004cf1da 
+004cf1e2 bool cond:2 = ebp_1[-0x12a] u< 0x10
+004cf1e9 ebp_1[-0x118] = 0xf
+004cf1f3 ebp_1[-0x119] = 0
+004cf1fd ebp_1[-0x11d].b = 0
+004cf1fd 
+004cf204 if (not(cond:2))
+004cf206     *(esp_1 - 4) = ebp_1[-0x12f]
+004cf20c     ebp_1 = j_sub_688543()
+004cf20c 
+004cf214 bool cond:3 = ebp_1[-0x124] u< 0x10
+004cf21b ebp_1[-0x12a] = 0xf
+004cf225 ebp_1[-0x12b] = 0
+004cf22f ebp_1[-0x12f].b = 0
+004cf22f 
+004cf236 if (not(cond:3))
+004cf238     *(esp_1 - 4) = ebp_1[-0x129]
+004cf23e     ebp_1 = j_sub_688543()
+004cf23e 
+004cf246 bool cond:4 = ebp_1[-0x10c] u< 0x10
+004cf24d ebp_1[-0x124] = 0xf
+004cf257 ebp_1[-0x125] = 0
+004cf261 ebp_1[-0x129].b = 0
+004cf261 
+004cf268 if (not(cond:4))
+004cf26a     *(esp_1 - 4) = ebp_1[-0x111]
+004cf270     ebp_1 = j_sub_688543()
+004cf270 
+004cf278 bool cond:5 = ebp_1[-0x112] u< 0x10
+004cf27f ebp_1[-0x10c] = 0xf
+004cf289 ebp_1[-0x10d] = 0
+004cf293 ebp_1[-0x111].b = 0
+004cf293 
+004cf29a if (not(cond:5))
+004cf29c     *(esp_1 - 4) = ebp_1[-0x117]
+004cf2a2     ebp_1 = j_sub_688543()
+004cf2a2 
+004cf2af fsbase->NtTib.ExceptionList = ebp_1[-3]
+004cf2b6 esp_1[1]
+004cf2b7 esp_1[2]
+004cf2be sub_687de2(ebp_1[-5] ^ ebp_1)
+004cf2c5 *ebp_1
+004cf2c6 return result

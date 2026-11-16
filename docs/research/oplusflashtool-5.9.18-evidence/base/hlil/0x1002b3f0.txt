@@ -1,0 +1,14 @@
+1002b3fa char* edx = arg1 + 0x284
+1002b408 char i
+1002b408 
+1002b408 do
+1002b403     i = *edx
+1002b405     edx = &edx[1]
+1002b408 while (i != 0)
+1002b408 
+1002b40c if (edx == &edx[1])
+1002b416     return 0xffffffff
+1002b416 
+1002b417 int32_t edi
+1002b417 int32_t var_18 = edi
+1002b41d return j_sub_103df8eb()

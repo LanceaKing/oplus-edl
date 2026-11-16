@@ -1,0 +1,5 @@
+00411e09 __security_cookie
+00411e36 uint8_t PropertyBuffer[0x100]
+00411e36 SetupDiGetDeviceRegistryPropertyA(arg1, arg2, 0xc, nullptr, &PropertyBuffer, 0x100, nullptr) != 0
+00411e36     && _strncmp(&PropertyBuffer, "Qualcomm MMC Storage USB Device", 0x1f) != 0
+00411e68 return sub_53b554()

@@ -1,0 +1,117 @@
+00423812 if (*(arg1 + 0x100390) != 0)
+0042381f     return 0x4c7
+0042381f 
+00423822 int32_t* ebx = arg2
+00423825 int32_t eax_1 = ebx[0x1f]
+00423830 char* edi
+00423830 
+00423830 if (eax_1 != 0x200)
+00423848     if (eax_1 != 0x1000)
+00423a94         return 1
+00423a94     
+0042384e     struct DOS_Header* const var_24_1 = &__dos_header
+00423853     int32_t* eax_3 = sub_42e817()
+00423858     edi = eax_3
+0042385a     arg2 = eax_3
+00423830 else
+00423832     int32_t var_24 = 0x80000
+0042383c     edi = sub_42e817()
+0042383e     arg2 = edi
+0042383e 
+00423862 if (edi == 0)
+0042386d     return &edi[8]
+0042386d 
+0042387a _memset(edi, 0, eax_1 << 0xa)
+00423889 int32_t eax_7 = sub_4094a0(ebx, "BackupGPT")
+00423890 char* eax_8
+00423890 
+00423890 if (eax_7 != 0)
+004238c1     int32_t eax_10
+004238c1     int32_t edx_1
+004238c1     edx_1:eax_10 = sx.q(ebx[0x19])
+004238c8     eax_8 = sub_42ac20(*(arg1 + 0x28), ebx, ebx[0x18], eax_10, edx_1)
+00423890 else
+0042389a     char* var_3c_1
+0042389a     
+0042389a     if (*(arg1 + 0x1c) == eax_7.b)
+004238b4         var_3c_1 = "NUM_DISK_SECTORS-33."
+0042389a     else
+0042389c         var_3c_1 = "NUM_DISK_SECTORS-5."
+0042389c     
+004238a1     void var_38
+004238a1     sub_4022a0(&var_38, var_3c_1)
+004238ad     eax_8 = sub_42c630(*(arg1 + 0x28), ebx, ebx[0x18], var_38)
+004238ad 
+004238cd char* var_8 = eax_8
+004238cd 
+004238d2 if (eax_8 != 0)
+004238de     char* var_24_5 = eax_8
+004238df     wchar16 const* const var_28_2
+004238df     
+004238df     if (*(arg1 + 0x1b) == 0)
+004238e8         var_28_2 = u"SendProgromCommand Failed, Errno: %d"
+004238df     else
+004238e1         var_28_2 = u"SendProgromComman"
+004238e1     
+004238ee     sub_426230(arg1 + 0x290, var_28_2)
+00423911     SendMessageW(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, arg1 + 0x290)
+00423918     j__free(edi)
+00423929     return var_8
+00423929 
+00423947 SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 2, ebx[0x18])
+0042394d int32_t edi_1 = ebx[0x18]
+00423952 enum WIN32_ERROR eax_22
+00423952 
+00423952 while (true)
+00423952     if (edi_1 == 0)
+00423a16         if (*(arg1 + 0x100390) == 0)
+00423a33             enum WIN32_ERROR eax_32 = sub_42ab30(*(arg1 + 0x28), 0x32)
+00423a33             
+00423a3c             if (eax_32 != NO_ERROR)
+00423a48                 enum WIN32_ERROR var_24_16 = eax_32
+00423a49                 wchar16 const* const var_28_9
+00423a49                 
+00423a49                 if (*(arg1 + 0x1b) == 0)
+00423a52                     var_28_9 = u"FirehoseCheckRSP Failed, Errno: %d"
+00423a49                 else
+00423a4b                     var_28_9 = u"FirehoseCheckRS"
+00423a4b                 
+00423a6b                 sub_420d10(sub_426230(arg1 + 0x290, var_28_9), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 
+00423a6b                     0, arg1 + 0x290, 1)
+00423a6b             
+00423a76             j__free(arg2)
+00423a86             return eax_32
+00423952     else if (*(arg1 + 0x100390) == 0)
+0042396a         void** ecx_4 = *(arg1 + 0x28)
+0042396f         int32_t edx_2 = edi_1
+00423971         var_8 = nullptr
+00423971         
+00423978         if (edi_1 u> 0x400)
+00423978             edx_2 = 0x400
+00423978         
+0042398e         eax_22 = sub_426500(*ecx_4, arg2, eax_1 * edx_2, &var_8)
+00423993         var_8 = eax_22
+00423993         
+00423998         if (eax_22 != NO_ERROR)
+00423998             break
+00423998         
+0042399a         edi_1 -= edx_2
+004239bb         SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 3, 
+004239bb             ebx[0x18] - edi_1)
+004239c1         continue
+004239c1     
+00423a1b     j__free(arg2)
+00423a2b     return 0
+00423a2b 
+004239cd enum WIN32_ERROR var_24_11 = eax_22
+004239ce wchar16 const* const var_28_7
+004239ce 
+004239ce if (*(arg1 + 0x1b) == 0)
+004239d7     var_28_7 = u"FirehoseWriteData Failed, Errno: %d"
+004239ce else
+004239d0     var_28_7 = u"FirehoseWriteDat"
+004239d0 
+004239f0 sub_420d10(sub_426230(arg1 + 0x290, var_28_7), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, arg1 + 0x290, 
+004239f0     1)
+004239fb j__free(arg2)
+00423a0c return var_8

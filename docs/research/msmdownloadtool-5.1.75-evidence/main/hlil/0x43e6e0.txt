@@ -1,0 +1,109 @@
+0043e6e0 int32_t ebx
+0043e6e0 int32_t var_4 = ebx
+0043e6e1 int32_t esi
+0043e6e1 int32_t var_8 = esi
+0043e6e2 int32_t edi
+0043e6e2 int32_t var_c = edi
+0043e6e3 void* esi_1 = arg1
+0043e6ea int32_t var_10 = 0x7530
+0043e6ef void* eax_1 = *(sub_57a610() + 0xc)
+0043e6f2 void* var_14 = eax_1
+0043e6f4 sub_fcaeed(eax_1)
+0043e700 void* edx = sub_57898c(esi_1 + 0x40198, &data_43e6f9)
+0043e700 
+0043e70c if (data_7c1eec == 0)
+0043e712     int32_t var_1c_2 = 0
+0043e70c else
+0043e70e     int32_t var_1c_1 = 8
+0043e70e 
+0043e714 int32_t var_20 = 0x8026
+0043e719 int32_t var_24 = *(esi_1 + 0x4019c)
+0043e720 sub_b7f671(edx)
+0043e725 int32_t var_2c = 0x401
+0043e72a int32_t var_30 = 0
+0043e72c int32_t var_34 = *(esi_1 + 0x4019c)
+0043e72c int32_t* esp_1 = &var_34
+0043e732 0x3b8bc4(var_34, var_30, var_2c)
+0043e732 
+0043e745 if (data_7e0384 == 1)
+0043e749     struct CObject::CMenu::VTable** eax_2 = sub_56c49b(8)
+0043e74e     struct CObject::CMenu::VTable** edi_1 = eax_2
+0043e74e     
+0043e755     if (edi_1 == 0)
+0043e766         edi_1 = nullptr
+0043e755     else
+0043e757         *edi_1 = &CMenu::`vftable'{for `CObject'}
+0043e75d         edi_1[1] = 0
+0043e75d     
+0043e769     esi_1 = sub_d0fc5f(esi_1)
+0043e771     sub_57898c(edi_1, eax_2)
+0043e791     0x3b880c(edi_1[1], sbb.d(0x7917eb96, 0x7917eb96, true) & 8, 0x8024, u"MES Upload")
+0043e793     wchar16 const* const var_4c_1 = u"Factory"
+0043e798     int32_t var_50_1 = edi_1[1]
+0043e79b     int32_t var_54_1 = 0x10
+0043e79d     int32_t var_58 = 0x1075f685
+0043e79d     esp_1 = &var_58
+0043e7a3     0x3b880c(var_58, var_54_1, var_50_1, var_4c_1)
+0043e7a3 
+0043e7ac if (data_7e0308 == 1)
+0043e7ae     *(esp_1 - 4) = 8
+0043e7b5     struct CObject::CMenu::VTable** edi_2 = sub_56c49b()
+0043e7b5     
+0043e7bc     if (edi_2 == 0)
+0043e7cd         edi_2 = nullptr
+0043e7bc     else
+0043e7be         *edi_2 = &CMenu::`vftable'{for `CObject'}
+0043e7c4         edi_2[1] = 0
+0043e7c4     
+0043e7cf     *(esp_1 - 4) = edi_2
+0043e7d5     *(esp_1 - 8) = sub_fff519()
+0043e7d8     sub_57898c(edi_2)
+0043e7dd     *(esp_1 - 8) = u"Generate License Token"
+0043e7e2     *(esp_1 - 0xc) = 0x80ea
+0043e7e7     *(esp_1 - 0x10) = 0
+0043e7e9     *(esp_1 - 0x14) = edi_2[1]
+0043e7ec     0x3b880c()
+0043e7ee     *(esp_1 - 0x18) = u"Update License"
+0043e7f3     *(esp_1 - 0x1c) = 0x80eb
+0043e7f8     *(esp_1 - 0x20) = 0
+0043e7fa     *(esp_1 - 0x24) = edi_2[1]
+0043e7fd     0x3b880c()
+0043e7ff     *(esp_1 - 0x28) = u"Develop"
+0043e804     *(esp_1 - 0x2c) = edi_2[1]
+0043e807     *(esp_1 - 0x30) = 0x10
+0043e809     *(esp_1 - 0x34) = *(esi_1 + 0x4019c)
+0043e809     esp_1 -= 0x34
+0043e80f     0x3b880c()
+0043e80f 
+0043e811 *(esp_1 - 4) = 8
+0043e813 struct CObject::CMenu::VTable** eax_7 = sub_56c49b()
+0043e818 struct CObject::CMenu::VTable** edi_3 = eax_7
+0043e818 
+0043e81f if (edi_3 == 0)
+0043e830     edi_3 = nullptr
+0043e81f else
+0043e821     *edi_3 = &CMenu::`vftable'{for `CObject'}
+0043e827     edi_3[1] = 0
+0043e827 
+0043e832 *(esp_1 - 4) = eax_7
+0043e833 sub_ce40a6()
+0043e838 *(esp_1 - 8) = &data_43e838
+0043e83b sub_57898c(edi_3)
+0043e840 *(esp_1 - 8) = u"Open dump file folder"
+0043e845 *(esp_1 - 0xc) = 0x80ed
+0043e84a *(esp_1 - 0x10) = 0
+0043e84c *(esp_1 - 0x14) = edi_3[1]
+0043e84f 0x3b880c()
+0043e851 *(esp_1 - 0x18) = u"Debug"
+0043e856 *(esp_1 - 0x1c) = edi_3[1]
+0043e859 *(esp_1 - 0x20) = 0x10
+0043e85b *(esp_1 - 0x24) = *(esi_1 + 0x4019c)
+0043e861 0x3b880c()
+0043e863 *(esp_1 - 0x28) = 8
+0043e865 struct CObject::CMenu::VTable** eax_8 = sub_56c49b()
+0043e865 
+0043e871 if (eax_8 != 0)
+0043e873     *eax_8 = &CMenu::`vftable'{for `CObject'}
+0043e879     eax_8[1] = 0
+0043e879 
+0043e889 return j_sub_f064e7()

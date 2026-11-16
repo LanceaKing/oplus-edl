@@ -1,0 +1,116 @@
+005063b0 mov     eax, 0x4c
+005063b5 call    0x692a80
+005063ba mov     eax, dword [0x7c0bb0]
+005063bf xor     eax, esp
+005063c1 mov     dword [esp+0x48], eax
+005063c5 push    ebx
+005063c6 push    ebp
+005063c7 mov     ebp, dword [esp+0x58]
+005063cb xor     ebx, ebx
+005063cd mov     dword [esp+0x8], 0x0
+005063d5 push    esi
+005063d6 mov     esi, dword [esp+0x60]
+005063da mov     ecx, dword [ebp+0x10]
+005063dd push    edi
+005063de mov     edi, dword [esp+0x68]
+005063e2 mov     dword [esp+0x14], esi
+005063e6 mov     eax, dword [ecx]
+005063e8 mov     eax, dword [eax+0x48]
+005063eb test    eax, eax
+005063ed setne   bl
+005063f0 test    dword [ebp+0x8], 0x200
+005063f7 je      0x506421
+00506421 call    0x4d8390
+00506426 mov     esi, eax
+00506428 test    esi, esi
+0050642a je      0x5064c7
+005063f9 test    ebx, ebx
+005063fb je      0x50640a
+005064c7 mov     ecx, dword [esp+0x58]
+005064cb or      eax, 0xffffffff
+005064ce pop     edi
+005064cf pop     esi
+005064d0 pop     ebp
+005064d1 pop     ebx
+005064d2 xor     ecx, esp
+005064d4 call    0x687de2
+005064d9 add     esp, 0x4c
+005064dc retn    
+00506430 push    ebp
+00506431 push    esi
+00506432 call    0x4d8210
+00506437 add     esp, 0x8
+0050643a test    eax, eax
+0050643c je      0x5064c7
+0050640a lea     eax, [esp+0x10]
+0050640e push    eax
+0050640f lea     eax, [esp+0x1c]
+00506413 push    eax
+00506414 push    ebp
+00506415 call    0x4d7fd0
+0050641a add     esp, 0xc
+0050641d mov     edi, eax
+0050641f jmp     0x506482
+005063fd push    ebp
+005063fe push    edi
+005063ff push    esi
+00506400 push    ecx
+00506401 call    eax
+00506403 add     esp, 0x10
+00506406 mov     edi, eax
+00506408 jmp     0x50647e
+00506442 test    ebx, ebx
+00506444 je      0x50645c
+00506482 test    edi, edi
+00506484 je      0x5064b2
+0050647e test    ebx, ebx
+00506480 jne     0x5064b2
+0050645c lea     eax, [esp+0x10]
+00506460 push    eax
+00506461 lea     eax, [esp+0x1c]
+00506465 push    eax
+00506466 push    esi
+00506467 call    0x4d7fd0
+0050646c add     esp, 0xc
+00506446 mov     eax, dword [esi+0x10]
+00506449 push    esi
+0050644a push    edi
+0050644b push    dword [esp+0x1c]
+0050644f mov     ecx, dword [eax]
+00506451 push    eax
+00506452 mov     eax, dword [ecx+0x48]
+00506455 call    eax
+00506457 add     esp, 0x10
+0050645a jmp     0x50646f
+005064b2 mov     eax, edi
+005064b4 pop     edi
+005064b5 pop     esi
+005064b6 pop     ebp
+005064b7 pop     ebx
+005064b8 mov     ecx, dword [esp+0x48]
+005064bc xor     ecx, esp
+005064be call    0x687de2
+005064c3 add     esp, 0x4c
+005064c6 retn    
+00506486 push    dword [esp+0x10]
+0050648a lea     eax, [esp+0x1c]
+0050648e push    eax
+0050648f push    dword [esp+0x70]
+00506493 push    esi
+00506494 push    dword [ebp+0x10]
+00506497 call    0x51e540
+0050649c add     esp, 0x14
+0050649f pop     edi
+005064a0 pop     esi
+005064a1 pop     ebp
+005064a2 pop     ebx
+005064a3 mov     ecx, dword [esp+0x48]
+005064a7 xor     ecx, esp
+005064a9 call    0x687de2
+005064ae add     esp, 0x4c
+005064b1 retn    
+0050646f push    esi
+00506470 mov     edi, eax
+00506472 call    0x4d8370
+00506477 mov     esi, dword [esp+0x18]
+0050647b add     esp, 0x4

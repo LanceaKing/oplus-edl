@@ -1,0 +1,39 @@
+FIRST
+00c02b56 50                             push eax
+00c02b57 e95e574000                     jmp 0x10082ba
+010082ba 8b442404                       mov eax, dword ptr [esp + 4]
+010082be e9ca9c0900                     jmp 0x10a1f8d
+010a1f8d 8d4001                         lea eax, [eax + 1]
+010a1f90 e91079c8ff                     jmp 0xd298a5
+00d298a5 89442404                       mov dword ptr [esp + 4], eax
+00d298a9 86c0                           xchg al, al
+00d298ab 6698                           cbw 
+00d298ad b882335700                     mov eax, 0x573382
+00d298b2 e9d4122100                     jmp 0xf3ab8b
+00f3ab8b 8b803ee36300                   mov eax, dword ptr [eax + 0x63e33e]
+00f3ab91 e9a82cd2ff                     jmp 0xc5d83e
+00c5d83e 8d805a49f806                   lea eax, [eax + 0x6f8495a]
+00c5d844 e966ea4100                     jmp 0x107c2af
+0107c2af 870424                         xchg dword ptr [esp], eax
+0107c2b2 e96a215aff                     jmp 0x61e421
+0061e421 c3                             ret 
+
+LAST
+00c02b56 50                             push eax
+00c02b57 e95e574000                     jmp 0x10082ba
+010082ba 8b442404                       mov eax, dword ptr [esp + 4]
+010082be e9ca9c0900                     jmp 0x10a1f8d
+010a1f8d 8d4001                         lea eax, [eax + 1]
+010a1f90 e91079c8ff                     jmp 0xd298a5
+00d298a5 89442404                       mov dword ptr [esp + 4], eax
+00d298a9 86c0                           xchg al, al
+00d298ab 6698                           cbw 
+00d298ad b882335700                     mov eax, 0x573382
+00d298b2 e9d4122100                     jmp 0xf3ab8b
+00f3ab8b 8b803ee36300                   mov eax, dword ptr [eax + 0x63e33e]
+00f3ab91 e9a82cd2ff                     jmp 0xc5d83e
+00c5d83e 8d805a49f806                   lea eax, [eax + 0x6f8495a]
+00c5d844 e966ea4100                     jmp 0x107c2af
+0107c2af 870424                         xchg dword ptr [esp], eax
+0107c2b2 e96a215aff                     jmp 0x61e421
+0061e421 c3                             ret 

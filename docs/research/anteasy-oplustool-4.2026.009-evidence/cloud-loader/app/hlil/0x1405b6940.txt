@@ -1,0 +1,77 @@
+1405b694f int64_t var_28 = 0
+1405b6957 void* rbx = *(arg1 + 8)
+1405b695b int64_t rax = sub_1406f8370()
+1405b6967 (*(rbx + 0x20))(*(rbx + 8), rax)
+1405b6971 void* rax_1
+1405b6971 int512_t zmm0
+1405b6971 rax_1, zmm0 = sub_1408f8960(*(arg1 + 0x54), arg2)
+1405b6980 int64_t* rax_2
+1405b6980 int512_t zmm0_1
+1405b6980 rax_2, zmm0_1 = sub_1408d1980(&data_1434c1c00, rax_1, zmm0)
+1405b6993 uint64_t ssp
+1405b6993 
+1405b6993 if (sub_1405b97c0(arg1, rax_2, zmm0_1) == 0)
+1405b6b78     sub_1405b7000(arg1, 0x4b3)
+1405b6b84     void** rax_17 = sub_141194310(&data_142a5f6a0)
+1405b6b9f     sub_1411948d0(rax_17, ssp, sub_1405b5e80(rax_17, 0x4b3, 0))
+1405b6b9f     noreturn
+1405b6b9f 
+1405b69a0 void** rax_4 = sub_141194310(&data_142a5ef60)
+1405b69ac void* rsi = *(arg1 + 0x20)
+1405b69b0 *(rax_4 + 0x64) = 0x64
+1405b69b7 rax_4[0xd].d = 0x14
+1405b69be *(rax_4 + 0x7c) = 0x101
+1405b69ce rax_4[0xc] = 0x3200007530
+1405b69d2 rax_4[0xd] = 0x32
+1405b69dc *(rax_4 + 0x74) = 0
+1405b69df rax_4[0xf].d = 0
+1405b69e9 void** rax_5
+1405b69e9 int512_t zmm0_2
+1405b69e9 rax_5, zmm0_2 = sub_141194310(&data_142cf6b80)
+1405b69f8 sub_141176190(rax_5, arg1)
+1405b6a04 sub_141194570(&rax_4[1], rax_5)
+1405b6a09 *rsi
+1405b6a26 void* rax_6
+1405b6a26 int512_t zmm0_3
+1405b6a26 rax_6, zmm0_3 = sub_140581fc0(2, nullptr, 0x100000, 0, zmm0_2, 0, 0)
+1405b6a3a void** rax_7
+1405b6a3a int512_t zmm0_4
+1405b6a3a rax_7, zmm0_4 = sub_1405b2040(rsi, rax_6, 2, rax_4, zmm0_3)
+1405b6a3a 
+1405b6a46 if (*(rax_7 + 0x2c) == 0)
+1405b6a8a     var_28 = sub_1405b59c0(rax_7, 0x580)
+1405b6a8a     
+1405b6a92     if (var_28.b != 0)
+1405b6ac3         sub_1405b7000(arg1, sub_140c24660(&var_28))
+1405b6acf         void** rax_13 = sub_141194310(&data_142a5f6a0)
+1405b6af0         sub_1411948d0(rax_13, ssp, sub_1405b5e80(rax_13, sub_140c24660(&var_28), 0))
+1405b6af0         noreturn
+1405b6af0     
+1405b6a9b     void** rax_11
+1405b6a9b     int512_t zmm0_5
+1405b6a9b     rax_11, zmm0_5 = sub_141194310(&data_142a9a698)
+1405b6aa6     sub_1408fcc00(rax_11)
+1405b6aae     sub_1411948d0(rax_11, ssp, zmm0_5)
+1405b6aae     noreturn
+1405b6aae 
+1405b6a4c void* rsi_1 = *(arg1 + 8)
+1405b6a50 int64_t rax_8 = sub_1406f6e10()
+1405b6a5c (*(rsi_1 + 0x20))(*(rsi_1 + 8), rax_8)
+1405b6a5c 
+1405b6a6e if (sub_1405b6bf0(arg1, rax_7[1], zmm0_4) == 0)
+1405b6aff     sub_1405b7000(arg1, 0x4bc)
+1405b6b0b     void** rax_15 = sub_141194310(&data_142a5f6a0)
+1405b6b26     sub_1411948d0(rax_15, ssp, sub_1405b5e80(rax_15, 0x4bc, 0))
+1405b6b26     noreturn
+1405b6b26 
+1405b6a74 int64_t result = rax_7[1]
+1405b6b34 int64_t* rcx_23 = *(*(arg1 + 0x20) + 8)
+1405b6b34 
+1405b6b42 if (*rcx_23 == &data_142a5f000)
+1405b6b5e     sub_1405b1da0(rcx_23)
+1405b6b42 else if (*rcx_23 == &data_142a5f428)
+1405b6b57     sub_1405b4750(rcx_23)
+1405b6b4e else
+1405b6b50     sub_14053be70(rcx_23)
+1405b6b50 
+1405b6b6e return result

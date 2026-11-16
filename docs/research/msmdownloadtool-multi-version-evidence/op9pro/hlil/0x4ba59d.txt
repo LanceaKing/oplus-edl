@@ -1,0 +1,22 @@
+004ba5a5 sub_47f0e0(u"firmware update file can't not found.")
+004ba5ae void* eax = &arg1[-0xd]
+004ba5ae 
+004ba5b1 if (arg1[-8] u>= 8)
+004ba5b1     eax = arg1[-0xd]
+004ba5b1 
+004ba5c2 sub_68ae2f(arg2 + 0x2c4, &data_76c874, eax)
+004ba5db sub_4b95c0(*(arg2 + 0x40), *(arg2 + 0x3c))
+004ba5e2 sub_4b9730(0, arg2 + 0x2c4, 1)
+004ba5ea arg1[-1].b = 0
+004ba5ee sub_4145e0(&arg1[-0x17])
+004ba7ff sub_56c751(arg1[-0x1b])
+004ba7ff 
+004ba80b if (arg1[-8] u>= 8)
+004ba810     sub_56c751(arg1[-0xd])
+004ba810 
+004ba81d TEB* fsbase
+004ba81d fsbase->NtTib.ExceptionList = arg1[-3]
+004ba827 arg1[-5]
+004ba82c int32_t result = sub_68804f()
+004ba833 *arg1
+004ba834 return result

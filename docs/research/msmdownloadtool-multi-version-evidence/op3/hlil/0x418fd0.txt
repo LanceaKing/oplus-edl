@@ -1,0 +1,107 @@
+00418fd3 int32_t var_8 = 0xffffffff
+00418fd5 int32_t (* var_c)() = sub_55e530
+00418fe0 TEB* fsbase
+00418fe0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00418fe9 int32_t __saved_ebp
+00418fe9 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00418ff5 fsbase->NtTib.ExceptionList = &ExceptionList
+00418ffd struct _EXCEPTION_REGISTRATION_RECORD** eax_3
+00418ffd eax_3.b = *(arg1 + 0x1e4)
+00418ffd 
+00419008 if (eax_3.b == 0)
+00419014     int32_t var_1c_1 = 0xf
+0041901b     int32_t var_20_1 = 0
+00419022     char var_30 = 0
+00419026     int32_t var_8_1 = 0
+0041902d     int32_t var_60
+0041902d     int32_t* ecx = &var_60
+0041902d     
+00419039     if (arg2[0xa] != 0)
+004190bc         int32_t* eax_8 = sub_410770(&arg2[6], 0x5a25b0, ecx, &arg2[6])
+004190bc         
+004190cb         if (&var_30 != eax_8)
+004190d1             if (var_1c_1 u>= 0x10)
+004190d6                 sub_4208bb(var_30.d, eax_2)
+004190d6             
+004190e2             var_1c_1 = 0xf
+004190e9             int32_t var_20_3 = 0
+004190f0             var_30 = 0
+004190f4             sub_404ca0(&var_30, eax_8)
+00419039     else
+0041903c         int32_t* eax_5 = sub_410770(eax_3, 0x5a25b0, ecx, arg2)
+0041904b         var_8_1.b = 1
+00419052         char var_48
+00419052         int32_t* eax_6 = sub_410860(eax_5.b, eax_5, &var_48, ".bin")
+00419052         
+00419061         if (&var_30 != eax_6)
+00419067             if (var_1c_1 u>= 0x10)
+0041906c                 sub_4208bb(var_30.d, eax_2)
+0041906c             
+00419078             var_1c_1 = 0xf
+0041907f             int32_t var_20_2 = 0
+00419086             var_30 = 0
+0041908a             sub_404ca0(&var_30, eax_6)
+0041908a         
+00419093         int32_t var_34
+00419093         
+00419093         if (var_34 u>= 0x10)
+00419098             sub_4208bb(var_48.d, eax_2)
+00419098         
+004190a0         int32_t var_34_1 = 0xf
+004190a7         int32_t var_38_1 = 0
+004190ae         var_48 = 0
+004190b2         var_8_1.b = 0
+004190b2     
+004190fd     int32_t var_4c
+004190fd     
+004190fd     if (var_4c u>= 0x10)
+00419102         sub_4208bb(var_60, eax_2)
+00419102     
+0041910e     char* eax_9 = &var_30
+0041910e     
+00419116     if (var_1c_1 u>= 0x10)
+00419116         eax_9 = var_30.d
+00419116     
+0041911b     int32_t eax_10 = std::_Deallocate<64,0>(eax_9, 0x5a25b4, eax_2)
+00419128     LPARAM lParam
+00419128     WPARAM wParam
+00419128     
+00419128     if (eax_10 != 0)
+00419185         sub_41a6f0(eax_10, arg2)
+0041918f         _fclose(eax_10)
+004191a3         wParam = zx.d((*(arg1 + 0x2c)).b) << 0x10 | 4
+004191a6         lParam = 0
+00419128     else
+0041912a         enum WIN32_ERROR eax_11 = GetLastError()
+00419136         char const* const var_84_1
+00419136         
+00419136         if (*(arg1 + 0x1b) == 0)
+00419150             void** eax_12 = &arg2[0xc]
+00419150             
+00419153             if (arg2[0x11] u>= 0x10)
+00419155                 eax_12 = *eax_12
+00419155             
+00419157             enum WIN32_ERROR var_7c_10 = eax_11
+00419158             void** var_80_3 = eax_12
+00419159             var_84_1 = "Open %s  Failed, Errno: %d"
+00419136         else
+0041913c             void** ecx_4 = &arg2[0xc]
+0041913c             
+0041913f             if (arg2[0x11] u>= 0x10)
+00419141                 ecx_4 = *ecx_4
+00419141             
+00419143             enum WIN32_ERROR var_7c_9 = eax_11
+00419144             void** var_80_2 = ecx_4
+00419145             var_84_1 = &data_5a2570
+00419145         
+00419165         sub_410900(arg1 + 0x164, var_84_1)
+0041917b         wParam = (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10
+0041917e         lParam = arg1 + 0x164
+0041917e     
+004191b1     SendMessageA(*(arg1 + 0x30), 0x178c, wParam, lParam)
+004191b1     
+004191bb     if (var_1c_1 u>= 0x10)
+004191c0         sub_4208bb(var_30.d)
+004191c0 
+004191cd fsbase->NtTib.ExceptionList = ExceptionList
+004191e5 return sub_53b554()

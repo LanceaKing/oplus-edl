@@ -1,0 +1,23 @@
+{
+  "revision": "205c7d4d9f15add22d78c422ba77843ab72c95d4",
+  "branch": "oplus-edl-phase1",
+  "remote": "https://github.com/LanceaKing/qdlrs.git",
+  "parent": "a80cd1e8cd1cd60634b9c5ce9a4c8c96b727c003",
+  "tree": "d989046f02e48af5fc25a80952901098c75d0b01",
+  "message": "Share validated GPT and partition operations through qdl storage API\n\nMove bounded GPT reads, validation, unique partition lookup and partition\ntransfers into qdl::storage. Preserve explicit storage slots and provide\nread callbacks for caller capture and device adapters. Reject short GPT\ncallback results before parsing.\n\nUse the shared API from CLI named reads, writes and erase. Add library\nand CLI regression coverage and document the boundary with caller policy.\n\nValidation: formatting, Clippy with warnings denied, 95 workspace tests,\nand workspace build passed offline with all features. Two fresh-context\nreview rounds completed without Blocker or Major findings.\n\nAssisted-by: Codex:GPT-6",
+  "tests": {
+    "qdl": {
+      "passed": 95,
+      "ignored": 0,
+      "json_subprocess": false
+    },
+    "product": {
+      "passed": 135,
+      "ignored": 1,
+      "json_subprocess": true
+    }
+  },
+  "host": "macOS-26.6.2-arm64-arm-64bit",
+  "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)",
+  "cargo": "cargo 1.99.0 (5f94df478 2026-08-27)"
+}

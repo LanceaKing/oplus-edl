@@ -1,0 +1,157 @@
+18003ee60 void var_108
+18003ee60 int64_t rax_1 = __security_cookie ^ &var_108
+18003ee7b int32_t* var_d8 = arg1 + 0x50
+18003ee83 int32_t rax_2
+18003ee83 int64_t r8
+18003ee83 uint64_t r9
+18003ee83 rax_2, r8, r9 = sub_180064350(arg1 + 0x50, arg2)
+18003ee83 
+18003ee8a if (rax_2 != 0)
+18003f241     std::_Throw_Cpp_error(5)
+18003f241     noreturn
+18003f241 
+18003ee90 int32_t rax_3 = *(arg1 + 0x9c)
+18003ee90 
+18003ee9b if (rax_3 == 0x7fffffff)
+18003f22b     *(arg1 + 0x9c) = rax_3 - 1
+18003f236     std::_Throw_Cpp_error(6)
+18003f236     noreturn
+18003f236 
+18003eea5 int32_t* rdx_8
+18003eea5 int64_t* rbx
+18003eea5 int32_t var_c8
+18003eea5 void* const var_b8
+18003eea5 int32_t* var_a0_1
+18003eea5 int128_t var_98
+18003eea5 int64_t var_80_1
+18003eea5 
+18003eea5 if (arg6 == 0)
+18003f019     if (*(arg1 + 0x128) != 0)
+18003f019         goto label_18003f0ba
+18003f019     
+18003f01f     *(arg1 + 0x128) = 1
+18003f029     var_c8.o = zx.o(0)
+18003f02d     var_b8 = nullptr
+18003f031     int32_t var_b0
+18003f031     var_b0.q = 0xf
+18003f039     var_c8.b = 0
+18003f03d     int64_t var_a8
+18003f03d     var_a8.o = zx.o(0)
+18003f041     var_98.q = 0
+18003f045     var_98:8.q = 0xf
+18003f04d     var_a8.b = 0
+18003f051     int64_t var_88
+18003f051     var_88.o = zx.o(0)
+18003f055     int64_t var_78_1 = 0
+18003f059     int64_t var_70_1 = 0xf
+18003f061     var_88.b = 0
+18003f065     int64_t var_68_1 = 0
+18003f065     
+18003f082     if (sub_18003f3b0(arg1, arg2, arg3, &var_c8, arg5) != 0)
+18003f09b         sub_1800359c0(arg1 + 0xc0)
+18003f0ab         sub_180035440(arg1 + 0xc0, &var_c8)
+18003f0b5         sub_180034fd0(&var_c8)
+18003f0ba     label_18003f0ba:
+18003f0ba         rbx = arg1 + 0xc0
+18003f0c4         char rax_8
+18003f0c4         int64_t r8_2
+18003f0c4         uint64_t r9_2
+18003f0c4         rax_8, rdx_8, r8_2, r9_2 = sub_180036030(rbx)
+18003f0c4         
+18003f0cb         if (rax_8 == 0)
+18003f0d4             int16_t* rdx_11 = sub_1800359c0(rbx)
+18003f0d9             var_c8 = 9
+18003f0e0             int64_t var_c4_2 = 0x191
+18003f0e8             int32_t var_bc_2 = 0x57e
+18003f0ef             int32_t var_ac_2 = 0
+18003f0f3             int64_t var_a8_2 = 0xc
+18003f0fb             var_a0_1 = 0xf
+18003f10b             __builtin_strncpy(&var_b8, "AUTH_EXPIRED", 0xd)
+18003f120             __builtin_memset(&var_98, 0, 0x20)
+18003f131             int64_t rax_9 = sub_1800d1b80(0x40, rdx_11, r8_2, r9_2)
+18003f136             var_98.q = rax_9
+18003f13a             int64_t var_88_2 = 0x3a
+18003f142             var_80_1 = 0x3f
+18003f151             __builtin_strncpy(rax_9, "loader temporary credentials expired; recreate the context", 
+18003f151                 0x3b)
+18003f179             goto label_18003ef61
+18003f179         
+18003f188         if (arg4 != rbx)
+18003f192             if (*(arg1 + 0xd8) u> 0xf)
+18003f194                 rbx = *rbx
+18003f194             
+18003f1a4             uint64_t r9_3 = sub_180001650(arg4, rbx, *(arg1 + 0xd0), r9_2)
+18003f1a9             int32_t* rdx_13 = arg1 + 0xe0
+18003f1a9             
+18003f1bc             if (*(arg1 + 0xf8) u> 0xf)
+18003f1be                 rdx_13 = *rdx_13
+18003f1be             
+18003f1c8             uint64_t r9_4 = sub_180001650(&arg4[4], rdx_13, *(arg1 + 0xf0), r9_3)
+18003f1cd             void** rdx_14 = arg1 + 0x100
+18003f1cd             
+18003f1e0             if (*(arg1 + 0x118) u> 0xf)
+18003f1e2                 rdx_14 = *rdx_14
+18003f1e2             
+18003f1ec             rdx_8 = sub_180001650(&arg4[8], rdx_14, *(arg1 + 0x110), r9_4)
+18003f1ec         
+18003f1f8         arg4[0xc] = *(arg1 + 0x120)
+18003f1fc         rbx.b = 1
+18003f082     else
+18003f088         rdx_8 = sub_180034fd0(&var_c8)
+18003f08d         rbx.b = 0
+18003eea5 else
+18003eeb2     int16_t* rdx = sub_1800359c0(arg1 + 0xc0)
+18003eeb7     *(arg1 + 0x128) = 1
+18003eebe     var_c8 = 9
+18003eec5     int64_t var_c4_1 = 0x191
+18003eed0     int32_t var_bc_1 = 0x57e
+18003eed7     int32_t var_ac_1 = 0
+18003eedb     int64_t var_a8_1 = 0xc
+18003eee3     var_a0_1 = 0xf
+18003eef3     __builtin_strncpy(&var_b8, "AUTH_EXPIRED", 0xd)
+18003ef08     __builtin_memset(&var_98, 0, 0x20)
+18003ef19     int64_t rax_4 = sub_1800d1b80(0x40, rdx, r8, r9)
+18003ef1e     var_98.q = rax_4
+18003ef22     int64_t var_88_1 = 0x3a
+18003ef2a     var_80_1 = 0x3f
+18003ef39     __builtin_strncpy(rax_4, "loader temporary credentials expired; recreate the context", 0x3b)
+18003ef61 label_18003ef61:
+18003ef61     *arg5 = 9
+18003ef68     *(arg5 + 4) = 0x191
+18003ef70     *(arg5 + 0xc) = 0x57e
+18003ef80     sub_1800352b0(&arg5[2], &var_b8)
+18003ef8d     sub_1800352b0(&arg5[6], &var_98)
+18003ef8d     
+18003ef9a     if (var_80_1 u> 0xf)
+18003efa6         void* rcx_4 = var_98.q
+18003efa6         
+18003efaa         if (var_80_1 + 1 u>= 0x1000)
+18003efac             void* rax_5 = *(rcx_4 - 8)
+18003efac             
+18003efbb             if (rcx_4 - rax_5 - 8 u> 0x1f)
+18003f183                 trap(0xd)
+18003f183             
+18003efc5             rcx_4 = rax_5
+18003efc5         
+18003efc8         j_sub_18012c540(rcx_4)
+18003efc8     
+18003efcd     rdx_8 = var_a0_1
+18003efcd     
+18003efd5     if (rdx_8 u<= 0xf)
+18003f008         rbx.b = 0
+18003efd5     else
+18003efe1         void* const rcx_7 = var_b8
+18003efe1         
+18003efe5         if (rdx_8 + 1 u>= 0x1000)
+18003efe7             void* rax_6 = *(rcx_7 - 8)
+18003efe7             
+18003eff6             if (rcx_7 - rax_6 - 8 u> 0x1f)
+18003f183                 trap(0xd)
+18003f183             
+18003effc             rcx_7 = rax_6
+18003effc         
+18003f003         rdx_8 = j_sub_18012c540(rcx_7)
+18003f008         rbx.b = 0
+18003f201 sub_180064490(arg1 + 0x50, rdx_8)
+18003f210 __security_check_cookie(rax_1 ^ &var_108)
+18003f228 return zx.q(rbx.b)

@@ -1,0 +1,118 @@
+00421bc3 int32_t var_8 = 0xffffffff
+00421bc5 int32_t (* var_c)(void* arg1) = sub_571986
+00421bd0 TEB* fsbase
+00421bd0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00421bdc int32_t __saved_ebp
+00421bdc int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00421be4 int32_t var_c8 = eax_2
+00421be8 fsbase->NtTib.ExceptionList = &ExceptionList
+00421bf7 int32_t* eax_3 = arg2 + 0x18
+00421bf7 
+00421bfa if (*(arg2 + 0x2c) u>= 0x10)
+00421bfc     eax_3 = *eax_3
+00421bfc 
+00421c05 void* var_9c
+00421c05 sub_426050(&var_9c, eax_3)
+00421c0a int32_t var_8_1 = 0
+00421c1d enum WIN32_ERROR result
+00421c1d 
+00421c1d if (arg2 == 0 || *(arg2 + 0x40) == 0)
+00421dd6     void* var_cc_4 = var_9c
+00421ddc     char const* const var_d0_5
+00421ddc     
+00421ddc     if (*(arg1 + 0x1b) == 0)
+00421de5         var_d0_5 = u"Can't find file %s"
+00421ddc     else
+00421dde         var_d0_5 = "~b\rN0R"
+00421dde     
+00421deb     sub_426230(arg1 + 0x290, var_d0_5)
+00421e0e     SendMessageW(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, arg1 + 0x290)
+00421e14     result = ERROR_INVALID_FUNCTION
+00421c1d else
+00421c2f     uint32_t wParam = zx.d((*(arg1 + 0x2c)).b) << 0x10
+00421c32     bool cond:2_1 = *(arg1 + 0x1b) == 0
+00421c36     *(arg1 + 0x59) = 0
+00421c3a     LPARAM lParam
+00421c3a     
+00421c3a     lParam = cond:2_1 ? u"Try Send Sahara Message" : 0x5bb6a4
+00421c3a     
+00421c51     SendMessageW(*(arg1 + 0x30), 0x178c, wParam, lParam)
+00421c60     LPARAM lParam_1
+00421c60     
+00421c60     if (*(arg1 + 0x1b) == 0)
+00421c69         lParam_1 = u"Start Download Firehose Binary"
+00421c60     else
+00421c62         lParam_1 = 0x5bb6f8
+00421c62     
+00421c77     SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam_1)
+00421c80     int32_t var_a4_1 = 0xf
+00421c8a     *(*(arg1 + 0x24) + 0x4c) = arg2
+00421c8d     void* eax_10 = *(arg1 + 0x24)
+00421c90     char ecx_1 = *(arg1 + 0x34)
+00421c93     int32_t var_a8_1 = 0
+00421c9d     char var_b8 = 0
+00421ca4     *(eax_10 + 0x2d) = ecx_1
+00421cb1     sub_402330(&var_b8, arg1 + 0x40, 0, 0xffffffff)
+00421cb9     int32_t* ecx_4 = *(arg1 + 0x24) + 0x30
+00421cbc     var_8_1.b = 1
+00421cbc     
+00421cc8     if (ecx_4 != &var_b8)
+00421ccf         sub_402330(ecx_4, &var_b8, 0, 0xffffffff)
+00421ccf     
+00421cd4     var_8_1.b = 0
+00421cd4     
+00421cdf     if (var_a4_1 u>= 0x10)
+00421ce7         j__free(var_b8.d)
+00421ce7     
+00421cf9     if (*(*(arg1 + 0x60) + 0xa0) == 0)
+00421d91     label_421d91:
+00421d91         enum WIN32_ERROR result_1 = sub_426c10(*(arg1 + 0x24))
+00421d96         result = result_1
+00421d96         
+00421d9a         if (result != NO_ERROR)
+00421da0             char edx_3 = (*(arg1 + 0x2c)).b
+00421da3             HWND ecx_12 = *(arg1 + 0x30)
+00421da3             
+00421da8             if (*(arg1 + 0x1b) == 0)
+00421dc2                 sub_420d10(result_1, edx_3, ecx_12, 0, u"Sahara Communication Faile", 1)
+00421da8             else
+00421db1                 sub_420d10(result_1, edx_3, ecx_12, 0, u"Sahar", 1)
+00421cf9     else
+00421d02         sub_426de0(*(arg1 + 0x24))
+00421d0a         enum WIN32_ERROR eax_13
+00421d0a         int32_t ecx_7
+00421d0a         eax_13, ecx_7 = sub_4272d0(*(arg1 + 0x24))
+00421d0a         
+00421d14         if (eax_13 != ERROR_MUTUAL_AUTH_FAILED)
+00421d60             if (eax_13 != NO_ERROR)
+00421d6e                 LPARAM var_d0_4
+00421d6e                 
+00421d6e                 if (*(arg1 + 0x1b) == 0)
+00421d77                     var_d0_4 = u"Sahara Communication Faile"
+00421d6e                 else
+00421d70                     var_d0_4 = u"Sahar"
+00421d70                 
+00421d7e                 sub_420d10(eax_13, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, var_d0_4, 1)
+00421d7e             
+00421d88             Sleep(0x32)
+00421d88             goto label_421d91
+00421d88         
+00421d16         int32_t var_cc_2 = ecx_7
+00421d21         void var_98
+00421d21         sub_427120(*(arg1 + 0x24), &var_98)
+00421d2c         void* var_cc_3 = &var_98
+00421d4c         sub_420d10(sub_426230(arg1 + 0x290, &data_5b64cc), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+00421d4c             arg1 + 0x290, 1)
+00421d54         result = ERROR_MUTUAL_AUTH_FAILED
+00421d54 
+00421e19 int32_t var_8_2 = 0xffffffff
+00421e29 int32_t* edi_2 = var_9c - 0x10
+00421e2f int32_t ecx_13 = edi_2[3]
+00421e2f edi_2[3] -= 1
+00421e2f 
+00421e36 if (ecx_13 - 1 s<= 0)
+00421e3d     (*(**edi_2 + 4))(edi_2)
+00421e3d 
+00421e45 fsbase->NtTib.ExceptionList = ExceptionList
+00421e55 sub_54a573(eax_2 ^ &__saved_ebp)
+00421e5d return result

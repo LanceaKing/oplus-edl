@@ -1,0 +1,54 @@
+004aded0 int32_t ebp
+004aded0 int32_t var_4 = ebp
+004aded1 int32_t* ebp_1 = &var_4
+004aded3 int32_t var_8 = 0xffffffff
+004aded5 int32_t (* var_c)(void* arg1) = sub_6d9d6b
+004adee0 TEB* fsbase
+004adee0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004adeec int32_t eax_2 = __security_cookie ^ &var_4
+004adeee int32_t var_14 = eax_2
+004adef1 int32_t esi
+004adef1 int32_t var_a0 = esi
+004adef2 int32_t edi
+004adef2 int32_t var_a4 = edi
+004adef7 fsbase->NtTib.ExceptionList = &ExceptionList
+004adf20 int16_t* esi_1 = (*(data_7bfb90 + 0xc))(eax_2) + 0x10
+004adf23 int16_t* var_9c = esi_1
+004adf29 int32_t var_8_1 = 0
+004adf44 void* eax_7
+004adf44 
+004adf44 if (*(*(arg1 + 8) - 0xc) s> 0 && *(*(arg1 + 4) - 0xc) s> 0)
+004adf46     eax_7 = *(arg1 + 0xc)
+004adf46 
+004adf4d int32_t result
+004adf4d 
+004adf4d if (*(*(arg1 + 8) - 0xc) s<= 0 || *(*(arg1 + 4) - 0xc) s<= 0 || *(eax_7 - 0xc) s<= 0)
+004adfc1     result = 1
+004adf4d else
+004adf4f     wchar16 const* const var_14_1 = u"6bb91c30390d8718"
+004adf54     void* var_18_1 = eax_7
+004adf55     int32_t var_1c_1 = *(arg1 + 4)
+004adf5e     int32_t var_20_1 = *(arg1 + 8)
+004adf67     sub_414410(&var_9c, u"%s:%s:%s:%s")
+004adf6c     esi_1 = var_9c
+004adf7b     void var_94
+004adf7b     void* var_98 = &var_94
+004adf8a     ebp_1 = sub_412d40(&var_98, esi_1, 3)
+004adf9c     sub_4d7200(ebp_1[-0x25], *(esi_1 - 0xc), arg1 + 0x48)
+004adfa1     int32_t eax_9 = ebp_1[-0x25]
+004adfb0     result = 0
+004adfb0     
+004adfb4     if (eax_9 != &ebp_1[-0x24])
+004adfb7         ebp_1 = sub_688543(eax_9)
+004adfb7 
+004adfc9 ebp_1[-1] = 0xffffffff
+004adfd6 int32_t ecx_2 = *(esi_1 - 4)
+004adfd6 *(esi_1 - 4) -= 1
+004adfd6 
+004adfdd if (ecx_2 - 1 s<= 0)
+004adfe4     (*(**(esi_1 - 0x10) + 4))(&esi_1[-8])
+004adfe4 
+004adfec fsbase->NtTib.ExceptionList = ebp_1[-3]
+004adffb sub_687de2(ebp_1[-4] ^ ebp_1)
+004ae002 *ebp_1
+004ae003 return result

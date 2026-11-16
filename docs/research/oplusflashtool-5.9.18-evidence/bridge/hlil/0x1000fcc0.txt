@@ -1,0 +1,143 @@
+1000fcdc void* esi = *(this + 4)
+1000fcdf void* var_8 = esi
+1000fce2 int32_t var_a0c
+1000fce2 memset(&var_a0c, 0, 0xa04)
+1000fce7 char const* ecx = arg2
+1000fcf3 var_a0c = 4
+1000fcfd void var_a08
+1000fcfd int32_t edx = &var_a08 - ecx
+1000fd0b char const i
+1000fd0b 
+1000fd0b do
+1000fd00     i = *ecx
+1000fd02     ecx = &ecx[1]
+1000fd05     ecx[edx - 1] = i
+1000fd0b while (i != 0)
+1000fd0b 
+1000fd16 char const* ecx_1 = arg3
+1000fd16 
+1000fd2b do
+1000fd20     i = *ecx_1
+1000fd22     ecx_1 = &ecx_1[1]
+1000fd25     void var_808
+1000fd25     ecx_1[&var_808 - arg3 - 1] = i
+1000fd2b while (i != 0)
+1000fd2b 
+1000fd2d char const* ecx_2 = arg4
+1000fd36 void var_788
+1000fd36 int32_t edx_2 = &var_788 - ecx_2
+1000fd36 
+1000fd4b do
+1000fd40     i = *ecx_2
+1000fd42     ecx_2 = &ecx_2[1]
+1000fd45     ecx_2[edx_2 - 1] = i
+1000fd4b while (i != 0)
+1000fd4b 
+1000fd4d char const* ecx_3 = arg5
+1000fd56 void var_688
+1000fd56 int32_t edx_3 = &var_688 - ecx_3
+1000fd56 
+1000fd6b do
+1000fd60     i = *ecx_3
+1000fd62     ecx_3 = &ecx_3[1]
+1000fd65     ecx_3[edx_3 - 1] = i
+1000fd6b while (i != 0)
+1000fd6b 
+1000fd71 char* ecx_4 = this + 0x20
+1000fd71 
+1000fd74 if (*(this + 0x34) u>= 0x10)
+1000fd76     ecx_4 = *ecx_4
+1000fd76 
+1000fd78 void var_608
+1000fd78 char* edx_4 = &var_608
+1000fd78 
+1000fd8c do
+1000fd80     i = *ecx_4
+1000fd82     ecx_4 = &ecx_4[1]
+1000fd85     *edx_4 = i
+1000fd87     edx_4 = &edx_4[1]
+1000fd8c while (i != 0)
+1000fd8c 
+1000fd95 char* ecx_5 = this + 0x204
+1000fd95 
+1000fd9b if (*(this + 0x218) u>= 0x10)
+1000fd9d     ecx_5 = *ecx_5
+1000fd9d 
+1000fd9f void var_108
+1000fd9f char* edx_5 = &var_108
+1000fd9f 
+1000fdb1 do
+1000fda5     i = *ecx_5
+1000fda7     ecx_5 = &ecx_5[1]
+1000fdaa     *edx_5 = i
+1000fdac     edx_5 = &edx_5[1]
+1000fdb1 while (i != 0)
+1000fdb1 
+1000fdc4 char* edx_6 = esi + 0x48
+1000fdc9 arg2:3.b = auth_exec_login(esi, &var_a0c) == 0
+1000fdd0 void* ecx_6
+1000fdd0 
+1000fdd0 if (*edx_6 != 0)
+1000fdd6     char* ecx_7 = edx_6
+1000fde5     int32_t eax_1
+1000fde5     
+1000fde5     do
+1000fde0         eax_1.b = *ecx_7
+1000fde2         ecx_7 = &ecx_7[1]
+1000fde5     while (eax_1.b != 0)
+1000fde7     ecx_6 = ecx_7 - &ecx_7[1]
+1000fde9     esi = var_8
+1000fdd0 else
+1000fdd2     ecx_6 = nullptr
+1000fdd2 
+1000fdf1 sub_10003300(this + 0x38, edx_6, ecx_6)
+1000fdfd char* edx_7 = esi + 0x88
+1000fe03 uint32_t ecx_9
+1000fe03 
+1000fe03 if (*(esi + 0x88) != 0)
+1000fe09     char* ecx_10 = edx_7
+1000fe15     char i_1
+1000fe15     
+1000fe15     do
+1000fe10         i_1 = *ecx_10
+1000fe12         ecx_10 = &ecx_10[1]
+1000fe15     while (i_1 != 0)
+1000fe17     ecx_9 = ecx_10 - &ecx_10[1]
+1000fe19     esi = var_8
+1000fe03 else
+1000fe05     ecx_9 = 0
+1000fe05 
+1000fe21 sub_10003300(this + 0x50, edx_7, ecx_9)
+1000fe33 uint32_t ecx_12
+1000fe33 
+1000fe33 if (*(esi + 0x488) != 0)
+1000fe39     char* ecx_13 = esi + 0x488
+1000fe45     char i_2
+1000fe45     
+1000fe45     do
+1000fe40         i_2 = *ecx_13
+1000fe42         ecx_13 = &ecx_13[1]
+1000fe45     while (i_2 != 0)
+1000fe47     ecx_12 = ecx_13 - &ecx_13[1]
+1000fe33 else
+1000fe35     ecx_12 = 0
+1000fe35 
+1000fe4e sub_10003300(this + 0x68, esi + 0x488, ecx_12)
+1000fe60 sub_10003300(this + 0x80, "after-sale", 0xa)
+1000fe68 uint32_t ecx_16
+1000fe68 
+1000fe68 if (*arg3 != 0)
+1000fe6e     char const* ecx_17 = arg3
+1000fe78     char const i_3
+1000fe78     
+1000fe78     do
+1000fe73         i_3 = *ecx_17
+1000fe75         ecx_17 = &ecx_17[1]
+1000fe78     while (i_3 != 0)
+1000fe7a     ecx_16 = ecx_17 - &ecx_17[1]
+1000fe68 else
+1000fe6a     ecx_16 = 0
+1000fe6a 
+1000fe84 sub_10003300(this + 0x98, arg3, ecx_16)
+1000fe96 sub_10003300(this + 0xb0, "RCSM", 4)
+1000fea4 return arg2:3.b

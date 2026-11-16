@@ -1,0 +1,315 @@
+0042d183 int32_t var_8 = 0xffffffff
+0042d185 int32_t (* var_c)(void* arg1) = sub_5723ef
+0042d190 TEB* fsbase
+0042d190 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0042d19c int32_t __saved_ebp
+0042d19c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+0042d1a4 int32_t var_1d0 = eax_2
+0042d1a8 fsbase->NtTib.ExceptionList = &ExceptionList
+0042d1c3 void* var_1b4 = nullptr
+0042d1cd int32_t var_4c = 0xf
+0042d1d4 int32_t var_50 = 0
+0042d1db char var_60 = 0
+0042d1df sub_402470(&var_60, &data_5b7a80, nullptr)
+0042d1e4 int32_t var_8_1 = 0
+0042d1f8 int32_t var_7c = 0xf
+0042d1ff int32_t var_80 = 0
+0042d206 char var_90 = 0
+0042d20d sub_402470(&var_90, "  <patch SECTOR_SIZE_IN_BYTES="512" ", 0x24)
+0042d212 var_8_1.b = 1
+0042d223 int32_t var_f4 = 0xf
+0042d22d int32_t var_f8 = 0
+0042d237 char var_108 = 0
+0042d23e sub_402470(&var_108, "byte_offset="16"", 0x10)
+0042d243 var_8_1.b = 2
+0042d251 int32_t var_64 = 0xf
+0042d258 int32_t var_68 = 0
+0042d25f char var_78 = 0
+0042d263 sub_402470(&var_78, "filename="DISK"", 0xf)
+0042d268 var_8_1.b = 3
+0042d272 void* var_1d4_4 = 0x1d
+0042d274 int32_t* var_1d8_4 = "physical_partition_number="0""
+0042d279 int32_t var_c4 = 0xf
+0042d283 int32_t var_c8 = 0
+0042d28d char var_d8 = 0
+0042d294 sub_402470(&var_d8, var_1d8_4, var_1d4_4)
+0042d299 var_8_1.b = 4
+0042d2a3 void* var_1d4_5 = 0x11
+0042d2a5 int32_t* var_1d8_5 = "size_in_bytes="4""
+0042d2aa int32_t var_dc = 0xf
+0042d2b4 int32_t var_e0 = 0
+0042d2be char var_f0 = 0
+0042d2c5 sub_402470(&var_f0, var_1d8_5, var_1d4_5)
+0042d2ca var_8_1.b = 5
+0042d2d4 void* var_1d4_6 = 0x22
+0042d2d6 int32_t* var_1d8_6 = "start_sector="NUM_DISK_SECTORS-1.""
+0042d2db int32_t var_ac = 0xf
+0042d2e5 int32_t var_b0 = 0
+0042d2ef char var_c0 = 0
+0042d2f6 sub_402470(&var_c0, var_1d8_6, var_1d4_6)
+0042d2fb var_8_1.b = 6
+0042d305 void* var_1d4_7 = 9
+0042d307 int32_t* var_1d8_7 = "value="0""
+0042d30c int32_t var_94 = 0xf
+0042d316 int32_t var_98 = 0
+0042d320 char var_a8 = 0
+0042d327 sub_402470(&var_a8, var_1d8_7, var_1d4_7)
+0042d32c var_8_1.b = 7
+0042d336 void* var_1d4_8 = nullptr
+0042d338 int32_t var_124 = 0xf
+0042d342 int32_t var_128 = 0
+0042d34c char var_138 = 0
+0042d358 sub_402470(&var_138, &data_5b7a80, var_1d4_8)
+0042d363 var_8_1.b = 8
+0042d36e int32_t i_1 = 5
+0042d379 int32_t var_1b0
+0042d379 int32_t* eax_5 = sub_418600(&var_108, &var_90, &var_1b0, &var_108)
+0042d384 var_8_1.b = 9
+0042d391 char var_180
+0042d391 char* eax_6 = sub_406160(eax_5, eax_5, &var_180, &var_78)
+0042d39f var_8_1.b = 0xa
+0042d3ac char var_198
+0042d3ac char* eax_7 = sub_406160(eax_6, eax_6, &var_198, &var_d8)
+0042d3ba var_8_1.b = 0xb
+0042d3c7 char var_168
+0042d3c7 char* eax_8 = sub_406160(eax_7, eax_7, &var_168, &var_f0)
+0042d3d5 var_8_1.b = 0xc
+0042d3e2 char var_150
+0042d3e2 char* eax_9 = sub_406160(eax_8, eax_8, &var_150, &var_c0)
+0042d3f0 var_8_1.b = 0xd
+0042d3fa char var_30
+0042d3fa char* eax_10 = sub_406160(eax_9, eax_9, &var_30, &var_a8)
+0042d409 var_8_1.b = 0xe
+0042d410 char var_48
+0042d410 int32_t* eax_11 = sub_4187b0(eax_10.b, eax_10, &var_48, "/>")
+0042d410 
+0042d41f if (&var_60 != eax_11)
+0042d425     if (var_4c u>= 0x10)
+0042d42a         j__free(var_60.d)
+0042d42a     
+0042d436     var_4c = 0xf
+0042d43d     int32_t var_50_1 = 0
+0042d444     var_60 = 0
+0042d448     sub_405f50(&var_60, eax_11)
+0042d448 
+0042d451 int32_t var_34
+0042d451 
+0042d451 if (var_34 u>= 0x10)
+0042d456     j__free(var_48.d)
+0042d456 
+0042d462 int32_t var_34_1 = 0xf
+0042d469 int32_t var_38 = 0
+0042d470 var_48 = 0
+0042d474 int32_t var_1c
+0042d474 
+0042d474 if (var_1c u>= 0x10)
+0042d479     j__free(var_30.d)
+0042d479 
+0042d488 int32_t var_1c_1 = 0xf
+0042d48f int32_t var_20 = 0
+0042d496 var_30 = 0
+0042d49a int32_t var_13c
+0042d49a 
+0042d49a if (var_13c u>= 0x10)
+0042d4a2     j__free(var_150.d)
+0042d4a2 
+0042d4b1 int32_t var_13c_1 = 0xf
+0042d4bb int32_t var_140 = 0
+0042d4c5 var_150 = 0
+0042d4cc int32_t var_154
+0042d4cc 
+0042d4cc if (var_154 u>= 0x10)
+0042d4d4     j__free(var_168.d)
+0042d4d4 
+0042d4e3 int32_t var_154_1 = 0xf
+0042d4ed int32_t var_158 = 0
+0042d4f7 var_168 = 0
+0042d4fe int32_t var_184
+0042d4fe 
+0042d4fe if (var_184 u>= 0x10)
+0042d506     j__free(var_198.d)
+0042d506 
+0042d515 int32_t var_184_1 = 0xf
+0042d51f int32_t var_188 = 0
+0042d529 var_198 = 0
+0042d530 int32_t var_16c
+0042d530 
+0042d530 if (var_16c u>= 0x10)
+0042d538     j__free(var_180.d)
+0042d538 
+0042d540 var_8_1.b = 8
+0042d54b int32_t var_16c_1 = 0xf
+0042d555 int32_t var_170 = 0
+0042d55f var_180 = 0
+0042d566 int32_t var_19c
+0042d566 
+0042d566 if (var_19c u>= 0x10)
+0042d56e     j__free(var_1b0)
+0042d56e 
+0042d582 int32_t var_1d4_25 = 0xf
+0042d589 int32_t var_1d8_9 = 0
+0042d591 char var_1e8 = 0
+0042d594 sub_402330(&var_1e8, &var_60, 0, 0xffffffff)
+0042d5a0 int32_t* var_120
+0042d5a0 sub_42e500(&var_120, var_1e8)
+0042d5aa var_8_1.b = 0xf
+0042d5b3 _memset(arg1[2], 0, 0x1000)
+0042d5c5 _memset(arg1[3], 0, 0x1000)
+0042d5ca char* edx_7 = arg1[3]
+0042d5cd int32_t* ecx_18 = &var_120
+0042d5dd int32_t var_10c
+0042d5dd 
+0042d5dd if (var_10c u>= 0x10)
+0042d5dd     ecx_18 = var_120
+0042d5dd 
+0042d5f0 char i
+0042d5f0 
+0042d5f0 do
+0042d5e4     i = *ecx_18
+0042d5e6     ecx_18 += 1
+0042d5e9     *edx_7 = i
+0042d5eb     edx_7 = &edx_7[1]
+0042d5f0 while (i != 0)
+0042d6b7 enum WIN32_ERROR result
+0042d6b7 
+0042d6b7 do
+0042d5f2     char* edx_8 = arg1[3]
+0042d5f5     char* eax_12 = edx_8
+0042d5f5     
+0042d605     do
+0042d600         ecx_18.b = *eax_12
+0042d602         eax_12 = &eax_12[1]
+0042d605     while (ecx_18.b != 0)
+0042d605     
+0042d61c     void var_1bc
+0042d61c     
+0042d61c     if (sub_426500(*arg1, edx_8, eax_12 - &eax_12[1], &var_1bc) == ERROR_INVALID_FUNCTION)
+0042d753         result = ERROR_INVALID_FUNCTION
+0042d753         break
+0042d753     
+0042d62d     Sleep((6 - i_1) * 0x32)
+0042d649     enum WIN32_ERROR result_1
+0042d649     result_1, ecx_18 = sub_4266a0(*arg1, arg1[2], 0x1000, &var_1b4, 0x3e8)
+0042d64e     result = result_1
+0042d64e     
+0042d652     if (result != NO_ERROR)
+0042d6ae         if (result != 0x102)
+0042d6ae             break
+0042d6ae         
+0042d6b4         i_1 -= 1
+0042d652     else
+0042d654         void* var_1d4_31 = var_1b4
+0042d65d         int32_t var_1c_2 = 0xf
+0042d664         int32_t* var_1d8_14 = arg1[2]
+0042d667         enum WIN32_ERROR result_2 = result_1
+0042d66a         var_30 = result_1.b
+0042d66d         sub_402470(&var_30, var_1d8_14, var_1d4_31)
+0042d67d         var_8_1.b = 0x10
+0042d681         char* eax_17
+0042d681         eax_17, ecx_18 = sub_4172e0(&var_30, "response value="ACK"", result, 0x14)
+0042d681         
+0042d689         if (eax_17 != 0xffffffff)
+0042d6ce             char* eax_18 = sub_4172e0(&var_30, "Patched sector", nullptr, 0xe)
+0042d6f7             sub_4160f0(&var_30, &var_48, &eax_18[0xe], 
+0042d6f7                 sub_4172e0(&var_30, "with", nullptr, 4) - eax_18 - 0xe)
+0042d700             char* eax_23 = &var_48
+0042d700             
+0042d703             if (var_34_1 u>= 0x10)
+0042d703                 eax_23 = var_48.d
+0042d703             
+0042d707             char* var_1d4_37 = eax_23
+0042d714             int32_t eax_26
+0042d714             int32_t edx_9
+0042d714             edx_9:eax_26 = sx.q(sub_54dccb() + 1)
+0042d71c             *arg2 = eax_26
+0042d71e             arg2[1] = edx_9
+0042d71e             
+0042d721             if (var_34_1 u>= 0x10)
+0042d726                 j__free(var_48.d)
+0042d726             
+0042d732             int32_t var_34_2 = 0xf
+0042d739             int32_t var_38_1 = 0
+0042d740             var_48 = 0
+0042d740             
+0042d744             if (var_1c_2 u>= 0x10)
+0042d749                 j__free(var_30.d)
+0042d749             
+0042d721             break
+0042d721         
+0042d68b         i_1 -= 1
+0042d68c         var_8_1.b = 0xf
+0042d694         result = ERROR_INVALID_FUNCTION
+0042d694         
+0042d699         if (var_1c_2 u>= 0x10)
+0042d69e             j__free(var_30.d)
+0042d6b7 while (i_1 s> 0)
+0042d6b7 
+0042d75f if (var_10c u>= 0x10)
+0042d767     j__free(var_120)
+0042d767 
+0042d776 int32_t var_10c_1 = 0xf
+0042d780 int32_t var_110 = 0
+0042d78a var_120.b = 0
+0042d78a 
+0042d791 if (var_124 u>= 0x10)
+0042d799     j__free(var_138.d)
+0042d799 
+0042d7a8 int32_t var_124_1 = 0xf
+0042d7b2 int32_t var_128_1 = 0
+0042d7bc var_138 = 0
+0042d7bc 
+0042d7c3 if (var_94 u>= 0x10)
+0042d7cb     j__free(var_a8.d)
+0042d7cb 
+0042d7da int32_t var_94_1 = 0xf
+0042d7e4 int32_t var_98_1 = 0
+0042d7ee var_a8 = 0
+0042d7ee 
+0042d7f5 if (var_ac u>= 0x10)
+0042d7fd     j__free(var_c0.d)
+0042d7fd 
+0042d80c int32_t var_ac_1 = 0xf
+0042d816 int32_t var_b0_1 = 0
+0042d820 var_c0 = 0
+0042d820 
+0042d827 if (var_dc u>= 0x10)
+0042d82f     j__free(var_f0.d)
+0042d82f 
+0042d83e int32_t var_dc_1 = 0xf
+0042d848 int32_t var_e0_1 = 0
+0042d852 var_f0 = 0
+0042d852 
+0042d859 if (var_c4 u>= 0x10)
+0042d861     j__free(var_d8.d)
+0042d861 
+0042d86d int32_t var_c4_1 = 0xf
+0042d877 int32_t var_c8_1 = 0
+0042d881 var_d8 = 0
+0042d881 
+0042d888 if (var_64 u>= 0x10)
+0042d88d     j__free(var_78.d)
+0042d88d 
+0042d89c int32_t var_64_1 = 0xf
+0042d8a3 int32_t var_68_1 = 0
+0042d8aa var_78 = 0
+0042d8aa 
+0042d8ae if (var_f4 u>= 0x10)
+0042d8b6     j__free(var_108.d)
+0042d8b6 
+0042d8c2 int32_t var_f4_1 = 0xf
+0042d8cc int32_t var_f8_1 = 0
+0042d8d6 var_108 = 0
+0042d8d6 
+0042d8dd if (var_7c u>= 0x10)
+0042d8e5     j__free(var_90.d)
+0042d8e5 
+0042d8f1 int32_t var_7c_1 = 0xf
+0042d8f8 int32_t var_80_1 = 0
+0042d8ff var_90 = 0
+0042d8ff 
+0042d906 if (var_4c u>= 0x10)
+0042d90b     j__free(var_60.d)
+0042d90b 
+0042d918 fsbase->NtTib.ExceptionList = ExceptionList
+0042d928 sub_54a573(eax_2 ^ &__saved_ebp)
+0042d930 return result

@@ -1,0 +1,162 @@
+00412580 int32_t ebp
+00412580 int32_t var_4 = ebp
+00412581 int32_t* ebp_1 = &var_4
+00412583 int32_t var_8 = 0xffffffff
+00412585 int32_t (* var_c)() = sub_64b701
+00412590 TEB* fsbase
+00412590 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0041259c int32_t eax_2 = __security_cookie ^ &var_4
+0041259e int32_t var_14 = eax_2
+004125a1 int32_t ebx
+004125a1 int32_t var_5e8 = ebx
+004125a2 int32_t esi
+004125a2 int32_t var_5ec = esi
+004125a3 int32_t edi
+004125a3 int32_t var_5f0 = edi
+004125a8 fsbase->NtTib.ExceptionList = &ExceptionList
+004125c6 int128_t var_50
+004125c6 __builtin_wcscpy(&var_50, u"License Token(*.enc)|*.enc||")
+004125f2 int32_t* eax_3 = sub_4f2b78(eax_2)
+004125fd int32_t ecx
+004125fd ecx.b = eax_3 != 0
+004125fd 
+00412602 if (ecx == 0)
+00412609     sub_405ee0(0x80004005)
+00412609     noreturn
+00412609 
+00412615 void* esi_1 = (*(*eax_3 + 0xc))() + 0x10
+00412618 void* var_5d4 = esi_1
+0041261e int32_t var_8_2 = 1
+00412620 int32_t var_c_1 = 0
+00412622 ExceptionList = nullptr
+00412627 int32_t var_8_3 = 0
+0041262e int128_t* var_14_1 = &var_50
+0041262f int16_t var_18
+0041262f var_18.d = 0
+00412631 int64_t var_20_1
+00412631 var_20_1:4.d = u"License4Token.enc"
+0041263f var_20_1.d = u".enc"
+00412644 int128_t var_30_1
+00412644 var_30_1:0xc.d = 0
+00412646 int64_t var_27c
+00412646 __builtin_memset(&var_27c, 0, 0x18)
+0041265e sub_503e12()
+00412663 var_8_3.b = 1
+00412676 void* edi_2
+00412676 
+00412676 while (true)
+0041267e     if (sub_5047a5(var_14_1) == 1)
+0041268a         void* var_5e4
+0041268a         var_18.d = &var_5e4
+00412696         var_8_3.b = 2
+0041269d         void* ecx_2 = *sub_504926(var_18)
+0041269d         
+004126a4         if (ecx_2 - 0x10 != esi_1 - 0x10)
+004126b3             if (*(esi_1 - 4) s< 0 || *(ecx_2 - 0x10) != *(esi_1 - 0x10))
+004126e2                 var_18.d = *(ecx_2 - 0xc)
+004126e5                 var_20_1:4.d = ecx_2
+004126ec                 sub_405a80(&var_5d4)
+004126f1                 esi_1 = var_5d4
+004126b3             else
+004126b5                 var_18.d = ecx_2 - 0x10
+004126b6                 int32_t* eax_9 = sub_405980(var_18)
+004126c3                 int32_t ecx_3 = *(esi_1 - 4)
+004126c3                 *(esi_1 - 4) -= 1
+004126c3                 
+004126ca                 if (ecx_3 - 1 s<= 0)
+004126ce                     var_18.d = esi_1 - 0x10
+004126d1                     (*(**(esi_1 - 0x10) + 4))(var_18)
+004126d1                 
+004126d4                 esi_1 = &eax_9[4]
+004126da                 var_5d4 = esi_1
+004126da         
+004126f7         var_8_3.b = 1
+00412703         int32_t* edx_4 = var_5e4 - 0x10
+00412709         int32_t ecx_7 = edx_4[3]
+00412709         edx_4[3] -= 1
+00412709         
+00412710         if (ecx_7 - 1 s<= 0)
+00412714             var_18.d = edx_4
+00412717             (*(**edx_4 + 4))(var_18)
+00412717         
+0041271a         var_18.d = 0
+00412722         var_20_1:4.d = &var_27c
+00412723         var_20_1.d = esi_1
+00412724         int32_t eax_12
+00412724         int32_t ecx_10
+00412724         eax_12, ecx_10 = sub_505acf(var_20_1, var_18)
+0041272c         int32_t eax_13
+0041272c         
+0041272c         if (eax_12 == 1)
+0041272e             var_18.d = 0
+00412730             var_20_1:4.d = 0x23
+00412732             var_20_1.d = u"File Exist! OverWrite? "
+00412737             eax_13, ecx_10 = sub_4f1c19(var_20_1, var_18)
+00412737         
+0041273f         if (eax_12 != 1 || eax_13 == 6)
+004127a0             var_18.d = ecx_10
+004127a4             int32_t* edi_4 = esi_1 - 0x10
+004127a7             void** var_5dc_1 = &var_18
+004127af             int32_t* eax_17 = (*(**(esi_1 - 0x10) + 0x10))(var_18)
+004127af             
+004127bf             if (edi_4[3] s< 0 || eax_17 != *edi_4)
+004127ce                 var_18.d = 2
+004127d0                 var_20_1:4.d = edi_4[1]
+004127d3                 int32_t* eax_20 = (**eax_17)()
+004127d3                 
+004127df                 if (eax_20 == 0)
+00412850                     sub_405de0()
+00412850                     noreturn
+00412850                 
+004127e4                 eax_20[1] = edi_4[1]
+004127e7                 int32_t ecx_20 = edi_4[1]
+004127f1                 var_18.d = (ecx_20 << 1) + 2
+004127f5                 var_20_1:4.d = &edi_4[4]
+004127fd                 var_20_1.d = (ecx_20 << 1) + 2
+00412801                 var_30_1:0xc.d = &eax_20[4]
+00412802                 _memcpy_s()
+00412807                 edi_4 = eax_20
+004127bf             else
+004127b6                 edi_4[3]
+004127c6                 edi_4[3] += 1
+004127c6             
+00412819             edi_2 = arg1
+0041281f             *var_5dc_1 = &edi_4[4]
+00412823             int32_t eax_26
+00412823             eax_26, ebp_1 = Concurrency::_Receive_impl<uint32_t>::_Blocking_recipient::~_Blocking_recipient::~~_Blocking_recipient(
+00412823                 edi_2)
+00412828             var_18.d = 0
+00412828             
+0041282c             if (eax_26 != 0)
+0041283f                 var_20_1:4.d = 0x30
+00412841                 var_20_1.d = u"Failed to save License token!"
+00412846                 sub_4f1c19(var_20_1)
+0041282c             else
+0041282e                 var_20_1:4.d = 0x40
+00412830                 var_20_1.d = u"Save License token Success!"
+00412835                 sub_4f1c19(var_20_1)
+00412835             
+0041282c             break
+0041282c         
+00412744         if (eax_13 == 7)
+00412744             continue
+00412744     
+0041274a     edi_2 = arg1
+0041274a     break
+0041274a 
+00412752 sub_4fea07(edi_2)
+0041275d ebp_1[-1].b = 0
+00412761 sub_5040e0()
+00412769 ebp_1[-1] = 0xffffffff
+00412773 int32_t ebx_2 = *(esi_1 - 4)
+00412773 *(esi_1 - 4) -= 1
+00412773 
+0041277a if (ebx_2 - 1 s<= 0)
+0041277e     var_18.d = esi_1 - 0x10
+00412781     (*(**(esi_1 - 0x10) + 4))(var_18)
+00412781 
+00412787 fsbase->NtTib.ExceptionList = ebp_1[-3]
+00412792 ebp_1[-4]
+00412797 int32_t result = sub_60bdca()
+0041279e *ebp_1
+0041279f return result

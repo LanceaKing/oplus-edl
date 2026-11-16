@@ -1,0 +1,72 @@
+00433113 int32_t var_8 = 0xffffffff
+00433115 int32_t (* var_c)(void* arg1) = sub_6cea38
+00433120 TEB* fsbase
+00433120 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0043312e int32_t __saved_ebp
+0043312e int32_t var_30 = __security_cookie ^ &__saved_ebp
+00433132 fsbase->NtTib.ExceptionList = &ExceptionList
+00433138 int32_t var_8_1 = 3
+0043313f void* arg_10
+0043313f void* eax_3 = arg_10
+00433142 int32_t* var_34 = &data_7dfdb4
+00433147 void* var_38 = arg1
+0043314b int32_t* var_14 = &var_38
+00433150 int32_t* var_3c = eax_3 - 0x10
+00433159 var_38 = &sub_41a8a0(var_3c)[4]
+0043315b var_8_1.b = 4
+00433167 int32_t** var_18 = &var_3c
+0043316a void* arg_c
+0043316a int32_t* var_40 = arg_c - 0x10
+00433173 var_3c = &sub_41a8a0(var_40)[4]
+00433175 var_8_1.b = 5
+00433181 int32_t** var_1c = &var_40
+0043318d void* arg_8
+0043318d var_40 = &sub_41a8a0(arg_8 - 0x10)[4]
+0043318f var_8_1.b = 6
+004331a9 var_8_1.b = 3
+004331ad void* arg_4
+004331ad int32_t result = CMESAPI::Login_MES(&sub_41a8a0(arg_4 - 0x10)[4], var_40, var_3c, var_38, var_34)
+004331ad 
+004331ba if (result == 0)
+00433200     data_7df7c8 = 0
+004331ba else
+004331c5     sub_41a720(&data_7dfdb0, &arg_4)
+004331d3     sub_41a720(&data_7dfdb8, &arg_8)
+004331e1     sub_41a720(&data_7dfdbc, &arg_c)
+004331ef     sub_41a720(&data_7dfdc0, &arg_10)
+004331f4     data_7df7c8 = 1
+004331f4 
+0043320a var_8_1.b = 2
+00433216 int32_t* edx_1 = arg_4 - 0x10
+0043321c int32_t eax_19 = edx_1[3]
+0043321c edx_1[3] -= 1
+0043321c 
+00433223 if (eax_19 - 1 s<= 0)
+0043322a     (*(**edx_1 + 4))(edx_1)
+0043322a 
+0043322d var_8_1.b = 1
+00433236 int32_t* edx_3 = arg_8 - 0x10
+0043323c int32_t ecx_2 = edx_3[3]
+0043323c edx_3[3] -= 1
+0043323c 
+00433243 if (ecx_2 - 1 s<= 0)
+0043324a     (*(**edx_3 + 4))(edx_3)
+0043324a 
+0043324d var_8_1.b = 0
+00433256 int32_t* edx_5 = arg_c - 0x10
+0043325c int32_t ecx_5 = edx_5[3]
+0043325c edx_5[3] -= 1
+0043325c 
+00433263 if (ecx_5 - 1 s<= 0)
+0043326a     (*(**edx_5 + 4))(edx_5)
+0043326a 
+0043326d int32_t var_8_2 = 0xffffffff
+00433277 int32_t* edi_1 = arg_10 - 0x10
+0043327d int32_t esi = edi_1[3]
+0043327d edi_1[3] -= 1
+0043327d 
+00433284 if (esi - 1 s<= 0)
+0043328b     (*(**edi_1 + 4))(edi_1)
+0043328b 
+00433293 fsbase->NtTib.ExceptionList = ExceptionList
+004332a1 return result

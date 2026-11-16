@@ -1,0 +1,31 @@
+10072650 push    ebp
+10072651 mov     ebp, esp
+10072653 push    0xffffffff
+10072655 push    0x101ba1c0
+1007265a mov     eax, dword [fs:0x0]
+10072660 push    eax
+10072661 sub     esp, 0x44
+10072664 mov     eax, dword [0x10247210]
+10072669 xor     eax, ebp
+1007266b mov     dword [ebp-0x10], eax
+1007266e push    ebx
+1007266f push    esi
+10072670 push    edi
+10072671 push    eax
+10072672 lea     eax, [ebp-0xc]
+10072675 mov     dword [fs:0x0], eax
+1007267b mov     ebx, dword [ebp+0x18]
+1007267e mov     dword [ebp-0x2c], ebx
+10072681 push    0x1022598c
+10072686 mov     dword [ebp-0x4], 0x3
+1007268d jmp     0x106dff88
+106dff88 push    0xdf83c304
+106dff8d call    0x10a665c1
+106dff92 push    0x3238aa6
+106dff97 call    0x104cbd8d
+106dff9c mov     esi, dword [esi+0x8b3516]
+106dffa2 jmp     0x104c225b
+104c225b lea     esi, [esi+0x58531dda]
+104c2261 jmp     0x10b02aa0
+10b02aa0 xchg    dword [esp], esi
+10b02aa3 retn    

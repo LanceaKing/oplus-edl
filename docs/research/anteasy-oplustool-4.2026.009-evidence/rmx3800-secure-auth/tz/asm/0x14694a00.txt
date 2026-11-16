@@ -1,0 +1,21 @@
+14694a00 msr     tpidrro_el0, x0
+14694a04 msr     tpidr_el3, x4
+14694a08 mrs     x4, esr_el3
+14694a0c ubfx    x4, x4, #0x1a, #0x6
+14694a10 cmp     x4, #0x3f
+14694a14 b.ne    0x14694a34
+14694a34 mov     x0, #0x10
+14694a38 cmp     x4, #0x1c
+14694a3c b.ne    0x14694a44
+14694a18 str     lr, [sp, #-0x10]!
+14694a1c bl      0x146937d8
+14694a20 ldr     lr, [sp], #0x10
+14694a24 cbz     x0, 0x14694a48
+14694a44 b       0x146935b8
+14694a40 mov     x0, #0x58
+14694a48 mrs     x0, tpidrro_el0
+14694a4c mrs     x4, tpidr_el3
+14694a50 eret    
+14694a28 mov     x0, #0x10
+14694a2c mrs     x4, tpidr_el3
+14694a30 b       0x14694a44

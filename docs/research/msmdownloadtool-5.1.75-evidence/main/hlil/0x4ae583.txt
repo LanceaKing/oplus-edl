@@ -1,0 +1,86 @@
+004ae586 void** ebx = arg1
+004ae58b __return_addr = &arg2[-0xd]
+004ae592 int32_t esi
+004ae592 
+004ae592 if (esi(ebx) == 0x6f)
+004ae595     arg2 = sub_688543(ebx)
+004ae5a5     ebx = _malloc(arg2[-0xd])
+004ae5a5 
+004ae5ac esi(ebx, &arg2[-0xd])
+004ae5b0 int32_t result
+004ae5b0 
+004ae5b0 if (ebx == 0)
+004ae64f label_4ae64f:
+004ae64f     result = 1
+004ae5b0 else
+004ae5cd     while (true)
+004ae5cd         int16_t* esi_1 = (*(data_7bfb90 + 0xc))() + 0x10
+004ae5d0         arg2[-0xc] = esi_1
+004ae5d9         arg2[-1].b = 1
+004ae5d9         
+004ae5e6         if (ebx == 0xfffffe28 || (&ebx[0x76] & 0xffff0000) != 0)
+004ae60a             sub_413fd0(&arg2[-0xc], &ebx[0x76], &ebx[0x76])
+004ae60f             esi_1 = arg2[-0xc]
+004ae5e6         else
+004ae5e8             uint32_t eax_7 = zx.d((&ebx[0x76]).w)
+004ae5eb             uint32_t var_10_1 = eax_7
+004ae5ec             arg2[-0xe] = eax_7
+004ae5ef             int32_t eax_8 = sub_577816()
+004ae5ef             
+004ae5f6             if (eax_8 != 0)
+004ae5ff                 arg2, arg3 = sub_413e70(&arg2[-0xc], eax_8, arg2[-0xe])
+004ae60f                 esi_1 = arg2[-0xc]
+004ae60f         
+004ae618         arg2[-1].b = 2
+004ae61c         uint32_t eax_9 = sub_689666(esi_1, u"0.0.0.0")
+004ae61c         
+004ae626         if (eax_9 != 0)
+004ae69a             if (ebx[0x64] u> 0)
+004ae69c                 char* esi_4 = &arg2[-0xb]
+004ae69f                 int32_t i = 0
+004ae69f                 
+004ae6c2                 do
+004ae6a9                     uint32_t var_10_6 = zx.d(*(ebx + i + 0x194))
+004ae6b0                     sub_68abcf(esi_4, u"%2.2X")
+004ae6b5                     i += 1
+004ae6b9                     esi_4 = &esi_4[4]
+004ae6c2                 while (i u< ebx[0x64])
+004ae6c2                 
+004ae6c4                 esi_1 = arg2[-0xc]
+004ae6c7                 arg3 = arg2[-0x10]
+004ae6c7             
+004ae6cd             void* var_10_7 = &arg2[-0xb]
+004ae6da             sub_414410(arg2[-0xf] + 4, &data_76c874)
+004ae6e2             result = 0
+004ae6e7             arg2[-1].b = 0
+004ae6f0             int32_t ecx_12 = *(esi_1 - 4)
+004ae6f0             *(esi_1 - 4) -= 1
+004ae6f0             
+004ae6f7             if (ecx_12 - 1 s<= 0)
+004ae702                 (*(**(esi_1 - 0x10) + 4))(&esi_1[-8])
+004ae702             
+004ae6f7             break
+004ae6f7         
+004ae628         ebx = *ebx
+004ae62d         arg2[-1].b = eax_9.b
+004ae636         int32_t ecx_3 = *(esi_1 - 4)
+004ae636         *(esi_1 - 4) -= 1
+004ae636         
+004ae63d         if (ecx_3 - 1 s<= 0)
+004ae644             (*(**(esi_1 - 0x10) + 4))(&esi_1[-8])
+004ae644         
+004ae649         if (ebx == 0)
+004ae649             goto label_4ae64f
+004ae649 
+004ae657 arg2[-1] = 0xffffffff
+004ae664 int32_t ecx_6 = *(arg3 - 4)
+004ae664 *(arg3 - 4) -= 1
+004ae664 
+004ae66b if (ecx_6 - 1 s<= 0)
+004ae672     (*(**(arg3 - 0x10) + 4))(arg3 - 0x10)
+004ae672 
+004ae67a TEB* fsbase
+004ae67a fsbase->NtTib.ExceptionList = arg2[-3]
+004ae68a sub_687de2(arg2[-4] ^ arg2)
+004ae691 *arg2
+004ae692 return result

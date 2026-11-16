@@ -1,0 +1,125 @@
+{
+  "entry": "0x4d5070",
+  "reproduction_script_sha256": "64ea04dd53ad427c060dea1953ed8aeca7244d03d81574f7ecc77d35ae8e8413",
+  "observer_source_sha256": "c88a66553b88b04bc7d2ab711a11e9ff38f9158dd91de6e901702e05434d6df2",
+  "runtime_count": 10292,
+  "fixture": null,
+  "allocations": {},
+  "runtime_base": "0x21000000",
+  "clock_unix": 1700000000,
+  "heap_poison": null,
+  "clock_offsets": [],
+  "import_relocations": 809,
+  "runtime_hash": 556277003,
+  "image_sha256": "0717b3160c05e5bbb5991dabc134b2948c750c0011ea2628da56cdbc621d9649",
+  "slot_change": null,
+  "cpu_events": [
+    {
+      "pc": "0x10f4918",
+      "eax": "0x1",
+      "ecx": "0x300eff54"
+    }
+  ],
+  "peb_build": 19041,
+  "tsc_step": null,
+  "cpuid_clear": null,
+  "tsc_events": [
+    {
+      "phase": "after-cpuid",
+      "pc": "0x10f491a",
+      "eax": "0x306c4",
+      "edx": "0x78bfbfd",
+      "ecx": "0xced82203"
+    }
+  ],
+  "scope": "Synthetic state. Runtime fields are a recovered dependency model, not observed Windows initialization. Only explicitly logged API models run; other imports stop. No authorization or probe result is supplied.",
+  "error": "Invalid memory fetch (UC_ERR_FETCH_UNMAPPED)",
+  "timeout": false,
+  "seconds": 0.07328662497457117,
+  "final": {
+    "eax": "0xbb40e64e",
+    "ebx": "0x0",
+    "ecx": "0x0",
+    "edx": "0x0",
+    "esi": "0x300efd10",
+    "edi": "0x0",
+    "ebp": "0x300efcc0",
+    "esp": "0x300efcb8",
+    "eip": "0xbb40e64e",
+    "eflags": "0x86"
+  },
+  "counts": {
+    "dispatch": 2979,
+    "blocks": 21102,
+    "image_reads_dword": 3795,
+    "stack_writes": 6469,
+    "zero_reads": 1,
+    "object_reads": 0
+  },
+  "evidence_file": "main-0x4d5070-native-peb19041-rc0x2834-rh0x21281d0b-imports-clock1700000000-crt-heap-run1794703629943519000.json",
+  "raw_trace": {
+    "path": "traces/main-0x4d5070-native-peb19041-rc0x2834-rh0x21281d0b-imports-clock1700000000-crt-heap-run1794703629943519000.json",
+    "sha256": "7219dab58ae1ef2e8b7c828f95522c8ab20c1cc7296a797e1770b2618aa71e93"
+  },
+  "zeros": [
+    {
+      "pc": "0x69d189",
+      "address": "0x7e9008",
+      "size": 4,
+      "value": "0x0"
+    }
+  ],
+  "api_events": [
+    {
+      "pc": "0x33000f20",
+      "import": {
+        "module": "KERNEL32.dll",
+        "symbol": "GetSystemTimeAsFileTime",
+        "slot_va": "0xddb34c",
+        "key": 701826042,
+        "stored": "0x6dbc2de3",
+        "record_va": "0x132a30d",
+        "name_rva": "0x1884367"
+      },
+      "stack": [
+        "0x689b13",
+        "0x300effd0",
+        "0x31000000",
+        "0x31000000",
+        "0x300efffc",
+        "0xe27690",
+        "0x0",
+        "0x0",
+        "0x0"
+      ],
+      "implemented": true,
+      "filetime": 133444736000000000
+    },
+    {
+      "pc": "0x33001330",
+      "import": {
+        "module": "KERNEL32.dll",
+        "symbol": "GetLastError",
+        "slot_va": "0x6f1588",
+        "key": 0,
+        "stored": "0x3b786c",
+        "record_va": "0x132a619",
+        "name_rva": "0x18eddb9"
+      },
+      "stack": [
+        "0x69c52f",
+        "0x300effd8",
+        "0x300efd10",
+        "0x69c515",
+        "0x300efd10",
+        "0x68928c",
+        "0x300effd8",
+        "0x0",
+        "0x300eff80"
+      ],
+      "implemented": true,
+      "retval": "0x0",
+      "model": "single-thread CRT state"
+    }
+  ]
+}

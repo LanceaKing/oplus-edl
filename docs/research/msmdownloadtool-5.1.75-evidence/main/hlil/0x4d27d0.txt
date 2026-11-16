@@ -1,0 +1,60 @@
+004d27de int32_t __saved_ebp
+004d27de int32_t eax_1 = __security_cookie ^ &__saved_ebp
+004d27e8 int32_t* esi = arg1
+004d27ea void** var_124 = arg1
+004d27ed int32_t var_114 = 0
+004d27f7 int32_t result
+004d27f7 int32_t edx
+004d27f7 result, edx = sub_4d23e0(arg1, 1)
+004d27f7 
+004d27fe if (result == 0)
+004d280c     int32_t var_124_1 = 0x7d0
+004d2811     int32_t var_128_1 = 0x400
+004d281a     int32_t eax_3
+004d281a     int32_t ecx_1
+004d281a     int32_t* edi_1
+004d281a     eax_3, ecx_1, edi_1 = sub_4b8550(&var_114, edx, *esi, esi[2], &var_114)
+004d281a     
+004d2839     if (eax_3 == 0 && var_114 != eax_3 && *esi[2] == 0xb)
+004d283f         int32_t var_124_2 = ecx_1
+004d284b         int32_t var_110
+004d284b         int32_t eax_5
+004d284b         int32_t ecx_3
+004d284b         eax_5, ecx_3 = sub_4d26e0(esi, 1, &var_110)
+004d284b         
+004d2859         if (eax_5 s> 0 && eax_5 u< 0x100)
+004d2861             *edi_1 = var_110
+004d2861         
+004d2863         int32_t var_124_3 = ecx_3
+004d286f         int32_t eax_7
+004d286f         int32_t ecx_5
+004d286f         eax_7, ecx_5 = sub_4d26e0(esi, 2, &var_110)
+004d287d         int32_t var_10c
+004d287d         
+004d287d         if (eax_7 s> 0 && eax_7 u< 0x100)
+004d2885             edi_1[1] = var_10c
+004d2888         int32_t var_124_4 = ecx_5
+004d2894         int32_t eax_9
+004d2894         int32_t ecx_7
+004d2894         eax_9, ecx_7 = sub_4d26e0(esi, 3, &var_110)
+004d2894         
+004d28a2         if (eax_9 s> 0 && eax_9 u< 0x100)
+004d28b3             ecx_7 = _memcpy_s(&edi_1[2], 0x20, &var_110, 0x20)
+004d28b3         
+004d28bb         int32_t var_124_5 = ecx_7
+004d28c7         int32_t eax_11
+004d28c7         int32_t ecx_9
+004d28c7         eax_11, ecx_9 = sub_4d26e0(esi, 7, &var_110)
+004d28c7         
+004d28d5         if (eax_11 s> 0 && eax_11 u< 0x100)
+004d28dd             edi_1[0xa] = var_110
+004d28dd         
+004d28e0         int32_t var_124_6 = ecx_9
+004d28e3         sub_4d2370(esi)
+004d28f1         sub_687de2(eax_1 ^ &__saved_ebp)
+004d28f9         return 0
+004d28f9     
+004d28fc     result = 0x57
+004d28fc 
+004d2908 sub_687de2(eax_1 ^ &__saved_ebp)
+004d2910 return result

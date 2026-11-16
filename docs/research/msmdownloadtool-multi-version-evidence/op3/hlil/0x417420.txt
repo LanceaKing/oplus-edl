@@ -1,0 +1,277 @@
+00417429 __security_cookie
+00417436 int32_t var_1c = 0
+00417448 int32_t var_13 = 0
+0041744c int16_t var_f = 0
+00417451 char var_d = 0
+00417455 int32_t var_28 = 0
+00417465 char edx = 0
+00417468 char var_35 = 0
+00417468 
+0041746e if (*(arg1 + 0x19) != 0)
+0041746e     edx = 1
+0041746e 
+00417471 char var_14 = 0
+00417476 int32_t var_24 = 0xffffffff
+0041747e int32_t i = 2
+00417481 int32_t* var_30 = nullptr
+00417489 char var_20 = edx
+0041748d char var_2c = edx
+0041748d 
+00417870 do
+004174a6     LPARAM lParam
+004174a6     
+004174a6     if (*(arg1 + 0x1b) == 0)
+004174af         lParam = "Open Serial device"
+004174a6     else
+004174a8         lParam = 0x5a1c48
+004174a8     
+004174bd     SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam)
+004174bf     *(arg1 + 0x20)
+004174c2     sub_41ad20()
+004174cd     *(arg1 + 0x20)
+004174cd     
+004174dd     if (sub_41ac20(*(arg1 + 0x38) + 0x108) != 0)
+00417849         LPARAM lParam_5
+00417849         
+00417849         if (*(arg1 + 0x1b) == 0)
+00417852             lParam_5 = "Open Serial Device Failed"
+00417849         else
+0041784b             lParam_5 = 0x5a1c6c
+0041784b         
+00417860         SendMessageA(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, lParam_5)
+00417862         i -= 1
+00417862         
+00417868         if (i s<= 0)
+00417868             break
+004174dd     else
+004174e6         *(*(arg1 + 0x20) + 4) = 3
+004174f2         int32_t* edi = *(arg1 + 0x40)
+004174f8         int32_t ecx_4 = edi[1] - *edi
+004174fa         int32_t eax_9
+004174fa         int32_t edx_1
+004174fa         edx_1:eax_9 = muls.dp.d(0x8d3dcb09, ecx_4)
+004174fe         int32_t edx_3 = (edx_1 + ecx_4) s>> 6
+004174fe         
+00417508         if (edx_3 u>> 0x1f != neg.d(edx_3))
+0041750c             var_1c = *edi
+0041750c         
+00417515         Sleep(0xc8)
+0041752a         LPARAM lParam_6
+0041752a         int32_t wParam
+0041752a         
+0041752a         if (sub_417d10(var_1c) != 0)
+00417950             wParam = (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10
+00417950             
+00417957             if (*(arg1 + 0x1b) == 0)
+00417960                 lParam_6 = 0x5a1cc8
+00417957             else
+00417959                 lParam_6 = 0x5a1c9c
+00417959             
+0041796e         label_41796e:
+0041796e             SendMessageA(*(arg1 + 0x30), 0x178c, wParam, lParam_6)
+00417970         label_417970:
+00417970             void* eax_58 = *(arg1 + 0x20)
+00417973             *(eax_58 + 4) = 4
+0041797d             CancelIo(*(eax_58 + 8))
+00417983             *(arg1 + 0x20)
+00417986             sub_41ad20()
+00417986             break
+00417986         
+00417535         Sleep(0xc8)
+0041754b         LPARAM lParam_1
+0041754b         
+0041754b         if (*(arg1 + 0x1b) == 0)
+00417554             lParam_1 = "Try Firehose Communication Handshake"
+0041754b         else
+0041754d             lParam_1 = 0x5a1d0c
+0041754d         
+00417562         SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam_1)
+00417564         *(arg1 + 0x28)
+00417564         
+00417570         if (sub_41b600() != 0)
+0041792b             wParam = (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10
+0041792b             
+00417932             if (*(arg1 + 0x1b) == 0)
+0041793b                 lParam_6 = "Firehose Communication Handshake Failed"
+00417932             else
+00417934                 lParam_6 = 0x5a1d50
+00417934             
+00417932             goto label_41796e
+00417932         
+0041757b         Sleep(0x3e8)
+00417591         LPARAM lParam_2
+00417591         
+00417591         if (*(arg1 + 0x1b) == 0)
+0041759a             lParam_2 = "Setting Firehose Communication data transmission"
+00417591         else
+00417593             lParam_2 = 0x5a1d94
+00417593         
+004175a8         int32_t ecx_7 =
+004175a8             SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam_2)
+004175ae         int32_t var_50_4
+004175ae         int32_t var_4c_2
+004175ae         
+004175ae         if (*(arg1 + 0x1c) == 0)
+004175b8             var_4c_2 = 0
+004175ba             var_50_4 = 0
+004175ae         else
+004175b0             var_4c_2 = var_2c.d
+004175b4             var_50_4 = 1
+004175b4         
+004175bd         *(arg1 + 0x28)
+004175c0         int32_t eax_22 = std::num_put<uint16_t,class std::ostreambuf_iterator<uint16_t,struct std::char_traits<uint16_t> > >::_Iput(
+004175c0             ecx_7, var_50_4, var_4c_2)
+004175c0         
+004175c9         if (eax_22 != 0)
+004175c9             goto label_417970
+004175c9         
+004175d2         int32_t j_1
+004175d2         
+004175d2         if (*(arg1 + 0x1c) != eax_22.b)
+004175dd             Sleep(0xc8)
+004175f3             LPARAM lParam_3
+004175f3             
+004175f3             if (*(arg1 + 0x1b) == 0)
+004175fc                 lParam_3 = "Firehose GetUfsInfo"
+004175f3             else
+004175f5                 lParam_3 = 0x5a1dec
+004175f5             
+0041760a             SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam_3)
+0041760c             *(arg1 + 0x28)
+00417619             int32_t j_2 = sub_41c360(&var_14, &var_28)
+0041761e             j_1 = j_2
+0041761e             
+00417622             if (j_1 != 0)
+00417898                 char edx_10 = (*(arg1 + 0x2c)).b
+0041789b                 HWND ecx_26 = *(arg1 + 0x30)
+0041789b                 
+004178a0                 if (*(arg1 + 0x1b) == 0)
+004178bd                     sub_417200(j_2, edx_10, ecx_26, 0, "Firehose GetUfsInfo Failed", 1)
+004178a0                 else
+004178a9                     sub_417200(j_2, edx_10, ecx_26, 0, 0x5a1e10, 1)
+004178a9                 
+004178a0                 goto label_417970
+004178a0             
+00417628             int32_t* eax_26 = *(arg1 + 0x44)
+0041762b             int32_t j = j_1
+00417630             int32_t ecx_11 = eax_26[1] - *eax_26
+00417637             int32_t eax_27
+00417637             int32_t edx_4
+00417637             edx_4:eax_27 = muls.dp.d(0x8d3dcb09, ecx_11)
+0041763b             int32_t edx_6 = (edx_4 + ecx_11) s>> 6
+0041763b             
+00417649             if (edx_6 u>> 0x1f != neg.d(edx_6))
+00417680                 do
+00417655                     int32_t* eax_33 = **(arg1 + 0x44) + j_1
+0041765e                     var_30 = eax_33
+0041765e                     
+00417662                     if (*(arg1 + 0x1e4) != 0)
+00417891                         return sub_53b554()
+00417891                     
+00417676                     if (sub_404c40(eax_33, &var_14) == 0)
+00417684                         var_35 = 1
+00417684                         break
+00417684                     
+00417678                     j += 1
+00417679                     j_1 += 0x74
+00417680                 while (j u< ecx_11 s/ 0x74)
+00417680         
+0041769a         int32_t eax_35 = __vcasan::OnAsanReport(&var_24, var_28)
+0041769a         
+004176a3         if (eax_35 != 0)
+004176a3             goto label_417970
+004176a3         
+004176c9         if (*(arg1 + 0x1c) == eax_35.b || *(arg1 + 0x19) == eax_35.b || var_35 == eax_35.b
+004176c9             || var_20 == eax_35.b)
+0041776c         label_41776c:
+0041776c             
+00417770             if (sub_4181b0(arg1, var_24) != 0)
+00417770                 goto label_417970
+00417770             
+00417786             LPARAM lParam_4
+00417786             
+00417786             if (*(arg1 + 0x1b) == 0)
+0041778f                 lParam_4 = "Write patch to DISK"
+00417786             else
+00417788                 lParam_4 = 0x5a1e90
+00417788             
+0041779d             SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam_4)
+004177a1             int32_t j_3 = sub_41aa50()
+004177a6             j_1 = j_3
+004177a6             
+004177aa             if (j_1 != 0)
+004178f1                 char edx_12 = (*(arg1 + 0x2c)).b
+004178f4                 HWND ecx_29 = *(arg1 + 0x30)
+004178f4                 
+004178f9                 if (*(arg1 + 0x1b) == 0)
+00417913                     sub_417200(j_3, edx_12, ecx_29, 0, "Write patch to DISK Failed", 1)
+004178f9                 else
+00417902                     sub_417200(j_3, edx_12, ecx_29, 0, 0x5a1eb8, 1)
+00417902                 
+004178f9                 goto label_417970
+004178f9             
+004177b3             if (*(arg1 + 0x19) == j_3.b)
+004177b5                 *(arg1 + 0x28)
+004177c2                 j_1 = sub_41ca00(0x5a1ee8)
+004177c2             
+004177c4             void* eax_44 = *(arg1 + 0x20)
+004177c7             HANDLE hFile = *(eax_44 + 8)
+004177ca             *(eax_44 + 4) = 4
+004177d1             CancelIo(hFile)
+004177d7             *(arg1 + 0x20)
+004177da             int32_t eax_45 = sub_41ad20()
+004177da             
+004177e1             if (j_1 == 0)
+004177e1                 break
+004177e1             
+004177ec             if (i == 1)
+004177ec                 break
+004177ec             
+004177f9             if (*(arg1 + 0x1e4) != 0)
+004177f9                 break
+004177f9             
+0041780b             LPARAM var_50_10
+0041780b             
+0041780b             if (*(arg1 + 0x1b) == 0)
+00417814                 var_50_10 = "Serial Download Failed, Ready to try again"
+0041780b             else
+0041780d                 var_50_10 = 0x5a1eec
+0041780d             
+0041781b             sub_417200(eax_45, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, var_50_10, 1)
+00417828             Sleep(0x3e8)
+0041782e             i -= 1
+004176c9         else
+004176dc             sub_417200(eax_35, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), eax_35.w, "Provisioning UFS", 
+004176dc                 eax_35)
+004176e9             Sleep(0xc8)
+004176f3             *(arg1 + 0x28)
+004176f6             int32_t eax_36 = sub_41bf60(var_30)
+004176f6             
+004176ff             if (eax_36 != 0)
+004178d9                 sub_417200(eax_36, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+004178d9                     "Provisioning UFS failed", 1)
+004178e3                 sub_417360(arg1)
+004178e8                 break
+004178e8             
+00417705             *(arg1 + 0x28)
+0041770d             int32_t eax_37 = sub_41ca00("reset_to_edl")
+00417720             LPARAM var_50_8
+00417720             
+00417720             if (*(arg1 + 0x1b) == 0)
+00417729                 var_50_8 = "reset_to_edl"
+00417720             else
+00417722                 var_50_8 = 0x5a1e7c
+00417722             
+00417730             sub_417200(eax_37, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, var_50_8, 0)
+0041773a             sub_417360(arg1)
+0041773a             
+00417741             if (eax_37 != 0)
+00417741                 goto label_41776c
+00417741             
+00417748             Sleep(0x1388)
+0041774e             i -= 1
+00417754             var_20 = 0
+00417758             var_2c = 0
+00417870 while (i != 0)
+00417870 
+0041799e return sub_53b554()

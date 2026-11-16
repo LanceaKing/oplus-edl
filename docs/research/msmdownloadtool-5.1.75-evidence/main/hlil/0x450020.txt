@@ -1,0 +1,92 @@
+00450020 int32_t ebp
+00450020 int32_t var_4 = ebp
+00450021 int32_t* ebp_1 = &var_4
+00450023 int32_t var_8 = 0xffffffff
+00450025 int32_t (* var_c)(void* arg1) = sub_6cd398
+00450030 TEB* fsbase
+00450030 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00450031 void* var_14 = arg1
+00450032 int32_t ebx
+00450032 int32_t var_18 = ebx
+00450033 int32_t esi
+00450033 int32_t var_1c = esi
+00450034 int32_t edi
+00450034 int32_t var_20 = edi
+0045003a int32_t eax_2 = __security_cookie ^ &var_4
+00450040 fsbase->NtTib.ExceptionList = &ExceptionList
+00450052 int32_t var_28_1 = 0
+00450054 int32_t var_2c = 0
+00450056 int32_t var_30 = 0x147
+0045005b int32_t var_34 = sub_5735d5(arg1, 0x43a)[8]
+0045005b int32_t* esp = &var_34
+0045005e int32_t eax_4 = 0x3b8730(var_34, var_30, var_2c, var_28_1, eax_2)
+00450067 void* result
+00450067 
+00450067 if (eax_4 == 0)
+00450077 label_450077:
+00450077     int32_t var_38_1 = 0
+00450079     int32_t var_3c = 0x43b
+00450080     void** eax_7
+00450080     int32_t edx_1
+00450080     eax_7, edx_1 = sub_5735d5(arg1, var_3c)
+00450087     sub_573589(eax_7, edx_1, eax_7, var_38_1)
+0045008c     var_3c = 0
+00450095     void** eax_8
+00450095     int32_t edx_2
+00450095     eax_8, edx_2 = sub_5735d5(arg1, 0x43c)
+0045009c     sub_573589(eax_8, edx_2, eax_8, var_3c)
+004500ad     sub_573841(arg1, 0x42e, u"Next")
+004500c2     sub_573950(sub_5735d5(arg1, 0x43e), arg1, 0)
+004500d7     sub_573950(sub_5735d5(arg1, 0x43f), arg1, 0)
+004500ec     ebp_1 = sub_573950(sub_5735d5(arg1, 0x440), arg1, 0)
+004500fd     sub_573841(arg1, 0x43b, &data_76a09c)
+0045010e     result = sub_573841(arg1, 0x43c, &data_76a09c)
+0045010e     esp = &var_3c
+00450067 else
+0045006a     if (eax_4 == 1)
+00450148         void* esi_2 = (*(data_7bfb90 + 0xc))() + 0x10
+0045014b         void* var_14_1 = esi_2
+0045014e         int32_t arg_1c = 1
+00450150         int32_t arg_18 = 0x43b
+00450157         int32_t var_8_1 = 0
+0045015e         void** eax_14
+0045015e         int32_t edx_3
+0045015e         eax_14, edx_3 = sub_5735d5(arg1)
+00450165         sub_573589(eax_14, edx_3, eax_14)
+0045016a         arg_18 = 1
+0045016c         wchar16 const* const arg_14 = 0x43c
+00450173         void** eax_15
+00450173         int32_t edx_4
+00450173         eax_15, edx_4 = sub_5735d5(arg1)
+0045017a         void* ebp_3 = sub_573589(eax_15, edx_4, eax_15)
+0045017a         
+00450193         if (((*(esi_2 - 8) - 0x100) | (1 - *(esi_2 - 4))) s< 0)
+0045019d             sub_414290(ebp_3 - 0x10, 0x100)
+004501a2             esi_2 = *(ebp_3 - 0x10)
+004501a2         
+004501ac         if (*(esi_2 - 8) s< 0x100)
+004501b3             sub_414340(0x80070057)
+004501b3             noreturn
+004501b3         
+004501b8         arg_14 = u"c:\temp\MsmDownloadTool\customer_settings.ini"
+004501bd         int32_t arg_10 = 0x100
+004501c2         void* arg_c = esi_2
+004501c3         void* const arg_8 = &data_76a09c
+004501c8         wchar16 const* const arg_4 = u"USER"
+004501cf         *(esi_2 - 0xc) = 0x100
+004501d6         __return_addr = u"Customer_Login"
+004501db         *(esi_2 + 0x200) = 0
+004501e7         return j_sub_100a63b(0)
+004501e7     
+00450070     result = eax_4 - 2
+00450070     
+00450071     if (eax_4 == 2)
+00450071         goto label_450077
+00450071 
+00450116 fsbase->NtTib.ExceptionList = ebp_1[-3]
+0045011d *esp
+0045011d esp[1]
+0045011e esp[2]
+0045011f esp[3]
+00450123 *ebp_1
+00450124 return result

@@ -1,0 +1,70 @@
+149a19c8 int32_t var_14 = 0
+149a19cc int64_t x4
+149a19cc int64_t x5
+149a19cc int64_t x6
+149a19cc int64_t x7
+149a19cc int128_t v0
+149a19cc int128_t v1
+149a19cc int128_t v2
+149a19cc int128_t v3
+149a19cc int128_t v4
+149a19cc int128_t v5
+149a19cc int128_t v6
+149a19cc int128_t v7
+149a19cc x4, x5, x6, x7, v0, v1, v2, v3, v4, v5, v6, v7 =
+149a19cc     sub_149aaf64(&var_14, arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8)
+149a19d0 uint64_t x3 = zx.q(var_14)
+149a19dc int32_t x0_1
+149a19dc int128_t v0_1
+149a19dc int128_t v1_1
+149a19dc int128_t v2_1
+149a19dc int128_t v3_1
+149a19dc int128_t v4_1
+149a19dc int128_t v5_1
+149a19dc int128_t v6_1
+149a19dc int128_t v7_1
+149a19dc 
+149a19dc if (x3.d + 1 u> 1)
+149a1a10     sub_1499aeac(0x8025b281, 9, "%x", v0, v1, v2, v3, v4, v5, v6, v7)
+149a1a14     x0_1, v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, v6_1, v7_1 = sub_149a0d3c()
+149a1a14     
+149a1a18     if (x0_1 == 0)
+149a1a1c         int128_t v0_2
+149a1a1c         int128_t v1_2
+149a1a1c         int128_t v2_2
+149a1a1c         int128_t v3_2
+149a1a1c         int128_t v4_2
+149a1a1c         int128_t v5_2
+149a1a1c         int128_t v6_2
+149a1a1c         int128_t v7_2
+149a1a1c         v0_2, v1_2, v2_2, v3_2, v4_2, v5_2, v6_2, v7_2 =
+149a1a1c             sub_149a0f44(v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, v6_1, v7_1)
+149a1a20         int32_t x0_2
+149a1a20         int128_t v0_3
+149a1a20         int128_t v1_3
+149a1a20         int128_t v2_3
+149a1a20         int128_t v3_3
+149a1a20         int128_t v4_3
+149a1a20         int128_t v5_3
+149a1a20         int128_t v6_3
+149a1a20         int128_t v7_3
+149a1a20         x0_2, v0_3, v1_3, v2_3, v3_3, v4_3, v5_3, v6_3, v7_3 =
+149a1a20             sub_149a10a0(v0_2, v1_2, v2_2, v3_2, v4_2, v5_2, v6_2, v7_2)
+149a1a20         
+149a1a28         if (x0_2 == 0xffffffff)
+149a1a64             v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, v6_1, v7_1 =
+149a1a64                 sub_149a1c4c(v0_3, v1_3, v2_3, v3_3, v4_3, v5_3, v6_3, v7_3)
+149a19f4             x0_1 = -1
+149a1a28         else
+149a1a2c             v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, v6_1, v7_1 =
+149a1a2c                 sub_149a1150(v0_3, v1_3, v2_3, v3_3, v4_3, v5_3, v6_3, v7_3)
+149a1a30             x0_1 = 0
+149a19dc else
+149a19f0     uint64_t x24
+149a19f0     v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, v6_1, v7_1 = sub_149a5c34(2, "Chip serial num: %u (0x%x)", 
+149a19f0         zx.q(x3.d), x3, x4, x5, x6, x7, v0, v1, v2, v3, v4, v5, v6, v7, x24)
+149a19f4     x0_1 = -1
+149a19f4 
+149a1a3c int32_t x0_3 = x0_1 == 0 ? 1 : 0
+149a1a44 data_8025b280 = x0_3.b
+149a1a54 return sub_149a84f0(x0_3, 0, v0_1, v1_1, v2_1, v3_1, v4_1, v5_1, v6_1, v7_1)

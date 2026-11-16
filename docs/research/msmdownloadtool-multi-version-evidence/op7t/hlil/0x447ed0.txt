@@ -1,0 +1,265 @@
+00447ed0 int32_t ebp
+00447ed0 int32_t var_4 = ebp
+00447ed6 int32_t ebx
+00447ed6 int32_t var_8 = ebx
+00447ed7 int32_t esi
+00447ed7 int32_t var_c = esi
+00447ed8 int32_t esi_1 = 1
+00447edd int32_t edi
+00447edd int32_t var_10 = edi
+00447edd int32_t* esp_1 = &var_10
+00447ee3 void* var_3c
+00447ee3 int32_t var_30
+00447ee3 int32_t var_1c
+00447ee3 int32_t ebx_4
+00447ee3 void** esp_2
+00447ee3 
+00447ee3 if (arg2 == 0)
+00448356     void* const var_14_14
+00448356     
+00448356     if (arg1[8].b == 0)
+0044835f         var_14_14 = u"Param preload"
+00448356     else
+00448358         var_14_14 = u"Param"
+00448358     
+00448365     sub_60f73f(&arg1[0xae], var_14_14)
+0044837c     uint32_t eax_59 = zx.d((arg1[0xc].w).b) << 0x10
+00448381     var_1c = 0x178c
+00448389     0x3095d0(arg1[0xd], var_1c, eax_59, &arg1[0xae])
+00448398     int32_t eax_63 = zx.d((arg1[0xc].w).b) << 0x10 | 1
+0044839c     int32_t var_2c_3 = 0x178c
+004483a1     var_30 = arg1[0xd]
+004483a4     int32_t ecx_25 = 0x3095d0(var_30, var_2c_3, eax_63, &arg1[0xae])
+004483a6     int32_t var_34_24 = 0
+004483a8     int32_t var_38_17 = 0x100000
+004483b3     var_3c = &arg1[0x12e]
+004483b4     int32_t var_40_8 = 0
+004483b6     int32_t var_44_8 = 0
+004483bb     esp_1 = &var_30
+004483c0     esi_1 = sub_446460(arg1, ecx_25, 0, 0, var_3c, var_38_17)
+004483c0     
+004483c4     if (esi_1 != 0)
+004483d5         ebx_4 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+004483d7         esp_1 = &var_30
+004483d7         
+004483dc         if (ebx_4 != 0)
+004483e1             int32_t var_34_26 = esi_1
+004483e3             int32_t var_38_19 = arg1[0xc] + 1
+004483e4             var_3c = "[%d] ReadParamRegion Failed. (%d)\n"
+004483e4             esp_2 = &var_3c
+004483e9         label_4483e9:
+004483e9             *(esp_2 - 4) = ebx_4
+004483ea             _fprintf()
+004483ef             *(esp_2 - 8) = ebx_4
+004483f0             _fclose()
+004483f5             esp_1 = &esp_2[3]
+00447ee3 else if (arg2 == 1)
+00448200     if (arg1[7] != 2)
+00448209         if (sub_448810() == 0)
+00448215             int32_t eax_44 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00448215             
+00448221             if (eax_44 != 0)
+00448226                 int32_t ecx_16 = arg1[0xc] + 1
+00448228                 void* const var_18_4 = "[%d] Get Param PCBA failed\n"
+0044822d                 var_1c = eax_44
+0044822e                 _fprintf(var_1c, var_18_4, ecx_16)
+00448237                 _fclose(eax_44)
+00448237         
+00448248         if (sub_4486e0() != 0)
+00448254             int32_t eax_46 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00448254             
+00448260             if (eax_46 != 0)
+00448265                 int32_t ecx_19 = arg1[0xc] + 1
+00448267                 void* const var_18_6 = "[%d] Get Param mobid failed\n"
+0044826c                 var_1c = eax_46
+0044826d                 _fprintf(var_1c, var_18_6, ecx_19)
+00448276                 _fclose(eax_46)
+00448276     
+00448288     void* const var_14_9
+00448288     
+00448288     if (arg1[8].b == 0)
+00448291         var_14_9 = u"Recording download time"
+00448288     else
+0044828a         var_14_9 = "ck(W"
+0044828a     
+00448297     sub_60f73f(&arg1[0xae], var_14_9)
+004482ae     uint32_t eax_49 = zx.d((arg1[0xc].w).b) << 0x10
+004482b3     var_1c = 0x178c
+004482bb     0x3095d0(arg1[0xd], var_1c, eax_49, &arg1[0xae])
+004482ca     int32_t eax_53 = zx.d((arg1[0xc].w).b) << 0x10 | 1
+004482ce     int32_t var_2c_2 = 0x178c
+004482d3     var_30 = arg1[0xd]
+004482d6     0x3095d0(var_30, var_2c_2, eax_53, &arg1[0xae])
+004482da     sub_448a70()
+004482e8     int32_t eax_54 = 0xf0
+004482e8     
+004482ed     if (arg1[7] == 2)
+004482ed         eax_54 = 0x30
+004482ed     
+004482f8     if (arg1 != 0xfffffb48)
+004482fa         *(eax_54 + arg1 + 0x34b8) = 0x53
+004482fa     
+00448302     int32_t var_14_11 = 0
+00448304     int32_t var_18_9 = 0x100000
+00448309     var_1c = &arg1[0x12e]
+00448311     esp_1 = &var_10
+00448316     esi_1 = sub_446690(arg1, &arg1[0x12e], 0, 0, var_1c, var_18_9)
+00448316     
+0044831a     if (esi_1 != 0)
+0044832f         ebx_4 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00448331         esp_1 = &var_10
+00448331         
+00448336         if (ebx_4 != 0)
+0044833f             int32_t var_14_13 = esi_1
+00448341             int32_t var_18_11 = arg1[0xc] + 1
+00448342             var_1c = "[%d] WriteParamRegion Failed. (%d)\n"
+00448342             esp_2 = &var_1c
+00448347             goto label_4483e9
+00447eea else if (arg2 == 2)
+00447f00     void* const var_14_1
+00447f00     
+00447f00     if (arg1[8].b == (arg2 - 1).b - 1)
+00447f09         var_14_1 = u"Param post processing"
+00447f00     else
+00447f02         var_14_1 = u"Param"
+00447f02     
+00447f0f     sub_60f73f(&arg1[0xae], var_14_1)
+00447f26     uint32_t eax_6 = zx.d((arg1[0xc].w).b) << 0x10
+00447f2b     var_1c = 0x178c
+00447f33     0x3095d0(arg1[0xd], var_1c, eax_6, &arg1[0xae])
+00447f42     int32_t eax_10 = zx.d((arg1[0xc].w).b) << 0x10 | 1
+00447f46     int32_t var_2c_1 = 0x178c
+00447f4b     var_30 = arg1[0xd]
+00447f4e     int32_t ecx = 0x3095d0(var_30, var_2c_1, eax_10, &arg1[0xae])
+00447f50     int32_t var_34_1 = 0
+00447f52     int32_t var_38_1 = 0x100000
+00447f5d     var_3c = &arg1[0x12e]
+00447f5e     int32_t var_40_1 = 0
+00447f60     int32_t var_44_1 = 0
+00447f65     int32_t eax_11 = sub_446460(arg1, ecx, 0, 0, var_3c, var_38_1)
+00447f65     
+00447f6f     if (eax_11 != 0)
+00447f7b         int32_t eax_12 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00447f7b         
+00447f8a         if (eax_12 != 0)
+00447f90             int32_t eax_14 = arg1[0xc] + 1
+00447f92             var_3c = "[%d] ReadParamRegion Failed. (hr)\n"
+00447f98             _fprintf(eax_12, var_3c, eax_14, eax_11)
+00447f9e             _fclose(eax_12)
+00447f9e         
+00447fac         return eax_11
+00447fac     
+00447fb3     if (arg1[7] == 2)
+00447fb9         void* const var_34_4
+00447fb9         
+00447fb9         if (arg1[8].b == 0)
+00447fc2             var_34_4 = u"Recording download time"
+00447fb9         else
+00447fbb             var_34_4 = "ck(W"
+00447fbb         
+00447fc8         sub_60f73f(&arg1[0xae], var_34_4)
+00447fd9         uint32_t eax_18 = zx.d((arg1[0xc].w).b) << 0x10
+00447fde         var_3c = 0x178c
+00447fe6         0x3095d0(arg1[0xd], var_3c, eax_18, &arg1[0xae])
+00447ffd         int32_t var_4c_1 = 0x178c
+00448005         0x3095d0(arg1[0xd], 0x178c, zx.d((arg1[0xc].w).b) << 0x10 | 1, &arg1[0xae])
+0044800d         sub_448a70()
+0044800d     
+00448016     if (arg1[0x10] == 1)
+0044801d         sub_448940(arg1[0xf])
+0044801d     
+00448026     if (arg1[7] != 2)
+0044803f         int32_t eax_23
+0044803f         int32_t ecx_5
+0044803f         eax_23, ecx_5 = sub_442dd0(arg1, &arg1[0xae], "userdata")
+0044803f         
+0044804a         if (eax_23 != 0 && arg1 != 0xfffffb48)
+0044804c             arg1[0xd94] = 0
+00448056             arg1[0xd95] = 0
+00448056         
+00448064         if (*(arg1 + 0x59) == 1)
+00448069             sub_4488d0(ecx_5)
+00448026     else if (arg1 != 0xfffffb48)
+0044802c         arg1[0xd96] = 1
+0044802c     
+0044807c     int32_t esi_6
+0044807c     
+0044807c     if (arg1[0x13].b == 0 || *(arg1 + 0x4e) != 1)
+0044810a         int32_t eax_32 = sub_4488f0(0)
+0044810a         
+00448114         if (eax_32 != 0)
+00448120             int32_t eax_33 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00448120             
+0044812c             if (eax_33 != 0)
+00448134                 int32_t eax_35 = arg1[0xc] + 1
+00448136                 var_3c = "[%d] Set net Failed.(%d)\n"
+0044813c                 _fprintf(eax_33, var_3c, eax_35, eax_32)
+00448142                 _fclose(eax_33)
+00448142         
+0044814e         int32_t eax_36 = sub_448a20(0)
+0044814e         
+00448158         if (eax_36 != 0)
+00448169             esi_6 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00448169             
+00448170             if (esi_6 != 0)
+00448172                 int32_t var_34_20 = eax_36
+00448179                 int32_t var_38_13 = arg1[0xc] + 1
+0044817a                 var_3c = "[%d] Set BT Failed (%d).\n"
+00448180                 _fprintf(esi_6)
+00448186                 _fclose(esi_6)
+0044807c     else
+00448086         int32_t eax_24 = sub_4488f0(3)
+00448086         
+00448090         if (eax_24 != 0)
+0044809c             int32_t eax_25 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+0044809c             
+004480a8             if (eax_25 != 0)
+004480b0                 int32_t eax_27 = arg1[0xc] + 1
+004480b2                 var_3c = "[%d] Set net Failed.(hr)\n"
+004480b8                 _fprintf(eax_25, var_3c, eax_27, eax_24)
+004480be                 _fclose(eax_25)
+004480be         
+004480cb         int32_t eax_28 = sub_448a20(arg1[0x15])
+004480cb         
+004480d5         if (eax_28 != 0)
+004480ea             esi_6 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+004480ea             
+004480f1             if (esi_6 != 0)
+004480f7                 int32_t var_34_14 = eax_28
+004480fe                 int32_t var_38_9 = arg1[0xc] + 1
+004480ff                 var_3c = "[%d] Set BT Failed.(%d)\n"
+00448180                 _fprintf(esi_6)
+00448186                 _fclose(esi_6)
+00448190     sub_448460()
+00448199     int32_t eax_40 = 0xf0
+00448199     
+004481a3     if (arg1[7] == 2)
+004481a3         eax_40 = 0x30
+004481a3     
+004481a8     if (arg1 != 0xfffffb48)
+004481aa         *(eax_40 + arg1 + 0x34b8) = 0x46
+004481aa     
+004481b2     int32_t var_34_21 = 0
+004481b4     int32_t var_38_14 = 0x100000
+004481b9     var_3c = &arg1[0x12e]
+004481ba     int32_t var_40_7 = 0
+004481bc     int32_t var_44_7 = 0
+004481be     int32_t var_48_3 = 0x30
+004481c1     esp_1 = &var_30
+004481c6     esi_1 = sub_446690(arg1, 0x30, 0, 0, var_3c, var_38_14)
+004481c6     
+004481ca     if (esi_1 != 0)
+004481df         ebx_4 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+004481e1         esp_1 = &var_30
+004481e1         
+004481e6         if (ebx_4 != 0)
+004481ef             int32_t var_34_23 = esi_1
+004481f1             int32_t var_38_16 = arg1[0xc] + 1
+004481f2             var_3c = "[%d] WriteParamRegion Failed. (hr)\n"
+004481f2             esp_2 = &var_3c
+004481f7             goto label_4483e9
+004483f8 *esp_1
+004483f8 esp_1[1]
+004483fb esp_1[2]
+004483fc esp_1[3]
+004483fe return esi_1

@@ -39,6 +39,70 @@ fn xml(root: &Path, name: &str, body: &str) -> std::path::PathBuf {
     fs::write(&path, format!("<data>{body}</data>")).unwrap();
     path
 }
+
+#[test]
+fn file_sized_raw_programs_round_only_the_final_sector_and_keep_xml_cap() {
+    use oplus_edl::cli::RawSize;
+    let dir = tempfile::tempdir().unwrap();
+    let path = xml(dir.path(), "rawprogram.xml", &program("raw.bin", ""));
+    for (size, expected) in [
+        (1, 512),
+        (512, 512),
+        (513, 1024),
+        (1536, 1536),
+        (2048, 1536),
+    ] {
+        fs::write(dir.path().join("raw.bin"), vec![0xa5; size]).unwrap();
+        let parsed = program_xml::parse_with_raw_size(
+            std::slice::from_ref(&path),
+            &[],
+            512,
+            false,
+            RawSize::File,
+        )
+        .unwrap();
+        match &parsed[0].operation {
+            Operation::Program {
+                transfer_bytes,
+                span_bytes,
+                source_bytes,
+                ..
+            } => {
+                assert_eq!(*transfer_bytes, expected);
+                assert_eq!(*span_bytes, expected);
+                assert_eq!(*source_bytes, size as u64);
+            }
+            _ => panic!("expected program"),
+        }
+        if size <= 1024 {
+            assert!(program_xml::parse(std::slice::from_ref(&path), &[], 512, false).is_err());
+        }
+    }
+    fs::write(dir.path().join("raw.bin"), []).unwrap();
+    assert!(program_xml::parse_with_raw_size(&[path], &[], 512, false, RawSize::File).is_err());
+}
+
+#[test]
+fn file_sized_raw_uses_bytes_after_source_offset() {
+    use oplus_edl::cli::RawSize;
+    let dir = tempfile::tempdir().unwrap();
+    fs::write(dir.path().join("raw.bin"), vec![0xa5; 513]).unwrap();
+    let path = xml(
+        dir.path(),
+        "rawprogram.xml",
+        &program("raw.bin", "file_sector_offset=\"1\""),
+    );
+    let parsed = program_xml::parse_with_raw_size(&[path], &[], 512, false, RawSize::File).unwrap();
+    assert!(matches!(
+        parsed[0].operation,
+        Operation::Program {
+            source_offset: 512,
+            transfer_bytes: 512,
+            span_bytes: 512,
+            ..
+        }
+    ));
+}
 #[test]
 fn sparse_ranges_retain_gaps_and_fill_pattern_without_expansion() {
     let image = sparse::parse(&mut Cursor::new(sparse_bytes()), 512).unwrap();

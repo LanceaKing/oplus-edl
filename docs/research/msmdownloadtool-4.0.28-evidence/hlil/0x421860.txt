@@ -1,0 +1,150 @@
+0042186e void var_2c
+0042186e int32_t eax_1 = __security_cookie ^ &var_2c
+00421877 enum WIN32_ERROR result_1 = ERROR_INVALID_FUNCTION
+00421889 int32_t ebx = 2
+0042188e void* var_1c = nullptr
+00421896 char var_14 = 0
+0042189b int32_t var_13 = 0
+0042189f int16_t var_f = 0
+004218a4 char var_d = 0
+004218a8 enum WIN32_ERROR var_24 = NO_ERROR
+004218ac int32_t var_20 = 0xffffffff
+004218b8 enum WIN32_ERROR result
+004218b8 
+004218b8 while (true)
+004218b8     ebx -= 1
+004218c9     LPARAM lParam
+004218c9     
+004218c9     if (*(arg1 + 0x1b) == 0)
+004218d2         lParam = u"Open Serial device"
+004218c9     else
+004218cb         lParam = &data_5bb028
+004218cb     
+004218e0     SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam)
+004218e5     sub_4264e0(*(arg1 + 0x20))
+004218e5     
+00421900     if (sub_4263e0(*(arg1 + 0x20), *(arg1 + 0x5c) + 0x414) != 0)
+00421af0         LPARAM lParam_3
+00421af0         
+00421af0         if (*(arg1 + 0x1b) == 0)
+00421af9             lParam_3 = u"Open Serial Device Failed"
+00421af0         else
+00421af2             lParam_3 = &data_5bb060
+00421af2         
+00421b07         SendMessageW(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, lParam_3)
+00421b07         
+00421b0f         if (ebx s> 0 && ebx != 0)
+00421b0f             continue
+00421b0f         
+00421b15         result = result_1
+00421b15         break
+00421b15     
+00421909     *(*(arg1 + 0x20) + 4) = 3
+00421915     int32_t* ebx_1 = *(arg1 + 0x64)
+0042191d     int32_t eax_9
+0042191d     int32_t edx_1
+0042191d     edx_1:eax_9 = muls.dp.d(0x66666667, ebx_1[1] - *ebx_1)
+0042191f     int32_t edx_2 = edx_1 s>> 6
+0042191f     
+00421929     if (edx_2 u>> 0x1f != neg.d(edx_2))
+0042192d         var_1c = *ebx_1
+0042192d     
+00421936     Sleep(0xc8)
+00421942     enum WIN32_ERROR result_2 = sub_421bc0(arg1, var_1c)
+00421947     result = result_2
+00421947     
+0042194b     if (result != NO_ERROR)
+00421b7c         LPARAM var_40_10
+00421b7c         
+00421b7c         if (*(arg1 + 0x1b) == 0)
+00421b85             var_40_10 = u"Sahara Communication Faile"
+00421b7c         else
+00421b7e             var_40_10 = u"Sahar"
+00421b7e         
+00421b8c         sub_420d10(result_2, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, var_40_10, 1)
+00421b91         void* eax_34 = *(arg1 + 0x20)
+00421b97         HANDLE hFile_1 = *(eax_34 + 8)
+00421b9a         *(eax_34 + 4) = 4
+00421ba1         CancelIo(hFile_1)
+00421baa         sub_4264e0(*(arg1 + 0x20))
+0042194b     else
+00421956         Sleep(0xc8)
+0042196b         LPARAM lParam_1
+0042196b         
+0042196b         if (*(arg1 + 0x1b) == result.b)
+00421974             lParam_1 = u"Try Firehose Communication Handshake"
+0042196b         else
+0042196d             lParam_1 = 0x5bb0a8
+0042196d         
+00421982         SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam_1)
+00421984         *(arg1 + 0x28)
+00421987         enum WIN32_ERROR result_3 = sub_4286a0()
+0042198c         result = result_3
+0042198c         
+00421990         if (result != NO_ERROR)
+00421b3b             LPARAM var_40_9
+00421b3b             
+00421b3b             if (*(arg1 + 0x1b) == 0)
+00421b44                 var_40_9 = u"Firehose Communication Handshake Failed"
+00421b3b             else
+00421b3d                 var_40_9 = 0x5bb11c
+00421b3d             
+00421b4b             sub_420d10(result_3, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, var_40_9, 1)
+00421b50             goto label_421b53
+00421b50         
+0042199b         Sleep(0x3e8)
+004219b0         LPARAM lParam_2
+004219b0         
+004219b0         if (*(arg1 + 0x1b) == result.b)
+004219b9             lParam_2 = u"Setting Firehose Communication data transmission"
+004219b0         else
+004219b2             lParam_2 = "ck(WM"
+004219b2         
+004219c7         SendMessageW(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam_2)
+004219d2         int32_t var_40_4
+004219d2         
+004219d2         if (*(arg1 + 0x1c) == 0)
+004219d8             var_40_4 = 0
+004219d2         else
+004219d4             var_40_4 = 1
+004219d4         
+004219df         enum WIN32_ERROR result_4 = sub_428a80(*(arg1 + 0x28), 0x8000, var_40_4, 0)
+004219e4         result = result_4
+004219e4         
+004219e8         if (result != NO_ERROR)
+00421b53         label_421b53:
+00421b53             void* eax_33 = *(arg1 + 0x20)
+00421b56             *(eax_33 + 4) = 4
+00421b60             CancelIo(*(eax_33 + 8))
+00421b69             sub_4264e0(*(arg1 + 0x20))
+004219e8         else
+004219f1             if (*(arg1 + 0x1c) != result_4.b)
+00421a05                 result = sub_429680(*(arg1 + 0x28), &var_14, &var_24)
+00421a05             
+00421a09             if (*(arg1 + 0x1c) != result_4.b && result != NO_ERROR)
+00421a09                 goto label_421b53
+00421a09             
+00421a1f             result = sub_421e60(arg1, &var_20, var_24)
+00421a1f             
+00421a23             if (result != NO_ERROR)
+00421a23                 goto label_421b53
+00421a23             
+00421a29             int32_t var_3c_4 = var_20
+00421a34             result = GSI1::QueryMiniPDBForTiDefnUDT2(arg1)
+00421a34             
+00421a38             if (result != NO_ERROR)
+00421a38                 goto label_421b53
+00421a38             
+00421a46             sub_429da0(*(arg1 + 0x28), "off")
+00421a4b             void* ecx_11 = *(arg1 + 0x20)
+00421a4e             result = NO_ERROR
+00421a50             result_1 = NO_ERROR
+00421a54             HANDLE hFile = *(ecx_11 + 8)
+00421a57             *(ecx_11 + 4) = 4
+00421a5e             CancelIo(hFile)
+00421a67             sub_4264e0(*(arg1 + 0x20))
+00421a67     
+0042194b     break
+0042194b 
+00421b24 sub_54a573(eax_1 ^ &var_2c)
+00421b2c return result

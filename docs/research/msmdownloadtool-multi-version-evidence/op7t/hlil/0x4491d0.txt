@@ -1,0 +1,450 @@
+004491d0 int32_t __saved_ebp_2
+004491d0 int32_t __saved_ebp_1 = __saved_ebp_2
+004491d3 int32_t var_8 = 0xffffffff
+004491d5 int32_t (* var_c)() = __ehhandler$?SendCoreNotification@SchedulerProxy@details@Concurrency@@QAEXPAUSchedulerCore@23@_N@Z
+004491e0 TEB* fsbase
+004491e0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004491ee int32_t ebx
+004491ee int32_t var_48 = ebx
+004491ef int32_t esi
+004491ef int32_t var_4c = esi
+004491f0 int32_t edi
+004491f0 int32_t var_50 = edi
+004491f1 int32_t __saved_ebp
+004491f1 int32_t var_54 = __security_cookie ^ &__saved_ebp
+004491f5 fsbase->NtTib.ExceptionList = &ExceptionList
+004491fd void* edi_1 = arg3
+00449204 int32_t* eax_3 = edi_1 + 0x34
+00449207 int32_t ebx_1 = arg2
+0044920a int32_t var_3c = ebx_1
+0044920d void* var_34 = edi_1
+00449210 int32_t var_38 = 3
+00449210 
+00449217 if (*(edi_1 + 0x48) u>= 0x10)
+00449219     eax_3 = *eax_3
+00449219 
+0044921f void* var_30
+0044921f sub_40d1f0(&var_30, eax_3)
+0044921f int32_t* esp_1 = &var_54
+00449224 int32_t var_8_1 = 0
+00449233 int32_t* esp_2
+00449233 
+00449233 if (*(arg1 + 0x1004e5) == 0)
+0044928b     while (true)
+0044928b         if (*(edi_1 + 0x64) != 1 || *(arg1 + 0x4a) == 0 || *(arg1 + 0x48) == 0
+0044928b                 || *(arg1 + 0x49) != 0)
+00449279             goto label_4492a2
+00449279         
+0044928d         *(arg1 + 0x2c)
+00449295         void* ebx_2 = sub_4575f0()
+00449299         void* esp_49
+00449299         int32_t edi_9
+00449299         
+00449299         if (ebx_2 != 0)
+004494f0             bool cond:3_1 = *(arg1 + 0x20) == 0
+004494fa             *(esp_1 - 4) = var_30
+004494fd             *(esp_1 - 8) = ebx_2
+004494fe             void* esp_37
+004494fe             
+004494fe             if (cond:3_1)
+00449507                 *(esp_1 - 0xc) = u"Failed to send SHA256 init commmand(%d), %s"
+00449507                 esp_37 = esp_1 - 0xc
+004494fe             else
+00449500                 *(esp_1 - 0xc) = 0x6e2864
+00449500                 esp_37 = esp_1 - 0xc
+00449500             
+0044950c             *(esp_37 - 4) = arg1 + 0x2b8
+0044950d             sub_44d900()
+00449520             uint32_t eax_29 = zx.d((*(arg1 + 0x30)).b) | 0x100
+00449523             *(esp_37 + 8) = arg1 + 0x2b8
+0044952a             *(esp_37 + 4) = eax_29 << 0x10 | 1
+0044952b             *esp_37 = 0x178c
+00449530             *(esp_37 - 4) = *(arg1 + 0x34)
+00449533             0x3095d0()
+00449539             *(esp_37 - 8) = &data_6d9770
+0044953e             *(esp_37 - 0xc) = "C:/ToolLog.txt"
+00449548             edi_9 = std::_Deallocate<64,0>()
+0044954a             esp_2 = esp_37 - 4
+0044954a             
+0044954f             if (edi_9 == 0)
+0044954f                 break
+0044954f             
+00449555             *(esp_2 - 4) = var_30
+00449558             int32_t ecx_10 = *(arg1 + 0x30)
+0044955b             *(esp_2 - 8) = ebx_2
+0044955d             *(esp_2 - 0xc) = ecx_10 + 1
+0044955e             *(esp_2 - 0x10) = "[%d] Failed to send SHA256 init commmand (%d), %ls"
+0044955e             esp_49 = esp_2 - 0x10
+00449299         else
+0044929f             ebx_1 = var_3c
+004492a2         label_4492a2:
+004492a2             bool cond:1_1 = *(edi_1 + 0x18) == 0
+004492a8             *(esp_1 - 4) = edi_1
+004492a9             *(esp_1 - 8) = ebx_1
+004492aa             void* eax_7
+004492aa             
+004492aa             if (cond:1_1)
+004492b3                 eax_7 = sub_44b550()
+004492aa             else
+004492ac                 eax_7 = std::num_put<uint16_t,class std::ostreambuf_iterator<uint16_t,struct std::char_traits<uint16_t> > >::do_put()
+004492ac             
+004492bc             if (eax_7 == 0)
+004492e1                 if (*(edi_1 + 0x64) != 1 || *(arg1 + 0x4a) == eax_7.b || *(arg1 + 0x48) == eax_7.b
+004492e1                         || *(arg1 + 0x49) != eax_7.b)
+00449670                     *(esp_1 - 0xc) = &data_6d9770
+00449675                     *(esp_1 - 0x10) = "C:/ToolLog.txt"
+0044967a                     int32_t eax_41 = std::_Deallocate<64,0>()
+00449681                     esp_1 -= 8
+00449681                     
+00449686                     if (eax_41 != 0)
+0044968f                         *(esp_1 - 4) = zx.d(*(arg1 + 0x49))
+00449694                         *(esp_1 - 8) = zx.d(*(arg1 + 0x48))
+00449699                         int32_t eax_43 = sx.d(*(var_34 + 0x64))
+0044969d                         *(esp_1 - 0xc) = zx.d(*(arg1 + 0x4a))
+0044969e                         *(esp_1 - 0x10) = eax_43
+0044969f                         *(esp_1 - 0x14) = var_30
+004496a6                         *(esp_1 - 0x18) = *(arg1 + 0x30) + 1
+004496a7                         *(esp_1 - 0x1c) = "[%d] Skip sha256 checking (%ls) (%d:%d:%d,%d)\n"
+004496ac                         *(esp_1 - 0x20) = eax_41
+004496ad                         _fprintf()
+004496b2                         *(esp_1 - 0x24) = eax_41
+004496b3                         _fclose()
+004492e1                 else
+004492e7                     int32_t var_18_1 = 0xf
+004492f1                     char var_2c = eax_7.b
+004492f7                     var_8_1.b = 1
+004492fb                     *(arg1 + 0x2c)
+004492fe                     *(esp_1 - 0xc) = &var_2c
+00449304                     ebx_2 = sub_457910()
+00449306                     void* var_40_1 = ebx_2
+00449306                     
+0044930b                     if (ebx_2 != 0)
+004495c7                         bool cond:4_1 = *(arg1 + 0x20) == 0
+004495d1                         *(esp_1 - 0xc) = ebx_2
+004495d2                         *(esp_1 - 0x10) = var_30
+004495d5                         void* esp_60
+004495d5                         
+004495d5                         if (cond:4_1)
+004495de                             *(esp_1 - 0x14) = u"Failed to get SHA256, %ls (%d)"
+004495de                             esp_60 = esp_1 - 0x14
+004495d5                         else
+004495d7                             *(esp_1 - 0x14) = 0x6e28f0
+004495d7                             esp_60 = esp_1 - 0x14
+004495d7                         
+004495e3                         *(esp_60 - 4) = arg1 + 0x2b8
+004495e4                         sub_44d900()
+004495f7                         uint32_t eax_37 = zx.d((*(arg1 + 0x30)).b) | 0x100
+004495fa                         *(esp_60 + 8) = arg1 + 0x2b8
+00449601                         *(esp_60 + 4) = eax_37 << 0x10 | 1
+00449602                         *esp_60 = 0x178c
+00449607                         *(esp_60 - 4) = *(arg1 + 0x34)
+0044960a                         0x3095d0()
+00449610                         *(esp_60 - 8) = &data_6d9770
+00449615                         *(esp_60 - 0xc) = "C:/ToolLog.txt"
+0044961a                         int32_t eax_40 = std::_Deallocate<64,0>()
+00449621                         esp_2 = esp_60 - 4
+00449621                         
+00449626                         if (eax_40 != 0)
+00449628                             int32_t ecx_14 = *(arg1 + 0x30)
+0044962b                             *(esp_2 - 4) = ebx_2
+0044962c                             *(esp_2 - 8) = var_30
+00449630                             *(esp_2 - 0xc) = ecx_14 + 1
+00449631                             *(esp_2 - 0x10) = "[%d] Failed to get SHA256, %ls (%d)"
+00449636                             *(esp_2 - 0x14) = eax_40
+00449637                             _fprintf()
+0044963f                             *(esp_2 - 4) = eax_40
+00449640                             _fclose()
+00449640                         
+0044964c                         if (var_18_1 u>= 0x10)
+0044964e                             *(esp_2 - 4) = var_2c.d
+00449651                             sub_4f0808()
+00449651                         
+00449659                         int32_t var_18_4 = 0xf
+00449660                         int32_t var_1c_4 = 0
+00449667                         var_2c = 0
+00449626                         break
+00449626                     
+00449311                     *(esp_1 - 0xc) = &data_6d9770
+00449316                     *(esp_1 - 0x10) = "C:/ToolLog.txt"
+0044931b                     int32_t eax_9 = std::_Deallocate<64,0>()
+00449325                     void* esp_9 = esp_1 - 8
+00449325                     
+0044932a                     if (eax_9 != 0)
+00449330                         void** ecx_6 = var_34 + 0x1c
+00449330                         
+00449333                         if (*(var_34 + 0x30) u>= 0x10)
+00449335                             ecx_6 = *ecx_6
+00449335                         
+0044933b                         char* eax_10 = &var_2c
+0044933e                         *(esp_9 - 4) = ecx_6
+0044933e                         
+0044933f                         if (var_18_1 u>= 0x10)
+0044933f                             eax_10 = var_2c.d
+0044933f                         
+00449343                         *(esp_9 - 8) = eax_10
+00449348                         *(esp_9 - 0xc) = *(arg1 + 0x30) + 1
+00449349                         *(esp_9 - 0x10) = "[%d] SHA256=%s, sha image = %s\n"
+0044934e                         *(esp_9 - 0x14) = eax_9
+0044934f                         _fprintf()
+00449357                         *(esp_9 - 4) = eax_9
+00449358                         _fclose()
+00449358                     
+00449364                     void** ecx_7 = var_34 + 0x1c
+00449364                     
+00449367                     if (*(var_34 + 0x30) u>= 0x10)
+00449369                         ecx_7 = *ecx_7
+00449369                     
+0044936e                     void* edx_1
+0044936e                     
+0044936e                     if (*ecx_7 != 0)
+00449374                         void** edx_2 = ecx_7
+00449376                         void* edi_4 = edx_2 + 1
+00449376                         
+00449385                         do
+00449380                             eax_9.b = *edx_2
+00449382                             edx_2 += 1
+00449385                         while (eax_9.b != 0)
+00449385                         
+00449387                         edx_1 = edx_2 - edi_4
+0044936e                     else
+00449370                         edx_1 = nullptr
+00449370                     
+0044938d                     char* ebx_4 = &var_2c
+00449390                     void* eax_13 = eax_7
+00449393                     void* edi_5 = edx_1
+00449393                     
+00449395                     if (var_18_1 u>= 0x10)
+00449395                         ebx_4 = var_2c.d
+00449395                     
+0044939b                     if (eax_13 u< edx_1)
+0044939b                         edi_5 = eax_13
+0044939b                     
+004493a0                     if (edi_5 == 0)
+004493a0                         goto label_4493fa
+004493a0                     
+004493a2                     void* i_1 = edi_5 - 4
+004493a2                     
+004493a5                     if (edi_5 u>= 4)
+004493b6                         void* i
+004493b6                         
+004493b6                         do
+004493ab                             if (*ebx_4 != *ecx_7)
+004493ab                                 goto label_4493bd
+004493ab                             
+004493ad                             ebx_4 = &ebx_4[4]
+004493b0                             ecx_7 = &ecx_7[1]
+004493b3                             i = i_1
+004493b3                             i_1 -= 4
+004493b6                         while (i u>= 4)
+004493b6                     
+004493bb                     int32_t eax_15
+004493bb                     
+004493bb                     if (i_1 == 0xfffffffc)
+004493f1                         eax_15 = 0
+004493bb                     else
+004493bd                     label_4493bd:
+004493bd                         eax_13.b = *ebx_4
+004493bf                         char temp2_1 = *ecx_7
+004493bf                         
+004493c1                         if (eax_13.b != temp2_1)
+004493ec                             eax_15 = sbb.d(eax_13, eax_13, eax_13.b u< temp2_1) | 1
+004493c1                         else if (i_1 == 0xfffffffd)
+004493f1                             eax_15 = 0
+004493c6                         else
+004493c8                             eax_13.b = ebx_4[1]
+004493cb                             char temp4_1 = *(ecx_7 + 1)
+004493cb                             
+004493ce                             if (eax_13.b != temp4_1)
+004493ec                                 eax_15 = sbb.d(eax_13, eax_13, eax_13.b u< temp4_1) | 1
+004493ce                             else if (i_1 == 0xfffffffe)
+004493f1                                 eax_15 = 0
+004493d3                             else
+004493d5                                 eax_13.b = ebx_4[2]
+004493d8                                 char temp5_1 = *(ecx_7 + 2)
+004493d8                                 
+004493db                                 if (eax_13.b != temp5_1)
+004493ec                                     eax_15 = sbb.d(eax_13, eax_13, eax_13.b u< temp5_1) | 1
+004493db                                 else if (i_1 == 0xffffffff)
+004493f1                                     eax_15 = 0
+004493e0                                 else
+004493e2                                     eax_13.b = ebx_4[3]
+004493e5                                     char temp6_1 = *(ecx_7 + 3)
+004493e5                                     
+004493e8                                     if (eax_13.b == temp6_1)
+004493f1                                         eax_15 = 0
+004493e8                                     else
+004493ec                                         eax_15 = sbb.d(eax_13, eax_13, eax_13.b u< temp6_1) | 1
+004493ec                     
+004493f5                     if (eax_15 != 0)
+004493f5                         goto label_449417
+004493f5                     
+004493f7                     eax_13 = eax_7
+004493fa                 label_4493fa:
+004493fa                     
+004493fc                     if (eax_13 u< edx_1)
+00449417                     label_449417:
+00449417                         *(esp_9 - 4) = var_30
+0044941a                         int32_t eax_18 = var_38 - 1
+00449420                         var_38 = eax_18
+00449425                         void* esp_18
+00449425                         
+00449425                         if (eax_18 s<= 0)
+0044943f                             if (*(arg1 + 0x20) == 0)
+00449448                                 *(esp_9 - 8) = u"SHA256 does not match, %ls"
+00449448                                 esp_18 = esp_9 - 8
+0044943f                             else
+00449441                                 *(esp_9 - 8) = u"SHA25"
+00449441                                 esp_18 = esp_9 - 8
+00449425                         else if (*(arg1 + 0x20) == 0)
+00449434                             *(esp_9 - 8) = u"SHA256 does not match, repeat to download %ls"
+00449434                             esp_18 = esp_9 - 8
+0044942b                         else
+0044942d                             *(esp_9 - 8) = u"SHA25"
+0044942d                             esp_18 = esp_9 - 8
+0044942d                         
+0044944d                         *(esp_18 - 4) = arg1 + 0x2b8
+0044944e                         sub_44d900()
+00449464                         uint32_t eax_23 = (zx.d((*(arg1 + 0x30)).b) | 0x100) << 0x10
+00449467                         *(esp_18 + 4) = arg1 + 0x2b8
+0044946b                         *esp_18 = eax_23 | 1
+0044946c                         *(esp_18 - 4) = 0x178c
+00449471                         *(esp_18 - 8) = *(arg1 + 0x34)
+00449474                         0x3095d0()
+0044947a                         *(esp_18 - 0xc) = &data_6d9770
+0044947f                         *(esp_18 - 0x10) = "C:/ToolLog.txt"
+00449484                         int32_t eax_25 = std::_Deallocate<64,0>()
+0044948b                         esp_1 = esp_18 - 8
+0044948b                         
+00449490                         if (eax_25 != 0)
+00449492                             *(esp_1 - 4) = var_38
+00449495                             int32_t ecx_8 = *(arg1 + 0x30)
+00449498                             *(esp_1 - 8) = var_30
+0044949c                             *(esp_1 - 0xc) = ecx_8 + 1
+0044949d                             *(esp_1 - 0x10) =
+0044949d                                 "[%d] SHA256 does not match, filename: %ls, retry count: %d \n"
+004494a2                             *(esp_1 - 0x14) = eax_25
+004494a3                             _fprintf()
+004494ab                             *(esp_1 - 4) = eax_25
+004494ac                             _fclose()
+004494ac                         
+004494b4                         var_8_1.b = 0
+004494b4                         
+004494bc                         if (var_18_1 u>= 0x10)
+004494be                             *(esp_1 - 4) = var_2c.d
+004494c1                             sub_4f0808()
+004494c1                         
+004494cd                         int32_t var_18_2 = 0xf
+004494d4                         int32_t var_1c_2 = 0
+004494db                         var_2c = 0
+004494db                         
+004494df                         if (var_38 s> 0)
+004494e5                             edi_1 = var_34
+004494e8                             ebx_1 = var_3c
+004494eb                             continue
+004493fc                     else
+00449403                         int32_t eax_16
+00449403                         eax_16.b = eax_7 != edx_1
+00449403                         
+00449408                         if (eax_16 != 0)
+00449408                             goto label_449417
+00449408                         
+00449568                         *(esp_9 - 4) = &data_6d9770
+0044956d                         *(esp_9 - 8) = "C:/ToolLog.txt"
+00449572                         int32_t eax_33 = std::_Deallocate<64,0>()
+00449579                         esp_1 = esp_9
+00449579                         
+0044957e                         if (eax_33 != 0)
+00449580                             *(esp_1 - 4) = var_30
+00449587                             *(esp_1 - 8) = *(arg1 + 0x30) + 1
+00449588                             *(esp_1 - 0xc) = "[%d] Readback Sha256 verify ok, %ls \n"
+0044958d                             *(esp_1 - 0x10) = eax_33
+0044958e                             _fprintf()
+00449593                             *(esp_1 - 0x14) = eax_33
+00449594                             _fclose()
+00449594                         
+004495a0                         if (var_18_1 u>= 0x10)
+004495a2                             *(esp_1 - 4) = var_2c.d
+004495a5                             sub_4f0808()
+004495a5                         
+004495b0                         int32_t var_18_3 = 0xf
+004495b7                         int32_t var_1c_3 = 0
+004495be                         var_2c = 0
+004495be                 
+004496be                 uint32_t eax_47 = zx.d((*(arg1 + 0x30)).b)
+004496c1                 *(esp_1 - 4) = 0
+004496c9                 *(esp_1 - 8) = eax_47 << 0x10 | 4
+004496ca                 *(esp_1 - 0xc) = 0x178c
+004496cf                 *(esp_1 - 0x10) = *(arg1 + 0x34)
+004496cf                 esp_2 = esp_1 - 0x10
+004496d2                 0x3095d0()
+004496d8                 break
+004496d8             
+004496dd             bool cond:2_1 = *(arg1 + 0x20) == 0
+004496e7             *(esp_1 - 0xc) = eax_7
+004496e8             *(esp_1 - 0x10) = var_30
+004496eb             void* esp_93
+004496eb             
+004496eb             if (cond:2_1)
+004496f4                 *(esp_1 - 0x14) = u"Failed to download %s (%d)"
+004496f4                 esp_93 = esp_1 - 0x14
+004496eb             else
+004496ed                 *(esp_1 - 0x14) = 0x6e2844
+004496ed                 esp_93 = esp_1 - 0x14
+004496ed             
+004496f9             *(esp_93 - 4) = arg1 + 0x2b8
+004496fa             sub_44d900()
+0044970d             uint32_t eax_53 = zx.d((*(arg1 + 0x30)).b) | 0x100
+00449710             *(esp_93 + 8) = arg1 + 0x2b8
+00449717             *(esp_93 + 4) = eax_53 << 0x10 | 1
+00449718             *esp_93 = 0x178c
+0044971d             *(esp_93 - 4) = *(arg1 + 0x34)
+00449720             0x3095d0()
+00449726             *(esp_93 - 8) = &data_6d9770
+0044972b             *(esp_93 - 0xc) = "C:/ToolLog.txt"
+00449735             edi_9 = std::_Deallocate<64,0>()
+00449737             esp_2 = esp_93 - 4
+00449737             
+0044973c             if (edi_9 == 0)
+0044973c                 break
+0044973c             
+0044973e             int32_t ecx_19 = *(arg1 + 0x30)
+00449741             *(esp_2 - 4) = eax_7
+00449742             *(esp_2 - 8) = var_30
+00449746             *(esp_2 - 0xc) = ecx_19 + 1
+00449747             *(esp_2 - 0x10) = "[%d] Failed to download %ls (%d)"
+00449747             esp_49 = esp_2 - 0x10
+00449747         
+0044974c         *(esp_49 - 4) = edi_9
+0044974d         _fprintf()
+00449755         *(esp_49 + 0xc) = edi_9
+00449756         _fclose()
+0044975b         esp_2 = esp_49 + 0x10
+0044975b         break
+00449233 else
+00449235     void* const var_58_1 = &data_6d9770
+0044923a     char const* const var_5c_1 = "C:/ToolLog.txt"
+0044923f     int32_t eax_5 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00449246     esp_2 = &var_54
+00449246     
+0044924b     if (eax_5 != 0)
+00449250         int32_t var_58_2 = 0x4c7
+00449257         void* const var_60_1 = "[%d] The thread job has been cancelled (%d)\n"
+0044925d         _fprintf(eax_5, "[%d] The thread job has been cancelled (%d)\n", *(arg1 + 0x30) + 1, 0x4c7)
+00449263         _fclose(eax_5)
+00449268         esp_2 = &var_54
+00449268 
+0044975e int32_t var_8_2 = 0xffffffff
+0044976b int32_t* esi_3 = var_30 - 0x10
+00449771 int32_t ecx_21 = esi_3[3]
+00449771 esi_3[3] -= 1
+00449771 
+00449778 if (ecx_21 - 1 s<= 0)
+0044977a     int32_t* ecx_23 = *esi_3
+0044977c     *(esp_2 - 4) = esi_3
+0044977f     (*(*ecx_23 + 4))()
+0044977f 
+00449787 fsbase->NtTib.ExceptionList = ExceptionList
+0044978e esp_2[1]
+0044978f esp_2[2]
+00449790 esp_2[3]
+0044979f return sub_60bdca()

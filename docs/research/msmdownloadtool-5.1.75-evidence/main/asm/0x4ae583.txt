@@ -1,0 +1,140 @@
+004ae583 add     esp, 0x4
+004ae586 mov     ebx, eax
+004ae588 lea     eax, [ebp-0x34]
+004ae58b push    eax
+004ae58c push    ebx
+004ae58d call    esi
+004ae58f cmp     eax, 0x6f
+004ae592 jne     0x4ae5a7
+004ae5a7 lea     eax, [ebp-0x34]
+004ae5aa push    eax
+004ae5ab push    ebx
+004ae5ac call    esi
+004ae5ae test    ebx, ebx
+004ae5b0 je      0x4ae64f
+004ae594 push    ebx
+004ae595 call    0x688543
+004ae59a push    dword [ebp-0x34]
+004ae59d call    0x689262
+004ae5a2 add     esp, 0x8
+004ae5a5 mov     ebx, eax
+004ae64f mov     ebx, 0x1
+004ae5b6 call    0x575b26
+004ae5bb mov     ecx, eax
+004ae5bd xor     eax, eax
+004ae5bf test    ecx, ecx
+004ae5c1 setne   al
+004ae5c4 test    eax, eax
+004ae5c6 je      0x4ae550
+004ae675 mov     eax, ebx
+004ae677 mov     ecx, dword [ebp-0xc]
+004ae67a mov     dword [fs:0x0], ecx
+004ae681 pop     ecx
+004ae682 pop     edi
+004ae683 pop     esi
+004ae684 pop     ebx
+004ae685 mov     ecx, dword [ebp-0x10]
+004ae688 xor     ecx, ebp
+004ae68a call    0x687de2
+004ae68f mov     esp, ebp
+004ae691 pop     ebp
+004ae692 retn    
+004ae66d mov     ecx, dword [edi]
+004ae66f push    edi
+004ae670 mov     edx, dword [ecx]
+004ae672 call    dword [edx+0x4]
+004ae550 push    0x80004005
+004ae555 call    0x414340
+004ae5c8 mov     eax, dword [ecx]
+004ae5ca call    dword [eax+0xc]
+004ae5cd lea     esi, [eax+0x10]
+004ae5d0 mov     dword [ebp-0x30], esi
+004ae5d3 lea     eax, [ebx+0x1d8]
+004ae5d9 mov     byte [ebp-0x4], 0x1
+004ae5dd test    eax, eax
+004ae5df je      0x4ae606
+004ae606 push    eax
+004ae607 lea     ecx, [ebp-0x30]
+004ae60a call    0x413fd0
+004ae5e1 test    eax, 0xffff0000
+004ae5e6 jne     0x4ae606
+004ae693 cmp     dword [ebx+0x190], 0x0
+004ae69a jbe     0x4ae6ca
+004ae628 mov     ebx, dword [ebx]
+004ae62a add     esi, 0xfffffff0
+004ae62d mov     byte [ebp-0x4], al
+004ae630 or      ecx, 0xffffffff
+004ae633 lea     eax, [esi+0xc]
+004ae636 lock xadd dword [eax], ecx
+004ae63a dec     ecx
+004ae63b test    ecx, ecx
+004ae63d jg      0x4ae647
+004ae5e8 movzx   eax, ax
+004ae5eb push    eax
+004ae5ec mov     dword [ebp-0x38], eax
+004ae5ef call    0x577816
+004ae5f4 test    eax, eax
+004ae5f6 je      0x4ae612
+004ae6ca lea     eax, [ebp-0x2c]
+004ae6cd push    eax
+004ae6ce mov     eax, dword [ebp-0x3c]
+004ae6d1 add     eax, 0x4
+004ae6d4 push    0x76c874
+004ae6d9 push    eax
+004ae6da call    0x414410
+004ae6df add     esi, 0xfffffff0
+004ae6e2 xor     ebx, ebx
+004ae6e4 add     esp, 0xc
+004ae6e7 mov     byte [ebp-0x4], bl
+004ae6ea or      ecx, 0xffffffff
+004ae6ed lea     eax, [esi+0xc]
+004ae6f0 lock xadd dword [eax], ecx
+004ae6f4 dec     ecx
+004ae6f5 test    ecx, ecx
+004ae6f7 jg      0x4ae654
+004ae69c lea     esi, [ebp-0x2c]
+004ae69f xor     edi, edi
+004ae647 test    ebx, ebx
+004ae649 jne     0x4ae5b6
+004ae63f mov     ecx, dword [esi]
+004ae641 push    esi
+004ae642 mov     eax, dword [ecx]
+004ae644 call    dword [eax+0x4]
+004ae612 push    0x778708
+004ae617 push    esi
+004ae618 mov     byte [ebp-0x4], 0x2
+004ae61c call    0x689666
+004ae621 add     esp, 0x8
+004ae624 test    eax, eax
+004ae626 jne     0x4ae693
+004ae5f8 push    dword [ebp-0x38]
+004ae5fb lea     ecx, [ebp-0x30]
+004ae5fe push    eax
+004ae5ff call    0x413e70
+004ae604 jmp     0x4ae60f
+004ae654 add     edi, 0xfffffff0
+004ae657 mov     dword [ebp-0x4], 0xffffffff
+004ae65e or      ecx, 0xffffffff
+004ae661 lea     eax, [edi+0xc]
+004ae664 lock xadd dword [eax], ecx
+004ae668 dec     ecx
+004ae669 test    ecx, ecx
+004ae66b jg      0x4ae675
+004ae6fd mov     ecx, dword [esi]
+004ae6ff push    esi
+004ae700 mov     eax, dword [ecx]
+004ae702 call    dword [eax+0x4]
+004ae705 jmp     0x4ae654
+004ae6a1 movzx   eax, byte [ebx+edi+0x194]
+004ae6a9 push    eax
+004ae6aa push    0x76ea78
+004ae6af push    esi
+004ae6b0 call    0x68abcf
+004ae6b5 inc     edi
+004ae6b6 add     esp, 0xc
+004ae6b9 add     esi, 0x4
+004ae6bc cmp     edi, dword [ebx+0x190]
+004ae6c2 jb      0x4ae6a1
+004ae6c4 mov     esi, dword [ebp-0x30]
+004ae6c7 mov     edi, dword [ebp-0x40]
+004ae60f mov     esi, dword [ebp-0x30]

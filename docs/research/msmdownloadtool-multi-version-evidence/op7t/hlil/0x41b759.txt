@@ -1,0 +1,17 @@
+0041b75c sub_4f3f00(arg1)
+0041b770 int32_t ebx
+0041b770 ebx(*(arg2 + 4), 0, 0x80ea, u"Generate License Token")
+0041b781 ebx(*(arg2 + 4), 0, 0x80eb, u"Update License")
+0041b793 ebx(arg3[0x167], 0x10, *(arg2 + 4), u"Develop")
+0041b79c struct CObject::CMenu::VTable** esi = sub_4f07db(8)
+0041b79c 
+0041b7a3 if (esi == 0)
+0041b7b4     esi = nullptr
+0041b7a3 else
+0041b7a5     *esi = &CMenu::`vftable'{for `CObject'}
+0041b7ab     esi[1] = 0
+0041b7ab 
+0041b7bf sub_4f3f00(sub_c5b7a9(esi))
+0041b7d3 ebx(esi[1], 0, 0x80ed, u"Open dump file folder")
+0041b7e5 ebx(arg3[0x167], 0x10, esi[1], u"Debug")
+0041b7f8 return (*(*arg3 + 0x70))(&arg3[0x166])

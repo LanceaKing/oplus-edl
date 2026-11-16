@@ -1,0 +1,273 @@
+180002cf8 void var_c88
+180002cf8 int64_t rax_1 = __security_cookie ^ &var_c88
+180002d16 int128_t* var_c30 = arg3
+180002d20 *arg9 = 0
+180002d2a int128_t* result
+180002d2a 
+180002d2a if (arg1 != 0)
+180002d42     if (arg3 != 0 && arg4 == 0x10)
+180002d38         goto label_180002d48
+180002d38     
+1800033bc     result.b = 0
+180002d2a else if (arg2 != 0 || arg3 == 0 || arg4 != 0x10)
+1800033bc     result.b = 0
+180002d42 else
+180002d48 label_180002d48:
+180002d48     void* rbx_1 = nullptr
+180002d48     
+180002d5c     if (arg1 != 0)
+180002d5c         rbx_1 = arg2
+180002d5c     
+180002d62     int128_t var_428[0x3f]
+180002d62     sub_18009a050(&var_428, 0, 0x3f0)
+180002d6e     int128_t var_438
+180002d6e     __builtin_strncpy(&var_438, "7016147d58e8c038", 0x10)
+180002d6e     
+180002d78     if (rbx_1 u> 0x3f0)
+1800033bc         result.b = 0
+180002d78     else
+180002d8b         memcpy(&var_428, arg1, rbx_1)
+180002d8b         
+180002d97         if (0x3f0 - rbx_1 u< 0x10)
+1800033bc             result.b = 0
+180002d97         else
+180002db8             memcpy(&var_438 + rbx_1 + 0x10, "TdYWNqblwrWOJ1Yy", 0x10)
+180002dd0             int128_t var_c20
+180002dd0             __builtin_memset(&var_c20, 0, 0x20)
+180002dd0             
+180002de1             if (sub_1800016d0(&var_438, rbx_1 + 0x20, &var_c20).b == 0)
+1800033bc                 result.b = 0
+180002de1             else
+180002df3                 int128_t var_bd8
+180002df3                 __builtin_memset(&var_bd8, 0, 0x40)
+180002e03                 sub_180002620(&var_c20, &var_bd8)
+180002e16                 __builtin_memset(&var_c20, 0, 0x20)
+180002e27                 int128_t var_838
+180002e27                 sub_18009a050(&var_838, 0, 0x400)
+180002e40                 memcpy(&var_838, "c4b95538c57df231", 0x10)
+180002e52                 int128_t var_828[0x3f]
+180002e52                 memcpy(&var_828, arg1, rbx_1)
+180002e62                 void* var_c58
+180002e62                 void** var_c68_1 = &var_c58
+180002e70                 var_c58 = rbx_1 + 0x10
+180002e70                 
+180002e84                 if (sub_180002530(zx.q(arg6), 1, &var_838, 0x400, var_c68_1).b == 0)
+1800033bc                     result.b = 0
+180002e84                 else if (sub_180002530(zx.q(arg5), 1, &var_838, 0x400, &var_c58).b == 0)
+1800033bc                     result.b = 0
+180002eb4                 else
+180002eba                     void* r15_2 = var_c58
+180002eba                     
+180002ec8                     if (0x400 - r15_2 u< 0x12)
+1800033bc                         result.b = 0
+180002ec8                     else
+180002ee5                         memcpy(&var_838 + r15_2, "Oplus_downloadtool", 0x12)
+180002efa                         void** var_c68_3 = &var_c58
+180002f02                         var_c58 = r15_2 + 0x12
+180002f02                         
+180002f1a                         if (sub_180002530(arg7, 1, &var_838, 0x400, var_c68_3).b == 0)
+1800033bc                             result.b = 0
+180002f1a                         else
+180002f20                             void* r15_4 = var_c58
+180002f20                             
+180002f2e                             if (0x400 - r15_4 u< 0x40)
+1800033bc                                 result.b = 0
+180002f2e                             else
+180002f48                                 memcpy(&var_838 + r15_4, &var_bd8, 0x40)
+180002f48                                 
+180002f58                                 if (0x400 - (r15_4 + 0x40) u< 0x10)
+1800033bc                                     result.b = 0
+180002f58                                 else
+180002f75                                     memcpy(&var_838 + r15_4 + 0x40, "5b0217457e49381b", 0x10)
+180002f8c                                     int128_t var_c00
+180002f8c                                     __builtin_memset(&var_c00, 0, 0x20)
+180002f8c                                     
+180002f9b                                     if (sub_1800016d0(&var_838, r15_4 + 0x50, &var_c00).b == 0)
+1800033bc                                         result.b = 0
+180002f9b                                     else
+180002fac                                         int128_t var_b78
+180002fac                                         __builtin_memset(&var_b78, 0, 0x40)
+180002fbc                                         sub_180002620(&var_c00, &var_b78)
+180002fce                                         __builtin_memset(&var_c00, 0, 0x20)
+180002fda                                         int128_t var_b38
+180002fda                                         sub_18009a050(&var_b38, 0, 0x100)
+180002fda                                         
+180002fe6                                         if (rbx_1 u> 0x100)
+1800033bc                                             result.b = 0
+180002fe6                                         else
+180002ff6                                             memcpy(&var_b38, arg1, rbx_1)
+180002ff6                                             
+180003007                                             if (0x100 - rbx_1 u< 1)
+1800033bc                                                 result.b = 0
+180003007                                             else
+180003012                                                 *(&var_b38 + rbx_1) = 0x2c
+180003012                                                 
+18000301e                                                 if (0xff - rbx_1 u< 0x10)
+1800033bc                                                     result.b = 0
+18000301e                                                 else
+180003036                                                     int128_t var_b88
+180003036                                                     memcpy(&var_b88 + rbx_1 + 0x51, 
+180003036                                                         "TdYWNqblwrWOJ1Yy", 0x10)
+180003036                                                     
+180003047                                                     if (0xef - rbx_1 u< 1)
+1800033bc                                                         result.b = 0
+180003047                                                     else
+180003052                                                         char var_b27[0x41]
+180003052                                                         *(&var_b27 + rbx_1) = 0x2c
+180003052                                                         
+18000305e                                                         if (0xee - rbx_1 u< 0x40)
+1800033bc                                                             result.b = 0
+18000305e                                                         else
+180003073                                                             memcpy(&var_b88 + rbx_1 + 0x62, 
+180003073                                                                 &var_bd8, 0x40)
+180003073                                                             
+180003084                                                             if (0xae - rbx_1 u< 1)
+1800033bc                                                                 result.b = 0
+180003084                                                             else
+18000308f                                                                 char var_ae6[0x13]
+18000308f                                                                 *(&var_ae6 + rbx_1) = 0x2c
+18000308f                                                                 
+18000309e                                                                 if (0xad - rbx_1 u< 0x12)
+1800033bc                                                                     result.b = 0
+18000309e                                                                 else
+1800030b9                                                                     memcpy(&var_b88 + rbx_1 + 0xa3, 
+1800030b9                                                                         "Oplus_downloadtool", 0x12)
+1800030b9                                                                     
+1800030ca                                                                     if (0x9b - rbx_1 u< 1)
+1800033bc                                                                         result.b = 0
+1800030ca                                                                     else
+1800030da                                                                         var_c58 = rbx_1 + 0x66
+1800030e8                                                                         char var_ad3[0x9b]
+1800030e8                                                                         *(&var_ad3 + rbx_1) = 0x2c
+1800030e8                                                                         
+180003107                                                                         if (sub_180002530(zx.q(arg6), 1, 
+180003107                                                                                 &var_b38, 0x100, &var_c58).b == 0)
+1800033bc                                                                             result.b = 0
+180003107                                                                         else
+18000310d                                                                             void* rdx_9 = var_c58
+18000310d                                                                             
+18000311e                                                                             if (0x100 - rdx_9 u< 1)
+1800033bc                                                                                 result.b = 0
+18000311e                                                                             else
+180003124                                                                                 *(&var_b38 + rdx_9) = 0x2c
+180003131                                                                                 void** var_c68_5 = &var_c58
+180003136                                                                                 var_c58 = rdx_9 + 1
+180003136                                                                                 
+180003154                                                                                 if (sub_180002530(zx.q(arg5), 1, 
+180003154                                                                                         &var_b38, 0x100, var_c68_5).b == 0)
+1800033bc                                                                                     result.b = 0
+180003154                                                                                 else
+18000315a                                                                                     void* rdi_3 = var_c58
+18000315a                                                                                     
+18000316b                                                                                     if (0x100 - rdi_3 u< 1)
+1800033bc                                                                                         result.b = 0
+18000316b                                                                                     else
+18000317d                                                                                         *(&var_b38 + rdi_3) = 0x2c
+180003189                                                                                         int64_t* var_c68_6 = &var_c58
+180003194                                                                                         var_c58 = rdi_3 + 1
+180003194                                                                                         
+1800031a5                                                                                         if (sub_180002530(arg7, 1, &var_b38, 
+1800031a5                                                                                                 0x100, var_c68_6).b == 0)
+1800033bc                                                                                             result.b = 0
+1800031a5                                                                                         else
+1800031ab                                                                                             void* rcx_25 = var_c58
+1800031ab                                                                                             
+1800031bc                                                                                             if (0x100 - rcx_25 u< 1)
+1800033bc                                                                                                 result.b = 0
+1800031bc                                                                                             else
+1800031c2                                                                                                 *(&var_b38 + rcx_25) = 0x2c
+1800031c2                                                                                                 
+1800031d6                                                                                                 if (0x100 - (rcx_25 + 1) u< 0x40)
+1800033bc                                                                                                     result.b = 0
+1800031d6                                                                                                 else
+1800031ed                                                                                                     memcpy(rcx_25 + 1 + &var_b38, &var_b78, 
+1800031ed                                                                                                         0x40)
+1800031f2                                                                                                     void var_938
+1800031f2                                                                                                     void* rax_4 = &var_938
+1800031f9                                                                                                     int64_t i_2 = 2
+1800031fe                                                                                                     int128_t* rcx_28 = &var_b38
+180003253                                                                                                     int128_t zmm1_1
+180003253                                                                                                     int64_t i
+180003253                                                                                                     
+180003253                                                                                                     do
+180003202                                                                                                         rax_4 += 0x80
+180003209                                                                                                         int128_t zmm0_1 = *rcx_28
+18000320c                                                                                                         zmm1_1 = rcx_28[1]
+180003210                                                                                                         rcx_28 = &rcx_28[8]
+180003217                                                                                                         *(rax_4 - 0x80) = zmm0_1
+18000321b                                                                                                         zmm0_1 = rcx_28[-6]
+18000321f                                                                                                         *(rax_4 - 0x70) = zmm1_1
+180003223                                                                                                         zmm1_1 = rcx_28[-5]
+180003227                                                                                                         *(rax_4 - 0x60) = zmm0_1
+18000322b                                                                                                         zmm0_1 = rcx_28[-4]
+18000322f                                                                                                         *(rax_4 - 0x50) = zmm1_1
+180003233                                                                                                         zmm1_1 = rcx_28[-3]
+180003237                                                                                                         *(rax_4 - 0x40) = zmm0_1
+18000323b                                                                                                         zmm0_1 = rcx_28[-2]
+18000323f                                                                                                         *(rax_4 - 0x30) = zmm1_1
+180003243                                                                                                         zmm1_1 = rcx_28[-1]
+180003247                                                                                                         *(rax_4 - 0x20) = zmm0_1
+18000324b                                                                                                         *(rax_4 - 0x10) = zmm1_1
+18000324f                                                                                                         i = i_2
+18000324f                                                                                                         i_2 -= 1
+180003253                                                                                                     while (i != 1)
+180003266                                                                                                     __builtin_memset(&var_b38, 0, 0x100)
+18000326f                                                                                                     void var_a38
+18000326f                                                                                                     sub_18009a050(&var_a38, i_2.b, 0x100)
+180003280                                                                                                     int32_t var_c50_1 = 0x87634510
+18000328c                                                                                                     int32_t var_c4c_1 = 0x71237ee3
+18000329b                                                                                                     int32_t var_c38_1 = 0x74a0d4a2
+1800032b2                                                                                                     int32_t var_c34_1 = 0x9628d30f
+1800032ba                                                                                                     void* var_c68_7 = &var_a38
+1800032bf                                                                                                     int128_t var_c48 = *var_c30
+1800032c9                                                                                                     int128_t var_c40
+1800032c9                                                                                                     zmm1_1 = var_c40
+1800032ce                                                                                                     int128_t var_b98 = var_c50_1.o
+1800032d2                                                                                                     var_b88 = zmm1_1
+1800032d6                                                                                                     char rax_6 = sub_180001d00(&var_938, 
+1800032d6                                                                                                         0x100, &var_b98, &data_1800aece8, 
+1800032d6                                                                                                         var_c68_7)
+1800032ec                                                                                                     __builtin_memset(&var_938, 0, 0x100)
+1800032ec                                                                                                     
+1800032f0                                                                                                     if (rax_6 == 0)
+1800033bc                                                                                                         result.b = 0
+1800032f0                                                                                                     else
+180003396                                                                                                         for (int64_t i_1 = 0; i_1 u< 0x100; 
+180003396                                                                                                                 i_1 += 4)
+180003300                                                                                                             uint32_t rcx_31 =
+180003300                                                                                                                 zx.d(*(&var_a38 + i_1))
+180003308                                                                                                             char var_a35[0xfd]
+180003308                                                                                                             uint32_t rdx_13 = zx.d(var_a35[i_1])
+18000331e                                                                                                             *(arg8 + (i_1 << 1)) = (
+18000331e                                                                                                                 *"0123456789ABCDEF")[zx.q(rcx_31) u>> 4]
+180003326                                                                                                             void var_a37
+180003326                                                                                                             uint32_t rcx_33 =
+180003326                                                                                                                 zx.d(*(&var_a37 + i_1))
+18000332e                                                                                                             *(arg8 + (i_1 << 1) + 1) = *("
+18000332e                                                                                                                 0123456789ABCDEF"
+18000332e                                                                                                                 + (zx.q(rcx_31) & 0xf))
+180003340                                                                                                             *(arg8 + (i_1 << 1) + 2) = (
+180003340                                                                                                                 *"0123456789ABCDEF")[zx.q(rcx_33) u>> 4]
+180003349                                                                                                             void var_a36
+180003349                                                                                                             uint32_t rcx_35 =
+180003349                                                                                                                 zx.d(*(&var_a36 + i_1))
+180003351                                                                                                             *(arg8 + (i_1 << 1) + 3) = *("
+180003351                                                                                                                 0123456789ABCDEF"
+180003351                                                                                                                 + (zx.q(rcx_33) & 0xf))
+180003363                                                                                                             *(arg8 + (i_1 << 1) + 4) = (
+180003363                                                                                                                 *"0123456789ABCDEF")[zx.q(rcx_35) u>> 4]
+18000336c                                                                                                             *(arg8 + (i_1 << 1) + 5) = *("
+18000336c                                                                                                                 0123456789ABCDEF"
+18000336c                                                                                                                 + (zx.q(rcx_35) & 0xf))
+18000337e                                                                                                             *(arg8 + (i_1 << 1) + 6) = (
+18000337e                                                                                                                 *"0123456789ABCDEF")[zx.q(rdx_13) u>> 4]
+180003387                                                                                                             *(arg8 + (i_1 << 1) + 7) = *("
+180003387                                                                                                                 0123456789ABCDEF"
+180003387                                                                                                                 + (zx.q(rdx_13) & 0xf))
+180003387                                                                                                         
+1800033ad                                                                                                         *arg9 = 0x200
+1800033b6                                                                                                         __builtin_memset(&var_a38, 0, 0x100)
+1800033b8                                                                                                         result.b = 1
+1800033b8 
+1800033c8 __security_check_cookie(rax_1 ^ &var_c88)
+1800033e8 return result

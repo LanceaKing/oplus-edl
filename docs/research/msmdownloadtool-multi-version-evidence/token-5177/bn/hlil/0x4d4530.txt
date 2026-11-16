@@ -1,0 +1,30 @@
+004d4530 int32_t esi
+004d4530 int32_t var_4 = esi
+004d4536 sub_4d45e0()
+004d4546 int32_t var_8 = 0x78018c
+010f5718 int32_t var_c = 0xf4f1cccd
+010f571d int32_t result = sub_8b40c5(sub_4d45e0())
+010f571d void arg_4
+010f571d void* result_1 = &arg_4
+00968edc void arg_64
+00968edc 
+00968edc if (arg2 u<= &arg_64)
+00968eed     int32_t eax_2 = (arg2 - 0x80) & 0xfffffffc
+00968ef2     result = eax_2 - 0x40
+00968ef2     bool p_1 = unimplemented  {sub eax, ecx}
+00968ef2     bool a_1 = unimplemented  {sub eax, ecx}
+010a27d9     *(result - 4) = arg3
+010a27dc     *(result - 8) = arg1
+010a27dd     int32_t edi_2
+010a27dd     edi_2.w = 0x5a12
+010a27e1     bool d
+010a27e1     *(result - 0xc) = (add_overflow(eax_2, 0xffffffc0) ? 1 : 0) << 0xb | (d ? 1 : 0) << 0xa
+010a27e1         | (eax_2 - 0x40 s< 0 ? 1 : 0) << 7 | (eax_2 == 0x40 ? 1 : 0) << 6 | (a_1 ? 1 : 0) << 4
+010a27e1         | (p_1 ? 1 : 0) << 2 | (eax_2 u< 0x40 ? 1 : 0)
+01135186     __builtin_memcpy(result, &arg_4, 0x40)
+01135190     *(result - 8)
+01135191     arg3 = *(result - 4)
+01135191     result_1 = result
+01135191 
+01135192 *(result_1 - 4) = arg3
+01135193 return result

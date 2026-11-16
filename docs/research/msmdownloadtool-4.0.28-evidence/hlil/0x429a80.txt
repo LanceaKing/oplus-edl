@@ -1,0 +1,160 @@
+00429a83 int32_t var_8 = 0xffffffff
+00429a85 int32_t (* var_c)(void* arg1) = sub_571ec3
+00429a90 TEB* fsbase
+00429a90 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00429a9c int32_t __saved_ebp
+00429a9c int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00429aa4 int32_t var_a0 = eax_2
+00429aa8 fsbase->NtTib.ExceptionList = &ExceptionList
+00429aba void* var_8c = nullptr
+00429ac4 int32_t var_70 = 0xf
+00429acb int32_t var_74 = 0
+00429ad2 char var_84 = 0
+00429ad6 sub_402470(&var_84, "  <setbootablestoragedrive value=", 0x21)
+00429adb int32_t var_8_1 = 0
+00429ae2 int32_t var_28 = 0xf
+00429ae9 int32_t var_2c = 0
+00429af0 char var_3c = 0
+00429af4 int32_t var_a4_1 = arg2
+00429afa var_8_1.b = 1
+00429b04 int32_t i_1 = 5
+00429b09 char var_24
+00429b09 sub_42e740(&var_24, &data_5b9d7c)
+00429b13 char var_b8
+00429b13 char* var_90 = &var_b8
+00429b19 int32_t var_a4_2 = 0xf
+00429b20 int32_t var_a8_2 = 0
+00429b27 var_b8 = 0
+00429b2e void* ecx_1
+00429b2e 
+00429b2e if (var_24 != 0)
+00429b34     char* ecx_2 = &var_24
+00429b45     char i
+00429b45     
+00429b45     do
+00429b40         i = *ecx_2
+00429b42         ecx_2 = &ecx_2[1]
+00429b45     while (i != 0)
+00429b47     void var_23
+00429b47     ecx_1 = ecx_2 - &var_23
+00429b2e else
+00429b30     ecx_1 = nullptr
+00429b30 
+00429b50 sub_402470(&var_b8, &var_24, ecx_1)
+00429b58 var_8_1.b = 2
+00429b65 int32_t var_bc_1 = 0xf
+00429b6c int32_t var_c0_1 = 0
+00429b74 char var_d0 = 0
+00429b77 sub_402330(&var_d0, &var_84, 0, 0xffffffff)
+00429b7f var_8_1.b = 1
+00429b84 int32_t var_54
+00429b84 char* eax_3 = sub_42e660(&var_54, var_d0)
+00429b84 
+00429b90 if (&var_3c != eax_3)
+00429b96     if (var_28 u>= 0x10)
+00429b9b         j__free(var_3c.d)
+00429b9b     
+00429ba7     var_28 = 0xf
+00429bae     int32_t var_2c_1 = 0
+00429bb5     var_3c = 0
+00429bb9     sub_405f50(&var_3c, eax_3)
+00429bb9 
+00429bc2 int32_t var_40
+00429bc2 
+00429bc2 if (var_40 u>= 0x10)
+00429bc7     j__free(var_54)
+00429bc7 
+00429bd9 sub_406070(&var_3c, &data_5bcab0, 2)
+00429be6 void* var_bc_2 = 0xffffffff
+00429be8 int32_t var_c0_2 = 0
+00429bea int32_t var_a4_7 = 0xf
+00429bf1 int32_t var_a8_4 = 0
+00429bf8 void** var_c4 = &var_3c
+00429bf9 var_b8 = 0
+00429bfc sub_402330(&var_b8, var_c4, var_c0_2, var_bc_2)
+00429c05 int32_t* var_6c
+00429c05 sub_42e500(&var_6c, var_b8)
+00429c0f var_8_1.b = 3
+00429c18 _memset(arg1[2], 0, 0x1000)
+00429c2a _memset(arg1[3], 0, 0x1000)
+00429c2f char* edx = arg1[3]
+00429c32 int32_t* ecx_8 = &var_6c
+00429c3c int32_t var_58
+00429c3c 
+00429c3c if (var_58 u>= 0x10)
+00429c3c     ecx_8 = var_6c
+00429c3c 
+00429c4c char* result_1
+00429c4c 
+00429c4c do
+00429c40     result_1.b = *ecx_8
+00429c42     ecx_8 += 1
+00429c45     *edx = result_1.b
+00429c47     edx = &edx[1]
+00429c4c while (result_1.b != 0)
+00429c4c 
+00429d04 char* result
+00429d04 
+00429d04 do
+00429c50     char* edx_1 = arg1[3]
+00429c53     char* ecx_9 = edx_1
+00429c53     
+00429c5d     do
+00429c58         result_1.b = *ecx_9
+00429c5a         ecx_9 = &ecx_9[1]
+00429c5d     while (result_1.b != 0)
+00429c5d     
+00429c71     void var_88
+00429c71     result = sub_426500(*arg1, edx_1, ecx_9 - &ecx_9[1], &var_88)
+00429c71     
+00429c75     if (result != 0)
+00429c75         break
+00429c75     
+00429c86     Sleep((6 - i_1) * 0x32)
+00429ca2     result_1 = sub_4266a0(*arg1, arg1[2], 0x1000, &var_8c, 0x3e8)
+00429ca7     result = result_1
+00429ca7     
+00429cab     if (result != 0)
+00429cff         if (result != 0x102)
+00429cff             break
+00429cff         
+00429d01         i_1 -= 1
+00429cab     else
+00429cb6         int32_t var_40_1 = 0xf
+00429cc0         char* result_2 = result_1
+00429cc3         var_54.b = result_1.b
+00429cc6         sub_402470(&var_54, arg1[2], var_8c)
+00429cc6         
+00429cde         if (sub_4172e0(&var_54, "response value="ACK"", result, 0x14) != 0xffffffff)
+00429d10             if (var_40_1 u>= 0x10)
+00429d15                 j__free(var_54)
+00429d15             
+00429d10             break
+00429d10         
+00429ce0         i_1 -= 1
+00429ce1         result = 1
+00429ce1         
+00429cea         if (var_40_1 u>= 0x10)
+00429cef             j__free(var_54)
+00429d04 while (i_1 s> 0)
+00429d04 
+00429d21 if (var_58 u>= 0x10)
+00429d26     j__free(var_6c)
+00429d26 
+00429d32 int32_t var_58_1 = 0xf
+00429d39 int32_t var_5c = 0
+00429d40 var_6c.b = 0
+00429d40 
+00429d44 if (var_28 u>= 0x10)
+00429d49     j__free(var_3c.d)
+00429d49 
+00429d55 int32_t var_28_1 = 0xf
+00429d5c int32_t var_2c_2 = 0
+00429d63 var_3c = 0
+00429d63 
+00429d67 if (var_70 u>= 0x10)
+00429d6c     j__free(var_84.d)
+00429d6c 
+00429d79 fsbase->NtTib.ExceptionList = ExceptionList
+00429d89 sub_54a573(eax_2 ^ &__saved_ebp)
+00429d91 return result

@@ -1,0 +1,49 @@
+004c0490 int32_t ebx
+004c0490 int32_t var_4_4 = ebx
+004c0491 int32_t esi
+004c0491 int32_t var_8 = esi
+004c049a int32_t edi
+004c049a int32_t var_c = edi
+004c04a7 *(*(arg1 + 0x5a4) + 0x9c) = *(arg1 + 0x574)
+004c04ad *(arg1 + 0x38)
+004c04b1 int32_t result = sub_4ce6e0(arg1 + 0x5a4)
+004c04ba int32_t eax_2
+004c04ba void* __return_addr_1
+004c04ba 
+004c04ba if (result != 0)
+004c04ec     __return_addr = *(*(arg1 + 0x5a4) + 0x170)
+004c0503     sub_4d6500(&data_7e4a58, 4, "[%d] verify uc failed %d\n", *(arg1 + 0x3c) + 1)
+004c050d     __return_addr_1 = arg1 + 0x2c4
+004c0513     int32_t eax_7 = *(*(arg1 + 0x5a4) + 0x170)
+004c0513     
+004c051a     if (eax_7 == 1)
+004c054b         if (*(arg1 + 0x24) == 0)
+004c0554             __return_addr = u"uc hash not match\n"
+004c054b         else
+004c054d             __return_addr = &data_77d068
+004c051a     else if (eax_7 == 2)
+004c0537         if (*(arg1 + 0x24) == 0)
+004c0540             __return_addr = u"uc magic incorrect or token decrypt failed\n"
+004c0537         else
+004c0539             __return_addr = &data_77cff4
+004c051d     else if (*(arg1 + 0x24) == 0)
+004c052c         __return_addr = u"uc verify failed\n"
+004c0523     else
+004c0525         __return_addr = &data_77d120
+004c0525     
+004c055a     sub_4c26f0(__return_addr_1)
+004c0566     eax_2 = zx.d(*(arg1 + 0x3c)) | 0x1010000
+004c04ba else
+004c04bc     __return_addr_1 = arg1 + 0x2c4
+004c04bc     
+004c04c5     if (*(arg1 + 0x24) == result.b)
+004c04ce         __return_addr = u"Send uc to device success!\n"
+004c04c5     else
+004c04c7         __return_addr = &data_77cfdc
+004c04c7     
+004c04d4     sub_4c26f0(__return_addr_1)
+004c04e0     eax_2 = zx.d(*(arg1 + 0x3c)) | 0x10000
+004c04e0 
+004c056b __return_addr = __return_addr_1
+004c0575 0x3b87d0(*(arg1 + 0x40), 0x178c, eax_2)
+004c0580 return result

@@ -1,0 +1,40 @@
+1003f8c1 char* ebp = arg2
+1003f8c6 void* edi = arg3
+1003f8c6 
+1003f8cc if (edi != 0)
+1003f8d7     int32_t eax_1 = arg1[8]
+1003f8da     int32_t ecx_1 = eax_1 + (edi << 3)
+1003f8da     
+1003f8df     if (ecx_1 u< eax_1)
+1003f8e1         arg1[9] += 1
+1003f8e1     
+1003f8e6     arg1[8] = ecx_1
+1003f8e9     void* ecx_2 = arg1[0x1a]
+1003f8ef     arg1[9] += edi u>> 0x1d
+1003f8ef     
+1003f8f5     if (ecx_2 != 0)
+1003f905         if (edi u< 0x40 && ecx_2 + edi u< 0x40)
+1003f90d             sub_101499b0(&arg1[0xa] + ecx_2, ebp, edi)
+1003f91a             arg1[0x1a] += edi
+1003f921             return 1
+1003f921         
+1003f92f         sub_101499b0(&arg1[0xa] + ecx_2, ebp, 0x40 - ecx_2)
+1003f93b         sub_1003f9a0(arg1, &arg1[0xa], 1)
+1003f945         arg1[0x1a] = 0
+1003f94f         ebp += 0x40 - ecx_2
+1003f951         edi -= 0x40 - ecx_2
+1003f953         _memset(&arg1[0xa], 0, 0x40)
+1003f953     
+1003f95d     uint32_t esi_3 = edi u>> 6
+1003f95d     
+1003f962     if (esi_3 != 0)
+1003f967         sub_1003f9a0(arg1, ebp, esi_3)
+1003f96c         uint32_t esi_4 = esi_3 << 6
+1003f972         ebp = &ebp[esi_4]
+1003f974         edi -= esi_4
+1003f974     
+1003f978     if (edi != 0)
+1003f97e         arg1[0x1a] = edi
+1003f983         sub_101499b0(&arg1[0xa], ebp, edi)
+1003f983 
+1003f994 return 1

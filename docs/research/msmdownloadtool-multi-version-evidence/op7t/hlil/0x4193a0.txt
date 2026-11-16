@@ -1,0 +1,424 @@
+004193a0 int32_t ebp
+004193a0 int32_t var_4 = ebp
+004193a3 int32_t var_8 = 0xffffffff
+004193a5 int32_t (* var_c)() = sub_64bfee
+004193b0 TEB* fsbase
+004193b0 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+004193bc int32_t eax_2 = __security_cookie ^ &var_4
+004193be int32_t var_14 = eax_2
+004193c1 int32_t ebx
+004193c1 int32_t var_118 = ebx
+004193c2 int32_t esi
+004193c2 int32_t var_11c = esi
+004193c3 int32_t edi
+004193c3 int32_t var_120 = edi
+004193c4 int32_t var_124 = eax_2
+004193c4 int32_t* esp_1 = &var_124
+004193c8 fsbase->NtTib.ExceptionList = &ExceptionList
+004193d0 void* var_20 = arg1
+004193d3 int32_t* eax_3 = sub_4f2b78(var_124)
+004193de int32_t ecx
+004193de ecx.b = eax_3 != 0
+004193de 
+004193e3 if (ecx == 0)
+004193e5 label_4193e5:
+004193e5     *(esp_1 - 4) = 0x80004005
+004193ea     sub_405ee0()
+004193ea     noreturn
+004193ea 
+004193f9 int32_t var_24 = (*(*eax_3 + 0xc))() + 0x10
+004193fc int32_t var_8_1 = 0
+0041940d wchar16 const* const var_12c_1
+0041940d void* const var_128_1
+0041940d 
+0041940d if (data_72421c == 0)
+00419418     var_128_1 = 0x38
+0041941a     var_12c_1 = u"The password you entered is incorrect. Please try agai"
+0041940d else
+0041940f     var_128_1 = 0xd
+00419411     var_12c_1 = &data_6dc78c
+00419411 
+0041941f sub_405a80(&var_24, var_12c_1, var_128_1, var_124)
+0041942c uint128_t xmm1_1 = (*"@pJ?F^1jA#$version=%sQ?F")[0].o
+00419439 char var_38_1 = 0
+0041943e int32_t var_37_1 = 0
+00419441 int16_t var_33_1 = 0
+00419445 char var_31_1 = 0
+0041944e int32_t var_40
+0041944e __builtin_strncpy(&var_40, "on=%", 4)
+00419456 int16_t var_60_1 = 0x47
+0041945a int64_t var_5e_1 = 0
+0041946b int32_t var_56_1 = 0
+00419472 char xmm0_2 = _mm_bsrli_si128(xmm1_1, 0xc)
+0041947f int32_t xmm0_4 = _mm_bsrli_si128(xmm1_1, 4)
+00419484 int32_t xmm1_2 = _mm_bsrli_si128(xmm1_1, 8)
+0041948b char xmm2_2 = _mm_bsrli_si128((*"0123456789ABCDEFG")[0].o, 0xc)
+00419490 char var_1c = xmm0_2 + 0xf
+00419497 int16_t var_52_1 = 0
+0041949d char var_17_1 = 0
+004194a6 uint8_t var_1b_1 = (xmm0_4 u>> 0x10).b + 0x34
+004194b2 uint8_t var_1a_1 = (xmm1_2 u>> 0x10).b + 0xd
+004194bd uint8_t var_19_1 = (var_40 u>> 0x18).b + 0xd
+004194c6 char var_18_1 = xmm2_2 - 0x10
+004194c9 int32_t* eax_15 = sub_4f2b78()
+004194d4 int32_t ecx_3
+004194d4 ecx_3.b = eax_15 != 0
+004194d4 
+004194d9 if (ecx_3 == 0)
+004194e0     sub_405ee0(0x80004005)
+004194e0     noreturn
+004194e0 
+004194ef int32_t var_28 = (*(*eax_15 + 0xc))() + 0x10
+004194f5 var_8_1.b = 1
+004194fd int32_t* ebp_1 = sub_404cb0(&var_28, &var_1c)
+004194fd int32_t* esp_2 = &var_124
+00419502 int32_t eax_19 = data_724274
+0041951c int32_t eax_26
+0041951c 
+0041951c if (eax_19 != 2 && eax_19 != 1 && eax_19 != 3)
+00419529     void* eax_20 = sub_4fe79b(arg1, 0x3f0)
+00419529     int32_t* esp_3 = &var_124
+00419529     
+00419536     if (eax_20 != 0)
+00419538         int32_t var_128_5 = 0
+0041953a         int32_t var_12c_2 = 0
+0041953c         int32_t var_130_1 = 0xf0
+00419541         int32_t var_134 = *(eax_20 + 0x20)
+00419541         esp_3 = &var_134
+00419544         int32_t eax_21 = 0x3095d0(var_134, var_130_1, var_12c_2, var_128_5)
+00419544         
+00419549         if (eax_21 == 1)
+0041954b             void* const var_138_1 = &data_6d9770
+00419550             char const* const var_13c_1 = "C:/ToolLog.txt"
+00419555             data_724274 = eax_21
+0041955a             int32_t eax_22 = std::_Deallocate<64,0>("C:/ToolLog.txt", &data_6d9770)
+00419561             esp_3 = &var_134
+00419561             
+00419566             if (eax_22 != 0)
+00419568                 char const* const var_138_2 = "Start process in upgrade mode\n"
+0041956e                 _fprintf(eax_22, "Start process in upgrade mode\n")
+00419574                 _fclose(eax_22)
+00419579                 esp_3 = &var_134
+00419579     
+0041957c     *(esp_3 - 4) = 0x3ef
+00419583     void* eax_23 = sub_4fe79b(arg1)
+00419583     esp_2 = esp_3
+00419583     
+0041958a     if (eax_23 != 0)
+0041958c         *(esp_2 - 4) = 0
+0041958e         *(esp_2 - 8) = 0
+00419590         *(esp_2 - 0xc) = 0xf0
+00419595         *(esp_2 - 0x10) = *(eax_23 + 0x20)
+00419595         esp_2 -= 0x10
+00419595         
+0041959d         if (0x3095d0() == 1)
+0041959f             *(esp_2 - 4) = &data_6d9770
+004195a4             *(esp_2 - 8) = "C:/ToolLog.txt"
+004195a9             data_724274 = 2
+004195b3             int32_t eax_25 = std::_Deallocate<64,0>()
+004195b3             
+004195bf             if (eax_25 != 0)
+004195c1                 *(esp_2 - 4) = "Start process in SMT mode\n"
+004195c6                 *(esp_2 - 8) = eax_25
+004195c7                 _fprintf()
+004195cc                 *(esp_2 - 0xc) = eax_25
+004195cd                 _fclose()
+004195cd     
+004195d5     eax_26 = data_724274
+004195d5 
+004195e7 if (eax_19 != 2 && eax_19 != 1 && eax_19 != 3 && eax_26 != 2 && eax_26 != 1 && eax_26 != 3)
+004195e9     *(esp_2 - 4) = &data_6d9770
+004195ee     *(esp_2 - 8) = "C:/ToolLog.txt"
+004195f3     int32_t eax_27 = std::_Deallocate<64,0>()
+004195fa     esp_1 = esp_2
+004195fa     
+004195ff     if (eax_27 != 0)
+00419601         *(esp_1 - 4) = "Star process not set to Download type mode. End up Process\n"
+00419606         *(esp_1 - 8) = eax_27
+00419607         _fprintf()
+0041960c         *(esp_1 - 0xc) = eax_27
+0041960d         _fclose()
+0041960d     
+004195ff     goto label_419615
+004195ff 
+00419666 void* esp_19
+00419666 
+00419666 if (data_72421c == 0)
+0041966f     *(esp_2 - 4) = u" When updating your system, please ensure you have sufficient remaining battery "
+0041966f     "to avoid unintended interruptions."
+0041966f     esp_19 = esp_2 - 4
+00419666 else
+00419668     *(esp_2 - 4) = "te:gGS"
+00419668     esp_19 = esp_2 - 4
+00419668 
+00419674 *(esp_19 - 4) = 0x401
+00419679 int32_t eax_32 = sub_4fe79b(arg1)
+00419680 int32_t eax_33
+00419680 int32_t ecx_13
+00419680 int32_t edx_6
+00419680 eax_33, ecx_13, edx_6 = sub_4feaaa(eax_32, eax_32)
+00419680 esp_1 = esp_19 + 4
+00419685 int32_t eax_34
+00419685 int32_t ecx_14
+00419685 eax_34, ecx_14 = sub_41d720(eax_33, edx_6, ecx_13)
+0041968a void* edi_1 = ebp_1[-8]
+00419690 void* esi_4 = ebp_1[-9]
+00419690 
+00419695 if (eax_34 == 0)
+004196cc     if (data_724274 != 2 || *(ebp_1[-7] + 0xc8) != 0)
+0041989c     label_41989c:
+0041989c         int32_t eax_51
+0041989c         int32_t edx_12
+0041989c         eax_51, edx_12 = sub_414a40(&data_723df0)
+0041989c         
+004198a4         if (eax_51 == 1)
+004198a6             int32_t ecx_35 = ebp_1[-7]
+004198a9             *(esp_1 - 4) = 0x415
+004198a9             esp_1 -= 4
+004198ae             int32_t eax_52
+004198ae             eax_52, ebp_1 = sub_4fe8e9(eax_51, edx_12, ecx_35)
+004198b3             int32_t eax_53 = neg.d(eax_52)
+004198b9             data_724210 = neg.d(sbb.d(eax_53, eax_53, eax_52 != 0))
+004198b9         
+004198be         void* eax_56 = ebp_1[-7]
+004198be         
+004198c8         if (*(eax_56 + 0x194) == 0)
+00419998             bool cond:1_1 = data_72421c == 0
+0041999f             *(esp_1 - 4) = 0
+004199a1             *(esp_1 - 8) = 0x30
+004199a3             void* esp_58
+004199a3             
+004199a3             if (cond:1_1)
+004199ac                 *(esp_1 - 0xc) =
+004199ac                     u"SMT download mode: not verify or verify failed, Not allowed to downloa"
+004199ac                 esp_58 = esp_1 - 0xc
+004199a3             else
+004199a5                 *(esp_1 - 0xc) = &data_6dca98
+004199a5                 esp_58 = esp_1 - 0xc
+004199a5             
+004199b1             sub_4f1c19()
+004199b1             esp_1 = esp_58 + 0xc
+004198c8         else
+004198d4             sub_4082f0(eax_56 + 0x614)
+004198dc             sub_419a50(ebp_1[-7])
+004198e4             sub_41b890(ebp_1[-7])
+004198ec             sub_41d5d0(ebp_1[-7])
+004198f1             int32_t ecx_40 = ebp_1[-7]
+004198f4             *(esp_1 - 4) = 0
+004198f6             *(esp_1 - 8) = 0x3ef
+00419902             sub_4fe74f(sub_4fe79b(ecx_40))
+00419907             int32_t ecx_42 = ebp_1[-7]
+0041990a             *(esp_1 - 4) = 0
+0041990c             *(esp_1 - 8) = 0x3f0
+00419918             int32_t eax_59
+00419918             int32_t edx_13
+00419918             eax_59, edx_13 = sub_4fe74f(sub_4fe79b(ecx_42))
+0041991d             int32_t ecx_44 = ebp_1[-7]
+00419920             *(esp_1 - 4) = 0x412
+00419925             int32_t eax_60
+00419925             void* ebp_2
+00419925             eax_60, ebp_2 = sub_4fe8e9(eax_59, edx_13, ecx_44)
+0041992c             bool cond:2_1
+0041992c             
+0041992c             if (eax_60 != 0)
+0041992e                 cond:2_1 = data_72401a != 1
+00419935                 data_7241d4 = 1
+00419935             
+0041993f             if (eax_60 == 0 || not(cond:2_1))
+00419941                 data_7241d4 = 0
+00419941             
+0041994b             int32_t ecx_45 = *(ebp_2 - 0x1c)
+0041994e             *(esp_1 - 8) = 0
+00419950             *(esp_1 - 0xc) = 0x412
+0041995c             int32_t eax_62
+0041995c             int32_t edx_14
+0041995c             eax_62, edx_14 = sub_4fe74f(sub_4fe79b(ecx_45))
+00419961             int32_t ecx_47 = *(ebp_2 - 0x1c)
+00419964             *(esp_1 - 8) = 0x417
+00419964             esp_1 -= 8
+00419969             int32_t eax_63
+00419969             eax_63, ebp_1 = sub_4fe8e9(eax_62, edx_14, ecx_47)
+00419970             int32_t eax_64
+00419970             
+00419970             if (eax_63 != 0)
+00419977                 eax_64 = sub_414a40(&data_723df0)
+00419977             
+0041997e             if (eax_63 == 0 || eax_64 == 0)
+0041998c                 data_7241d8 = 0
+0041997e             else
+00419980                 data_7241d8 = 1
+00419980         
+004198c8         goto label_4199b9
+004198c8     
+004196d2     *(esp_1 - 4) = ecx_14
+004196d9     ebp_1[-0xb] = 0
+004196e0     edi_1 = sub_40a180(&ebp_1[-0x44])
+004196eb     ebp_1[-1].b = 2
+004196eb     
+004196f7     if (sub_4fffd3() == 1)
+00419701         int32_t eax_37
+00419701         eax_37.b = esi_4 != 0
+00419704         ebp_1[-0xa] = eax_37
+004197b2         bool cond:4_1
+004197b2         
+004197b2         do
+00419709             if (eax_37 == 0)
+00419709                 goto label_4193e5
+00419709             
+0041970f             *(esp_1 - 4) = esi_4
+00419710             *(esp_1 - 8) = ebp_1[-0x1e]
+00419710             
+0041971d             if (sub_60d4ea() == 0)
+0041980f                 void* eax_47 = ebp_1[-7]
+00419812                 *(esp_1 - 4) = &data_6d9770
+00419817                 *(esp_1 - 8) = "C:/ToolLog.txt"
+0041981c                 *(eax_47 + 0xc8) = 1
+00419826                 int32_t eax_48 = std::_Deallocate<64,0>()
+0041982e                 ebp_1[-0xa] = eax_48
+0041982e                 
+00419833                 if (eax_48 != 0)
+00419835                     *(esp_1 - 4) = ebp_1[-0x1c]
+00419838                     *(esp_1 - 8) = "Dialog selection = %d\n"
+0041983d                     *(esp_1 - 0xc) = eax_48
+0041983e                     _fprintf()
+00419843                     *(esp_1 - 0x10) = ebp_1[-0xa]
+00419846                     _fclose()
+00419846                 
+0041984e                 int32_t eax_49 = ebp_1[-0x1c]
+0041984e                 
+00419854                 if (eax_49 u> 4)
+0041988e                     ebp_1[-1].b = 1
+00419892                     sub_40a310(&ebp_1[-0x44])
+00419854                 else
+00419856                     switch (eax_49)
+00419856                         case 0
+00419856                             return sub_41985d(ebp_1, esi_4, nullptr) __tailcall
+00419856                         case 1
+00419856                             jump(0x419864)
+00419856                         case 2
+00419856                             jump(0x41986b)
+00419856                         case 3
+00419856                             jump(0x419872)
+00419856                         case 4
+00419856                             return sub_419879(ebp_1, esi_4, nullptr) __tailcall
+00419856                 
+00419854                 goto label_41989c
+00419854             
+00419723             *(esp_1 - 4) = 0
+00419725             *(esp_1 - 8) = 0x34
+00419727             *(esp_1 - 0xc) = 0
+00419727             
+00419730             if (sub_4f1c19() != 6)
+00419730                 break
+00419730             
+00419739             int32_t eax_41 = ebp_1[-0xb] + 1
+0041973a             ebp_1[-0xb] = eax_41
+0041973a             
+00419740             if (eax_41 s>= 3)
+004197c4                 void* esp_32
+004197c4                 
+004197c4                 if (data_72421c == 0)
+004197cd                     *(esp_1 - 4) = u"The password you entered is incorrec"
+004197cd                     esp_32 = esp_1 - 4
+004197c4                 else
+004197c6                     *(esp_1 - 4) = 0x6dc9e8
+004197c6                     esp_32 = esp_1 - 4
+004197c6                 
+004197d2                 sub_405b80(&ebp_1[-8], esi_4)
+004197d7                 *esp_32 = 0
+004197d9                 *(esp_32 - 4) = 0x34
+004197db                 *(esp_32 - 8) = ebp_1[-8]
+004197de                 sub_4f1c19()
+004197de                 esp_1 = esp_32 + 4
+004197de                 break
+004197de             
+00419742             ebp_1[-1].b = 4
+0041974b             int32_t* edx_8 = ebp_1[-0x1d] - 0x10
+00419751             int32_t ecx_18 = edx_8[3]
+00419751             edx_8[3] -= 1
+00419751             
+00419758             if (ecx_18 - 1 s<= 0)
+0041975a                 int32_t* ecx_20 = *edx_8
+0041975c                 *(esp_1 - 4) = edx_8
+0041975f                 (*(*ecx_20 + 4))()
+0041975f             
+00419762             ebp_1[-1].b = 3
+0041976b             int32_t* edx_10 = ebp_1[-0x1e] - 0x10
+00419771             int32_t ecx_21 = edx_10[3]
+00419771             edx_10[3] -= 1
+00419771             
+00419778             if (ecx_21 - 1 s<= 0)
+0041977a                 int32_t* ecx_23 = *edx_10
+0041977c                 *(esp_1 - 4) = edx_10
+0041977f                 (*(*ecx_23 + 4))()
+0041977f             
+00419788             ebp_1[-1].b = 1
+00419791             *(esp_1 - 4) = sub_4ffad4()
+00419798             edi_1 = sub_40a180(&ebp_1[-0x44])
+004197a3             ebp_1[-1].b = 2
+004197ac             cond:4_1 = sub_4fffd3() == 1
+004197af             eax_37 = ebp_1[-0xa]
+004197b2         while (cond:4_1)
+004197b2     
+004197e3     ebp_1[-7]
+004197e6     sub_500297()
+004197f1     ebp_1[-1].b = 1
+004197f5     sub_40a310(&ebp_1[-0x44])
+004197fd     sub_405d20(&ebp_1[-9])
+00419805     sub_405d20(&ebp_1[-8])
+00419695 else
+0041969f     int32_t* ecx_10
+0041969f     
+0041969f     if (eax_34 != 0x574)
+004196ab         sub_500297()
+00419615     label_419615:
+00419615         ebp_1[-1].b = 0
+00419621         int32_t* edx_3 = ebp_1[-9] - 0x10
+00419627         int32_t eax_28 = edx_3[3]
+00419627         edx_3[3] -= 1
+00419627         
+0041962e         if (eax_28 - 1 s<= 0)
+00419630             int32_t* ecx_9 = *edx_3
+00419632             *(esp_1 - 4) = edx_3
+00419635             (*(*ecx_9 + 4))()
+00419635         
+00419638         ebp_1[-1] = 0xffffffff
+00419642         int32_t* edx_5 = ebp_1[-8] - 0x10
+00419648         int32_t ebx_2 = edx_5[3]
+00419648         edx_5[3] -= 1
+00419648         
+0041964f         if (ebx_2 - 1 s<= 0)
+00419655             ecx_10 = *edx_5
+00419657             *(esp_1 - 4) = edx_5
+00419657             esp_1 -= 4
+004199ee             (*(*ecx_10 + 4))()
+0041969f     else
+004196a1         esi_4 = sub_41d8b0(ebp_1[-7])
+004199b9     label_4199b9:
+004199b9         ebp_1[-1].b = 0
+004199c2         int32_t ecx_48 = *(esi_4 - 4)
+004199c2         *(esi_4 - 4) -= 1
+004199c2         
+004199c9         if (ecx_48 - 1 s<= 0)
+004199cb             int32_t* ecx_50 = *(esi_4 - 0x10)
+004199cd             *(esp_1 - 4) = esi_4 - 0x10
+004199d0             (*(*ecx_50 + 4))()
+004199d0         
+004199d6         ebp_1[-1] = 0xffffffff
+004199e0         int32_t ebx_4 = *(edi_1 - 4)
+004199e0         *(edi_1 - 4) -= 1
+004199e0         
+004199e7         if (ebx_4 - 1 s<= 0)
+004199e9             ecx_10 = *(edi_1 - 0x10)
+004199eb             *(esp_1 - 4) = edi_1 - 0x10
+004199eb             esp_1 -= 4
+004199ee             (*(*ecx_10 + 4))()
+004199ee 
+004199f4 fsbase->NtTib.ExceptionList = ebp_1[-3]
+004199fb esp_1[1]
+004199fc esp_1[2]
+004199fd esp_1[3]
+004199ff ebp_1[-4]
+00419a04 int32_t result = sub_60bdca()
+00419a0b *ebp_1
+00419a0c return result

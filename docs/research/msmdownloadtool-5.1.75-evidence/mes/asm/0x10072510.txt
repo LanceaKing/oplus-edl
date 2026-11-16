@@ -1,0 +1,25 @@
+10072510 push    ebp
+10072511 mov     ebp, esp
+10072513 push    0xffffffff
+10072515 push    0x101ba128
+1007251a mov     eax, dword [fs:0x0]
+10072520 push    eax
+10072521 push    ebx
+10072522 push    esi
+10072523 push    edi
+10072524 mov     eax, dword [0x10247210]
+10072529 xor     eax, ebp
+1007252b push    eax
+1007252c lea     eax, [ebp-0xc]
+1007252f mov     dword [fs:0x0], eax
+10072535 push    0x10225974
+1007253a mov     dword [ebp-0x4], 0x0
+10072541 jmp     0x10802eed
+10802eed push    0x8aa1159c
+10802ef2 call    0x104de0bb
+10802ef7 mov     ecx, dword [ecx+0x5dd18d]
+10802efd lea     ecx, [ecx+0x3775487e]
+10802f03 jmp     0x1064aa0a
+1064aa0a xchg    dword [esp], ecx
+1064aa0d jmp     0x108f5c31
+108f5c31 retn    

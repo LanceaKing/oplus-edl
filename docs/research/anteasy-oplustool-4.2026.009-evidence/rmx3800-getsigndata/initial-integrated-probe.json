@@ -1,0 +1,391 @@
+{
+  "execution": {
+    "entry": "0x149a19b8",
+    "instructions": 2889343,
+    "returned": false,
+    "logger_skips": 11,
+    "stopped_before_ack_transport": true,
+    "pc": "0x149a84f0",
+    "return_x0": "0x1",
+    "code_region_unchanged": true
+  },
+  "fields": {
+    "id": "1234abcd",
+    "rand": "bb3333bb95511559",
+    "digest_write": "205f782bcbb1e086f3c650304ca5eda0b487af33008ceac7d61fb8b99f0ba874",
+    "digest_read": "0123456789012345678901234567890101234567890123456789012345678901",
+    "nv": "T1NJRzAAAABZAAAAVwAAAFFDT00AAAAAU004NjUwAABPTERJRDEyMwAAAAAAAAAAZmVkY2JhOTg3NjU0MzIxMEFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCMDAwMDAAAAAwMDAwMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMKERgfJi00O0JJUFdeZWxzeoGIj5adpKuyucDHztXc4+rx+P8GDRQbIikwNz5FTFNaYWhvdn2Ei5KZoKeutbzDytHY3+bt9PsCCRAXHiUsMzpBSE9WXWRrcnmAh46VnA==",
+    "prepared": 1,
+    "auth_pass": 0,
+    "auth_mode": 0,
+    "transfer_buffers_in_use": "0000"
+  },
+  "ack_argument": 1,
+  "mmio": [
+    {
+      "pc": "0x149ad690",
+      "access": 16,
+      "address": "0x10c3004",
+      "value": "0x1"
+    },
+    {
+      "pc": "0x149ad6a0",
+      "access": 16,
+      "address": "0x10c3000",
+      "value": "0x12345678"
+    },
+    {
+      "pc": "0x149ad6b4",
+      "access": 16,
+      "address": "0x10c3004",
+      "value": "0x1"
+    },
+    {
+      "pc": "0x149ad6c4",
+      "access": 16,
+      "address": "0x10c3000",
+      "value": "0x87654321"
+    },
+    {
+      "pc": "0x149ad690",
+      "access": 16,
+      "address": "0x10c3004",
+      "value": "0x1"
+    },
+    {
+      "pc": "0x149ad6a0",
+      "access": 16,
+      "address": "0x10c3000",
+      "value": "0x23456789"
+    },
+    {
+      "pc": "0x149ad6b4",
+      "access": 16,
+      "address": "0x10c3004",
+      "value": "0x1"
+    },
+    {
+      "pc": "0x149ad6c4",
+      "access": 16,
+      "address": "0x10c3000",
+      "value": "0x98765432"
+    },
+    {
+      "pc": "0x149ad690",
+      "access": 16,
+      "address": "0x10c3004",
+      "value": "0x1"
+    },
+    {
+      "pc": "0x149ad6a0",
+      "access": 16,
+      "address": "0x10c3000",
+      "value": "0x3456789a"
+    },
+    {
+      "pc": "0x149ad6b4",
+      "access": 16,
+      "address": "0x10c3004",
+      "value": "0x1"
+    },
+    {
+      "pc": "0x149ad6c4",
+      "access": 16,
+      "address": "0x10c3000",
+      "value": "0xa9876543"
+    },
+    {
+      "pc": "0x149ad690",
+      "access": 16,
+      "address": "0x10c3004",
+      "value": "0x1"
+    },
+    {
+      "pc": "0x149ad6a0",
+      "access": 16,
+      "address": "0x10c3000",
+      "value": "0x456789ab"
+    },
+    {
+      "pc": "0x149ad6b4",
+      "access": 16,
+      "address": "0x10c3004",
+      "value": "0x1"
+    },
+    {
+      "pc": "0x149ad6c4",
+      "access": 16,
+      "address": "0x10c3000",
+      "value": "0xba987654"
+    }
+  ],
+  "source_words_consumed": 8,
+  "rand_requests": [
+    {
+      "destination": "0x300fefd8",
+      "length": 16
+    }
+  ],
+  "smc_inputs": [
+    {
+      "function": "0x2000102",
+      "status": 0,
+      "secure_input": 1
+    },
+    {
+      "function": "0x2000102",
+      "status": 0,
+      "secure_input": 1
+    },
+    {
+      "function": "0x2000102",
+      "status": 0,
+      "secure_input": 1
+    }
+  ],
+  "storage": [
+    {
+      "op": "open",
+      "type": 3,
+      "slot": 0,
+      "unit": 3,
+      "handle": "0x310080c0"
+    },
+    {
+      "op": "read",
+      "type": 3,
+      "unit": 3,
+      "sector_size": 4096,
+      "lba": "0x260",
+      "count": 1,
+      "destination": "0x80000000",
+      "result": 0,
+      "bytes_sha256": "156a057a7e090f7f37242b4d71f1199b6ed5499f93a5f5ffbff76858f2c35a7d"
+    },
+    {
+      "op": "close",
+      "handle": "0x310080c0"
+    },
+    {
+      "op": "open",
+      "type": 3,
+      "slot": 0,
+      "unit": 5,
+      "handle": "0x31008140"
+    },
+    {
+      "op": "read",
+      "type": 3,
+      "unit": 5,
+      "sector_size": 4096,
+      "lba": "0x0",
+      "count": 6,
+      "destination": "0x80100000",
+      "result": 0,
+      "bytes_sha256": "c125ce90c56356e671f30fc8eada7c1d292c360f1f1cdb4765638a81890cee17"
+    },
+    {
+      "op": "close",
+      "handle": "0x31008140"
+    },
+    {
+      "op": "open",
+      "type": 3,
+      "slot": 0,
+      "unit": 5,
+      "handle": "0x31008140"
+    },
+    {
+      "op": "read",
+      "type": 3,
+      "unit": 5,
+      "sector_size": 4096,
+      "lba": "0x148d",
+      "count": 1,
+      "destination": "0x80000000",
+      "result": 0,
+      "bytes_sha256": "156a057a7e090f7f37242b4d71f1199b6ed5499f93a5f5ffbff76858f2c35a7d"
+    },
+    {
+      "op": "close",
+      "handle": "0x31008140"
+    }
+  ],
+  "rsa": [
+    {
+      "event": "entry",
+      "modulus_ptr": "0x149ce818",
+      "message": "4f53494730000000590000005700000051434f4d00000000534d3836353000003132333461626364000000000000000066656463626139383736353433323130414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424230303030300000003030303030000000",
+      "sha256": "2fa86617ae7c056dc0e04958fa3c3df97aeba69cfa2378ad73c74a71105af0ad",
+      "signature": "030a11181f262d343b424950575e656c737a81888f969da4abb2b9c0c7ced5dce3eaf1f8ff060d141b222930373e454c535a61686f767d848b9299a0a7aeb5bcc3cad1d8dfe6edf4fb020910171e252c333a41484f565d646b727980878e959ca3aab1b8bfc6cdd4dbe2e9f0f7fe050c131a21282f363d444b525960676e757c838a91989fa6adb4bbc2c9d0d7dee5ecf3fa01080f161d242b323940474e555c636a71787f868d949ba2a9b0b7bec5ccd3dae1e8eff6fd040b121920272e353c434a51585f666d747b828990979ea5acb3bac1c8cfd6dde4ebf2f900070e151c232a31383f464d545b626970777e858c939aa1a8afb6bdc4cbd2d9e0e7eef5fc"
+    },
+    {
+      "event": "digest",
+      "value": "2fa86617ae7c056dc0e04958fa3c3df97aeba69cfa2378ad73c74a71105af0ad"
+    },
+    {
+      "event": "result",
+      "w0": "0xffffbc80"
+    }
+  ],
+  "log_calls": [
+    {
+      "format": "SM8650 oplus_get_soc_serial_number 0x%x",
+      "args": [
+        "0x1234abcd",
+        "0x2",
+        "0x12000",
+        "0x0",
+        "0x0",
+        "0x0"
+      ]
+    },
+    {
+      "format": "%s verify signature failed",
+      "args": [
+        "0x149cfc38",
+        "0x100",
+        "0x0",
+        "0x40",
+        "0x8196e45",
+        "0x80270234"
+      ]
+    },
+    {
+      "format": "verify failed%c",
+      "args": [
+        "0x2e",
+        "0x100",
+        "0x0",
+        "0x40",
+        "0x8196e45",
+        "0x80270234"
+      ]
+    },
+    {
+      "format": "sw version error%c",
+      "args": [
+        "0x2e",
+        "0x100",
+        "0x0",
+        "0x40",
+        "0x8196e45",
+        "0x80270234"
+      ]
+    },
+    {
+      "format": "wlen: %zu",
+      "args": [
+        "0x1a",
+        "0x300fef40",
+        "0x300fef38",
+        "0x40",
+        "0x8196e45",
+        "0x80270234"
+      ]
+    },
+    {
+      "format": "find %s",
+      "args": [
+        "0x300fef48",
+        "0x300fef40",
+        "0x300fef38",
+        "0x40",
+        "0x8196e45",
+        "0x80270234"
+      ]
+    },
+    {
+      "format": "get nvid ok%c",
+      "args": [
+        "0x2e",
+        "0x300fef78",
+        "0x300fef38",
+        "0x40",
+        "0x8196e45",
+        "0x80270234"
+      ]
+    },
+    {
+      "format": "Version:%s; Platform1:%s; Platform2:%s; Mode:%s; Rand:%s; ProjectWrite:%s; ProjectRead:%s; DigestWrite:%s; DigestRead:%s;",
+      "args": [
+        "0x149ce781",
+        "0x149ce783",
+        "0x149ce788",
+        "0x149ce78f",
+        "0x8025b28a",
+        "0x149ce793"
+      ]
+    },
+    {
+      "format": "ID:%s;",
+      "args": [
+        "0x8025b281",
+        "0x149ce783",
+        "0x149ce788",
+        "0x149ce78f",
+        "0x8025b28a",
+        "0x149ce793"
+      ]
+    },
+    {
+      "format": "NV:%s;",
+      "args": [
+        "0x8025b41d",
+        "0x149ce783",
+        "0x149ce788",
+        "0x149ce78f",
+        "0x8025b28a",
+        "0x149ce793"
+      ]
+    },
+    {
+      "format": "SecureBoot:enable%c",
+      "args": [
+        "0x3b",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x0",
+        "0x300fef78"
+      ]
+    }
+  ],
+  "setup": {
+    "heap": {
+      "entry": "0x1499f458",
+      "instructions": 1384,
+      "returned": true,
+      "pc": "0x3100f000",
+      "return_x0": "0x0",
+      "code_region_unchanged": true,
+      "descriptor": "591551950000000000000032000000000000003200000000010000000000200000000000000000000000000000000000ecb29a1400000000f4b29a1400000000142e208000000000bb33d91d00000000000000000000000000000000000000000000000000000000000000000000000001000000000000000000003200000000",
+      "heap_capacity": 2097152,
+      "entropy_events": []
+    },
+    "buffers": {
+      "entry": "0x149a4fa0",
+      "instructions": 24,
+      "returned": true,
+      "pc": "0x3100f000",
+      "return_x0": "0x80269001",
+      "code_region_unchanged": true
+    },
+    "storage_selection": {
+      "entry": "0x149a8be0",
+      "instructions": 55,
+      "returned": true,
+      "pc": "0x3100f000",
+      "return_x0": "0x80269b50",
+      "code_region_unchanged": true
+    }
+  },
+  "digest_write_call": {
+    "entry": "0x149a0ca4",
+    "instructions": 42655,
+    "returned": true,
+    "pc": "0x3100f000",
+    "return_x0": "0x0",
+    "code_region_unchanged": true
+  }
+}

@@ -1,0 +1,137 @@
+00457e50 int32_t ebp
+00457e50 int32_t var_4 = ebp
+00457e51 int32_t* ebp_1 = &var_4
+00457e53 int32_t var_8 = 0xffffffff
+00457e55 int32_t (* var_c)(void* arg1) = sub_6d2d90
+00457e60 TEB* fsbase
+00457e60 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00457e69 int32_t eax_2 = __security_cookie ^ &var_4
+00457e6b int32_t var_18 = eax_2
+00457e6e int32_t ebx
+00457e6e int32_t var_58 = ebx
+00457e6f int32_t esi
+00457e6f int32_t var_5c = esi
+00457e70 int32_t edi
+00457e70 int32_t var_60 = edi
+00457e71 int32_t var_64 = eax_2
+00457e75 fsbase->NtTib.ExceptionList = &ExceptionList
+00457e7b int32_t* var_14 = &var_64
+00457e86 void* var_3c = arg1
+00457e89 void var_38
+00457e89 sub_495fa0(&var_38)
+00457e91 int32_t var_8_1 = 0
+00457e9c (*(*(arg1 + 0x58) + 0xc))(0xffffffff, var_64)
+00457e9f int16_t* var_6c = 7
+00457ea3 int32_t var_1c = 7
+00457eaa wchar16 const* const var_70 = u"account"
+00457eb2 int32_t var_20 = 0
+00457eb9 int16_t var_30 = 0
+00457ebd sub_45c850(&var_30, var_70, var_6c)
+00457ec2 var_8_1.b = 1
+00457ec9 int16_t* edx = *arg2
+00457ecf var_6c = 7
+00457ed6 int32_t var_70_1 = 0
+00457edd int16_t var_80 = 0
+00457ee3 int32_t ecx_3
+00457ee3 
+00457ee3 if (*edx != 0)
+00457ee9     int16_t* ecx_4 = edx
+00457ef9     int16_t i
+00457ef9     
+00457ef9     do
+00457ef0         i = *ecx_4
+00457ef3         ecx_4 = &ecx_4[1]
+00457ef9     while (i != 0)
+00457efd     ecx_3 = (ecx_4 - &ecx_4[1]) s>> 1
+00457ee3 else
+00457ee5     ecx_3 = 0
+00457ee5 
+00457f03 int32_t* eax_4
+00457f03 int32_t edx_1
+00457f03 eax_4, edx_1 = sub_45c850(&var_80, edx, ecx_3)
+00457f0b struct web::json::details::_Value::web::json::details::_String::VTable** var_34
+00457f0b struct web::json::details::_Value::web::json::details::_String::VTable*** eax_5 =
+00457f0b     sub_495f20(eax_4, edx_1, &var_34, var_80)
+00457f18 var_8_1.b = 2
+00457f1c var_6c = &var_30
+00457f20 struct web::json::details::_Value::web::json::details::_String::VTable*** eax_6 =
+00457f20     sub_4960f0(&var_38)
+00457f20 
+00457f29 if (eax_6 != eax_5)
+00457f2b     struct web::json::details::_Value::web::json::details::_String::VTable** ecx_9 = *eax_6
+00457f2f     *eax_6 = *eax_5
+00457f31     *eax_5 = ecx_9
+00457f31 
+00457f33 var_8_1.b = 1
+00457f37 struct web::json::details::_Value::web::json::details::_String::VTable** ecx_10 = var_34
+00457f37 
+00457f3c if (ecx_10 != 0)
+00457f42     ecx_10 = (*ecx_10)->vFunc_24(1)
+00457f42 
+00457f49 if (var_1c u>= 8)
+00457f4e     ecx_10, ebp_1 = j_sub_688543(var_30.d)
+00457f4e 
+00457f56 struct web::json::details::_Value::web::json::details::_String::VTable** var_70_4 = ecx_10
+00457f5a ebp_1[-1].b = 3
+00457f5e int32_t* var_74 = arg1 + 8
+00457f69 int32_t* eax_12 = sub_4589b0(arg1, &ebp_1[-0x10], &ebp_1[-0xd])
+00457f69 void** esp_1 = &var_6c
+00457f6e ebp_1[-1].b = 4
+00457f72 void* ecx_12 = *eax_12
+00457f72 
+00457f76 if (ecx_12 == 0)
+00457f78     char const* const var_70_5 = "wait() cannot be called on a default constructed task."
+00457f80     sub_68efe0(&ebp_1[-0x14])
+00457f85     char* var_70_6 = &data_7b5894
+00457f8d     var_74 = &ebp_1[-0x14]
+00457f8d     esp_1 = &var_74
+00457f8e     ecx_12, ebp_1 = sub_69858f(var_74, var_70_6)
+00457f8e 
+00457f93 int32_t edx_3 = sub_455740(ecx_12)
+00457f98 ebp_1[-1].b = 3
+00457f9c int32_t* esi_4 = ebp_1[-0xf]
+00457f9c 
+00457fa1 if (esi_4 != 0)
+00457fab     bool cond:0_1 = esi_4[1] != 1
+00457fa6     esi_4[1]
+00457fab     esi_4[1] -= 1
+00457fab     
+00457faf     if (not(cond:0_1))
+00457fb5         edx_3 = (**esi_4)()
+00457fba         int32_t ebx_1 = esi_4[2]
+00457fba         esi_4[2] -= 1
+00457fba         
+00457fbf         if (ebx_1 == 1)
+00457fc5             edx_3 = (*(*esi_4 + 4))()
+00457fc5 
+00457fd1 int32_t result
+00457fd1 
+00457fd1 if (0xc8 != *(arg1 + 8))
+00457ff0     *(arg1 + 0x10) = 1
+00457ff7     result = 1
+00457fd1 else
+00457fd8     *(esp_1 - 4) = arg1 + 0xc
+00457fd8     
+00457fe0     if (sub_458550(arg1 + 0xc, edx_3, arg1) == 0)
+00458023         ebp_1[-1] = 0
+0045802c         (*(*(arg1 + 0x58) + 0x14))()
+0045802f         result = 0
+00457fe0     else
+00457fe2         *(arg1 + 0x10) = 0xb
+00457fe9         result = 1
+00457fe9 
+00458031 ebp_1[-1] = 0xffffffff
+00458038 int32_t* ecx_19 = ebp_1[-0xd]
+00458038 
+0045803d if (ecx_19 != 0)
+0045803f     int32_t edx_4 = *ecx_19
+00458041     *(esp_1 - 4) = 1
+00458043     (*(edx_4 + 0x60))()
+00458043 
+0045804b fsbase->NtTib.ExceptionList = ebp_1[-3]
+00458052 esp_1[1]
+00458053 esp_1[2]
+00458054 esp_1[3]
+0045805b sub_687de2(ebp_1[-5] ^ ebp_1)
+00458062 *ebp_1
+00458063 return result

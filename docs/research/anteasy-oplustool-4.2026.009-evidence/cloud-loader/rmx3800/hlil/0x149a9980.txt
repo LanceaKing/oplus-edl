@@ -1,0 +1,28 @@
+149a9954 char* x0 = sub_149a79ac(arg1, "storage_type")
+149a995c int32_t x0_1
+149a995c 
+149a995c if (zx.d(*x0) == 0)
+149a9968     x0_1 = sub_149a8bf4()
+149a995c else
+149a9960     x0_1 = sub_149a83a0(x0)
+149a9960 
+149a9978 *arg2 = x0_1
+149a9984 int32_t x0_3
+149a9984 int128_t v0
+149a9984 int128_t v1
+149a9984 int128_t v2
+149a9984 int128_t v3
+149a9984 int128_t v4
+149a9984 int128_t v5
+149a9984 int128_t v6
+149a9984 int128_t v7
+149a9984 x0_3, v0, v1, v2, v3, v4, v5, v6, v7 =
+149a9984     sub_149a828c(arg1, "slot", &arg2[1], arg3, arg4, arg5, arg6, arg7, arg8, arg9, arg10)
+149a9984 
+149a9988 if (x0_3 != 0)
+149a998c     arg2[1] = 0
+149a998c 
+149a99a8 if (sub_149a828c(arg1, "physical_partition_number", &arg2[2], v0, v1, v2, v3, v4, v5, v6, v7) != 0)
+149a99ac     arg2[2] = 0
+149a99ac 
+149a99c0 return 0

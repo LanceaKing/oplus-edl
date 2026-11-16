@@ -1,0 +1,39 @@
+00417d23 if (arg2 != 0 && *(arg2 + 0x40) != 0)
+00417d34     uint32_t wParam = zx.d((*(arg1 + 0x2c)).b) << 0x10
+00417d37     bool cond:1 = *(arg1 + 0x1b) == 0
+00417d3b     *(arg1 + 0x35) = 0
+00417d3f     LPARAM lParam
+00417d3f     
+00417d3f     lParam = cond:1 ? "Try Send Sahara Message" : 0x5a1f98
+00417d3f     
+00417d56     SendMessageA(*(arg1 + 0x30), 0x178c, wParam, lParam)
+00417d68     LPARAM lParam_1
+00417d68     
+00417d68     if (*(arg1 + 0x1b) == 0)
+00417d71         lParam_1 = "Start Download Firehose Binary"
+00417d68     else
+00417d6a         lParam_1 = 0x5a1fcc
+00417d6a     
+00417d7f     SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam_1)
+00417d84     *(*(arg1 + 0x24) + 0x14) = arg2
+00417d93     return sub_41b200(*(arg1 + 0x24))
+00417d93 
+00417d9a void** eax_7 = arg2 + 0x18
+00417d9d void* const var_18_2
+00417d9d 
+00417d9d if (*(arg1 + 0x1b) == 0)
+00417db3     if (eax_7[5] u>= 0x10)
+00417db5         eax_7 = *eax_7
+00417db5     
+00417db7     void** var_14_1 = eax_7
+00417db8     var_18_2 = "Can't find file %s"
+00417d9d else
+00417da3     if (eax_7[5] u>= 0x10)
+00417da5         eax_7 = *eax_7
+00417da5     
+00417da7     void** var_14 = eax_7
+00417da8     var_18_2 = &data_5a1f74
+00417da8 
+00417dc4 sub_410900(arg1 + 0x164, var_18_2)
+00417de7 SendMessageA(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, arg1 + 0x164)
+00417df6 return 1

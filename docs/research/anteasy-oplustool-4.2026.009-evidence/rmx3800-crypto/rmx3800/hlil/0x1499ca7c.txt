@@ -1,0 +1,16 @@
+1499ca8c int64_t result
+1499ca8c int64_t i
+1499ca8c void* x10
+1499ca8c result, i, x10 = sub_1499caf0(&data_80202000)
+1499ca8c 
+1499ca94 for (; i != 0x480; i += 0x80)
+1499ca98     char* x8_1 = x10 + i
+1499ca98     
+1499caa0     if (zx.d(x8_1[0x70]) != 0)
+1499caa4         int64_t x11_2 = *(x8_1 + 8)
+1499caa4         
+1499cabc         if (x11_2 u<= arg1 && x11_2 + zx.q(*(x8_1 + 0x1c)) u> arg1)
+1499cacc             sub_149abad4(x8_1, arg1)
+1499cad0             return 0
+1499cad0 
+1499cad8 return result

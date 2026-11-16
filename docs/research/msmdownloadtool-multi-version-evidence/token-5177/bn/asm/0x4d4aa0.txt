@@ -1,0 +1,39 @@
+004d4aa0 push    ebp
+004d4aa1 mov     ebp, esp
+004d4aa3 push    0xffffffff
+004d4aa5 push    0x6dccb4
+004d4aaa mov     eax, dword [fs:0x0]
+004d4ab0 push    eax
+004d4ab1 sub     esp, 0x15c
+004d4ab7 mov     eax, dword [0x7c0bb0]
+004d4abc xor     eax, ebp
+004d4abe mov     dword [ebp-0x14], eax
+004d4ac1 push    esi
+004d4ac2 push    edi
+004d4ac3 push    eax
+004d4ac4 lea     eax, [ebp-0xc]
+004d4ac7 mov     dword [fs:0x0], eax
+004d4acd mov     dword [ebp-0xe0], ecx
+004d4ad3 mov     eax, dword [ebp+0x8]
+004d4ad6 mov     esi, 0x1
+004d4adb xor     edi, edi
+004d4add mov     dword [ebp-0xe4], eax
+004d4ae3 mov     dword [ebp-0xd8], esi
+004d4ae9 mov     dword [ebp-0x44], 0xf
+004d4af0 mov     dword [ebp-0x48], edi
+004d4af3 mov     byte [ebp-0x58], 0x0
+004d4af7 mov     dword [ebp-0x4], edi
+004d4afa xorps   xmm0, xmm0
+004d4afd push    0x7801e4
+004d4b02 mov     byte [ebp-0x34], 0x0
+004d4b06 movdqu  xmmword [ebp-0x33], xmm0
+004d4b0b mov     dword [ebp-0x1b], edi
+004d4b0e movq    qword [ebp-0x23], xmm0
+004d4b13 mov     word [ebp-0x17], di
+004d4b17 mov     byte [ebp-0x15], 0x0
+004d4b1b jmp     0xd0bf04
+00d0bf04 push    0x30396754
+00d0bf09 call    0x9bf71b
+00d0bf0e xchg    dword [esp], eax
+00d0bf11 jmp     0x697ba5
+00697ba5 retn    

@@ -1,0 +1,40 @@
+0042ab3b int32_t __saved_ebp
+0042ab3b int32_t eax_1 = __security_cookie ^ &__saved_ebp
+0042ab45 void* var_28 = nullptr
+0042ab53 int32_t i = 5
+0042ab5b _memset(arg1[2], 0, 0x1000)
+0042abea enum WIN32_ERROR result
+0042abea 
+0042abea do
+0042ab72     Sleep((5 - i) * arg2 + 0x32)
+0042ab8b     enum WIN32_ERROR result_1 = sub_4266a0(*arg1, arg1[2], 0x1000, &var_28, 0x3e8)
+0042ab90     result = result_1
+0042ab90     
+0042ab94     if (result != NO_ERROR)
+0042abe5         if (result != 0x102)
+0042abe5             break
+0042abe5         
+0042abe7         i -= 1
+0042ab94     else
+0042ab96         void* var_3c_2 = var_28
+0042ab9c         int32_t var_10_1 = 0xf
+0042aba3         int32_t* var_40_2 = arg1[2]
+0042aba6         enum WIN32_ERROR result_2 = result_1
+0042aba9         char var_24 = result_1.b
+0042abac         sub_402470(&var_24, var_40_2, var_3c_2)
+0042abac         
+0042abc4         if (sub_4172e0(&var_24, "response value="ACK" rawmode="false"", result, 0x24) != 0xffffffff)
+0042abf6             if (var_10_1 u>= 0x10)
+0042abfb                 j__free(var_24.d)
+0042abfb             
+0042abf6             break
+0042abf6         
+0042abc6         i -= 1
+0042abc7         result = ~ERROR_INVALID_FUNCTION~DNS_ERROR_RCODE_NO_ERROR
+0042abc7         
+0042abd0         if (var_10_1 u>= 0x10)
+0042abd5             j__free(var_24.d)
+0042abea while (i != 0)
+0042abea 
+0042ac0d sub_54a573(eax_1 ^ &__saved_ebp)
+0042ac15 return result

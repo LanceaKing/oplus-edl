@@ -1,0 +1,43 @@
+004d4530 push    esi
+004d4531 mov     esi, ecx
+004d4533 lea     ecx, [esi+0x8]
+004d4536 call    0x4d45e0
+004d453b lea     ecx, [esi+0xb8]
+004d4541 call    0x4d45e0
+004d4546 push    0x78018c
+004d454b jmp     0x10f5718
+010f5718 push    0xf4f1cccd
+010f571d call    0x8b40c5
+010f5722 jmp     0xf40358
+00f40358 lea     edx, [esp+0x60]
+00f4035c jmp     0x8be710
+008be710 cmp     ebp, edx
+008be712 jmp     0x968edc
+00968edc ja      0x1135192
+01135192 push    edi
+01135193 retn    
+00968ee2 mov     edx, esp
+00968ee4 mov     ecx, 0x40
+00968ee9 lea     eax, [ebp-0x80]
+00968eed and     eax, 0xfffffffc
+00968ef2 sub     eax, ecx
+00968ef4 jmp     0x99e7b9
+0099e7b9 mov     esp, eax
+0099e7bb jmp     0x10a27d9
+010a27d9 push    edi
+010a27da not     edi
+010a27dc push    esi
+010a27dd mov     di, 0x5a12
+010a27e1 pushfd  
+010a27e2 jmp     0x11028f7
+011028f7 mov     esi, edx
+011028f9 mov     edi, eax
+011028fb jmp     0x10907d5
+010907d5 cld     
+010907d6 jmp     0x1135186
+01135186 rep movsb byte [edi], [esi]
+01135188 cmove   di, di
+0113518c popfd   
+0113518d mov     si, si
+01135190 pop     esi
+01135191 pop     edi

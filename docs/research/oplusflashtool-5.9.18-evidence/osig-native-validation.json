@@ -1,0 +1,137 @@
+{
+  "sample_sha256": "45e6ca712d6f116f23e8b194032f2bca475e31c2da7e12858af7fbea0c8cf4ab",
+  "entry": "0x1001d420",
+  "stop_before": "0x1001d5b9",
+  "scope": "native serialization and SHA256 only; synthetic fields; no signature verification or auth",
+  "cases": [
+    {
+      "case": "zero_fields",
+      "mode": 0,
+      "input_fields": {},
+      "instructions": 17705,
+      "native_function_entries": [
+        "0x1003f580",
+        "0x1003f860",
+        "0x1003f8c0",
+        "0x1003f9a0",
+        "0x10149f30"
+      ],
+      "stop_eip": "0x1001d5b9",
+      "stopped_before_key_lookup": true,
+      "error": null,
+      "osig_hex": "4f534947000000005900000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "native_sha256": "f3ce2fe0645014f7e143ec0e863a7631a10a39d9b6ee97e08f589edca7f562b6",
+      "reference_sha256": "f3ce2fe0645014f7e143ec0e863a7631a10a39d9b6ee97e08f589edca7f562b6",
+      "serialization_equal": true,
+      "hash_equal": true,
+      "hooks": "code observation and stop only; no API stubs or patched return values"
+    },
+    {
+      "case": "ascii_fields_legacy",
+      "mode": 0,
+      "input_fields": {
+        "0x0": "1",
+        "0x100": "QCOM",
+        "0x200": "SM8650",
+        "0x300": "W",
+        "0x400": "0123456789abcdef",
+        "0x500": "23631",
+        "0x600": "23631",
+        "0x700": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "0x800": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "0x900": "0011223344556677",
+        "0xc24": "2",
+        "0xd24": "4"
+      },
+      "instructions": 17705,
+      "native_function_entries": [
+        "0x1003f580",
+        "0x1003f860",
+        "0x1003f8c0",
+        "0x1003f9a0",
+        "0x10149f30"
+      ],
+      "stop_eip": "0x1001d5b9",
+      "stopped_before_key_lookup": true,
+      "error": null,
+      "osig_hex": "4f53494731000000590000005700000051434f4d00000000534d3836353000003030313132323333343435353636373730313233343536373839616263646566414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424232333633310000003233363331000000",
+      "native_sha256": "5feb946400c25c19a34beaa1f7283f9af11165cdafa0167f6a0ad7eefedfd35d",
+      "reference_sha256": "5feb946400c25c19a34beaa1f7283f9af11165cdafa0167f6a0ad7eefedfd35d",
+      "serialization_equal": true,
+      "hash_equal": true,
+      "hooks": "code observation and stop only; no API stubs or patched return values"
+    },
+    {
+      "case": "ascii_fields_extended",
+      "mode": 1,
+      "input_fields": {
+        "0x0": "1",
+        "0x100": "QCOM",
+        "0x200": "SM8650",
+        "0x300": "W",
+        "0x400": "0123456789abcdef",
+        "0x500": "23631",
+        "0x600": "23631",
+        "0x700": "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+        "0x800": "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB",
+        "0x900": "0011223344556677",
+        "0xc24": "2",
+        "0xd24": "4"
+      },
+      "instructions": 18137,
+      "native_function_entries": [
+        "0x1003f580",
+        "0x1003f860",
+        "0x1003f8c0",
+        "0x1003f9a0",
+        "0x10149f30",
+        "0x10152d93"
+      ],
+      "stop_eip": "0x1001d5b9",
+      "stopped_before_key_lookup": true,
+      "error": null,
+      "osig_hex": "4f53494731040200590000005700000051434f4d00000000534d3836353000003030313132323333343435353636373730313233343536373839616263646566414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414141414242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424242424232333633310000003233363331000000",
+      "native_sha256": "b59eda84e8f7d90385031fa4cc2d0ecb5fb75083b569f45de3e1a8b18010f1e9",
+      "reference_sha256": "b59eda84e8f7d90385031fa4cc2d0ecb5fb75083b569f45de3e1a8b18010f1e9",
+      "serialization_equal": true,
+      "hash_equal": true,
+      "hooks": "code observation and stop only; no API stubs or patched return values"
+    },
+    {
+      "case": "alternate_fields_extended",
+      "mode": 1,
+      "input_fields": {
+        "0x0": "2",
+        "0x100": "ABCDEFGH",
+        "0x200": "SM8650W",
+        "0x300": "R",
+        "0x400": "fedcba9876543210",
+        "0x500": "12345678",
+        "0x600": "87654321",
+        "0x700": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+        "0x800": "fedcba9876543210fedcba9876543210fedcba9876543210fedcba9876543210",
+        "0x900": "0123456789ABCDEF",
+        "0xc24": "1",
+        "0xd24": "2"
+      },
+      "instructions": 18137,
+      "native_function_entries": [
+        "0x1003f580",
+        "0x1003f860",
+        "0x1003f8c0",
+        "0x1003f9a0",
+        "0x10149f30",
+        "0x10152d93"
+      ],
+      "stop_eip": "0x1001d5b9",
+      "stopped_before_key_lookup": true,
+      "error": null,
+      "osig_hex": "4f5349473202010059000000520000004142434445464748534d3836353057003031323334353637383941424344454666656463626139383736353433323130303132333435363738396162636465663031323334353637383961626364656630313233343536373839616263646566303132333435363738396162636465666665646362613938373635343332313066656463626139383736353433323130666564636261393837363534333231306665646362613938373635343332313031323334353637383837363534333231",
+      "native_sha256": "1a217c1ece4b409c8967e12cef14740c7feac1ecdac98af5ffc8fb505854b476",
+      "reference_sha256": "1a217c1ece4b409c8967e12cef14740c7feac1ecdac98af5ffc8fb505854b476",
+      "serialization_equal": true,
+      "hash_equal": true,
+      "hooks": "code observation and stop only; no API stubs or patched return values"
+    }
+  ]
+}

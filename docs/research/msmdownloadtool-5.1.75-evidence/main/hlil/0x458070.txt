@@ -1,0 +1,141 @@
+00458070 int32_t ebp
+00458070 int32_t var_4 = ebp
+00458073 int32_t var_8 = 0xffffffff
+00458075 int32_t (* var_c)(void* arg1) = sub_6d2e18
+00458080 TEB* fsbase
+00458080 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0045808c int32_t eax_2 = __security_cookie ^ &var_4
+0045808e int32_t var_14 = eax_2
+00458091 int32_t ebx
+00458091 int32_t var_1d0 = ebx
+00458092 int32_t esi
+00458092 int32_t var_1d4 = esi
+00458093 int32_t edi
+00458093 int32_t var_1d8 = edi
+00458094 int32_t var_1dc = eax_2
+00458098 fsbase->NtTib.ExceptionList = &ExceptionList
+004580a7 int32_t var_1c8 = arg3
+004580b0 int32_t var_1a4 = 1
+004580ce int32_t var_8_1 = 0
+004580eb var_8_1.b = 1
+004580fd var_8_1.b = 2
+00458102 void* var_1c4
+00458102 void* var_1bc
+00458102 void* var_1b8
+00458102 int16_t* var_1ac
+00458102 sub_4276b0(&var_1ac, 
+00458102     sub_4276b0(&var_1bc, sub_4276b0(&var_1b8, sub_4276b0(&var_1c4, &arg1[2], &arg1[4]), &arg1[3]), 
+00458102         arg1), 
+00458102     arg2)
+0045810a var_8_1.b = 4
+00458119 int32_t* edx_1 = var_1bc - 0x10
+0045811f int32_t eax_8 = edx_1[3]
+0045811f edx_1[3] -= 1
+0045811f 
+00458126 if (eax_8 - 1 s<= 0)
+0045812d     (*(**edx_1 + 4))(edx_1)
+0045812d 
+00458130 var_8_1.b = 5
+0045813c int32_t* edx_3 = var_1b8 - 0x10
+00458142 int32_t ecx_4 = edx_3[3]
+00458142 edx_3[3] -= 1
+00458142 
+00458149 if (ecx_4 - 1 s<= 0)
+00458150     (*(**edx_3 + 4))(edx_3)
+00458150 
+00458153 var_8_1.b = 6
+0045815f int32_t* edx_5 = var_1c4 - 0x10
+00458165 int32_t ecx_7 = edx_5[3]
+00458165 edx_5[3] -= 1
+00458165 
+0045816c if (ecx_7 - 1 s<= 0)
+00458173     (*(**edx_5 + 4))(edx_5)
+00458173 
+0045818d var_8_1.b = 7
+0045819a void* var_1cc
+0045819a void var_1b0
+0045819a sub_4276b0(&var_1b0, sub_4276b0(&var_1cc, &arg1[2], &arg1[4]), &arg1[3])
+004581a2 var_8_1.b = 9
+004581ae int32_t* edx_7 = var_1cc - 0x10
+004581b4 int32_t ecx_11 = edx_7[3]
+004581b4 edx_7[3] -= 1
+004581b4 
+004581bb if (ecx_11 - 1 s<= 0)
+004581c2     (*(**edx_7 + 4))(edx_7)
+004581c2 
+004581c7 int16_t* var_1e4_2 = var_1ac
+004581d9 void var_118
+004581d9 void* var_11c = &var_118
+004581df void* ebp_1 = sub_412d40(&var_11c, var_1e4_2, 3)
+004581e4 *(ebp_1 - 4) = 0xa
+004581f0 int16_t* var_1e4_3 = *(ebp_1 - 0x1ac)
+004581fc *(ebp_1 - 0x19c) = ebp_1 - 0x198
+00458202 int32_t* ebp_2 = sub_412d40(ebp_1 - 0x19c, var_1e4_3, 3)
+00458207 ebp_2[-1].b = 0xb
+0045820b int32_t var_1e0_6 = 0x40
+0045820d ebp_2[-0x69] = 0
+00458217 int32_t eax_21 = sub_56c4c8()
+00458227 ebp_2[-0x6f] = *(ebp_2[-0x6a] - 0xc)
+00458233 void* edi_2 = *(ebp_2[-0x6b] - 0xc)
+0045823d char* eax_25 = sub_4d6b30()
+00458246 int32_t* var_1f0_2 = ebp_2[-0x67]
+0045824c char* esi_2 = eax_25
+0045824e ebp_2[-0x6c] = eax_25
+0045824e 
+0045825f if (sub_4d6d10(esi_2, var_1f0_2, edi_2, &data_6f23b4, nullptr) != 0
+0045825f         && sub_4d6f20(esi_2, ebp_2[-0x46], ebp_2[-0x6f]) != 0
+0045825f         && sub_4d6c60(esi_2, eax_21, &ebp_2[-0x69]) != 0)
+00458293     void* i = nullptr
+00458293     
+0045829b     if (ebp_2[-0x69] u> 0)
+0045829d         char* edi_3 = &ebp_2[-0x25]
+0045829d         
+004582c0         do
+004582a7             uint32_t var_18_3 = zx.d(*(i + eax_21))
+004582ae             sub_68abcf(edi_3, u"%2.2X")
+004582b3             i += 1
+004582b7             edi_3 = &edi_3[4]
+004582c0         while (i u< ebp_2[-0x69])
+004582c0     
+004582c8     void* var_18_4 = &ebp_2[-0x25]
+004582d4     sub_414410(ebp_2[-0x71], &data_76c874)
+004582d9     esi_2 = ebp_2[-0x6c]
+004582e2     ebp_2[-0x68] = 0
+004582e2 
+004582ee if (eax_21 != 0)
+004582f1     ebp_2 = j_sub_688543(eax_21)
+004582f1 
+004582fb if (esi_2 != 0)
+004582fe     sub_4d6ac0(esi_2)
+004582fe 
+00458306 int32_t eax_32 = ebp_2[-0x67]
+00458306 
+00458314 if (eax_32 != &ebp_2[-0x66])
+00458317     ebp_2 = sub_688543(eax_32)
+00458317 
+0045831f int32_t eax_33 = ebp_2[-0x46]
+0045831f 
+0045832d if (eax_33 != &ebp_2[-0x45])
+00458330     ebp_2 = sub_688543(eax_33)
+00458330 
+00458338 ebp_2[-1].b = 6
+00458347 int32_t* edx_9 = ebp_2[-0x6b] - 0x10
+0045834d int32_t ecx_18 = edx_9[3]
+0045834d edx_9[3] -= 1
+0045834d 
+00458354 if (ecx_18 - 1 s<= 0)
+0045835b     (*(**edx_9 + 4))(edx_9)
+0045835b 
+0045835e ebp_2[-1] = 0xffffffff
+0045836b int32_t* edi_5 = ebp_2[-0x6a] - 0x10
+00458371 int32_t esi_3 = edi_5[3]
+00458371 edi_5[3] -= 1
+00458371 
+00458378 if (esi_3 - 1 s<= 0)
+0045837f     (*(**edi_5 + 4))(edi_5)
+0045837f 
+00458382 int32_t result = ebp_2[-0x68]
+0045838b fsbase->NtTib.ExceptionList = ebp_2[-3]
+0045839b sub_687de2(ebp_2[-4] ^ ebp_2)
+004583a2 *ebp_2
+004583a3 return result

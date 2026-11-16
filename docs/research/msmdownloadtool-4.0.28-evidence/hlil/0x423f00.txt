@@ -1,0 +1,120 @@
+00423f03 int32_t var_8 = 0xffffffff
+00423f05 int32_t (* var_c)(void* arg1) = sub_571af8
+00423f10 TEB* fsbase
+00423f10 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00423f19 int32_t __saved_ebp
+00423f19 int32_t eax_2 = __security_cookie ^ &__saved_ebp
+00423f21 int32_t var_78 = eax_2
+00423f25 fsbase->NtTib.ExceptionList = &ExceptionList
+00423f34 int32_t* eax_3 = &arg2[0xc]
+00423f34 
+00423f37 if (arg2[0x11] u>= 0x10)
+00423f39     eax_3 = *eax_3
+00423f39 
+00423f3f void* var_64
+00423f3f sub_426050(&var_64, eax_3)
+00423f44 int32_t var_8_1 = 0
+00423f4b int32_t* eax_4
+00423f4b eax_4.b = *(arg1 + 0x100390)
+00423f53 char* result
+00423f53 
+00423f53 if (eax_4.b == 0)
+00423f5f     int32_t var_1c_1 = 0xf
+00423f66     int32_t var_20_1 = 0
+00423f6d     char var_30 = 0
+00423f71     var_8_1.b = 1
+00423f75     int32_t var_60
+00423f75     int32_t* ecx_1 = &var_60
+00423f75     
+00423f81     if (arg2[0xa] != 0)
+00424004         int32_t* eax_8 = sub_4186c0(&arg2[6], 0x5bc490, ecx_1, &arg2[6])
+00424004         
+00424013         if (&var_30 != eax_8)
+00424019             if (var_1c_1 u>= 0x10)
+0042401e                 j__free(var_30.d)
+0042401e             
+0042402a             var_1c_1 = 0xf
+00424031             int32_t var_20_3 = 0
+00424038             var_30 = 0
+0042403c             sub_405f50(&var_30, eax_8)
+00423f81     else
+00423f84         int32_t* eax_5 = sub_4186c0(eax_4, 0x5bc490, ecx_1, arg2)
+00423f93         var_8_1.b = 2
+00423f9a         char var_48
+00423f9a         int32_t* eax_6 = sub_4187b0(eax_5.b, eax_5, &var_48, ".bin")
+00423f9a         
+00423fa9         if (&var_30 != eax_6)
+00423faf             if (var_1c_1 u>= 0x10)
+00423fb4                 j__free(var_30.d)
+00423fb4             
+00423fc0             var_1c_1 = 0xf
+00423fc7             int32_t var_20_2 = 0
+00423fce             var_30 = 0
+00423fd2             sub_405f50(&var_30, eax_6)
+00423fd2         
+00423fdb         int32_t var_34
+00423fdb         
+00423fdb         if (var_34 u>= 0x10)
+00423fe0             j__free(var_48.d)
+00423fe0         
+00423fe8         int32_t var_34_1 = 0xf
+00423fef         int32_t var_38_1 = 0
+00423ff6         var_48 = 0
+00423ffa         var_8_1.b = 1
+00423ffa     
+00424045     int32_t var_4c
+00424045     
+00424045     if (var_4c u>= 0x10)
+0042404a         j__free(var_60)
+0042404a     
+00424056     int32_t* eax_9 = &var_30
+00424056     
+0042405e     if (var_1c_1 u>= 0x10)
+0042405e         eax_9 = var_30.d
+0042405e     
+00424063     int32_t* eax_10 = _fopen(eax_9, "wb")
+0042406f     LPARAM lParam
+0042406f     WPARAM wParam
+0042406f     
+0042406f     if (eax_10 != 0)
+004240bc         result = sub_425a10(arg1, eax_10, arg2)
+004240be         _fclose(eax_10)
+004240cf         wParam = zx.d((*(arg1 + 0x2c)).b) << 0x10 | 4
+004240d2         lParam = 0
+0042406f     else
+00424081         result = GetLastError()
+00424083         char* result_1 = result
+00424084         void* var_80_2 = var_64
+00424087         wchar16 const* const var_84_1
+00424087         
+00424087         if (*(arg1 + 0x1b) == 0)
+00424090             var_84_1 = u"Open %s  Failed, Errno: %d"
+00424087         else
+00424089             var_84_1 = &data_5bc498
+00424089         
+00424096         sub_426230(arg1 + 0x290, var_84_1)
+004240ac         lParam = arg1 + 0x290
+004240ad         wParam = (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10
+004240ad     
+004240dd     SendMessageW(*(arg1 + 0x30), 0x178c, wParam, lParam)
+004240dd     
+004240e7     if (var_1c_1 u>= 0x10)
+004240ec         j__free(var_30.d)
+004240ec     
+004240f4     int32_t var_1c_2 = 0xf
+004240fb     int32_t var_20_4 = 0
+00424102     var_30 = 0
+00423f53 else
+00423f55     result = 0x4c7
+00423f55 
+00424106 int32_t var_8_2 = 0xffffffff
+00424113 int32_t* edi_2 = var_64 - 0x10
+00424119 int32_t ecx_6 = edi_2[3]
+00424119 edi_2[3] -= 1
+00424119 
+00424120 if (ecx_6 - 1 s<= 0)
+00424127     (*(**edi_2 + 4))(edi_2)
+00424127 
+0042412f fsbase->NtTib.ExceptionList = ExceptionList
+0042413f sub_54a573(eax_2 ^ &__saved_ebp)
+00424147 return result

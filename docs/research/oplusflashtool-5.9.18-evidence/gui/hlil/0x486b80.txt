@@ -1,0 +1,42 @@
+00486b83 int32_t var_8 = 0xffffffff
+00486b85 int32_t (* var_c)(struct EHRegistrationNode* arg1) = sub_4e262b
+00486b90 TEB* fsbase
+00486b90 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00486b9a int32_t __saved_ebp
+00486b9a char* eax_2 = __security_cookie ^ &__saved_ebp
+00486ba0 fsbase->NtTib.ExceptionList = &ExceptionList
+00486bb1 QStackedWidget::setCurrentWidget(*(*(arg1 + 0x18) + 0x34), *(arg1 + 0x28))
+00486bba sub_46e330(*(arg1 + 0x28))
+00486bc5 QWidget::show(*(*(arg1 + 0x18) + 0x20))
+00486bcb sub_41cbc0()
+00486beb int32_t var_8_1 = 0
+00486bf3 char var_18
+00486bf3 QString var_14
+00486bf3 QString* eax_4 = sub_41b290(&var_14, 
+00486bf3     sub_429b80(&var_18, 
+00486bf3         "<html><head/><body><p><a href="admin"><span style=" color:#ffffff;font-size: 12px;text-decoration:"
+00486bf3 "none;">", 
+00486bf3         &data_58a028), 
+00486bf3     "</span></a></p></body></html>")
+00486bff var_8_1.b = 1
+00486c18 int32_t var_8_2 = 0xffffffff
+00486c28 void var_1c
+00486c28 void* var_3c_2 = &var_1c
+00486c40 char const* const var_3c_3 = "Login success!"
+00486c45 void* const var_40 = &data_4f2998
+00486c4a int32_t var_44_1 = 0xbb
+00486c4f void* const var_48 = &data_4f2994
+00486c54 char const* const var_4c_1 = "MainWindow::OnLoginSuccess"
+00486c60 int32_t var_8_3 = 2
+00486c87 class QDebug& eax_11 = QDebug::operator<<(
+00486c87     QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(QDebug::operator<<(
+00486c87         QMessageLogger::debug(QMessageLogger::QMessageLogger(
+00486c87             QString::~QString(QString::~QString(QLabel::setText(*(*(arg1 + 0x18) + 0x20), eax_4))), 
+00486c87             nullptr, 0, nullptr)), 
+00486c87         "[FTGuiSales][")))), 
+00486c87     eax_2)
+00486c98 int32_t var_8_4 = 0xffffffff
+00486c9f QDebug::~QDebug(QDebug::operator<<(eax_11))
+00486ca8 void* result = sub_46f640(*(arg1 + 0x28))
+00486cb0 fsbase->NtTib.ExceptionList = ExceptionList
+00486cbc return result

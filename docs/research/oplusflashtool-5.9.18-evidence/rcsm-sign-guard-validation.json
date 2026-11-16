@@ -1,0 +1,27 @@
+{
+  "sample_sha256": "45e6ca712d6f116f23e8b194032f2bca475e31c2da7e12858af7fbea0c8cf4ab",
+  "entry": "0x100197bd",
+  "scope": "synthetic status strings only; stop before result lookup, Base64 decoding and authorization; no API hooks",
+  "cases": [
+    {
+      "status": "",
+      "end_eip": "0x10019875",
+      "branch": "continue_to_encrypt_lookup"
+    },
+    {
+      "status": "0",
+      "end_eip": "0x10019851",
+      "branch": "server_error"
+    },
+    {
+      "status": "0000",
+      "end_eip": "0x10019851",
+      "branch": "server_error"
+    },
+    {
+      "status": "1001",
+      "end_eip": "0x10019851",
+      "branch": "server_error"
+    }
+  ]
+}

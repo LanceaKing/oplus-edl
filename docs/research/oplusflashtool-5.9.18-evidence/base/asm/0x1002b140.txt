@@ -1,0 +1,251 @@
+1002b140 push    ebp
+1002b141 mov     ebp, esp
+1002b143 sub     esp, 0x8
+1002b146 push    ebx
+1002b147 push    esi
+1002b148 mov     esi, ecx
+1002b14a push    0x1000
+1002b14f push    0x0
+1002b151 mov     dword [ebp-0x4], esi
+1002b154 lea     ebx, [esi+0x5578]
+1002b15a push    ebx
+1002b15b call    0x10149f30
+1002b160 lea     edx, [esi+0x104]
+1002b166 add     esp, 0xc
+1002b169 mov     esi, edx
+1002b16b nop     dword [eax+eax]
+1002b170 mov     al, byte [edx]
+1002b172 inc     edx
+1002b173 test    al, al
+1002b175 jne     0x1002b170
+1002b177 push    edi
+1002b178 sub     edx, esi
+1002b17a lea     edi, [ebx-0x1]
+1002b17d nop     dword [eax]
+1002b180 mov     al, byte [edi+0x1]
+1002b183 inc     edi
+1002b184 test    al, al
+1002b186 jne     0x1002b180
+1002b188 mov     ecx, edx
+1002b18a shr     ecx, 0x2
+1002b18d rep movsd dword [edi], [esi]
+1002b18f mov     ecx, edx
+1002b191 and     ecx, 0x3
+1002b194 rep movsb byte [edi], [esi]
+1002b196 lea     ecx, [ebx-0x1]
+1002b199 nop     dword [eax]
+1002b1a0 mov     al, byte [ecx+0x1]
+1002b1a3 lea     ecx, [ecx+0x1]
+1002b1a6 test    al, al
+1002b1a8 jne     0x1002b1a0
+1002b1aa mov     eax, dword [0x10201658]
+1002b1af mov     edx, dword [ebp-0x4]
+1002b1b2 mov     dword [ecx], eax
+1002b1b4 add     edx, 0x204
+1002b1ba mov     eax, dword [0x1020165c]
+1002b1bf mov     esi, edx
+1002b1c1 mov     dword [ecx+0x4], eax
+1002b1c4 mov     al, byte [0x10201660]
+1002b1c9 mov     byte [ecx+0x8], al
+1002b1cc nop     dword [eax]
+1002b1d0 mov     al, byte [edx]
+1002b1d2 inc     edx
+1002b1d3 test    al, al
+1002b1d5 jne     0x1002b1d0
+1002b1d7 sub     edx, esi
+1002b1d9 lea     edi, [ebx-0x1]
+1002b1dc nop     dword [eax]
+1002b1e0 mov     al, byte [edi+0x1]
+1002b1e3 inc     edi
+1002b1e4 test    al, al
+1002b1e6 jne     0x1002b1e0
+1002b1e8 mov     ecx, edx
+1002b1ea shr     ecx, 0x2
+1002b1ed rep movsd dword [edi], [esi]
+1002b1ef mov     ecx, edx
+1002b1f1 and     ecx, 0x3
+1002b1f4 rep movsb byte [edi], [esi]
+1002b1f6 lea     ecx, [ebx-0x1]
+1002b1f9 nop     dword [eax]
+1002b200 mov     al, byte [ecx+0x1]
+1002b203 lea     ecx, [ecx+0x1]
+1002b206 test    al, al
+1002b208 jne     0x1002b200
+1002b20a mov     eax, dword [0x10201860]
+1002b20f mov     edx, dword [ebp-0x4]
+1002b212 mov     dword [ecx], eax
+1002b214 add     edx, 0xd64
+1002b21a mov     eax, dword [0x10201864]
+1002b21f mov     esi, edx
+1002b221 mov     dword [ecx+0x4], eax
+1002b224 mov     al, byte [edx]
+1002b226 inc     edx
+1002b227 test    al, al
+1002b229 jne     0x1002b224
+1002b22b sub     edx, esi
+1002b22d lea     edi, [ebx-0x1]
+1002b230 mov     al, byte [edi+0x1]
+1002b233 inc     edi
+1002b234 test    al, al
+1002b236 jne     0x1002b230
+1002b238 mov     ecx, edx
+1002b23a shr     ecx, 0x2
+1002b23d rep movsd dword [edi], [esi]
+1002b23f mov     ecx, edx
+1002b241 and     ecx, 0x3
+1002b244 rep movsb byte [edi], [esi]
+1002b246 mov     edi, dword [ebp-0x4]
+1002b249 lea     edx, [edi+0x1d64]
+1002b24f mov     ecx, edx
+1002b251 lea     esi, [ecx+0x1]
+1002b254 mov     al, byte [ecx]
+1002b256 inc     ecx
+1002b257 test    al, al
+1002b259 jne     0x1002b254
+1002b25b sub     ecx, esi
+1002b25d je      0x1002b2ac
+1002b2ac lea     ecx, [ebx-0x1]
+1002b2af nop     
+1002b25f lea     ecx, [ebx-0x1]
+1002b2b0 mov     al, byte [ecx+0x1]
+1002b2b3 lea     ecx, [ecx+0x1]
+1002b2b6 test    al, al
+1002b2b8 jne     0x1002b2b0
+1002b2ba mov     eax, dword [0x10201874]
+1002b2bf lea     edx, [edi+0x1564]
+1002b2c5 mov     dword [ecx], eax
+1002b2c7 mov     esi, edx
+1002b2c9 mov     eax, dword [0x10201878]
+1002b2ce mov     dword [ecx+0x4], eax
+1002b2d1 mov     eax, dword [0x1020187c]
+1002b2d6 mov     dword [ecx+0x8], eax
+1002b2d9 mov     al, byte [0x10201880]
+1002b2de mov     byte [ecx+0xc], al
+1002b262 mov     al, byte [ecx+0x1]
+1002b265 lea     ecx, [ecx+0x1]
+1002b268 test    al, al
+1002b26a jne     0x1002b262
+1002b26c mov     eax, dword [0x10201868]
+1002b271 mov     esi, edx
+1002b273 mov     dword [ecx], eax
+1002b275 mov     eax, dword [0x1020186c]
+1002b27a mov     dword [ecx+0x4], eax
+1002b27d mov     ax, word [0x10201870]
+1002b283 mov     word [ecx+0x8], ax
+1002b2e1 mov     al, byte [edx]
+1002b2e3 inc     edx
+1002b2e4 test    al, al
+1002b2e6 jne     0x1002b2e1
+1002b2e8 sub     edx, esi
+1002b2ea lea     edi, [ebx-0x1]
+1002b2ed nop     dword [eax]
+1002b287 mov     al, byte [edx]
+1002b289 inc     edx
+1002b28a test    al, al
+1002b28c jne     0x1002b287
+1002b28e sub     edx, esi
+1002b290 lea     edi, [ebx-0x1]
+1002b2f0 mov     al, byte [edi+0x1]
+1002b2f3 inc     edi
+1002b2f4 test    al, al
+1002b2f6 jne     0x1002b2f0
+1002b2f8 mov     ecx, edx
+1002b2fa shr     ecx, 0x2
+1002b2fd rep movsd dword [edi], [esi]
+1002b2ff mov     ecx, edx
+1002b301 and     ecx, 0x3
+1002b304 rep movsb byte [edi], [esi]
+1002b306 lea     ecx, [ebx-0x1]
+1002b309 nop     dword [eax]
+1002b293 mov     al, byte [edi+0x1]
+1002b296 inc     edi
+1002b297 test    al, al
+1002b299 jne     0x1002b293
+1002b29b mov     ecx, edx
+1002b29d shr     ecx, 0x2
+1002b2a0 rep movsd dword [edi], [esi]
+1002b2a2 mov     ecx, edx
+1002b2a4 and     ecx, 0x3
+1002b2a7 rep movsb byte [edi], [esi]
+1002b2a9 mov     edi, dword [ebp-0x4]
+1002b310 mov     al, byte [ecx+0x1]
+1002b313 lea     ecx, [ecx+0x1]
+1002b316 test    al, al
+1002b318 jne     0x1002b310
+1002b31a mov     eax, dword [0x10201664]
+1002b31f mov     edx, dword [ebp-0x4]
+1002b322 mov     dword [ecx], eax
+1002b324 add     edx, 0xcc4
+1002b32a mov     eax, dword [0x10201668]
+1002b32f mov     esi, edx
+1002b331 mov     dword [ecx+0x4], eax
+1002b334 mov     eax, dword [0x1020166c]
+1002b339 mov     dword [ecx+0x8], eax
+1002b33c nop     dword [eax]
+1002b340 mov     al, byte [edx]
+1002b342 inc     edx
+1002b343 test    al, al
+1002b345 jne     0x1002b340
+1002b347 sub     edx, esi
+1002b349 lea     edi, [ebx-0x1]
+1002b34c nop     dword [eax]
+1002b350 mov     al, byte [edi+0x1]
+1002b353 inc     edi
+1002b354 test    al, al
+1002b356 jne     0x1002b350
+1002b358 mov     ecx, edx
+1002b35a shr     ecx, 0x2
+1002b35d rep movsd dword [edi], [esi]
+1002b35f mov     ecx, edx
+1002b361 and     ecx, 0x3
+1002b364 rep movsb byte [edi], [esi]
+1002b366 lea     edi, [ebx-0x1]
+1002b369 nop     dword [eax]
+1002b370 mov     al, byte [edi+0x1]
+1002b373 lea     edi, [edi+0x1]
+1002b376 test    al, al
+1002b378 jne     0x1002b370
+1002b37a mov     edx, dword [ebp-0x4]
+1002b37d mov     ax, word [0x101fe7cc]
+1002b383 add     edx, 0x244
+1002b389 mov     word [edi], ax
+1002b38c mov     esi, edx
+1002b38e nop     
+1002b390 mov     al, byte [edx]
+1002b392 inc     edx
+1002b393 test    al, al
+1002b395 jne     0x1002b390
+1002b397 sub     edx, esi
+1002b399 lea     edi, [ebx-0x1]
+1002b39c nop     dword [eax]
+1002b3a0 mov     al, byte [edi+0x1]
+1002b3a3 inc     edi
+1002b3a4 test    al, al
+1002b3a6 jne     0x1002b3a0
+1002b3a8 mov     ecx, edx
+1002b3aa shr     ecx, 0x2
+1002b3ad rep movsd dword [edi], [esi]
+1002b3af mov     ecx, edx
+1002b3b1 and     ecx, 0x3
+1002b3b4 rep movsb byte [edi], [esi]
+1002b3b6 mov     ecx, ebx
+1002b3b8 pop     edi
+1002b3b9 lea     edx, [ecx+0x1]
+1002b3bc nop     dword [eax]
+1002b3c0 mov     al, byte [ecx]
+1002b3c2 inc     ecx
+1002b3c3 test    al, al
+1002b3c5 jne     0x1002b3c0
+1002b3c7 mov     eax, dword [ebp-0x4]
+1002b3ca sub     ecx, edx
+1002b3cc add     eax, 0xce4
+1002b3d1 push    eax
+1002b3d2 push    ecx
+1002b3d3 push    ebx
+1002b3d4 call    0x10025e50
+1002b3d9 add     esp, 0xc
+1002b3dc pop     esi
+1002b3dd pop     ebx
+1002b3de mov     esp, ebp
+1002b3e0 pop     ebp
+1002b3e1 retn    

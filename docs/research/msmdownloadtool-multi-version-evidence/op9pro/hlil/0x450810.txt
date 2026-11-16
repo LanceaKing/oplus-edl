@@ -1,0 +1,14 @@
+00450810 int32_t ebp
+00450810 int32_t var_4 = ebp
+00450813 int32_t var_8 = 0xffffffff
+00450815 int32_t (* var_c)() =
+00450815     __ehhandler$?RemoveCore@SchedulerProxy@details@Concurrency@@QAEXPAUSchedulerNode@23@I@Z
+00450820 TEB* fsbase
+00450820 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00450826 int32_t edi
+00450826 int32_t var_30 = edi
+0045082e int32_t var_34 = __security_cookie ^ &var_4
+00450832 fsbase->NtTib.ExceptionList = &ExceptionList
+0045083b int32_t var_38 = 0x773384
+00450840 int32_t var_8_1 = 1
+00450847 return sub_e71d9b(edi) __tailcall

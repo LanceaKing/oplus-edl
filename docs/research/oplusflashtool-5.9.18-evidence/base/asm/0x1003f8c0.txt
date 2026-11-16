@@ -1,0 +1,88 @@
+1003f8c0 push    ebp
+1003f8c1 mov     ebp, dword [esp+0xc]
+1003f8c5 push    edi
+1003f8c6 mov     edi, dword [esp+0x14]
+1003f8ca test    edi, edi
+1003f8cc je      0x1003f98d
+1003f98d pop     edi
+1003f98e mov     eax, 0x1
+1003f993 pop     ebp
+1003f994 retn    
+1003f8d2 push    ebx
+1003f8d3 mov     ebx, dword [esp+0x10]
+1003f8d7 mov     eax, dword [ebx+0x20]
+1003f8da lea     ecx, [eax+edi*8]
+1003f8dd cmp     ecx, eax
+1003f8df jae     0x1003f8e4
+1003f8e4 mov     eax, edi
+1003f8e6 mov     dword [ebx+0x20], ecx
+1003f8e9 mov     ecx, dword [ebx+0x68]
+1003f8ec shr     eax, 0x1d
+1003f8ef add     dword [ebx+0x24], eax
+1003f8f2 push    esi
+1003f8f3 test    ecx, ecx
+1003f8f5 je      0x1003f95b
+1003f8e1 inc     dword [ebx+0x24]
+1003f95b mov     esi, edi
+1003f95d shr     esi, 0x6
+1003f960 test    esi, esi
+1003f962 je      0x1003f976
+1003f8f7 lea     edx, [ebx+0x28]
+1003f8fa cmp     edi, 0x40
+1003f8fd jae     0x1003f922
+1003f976 test    edi, edi
+1003f978 je      0x1003f98b
+1003f964 push    esi
+1003f965 push    ebp
+1003f966 push    ebx
+1003f967 call    0x1003f9a0
+1003f96c shl     esi, 0x6
+1003f96f add     esp, 0xc
+1003f972 add     ebp, esi
+1003f974 sub     edi, esi
+1003f922 mov     esi, 0x40
+1003f927 lea     eax, [edx+ecx]
+1003f92a sub     esi, ecx
+1003f92c push    esi
+1003f92d push    ebp
+1003f92e push    eax
+1003f92f call    0x101499b0
+1003f934 push    0x1
+1003f936 lea     eax, [ebx+0x28]
+1003f939 push    eax
+1003f93a push    ebx
+1003f93b call    0x1003f9a0
+1003f940 push    0x40
+1003f942 lea     eax, [ebx+0x28]
+1003f945 mov     dword [ebx+0x68], 0x0
+1003f94c push    0x0
+1003f94e push    eax
+1003f94f add     ebp, esi
+1003f951 sub     edi, esi
+1003f953 call    0x10149f30
+1003f958 add     esp, 0x24
+1003f8ff lea     eax, [ecx+edi]
+1003f902 cmp     eax, 0x40
+1003f905 jae     0x1003f922
+1003f98b pop     esi
+1003f98c pop     ebx
+1003f97a push    edi
+1003f97b lea     eax, [ebx+0x28]
+1003f97e mov     dword [ebx+0x68], edi
+1003f981 push    ebp
+1003f982 push    eax
+1003f983 call    0x101499b0
+1003f988 add     esp, 0xc
+1003f907 push    edi
+1003f908 lea     eax, [edx+ecx]
+1003f90b push    ebp
+1003f90c push    eax
+1003f90d call    0x101499b0
+1003f912 add     esp, 0xc
+1003f915 mov     eax, 0x1
+1003f91a add     dword [ebx+0x68], edi
+1003f91d pop     esi
+1003f91e pop     ebx
+1003f91f pop     edi
+1003f920 pop     ebp
+1003f921 retn    

@@ -1,0 +1,55 @@
+00421033 int32_t var_8 = 0xffffffff
+00421035 int32_t (* var_c)(void* arg1) = sub_6cc489
+00421040 TEB* fsbase
+00421040 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00421051 fsbase->NtTib.ExceptionList = &ExceptionList
+00421059 int32_t* var_18 = arg1
+0042105c int32_t var_8_1 = 0
+00421063 int32_t var_14 = 0
+0042106f int32_t edi = *(data_7df91c + 0x10)
+00421096 int32_t __saved_ebp
+00421096 *arg1 = (*(data_7bfb90 + 0xc))(__security_cookie ^ &__saved_ebp) + 0x10
+00421098 int32_t var_8_2 = 0
+0042109f int32_t var_14_1 = 1
+0042109f 
+004210af switch (edi)
+004210bd     case 0
+004210bd         sub_41aa40(arg1, u"Success!\n")
+004210c7         fsbase->NtTib.ExceptionList = ExceptionList
+004210d4         return arg1
+004210dc     case 2
+004210dc         sub_41aa40(arg1, u"Connection failed!\n")
+004210e6         fsbase->NtTib.ExceptionList = ExceptionList
+004210f3         return arg1
+004210fb     case 3
+004210fb         sub_41aa40(arg1, u"Connection exception\n")
+00421105         fsbase->NtTib.ExceptionList = ExceptionList
+00421112         return arg1
+0042111a     case 4
+0042111a         sub_41aa40(arg1, u"Input argument incorrect\n")
+00421124         fsbase->NtTib.ExceptionList = ExceptionList
+00421131         return arg1
+00421139     case 5
+00421139         sub_41aa40(arg1, u"User Password incorrect\n")
+00421143         fsbase->NtTib.ExceptionList = ExceptionList
+00421150         return arg1
+004211b5     case 6
+004211b5         sub_41aa40(arg1, u"The account has been locked.\n")
+004211bf         fsbase->NtTib.ExceptionList = ExceptionList
+004211cc         return arg1
+00421196     case 7
+00421196         sub_41aa40(arg1, u"PC Info is incorrect\n")
+004211a0         fsbase->NtTib.ExceptionList = ExceptionList
+004211ad         return arg1
+00421177     case 9
+00421177         sub_41aa40(arg1, u"Verify server failed\n")
+00421181         fsbase->NtTib.ExceptionList = ExceptionList
+0042118e         return arg1
+00421158     case 0xb
+00421158         sub_41aa40(arg1, u"Response data not found\n")
+00421162         fsbase->NtTib.ExceptionList = ExceptionList
+0042116f         return arg1
+0042116f 
+004211d6 sub_41a940(arg1, u"Authenticate failed\n", 0x14)
+004211e0 fsbase->NtTib.ExceptionList = ExceptionList
+004211ed return arg1

@@ -1,0 +1,10 @@
+005042d0 mov     eax, dword [esp+0x4]
+005042d4 push    dword [eax+0x10]
+005042d7 call    0x4e45c0
+005042dc add     eax, 0x7
+005042df add     esp, 0x4
+005042e2 cdq     
+005042e3 and     edx, 0x7
+005042e6 add     eax, edx
+005042e8 sar     eax, 0x3
+005042eb retn    

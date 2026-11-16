@@ -1,0 +1,70 @@
+00420d47 LPARAM lParam
+00420d47 int32_t wParam
+00420d47 
+00420d47 if (*(arg1 + 0x5c) == 0)
+00420d57     wParam = (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10
+00420d57     
+00420d5e     if (*(arg1 + 0x1b) == 0)
+00420d67         lParam = u"No device info set"
+00420d5e     else
+00420d60         lParam = 0x5bae8c
+00420d47 else if (*(arg1 + 0x60) != 0)
+00420db2     if (*(arg1 + 0x64) != 0)
+00420ddd         int32_t eax
+00420ddd         
+00420ddd         if (*(arg1 + 0x68) == 0)
+00420de3             char edx = (*(arg1 + 0x2c)).b
+00420de6             HWND ecx = *(arg1 + 0x30)
+00420de6             
+00420deb             if (*(arg1 + 0x1b) == 0)
+00420e0b                 sub_420d10(eax, edx, ecx, 0, u"No UFS Provison file list set", 1)
+00420e13                 *(arg1 + 0x58) = 1
+00420e17                 LRESULT eax_12
+00420e17                 eax_12.b = 0
+00420e1a                 return eax_12
+00420e1a             
+00420df4             sub_420d10(eax, edx, ecx, 0, 0x5baf58, 1)
+00420dfc             *(arg1 + 0x58) = 1
+00420e00             LRESULT eax_11
+00420e00             eax_11.b = 0
+00420e03             return eax_11
+00420e03         
+00420e1f         if (*(arg1 + 0x6c) != 0)
+00420e5d             eax.b = 1
+00420e60             return eax
+00420e60         
+00420e25         char edx_1 = (*(arg1 + 0x2c)).b
+00420e28         HWND ecx_1 = *(arg1 + 0x30)
+00420e28         
+00420e2d         if (*(arg1 + 0x1b) == 0)
+00420e4d             sub_420d10(eax, edx_1, ecx_1, 0, u"No Program image list set", 1)
+00420e55             *(arg1 + 0x58) = 1
+00420e59             LRESULT eax_14
+00420e59             eax_14.b = 0
+00420e5c             return eax_14
+00420e5c         
+00420e36         sub_420d10(eax, edx_1, ecx_1, 0, 0x5bafbc, 1)
+00420e3e         *(arg1 + 0x58) = 1
+00420e42         LRESULT eax_13
+00420e42         eax_13.b = 0
+00420e45         return eax_13
+00420e45     
+00420dc2     wParam = (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10
+00420dc2     
+00420dc9     if (*(arg1 + 0x1b) == 0)
+00420dd2         lParam = u"No Sahara image list set"
+00420dc9     else
+00420dcb         lParam = 0x5baf04
+00420d87 else
+00420d97     wParam = (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10
+00420d97     
+00420d9e     if (*(arg1 + 0x1b) == 0)
+00420da7         lParam = u"No basic info set"
+00420d9e     else
+00420da0         lParam = 0x5baec8
+00420da0 
+00420d75 SendMessageW(*(arg1 + 0x30), 0x178c, wParam, lParam)
+00420d7b *(arg1 + 0x58) = 1
+00420d7f LRESULT eax_4
+00420d7f eax_4.b = 0
+00420d82 return eax_4

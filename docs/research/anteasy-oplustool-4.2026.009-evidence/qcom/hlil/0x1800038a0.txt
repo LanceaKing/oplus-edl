@@ -1,0 +1,102 @@
+1800038c3 void var_a8
+1800038c3 int64_t rax_1 = __security_cookie ^ &var_a8
+1800038d0 int64_t* r15 = arg1 + 0x98
+1800038df int32_t* rdx
+1800038df 
+1800038df if (*(arg1 + 0xb0) u<= 0xf)
+1800038e6     rdx = r15
+1800038df else
+1800038e1     rdx = *r15
+1800038e1 
+1800038ec int128_t var_58 = zx.o(0)
+1800038f0 void* var_48 = nullptr
+1800038f4 int64_t var_40 = 0
+180003903 sub_180004790(&var_58, rdx, *(arg1 + 0xa8))
+180003908 int128_t* rsi = &var_58
+18000390c int128_t* rcx_1 = var_58.q
+180003910 int64_t rdx_1 = var_40
+180003910 
+180003918 if (rdx_1 u> 0xf)
+180003918     rsi = rcx_1
+180003918 
+18000391c int128_t* rbx = &var_58
+18000391c 
+180003920 if (rdx_1 u> 0xf)
+180003920     rbx = rcx_1
+180003920 
+180003924 void* r8_1 = var_48
+180003928 void* rbx_1 = rbx + r8_1
+18000392b int128_t* rdi = &var_58
+18000392b 
+180003933 if (rdx_1 u> 0xf)
+180003933     rdi = rcx_1
+180003933 
+18000393a if (rdi != rbx_1)
+180003954     do
+180003948         *rsi = tolower(zx.d(*rdi))
+18000394a         rsi += 1
+18000394e         rdi += 1
+180003954     while (rdi != rbx_1)
+180003954     
+180003956     rdx_1 = var_40
+18000395a     r8_1 = var_48
+18000395e     rcx_1 = var_58.q
+18000395e 
+180003962 int128_t* rdi_1 = &var_58
+180003962 
+18000396a if (rdx_1 u> 0xf)
+18000396a     rdi_1 = rcx_1
+18000396a 
+180003972 int32_t rax_7
+180003972 int32_t rbx_3
+180003972 
+180003972 if (r8_1 u< 0xb)
+180003a1a     rbx_3 = 6
+180003a1f     rax_7 = 6
+180003972 else
+180003978     uint8_t (* rbx_2)[0x20] = r8_1 + rdi_1
+18000398f     uint8_t (* rax_3)[0x20] = j_sub_180075f90(rdi_1, rbx_2, "value="ack"", 0xb)
+18000398f     
+1800039a0     if (rax_3 == rbx_2 || rax_3 - rdi_1 == -1)
+180003a12         rdx_1 = var_40
+180003a16         rcx_1 = var_58.q
+180003a1a         rbx_3 = 6
+180003a1f         rax_7 = 6
+1800039a0     else
+1800039a2         int64_t* rax_5 = r15
+1800039a2         
+1800039ad         if (*(arg1 + 0xb0) u> 0xf)
+1800039af             rax_5 = *r15
+1800039af         
+1800039b9         char const* const var_78 = "verify_res"
+1800039bd         int64_t var_70_1 = 0xa
+1800039c5         int64_t* var_68 = rax_5
+1800039d0         int64_t var_60_1 = *(arg1 + 0xa8)
+1800039e3         sub_180003cd0("verify_res", &var_68, &var_78, arg1 + 0xb8)
+1800039e8         *(arg1 + 0xa8) = 0
+1800039e8         
+1800039f7         if (*(arg1 + 0xb0) u> 0xf)
+1800039f9             r15 = *r15
+1800039f9         
+1800039fc         *r15 = 0
+180003a00         rbx_3 = 0
+180003a03         rax_7 = 3
+180003a08         rdx_1 = var_40
+180003a0c         rcx_1 = var_58.q
+180003a0c 
+180003a21 *(arg1 + 0x50) = rax_7
+180003a25 *(arg1 + 0x54) = rbx_3
+180003a25 
+180003a2d if (rdx_1 u> 0xf)
+180003a39     if (rdx_1 + 1 u>= 0x1000)
+180003a3b         int128_t* rax_8 = *(rcx_1 - 8)
+180003a3b         
+180003a4a         if (rcx_1 - rax_8 - 8 u> 0x1f)
+180003a87             trap(0xd)
+180003a87         
+180003a50         rcx_1 = rax_8
+180003a50     
+180003a53     j_sub_1800899c0(rcx_1)
+180003a53 
+180003a61 __security_check_cookie(rax_1 ^ &var_a8)
+180003a81 return zx.q(rbx_3)

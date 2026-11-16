@@ -338,3 +338,108 @@ fn sparse_unsupported_features_and_corrupt_payloads_have_distinct_exit_categorie
         );
     }
 }
+
+#[test]
+fn firmware_length_error_identifies_the_xml_source_and_target_without_hardware() {
+    let tmp = tempfile::tempdir().unwrap();
+    let xml = tmp.path().join("rawprogram0.xml");
+    std::fs::write(tmp.path().join("vbmeta_system.img"), [0; 8192]).unwrap();
+    std::fs::write(&xml, r#"<data><program filename="vbmeta_system.img" label="vbmeta_system_a" SECTOR_SIZE_IN_BYTES="4096" physical_partition_number="0" start_sector="64" num_partition_sectors="16"/></data>"#).unwrap();
+    let (code, result) = invoke(&["flash", "--program", xml.to_str().unwrap()]);
+    assert_eq!(code, 2);
+    assert!(result["target"].is_null());
+    let message = result["errors"][0]["message"].as_str().unwrap();
+    for detail in [
+        "rawprogram0.xml",
+        "program node 1",
+        "LUN 0",
+        "vbmeta_system_a",
+        "vbmeta_system.img",
+        "65536",
+        "8192",
+    ] {
+        assert!(message.contains(detail), "missing {detail}: {message}");
+    }
+}
+
+#[test]
+fn invalid_signed_digest_is_rejected_before_loader_and_device_access() {
+    let tmp = tempfile::tempdir().unwrap();
+    let empty = tmp.path().join("empty.mbn");
+    let missing = tmp.path().join("missing.mbn");
+    std::fs::write(&empty, []).unwrap();
+    for path in [&empty, &missing] {
+        let (code, result) = invoke(&[
+            "backup",
+            "--output",
+            "unused",
+            "--device",
+            "not-opened",
+            "--loader",
+            "not-opened.elf",
+            "--signed-digest",
+            path.to_str().unwrap(),
+        ]);
+        assert_eq!(code, 2);
+        assert!(result["target"].is_null());
+        assert!(
+            result["errors"][0]["message"]
+                .as_str()
+                .unwrap()
+                .contains("signed digest")
+        );
+        assert_eq!(result["items"], serde_json::json!([]));
+    }
+}
+
+#[test]
+fn cloud_flash_flags_require_output_and_exclude_local_auth_inputs() {
+    assert!(Cli::try_parse_from(["oplus-edl", "flash", "--cloud-fetch-only"]).is_err());
+    assert!(Cli::try_parse_from(["oplus-edl", "flash", "--cloud-config", "cloud.json"]).is_err());
+    assert!(
+        Cli::try_parse_from([
+            "oplus-edl",
+            "flash",
+            "--cloud-config",
+            "cloud.json",
+            "--cloud-output",
+            "assets",
+            "--loader",
+            "local.elf"
+        ])
+        .is_err()
+    );
+    assert!(
+        Cli::try_parse_from([
+            "oplus-edl",
+            "flash",
+            "--cloud-config",
+            "cloud.json",
+            "--cloud-output",
+            "assets",
+            "--cloud-fetch-only"
+        ])
+        .is_ok()
+    );
+}
+
+#[test]
+fn flash_waits_by_default_and_accepts_a_bounded_wait() {
+    let cli = Cli::try_parse_from(["oplus-edl", "flash"]).unwrap();
+    assert!(matches!(
+        cli.command,
+        Command::Flash {
+            wait_timeout: 0,
+            ..
+        }
+    ));
+    let cli = Cli::try_parse_from(["oplus-edl", "flash", "--wait-timeout", "30"]).unwrap();
+    assert!(matches!(
+        cli.command,
+        Command::Flash {
+            wait_timeout: 30,
+            ..
+        }
+    ));
+    assert!(Cli::try_parse_from(["oplus-edl", "flash", "--wait-timeout", "-1"]).is_err());
+}

@@ -1,0 +1,177 @@
+004179b9 __security_cookie
+004179c7 int32_t var_28 = 1
+004179d9 int32_t i = 2
+004179de int32_t var_1c = 0
+004179e6 char var_14 = 0
+004179eb int32_t var_13 = 0
+004179ef int16_t var_f = 0
+004179f4 char var_d = 0
+004179f8 int32_t var_24 = 0
+004179fc int32_t var_20 = 0xffffffff
+004179fc 
+00417c5d do
+00417a08     i -= 1
+00417a19     LPARAM lParam
+00417a19     
+00417a19     if (*(arg1 + 0x1b) == 0)
+00417a22         lParam = "Open Serial device"
+00417a19     else
+00417a1b         lParam = 0x5a1c48
+00417a1b     
+00417a30     SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam)
+00417a32     *(arg1 + 0x20)
+00417a35     sub_41ad20()
+00417a40     *(arg1 + 0x20)
+00417a40     
+00417a50     if (sub_41ac20(*(arg1 + 0x38) + 0x108) != 0)
+00417c3e         LPARAM lParam_4
+00417c3e         
+00417c3e         if (*(arg1 + 0x1b) == 0)
+00417c47             lParam_4 = "Open Serial Device Failed"
+00417c3e         else
+00417c40             lParam_4 = 0x5a1c6c
+00417c40         
+00417c55         SendMessageA(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, lParam_4)
+00417c55         
+00417c59         if (i s<= 0)
+00417c59             break
+00417a50     else
+00417a59         *(*(arg1 + 0x20) + 4) = 3
+00417a65         int32_t* ebx = *(arg1 + 0x40)
+00417a6b         int32_t ecx_3 = ebx[1] - *ebx
+00417a6d         int32_t eax_9
+00417a6d         int32_t edx_1
+00417a6d         edx_1:eax_9 = muls.dp.d(0x8d3dcb09, ecx_3)
+00417a71         int32_t edx_3 = (edx_1 + ecx_3) s>> 6
+00417a71         
+00417a7b         if (edx_3 u>> 0x1f != neg.d(edx_3))
+00417a7f             var_1c = *ebx
+00417a7f         
+00417a88         Sleep(0xc8)
+00417a94         int32_t eax_14 = sub_417d10(var_1c)
+00417a94         
+00417a9d         if (eax_14 != 0)
+00417cca             LPARAM var_40_10
+00417cca             
+00417cca             if (*(arg1 + 0x1b) == 0)
+00417cd3                 var_40_10 = "Sahara Communication Failed"
+00417cca             else
+00417ccc                 var_40_10 = "Sahara"
+00417ccc             
+00417cda             sub_417200(eax_14, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, var_40_10, 1)
+00417cdf             void* eax_39 = *(arg1 + 0x20)
+00417ce5             HANDLE hFile_2 = *(eax_39 + 8)
+00417ce8             *(eax_39 + 4) = 4
+00417cef             CancelIo(hFile_2)
+00417cf5             *(arg1 + 0x20)
+00417cf8             sub_41ad20()
+00417cfd             break
+00417cfd         
+00417aa8         Sleep(0xc8)
+00417abd         LPARAM lParam_1
+00417abd         
+00417abd         if (*(arg1 + 0x1b) == eax_14.b)
+00417ac6             lParam_1 = "Try Firehose Communication Handshake"
+00417abd         else
+00417abf             lParam_1 = 0x5a1d0c
+00417abf         
+00417ad4         SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam_1)
+00417ad6         *(arg1 + 0x28)
+00417ad9         int32_t eax_18 = sub_41b600()
+00417ad9         
+00417ae2         if (eax_18 != 0)
+00417c89             LPARAM var_40_9
+00417c89             
+00417c89             if (*(arg1 + 0x1b) == 0)
+00417c92                 var_40_9 = "Firehose Communication Handshake Failed"
+00417c89             else
+00417c8b                 var_40_9 = 0x5a1d50
+00417c8b             
+00417c99             sub_417200(eax_18, (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, var_40_9, 1)
+00417c9e             goto label_417ca1
+00417c9e         
+00417aed         Sleep(0x3e8)
+00417b02         LPARAM lParam_2
+00417b02         
+00417b02         if (*(arg1 + 0x1b) == eax_18.b)
+00417b0b             lParam_2 = "Setting Firehose Communication data transmission"
+00417b02         else
+00417b04             lParam_2 = 0x5a1d94
+00417b04         
+00417b19         int32_t ecx_6 =
+00417b19             SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10, lParam_2)
+00417b21         int32_t var_40_4
+00417b21         
+00417b21         if (*(arg1 + 0x1c) == 0)
+00417b27             var_40_4 = 0
+00417b21         else
+00417b23             var_40_4 = 1
+00417b23         
+00417b2a         *(arg1 + 0x28)
+00417b2d         int32_t eax_22 = std::num_put<uint16_t,class std::ostreambuf_iterator<uint16_t,struct std::char_traits<uint16_t> > >::_Iput(
+00417b2d             ecx_6, var_40_4, 0)
+00417b2d         
+00417b36         if (eax_22 != 0)
+00417ca1         label_417ca1:
+00417ca1             void* eax_38 = *(arg1 + 0x20)
+00417ca4             *(eax_38 + 4) = 4
+00417cae             CancelIo(*(eax_38 + 8))
+00417cb4             *(arg1 + 0x20)
+00417cb7             sub_41ad20()
+00417cbc             break
+00417cbc         
+00417b3f         int32_t ebx_1
+00417b3f         
+00417b3f         if (*(arg1 + 0x1c) != eax_22.b)
+00417b41             *(arg1 + 0x28)
+00417b53             ebx_1 = sub_41c360(&var_14, &var_24)
+00417b53         
+00417b57         if (*(arg1 + 0x1c) != eax_22.b && ebx_1 != 0)
+00417b57             goto label_417ca1
+00417b57         
+00417b71         if (__vcasan::OnAsanReport(&var_20, var_24) != 0)
+00417b71             goto label_417ca1
+00417b71         
+00417b82         ebx_1 = sub_4188b0(arg1, var_20)
+00417b82         
+00417b86         if (ebx_1 != 0)
+00417b86             goto label_417ca1
+00417b86         
+00417b8c         *(arg1 + 0x28)
+00417b94         int32_t eax_26 = sub_41ca00(0x5a1ee8)
+00417b99         void* ecx_12 = *(arg1 + 0x20)
+00417b9e         var_28 = eax_26
+00417ba2         HANDLE hFile = *(ecx_12 + 8)
+00417ba5         *(ecx_12 + 4) = 4
+00417bac         CancelIo(hFile)
+00417bb2         *(arg1 + 0x20)
+00417bb5         sub_41ad20()
+00417bb5         
+00417bbc         if (eax_26 == 0)
+00417bbc             break
+00417bbc         
+00417bc2         void* eax_27 = *(arg1 + 0x20)
+00417bc5         HANDLE hFile_1 = *(eax_27 + 8)
+00417bc8         *(eax_27 + 4) = 4
+00417bcf         CancelIo(hFile_1)
+00417bd5         *(arg1 + 0x20)
+00417bd8         sub_41ad20()
+00417bd8         
+00417be3         if (i == 0)
+00417be3             break
+00417be3         
+00417bec         if (*(arg1 + 0x1e4) != 0)
+00417bec             break
+00417bec         
+00417c03         LPARAM lParam_3
+00417c03         
+00417c03         if (*(arg1 + 0x1b) == 0)
+00417c0c             lParam_3 = "Serial ReadBack Failed, Ready to try again"
+00417c03         else
+00417c05             lParam_3 = 0x5a1f30
+00417c05         
+00417c1a         SendMessageA(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, lParam_3)
+00417c21         Sleep(0x3e8)
+00417c5d while (i != 0)
+00417c5d 
+00417c7a return sub_53b554()

@@ -1,0 +1,4101 @@
+[
+  {
+    "file": "OplusTool.exe",
+    "bytes": 60755968,
+    "sha256": "cc7af93dee955fcb659a5dfb146bd9c30412502f5269b5f90331982130760577",
+    "machine": "0x8664",
+    "imagebase": "0x140000000",
+    "entry": "0x1412361b0",
+    "clr": {
+      "rva": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "rva": "0x1000",
+        "virtual_bytes": 19213768,
+        "raw_bytes": 19213824,
+        "entropy": 6.519
+      },
+      {
+        "name": ".rdata",
+        "rva": "0x1254000",
+        "virtual_bytes": 35765048,
+        "raw_bytes": 35765248,
+        "entropy": 6.748
+      },
+      {
+        "name": ".data",
+        "rva": "0x3470000",
+        "virtual_bytes": 3383512,
+        "raw_bytes": 2912768,
+        "entropy": 3.881
+      },
+      {
+        "name": ".pdata",
+        "rva": "0x37ab000",
+        "virtual_bytes": 1208424,
+        "raw_bytes": 1208832,
+        "entropy": 6.857
+      },
+      {
+        "name": ".rsrc",
+        "rva": "0x38d3000",
+        "virtual_bytes": 421930,
+        "raw_bytes": 422400,
+        "entropy": 5.002
+      },
+      {
+        "name": ".reloc",
+        "rva": "0x393b000",
+        "virtual_bytes": 1231372,
+        "raw_bytes": 1231872,
+        "entropy": 5.468
+      }
+    ],
+    "version": [
+      {
+        "Comments": "Oplus/OnePlus/Realme EDL Flash Tool",
+        "CompanyName": "Institute of Mathematics and Systems Science,XAS",
+        "FileDescription": "OplusTool",
+        "FileVersion": "4.2026.009",
+        "InternalName": "OplusTool.dll",
+        "LegalCopyright": "Copyright © Institute of Mathematics and Systems Science,XAS",
+        "OriginalFilename": "OplusTool.dll",
+        "ProductName": "OplusTool",
+        "ProductVersion": "1.0.0+c8a4e9b8ca2313fb6af155dcf664bacbf7cb9a57",
+        "Assembly Version": "4.2026.9.0"
+      }
+    ],
+    "imports": [
+      {
+        "dll": "ADVAPI32.dll",
+        "names": [
+          "AdjustTokenPrivileges",
+          "CloseServiceHandle",
+          "ControlService",
+          "DeleteService",
+          "DeregisterEventSource",
+          "GetTokenInformation",
+          "ImpersonateLoggedOnUser",
+          "LookupPrivilegeValueW",
+          "OpenProcessToken",
+          "OpenSCManagerW",
+          "OpenServiceW",
+          "OpenThreadToken",
+          "RegCloseKey",
+          "RegDeleteKeyExW",
+          "RegDeleteTreeW",
+          "RegDeleteValueW",
+          "RegEnumKeyExW",
+          "RegEnumValueW",
+          "RegNotifyChangeKeyValue",
+          "RegOpenKeyExW",
+          "RegQueryInfoKeyW",
+          "RegQueryValueExW",
+          "RegSetValueExW",
+          "RegisterEventSourceW",
+          "ReportEventW",
+          "RevertToSelf"
+        ]
+      },
+      {
+        "dll": "bcrypt.dll",
+        "names": [
+          "BCryptFinishHash",
+          "BCryptFinalizeKeyPair",
+          "BCryptExportKey",
+          "BCryptEncrypt",
+          "BCryptDestroyKey",
+          "BCryptDestroyHash",
+          "BCryptDecrypt",
+          "BCryptCreateHash",
+          "BCryptCloseAlgorithmProvider",
+          "BCryptGenRandom",
+          "BCryptHashData",
+          "BCryptImportKey",
+          "BCryptGetProperty",
+          "BCryptGenerateKeyPair",
+          "BCryptImportKeyPair",
+          "BCryptOpenAlgorithmProvider",
+          "BCryptSetProperty",
+          "BCryptSignHash"
+        ]
+      },
+      {
+        "dll": "CRYPT32.dll",
+        "names": [
+          "CertFreeCertificateChainEngine",
+          "CertFreeCertificateContext",
+          "CertFreeCertificateChain",
+          "CertEnumCertificatesInStore",
+          "CertDuplicateCertificateContext",
+          "CertCreateCertificateChainEngine",
+          "CryptUnprotectData",
+          "CryptProtectData",
+          "CryptImportPublicKeyInfoEx2",
+          "CryptFormatObject",
+          "CertControlStore",
+          "CryptFindOIDInfo",
+          "CryptDecodeObject",
+          "CertVerifyCertificateChainPolicy",
+          "CertOpenStore",
+          "CertNameToStrW",
+          "CertGetNameStringW",
+          "CertGetCertificateContextProperty",
+          "CertGetCertificateChain",
+          "CertAddCertificateContextToStore",
+          "CertAddCertificateLinkToStore",
+          "CertCloseStore"
+        ]
+      },
+      {
+        "dll": "IPHLPAPI.DLL",
+        "names": [
+          "ConvertInterfaceLuidToIndex",
+          "ConvertInterfaceNameToLuidW",
+          "GetAdaptersAddresses",
+          "GetPerAdapterInfo",
+          "GetNetworkParams"
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "names": [
+          "K32GetProcessMemoryInfo",
+          "IsDebuggerPresent",
+          "HeapCreate",
+          "HeapDestroy",
+          "HeapAlloc",
+          "HeapFree",
+          "InitializeSListHead",
+          "SetUnhandledExceptionFilter",
+          "RtlUnwindEx",
+          "RtlPcToFileHeader",
+          "FlsFree",
+          "EncodePointer",
+          "GetProcessHeap",
+          "CancelIoEx",
+          "CancelSynchronousIo",
+          "CancelThreadpoolIo",
+          "CloseHandle",
+          "CloseThreadpoolIo",
+          "CloseThreadpoolWait",
+          "CloseThreadpoolWork",
+          "CompareStringEx",
+          "CompareStringOrdinal",
+          "CopyFileExW",
+          "CreateDirectoryW",
+          "CreateEventExW",
+          "CreateFileW",
+          "CreatePipe",
+          "CreateProcessW",
+          "CreateThread",
+          "CreateThreadpoolIo",
+          "CreateThreadpoolTimer",
+          "CreateThreadpoolWait",
+          "CreateThreadpoolWork",
+          "DeleteCriticalSection",
+          "DeleteFileW",
+          "DeleteVolumeMountPointW",
+          "DeviceIoControl",
+          "DuplicateHandle",
+          "EnterCriticalSection",
+          "EnumCalendarInfoExEx",
+          "EnumSystemLocalesEx",
+          "EnumTimeFormatsEx",
+          "ExitProcess",
+          "ExpandEnvironmentStringsW",
+          "FileTimeToSystemTime",
+          "FindClose",
+          "FindFirstFileExW",
+          "FindNLSStringEx",
+          "FindNextFileW",
+          "FindStringOrdinal",
+          "FlushFileBuffers",
+          "FormatMessageW",
+          "FreeLibrary",
+          "GetCPInfo",
+          "GetCPInfoExW",
+          "GetCalendarInfoEx",
+          "GetConsoleCP",
+          "GetConsoleMode",
+          "GetConsoleOutputCP",
+          "GetCurrentDirectoryW",
+          "GetCurrentProcess",
+          "GetCurrentProcessId",
+          "GetCurrentProcessorNumberEx",
+          "GetCurrentThread",
+          "GetCurrentThreadId",
+          "GetDiskFreeSpaceExW",
+          "GetDynamicTimeZoneInformation",
+          "GetEnvironmentVariableW",
+          "GetExitCodeProcess",
+          "GetFileAttributesExW",
+          "GetFileInformationByHandleEx",
+          "GetFileType",
+          "GetFullPathNameW",
+          "GetLastError",
+          "GetLocaleInfoEx",
+          "GetLongPathNameW",
+          "GetModuleFileNameW",
+          "GetModuleHandleW",
+          "GetOverlappedResult",
+          "GetProcAddress",
+          "GetProcessId",
+          "GetProcessTimes",
+          "GetStdHandle",
+          "GetSystemDirectoryW",
+          "GetSystemTime",
+          "GetThreadPriority",
+          "GetTickCount64",
+          "GetTimeZoneInformation",
+          "GetUserPreferredUILanguages",
+          "GlobalAlloc",
+          "InitializeConditionVariable",
+          "InitializeCriticalSection",
+          "InitializeCriticalSectionEx",
+          "K32EnumProcesses",
+          "LCIDToLocaleName",
+          "LCMapStringEx",
+          "LeaveCriticalSection",
+          "LoadLibraryExW",
+          "LoadLibraryW",
+          "LocalAlloc",
+          "LocalFree",
+          "LocaleNameToLCID",
+          "MoveFileExW",
+          "MultiByteToWideChar",
+          "OpenProcess",
+          "OpenThread",
+          "OutputDebugStringW",
+          "QueryPerformanceCounter",
+          "QueryPerformanceFrequency",
+          "QueryUnbiasedInterruptTime",
+          "RaiseFailFastException",
+          "ReadConsoleW",
+          "ReadFile",
+          "RemoveDirectoryW",
+          "ReplaceFileW",
+          "ResetEvent",
+          "ResolveLocaleName",
+          "ResumeThread",
+          "SetDefaultDllDirectories",
+          "SetEvent",
+          "SetFileAttributesW",
+          "SetFileInformationByHandle",
+          "SetFilePointerEx",
+          "SetLastError",
+          "SetThreadErrorMode",
+          "SetThreadPriority",
+          "SetThreadpoolTimer",
+          "SetThreadpoolWait",
+          "Sleep",
+          "SleepConditionVariableCS",
+          "StartThreadpoolIo",
+          "SubmitThreadpoolWork",
+          "SystemTimeToFileTime",
+          "TerminateProcess",
+          "TzSpecificLocalTimeToSystemTime",
+          "VirtualAlloc",
+          "VirtualFree",
+          "WaitForMultipleObjectsEx",
+          "WaitForSingleObject",
+          "WaitForThreadpoolWaitCallbacks",
+          "WakeConditionVariable",
+          "WideCharToMultiByte",
+          "WriteConsoleW",
+          "WriteFile",
+          "RaiseException",
+          "AddVectoredExceptionHandler",
+          "RtlVirtualUnwind",
+          "RtlCaptureContext",
+          "RtlRestoreContext",
+          "VerSetConditionMask",
+          "FlsAlloc",
+          "FlsGetValue",
+          "FlsSetValue",
+          "WaitForSingleObjectEx",
+          "CreateEventW",
+          "SwitchToThread",
+          "SuspendThread",
+          "FlushProcessWriteBuffers",
+          "GetThreadContext",
+          "SetThreadContext",
+          "FlushInstructionCache",
+          "GetSystemTimeAsFileTime",
+          "VirtualProtect",
+          "CreateMemoryResourceNotification",
+          "QueryInformationJobObject",
+          "GetModuleHandleExW",
+          "GetProcessAffinityMask",
+          "VerifyVersionInfoW",
+          "InitializeContext",
+          "GetEnabledXStateFeatures",
+          "LocateXStateFeature",
+          "SetXStateFeaturesMask",
+          "VirtualQuery",
+          "DebugBreak",
+          "SleepEx",
+          "GlobalMemoryStatusEx",
+          "GetSystemInfo",
+          "GetLogicalProcessorInformation",
+          "GetLogicalProcessorInformationEx",
+          "GetLargePageMinimum",
+          "VirtualUnlock",
+          "VirtualAllocExNuma",
+          "IsProcessInJob",
+          "GetNumaHighestNodeNumber",
+          "GetProcessGroupAffinity"
+        ]
+      },
+      {
+        "dll": "ncrypt.dll",
+        "names": [
+          "NCryptCreatePersistedKey",
+          "NCryptDeleteKey",
+          "NCryptExportKey",
+          "NCryptFinalizeKey",
+          "NCryptFreeObject",
+          "NCryptGetProperty",
+          "NCryptImportKey",
+          "NCryptOpenKey",
+          "NCryptOpenStorageProvider",
+          "NCryptSetProperty"
+        ]
+      },
+      {
+        "dll": "ole32.dll",
+        "names": [
+          "CoCreateGuid",
+          "CoCreateInstance",
+          "CoGetApartmentType",
+          "CoGetContextToken",
+          "CoGetInterfaceAndReleaseStream",
+          "CoInitializeEx",
+          "CoMarshalInterThreadInterfaceInStream",
+          "CoTaskMemAlloc",
+          "CoTaskMemFree",
+          "CoUninitialize",
+          "CoWaitForMultipleHandles"
+        ]
+      },
+      {
+        "dll": "OLEAUT32.dll",
+        "names": [
+          "SafeArrayLock",
+          "SafeArrayUnlock",
+          "SysAllocStringLen",
+          "SysFreeString",
+          "SafeArrayCreate",
+          "SafeArrayDestroy",
+          "GetErrorInfo"
+        ]
+      },
+      {
+        "dll": "USER32.dll",
+        "names": [
+          "LoadStringW"
+        ]
+      },
+      {
+        "dll": "WS2_32.dll",
+        "names": [
+          "WSASocketW",
+          "WSASend",
+          "WSARecv",
+          "WSAIoctl",
+          "WSAGetOverlappedResult",
+          "WSAEventSelect",
+          "closesocket",
+          "WSACleanup",
+          "GetNameInfoW",
+          "GetAddrInfoW",
+          "GetAddrInfoExW",
+          "FreeAddrInfoW",
+          "FreeAddrInfoExW",
+          "WSAStartup",
+          "getpeername",
+          "bind",
+          "getsockopt",
+          "ioctlsocket",
+          "recv",
+          "select",
+          "send",
+          "shutdown",
+          "setsockopt",
+          "WSAConnect"
+        ]
+      },
+      {
+        "dll": "api-ms-win-crt-heap-l1-1-0.dll",
+        "names": [
+          "_aligned_malloc",
+          "malloc",
+          "_callnewh",
+          "realloc",
+          "_aligned_free",
+          "_set_new_mode",
+          "calloc",
+          "free"
+        ]
+      },
+      {
+        "dll": "api-ms-win-crt-math-l1-1-0.dll",
+        "names": [
+          "pow",
+          "log",
+          "sin",
+          "sinf",
+          "tan",
+          "fmodf",
+          "fmod",
+          "floor",
+          "exp",
+          "__setusermatherr",
+          "cosf",
+          "cos",
+          "ceil",
+          "atan2",
+          "modf"
+        ]
+      },
+      {
+        "dll": "api-ms-win-crt-string-l1-1-0.dll",
+        "names": [
+          "_stricmp",
+          "strcpy_s",
+          "strcpy",
+          "strncpy_s",
+          "strlen",
+          "strcmp"
+        ]
+      },
+      {
+        "dll": "api-ms-win-crt-convert-l1-1-0.dll",
+        "names": [
+          "strtoull"
+        ]
+      },
+      {
+        "dll": "api-ms-win-crt-stdio-l1-1-0.dll",
+        "names": [
+          "__stdio_common_vfprintf",
+          "__p__commode",
+          "__stdio_common_vsnprintf_s",
+          "__stdio_common_vsscanf",
+          "__stdio_common_vsprintf_s",
+          "_set_fmode",
+          "__acrt_iob_func"
+        ]
+      },
+      {
+        "dll": "api-ms-win-crt-runtime-l1-1-0.dll",
+        "names": [
+          "_exit",
+          "_set_app_type",
+          "_seh_filter_exe",
+          "__p___wargv",
+          "_initterm_e",
+          "terminate",
+          "_crt_atexit",
+          "_register_onexit_function",
+          "_initialize_onexit_table",
+          "_configure_wide_argv",
+          "_initterm",
+          "_get_initial_wide_environment",
+          "_register_thread_local_exe_atexit_callback",
+          "_c_exit",
+          "_cexit",
+          "__p___argc",
+          "abort",
+          "exit",
+          "_initialize_wide_environment"
+        ]
+      },
+      {
+        "dll": "api-ms-win-crt-locale-l1-1-0.dll",
+        "names": [
+          "_configthreadlocale"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "va": "0x141222c40",
+        "name": "BrotliDecoderAttachDictionary"
+      },
+      {
+        "va": "0x141222d50",
+        "name": "BrotliDecoderCreateInstance"
+      },
+      {
+        "va": "0x141222e00",
+        "name": "BrotliDecoderDecompress"
+      },
+      {
+        "va": "0x141222ed0",
+        "name": "BrotliDecoderDecompressStream"
+      },
+      {
+        "va": "0x1412243d0",
+        "name": "BrotliDecoderDestroyInstance"
+      },
+      {
+        "va": "0x141224420",
+        "name": "BrotliDecoderErrorString"
+      },
+      {
+        "va": "0x1412245d0",
+        "name": "BrotliDecoderGetErrorCode"
+      },
+      {
+        "va": "0x1412245e0",
+        "name": "BrotliDecoderHasMoreOutput"
+      },
+      {
+        "va": "0x141224620",
+        "name": "BrotliDecoderIsFinished"
+      },
+      {
+        "va": "0x141224660",
+        "name": "BrotliDecoderIsUsed"
+      },
+      {
+        "va": "0x141224680",
+        "name": "BrotliDecoderSetMetadataCallbacks"
+      },
+      {
+        "va": "0x1412246a0",
+        "name": "BrotliDecoderSetParameter"
+      },
+      {
+        "va": "0x1412246f0",
+        "name": "BrotliDecoderTakeOutput"
+      },
+      {
+        "va": "0x1411d89a0",
+        "name": "BrotliDecoderVersion"
+      },
+      {
+        "va": "0x141249350",
+        "name": "BrotliDefaultAllocFunc"
+      },
+      {
+        "va": "0x141249360",
+        "name": "BrotliDefaultFreeFunc"
+      },
+      {
+        "va": "0x1411d74d0",
+        "name": "BrotliEncoderAttachPreparedDictionary"
+      },
+      {
+        "va": "0x1411d76d0",
+        "name": "BrotliEncoderCompress"
+      },
+      {
+        "va": "0x1411d7c80",
+        "name": "BrotliEncoderCompressStream"
+      },
+      {
+        "va": "0x1411d83d0",
+        "name": "BrotliEncoderCreateInstance"
+      },
+      {
+        "va": "0x1411d8590",
+        "name": "BrotliEncoderDestroyInstance"
+      },
+      {
+        "va": "0x1411d8700",
+        "name": "BrotliEncoderDestroyPreparedDictionary"
+      },
+      {
+        "va": "0x1411d8770",
+        "name": "BrotliEncoderHasMoreOutput"
+      },
+      {
+        "va": "0x1411d8780",
+        "name": "BrotliEncoderIsFinished"
+      },
+      {
+        "va": "0x1411d87a0",
+        "name": "BrotliEncoderMaxCompressedSize"
+      },
+      {
+        "va": "0x1411d87d0",
+        "name": "BrotliEncoderPrepareDictionary"
+      },
+      {
+        "va": "0x1411d8850",
+        "name": "BrotliEncoderSetParameter"
+      },
+      {
+        "va": "0x1411d8930",
+        "name": "BrotliEncoderTakeOutput"
+      },
+      {
+        "va": "0x1411d89a0",
+        "name": "BrotliEncoderVersion"
+      },
+      {
+        "va": "0x141249370",
+        "name": "BrotliGetDictionary"
+      },
+      {
+        "va": "0x141249380",
+        "name": "BrotliGetTransforms"
+      },
+      {
+        "va": "0x141197580",
+        "name": "BrotliSetDictionaryData"
+      },
+      {
+        "va": "0x141249780",
+        "name": "BrotliSharedDictionaryAttach"
+      },
+      {
+        "va": "0x1412497b0",
+        "name": "BrotliSharedDictionaryCreateInstance"
+      },
+      {
+        "va": "0x141249890",
+        "name": "BrotliSharedDictionaryDestroyInstance"
+      },
+      {
+        "va": "0x141249390",
+        "name": "BrotliTransformDictionaryWord"
+      },
+      {
+        "va": "0x1437360f0",
+        "name": "DotNetRuntimeDebugHeader"
+      },
+      {
+        "va": "0x1431ada00",
+        "name": "_kBrotliContextLookupTable"
+      },
+      {
+        "va": "0x1431cc560",
+        "name": "_kBrotliPrefixCodeRanges"
+      }
+    ]
+  },
+  {
+    "file": "Oplusdll/MySwm.dll",
+    "bytes": 15310336,
+    "sha256": "3b4c6dd0b2b5b5b774cd49562462191a44d859b264ff79e3c414a724343dc1a5",
+    "machine": "0x8664",
+    "imagebase": "0x180000000",
+    "entry": "0x180cba3bd",
+    "clr": {
+      "rva": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "rva": "0x1000",
+        "virtual_bytes": 1775900,
+        "raw_bytes": 1776128,
+        "entropy": 6.426
+      },
+      {
+        "name": ".rdata",
+        "rva": "0x1b3000",
+        "virtual_bytes": 276418,
+        "raw_bytes": 276480,
+        "entropy": 5.737
+      },
+      {
+        "name": ".data",
+        "rva": "0x1f7000",
+        "virtual_bytes": 369792,
+        "raw_bytes": 34304,
+        "entropy": 4.248
+      },
+      {
+        "name": ".pdata",
+        "rva": "0x252000",
+        "virtual_bytes": 75780,
+        "raw_bytes": 76288,
+        "entropy": 7.987
+      },
+      {
+        "name": ".fptable",
+        "rva": "0x265000",
+        "virtual_bytes": 256,
+        "raw_bytes": 512,
+        "entropy": 0.0
+      },
+      {
+        "name": ".x&?",
+        "rva": "0x266000",
+        "virtual_bytes": 6949756,
+        "raw_bytes": 6949888,
+        "entropy": 7.52
+      },
+      {
+        "name": ".~i\\",
+        "rva": "0x907000",
+        "virtual_bytes": 184,
+        "raw_bytes": 512,
+        "entropy": 0.541
+      },
+      {
+        "name": ".<cN",
+        "rva": "0x908000",
+        "virtual_bytes": 6188640,
+        "raw_bytes": 6189056,
+        "entropy": 7.469
+      },
+      {
+        "name": ".rsrc",
+        "rva": "0xeef000",
+        "virtual_bytes": 469,
+        "raw_bytes": 512,
+        "entropy": 4.725
+      },
+      {
+        "name": ".reloc",
+        "rva": "0xef0000",
+        "virtual_bytes": 5452,
+        "raw_bytes": 5632,
+        "entropy": 5.459
+      }
+    ],
+    "version": [],
+    "imports": [
+      {
+        "dll": "bcrypt.dll",
+        "names": [
+          "BCryptGetProperty"
+        ]
+      },
+      {
+        "dll": "ncrypt.dll",
+        "names": [
+          "NCryptOpenStorageProvider"
+        ]
+      },
+      {
+        "dll": "CRYPT32.dll",
+        "names": [
+          "CryptStringToBinaryA"
+        ]
+      },
+      {
+        "dll": "SHELL32.dll",
+        "names": [
+          "SHGetFolderPathW"
+        ]
+      },
+      {
+        "dll": "WINHTTP.dll",
+        "names": [
+          "WinHttpOpen"
+        ]
+      },
+      {
+        "dll": "IPHLPAPI.DLL",
+        "names": [
+          "GetAdaptersAddresses"
+        ]
+      },
+      {
+        "dll": "ADVAPI32.dll",
+        "names": [
+          "RegQueryValueExW"
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "names": [
+          "GetCommandLineA"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "va": "0x18005dac0",
+        "name": "oplus_swm_client_begin_download"
+      },
+      {
+        "va": "0x18005dd30",
+        "name": "oplus_swm_client_begin_enrollment_ticket"
+      },
+      {
+        "va": "0x18005dd60",
+        "name": "oplus_swm_client_begin_event"
+      },
+      {
+        "va": "0x18005dd90",
+        "name": "oplus_swm_client_begin_events"
+      },
+      {
+        "va": "0x18005ddc0",
+        "name": "oplus_swm_client_begin_feedback"
+      },
+      {
+        "va": "0x18005ddf0",
+        "name": "oplus_swm_client_begin_firmware_resolve"
+      },
+      {
+        "va": "0x18005e060",
+        "name": "oplus_swm_client_begin_heartbeat"
+      },
+      {
+        "va": "0x18005e090",
+        "name": "oplus_swm_client_begin_operation_authorization_v3"
+      },
+      {
+        "va": "0x18005e940",
+        "name": "oplus_swm_client_begin_refresh_online_keys"
+      },
+      {
+        "va": "0x18005e970",
+        "name": "oplus_swm_client_begin_update_check"
+      },
+      {
+        "va": "0x18005e9a0",
+        "name": "oplus_swm_client_begin_update_stream"
+      },
+      {
+        "va": "0x18005ec10",
+        "name": "oplus_swm_context_clear_session"
+      },
+      {
+        "va": "0x18005ec90",
+        "name": "oplus_swm_context_create"
+      },
+      {
+        "va": "0x18005f4e0",
+        "name": "oplus_swm_context_destroy"
+      },
+      {
+        "va": "0x18005f510",
+        "name": "oplus_swm_context_get_cloud_state"
+      },
+      {
+        "va": "0x18005f5a0",
+        "name": "oplus_swm_context_get_identity"
+      },
+      {
+        "va": "0x18005f7d0",
+        "name": "oplus_swm_context_get_last_error"
+      },
+      {
+        "va": "0x18005f890",
+        "name": "oplus_swm_context_get_session_expires_at"
+      },
+      {
+        "va": "0x18005f900",
+        "name": "oplus_swm_context_get_trusted_time_unix_ms"
+      },
+      {
+        "va": "0x18005f940",
+        "name": "oplus_swm_debug_session_cancel_request"
+      },
+      {
+        "va": "0x18005fa10",
+        "name": "oplus_swm_debug_session_create"
+      },
+      {
+        "va": "0x18005fc70",
+        "name": "oplus_swm_debug_session_destroy"
+      },
+      {
+        "va": "0x18005fcf0",
+        "name": "oplus_swm_debug_session_get_reason"
+      },
+      {
+        "va": "0x18005fdf0",
+        "name": "oplus_swm_debug_session_get_state"
+      },
+      {
+        "va": "0x18005fe10",
+        "name": "oplus_swm_debug_session_is_diagnostic_authorized_v1"
+      },
+      {
+        "va": "0x18005fe50",
+        "name": "oplus_swm_debug_session_request"
+      },
+      {
+        "va": "0x18005ff40",
+        "name": "oplus_swm_debug_session_wait_state"
+      },
+      {
+        "va": "0x18005ff80",
+        "name": "oplus_swm_device_pcid_get"
+      },
+      {
+        "va": "0x180060410",
+        "name": "oplus_swm_get_abi_version"
+      },
+      {
+        "va": "0x180060420",
+        "name": "oplus_swm_get_cycle_retry_delay_ms"
+      },
+      {
+        "va": "0x180060450",
+        "name": "oplus_swm_get_host_integrity_policy_v1"
+      },
+      {
+        "va": "0x1800604d0",
+        "name": "oplus_swm_get_host_integrity_state_v1"
+      },
+      {
+        "va": "0x180060520",
+        "name": "oplus_swm_get_local_request_policy"
+      },
+      {
+        "va": "0x180060580",
+        "name": "oplus_swm_get_offline_budget_state"
+      },
+      {
+        "va": "0x1800605e0",
+        "name": "oplus_swm_operation_lease_consume"
+      },
+      {
+        "va": "0x1800605f0",
+        "name": "oplus_swm_operation_lease_destroy"
+      },
+      {
+        "va": "0x180060620",
+        "name": "oplus_swm_operation_lease_export_consumption_receipt_v1"
+      },
+      {
+        "va": "0x180060650",
+        "name": "oplus_swm_operation_lease_export_v1"
+      },
+      {
+        "va": "0x180060680",
+        "name": "oplus_swm_operation_lease_get_trusted_time_unix_ms_v1"
+      },
+      {
+        "va": "0x180060690",
+        "name": "oplus_swm_stream_cancel"
+      },
+      {
+        "va": "0x1800606b0",
+        "name": "oplus_swm_stream_destroy"
+      },
+      {
+        "va": "0x180060730",
+        "name": "oplus_swm_stream_get_error"
+      },
+      {
+        "va": "0x1800607c0",
+        "name": "oplus_swm_stream_get_error_body"
+      },
+      {
+        "va": "0x1800608f0",
+        "name": "oplus_swm_stream_get_error_code"
+      },
+      {
+        "va": "0x180060a30",
+        "name": "oplus_swm_stream_get_error_message"
+      },
+      {
+        "va": "0x180060b70",
+        "name": "oplus_swm_stream_get_event"
+      },
+      {
+        "va": "0x180060b90",
+        "name": "oplus_swm_stream_wait_event"
+      },
+      {
+        "va": "0x180060c60",
+        "name": "oplus_swm_task_cancel"
+      },
+      {
+        "va": "0x180060c80",
+        "name": "oplus_swm_task_destroy"
+      },
+      {
+        "va": "0x180060d00",
+        "name": "oplus_swm_task_get_error"
+      },
+      {
+        "va": "0x180060d90",
+        "name": "oplus_swm_task_get_error_body"
+      },
+      {
+        "va": "0x180060ec0",
+        "name": "oplus_swm_task_get_error_code"
+      },
+      {
+        "va": "0x180061000",
+        "name": "oplus_swm_task_get_error_message"
+      },
+      {
+        "va": "0x180061140",
+        "name": "oplus_swm_task_get_progress"
+      },
+      {
+        "va": "0x180061180",
+        "name": "oplus_swm_task_get_result"
+      },
+      {
+        "va": "0x180061350",
+        "name": "oplus_swm_task_get_state"
+      },
+      {
+        "va": "0x180061370",
+        "name": "oplus_swm_task_take_operation_lease"
+      },
+      {
+        "va": "0x180061450",
+        "name": "oplus_swm_task_wait"
+      }
+    ]
+  },
+  {
+    "file": "Oplusdll/Oplus_ColorOSAssist.dll",
+    "bytes": 13498368,
+    "sha256": "460459f2ca9c494e7138f8d6ddc709ef359e475fb4a48e5c7b9dec062eb7127a",
+    "machine": "0x8664",
+    "imagebase": "0x180000000",
+    "entry": "0x180b1073c",
+    "clr": {
+      "rva": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "rva": "0x1000",
+        "virtual_bytes": 684924,
+        "raw_bytes": 685056,
+        "entropy": 6.38
+      },
+      {
+        "name": ".rdata",
+        "rva": "0xa9000",
+        "virtual_bytes": 133354,
+        "raw_bytes": 133632,
+        "entropy": 5.753
+      },
+      {
+        "name": ".data",
+        "rva": "0xca000",
+        "virtual_bytes": 435872,
+        "raw_bytes": 341504,
+        "entropy": 0.098
+      },
+      {
+        "name": ".pdata",
+        "rva": "0x135000",
+        "virtual_bytes": 25656,
+        "raw_bytes": 26112,
+        "entropy": 7.955
+      },
+      {
+        "name": ".fptable",
+        "rva": "0x13c000",
+        "virtual_bytes": 256,
+        "raw_bytes": 512,
+        "entropy": 0.0
+      },
+      {
+        "name": ".Ht ",
+        "rva": "0x13d000",
+        "virtual_bytes": 6550732,
+        "raw_bytes": 6551040,
+        "entropy": 7.543
+      },
+      {
+        "name": ".R+$",
+        "rva": "0x77d000",
+        "virtual_bytes": 136,
+        "raw_bytes": 512,
+        "entropy": 0.366
+      },
+      {
+        "name": ".hf1",
+        "rva": "0x77e000",
+        "virtual_bytes": 5754292,
+        "raw_bytes": 5754368,
+        "entropy": 7.497
+      },
+      {
+        "name": ".rsrc",
+        "rva": "0xcfb000",
+        "virtual_bytes": 469,
+        "raw_bytes": 512,
+        "entropy": 4.725
+      },
+      {
+        "name": ".reloc",
+        "rva": "0xcfc000",
+        "virtual_bytes": 3620,
+        "raw_bytes": 4096,
+        "entropy": 5.191
+      }
+    ],
+    "version": [],
+    "imports": [
+      {
+        "dll": "bcrypt.dll",
+        "names": [
+          "BCryptDecrypt"
+        ]
+      },
+      {
+        "dll": "SHELL32.dll",
+        "names": [
+          "SHCreateDirectoryExW"
+        ]
+      },
+      {
+        "dll": "CRYPT32.dll",
+        "names": [
+          "CryptUnprotectData"
+        ]
+      },
+      {
+        "dll": "ncrypt.dll",
+        "names": [
+          "NCryptFinalizeKey"
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "names": [
+          "GetCommandLineW"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "va": "0x1800226b0",
+        "name": "oplus_coloros_assist_authorization_prepare_challenge_v1"
+      },
+      {
+        "va": "0x180028190",
+        "name": "oplus_coloros_assist_backup_context_authorize_v1"
+      },
+      {
+        "va": "0x180028b50",
+        "name": "oplus_coloros_assist_backup_context_begin_connect"
+      },
+      {
+        "va": "0x1800286f0",
+        "name": "oplus_coloros_assist_backup_context_copy_manifest_v1"
+      },
+      {
+        "va": "0x180027940",
+        "name": "oplus_coloros_assist_backup_context_create"
+      },
+      {
+        "va": "0x1800280c0",
+        "name": "oplus_coloros_assist_backup_context_destroy"
+      },
+      {
+        "va": "0x180028b90",
+        "name": "oplus_coloros_assist_backup_context_feed_command_frame"
+      },
+      {
+        "va": "0x180028c60",
+        "name": "oplus_coloros_assist_backup_context_feed_file_bytes"
+      },
+      {
+        "va": "0x180028cc0",
+        "name": "oplus_coloros_assist_backup_context_finish_file_input"
+      },
+      {
+        "va": "0x180028ed0",
+        "name": "oplus_coloros_assist_backup_context_get_state"
+      },
+      {
+        "va": "0x180028b10",
+        "name": "oplus_coloros_assist_backup_context_initialize"
+      },
+      {
+        "va": "0x180029140",
+        "name": "oplus_coloros_assist_backup_context_next_action"
+      },
+      {
+        "va": "0x1800282e0",
+        "name": "oplus_coloros_assist_backup_context_prepare_selected_v1"
+      },
+      {
+        "va": "0x180028880",
+        "name": "oplus_coloros_assist_backup_context_queue_prepared_start_v1"
+      },
+      {
+        "va": "0x180028bf0",
+        "name": "oplus_coloros_assist_backup_context_set_formatted_time"
+      },
+      {
+        "va": "0x180028e90",
+        "name": "oplus_coloros_assist_backup_context_stop"
+      },
+      {
+        "va": "0x180029e40",
+        "name": "oplus_coloros_assist_backup_list_records"
+      },
+      {
+        "va": "0x180029ec0",
+        "name": "oplus_coloros_assist_backup_read_record"
+      },
+      {
+        "va": "0x18002a6e0",
+        "name": "oplus_coloros_assist_backup_read_restore_file_count"
+      },
+      {
+        "va": "0x180024620",
+        "name": "oplus_coloros_assist_downgrade_build_official_install_descriptor"
+      },
+      {
+        "va": "0x180024690",
+        "name": "oplus_coloros_assist_downgrade_parse_official_query_response"
+      },
+      {
+        "va": "0x180022620",
+        "name": "oplus_coloros_assist_frame_header_probe"
+      },
+      {
+        "va": "0x180022610",
+        "name": "oplus_coloros_assist_get_abi_version"
+      },
+      {
+        "va": "0x180025950",
+        "name": "oplus_coloros_assist_ota_session_authorize_v1"
+      },
+      {
+        "va": "0x1800259c0",
+        "name": "oplus_coloros_assist_ota_session_begin_connect"
+      },
+      {
+        "va": "0x1800260d0",
+        "name": "oplus_coloros_assist_ota_session_copy_install_ack_json"
+      },
+      {
+        "va": "0x180026300",
+        "name": "oplus_coloros_assist_ota_session_copy_install_ack_raw_message"
+      },
+      {
+        "va": "0x180025860",
+        "name": "oplus_coloros_assist_ota_session_create"
+      },
+      {
+        "va": "0x1800258d0",
+        "name": "oplus_coloros_assist_ota_session_destroy"
+      },
+      {
+        "va": "0x180025a00",
+        "name": "oplus_coloros_assist_ota_session_feed_frame"
+      },
+      {
+        "va": "0x180025e50",
+        "name": "oplus_coloros_assist_ota_session_get_device_profile_v1"
+      },
+      {
+        "va": "0x180026530",
+        "name": "oplus_coloros_assist_ota_session_get_install_ack_result"
+      },
+      {
+        "va": "0x180025d90",
+        "name": "oplus_coloros_assist_ota_session_get_state"
+      },
+      {
+        "va": "0x180025de0",
+        "name": "oplus_coloros_assist_ota_session_next_action"
+      },
+      {
+        "va": "0x180025a50",
+        "name": "oplus_coloros_assist_ota_session_queue_official_install"
+      },
+      {
+        "va": "0x180023e30",
+        "name": "oplus_coloros_assist_query_plan_authorize_v1"
+      },
+      {
+        "va": "0x180023f90",
+        "name": "oplus_coloros_assist_query_plan_build_artifacts_v1"
+      },
+      {
+        "va": "0x180023d10",
+        "name": "oplus_coloros_assist_query_plan_copy_manifest_target_v1"
+      },
+      {
+        "va": "0x180022f10",
+        "name": "oplus_coloros_assist_query_plan_create_v1"
+      },
+      {
+        "va": "0x180023c10",
+        "name": "oplus_coloros_assist_query_plan_destroy"
+      },
+      {
+        "va": "0x18002b2b0",
+        "name": "oplus_coloros_assist_restore_context_authorize_v1"
+      },
+      {
+        "va": "0x18002b370",
+        "name": "oplus_coloros_assist_restore_context_begin_connect"
+      },
+      {
+        "va": "0x18002ae60",
+        "name": "oplus_coloros_assist_restore_context_create"
+      },
+      {
+        "va": "0x18002b250",
+        "name": "oplus_coloros_assist_restore_context_destroy"
+      },
+      {
+        "va": "0x18002b3b0",
+        "name": "oplus_coloros_assist_restore_context_feed_command_frame"
+      },
+      {
+        "va": "0x18002bdf0",
+        "name": "oplus_coloros_assist_restore_context_get_state"
+      },
+      {
+        "va": "0x18002b330",
+        "name": "oplus_coloros_assist_restore_context_initialize"
+      },
+      {
+        "va": "0x18002b410",
+        "name": "oplus_coloros_assist_restore_context_load_selected_items"
+      },
+      {
+        "va": "0x18002c130",
+        "name": "oplus_coloros_assist_restore_context_next_action"
+      },
+      {
+        "va": "0x18002bb20",
+        "name": "oplus_coloros_assist_restore_context_queue_start"
+      },
+      {
+        "va": "0x18002bdb0",
+        "name": "oplus_coloros_assist_restore_context_stop"
+      },
+      {
+        "va": "0x18002bd70",
+        "name": "oplus_coloros_assist_restore_context_tick"
+      }
+    ]
+  },
+  {
+    "file": "Oplusdll/Oplus_Fastboot.dll",
+    "bytes": 14042112,
+    "sha256": "f1f3a2d0be32afee64c5f3592e0eb215931ac3b18bfd52e638cd086fcd849712",
+    "machine": "0x8664",
+    "imagebase": "0x180000000",
+    "entry": "0x180c4a110",
+    "clr": {
+      "rva": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "rva": "0x1000",
+        "virtual_bytes": 664140,
+        "raw_bytes": 664576,
+        "entropy": 6.375
+      },
+      {
+        "name": ".rdata",
+        "rva": "0xa4000",
+        "virtual_bytes": 157926,
+        "raw_bytes": 158208,
+        "entropy": 5.791
+      },
+      {
+        "name": ".data",
+        "rva": "0xcb000",
+        "virtual_bytes": 439280,
+        "raw_bytes": 343552,
+        "entropy": 0.157
+      },
+      {
+        "name": ".pdata",
+        "rva": "0x137000",
+        "virtual_bytes": 26916,
+        "raw_bytes": 27136,
+        "entropy": 7.979
+      },
+      {
+        "name": ".fptable",
+        "rva": "0x13e000",
+        "virtual_bytes": 256,
+        "raw_bytes": 512,
+        "entropy": 0.0
+      },
+      {
+        "name": ".-dX",
+        "rva": "0x13f000",
+        "virtual_bytes": 6828060,
+        "raw_bytes": 6828544,
+        "entropy": 7.524
+      },
+      {
+        "name": ".*}V",
+        "rva": "0x7c3000",
+        "virtual_bytes": 168,
+        "raw_bytes": 512,
+        "entropy": 0.475
+      },
+      {
+        "name": ".z8+",
+        "rva": "0x7c4000",
+        "virtual_bytes": 6013408,
+        "raw_bytes": 6013440,
+        "entropy": 7.473
+      },
+      {
+        "name": ".rsrc",
+        "rva": "0xd81000",
+        "virtual_bytes": 469,
+        "raw_bytes": 512,
+        "entropy": 4.725
+      },
+      {
+        "name": ".reloc",
+        "rva": "0xd82000",
+        "virtual_bytes": 3932,
+        "raw_bytes": 4096,
+        "entropy": 5.436
+      }
+    ],
+    "version": [],
+    "imports": [
+      {
+        "dll": "bcrypt.dll",
+        "names": [
+          "BCryptOpenAlgorithmProvider"
+        ]
+      },
+      {
+        "dll": "SETUPAPI.dll",
+        "names": [
+          "SetupDiEnumDeviceInterfaces"
+        ]
+      },
+      {
+        "dll": "WINUSB.DLL",
+        "names": [
+          "WinUsb_QueryInterfaceSettings"
+        ]
+      },
+      {
+        "dll": "SHELL32.dll",
+        "names": [
+          "SHCreateDirectoryExW"
+        ]
+      },
+      {
+        "dll": "CRYPT32.dll",
+        "names": [
+          "CryptUnprotectData"
+        ]
+      },
+      {
+        "dll": "ncrypt.dll",
+        "names": [
+          "NCryptFreeObject"
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "names": [
+          "GetCommandLineW"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "va": "0x18005d1b0",
+        "name": "oplus_fastboot_authorization_prepare_challenge_v1"
+      },
+      {
+        "va": "0x18005d4b0",
+        "name": "oplus_fastboot_copy_last_error_message"
+      },
+      {
+        "va": "0x1800621f0",
+        "name": "oplus_fastboot_device_list_copy_interface_path"
+      },
+      {
+        "va": "0x180062180",
+        "name": "oplus_fastboot_device_list_copy_serial"
+      },
+      {
+        "va": "0x180062120",
+        "name": "oplus_fastboot_device_list_destroy"
+      },
+      {
+        "va": "0x180062150",
+        "name": "oplus_fastboot_device_list_get_count"
+      },
+      {
+        "va": "0x1800620f0",
+        "name": "oplus_fastboot_enumerate_devices_v1"
+      },
+      {
+        "va": "0x18005d1a0",
+        "name": "oplus_fastboot_get_abi_version"
+      },
+      {
+        "va": "0x18005d460",
+        "name": "oplus_fastboot_get_last_error_v1"
+      },
+      {
+        "va": "0x1800610a0",
+        "name": "oplus_fastboot_plan_copy_operation_manifest_v1"
+      },
+      {
+        "va": "0x180060a00",
+        "name": "oplus_fastboot_plan_create_v1"
+      },
+      {
+        "va": "0x180060a60",
+        "name": "oplus_fastboot_plan_destroy"
+      },
+      {
+        "va": "0x180060fe0",
+        "name": "oplus_fastboot_plan_get_exclusion_v1"
+      },
+      {
+        "va": "0x180061060",
+        "name": "oplus_fastboot_plan_get_file_action_v1"
+      },
+      {
+        "va": "0x180060ab0",
+        "name": "oplus_fastboot_plan_get_info_v1"
+      },
+      {
+        "va": "0x180060d20",
+        "name": "oplus_fastboot_plan_get_step_v1"
+      },
+      {
+        "va": "0x180061020",
+        "name": "oplus_fastboot_plan_get_warning"
+      },
+      {
+        "va": "0x18005df20",
+        "name": "oplus_fastboot_probe_result_copy_current_slot"
+      },
+      {
+        "va": "0x18005dec0",
+        "name": "oplus_fastboot_probe_result_copy_product"
+      },
+      {
+        "va": "0x18005dfb0",
+        "name": "oplus_fastboot_probe_result_copy_variable"
+      },
+      {
+        "va": "0x18005de50",
+        "name": "oplus_fastboot_probe_result_destroy"
+      },
+      {
+        "va": "0x18005de90",
+        "name": "oplus_fastboot_probe_result_get_info_v1"
+      },
+      {
+        "va": "0x18005df80",
+        "name": "oplus_fastboot_probe_result_get_variable_count"
+      },
+      {
+        "va": "0x180062900",
+        "name": "oplus_fastboot_repair_copy_operation_manifest_v1"
+      },
+      {
+        "va": "0x1800628a0",
+        "name": "oplus_fastboot_repair_copy_partition_name_v1"
+      },
+      {
+        "va": "0x180062840",
+        "name": "oplus_fastboot_repair_get_partition_count_v1"
+      },
+      {
+        "va": "0x180062870",
+        "name": "oplus_fastboot_repair_get_partition_info_v1"
+      },
+      {
+        "va": "0x180063290",
+        "name": "oplus_fastboot_repair_result_copy_current_slot"
+      },
+      {
+        "va": "0x1800632f0",
+        "name": "oplus_fastboot_repair_result_copy_flashed_partition"
+      },
+      {
+        "va": "0x180063230",
+        "name": "oplus_fastboot_repair_result_copy_product"
+      },
+      {
+        "va": "0x1800631d0",
+        "name": "oplus_fastboot_repair_result_copy_serial"
+      },
+      {
+        "va": "0x180063390",
+        "name": "oplus_fastboot_repair_result_copy_variable"
+      },
+      {
+        "va": "0x180063150",
+        "name": "oplus_fastboot_repair_result_destroy"
+      },
+      {
+        "va": "0x1800631a0",
+        "name": "oplus_fastboot_repair_result_get_info_v1"
+      },
+      {
+        "va": "0x180063360",
+        "name": "oplus_fastboot_repair_result_get_variable_count"
+      },
+      {
+        "va": "0x1800607d0",
+        "name": "oplus_fastboot_script_plan_create_v1"
+      },
+      {
+        "va": "0x18005dbd0",
+        "name": "oplus_fastboot_session_cancel"
+      },
+      {
+        "va": "0x18005db70",
+        "name": "oplus_fastboot_session_cancel_operation"
+      },
+      {
+        "va": "0x18005f1f0",
+        "name": "oplus_fastboot_session_cancel_snapshot"
+      },
+      {
+        "va": "0x18005d930",
+        "name": "oplus_fastboot_session_connect"
+      },
+      {
+        "va": "0x18005dc00",
+        "name": "oplus_fastboot_session_copy_serial"
+      },
+      {
+        "va": "0x18005d730",
+        "name": "oplus_fastboot_session_create_context_v1"
+      },
+      {
+        "va": "0x18005d530",
+        "name": "oplus_fastboot_session_create_v1"
+      },
+      {
+        "va": "0x18005dba0",
+        "name": "oplus_fastboot_session_destroy"
+      },
+      {
+        "va": "0x18005f190",
+        "name": "oplus_fastboot_session_ensure_mode"
+      },
+      {
+        "va": "0x180060280",
+        "name": "oplus_fastboot_session_erase"
+      },
+      {
+        "va": "0x1800612f0",
+        "name": "oplus_fastboot_session_execute_plan_authorized_v1"
+      },
+      {
+        "va": "0x1800612b0",
+        "name": "oplus_fastboot_session_execute_plan_v1"
+      },
+      {
+        "va": "0x180060170",
+        "name": "oplus_fastboot_session_flash"
+      },
+      {
+        "va": "0x1800602f0",
+        "name": "oplus_fastboot_session_flash_checked_v1"
+      },
+      {
+        "va": "0x1800601f0",
+        "name": "oplus_fastboot_session_flash_vbmeta"
+      },
+      {
+        "va": "0x180060350",
+        "name": "oplus_fastboot_session_flash_vbmeta_checked_v1"
+      },
+      {
+        "va": "0x18005f3f0",
+        "name": "oplus_fastboot_session_get_unlock_ability_v1"
+      },
+      {
+        "va": "0x18005f420",
+        "name": "oplus_fastboot_session_get_var_v1"
+      },
+      {
+        "va": "0x18005f2b0",
+        "name": "oplus_fastboot_session_issue_reboot_v1"
+      },
+      {
+        "va": "0x18005f350",
+        "name": "oplus_fastboot_session_oem_cdms_v1"
+      },
+      {
+        "va": "0x18005f380",
+        "name": "oplus_fastboot_session_oem_command_v1"
+      },
+      {
+        "va": "0x18005f230",
+        "name": "oplus_fastboot_session_prepare_fastbootd_v1"
+      },
+      {
+        "va": "0x18005d960",
+        "name": "oplus_fastboot_session_prepare_operation_v1"
+      },
+      {
+        "va": "0x18005dc60",
+        "name": "oplus_fastboot_session_probe_v1"
+      },
+      {
+        "va": "0x18005f280",
+        "name": "oplus_fastboot_session_reboot_system"
+      },
+      {
+        "va": "0x180062bf0",
+        "name": "oplus_fastboot_session_repair_fastbootd_authorized_v1"
+      },
+      {
+        "va": "0x180062b80",
+        "name": "oplus_fastboot_session_repair_fastbootd_v1"
+      },
+      {
+        "va": "0x18005f1c0",
+        "name": "oplus_fastboot_session_restart_bootloader"
+      },
+      {
+        "va": "0x18005f320",
+        "name": "oplus_fastboot_session_set_active_slot_v1"
+      },
+      {
+        "va": "0x18005f3c0",
+        "name": "oplus_fastboot_session_set_bootloader_lock_critical_v1"
+      },
+      {
+        "va": "0x18005f2e0",
+        "name": "oplus_fastboot_session_set_bootloader_lock_v1"
+      },
+      {
+        "va": "0x1800602c0",
+        "name": "oplus_fastboot_session_wipe_v1"
+      }
+    ]
+  },
+  {
+    "file": "Oplusdll/Oplus_Image.dll",
+    "bytes": 12862976,
+    "sha256": "581f55e7284117763e3b817d1cd3c7f32bbeefa391f063726b7ccaa9bd175b51",
+    "machine": "0x8664",
+    "imagebase": "0x180000000",
+    "entry": "0x180b9f3f2",
+    "clr": {
+      "rva": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "rva": "0x1000",
+        "virtual_bytes": 389404,
+        "raw_bytes": 389632,
+        "entropy": 6.403
+      },
+      {
+        "name": ".rdata",
+        "rva": "0x61000",
+        "virtual_bytes": 113660,
+        "raw_bytes": 113664,
+        "entropy": 5.674
+      },
+      {
+        "name": ".data",
+        "rva": "0x7d000",
+        "virtual_bytes": 344344,
+        "raw_bytes": 340480,
+        "entropy": 0.081
+      },
+      {
+        "name": ".pdata",
+        "rva": "0xd2000",
+        "virtual_bytes": 16284,
+        "raw_bytes": 16384,
+        "entropy": 7.968
+      },
+      {
+        "name": ".fptable",
+        "rva": "0xd6000",
+        "virtual_bytes": 256,
+        "raw_bytes": 512,
+        "entropy": 0.0
+      },
+      {
+        "name": ".jQT",
+        "rva": "0xd7000",
+        "virtual_bytes": 6403868,
+        "raw_bytes": 6404096,
+        "entropy": 7.552
+      },
+      {
+        "name": ".l~3",
+        "rva": "0x6f3000",
+        "virtual_bytes": 88,
+        "raw_bytes": 512,
+        "entropy": 0.183
+      },
+      {
+        "name": ".iHm",
+        "rva": "0x6f4000",
+        "virtual_bytes": 5592248,
+        "raw_bytes": 5592576,
+        "entropy": 7.501
+      },
+      {
+        "name": ".rsrc",
+        "rva": "0xc4a000",
+        "virtual_bytes": 469,
+        "raw_bytes": 512,
+        "entropy": 4.725
+      },
+      {
+        "name": ".reloc",
+        "rva": "0xc4b000",
+        "virtual_bytes": 3368,
+        "raw_bytes": 3584,
+        "entropy": 5.349
+      }
+    ],
+    "version": [],
+    "imports": [
+      {
+        "dll": "bcrypt.dll",
+        "names": [
+          "BCryptOpenAlgorithmProvider"
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "names": [
+          "InitializeCriticalSectionEx"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "va": "0x180026120",
+        "name": "oplus_image_copy_last_error_message"
+      },
+      {
+        "va": "0x18002dec0",
+        "name": "oplus_image_dynamic_super_context_add_group_v1"
+      },
+      {
+        "va": "0x18002eb70",
+        "name": "oplus_image_dynamic_super_context_add_partition_v1"
+      },
+      {
+        "va": "0x18002ca80",
+        "name": "oplus_image_dynamic_super_context_create_v1"
+      },
+      {
+        "va": "0x18002f050",
+        "name": "oplus_image_dynamic_super_context_destroy_v1"
+      },
+      {
+        "va": "0x18002f020",
+        "name": "oplus_image_dynamic_super_context_export_metadata_region_v1"
+      },
+      {
+        "va": "0x18002ed80",
+        "name": "oplus_image_dynamic_super_context_export_v1"
+      },
+      {
+        "va": "0x18002e8f0",
+        "name": "oplus_image_dynamic_super_context_get_metadata_region_layout_v1"
+      },
+      {
+        "va": "0x18002e710",
+        "name": "oplus_image_dynamic_super_context_get_metadata_region_size_v1"
+      },
+      {
+        "va": "0x18002eba0",
+        "name": "oplus_image_dynamic_super_context_get_spaces_v1"
+      },
+      {
+        "va": "0x18002cbe0",
+        "name": "oplus_image_dynamic_super_context_set_layout_v1"
+      },
+      {
+        "va": "0x18002eb40",
+        "name": "oplus_image_dynamic_super_context_use_reference_v1"
+      },
+      {
+        "va": "0x1800260d0",
+        "name": "oplus_image_get_abi_version"
+      },
+      {
+        "va": "0x1800260e0",
+        "name": "oplus_image_get_last_error_v1"
+      },
+      {
+        "va": "0x18002f360",
+        "name": "oplus_image_lp_metadata_context_create_from_bytes_v1"
+      },
+      {
+        "va": "0x18002fef0",
+        "name": "oplus_image_lp_metadata_context_destroy"
+      },
+      {
+        "va": "0x18002fd50",
+        "name": "oplus_image_lp_metadata_copy_block_device_name_v1"
+      },
+      {
+        "va": "0x18002fac0",
+        "name": "oplus_image_lp_metadata_copy_partition_name_v1"
+      },
+      {
+        "va": "0x18002fce0",
+        "name": "oplus_image_lp_metadata_get_block_device_v1"
+      },
+      {
+        "va": "0x18002fc60",
+        "name": "oplus_image_lp_metadata_get_extent_v1"
+      },
+      {
+        "va": "0x18002f980",
+        "name": "oplus_image_lp_metadata_get_info_v1"
+      },
+      {
+        "va": "0x18002fa40",
+        "name": "oplus_image_lp_metadata_get_partition_v1"
+      },
+      {
+        "va": "0x180026240",
+        "name": "oplus_image_sparse_context_add_input"
+      },
+      {
+        "va": "0x180028870",
+        "name": "oplus_image_sparse_context_cancel"
+      },
+      {
+        "va": "0x180026840",
+        "name": "oplus_image_sparse_context_convert_v1"
+      },
+      {
+        "va": "0x1800261a0",
+        "name": "oplus_image_sparse_context_create_v1"
+      },
+      {
+        "va": "0x180028890",
+        "name": "oplus_image_sparse_context_destroy"
+      },
+      {
+        "va": "0x1800289a0",
+        "name": "oplus_image_sparse_overlay_context_add_reader_v1"
+      },
+      {
+        "va": "0x180029da0",
+        "name": "oplus_image_sparse_overlay_context_cancel_v1"
+      },
+      {
+        "va": "0x1800288c0",
+        "name": "oplus_image_sparse_overlay_context_create_v1"
+      },
+      {
+        "va": "0x180029dc0",
+        "name": "oplus_image_sparse_overlay_context_destroy_v1"
+      },
+      {
+        "va": "0x180029ba0",
+        "name": "oplus_image_sparse_overlay_context_list_spans_v1"
+      },
+      {
+        "va": "0x180028e90",
+        "name": "oplus_image_sparse_overlay_context_open_v1"
+      },
+      {
+        "va": "0x180028ec0",
+        "name": "oplus_image_sparse_overlay_context_read_v1"
+      },
+      {
+        "va": "0x18002f0c0",
+        "name": "oplus_image_sparse_probe_file_v1"
+      },
+      {
+        "va": "0x18002a410",
+        "name": "oplus_image_super_context_add_group_v1"
+      },
+      {
+        "va": "0x18002a8d0",
+        "name": "oplus_image_super_context_add_partition_v1"
+      },
+      {
+        "va": "0x18002c9d0",
+        "name": "oplus_image_super_context_build_v1"
+      },
+      {
+        "va": "0x18002ca00",
+        "name": "oplus_image_super_context_cancel"
+      },
+      {
+        "va": "0x180029df0",
+        "name": "oplus_image_super_context_create_v1"
+      },
+      {
+        "va": "0x18002ca20",
+        "name": "oplus_image_super_context_destroy"
+      },
+      {
+        "va": "0x180029f20",
+        "name": "oplus_image_super_context_set_layout_v1"
+      },
+      {
+        "va": "0x18002b000",
+        "name": "oplus_image_super_context_validate_v1"
+      }
+    ]
+  },
+  {
+    "file": "Oplusdll/Oplus_Mediatek.dll",
+    "bytes": 14495744,
+    "sha256": "1a920deae17ced71ccebb68dd3381316a88525844d7bb008b381eb529a45f24e",
+    "machine": "0x8664",
+    "imagebase": "0x180000000",
+    "entry": "0x180ce3276",
+    "clr": {
+      "rva": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "rva": "0x1000",
+        "virtual_bytes": 1381676,
+        "raw_bytes": 1381888,
+        "entropy": 6.312
+      },
+      {
+        "name": ".rdata",
+        "rva": "0x153000",
+        "virtual_bytes": 292608,
+        "raw_bytes": 292864,
+        "entropy": 5.863
+      },
+      {
+        "name": ".data",
+        "rva": "0x19b000",
+        "virtual_bytes": 473660,
+        "raw_bytes": 378880,
+        "entropy": 0.959
+      },
+      {
+        "name": ".pdata",
+        "rva": "0x20f000",
+        "virtual_bytes": 42660,
+        "raw_bytes": 43008,
+        "entropy": 7.98
+      },
+      {
+        "name": ".fptable",
+        "rva": "0x21a000",
+        "virtual_bytes": 256,
+        "raw_bytes": 512,
+        "entropy": 0.0
+      },
+      {
+        "name": ".@.k",
+        "rva": "0x21b000",
+        "virtual_bytes": 6579932,
+        "raw_bytes": 6580224,
+        "entropy": 7.541
+      },
+      {
+        "name": "./Ut",
+        "rva": "0x862000",
+        "virtual_bytes": 168,
+        "raw_bytes": 512,
+        "entropy": 0.484
+      },
+      {
+        "name": ".' S",
+        "rva": "0x863000",
+        "virtual_bytes": 5809760,
+        "raw_bytes": 5810176,
+        "entropy": 7.49
+      },
+      {
+        "name": ".rsrc",
+        "rva": "0xdee000",
+        "virtual_bytes": 469,
+        "raw_bytes": 512,
+        "entropy": 4.725
+      },
+      {
+        "name": ".reloc",
+        "rva": "0xdef000",
+        "virtual_bytes": 6040,
+        "raw_bytes": 6144,
+        "entropy": 5.469
+      }
+    ],
+    "version": [],
+    "imports": [
+      {
+        "dll": "bcrypt.dll",
+        "names": [
+          "BCryptEncrypt"
+        ]
+      },
+      {
+        "dll": "ADVAPI32.dll",
+        "names": [
+          "RegCloseKey"
+        ]
+      },
+      {
+        "dll": "SETUPAPI.dll",
+        "names": [
+          "SetupDiGetClassDevsA"
+        ]
+      },
+      {
+        "dll": "SHELL32.dll",
+        "names": [
+          "SHCreateDirectoryExW"
+        ]
+      },
+      {
+        "dll": "CRYPT32.dll",
+        "names": [
+          "CryptUnprotectData"
+        ]
+      },
+      {
+        "dll": "ncrypt.dll",
+        "names": [
+          "NCryptFinalizeKey"
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "names": [
+          "GetCommandLineA"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "va": "0x180104ee0",
+        "name": "oplus_mtk_account_reset_commit_v2"
+      },
+      {
+        "va": "0x1800e0fd0",
+        "name": "oplus_mtk_account_reset_entry_authorize_v1"
+      },
+      {
+        "va": "0x1801042e0",
+        "name": "oplus_mtk_account_reset_plan_append_v2"
+      },
+      {
+        "va": "0x1801040f0",
+        "name": "oplus_mtk_account_reset_plan_begin_v2"
+      },
+      {
+        "va": "0x180105150",
+        "name": "oplus_mtk_account_reset_plan_clear_v2"
+      },
+      {
+        "va": "0x180104d80",
+        "name": "oplus_mtk_account_reset_plan_copy_manifest_v2"
+      },
+      {
+        "va": "0x180104520",
+        "name": "oplus_mtk_account_reset_plan_finish_v2"
+      },
+      {
+        "va": "0x1800963a0",
+        "name": "oplus_mtk_account_safety_backup_plan_v1"
+      },
+      {
+        "va": "0x1800e49d0",
+        "name": "oplus_mtk_add_kamakiri_payload"
+      },
+      {
+        "va": "0x1800e4930",
+        "name": "oplus_mtk_adopt_chip_identity_v1"
+      },
+      {
+        "va": "0x180103e20",
+        "name": "oplus_mtk_analyze_account_rpmb_v1"
+      },
+      {
+        "va": "0x1800e40a0",
+        "name": "oplus_mtk_attach_running_da_v2"
+      },
+      {
+        "va": "0x1800df740",
+        "name": "oplus_mtk_authorization_prepare_challenge_v1"
+      },
+      {
+        "va": "0x1801075f0",
+        "name": "oplus_mtk_bootloader_lock_commit_v1"
+      },
+      {
+        "va": "0x180105380",
+        "name": "oplus_mtk_bootloader_lock_plan_begin_v1"
+      },
+      {
+        "va": "0x180108480",
+        "name": "oplus_mtk_bootloader_lock_plan_clear_v1"
+      },
+      {
+        "va": "0x1801070b0",
+        "name": "oplus_mtk_bootloader_lock_plan_copy_backup_v1"
+      },
+      {
+        "va": "0x180107480",
+        "name": "oplus_mtk_bootloader_lock_plan_copy_manifest_v1"
+      },
+      {
+        "va": "0x1800e8fe0",
+        "name": "oplus_mtk_brom_sla_begin_v1"
+      },
+      {
+        "va": "0x1800e9620",
+        "name": "oplus_mtk_brom_sla_complete_v1"
+      },
+      {
+        "va": "0x1800fd0a0",
+        "name": "oplus_mtk_cancel_operation"
+      },
+      {
+        "va": "0x1800e4060",
+        "name": "oplus_mtk_connect_brom"
+      },
+      {
+        "va": "0x1800e0c50",
+        "name": "oplus_mtk_context_authorize_v1"
+      },
+      {
+        "va": "0x1800dfbf0",
+        "name": "oplus_mtk_context_create"
+      },
+      {
+        "va": "0x1800e1090",
+        "name": "oplus_mtk_context_destroy"
+      },
+      {
+        "va": "0x1800e1030",
+        "name": "oplus_mtk_context_end_authorization"
+      },
+      {
+        "va": "0x1800e8ad0",
+        "name": "oplus_mtk_crash_preloader"
+      },
+      {
+        "va": "0x1800e9c70",
+        "name": "oplus_mtk_da_sla_begin_v1"
+      },
+      {
+        "va": "0x1800ea030",
+        "name": "oplus_mtk_da_sla_complete_v1"
+      },
+      {
+        "va": "0x1801094f0",
+        "name": "oplus_mtk_dm_verity_fix_commit_v1"
+      },
+      {
+        "va": "0x180108610",
+        "name": "oplus_mtk_dm_verity_fix_plan_begin_v1"
+      },
+      {
+        "va": "0x18010a070",
+        "name": "oplus_mtk_dm_verity_fix_plan_clear_v1"
+      },
+      {
+        "va": "0x180109280",
+        "name": "oplus_mtk_dm_verity_fix_plan_copy_backup_v1"
+      },
+      {
+        "va": "0x180109390",
+        "name": "oplus_mtk_dm_verity_fix_plan_copy_manifest_v1"
+      },
+      {
+        "va": "0x1800f9e00",
+        "name": "oplus_mtk_download_flag_v5_finalize"
+      },
+      {
+        "va": "0x1800f9ea0",
+        "name": "oplus_mtk_download_flag_v5_probe"
+      },
+      {
+        "va": "0x1800f9ed0",
+        "name": "oplus_mtk_download_flag_v5_probe_v2"
+      },
+      {
+        "va": "0x1800f9e70",
+        "name": "oplus_mtk_download_flag_v5_snapshot"
+      },
+      {
+        "va": "0x1800f9d30",
+        "name": "oplus_mtk_download_flag_v5_write"
+      },
+      {
+        "va": "0x1800f9ff0",
+        "name": "oplus_mtk_download_flag_v6_finalize_v1"
+      },
+      {
+        "va": "0x1800f9f80",
+        "name": "oplus_mtk_download_flag_v6_probe_v1"
+      },
+      {
+        "va": "0x1800f9fc0",
+        "name": "oplus_mtk_download_flag_v6_snapshot_v1"
+      },
+      {
+        "va": "0x1800f9f10",
+        "name": "oplus_mtk_download_flag_v6_write_v1"
+      },
+      {
+        "va": "0x1800e3d10",
+        "name": "oplus_mtk_enumerate_ports"
+      },
+      {
+        "va": "0x1800f6670",
+        "name": "oplus_mtk_erase_partition"
+      },
+      {
+        "va": "0x180101e50",
+        "name": "oplus_mtk_erase_rpmb_region_v1"
+      },
+      {
+        "va": "0x180103a40",
+        "name": "oplus_mtk_erase_rpmb_region_v2"
+      },
+      {
+        "va": "0x180101a70",
+        "name": "oplus_mtk_finish_rpmb_write_v1"
+      },
+      {
+        "va": "0x180103860",
+        "name": "oplus_mtk_finish_rpmb_write_v2"
+      },
+      {
+        "va": "0x1800df730",
+        "name": "oplus_mtk_get_abi_version"
+      },
+      {
+        "va": "0x1800fc8a0",
+        "name": "oplus_mtk_get_device_info"
+      },
+      {
+        "va": "0x180100570",
+        "name": "oplus_mtk_get_rpmb_region_count_v1"
+      },
+      {
+        "va": "0x180100850",
+        "name": "oplus_mtk_get_rpmb_region_info_v1"
+      },
+      {
+        "va": "0x1800fc940",
+        "name": "oplus_mtk_get_storage_info_v1"
+      },
+      {
+        "va": "0x1800ef970",
+        "name": "oplus_mtk_gpt_build_offline_v1"
+      },
+      {
+        "va": "0x1800f04e0",
+        "name": "oplus_mtk_gpt_offline_prepare_manifest_v1"
+      },
+      {
+        "va": "0x1800f0840",
+        "name": "oplus_mtk_gpt_repair_commit_v2"
+      },
+      {
+        "va": "0x1800ee4c0",
+        "name": "oplus_mtk_gpt_repair_plan_v2"
+      },
+      {
+        "va": "0x1800fca80",
+        "name": "oplus_mtk_is_da_session_ready"
+      },
+      {
+        "va": "0x1800e53c0",
+        "name": "oplus_mtk_load_da_file"
+      },
+      {
+        "va": "0x1800e5cb0",
+        "name": "oplus_mtk_load_preloader"
+      },
+      {
+        "va": "0x1800ea040",
+        "name": "oplus_mtk_load_scatter"
+      },
+      {
+        "va": "0x1800b4bf0",
+        "name": "oplus_mtk_maintenance_commit_v1"
+      },
+      {
+        "va": "0x1800b4000",
+        "name": "oplus_mtk_maintenance_plan_v1"
+      },
+      {
+        "va": "0x1800fd590",
+        "name": "oplus_mtk_ofp_decryptor_create"
+      },
+      {
+        "va": "0x1800fd9f0",
+        "name": "oplus_mtk_ofp_decryptor_decrypt"
+      },
+      {
+        "va": "0x1800fd970",
+        "name": "oplus_mtk_ofp_decryptor_destroy"
+      },
+      {
+        "va": "0x1800fde60",
+        "name": "oplus_mtk_ofp_package_decode_entries_v1"
+      },
+      {
+        "va": "0x1800fdb40",
+        "name": "oplus_mtk_ofp_package_probe_v1"
+      },
+      {
+        "va": "0x1800ea900",
+        "name": "oplus_mtk_parse_scatter_v1"
+      },
+      {
+        "va": "0x1800eac50",
+        "name": "oplus_mtk_parse_scatter_xml_v1"
+      },
+      {
+        "va": "0x1800f1740",
+        "name": "oplus_mtk_preloader_inspect_container_v1"
+      },
+      {
+        "va": "0x1800e5650",
+        "name": "oplus_mtk_prepare_da_files"
+      },
+      {
+        "va": "0x1800e5a70",
+        "name": "oplus_mtk_prepare_da_memory"
+      },
+      {
+        "va": "0x1800ed910",
+        "name": "oplus_mtk_read_gpt"
+      },
+      {
+        "va": "0x1800edc20",
+        "name": "oplus_mtk_read_gpt_image"
+      },
+      {
+        "va": "0x1800fb210",
+        "name": "oplus_mtk_read_ocdt_project_id"
+      },
+      {
+        "va": "0x1800f1890",
+        "name": "oplus_mtk_read_partition"
+      },
+      {
+        "va": "0x1800f1b30",
+        "name": "oplus_mtk_read_partition_range"
+      },
+      {
+        "va": "0x1800e3cf0",
+        "name": "oplus_mtk_read_plan_clear_v1"
+      },
+      {
+        "va": "0x1800e3ba0",
+        "name": "oplus_mtk_read_plan_copy_manifest_v1"
+      },
+      {
+        "va": "0x1800e2020",
+        "name": "oplus_mtk_read_plan_prepare_v1"
+      },
+      {
+        "va": "0x1800fcb20",
+        "name": "oplus_mtk_read_preloader"
+      },
+      {
+        "va": "0x1800fef30",
+        "name": "oplus_mtk_read_rpmb_key_material_v2"
+      },
+      {
+        "va": "0x1800ff0a0",
+        "name": "oplus_mtk_read_rpmb_key_material_v3"
+      },
+      {
+        "va": "0x180100950",
+        "name": "oplus_mtk_read_rpmb_region_v1"
+      },
+      {
+        "va": "0x1800fcd20",
+        "name": "oplus_mtk_read_special_partition_v1"
+      },
+      {
+        "va": "0x1800fc890",
+        "name": "oplus_mtk_reboot"
+      },
+      {
+        "va": "0x180103f60",
+        "name": "oplus_mtk_reset_account_rpmb_v1"
+      },
+      {
+        "va": "0x180103c20",
+        "name": "oplus_mtk_rpmb_mutation_plan_clear_v1"
+      },
+      {
+        "va": "0x1801034d0",
+        "name": "oplus_mtk_rpmb_mutation_plan_copy_manifest_v1"
+      },
+      {
+        "va": "0x180102f40",
+        "name": "oplus_mtk_rpmb_mutation_plan_v1"
+      },
+      {
+        "va": "0x1800eb240",
+        "name": "oplus_mtk_serialize_scatter_v1"
+      },
+      {
+        "va": "0x1800e99c0",
+        "name": "oplus_mtk_set_allinone_signature_payload_v1"
+      },
+      {
+        "va": "0x1800e5380",
+        "name": "oplus_mtk_set_auth_file"
+      },
+      {
+        "va": "0x1800e53a0",
+        "name": "oplus_mtk_set_cert_file"
+      },
+      {
+        "va": "0x1800e9900",
+        "name": "oplus_mtk_set_da_sla_options_v1"
+      },
+      {
+        "va": "0x1800e4980",
+        "name": "oplus_mtk_set_kamakiri_payload"
+      },
+      {
+        "va": "0x1800fd060",
+        "name": "oplus_mtk_set_log_callback"
+      },
+      {
+        "va": "0x1800e4f80",
+        "name": "oplus_mtk_set_preloader_data"
+      },
+      {
+        "va": "0x1800e5180",
+        "name": "oplus_mtk_set_preloader_fallback_data_v1"
+      },
+      {
+        "va": "0x1800fd080",
+        "name": "oplus_mtk_set_progress_callback"
+      },
+      {
+        "va": "0x1800fef00",
+        "name": "oplus_mtk_set_rpmb_derivation_profile_v1"
+      },
+      {
+        "va": "0x1800fec70",
+        "name": "oplus_mtk_set_xflash_extension_payload_v1"
+      },
+      {
+        "va": "0x1800fe720",
+        "name": "oplus_mtk_set_xml_extension_payload_v1"
+      },
+      {
+        "va": "0x1800fe9f0",
+        "name": "oplus_mtk_set_xml_extension_payloads_v2"
+      },
+      {
+        "va": "0x1800f8ed0",
+        "name": "oplus_mtk_sfp_resolve_nvid_v1"
+      },
+      {
+        "va": "0x1800f6f70",
+        "name": "oplus_mtk_sfp_super_write_begin_v1"
+      },
+      {
+        "va": "0x1800e7c90",
+        "name": "oplus_mtk_sla_challenge"
+      },
+      {
+        "va": "0x1800fc6b0",
+        "name": "oplus_mtk_slot_read"
+      },
+      {
+        "va": "0x1800fc6e0",
+        "name": "oplus_mtk_slot_set"
+      },
+      {
+        "va": "0x1800f3f20",
+        "name": "oplus_mtk_sparse_write_plan_v1"
+      },
+      {
+        "va": "0x1800e5f80",
+        "name": "oplus_mtk_upload_da"
+      },
+      {
+        "va": "0x1800e3d30",
+        "name": "oplus_mtk_wait_device"
+      },
+      {
+        "va": "0x1800edfd0",
+        "name": "oplus_mtk_write_gpt"
+      },
+      {
+        "va": "0x1800fa060",
+        "name": "oplus_mtk_write_ocdt"
+      },
+      {
+        "va": "0x1800f2040",
+        "name": "oplus_mtk_write_partition"
+      },
+      {
+        "va": "0x1800f2550",
+        "name": "oplus_mtk_write_partition_begin"
+      },
+      {
+        "va": "0x1800f4240",
+        "name": "oplus_mtk_write_partition_chunk"
+      },
+      {
+        "va": "0x1800f5180",
+        "name": "oplus_mtk_write_partition_end"
+      },
+      {
+        "va": "0x1800f2cd0",
+        "name": "oplus_mtk_write_partition_packed_spaces_begin_v1"
+      },
+      {
+        "va": "0x1800fd1c0",
+        "name": "oplus_mtk_write_preloader_v5"
+      },
+      {
+        "va": "0x180100df0",
+        "name": "oplus_mtk_write_rpmb_region_v1"
+      },
+      {
+        "va": "0x180103620",
+        "name": "oplus_mtk_write_rpmb_region_v2"
+      }
+    ]
+  },
+  {
+    "file": "Oplusdll/Oplus_Payload.dll",
+    "bytes": 2272256,
+    "sha256": "0cfa17705af2965dfe8fdfe36aa4f4efc9e48462fe18c2c5376236b1cef46cb6",
+    "machine": "0x8664",
+    "imagebase": "0x180000000",
+    "entry": "0x1801225a0",
+    "clr": {
+      "rva": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "rva": "0x1000",
+        "virtual_bytes": 1742668,
+        "raw_bytes": 1742848,
+        "entropy": 6.481
+      },
+      {
+        "name": ".rdata",
+        "rva": "0x1ab000",
+        "virtual_bytes": 420064,
+        "raw_bytes": 420352,
+        "entropy": 6.108
+      },
+      {
+        "name": ".data",
+        "rva": "0x212000",
+        "virtual_bytes": 391860,
+        "raw_bytes": 23552,
+        "entropy": 3.584
+      },
+      {
+        "name": ".pdata",
+        "rva": "0x272000",
+        "virtual_bytes": 78096,
+        "raw_bytes": 78336,
+        "entropy": 6.193
+      },
+      {
+        "name": ".fptable",
+        "rva": "0x286000",
+        "virtual_bytes": 256,
+        "raw_bytes": 512,
+        "entropy": 0.0
+      },
+      {
+        "name": ".rsrc",
+        "rva": "0x287000",
+        "virtual_bytes": 480,
+        "raw_bytes": 512,
+        "entropy": 4.725
+      },
+      {
+        "name": ".reloc",
+        "rva": "0x288000",
+        "virtual_bytes": 4612,
+        "raw_bytes": 5120,
+        "entropy": 5.25
+      }
+    ],
+    "version": [],
+    "imports": [
+      {
+        "dll": "bcrypt.dll",
+        "names": [
+          "BCryptDestroyHash",
+          "BCryptFinishHash",
+          "BCryptHashData",
+          "BCryptCreateHash",
+          "BCryptCloseAlgorithmProvider",
+          "BCryptGetProperty",
+          "BCryptOpenAlgorithmProvider"
+        ]
+      },
+      {
+        "dll": "WINHTTP.dll",
+        "names": [
+          "WinHttpCloseHandle",
+          "WinHttpConnect",
+          "WinHttpOpen",
+          "WinHttpQueryDataAvailable",
+          "WinHttpReadData",
+          "WinHttpQueryHeaders",
+          "WinHttpReceiveResponse",
+          "WinHttpSendRequest",
+          "WinHttpAddRequestHeaders",
+          "WinHttpOpenRequest",
+          "WinHttpSetTimeouts",
+          "WinHttpSetOption",
+          "WinHttpCrackUrl"
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "names": [
+          "QueryPerformanceFrequency",
+          "OutputDebugStringW",
+          "SetEndOfFile",
+          "WriteConsoleW",
+          "HeapSize",
+          "SetStdHandle",
+          "GetProcessHeap",
+          "SetEnvironmentVariableW",
+          "FreeEnvironmentStringsW",
+          "GetEnvironmentStringsW",
+          "GetCommandLineW",
+          "GetCommandLineA",
+          "HeapReAlloc",
+          "GetOEMCP",
+          "GetACP",
+          "IsValidCodePage",
+          "SetConsoleCtrlHandler",
+          "GetTimeZoneInformation",
+          "ReadConsoleW",
+          "GetConsoleMode",
+          "GetConsoleOutputCP",
+          "WriteFile",
+          "CompareStringOrdinal",
+          "CreateFileW",
+          "GetFileAttributesW",
+          "GetFileSizeEx",
+          "ReadFile",
+          "CloseHandle",
+          "GetLastError",
+          "GetOverlappedResult",
+          "CreateEventW",
+          "MultiByteToWideChar",
+          "FindClose",
+          "FindFirstFileW",
+          "FindNextFileW",
+          "GetDriveTypeW",
+          "GetFileInformationByHandle",
+          "GetFinalPathNameByHandleW",
+          "GetFullPathNameW",
+          "GetVolumePathNameW",
+          "SetFilePointerEx",
+          "ResetEvent",
+          "GetCurrentProcessId",
+          "GetTickCount64",
+          "CreateFileMappingW",
+          "MapViewOfFile",
+          "UnmapViewOfFile",
+          "GetModuleFileNameW",
+          "GetModuleHandleW",
+          "GetModuleHandleExW",
+          "GetProcAddress",
+          "ReadDirectoryChangesW",
+          "FlushFileBuffers",
+          "GetFileType",
+          "GetStdHandle",
+          "EnumSystemLocalesW",
+          "GetUserDefaultLCID",
+          "LocalFree",
+          "FormatMessageA",
+          "GetLocaleInfoEx",
+          "SetCurrentDirectoryW",
+          "GetCurrentDirectoryW",
+          "CreateDirectoryW",
+          "FindFirstFileExW",
+          "GetDiskFreeSpaceExW",
+          "GetFileAttributesExW",
+          "SetFileAttributesW",
+          "SetFileInformationByHandle",
+          "SetFileTime",
+          "GetTempPathW",
+          "CreateFile2",
+          "AreFileApisANSI",
+          "DeviceIoControl",
+          "CreateDirectoryExW",
+          "CopyFile2",
+          "MoveFileExW",
+          "CreateHardLinkW",
+          "GetFileInformationByHandleEx",
+          "CreateSymbolicLinkW",
+          "WideCharToMultiByte",
+          "ReleaseSRWLockExclusive",
+          "AcquireSRWLockExclusive",
+          "TryAcquireSRWLockExclusive",
+          "GetCurrentThreadId",
+          "RtlPcToFileHeader",
+          "RaiseException",
+          "QueryPerformanceCounter",
+          "RtlUnwind",
+          "GetSystemTimePreciseAsFileTime",
+          "WaitForSingleObjectEx",
+          "Sleep",
+          "SwitchToThread",
+          "GetExitCodeThread",
+          "GetLogicalProcessorInformationEx",
+          "WakeConditionVariable",
+          "WakeAllConditionVariable",
+          "SleepConditionVariableSRW",
+          "ReleaseSRWLockShared",
+          "AcquireSRWLockShared",
+          "TryAcquireSRWLockShared",
+          "EnterCriticalSection",
+          "LeaveCriticalSection",
+          "InitializeCriticalSectionEx",
+          "DeleteCriticalSection",
+          "EncodePointer",
+          "DecodePointer",
+          "LCMapStringEx",
+          "GetStringTypeW",
+          "CompareStringEx",
+          "GetCPInfo",
+          "SetUnhandledExceptionFilter",
+          "GetStartupInfoW",
+          "GetSystemTimeAsFileTime",
+          "InitializeSListHead",
+          "RtlLookupFunctionEntry",
+          "RtlUnwindEx",
+          "InterlockedPushEntrySList",
+          "InterlockedFlushSList",
+          "SetLastError",
+          "FlsAlloc",
+          "FlsGetValue",
+          "FlsSetValue",
+          "FlsFree",
+          "CreateThread",
+          "ExitThread",
+          "ResumeThread",
+          "FreeLibrary",
+          "FreeLibraryAndExitThread",
+          "GetCurrentProcess",
+          "ExitProcess",
+          "TerminateProcess",
+          "IsProcessorFeaturePresent",
+          "RtlCaptureContext",
+          "RtlVirtualUnwind",
+          "IsDebuggerPresent",
+          "UnhandledExceptionFilter",
+          "GetCurrentThread",
+          "HeapFree",
+          "HeapAlloc",
+          "IsThreadAFiber",
+          "VirtualProtect",
+          "LoadLibraryExW",
+          "GetDateFormatW",
+          "GetTimeFormatW",
+          "CompareStringW",
+          "LCMapStringW",
+          "GetLocaleInfoW",
+          "IsValidLocale"
+        ]
+      },
+      {
+        "dll": "api-ms-win-core-synch-l1-2-0.dll",
+        "names": [
+          "WakeByAddressSingle",
+          "WakeByAddressAll",
+          "WaitOnAddress"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "va": "0x1800341b0",
+        "name": "oplus_payload_context_cancel"
+      },
+      {
+        "va": "0x1800341f0",
+        "name": "oplus_payload_context_create_url_cancellable_v1"
+      },
+      {
+        "va": "0x180034310",
+        "name": "oplus_payload_context_create_url_v1"
+      },
+      {
+        "va": "0x180034420",
+        "name": "oplus_payload_context_create_v1"
+      },
+      {
+        "va": "0x1800344c0",
+        "name": "oplus_payload_context_create_verified_v1"
+      },
+      {
+        "va": "0x180034580",
+        "name": "oplus_payload_context_destroy"
+      },
+      {
+        "va": "0x1800345b0",
+        "name": "oplus_payload_context_extract_v2"
+      },
+      {
+        "va": "0x180034790",
+        "name": "oplus_payload_context_extract_v3"
+      },
+      {
+        "va": "0x180034a10",
+        "name": "oplus_payload_context_get_info_v1"
+      },
+      {
+        "va": "0x180034a80",
+        "name": "oplus_payload_context_get_info_v2"
+      },
+      {
+        "va": "0x180034b10",
+        "name": "oplus_payload_context_get_info_v3"
+      },
+      {
+        "va": "0x180034ba0",
+        "name": "oplus_payload_context_get_partition_info_v1"
+      },
+      {
+        "va": "0x180034ce0",
+        "name": "oplus_payload_context_select_all"
+      },
+      {
+        "va": "0x180034d20",
+        "name": "oplus_payload_context_select_partition"
+      },
+      {
+        "va": "0x180034ec0",
+        "name": "oplus_payload_context_selected_requires_source_v1"
+      },
+      {
+        "va": "0x180034f10",
+        "name": "oplus_payload_copy_last_error_message"
+      },
+      {
+        "va": "0x180034fb0",
+        "name": "oplus_payload_get_abi_version"
+      },
+      {
+        "va": "0x180034fc0",
+        "name": "oplus_payload_get_last_error_v1"
+      }
+    ]
+  },
+  {
+    "file": "Oplusdll/Oplus_Qualcomm.dll",
+    "bytes": 14511104,
+    "sha256": "05562025f23535bf291a5c19ba5a4bfb792a5945a2f67526dc8eb118b8ca1ca5",
+    "machine": "0x8664",
+    "imagebase": "0x180000000",
+    "entry": "0x180c87c97",
+    "clr": {
+      "rva": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "rva": "0x1000",
+        "virtual_bytes": 647132,
+        "raw_bytes": 647168,
+        "entropy": 6.404
+      },
+      {
+        "name": ".rdata",
+        "rva": "0x9f000",
+        "virtual_bytes": 161002,
+        "raw_bytes": 161280,
+        "entropy": 5.81
+      },
+      {
+        "name": ".data",
+        "rva": "0xc7000",
+        "virtual_bytes": 435996,
+        "raw_bytes": 341504,
+        "entropy": 0.099
+      },
+      {
+        "name": ".pdata",
+        "rva": "0x132000",
+        "virtual_bytes": 28380,
+        "raw_bytes": 28672,
+        "entropy": 7.976
+      },
+      {
+        "name": ".fptable",
+        "rva": "0x139000",
+        "virtual_bytes": 256,
+        "raw_bytes": 512,
+        "entropy": 0.0
+      },
+      {
+        "name": ".;h9",
+        "rva": "0x13a000",
+        "virtual_bytes": 7055084,
+        "raw_bytes": 7055360,
+        "entropy": 7.515
+      },
+      {
+        "name": ".nYN",
+        "rva": "0x7f5000",
+        "virtual_bytes": 184,
+        "raw_bytes": 512,
+        "entropy": 0.537
+      },
+      {
+        "name": ".jLE",
+        "rva": "0x7f6000",
+        "virtual_bytes": 6269976,
+        "raw_bytes": 6270464,
+        "entropy": 7.463
+      },
+      {
+        "name": ".rsrc",
+        "rva": "0xdf1000",
+        "virtual_bytes": 469,
+        "raw_bytes": 512,
+        "entropy": 4.725
+      },
+      {
+        "name": ".reloc",
+        "rva": "0xdf2000",
+        "virtual_bytes": 3768,
+        "raw_bytes": 4096,
+        "entropy": 5.322
+      }
+    ],
+    "version": [],
+    "imports": [
+      {
+        "dll": "bcrypt.dll",
+        "names": [
+          "BCryptDestroyHash"
+        ]
+      },
+      {
+        "dll": "ole32.dll",
+        "names": [
+          "StringFromGUID2"
+        ]
+      },
+      {
+        "dll": "SETUPAPI.dll",
+        "names": [
+          "SetupDiDestroyDeviceInfoList"
+        ]
+      },
+      {
+        "dll": "SHELL32.dll",
+        "names": [
+          "SHCreateDirectoryExW"
+        ]
+      },
+      {
+        "dll": "CRYPT32.dll",
+        "names": [
+          "CryptUnprotectData"
+        ]
+      },
+      {
+        "dll": "ncrypt.dll",
+        "names": [
+          "NCryptSetProperty"
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "names": [
+          "GetCommandLineW"
+        ]
+      },
+      {
+        "dll": "ADVAPI32.dll",
+        "names": [
+          "RegQueryValueExW"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "va": "0x180007210",
+        "name": "oplus_ocdt_create_image"
+      },
+      {
+        "va": "0x180007120",
+        "name": "oplus_ocdt_decrypt"
+      },
+      {
+        "va": "0x180007030",
+        "name": "oplus_ocdt_encrypt"
+      },
+      {
+        "va": "0x180007680",
+        "name": "oplus_ocdt_extract_project_id"
+      },
+      {
+        "va": "0x180044690",
+        "name": "oplus_ofp_context_copy_xml"
+      },
+      {
+        "va": "0x180044170",
+        "name": "oplus_ofp_context_create"
+      },
+      {
+        "va": "0x1800446f0",
+        "name": "oplus_ofp_context_decrypt"
+      },
+      {
+        "va": "0x180044760",
+        "name": "oplus_ofp_context_destroy"
+      },
+      {
+        "va": "0x180044670",
+        "name": "oplus_ofp_context_get_xml_size"
+      },
+      {
+        "va": "0x18003f0e0",
+        "name": "oplus_qcom_command_form_create"
+      },
+      {
+        "va": "0x18003f6a0",
+        "name": "oplus_qcom_command_form_destroy"
+      },
+      {
+        "va": "0x18003f1c0",
+        "name": "oplus_qcom_command_form_get_decision_v2"
+      },
+      {
+        "va": "0x18003f320",
+        "name": "oplus_qcom_command_form_observe_response"
+      },
+      {
+        "va": "0x18003f2b0",
+        "name": "oplus_qcom_command_form_reset_capture"
+      },
+      {
+        "va": "0x18003f150",
+        "name": "oplus_qcom_command_form_set_evidence_v2"
+      },
+      {
+        "va": "0x18003f5b0",
+        "name": "oplus_qcom_command_form_take_diagnostic"
+      },
+      {
+        "va": "0x180041f70",
+        "name": "oplus_qcom_device_control_accept_no_response"
+      },
+      {
+        "va": "0x180041260",
+        "name": "oplus_qcom_device_control_copy_command"
+      },
+      {
+        "va": "0x180040d90",
+        "name": "oplus_qcom_device_control_create"
+      },
+      {
+        "va": "0x1800420a0",
+        "name": "oplus_qcom_device_control_destroy"
+      },
+      {
+        "va": "0x1800412f0",
+        "name": "oplus_qcom_device_control_feed_response"
+      },
+      {
+        "va": "0x180041fc0",
+        "name": "oplus_qcom_device_control_get_status"
+      },
+      {
+        "va": "0x1800424c0",
+        "name": "oplus_qcom_digest_auth_advance"
+      },
+      {
+        "va": "0x1800423a0",
+        "name": "oplus_qcom_digest_auth_copy_command"
+      },
+      {
+        "va": "0x1800421c0",
+        "name": "oplus_qcom_digest_auth_create"
+      },
+      {
+        "va": "0x180043b80",
+        "name": "oplus_qcom_digest_auth_destroy"
+      },
+      {
+        "va": "0x180042640",
+        "name": "oplus_qcom_digest_auth_feed_response"
+      },
+      {
+        "va": "0x180043ac0",
+        "name": "oplus_qcom_digest_auth_get_status"
+      },
+      {
+        "va": "0x180043ef0",
+        "name": "oplus_qcom_digest_write_advance"
+      },
+      {
+        "va": "0x180043d70",
+        "name": "oplus_qcom_digest_write_copy_command"
+      },
+      {
+        "va": "0x180043c30",
+        "name": "oplus_qcom_digest_write_create"
+      },
+      {
+        "va": "0x1800440b0",
+        "name": "oplus_qcom_digest_write_destroy"
+      },
+      {
+        "va": "0x180043dd0",
+        "name": "oplus_qcom_digest_write_feed_response"
+      },
+      {
+        "va": "0x180043f80",
+        "name": "oplus_qcom_digest_write_get_status"
+      },
+      {
+        "va": "0x1800406a0",
+        "name": "oplus_qcom_download_flag_context_build_block_v1"
+      },
+      {
+        "va": "0x18003f6d0",
+        "name": "oplus_qcom_download_flag_context_create_v1"
+      },
+      {
+        "va": "0x180040a70",
+        "name": "oplus_qcom_download_flag_context_destroy"
+      },
+      {
+        "va": "0x1800405f0",
+        "name": "oplus_qcom_download_flag_context_get_plan_v1"
+      },
+      {
+        "va": "0x1800449a0",
+        "name": "oplus_qcom_firehose_begin_command"
+      },
+      {
+        "va": "0x180046110",
+        "name": "oplus_qcom_firehose_build_command"
+      },
+      {
+        "va": "0x180046ed0",
+        "name": "oplus_qcom_firehose_build_command_v2"
+      },
+      {
+        "va": "0x180045eb0",
+        "name": "oplus_qcom_firehose_copy_log"
+      },
+      {
+        "va": "0x180045f40",
+        "name": "oplus_qcom_firehose_copy_response"
+      },
+      {
+        "va": "0x180044870",
+        "name": "oplus_qcom_firehose_create"
+      },
+      {
+        "va": "0x180047550",
+        "name": "oplus_qcom_firehose_destroy"
+      },
+      {
+        "va": "0x180044b00",
+        "name": "oplus_qcom_firehose_evaluate_response"
+      },
+      {
+        "va": "0x180044a70",
+        "name": "oplus_qcom_firehose_feed_response"
+      },
+      {
+        "va": "0x180046020",
+        "name": "oplus_qcom_firehose_get_state"
+      },
+      {
+        "va": "0x180047130",
+        "name": "oplus_qcom_firehose_parse_chip_serial_v1"
+      },
+      {
+        "va": "0x180045fd0",
+        "name": "oplus_qcom_firehose_set_digest_mode"
+      },
+      {
+        "va": "0x1800480b0",
+        "name": "oplus_qcom_gpt_analyze_slot"
+      },
+      {
+        "va": "0x18000b010",
+        "name": "oplus_qcom_gpt_build_primary_read_plan_v1"
+      },
+      {
+        "va": "0x180047fc0",
+        "name": "oplus_qcom_gpt_context_copy_entry_name"
+      },
+      {
+        "va": "0x180048bb0",
+        "name": "oplus_qcom_gpt_context_destroy"
+      },
+      {
+        "va": "0x180047e70",
+        "name": "oplus_qcom_gpt_context_get_entry"
+      },
+      {
+        "va": "0x180047d00",
+        "name": "oplus_qcom_gpt_context_get_entry_count"
+      },
+      {
+        "va": "0x180047be0",
+        "name": "oplus_qcom_gpt_context_get_header"
+      },
+      {
+        "va": "0x180048950",
+        "name": "oplus_qcom_gpt_context_set_entry_attributes"
+      },
+      {
+        "va": "0x180044130",
+        "name": "oplus_qcom_gpt_crc32"
+      },
+      {
+        "va": "0x180047610",
+        "name": "oplus_qcom_gpt_entry_slot_flag_v1"
+      },
+      {
+        "va": "0x180047580",
+        "name": "oplus_qcom_gpt_find_signature"
+      },
+      {
+        "va": "0x18000a7a0",
+        "name": "oplus_qcom_gpt_inspect_geometry"
+      },
+      {
+        "va": "0x180047d50",
+        "name": "oplus_qcom_gpt_merge_slot_analyses"
+      },
+      {
+        "va": "0x180048170",
+        "name": "oplus_qcom_gpt_modify_slot"
+      },
+      {
+        "va": "0x180047640",
+        "name": "oplus_qcom_gpt_parse"
+      },
+      {
+        "va": "0x180047900",
+        "name": "oplus_qcom_gpt_parse_v2"
+      },
+      {
+        "va": "0x180048be0",
+        "name": "oplus_qcom_gpt_resolve_slot_analyses_v1"
+      },
+      {
+        "va": "0x180048a60",
+        "name": "oplus_qcom_gpt_serialize"
+      },
+      {
+        "va": "0x180048070",
+        "name": "oplus_qcom_gpt_validate"
+      },
+      {
+        "va": "0x180049250",
+        "name": "oplus_qcom_gpt_write_plan_copy_region_data"
+      },
+      {
+        "va": "0x180049170",
+        "name": "oplus_qcom_gpt_write_plan_create"
+      },
+      {
+        "va": "0x180049180",
+        "name": "oplus_qcom_gpt_write_plan_create_backup_from_primary"
+      },
+      {
+        "va": "0x1800492f0",
+        "name": "oplus_qcom_gpt_write_plan_destroy"
+      },
+      {
+        "va": "0x180049190",
+        "name": "oplus_qcom_gpt_write_plan_get_info"
+      },
+      {
+        "va": "0x1800491d0",
+        "name": "oplus_qcom_gpt_write_plan_get_region"
+      },
+      {
+        "va": "0x18005c5d0",
+        "name": "oplus_qcom_is_protected_sector"
+      },
+      {
+        "va": "0x18004be60",
+        "name": "oplus_qcom_oneplus_auth_context_create"
+      },
+      {
+        "va": "0x18004c680",
+        "name": "oplus_qcom_oneplus_auth_copy_command_v1"
+      },
+      {
+        "va": "0x18004cb00",
+        "name": "oplus_qcom_oneplus_auth_destroy"
+      },
+      {
+        "va": "0x18004c7a0",
+        "name": "oplus_qcom_oneplus_auth_feed_response_v1"
+      },
+      {
+        "va": "0x18004c660",
+        "name": "oplus_qcom_oneplus_auth_get_action_v1"
+      },
+      {
+        "va": "0x18004ca90",
+        "name": "oplus_qcom_oneplus_auth_get_result_v1"
+      },
+      {
+        "va": "0x180050d30",
+        "name": "oplus_qcom_oneplus_build_vendor_erase_command_v1"
+      },
+      {
+        "va": "0x18004d700",
+        "name": "oplus_qcom_oneplus_classify_auth_failure_v1"
+      },
+      {
+        "va": "0x18004db50",
+        "name": "oplus_qcom_oneplus_classify_cdt_label_v1"
+      },
+      {
+        "va": "0x18004d080",
+        "name": "oplus_qcom_oneplus_copy_configure_command_v1"
+      },
+      {
+        "va": "0x18004cb50",
+        "name": "oplus_qcom_oneplus_copy_ddr_probe_command_v1"
+      },
+      {
+        "va": "0x18004d1a0",
+        "name": "oplus_qcom_oneplus_copy_version_query_v1"
+      },
+      {
+        "va": "0x18004cc70",
+        "name": "oplus_qcom_oneplus_ddr_probe_follow_up_v1"
+      },
+      {
+        "va": "0x18004eed0",
+        "name": "oplus_qcom_oneplus_find_ddr_variant_entries_v1"
+      },
+      {
+        "va": "0x18004e6c0",
+        "name": "oplus_qcom_oneplus_is_ddr_probe_only_loader_v1"
+      },
+      {
+        "va": "0x18004ee90",
+        "name": "oplus_qcom_oneplus_is_lun_type_mismatch_v1"
+      },
+      {
+        "va": "0x18004ed60",
+        "name": "oplus_qcom_oneplus_is_protected_program_label_v1"
+      },
+      {
+        "va": "0x18004e180",
+        "name": "oplus_qcom_oneplus_order_programmers_v1"
+      },
+      {
+        "va": "0x18004e8c0",
+        "name": "oplus_qcom_oneplus_package_erase_decide_v1"
+      },
+      {
+        "va": "0x18004d4d0",
+        "name": "oplus_qcom_oneplus_parse_cpu_id_v1"
+      },
+      {
+        "va": "0x18004cd80",
+        "name": "oplus_qcom_oneplus_parse_ddr_probe_response_v1"
+      },
+      {
+        "va": "0x18004d2e0",
+        "name": "oplus_qcom_oneplus_parse_decimal_attribute_v1"
+      },
+      {
+        "va": "0x180050b10",
+        "name": "oplus_qcom_oneplus_resolve_start_erase_user_data_v1"
+      },
+      {
+        "va": "0x18004dc30",
+        "name": "oplus_qcom_oneplus_select_programmer_v1"
+      },
+      {
+        "va": "0x180050320",
+        "name": "oplus_qcom_oneplus_start_erase_plan_v1"
+      },
+      {
+        "va": "0x18004a120",
+        "name": "oplus_qcom_operation_plan_copy_manifest_v1"
+      },
+      {
+        "va": "0x180049f70",
+        "name": "oplus_qcom_operation_plan_create_v1"
+      },
+      {
+        "va": "0x18004a1f0",
+        "name": "oplus_qcom_operation_plan_destroy"
+      },
+      {
+        "va": "0x18004b140",
+        "name": "oplus_qcom_operation_transaction_abort"
+      },
+      {
+        "va": "0x18004b580",
+        "name": "oplus_qcom_operation_transaction_arm_download_flag_payload_v1"
+      },
+      {
+        "va": "0x18004a7a0",
+        "name": "oplus_qcom_operation_transaction_begin_step"
+      },
+      {
+        "va": "0x18004ade0",
+        "name": "oplus_qcom_operation_transaction_complete_step"
+      },
+      {
+        "va": "0x18004a270",
+        "name": "oplus_qcom_operation_transaction_create_v1"
+      },
+      {
+        "va": "0x18004b7e0",
+        "name": "oplus_qcom_operation_transaction_destroy"
+      },
+      {
+        "va": "0x18004b380",
+        "name": "oplus_qcom_operation_transaction_enter_rollback"
+      },
+      {
+        "va": "0x18004afa0",
+        "name": "oplus_qcom_operation_transaction_finish"
+      },
+      {
+        "va": "0x180051910",
+        "name": "oplus_qcom_partition_erase_advance"
+      },
+      {
+        "va": "0x180051720",
+        "name": "oplus_qcom_partition_erase_copy_command"
+      },
+      {
+        "va": "0x180051530",
+        "name": "oplus_qcom_partition_erase_create_v2"
+      },
+      {
+        "va": "0x180051af0",
+        "name": "oplus_qcom_partition_erase_destroy"
+      },
+      {
+        "va": "0x1800517b0",
+        "name": "oplus_qcom_partition_erase_feed_response"
+      },
+      {
+        "va": "0x1800519a0",
+        "name": "oplus_qcom_partition_erase_get_status"
+      },
+      {
+        "va": "0x1800527d0",
+        "name": "oplus_qcom_partition_raw_write_advance"
+      },
+      {
+        "va": "0x1800525e0",
+        "name": "oplus_qcom_partition_raw_write_copy_command"
+      },
+      {
+        "va": "0x180051ef0",
+        "name": "oplus_qcom_partition_raw_write_create_v2"
+      },
+      {
+        "va": "0x180052310",
+        "name": "oplus_qcom_partition_raw_write_create_v3"
+      },
+      {
+        "va": "0x1800529c0",
+        "name": "oplus_qcom_partition_raw_write_destroy"
+      },
+      {
+        "va": "0x180052670",
+        "name": "oplus_qcom_partition_raw_write_feed_response"
+      },
+      {
+        "va": "0x180052860",
+        "name": "oplus_qcom_partition_raw_write_get_status"
+      },
+      {
+        "va": "0x180052de0",
+        "name": "oplus_qcom_partition_read_copy_command"
+      },
+      {
+        "va": "0x180053ba0",
+        "name": "oplus_qcom_partition_read_copy_payload"
+      },
+      {
+        "va": "0x180052af0",
+        "name": "oplus_qcom_partition_read_create"
+      },
+      {
+        "va": "0x180053c50",
+        "name": "oplus_qcom_partition_read_destroy"
+      },
+      {
+        "va": "0x180052e70",
+        "name": "oplus_qcom_partition_read_feed"
+      },
+      {
+        "va": "0x180053a70",
+        "name": "oplus_qcom_partition_read_get_status"
+      },
+      {
+        "va": "0x18005c1c0",
+        "name": "oplus_qcom_protected_sector_plan_create"
+      },
+      {
+        "va": "0x180053da0",
+        "name": "oplus_qcom_raw_write_plan_create_v2"
+      },
+      {
+        "va": "0x18005c600",
+        "name": "oplus_qcom_resolve_partition_parameters"
+      },
+      {
+        "va": "0x180053f10",
+        "name": "oplus_qcom_rw_mode_decide"
+      },
+      {
+        "va": "0x180053fd0",
+        "name": "oplus_qcom_rw_mode_probe_create_v1"
+      },
+      {
+        "va": "0x1800545b0",
+        "name": "oplus_qcom_sahara_begin_host_hello"
+      },
+      {
+        "va": "0x180054870",
+        "name": "oplus_qcom_sahara_build_switch_mode"
+      },
+      {
+        "va": "0x180054720",
+        "name": "oplus_qcom_sahara_copy_output"
+      },
+      {
+        "va": "0x180054470",
+        "name": "oplus_qcom_sahara_create"
+      },
+      {
+        "va": "0x1800548d0",
+        "name": "oplus_qcom_sahara_destroy"
+      },
+      {
+        "va": "0x180054500",
+        "name": "oplus_qcom_sahara_feed"
+      },
+      {
+        "va": "0x180054790",
+        "name": "oplus_qcom_sahara_get_state"
+      },
+      {
+        "va": "0x1800553e0",
+        "name": "oplus_qcom_sahara_identity_begin_host_hello"
+      },
+      {
+        "va": "0x180055670",
+        "name": "oplus_qcom_sahara_identity_copy_output"
+      },
+      {
+        "va": "0x180055920",
+        "name": "oplus_qcom_sahara_identity_copy_pk_hash"
+      },
+      {
+        "va": "0x180054a00",
+        "name": "oplus_qcom_sahara_identity_create"
+      },
+      {
+        "va": "0x1800559b0",
+        "name": "oplus_qcom_sahara_identity_destroy"
+      },
+      {
+        "va": "0x180054b30",
+        "name": "oplus_qcom_sahara_identity_feed"
+      },
+      {
+        "va": "0x180055430",
+        "name": "oplus_qcom_sahara_identity_finish"
+      },
+      {
+        "va": "0x180055700",
+        "name": "oplus_qcom_sahara_identity_get_info"
+      },
+      {
+        "va": "0x180055480",
+        "name": "oplus_qcom_sahara_identity_next_action"
+      },
+      {
+        "va": "0x180054610",
+        "name": "oplus_qcom_sahara_next_action_v2"
+      },
+      {
+        "va": "0x180058ae0",
+        "name": "oplus_qcom_session_allow_gpt_read_v1"
+      },
+      {
+        "va": "0x180058b10",
+        "name": "oplus_qcom_session_allow_rw_mode_probe_v1"
+      },
+      {
+        "va": "0x180058fa0",
+        "name": "oplus_qcom_session_authorize_v1"
+      },
+      {
+        "va": "0x18004b860",
+        "name": "oplus_qcom_session_bind_operation_transaction"
+      },
+      {
+        "va": "0x180056f40",
+        "name": "oplus_qcom_session_cancel"
+      },
+      {
+        "va": "0x180056f10",
+        "name": "oplus_qcom_session_close"
+      },
+      {
+        "va": "0x180055a70",
+        "name": "oplus_qcom_session_create_v2"
+      },
+      {
+        "va": "0x180058fd0",
+        "name": "oplus_qcom_session_destroy"
+      },
+      {
+        "va": "0x1800571d0",
+        "name": "oplus_qcom_session_get_open_diagnostics_v2"
+      },
+      {
+        "va": "0x180058800",
+        "name": "oplus_qcom_session_get_pending_read_size"
+      },
+      {
+        "va": "0x180057030",
+        "name": "oplus_qcom_session_get_state"
+      },
+      {
+        "va": "0x180056290",
+        "name": "oplus_qcom_session_open"
+      },
+      {
+        "va": "0x180057290",
+        "name": "oplus_qcom_session_read"
+      },
+      {
+        "va": "0x180058c00",
+        "name": "oplus_qcom_session_set_gpt_geometry_v1"
+      },
+      {
+        "va": "0x180058a90",
+        "name": "oplus_qcom_session_write"
+      },
+      {
+        "va": "0x180049380",
+        "name": "oplus_qcom_sha256_context_create_v1"
+      },
+      {
+        "va": "0x1800497c0",
+        "name": "oplus_qcom_sha256_context_destroy"
+      },
+      {
+        "va": "0x1800496b0",
+        "name": "oplus_qcom_sha256_context_finalize_v1"
+      },
+      {
+        "va": "0x180049610",
+        "name": "oplus_qcom_sha256_context_update_v1"
+      },
+      {
+        "va": "0x180048da0",
+        "name": "oplus_qcom_slot_operation_plan_build_v1"
+      },
+      {
+        "va": "0x180059000",
+        "name": "oplus_qcom_sparse_parse_header"
+      },
+      {
+        "va": "0x1800594c0",
+        "name": "oplus_qcom_sparse_plan_consume_chunk"
+      },
+      {
+        "va": "0x180059420",
+        "name": "oplus_qcom_sparse_plan_create_v2"
+      },
+      {
+        "va": "0x180059880",
+        "name": "oplus_qcom_sparse_plan_destroy"
+      },
+      {
+        "va": "0x180059850",
+        "name": "oplus_qcom_sparse_plan_finalize"
+      },
+      {
+        "va": "0x1800594a0",
+        "name": "oplus_qcom_sparse_plan_get_next_chunk_offset"
+      },
+      {
+        "va": "0x1800598d0",
+        "name": "oplus_qcom_subpartition_plan_create_v1"
+      },
+      {
+        "va": "0x18005a5b0",
+        "name": "oplus_qcom_subpartition_plan_destroy"
+      },
+      {
+        "va": "0x18005a4f0",
+        "name": "oplus_qcom_subpartition_plan_get_count"
+      },
+      {
+        "va": "0x18005a530",
+        "name": "oplus_qcom_subpartition_plan_get_entry_v1"
+      },
+      {
+        "va": "0x18005c350",
+        "name": "oplus_qcom_write_attempt_plan_copy_filename"
+      },
+      {
+        "va": "0x18005c3f0",
+        "name": "oplus_qcom_write_attempt_plan_copy_label"
+      },
+      {
+        "va": "0x18005c490",
+        "name": "oplus_qcom_write_attempt_plan_destroy"
+      },
+      {
+        "va": "0x18005c2c0",
+        "name": "oplus_qcom_write_attempt_plan_get_attempt"
+      },
+      {
+        "va": "0x18005c280",
+        "name": "oplus_qcom_write_attempt_plan_get_count"
+      },
+      {
+        "va": "0x18005c6c0",
+        "name": "oplus_qcom_write_classify_label"
+      },
+      {
+        "va": "0x18005b940",
+        "name": "oplus_qcom_write_fallback_plan_create"
+      },
+      {
+        "va": "0x18005c4c0",
+        "name": "oplus_qcom_write_select_parameters"
+      },
+      {
+        "va": "0x180049820",
+        "name": "oplus_qualcomm_authorization_prepare_challenge_v1"
+      },
+      {
+        "va": "0x180044120",
+        "name": "oplus_qualcomm_get_abi_version"
+      }
+    ]
+  },
+  {
+    "file": "Oplusdll/loader.dll",
+    "bytes": 14266368,
+    "sha256": "f1e71749bb457c69919c29480acaaf19625d499f45cb498904b0049ca6251aa3",
+    "machine": "0x8664",
+    "imagebase": "0x180000000",
+    "entry": "0x180d6f67e",
+    "clr": {
+      "rva": 0,
+      "size": 0
+    },
+    "sections": [
+      {
+        "name": ".text",
+        "rva": "0x1000",
+        "virtual_bytes": 1392412,
+        "raw_bytes": 1392640,
+        "entropy": 6.473
+      },
+      {
+        "name": ".rdata",
+        "rva": "0x155000",
+        "virtual_bytes": 218176,
+        "raw_bytes": 218624,
+        "entropy": 5.638
+      },
+      {
+        "name": ".data",
+        "rva": "0x18b000",
+        "virtual_bytes": 356504,
+        "raw_bytes": 20992,
+        "entropy": 3.357
+      },
+      {
+        "name": ".pdata",
+        "rva": "0x1e3000",
+        "virtual_bytes": 62028,
+        "raw_bytes": 62464,
+        "entropy": 7.982
+      },
+      {
+        "name": ".fptable",
+        "rva": "0x1f3000",
+        "virtual_bytes": 256,
+        "raw_bytes": 512,
+        "entropy": 0.0
+      },
+      {
+        "name": ".<_&",
+        "rva": "0x1f4000",
+        "virtual_bytes": 6664876,
+        "raw_bytes": 6665216,
+        "entropy": 7.526
+      },
+      {
+        "name": ".2q_",
+        "rva": "0x850000",
+        "virtual_bytes": 136,
+        "raw_bytes": 512,
+        "entropy": 0.362
+      },
+      {
+        "name": ".FtQ",
+        "rva": "0x851000",
+        "virtual_bytes": 5898264,
+        "raw_bytes": 5898752,
+        "entropy": 7.475
+      },
+      {
+        "name": ".rsrc",
+        "rva": "0xdf2000",
+        "virtual_bytes": 469,
+        "raw_bytes": 512,
+        "entropy": 4.711
+      },
+      {
+        "name": ".reloc",
+        "rva": "0xdf3000",
+        "virtual_bytes": 4828,
+        "raw_bytes": 5120,
+        "entropy": 5.377
+      }
+    ],
+    "version": [],
+    "imports": [
+      {
+        "dll": "bcrypt.dll",
+        "names": [
+          "BCryptGenRandom"
+        ]
+      },
+      {
+        "dll": "SHELL32.dll",
+        "names": [
+          "SHGetFolderPathW"
+        ]
+      },
+      {
+        "dll": "WINHTTP.dll",
+        "names": [
+          "WinHttpGetIEProxyConfigForCurrentUser"
+        ]
+      },
+      {
+        "dll": "CRYPT32.dll",
+        "names": [
+          "CryptStringToBinaryA"
+        ]
+      },
+      {
+        "dll": "KERNEL32.dll",
+        "names": [
+          "OutputDebugStringW"
+        ]
+      }
+    ],
+    "exports": [
+      {
+        "va": "0x180004800",
+        "name": "oplus_loader_client_begin_download_asset"
+      },
+      {
+        "va": "0x180004aa0",
+        "name": "oplus_loader_client_begin_list"
+      },
+      {
+        "va": "0x180004d40",
+        "name": "oplus_loader_context_create"
+      },
+      {
+        "va": "0x180004ef0",
+        "name": "oplus_loader_context_destroy"
+      },
+      {
+        "va": "0x180004f20",
+        "name": "oplus_loader_context_get_last_error"
+      },
+      {
+        "va": "0x180005090",
+        "name": "oplus_loader_get_abi_version"
+      },
+      {
+        "va": "0x1800050a0",
+        "name": "oplus_loader_task_cancel"
+      },
+      {
+        "va": "0x1800050c0",
+        "name": "oplus_loader_task_destroy"
+      },
+      {
+        "va": "0x180005140",
+        "name": "oplus_loader_task_get_error"
+      },
+      {
+        "va": "0x1800051e0",
+        "name": "oplus_loader_task_get_error_code"
+      },
+      {
+        "va": "0x1800052a0",
+        "name": "oplus_loader_task_get_error_message"
+      },
+      {
+        "va": "0x180005360",
+        "name": "oplus_loader_task_get_progress"
+      },
+      {
+        "va": "0x1800053a0",
+        "name": "oplus_loader_task_get_result"
+      },
+      {
+        "va": "0x180005430",
+        "name": "oplus_loader_task_get_state"
+      },
+      {
+        "va": "0x180005450",
+        "name": "oplus_loader_task_wait"
+      }
+    ]
+  }
+]

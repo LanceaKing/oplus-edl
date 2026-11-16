@@ -1,0 +1,332 @@
+00426980 int32_t ebp
+00426980 int32_t var_4 = ebp
+00426983 int32_t var_8 = 0xffffffff
+00426985 int32_t (* var_c)(void* arg1) = sub_6cd363
+00426990 TEB* fsbase
+00426990 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+0042699c int32_t eax_2 = __security_cookie ^ &var_4
+0042699e int32_t var_18 = eax_2
+004269a1 int32_t ebx
+004269a1 int32_t var_254 = ebx
+004269a2 int32_t esi
+004269a2 int32_t var_258 = esi
+004269a3 int32_t edi
+004269a3 int32_t var_25c = edi
+004269a4 int32_t var_260 = eax_2
+004269a8 fsbase->NtTib.ExceptionList = &ExceptionList
+004269bc char var_228[0x1f8]
+004269bc sub_426fc0(&var_228)
+004269c7 int32_t var_8_1 = 0
+004269ce sub_433ba0(&var_228)
+004269f9 void* var_22c = (*(data_7bfb90 + 0xc))() + 0x10
+004269ff var_8_1.b = 1
+00426a26 void* edi_1 = (*(data_7bfb90 + 0xc))() + 0x10
+00426a29 void* var_24c = edi_1
+00426a2f var_8_1.b = 2
+00426a3c int32_t* var_264 = *(arg1 + 0x18c8) - 0x10
+00426a45 void* esi_1 = &sub_41a8a0(var_264)[4]
+00426a48 void* var_250 = esi_1
+00426a4e var_264 = u"PASS"
+00426a59 var_8_1.b = 3
+00426a5d void* var_240
+00426a5d sub_41a5b0(&var_240, var_264)
+00426a62 var_264 = &data_76a09c
+00426a6d var_8_1.b = 4
+00426a71 void* var_244
+00426a71 sub_41a5b0(&var_244, var_264)
+00426a7a var_8_1.b = 5
+00426a7e wchar16 const* const var_268
+00426a7e 
+00426a7e if (arg2 != 0)
+00426a80     var_264 = 4
+00426a82     var_268 = u"FAIL"
+00426a8d     sub_41a940(&var_240, var_268, var_264)
+00426a92     var_264 = 6
+00426a94     var_268 = u"900801"
+00426a9f     sub_41a940(&var_244, var_268, var_264)
+00426a9f 
+00426aa8 int32_t* esp_1
+00426aa8 int32_t* ebp_1
+00426aa8 int32_t* var_270
+00426aa8 int32_t* var_26c
+00426aa8 
+00426aa8 if (*(esi_1 - 0xc) != 0)
+00426ae5     int32_t* ecx_10 = sub_413f70(&var_22c)
+00426aea     void* eax_14 = var_244
+00426af0     var_264 = ecx_10
+00426af4     int32_t** var_248_1 = &var_264
+00426afc     var_268 = eax_14 - 0x10
+00426b05     var_264 = &sub_41a8a0(var_268)[4]
+00426b07     var_8_1.b = 6
+00426b16     wchar16 const* const* var_23c_1 = &var_268
+00426b25     var_268 = &sub_41a8a0(var_240 - 0x10)[4]
+00426b2a     var_8_1.b = 7
+00426b30     var_270 = esi_1 - 0x10
+00426b3f     int32_t* eax_24 = &sub_41a8a0(var_270)[4]
+00426b4a     var_8_1.b = 5
+00426b4e     int32_t eax_25 = sub_434460(eax_24, &var_22c, &var_228, eax_24, var_268, var_264)
+00426b56     int32_t var_23c_2 = eax_25
+00426b5c     int32_t* ecx_12 = &var_22c
+00426b5c     
+00426b64     if (eax_25 != 0)
+00426c46         var_264 = 5
+00426c48         var_268 = u" SN: "
+00426c4d         sub_41a100(ecx_12, var_268, var_264)
+00426c5e         wchar16* eax_37 = *(arg1 + 0x18c8)
+00426c64         var_264 = *(eax_37 - 0xc)
+00426c67         var_268 = eax_37
+00426c68         sub_41a100(&var_22c, var_268, var_264)
+00426c6d         void* eax_38 = var_22c
+00426c73         var_264 = nullptr
+00426c79         var_268 = eax_38 - 0x10
+00426c8a         var_264 = &sub_41a8a0(var_268)[4]
+00426c8c         void** eax_42
+00426c8c         void* ebp_3
+00426c8c         void* esi_2
+00426c8c         eax_42, ebp_3, esi_2 = PSGSI1::Close(var_264)
+00426c94         *(ebp_3 - 4) = 9
+00426c94         
+00426c9c         if (eax_42[5] u>= 0x10)
+00426c9e             eax_42 = *eax_42
+00426c9e         
+00426ca0         var_264 = eax_42
+00426ca1         var_268 = *(ebp_3 - 0x238)
+00426ca7         var_26c = "[MES_CateEndLot] : SUCCESS(%d) Msg(%s)\n"
+00426cac         var_270 = 4
+00426cae         void* var_274_2 = &data_7e09e8
+00426cb3         void* ebp_4 = sub_4d6270(&data_7e09e8)
+00426cbb         *(ebp_4 - 4) = 5
+00426cbb         
+00426cc3         if (*(ebp_4 - 0x18) u>= 0x10)
+00426cc5             var_264 = *(ebp_4 - 0x2c)
+00426cc8             ebp_4 = j_sub_688543(var_264)
+00426cc8         
+00426cf0         int32_t eax_44
+00426cf0         int32_t* ecx_18
+00426cf0         eax_44, ecx_18 = (*(data_7bfb90 + 0xc))()
+00426cf6         *(ebp_4 - 0x22c) = eax_44 + 0x10
+00426cfc         var_264 = ecx_18
+00426d00         *(ebp_4 - 4) = 0xa
+00426d06         var_268 = esi_2 - 0x10
+00426d18         var_264 = &sub_41a8a0(var_268)[4]
+00426d1a         int32_t eax_49 = sub_434270(var_264)
+00426d22         *(ebp_4 - 0x244) = eax_49
+00426d22         
+00426d30         if (eax_49 != 0)
+00426e37             var_264 = u" SN: "
+00426e3c             sub_41a210(ebp_4 - 0x22c, var_264)
+00426e4d             wchar16* eax_63 = *(*(ebp_4 - 0x230) + 0x18c8)
+00426e53             var_264 = *(eax_63 - 0xc)
+00426e56             var_268 = eax_63
+00426e57             sub_41a100(ebp_4 - 0x22c, var_268, var_264)
+00426e5c             void* eax_64 = *(ebp_4 - 0x22c)
+00426e62             var_264 = nullptr
+00426e68             var_268 = eax_64 - 0x10
+00426e79             var_264 = &sub_41a8a0(var_268)[4]
+00426e7b             void** eax_68
+00426e7b             void* ebp_6
+00426e7b             eax_68, ebp_6, esi_1 = PSGSI1::Close(var_264)
+00426e83             *(ebp_6 - 4) = 0xc
+00426e83             
+00426e8b             if (eax_68[5] u>= 0x10)
+00426e8d                 eax_68 = *eax_68
+00426e8d             
+00426e8f             var_264 = eax_68
+00426e90             var_268 = *(ebp_6 - 0x244)
+00426e96             var_26c = "[MES_CateMappingSnAndSoftware] : SUCCESS(%d) Msg(%s)\n"
+00426e9b             var_270 = 4
+00426e9d             void* var_274_5 = &data_7e09e8
+00426ea2             ebp_1 = sub_4d6270(&data_7e09e8)
+00426ea7             esp_1 = &var_260
+00426ea7             
+00426eae             if (ebp_1[-6] u>= 0x10)
+00426eb0                 var_264 = ebp_1[-0xb]
+00426eb3                 ebp_1 = j_sub_688543(var_264)
+00426eb8                 esp_1 = &var_260
+00426eb8             
+00426ebb             ebp_1[-1].b = 5
+00426eca             int32_t* edx_13 = ebp_1[-0x8b] - 0x10
+00426ed0             int32_t ecx_30 = edx_13[3]
+00426ed0             edx_13[3] -= 1
+00426ed0             
+00426ed7             if (ecx_30 - 1 s<= 0)
+00426ed9                 int32_t* ecx_32 = *edx_13
+00426edb                 var_264 = edx_13
+00426ede                 (*(*ecx_32 + 4))(var_264)
+00426ede                 esp_1 = &var_260
+00426ede             
+00426ee1             ebp_1[-0x8c] = 1
+00426d30         else
+00426d36             var_264 = u" [MES_CateMappingSnAndSoftware]SN: "
+00426d3b             sub_41a210(ebp_4 - 0x22c, var_264)
+00426d4c             wchar16* eax_51 = *(*(ebp_4 - 0x230) + 0x18c8)
+00426d52             var_264 = *(eax_51 - 0xc)
+00426d55             var_268 = eax_51
+00426d56             sub_41a100(ebp_4 - 0x22c, var_268, var_264)
+00426d5b             void* eax_52 = *(ebp_4 - 0x22c)
+00426d61             var_264 = nullptr
+00426d67             var_268 = eax_52 - 0x10
+00426d78             var_264 = &sub_41a8a0(var_268)[4]
+00426d7a             void** eax_56
+00426d7a             void* ebp_5
+00426d7a             eax_56, ebp_5, esi_1 = PSGSI1::Close(var_264)
+00426d82             *(ebp_5 - 4) = 0xb
+00426d82             
+00426d8a             if (eax_56[5] u>= 0x10)
+00426d8c                 eax_56 = *eax_56
+00426d8c             
+00426d8e             var_264 = eax_56
+00426d8f             var_268 = *(ebp_5 - 0x238)
+00426d95             var_26c = "[MES_CateMappingSnAndSoftware] : SUCCESS(%d) Msg(%s)\n"
+00426d9a             var_270 = 4
+00426d9c             void* var_274_3 = &data_7e09e8
+00426da1             ebp_1 = sub_4d6270(&data_7e09e8)
+00426da9             ebp_1[-1].b = 0xa
+00426da9             
+00426db1             if (ebp_1[-6] u>= 0x10)
+00426db3                 var_264 = ebp_1[-0xb]
+00426db6                 ebp_1 = j_sub_688543(var_264)
+00426db6             
+00426dbe             int32_t* eax_57 = ebp_1[-0x8b]
+00426dbe             
+00426dc8             if (eax_57[-1] s> 1)
+00426dca                 var_264 = eax_57[-3]
+00426dd3                 esi_1 = sub_4141c0(&ebp_1[-0x8b], var_264)
+00426dd8                 eax_57 = ebp_1[-0x8b]
+00426dd8             
+00426dde             void* edx_7 = ebp_1[-0x8c]
+00426de4             var_264 = eax_57
+00426de8             void* edx_8 = *(edx_7 + 0x74)
+00426df3             var_268 = zx.d((*(edx_7 + 0x70)).w) | 0x1000000
+00426df4             var_26c = 0x178c
+00426df9             var_270 = *(edx_8 + 0x20)
+00426df9             esp_1 = &var_270
+00426dfc             0x3b8730(var_270, var_26c, var_268, var_264)
+00426e02             ebp_1[-1].b = 5
+00426e11             int32_t* edx_10 = ebp_1[-0x8b] - 0x10
+00426e17             int32_t ecx_25 = edx_10[3]
+00426e17             edx_10[3] -= 1
+00426e17             
+00426e1e             if (ecx_25 - 1 s<= 0)
+00426e25                 (*(**edx_10 + 4))(edx_10)
+00426e25                 esp_1 = &var_270
+00426e25             
+00426e28             ebp_1[-0x8c] = 0
+00426b64     else
+00426b6a         var_264 = 0x15
+00426b6c         var_268 = u" [MES_CateEndLot]SN: "
+00426b71         sub_41a100(ecx_12, var_268, var_264)
+00426b82         wchar16* eax_27 = *(arg1 + 0x18c8)
+00426b88         var_264 = *(eax_27 - 0xc)
+00426b8b         var_268 = eax_27
+00426b8c         sub_41a100(&var_22c, var_268, var_264)
+00426b91         void* eax_28 = var_22c
+00426b97         var_264 = nullptr
+00426b9d         var_268 = eax_28 - 0x10
+00426bae         var_264 = &sub_41a8a0(var_268)[4]
+00426bb0         void** eax_32
+00426bb0         void* ebp_2
+00426bb0         eax_32, ebp_2, esi_1 = PSGSI1::Close(var_264)
+00426bb8         *(ebp_2 - 4) = 8
+00426bb8         
+00426bc0         if (eax_32[5] u>= 0x10)
+00426bc2             eax_32 = *eax_32
+00426bc2         
+00426bc4         var_264 = eax_32
+00426bc5         var_268 = nullptr
+00426bc7         var_26c = "[MES_CateEndLot] : SUCCESS(%d) Msg(%s)\n"
+00426bcc         var_270 = 4
+00426bce         void* var_274_1 = &data_7e09e8
+00426bd3         ebp_1 = sub_4d6270(&data_7e09e8)
+00426bdb         ebp_1[-1].b = 5
+00426bdb         
+00426be3         if (ebp_1[-6] u>= 0x10)
+00426be5             var_264 = ebp_1[-0xb]
+00426be8             ebp_1 = j_sub_688543(var_264)
+00426be8         
+00426bf0         int32_t* eax_33 = ebp_1[-0x8a]
+00426bf0         
+00426bfa         if (eax_33[-1] s> 1)
+00426bfc             var_264 = eax_33[-3]
+00426c05             esi_1 = sub_4141c0(&ebp_1[-0x8a], var_264)
+00426c0a             eax_33 = ebp_1[-0x8a]
+00426c0a         
+00426c10         void* edx_3 = ebp_1[-0x8c]
+00426c16         var_264 = eax_33
+00426c1a         void* edx_4 = *(edx_3 + 0x74)
+00426c25         var_268 = zx.d((*(edx_3 + 0x70)).w) | 0x1000000
+00426c26         var_26c = 0x178c
+00426c2b         var_270 = *(edx_4 + 0x20)
+00426c2b         esp_1 = &var_270
+00426c2e         0x3b8730()
+00426c34         ebp_1[-0x8c] = 0
+00426aa8 else
+00426aaa     var_264 = "PCBA IS EMPTY\n"
+00426aaf     var_268 = 4
+00426ab6     ebp_1 = sub_4d6270(&data_7e09e8)
+00426ac1     void* ecx_8 = *(arg1 + 0x74)
+00426ac7     wchar16* eax_13 = zx.d((*(arg1 + 0x70)).w) | 0x1000000
+00426acc     var_264 = u"PCBA IS EMPTY"
+00426ad1     var_268 = eax_13
+00426ad2     var_26c = 0x178c
+00426ad7     var_270 = *(ecx_8 + 0x20)
+00426ad7     esp_1 = &var_270
+00426c2e     0x3b8730()
+00426c34     ebp_1[-0x8c] = 0
+00426eeb ebp_1[-1].b = 4
+00426ef7 int32_t* edx_15 = ebp_1[-0x90] - 0x10
+00426efd int32_t ecx_33 = edx_15[3]
+00426efd edx_15[3] -= 1
+00426efd 
+00426f04 if (ecx_33 - 1 s<= 0)
+00426f06     int32_t* ecx_35 = *edx_15
+00426f08     *(esp_1 - 4) = edx_15
+00426f0b     (*(*ecx_35 + 4))()
+00426f0b 
+00426f0e ebp_1[-1].b = 3
+00426f1a int32_t* edx_17 = ebp_1[-0x8f] - 0x10
+00426f20 int32_t ecx_36 = edx_17[3]
+00426f20 edx_17[3] -= 1
+00426f20 
+00426f27 if (ecx_36 - 1 s<= 0)
+00426f29     int32_t* ecx_38 = *edx_17
+00426f2b     *(esp_1 - 4) = edx_17
+00426f2e     (*(*ecx_38 + 4))()
+00426f2e 
+00426f34 ebp_1[-1].b = 2
+00426f3d int32_t ecx_39 = *(esi_1 - 4)
+00426f3d *(esi_1 - 4) -= 1
+00426f3d 
+00426f44 if (ecx_39 - 1 s<= 0)
+00426f46     int32_t* ecx_41 = *(esi_1 - 0x10)
+00426f48     *(esp_1 - 4) = esi_1 - 0x10
+00426f4b     (*(*ecx_41 + 4))()
+00426f4b 
+00426f51 ebp_1[-1].b = 1
+00426f5a int32_t ecx_42 = *(edi_1 - 4)
+00426f5a *(edi_1 - 4) -= 1
+00426f5a 
+00426f61 if (ecx_42 - 1 s<= 0)
+00426f63     int32_t* ecx_44 = *(edi_1 - 0x10)
+00426f65     *(esp_1 - 4) = edi_1 - 0x10
+00426f68     (*(*ecx_44 + 4))()
+00426f68 
+00426f6b ebp_1[-1].b = 0
+00426f75 int32_t* esi_5 = ebp_1[-0x8a] - 0x10
+00426f7b int32_t ebx_2 = esi_5[3]
+00426f7b esi_5[3] -= 1
+00426f7b 
+00426f82 if (ebx_2 - 1 s<= 0)
+00426f84     int32_t* ecx_45 = *esi_5
+00426f86     *(esp_1 - 4) = esi_5
+00426f89     (*(*ecx_45 + 4))()
+00426f89 
+00426f92 sub_4271c0(&ebp_1[-0x89])
+00426f97 int32_t result = ebp_1[-0x8c]
+00426fa0 fsbase->NtTib.ExceptionList = ebp_1[-3]
+00426fa7 esp_1[1]
+00426fa8 esp_1[2]
+00426fa9 esp_1[3]
+00426fb0 sub_687de2(ebp_1[-5] ^ ebp_1)
+00426fb7 *ebp_1
+00426fb8 return result

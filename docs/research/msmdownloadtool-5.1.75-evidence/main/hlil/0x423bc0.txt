@@ -1,0 +1,148 @@
+00423bc0 int32_t __saved_ebp_1
+00423bc0 int32_t __saved_ebp = __saved_ebp_1
+00423bc6 int32_t var_c = 0xffffffff
+00423bc8 int32_t (* var_10)(void* arg1) = sub_6cccc8
+00423bd3 TEB* fsbase
+00423bd3 struct _EXCEPTION_REGISTRATION_RECORD* ExceptionList = fsbase->NtTib.ExceptionList
+00423bd7 int32_t ebx
+00423bd7 int32_t var_40 = ebx
+00423bd8 int32_t esi
+00423bd8 int32_t var_44 = esi
+00423bd9 int32_t edi
+00423bd9 int32_t var_48 = edi
+00423be1 int32_t var_4c = __security_cookie ^ &var_48
+00423be1 int32_t* esp_1 = &var_4c
+00423be6 fsbase->NtTib.ExceptionList = &ExceptionList
+00423c13 wchar16* esi_1 = (*(data_7bfb90 + 0xc))() + 0x10
+00423c16 wchar16* var_38 = esi_1
+00423c1a int32_t var_c_1 = 0
+00423c27 int32_t eax_6 = data_7e0384 - 1
+00423c2b int32_t var_5c
+00423c2b wchar16 const* const var_50_10
+00423c2b 
+00423c2b if (eax_6 u> 3)
+00423daf     var_50_10 = u"Normal"
+00423db4 label_423db4:
+00423db4     int32_t var_54_9 = 3
+00423db6     int32_t var_58_8 = 0x40b
+00423dbb     var_5c = *(arg1 + 0x20)
+00423dbb     esp_1 = &var_5c
+00423dbe     0x3b8730(var_5c, var_58_8, var_54_9, var_50_10)
+00423c2b else
+00423c31     switch (eax_6)
+00423da1         case 0
+00423da1             var_50_10 = u"Factory"
+00423da6             goto label_423db4
+00423d9a         case 1
+00423d9a             var_50_10 = u"Customer Service"
+00423d9f             goto label_423db4
+00423c3f         case 2
+00423c3f             if (data_7e0308 == 1)
+00423c52                 if (sub_436e20(&data_7dfe70) != 1)
+00423d5f                     int32_t eax_18 = data_7e032c
+00423d5f                     
+00423d69                     if (eax_18 != 0x1b90)
+00423d80                         int32_t var_50_12 = eax_18
+00423d8b                         sub_414410(&var_38, u"Verify Failed(%u)")
+00423d90                         esi_1 = var_38
+00423d97                         var_50_10 = esi_1
+00423d69                     else
+00423d74                     label_423d74:
+00423d74                         sub_41aa40(&var_38, u"License Expired")
+00423d79                         esi_1 = var_38
+00423d7d                         var_50_10 = esi_1
+00423c52                 else
+00423c60                     int32_t eax_9
+00423c60                     int32_t ecx
+00423c60                     int32_t edx_1
+00423c60                     eax_9, ecx, edx_1 = __wtoi64(*(data_7e0348 + 0x3c))
+00423c6a                     uint32_t eax_10
+00423c6a                     int32_t edx_2
+00423c6a                     eax_10, edx_2 = sub_6898a4(eax_9, edx_1, ecx, nullptr)
+00423c72                     int32_t esi_3 = eax_9 - eax_10
+00423c72                     bool c_1 = eax_9 u< eax_10
+00423c74                     uint32_t edi_1 = sbb.d(0, edx_2, c_1)
+00423c74                     bool s_1 = sbb.d(0, edx_2, c_1) s< 0
+00423c74                     bool o_1 = unimplemented  {sbb edi, edx}
+00423c74                     
+00423c80                     if (s_1 || ((sbb.d(0, edx_2, c_1) == 0 || s_1 != o_1) && esi_3 u< 0))
+00423c76                         goto label_423d74
+00423c76                     
+00423c86                     uint32_t var_50_3 = 0
+00423c88                     int32_t var_54_2 = 0x15180
+00423c8e                     var_5c = esi_3
+00423c8f                     uint32_t eax_11
+00423c8f                     int32_t edx_3
+00423c8f                     eax_11, edx_3 = __alldiv(var_5c, edi_1, var_54_2, var_50_3)
+00423c94                     int32_t var_50_4 = 0xffffffff
+00423c9a                     int32_t var_54_3 = 0xfffeae80
+00423ca0                     var_5c = eax_11
+00423ca9                     int32_t eax_13
+00423ca9                     int32_t edx_4
+00423ca9                     eax_13, edx_4 = __allmul(var_5c, edx_3, var_54_3, var_50_4)
+00423cae                     int32_t esi_4 = esi_3 + eax_13
+00423cb0                     uint32_t var_50_5 = 0
+00423cb2                     int32_t var_54_4 = 0xe10
+00423cb7                     uint32_t edi_2 = adc.d(edi_1, edx_4, esi_3 + eax_13 u< esi_3)
+00423cba                     var_5c = esi_4
+00423cbb                     uint32_t eax_14
+00423cbb                     int32_t edx_5
+00423cbb                     eax_14, edx_5 = __alldiv(var_5c, edi_2, var_54_4, var_50_5)
+00423cc0                     int32_t var_50_6 = 0xffffffff
+00423cc6                     int32_t var_54_5 = 0xfffff1f0
+00423ccc                     var_5c = eax_14
+00423cd5                     int32_t eax_16
+00423cd5                     int32_t edx_6
+00423cd5                     eax_16, edx_6 = __allmul(var_5c, edx_5, var_54_5, var_50_6)
+00423cda                     int32_t esi_5 = esi_4 + eax_16
+00423cdc                     uint32_t var_50_7 = 0
+00423cde                     uint32_t edi_3 = adc.d(edi_2, edx_6, esi_4 + eax_16 u< esi_4)
+00423ce4                     int32_t var_54_6 = 0x3c
+00423ce7                     var_5c = esi_5
+00423cec                     uint32_t eax_17
+00423cec                     int32_t edx_7
+00423cec                     eax_17, edx_7 = __alldiv(var_5c, edi_3, var_54_6, var_50_7)
+00423d02                     uint32_t ecx_4 = eax_17 << 4
+00423d05                     uint32_t ecx_5 = ecx_4 - eax_17
+00423d09                     int32_t ecx_6 = neg.d(ecx_5)
+00423d14                     int32_t ecx_7 = ecx_6 << 2
+00423d17                     int32_t var_30_2 = esi_5 + ecx_7
+00423d1f                     int32_t var_34_2 = adc.d(edi_3, 
+00423d1f                         neg.d(adc.d(
+00423d1f                             sbb.d(edx_7 << 4 | eax_17 u>> 0xffffffe4, edx_7, ecx_4 u< eax_17), 0, 
+00423d1f                             ecx_5 != 0)) << 2 | ecx_6 u>> 0xffffffe2, 
+00423d1f                         esi_5 + ecx_7 u< esi_5)
+00423d23                     sub_41aa40(&var_38, u"License Exp: ")
+00423d28                     int32_t var_50_9 = var_34_2
+00423d30                     int32_t var_54_7 = var_30_2
+00423d34                     int32_t var_58_6 = edx_7
+00423d35                     var_5c = eax_17
+00423d36                     int32_t var_60_1 = edx_5
+00423d3a                     uint32_t var_64_1 = eax_14
+00423d3e                     int32_t var_68_1 = edx_3
+00423d42                     uint32_t var_6c_1 = eax_11
+00423d46                     wchar16 const* const var_70_1 = u"%llu day %02llu:%02llu:%02llu"
+00423d4c                     sub_424080(&var_38, u"%llu day %02llu:%02llu:%02llu")
+00423d51                     esi_1 = var_38
+00423d5c                     var_50_10 = esi_1
+00423d5c                 
+00423c52                 goto label_423db4
+00423da8         case 3
+00423da8             var_50_10 = &data_76ce88
+00423dad             goto label_423db4
+00423dc7 esp_1[0x10] = 0xffffffff
+00423dd2 int32_t* result = &esi_1[-2]
+00423dd5 int32_t ecx_10 = *result
+00423dd5 *result -= 1
+00423dd5 
+00423ddc if (ecx_10 - 1 s<= 0)
+00423dde     int32_t* ecx_12 = *(esi_1 - 0x10)
+00423de0     *(esp_1 - 4) = &esi_1[-8]
+00423de3     result = (*(*ecx_12 + 4))()
+00423de3 
+00423dea fsbase->NtTib.ExceptionList = esp_1[0xe]
+00423df1 *esp_1
+00423df1 esp_1[1]
+00423df2 esp_1[2]
+00423df3 esp_1[3]
+00423df8 return result

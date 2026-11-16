@@ -1,0 +1,319 @@
+180056bc0 push    rbp
+180056bc2 push    rbx
+180056bc3 push    rsi
+180056bc4 push    rdi
+180056bc5 push    r12
+180056bc7 push    r13
+180056bc9 push    r14
+180056bcb push    r15
+180056bcd lea     rbp, [rsp-0x388]
+180056bd5 sub     rsp, 0x488
+180056bdc mov     rax, qword [rel 0x18018ccc0]
+180056be3 xor     rax, rsp
+180056be6 mov     qword [rbp+0x370], rax
+180056bed mov     qword [rbp-0x60], r9
+180056bf1 mov     qword [rsp+0x30], r8
+180056bf6 mov     r15, rdx
+180056bf9 mov     qword [rsp+0x20], rcx
+180056bfe mov     rsi, qword [rbp+0x3f0]
+180056c05 mov     r14, qword [rbp+0x3f8]
+180056c0c mov     rdi, qword [rbp+0x400]
+180056c13 xorps   xmm0, xmm0
+180056c16 movups  xmmword [rbp-0x40], xmm0
+180056c1a xorps   xmm1, xmm1
+180056c1d movups  xmmword [rbp-0x30], xmm1
+180056c21 movups  xmmword [rbp-0x20], xmm1
+180056c25 movups  xmmword [rbp-0x10], xmm0
+180056c29 movups  xmmword [rbp], xmm0
+180056c2d lea     rcx, [rbp-0x40]
+180056c31 call    0x18001c430
+180056c36 mov     r12, rax
+180056c39 lea     rcx, [rbp-0x40]
+180056c3d call    0x18001acf0
+180056c42 mov     r13, rax
+180056c45 mov     rdx, r12
+180056c48 mov     rcx, rax
+180056c4b call    0x18005d8f0
+180056c50 test    al, al
+180056c52 je      0x180057088
+180057088 mov     qword [rsp+0x50], 0x6
+180057091 xor     eax, eax
+180057093 mov     dword [rsp+0x58], eax
+180057097 mov     dword [rsp+0x5c], 0x4b7
+18005709f lea     rcx, [rsp+0x60]
+1800570a4 call    0x1800023b0
+1800570a9 nop     
+1800570aa lea     rdx, [rel 0x180159560]
+1800570b1 lea     rcx, [rbp-0x80]
+1800570b5 call    0x180002360
+1800570ba nop     
+1800570bb lea     rdx, [rsp+0x50]
+1800570c0 mov     rcx, rdi
+1800570c3 call    0x180035500
+1800570c8 lea     rcx, [rsp+0x50]
+1800570cd call    0x180002ea0
+1800570d2 xor     al, al
+180056c58 mov     rcx, rsi
+180056c5b call    0x18001c4b0
+180056c60 mov     rbx, rax
+180056c63 mov     rcx, rsi
+180056c66 call    0x18001ad90
+180056c6b mov     rcx, rax
+180056c6e lea     r8, [rbp-0x30]
+180056c72 mov     rdx, rbx
+180056c75 call    0x18005d930
+180056c7a test    al, al
+180056c7c je      0x180057088
+180056c82 mov     r8, r12
+180056c85 mov     rdx, r13
+180056c88 lea     rcx, [rbp+0x30]
+180056c8c call    0x180058da0
+180056c91 nop     
+180056c92 call    0x180036ac0
+180056c97 mov     rdx, rax
+180056c9a lea     rcx, [rbp+0x10]
+180056c9e call    0x180057100
+180056ca3 nop     
+180056ca4 lea     rcx, [rbp-0x30]
+180056ca8 call    0x18001c450
+180056cad mov     rbx, rax
+180056cb0 lea     rcx, [rbp-0x30]
+180056cb4 call    0x18001ad30
+180056cb9 mov     rdx, rax
+180056cbc mov     r8, rbx
+180056cbf lea     rcx, [rbp+0x1d0]
+180056cc6 call    0x180058da0
+180056ccb mov     rbx, rax
+180056cce lea     r8, [rel 0x180159580]
+180056cd5 mov     rdx, r15
+180056cd8 lea     rcx, [rbp+0x1b0]
+180056cdf call    0x180056700
+180056ce4 nop     
+180056ce5 mov     r8, qword [rsp+0x30]
+180056cea mov     rdx, rax
+180056ced lea     rcx, [rbp+0x190]
+180056cf4 call    0x180038450
+180056cf9 nop     
+180056cfa lea     r8, [rel 0x180159580]
+180056d01 mov     rdx, rax
+180056d04 lea     rcx, [rbp+0x170]
+180056d0b call    0x1800384c0
+180056d10 nop     
+180056d11 mov     r8, qword [rbp-0x60]
+180056d15 mov     rdx, rax
+180056d18 lea     rcx, [rbp+0x150]
+180056d1f call    0x180038450
+180056d24 nop     
+180056d25 lea     r8, [rel 0x180159580]
+180056d2c mov     rdx, rax
+180056d2f lea     rcx, [rbp+0x130]
+180056d36 call    0x1800384c0
+180056d3b nop     
+180056d3c mov     r8, rbx
+180056d3f mov     rdx, rax
+180056d42 lea     rcx, [rbp+0x110]
+180056d49 call    0x180038420
+180056d4e nop     
+180056d4f lea     r8, [rel 0x180159580]
+180056d56 mov     rdx, rax
+180056d59 lea     rcx, [rbp+0xf0]
+180056d60 call    0x1800384c0
+180056d65 nop     
+180056d66 lea     r8, [rbp+0x10]
+180056d6a mov     rdx, rax
+180056d6d lea     rcx, [rbp+0xd0]
+180056d74 call    0x180038450
+180056d79 nop     
+180056d7a lea     r8, [rel 0x180159580]
+180056d81 mov     rdx, rax
+180056d84 lea     rcx, [rbp+0xb0]
+180056d8b call    0x1800384c0
+180056d90 nop     
+180056d91 lea     r8, [rbp+0x30]
+180056d95 mov     rdx, rax
+180056d98 lea     rcx, [rbp+0x90]
+180056d9f call    0x180038450
+180056da4 nop     
+180056da5 lea     r8, [rel 0x180159580]
+180056dac mov     rdx, rax
+180056daf lea     rcx, [rbp+0x70]
+180056db3 call    0x1800384c0
+180056db8 nop     
+180056db9 mov     rbx, qword [rsp+0x20]
+180056dbe mov     r8, rbx
+180056dc1 mov     rdx, rax
+180056dc4 lea     rcx, [rbp+0x50]
+180056dc8 call    0x180038450
+180056dcd nop     
+180056dce lea     rcx, [rbp+0x70]
+180056dd2 call    0x180002b10
+180056dd7 nop     
+180056dd8 lea     rcx, [rbp+0x90]
+180056ddf call    0x180002b10
+180056de4 nop     
+180056de5 lea     rcx, [rbp+0xb0]
+180056dec call    0x180002b10
+180056df1 nop     
+180056df2 lea     rcx, [rbp+0xd0]
+180056df9 call    0x180002b10
+180056dfe nop     
+180056dff lea     rcx, [rbp+0xf0]
+180056e06 call    0x180002b10
+180056e0b nop     
+180056e0c lea     rcx, [rbp+0x110]
+180056e13 call    0x180002b10
+180056e18 nop     
+180056e19 lea     rcx, [rbp+0x130]
+180056e20 call    0x180002b10
+180056e25 nop     
+180056e26 lea     rcx, [rbp+0x150]
+180056e2d call    0x180002b10
+180056e32 nop     
+180056e33 lea     rcx, [rbp+0x170]
+180056e3a call    0x180002b10
+180056e3f nop     
+180056e40 lea     rcx, [rbp+0x190]
+180056e47 call    0x180002b10
+180056e4c nop     
+180056e4d lea     rcx, [rbp+0x1b0]
+180056e54 call    0x180002b10
+180056e59 nop     
+180056e5a lea     rcx, [rbp+0x1d0]
+180056e61 call    0x180002b10
+180056e66 lea     rdx, [rsp+0x30]
+180056e6b lea     rcx, [rbp+0x50]
+180056e6f call    0x18000e6e0
+180056e74 movups  xmm0, xmmword [rax]
+180056e77 movaps  xmmword [rsp+0x20], xmm0
+180056e7c lea     rcx, [rbx+0x20]
+180056e80 lea     rdx, [rsp+0x40]
+180056e85 call    0x18000e6e0
+180056e8a movups  xmm0, xmmword [rax]
+180056e8d movaps  xmmword [rbp-0x60], xmm0
+180056e91 lea     r8, [rbp-0x10]
+180056e95 lea     rdx, [rsp+0x20]
+180056e9a lea     rcx, [rbp-0x60]
+180056e9e call    0x18005d680
+180056ea3 test    al, al
+180056ea5 jne     0x180056ef8
+180056ef8 lea     rdx, [rel 0x180158f8c]
+180056eff mov     rcx, r15
+180056f02 call    0x1800383b0
+180056f07 lea     rdx, [rel 0x180158f90]
+180056f0e lea     rcx, [rel 0x180158888]
+180056f15 test    al, al
+180056f17 cmovne  rcx, rdx
+180056f1b mov     qword [rsp+0x20], rcx
+180056f20 lea     r8, [rsp+0x20]
+180056f25 lea     rdx, [rel 0x18015889c]
+180056f2c lea     rcx, [rbp+0x1f0]
+180056f33 call    0x1800565d0
+180056f38 nop     
+180056f39 mov     r8, rbx
+180056f3c lea     rdx, [rel 0x1801595a8]
+180056f43 lea     rcx, [rbp+0x230]
+180056f4a call    0x180056690
+180056f4f nop     
+180056f50 lea     r8, [rbp+0x10]
+180056f54 lea     rdx, [rel 0x1801595b8]
+180056f5b lea     rcx, [rbp+0x270]
+180056f62 call    0x180056690
+180056f67 nop     
+180056f68 lea     r8, [rbp+0x30]
+180056f6c lea     rdx, [rel 0x1801595c8]
+180056f73 lea     rcx, [rbp+0x2b0]
+180056f7a call    0x180056610
+180056f7f nop     
+180056f80 lea     r8, [rel 0x1801595d0]
+180056f87 lea     rdx, [rel 0x1801595d8]
+180056f8e lea     rcx, [rbp+0x2f0]
+180056f95 call    0x180056650
+180056f9a nop     
+180056f9b lea     rcx, [rbp-0x10]
+180056f9f call    0x18001c450
+180056fa4 mov     rbx, rax
+180056fa7 lea     rcx, [rbp-0x10]
+180056fab call    0x18001ad30
+180056fb0 mov     rdi, rax
+180056fb3 mov     r8, rbx
+180056fb6 mov     rdx, rax
+180056fb9 lea     rcx, [rbp-0x60]
+180056fbd call    0x180058da0
+180056fc2 nop     
+180056fc3 mov     r8, rax
+180056fc6 lea     rdx, [rel 0x1801595f0]
+180056fcd lea     rcx, [rbp+0x330]
+180056fd4 call    0x1800566d0
+180056fd9 nop     
+180056fda lea     r8, [rbp+0x370]
+180056fe1 lea     rdx, [rbp+0x1f0]
+180056fe8 lea     rcx, [rsp+0x40]
+180056fed call    0x18003e390
+180056ff2 movups  xmm0, xmmword [rax]
+180056ff5 movaps  xmmword [rsp+0x20], xmm0
+180056ffa lea     rdx, [rsp+0x20]
+180056fff mov     rcx, r14
+180057002 call    0x180049810
+180057007 nop     
+180057008 lea     r9, [rel 0x18003e750]
+18005700f mov     edx, 0x40
+180057014 mov     r8d, 0x6
+18005701a lea     rcx, [rbp+0x1f0]
+180057021 call    0x1800d2560
+180057026 nop     
+180057027 lea     rcx, [rbp-0x60]
+18005702b call    0x180002b10
+180057030 lea     rdx, [rel 0x180158f8c]
+180057037 mov     rcx, r15
+18005703a call    0x1800383b0
+18005703f test    al, al
+180057041 jne     0x180057059
+180056ea7 mov     qword [rsp+0x50], 0x6
+180056eb0 xor     eax, eax
+180056eb2 mov     dword [rsp+0x58], eax
+180056eb6 mov     dword [rsp+0x5c], 0x4b7
+180056ebe lea     rcx, [rsp+0x60]
+180056ec3 call    0x1800023b0
+180056ec8 nop     
+180056ec9 lea     rdx, [rel 0x180159588]
+180056ed0 lea     rcx, [rbp-0x80]
+180056ed4 call    0x180002360
+180056ed9 nop     
+180056eda lea     rdx, [rsp+0x50]
+180056edf mov     rcx, rdi
+180056ee2 call    0x180035500
+180056ee7 lea     rcx, [rsp+0x50]
+180056eec call    0x180002ea0
+180056ef1 xor     bl, bl
+180056ef3 jmp     0x180057066
+180057059 mov     rdx, rbx
+18005705c mov     rcx, rdi
+18005705f call    0x180047eb0
+180057064 mov     bl, 0x1
+180057043 lea     r8, [rel 0x180158888]
+18005704a lea     rdx, [rel 0x1801588a8]
+180057051 mov     rcx, r14
+180057054 call    0x180056a60
+180057066 lea     rcx, [rbp+0x50]
+18005706a call    0x180002b10
+18005706f nop     
+180057070 lea     rcx, [rbp+0x10]
+180057074 call    0x180002b10
+180057079 nop     
+18005707a lea     rcx, [rbp+0x30]
+18005707e call    0x180002b10
+180057083 movzx   eax, bl
+180057086 jmp     0x1800570d4
+1800570d4 mov     rcx, qword [rbp+0x370]
+1800570db xor     rcx, rsp
+1800570de call    0x1800d2230
+1800570e3 add     rsp, 0x488
+1800570ea pop     r15
+1800570ec pop     r14
+1800570ee pop     r13
+1800570f0 pop     r12
+1800570f2 pop     rdi
+1800570f3 pop     rsi
+1800570f4 pop     rbx
+1800570f5 pop     rbp
+1800570f6 retn    

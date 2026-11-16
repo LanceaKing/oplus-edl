@@ -1,0 +1,90 @@
+1002b600 int32_t ebp
+1002b600 int32_t var_4 = ebp
+1002b603 int32_t* var_8 = arg1
+1002b60f char* edx = &arg1[0x359]
+1002b619 char i
+1002b619 
+1002b619 do
+1002b614     i = *edx
+1002b616     edx = &edx[1]
+1002b619 while (i != 0)
+1002b61d void* var_18 = edx - &edx[1]
+1002b621 char* eax = sub_100fc7f0(*arg1, &arg1[0x359])
+1002b621 
+1002b62d if (eax == 0)
+1002b730     char const* const var_18_7 = "[ERROR] [RCSM] s_msg_enc malloc memory error."
+1002b735     int32_t var_1c_5 = 0xc8
+1002b62d else
+1002b639     void* var_18_1 = &arg1[0x559]
+1002b63a     char* var_1c_1 = eax
+1002b641     void* var_20_1 = &arg1[0x339]
+1002b648     void* var_24_1 = &arg1[0x331]
+1002b64f     void* var_28_1 = &arg1[0x81]
+1002b65c     _sprintf(&arg1[0x959], "app_id=%s&timestamp=%s&sign=%s&s_msg=%s&s_msg_md_5=%s")
+1002b665     sub_100fc930(eax)
+1002b66a     char* ecx_3 = &arg1[0x2a1]
+1002b67b     char i_1
+1002b67b     
+1002b67b     do
+1002b676         i_1 = *ecx_3
+1002b678         ecx_3 = &ecx_3[1]
+1002b67b     while (i_1 != 0)
+1002b67b     
+1002b67f     if (ecx_3 == &ecx_3[1])
+1002b703     label_1002b703:
+1002b703         int32_t* var_18_5 = &arg1[0x959]
+1002b704         char const* const var_1c_3 = "[INFO][RCSM] request: %s"
+1002b709         int32_t var_20_3 = 0xda
+1002b70e         char const* const var_24_2 = "rcsm_gen_request_data"
+1002b722         *opdbg_log()
+1002b723         return 0
+1002b723     
+1002b68b     char* ecx_5 = &arg1[0x759]
+1002b68b     
+1002b695     do
+1002b690         i_1 = *ecx_5
+1002b692         ecx_5 = &ecx_5[1]
+1002b695     while (i_1 != 0)
+1002b695     
+1002b699     void* var_18_3 = ecx_5 - &ecx_5[1]
+1002b6a2     char* edx_4 = sub_100fc7f0(*arg1, &arg1[0x759])
+1002b6a7     char* var_8_1 = edx_4
+1002b6a7     
+1002b6ac     if (edx_4 != 0)
+1002b6ae         void* ecx_7 = arg1 + 0x2563
+1002b6b9         char* eax_3
+1002b6b9         
+1002b6b9         do
+1002b6b1             eax_3.b = *(ecx_7 + 1)
+1002b6b4             ecx_7 += 1
+1002b6b9         while (eax_3.b != 0)
+1002b6c0         char* esi_1 = edx_4
+1002b6c2         __builtin_strcpy(ecx_7, "&s_msg_c=")
+1002b6db         char i_2
+1002b6db         
+1002b6db         do
+1002b6d6             i_2 = *edx_4
+1002b6d8             edx_4 = &edx_4[1]
+1002b6db         while (i_2 != 0)
+1002b6db         
+1002b6dd         void* edx_5 = edx_4 - esi_1
+1002b6df         void* edi_3 = arg1 + 0x2563
+1002b6df         
+1002b6e8         do
+1002b6e2             i_2 = *(edi_3 + 1)
+1002b6e5             edi_3 += 1
+1002b6e8         while (i_2 != 0)
+1002b6e8         
+1002b6f2         int32_t esi_2
+1002b6f2         int32_t edi_4
+1002b6f2         edi_4, esi_2 = __builtin_memcpy(edi_3, esi_1, edx_5 u>> 2 << 2)
+1002b6f9         __builtin_memcpy(edi_4, esi_2, edx_5 & 3)
+1002b6fb         sub_100fc930(var_8_1)
+1002b700         goto label_1002b703
+1002b700     
+1002b724     char const* const var_18_6 = "[ERROR] [RCSM] s_msg_c_enc malloc memory error."
+1002b729     int32_t var_1c_4 = 0xd4
+1002b729 
+1002b73a char const* const var_20_4 = "rcsm_gen_request_data"
+1002b74f *opdbg_log()
+1002b750 return 0xffffffff

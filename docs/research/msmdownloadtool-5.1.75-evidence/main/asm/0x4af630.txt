@@ -1,0 +1,31 @@
+004af630 push    ebp
+004af631 mov     ebp, esp
+004af633 push    ecx
+004af634 push    edi
+004af635 push    0x0
+004af637 push    0x80
+004af63c push    0x3
+004af63e push    0x0
+004af640 push    0x1
+004af642 push    0x80000000
+004af647 push    dword [ecx+0x44]
+004af64a mov     dword [ebp-0x4], 0x0
+004af651 push    esi
+004af652 call    0xb38c7d
+004af657 mov     edi, eax
+004af659 cmp     edi, 0xffffffff
+004af65c jne     0x4af66b
+004af66b push    esi
+004af66c push    0x0
+004af66e lea     eax, [ebp-0x4]
+004af671 push    eax
+004af672 push    dword [ebp+0x10]
+004af675 push    dword [ebp+0x8]
+004af678 push    edi
+004af679 call    0x107e6e1
+004af67e retn    
+004af65e call    dword [0x6f1588]
+004af664 pop     edi
+004af665 mov     esp, ebp
+004af667 pop     ebp
+004af668 retn    0xc

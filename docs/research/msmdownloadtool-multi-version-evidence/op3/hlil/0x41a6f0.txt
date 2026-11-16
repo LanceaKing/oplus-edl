@@ -1,0 +1,188 @@
+0041a6f6 int32_t ebx
+0041a6f6 int32_t var_24 = ebx
+0041a6f7 int32_t esi
+0041a6f7 int32_t var_28 = esi
+0041a6f7 
+0041a702 if (*(arg1 + 0x1e4) != 0)
+0041a70f     return 0x4c7
+0041a70f 
+0041a717 int32_t ebx_2 = arg3[0x19]
+0041a71d int32_t eax_2
+0041a71d int32_t edx
+0041a71d edx:eax_2 = sx.q(arg3[0x12])
+0041a724 int32_t eax_3
+0041a724 int32_t edx_1
+0041a724 eax_3, edx_1 = __allmul(eax_2, edx, ebx_2, 0)
+0041a724 int32_t __saved_edi
+0041a724 int32_t* esp = &__saved_edi
+0041a735 int32_t var_c_1
+0041a735 int32_t ebx_3
+0041a735 
+0041a735 if (ebx_2 != 0x200)
+0041a74e     if (ebx_2 != 0x1000)
+0041a983     label_41a983:
+0041a983         *esp
+0041a983         esp[1]
+0041a984         esp[2]
+0041a989         return 1
+0041a989     
+0041a759     int32_t eax_5 = sub_4208b2(&__dos_header)
+0041a75e     ebx_3 = eax_5
+0041a760     var_c_1 = eax_5
+0041a735 else
+0041a741     ebx_3 = sub_4208b2(0x80000)
+0041a743     var_c_1 = ebx_3
+0041a743 
+0041a768 if (ebx_3 == 0)
+0041a773     return ebx_3 + 8
+0041a773 
+0041a77d int32_t eax_7 = sub_404c40(arg3, "BackupGPT")
+0041a784 int32_t __saved_edi_21
+0041a784 
+0041a784 if (eax_7 != 0)
+0041a7b2     *(arg1 + 0x28)
+0041a7b5     int32_t eax_9
+0041a7b5     int32_t edx_2
+0041a7b5     edx_2:eax_9 = sx.q(arg3[0x13])
+0041a7bc     __saved_edi_21 = std::num_get<uint16_t,class std::istreambuf_iterator<uint16_t,struct std::char_traits<uint16_t> > >::_Getffldx(
+0041a7bc         arg3, arg3[0x12], eax_9, edx_2)
+0041a784 else
+0041a78e     char* var_44_1
+0041a78e     
+0041a78e     if (*(arg1 + 0x1c) == eax_7.b)
+0041a7a8         var_44_1 = "NUM_DISK_SECTORS-33."
+0041a78e     else
+0041a790         var_44_1 = "NUM_DISK_SECTORS-5."
+0041a790     
+0041a795     void var_40
+0041a795     sub_402270(&var_40, var_44_1)
+0041a79d     *(arg1 + 0x28)
+0041a7a1     __saved_edi_21 = std::num_get<wchar_t,class std::istreambuf_iterator<wchar_t,struct std::char_traits<wchar_t> > >::_Getffldx(
+0041a7a1         arg3, arg3[0x12])
+0041a7a1 
+0041a7c5 if (__saved_edi_21 != 0)
+0041a7d1     int32_t __saved_edi_3 = __saved_edi_21
+0041a7d2     void* const var_30_4
+0041a7d2     
+0041a7d2     if (*(arg1 + 0x1b) == 0)
+0041a7db         var_30_4 = "SendReadCommand Failed, Errno: %d"
+0041a7d2     else
+0041a7d4         var_30_4 = "SendReadCommand"
+0041a7d4     
+0041a7e1     sub_410900(arg1 + 0x164, var_30_4)
+0041a804     SendMessageA(*(arg1 + 0x30), 0x178c, (zx.d((*(arg1 + 0x2c)).b) | 0x100) << 0x10, arg1 + 0x164)
+0041a80d     sub_4208bb(var_c_1)
+0041a81d     return __saved_edi_21
+0041a81d 
+0041a82d LPARAM lParam = __alldiv(eax_3, edx_1, 0x200, 0)
+0041a84b SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 2, lParam)
+0041a854 int32_t ecx_4 = edx_1
+0041a859 int32_t edi_4 = eax_3
+0041a85b int32_t var_18_1 = ecx_4
+0041a85b 
+0041a860 if (edx_1 s>= 0)
+0041a866     bool cond:6_1
+0041a866     
+0041a866     if (edx_1 s<= 0)
+0041a868         cond:6_1 = eax_3 == 0
+0041a868         goto label_41a86a
+0041a868     
+0041a877     while (true)
+0041a877         if (*(arg1 + 0x1e4) != 0)
+0041a877             goto label_41a9e1
+0041a877         
+0041a880         int32_t eax_21 = ebx_2 << 0xa
+0041a880         
+0041a885         if (ecx_4 s< 0)
+0041a88d             eax_21 = edi_4
+0041a885         else if (ecx_4 s<= 0 && edi_4 u<= eax_21)
+0041a88d             eax_21 = edi_4
+0041a88d         
+0041a895         int32_t __saved_edi_8 = 0xbb8
+0041a89a         int32_t var_8
+0041a89a         int32_t* var_30_8 = &var_8
+0041a89c         **(arg1 + 0x28)
+0041a89f         var_8 = eax_21
+0041a8a2         int32_t __saved_edi_22 = sub_41af00(ebx_3, eax_21, var_30_8, __saved_edi_8)
+0041a8a2         
+0041a8ab         if (__saved_edi_22 != 0)
+0041a996             int32_t __saved_edi_16 = __saved_edi_22
+0041a997             void* const var_30_15
+0041a997             
+0041a997             if (*(arg1 + 0x1b) == 0)
+0041a9a0                 var_30_15 = "FirehoseReadData Failed, Errno: %d"
+0041a997             else
+0041a999                 var_30_15 = "FirehoseReadData"
+0041a999             
+0041a9b9             sub_417200(sub_410900(arg1 + 0x164, var_30_15), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+0041a9b9                 arg1 + 0x164, 1)
+0041a9c4             sub_4208bb(var_c_1)
+0041a9d4             return __saved_edi_22
+0041a9d4         
+0041a8b4         ebx_3 = var_c_1
+0041a8b4         
+0041a8c8         if (sub_53dd28(ebx_3, var_8, 1, arg2) != 1)
+0041a928             void** eax_30 = &arg3[6]
+0041a92f             void* const var_34_10
+0041a92f             
+0041a92f             if (*(arg1 + 0x1b) == 0)
+0041a947                 if (eax_30[5] u>= 0x10)
+0041a949                     eax_30 = *eax_30
+0041a949                 
+0041a94b                 int32_t __saved_edi_13 = 0
+0041a94d                 void** var_30_13 = eax_30
+0041a94e                 var_34_10 = "Write %s Failed, Errno: %d"
+0041a92f             else
+0041a935                 if (eax_30[5] u>= 0x10)
+0041a937                     eax_30 = *eax_30
+0041a937                 
+0041a939                 int32_t __saved_edi_12 = 1
+0041a93b                 void** var_30_12 = eax_30
+0041a93c                 var_34_10 = &data_5a28b8
+0041a93c             
+0041a96d             sub_417200(sub_410900(arg1 + 0x164, var_34_10), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+0041a96d                 arg1 + 0x164, 0)
+0041a976             sub_4208bb(ebx_3)
+0041a97b             esp = &var_28
+0041a97b             goto label_41a983
+0041a97b         
+0041a8ca         int32_t temp3_1 = edi_4
+0041a8ca         edi_4 -= var_8
+0041a8d3         int32_t edx_5 = sbb.d(var_18_1, 0, temp3_1 u< var_8)
+0041a8e4         var_18_1 = edx_5
+0041a8e9         LPARAM lParam_1 = __alldiv(eax_3 - edi_4, sbb.d(edx_1, edx_5, eax_3 u< edi_4), 0x200, 0)
+0041a907         SendMessageA(*(arg1 + 0x30), 0x178c, zx.d((*(arg1 + 0x2c)).b) << 0x10 | 3, lParam_1)
+0041a90d         ecx_4 = var_18_1
+0041a90d         
+0041a912         if (ecx_4 s< 0)
+0041a912             break
+0041a912         
+0041a918         if (ecx_4 s<= 0)
+0041a91e             cond:6_1 = edi_4 == 0
+0041a86a         label_41a86a:
+0041a86a             
+0041a86a             if (cond:6_1)
+0041a86a                 break
+0041a86a 
+0041a9de if (*(arg1 + 0x1e4) != 0)
+0041a9e1 label_41a9e1:
+0041a9e1     sub_4208bb(ebx_3)
+0041a9f1     return 0
+0041a9f1 
+0041a9f5 *(arg1 + 0x28)
+0041a9f8 int32_t* eax_36 = sub_41d790(ecx_4)
+0041a9f8 
+0041aa02 if (eax_36 != 0)
+0041aa0e     int32_t* var_30_17 = eax_36
+0041aa0f     char const* const var_34_14
+0041aa0f     
+0041aa0f     if (*(arg1 + 0x1b) == 0)
+0041aa18         var_34_14 = "FirehoseCheckRSP Failed, Errno: %d"
+0041aa0f     else
+0041aa11         var_34_14 = "FirehoseCheckRSP"
+0041aa11     
+0041aa31     sub_417200(sub_410900(arg1 + 0x164, var_34_14), (*(arg1 + 0x2c)).b, *(arg1 + 0x30), 0, 
+0041aa31         arg1 + 0x164, 1)
+0041aa31 
+0041aa3a sub_4208bb(ebx_3)
+0041aa4b return eax_36

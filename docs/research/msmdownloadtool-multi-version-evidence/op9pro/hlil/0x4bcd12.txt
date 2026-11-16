@@ -1,0 +1,522 @@
+004bcd1c void* const var_4
+004bcd1c 
+004bcd1c if (*(arg2 + 0x24) == 0)
+004bcd25     var_4 = u"Param post processing"
+004bcd1c else
+004bcd1e     var_4 = u"Param"
+004bcd1e 
+004bcd2b sub_68ae2f(arg2 + 0x2c4, var_4)
+004bcd3e sub_4b95c0(*(arg2 + 0x40), *(arg2 + 0x3c), 0, arg2 + 0x2c4, 0)
+004bcd43 int32_t var_18 = 0
+004bcd46 int32_t var_20 = 1
+004bcd48 int32_t var_24 = *(arg2 + 0x3c)
+004bcd4b int32_t var_28 = *(arg2 + 0x40)
+004bcd4b int32_t* esp_1 = &var_28
+004bcd4e sub_4b95c0(var_28, var_24, var_20, arg2 + 0x2c4, var_18)
+004bcd53 int32_t* ebx_1 = arg2 + 0x2c
+004bcd5d int32_t result = sub_4b8ed0(ebx_1)
+004bcd5d 
+004bcd61 if (result == 0)
+004bcd82     int32_t eax_1 = 3
+004bcd82     
+004bcd8e     while (true)
+004bcd8e         bool cond:8_1 = *(arg2 + 0x20) != 2
+004bcd92         arg1[2] = eax_1 - 1
+004bcd92         
+004bcd95         if (not(cond:8_1))
+004bcda5             void* esp_2
+004bcda5             
+004bcda5             if (*(arg2 + 0x24) == 0)
+004bcdae                 *(esp_1 - 4) = u"Recording download time"
+004bcdae                 esp_2 = esp_1 - 4
+004bcda5             else
+004bcda7                 *(esp_1 - 4) = "ck(W"
+004bcda7                 esp_2 = esp_1 - 4
+004bcda7             
+004bcdb3             *(esp_2 - 4) = arg2 + 0x2c4
+004bcdb4             sub_68ae2f()
+004bcdbf             uint32_t eax_4 = zx.d((*(arg2 + 0x3c)).w)
+004bcdc2             *esp_2 = arg2 + 0x2c4
+004bcdc3             *(esp_2 - 4) = eax_4
+004bcdc4             *(esp_2 - 8) = 0x178c
+004bcdc9             *(esp_2 - 0xc) = *(arg2 + 0x40)
+004bcdcc             0x3b87d0()
+004bcdce             int16_t eax_5 = (*(arg2 + 0x3c)).w
+004bcdd1             *(esp_2 - 0x10) = arg2 + 0x2c4
+004bcdda             *(esp_2 - 0x14) = zx.d(eax_5) | 0x10000
+004bcddb             *(esp_2 - 0x18) = 0x178c
+004bcde0             *(esp_2 - 0x1c) = *(arg2 + 0x40)
+004bcde3             0x3b87d0()
+004bcdee             int32_t edi = *(arg2 + 0x5dc)
+004bcdf4             int32_t eax_9 = *(arg2 + 0x94) + 0x48
+004bcdf7             *(esp_2 - 0x20) = 0xffffffff
+004bcdf9             *(esp_2 - 0x24) = 0
+004bcdfb             *(esp_2 - 0x28) = eax_9
+004bcdfc             arg1[-0xa] = 0xf
+004bce03             arg1[-0xb] = 0
+004bce0a             arg1[-0xf].b = 0
+004bce0e             sub_412b40(&arg1[-0xf])
+004bce19             int32_t ebx_3
+004bce19             ebx_3.b = *(arg2 + 0x20) == 2
+004bce1c             *(esp_2 - 0x20) = edi
+004bce20             arg1[-1] = 0
+004bce2c             *(esp_2 - 0x3c) = 0xffffffff
+004bce2e             *(esp_2 - 0x40) = 0
+004bce30             *(esp_2 - 0x24) = 0xf
+004bce37             *(esp_2 - 0x28) = 0
+004bce3e             *(esp_2 - 0x44) = &arg1[-0xf]
+004bce3f             *(esp_2 - 0x38) = 0
+004bce42             sub_412b40(esp_2 - 0x38)
+004bce47             *(arg2 + 0x2c)
+004bce4a             *(esp_2 - 0x3c) = ebx_3
+004bce4b             ebx_1 = arg2 + 0x2c
+004bce4e             int32_t eax_11
+004bce4e             int32_t ecx_6
+004bce4e             eax_11, ecx_6 = sub_4c3cb0()
+004bce4e             void* esp_24 = esp_2 + 4
+004bce53             arg1[-1] = 0xffffffff
+004bce53             
+004bce60             if (arg1[-0xa] u>= 0x10)
+004bce62                 *(esp_24 - 4) = arg1[-0xf]
+004bce65                 ecx_6 = sub_56c751()
+004bce65             
+004bce6d             arg1[-0xa] = 0xf
+004bce74             arg1[-0xb] = 0
+004bce7b             arg1[-0xf].b = 0
+004bce7b             
+004bce81             if (eax_11 != 0)
+004bce83                 int32_t eax_12 = *(arg2 + 0x3c)
+004bce86                 *(esp_24 - 4) = eax_11
+004bce88                 *(esp_24 - 8) = eax_12 + 1
+004bce89                 *(esp_24 - 0xc) = "[%d] Failed to update donwload info in SMT mode. (hr)\n"
+004bce8e                 *(esp_24 - 0x10) = 4
+004bce90                 *(esp_24 - 0x14) = &data_7e4a58
+004bce95                 ecx_6 = sub_4d6500()
+004bce95             
+004bce9d             *(esp_24 - 4) = ecx_6
+004bce9e             *ebx_1
+004bcea6             *(esp_24 - 8) = arg2 + 0x50c
+004bcea7             sub_4c4a90()
+004bcea7             esp_1 = esp_24
+004bcea7         
+004bceb6         if (*(arg2 + 0x4c) == 1)
+004bcec5             if (*(*(arg2 + 0x94) + 0x15c) != 1)
+004bcef6                 *(esp_1 - 4) = *(arg2 + 0x48)
+004bcef9                 *ebx_1
+004bcefb                 *(esp_1 - 8) = 0x14
+004bcefd                 int32_t eax_19 = sub_4c3840()
+004bcefd                 
+004bcf04                 if (eax_19 != 0)
+004bcf06                     *(esp_1 - 4) = eax_19
+004bcf0b                     *(esp_1 - 8) = *(arg2 + 0x3c) + 1
+004bcf0c                     *(esp_1 - 0xc) = "[%d] Failed to set enc trg id (%d)\n"
+004bcf11                     *(esp_1 - 0x10) = 4
+004bcf13                     *(esp_1 - 0x14) = &data_7e4a58
+004bcf18                     sub_4d6500()
+004bcec5             else
+004bcec7                 uint32_t eax_16 = zx.d(*(arg2 + 0x3c))
+004bcecb                 *(esp_1 - 4) = u"Multi-image identify by target sw id is disabled. Bypass record."
+004bced0                 *(esp_1 - 8) = eax_16
+004bced1                 *(esp_1 - 0xc) = 0x178c
+004bced6                 *(esp_1 - 0x10) = *(arg2 + 0x40)
+004bced9                 0x3b87d0()
+004bcedf                 *(esp_1 - 0x14) = *(arg2 + 0x3c) + 1
+004bcee0                 *(esp_1 - 0x18) =
+004bcee0                     "[%d] Multi-image identify by target sw id is disabled. Bypass record.\n"
+004bcee5                 *(esp_1 - 0x1c) = 4
+004bcee7                 *(esp_1 - 0x20) = &data_7e4a58
+004bceec                 sub_4d6500()
+004bcef1                 esp_1 -= 0x10
+004bcef1         
+004bcf27         if (*(arg2 + 0x5e4) == 1)
+004bcf29             int32_t eax_22 = *(arg2 + 0x5e0)
+004bcf29             
+004bcf32             if (eax_22 != 0xffffffff)
+004bcf34                 *ebx_1
+004bcf36                 *(esp_1 - 4) = eax_22
+004bcf37                 *(esp_1 - 8) = 0xf
+004bcf39                 int32_t eax_23 = sub_4c3840()
+004bcf40                 void* esp_53
+004bcf40                 
+004bcf40                 if (eax_23 == 0)
+004bcf4f                     *(esp_1 - 4) = *(arg2 + 0x5e0)
+004bcf59                     *(esp_1 - 8) = *(arg2 + 0x3c) + 1
+004bcf5a                     *(esp_1 - 0xc) = "[%d] Set enc carrier ID (%d) success\n"
+004bcf5a                     esp_53 = esp_1 - 0xc
+004bcf40                 else
+004bcf42                     *(esp_1 - 4) = eax_23
+004bcf47                     *(esp_1 - 8) = *(arg2 + 0x3c) + 1
+004bcf48                     *(esp_1 - 0xc) = "[%d] Failed to set enc carrier ID (%d)\n"
+004bcf48                     esp_53 = esp_1 - 0xc
+004bcf48                 
+004bcf5f                 *(esp_53 - 4) = 4
+004bcf61                 *(esp_53 - 8) = &data_7e4a58
+004bcf66                 sub_4d6500()
+004bcf6b                 *ebx_1
+004bcf70                 *(esp_53 + 8) = 1
+004bcf72                 *(esp_53 + 4) = 0x10
+004bcf74                 int32_t eax_28 = sub_4c3840()
+004bcf7b                 void* esp_64
+004bcf7b                 
+004bcf7b                 if (eax_28 == 0)
+004bcf8a                     int32_t eax_31 = *(arg2 + 0x3c)
+004bcf8d                     *(esp_53 + 8) = 1
+004bcf90                     *(esp_53 + 4) = eax_31 + 1
+004bcf91                     *esp_53 = "[%d] Set enc carrier ID init flag (%d) success\n"
+004bcf91                     esp_64 = esp_53
+004bcf7b                 else
+004bcf7d                     *(esp_53 + 8) = eax_28
+004bcf82                     *(esp_53 + 4) = *(arg2 + 0x3c) + 1
+004bcf83                     *esp_53 = "[%d] Failed to set enc carrier ID init flag (%d)\n"
+004bcf83                     esp_64 = esp_53
+004bcf83                 
+004bcf96                 *(esp_64 - 4) = 4
+004bcf98                 *(esp_64 - 8) = &data_7e4a58
+004bcf9d                 sub_4d6500()
+004bcfa2                 esp_1 = esp_64 + 0xc
+004bcfa2         
+004bcfa9         *ebx_1
+004bcfa9         
+004bcfab         if (*(arg2 + 0x20) == 2)
+004bcfab             goto label_4bcfd9
+004bcfab         
+004bcfad         *(esp_1 - 4) = "userdata"
+004bcfad         
+004bcfb9         if (sub_4c3700() != 0)
+004bcfbb             *ebx_1
+004bcfbd             *(esp_1 - 4) = 0
+004bcfbf             *(esp_1 - 8) = 2
+004bcfc1             sub_4c3b80()
+004bcfc6             *ebx_1
+004bcfc8             *(esp_1 - 4) = 0
+004bcfca             *(esp_1 - 8) = 3
+004bcfcc             sub_4c3b80()
+004bcfcc         
+004bcfd5         if (*(arg2 + 0x65) == 1)
+004bcfd7             *ebx_1
+004bcfd9         label_4bcfd9:
+004bcfd9             *(esp_1 - 4) = 1
+004bcfdb             *(esp_1 - 8) = 4
+004bcfdd             sub_4c3b80()
+004bcfdd         
+004bcff0         void* esp_93
+004bcff0         void* esp_96
+004bcff0         
+004bcff0         if (*(arg2 + 0x58) == 0 || *(arg2 + 0x5a) != 1)
+004bd097             *(esp_1 - 4) = *(arg2 + 0x3c) + 1
+004bd098             *(esp_1 - 8) = "[%d] Try to set if and bm by default\n"
+004bd09d             *(esp_1 - 0xc) = 4
+004bd09f             *(esp_1 - 0x10) = &data_7e4a58
+004bd0a4             sub_4d6500()
+004bd0ac             arg1[-5] = 0
+004bd0bb             *(esp_1 - 4) = &arg1[-5]
+004bd0bf             *(esp_1 - 8) = &arg1[-8]
+004bd0c0             sub_42bb00(&data_7e4820)
+004bd0c5             void* eax_51 = arg1[-8]
+004bd0c8             *ebx_1
+004bd0d0             void* esp_105
+004bd0d0             
+004bd0d0             if (eax_51 == data_7e4820)
+004bd0d7                 *(esp_1 - 4) = 0
+004bd0d7                 esp_105 = esp_1 - 4
+004bd0d0             else
+004bd0d2                 *(esp_1 - 4) = *(eax_51 + 0xc)
+004bd0d2                 esp_105 = esp_1 - 4
+004bd0d2             
+004bd0d9             *(esp_105 - 4) = 0xc
+004bd0db             int32_t eax_52 = sub_4c3840()
+004bd0db             void* esp_107 = esp_105 + 4
+004bd0db             
+004bd0e2             if (eax_52 != 0)
+004bd0e4                 *(esp_107 - 4) = eax_52
+004bd0e9                 *(esp_107 - 8) = *(arg2 + 0x3c) + 1
+004bd0ea                 *(esp_107 - 0xc) = "[%d] Set net Failed.(%d)\n"
+004bd0ef                 *(esp_107 - 0x10) = 4
+004bd0f1                 *(esp_107 - 0x14) = &data_7e4a58
+004bd0f6                 sub_4d6500()
+004bd0f6             
+004bd101             arg1[-5] = 0
+004bd108             *(esp_107 - 4) = &arg1[-5]
+004bd111             *(esp_107 - 8) = &arg1[-9]
+004bd112             sub_42bb00(&data_7e4840)
+004bd117             void* eax_57 = arg1[-9]
+004bd11a             *ebx_1
+004bd122             void* esp_116
+004bd122             
+004bd122             if (eax_57 == data_7e4840)
+004bd129                 *(esp_107 - 4) = 0
+004bd129                 esp_116 = esp_107 - 4
+004bd122             else
+004bd124                 *(esp_107 - 4) = *(eax_57 + 0xc)
+004bd124                 esp_116 = esp_107 - 4
+004bd124             
+004bd12b             *(esp_116 - 4) = 0xd
+004bd12d             int32_t eax_58 = sub_4c3840()
+004bd12d             esp_93 = esp_116 + 4
+004bd12d             
+004bd134             if (eax_58 != 0)
+004bd136                 *(esp_93 - 4) = eax_58
+004bd13b                 *(esp_93 - 8) = *(arg2 + 0x3c) + 1
+004bd13c                 *(esp_93 - 0xc) = "[%d] Set BT Failed (%d).\n"
+004bd13c                 esp_96 = esp_93 - 0xc
+004bd141             label_4bd141:
+004bd141                 *(esp_96 - 4) = 4
+004bd143                 *(esp_96 - 8) = &data_7e4a58
+004bd148                 sub_4d6500()
+004bd14d                 esp_93 = esp_96 + 0xc
+004bcff0         else
+004bcff9             arg1[-5] = 1
+004bd000             *(esp_1 - 4) = &arg1[-5]
+004bd009             *(esp_1 - 8) = &arg1[-6]
+004bd00a             sub_42bb00(&data_7e4820)
+004bd00f             void* eax_36 = arg1[-6]
+004bd012             *ebx_1
+004bd01a             void* esp_80
+004bd01a             
+004bd01a             if (eax_36 == data_7e4820)
+004bd021                 *(esp_1 - 4) = 0
+004bd021                 esp_80 = esp_1 - 4
+004bd01a             else
+004bd01c                 *(esp_1 - 4) = *(eax_36 + 0xc)
+004bd01c                 esp_80 = esp_1 - 4
+004bd01c             
+004bd023             *(esp_80 - 4) = 0xc
+004bd025             int32_t eax_37 = sub_4c3840()
+004bd025             void* esp_82 = esp_80 + 4
+004bd025             
+004bd02c             if (eax_37 != 0)
+004bd02e                 *(esp_82 - 4) = eax_37
+004bd033                 *(esp_82 - 8) = *(arg2 + 0x3c) + 1
+004bd034                 *(esp_82 - 0xc) = "[%d] Set net Failed.(hr)\n"
+004bd039                 *(esp_82 - 0x10) = 4
+004bd03b                 *(esp_82 - 0x14) = &data_7e4a58
+004bd040                 sub_4d6500()
+004bd040             
+004bd050             arg1[-5] = *(arg2 + 0x60)
+004bd056             *(esp_82 - 4) = &arg1[-5]
+004bd05a             *(esp_82 - 8) = &arg1[-7]
+004bd05b             sub_42bb00(&data_7e4840)
+004bd060             void* eax_43 = arg1[-7]
+004bd063             *ebx_1
+004bd06b             void* esp_91
+004bd06b             
+004bd06b             if (eax_43 == data_7e4840)
+004bd072                 *(esp_82 - 4) = 0
+004bd072                 esp_91 = esp_82 - 4
+004bd06b             else
+004bd06d                 *(esp_82 - 4) = *(eax_43 + 0xc)
+004bd06d                 esp_91 = esp_82 - 4
+004bd06d             
+004bd074             *(esp_91 - 4) = 0xd
+004bd076             int32_t eax_44 = sub_4c3840()
+004bd076             esp_93 = esp_91 + 4
+004bd076             
+004bd07d             if (eax_44 != 0)
+004bd083                 *(esp_93 - 4) = eax_44
+004bd088                 *(esp_93 - 8) = *(arg2 + 0x3c) + 1
+004bd089                 *(esp_93 - 0xc) = "[%d] Set BT Failed.(%d)\n"
+004bd089                 esp_96 = esp_93 - 0xc
+004bd08e                 goto label_4bd141
+004bd157         int32_t eax_61 = *(arg2 + 0x5b0)
+004bd157         
+004bd164         if (*(arg2 + 0x5ac) == 1 && eax_61 != 0xdeadf1a9)
+004bd166             *ebx_1
+004bd168             *(esp_93 - 4) = eax_61
+004bd169             *(esp_93 - 8) = 0xe
+004bd16b             int32_t eax_62 = sub_4c3840()
+004bd16b             
+004bd172             if (eax_62 != 0)
+004bd174                 *(esp_93 - 4) = eax_62
+004bd179                 *(esp_93 - 8) = *(arg2 + 0x3c) + 1
+004bd17a                 *(esp_93 - 0xc) = "[%d] Set CF Failed (%d)\n"
+004bd17f                 *(esp_93 - 0x10) = 4
+004bd181                 *(esp_93 - 0x14) = &data_7e4a58
+004bd186                 sub_4d6500()
+004bd186         
+004bd195         int32_t eax_65 = *(arg2 + 0x5b4)
+004bd19f         void* esp_129
+004bd19f         
+004bd19f         if (*(arg2 + 0x5ac) != 1 || eax_65 == 0)
+004bd1a4             *(esp_93 - 4) = 0
+004bd1a4             esp_129 = esp_93 - 4
+004bd19f         else
+004bd1a1             *(esp_93 - 4) = eax_65
+004bd1a1             esp_129 = esp_93 - 4
+004bd1a1         
+004bd1a6         *ebx_1
+004bd1a8         *(esp_129 - 4) = 0x15
+004bd1aa         int32_t eax_66 = sub_4c3840()
+004bd1aa         void* esp_131 = esp_129 + 4
+004bd1aa         
+004bd1b1         if (eax_66 != 0)
+004bd1b3             *(esp_131 - 4) = eax_66
+004bd1b8             *(esp_131 - 8) = *(arg2 + 0x3c) + 1
+004bd1b9             *(esp_131 - 0xc) = "[%d] Set AF Failed (%d)\n"
+004bd1be             *(esp_131 - 0x10) = 4
+004bd1c0             *(esp_131 - 0x14) = &data_7e4a58
+004bd1c5             sub_4d6500()
+004bd1c5         
+004bd1cd         *(esp_131 - 4) = *(arg2 + 0x574)
+004bd1d3         *ebx_1
+004bd1d5         *(esp_131 - 8) = 0xb
+004bd1d7         sub_4c3b80()
+004bd1d7         void* esp_139 = esp_131
+004bd1dc         void* eax_69 = *(arg2 + 0x94)
+004bd1dc         
+004bd1f3         if (*(eax_69 + 0xe8) s> 0 && *(arg2 + 0x20) == 2)
+004bd200             int32_t eax_70 = *(arg2 + 0x3c)
+004bd203             int32_t eax_74
+004bd203             void* esp_148
+004bd203             
+004bd203             if (*(eax_69 + 0x158) != 1)
+004bd23c                 *(esp_139 - 4) = eax_70 + 1
+004bd23d                 *(esp_139 - 8) = "[%d] Set SPI in non-ATO mode\n"
+004bd242                 *(esp_139 - 0xc) = 4
+004bd244                 *(esp_139 - 0x10) = &data_7e4a58
+004bd249                 sub_4d6500()
+004bd24e                 eax_74 = *(arg2 + 0x5e8)
+004bd254                 esp_148 = esp_139
+004bd203             else
+004bd206                 *(esp_139 - 4) = eax_70 + 1
+004bd207                 *(esp_139 - 8) = "[%d] Set SPI in ATO mode\n"
+004bd20c                 *(esp_139 - 0xc) = 4
+004bd20e                 *(esp_139 - 0x10) = &data_7e4a58
+004bd213                 sub_4d6500()
+004bd221                 void** eax_73 = *(arg2 + 0x94) + 0x30
+004bd221                 
+004bd228                 if (eax_73[5] u>= 0x10)
+004bd22a                     eax_73 = *eax_73
+004bd22a                 
+004bd22c                 *(esp_139 - 4) = 0x10
+004bd22e                 *(esp_139 - 8) = 0
+004bd230                 *(esp_139 - 0xc) = eax_73
+004bd231                 eax_74 = sub_68cc5c()
+004bd236                 esp_148 = esp_139
+004bd236             
+004bd257             *ebx_1
+004bd259             *(esp_148 - 4) = eax_74
+004bd25a             *(esp_148 - 8) = 0x27
+004bd25c             sub_4c3840()
+004bd261             *ebx_1
+004bd263             *(esp_148 - 4) = 1
+004bd265             *(esp_148 - 8) = 0x28
+004bd267             sub_4c3840()
+004bd26c             *ebx_1
+004bd26e             *(esp_148 - 4) = 0xdc9ef893
+004bd273             *(esp_148 - 8) = 0x29
+004bd275             sub_4c3840()
+004bd275             esp_139 = esp_148
+004bd275         
+004bd27a         *ebx_1
+004bd282         int32_t eax_76
+004bd282         eax_76.b = *(arg2 + 0x20) == 2
+004bd285         *(esp_139 - 4) = eax_76
+004bd286         sub_4c3a80()
+004bd286         
+004bd298         if (*(*(arg2 + 0x94) + 0x94) != 1)
+004bd29e             void* eax_78 = *ebx_1
+004bd29e             
+004bd2a0             if (*(arg2 + 0x20) != 2)
+004bd2ab                 *(eax_78 + 0x30f0) = 0x46
+004bd2a0             else
+004bd2a2                 *(eax_78 + 0x3030) = 0x46
+004bd2a2         
+004bd2b2         void* eax_79 = *ebx_1
+004bd2b4         *(esp_139 - 4) = 0
+004bd2b6         *(esp_139 - 8) = 0x100000
+004bd2bb         *(esp_139 - 0xc) = eax_79
+004bd2bc         int32_t* ecx_30 = *(eax_79 + 0x100000)
+004bd2c2         *(esp_139 - 0x10) = 0
+004bd2c4         *(esp_139 - 0x14) = 0
+004bd2c6         *(esp_139 - 0x18) = "param"
+004bd2cf         result = (**ecx_30)()
+004bd2d4         int32_t eax_82 = *(arg2 + 0x3c) + 1
+004bd2d4         
+004bd2d7         if (result != 0)
+004bd3ad             *(esp_139 - 4) = result
+004bd3ae             *(esp_139 - 8) = eax_82
+004bd3af             *(esp_139 - 0xc) = "[%d] CommitToUFS Failed. (hr)\n"
+004bd3b4             *(esp_139 - 0x10) = 4
+004bd3b6             *(esp_139 - 0x14) = &data_7e4a58
+004bd3bb             sub_4d6500()
+004bd3c0             esp_1 = esp_139
+004bd3c3             break
+004bd3c3         
+004bd2dd         *(esp_139 - 4) = eax_82
+004bd2de         *(esp_139 - 8) = "[%d] Readback param region and check DownloadCurrentState\n"
+004bd2e3         *(esp_139 - 0xc) = 4
+004bd2e5         *(esp_139 - 0x10) = &data_7e4a58
+004bd2ea         sub_4d6500()
+004bd2ef         void* eax_83 = *ebx_1
+004bd2f4         int32_t* ecx_31 = *(eax_83 + 0x100000)
+004bd2fa         *(esp_139 - 4) = result
+004bd2fb         *(esp_139 - 8) = 0x100000
+004bd300         *(esp_139 - 0xc) = eax_83
+004bd301         int32_t edx_2 = *ecx_31
+004bd303         *(esp_139 - 0x10) = result
+004bd304         *(esp_139 - 0x14) = result
+004bd305         *(esp_139 - 0x18) = "param"
+004bd30d         result = (*(edx_2 + 4))()
+004bd30d         
+004bd311         if (result != 0)
+004bd391             int32_t eax_92 = *(arg2 + 0x3c)
+004bd394             *(esp_139 - 4) = result
+004bd396             *(esp_139 - 8) = eax_92 + 1
+004bd397             *(esp_139 - 0xc) = "[%d] After Download Checking - ReadParamFromUFS Failed. (%d)\n"
+004bd39c             *(esp_139 - 0x10) = 4
+004bd39e             *(esp_139 - 0x14) = &data_7e4a58
+004bd3a3             sub_4d6500()
+004bd3a8             esp_1 = esp_139
+004bd3ab             break
+004bd3ab         
+004bd319         result = 1
+004bd319         
+004bd324         if (*(*(arg2 + 0x94) + 0x94) == 1)
+004bd374             result = 0
+004bd324         else
+004bd32a             void* eax_86 = *ebx_1
+004bd32a             
+004bd32c             if (*(arg2 + 0x20) != 2)
+004bd344                 if (*(eax_86 + 0x30f0) == 0x46)
+004bd344                     result = 0
+004bd32c             else if (*(eax_86 + 0x3030) == 0x46)
+004bd337                 result = 0
+004bd337             
+004bd349             if (result != 0)
+004bd34e                 *(esp_139 - 4) = arg1[2]
+004bd353                 *(esp_139 - 8) = *(arg2 + 0x3c) + 1
+004bd354                 *(esp_139 - 0xc) = "[%d] UPD_PARAM_AFTER_DOWNLOAD Checking - "
+004bd354                 "CheckParamDownloadCurrentState Failed. Retry (%d)\n"
+004bd359                 *(esp_139 - 0x10) = 4
+004bd35b                 *(esp_139 - 0x14) = &data_7e4a58
+004bd360                 sub_4d6500()
+004bd365                 eax_1 = arg1[2]
+004bd368                 esp_1 = esp_139
+004bd368                 
+004bd36d                 if (eax_1 == 0)
+004bd36d                     break
+004bd36d                 
+004bd36d                 continue
+004bd36d         
+004bd37a         *(esp_139 - 4) = *(arg2 + 0x3c) + 1
+004bd37b         *(esp_139 - 8) = "[%d] UPD_PARAM_AFTER_DOWNLOAD Checking - Pass\n"
+004bd380         *(esp_139 - 0xc) = 4
+004bd382         *(esp_139 - 0x10) = &data_7e4a58
+004bd387         sub_4d6500()
+004bd38c         esp_1 = esp_139
+004bd38f         break
+004bcd61 else
+004bcd69     char const* const var_34_1 = "[%d] ReadParamFromUFS Failed. (%d)\n"
+004bcd6e     int32_t var_38_1 = 4
+004bcd70     void* var_3c_1 = &data_7e4a58
+004bcd75     sub_4d6500(&data_7e4a58, 4, "[%d] ReadParamFromUFS Failed. (%d)\n", *(arg2 + 0x3c) + 1, result)
+004bcd7a     esp_1 = &var_28
+004bcd7a 
+004bd3d1 TEB* fsbase
+004bd3d1 fsbase->NtTib.ExceptionList = arg1[-3]
+004bd3d8 *esp_1
+004bd3d8 esp_1[1]
+004bd3d9 esp_1[2]
+004bd3da esp_1[3]
+004bd3de *arg1
+004bd3df return result

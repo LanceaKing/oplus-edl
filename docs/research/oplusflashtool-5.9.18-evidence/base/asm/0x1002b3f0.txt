@@ -1,0 +1,23 @@
+1002b3f0 push    ebp
+1002b3f1 mov     ebp, esp
+1002b3f3 sub     esp, 0x8
+1002b3f6 push    ebx
+1002b3f7 mov     ebx, ecx
+1002b3f9 push    esi
+1002b3fa lea     edx, [ebx+0x284]
+1002b400 lea     esi, [edx+0x1]
+1002b403 mov     al, byte [edx]
+1002b405 inc     edx
+1002b406 test    al, al
+1002b408 jne     0x1002b403
+1002b40a sub     edx, esi
+1002b40c jne     0x1002b417
+1002b417 push    edi
+1002b418 call    0x103a6d6e
+1002b41d retn    
+1002b40e pop     esi
+1002b40f or      eax, 0xffffffff
+1002b412 pop     ebx
+1002b413 mov     esp, ebp
+1002b415 pop     ebp
+1002b416 retn    
