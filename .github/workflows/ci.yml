@@ -18,13 +18,23 @@ env:
 
 jobs:
   check:
-    name: Native checks (${{ matrix.os }})
-    runs-on: ${{ matrix.os }}
+    name: Native checks and packaging (${{ matrix.artifact }})
+    runs-on: ${{ matrix.runner }}
     timeout-minutes: 45
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        include:
+          - runner: ubuntu-24.04
+            artifact: linux-x86_64
+            suffix: linux-x86_64.tar.gz
+          # Deploy to macOS 14. The macOS 14 hosted runner has been retired.
+          - runner: macos-15
+            artifact: macos-arm64
+            suffix: macos-arm64.zip
+          - runner: windows-2025
+            artifact: windows-x86_64
+            suffix: windows-x86_64.zip
     steps:
       - uses: actions/checkout@v6
         with:
@@ -55,6 +65,7 @@ jobs:
         run: rustup toolchain install stable --profile minimal --component rustfmt --component clippy
       - name: Record native toolchain
         run: |
+          git rev-parse HEAD
           rustc +stable -Vv
           cargo +stable -V
       - name: Cache downloaded dependencies
@@ -76,3 +87,28 @@ jobs:
       # Default tests include loopback HTTP fixtures; live cloud probes stay ignored.
       - name: Offline tests (no hardware or live services)
         run: cargo +stable test --workspace --all-features --locked --offline
+      - name: Core API without default features
+        run: cargo +stable test -p oplus-edl-core --no-default-features --test public_api --locked --offline
+      - name: Session response waits without cloud or native transport
+        run: cargo +stable test -p oplus-edl-core --no-default-features --features test-support --test session --locked --offline
+      - name: Desktop and CLI parity without native transport
+        run: cargo +stable test -p oplus-edl-desktop --no-default-features --test app --test frontend_parity --locked --offline
+      - name: Verify the desktop qualification fixture
+        run: cargo +stable test -p oplus-edl-desktop --no-default-features --example native-qualification --locked --offline
+      - name: Build and verify desktop release archive (macOS or Linux)
+        if: runner.os != 'Windows'
+        env:
+          RUSTUP_TOOLCHAIN: stable
+        run: sh scripts/package-desktop.sh
+      - name: Build and verify desktop release archive (Windows)
+        if: runner.os == 'Windows'
+        shell: pwsh
+        env:
+          RUSTUP_TOOLCHAIN: stable
+        run: ./scripts/package-desktop.ps1
+      - name: Upload verified archive to this CI run
+        uses: actions/upload-artifact@v4
+        with:
+          name: oplus-edl-${{ matrix.artifact }}
+          path: dist/oplus-edl-*-${{ matrix.suffix }}
+          if-no-files-found: error

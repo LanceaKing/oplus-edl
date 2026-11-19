@@ -2,7 +2,12 @@
 
 | 内容 | 入口 |
 | --- | --- |
-| 当前设计 | [Oplus EDL 设计](designs/oplus-edl.md) |
+| 桌面 GUI 与共用核心设计（已定稿） | [中文](designs/oplus-edl-desktop.zh-CN.md) · [English](designs/oplus-edl-desktop.md) · [检查点进度](implementation/desktop-migration.md) |
+| 桌面用法 | [桌面工作区](desktop.md) |
+| CLI 命令与输出 | [CLI 用法](cli.md) |
+| 发布包、启动与访问权限 | [发布指南](distribution.md) |
+| 源码构建、生产打包与独立核心 | [开发指南](development.md) |
+| 初版 CLI 设计 | [Oplus EDL 设计](designs/oplus-edl.md) |
 | 实施与验收进度 | [实施索引](implementation/README.md) |
 | 工具与协议研究 | [研究索引](research/README.md) |
 | 测试方法与边界 | [测试说明](testing.md) |

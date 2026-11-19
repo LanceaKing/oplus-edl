@@ -1,16 +1,24 @@
 # 第三方来源与许可证
 
-当前链接的 qdl 固定为 [`205c7d4d9f15add22d78c422ba77843ab72c95d4`](https://github.com/LanceaKing/qdlrs/commit/205c7d4d9f15add22d78c422ba77843ab72c95d4)，包含已发布的通用存储接口，使用 BSD-3-Clause。临时路径依赖已移除；见[发布记录](docs/implementation/shared-storage-publish/README.md)。
+当前链接的 qdl 固定为 [`9161c0f46cef245f3b5fc5394dba1ec5e8c3f6ac`](https://github.com/LanceaKing/qdlrs/commit/9161c0f46cef245f3b5fc5394dba1ec5e8c3f6ac)，包含通用存储接口和应答等待修复，使用 [BSD-3-Clause](licenses/qdlrs-BSD-3-Clause.txt)。
 
-历史状态（2026-11-14）：产品当时链接的 qdl 固定为 `a80cd1e8cd1cd60634b9c5ce9a4c8c96b727c003`，已发布并包含 Sahara 加载器模式修复，保留 BSD-3-Clause。下文旧 revision 是源码复用的历史基线。产品新增 libc 和 windows-sys 依赖，均保留其 MIT／Apache-2.0 许可。许可元数据见[修复记录附件](docs/implementation/phase-2-repair/verification/dependency-licenses.json)，新 Git 来源见[发布记录](docs/implementation/phase-2-publish/dependency-source.json)。
+历史上，产品使用 `a80cd1e8cd1cd60634b9c5ce9a4c8c96b727c003` 接入 Sahara 加载器模式修复，使用 `205c7d4d9f15add22d78c422ba77843ab72c95d4` 接入已发布的通用存储接口。
 
-产品原创代码使用 MIT。下列复用文件保留 BSD-3-Clause 标记，不因产品许可改变其许可：
+产品原创代码使用 MIT。以下复用源码保留原 BSD-3-Clause 许可。
 
-- GPT 读取、有界分配、GPT 校验、唯一名称定位及单分区传输已移入 fork 的 `qdl/src/storage.rs`，保留 Qualcomm 与 LanceaKing 的版权及 BSD-3-Clause 标记。产品 `src/storage.rs` 保留目录／LUN 策略和薄适配层，继续使用 BSD-3-Clause。
-- `tests/support/mod.rs` 的 ScriptedIo 及设备构造辅助函数来自 fork 的 `qdl/tests/support/mod.rs`；产品新增合成 GPT 与测试会话辅助函数。
+- GPT 读取、有界分配、GPT 校验、唯一名称定位及单分区传输位于 fork 的 `qdl/src/storage.rs`，保留 Qualcomm 与 LanceaKing 的版权。产品 `crates/oplus-edl-core/src/storage.rs` 保留目录、LUN 策略和适配层。
+- 核心离线测试的 ScriptedIo 及设备构造辅助函数来自 fork 的 `qdl/tests/support/mod.rs`。产品新增了合成 GPT 与测试会话辅助函数。
+- `crates/oplus-edl-core/src/programmer.rs` 的 CPIO newc 解码来自锁定的 `qdl/src/lib.rs`，改为读取核心已持有的加载器句柄，保留 Qualcomm 的版权和 BSD-3-Clause 许可。
 
-上述复用源码的历史基线来自 [LanceaKing/qdlrs，7e0a31a5be2ab5d01b27bd743ee67a445ad0b84d](https://github.com/LanceaKing/qdlrs/tree/7e0a31a5be2ab5d01b27bd743ee67a445ad0b84d)。BSD 条款及上游版权文本保存在 [licenses/qdlrs-BSD-3-Clause.txt](licenses/qdlrs-BSD-3-Clause.txt)。上游基线与修正说明见[依赖记录](docs/dependencies/qdlrs.md)。未复制 bkerler/edl 的 GPL 源码。
+早期存储与测试复用的历史基线来自 [LanceaKing/qdlrs，7e0a31a5be2ab5d01b27bd743ee67a445ad0b84d](https://github.com/LanceaKing/qdlrs/tree/7e0a31a5be2ab5d01b27bd743ee67a445ad0b84d)。BSD 条款及上游版权文本保存在 [licenses/qdlrs-BSD-3-Clause.txt](licenses/qdlrs-BSD-3-Clause.txt)。
 
-Cargo.lock 保存本次实际解析版本。直接依赖 clap、serde、serde_json、anyhow、gptman 使用其各自 MIT／Apache-2.0 许可；qdl 使用 BSD-3-Clause。测试依赖 tempfile、bincode 使用各自 MIT／Apache-2.0 许可。完整直接与传递依赖许可元数据见第二阶段的 `verification/dependency-licenses.json`。此元数据不是许可证全文集合；之后制作分发包时须随包保留适用的第三方许可文本。本阶段不生成发布包，也不分发加载器或固件。
+`Cargo.lock` 记录实际解析版本。`clap`、`serde`、`serde_json`、`anyhow`、`libc` 和 `windows-sys` 按各 crate 声明的 MIT 或 Apache-2.0 许可使用。`xmltree` 0.11.0 使用 MIT。XML 与稀疏解析为产品原创实现，行为参照设计指定的 qdlrs 与 qdl 版本。
 
-第三阶段新增直接依赖 xmltree 0.11.0（MIT，原已由 qdl 间接依赖）。XML 与稀疏解析为产品原创实现，行为参照设计固定的 qdlrs 与 qdl；未复制 qdl 稀疏解析 C 源码或 EDL Python 源码。
+## 发布包
+
+- USB 依赖 `nusb` 0.2.9，使用 Apache-2.0 或 MIT。云端依赖 `wreq` 0.16.3 和 `btls` 0.5.6，均使用 Apache-2.0。`btls-sys` 0.5.6 使用 MIT，包内另附其 BoringSSL 源码自带的许可文本。
+- eframe、egui 和 egui_extras 0.37.0 由 [egui 项目](https://github.com/emilk/egui/tree/0.37.0)提供，可按 MIT 或 Apache-2.0 使用。包内附 [MIT 条款](licenses/egui-MIT.txt)。
+- [rfd 0.18.0](https://docs.rs/rfd/0.18.0/rfd/) 使用 [MIT 条款](licenses/rfd-MIT.txt)。
+- 包内嵌未修改的 Noto Sans CJK SC Regular 2.004。字体版权 © 2014–2021 Adobe，使用 SIL Open Font License 1.1。包内的 `licenses/NotoSansCJK-OFL.txt` 附完整文本。
+
+每个平台的包内 `licenses/dependencies.json` 列出该目标的正常和构建依赖版本、许可声明及随包文件。`licenses/cargo/` 收录锁定源码自带的文本，并按已锁定版本补充上游声明。`dispatch` 0.2.0 的条目使用上游 Cargo 清单所声明的 MIT 许可元数据。

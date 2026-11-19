@@ -19,6 +19,14 @@
 
 | 目录 | 用途 |
 | --- | --- |
+| [检查点 D 发布包日志](desktop-qualification/checkpoint-d-release-packaging.log) | macOS arm64 本机离线打包、解包核验和工作区测试证据 |
+| [检查点 A 原型 ZIP](desktop-qualification/checkpoint-a-prototype-macos-arm64.zip) | 原型 GUI 本机记录对应的归档 |
+| [A–D 第一轮修订验证](desktop-qualification/implementation-round-1-repair.log) | 重新执行离线回归、资格样例及 macOS 生产归档核验 |
+| [A–D 第二轮修订验证](desktop-qualification/implementation-round-2-repair.log) | 离线回归、macOS 生产包和解包 CLI 的 stdout 阻塞复测 |
+| [A–D 第三轮修订验证](desktop-qualification/implementation-round-3-repair.log) | 材料、路径、选择和偏好回归及 macOS 生产包核验 |
+| [A–D 第四轮修订验证](desktop-qualification/implementation-round-4-repair.log) | 备份路径、恢复范围、部分文件和结果面板回归及 macOS 生产包核验 |
+| [A–D 第五轮修订验证](desktop-qualification/implementation-round-5-repair.log) | 多 LUN 输出、SWM、日志、回读、停止回归及 macOS 生产包核验 |
+| [A–D 第六轮修订验证](desktop-qualification/implementation-round-6-repair.log) | 备份调度、云绑定、结果类型、停止回归及 macOS 生产包核验 |
 | [firmware](firmware/) | 固件 ZIP、SHA-256 和校验记录 |
 | [preview-super-implementation](preview-super-implementation/) | super 构建、两次准备结果与离线验证 |
 | [preview-rmx3800-alignment](preview-rmx3800-alignment/)、[preview-export-locations](preview-export-locations/) | preview 行为对齐与导出位置 |

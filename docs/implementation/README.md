@@ -1,5 +1,9 @@
 # 实施记录索引
 
+检查点 D 已补齐三平台发布包配置和交付文档。macOS arm64 本机离线打包与解包核验通过。Windows 和 Ubuntu 实包、三平台原生验收以及 USB 在途读取计时仍待实测。[检查点 D 记录](desktop-migration.md#checkpoint-d-release-packaging)
+
+检查点 C 的桌面工作区已接入共用设备服务、备份、恢复和刷写。GUI 与 CLI 离线等价回归通过。[检查点 C 记录](desktop-migration.md#checkpoint-c-real-desktop-adapter)
+
 按[设计的六个实施阶段](../designs/oplus-edl.md)统计，前五阶段已完成，第六阶段已有 RMX3800 实刷和启动证据，全量回读验收尚未完成。阶段完成结论对应记录中的版本和测试组合，不自动覆盖当前未提交改动。
 
 | 阶段 | 内容与状态 | 主要记录 |

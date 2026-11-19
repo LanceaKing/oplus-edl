@@ -1,0 +1,41 @@
+[package]
+name = "oplus-edl-cli"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "oplus-edl"
+path = "src/main.rs"
+
+[[test]]
+name = "json_stdout"
+harness = false
+
+[features]
+default = ["usb", "serial", "cloud"]
+usb = ["oplus-edl-core/usb"]
+serial = ["oplus-edl-core/serial"]
+cloud = ["oplus-edl-core/cloud"]
+
+[dependencies]
+oplus-edl-core = { path = "../oplus-edl-core" }
+clap.workspace = true
+serde_json.workspace = true
+base64 = "0.22"
+
+[dev-dependencies]
+anyhow.workspace = true
+qdl.workspace = true
+oplus-edl-core = { path = "../oplus-edl-core", features = ["test-support"] }
+sha2 = "0.10"
+tempfile.workspace = true
+gptman = "1.1.2"
+xmltree = "0.11"
+
+[target.'cfg(unix)'.dependencies]
+libc.workspace = true
+
+[target.'cfg(windows)'.dependencies]
+windows-sys = { version = "0.61", features = ["Win32_System_Console", "Win32_Foundation"] }
