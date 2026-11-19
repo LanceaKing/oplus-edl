@@ -1,3 +1,4 @@
+#[cfg(unix)]
 use oplus_edl_core::result::ExecutionState;
 #[path = "support/cloud_fixture.rs"]
 mod cloud_fixture;
