@@ -477,10 +477,6 @@ pub struct DesktopApp {
     pub(crate) dropped_logs: u64,
     sampled_at: Option<Instant>,
     pub(crate) compact_panel: Option<SidePanel>,
-    pub(crate) show_inputs: bool,
-    pub(crate) show_status: bool,
-    pub(crate) window_size: [f32; 2],
-    pub(crate) zoom: f32,
     persistence: bool,
 }
 
@@ -508,10 +504,6 @@ impl DesktopApp {
             dropped_logs: 0,
             sampled_at: None,
             compact_panel: None,
-            show_inputs: true,
-            show_status: true,
-            window_size: [1280.0, 800.0],
-            zoom: 1.0,
             persistence: false,
         }
     }
@@ -520,12 +512,12 @@ impl DesktopApp {
         let mut app = Self::with_ui_service(ctx, CoreService::new(HostServices::native()));
         preferences.apply(&mut app);
         app.persistence = true;
-        ctx.set_zoom_factor(app.zoom);
         app
     }
 
     pub fn with_ui_service(ctx: &egui::Context, service: CoreService) -> Self {
         let app = Self::with_service(service);
+        ctx.options_mut(|options| options.zoom_with_keyboard = false);
         views::configure_style(ctx);
         let mut fonts = egui::FontDefinitions::default();
         let font = egui::FontData::from_static(include_bytes!(
@@ -1158,27 +1150,9 @@ impl DesktopApp {
     }
 }
 
-fn logical_window_size([width, height]: [u32; 2], display_scale: f64) -> Option<[f32; 2]> {
-    (width != 0 && height != 0).then(|| {
-        [
-            (f64::from(width) / display_scale) as f32,
-            (f64::from(height) / display_scale) as f32,
-        ]
-    })
-}
-
 impl eframe::App for DesktopApp {
-    fn logic(&mut self, ctx: &egui::Context, frame: &mut eframe::Frame) {
+    fn logic(&mut self, ctx: &egui::Context, _frame: &mut eframe::Frame) {
         self.tick();
-        self.zoom = ctx.zoom_factor();
-        if let Some(window) = frame.winit_window() {
-            let size = window.inner_size();
-            if let Some(size) =
-                logical_window_size([size.width, size.height], window.scale_factor())
-            {
-                self.window_size = size;
-            }
-        }
         if ctx.input(|input| input.viewport().close_requested()) && !self.close_ready() {
             ctx.send_viewport_cmd(egui::ViewportCommand::CancelClose);
             self.request_window_close();
@@ -1265,17 +1239,29 @@ mod tests {
     }
 
     #[test]
-    fn window_size_uses_native_display_scale_and_ignores_minimized_bounds() {
-        assert_eq!(
-            logical_window_size([1920, 1200], 1.5),
-            Some([1280.0, 800.0])
-        );
-        assert_eq!(
-            logical_window_size([2560, 1600], 2.0),
-            Some([1280.0, 800.0])
-        );
-        assert_eq!(logical_window_size([1280, 800], 1.0), Some([1280.0, 800.0]));
-        assert_eq!(logical_window_size([0, 0], 2.0), None);
+    fn desktop_uses_native_display_scale_without_keyboard_zoom() {
+        let ctx = egui::Context::default();
+        let _app = DesktopApp::with_ui_service(&ctx, CoreService::new(HostServices::default()));
+        let mut input = egui::RawInput {
+            events: vec![egui::Event::Key {
+                key: egui::Key::Equals,
+                physical_key: None,
+                pressed: true,
+                repeat: false,
+                modifiers: egui::Modifiers::COMMAND,
+            }],
+            ..Default::default()
+        };
+        input
+            .viewports
+            .get_mut(&egui::ViewportId::ROOT)
+            .unwrap()
+            .native_pixels_per_point = Some(2.0);
+        ctx.run_ui(input.clone(), |_| {}).textures_delta.clear();
+        input.events.clear();
+        ctx.run_ui(input, |_| {}).textures_delta.clear();
+        assert_eq!(ctx.zoom_factor(), 1.0);
+        assert_eq!(ctx.pixels_per_point(), 2.0);
     }
 
     #[test]

@@ -8,7 +8,7 @@ fn main() -> eframe::Result {
     let options = eframe::NativeOptions {
         viewport: egui::ViewportBuilder::default()
             .with_title("Oplus EDL")
-            .with_inner_size(preferences.window_size)
+            .with_inner_size([1280.0, 800.0])
             .with_min_inner_size([640.0, 480.0]),
         renderer: eframe::Renderer::Glow,
         ..Default::default()

@@ -7,45 +7,15 @@ use std::{
     path::{Path, PathBuf},
 };
 
-#[derive(Deserialize, Serialize)]
+#[derive(Default, Deserialize, Serialize)]
 #[serde(default)]
 pub struct Preferences {
-    pub window_size: [f32; 2],
-    zoom: f32,
-    show_inputs: bool,
-    show_status: bool,
     mode: Mode,
     flash_kind: FlashKind,
     restore_kind: RestoreKind,
     paths: BTreeMap<String, OsString>,
     programs: Vec<OsString>,
     patches: Vec<OsString>,
-}
-
-impl Default for Preferences {
-    fn default() -> Self {
-        Self {
-            window_size: [1280.0, 800.0],
-            zoom: 1.0,
-            show_inputs: true,
-            show_status: true,
-            mode: Mode::default(),
-            flash_kind: FlashKind::default(),
-            restore_kind: RestoreKind::default(),
-            paths: BTreeMap::new(),
-            programs: Vec::new(),
-            patches: Vec::new(),
-        }
-    }
-}
-
-fn supported_zoom(zoom: f32) -> f32 {
-    // Match the keyboard zoom limits in the pinned egui version.
-    if (0.2..=5.0).contains(&zoom) {
-        zoom
-    } else {
-        1.0
-    }
 }
 
 impl Preferences {
@@ -58,21 +28,7 @@ impl Preferences {
     fn read(path: &Path) -> io::Result<Self> {
         use std::io::Read;
         let bytes = fs::File::open(path)?.take(1024 * 1024 + 1);
-        let mut preferences: Self = serde_json::from_reader(bytes)?;
-        let width = &mut preferences.window_size[0];
-        *width = if width.is_finite() {
-            width.clamp(640.0, 4096.0)
-        } else {
-            1280.0
-        };
-        let height = &mut preferences.window_size[1];
-        *height = if height.is_finite() {
-            height.clamp(480.0, 3072.0)
-        } else {
-            800.0
-        };
-        preferences.zoom = supported_zoom(preferences.zoom);
-        Ok(preferences)
+        serde_json::from_reader(bytes).map_err(Into::into)
     }
 
     pub(crate) fn apply(self, app: &mut DesktopApp) {
@@ -99,10 +55,6 @@ impl Preferences {
         inputs.restore.kind = self.restore_kind;
         app.update_inputs(inputs);
         app.set_mode(self.mode);
-        app.show_inputs = self.show_inputs;
-        app.show_status = self.show_status;
-        app.window_size = self.window_size;
-        app.zoom = self.zoom;
     }
 
     pub(crate) fn capture(app: &DesktopApp) -> Self {
@@ -142,13 +94,9 @@ impl Preferences {
                 .iter()
                 .map(|path| path.as_os_str().to_owned())
                 .collect(),
-            show_inputs: app.show_inputs,
-            show_status: app.show_status,
             mode: app.mode,
             flash_kind: input.flash.kind,
             restore_kind: input.restore.kind,
-            window_size: app.window_size,
-            zoom: supported_zoom(app.zoom),
         }
     }
 
@@ -192,19 +140,29 @@ mod tests {
     use oplus_edl_core::{CoreService, HostServices};
 
     #[test]
-    fn preferences_restore_intermediate_keyboard_zoom_and_logical_size_independently() {
+    fn legacy_display_settings_are_ignored_and_saved_paths_are_retained() {
         let root = tempfile::tempdir().unwrap();
         let path = root.path().join("desktop.json");
         let create_app = || DesktopApp::with_service(CoreService::new(HostServices::default()));
         let mut app = create_app();
-        app.window_size = [1165.0, 732.0];
-        for (input_zoom, restored_zoom) in [(0.2, 0.2), (1.1, 1.1), (5.0, 5.0), (7.0, 1.0)] {
-            app.zoom = input_zoom;
-            Preferences::capture(&app).write(&path).unwrap();
-            let mut restarted = create_app();
-            Preferences::read(&path).unwrap().apply(&mut restarted);
-            assert_eq!(restarted.zoom, restored_zoom);
-            assert_eq!(restarted.window_size, app.window_size);
+        let mut inputs = app.inputs().clone();
+        inputs.backup.output = root.path().join("backup");
+        app.update_inputs(inputs.clone());
+
+        let mut legacy = serde_json::to_value(Preferences::capture(&app)).unwrap();
+        legacy["window_size"] = serde_json::json!([1024.0, 768.0]);
+        legacy["zoom"] = serde_json::json!(2.0);
+        legacy["show_inputs"] = serde_json::json!(false);
+        legacy["show_status"] = serde_json::json!(false);
+        fs::write(&path, serde_json::to_vec(&legacy).unwrap()).unwrap();
+
+        let mut restarted = create_app();
+        Preferences::read(&path).unwrap().apply(&mut restarted);
+        assert_eq!(restarted.inputs().backup.output, inputs.backup.output);
+        Preferences::capture(&restarted).write(&path).unwrap();
+        let saved: serde_json::Value = serde_json::from_slice(&fs::read(path).unwrap()).unwrap();
+        for key in ["window_size", "zoom", "show_inputs", "show_status"] {
+            assert!(saved.get(key).is_none(), "{key}");
         }
     }
 

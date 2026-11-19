@@ -52,8 +52,7 @@ pub(crate) fn primary_button(label: &str) -> Button<'_> {
 }
 
 pub(crate) fn workspace(app: &mut DesktopApp, ui: &mut Ui, frame: &eframe::Frame) {
-    let width = ui.available_width();
-    let compact = width < 920.0;
+    let compact = ui.available_width() < 920.0;
     egui::Panel::top("navigation")
         .resizable(false)
         .frame(panel_frame(Color32::WHITE))
@@ -64,23 +63,16 @@ pub(crate) fn workspace(app: &mut DesktopApp, ui: &mut Ui, frame: &eframe::Frame
         .show(ui, |ui| progress(app, ui));
 
     if !compact {
-        let max_width = (width * 0.31).min(360.0);
-        if app.show_inputs {
-            egui::Panel::left("operation_inputs")
-                .resizable(true)
-                .default_size(249.0)
-                .size_range(210.0..=max_width)
-                .frame(panel_frame(PANEL))
-                .show(ui, |ui| inputs(app, ui, frame));
-        }
-        if app.show_status {
-            egui::Panel::right("operation_status")
-                .resizable(true)
-                .default_size(248.0)
-                .size_range(210.0..=max_width)
-                .frame(panel_frame(PANEL))
-                .show(ui, |ui| status(app, ui));
-        }
+        egui::Panel::left("operation_inputs")
+            .resizable(false)
+            .exact_size(249.0)
+            .frame(panel_frame(PANEL))
+            .show(ui, |ui| inputs(app, ui, frame));
+        egui::Panel::right("operation_status")
+            .resizable(false)
+            .exact_size(248.0)
+            .frame(panel_frame(PANEL))
+            .show(ui, |ui| status(app, ui));
     }
 
     egui::CentralPanel::default()
@@ -124,36 +116,18 @@ fn header(app: &mut DesktopApp, ui: &mut Ui, compact: bool) {
                 app.set_mode(mode);
             }
         }
-        ui.separator();
-        for (label, side, visible) in [
-            ("输入", SidePanel::Inputs, &mut app.show_inputs),
-            ("状态与日志", SidePanel::Status, &mut app.show_status),
-        ] {
-            let selected = if compact {
-                app.compact_panel == Some(side)
-            } else {
-                *visible
-            };
-            if ui.add(Button::new(label).selected(selected)).clicked() {
-                if compact {
+        if compact {
+            ui.separator();
+            for (label, side) in [
+                ("输入", SidePanel::Inputs),
+                ("状态与日志", SidePanel::Status),
+            ] {
+                let selected = app.compact_panel == Some(side);
+                if ui.add(Button::new(label).selected(selected)).clicked() {
                     app.compact_panel = if selected { None } else { Some(side) };
-                } else {
-                    *visible = !*visible;
                 }
             }
         }
-        ui.separator();
-        let active_zoom = ui.ctx().zoom_factor();
-        egui::ComboBox::from_id_salt("display_scale")
-            .width(73.0)
-            .selected_text(format!("{:.0}%", 100.0 * active_zoom))
-            .show_ui(ui, |ui| {
-                for (label, zoom) in [("100%", 1.0), ("150%", 1.5), ("200%", 2.0)] {
-                    if ui.selectable_label(active_zoom == zoom, label).clicked() {
-                        ui.ctx().set_zoom_factor(zoom);
-                    }
-                }
-            });
     });
     if let Some(notice) = &app.notice {
         ui.label(RichText::new(notice).color(WARNING));
@@ -697,7 +671,6 @@ fn partition_table(ui: &mut Ui, app: &mut DesktopApp) {
             ui.set_min_width(420.0);
             TableBuilder::new(ui)
                 .striped(true)
-                .resizable(true)
                 .column(Column::exact(30.0))
                 .column(Column::initial(145.0).at_least(100.0).clip(true))
                 .column(Column::exact(43.0))
@@ -729,10 +702,10 @@ fn partition_table(ui: &mut Ui, app: &mut DesktopApp) {
                             ui.label(key.lun.to_string());
                         });
                         row.col(|ui| {
-                            ui.label(&key.start_sector);
+                            ui.add(Label::new(&key.start_sector).truncate());
                         });
                         row.col(|ui| {
-                            ui.label(&key.sectors);
+                            ui.add(Label::new(&key.sectors).truncate());
                         });
                     });
                 });
@@ -756,7 +729,6 @@ fn work_table(ui: &mut Ui, items: &[Item], result: bool) {
             ui.set_min_width(600.0);
             TableBuilder::new(ui)
                 .striped(true)
-                .resizable(true)
                 .column(Column::exact(35.0))
                 .column(Column::initial(84.0).clip(true))
                 .column(Column::initial(108.0).clip(true))
